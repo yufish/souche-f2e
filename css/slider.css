@@ -1,0 +1,138 @@
+/* line 2, slider.less */
+#slider {
+  width: 875px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100000;
+}
+/* line 7, slider.less */
+#slider .slider-scroll {
+  width: 875px;
+  height: 575px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 10px;
+}
+/* line 13, slider.less */
+#slider .slider-scroll .slider-container {
+  width: 10000px;
+}
+/* line 15, slider.less */
+#slider .slider-scroll .slider-container .panel {
+  width: 875px;
+  height: 575px;
+  float: left;
+}
+/* line 19, slider.less */
+#slider .slider-scroll .slider-container .panel .picWrap {
+  width: 300px;
+  height: 197px;
+  margin: 0 auto;
+  margin-top: 188px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 27, slider.less */
+#slider .slider-scroll .slider-container .panel img {
+  width: 300px;
+}
+/* line 32, slider.less */
+#slider .slider-scroll .slider-container .first-panel .picWrap {
+  width: 875px;
+  height: 575px;
+  margin-top: 0;
+}
+/* line 37, slider.less */
+#slider .slider-scroll .slider-container .first-panel img {
+  width: 875px;
+}
+/* line 44, slider.less */
+#slider .scrollBtn {
+  position: absolute;
+  width: 102px;
+  height: 95px;
+  top: 247px;
+  cursor: pointer;
+  background: url(../../images/fed/bigPic.png?dd) no-repeat;
+}
+/* line 51, slider.less */
+#slider .scrollBtn.scrollBtn-left {
+  left: -102px;
+  background-position: 5px -187px;
+}
+/* line 55, slider.less */
+#slider .scrollBtn.scrollBtn-right {
+  right: -102px;
+  background-position: 5px -285px;
+}
+/* line 59, slider.less */
+#slider .scrollBtn.scrollBtn-left:hover {
+  background-position: 5px 2px;
+}
+/* line 62, slider.less */
+#slider .scrollBtn.scrollBtn-right:hover {
+  background-position: 5px -92px;
+}
+/* line 67, slider.less */
+#pic-feed {
+  width: 875px;
+  margin: 0 auto;
+  padding-top: 18px;
+  color: #fff;
+  position: relative;
+  z-index: 100000;
+}
+/* line 74, slider.less */
+#pic-feed .pic-title {
+  width: 405px;
+  float: left;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
+}
+/* line 80, slider.less */
+#pic-feed .pic-title ins {
+  color: #ee7700;
+}
+/* line 84, slider.less */
+#pic-feed .pic-tabs {
+  float: right;
+}
+/* line 86, slider.less */
+#pic-feed .pic-tabs i {
+  display: inline-block;
+  height: 15px;
+  line-height: 15px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+/* line 93, slider.less */
+#pic-feed .pic-tabs .pic-tab-intro {
+  font-style: normal;
+  padding-left: 2px;
+}
+/* line 97, slider.less */
+#pic-feed .pic-tabs .pic-tab {
+  width: 15px;
+  text-indent: -9999em;
+  background: url(../../images/fed/bigPic.png?dd) no-repeat -58px -399px;
+}
+/* line 101, slider.less */
+#pic-feed .pic-tabs .pic-tab.pic-tab-active {
+  background-position: -58px -423px;
+}
+/* line 107, slider.less */
+.slider-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 46px;
+  height: 47px;
+  cursor: pointer;
+  z-index: 100000;
+  background: url(../../images/fed/bigPic.png?dd) no-repeat -1px -392px;
+}
+/* line 116, slider.less */
+.slider-close.close-hover {
+  background-position: -2px -442px;
+}

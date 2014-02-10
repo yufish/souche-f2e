@@ -1,0 +1,157 @@
+#filter{
+  position: absolute;
+  left:-100%;
+  top:0;
+//   transition: left 0.5s;
+// -moz-transition: left 0.5s;
+// -webkit-transition: left 0.5s;
+// -o-transition: left 0.5s;
+background: #eaeaea;
+width:100%;
+z-index:10000;
+padding-bottom: 70px;
+  .ok{
+    width:60px;
+    height:30px;
+    border-radius: 5px;
+    background: #f0d8b1;
+    color:#df5d16;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    right:10px;
+    top:5px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  .filter{
+    padding:5px;
+    background:#f4f4f4;
+    border:1px solid #ddd;
+    margin:10px;
+    .t{
+      float: left;
+      line-height: 30px;
+      color:#666;
+      font-size: 14px;
+    }
+    .item{
+      background: #e3e3e3;
+      float: left;
+      padding:5px;
+      margin-right: 5px;
+      font-size: 14px;
+      color:#666;
+      margin-bottom: 5px;
+      .close{
+        display: inline-block;
+        width:12px;
+        height:12px;
+        background: url(./../images/mob/filter-close.png) no-repeat;
+        background-size: 100%;
+        vertical-align: 0px;
+        margin-left: 5px;
+      }
+    }
+    .filter-list{
+      display:inline;
+    }
+  }
+  #options{
+    label{
+      margin:0 10px;
+    }
+  }
+  label{
+    font-size: 14px;
+    color:#333;
+  }
+  .group{
+    margin:10px;
+    
+    border:1px solid #ccc;
+    border-radius: 5px;
+    .option{
+      height:40px;
+      line-height: 40px;
+      position: relative;
+      background: #f6f6f6;
+      border-bottom:1px solid #ccc;
+      select{
+        background: none;
+        width:100%;
+        height:40px;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 2;
+        opacity: 0;
+      }
+      .name{
+        padding-left: 10px;
+        font-size: 14px;
+        color:#666;
+        height:40px;
+        overflow: hidden;
+        padding-right: 15px;
+      }
+      .value{
+        position: absolute;
+        right:30px;
+        top:0px;
+        font-size: 14px;
+        color:#666;
+        height:40px;
+        overflow: hidden;
+        color:#999;
+      }
+      i{
+        position: absolute;
+        top:13px;
+        right:10px;
+        width:10px;
+        height:15px;
+        display: inline-block;
+        background: url(./../images/mob/filter-i.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+  .action{
+    margin:10px;
+    height:40px;
+    .reset-btn{
+      float:left;
+      width:36%;
+      background: #68a447;
+      color:#fff;
+      text-align: center;
+      line-height: 50px;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    .submit-btn{
+      float:left;
+      width:60%;
+      margin-left: 4%;
+      background: #dd5e25;
+      color:#fff;
+      text-align: center;
+       font-size: 18px;
+      border-radius: 5px;
+      line-height: 50px;
+    }
+  }
+  .history{
+    margin-top: 20px;
+    label{
+      padding:10px;
+    }
+    .no{
+      color:#999;
+      padding:10px;
+      font-size: 12px;
+    }
+  }
+  }

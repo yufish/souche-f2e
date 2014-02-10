@@ -1,0 +1,270 @@
+#list{
+  #content{
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+  #footer{
+    position: relative;
+    z-index: 9;
+  }
+  #header{
+    height:40px;
+  }
+  #order{
+    li{
+      width:33.3%;
+      float:left;
+      vertical-align: top;
+      a{
+        font-size: 14px;
+        line-height: 40px;
+        text-align: center;
+        display: block;
+        background: #d3d3d3;
+        border-right:1px solid #fff;
+        color:#333;
+        i{
+          width:10px;
+          height:10px;
+          display: inline-block;
+          background: url(./../images/mob/order.png) no-repeat;
+          background-size: 100%;
+          vertical-align: -1px;
+        }
+      }
+      a.active{
+        color:#db5d30;
+        i{
+          background: url(./../images/mob/order-1.png) no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  #list-tip{
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color:#666;
+    em{
+      color:#db5d30;
+    }
+  }
+  .filter{
+    padding:5px;
+    background:#f4f4f4;
+    border:1px solid #ddd;
+    margin:10px;
+    margin-top: 0;
+    .t{
+      float: left;
+      line-height: 30px;
+      color:#666;
+      font-size: 14px;
+    }
+    .item{
+      background: #e3e3e3;
+      float: left;
+      padding:5px;
+      margin-right: 5px;
+      font-size: 14px;
+      color:#333;
+      margin-bottom: 5px;
+      .close{
+        display: inline-block;
+        width:12px;
+        height:12px;
+        background: url(./../images/mob/filter-close.png) no-repeat;
+        background-size: 100%;
+        vertical-align: 0px;
+        margin-left: 5px;
+      }
+    }
+  }
+  .no-car{
+    text-align: center;
+    line-height: 30px;
+    color:#999;
+    font-size: 18px;
+    padding-bottom: 20px;
+    i{
+      display: inline-block;
+      width:25px;
+      height:25px;
+      background: url(./../images/mob/list-no.png) no-repeat;
+      background-size: 100%;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  .no-car-2{
+    text-align: center;
+    line-height: 30px;
+    color:#999;
+    font-size: 18px;
+    padding-bottom: 90px;
+    i{
+      display: inline-block;
+      width:25px;
+      height:25px;
+      background: url(./../images/mob/list-no2.png) no-repeat;
+      background-size: 100%;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  #cars{
+    margin:10px;
+    .car{
+      position: relative;
+      padding:10px 0;
+      border-bottom: 1px solid #ddd;
+      font-size:12px;
+      display: block;
+      .i-shanggou{
+        position: absolute;
+        top:12px;
+        left:2px;
+        display: block;
+        width:25px;
+        height:25px;
+        background: url(./../images/mob/i-shangou.png) no-repeat;
+        background-size: 100%;
+      }
+.i-yushou{
+        position: absolute;
+        top:12px;
+        left:2px;
+        display: block;
+        width:25px;
+        height:25px;
+        background: url(./../images/mob/i-yushou.png) no-repeat;
+        background-size: 100%;
+      }
+        .lft{
+          display: inline-block;
+          vertical-align: top;
+          width:100px;
+          position: absolute;
+          top:10px;
+          left:0;
+          height:80px;
+          overflow: hidden;
+          img{
+            width:100%;
+            margin: 0;
+          }
+
+        }
+        .rht{
+          display: inline-block;
+          vertical-align: top;
+          padding-left: 110px;
+          .title{
+            line-height:16px;
+            font-size: 12px;
+            color:#333;
+
+          }
+          .price{
+            s{
+              color:#999;
+              font-size:14px;
+            }
+            em{
+              color:#df5d16;
+              font-size:14px;
+            }
+            line-height: 20px;
+          }
+          .info{
+            color: #888;
+            line-height: 18px;
+            font-size: 12px;
+          }
+          .new-price{
+            color:#888;
+            line-height: 16px;
+            font-size: 12px;
+          }
+          .buy-time{
+            color:#888;
+            line-height: 16px;
+            font-size: 12px;
+          }
+          .rate-yushou{
+            background:#208ba7;
+            height:18px;
+            line-height: 18px;
+            position: absolute;
+            right:-10px;
+            bottom:10px;
+            font-size: 12px;
+            color:#fff;
+            margin-top: -2px;
+            border-top-left-radius:20px;
+            border-bottom-left-radius:20px;
+            width:60px;
+              text-align: center;
+          }
+          .rate{
+            background:#91ad2d;
+            height:18px;
+            line-height: 18px;
+            position: absolute;
+            right:-10px;
+            bottom:10px;
+            font-size: 0;
+            color:#fff;
+            margin-top: -2px;
+            border-top-left-radius:20px;
+            border-bottom-left-radius:20px;
+            span{
+              display: inline-block;
+              width:90px;
+              text-align: center;
+              font-size: 12px;
+            }
+            em{
+              display: inline-block;
+              text-align: center;
+              width:20px;
+              float: right;
+              height:18px;
+              line-height:18px;
+              font-size: 12px;
+              background: #698517;
+            }
+          }
+          .rate.no-pass{
+            background: #1b8ba8;
+
+          }
+          .shangou-price{
+        color:#999;
+        em{
+          color:#df5d16;
+          font-size:12px;
+        }
+      }
+        }
+    }
+    .more{
+      font-size: 14px;
+      line-height: 50px;
+      text-align: center;
+      display: block;
+      color:#999;
+      i{
+        width:40px;
+        height:40px;
+        display: inline-block;
+        background:url(./../images/mob/list-more.png) no-repeat;
+        background-size: 100%;
+        vertical-align: -15px;
+      }
+    }
+  }
+
+}

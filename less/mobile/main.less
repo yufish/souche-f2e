@@ -1,0 +1,187 @@
+@import 'prefix.less';
+
+#header{
+  background: #db5d30;
+  position: relative;
+  .back{
+    background:url(./../images/mob/header-back.png) no-repeat;
+    background-size: 80%;
+    height:30px;
+    position: absolute;
+    left:5px;
+    top:5px;
+    width:30px;
+    display: inline-block;
+
+  }
+  .title{
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px;
+
+  }
+}
+#footer{
+  padding-bottom: 20px;
+  font-size: 12px;
+  em{
+    color:#db5d30;
+  }
+  #ft-actions{
+    a{
+      display:inline-block;
+      width:32%;
+      text-align: center;
+      line-height: 20px;
+      margin-top: 10px;
+      color:#666;
+      font-size: 14px;
+      img{
+        display: block;
+        width: 35px;
+        margin:0 auto;
+      }
+    }
+    margin-bottom: 10px;
+  }
+  #contact{
+    border-top:1px solid #ddd;
+    padding:10px;
+    .hd{
+      font-size:14px;
+      line-height: 25px;
+      color:#333;
+      margin-bottom: 5px;
+    }
+    a{
+      color:#444;
+    }
+    .item{
+      margin-bottom: 18px;
+      .h{
+        strong{
+          font-weight: 900;
+          font-size: 13px;
+          color:#999;
+          text-decoration: underline;
+          margin-right: 5px;
+        }
+         color:#444;
+         font-size: 13px;
+        line-height: 18px;
+      }
+      .b{
+        color:#888;
+        display: block;
+        line-height: 18px;
+        padding-left: 18px;
+    }
+  }
+}
+}
+
+@import 'index.less';
+@import 'list.less';
+@import 'filter.less';
+@import 'detail.less';
+@import 'my.less';
+@import 'report.less';
+@import 'config.less';
+@import 'login.less';
+@import 'center.less';
+@import 'cars.less';
+@import 'advance.less';
+@import 'sellforyou.less';
+@import 'wantbuy.less';
+@import 'intro.less';
+@import 'fankui.less';
+.loading-tip{
+  position:fixed;
+  top:0;
+  height:30px;
+  line-height:30px;
+  padding:5px 10px;
+  display: block;
+  background:#888;
+  color:#fff;
+  z-index:10000;
+  box-shadow: 1px 1px 1px #ddd;
+  font-size: 14px;
+  border-radius: 5px;
+  opacity:0;
+   -moz-transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+}
+.loading-tip.show{
+  opacity:1;
+}
+.message-tip{
+  position:fixed;
+  top:200px;
+  left:45%;
+  height:20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  line-height:20px;
+  padding:2px 10px;
+  border-radius: 15px;
+  background:#f4e8ab;
+  color:#333;
+  border:1px solid #dac55f;
+  opacity:0;
+  z-index:10000;
+  /*    box-shadow: 1px 1px 1px #999;*/
+  -webkit-animation: zoomIn 400ms ease both;
+  -webkit-backface-visibility: visible;
+  -moz-animation: zoomIn 400ms ease both;
+  -moz-backface-visibility: visible;
+  -o-animation: zoomIn 400ms ease both;
+  -o-backface-visibility: visible;
+  animation: zoomIn 400ms ease both;
+}
+.message-tip.show{
+  opacity:1;
+  -webkit-animation: zoomOut 200ms ease both;
+  -webkit-backface-visibility: visible;
+  -moz-animation: zoomOut 200ms ease both;
+  -moz-backface-visibility: visible;
+  -o-animation: zoomOut 200ms ease both;
+  -o-backface-visibility: visible;
+  animation: zoomOut 200ms ease both;
+}
+#xuan{
+    // background: url(./../images/mob/list-shai.png) no-repeat;
+    // background-size:100%;
+    position: fixed;
+    bottom:0px;
+    left:50%;
+    width:80px;
+    margin-left: -40px;
+    border-radius: 20px;
+    z-index:1000;
+    text-align: center;
+    padding:10px 6px;
+    padding-top:15px;
+    cursor: pointer;
+    color:#a56952;
+    font-size: 16px;
+    span{
+      background: #d8c3a9;
+    border-radius: 20px;
+    height:25px;
+    line-height: 25px;
+    display: block;
+    box-shadow: 0px 0px 3px #666;
+
+    }
+  }
+  
+  #index{
+    #xuan{
+      width:110px;
+      margin-left: -65px;
+    }
+  }
