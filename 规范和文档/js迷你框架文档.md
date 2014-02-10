@@ -42,7 +42,7 @@
 
 标准的validate插件的配置模式，配置到dom里面。
 
-例如：<input type="text" id="login_tel" class="login_text_input email" name="j_username" required minlength="2"/> 这其中配置了三个信息 一个是class中的email格式验证，另外是必填和最小长度
+例如：`<input type="text" id="login_tel" class="login_text_input email" name="j_username" required minlength="2"/> ` 这其中配置了三个信息 一个是class中的email格式验证，另外是必填和最小长度
 
 扩展验证：
 
@@ -86,7 +86,7 @@ Souche.UI.Select.init({
 
 ##### minilogin
 
-需要引入：<script type="text/javascript" src="<sc:res value="/js/fed/souche.js"/>"></script>
+需要引入：`<script type="text/javascript" src="<sc:res value="/js/fed/souche.js"/>"></script>`
 
 使用方法：
 
