@@ -3,6 +3,9 @@
 以下代码均位于 /js/souche.js
 
 ###方法
+#####Util
+ * Souche.Util.mixin(target,source) 混合两个对象，通常用于混合参数配置到默认配置中。
+ * Souche.Util.appear(selector,bindFunction) 设置一个事件，只有滚动到selector所在的div位置的时候才会触发。
 
 #####Form
 ```
@@ -84,14 +87,33 @@ Souche.UI.Select.init({
   * defaultValues是默认选中的数据的code数组，可以不设置，也可以设置一个或多个，设置后会默认选中这组数据；
   * 每个页面可以多次调用；
 
-##### minilogin
+##### Souche.UI.CustomDropdown ，自定义样式的下拉框，不带联动。
+
+会自动识别当前select位置，如果下拉后可能被浏览器遮住，会改变下拉框的下拉位置变为上拉。
+
+调用，写入如下html即可：
+
+```
+<div class="sc-option" data-ui="dropdown" id="brand_option">
+  <div class="sc-option-hd">
+    <div class="sc-option-content">请选择价格</div>
+    <div class="sc-option-action"><i></i></div>
+  </div>
+  <ul class="sc-option-list hidden">
+    <li>
+    <a href="#">5万以下</a>
+    </li>
+  </ul>
+</div>
+```
+
+##### minilogin，网站端貌似已经不在使用，现在都是免登陆
 
 需要引入：`<script type="text/javascript" src="<sc:res value="/js/fed/souche.js"/>"></script>`
 
 使用方法：
 
 ```
-
 Souche.MiniLogin.checkLogin(function(){
   //登录成功后需要执行的逻辑，此方法一开始会检查是否登录，如果登陆了会直接执行此回调，如果没登陆弹出登录窗口，登录完成后回调用此回调。
   //相当于一个中断，等待iframe里面的成功消息再继续执行
