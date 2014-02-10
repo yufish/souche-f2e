@@ -106,7 +106,8 @@ Souche.UI.Select.init({
   </ul>
 </div>
 ```
-
+##### Souche.checkPhoneExist 检查是否填过手机号，用于免登陆。
+##### Souche.PhoneRegister 一步注册手机号，用于免登陆
 ##### minilogin，网站端貌似已经不在使用，现在都是免登陆
 
 需要引入：`<script type="text/javascript" src="<sc:res value="/js/fed/souche.js"/>"></script>`
