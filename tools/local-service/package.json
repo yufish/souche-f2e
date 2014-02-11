@@ -1,0 +1,25 @@
+{
+  "name": "local-service",
+  "version": "0.0.0",
+  "description": "本地服务，用于开发者本地使用环境开发。",
+  "main": "service.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinyu198736/souche-f2e"
+  },
+  "dependencies":{
+    "express":"3.4.8",
+    "less":"1.6.3",
+    "less-middleware":"0.1.15",
+    "log4js":"0.6.10",
+    "moment":"2.5.1",
+    "glob":"3.2.8",
+    "methods":"0.1.0",
+    "jade":"1.1.5"
+  }
+}
