@@ -41,7 +41,15 @@ app.configure ->
   # 直接输出静态jade的route，无需自己配置route
   app.get /^\/demo\/(.*)$/,(req,res,next)->
     console.log req.params[0]
-    res.render req.params[0]+".jade"
+    _path = path.join config.demo_path,req.params[0]+".jade"
+    if fs.existsSync _path
+      res.render req.params[0]+".jade"
+    else
+      fs.readFile (path.join config.demo_path,req.params[0]),'utf-8',(error,content)->
+        if error 
+          next error
+        else
+          res.send content
   app.use app.router
   
   # rainbow.route(app, {  
@@ -51,13 +59,11 @@ app.configure ->
   # })
   #404
   app.all "*",(req, res, next)->
-    res.render '404.jade',{status: 404},(error,page)->
-      res.send page,404
+      res.send "页面不存在",404
   #错误显示页面
-  # app.use (err, req, res, next)->
-  #   console.trace err
-  #   res.render 'error.jade',{error:err.message,code:err.code},(error,page)->
-  #     res.send page,404
+  app.use (err, req, res, next)->
+    console.trace err
+    res.send err.message,404
   
   # app.locals.moment= require 'moment'
   # app.locals.moment.lang('zh-cn');
