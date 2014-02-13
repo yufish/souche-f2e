@@ -1,6 +1,5 @@
-
-express        = require 'express'
-http           = require 'http'
+express = require 'express'
+http = require 'http'
 path           = require 'path'
 config         = require './config.coffee'
 rainbow        = require './lib/rainbow.js'
