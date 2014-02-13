@@ -1,5 +1,6 @@
 
 require ("coffee-script");
+require ("iced-coffee-script");
 var server = require ("./main.coffee")
 var config = require ("./config.coffee")
 
