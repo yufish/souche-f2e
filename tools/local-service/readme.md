@@ -36,7 +36,10 @@ demo中则可以新建子文件夹，可以放jade，可以放html和其他文�
 
 ####发布方式
 
-
+```
+cd /home/souche/dev/souche-trunk/
+tools.sh resourceUpload /home/souche/souche-f2e/assets ~/dev/souche-trunk/souche-web/config/resource.properties
+```
 ####自动更新。
 
 代码提交到github上的主干后，过一会就会自动同步到测试服务器上，并且重新启动相关服务。
