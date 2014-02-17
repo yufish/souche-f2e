@@ -26,3 +26,21 @@ server {
 
 demo中则可以新建子文件夹，可以放jade，可以放html和其他文件。
 
+####引用规则。
+
+在java中，兼容老的本地开发方式。
+
+如果要引用新的assets，请使用如下方式：<sc:res value="/assets/js/common.js" />
+
+以/assets/开头的资源在测试环境的时候会请求到f2e.souche.com/assets 上面
+
+####发布方式
+
+```
+cd /home/souche/dev/souche-trunk/
+tools.sh resourceUpload /home/souche/souche-f2e/assets ~/dev/souche-trunk/souche-web/config/resource.properties
+```
+####自动更新。
+
+代码提交到github上的主干后，过一会就会自动同步到测试服务器上，并且重新启动相关服务。
+
