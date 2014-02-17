@@ -70,6 +70,4 @@ app.configure ->
 app.configure "development", ->
   app.use express.errorHandler()
 
-require('http').createServer(app).listen(config.run_port,()->
-    console.log("Express server listening on port " + config.run_port);
-  ).setMaxListeners(0);
+module.exports = app
