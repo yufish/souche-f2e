@@ -1,3 +1,4 @@
+//test
 (function(){
 	$(document).ready(function(){
 		var Q_Buy_active = false;
