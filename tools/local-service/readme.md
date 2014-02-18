@@ -28,6 +28,8 @@ demo中则可以新建子文件夹，可以放jade，可以放html和其他文�
 
 ####引用规则。
 
+/home/souche/souche-f2e
+
 在java中，兼容老的本地开发方式。
 
 如果要引用新的assets，请使用如下方式：<sc:res value="/assets/js/common.js" />
@@ -37,8 +39,8 @@ demo中则可以新建子文件夹，可以放jade，可以放html和其他文�
 ####发布方式
 
 ```
-cd /home/souche/dev/souche-trunk/
-tools.sh resourceUpload /home/souche/souche-f2e/assets ~/dev/souche-trunk/souche-web/config/resource.properties
+cd /home/souche/dev/souche-trunk/souche-web/script
+./tools.sh resourceUpload /home/souche/souche-f2e/assets ~/dev/souche-trunk/souche-web/config/resource.properties
 ```
 ####自动更新。
 
