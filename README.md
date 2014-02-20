@@ -12,6 +12,7 @@ souche-f2e
  * [js迷你框架文档](https://github.com/souche/souche-f2e/blob/master/%E8%A7%84%E8%8C%83%E5%92%8C%E6%96%87%E6%A1%A3/js%E8%BF%B7%E4%BD%A0%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3.md)
  * [phonegap内嵌webapp开发指南](https://github.com/souche/souche-f2e/blob/master/%E8%A7%84%E8%8C%83%E5%92%8C%E6%96%87%E6%A1%A3/phonegap%E5%86%85%E5%B5%8Cwebapp%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md)
  * [git使用教程 by 蒋子龙](https://github.com/souche/souche-f2e/blob/master/%E8%A7%84%E8%8C%83%E5%92%8C%E6%96%87%E6%A1%A3/zilong/git%20doc.md)
+ 
 ####人员
 ```
  project  : souche-f2e
