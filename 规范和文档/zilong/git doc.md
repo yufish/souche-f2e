@@ -46,13 +46,18 @@ command
 
 	git branch <branch-name> #创建名为branch-name的分支
 
+	//除了像下面这样的切换分支，checkout 命令慎用
 	git checkout <branch-name> #切换到branch-name分支
+
+	git push
+	
+	git pull
 	//待进一步充实
 	
 #3.冲突解决
 git解决冲突的能力出色，一般会自动解决相应的问题，如果不同开发者对不同的文件进行修改，`merge`一般会自动完成。（注意 `git pull` 包含`git fetch` 和 `git merge`两个步骤，如果git可以自动解决冲突问题，一般执行pull就可以了）
 
-**所以最好让不同的开发者，同时修改相同的文件**
+**所以最好 不要 让不同的开发者，同时修改相同的文件**
 
 如果出现对相同文件的相同区域进行修改，从而导致git无法自动解决冲突问题，只有通过手动编辑来解决，请搜索`git mergetool`进行相关操作的学习查阅
 
