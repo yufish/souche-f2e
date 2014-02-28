@@ -42,7 +42,7 @@ Souche.UI.CustomSelect = function(){
         })
      },
      removeAllOption:function(){
-        $(".sc-select-list").html("")
+        $(".sc-select-list",this.ele).html("")
      },
      _bindClick:function(){
       var self = this;

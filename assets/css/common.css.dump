@@ -325,6 +325,10 @@ padding-left: 0;
   right:5px;
   top:0px;
 }
+.sc-select-content .placeholder{
+  line-height: 30px;
+  padding-left: 10px;
+}
 .sc-select-action{
     width:25px;height:25px;
     position:absolute;
