@@ -16,6 +16,7 @@ html
     </script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/libs/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/dropdown.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/select.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/multi-select.js"></script>
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
@@ -24,7 +25,19 @@ html
 
 
   body
-    div.
+    div(style="margin-top:20px;").
+      <div class="sc-option" data-ui="dropdown" id="brand_option">
+        <div class="sc-option-hd">
+          <div class="sc-option-content">请选择价格</div>
+          <div class="sc-option-action"><i></i></div>
+        </div>
+        <ul class="sc-option-list hidden">
+          <li>
+          <a href="#">5万以下</a>
+          </li>
+        </ul>
+      </div>
+    div(style="margin-top:20px;").
       <div class="sc-select" id="brand_select">
         <div class="sc-select-hd">
           <div class="sc-select-content">请选择价格</div>
