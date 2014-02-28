@@ -52,7 +52,7 @@ Souche.UI.CustomMultiSelect = function(){
 	fn.hideOptions=function(){
 		this.$list.addClass('hidden');
 	}
-
+	//包括selected,$content,$list中内容的添加
 	fn.addSelected=function(key,value){
 		var $content = this.$content
 			,$list = this.$list;
@@ -70,7 +70,7 @@ Souche.UI.CustomMultiSelect = function(){
 
 		this.selected.push({key:key,value:value});
 	}
-
+	//包括selected,$content,$list中内容的删除
 	fn.removeSelected=function(key){
 		var $content = this.$content;
 		$('div[data-value='+key+']',$content).remove();
