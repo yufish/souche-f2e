@@ -290,6 +290,9 @@ Souche.UI.CustomDropdown = function(){
 	return select;
 }();
 Souche.UI.CustomDropdown.zIndex =10000;
+
+
+
 $(document).ready(function(){
 	$("*[data-ui='dropdown']").each(function(i,ele){
 		$(ele).css({
@@ -297,6 +300,7 @@ $(document).ready(function(){
 		});
 		new Souche.UI.CustomDropdown(ele);
 	});
+	
 });
 
 Souche.MiniLogin = Souche.MiniLogin||{};

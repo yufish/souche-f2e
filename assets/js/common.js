@@ -20,6 +20,7 @@
 		}).mouseleave(function(){
 			$(this).find("ins").removeClass("ins_hover");
 		});
+		
 		$("#toTop").mouseenter(function(){
 			$(this).addClass("toTopActive");
 		}).mouseleave(function(){

@@ -253,7 +253,7 @@ padding-left: 50px;
 #sellFlow .flow_data{float:left;padding-top:26px;margin-left:34px}
 #sellFlow .flow_data h1{color:#72954f}
 #sellFlow .flow_data ul{line-height:2.1em;margin-top:24px}
-#advance_banner{width:100%;height:370px;background:url(../../images/fed/advantage.jpg) no-repeat top center #e6ebef;text-indent:-9999em}
+#advance_banner{width:100%;height:370px;background:url(../../images/fed/advantage2.jpg) no-repeat top center #e6ebef;text-indent:-9999em}
 #choose{position:relative;margin-top:15px;width:100%;zoom:1;}
 #choose .choose_condition{width:795px;height:38px;line-height:38px;border:1px solid #ddd;background-color:#fff;float:left;display:inline;overflow:hidden}
 #choose .choose_condition p{color:#333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;padding-left:15px;float:left;padding-right:5px}
@@ -280,18 +280,19 @@ padding-left: 50px;
 #choose.choose_fixed  .choose_condition .choose_item span{background:url("../../images/fed/choose-fixed-close.png") no-repeat;margin-top:5px;*margin-top:-16px;}
 #listContain .list-banner{display:block;width:100%;height:100px;background-repeat:no-repeat;margin-top:20px;}
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
-#list_wrap .list_nav .sc-option{*float:right;*display:inline;*margin-top:-30px;margin-left:15px;*margin-left:auto;width:145px;}
+#list_wrap .list_nav .sc-option{*float:right;*display:inline;*margin-top:-30px;width:145px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
 #list_wrap .list_nav .list_nav_wrap{margin-left:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin-left:2px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title{color:#333;width:224px;line-height:36px;padding-top:20px;font-weight:bold;border-bottom:1px solid #e4e4e4;margin-bottom:8px}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title span{float:left;width:25px;height:20px;background:url("../../images/fed/inside_sprite3.png?aa.png") no-repeat 0 -48px;margin-top:8px}
+#list_wrap .list_nav .list_nav_wrap .list_nav_title label{float:left;width:50px;}
 #list_wrap .list_nav .list_nav_wrap ul li{float:left;display:inline;width:69px;color:#666;line-height:1.8em;margin-right:10px;white-space:nowrap;overflow:hidden}
 #list_wrap .list_nav .list_nav_wrap ul li a{color:#666}
 #list_wrap .list_nav .list_nav_wrap ul li a.listNav_active{color:#e70}
 #list_wrap .list_nav .list_nav_wrap .nav-list{overflow:hidden;}
-#list_wrap .list_nav .list_nav_wrap .nav_list_more{color:#666;cursor:pointer}
+#list_wrap .list_nav .list_nav_wrap .nav_list_more{color:#666;font-size:12px;font-weight:normal;float:right;cursor:pointer}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand{position:absolute;left:257px;min-height:219px;_height:427px;width:0;padding-bottom:12px;padding-left:25px;top:-1px;background-color:#fff;border:1px solid #e70;z-index:10;display:none;overflow:hidden}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand p{color:#333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-weight:bold;margin-bottom:17px;padding-top:15px;width:717px}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .list_allBrand_wrap{width:717px}
@@ -299,7 +300,7 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl{margin-bottom:15px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dt{float:left;color:#00b0b4;font-size:18px;line-height:18px;width:16px;margin-right:10px}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd{float:left;width:332px;display:inline}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a{float:left;color:#666;font-family:"������",Tahoma,Verdana;font-size:12px;margin-right:18px;line-height:18px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a.allBrandOn{color:#ff4301}
-#list_wrap .list_nav .nav_brand{position:relative;border:1px solid #fff;border-right:none;padding-bottom:10px;height:215px}
+#list_wrap .list_nav .nav_brand{position:relative;border:1px solid #fff;border-right:none;padding-bottom:10px;height:135px}
 #list_wrap .list_nav .nav_brand_active{border-color:#e70;width:243px;padding-left:20px;margin-left:0px}
 #list_wrap .list_nav .nav_price .list_nav_title span{background-position:-27px -48px}
 #list_wrap .list_nav .nav_series .list_nav_title span{background-position:-1px -160px}
@@ -307,7 +308,7 @@ padding-left: 50px;
 #list_wrap .list_nav .nav_dis .list_nav_title span{background-position:-25px -21px}
 #list_wrap .list_nav .nav_age .list_nav_title span{background-position:-50px -21px}
 #list_wrap .list_nav .nav_use .list_nav_title span{background-position:-34px -78px}
-#list_wrap .list_nav .cover{position:absolute;width:1px;height:225px;background-color:#fff;top:0;right:5px;z-index:20}
+#list_wrap .list_nav .cover{position:absolute;width:1px;height:145px;background-color:#fff;top:0;right:5px;z-index:20}
 #list_wrap .list_nav_fixed{position:fixed;_position:static;bottom:0;z-index:10}
 #list_wrap .list_nav_absolute{position:absolute;bottom:0}
 #list_wrap .list_main{width:720px;float:left;margin-left:15px;}
