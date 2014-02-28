@@ -55,7 +55,7 @@ Souche.UI.CustomSelect = function(){
             self._autoDrop(list);
           }
           $(list[0].parentNode).css({
-            zIndex:Souche.UI.CustomSelect.zIndex++
+            zIndex:Souche.Data.DropdownzIndex++
           });
         }else{
           $(".sc-select-list").addClass("hidden");
@@ -97,7 +97,6 @@ Souche.UI.CustomSelect = function(){
   };
   return select;
 }();
-Souche.UI.CustomSelect.zIndex =10000;
 $(document).ready(function(){
   $("*[data-ui='select']").each(function(i,ele){
     $(ele).css({

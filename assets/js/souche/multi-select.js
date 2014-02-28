@@ -71,7 +71,7 @@ Souche.UI.CustomMultiSelect = function(){
           }
           $(".sc-select-list",self.ele).scrollTop(0)
           $(list[0].parentNode).css({
-            zIndex:Souche.UI.CustomMultiSelect.zIndex++
+            zIndex:Souche.Data.DropdownzIndex++
           });
         }else{
           $(".sc-select-list").addClass("hidden");
@@ -92,45 +92,77 @@ Souche.UI.CustomMultiSelect = function(){
       if(!_ele){
         _ele = $(".sc-select-list li a",this.ele)
       }
+      $("input[type=checkbox]",_ele).on("click",function(e){
+
+        var key = $(this.parentNode).attr("data-value");
+        var value = $(".value",this.parentNode).html();
+        var checkbox = $(this);
+        if(checkbox.attr("checked")){
+          self._addKey(key,value);
+          // checkbox.attr("checked",false);
+        }else{
+          self._delKey(key);
+          // checkbox.attr("checked","checked");
+          
+        }
+        self._renderSelected();
+        $(self).trigger("change",{key:key,value:value})
+        // $(".sc-select-content",self.ele).html(value)
+        // $(".selected_value",self.ele).val(key)
+        e.stopPropagation();
+      })
       _ele.on("click",function(e){
         e.preventDefault();
         var key = $(this).attr("data-value");
         var value = $(".value",this).html();
         var checkbox = $("input[type=checkbox]",this);
         if(checkbox.attr("checked")){
-          for(var i =0;i<self.selected.length;i++){
-            var s = self.selected[i];
-            if(s&&s.key==key){
-              self.selected.splice(i,1)
-            }
-          }
+          self._delKey(key);
           checkbox.attr("checked",false);
         }else{
+          self._addKey(key,value);
           checkbox.attr("checked","checked");
-          var alreadySelected = false;
-          for(var i =0;i<self.selected.length;i++){
-            var s = self.selected[i];
-            if(s&&s.key==key){
-              alreadySelected = true;
-            }
-          }
-          if(!alreadySelected){
-            self.selected.push({key:key,value:value,ele:this})
-          }else{
-
-          }
+          
         }
         self._renderSelected();
-        $(self).trigger("change",{key:key,value:value,ele:this})
+        $(self).trigger("change",{key:key,value:value})
         // $(".sc-select-content",self.ele).html(value)
         // $(".selected_value",self.ele).val(key)
         e.stopPropagation();
       })
+
+      
  
+     },
+     _delKey:function(key){
+      var self = this;
+      for(var i =0;i<self.selected.length;i++){
+          var s = self.selected[i];
+          if(s&&s.key==key){
+            self.selected.splice(i,1)
+          }
+        }
+     },
+     _addKey:function(key,value){
+      var self = this;
+      var alreadySelected = false;
+      for(var i =0;i<self.selected.length;i++){
+        var s = self.selected[i];
+        if(s&&s.key==key){
+          alreadySelected = true;
+        }
+      }
+      if(!alreadySelected){
+        self.selected.push({key:key,value:value})
+      }else{
+
+      }
      },
      //渲染选择框里的item
      _renderSelected:function(){
       var self = this;
+      $(".selected_values",self.ele).val(self.selected.join(","))
+      console.log(self.selected)
       $(".sc-select-content",self.ele).html("")
       for(var i=0;i<self.selected.length;i++){
         var s = self.selected[i];
@@ -146,8 +178,8 @@ Souche.UI.CustomMultiSelect = function(){
             }
           }
         self._renderSelected();
-        self.hideOptions();
-        $(".sc-select-list li a input[type=checkbox][data-value='"+key+"']").attr("checked",false)
+        // self.hideOptions();
+        $(".sc-select-list li a[data-value='"+key+"'] input[type='checkbox']",self.ele).attr("checked",false)
         e.stopPropagation();
       })
       if(self.selected.length){
@@ -183,4 +215,3 @@ Souche.UI.CustomMultiSelect = function(){
   };
   return select;
 }();
-Souche.UI.CustomMultiSelect.zIndex =10000;
