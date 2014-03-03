@@ -1,9 +1,9 @@
-@module1-ligth-gray:#999;
-@module1-dark-gray:#666;
+@module1-ligth-gray:#e6e6e6;
+@module1-dark-gray:#999;
 .filter-nav{
   border:1px solid @module1-ligth-gray;
   float:left;
-  width:240px;
+  width:246px;
   .inner{
     padding:10px;
   }
@@ -14,7 +14,7 @@
   }
   .nav-item-hd {
     font-size:14px;
-    color:#000;
+    color:#333;
     font-weight:bold;
     img{
       vertical-align:middle;
@@ -41,7 +41,7 @@
 }
 
 .main-slider{
-  margin:0 0 0 16px;
+  margin-left:10px;
   float:left;
   .inner{
     border:1px solid @module1-ligth-gray;
@@ -49,7 +49,6 @@
   .slider img{
     width:660px;
     height:300px;
-
   }
 
   .performance{
@@ -63,7 +62,7 @@
       border-right: 0;
     }
     .per-item img{
-      height: 143px;
+      height: 141px;
       width: 219px;
     }
   }
@@ -77,68 +76,72 @@
     height: 240px;
     width: 260px;
     margin-bottom: 10px;
-    i{
-      display: block;
-      width:40px;
-      height:40px;
-      position: absolute;
-      top:8px;
-      left:20px;
+    .inner{
+      padding-top: 15px;
+      i{
+        display: block;
+        width:40px;
+        height:40px;
+        position: absolute;
+        top:24px;
+        left:20px;
 
-    }
-    .per{
-      position: relative;
-      width:380px;
-      padding:0 0 30px 70px;
-      
-    }
-    .t{
-      font-size: 16px;
-      line-height: 30px;
-      color:#666;
-    }
-    .st{
-      font-size: 14px;
-      color:#999;
-      line-height: 20px;
-    }
-    .per-1{
-      i{
-        background: url(../images/index/per-1.png) no-repeat;
       }
-    }
-    .per-2{
-      i{
-        background: url(../images/index/per-2.png) no-repeat;
+      .per{
+        position: relative;
+        width:260px;
+        padding:15px 0 0px 70px;
+        
       }
-    }
-    .per-3{
-      i{
-        background: url(../images/index/per-3.png) no-repeat;
+      .t{
+        font-size: 16px;
+        line-height: 30px;
+        color:#666;
+      }
+      .st{
+        font-size: 14px;
+        color:#999;
+        line-height: 20px;
+      }
+      .per-1{
+        i{
+          background: url(../images/index/per-1.png) no-repeat;
+        }
+      }
+      .per-2{
+        i{
+          background: url(../images/index/per-2.png) no-repeat;
+        }
+      }
+      .per-3{
+        i{
+          background: url(../images/index/per-3.png) no-repeat;
+        }
       }
     }
   }
   .address{
-    .inner{
-      border: 1px solid @module1-ligth-gray;
-      padding: 10px
-    }
+    border: 1px solid @module1-ligth-gray;
+    color: #333;
     img{
-      margin:0 auto;
-      height: 97px;
-      width: 260px;
+        width: 260px;
     }
-    p.t{
-      font-size: 16px;
-      color: #333;
-      margin:10px 0 ;
+    .inner{
+      height: 87px;
+      padding: 0 15px;
+    
+      p.t{
+        font-size: 16px;
+        margin-top:10px;
+      }
+      p.a{
+        margin:5px 0;
+      }
+      a{
+        color: #0090CC;
+      }
     }
-    p.a{
-      margin: 5px 0;
-    }
-    a{
-      color: #0090CC;
-    }
+   
   }
   
 }
