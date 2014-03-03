@@ -1,0 +1,3 @@
+Souche.UI.CustomSelect = function(){
+  
+}

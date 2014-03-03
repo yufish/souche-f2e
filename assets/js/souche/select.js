@@ -1,4 +1,4 @@
-Souche.UI.CustomSelect = function(){
+Souche.UI.Select = function(){
   var select = function(id){
     this.id = id;
     this.ele = typeof(id)!="string"?$(id):$("#"+this.id);
@@ -102,10 +102,10 @@ $(document).ready(function(){
     $(ele).css({
       zIndex:1000-i
     });
-    new Souche.UI.CustomSelect(ele);
+    new Souche.UI.Select(ele);
   });
 });
 
 define(function (){
-　　　　return Souche.UI.CustomSelect;
+　　　　return Souche.UI.Select;
 　　});
