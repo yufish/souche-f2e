@@ -29,7 +29,7 @@ app.configure ->
   app.set "views", config.demo_path
   app.set "view engine", "jade"
   app.use express.favicon()
-  app.use "/assets",lessmiddle({src:config.assets_path,compress:true})
+  app.use "/assets",lessmiddle({src:config.assets_path,compress:true,force:true})
   app.use "/assets", express.static(config.assets_path)
   # app.use express.logger("dev")
   # app.use express.bodyParser()
@@ -67,6 +67,8 @@ app.configure ->
   
   # app.locals.moment= require 'moment'
   # app.locals.moment.lang('zh-cn');
+app.set('env', 'development');
+console.log process.env.NODE_ENV
 app.configure "development", ->
   app.use express.errorHandler()
 
