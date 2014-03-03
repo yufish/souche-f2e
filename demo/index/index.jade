@@ -18,6 +18,14 @@ html
       });
     </script>
   body#index
+    #header
+      .wrapper
+        a.logo(href="#")
+          img(src="http://f2e.souche.com/assets/images/index/logo.png")
+        .search
+          form(action="")
+            input.search-text(type="text",name="keyword")
+            button.search-submit(type="submit")
     #content
       .wrapper
         include include/module1
