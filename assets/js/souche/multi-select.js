@@ -14,26 +14,8 @@ Souche.UI.CustomMultiSelect = function(){
   /**
   * 自定义事件：change 
   */
-  select.prototype = {
-     _init:function(_config){
-      var self = this;
-      Souche.Util.mixin(this.config,_config);
-
-      this._defaultHeadHeight = $(".sc-select-hd").height();
-      $(".sc-select-list").css({
-        height:this.config.maxDisplayItems*30
-      })
-      if($(".sc-select-list li",this.ele).length>10){
-        $(".sc-select-list",this.ele).css("height",300);
-      }
-      $(document.body).on("click",function(){
-        self.hideOptions();
-      });
-      this._bindClick();
-      this._bindSelect();
-      this._renderSelected();
-     },
-     addOption:function(key,value){
+  $.extend(select.prototype,{
+    addOption:function(key,value){
         var li =$("<li><a href='#' data-value='"+key+"'><input type='checkbox'/><span class='value'>"+value+"</span></a></li>") 
         $(".sc-select-list",this.ele).append(li)
         this._bindSelect($("a",li));
@@ -55,6 +37,26 @@ Souche.UI.CustomMultiSelect = function(){
      hideOptions:function(){
         $(".sc-select-list",this.ele).addClass("hidden");
         
+     }
+  })
+  $.extend(select.prototype,{
+    _init:function(_config){
+      var self = this;
+      Souche.Util.mixin(this.config,_config);
+
+      this._defaultHeadHeight = $(".sc-select-hd").height();
+      $(".sc-select-list").css({
+        height:this.config.maxDisplayItems*30
+      })
+      if($(".sc-select-list li",this.ele).length>10){
+        $(".sc-select-list",this.ele).css("height",300);
+      }
+      $(document.body).on("click",function(){
+        self.hideOptions();
+      });
+      this._bindClick();
+      this._bindSelect();
+      this._renderSelected();
      },
      //绑定输入框的点击事件
      _bindClick:function(){
@@ -212,6 +214,11 @@ Souche.UI.CustomMultiSelect = function(){
       //   });
       // }
      }
-  };
+  })
+  
   return select;
 }();
+
+define(function (){
+　　　　return Souche.UI.CustomMultiSelect;
+　　});

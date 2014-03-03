@@ -105,3 +105,7 @@ $(document).ready(function(){
     new Souche.UI.CustomSelect(ele);
   });
 });
+
+define(function (){
+　　　　return Souche.UI.CustomSelect;
+　　});

@@ -14,12 +14,9 @@ html
     <script>
       var contextPath = "";
     </script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/libs/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/dropdown.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/select.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/multi-select.js"></script>
-    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
     <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
     <meta name="baidu-site-verification" content="RXtT8X2tNU" />
 
@@ -33,7 +30,7 @@ html
         </div>
         <ul class="sc-option-list hidden">
           <li>
-          <a href="#">5万以下</a>
+            <a href="#">5万以下</a>
           </li>
         </ul>
       </div>
@@ -45,7 +42,7 @@ html
         </div>
         <ul class="sc-select-list hidden">
           <li>
-          <a href="#" data-value="5">5万以下</a>
+            <a href="#" data-value="5">5万以下</a>
           </li>
         </ul>
         <input type="hidden" name="" class="selected_value"/>
@@ -61,25 +58,29 @@ html
             <a href="#" data-value="5"><input type="checkbox"/><span class='value'>5万以下</span></a>
           </li>
         </ul>
-        <input type="hidden" name="" class="selected_values"/>
+        <input type="hidden" name="2,3,4" class="selected_values"/>
       </div>
-    script.
-      var select = new Souche.UI.CustomSelect("brand_select")
+  script.
+    require.config({
+      baseUrl: "http://f2e.souche.com/assets/js"
+    });
+    require(['souche/select'], function (CustomSelect){
+      var select = new CustomSelect("brand_select")
       $(select).bind("change",function(e,obj){
         console.log(obj)
       })
-      
       for(var i=0;i<100;i++){
         select.addOption(i,"元素"+i)
       }
       select.removeOption(2)
-    script.
-      var select = new Souche.UI.CustomMultiSelect("multi_select")
-      $(select).bind("change",function(e,obj){
-        console.log(obj)
-      })
-      
-      for(var i=0;i<100;i++){
-        select.addOption(i,"元素"+i)
-      }
-      select.removeOption(2)
+    });
+//- script.
+//-   var select = new Souche.UI.CustomMultiSelect("multi_select")
+//-   $(select).bind("change",function(e,obj){
+//-     console.log(obj)
+//-   })
+  
+//-   for(var i=0;i<100;i++){
+//-     select.addOption(i,"元素"+i)
+//-   }
+//-   select.removeOption(2)

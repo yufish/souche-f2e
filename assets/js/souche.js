@@ -246,15 +246,7 @@ Souche.Form = function(){
 
 
 
-$(document).ready(function(){
-	$("*[data-ui='dropdown']").each(function(i,ele){
-		$(ele).css({
-			zIndex:1000-i
-		});
-		new Souche.UI.CustomDropdown(ele);
-	});
-	
-});
+
 
 Souche.MiniLogin = Souche.MiniLogin||{};
 Souche.MiniLogin = function(){
