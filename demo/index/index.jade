@@ -34,11 +34,16 @@ html
           img(src="http://f2e.souche.com/assets/images/index/head-tel.png")
     #nav
       .wrapper
-        a.active(href="#") 首页
-        a(href="#") 我要买车
-        a(href="#") 我要卖车
-        a(href="#") 整点抢车
-        a(href="#") 买车必看
+        span.main-navs
+          a.active(href="#") 首页
+          a(href="#") 我要买车
+          a(href="#") 我要卖车
+          a(href="#") 整点抢车
+          a(href="#") 买车必看
+        span.other-navs
+          a(href="#") 我的大搜车
+          a(href="#") 登录
+          a.last(href="#") 注册
     #content
       .wrapper
         include include/module1

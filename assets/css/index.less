@@ -72,15 +72,30 @@
     height:45px;
     line-height: 50px;
     border-bottom: 2px solid @orange;
-    a{
-      font-size: 16px;
-      color:#333;
-      margin-right:40px;
-      font-weight: bold;
+    .main-navs{
+      a{
+        font-size: 16px;
+        color:#333;
+        margin-right:40px;
+        font-weight: bold;
+      }
+      a.active{
+        color:@orange;
+      }
     }
-    a.active{
-      color:@orange;
+    .other-navs{
+      float: right;
+      a{
+        font-size:12px;
+        padding:0 10px;
+        border-right:1px solid #ddd;
+        color:#666;
+      }
+      a.last{
+        border:none;
+      }
     }
+    
   }
   #content{
     .wrapper{
