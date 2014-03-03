@@ -2,7 +2,7 @@ require.config({
 	baseUrl: "/assets/js"
 });
 require(['souche/select'], function (Select){
-　　　　alert(math.add(1,1));
+　　　　
 　　});
 Souche.Index = (function(){
 	var config = {
@@ -21,3 +21,6 @@ Souche.Index = (function(){
 	
 })();
 
+define(function (){
+　　　　return Souche.Index;
+　　});
