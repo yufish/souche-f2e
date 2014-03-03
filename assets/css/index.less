@@ -1,4 +1,7 @@
+@orange:#fc7000;
 #index{
+  font-family: 'Microsoft YaHei',Tahoma,Verdana;
+
   .module{
     margin-top:10px;
     .mod-main{
@@ -6,9 +9,77 @@
       float:left;
     }
     .mod-side{
-      width:259px;
+      width:260px;
       float:left;
       margin-left:10px;
+    }
+  }
+  #header{
+    height:115px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+
+      position: relative;
+    }
+    .logo{
+      display: block;
+      position: absolute;
+      top:40px;
+      left:0px;
+    }
+    .search{
+      position: absolute;
+      left:300px;
+      top:40px;
+      .search-text{
+        width:490px;
+        height:35px;
+        border:2px solid #e5e5e5;
+        vertical-align: top;
+        padding-left:10px;
+      }
+      .search-submit{
+        background: @orange;
+        color:#fff;
+        font-size: 16px;
+        width:88px;
+        height:38px;
+        border:none;
+        vertical-align: top;
+        margin-left: -5px;
+      }
+      .hot-keywords{
+        line-height:30px;
+        a{
+          color:#666;
+          margin-left: 10px;
+        }
+      }
+
+    }
+    .head-tel{
+      position: absolute;
+      right:0;
+      top:40px;
+    }
+  }
+  #nav{
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+    }
+    height:45px;
+    line-height: 50px;
+    border-bottom: 2px solid @orange;
+    a{
+      font-size: 16px;
+      color:#333;
+      margin-right:40px;
+      font-weight: bold;
+    }
+    a.active{
+      color:@orange;
     }
   }
   #content{
