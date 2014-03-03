@@ -38,11 +38,12 @@ app.configure ->
   app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}))
   # app.locals.assets_head = config.assets_head
   # 直接输出静态jade的route，无需自己配置route
+  app.locals.pretty = true;
   app.get /^\/demo\/(.*)$/,(req,res,next)->
     console.log req.params[0]
     _path = path.join config.demo_path,req.params[0]+".jade"
     if fs.existsSync _path
-      res.render req.params[0]+".jade"
+      res.render req.params[0]+".jade",{pretty:true}
     else
       fs.readFile (path.join config.demo_path,req.params[0]),'utf-8',(error,content)->
         if error 
