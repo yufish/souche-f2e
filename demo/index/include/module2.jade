@@ -5,10 +5,35 @@
         .title 定制您的购车需求，全城搜车立即启动
         .sub-title 毫无疑问，这是最省心、最有效的购车方式
         .form
-          .form-item
+          .form-item.clearfix
             label 品牌
-            .input 
-            
+            .input. 
+              <div class="sc-select sc-custom-select brand-select" id="brand_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content clearfix"></div>
+                  <div class="sc-select-action hidden"><i></i></div>
+                </div>
+                <div class="sc-select-list hidden sc-popup">
+                    <a href="#" data-value="5" class="option"><input type="checkbox" class="hidden"/><span class='value'>5万以下</span></a>
+                     <a href="#" data-value="4" class="option"><input type="checkbox" class="hidden"/><span class='value'>4万以下</span></a>
+                </div>
+                <input type="hidden" name="2,3,4" class="selected_values"/>
+              </div>
+          .form-item.clearfix
+            label 车系
+            .input. 
+              <div class="sc-select sc-multi-select" id="multi_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content clearfix"></div>
+                  <div class="sc-select-action hidden"><i></i></div>
+                </div>
+                <ul class="sc-select-list hidden">
+                  <li>
+                    <a href="#" data-value="5"><input type="checkbox"/><span class='value'>5万以下</span></a>
+                  </li>
+                </ul>
+                <input type="hidden" name="2,3,4" class="selected_values"/>
+              </div>
 
   .mod-side
     .buyforme
