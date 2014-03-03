@@ -43,17 +43,21 @@
 .main-slider{
   margin:0 0 0 16px;
   float:left;
+  .inner{
+    border:1px solid @module1-ligth-gray;
+  }
   .slider img{
     width:660px;
     height:300px;
+
   }
 
   .performance{
-    border:1px solid @module1-ligth-gray;
     overflow:hidden;
     .per-item{
       float: left;
       border-right:1px solid  @module1-ligth-gray;
+      border-top:1px solid  @module1-ligth-gray;
     }
     .per-item.last{
       border-right: 0;
@@ -68,12 +72,51 @@
 
 .mod-side{
   
-  
-  float: left;
-  .service img{
+  .service{
+    background-color:#f5f5f5;
     height: 240px;
     width: 260px;
     margin-bottom: 10px;
+    i{
+      display: block;
+      width:40px;
+      height:40px;
+      position: absolute;
+      top:8px;
+      left:20px;
+
+    }
+    .per{
+      position: relative;
+      width:380px;
+      padding:0 0 30px 70px;
+      
+    }
+    .t{
+      font-size: 16px;
+      line-height: 30px;
+      color:#666;
+    }
+    .st{
+      font-size: 14px;
+      color:#999;
+      line-height: 20px;
+    }
+    .per-1{
+      i{
+        background: url(../images/index/per-1.png) no-repeat;
+      }
+    }
+    .per-2{
+      i{
+        background: url(../images/index/per-2.png) no-repeat;
+      }
+    }
+    .per-3{
+      i{
+        background: url(../images/index/per-3.png) no-repeat;
+      }
+    }
   }
   .address{
     .inner{
@@ -81,7 +124,9 @@
       padding: 10px
     }
     img{
-      height: 92px;
+      margin:0 auto;
+      height: 97px;
+      width: 260px;
     }
     p.t{
       font-size: 16px;
