@@ -2,10 +2,13 @@
   height: 300px;
   .hd{
     height: 45px;
+    h1{float: left;}
     a{
       float: right;
       font-size: 12px;
       color: #666;
+      display: block;
+      line-height: 40px;
     }
   }
   .timebuy-wrap{
@@ -20,7 +23,7 @@
         float: left;
         padding-right: 10px;
         .car-image{
-        height:140px; background: url(../images/index/car-image.png);
+        display:block;height:140px; background: url(../images/index/car-image.png);cursor: pointer;
         }
         .last-time{ font-size: 12px;color: #333;height: 20px;background-color: #f9f9f9;line-height: 25px;text-align:center;}
         .timebuy-price{ 
@@ -50,7 +53,9 @@
 .starbuy{
   height: 345px;
   border: 1px solid #DDD;
-  .hd{height: 45px;}
+  .hd{height: 45px;
+    h1{padding: 0 0 0 20px;}
+  }
   .starbuy-box{
     width: 210px;
     padding: 0 25px 0 25px;
@@ -74,7 +79,7 @@
       }
      }
     }
-     .car-image{background: url(../images/index/car-image.png);height:140px;margin: 15px 0;}
+     .car-image{background: url(../images/index/car-image.png);height:140px;margin: 15px 0;display: block;cursor: pointer;}
      .car-reason{font-weight: bold;float: left;font-style: normal;color: #444;
       i {font-style: normal;font-weight: normal;color: #666;}
   }
