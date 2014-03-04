@@ -124,6 +124,9 @@ color: #ed9763;
   line-height: 18px;
   color:#bababa;
 }
+.sc-select.sc-active .sc-select-hd .sc-selected-item{
+color: #ed9763;
+    }
 .sc-select-content{
     padding-left: 10px;
 }
