@@ -1,3 +1,4 @@
+define(function(){
   var downCounter = function(target){
     var container = target;
     var counter = {
@@ -76,6 +77,8 @@
     },100);
   };
 
+  return downCounter;
+});
   /*
   var beginCount = function(counters){
     counters.each(function(){
