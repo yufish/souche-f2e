@@ -2,10 +2,11 @@
   .mod-main
     .filter-nav
       .inner
-        .nav-item
+        .nav-item(style='position:relative;')
           .nav-item-hd
             img(src='http://f2e.souche.com/assets/images/index/r-small.png')
             品牌
+          .right-arrow
           .nav-item-bd.clearfix
             a(href='#') 大众
             a(href='#') 沃尔沃
@@ -50,7 +51,7 @@
           .hr
         .nav-item
           .nav-item-hd
-            img(src='')
+            img(src='http://f2e.souche.com/assets/images/index/t-small.png')
             品牌
           .nav-item-bd.clearfix
             a(href='#') 大众
@@ -64,21 +65,58 @@
             a(href='#') 大众
 
     .main-slider
-      .slider
-        img
-      .performance
-        .per-item
-          img
-        .per-item
-          img
-        .per-item
-          img
+      .inner
+        .flexslider
+            ul.slides
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+        .performance
+          .per-item
+            img(src='http://f2e.souche.com/assets/images/index/per-item-1.jpg')
+          .per-item
+            img(src='http://f2e.souche.com/assets/images/index/per-item-1.jpg')
+          .per-item.last
+            img(src='http://f2e.souche.com/assets/images/index/per-item-1.jpg')
   .mod-side
       .service
-        img
-      .address
         .inner
-          img
+          .per-1.per
+              i 
+              .t 绝无火烧车，水淹车
+              .st 365项质监，保证车辆品质
+          .per-2.per
+            i 
+            .t 2年6万公里免质检
+            .st 二手车享受新车质保服务
+          .per-3.per
+            i 
+            .t 分期付款
+            .st 提供最长3年分期付款服务
+      .address
+        img(src="http://f2e.souche.com/assets/images/index/souche-beijing.jpg")
+        .inner
           p.t 大搜车北京门店
           p.a 北京海淀区世纪金源购物中心东区北广场
-          a 发送到手机
+          a 发送地址到手机
+
+  script.
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationSpeed: 300,
+      initDelay: 0,
+      slideshowSpeed: 5000
+    });
+   
+    $(".flexslider").mouseenter(function(){
+      $(this).flexslider("stop");
+    }).mouseleave(function(){
+      $(this).flexslider("play");
+    });

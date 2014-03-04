@@ -1,26 +1,24 @@
-require.config({
-	baseUrl: "/assets/js"
-});
-require(['souche/select'], function (Select){
-　　　　
-　　});
+
 Souche.Index = (function(){
 	var config = {
-		api_isLogin:'',
-		api_saveBuyInfo:'',
-		api_detail:'',
-		api_changeCars:''
+		
 	};
 	return {
 		init:function(_config){
-			Souche.Util.mixin(config,_config);
-			
-		}
+			$.extend(config,_config);
 
+			$('.down-counter').each(function(){
+	      var $this = $(this);
+	      downCounter($this);
+	    });
+		}
 	};
 	
 })();
 
-define(function (){
-　　　　return Souche.Index;
-　　});
+define(['index/qiugou'], function (QiuGou){
+	QiuGou.init();
+
+	return Souche.Index;
+});
+

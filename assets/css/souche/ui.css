@@ -74,9 +74,9 @@
 .sc-select{
     display:inline-block;
     border:1px solid #d9d9d9;
-    height:25px;
+    height:30px;
     background:#fff;
-    line-height:25px;
+    line-height:30px;
     width:145px;
     position:relative;
 }
@@ -85,6 +85,9 @@
   min-height: 30px;
 }
 .sc-multi-select .sc-select-hd{
+padding-left: 0;
+  }
+  .sc-custom-select .sc-select-hd{
 padding-left: 0;
   }
 .sc-select-hd{
@@ -114,7 +117,7 @@ padding-left: 0;
 }
 .sc-select-content .placeholder{
   line-height: 30px;
-  padding-left: 10px;
+  padding-left:10px;
 }
 .sc-select-action{
     width:25px;height:25px;
@@ -171,4 +174,14 @@ padding-left: 0;
 .sc-select-list li a:hover{
     background:#ff6700;
     color:#fff !important;
+}
+
+
+.sc-popup{
+    border:1px solid #ddd;
+    background: #fff;
+
+}
+.sc-popup .hd{
+
 }

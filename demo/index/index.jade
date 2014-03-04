@@ -9,10 +9,11 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/index.css?t=129" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
     <script>
-      var contextPath = "";
+      var contextPath = "http://www.souche.com/";
       require.config({
         baseUrl: "http://f2e.souche.com/assets/js"
       });
@@ -90,4 +91,7 @@ html
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
   script.
+    require(['index'], function (Index){
+      Index.init();
+    });
 
