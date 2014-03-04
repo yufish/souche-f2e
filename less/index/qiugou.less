@@ -38,16 +38,36 @@
     }
     .brand-select{
       width:257px;height:auto;display:block;
+      .sc-select-list{
+        overflow: hidden;
+        width:500px;
+        height:400px !important;
+      }
+      .sc-popup-bd{
+        height:370px;
+      }
+      .word-title{
+        float:left;
+        color:#5bb0b3;
+        font-size: 20px;
+        line-height: 30px;
+        width:30px;
+      }
+      .word-brands{
+        float: left;
+        display: inline;
+        width:450px;
+      }
       .option{
         padding:0 5px;
-        margin-right:5px;
-        color:#333;
+        margin-left:7px;
+        color:#666;
         float:left;
         display: inline;
         font-size: 12px;
         border:2px solid #fff;
         line-height: 20px;
-        margin-top:5px;
+        margin-top:3px;
       }
       .option.active{
         border:2px solid @orange;
@@ -58,9 +78,20 @@
       .option:hover{
         color: @orange;
       }
+      .sc-popup{
+        padding-right: 0;
+      }
     }
     .series-select{
       width:257px;height:auto;display:block;
+      .sc-select-list{
+        overflow: hidden;
+        width:500px;
+        height:400px !important;
+      }
+      .sc-popup-bd{
+        height:370px;
+      }
       .option{
         padding:0 5px;
         margin-right:5px;
@@ -80,6 +111,9 @@
       }
       .option:hover{
         color: @orange;
+      }
+      .sc-popup{
+        padding-right: 0;
       }
     }
     .age-select,.model-select{

@@ -4,9 +4,9 @@ Souche.UI.CustomSelect = function(){
     this.ele = typeof(id)!="string"?$(id):$("#"+this.id);
     this.config = {
       isAutoDrop:true,
-      maxDisplayItems:10,
       placeholder:"请选择品牌",
-      multi:true
+      multi:true,
+      listContainer:".sc-select-list .sc-popup-bd"
     };
     $.extend(this.config,_config)
     this.selected = [];
@@ -18,7 +18,7 @@ Souche.UI.CustomSelect = function(){
   */
   $.extend(select.prototype,{
     addOptions:function(html){
-        $(".sc-select-list",this.ele).append(html)
+        $(this.config.listContainer,this.ele).append(html)
      },
     //  removeOption:function(key){
     //     $(".sc-select-list a.option",this.ele).each(function(i,a){
@@ -28,7 +28,7 @@ Souche.UI.CustomSelect = function(){
     //     })
     //  },
      removeAllOption:function(){
-        $(".sc-select-list",this.ele).html("");
+        $(this.config.listContainer,this.ele).html("");
      },
      showOptions:function(){
         $(".sc-select-list",this.ele).removeClass("hidden");
@@ -45,12 +45,8 @@ Souche.UI.CustomSelect = function(){
       Souche.Util.mixin(this.config,_config);
 
       this._defaultHeadHeight = $(".sc-select-hd").height();
-      $(".sc-select-list").css({
-        height:this.config.maxDisplayItems*30
-      })
-      if($(".sc-select-list a.option",this.ele).length>10){
-        $(".sc-select-list",this.ele).css("height",300);
-      }
+      
+      
       $(document.body).on("click",function(){
         self.hideOptions();
       });
@@ -70,7 +66,7 @@ Souche.UI.CustomSelect = function(){
         if($(".sc-select-list",self.ele).hasClass("hidden")){
           $(".sc-select-list").addClass("hidden");
           $(".sc-select-list",self.ele).removeClass("hidden").css({
-            top:$(".sc-select-hd",self.ele).height()
+            top:$(".sc-select-hd",self.ele).height()+2
           });
           if(self.config.isAutoDrop){
             self._autoDrop(list);
@@ -82,7 +78,7 @@ Souche.UI.CustomSelect = function(){
         }else{
           $(".sc-select-list").addClass("hidden");
           list.css({
-              top:25
+              top:30
           });
         }
         
@@ -140,6 +136,9 @@ Souche.UI.CustomSelect = function(){
         $(self).trigger("change",{key:key,value:value})
         // $(".sc-select-content",self.ele).html(value)
         // $(".selected_value",self.ele).val(key)
+        e.stopPropagation();
+      })
+      $(".sc-select-list",self.ele).on("scroll",function(e){
         e.stopPropagation();
       })
 
@@ -211,7 +210,7 @@ Souche.UI.CustomSelect = function(){
       }
       
       $(".sc-select-list",self.ele).css({
-        top:$(".sc-select-hd",self.ele).height()
+        top:$(".sc-select-hd",self.ele).height()+2
       });
 
      },

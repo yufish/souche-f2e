@@ -53,12 +53,12 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
           for(var i in data){
             var b = data[i];
             var name = i;
-            html+="<div data-name='"+name+"' class='clearfix'><div class='word-title'>"+name+"</div>"
+            html+="<div data-name='"+name+"' class='clearfix'><div class='word-title'>"+name+"</div><div class='word-brands'>"
             for(var n =0;n<b.length;n++){
               var brand = b[n]
               html+=('<a href="#" data-value="'+brand.code+'" class="option"><input type="checkbox" class="hidden"/><span class="value">'+brand.name+'</span></a>');
             }
-            html+="</div>"
+            html+="</div></div>"
             
           }
           brandSelect.addOptions(html)
