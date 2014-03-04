@@ -32,11 +32,11 @@ Souche.UI.CustomSelect = function(){
      },
      showOptions:function(){
         $(".sc-select-list",this.ele).removeClass("hidden");
-        
+        this.ele.addClass("sc-active");
      },
      hideOptions:function(){
         $(".sc-select-list",this.ele).addClass("hidden");
-        
+        this.ele.removeClass("sc-active");
      }
   })
   $.extend(select.prototype,{
@@ -65,7 +65,8 @@ Souche.UI.CustomSelect = function(){
         var list =$(".sc-select-list",self.ele);
         if($(".sc-select-list",self.ele).hasClass("hidden")){
           $(".sc-select-list").addClass("hidden");
-          $(".sc-select-list",self.ele).removeClass("hidden").css({
+          self.showOptions();
+          $(".sc-select-list",self.ele).css({
             top:$(".sc-select-hd",self.ele).height()+2
           });
           if(self.config.isAutoDrop){
@@ -76,7 +77,7 @@ Souche.UI.CustomSelect = function(){
             zIndex:Souche.Data.DropdownzIndex++
           });
         }else{
-          $(".sc-select-list").addClass("hidden");
+          self.hideOptions();
           list.css({
               top:30
           });
@@ -222,7 +223,7 @@ Souche.UI.CustomSelect = function(){
         
         $(".sc-select-content",this.ele).html("<span class='placeholder'>"+this.config.placeholder+"</span>")
       }
-      $(".sc-select-list",this.ele).addClass("hidden")
+      this.hideOptions();
      },
      _autoDrop:function(list){
       var c = this.config
