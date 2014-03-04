@@ -73,10 +73,11 @@
     .performance{
       overflow:hidden;
       width: 660px;
-      border:1px solid  @module1-ligth-gray;
+      border-top:1px solid  @module1-ligth-gray;
       .per-item{
         float: left;
         border-right: 1px solid  @module1-ligth-gray;
+        a {display: block;width: 218px;height: 144px;background: url(../images/index/per-item-1.jpg);cursor: pointer;}
       }
       .per-item.last{
         border-right: 0;
@@ -161,9 +162,10 @@
       p.a{
         margin:5px 0;
       }
-      a{
-        color: #0090CC;
+      .sendadd{
+        color: #0090CC;cursor: pointer;
       }
+      .sendadd:hover{color: @orange;}
     }
    
   }
