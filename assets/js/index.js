@@ -29,18 +29,18 @@ Souche.Index = (function(){
 					})
 				}
 			})
-			$('.down-counter').each(function(){
-		      var $this = $(this);
-		      downCounter($this);
-		    });
 		}
 	};
 	
 })();
 
-define(['index/qiugou','souche/down-counter'], function (QiuGou){
+define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){
 	QiuGou.init();
-
+	$('.down-counter').each(function(){
+	      var $this = $(this);
+	      downCounter($this);
+	});
 	return Souche.Index;
 });
+
 
