@@ -11,7 +11,7 @@ Souche.Index = (function(){
 	
 })();
 
-define(['souche/custom-select'], function (CustomSelect){
-	var brandSelect = new CustomSelect("brand_select");
+define(['index/qiugou'], function (QiuGou){
+	QiuGou.init();
 	return Souche.Index;
 });
