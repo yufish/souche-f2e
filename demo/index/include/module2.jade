@@ -14,26 +14,76 @@
                   <div class="sc-select-action hidden"><i></i></div>
                 </div>
                 <div class="sc-select-list hidden sc-popup">
-                  <a href="#" data-value="5" class="option"><input type="checkbox" class="hidden"/><span class='value'>5万以下</span></a>
-                  <a href="#" data-value="4" class="option"><input type="checkbox" class="hidden"/><span class='value'>4万以下</span></a>
                 </div>
                 <input type="hidden" name="2,3,4" class="selected_values"/>
               </div>
           .form-item.clearfix
             label 车系
             .input. 
-              <div class="sc-select sc-multi-select series-select" id="series_select">
+              <div class="sc-select sc-custom-select series-select" id="series_select">
                 <div class="sc-select-hd">
                   <div class="sc-select-content clearfix"></div>
                   <div class="sc-select-action hidden"><i></i></div>
                 </div>
-                <ul class="sc-select-list hidden sc-popup">
-                    <a href="#" data-value="5" class="option"><input type="checkbox" class="hidden"/><span class='value'>5万以下</span></a>
-                </ul>
+                <div class="sc-select-list hidden sc-popup">
+                  请先选择品牌
+                </div>
                 <input type="hidden" name="" class="selected_values"/>
               </div>
           .form-item.clearfix
-            label 
+            label 价格
+            .input.
+              <div class="sc-select price-select-low" id="price_low_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content">请选择</div>
+                  <div class="sc-select-action"><i></i></div>
+                </div>
+                <ul class="sc-select-list hidden">
+                  <li>
+                    <a href="#" data-value="5">5万以下</a>
+                  </li>
+                </ul>
+                <input type="hidden" name="" class="selected_value"/>
+              </div>
+              至
+              <div class="sc-select price-select-high" id="price_high_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content">请选择</div>
+                  <div class="sc-select-action"><i></i></div>
+                </div>
+                <ul class="sc-select-list hidden">
+                  <li>
+                    <a href="#" data-value="5">5万以下</a>
+                  </li>
+                </ul>
+                <input type="hidden" name="" class="selected_value"/>
+              </div>
+          .form-item.clearfix
+            label 车龄
+            .input.
+              <div class="sc-select sc-custom-select age-select" id="age_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content clearfix"></div>
+                  <div class="sc-select-action"><i></i></div>
+                </div>
+                <div class="sc-select-list hidden sc-popup">
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">A 阿尔法罗米欧</span></a>
+                </div>
+                <input type="hidden" name="" class="selected_values"/>
+              </div>
+          .form-item.clearfix
+            label 车型
+            .input.
+              <div class="sc-select sc-custom-select model-select" id="model_select">
+                <div class="sc-select-hd">
+                  <div class="sc-select-content clearfix"></div>
+                  <div class="sc-select-action"><i></i></div>
+                </div>
+                <div class="sc-select-list hidden sc-popup">
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">A 阿尔法罗米欧</span></a>
+                </div>
+                <input type="hidden" name="" class="selected_values"/>
+              </div>
 
   .mod-side
     .buyforme

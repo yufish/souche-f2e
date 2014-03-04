@@ -120,7 +120,7 @@ padding-left: 0;
   padding-left:10px;
 }
 .sc-select-action{
-    width:25px;height:25px;
+    width:30px;height:30px;
     position:absolute;
     right:0;
     top:0;
@@ -132,8 +132,8 @@ padding-left: 0;
     _right:-1px;
 }
 .sc-select-action i{
-    margin-left:8px;
-    margin-top:10px;
+    margin-left:10px;
+    margin-top:12px;
     display:block;
     width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
     font-size:0px;
@@ -148,6 +148,7 @@ padding-left: 0;
         overflow:auto;
     z-index:10000;
     overflow-x:hidden;
+    background: #fff;
 }
 .sc-select-list .panel{
     font-size:12px;
@@ -165,7 +166,7 @@ padding-left: 0;
     background:#fff;
 }
 .sc-select-list li a{
-    padding-left:20px;
+    padding-left:10px;
     display:block;
     font-weight:normal;
     font-size:12px;
