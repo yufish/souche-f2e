@@ -30,16 +30,22 @@ Souche.Index = (function(){
 				}
 			})
 			$('.down-counter').each(function(){
+<<<<<<< HEAD
+		      var $this = $(this);
+		      downCounter($this);
+		    });
+=======
 	      var $this = $(this);
 	      downCounter($this);
 	    });
 
+>>>>>>> e48b5f3a9531fe29364fb7dfe9381a54e9ba5728
 		}
 	};
 	
 })();
 
-define(['index/qiugou'], function (QiuGou){
+define(['index/qiugou','souche/down-counter'], function (QiuGou){
 	QiuGou.init();
 
 	return Souche.Index;
