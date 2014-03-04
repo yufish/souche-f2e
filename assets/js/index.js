@@ -6,13 +6,21 @@ Souche.Index = (function(){
 	return {
 		init:function(_config){
 			$.extend(config,_config);
+
+			$('.down-counter').each(function(){
+	      var $this = $(this);
+	      downCounter($this);
+	    });
 		}
 	};
 	
 })();
 
-define(['souche/custom-select'], function (CustomSelect){
+define(['souche/custom-select','souche/down-counter'], function (CustomSelect){
 	var brandSelect = new CustomSelect("brand_select");
+
+
+
 	return Souche.Index;
 });
 
