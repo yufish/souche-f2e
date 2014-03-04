@@ -29,7 +29,14 @@ Souche.Index = (function(){
 					})
 				}
 			})
+<<<<<<< HEAD
 			
+=======
+			$('.down-counter').each(function(){
+		      var $this = $(this);
+		      downCounter($this);
+		    });
+>>>>>>> 3cf9b2bee649a18105bb97acd5d8cc154a4f2d92
 		}
 	};
 	
