@@ -66,7 +66,8 @@
     padding: 0 25px 0 25px;
     .starbuy-star{
       height: 72px;
-      .star-image{background: url(../images/index/star.png);width: 72px;height: 72px;float: left;}
+      .star-image{
+        background: url(../images/index/star.png);width: 72px;height: 72px;float: left;}
       .star{
         width: 132px;
         height: 72px;
@@ -84,7 +85,26 @@
       }
      }
     }
-     .car-image{background: url(../images/index/car-image.png);height:140px;margin: 15px 0;display: block;cursor: pointer;}
+     .car-image{
+      background: url(../images/index/car-image.png);height:140px;margin: 15px 0;display: block;cursor: pointer;
+      .car-float{
+          height: 50px;
+          background-color: #000;
+          opacity: 0.6;
+          position: relative;
+          top: 90px;
+          .float-box{
+            padding: 10px;
+            h1{
+              font-size: 12px;color: #fff;
+              i{
+                font-size: 12px;color: #fff;display: block;float: right;font-style: normal;
+              }
+            }
+            p{font-size: 12px;color: #fff;line-height: 20px;}
+          }
+        }
+    }
      .car-reason{font-weight: bold;float: left;font-style: normal;color: #444;
       i {font-style: normal;font-weight: normal;color: #666;}
   }
