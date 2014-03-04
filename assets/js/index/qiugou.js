@@ -18,17 +18,12 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
   return {
     init:function(){
       brandSelect = new CustomSelect("brand_select",{
-        placeholder:"请选择品牌"
+        placeholder:"请选择品牌，可多选"
       });
       seriesSelect = new CustomSelect("series_select",{
-        placeholder:"请选择车系"
+        placeholder:"请选择车系，可多选"
       });
-      priceLowSelect = new Select("price_low_select",{
-        maxDisplayItems:5
-      })
-      priceHighSelect = new Select("price_high_select",{
-        maxDisplayItems:5
-      })
+      
       ageSelect = new CustomSelect("age_select",{
         placeholder:"请选择",
         multi:false
@@ -38,6 +33,7 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
         multi:false
       })
       this._bindBrandChange();
+      this._onlyNum();
       //没有默认值，则只需要一个请求即可初始化
       brandSelect.removeAllOption();
       seriesSelect.removeAllOption();
@@ -71,6 +67,12 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
         }
       });
     },
+    _onlyNum:function(){
+      $("#price_low_select,#price_hight_select").on("keyup",function(e){
+        var v = this.value.replace(/[^0-9]/,"");
+        this.value = v;
+      })
+    },
     _bindBrandChange:function(){
       var self = this;
       $(brandSelect).on("select",function(e,data){
@@ -81,6 +83,8 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
         console.log(data)
         self._removeSeries(data.key)
         //取消选中某品牌，删除其所拥有的车系列表
+      }).on("show",function(){
+        $("html,body").animate({scrollTop:$(".qiugou").offset().top},200)
       })
     },
     _addSeries:function(brandCode){

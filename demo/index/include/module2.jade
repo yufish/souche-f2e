@@ -14,7 +14,7 @@
                   <div class="sc-select-action hidden"><i></i></div>
                 </div>
                 <div class="sc-select-list hidden sc-popup">
-                  <div class="sc-popup-hd">请选择您喜欢的品牌</div>
+                  <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
                   <div class="sc-popup-bd"></div>
                 </div>
                 <input type="hidden" name="2,3,4" class="selected_values"/>
@@ -28,39 +28,18 @@
                   <div class="sc-select-action hidden"><i></i></div>
                 </div>
                 <div class="sc-select-list hidden sc-popup">
-                  <div class="sc-popup-hd">请选择您喜欢的车系</div>
+                  <div class="sc-popup-hd">请选择您喜欢的车系<a class="close">确认</a></div>
                   <div class="sc-popup-bd"></div>
                 </div>
                 <input type="hidden" name="" class="selected_values"/>
               </div>
           .form-item.clearfix
             label 价格
-            .input.
-              <div class="sc-select price-select-low" id="price_low_select">
-                <div class="sc-select-hd">
-                  <div class="sc-select-content">请选择</div>
-                  <div class="sc-select-action"><i></i></div>
-                </div>
-                <ul class="sc-select-list hidden">
-                  <li>
-                    <a href="#" data-value="5">5万以下</a>
-                  </li>
-                </ul>
-                <input type="hidden" name="" class="selected_value"/>
-              </div>
-              至
-              <div class="sc-select price-select-high" id="price_high_select">
-                <div class="sc-select-hd">
-                  <div class="sc-select-content">请选择</div>
-                  <div class="sc-select-action"><i></i></div>
-                </div>
-                <ul class="sc-select-list hidden">
-                  <li>
-                    <a href="#" data-value="5">5万以下</a>
-                  </li>
-                </ul>
-                <input type="hidden" name="" class="selected_value"/>
-              </div>
+            .input
+              input.price-select-low#price_low_select(type="text",name="")
+              | 至
+              input.price-select-high#price_hight_select(type="text",name="")
+              | 万元
           .form-item.clearfix
             label 车龄
             .input.
@@ -69,9 +48,15 @@
                   <div class="sc-select-content clearfix"></div>
                   <div class="sc-select-action"><i></i></div>
                 </div>
-                <div class="sc-select-list hidden sc-popup">
-                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">A 阿尔法罗米欧</span></a>
+                <div class="sc-select-list hidden">
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1年内</span></a>
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1-3年</span></a>
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">3-5年</span></a>
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">5-8年</span></a>
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">8-10年</span></a>
+                  <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">10年以上</span></a>
                 </div>
+
                 <input type="hidden" name="" class="selected_values"/>
               </div>
           .form-item.clearfix

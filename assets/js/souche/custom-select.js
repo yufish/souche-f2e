@@ -33,10 +33,12 @@ Souche.UI.CustomSelect = function(){
      showOptions:function(){
         $(".sc-select-list",this.ele).removeClass("hidden");
         this.ele.addClass("sc-active");
+        $(this).trigger("show");
      },
      hideOptions:function(){
         $(".sc-select-list",this.ele).addClass("hidden");
         this.ele.removeClass("sc-active");
+        $(this).trigger("hide");
      }
   })
   $.extend(select.prototype,{
@@ -200,13 +202,13 @@ Souche.UI.CustomSelect = function(){
         e.stopPropagation();
       })
       if(self.selected.length){
-        $(".sc-select-hd",self.ele).css({
-          height:$(".sc-select-content",self.ele).height()
-        })
+        // $(".sc-select-hd",self.ele).css({
+        //   height:$(".sc-select-content",self.ele).height()
+        // })
       }else{
-        $(".sc-select-hd",self.ele).css({
-          height:self._defaultHeadHeight
-        })
+        // $(".sc-select-hd",self.ele).css({
+        //   height:self._defaultHeadHeight
+        // })
         $(".sc-select-content",self.ele).html("<span class='placeholder'>"+self.config.placeholder+"</span>")
       }
       
