@@ -29,7 +29,7 @@
         zeroS = "0";
       }
 
-      container.html("<span>剩余<ins>" + zeroH + counter.offHour + "</ins>时<ins>" + zeroM + counter.offMin + "</ins>分<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>秒</span>");
+      container.html("<span>剩余时间：<ins>" + zeroH + counter.offHour + "</ins>时<ins>" + zeroM + counter.offMin + "</ins>分<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>秒</span>");
     };
     var setInitTime = function(){
       var endDate = new Date(counter.endYear, counter.endMonth, counter.endDay, counter.endHour, 0, 0);
