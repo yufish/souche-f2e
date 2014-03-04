@@ -2,10 +2,11 @@
   .mod-main
     .filter-nav
       .inner
-        .nav-item
+        .nav-item(style='position:relative;')
           .nav-item-hd
             img(src='http://f2e.souche.com/assets/images/index/r-small.png')
             品牌
+          .right-arrow
           .nav-item-bd.clearfix
             a(href='#') 大众
             a(href='#') 沃尔沃
@@ -65,18 +66,18 @@
 
     .main-slider
       .inner
-        .slider
-          ul
-            li
-              img(src='http://f2e.souche.com/assets/images/index/main-slider-1.jpg')
-            li
-              img(src='http://f2e.souche.com/assets/images/index/main-slider-1.jpg')
-            li
-              img(src='http://f2e.souche.com/assets/images/index/main-slider-1.jpg')
-            li
-              img(src='http://f2e.souche.com/assets/images/index/main-slider-1.jpg')
-            li
-              img(src='http://f2e.souche.com/assets/images/index/main-slider-1.jpg')
+        .flexslider
+            ul.slides
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
+              li(style='background-image:url(http://f2e.souche.com/assets/images/index/main-slider-1.jpg)')
+                a(target='_blank' href='#')
         .performance
           .per-item
             img(src='http://f2e.souche.com/assets/images/index/per-item-1.jpg')
@@ -105,3 +106,17 @@
           p.t 大搜车北京门店
           p.a 北京海淀区世纪金源购物中心东区北广场
           a 发送地址到手机
+
+  script.
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationSpeed: 300,
+      initDelay: 0,
+      slideshowSpeed: 5000
+    });
+   
+    $(".flexslider").mouseenter(function(){
+      $(this).flexslider("stop");
+    }).mouseleave(function(){
+      $(this).flexslider("play");
+    });
