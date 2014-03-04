@@ -8,15 +8,15 @@ Souche.Index = (function(){
 			$.extend(config,_config);
 
 			$('.down-counter').each(function(){
-	      var $this = $(this);
-	      downCounter($this);
-	    });
+		      var $this = $(this);
+		      downCounter($this);
+		    });
 		}
 	};
 	
 })();
 
-define(['index/qiugou'], function (QiuGou){
+define(['index/qiugou','souche/down-counter'], function (QiuGou){
 	QiuGou.init();
 
 	return Souche.Index;
