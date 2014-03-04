@@ -1,11 +1,12 @@
 Souche.UI.Select = function(){
-  var select = function(id){
+  var select = function(id,_config){
     this.id = id;
     this.ele = typeof(id)!="string"?$(id):$("#"+this.id);
     this.config = {
       isAutoDrop:true,
       maxDisplayItems:10
     }
+    $.extend(this.config,_config);
     this._init();
   };
   /**

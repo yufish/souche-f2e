@@ -1,5 +1,5 @@
-define(['souche/custom-select'], function (CustomSelect){
-  var brandSelect,seriesSelect;
+define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
+  var brandSelect,seriesSelect,priceLowSelect,priceHighSelect,ageSelect,modelSelect;
   return {
     init:function(){
       brandSelect = new CustomSelect("brand_select",{
@@ -8,6 +8,20 @@ define(['souche/custom-select'], function (CustomSelect){
       seriesSelect = new CustomSelect("series_select",{
         placeholder:"请选择车系"
       });
+      priceLowSelect = new Select("price_low_select",{
+        maxDisplayItems:5
+      })
+      priceHighSelect = new Select("price_high_select",{
+        maxDisplayItems:5
+      })
+      ageSelect = new CustomSelect("age_select",{
+        placeholder:"请选择",
+        multi:false
+      })
+      modelSelect = new CustomSelect("model_select",{
+        placeholder:"请选择",
+        multi:false
+      })
       this._bindBrandChange();
       //没有默认值，则只需要一个请求即可初始化
       brandSelect.removeAllOption();
