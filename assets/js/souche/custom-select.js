@@ -56,7 +56,11 @@ Souche.UI.CustomSelect = function(){
       });
       this._bindClick();
       this._bindSelect();
-      this._renderSelected();
+      if(this.config.multi){
+        this._renderSelected();
+      }else{
+        this._renderSingleSelected();
+      }
      },
      //绑定输入框的点击事件
      _bindClick:function(){
@@ -128,7 +132,11 @@ Souche.UI.CustomSelect = function(){
           $(self).trigger("select",{key:key,value:value})
           
         }
+        if(self.config.multi){
         self._renderSelected();
+      }else{
+        self._renderSingleSelected();
+      }
         $(self).trigger("change",{key:key,value:value})
         // $(".sc-select-content",self.ele).html(value)
         // $(".selected_value",self.ele).val(key)
@@ -206,6 +214,16 @@ Souche.UI.CustomSelect = function(){
         top:$(".sc-select-hd",self.ele).height()
       });
 
+     },
+     _renderSingleSelected:function(){
+      
+      if(this.selected.length){
+        $(".sc-select-content",this.ele).html(this.selected[0].value);
+      }else{
+        
+        $(".sc-select-content",this.ele).html("<span class='placeholder'>"+this.config.placeholder+"</span>")
+      }
+      $(".sc-select-list",this.ele).addClass("hidden")
      },
      _autoDrop:function(list){
       var c = this.config
