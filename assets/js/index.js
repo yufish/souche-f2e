@@ -6,6 +6,11 @@ Souche.Index = (function(){
 	return {
 		init:function(_config){
 			$.extend(config,_config);
+
+			$('.down-counter').each(function(){
+	      var $this = $(this);
+	      downCounter($this);
+	    });
 		}
 	};
 	
@@ -13,5 +18,7 @@ Souche.Index = (function(){
 
 define(['index/qiugou'], function (QiuGou){
 	QiuGou.init();
+
 	return Souche.Index;
 });
+
