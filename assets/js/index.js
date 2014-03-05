@@ -15,19 +15,19 @@ Souche.Index = (function(){
 				//顶部对齐
 				if(windowTop>(contentTop-10)){
 					$("#side_bar").css({
-						top:windowTop-contentTop+10
+						top:0
 					})
 				}else{
 					$("#side_bar").css({
-						top:0
+						top:contentTop-windowTop
 					})
 				}
 				//底部对其
-				if(sidebarHeight+windowTop>contentTop+contentHeight){
-					$("#side_bar").css({
-						top:contentHeight-sidebarHeight
-					})
-				}
+				// if(sidebarHeight+windowTop>contentTop+contentHeight){
+				// 	$("#side_bar").css({
+				// 		top:contentHeight-sidebarHeight
+				// 	})
+				// }
 			})
 		}
 	};

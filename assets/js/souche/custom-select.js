@@ -218,7 +218,13 @@ Souche.UI.CustomSelect = function(){
 
      },
      _renderSingleSelected:function(){
-      
+      var self = this;
+      var s = []
+      for(var i=0;i<self.selected.length;i++){
+        s.push(self.selected[i].key)
+      }
+      console.log(self.ele)
+      $(".selected_values",self.ele).val(s.join(","))
       if(this.selected.length){
         $(".sc-select-content",this.ele).html(this.selected[0].value);
       }else{
