@@ -110,7 +110,11 @@
            .car-icon{
             width: 25px;height: 25px;background: url(../images/index/carlogo.png);float: left;margin-right: 10px;
            }
-           i{font-size: 14px;color: #444;font-style: normal;float: left;display: block;line-height: 25px;}
+           i{
+            font-size: 14px;color: #444;font-style: normal;float: left;display: block;line-height: 25px;
+            a{cursor: pointer;font-size: 14px;color: #444;font-style: normal;}
+            a:hover{color: @orange;}
+           }
            a{display: block;float: right;color: #959595;font-size: 12px;line-height: 25px;cursor: pointer;}
            a:hover{color: @orange;}
          }
@@ -148,6 +152,9 @@
             a{
               font-size: 12px;color: #666;cursor: pointer;display: block;
               i{font-style: normal;color: #fc7b28;display: block;float: right;position: relative;right: 7px;}
+            }
+            a:hover{
+              color: @orange;
             }
           }
         }

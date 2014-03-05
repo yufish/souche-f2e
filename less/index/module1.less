@@ -86,11 +86,16 @@
 
     .performance{
       overflow:hidden;
-      width: 678px;
-      border:1px solid  @module1-ligth-gray;
+
+      width: 676px;
+      border-top:1px solid  @module1-ligth-gray;
+
       .per-item{
         float: left;
         border-right: 1px solid  @module1-ligth-gray;
+        a {display: block;width: 219px;height: 144px;cursor: pointer;
+          img{width: 219px;height: 144px;}
+        }
       }
       .per-item.last{
         border-right: 0;
@@ -172,9 +177,10 @@
       p.a{
         margin:5px 0;
       }
-      a{
-        color: #0090CC;
+      .sendadd{
+        color: #0090CC;cursor: pointer;
       }
+      .sendadd:hover{color: @orange;}
     }
    
   }

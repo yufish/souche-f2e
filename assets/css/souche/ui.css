@@ -20,20 +20,21 @@
     right:0;
     top:0;
     *top:-4px;
-    background:#d9d9d9;
+    background:#fff;
     cursor:pointer;
     font-size:0px;
     line-height:0px;
     _right:-1px;
 }
 .sc-option-action i{
-    margin-left:8px;
-    margin-top:10px;
+    margin-left:0px;
+    margin-top:0px;
     display:block;
-    width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
+     width:30px;
+    height:30px;
     font-size:0px;
     line-height:0px;
-    
+    background: url(../../images/common/select-action-trigger.png) no-repeat center center;
 }
 .sc-option-list{
     width:100%;
@@ -76,7 +77,7 @@
     border:1px solid #d9d9d9;
     height:30px;
     background:#fff;
-    line-height:30px;
+    line-height:25px;
     width:145px;
     position:relative;
 }
@@ -95,12 +96,15 @@ padding-left: 0;
     position:relative;font-size:12px;
     color:#aaa;
     font-weight:normal;
-    height:30px;
+    height:auto;
+    
 }
 
 .sc-select-hd .sc-selected-item{
   border-radius: 3px;
   margin:5px;
+  margin-top: 0px;
+  margin-right: 0px;
   background: #f1f1f1;
   line-height: 18px;
   padding:0 5px;
@@ -109,6 +113,7 @@ padding-left: 0;
   padding-right:15px;
   position: relative;
   border:1px solid #bababa;
+  cursor:pointer;
 }
 .sc-select.sc-active .sc-select-hd .sc-selected-item{
 background: #fff7ec;
@@ -124,14 +129,18 @@ color: #ed9763;
   line-height: 18px;
   color:#bababa;
 }
-.sc-select.sc-active .sc-select-hd .sc-selected-item{
+.sc-select.sc-active .sc-select-hd .sc-close{
 color: #ed9763;
     }
 .sc-select-content{
     padding-left: 10px;
+    padding-top: 5px;
+    line-height: 20px;
 }
 .sc-select-content .placeholder{
-  line-height: 30px;
+  line-height: 20px;
+  display: block;
+  height:25px;
 }
 .sc-select-action{
     width:30px;height:30px;
@@ -139,20 +148,21 @@ color: #ed9763;
     right:0;
     top:0;
     *top:-4px;
-    background:#d9d9d9;
+    background:#fff;
     cursor:pointer;
     font-size:0px;
     line-height:0px;
     _right:-1px;
 }
 .sc-select-action i{
-    margin-left:10px;
-    margin-top:12px;
+    margin-left:0px;
+    margin-top:0px;
     display:block;
-    width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
+    width:30px;
+    height:30px;
     font-size:0px;
     line-height:0px;
-    
+    background: url(../../images/common/select-action-trigger.png) no-repeat center center;
 }
 .sc-select-list{
     width:100%;

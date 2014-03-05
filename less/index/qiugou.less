@@ -38,10 +38,26 @@
     }
     .brand-select{
       width:257px;height:auto;display:block;
+      .close{
+        background: @orange;
+        color:#fff;
+        font-size: 12px;
+        float:right;
+        margin-right: 10px;
+        line-height: 25px;
+        padding:0 10px;
+        cursor: pointer;
+      }
       .sc-select-list{
         overflow: hidden;
         width:500px;
         height:400px !important;
+      }
+      .sc-select-content{
+       padding-left:0;
+      }
+      .placeholder{
+        padding-left: 10px;
       }
       .sc-popup-bd{
         height:370px;
@@ -71,7 +87,7 @@
       }
       .option.active{
         border:2px solid @orange;
-        background: #ffedda;
+        background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
         color:@orange;
         
       }
@@ -89,8 +105,31 @@
         width:500px;
         height:400px !important;
       }
+      .close{
+        background: @orange;
+        color:#fff;
+        font-size: 12px;
+        float:right;
+        margin-right: 10px;
+        line-height: 25px;
+        padding:0 10px;
+        cursor: pointer;
+      }
+      .sc-select-content{
+        padding-left:0;
+      }
+      .placeholder{
+        padding-left: 10px;
+      }
       .sc-popup-bd{
         height:370px;
+      }
+      .brand-title{
+        color:@orange;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 30px;
+
       }
       .option{
         padding:0 5px;
@@ -99,13 +138,13 @@
         float:left;
         display: inline;
         font-size: 12px;
-        border:1px solid #fff;
+        border:2px solid #fff;
         line-height: 20px;
         margin-top:5px;
       }
       .option.active{
-        border:1px solid @orange;
-        background: #ffedda;
+        border:2px solid @orange;
+        background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
         color:@orange;
         
       }
@@ -119,13 +158,33 @@
     .age-select,.model-select{
       width:257px;display:block;
     }
+    .age-select,.model-select{
+      .option{
+        display: block;
+        float:none;
+        padding-left: 15px;
+        font-size: 12px;
+        line-height: 30px;
+        color:#333;
+
+      }
+      .option:hover{
+        background: @orange;
+        color:#fff;
+      }
+    }
     .price-select-low{
-      width:110px;
+      width:113px;
       margin-right: 5px;
+      height:30px;
+      border:1px solid #ddd;
     }
     .price-select-high{
       width:113px;
       margin-left: 5px;
+      margin-right:5px;
+      height:30px;
+      border:1px solid #ddd;
     }
   }
 }
