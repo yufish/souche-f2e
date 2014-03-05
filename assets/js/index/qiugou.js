@@ -41,7 +41,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       brandSelect.removeAllOption();
       seriesSelect.removeAllOption();
       $.ajax({
-        url:"/demo/yutou/index/brand.json",//contextPath+"/pages/dicAction/loadRootLevel.json",
+        url:contextPath+"/pages/dicAction/loadRootLevel.json",
         dataType:"json",
         data:{
           type:"car-subdivision"
@@ -110,7 +110,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         
       })
       $.ajax({
-        url:"/demo/yutou/index/qiugou.json",//contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+        url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
         dataType:"json",
         data:$("#qiugou-form").serialize(),
         success:function(data){
