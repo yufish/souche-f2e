@@ -1,4 +1,4 @@
-define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
+define(['souche/custom-select','souche/select','lib/jquery.easing.min'], function (CustomSelect,Select){
   var brandSelect,seriesSelect,priceLowSelect,priceHighSelect,ageSelect,modelSelect;
   var brandSort = function(data){
     var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -15,6 +15,7 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
 
     return obj;
   }
+  var qiugouData = null;
   return {
     init:function(){
       var self = this;
@@ -79,10 +80,12 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
         dataType:"json",
         data:$("#qiugou-form").serialize(),
         success:function(data){
+          qiugouData = data;
+          $("#qiugou_count").html(data.total)
           self._successAnim();
         },
         error:function(){
-          
+
         }
       })
       
@@ -93,12 +96,24 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
       setTimeout(function(){
         $(".qiugou .head .head-inner").animate({marginTop:-120},300)
         setTimeout(function(){
-
-        },400)
+          self._hideForm();
+        },600)
       },800)
     },
     _hideForm:function(){
-      
+      if(qiugouData&&qiugouData.items&&qiugouData.items.length){
+        $(".qiugou .form").css({
+          height:$(".qiugou .form").height()
+        })
+        $(".qiugou .form .form-inner").animate({
+          marginTop:$(".qiugou .form").height()+50
+        },800,'easeOutExpo')
+      }
+      setTimeout(function(){
+         $(".qiugou .person-bg").animate({
+          bottom:-1*($(".qiugou .person-bg").height()+50)
+        },800,'easeOutExpo')
+      })
     },
     _onlyNum:function(){
       $("#price_low_select,#price_hight_select").on("keyup",function(e){

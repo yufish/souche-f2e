@@ -2,87 +2,114 @@
   .mod-main
     .qiugou
       .inner
+        .person-bg
         .head
           .head-inner
             .title 定制您的购车需求，全城搜车立即启动
             .sub-title 毫无疑问，这是最省心、最有效的购车方式
             .success-title 提交成功！
-            .searching-title 全城搜车已为您启动
-        .form
-          form#qiugou-form
-            .form-item.clearfix
-              label 品牌
-              .input. 
-                <div class="sc-select sc-custom-select brand-select" id="brand_select">
-                  <div class="sc-select-hd">
-                    <div class="sc-select-content clearfix"></div>
-                    <div class="sc-select-action hidden"><i></i></div>
-                  </div>
-                  <div class="sc-select-list hidden sc-popup">
-                    <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
-                    <div class="sc-popup-bd"></div>
-                  </div>
-                  <input type="hidden" name="2,3,4" class="selected_values"/>
-                </div>
-            .form-item.clearfix
-              label 车系
-              .input. 
-                <div class="sc-select sc-custom-select series-select" id="series_select">
-                  <div class="sc-select-hd">
-                    <div class="sc-select-content clearfix"></div>
-                    <div class="sc-select-action hidden"><i></i></div>
-                  </div>
-                  <div class="sc-select-list hidden sc-popup">
-                    <div class="sc-popup-hd">请选择您喜欢的车系<a class="close">确认</a></div>
-                    <div class="sc-popup-bd"></div>
-                  </div>
-                  <input type="hidden" name="" class="selected_values"/>
-                </div>
-            .form-item.clearfix
-              label 价格
-              .input
-                input.price-select-low#price_low_select(type="text",name="")
-                | 至
-                input.price-select-high#price_hight_select(type="text",name="")
-                | 万元
-            .form-item.clearfix
-              label 车龄
-              .input.
-                <div class="sc-select sc-custom-select age-select" id="age_select">
-                  <div class="sc-select-hd">
-                    <div class="sc-select-content clearfix"></div>
-                    <div class="sc-select-action"><i></i></div>
-                  </div>
-                  <div class="sc-select-list hidden">
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1年内</span></a>
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1-3年</span></a>
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">3-5年</span></a>
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">5-8年</span></a>
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">8-10年</span></a>
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">10年以上</span></a>
-                  </div>
+            .searching-title 根据您的需求，我们为您找到了<em id="qiugou_count">24</em>辆车
+        .result
+          .cars
+            a.car(href="#")
+              .pic
+                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
+              .title 2011款 宝马520Li-2.5-手自一体 典雅型
+              .price 
+                em 28.7万 
+                span.time 首次上牌：2013-04
+            a.car
+              .pic
+                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
+              .title 2011款 宝马520Li-2.5-手自一体 典雅型
+              .price 
+                em 28.7万 
+                span.time 首次上牌：2013-04
+            a.car
+              .pic
+                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
+              .title 2011款 宝马520Li-2.5-手自一体 典雅型
+              .price 
+                em 28.7万 
+                span.time 首次上牌：2013-04
+            a.car.more
 
-                  <input type="hidden" name="" class="selected_values"/>
-                </div>
-            .form-item.clearfix
-              label 车形
-              .input.
-                <div class="sc-select sc-custom-select model-select" id="model_select">
-                  <div class="sc-select-hd">
-                    <div class="sc-select-content clearfix"></div>
-                    <div class="sc-select-action"><i></i></div>
+        .form
+          .form-inner
+            form#qiugou-form
+              .form-item.clearfix
+                label 品牌
+                .input. 
+                  <div class="sc-select sc-custom-select brand-select" id="brand_select">
+                    <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"></div>
+                      <div class="sc-select-action hidden"><i></i></div>
+                    </div>
+                    <div class="sc-select-list hidden sc-popup">
+                      <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
+                      <div class="sc-popup-bd"></div>
+                    </div>
+                    <input type="hidden" name="2,3,4" class="selected_values"/>
                   </div>
-                  <div class="sc-select-list hidden">
-                    <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">suv</span></a>
-                     <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">mpv</span></a>
+              .form-item.clearfix
+                label 车系
+                .input. 
+                  <div class="sc-select sc-custom-select series-select" id="series_select">
+                    <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"></div>
+                      <div class="sc-select-action hidden"><i></i></div>
+                    </div>
+                    <div class="sc-select-list hidden sc-popup">
+                      <div class="sc-popup-hd">请选择您喜欢的车系<a class="close">确认</a></div>
+                      <div class="sc-popup-bd"></div>
+                    </div>
+                    <input type="hidden" name="" class="selected_values"/>
                   </div>
-                  <input type="hidden" name="" class="selected_values"/>
-                </div>
-            .form-item.clearfix
-              label  
-              .input
-                button.submit 立即定制
-                span.go-login 已定制过？<a href="#">请点此登录</a>
+              .form-item.clearfix
+                label 价格
+                .input
+                  input.price-select-low#price_low_select(type="text",name="")
+                  | 至
+                  input.price-select-high#price_hight_select(type="text",name="")
+                  | 万元
+              .form-item.clearfix
+                label 车龄
+                .input.
+                  <div class="sc-select sc-custom-select age-select" id="age_select">
+                    <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"></div>
+                      <div class="sc-select-action"><i></i></div>
+                    </div>
+                    <div class="sc-select-list hidden">
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1年内</span></a>
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">1-3年</span></a>
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">3-5年</span></a>
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">5-8年</span></a>
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">8-10年</span></a>
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">10年以上</span></a>
+                    </div>
+
+                    <input type="hidden" name="" class="selected_values"/>
+                  </div>
+              .form-item.clearfix
+                label 车形
+                .input.
+                  <div class="sc-select sc-custom-select model-select" id="model_select">
+                    <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"></div>
+                      <div class="sc-select-action"><i></i></div>
+                    </div>
+                    <div class="sc-select-list hidden">
+                      <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">suv</span></a>
+                       <a href="#" data-value="brand-12" class="option"><input type="checkbox" class="hidden"><span class="value">mpv</span></a>
+                    </div>
+                    <input type="hidden" name="" class="selected_values"/>
+                  </div>
+              .form-item.clearfix
+                label  
+                .input
+                  button.submit 立即定制
+                  span.go-login 已定制过？<a href="#">请点此登录</a>
 
   .mod-side
     .buyforme
