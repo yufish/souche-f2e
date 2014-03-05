@@ -164,7 +164,6 @@ Souche.UI.CustomMultiSelect = function(){
      _renderSelected:function(){
       var self = this;
       $(".selected_values",self.ele).val(self.selected.join(","))
-      console.log(self.selected)
       $(".sc-select-content",self.ele).html("")
       for(var i=0;i<self.selected.length;i++){
         var s = self.selected[i];
