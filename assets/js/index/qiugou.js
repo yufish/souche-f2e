@@ -17,6 +17,7 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
   }
   return {
     init:function(){
+      var self = this;
       brandSelect = new CustomSelect("brand_select",{
         placeholder:"请选择品牌，可多选"
       });
@@ -60,12 +61,44 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
           brandSelect.addOptions(html)
         },  
         error:function(){
-          alert("品牌信息请求出错，刷新后再试")
+          // alert("品牌信息请求出错，刷新后再试")
         },
         failure:function(){
-          alert("品牌信息请求出错，刷新后再试")
+          // alert("品牌信息请求出错，刷新后再试")
         }
       });
+      $("#qiugou-form").on("submit",function(e){
+        e.preventDefault();
+        self._submit();
+      })
+    },
+    _submit:function(){
+      var self = this;
+      $.ajax({
+        url:"/demo/yutou/index/qiugou.json",//contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+        dataType:"json",
+        data:$("#qiugou-form").serialize(),
+        success:function(data){
+          self._successAnim();
+        },
+        error:function(){
+          
+        }
+      })
+      
+    },
+    _successAnim:function(){
+      var self = this;
+      $(".qiugou .head .head-inner").css({marginTop:0}).animate({marginTop:-60},300)
+      setTimeout(function(){
+        $(".qiugou .head .head-inner").animate({marginTop:-120},300)
+        setTimeout(function(){
+
+        },400)
+      },800)
+    },
+    _hideForm:function(){
+      
     },
     _onlyNum:function(){
       $("#price_low_select,#price_hight_select").on("keyup",function(e){
@@ -115,10 +148,10 @@ define(['souche/custom-select','souche/select'], function (CustomSelect,Select){
           seriesSelect.addOptions(html)
         },  
         error:function(){
-          alert("车系信息请求出错，刷新后再试")
+          // alert("车系信息请求出错，刷新后再试")
         },
         failure:function(){
-          alert("车系信息请求出错，刷新后再试")
+          // alert("车系信息请求出错，刷新后再试")
         }
       });
     },
