@@ -5,15 +5,15 @@
   border:1px solid @module1-ligth-gray;
   float:left;
   width:228px;
-  height: 490px;
+  height: 488px;
+  overflow: hidden;
   .inner{
     padding:5px;
     overflow: hidden;
   }
   .nav-item{
-    height: 110px;
-    float:left;
     padding:5px;
+    padding-bottom: 10px;
     .right-arrow{
       background-image: url(../images/index/right-arrow.png);
       right: 0px;
@@ -24,7 +24,7 @@
     }
   }
   .nav-item-hd {
-    font-size:15px;
+    font-size:14px;
     color:#333;
     font-weight:bold;
     position: relative;
@@ -32,8 +32,10 @@
 
     i{
       display: inline-block;
-      height:17px;
+      height:21px;
       width: 19px;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
     i.item1{
       background-image:url(http://f2e.souche.com/assets/images/index/r-small.png);
@@ -51,6 +53,8 @@
       position: absolute;
       left:30px;
       top: 0px;
+      display: block;
+      width:60px;
     }
 
   }
@@ -63,13 +67,11 @@
       font-size: 12px;
       margin-right:11px;
       margin-bottom:10px;
+      line-height: 14px;
     }
 
     a:hover{color:@orange;}
 
-    a:hover{
-      color:@orange;
-    }
   }
 
   .hr{
@@ -82,42 +84,33 @@
   margin-left:10px;
   float:left;
   overflow: hidden;
-  width: 680px;
-  .inner{
-    border:1px solid @module1-ligth-gray;
-    .flexslider{overflow:hidden;width:100%;height:340px;position:relative;z-index:10;}
-    .flexslider .slides li{background-position:center top;background-repeat:no-repeat;}
-    .flexslider .slides img{display:block;margin:0 auto;}
-    .flexslider .flex-direction-nav{display:none;}
-    .flexslider .flex-viewport a{display:block;width:400px;margin:0 auto;height:340px;}
-    .flex-control-nav{position:absolute;bottom:10px;width:400px;text-align:center;margin-left:-200px;left:50%;}
-    .flex-control-nav li{display:inline-block;}
-    .flex-control-nav a{overflow: hidden;text-indent:1000px;float:left;width:12px;height:12px;line-height:12px;text-align:center;color:#fff;background-color:#666;margin-right:12px;cursor:pointer;border-radius:50%;}
-    .flex-control-nav a:hover{background-color:#e70;}
-    .flex-control-nav .flex-active{background-color:#e70;}
+  width: 678px;
+  border:1px solid @module1-ligth-gray;
+  .flexslider{overflow:hidden;width:100%;height:340px;position:relative;z-index:10;}
+  .flexslider .slides li{background-position:center top;background-repeat:no-repeat;}
+  .flexslider .slides img{display:block;margin:0 auto;}
+  .flexslider .flex-direction-nav{display:none;}
+  .flexslider .flex-viewport a{display:block;width:400px;margin:0 auto;height:340px;}
+  .flex-control-nav{position:absolute;bottom:10px;width:400px;text-align:center;margin-left:-200px;left:50%;}
+  .flex-control-nav li{display:inline-block;}
+  .flex-control-nav a{overflow: hidden;text-indent:1000px;float:left;width:12px;height:12px;line-height:12px;text-align:center;color:#fff;background-color:#666;margin-right:12px;cursor:pointer;border-radius:50%;}
+  .flex-control-nav a:hover{background-color:#e70;}
+  .flex-control-nav .flex-active{background-color:#e70;}
+  .performance{
+    overflow:hidden;
+    border-top:1px solid  @module1-ligth-gray;
 
-    .performance{
-      overflow:hidden;
-
-      width: 678px;
-      border-top:1px solid  @module1-ligth-gray;
-
-      .per-item{
-        float: left;
-        border-right: 1px solid  @module1-ligth-gray;
-        a {display: block;width: 225px;height: 148px;cursor: pointer;
-          img{width: 225px;height: 148px;}
-        }
-      }
-      .per-item.last{
-        border-right: 0;
+    .per-item{
+      float: left;
+      border-right: 1px solid  @module1-ligth-gray;
+      a {display: block;width: 225px;height: 147px;cursor: pointer;
+        img{width: 225px;height: 147px;}
       }
     }
+    .per-item.last{
+      border-right: 0;
+    }
   }
- 
-
-  
-
 }
 
 .mod-side{
