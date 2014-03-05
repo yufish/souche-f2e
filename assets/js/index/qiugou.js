@@ -72,6 +72,9 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         e.preventDefault();
         self._submit();
       })
+      $("#qiugou_redo").on("click",function(e){
+        self._redo();
+      })
     },
     _submit:function(){
       var self = this;
@@ -103,7 +106,8 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     _hideForm:function(){
       if(qiugouData&&qiugouData.items&&qiugouData.items.length){
         $(".qiugou .form").css({
-          height:$(".qiugou .form").height()
+          height:$(".qiugou .form").height(),
+          overflow:"hidden"
         })
         $(".qiugou .form .form-inner").animate({
           marginTop:$(".qiugou .form").height()+50
@@ -114,12 +118,42 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           backgroundPosition:($(".qiugou .person-bg").height()+50)
         },800,'easeOutExpo')
       },200)
+      setTimeout(function(){
+        $(".qiugou").css({overflow:"hidden"})
+         $(".qiugou .result").animate({
+          left:30
+        },800,'easeOutExpo')
+      },200)
     },
     _onlyNum:function(){
       $("#price_low_select,#price_hight_select").on("keyup",function(e){
         var v = this.value.replace(/[^0-9]/,"");
         this.value = v;
       })
+    },
+    _redo:function(){
+      $(".qiugou .result").animate({
+          left:930
+        },800,'easeOutExpo',function(){
+          $(".qiugou").css({overflow:"visible"})
+        })
+      setTimeout(function(){
+         $(".qiugou .person-bg").animate({
+          backgroundPosition:0
+        },800,'easeOutExpo')
+      },800)
+      setTimeout(function(){
+
+        $(".qiugou .form .form-inner").animate({
+          marginTop:0
+        },800,'easeOutExpo',function(){
+          $(".qiugou .form").css({
+            height:"auto",
+            overflow:"visible"
+          })
+        })
+      },1000)
+     
     },
     _bindBrandChange:function(){
       var self = this;
