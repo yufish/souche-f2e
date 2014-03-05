@@ -377,7 +377,12 @@ Souche.PhoneRegister = function(phone,callback){
 		}
 	})
 }
-	
+$(document).ready(function(){
+	$(".apply_popup .apply_close").on("click",function(){
+		$(".apply_popup").addClass("hidden")
+		$(".wrapGrayBg").hide();
+	})
+})
 	
 	
 	

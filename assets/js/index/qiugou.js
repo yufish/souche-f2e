@@ -16,6 +16,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     return obj;
   }
   var qiugouData = null;
+  var phoneReg = /^1[3458][0-9]{9}$/;
   return {
     init:function(){
       var self = this;
@@ -69,15 +70,45 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         }
       });
       $("#qiugou-form").on("submit",function(e){
-        e.preventDefault();
-        self._submit();
+          e.preventDefault();
+          Souche.checkPhoneExist(function(isLogin){
+          if(isLogin){
+            self._submit();
+          }else{
+            $("#qiugou-popup").removeClass("hidden")
+            $(".wrapGrayBg").show();
+          }
+        })
       })
       $("#qiugou_redo").on("click",function(e){
         self._redo();
       })
+      $("#qiugou_login").on("click",function(e){
+        e.preventDefault();
+        Souche.MiniLogin.checkLogin(function(){
+          $(".qiugou .go-login").addClass("hidden")
+        })
+      })
+      $("#qiugou-phone-form").on("submit",function(e){
+        e.preventDefault();
+        if(!phoneReg.test($("#qiugou-phone").val())){
+          $(".warning",this).removeClass("hidden");
+        }else{
+          Souche.PhoneRegister($("#qiugou-phone").val(),function(){
+            self._submit();
+          })
+          
+        }
+      })
     },
     _submit:function(){
       var self = this;
+
+      $(".qiugou .person-bg").animate({
+        backgroundPosition:0
+      },800,'easeOutExpo',function(){
+        
+      })
       $.ajax({
         url:"/demo/yutou/index/qiugou.json",//contextPath+"/pages/dicAction/loadRootLevelForCar.json",
         dataType:"json",
@@ -85,7 +116,18 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         success:function(data){
           qiugouData = data;
           $("#qiugou_count").html(data.total)
-          self._successAnim();
+          if(!data.total){
+            $(".qiugou .submit").html("重新定制")
+            $(".qiugou .person-bg").animate({
+              backgroundPosition:-402
+            },800,'easeOutExpo',function(){
+              
+            })
+          }else{
+            self._renderResult();
+            self._successAnim();
+          }
+          
         },
         error:function(){
 
@@ -111,19 +153,24 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         })
         $(".qiugou .form .form-inner").animate({
           marginTop:$(".qiugou .form").height()+50
-        },800,'easeOutExpo')
+        },800,'easeOutExpo',function(){
+          $(".qiugou .form").addClass("hidden")
+        })
       }
       setTimeout(function(){
          $(".qiugou .person-bg").animate({
           backgroundPosition:($(".qiugou .person-bg").height()+50)
-        },800,'easeOutExpo')
+        },800,'easeOutExpo',function(){
+          
+        })
       },200)
       setTimeout(function(){
+        $(".qiugou .person-bg").addClass("hidden")
         $(".qiugou").css({overflow:"hidden"})
-         $(".qiugou .result").animate({
-          left:30
+         $(".qiugou .result-inner").animate({
+          marginLeft:0
         },800,'easeOutExpo')
-      },200)
+      },500)
     },
     _onlyNum:function(){
       $("#price_low_select,#price_hight_select").on("keyup",function(e){
@@ -131,19 +178,48 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         this.value = v;
       })
     },
+    _renderResult:function(){
+      if(qiugouData&&qiugouData.items&&qiugouData.items.length>=3){
+        //渲染更多的模式
+        $(".qiugou .cars").html("")
+        for(var i =0;i<qiugouData.items.length;i++){
+          var car = qiugouData.items[i];
+          var html = '<a href="'+car.link+'" class="car">'+
+          '<div class="pic"><img src="'+car.pic+'"></div>'+
+          '<div class="title">'+car.name+'</div>'+
+          '<div class="price"><em>'+car.price+'万 </em><span class="time">首次上牌：'+car.time+'</span></div></a>'
+          $(".qiugou .cars").append(html)
+        }
+        $(".qiugou .cars").append("<a class='car more'></a>")
+      }else{
+        //渲染寻找中的模式
+        $(".qiugou .cars").html("")
+        for(var i =0;i<qiugouData.items.length;i++){
+          var car = qiugouData.items[i];
+          var html = '<a href="'+car.link+'" class="car">'+
+          '<div class="pic"><img src="'+car.pic+'"></div>'+
+          '<div class="title">'+car.name+'</div>'+
+          '<div class="price"><em>'+car.price+'万 </em><span class="time">首次上牌：'+car.time+'</span></div></a>'
+          $(".qiugou .cars").append(html)
+        }
+        for(var i=0;i<4-qiugouData.items.length;i++){
+          $(".qiugou .cars").append("<a class='car no'></a>")
+        }
+      }
+    },
     _redo:function(){
-      $(".qiugou .result").animate({
-          left:930
+      $(".qiugou .result-inner").animate({
+          marginLeft:930
         },800,'easeOutExpo',function(){
           $(".qiugou").css({overflow:"visible"})
         })
       setTimeout(function(){
-         $(".qiugou .person-bg").animate({
+         $(".qiugou .person-bg").removeClass("hidden").animate({
           backgroundPosition:0
         },800,'easeOutExpo')
       },800)
       setTimeout(function(){
-
+        $(".qiugou .form").removeClass("hidden")  
         $(".qiugou .form .form-inner").animate({
           marginTop:0
         },800,'easeOutExpo',function(){
@@ -153,6 +229,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           })
         })
       },1000)
+      $(".qiugou .head .head-inner").animate({marginTop:0},300)
      
     },
     _bindBrandChange:function(){

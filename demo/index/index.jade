@@ -8,16 +8,18 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/index.css?t=129" rel="stylesheet" type="text/css" />
+
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
     <script>
       var contextPath = "http://www.souche.com/";
       require.config({
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+    
   body#index
     #header
       .wrapper
@@ -91,6 +93,23 @@ html
               <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+    .apply_popup#qiugou-popup.hidden.
+      <span class="apply_close"></span>
+      <h1 class="popup-title">定制购车需求</h1>
+      <form id="qiugou-phone-form" action="">
+      <div class="result_p">
+      <div class="tip">输入您的手机号码，一键完成定制</div>
+            <div class="phone">
+            <label>手机号码</label>
+            <input type="text" name="" value="" id="qiugou-phone"  placeholder="在此输入手机号码"/>
+            <s class="warning hidden">请输入正确的手机号码</s>
+            </div>
+      </div>
+      <button type="submit" class="submit">确认</button>
+      </form>
+    |<div class="wrapGrayBg" style="opacity: 0.7; display: none;"></div>
+
+
   script.
     require(['index'], function (Index){
       Index.init();

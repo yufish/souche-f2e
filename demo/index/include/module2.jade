@@ -10,32 +10,27 @@
             .success-title 提交成功！
             .searching-title 根据您的需求，我们为您找到了<em id="qiugou_count">24</em>辆车
         .result
-          .redo#qiugou_redo 
-            i
-            | 重新定制
-          .cars
-            a.car(href="#")
-              .pic
-                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
-              .title 2011款 宝马520Li-2.5-手自一体 典雅型
-              .price 
-                em 28.7万 
-                span.time 首次上牌：2013-04
-            a.car
-              .pic
-                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
-              .title 2011款 宝马520Li-2.5-手自一体 典雅型
-              .price 
-                em 28.7万 
-                span.time 首次上牌：2013-04
-            a.car
-              .pic
-                img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
-              .title 2011款 宝马520Li-2.5-手自一体 典雅型
-              .price 
-                em 28.7万 
-                span.time 首次上牌：2013-04
-            a.car.more
+          .result-inner
+            .redo#qiugou_redo 
+              i
+              | 重新定制
+            .cars
+              a.car(href="#")
+                .pic
+                  img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
+                .title 2011款 宝马520Li-2.5-手自一体 典雅型
+                .price 
+                  em 28.7万 
+                  span.time 首次上牌：2013-04
+              a.car
+                .pic
+                  img(src="http://souche.cdn.aliyuncs.com/files/carpicture/E9A870D167587CDD11922CF84F306533_700x460.jpg_325x10000.jpg")
+                .title 2011款 宝马520Li-2.5-手自一体 典雅型
+                .price 
+                  em 28.7万 
+                  span.time 首次上牌：2013-04
+              a.car.no
+              a.car.more
 
         .form
           .form-inner
@@ -112,7 +107,7 @@
                 label  
                 .input
                   button.submit 立即定制
-                  span.go-login 已定制过？<a href="#">请点此登录</a>
+                  span.go-login 已定制过？<a href="#" id="qiugou_login">请点此登录</a>
 
   .mod-side
     .buyforme
