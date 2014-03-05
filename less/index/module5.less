@@ -8,7 +8,13 @@
         width: 370px;
         height:140px;
         float: left;
-        img{float: left;}
+        i{
+          float: left;
+          height: 140px;
+          width: 140px;
+          overflow: hidden;
+        }
+        
         .person{
           float: left;
           width:230px;
@@ -18,13 +24,13 @@
             margin: 18px 0 18px 18px; 
             position: relative;
             color: #333;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: bold;
             .name{
               padding: 2px 15px;
               position: absolute;
               font-weight: normal;
-              font-size: 10px;
+              font-size: 12px;
               color: #fff;
               right: -2px;
               top:-3px;
@@ -33,15 +39,17 @@
           }
           .info{
             span{
-              font-size:10px;
+              font-size:12px;
               color: #666;
-              margin-right: 12px;
+              margin-right: 10px;
+              line-height: 20px;
             }
-           
-            padding: 0 30px 0 20px;
-            
+            padding: 0 20px 0 20px;
           }
         }
+      }
+      .carlife-item.upper{
+        margin-bottom: 0;
       }
 
 
@@ -53,6 +61,9 @@
     height: 178px;
     overflow: hidden;
       a{
+        width: 257px;
+        height: 140px;
+        overflow: hidden;
         display: block;
         float: left;
         margin: 20px;
