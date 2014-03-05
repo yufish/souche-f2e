@@ -111,9 +111,9 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       }
       setTimeout(function(){
          $(".qiugou .person-bg").animate({
-          bottom:-1*($(".qiugou .person-bg").height()+50)
+          backgroundPosition:($(".qiugou .person-bg").height()+50)
         },800,'easeOutExpo')
-      })
+      },200)
     },
     _onlyNum:function(){
       $("#price_low_select,#price_hight_select").on("keyup",function(e){
