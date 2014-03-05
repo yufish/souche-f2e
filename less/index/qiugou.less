@@ -1,15 +1,25 @@
 .qiugou{
-  height:427px;
+  min-height:427px;
   border:1px solid #e6e6e6;
-  background:#f9f9f9 url(../images/index/qiugou-bg.jpg) no-repeat right bottom;
-  
+  background:#f9f9f9;
+  position: relative;
   .inner{
     padding-left:56px;
   padding-top:30px;
   }
+  .person-bg{
+    background:#f9f9f9 url(../images/index/qiugou-bg.jpg) no-repeat right bottom;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width:402px;
+    height:377px;
+  }
   .head{
     height:60px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
   .title{
     font-size: 28px;
@@ -32,9 +42,70 @@
     color:#222;
     line-height: 35px;
     height:60px;
+    em{
+      color:@orange;
+    }
+  }
+  .result{
+    position: absolute;
+    left:1020px;
+    top:130px;
+    width:890px;
+    background: #f9f9f9;
+    .cars{
+
+    }
+
+    .car{
+      background: #fff;
+      box-shadow: 0px 0px 3px #aaa;
+      float:left;
+      width:210px;
+      margin-right:10px;
+      .pic{
+        width:210px;
+        height:135px;
+        overflow: hidden;
+        img{
+          width:210px;
+        }
+      }
+      .title{
+        font-size: 12px;
+        padding:0 10px;
+        padding-top:10px;
+        line-height: 20px;
+
+      }
+      .price{
+        padding:0 10px;
+        padding-bottom: 10px;
+        em{
+          color:#db2400;
+          font-size: 18px;
+line-height: 30px;
+        }
+        .time{
+          font-size: 12px;
+          float: right;
+          line-height: 30px;
+          color:#666;
+        }
+      }
+    }
+    .more{
+      background:#fff url(../images/index/qiugou-more.png) no-repeat center center;
+      width:210px;
+      height:225px;
+    }
   }
   .form{
     margin-top:40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    .form-inner{
+      
+    }
     .form-item{
       margin-top:10px;
       label{
