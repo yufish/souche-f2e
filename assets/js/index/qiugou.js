@@ -235,11 +235,9 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     _bindBrandChange:function(){
       var self = this;
       $(brandSelect).on("select",function(e,data){
-        console.log(data)
         self._addSeries(data.key)
         //选中了某品牌
       }).on("unselect",function(e,data){
-        console.log(data)
         self._removeSeries(data.key)
         //取消选中某品牌，删除其所拥有的车系列表
       }).on("show",function(){
@@ -282,7 +280,6 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       });
     },
     _removeSeries:function(brandCode){
-      console.log($("#series_select .sc-select-list div[data-brandid="+brandCode+"]"))
       $("#series_select .sc-select-list div[data-brandid="+brandCode+"]").remove();
     }
   };
