@@ -36,14 +36,40 @@ Souche.Index = (function(){
 			})
 
 			//brand 出来，隐藏效果
-			$('#nav-item-brand').on('mouseover',function(){
+			
+			var showDelayT = 300;
+			var checkDisplayStatus = function(){
+				var brandTimer = setTimeout(function(){
+					var zIndex = (+$('#brand').css('z-index'))+1;
+					clearTimeout(brandTimer);
+					if(brandSelectActive == true){
+						$('#nav-item-brand').css({border:'1px solid #fc7000',
+																				'border-right':'1px solid #fff',
+																				'z-index':zIndex});
+						$('#brand').show().animate({width:'690px'},showDelayT);
+					}else{
+						$('#brand').animate({width:'0px'},showDelayT,function() {
+							$('#brand').hide();
+							$('#nav-item-brand').css({border:'1px solid #fff','z-index':0});
+						});
+					}
+				},showDelayT);
+			};
 
-			}).on('mouseout',function(){
+			var brandSelectActive = false;
+
+			$('#nav-item-brand,#brand').on('mouseenter',function(){
+				brandSelectActive=true;
+				checkDisplayStatus();
 				
-			})
+			}).on('mouseleave',function(){
+				brandSelectActive =false;
+				checkDisplayStatus();
+			});
+
+
 		}
-	};
-	
+	}
 })();
 
 define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){

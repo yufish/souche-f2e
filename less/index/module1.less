@@ -7,11 +7,15 @@
   width:228px;
   height: 488px;
   position: relative;
-  .brand{
+  #brand{
     position: absolute;
-    left:229px;
-    top:-1px;
-    width: 690px;
+    left:227px;
+    top:0px;
+    width: 0px;
+    display: none;
+    
+    height: 560px;
+    /*width: 690px;*/
     border: 1px solid @orange;
     z-index: 10000;
     background-color: #FFF;
@@ -23,6 +27,7 @@
       }
       .brand-text-wrap{
         overflow: hidden;
+        width:690px;
         .brand-text-left{
           margin-right: 25px;
           width: 360px;
@@ -65,9 +70,11 @@
       .brand-show-hd{
         font-weight: bold;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
       }
       .brand_show{
+          overflow: hidden;
+          height: 70px;
           li{
             float: left;
             color: #333;
@@ -79,7 +86,8 @@
               img{
                 display: block;
                 margin: 0 auto;
-                height: 40px;
+                height: 42px;
+                margin-bottom: 8px;
               }
               img:hover{
                 -webkit-transform: scale(1.2, 1.2);
@@ -103,6 +111,7 @@
     }
     #nav-item-brand{
       padding-top: 15px;
+      border: 1px solid #fff;
       .right-arrow{
         background-image: url(../images/index/right-arrow.png);
         right: 0px;
