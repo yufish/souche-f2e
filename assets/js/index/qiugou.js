@@ -249,7 +249,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         return;
       }
       $.ajax({
-        url:"/demo/yutou/index/series.json",//contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+        url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
         dataType:"json",
         data:{
           type:"car-subdivision",
