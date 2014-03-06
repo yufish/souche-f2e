@@ -34,6 +34,13 @@ Souche.Index = (function(){
 				// 	})
 				// }
 			})
+
+			//brand 出来，隐藏效果
+			$('#nav-item-brand').on('mouseover',function(){
+
+			}).on('mouseout',function(){
+				
+			})
 		}
 	};
 	

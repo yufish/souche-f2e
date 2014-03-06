@@ -6,80 +6,168 @@
   float:left;
   width:228px;
   height: 488px;
-  overflow: hidden;
+  position: relative;
+  .brand{
+    position: absolute;
+    left:229px;
+    top:-1px;
+    width: 690px;
+    border: 1px solid @orange;
+    z-index: 10000;
+    background-color: #FFF;
+    .inner{
+      padding: 15px 25px;
+      .brand-title{
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .brand-text-wrap{
+        overflow: hidden;
+        .brand-text-left{
+          margin-right: 25px;
+          width: 360px;
+          float: left;
+        }
+        .brand-text-right{
+
+        }
+
+        .bt-item{
+          line-height: 18px;
+          margin: 15px 0;
+          overflow: hidden;
+          .alpha {
+            font-size:14px;
+            color: @orange;
+            vertical-align: top;
+            float: left;
+          }
+          .details{
+            overflow: hidden;
+            font-size: 12px;
+            display: block;
+            a{
+              float: left;
+              margin-left: 20px;
+            }
+            a.hover{
+              color:@orange;
+            }
+          }
+        }
+      }
+
+      .hr{
+        clear:both;
+        background-color: @module1-ligth-gray;
+        margin: 5px 0 15px 0;
+      }
+      .brand-show-hd{
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .brand_show{
+          li{
+            float: left;
+            color: #333;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 12px;
+            a{
+              display: block;
+              img{
+                display: block;
+                margin: 0 auto;
+                height: 40px;
+              }
+              img:hover{
+                -webkit-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2); 
+              }
+            }
+          }
+      }
+      
+    }/*end of inner*/
+
+  }/*end of brand*/
+
   .inner{
-    padding:5px;
+    /*padding:15px 5px 0 10px ;*/
     overflow: hidden;
-  }
-  .nav-item{
-    padding:5px;
-    padding-bottom: 10px;
-    .right-arrow{
-      background-image: url(../images/index/right-arrow.png);
-      right: 0px;
-      top:0px;
-      position: absolute;
-      height: 20px;
-      width: 20px;
+    .nav-item{
+      padding: 0 5px 0 10px;
+      margin-bottom: 15px;
+      
     }
-  }
-  .nav-item-hd {
-    font-size:14px;
-    color:#333;
-    font-weight:bold;
-    position: relative;
-    width: 60px;
+    #nav-item-brand{
+      padding-top: 15px;
+      .right-arrow{
+        background-image: url(../images/index/right-arrow.png);
+        right: 0px;
+        top:15px;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+      }
+    }
+    .nav-item-hd {
+      font-size:14px;
+      color:#333;
+      font-weight:bold;
+      position: relative;
+      width: 60px;
+      i{
+        display: inline-block;
+        height:21px;
+        width: 19px;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      i.item1{
+        background-image:url(http://f2e.souche.com/assets/images/index/r-small.png);
+      }
+      i.item2{
+        background-image:url(http://f2e.souche.com/assets/images/index/m-small.png);
+      }
+      i.item3{
+        background-image:url(http://f2e.souche.com/assets/images/index/c-small.png);
+      }
+      i.item4{
+        background-image:url(http://f2e.souche.com/assets/images/index/t-small.png);
+      }
+      span{
+        position: absolute;
+        left:30px;
+        top: 0px;
+        display: block;
+        width:60px;
+      }
 
-    i{
-      display: inline-block;
-      height:21px;
-      width: 19px;
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-    i.item1{
-      background-image:url(http://f2e.souche.com/assets/images/index/r-small.png);
-    }
-    i.item2{
-      background-image:url(http://f2e.souche.com/assets/images/index/m-small.png);
-    }
-    i.item3{
-      background-image:url(http://f2e.souche.com/assets/images/index/c-small.png);
-    }
-    i.item4{
-      background-image:url(http://f2e.souche.com/assets/images/index/t-small.png);
-    }
-    span{
-      position: absolute;
-      left:30px;
-      top: 0px;
-      display: block;
-      width:60px;
-    }
-
-  }
-
-  .nav-item-bd{
-    padding:5px 10px 5px 30px;
-    a{
-      color:#666;
-      float:left;
-      font-size: 12px;
-      margin-right:11px;
-      margin-bottom:10px;
-      line-height: 14px;
     }
 
-    a:hover{color:@orange;}
+    .nav-item-bd{
+      padding:5px 10px 5px 30px;
+      a{
+        color:#666;
+        float:left;
+        font-size: 12px;
+        margin-right:11px;
+        margin-bottom:10px;
+        line-height: 14px;
+      }
 
-  }
+      a:hover{color:@orange;}
 
-  .hr{
-    border-bottom:1px solid @module1-ligth-gray;
-    width:98%;
+    }
+
+    .hr{
+      border-bottom:1px solid @module1-ligth-gray;
+      width:98%;
+    }
   }
 }
-
 .main-slider{
   margin-left:10px;
   float:left;
