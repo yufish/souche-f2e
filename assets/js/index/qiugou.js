@@ -128,7 +128,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         
       })
       $.ajax({
-        url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+        url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
         data:$("#qiugou-form").serialize(),
         success:function(data){
