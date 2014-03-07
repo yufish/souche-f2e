@@ -14,11 +14,13 @@
     .mod-main{
       width:920px;
       float:left;
+      display: inline;
     }
     .mod-side{
       width:260px;
       float:left;
       margin-left:10px;
+      display: inline;
     }
     .hd{
       font-size: 16px;
@@ -104,6 +106,7 @@
     }
     .other-navs{
       float: right;
+      display: inline;
       a{
         font-size:12px;
         padding:0 10px;
@@ -136,6 +139,8 @@
           height: 365px;
           background-color: #f7f7f7;
           float: left;
+          display: inline;
+          overflow: hidden;
           .nav-box{
             padding: 42px 34px;
             ul{
@@ -144,7 +149,7 @@
                 height: 83px;
                 padding-bottom: 20px;
                 a{
-                  display: block;
+                  display: inline-block;
                   width: 80px;
                   height: 80px;
                   float: left;
@@ -168,6 +173,12 @@
           width: 850px;
           height: 363px;
           float: left;
+          display: inline;
+          img{
+            width: 840px;
+            height: 363px;
+            display: inline;
+          }
         }
       }
       .dividing {
@@ -185,6 +196,7 @@
         .car-box{
           height: 265px;
           float: left;
+          display: inline;
           width: 292px;
           margin-left: 5px;
           a{cursor: pointer;}
@@ -196,9 +208,11 @@
         height: 1600px;
         .mod-main{
           width: 810px;
-          margin-right: 35px;
-          height: 1600px;
+          margin-right: 20px;
+          height: 1700px;
           float: left;
+          display: inline;
+          overflow: hidden;
           .favorite{
             height: 455px;
             border-bottom: 1px dashed #c0c0c0;
@@ -266,14 +280,17 @@
               .summary-box{
                 height: 252px;
                 padding-bottom: 10px;
+
                 .summary-text{
                   width: 427px;
                   height: 252px;
                   float: left;
+                  display: inline;
                   .text-box{
-                    width: 295px;
+                    width: 285px;
                     height: 190px;
                     float: right;
+                    display: inline;
                     padding:20px; 
                     a{
                       cursor: pointer;
@@ -286,17 +303,18 @@
                 .bg1{background: url(../images/girl/summary1.png);}
                 .bg2{background: url(../images/girl/summary2.png);}
                .car-box{
-                  width: 378px;
+                  width: 370px;
                   height: 252px;
                   float: left;
                   margin-left: 5px;
+                  display: inline;
                   a{
                     cursor: pointer;
                     img{width: 374px;height: 252px;}
                   }
                  .title-image{
                   background: url(../images/girl/summary-title.png);
-                  width: 385px;
+                  width: 374px;
                   height: 37px;
                   position: relative;
                   top: -41px;
@@ -493,7 +511,7 @@
         float:left;
         width:380px;
         padding-left:70px;
-        
+        display: inline;
       }
       .t{
         font-size: 16px;

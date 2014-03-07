@@ -83,23 +83,41 @@ var Index =(function(){
     init:function(){
       var basepath = 'http://f2e.souche.com/assets/images/girl/';
       var starMap=[
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png',
-        'star-cn.png'
+        'star-1.png',
+        'star-2.png',
+        'star-3.png',
+        'star-4.png',
+        'star-5.png',
+        'star-6.png',
+        'star-7.png',
+        'star-8.png',
+        'star-9.png',
+        'star-10.png',
+        'star-11.png',
+        'star-12.png'
+      ]
+
+      var imgHref=[
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-53&carPrice=0-100000000&carSeries=series-393&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-135&carPrice=0-100000000&carSeries=series-156&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-10",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-41&carPrice=0-100000000&carSeries=series-946&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-49&carPrice=0-100000000&carSeries=series-339&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-121&carPrice=0-100000000&carSeries=series-341&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-41&carPrice=0-100000000&carSeries=series-596&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-15&carPrice=0-100000000&carSeries=series-2011&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-126&carPrice=0-100000000&carSeries=series-2015&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-146&carPrice=0-100000000&carSeries=series-118&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-108&carPrice=0-100000000&carSeries=series-865&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose",
+"http://souche.com/pages/onsale/sale_car_list.html?carBrand=brand-97&carPrice=0-100000000&carSeries=series-382&carModel=&carMileage=0&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose"
       ]
 
       $('.star .starli').each(function(index,el){
-        $(this).click(function(){
-          $('.star .detail img').attr('src',basepath+starMap[index]);
+        $(this).click(function(e){
+
+          $('.star-box .detail img').attr('src',basepath+starMap[index]);
+          $('.detail a').attr('href',imgHref[index]);
+          e.preventDefault();
         })
       })
 
@@ -110,6 +128,7 @@ var Index =(function(){
       });
 
 
+     
     }
   }
 })();
