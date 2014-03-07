@@ -91,6 +91,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         e.preventDefault();
         Souche.MiniLogin.checkLogin(function(){
           $(".qiugou .go-login").addClass("hidden")
+          window.location.href=window.location.href+"#qiugou-cur";
         })
       })
       $("#qiugou-phone-form").on("submit",function(e){
@@ -107,12 +108,20 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
 
       //自动开始提交
       if(config.has_qiugou){
-        self._submit();
+        
+        var hasSubmit = false;
+        $(window).on("scroll",function(e){
+          if(hasSubmit) return;
+          if($(window).scrollTop()+$(window).height()>$(".qiugou .submit").offset().top){
+            self._submit();
+            hasSubmit = true;
+          }
+        });
       }
+
     },
     _submit:function(){
       var self = this;
-
       $(".qiugou .person-bg").animate({
         backgroundPosition:0
       },800,'easeOutExpo',function(){
