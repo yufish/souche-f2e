@@ -1,12 +1,21 @@
 
-Souche.Index = (function(){
+
+
+define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){
+	
+	$('.down-counter').each(function(){
+		var $this = $(this);
+		downCounter($this);
+	});
+	Souche.Index = (function(){
 	var config = {
-		
+		has_qiugou:false
 	};
 	
 	return {
 		init:function(_config){
 			$.extend(config,_config);
+			QiuGou.init(config);
 			//sidebar自动顶住
 			var contentTop = $("#content").offset().top;
 			var contentHeight = $("#content").height();
@@ -150,13 +159,6 @@ Souche.Index = (function(){
 		}
 	}
 })();
-
-define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){
-	QiuGou.init();
-	$('.down-counter').each(function(){
-		var $this = $(this);
-		downCounter($this);
-	});
 	return Souche.Index;
 });
 
