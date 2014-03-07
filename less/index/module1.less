@@ -7,6 +7,7 @@
   width:228px;
   height: 488px;
   position: relative;
+  z-index: 10;
   #brand{
     position: absolute;
     left:227px;
@@ -33,6 +34,8 @@
           margin-right: 25px;
           width: 360px;
           float: left;
+          display:inline;
+
         }
         .brand-text-right{
 
@@ -47,6 +50,7 @@
             color: @orange;
             vertical-align: top;
             float: left;
+            display:inline;
           }
           .details{
             overflow: hidden;
@@ -54,6 +58,7 @@
             display: block;
             a{
               float: left;
+              display:inline;
               margin-left: 20px;
             }
             a.hover{
@@ -78,6 +83,7 @@
           height: 70px;
           li{
             float: left;
+            display:inline;
             color: #333;
             font-size: 14px;
             text-align: center;
@@ -167,9 +173,7 @@
         margin-bottom:10px;
         line-height: 14px;
       }
-
       a:hover{color:@orange;}
-
     }
 
     .hr{
@@ -183,6 +187,8 @@
   float:left;
   overflow: hidden;
   width: 678px;
+  position: relative;
+  z-index:9;
   border:1px solid @module1-ligth-gray;
   .flexslider{overflow:hidden;width:100%;height:340px;position:relative;z-index:10;}
   .flexslider .slides li{background-position:center top;background-repeat:no-repeat;}
@@ -190,8 +196,8 @@
   .flexslider .flex-direction-nav{display:none;}
   .flexslider .flex-viewport a{display:block;width:400px;margin:0 auto;height:340px;}
   .flex-control-nav{position:absolute;bottom:10px;width:400px;text-align:center;margin-left:-200px;left:50%;}
-  .flex-control-nav li{display:inline-block;}
-  .flex-control-nav a{overflow: hidden;text-indent:1000px;float:left;width:12px;height:12px;line-height:12px;text-align:center;color:#fff;background-color:#666;margin-right:12px;cursor:pointer;border-radius:50%;}
+  .flex-control-nav li{display:inline-block;_float:left;}
+  .flex-control-nav a{overflow: hidden;text-indent:1000px;float:left;display:inline;width:12px;height:12px;line-height:12px;text-align:center;color:#fff;background-color:#666;margin-right:12px;cursor:pointer;border-radius:50%;}
   .flex-control-nav a:hover{background-color:#e70;}
   .flex-control-nav .flex-active{background-color:#e70;}
   .performance{
@@ -200,6 +206,7 @@
 
     .per-item{
       float: left;
+      display:inline;
       border-right: 1px solid  @module1-ligth-gray;
       a {display: block;width: 225px;height: 147px;cursor: pointer;
         img{width: 225px;height: 147px;}
@@ -212,7 +219,7 @@
 }
 
 .mod-side{
-  
+  overflow:hidden;
   .service{
     background-color:#f5f5f5;
     height: 278px;

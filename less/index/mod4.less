@@ -1,5 +1,6 @@
 .whybuy{
-  width: 920px;
+  width: 918px;
+  overflow:hidden;
   border: 1px solid #e6e6e6;
   .hd{height: 45px;
   }
@@ -27,6 +28,7 @@
         width: 210px;
         height: 260px;
         float: left;
+        display: inline;
         padding-left: 10px;
         .car-image{
           display:block;height:140px;width: 210px;
@@ -40,11 +42,13 @@
           a{font-size: 12px;cursor: pointer;}
         }
         .car-prices{
+          height:20px;
+          overflow: hidden;
           font-size: 18px;color: #db2400;padding-top: 10px;
-          i{display: block;font-size: 12px;color: #666;font-style: normal;float: right;line-height: 30px;}
+          i{display: block;font-size: 12px;color: #666;font-style: normal;float: right;line-height: 30px;_margin-top:-30px;}
         }
         .cai-tag{
-          height:20px;padding-top: 23px;
+          height:20px;padding-top: 18px;
           i{display: block;font-size: 12px;color: #444;background-color: #ececec;float: left;margin-right: 10px;border-left: 10px solid #ececec;border-right: 10px solid #ececec;font-style: normal;line-height: 18px;}
         }
       }
@@ -53,6 +57,7 @@
         height: 260px;
         background-color: #333;
         float: left;
+         display: inline;
         position: relative;
         overflow: hidden;
         .morecar{
@@ -85,6 +90,8 @@
 }
 .hotsell{
   height: 485px;
+  width:258px;
+  overflow: hidden;
   border: 1px solid #e6e6e6;
   .hd{
     height: 45px;
@@ -112,12 +119,12 @@
             a{cursor: pointer;font-size: 14px;color: #444;font-style: normal;}
             a:hover{color: @orange;}
            }
-           a{display: block;float: right;color: #959595;font-size: 12px;line-height: 25px;cursor: pointer;}
+           a{text-align:right;display:block;color: #959595;font-size: 12px;line-height: 25px;cursor: pointer;}
            a:hover{color: @orange;}
          }
         }
         .kempcar{
-          .triangle{width: 10px;height: 7px;background:url(../images/index/triangle.png);position: relative;top: -7px;left: 15px;}
+          .triangle{width: 10px;height: 7px;font-size:0;line-height:0;background:url(../images/index/triangle.png);position: relative;top: -7px;left: 15px;}
           .car-list{
             span{background: url(../images/index/kempcar.png);position: relative;left: -5px;}
           }
