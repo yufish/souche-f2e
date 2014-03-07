@@ -36,7 +36,6 @@ Souche.Index = (function(){
 			})
 
 			//brand 出来，隐藏效果
-			
 			var showDelayT = 300;
 			var checkDisplayStatus = function(){
 				var brandTimer = setTimeout(function(){
@@ -67,6 +66,66 @@ Souche.Index = (function(){
 				checkDisplayStatus();
 			});
 
+			//carlife effect
+			var $clItems = $('.carlife-item');
+			var clIndex = 0
+				,clLength = $clItems.size()
+				,clAnimateStop =false;
+			var height = $clItems.height();
+			var clAnimation = function(){
+					if(clAnimateStop) return;
+					$clItems.each(function(index,ele){
+						if(index===clIndex){	
+							$('.front',ele).animate({'top':-height});
+							$('.back',ele).animate({'top':-height});
+							//$(this).animate({top:-height});
+						}else{						
+							$('.front',ele).animate({'top':0});
+							$('.back',ele).animate({'top':0});
+							//$(this).animate({top:0});
+						}
+					});
+					if(clIndex==clLength-1){clIndex=0;}
+					else{clIndex++;}
+			}
+			setInterval(clAnimation,3000);
+			
+
+
+			$('.carlife .bd').on('mouseenter','.carlife-item',function(e){
+				clAnimateStop=true;
+				var target = e.currentTarget;
+				$clItems.each(function(index,ele){
+					if(ele !=target ){
+						$('.front',ele).stop(true,true).animate({'top':0});
+						$('.back',ele).stop(true,true).animate({'top':0});
+					}else{
+						$('.front',ele).css({'top':-height});
+						$('.back',ele).css({'top':-height});
+					}
+				})
+			}).on('mouseleave','.carlife-item',function(e){
+				//$clItems.css({top:0});
+				clAnimateStop = false;
+			});
+			
+			/*$clItems.on('mouseenter',function(e){
+				//clAnimateStop = true;
+				var self =this;
+				$clItems.each(function(index,ele){
+					if(ele !=self ){
+						$('.front',ele).stop(true,true).animate({'top':0});
+						$('.back',ele).stop(true,true).animate({'top':0});
+					}else{
+						$('.front',ele).css({'top':-height});
+						$('.back',ele).css({'top':-height});
+					}
+				})
+				e.stopPropagation();
+			}).on('mouseleave',function(e){
+				//$clItems.css({top:0});
+				//clAnimateStop = false;
+			});*/
 
 		}
 	}

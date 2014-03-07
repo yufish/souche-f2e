@@ -4,50 +4,105 @@
       border: 1px solid #e6e6e6;
       overflow: hidden;
       .carlife-item{
+        display: block;
         margin:20px 0 20px 20px; 
         width: 370px;
-        height:140px;
+        height:130px;
         float: left;
-        i{
-          float: left;
-          height: 140px;
-          width: 140px;
+        overflow: hidden;
+
+        .front{
+          position: relative;
           overflow: hidden;
-        }
-        
-        .person{
-          float: left;
-          width:230px;
-          height: 140px;
           background-color: #f5f5f5;
-          .title{
-            margin: 18px 0 18px 18px; 
-            position: relative;
-            color: #333;
-            font-size: 14px;
-            font-weight: bold;
-            .name{
-              padding: 2px 15px;
-              position: absolute;
-              font-weight: normal;
-              font-size: 12px;
-              color: #fff;
-              right: -2px;
-              top:-3px;
-              background-color: #797979;
-            }
+          i{
+            float: left;
+            height: 130px;
+            width: 130px;
+            overflow: hidden;
           }
-          .info{
-            span{
+          .person{
+            float: left;
+            width:230px;
+            height: 130px;
+            .title{
+              margin: 18px 0 10px 18px; 
+              position: relative;
+              color: #333;
+              font-size: 14px;
+              font-weight: bold;  
+            }
+            .name{
+              padding: 0 0 10px 20px;
               font-size:12px;
               color: #666;
-              margin-right: 10px;
               line-height: 20px;
             }
-            padding: 0 20px 0 20px;
+            .info{
+              overflow: hidden;
+              color: #666;
+              padding: 0 10px 0 20px;
+              span{
+                font-size:12px;
+                margin-right: 10px;
+                line-height: 20px;
+                float: left;
+              }
+              
+            }
+          }
+        }//end of content
+        .back{
+          z-index: 10;
+          overflow: hidden;
+          background-color: @orange;
+          color: #fff;
+          position: relative;
+          i{
+            float: left;
+            height: 130px;
+            width: 130px;
+            overflow: hidden;
+          }
+          .person{
+            float: left;
+            width:230px;
+            height: 130px;
+            position: relative;
+            .title{
+              margin: 18px 0 10px 18px; 
+              position: relative;
+              font-size: 14px;
+              font-weight: bold;  
+            }
+            .info{
+
+              overflow: hidden;
+              padding: 0 10px 0 20px;
+              span{
+                font-size:12px;
+                margin-right: 10px;
+                line-height: 20px;
+                float: left;
+              }
+              
+            }
+            
+            .look{
+              position: absolute;
+              right: 40px;
+              bottom: 20px;
+              span{
+                height: 15px;
+                width: 15px;
+                background-image:url(../images/index/to-look.png); 
+                display: inline-block;
+                margin-left: 10px;
+              }
+            }
           }
         }
-      }
+      }/*end of carlife-item*/
       .carlife-item.upper{
         margin-bottom: 0;
       }
