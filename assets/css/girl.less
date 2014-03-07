@@ -220,9 +220,11 @@
                 .car-image{
                   float: left;
                   margin-top: 20px;
+                  a{cursor: pointer;}
                   .title-image{
                     width: 519px;height: 37px;background: url(../images/index/title-image.png);position: relative;top: -41px;
-                    .title{font-size: 13px;color: #fff;float: right;line-height: 27px;margin-right: 20px;}
+                    .title{font-size: 13px;color: #fff;float: right;line-height: 27px;margin-right: 20px;cursor: pointer;}
+                    .title:hover{color: #ff3366; }
                   }
                 }
                 .car-tips{
@@ -236,23 +238,104 @@
                     .tips-image{
                       float: right;
                       background: url(../images/index/tips-image.png);
+                      width: 232px;
+                      height: 147px;
                       .tips-qq{
-                      position: relative;font-size: 12px;color: #fc4f7a;
+                      position: relative;font-size: 12px;color: #fc4f7a;top: 124px;left: 53px;cursor: pointer;
                       }
                     }
                     
                    }
-                   .text-box{}
+                   .text-box{
+                    h1{font-size: 13px;color: #000;padding-top: 10px;line-height: 30px;}
+                    p{font-size: 12px;color: #666;}
+                   }
                 }
               }
             }
+          }
+          .empirical{
+            height: 620px;
+            margin-top: 20px;
+            .hd{
+              height:80px; 
+              .hd-image{height: 34px;width: 327px;background: url(../images/index/empirical-hd.png);position: relative;top:15px;}
+            }
+            .empirical-box{
+              height: 252px;
+              .summary-box{
+                height: 252px;
+                padding-bottom: 10px;
+                .summary-text{
+                  width: 427px;
+                  height: 252px;
+                  float: left;
+                  .text-box{
+                    width: 295px;
+                    height: 190px;
+                    float: right;
+                    padding:20px; 
+                    a{
+                      cursor: pointer;
+                      h1{color: #ff3366;font-size: 14px;text-align: right;line-height: 30px;border-bottom:1px dashed #c0c0c0; }
+                    }
+                    p{color: #666;font-size: 12px;line-height: 25px;border-bottom:1px dashed #c0c0c0;text-decoration-line:underline;padding: 10px 0;}
+                    i{display: block;font-style: normal;color: #666;font-size: 13px;text-align: right;line-height: 20px;padding: 5px 0;}
+                  }
+                }
+                .bg1{background: url(../images/index/summary1.png);}
+                .bg2{background: url(../images/index/summary2.png);}
+               .car-box{
+                  width: 378px;
+                  height: 252px;
+                  float: left;
+                  margin-left: 5px;
+                  a{
+                    cursor: pointer;
+                    img{width: 374px;height: 252px;}
+                  }
+                 .title-image{
+                  background: url(../images/index/summary-title.png);
+                  width: 385px;
+                  height: 37px;
+                  position: relative;
+                  top: -41px;
+                  
+                  a{
+                    cursor: pointer;
+                    font-size: 13px;color: #fff;float: right;padding-right: 18px;line-height: 28px;
+                  }
+                  a:hover{color:#ff3366; }
+                }
+               }
+              }
+            }
+          }
+          .starcar{
+            height: 420px;
+            padding-top: 20px;
+            .hd{
+              height:80px;
+              .hd-image{height: 34px;width: 317px;background: url(../images/index/star-hd.png);position: relative;top:15px;}
+            }
+           @import '../../less/girl/star.less';
           }
         }
         .mod-side{
           width: 345px;
           height: 1600px;
-          background-color: #333;
           float: left;
+          .timebuy{
+            height: 410px;
+            .hd{background: url(../images/index/timebuy-hd.png);width: 346px;height: 38px;}
+            .timebuybox{
+              height: 272px;
+              .timebuycar{
+                width: 328px;float: right;background-color: #ededed;
+                h1{font-size: 17px;color: #050505;}
+              }
+            }
+          }
         }
       }
    }
