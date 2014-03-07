@@ -17,8 +17,12 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
   }
   var qiugouData = null;
   var phoneReg = /^1[3458][0-9]{9}$/;
+  var config = {
+
+  }
   return {
-    init:function(){
+    init:function(_config){
+      $.extend(config,_config);
       var self = this;
       brandSelect = new CustomSelect("brand_select",{
         placeholder:"请选择品牌，可多选"
@@ -99,7 +103,12 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           })
           
         }
-      })
+      });
+
+      //自动开始提交
+      if(config.has_qiugou){
+        self._submit();
+      }
     },
     _submit:function(){
       var self = this;
