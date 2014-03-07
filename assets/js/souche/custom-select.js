@@ -47,7 +47,9 @@ Souche.UI.CustomSelect = function(){
       Souche.Util.mixin(this.config,_config);
 
       this._defaultHeadHeight = $(".sc-select-hd").height();
-      
+      $(".sc-selected-item",self.ele).each(function(i,v){
+        self.selected.push({key:$(v).attr("data-value"),value:$(v).text().replace("x","")})
+      })
       
       $(document.body).on("click",function(){
         self.hideOptions();

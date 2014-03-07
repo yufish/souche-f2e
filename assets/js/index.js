@@ -36,7 +36,8 @@ Souche.Index = (function(){
 			})
 
 			//brand 出来，隐藏效果
-			var showDelayT = 300;
+
+			var showDelayT = 200;
 			var checkDisplayStatus = function(){
 				var brandTimer = setTimeout(function(){
 					var zIndex = (+$('#brand').css('z-index'))+1;
@@ -45,9 +46,9 @@ Souche.Index = (function(){
 						$('#nav-item-brand').css({border:'1px solid #fc7000',
 																				'border-right':'1px solid #fff',
 																				'z-index':zIndex});
-						$('#brand').show().animate({width:'690px'},showDelayT);
+						$('#brand').show().animate({width:'690px',avoidTransforms:true},showDelayT);
 					}else{
-						$('#brand').animate({width:'0px'},showDelayT,function() {
+						$('#brand').animate({width:'0px',avoidTransforms:true},showDelayT,function() {
 							$('#brand').hide();
 							$('#nav-item-brand').css({border:'1px solid #fff','z-index':0});
 						});
@@ -65,6 +66,7 @@ Souche.Index = (function(){
 				brandSelectActive =false;
 				checkDisplayStatus();
 			});
+
 
 			//carlife effect
 			var $clItems = $('.carlife-item');
@@ -127,6 +129,40 @@ Souche.Index = (function(){
 				//clAnimateStop = false;
 			});*/
 
+			  var phoneReg = /^1[3458][0-9]{9}$/;
+			var submitToPhone = function(){
+				$.ajax({
+					url:contextPath+"/pages/saleDetailAction/sendAddressToPhone.json",
+					data:{},
+					type:"post",
+					success:function(data){
+							$(".wrapGrayBg").show();
+							$("#address-popup").addClass("hidden")
+							$("#address-result-popup").removeClass('hidden');
+					}
+				})
+			}
+			$("#address-form").on("submit",function(e){
+				e.preventDefault();
+				if(!phoneReg.test($("#address-phone").val())){
+					$(".warning",this).removeClass("hidden");
+				}else{
+					Souche.PhoneRegister($("#address-phone").val(),function(){
+						submitToPhone();
+					})
+					
+				}
+			})
+			$(".sendadd").click(function(){
+				Souche.checkPhoneExist(function(is_login){
+					if(is_login){
+						submitToPhone();
+					}else{
+						$("#address-popup").removeClass("hidden")
+						$(".wrapGrayBg").show();
+					}
+				})
+			})
 		}
 	}
 })();

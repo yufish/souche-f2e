@@ -307,6 +307,11 @@ border-radius: 3px;
   line-height: 40px;
   letter-spacing: 3px;
 }
+.popup-result {
+  height:220px;
+}
+.popup-result .result_p ins{color:#111;font-size:20px;line-height: 44px;}
+.popup-result .result_p i{font-size:16px;color:#ff4301;font-style: normal;font-weight: bold;}
 .wrapGrayBg {
 height: 100%;
 width: 100%;
