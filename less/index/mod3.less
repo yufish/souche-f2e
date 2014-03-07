@@ -14,42 +14,58 @@
     a:hover{color:@orange;}
   }
   .timebuy-wrap{
-    height: 255px;
+    width: 918px;
+    overflow: hidden;
     border: 1px solid #e6e6e6;
     .timebuy-box{
-      width: 880px;
-      height: 215px;
-      padding: 20px 10px 20px 24px;
+      width: 920px;
+      height: 270px;
+      
       .timebuy-list{
-        width: 210px;
+        width: 209px;
         float: left;
-        padding-right: 10px;
+        padding: 10px;
+        padding-bottom: 5px;
+        border-right:1px solid #e6e6e6;
+        height: 255px;
+        .timebuy-inner{
+          
+        }
         .car-image{
         display:block;height:140px;width: 210px;overflow: hidden;
+          img{
+            width:210px;
+          }
         }
         .down-counter{
-         font-size: 12px;color: #333;height: 20px;background-color: #f9f9f9;line-height: 25px;text-align:center;
+          margin-top: 10px;
+          border-top: 1px solid #e6e6e6;
+         font-size: 12px;color: #333;height: 20px;line-height: 25px;text-align:center;
+         padding-top:5px;
          span{
            line-height: 12px;
-           ins{background-color: #333;color: #fff;padding:0 2px;font-size: 11px;line-height: 11px;}
+           ins{color:@orange;padding:0 2px;font-size: 11px;line-height: 11px;}
          }
        }
         .timebuy-price{ 
           height: 40px;
-          padding-top: 10px;
           .price-down{
-            width: 80px;
-            height: 40px;
+            background: url(../images/index/zhijiang.png) no-repeat;
+            width: 40px;
+            height: 35px;
             float: left;
+            padding-top: 40px;
+            margin-left:10px;
             background-color: #f55c00;
             i{color: #fff;font-size: 14px;text-align: center;line-height: 20px;font-family: 'Microsoft YaHei',Tahoma,Verdana;font-style: normal;display: block; }
           }
           .car-price{
-            width: 120px;
+            width: 140px;
             height: 40px;
             padding-left: 10px;
             float: left;
-            a{display:block;font-size: 15px;color: #444;font-family: 'Microsoft YaHei',Tahoma,Verdana;font-weight: bold;line-height: 20px;}
+            padding-top:5px;
+            a{margin-bottom:5px;height:40px;overflow:hidden;display:block;font-size: 12px;color: #444;font-family: 'Microsoft YaHei',Tahoma,Verdana;line-height: 20px;}
             a:hover{color: @orange}
             .price-now{font-size: 20px;color: #db2400;font-family: 'Arial',Tahoma,Verdana;float: left;}
             .price-old{font-size: 13px;color: #999;font-family: Tahoma,Verdana;line-height: 30px;text-decoration:line-through;float: left;margin-left: 8px;}
@@ -64,7 +80,7 @@
   h2{line-height: 55px;font-size: 16px;color: #333; }
 }
 .starbuy{
-  height: 345px;
+  height: 315px;
   border: 1px solid #e6e6e6;
   
   .hd{height: 45px;
@@ -75,12 +91,12 @@
     width: 210px;
     padding: 0 25px 0 25px;
     .starbuy-star{
-      height: 72px;
+      height: 52px;
       margin: 0px auto;
       margin-bottom: 10px;
       .star-image{
-        width: 72px;height: 72px;float: left;
-        img{width: 72px;height: 72px;border-radius: 72px;}
+        width: 50px;height: 50px;float: left;overflow: hidden;
+        img{width: 50px;height: 50px;}
       }
       .star{
         width: 132px;
@@ -92,8 +108,8 @@
           color: #444;
           line-height: 20px;
           float: left; 
-          padding-top: 15px;
-          i{font-size: 12px;color: #444;font-weight: bold;font-style: normal;}
+          padding-top: 5px;
+          i{font-size: 12px;color: #111;font-weight: bold;padding-left:5px;font-style: normal;}
         }
         .star-post{float: left;font-size: 12px;color: #bb8d6f;line-height: 20px;}
       }

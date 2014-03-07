@@ -109,7 +109,6 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
 
       //自动开始提交
       if(config.has_qiugou){
-        
         var hasSubmit = false;
         $(window).on("scroll",function(e){
           if(hasSubmit) return;
@@ -129,7 +128,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         
       })
       $.ajax({
-        url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+        url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
         data:$("#qiugou-form").serialize(),
         success:function(data){
