@@ -84,6 +84,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           }
         })
       })
+      $("#qiugou_redo").addClass("hidden")
       $("#qiugou_redo").on("click",function(e){
         self._redo();
       })
@@ -164,6 +165,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       },800)
     },
     _hideForm:function(){
+      $("#qiugou_redo").removeClass("hidden")
       if(qiugouData&&qiugouData.items&&qiugouData.items.length){
         $(".qiugou .form").css({
           height:$(".qiugou .form").height(),
@@ -248,7 +250,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         })
       },1000)
       $(".qiugou .head .head-inner").animate({marginTop:0},300)
-     
+      $("#qiugou_redo").addClass("hidden")
     },
     _bindBrandChange:function(){
       var self = this;
