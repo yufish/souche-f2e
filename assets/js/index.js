@@ -66,8 +66,40 @@ Souche.Index = (function(){
 				brandSelectActive =false;
 				checkDisplayStatus();
 			});
-
-
+			  var phoneReg = /^1[3458][0-9]{9}$/;
+			var submitToPhone = function(){
+				$.ajax({
+					url:contextPath+"/pages/saleDetailAction/sendAddressToPhone.json",
+					data:{},
+					type:"post",
+					success:function(data){
+							$(".wrapGrayBg").show();
+							$("#address-popup").addClass("hidden")
+							$("#address-result-popup").removeClass('hidden');
+					}
+				})
+			}
+			$("#address-form").on("submit",function(e){
+				e.preventDefault();
+				if(!phoneReg.test($("#address-phone").val())){
+					$(".warning",this).removeClass("hidden");
+				}else{
+					Souche.PhoneRegister($("#address-phone").val(),function(){
+						submitToPhone();
+					})
+					
+				}
+			})
+			$(".sendadd").click(function(){
+				Souche.checkPhoneExist(function(is_login){
+					if(is_login){
+						submitToPhone();
+					}else{
+						$("#address-popup").removeClass("hidden")
+						$(".wrapGrayBg").show();
+					}
+				})
+			})
 		}
 	}
 })();

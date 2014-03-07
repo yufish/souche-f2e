@@ -108,6 +108,30 @@ html
       <button type="submit" class="submit">确认</button>
       </form>
     |<div class="wrapGrayBg" style="opacity: 0.7; display: none;"></div>
+    #address-popup.apply_popup.hidden.
+      <span class="apply_close"></span>
+      <h1 class="popup-title">发送到手机</h1>
+      <form id="address-form" action="">
+      <div class="result_p">
+        <div class="tip">输入手机号码，即可发送</div>
+        <div class="yuyue-con">
+            <label>手机号码</label>
+            <input type="text" name="" value="" id="address-phone" placeholder="在此输入手机号码"/>
+            <s class="warning hidden">请输入正确的手机号码</s>
+        </div>
+      </div>
+      <button type="submit" class="submit">确认</button>
+      </form>
+    .apply_popup.popup-result#address-result-popup.hidden.
+      <span class="apply_close"></span>
+      <h1 class="popup-title">发送到手机</h1>
+      <div class="result_p">
+        <span class="buy_success"></span>
+        <p> 
+          <ins>发送成功</ins>
+        </p>
+      </div>
+
 
 
   script.
