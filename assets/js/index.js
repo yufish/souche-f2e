@@ -93,43 +93,27 @@ Souche.Index = (function(){
 			setInterval(clAnimation,3000);
 			
 
-
-			$('.carlife .bd').on('mouseenter','.carlife-item',function(e){
-				clAnimateStop=true;
-				var target = e.currentTarget;
-				$clItems.each(function(index,ele){
-					if(ele !=target ){
-						$('.front',ele).stop(true,true).animate({'top':0});
-						$('.back',ele).stop(true,true).animate({'top':0});
-					}else{
-						$('.front',ele).css({'top':-height});
-						$('.back',ele).css({'top':-height});
-					}
-				})
-			}).on('mouseleave','.carlife-item',function(e){
-				//$clItems.css({top:0});
-				clAnimateStop = false;
-			});
 			
-			/*$clItems.on('mouseenter',function(e){
-				//clAnimateStop = true;
+			
+			$clItems.on('mouseenter',function(e){
+				clAnimateStop = true;
 				var self =this;
 				$clItems.each(function(index,ele){
 					if(ele !=self ){
 						$('.front',ele).stop(true,true).animate({'top':0});
 						$('.back',ele).stop(true,true).animate({'top':0});
 					}else{
-						$('.front',ele).css({'top':-height});
-						$('.back',ele).css({'top':-height});
+						$('.front',ele).animate({'top':-height});
+						$('.back',ele).animate({'top':-height});
 					}
 				})
 				e.stopPropagation();
 			}).on('mouseleave',function(e){
 				//$clItems.css({top:0});
-				//clAnimateStop = false;
-			});*/
+				clAnimateStop = false;
+			});
 
-			  var phoneReg = /^1[3458][0-9]{9}$/;
+			var phoneReg = /^1[3458][0-9]{9}$/;
 			var submitToPhone = function(){
 				$.ajax({
 					url:contextPath+"/pages/saleDetailAction/sendAddressToPhone.json",
