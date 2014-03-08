@@ -142,10 +142,10 @@
           display: inline;
           overflow: hidden;
           .nav-box{
-            padding: 42px 34px;
+            padding: 26px 10px;
             ul{
               li{
-                width: 305px;
+                width: 334px;
                 height: 83px;
                 padding-bottom: 20px;
                 a{
@@ -154,6 +154,7 @@
                   height: 80px;
                   float: left;
                   border-radius: 80px;
+                  border: 6px solid #F7F7F7;
                   margin-right: 15px;
                   cursor: pointer;
                   i{font-size: 14px;color: #fff;font-style: normal;display: block;margin-top: 30px;text-align: center;font-weight: bold;}
@@ -163,6 +164,7 @@
                   height: 96px;
                   background: url(../images/girl/nav-but.png);
                   margin-right: 12px;
+                  border: none;
                   i{font-size: 16px;color: #fce76f; width: 70px;margin-top: 38px;padding-left: 12px;}
                 }
               }
@@ -197,9 +199,18 @@
           height: 265px;
           float: left;
           display: inline;
-          width: 292px;
+          width: 290px;
           margin-left: 5px;
-          a{cursor: pointer;}
+          border: 1px solid transparent;
+          a{
+            display: block;
+            height: 182px;
+            img{
+              width: 290px;
+              height: 182px;
+            }
+          }
+          img{width: 290px;}
           .car-text {font-size: 12px;color: #666;text-align: center;line-height: 22px;display: block;}
         }
         .car-box:hover{border: 1px solid #ff3366;}
@@ -440,7 +451,7 @@
                 margin: 0 auto;
                 padding-top: 20px;
                 width: 255px;
-                .story-image{display: block;background: url(../images/girl/story-image.png);width: 249px;height: 164px;cursor: pointer;}
+                .story-image{display: block;background: url(../images/girl/story-image.png);width: 249px;height: 164px;}
                 .story-title{
                   height: 45px;background-color: #fff;width: 249px;
                   p{font-size: 14px;color: #ff3b69;padding: 3px;margin: 0 auto; }
@@ -455,7 +466,7 @@
             }
           }
         .date{
-          height: 403px;
+          height: 300px;
           .hd{background: url(../images/girl/date-hd.png);width: 345px;height: 37px;}
           .date-box{
             width: 328px;float: right;background-color: #ededed;height: 235px;
@@ -478,6 +489,11 @@
     }
     .friendlinks{
       text-align: center;
+      margin-bottom: 15px;
+      .wrapper{
+      width:1190px;
+      margin:0 auto;
+      
       a{
         font-size:12px;
         color:#333;
@@ -487,8 +503,8 @@
       a.last{
         border:none;
       }
-      margin-bottom: 15px;
     }
+  }
     .footer-content{
       background: #f5f5f5;
       border-top:1px solid #e6e6e6;
