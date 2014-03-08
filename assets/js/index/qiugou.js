@@ -133,8 +133,8 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         data:$("#qiugou-form").serialize(),
         success:function(data){
           qiugouData = data;
-          $("#qiugou_count").html(data.total)
-          if(!data.total){
+          $("#qiugou_count").html(data.totalNumber)
+          if(!data.totalNumber){
             $(".qiugou .submit").html("重新定制")
             $(".qiugou .person-bg").animate({
               backgroundPosition:-402
