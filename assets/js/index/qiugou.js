@@ -30,7 +30,6 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       seriesSelect = new CustomSelect("series_select",{
         placeholder:"请选择车系，可多选"
       });
-      
       ageSelect = new CustomSelect("age_select",{
         placeholder:"请选择",
         multi:false
@@ -75,6 +74,12 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       });
       $("#qiugou-form").on("submit",function(e){
           e.preventDefault();
+          if(!$("#brand_select .selected_values").val()
+            &&!$("#series_select .selected_values").val()
+            &&!$("#age_select .selected_values").val()
+            &&!$("#model_select .selected_values").val()){
+
+          }
           Souche.checkPhoneExist(function(isLogin){
           if(isLogin){
             self._submit();
@@ -253,11 +258,19 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     },
     _bindBrandChange:function(){
       var self = this;
+      if(brandSelect.selected.length==0||seriesSelect.selected.length==0){
+        seriesSelect.disable("请先选择品牌")
+      }
       $(brandSelect).on("select",function(e,data){
+
         self._addSeries(data.key)
+          seriesSelect.enable();
         //选中了某品牌
       }).on("unselect",function(e,data){
         self._removeSeries(data.key)
+        if(brandSelect.selected.length==0){
+          seriesSelect.disable("请先选择品牌")
+        }
         //取消选中某品牌，删除其所拥有的车系列表
       }).on("show",function(){
         $("html,body").animate({scrollTop:$(".qiugou").offset().top},200)
