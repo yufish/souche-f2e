@@ -78,7 +78,10 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
             &&!$("#series_select .selected_values").val()
             &&!$("#age_select .selected_values").val()
             &&!$("#model_select .selected_values").val()){
-
+            $(".warning",self.ele).removeClass("hidden")
+            return;
+          }else{
+            $(".warning",self.ele).addClass("hidden")
           }
           Souche.checkPhoneExist(function(isLogin){
           if(isLogin){
