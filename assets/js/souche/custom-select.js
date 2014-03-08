@@ -12,6 +12,7 @@ Souche.UI.CustomSelect = function(){
     this.selected = [];
     this._init();
     this._defaultHeadHeight = 30;
+    this._enable = true;
   };
   /**
   * 自定义事件：select unselect
@@ -31,6 +32,7 @@ Souche.UI.CustomSelect = function(){
         $(this.config.listContainer,this.ele).html("");
      },
      showOptions:function(){
+      if(!this._enable) return;
         $(".sc-select-list",this.ele).removeClass("hidden");
         this.ele.addClass("sc-active");
         $(this).trigger("show");
@@ -39,6 +41,14 @@ Souche.UI.CustomSelect = function(){
         $(".sc-select-list",this.ele).addClass("hidden");
         this.ele.removeClass("sc-active");
         $(this).trigger("hide");
+     },
+     disable:function(txt){
+        $(".sc-select-content",this.ele).html("<span class='placeholder'>"+txt+"</span>");
+        this._enable = false;
+     },
+     enable:function(txt){
+        this._enable = true;
+        this._renderSelected();
      }
   })
   $.extend(select.prototype,{
@@ -134,10 +144,10 @@ Souche.UI.CustomSelect = function(){
           
         }
         if(self.config.multi){
-        self._renderSelected();
-      }else{
-        self._renderSingleSelected();
-      }
+          self._renderSelected();
+        }else{
+          self._renderSingleSelected();
+        }
         $(self).trigger("change",{key:key,value:value})
         // $(".sc-select-content",self.ele).html(value)
         // $(".selected_value",self.ele).val(key)
@@ -196,10 +206,11 @@ Souche.UI.CustomSelect = function(){
               self.selected.splice(i,1)
             }
           }
+          $(self).trigger("unselect",{key:key})
         self._renderSelected();
         // self.hideOptions();
         $(".sc-select-list a.option[data-value='"+key+"']",self.ele).removeClass("active")
-        $(self).trigger("unselect",{key:key})
+        
         e.stopPropagation();
       })
       if(self.selected.length){
