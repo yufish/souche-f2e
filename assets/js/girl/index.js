@@ -113,8 +113,10 @@ var Index =(function(){
       ]
 
       $('.star .starli').each(function(index,el){
+        var self = this 
         $(this).click(function(e){
-
+          $(".star .starli").removeClass("active")
+          $(self).addClass("active")
           $('.star-box .detail img').attr('src',basepath+starMap[index]);
           $('.detail a').attr('href',imgHref[index]);
           e.preventDefault();
