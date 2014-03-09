@@ -147,7 +147,6 @@ color: #ed9763;
     position:absolute;
     right:0;
     top:0;
-    *top:-4px;
     background:#fff;
     cursor:pointer;
     font-size:0px;

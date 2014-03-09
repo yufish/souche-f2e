@@ -1346,6 +1346,8 @@
 #index .filter-nav .inner .hr {
   border-bottom: 1px solid #e6e6e6;
   width: 90%;
+  font-size: 0px;
+  line-height: 0;
 }
 #index .main-slider {
   margin-left: 10px;
