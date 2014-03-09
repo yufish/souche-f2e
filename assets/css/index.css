@@ -247,12 +247,12 @@
 #index .qiugou .result .more {
   background: #ffffff url(../images/index/qiugou-more.png) no-repeat center center;
   width: 210px;
-  height: 245px;
+  height: 225px;
 }
 #index .qiugou .result .no {
   background: #fffcf6 url(../images/index/qiugou-no.png) no-repeat center center;
   width: 210px;
-  height: 245px;
+  height: 225px;
 }
 #index .qiugou .form {
   padding-bottom: 40px;

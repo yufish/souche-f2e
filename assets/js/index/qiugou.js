@@ -214,10 +214,10 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           var html = '<a href="'+car.link+'" class="car">'+
           '<div class="pic"><img src="'+car.pic+'"></div>'+
           '<div class="title">'+car.name+'</div>'+
-          '<div class="price"><em>'+car.price+'万 </em><span class="time">首次上牌：'+car.time+'</span></div></a>'
+          '<div class="price"><em>'+car.price+'万 </em><span class="time">上牌：'+car.time+'</span></div></a>'
           $(".qiugou .cars").append(html)
         }
-        $(".qiugou .cars").append("<a class='car more'></a>")
+        $(".qiugou .cars").append("<a class='car more' href='"+contextPath+"/pages/onsale/sale_car_list.html?match="+qiugouData.user+"'></a>")
       }else{
         //渲染寻找中的模式
         $(".qiugou .cars").html("")
@@ -226,7 +226,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           var html = '<a href="'+car.link+'" class="car">'+
           '<div class="pic"><img src="'+car.pic+'"></div>'+
           '<div class="title">'+car.name+'</div>'+
-          '<div class="price"><em>'+car.price+'万 </em><span class="time">首次上牌：'+car.time+'</span></div></a>'
+          '<div class="price"><em>'+car.price+'万 </em><span class="time">上牌：'+car.time+'</span></div></a>'
           $(".qiugou .cars").append(html)
         }
         for(var i=0;i<4-qiugouData.items.length;i++){
