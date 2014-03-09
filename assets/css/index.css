@@ -450,6 +450,11 @@
   font-size: 16px;
   cursor: pointer;
 }
+#index .qiugou .form .submit.loading {
+  background-image: url(../images/common/loading.gif);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
 #index .qiugou .form .go-login {
   margin-left: 30px;
   font-size: 12px;

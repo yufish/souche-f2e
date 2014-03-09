@@ -135,7 +135,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       },800,'easeOutExpo',function(){
         
       })
-      
+      $(".submit").addClass("loading");
       $.ajax({
         url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
@@ -143,6 +143,10 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         success:function(data){
           qiugouData = data;
           $("#qiugou-popup").addClass("hidden")
+          setTimeout(function(){
+            $(".submit").removeClass("loading");
+          },300)
+         
             $(".wrapGrayBg").hide();
           $("#qiugou_count").html(data.totalNumber)
           if(!data.totalNumber){
