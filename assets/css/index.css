@@ -698,15 +698,15 @@
 #index .starbuy .starbuy-box .car-float .float-box p {
   line-height: 20px;
 }
-#index .starbuy .starbuy-box .car-reason {
+#index .starbuy .car-reason {
   font-size: 12px;
   font-weight: bold;
   float: left;
   font-style: normal;
   color: #444;
-  padding: 0 20px;
+  padding: 0 25px;
 }
-#index .starbuy .starbuy-box .car-reason i {
+#index .starbuy .car-reason i {
   line-height: 20px;
   font-style: normal;
   font-weight: normal;

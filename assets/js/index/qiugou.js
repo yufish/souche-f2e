@@ -145,7 +145,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           $("#qiugou-popup").addClass("hidden")
           setTimeout(function(){
             $(".submit").removeClass("loading").html("重新定制");
-          },700)
+          },1500)
          
             $(".wrapGrayBg").hide();
           $("#qiugou_count").html(data.totalNumber)
