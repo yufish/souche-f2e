@@ -428,7 +428,9 @@
   color: #666;
   margin-right: 5px;
   height: 30px;
+  margin-left: 0;
   border: 1px solid #ddd;
+  *margin-left: -20px;
 }
 #index .qiugou .form .price-select-high {
   width: 103px;
@@ -697,6 +699,7 @@
   float: left;
   font-style: normal;
   color: #444;
+  padding: 0 20px;
 }
 #index .starbuy .starbuy-box .car-reason i {
   line-height: 20px;
