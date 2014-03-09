@@ -52,6 +52,9 @@ command
 	git push
 	
 	git pull
+
+	//查看最近一次commit所更改的文件信息
+	git log -n 1 --stat
 	//待进一步充实
 	
 #3.冲突解决
