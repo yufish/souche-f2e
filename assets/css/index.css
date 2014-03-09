@@ -1388,8 +1388,8 @@
 }
 #index .main-slider .flex-control-nav li {
   display: inline-block;
-  _float: left;
-  _display: inline;
+  *float: left;
+  *display: inline;
 }
 #index .main-slider .flex-control-nav a {
   overflow: hidden;
