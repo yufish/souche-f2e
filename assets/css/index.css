@@ -1503,13 +1503,17 @@
 #index .mod-side .address .inner .sendadd:hover {
   color: #fc7000;
 }
-#index .module .carlife .bd {
+#index .carlife {
+  width: 100%;
+  overflow: hidden;
+}
+#index .carlife .bd {
   margin-bottom: 20px;
   overflow: hidden;
   width: 1300px;
   /*end of carlife-item*/
 }
-#index .module .carlife .bd .carlife-item {
+#index .carlife .bd .carlife-item {
   display: block;
   margin: 10px 13px 10px 0;
   width: 387px;
@@ -1517,90 +1521,90 @@
   float: left;
   overflow: hidden;
 }
-#index .module .carlife .bd .carlife-item .front {
+#index .carlife .bd .carlife-item .front {
   position: relative;
   overflow: hidden;
   background-color: #f5f5f5;
 }
-#index .module .carlife .bd .carlife-item .front i {
+#index .carlife .bd .carlife-item .front i {
   float: left;
   height: 130px;
   width: 130px;
   overflow: hidden;
 }
-#index .module .carlife .bd .carlife-item .front .person {
+#index .carlife .bd .carlife-item .front .person {
   float: left;
   width: 245px;
   height: 130px;
 }
-#index .module .carlife .bd .carlife-item .front .person .title {
+#index .carlife .bd .carlife-item .front .person .title {
   margin: 15px 0 5px 15px;
   position: relative;
   color: #333;
   font-size: 14px;
   font-weight: bold;
 }
-#index .module .carlife .bd .carlife-item .front .person .name {
+#index .carlife .bd .carlife-item .front .person .name {
   padding: 0 0 5px 15px;
   font-size: 12px;
   color: #666;
   line-height: 20px;
 }
-#index .module .carlife .bd .carlife-item .front .person .info {
+#index .carlife .bd .carlife-item .front .person .info {
   overflow: hidden;
   color: #666;
   padding: 10px 0px 0 15px;
   line-height: 20px;
 }
-#index .module .carlife .bd .carlife-item .front .person .info span {
+#index .carlife .bd .carlife-item .front .person .info span {
   font-size: 12px;
   margin-right: 10px;
   line-height: 20px;
   float: left;
 }
-#index .module .carlife .bd .carlife-item .back {
+#index .carlife .bd .carlife-item .back {
   z-index: 10;
   overflow: hidden;
   background-color: #fc7000;
   color: #fff;
   position: relative;
 }
-#index .module .carlife .bd .carlife-item .back i {
+#index .carlife .bd .carlife-item .back i {
   float: left;
   height: 130px;
   width: 130px;
   overflow: hidden;
 }
-#index .module .carlife .bd .carlife-item .back .person {
+#index .carlife .bd .carlife-item .back .person {
   float: left;
   width: 240px;
   height: 130px;
   position: relative;
 }
-#index .module .carlife .bd .carlife-item .back .person .title {
+#index .carlife .bd .carlife-item .back .person .title {
   margin: 15px 0 10px 15px;
   position: relative;
   font-size: 14px;
   font-weight: bold;
 }
-#index .module .carlife .bd .carlife-item .back .person .info {
+#index .carlife .bd .carlife-item .back .person .info {
   font-size: 12px;
   overflow: hidden;
   padding-left: 15px;
   line-height: 20px;
 }
-#index .module .carlife .bd .carlife-item .back .person .info span {
+#index .carlife .bd .carlife-item .back .person .info span {
   font-size: 12px;
   margin-right: 10px;
   line-height: 20px;
   float: left;
 }
-#index .module .carlife .bd .carlife-item .back .person .look {
+#index .carlife .bd .carlife-item .back .person .look {
   position: absolute;
   right: 10px;
   bottom: 15px;
 }
-#index .module .carlife .bd .carlife-item .back .person .look span {
+#index .carlife .bd .carlife-item .back .person .look span {
   height: 15px;
   width: 15px;
   background-image: url(../images/index/to-look.png);
@@ -1608,12 +1612,11 @@
   margin-left: 10px;
   vertical-align: -2px;
 }
-#index .module .carlife .bd .carlife-item.upper {
+#index .carlife .bd .carlife-item.upper {
   margin-bottom: 0;
 }
 #index .module .banners {
   overflow: hidden;
-  width: 1300px;
 }
 #index .module .banners a {
   width: 296px;
