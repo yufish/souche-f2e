@@ -135,7 +135,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       },800,'easeOutExpo',function(){
         
       })
-      $(".submit").addClass("loading");
+      $(".submit").addClass("loading").html("正在提交");
       $.ajax({
         url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
@@ -144,8 +144,8 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           qiugouData = data;
           $("#qiugou-popup").addClass("hidden")
           setTimeout(function(){
-            $(".submit").removeClass("loading");
-          },300)
+            $(".submit").removeClass("loading").html("重新定制");
+          },700)
          
             $(".wrapGrayBg").hide();
           $("#qiugou_count").html(data.totalNumber)
