@@ -29,7 +29,7 @@ app.configure ->
   app.set "views", config.demo_path
   app.set "view engine", "jade"
   app.use express.favicon()
-  app.use "/assets",lessmiddle({src:config.assets_path,compress:true,force:true})
+  app.use "/assets",lessmiddle({src:config.assets_path,compress:false,force:true})
   app.use "/assets", express.static(config.assets_path)
   # app.use express.logger("dev")
   # app.use express.bodyParser()

@@ -29,3 +29,95 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
 #bridgehead {background:url(../../images/common/float-layer3.png) no-repeat -34px -451px !important;}
 #BaiduBridgePigeon .BdBridgeLogo{display:none}
 #BDBridgeIconWrap .BDActive {background:url(../../images/common/float-layer3.png) no-repeat -101px -451px !important;}
+
+
+
+#header {
+  height: 115px;
+  background: #fff;
+}
+#header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 115px;
+}
+#header .logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+#header .search {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+#header .search .search-text {
+  width: 490px;
+  height: 35px;
+  border: 2px solid #e5e5e5;
+  vertical-align: top;
+  padding-left: 10px;
+}
+#header .search .search-submit {
+  background: #fc7000;
+  color: #fff;
+  font-size: 16px;
+  width: 88px;
+  height: 38px;
+  border: none;
+  vertical-align: top;
+  margin-left: -5px;
+  cursor: pointer;
+}
+#header .search .hot-keywords {
+  line-height: 30px;
+}
+#header .search .hot-keywords a {
+  color: #666;
+  margin-left: 10px;
+}
+#header .search .hot-keywords a:hover {
+  color: #fc7000;
+}
+#header .head-tel {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+#nav {
+  height: 45px;
+  line-height: 50px;
+  border-bottom: 2px solid #fc7000;
+  background: #fff;
+}
+#nav .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+}
+#nav .main-navs a {
+  font-size: 16px;
+  color: #333;
+  margin-right: 50px;
+  font-weight: bold;
+}
+#nav .main-navs a:hover {
+  color: #fc7000;
+}
+#nav .main-navs a.active {
+  color: #fc7000;
+}
+#nav .other-navs {
+  float: right;
+  _margin-top: -50px;
+}
+#nav .other-navs a {
+  font-size: 12px;
+  padding: 0 10px;
+  border-right: 1px solid #e6e6e6;
+}
+#nav .other-navs a.last {
+  border: none;
+}
