@@ -25,7 +25,8 @@
 #index .module .hd {
   font-size: 16px;
   line-height: 35px;
-  color: #333;
+  color: #222;
+  font-weight: bold;
 }
 #index #content .wrapper {
   width: 1191px;
