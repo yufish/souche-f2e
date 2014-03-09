@@ -64,6 +64,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
             
           }
           brandSelect.addOptions(html)
+          
         },  
         error:function(){
           // alert("品牌信息请求出错，刷新后再试")

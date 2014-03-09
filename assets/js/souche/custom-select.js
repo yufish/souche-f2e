@@ -20,6 +20,9 @@ Souche.UI.CustomSelect = function(){
   $.extend(select.prototype,{
     addOptions:function(html){
         $(this.config.listContainer,this.ele).append(html)
+        for(var i=0;i<this.selected.length;i++){
+            $(".sc-select-list .option[data-value='"+this.selected[i].key+"']").addClass("active");
+          }
      },
     //  removeOption:function(key){
     //     $(".sc-select-list a.option",this.ele).each(function(i,a){
@@ -71,6 +74,7 @@ Souche.UI.CustomSelect = function(){
       }else{
         this._renderSingleSelected();
       }
+
      },
      //绑定输入框的点击事件
      _bindClick:function(){

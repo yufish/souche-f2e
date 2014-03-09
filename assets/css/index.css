@@ -1403,6 +1403,7 @@
   text-align: center;
   margin-left: -200px;
   left: 50%;
+  *margin-left: -50px;
 }
 #index .main-slider .flex-control-nav li {
   display: inline-block;
