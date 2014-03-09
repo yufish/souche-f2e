@@ -135,12 +135,15 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       },800,'easeOutExpo',function(){
         
       })
+      
       $.ajax({
         url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
         data:$("#qiugou-form").serialize(),
         success:function(data){
           qiugouData = data;
+          $("#qiugou-popup").addClass("hidden")
+            $(".wrapGrayBg").hide();
           $("#qiugou_count").html(data.totalNumber)
           if(!data.totalNumber){
             $(".qiugou .submit").html("重新定制")
@@ -278,6 +281,10 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       }).on("show",function(){
         $("html,body").animate({scrollTop:$(".qiugou").offset().top},200)
       })
+      brandSelect.selected
+      for(var i =0;i<brandSelect.selected.length;i++){
+        self._addSeries(brandSelect.selected[i].key)
+      }
     },
     _addSeries:function(brandCode){
       if($("#series_select .sc-select-list div[data-brandid="+brandCode+"]").length){
