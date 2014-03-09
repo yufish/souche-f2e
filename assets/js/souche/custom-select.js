@@ -133,19 +133,21 @@ Souche.UI.CustomSelect = function(){
         var key = $(this).attr("data-value");
         var value = $(".value",this).html();
         var $this = $(this);
-        if($this.hasClass("active")){
-          self._delKey(key);
-          $this.removeClass("active");
-          $(self).trigger("unselect",{key:key,value:value})
-        }else{
-          self._addKey(key,value);
-          $this.addClass("active");
-          $(self).trigger("select",{key:key,value:value})
-          
-        }
+        
         if(self.config.multi){
+          if($this.hasClass("active")){
+            self._delKey(key);
+            $this.removeClass("active");
+            $(self).trigger("unselect",{key:key,value:value})
+          }else{
+            self._addKey(key,value);
+            $this.addClass("active");
+            $(self).trigger("select",{key:key,value:value})
+            
+          }
           self._renderSelected();
         }else{
+          self.selected = [{key:key,value:value}];
           self._renderSingleSelected();
         }
         $(self).trigger("change",{key:key,value:value})
