@@ -91,14 +91,19 @@
   }
   .wrapper{
     width: 1190px;
-    height: 3980px;
+    
     margin: 0 auto;
     background-color: #f4f4f4;
     .car-list{
       width: 988px;
       margin: 0 auto;
-      height: 509px;
-      img.hd{width: 419px;height: 150px;margin: 0 auto;display: block;}
+      
+      overflow: hidden;
+      .hd-image{
+        height: 170px;
+        img.hd{width: 459px;height: 170px;margin: 0 auto;display: block;}
+      }
+      
       ul{
         height: 346px;
         li{
@@ -165,7 +170,7 @@
       height: 900px;
       .hd{margin:0 auto;width: 419px;height: 165px;display: block;}
       .explanation-image{
-        margin: 0 auto;width: 988px;height: 617px;background: url(../images/acts/white/explanation.png)
+        margin: 0 auto;width: 988px;height: 615px;background: url(../images/acts/white/explanation.png)
       }
     }
   }
