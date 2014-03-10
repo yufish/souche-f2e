@@ -574,7 +574,7 @@
 }
 #girl #content .wrapper .mod-lower .mod-side .timebuy .hd {
   background: url(../images/girl/timebuy-hd.png);
-  width: 346px;
+  width: px;
   height: 38px;
   margin-top: 20px;
 }
@@ -684,7 +684,7 @@
 }
 #girl #content .wrapper .mod-lower .mod-side .fenqi .hd {
   background: url(../images/girl/fenqi-hd.png);
-  width: 346px;
+  width: 345px;
   height: 37px;
 }
 #girl #content .wrapper .mod-lower .mod-side .fenqi .fenqicar {
@@ -718,7 +718,7 @@
   position: relative;
   top: -170px;
   left: 160px;
-  background: url(../images/girl/seal-image.png);
+  background: url(../images/girl/seal-image.png?233);
 }
 #girl #content .wrapper .mod-lower .mod-side .fenqi .fenqicar .car-box .fenqi-title {
   width: 263px;

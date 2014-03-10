@@ -91,18 +91,20 @@
 }
 #white #content .wrapper {
   width: 1190px;
-  height: 3980px;
   margin: 0 auto;
   background-color: #f4f4f4;
 }
 #white #content .wrapper .car-list {
   width: 988px;
   margin: 0 auto;
-  height: 509px;
+  overflow: hidden;
 }
-#white #content .wrapper .car-list img.hd {
-  width: 419px;
-  height: 150px;
+#white #content .wrapper .car-list .hd-image {
+  height: 170px;
+}
+#white #content .wrapper .car-list .hd-image img.hd {
+  width: 459px;
+  height: 170px;
   margin: 0 auto;
   display: block;
 }
@@ -237,7 +239,7 @@
 #white #content .wrapper .explanation .explanation-image {
   margin: 0 auto;
   width: 988px;
-  height: 617px;
+  height: 615px;
   background: url(../images/acts/white/explanation.png);
 }
 #white #footer {
