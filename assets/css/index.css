@@ -597,12 +597,27 @@
   color: #bb8d6f;
   line-height: 20px;
 }
-#index .starbuy .starbuy-box a {
+#index .starbuy .starbuy-box .car-image {
   width: 210px;
   height: 141px;
   margin-bottom: 10px;
   display: block;
   overflow: hidden;
+}
+#index .starbuy .starbuy-box a {
+  display: block;
+}
+#index .starbuy .starbuy-box .t {
+  color: #fff;
+}
+#index .starbuy .starbuy-box .t i {
+  display: block;
+  float: right;
+  font-style: normal;
+}
+#index .starbuy .starbuy-box .d {
+  line-height: 20px;
+  color: #fff;
 }
 #index .starbuy .starbuy-box .car-float {
   height: 50px;
@@ -617,14 +632,6 @@
   font-size: 12px;
   padding: 10px;
   color: #fff;
-}
-#index .starbuy .starbuy-box .car-float .float-box h1 i {
-  display: block;
-  float: right;
-  font-style: normal;
-}
-#index .starbuy .starbuy-box .car-float .float-box p {
-  line-height: 20px;
 }
 #index .starbuy .car-reason {
   font-size: 12px;

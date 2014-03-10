@@ -24,13 +24,10 @@ Souche.UI.CustomSelect = function(){
             $(".sc-select-list .option[data-value='"+this.selected[i].key+"']").addClass("active");
           }
      },
-    //  removeOption:function(key){
-    //     $(".sc-select-list a.option",this.ele).each(function(i,a){
-    //       if($(a).attr("data-value")==key){
-    //         a.parentNode.parentNode.removeChild(a.parentNode)
-    //       }
-    //     })
-    //  },
+     removeSelected:function(key){
+        this._delKey(key);
+        this._renderSelected();
+     },
      removeAllOption:function(){
         $(this.config.listContainer,this.ele).html("");
      },
