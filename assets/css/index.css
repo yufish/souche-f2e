@@ -1554,6 +1554,9 @@
   width: 130px;
   overflow: hidden;
 }
+#index .carlife .bd .carlife-item .front i img {
+  width: 130px;
+}
 #index .carlife .bd .carlife-item .front .person {
   float: left;
   width: 245px;
@@ -1599,6 +1602,9 @@
   height: 130px;
   width: 130px;
   overflow: hidden;
+}
+#index .carlife .bd .carlife-item .back i img {
+  width: 130px;
 }
 #index .carlife .bd .carlife-item .back .person {
   float: left;
