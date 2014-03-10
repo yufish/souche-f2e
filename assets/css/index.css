@@ -314,11 +314,12 @@
 }
 #index .qiugou .form .brand-select .sc-popup-bd {
   height: 370px;
+  padding-bottom: 60px;
 }
 #index .qiugou .form .brand-select .word-title {
   float: left;
-  color: #5bb0b3;
-  font-size: 20px;
+  color: #fc7000;
+  font-size: 18px;
   line-height: 30px;
   width: 30px;
 }
@@ -336,6 +337,9 @@
   border: 2px solid #fff;
   line-height: 20px;
   margin-top: 3px;
+}
+#index .qiugou .form .brand-select .word-container:last-child {
+  margin-bottom: 60px;
 }
 #index .qiugou .form .brand-select .option.active {
   border: 2px solid #fc7000;
@@ -398,6 +402,9 @@
   border: 2px solid #fc7000;
   background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
   color: #fc7000;
+}
+#index .qiugou .form .series-select .word-container:last-child {
+  margin-bottom: 60px;
 }
 #index .qiugou .form .series-select .option:hover {
   color: #fc7000;
@@ -718,6 +725,8 @@
   width: 918px;
   overflow: hidden;
   border: 1px solid #e6e6e6;
+  border-bottom: none;
+  border-right: none;
 }
 #index .whybuy .hd {
   height: 45px;
@@ -756,13 +765,14 @@
   height: 290px;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-car {
-  width: 220px;
+  width: 219px;
   height: 280px;
   float: left;
   display: inline;
   padding-left: 10px;
   overflow: hidden;
   padding-top: 10px;
+  border-right: 1px solid #e6e6e6;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-car .car-image {
   display: block;

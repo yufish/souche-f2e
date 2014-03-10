@@ -55,7 +55,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           for(var i in data){
             var b = data[i];
             var name = i;
-            html+="<div data-name='"+name+"' class='clearfix'><div class='word-title'>"+name+"</div><div class='word-brands'>"
+            html+="<div data-name='"+name+"' class='clearfix word-container'><div class='word-title'>"+name+"</div><div class='word-brands'>"
             for(var n =0;n<b.length;n++){
               var brand = b[n]
               html+=('<a href="#" data-value="'+brand.code+'" class="option"><input type="checkbox" class="hidden"/><span class="value">'+brand.name+'</span></a>');
@@ -309,7 +309,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           for(var i in data.codes){
             var b = data.codes[i];
             var name = i;
-            html+="<div data-name='"+name+"' data-brandid='"+brandCode+"' class='clearfix'><div class='brand-title'>"+name+"</div>"
+            html+="<div data-name='"+name+"' data-brandid='"+brandCode+"' class='clearfix word-container'><div class='brand-title'>"+name+"</div>"
             for(var n =0;n<b.length;n++){
               var series = b[n]
               html+=('<a href="#" data-value="'+series.code+'" class="option"><input type="checkbox" class="hidden"/><span class="value">'+series.name+'</span></a>');
