@@ -64,7 +64,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
             
           }
           brandSelect.addOptions(html)
-          
+
         },  
         error:function(){
           // alert("品牌信息请求出错，刷新后再试")
@@ -157,6 +157,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
             },800,'easeOutExpo',function(){
               
             })
+            $(".qiugou .head .head-inner").animate({marginTop:-120},300)
           }else{
             self._renderResult();
             self._successAnim();
