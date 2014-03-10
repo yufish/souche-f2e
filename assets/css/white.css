@@ -1,0 +1,164 @@
+#white {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  color: #333;
+}
+#white a {
+  color: #444;
+}
+#white a:hover {
+  color: #fc7000;
+}
+#white .module {
+  margin-top: 10px;
+}
+#white .module .mod-main {
+  width: 920px;
+  float: left;
+  display: inline;
+}
+#white .module .mod-side {
+  width: 260px;
+  float: left;
+  margin-left: 10px;
+  display: inline;
+}
+#white .module .hd {
+  font-size: 16px;
+  line-height: 35px;
+  color: #333;
+}
+#white #header {
+  height: 115px;
+}
+#white #header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#white #header .logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+#white #header .search {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+#white #header .search .search-text {
+  width: 490px;
+  height: 35px;
+  border: 2px solid #e5e5e5;
+  vertical-align: top;
+  padding-left: 10px;
+}
+#white #header .search .search-submit {
+  background: #fc7000;
+  color: #fff;
+  font-size: 16px;
+  width: 88px;
+  height: 38px;
+  border: none;
+  vertical-align: top;
+  margin-left: -5px;
+  cursor: pointer;
+}
+#white #header .search .hot-keywords {
+  line-height: 30px;
+}
+#white #header .search .hot-keywords a {
+  color: #666;
+  margin-left: 10px;
+}
+#white #header .search .hot-keywords a:hover {
+  color: #fc7000;
+}
+#white #header .head-tel {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+#white #footer {
+  margin-top: 30px;
+}
+#white #footer .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#white #footer .friendlinks {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#white #footer .friendlinks .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+}
+#white #footer .friendlinks .wrapper a {
+  font-size: 12px;
+  color: #333;
+  padding: 0 20px;
+  border-right: 1px solid #e6e6e6;
+}
+#white #footer .friendlinks .wrapper a.last {
+  border: none;
+}
+#white #footer .footer-content {
+  background: #f5f5f5;
+  border-top: 1px solid #e6e6e6;
+}
+#white #footer .performance {
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e6e6;
+  width: 1400px;
+}
+#white #footer .performance i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+#white #footer .performance .per {
+  position: relative;
+  float: left;
+  width: 380px;
+  padding-left: 70px;
+  display: inline;
+}
+#white #footer .performance .t {
+  font-size: 16px;
+  line-height: 30px;
+  color: #666;
+}
+#white #footer .performance .st {
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+}
+#white #footer .performance .per-1 i {
+  background: url(../images/index/per-1.png) no-repeat;
+}
+#white #footer .performance .per-2 i {
+  background: url(../images/index/per-2.png) no-repeat;
+}
+#white #footer .performance .per-3 i {
+  background: url(../images/index/per-3.png) no-repeat;
+}
+#white #footer .company_info {
+  padding: 20px 0px;
+}
+#white #footer .company_info .wrap {
+  text-align: center;
+}
+#white #footer .company_info .wrap a {
+  color: #666;
+  padding: 0 10px;
+}
+#white #footer .company_info p {
+  text-align: center;
+  line-height: 30px;
+  color: #999;
+}
