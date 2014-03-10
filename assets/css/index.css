@@ -1175,6 +1175,7 @@
   overflow: hidden;
 }
 #index .filter-nav #brand .inner .brand-text-wrap .bt-item .alpha {
+  width: 10px;
   font-size: 14px;
   color: #fc7000;
   vertical-align: top;
