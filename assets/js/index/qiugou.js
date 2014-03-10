@@ -78,7 +78,9 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           if(!$("#brand_select .selected_values").val()
             &&!$("#series_select .selected_values").val()
             &&!$("#age_select .selected_values").val()
-            &&!$("#model_select .selected_values").val()){
+            &&!$("#model_select .selected_values").val()
+            &&!($("#price_low_select").val()&&$("#price_hight_select").val())
+            ){
             $(".warning",self.ele).removeClass("hidden")
             return;
           }else{
