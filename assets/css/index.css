@@ -1033,10 +1033,12 @@
   width: 1400px;
 }
 #index .buy-guide .col {
-  width: 255px;
+  width: 257px;
   float: left;
   padding: 20px;
   padding-top: 0;
+  height: 319px;
+  border-right: 1px solid #e6e6e6;
 }
 #index .buy-guide .col img {
   width: 256px;
@@ -1054,6 +1056,7 @@
   width: 256px;
   height: 139px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 #index .buy-guide .col .tip {
   height: 30px;
@@ -1074,6 +1077,10 @@
   height: 30px;
   padding: 0 10px;
   overflow: hidden;
+  padding-left: 0;
+}
+#index .buy-guide .col .list .item i {
+  padding: 0 10px 0 5px;
 }
 #index .sidetoolbar-top {
   height: 131px;
