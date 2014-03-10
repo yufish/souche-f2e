@@ -29,8 +29,9 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
 #bridgehead {background:url(../../images/common/float-layer3.png) no-repeat -34px -451px !important;}
 #BaiduBridgePigeon .BdBridgeLogo{display:none}
 #BDBridgeIconWrap .BDActive {background:url(../../images/common/float-layer3.png) no-repeat -101px -451px !important;}
-
-
+body{
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
 
 #header {
   height: 115px;
