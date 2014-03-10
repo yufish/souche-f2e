@@ -1453,6 +1453,9 @@
 #index .main-slider .performance .per-item.last {
   border-right: 0;
 }
+#index .main-slider .performance .per-item:last-child {
+  border-right: 0;
+}
 #index .mod-side {
   overflow: hidden;
 }
