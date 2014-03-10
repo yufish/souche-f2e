@@ -136,11 +136,13 @@ color: #ed9763;
     padding-left: 10px;
     padding-top: 5px;
     line-height: 20px;
+    color:#333;
 }
 .sc-select-content .placeholder{
   line-height: 20px;
   display: block;
   height:25px;
+  color:#aaa;
 }
 .sc-select-action{
     width:30px;height:30px;
