@@ -186,13 +186,13 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
   line-height: 20px;
 }
 #footer .performance .per-1 i {
-  background: url(../images/index/per-1.png) no-repeat;
+  background: url(../../images/index/per-1.png) no-repeat;
 }
 #footer .performance .per-2 i {
-  background: url(../images/index/per-2.png) no-repeat;
+  background: url(../../images/index/per-2.png) no-repeat;
 }
 #footer .performance .per-3 i {
-  background: url(../images/index/per-3.png) no-repeat;
+  background: url(../../images/index/per-3.png) no-repeat;
 }
 #footer .company_info {
   padding: 20px 0px;
