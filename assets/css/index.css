@@ -665,8 +665,7 @@
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar {
   height: 30px;
-  background-color: #2d3f53;
-  width: 220px;
+  background-color: #000;
   position: absolute;
   cursor: pointer;
   font-size: 12px;
@@ -676,7 +675,7 @@
   padding-right: 10px;
   opacity: 0.8;
   left: 0px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-img {
   width: 228px;
@@ -971,7 +970,6 @@
 }
 #index .buy-guide .col .title {
   line-height: 50px;
-  text-align: center;
   font-size: 14px;
   color: #333;
   font-weight: bold;
