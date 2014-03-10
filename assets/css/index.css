@@ -42,87 +42,6 @@
   top: 172px;
   background-color: #fff;
 }
-#index #footer {
-  margin-top: 30px;
-}
-#index #footer .wrapper {
-  width: 1190px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-#index #footer .friendlinks {
-  text-align: center;
-  margin-top: 20px;
-}
-#index #footer .friendlinks a {
-  font-size: 12px;
-  color: #999;
-  padding: 0 10px;
-  border-right: 1px solid #e6e6e6;
-}
-#index #footer .friendlinks a.last {
-  border: none;
-}
-#index #footer .footer-content {
-  background: #f5f5f5;
-  border-top: 1px solid #e6e6e6;
-}
-#index #footer .performance {
-  padding: 40px 0;
-  border-bottom: 1px solid #e6e6e6;
-  width: 1400px;
-}
-#index #footer .performance i {
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 8px;
-  left: 20px;
-}
-#index #footer .performance .per {
-  position: relative;
-  float: left;
-  width: 380px;
-  padding-left: 70px;
-}
-#index #footer .performance .per a {
-  display: block;
-}
-#index #footer .performance .t {
-  font-size: 16px;
-  line-height: 30px;
-  color: #666;
-}
-#index #footer .performance .st {
-  font-size: 14px;
-  color: #999;
-  line-height: 20px;
-}
-#index #footer .performance .per-1 i {
-  background: url(../images/index/per-1.png) no-repeat;
-}
-#index #footer .performance .per-2 i {
-  background: url(../images/index/per-2.png) no-repeat;
-}
-#index #footer .performance .per-3 i {
-  background: url(../images/index/per-3.png) no-repeat;
-}
-#index #footer .company_info {
-  padding: 20px 0px;
-}
-#index #footer .company_info .wrap {
-  text-align: center;
-}
-#index #footer .company_info .wrap a {
-  color: #666;
-  padding: 0 10px;
-}
-#index #footer .company_info p {
-  text-align: center;
-  line-height: 30px;
-  color: #999;
-}
 #index .qiugou {
   min-height: 427px;
   border: 1px solid #e6e6e6;
@@ -197,7 +116,7 @@
   font-weight: bold;
   position: absolute;
   left: 780px;
-  top: 50px;
+  top: 45px;
   cursor: pointer;
 }
 #index .qiugou .result .redo i {
@@ -205,7 +124,7 @@
   width: 25px;
   height: 25px;
   background: url(../images/index/qiugou-re.png) no-repeat;
-  vertical-align: -6px;
+  vertical-align: -8px;
 }
 #index .qiugou .result .car {
   background: #fff;
@@ -314,11 +233,12 @@
 }
 #index .qiugou .form .brand-select .sc-popup-bd {
   height: 370px;
+  padding-bottom: 60px;
 }
 #index .qiugou .form .brand-select .word-title {
   float: left;
-  color: #5bb0b3;
-  font-size: 20px;
+  color: #fc7000;
+  font-size: 18px;
   line-height: 30px;
   width: 30px;
 }
@@ -336,6 +256,9 @@
   border: 2px solid #fff;
   line-height: 20px;
   margin-top: 3px;
+}
+#index .qiugou .form .brand-select .word-container:last-child {
+  margin-bottom: 60px;
 }
 #index .qiugou .form .brand-select .option.active {
   border: 2px solid #fc7000;
@@ -398,6 +321,9 @@
   border: 2px solid #fc7000;
   background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
   color: #fc7000;
+}
+#index .qiugou .form .series-select .word-container:last-child {
+  margin-bottom: 60px;
 }
 #index .qiugou .form .series-select .option:hover {
   color: #fc7000;
@@ -718,6 +644,8 @@
   width: 918px;
   overflow: hidden;
   border: 1px solid #e6e6e6;
+  border-bottom: none;
+  border-right: none;
 }
 #index .whybuy .hd {
   height: 45px;
@@ -756,13 +684,14 @@
   height: 290px;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-car {
-  width: 220px;
+  width: 219px;
   height: 280px;
   float: left;
   display: inline;
   padding-left: 10px;
   overflow: hidden;
   padding-top: 10px;
+  border-right: 1px solid #e6e6e6;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-car .car-image {
   display: block;
@@ -1023,10 +952,12 @@
   width: 1400px;
 }
 #index .buy-guide .col {
-  width: 255px;
+  width: 257px;
   float: left;
   padding: 20px;
   padding-top: 0;
+  height: 319px;
+  border-right: 1px solid #e6e6e6;
 }
 #index .buy-guide .col img {
   width: 256px;
@@ -1044,6 +975,7 @@
   width: 256px;
   height: 139px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 #index .buy-guide .col .tip {
   height: 30px;
@@ -1064,6 +996,10 @@
   height: 30px;
   padding: 0 10px;
   overflow: hidden;
+  padding-left: 0;
+}
+#index .buy-guide .col .list .item i {
+  padding: 0 10px 0 5px;
 }
 #index .sidetoolbar-top {
   height: 131px;
@@ -1537,7 +1473,7 @@
   /*end of carlife-item*/
 }
 #index .carlife .bd .carlife-item {
-  margin: 10px 13px 10px 0;
+  margin: 0px 13px 10px 0;
   width: 387px;
   height: 130px;
   display: block;
