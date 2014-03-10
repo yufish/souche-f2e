@@ -129,6 +129,7 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
 
 #footer {
   margin-top: 30px;
+  height:auto;
 }
 #footer .wrapper {
   width: 1190px;
