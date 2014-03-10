@@ -1376,10 +1376,12 @@
 #index .main-slider .performance {
   overflow: hidden;
   border-top: 1px solid #e6e6e6;
+  width: 681px;
 }
 #index .main-slider .performance .per-item {
   float: left;
   display: inline;
+  width: 226px;
   border-right: 1px solid #e6e6e6;
 }
 #index .main-slider .performance .per-item a {
@@ -1389,13 +1391,10 @@
   cursor: pointer;
 }
 #index .main-slider .performance .per-item a img {
-  width: 225px;
+  width: 226px;
   height: 147px;
 }
 #index .main-slider .performance .per-item.last {
-  border-right: 0;
-}
-#index .main-slider .performance .per-item:last-child {
   border-right: 0;
 }
 #index .mod-side {
