@@ -110,6 +110,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           $(".warning",this).removeClass("hidden");
         }else{
           Souche.PhoneRegister($("#qiugou-phone").val(),function(){
+            $(".go-login").addClass("hidden")
             self._submit();
           })
           
@@ -328,7 +329,16 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       });
     },
     _removeSeries:function(brandCode){
-      $("#series_select .sc-select-list div[data-brandid="+brandCode+"]").remove();
+      
+      $("#series_select .sc-select-list div[data-brandid="+brandCode+"]").each(function(i,key){
+        var options = $(".option",$(this));
+        options.each(function(n,k){
+          var series_id = $(k).attr("data-value")
+          seriesSelect.removeSelected(series_id)
+        })
+
+        $(this).remove();
+      })
     }
   };
 });
