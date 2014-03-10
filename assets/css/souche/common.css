@@ -111,7 +111,7 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
 }
 #nav .other-navs {
   float: right;
-  _margin-top: -50px;
+  *margin-top: -50px;
 }
 #nav .other-navs a {
   font-size: 12px;
