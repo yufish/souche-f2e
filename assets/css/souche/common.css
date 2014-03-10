@@ -58,8 +58,13 @@ height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
   width: 490px;
   height: 35px;
   border: 2px solid #e5e5e5;
-  padding-left: 10px;
+  
   line-height: 35px;
+  font-size:12px;
+  line-height: 20px;
+  height:20px;
+  padding:7px 0;
+  padding-left: 10px;
 }
 #header .search .search-submit {
   background: #fc7000;
