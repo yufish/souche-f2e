@@ -1531,7 +1531,6 @@
   margin-bottom: 20px;
   overflow: hidden;
   width: 1300px;
-  height: 140px;
   /*end of carlife-item*/
 }
 #index .carlife .bd .carlife-item {
@@ -1628,7 +1627,7 @@
 #index .carlife .bd .carlife-item .back .person .look {
   position: absolute;
   right: 10px;
-  top: 20px;
+  bottom: 10px;
 }
 #index .carlife .bd .carlife-item .back .person .look span {
   height: 15px;
