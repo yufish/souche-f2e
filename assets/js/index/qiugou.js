@@ -110,6 +110,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           $(".warning",this).removeClass("hidden");
         }else{
           Souche.PhoneRegister($("#qiugou-phone").val(),function(){
+            $(".go-login").addClass("hidden")
             self._submit();
           })
           
