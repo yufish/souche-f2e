@@ -544,13 +544,11 @@
 #index .timebuy .timebuy-wrap .timebuy-box .timebuy-list .timebuy-price .car-price .price-now {
   font-size: 20px;
   color: #db2400;
-  font-family: 'Arial', Tahoma, Verdana;
   float: left;
 }
 #index .timebuy .timebuy-wrap .timebuy-box .timebuy-list .timebuy-price .car-price .price-old {
   font-size: 13px;
   color: #999;
-  font-family: Tahoma,Verdana;
   line-height: 30px;
   text-decoration: line-through;
   float: left;
