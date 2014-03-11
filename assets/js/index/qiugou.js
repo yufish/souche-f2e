@@ -78,7 +78,9 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           if(!$("#brand_select .selected_values").val()
             &&!$("#series_select .selected_values").val()
             &&!$("#age_select .selected_values").val()
-            &&!$("#model_select .selected_values").val()){
+            &&!$("#model_select .selected_values").val()
+            &&!($("#price_low_select").val()&&$("#price_hight_select").val())
+            ){
             $(".warning",self.ele).removeClass("hidden")
             return;
           }else{
@@ -210,10 +212,10 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
       },500)
     },
     _onlyNum:function(){
-      $("#price_low_select,#price_hight_select").on("keyup",function(e){
-        var v = this.value.replace(/[^0-9]/,"");
-        this.value = v;
-      })
+      setInterval(function(){
+        $("#price_low_select").val($("#price_low_select").val().replace(/[^0-9]/,""))
+        $("#price_hight_select").val($("#price_hight_select").val().replace(/[^0-9]/,""))
+      },200)
     },
     _renderResult:function(){
       if(qiugouData&&qiugouData.items&&qiugouData.items.length>=3){

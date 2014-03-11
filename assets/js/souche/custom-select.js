@@ -76,6 +76,7 @@ Souche.UI.CustomSelect = function(){
      //绑定输入框的点击事件
      _bindClick:function(){
       var self = this;
+
       $(".sc-select-hd",this.ele).click(function(e){
         var list =$(".sc-select-list",self.ele);
         if($(".sc-select-list",self.ele).hasClass("hidden")){
@@ -155,6 +156,12 @@ Souche.UI.CustomSelect = function(){
         // $(".sc-select-content",self.ele).html(value)
         // $(".selected_value",self.ele).val(key)
         e.stopPropagation();
+      })
+      $(".sc-select-list",self.ele).on("click",function(e){
+        e.stopPropagation();
+      });
+      $(".close",self.ele).on("click",function(e){
+        self.hideOptions();
       })
       $(".sc-select-list",self.ele).on("scroll",function(e){
         e.stopPropagation();
