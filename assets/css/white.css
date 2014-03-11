@@ -201,8 +201,9 @@
   color: #444;
 }
 #white #content .wrapper .car-list ul li .car-fenqi ul .li1 i {
-  font-size: 26px;
+  font-size: 20px;
   color: #db2400;
+  line-height: 33px;
 }
 #white #content .wrapper .car-list ul li .car-fenqi ul .li1 i i {
   font-size: 16px;
