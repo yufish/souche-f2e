@@ -273,7 +273,6 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     _bindBrandChange:function(){
       var self = this;
       if(brandSelect.selected.length==0&&seriesSelect.selected.length==0){
-        alert("dd")
         seriesSelect.disable("请先选择品牌")
       }
       $(brandSelect).on("select",function(e,data){

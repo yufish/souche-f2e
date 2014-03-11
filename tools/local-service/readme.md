@@ -61,6 +61,8 @@ demo中则可以新建子文件夹，可以放jade，可以放html和其他文�
 
 
 ```
+ssh souche@112.124.33.146
+密码：!Z@X3c4v
 cd /home/souche/dev/souche-f2e;
 git pull;
 tools.sh resourceUpload /home/souche/dev/souche-f2e/assets/css ~/dev/souche-trunk/souche-web/config/resource.properties
