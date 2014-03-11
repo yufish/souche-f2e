@@ -48,7 +48,7 @@
 }
 #white #header .search .search-text {
   width: 490px;
-  height: 35px;
+  height: 20px;
   border: 2px solid #e5e5e5;
   vertical-align: top;
   padding-left: 10px;
@@ -115,6 +115,7 @@
   height: 346px;
   float: left;
   margin-left: 5px;
+  overflow: hidden;
 }
 #white #content .wrapper .car-list ul li .car-box {
   height: 230px;
