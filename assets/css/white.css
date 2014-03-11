@@ -149,27 +149,32 @@
   border-bottom: 1px solid #990000;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price {
+  width: 210px;
+  height: 25px;
   color: #fff;
+  overflow: hidden;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price span {
   font-size: 18px;
   font-weight: bold;
   float: left;
+  width: 60px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price i {
   font-style: normal;
   font-size: 12px;
   float: left;
   display: block;
-  margin-left: 10px;
+  margin-left: 5px;
   line-height: 30px;
+  width: 140px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-go {
   display: block;
   width: 37px;
   height: 25px;
   position: relative;
-  top: 44px;
+  top: 19px;
   left: 189px;
   background: url(../images/acts/white/go-image.png);
 }
