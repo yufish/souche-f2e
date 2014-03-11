@@ -95,7 +95,6 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           }
         })
       })
-      $("#qiugou_redo").addClass("hidden")
       $("#qiugou_redo").on("click",function(e){
         self._redo();
       })
@@ -119,17 +118,17 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
         }
       });
 
-      //自动开始提交
-      if(config.has_qiugou){
-        var hasSubmit = false;
-        $(window).on("scroll",function(e){
-          if(hasSubmit) return;
-          if($(window).scrollTop()+$(window).height()>$(".qiugou .submit").offset().top){
-            self._submit();
-            hasSubmit = true;
-          }
-        });
-      }
+      // //自动开始提交
+      // if(config.has_qiugou){
+      //   var hasSubmit = false;
+      //   $(window).on("scroll",function(e){
+      //     if(hasSubmit) return;
+      //     if($(window).scrollTop()+$(window).height()>$(".qiugou .submit").offset().top){
+      //       self._submit();
+      //       hasSubmit = true;
+      //     }
+      //   });
+      // }
 
     },
     _submit:function(){

@@ -423,6 +423,18 @@
   color: #666;
   line-height: 23px;
 }
+#index .has-qiugou .person-bg {
+  background-position: 427px 50%;
+}
+#index .has-qiugou .head-inner {
+  margin-top: -120px;
+}
+#index .has-qiugou .result .result-inner {
+  margin-left: 0px;
+}
+#index .has-qiugou .form .form-inner {
+  margin-top: 335px;
+}
 #index .timebuy .hd {
   height: 45px;
 }
