@@ -1,0 +1,178 @@
+
+
+
+
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/soucheweb/css/mobile.css?t=10">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="/soucheweb/js/mob/jquery-1.9.1.min.js?t=1"></script>
+</head>
+
+<body id="detail-pics">
+<div id="header">
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <div class="title">车辆图片</div>
+    </div>
+    <div id="content">
+      <div class="pics" id = 'pic-container'></div>
+    </div>
+    <script>
+      var imgSrc = [];
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/E939394DD958593F699D503EFB2A2DE4_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/2ABD87147B2D287D9C00B46809A65485_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/B2C7D2C612C4E8874D960B21D5702A67_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/2CEBFB82BCF929B64ED58D1B00D17C74_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/7E8F0A3D635090E1C1C9043CED5B6E41_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/297C050B214BD085AE21EF99698809FC_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/647BD5B552DCF1204C44DA4442CF7704_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/36453E388F0F38128B6D2BDB384B5050_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/66DF0A09EA6967FFB16B067260732D45_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/AECE999CC6DC51BD420B7EDA2E23C047_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/419169721DCB4443030C54185153945C_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/F794DE30D0165CF6DA9C790CF85634D0_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/57D843E1ADBD24807B087393BC31DE14_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/6F4B062155590919C6C635B7B6145EC1_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/3F25AD142CB609FA35C8AA6BCB72C5DC_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/EF08DA1B9D371FB208CD07D94F703EAF_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/EB7B2EC9FCBABC81BF73AEF6742E1770_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/7218EE1CED08E72D986445D3B71DDB78_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/DD5747216A24F7C7B13485758C52DC9F_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/1088F5E5F3BFA71EC7CF40C278D0C76C_700x460.jpg_325x10000.jpg');
+      
+          imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/392C8ACEBE1E60873C614FBCF9E4DCF0_700x460.jpg_325x10000.jpg');
+      
+    </script>
+    <script type="text/javascript">
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14b4aac5aa4127a195c3dd1a4049180f' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+    
+      var winWidth = $(window).width();
+    var picContainer = document.getElementById('pic-container');
+    //picContainer.style.width=winWidth+'px';
+    var total = imgSrc.length;
+    picContainer.style.width=winWidth*total+'px';
+    picContainer.style.height='400px';
+    
+    
+    
+    var curIndex = 0;
+    for(var i =0;i<total;i++){
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="index">{'+(i+1)+'/'+total+'}</div> <img src="ajax-loader.gif"></div>';
+      $(picContainer).append(nodeText);
+    }
+    
+    function setImg(index){
+      $('.pic img').each(function(idx,el){
+        if(curIndex==idx){
+          el.src=imgSrc[idx];
+          return false;
+        }
+        
+      });
+    }
+    setImg(curIndex);
+    
+    var startX = 0;
+    var isMoving = false;
+    var min_move=40;
+    function onTouchstart(e){
+      e.preventDefault();
+      var touches = e.touches;
+      if(touches.length==1){
+        startX = touches[0].pageX; 
+        isMoving =true;
+        this.addEventListener("touchmove",onTouchmove,false);
+      }
+      e.stopPropagation();
+    }
+    function onTouchmove(e){
+        e.preventDefault();
+        //var e = e.originalEvent;
+        if(isMoving){
+          var x = e.touches[0].pageX;
+          var dx = startX-x;
+          if(Math.abs(dx) >=min_move){
+            
+            isMoving=false;
+            this.removeEventListener('touchmove',onTouchmove);
+            if(dx>0){
+              curIndex++;
+              if(curIndex>total-1){curIndex=total-1};
+              setImg(curIndex);
+              //$('.pic').each(function(idx,el){
+                //$(this).animate({left:(idx-curIndex)*winWidth+'px'});
+              //})
+              $('#pic-container').animate({left:-curIndex*winWidth+'px'});
+            }else{
+              //if(curIndex<total)curIndex++; 
+              curIndex--;
+              if(curIndex<0)curIndex=0;
+              setImg(curIndex);
+              $('#pic-container').animate({left:-curIndex*winWidth+'px'});
+              //$('.pic').each(function(idx,el){
+                //$(this).animate({left:(idx-curIndex)*winWidth+'px'});
+              //})
+            }
+          }
+        }
+        e.stopPropagation();
+    }
+    picContainer.addEventListener('touchstart',onTouchstart,false);
+      //image lazy load
+      /*
+      var width = $('body').width();
+      var imgIndex = 0;
+      var imgCount = imgSrc.length;   
+      var picContainer = document.getElementById('pic-container');
+      picContainer.style.width='320px';
+      var pics=[];
+      var tmpDiv;
+      for(var i =0;i<imgCount;i++){
+        tmpDiv = document.createElement('div');
+        tmpDiv.className='pic';
+        pics.push(tmpDiv);
+        picContainer.appendChild(tmpDiv);
+      }
+      
+      var curImg = document.createElement('img');
+      curImg.style.width="100%";
+      curImg.src = imgSrc[imgIndex];
+      pics[imgIndex].appendChild(curImg);
+      
+      
+      
+      picContainer.addEventListener('touchmove',function(evt){
+        console.log(evt.changedTouches[0]);
+        
+      },false);
+      */
+  
+      
+        
+        
+    </script>
+</body>
