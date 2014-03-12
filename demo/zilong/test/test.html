@@ -78,7 +78,7 @@
     
     var curIndex = 0;
     for(var i =0;i<total;i++){
-      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="index">{'+(i+1)+'/'+total+'}</div> <img src="ajax-loader.gif"></div>';
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
       $(picContainer).append(nodeText);
     }
     
@@ -145,12 +145,18 @@
 		winHeight = $(window).height();
 		picContainer.style.width=winWidth*total+'px';
 		picContainer.style.height = winHeight+'px';
-		$('.pic').width(winWidth);
+		var $pic = $('.pic').width(winWidth);
 		if(winWidth > winHeight){	
-			$('.pic img').css({height:'100%'})
+			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
+			$('.wrapper',$pic).css({width:"400px",height:(winHeight-40)+'px'});
+			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
-			$('.pic img').css({width:'100%'})
+			//$('img',$pic).css({width:winHeight+'px',height:'auto'})
+			$('.wrapper',$pic).css({width:winWidth+'px',height:'auto'})
+			//$('.pic .wrapper').css({height:$('.pic img').height()});
+			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
+		$('#pic-container').css({left:-curIndex*winWidth+'px'});
 	});
       //image lazy load
       /*
