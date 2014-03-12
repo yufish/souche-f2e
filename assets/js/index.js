@@ -1,7 +1,7 @@
 
 
 
-define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){
+define(['index/qiugou','souche/down-counter','lib/lazyload'], function (QiuGou,downCounter,Lazyload){
 	
 	$('.down-counter').each(function(){
 		var $this = $(this);
@@ -11,7 +11,15 @@ define(['index/qiugou','souche/down-counter'], function (QiuGou,downCounter){
 	var config = {
 		has_qiugou:false
 	};
-	
+	$(".timebuy img").lazyload();
+	$(".whybuy img").lazyload();
+	$(".carlife img").lazyload();
+	$(".banners img").lazyload();
+	$(".buy-guide img").lazyload();
+	$(".hotsell-list img").lazyload();
+	$(".starbuy img").lazyload();
+	$(".cars img").lazyload();
+	$(".performance img").lazyload();
 	return {
 		init:function(_config){
 			$.extend(config,_config);
