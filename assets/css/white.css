@@ -142,6 +142,7 @@
   color: #fff;
   display: block;
   overflow: hidden;
+  height: 38px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-title .send {
   float: right;
@@ -151,6 +152,7 @@
   margin-right: 5px;
   border-bottom: 1px solid #990000;
   cursor: pointer;
+  height: 20px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price {
   width: 210px;
