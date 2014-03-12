@@ -68,6 +68,11 @@
     
       var winWidth = $(window).width();
 	  var winHeight = $(window).height();
+	  if(winHeight>winWidth){
+		var initMargin = '80px';
+	  }else{
+		var initMargin = '0';
+	  }
     var picContainer = document.getElementById('pic-container');
     //picContainer.style.width=winWidth+'px';
     var total = imgSrc.length;
@@ -78,7 +83,7 @@
     
     var curIndex = 0;
     for(var i =0;i<total;i++){
-      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;margin-top:'+initMargin+'"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
       $(picContainer).append(nodeText);
     }
     
@@ -152,10 +157,12 @@
 		if(winWidth > winHeight){	
 			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
 			$('.wrapper',$pic).css({width:(winHeight-40)/imgH*imgW+'px',height:(winHeight-40)+'px'});
+			$('.wrapper').css({'margin-top':'0'});
 			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
 			//$('img',$pic).css({width:winHeight+'px',height:'auto'})
 			$('.wrapper',$pic).css({width:winWidth+'px',height:'auto'})
+			$('.wrapper').css({'margin-top':'80px'})
 			//$('.pic .wrapper').css({height:$('.pic img').height()});
 			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
