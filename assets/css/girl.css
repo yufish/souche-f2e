@@ -574,7 +574,7 @@
 }
 #girl #content .wrapper .mod-lower .mod-side .timebuy .hd {
   background: url(../images/girl/timebuy-hd.png);
-  width: px;
+  width: 345px;
   height: 38px;
   margin-top: 20px;
 }
@@ -658,7 +658,7 @@
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
   font-weight: bold;
   line-height: 20px;
-  width: 65px;
+  width: 100px;
   height: 18px;
 }
 #girl #content .wrapper .mod-lower .mod-side .timebuy .timebuybox .timebuycar .car-box .timebuy-price .car-price a.carname:hover {
