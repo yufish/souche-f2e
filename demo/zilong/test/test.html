@@ -67,11 +67,12 @@
     <script>
     
       var winWidth = $(window).width();
+	  var winHeight = $(window).height();
     var picContainer = document.getElementById('pic-container');
     //picContainer.style.width=winWidth+'px';
     var total = imgSrc.length;
     picContainer.style.width=winWidth*total+'px';
-    picContainer.style.height='400px';
+    picContainer.style.height=(winHeight-40)+'px';
     
     
     
@@ -138,6 +139,14 @@
         e.stopPropagation();
     }
     picContainer.addEventListener('touchstart',onTouchstart,false);
+	
+	$(window).resize(function(e){
+		winWidth = $(window).width();
+		winHeight = $(window).height();
+		picContainer.style.width=winWidth*total+'px';
+		picContainer.style.height = winHeight+'px';
+		$('.pic').width(winWidth);
+	});
       //image lazy load
       /*
       var width = $('body').width();
