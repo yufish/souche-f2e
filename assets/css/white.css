@@ -79,6 +79,9 @@
   right: 0;
   top: 40px;
 }
+#white #content {
+  background-color: #F4F4F4;
+}
 #white #content #banner {
   width: 100%;
   height: 380px;
