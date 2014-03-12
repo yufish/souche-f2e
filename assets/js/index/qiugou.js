@@ -20,6 +20,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
   var config = {
 
   }
+  var is_submiting = false;
   return {
     init:function(_config){
       $.extend(config,_config);
@@ -133,12 +134,15 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
     },
     _submit:function(){
       var self = this;
+      if(is_submiting) return;
       $(".qiugou .person-bg").animate({
         backgroundPosition:0
       },800,'easeOutExpo',function(){
         
       })
+
       $(".submit").addClass("loading").html("正在提交");
+      is_submiting = true;
       $.ajax({
         url:contextPath+"/pages/homePageAction/saveBuyInfo.json",
         dataType:"json",
@@ -148,6 +152,7 @@ define(['souche/custom-select','souche/select','lib/jquery.easing.min'], functio
           $("#qiugou-popup").addClass("hidden")
           setTimeout(function(){
             $(".submit").removeClass("loading").html("重新定制");
+            is_submiting = false;
           },1500)
          
             $(".wrapGrayBg").hide();

@@ -161,7 +161,7 @@
   overflow: hidden;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price span {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   float: left;
   width: 60px;
@@ -171,8 +171,9 @@
   font-size: 12px;
   float: left;
   display: block;
+  margin-left: 5px;
   line-height: 30px;
-  width: 145px;
+  width: 140px;
   height: 20px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-go {
@@ -182,7 +183,7 @@
   position: relative;
   top: 8px;
   left: 189px;
-  background: url(../images/acts/white/go-image.png);
+  background: url(../../images/acts/white/go-image.png);
 }
 #white #content .wrapper .car-list ul li .car-fenqi {
   height: 98px;
@@ -253,7 +254,7 @@
   margin: 0 auto;
   width: 988px;
   height: 615px;
-  background: url(../images/acts/white/explanation.png?123);
+  background: url(../../images/acts/white/explanation.png?1234);
 }
 #white #footer {
   margin-top: 30px;
@@ -315,13 +316,13 @@
   line-height: 20px;
 }
 #white #footer .performance .per-1 i {
-  background: url(../images/index/per-1.png) no-repeat;
+  background: url(../../images/index/per-1.png) no-repeat;
 }
 #white #footer .performance .per-2 i {
-  background: url(../images/index/per-2.png) no-repeat;
+  background: url(../../images/index/per-2.png) no-repeat;
 }
 #white #footer .performance .per-3 i {
-  background: url(../images/index/per-3.png) no-repeat;
+  background: url(../../images/index/per-3.png) no-repeat;
 }
 #white #footer .company_info {
   padding: 20px 0px;
