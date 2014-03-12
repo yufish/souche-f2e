@@ -1,0 +1,341 @@
+#white {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  color: #333;
+}
+#white a {
+  color: #444;
+}
+#white a:hover {
+  color: #fc7000;
+}
+#white .module {
+  margin-top: 10px;
+}
+#white .module .mod-main {
+  width: 920px;
+  float: left;
+  display: inline;
+}
+#white .module .mod-side {
+  width: 260px;
+  float: left;
+  margin-left: 10px;
+  display: inline;
+}
+#white .module .hd {
+  font-size: 16px;
+  line-height: 35px;
+  color: #333;
+}
+#white #header {
+  height: 115px;
+}
+#white #header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#white #header .logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+#white #header .search {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+#white #header .search .search-text {
+  width: 490px;
+  height: 20px;
+  border: 2px solid #e5e5e5;
+  vertical-align: top;
+  padding-left: 10px;
+}
+#white #header .search .search-submit {
+  background: #fc7000;
+  color: #fff;
+  font-size: 16px;
+  width: 88px;
+  height: 38px;
+  border: none;
+  vertical-align: top;
+  margin-left: -5px;
+  cursor: pointer;
+}
+#white #header .search .hot-keywords {
+  line-height: 30px;
+}
+#white #header .search .hot-keywords a {
+  color: #666;
+  margin-left: 10px;
+}
+#white #header .search .hot-keywords a:hover {
+  color: #fc7000;
+}
+#white #header .head-tel {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+#white #content #banner {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+#white #content #banner img {
+  height: 380px;
+  width: 1920px;
+  display: inline;
+}
+#white #content .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+#white #content .wrapper .car-list {
+  width: 988px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#white #content .wrapper .car-list .hd-image {
+  height: 170px;
+}
+#white #content .wrapper .car-list .hd-image img.hd {
+  width: 459px;
+  height: 170px;
+  margin: 0 auto;
+  display: block;
+}
+#white #content .wrapper .car-list ul {
+  height: 346px;
+}
+#white #content .wrapper .car-list ul li {
+  height: 346px;
+  float: left;
+  margin-left: 5px;
+  overflow: hidden;
+}
+#white #content .wrapper .car-list ul li .car-box {
+  height: 230px;
+  padding: 16px;
+  background-color: #d96c6c;
+}
+#white #content .wrapper .car-list ul li .car-box a.car-image {
+  display: block;
+  width: 210px;
+  height: 142px;
+}
+#white #content .wrapper .car-list ul li .car-box a.car-image img {
+  width: 210px;
+  height: 142px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-title {
+  width: 210px;
+  margin: 10px 0;
+  line-height: 20px;
+  height: 45px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-title a {
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  height: 38px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-title .send {
+  float: right;
+  display: block;
+  color: #990000;
+  font-size: 12px;
+  margin-right: 5px;
+  border-bottom: 1px solid #990000;
+  cursor: pointer;
+  height: 20px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-price {
+  width: 210px;
+  height: 25px;
+  color: #fff;
+  overflow: hidden;
+}
+#white #content .wrapper .car-list ul li .car-box .car-price span {
+  font-size: 18px;
+  font-weight: bold;
+  float: left;
+  width: 60px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-price i {
+  font-style: normal;
+  font-size: 12px;
+  float: left;
+  display: block;
+  margin-left: 5px;
+  line-height: 30px;
+  width: 140px;
+  height: 20px;
+}
+#white #content .wrapper .car-list ul li .car-box .car-go {
+  display: block;
+  width: 37px;
+  height: 25px;
+  position: relative;
+  top: 8px;
+  left: 189px;
+  background: url(../images/acts/white/go-image.png);
+}
+#white #content .wrapper .car-list ul li .car-fenqi {
+  height: 98px;
+  background-color: #fff;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul {
+  height: 60px;
+  padding: 20px 10px;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul li {
+  float: left;
+  width: 66px;
+  height: 60px;
+  border-right: 1px solid #e7e7e7;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul li i {
+  font-style: normal;
+  text-align: center;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul li p {
+  font-size: 12px;
+  color: #444;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li1 i {
+  font-size: 16px;
+  color: #db2400;
+  line-height: 33px;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li1 i i {
+  font-size: 16px;
+  margin-left: 3px;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li2 i {
+  font-size: 14px;
+  color: #444;
+  line-height: 35px;
+  text-align: center;
+  display: block;
+  width: 60px;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li2 p {
+  text-align: center;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li3 {
+  border-right: none;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li3 i {
+  font-size: 14px;
+  color: #444;
+  line-height: 35px;
+  text-align: center;
+  display: block;
+  width: 60px;
+}
+#white #content .wrapper .car-list ul li .car-fenqi ul .li3 p {
+  text-align: center;
+}
+#white #content .wrapper .explanation {
+  height: 900px;
+}
+#white #content .wrapper .explanation .hd {
+  margin: 0 auto;
+  width: 419px;
+  height: 165px;
+  display: block;
+}
+#white #content .wrapper .explanation .explanation-image {
+  margin: 0 auto;
+  width: 988px;
+  height: 615px;
+  background: url(../images/acts/white/explanation.png?123);
+}
+#white #footer {
+  margin-top: 30px;
+}
+#white #footer .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#white #footer .friendlinks {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#white #footer .friendlinks .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+}
+#white #footer .friendlinks .wrapper a {
+  font-size: 12px;
+  color: #333;
+  padding: 0 20px;
+  border-right: 1px solid #e6e6e6;
+}
+#white #footer .friendlinks .wrapper a.last {
+  border: none;
+}
+#white #footer .footer-content {
+  background: #f5f5f5;
+  border-top: 1px solid #e6e6e6;
+}
+#white #footer .performance {
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e6e6;
+  width: 1400px;
+}
+#white #footer .performance i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+#white #footer .performance .per {
+  position: relative;
+  float: left;
+  width: 380px;
+  padding-left: 70px;
+  display: inline;
+}
+#white #footer .performance .t {
+  font-size: 16px;
+  line-height: 30px;
+  color: #666;
+}
+#white #footer .performance .st {
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+}
+#white #footer .performance .per-1 i {
+  background: url(../images/index/per-1.png) no-repeat;
+}
+#white #footer .performance .per-2 i {
+  background: url(../images/index/per-2.png) no-repeat;
+}
+#white #footer .performance .per-3 i {
+  background: url(../images/index/per-3.png) no-repeat;
+}
+#white #footer .company_info {
+  padding: 20px 0px;
+}
+#white #footer .company_info .wrap {
+  text-align: center;
+}
+#white #footer .company_info .wrap a {
+  color: #666;
+  padding: 0 10px;
+}
+#white #footer .company_info p {
+  text-align: center;
+  line-height: 30px;
+  color: #999;
+}
