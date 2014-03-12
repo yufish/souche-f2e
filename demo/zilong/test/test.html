@@ -152,7 +152,8 @@
 			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
 			$('.pic img').css({width:'100%',height:'auto'})
-			$('.pic .wrapper').css({width:$('.pic img').width()});
+			$('.pic .wrapper').css({width:winWidth+'px',height:'auto'})
+			//$('.pic .wrapper').css({height:$('.pic img').height()});
 			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
 		$('#pic-container').css({left:-curIndex*winWidth+'px'});
