@@ -68,6 +68,11 @@
     
       var winWidth = $(window).width();
 	  var winHeight = $(window).height();
+	  if(winHeight>winWidth){
+		var initMargin = '80px';
+	  }else{
+		var initMargin = '0';
+	  }
     var picContainer = document.getElementById('pic-container');
     //picContainer.style.width=winWidth+'px';
     var total = imgSrc.length;
@@ -78,7 +83,7 @@
     
     var curIndex = 0;
     for(var i =0;i<total;i++){
-      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:80px auto;position:relative;"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;margin-top:'+initMargin+'"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
       $(picContainer).append(nodeText);
     }
     
