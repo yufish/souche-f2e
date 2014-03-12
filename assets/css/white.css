@@ -79,6 +79,9 @@
   right: 0;
   top: 40px;
 }
+#white #content {
+  background-color: #F4F4F4;
+}
 #white #content #banner {
   width: 100%;
   height: 380px;
@@ -161,10 +164,10 @@
   overflow: hidden;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price span {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   float: left;
-  width: 60px;
+  width: 65px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price i {
   font-style: normal;

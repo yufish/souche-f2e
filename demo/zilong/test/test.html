@@ -1,13 +1,9 @@
-
-
-
-
-
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="http://f2e.souche.com/assets/css/test/mobile.css" type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="/soucheweb/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="jq.js"></script>
+	<meta charset='utf-8'>
 </head>
 
 <body id="detail-pics">
@@ -71,17 +67,23 @@
     <script>
     
       var winWidth = $(window).width();
+	  var winHeight = $(window).height();
+	  if(winHeight>winWidth){
+		var initMargin = '80px';
+	  }else{
+		var initMargin = '0';
+	  }
     var picContainer = document.getElementById('pic-container');
     //picContainer.style.width=winWidth+'px';
     var total = imgSrc.length;
     picContainer.style.width=winWidth*total+'px';
-    picContainer.style.height='400px';
+    picContainer.style.height=(winHeight-40)+'px';
     
     
     
     var curIndex = 0;
     for(var i =0;i<total;i++){
-      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="index">{'+(i+1)+'/'+total+'}</div> <img src="ajax-loader.gif"></div>';
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;margin-top:'+initMargin+'"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
       $(picContainer).append(nodeText);
     }
     
@@ -142,6 +144,30 @@
         e.stopPropagation();
     }
     picContainer.addEventListener('touchstart',onTouchstart,false);
+	
+	$(window).resize(function(e){
+		winWidth = $(window).width();
+		winHeight = $(window).height();
+		
+		picContainer.style.width=winWidth*total+'px';
+		picContainer.style.height = winHeight+'px';
+		var $pic = $('.pic').width(winWidth);
+		var imgH = $('img',$pic).height();
+		var imgW = $('img',$pic).width();
+		if(winWidth > winHeight){	
+			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
+			$('.wrapper',$pic).css({width:(winHeight-40)/imgH*imgW+'px',height:(winHeight-40)+'px'});
+			$('.wrapper').css({'margin-top':'0'});
+			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
+		}else{
+			//$('img',$pic).css({width:winHeight+'px',height:'auto'})
+			$('.wrapper',$pic).css({width:winWidth+'px',height:'auto'})
+			$('.wrapper').css({'margin-top':'80px'})
+			//$('.pic .wrapper').css({height:$('.pic img').height()});
+			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
+		}
+		$('#pic-container').css({left:-curIndex*winWidth+'px'});
+	});
       //image lazy load
       /*
       var width = $('body').width();
