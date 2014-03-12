@@ -78,7 +78,7 @@
     
     var curIndex = 0;
     for(var i =0;i<total;i++){
-      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
+      var nodeText ='<div class="pic" style="width:'+winWidth+'px"><div class="wrapper" style="margin:0 auto;position:relative;"><div class="index">'+(i+1)+'/'+total+'</div> <img src="ajax-loader.gif"></div></div>';
       $(picContainer).append(nodeText);
     }
     
@@ -148,8 +148,12 @@
 		$('.pic').width(winWidth);
 		if(winWidth > winHeight){	
 			$('.pic img').css({width:'auto',height:'100%'})
+			$('.pic .wrapper').css({width:$('.pic img').width()});
+			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
 			$('.pic img').css({width:'100%',height:'auto'})
+			$('.pic .wrapper').css({width:$('.pic img').width()});
+			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
 		$('#pic-container').css({left:-curIndex*winWidth+'px'});
 	});
