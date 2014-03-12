@@ -152,10 +152,12 @@
 		if(winWidth > winHeight){	
 			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
 			$('.wrapper',$pic).css({width:(winHeight-40)/imgH*imgW+'px',height:(winHeight-40)+'px'});
+			$('.wrapper').css({'margin-top':'0'});
 			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
 			//$('img',$pic).css({width:winHeight+'px',height:'auto'})
 			$('.wrapper',$pic).css({width:winWidth+'px',height:'auto'})
+			$('.wrapper').css({'margin-top':'80px'})
 			//$('.pic .wrapper').css({height:$('.pic img').height()});
 			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
