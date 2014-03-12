@@ -882,9 +882,13 @@
   left: 15px;
 }
 #index .hotsell .hotsell-wrap .hotsell-box .hotsell-list .kempcar .car-list span {
-  background: url(../images/index/kempcar.png);
-  position: relative;
-  left: -5px;
+  font-size: 14px;
+  color: #FC7000;
+  float: left;
+  display: block;
+  width: 20px;
+  height: 25px;
+  line-height: 25px;
 }
 #index .hotsell .hotsell-wrap .hotsell-box .hotsell-list .kempcar a.kempcar-price {
   color: #fc7b28;
