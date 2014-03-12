@@ -86,7 +86,7 @@
 }
 #white #content #banner img {
   height: 380px;
-  width: 100%;
+  width: 1920px;
   display: inline;
 }
 #white #content .wrapper {
@@ -135,10 +135,14 @@
   width: 210px;
   margin: 10px 0;
   line-height: 20px;
+  height: 45px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-title a {
   font-size: 12px;
   color: #fff;
+  display: block;
+  overflow: hidden;
+  height: 38px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-title .send {
   float: right;
@@ -148,6 +152,7 @@
   margin-right: 5px;
   border-bottom: 1px solid #990000;
   cursor: pointer;
+  height: 20px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-price {
   width: 210px;
@@ -169,13 +174,14 @@
   margin-left: 5px;
   line-height: 30px;
   width: 140px;
+  height: 20px;
 }
 #white #content .wrapper .car-list ul li .car-box .car-go {
   display: block;
   width: 37px;
   height: 25px;
   position: relative;
-  top: 19px;
+  top: 8px;
   left: 189px;
   background: url(../images/acts/white/go-image.png);
 }
@@ -202,7 +208,7 @@
   color: #444;
 }
 #white #content .wrapper .car-list ul li .car-fenqi ul .li1 i {
-  font-size: 20px;
+  font-size: 16px;
   color: #db2400;
   line-height: 33px;
 }
@@ -211,7 +217,7 @@
   margin-left: 3px;
 }
 #white #content .wrapper .car-list ul li .car-fenqi ul .li2 i {
-  font-size: 16px;
+  font-size: 14px;
   color: #444;
   line-height: 35px;
   text-align: center;
@@ -225,7 +231,7 @@
   border-right: none;
 }
 #white #content .wrapper .car-list ul li .car-fenqi ul .li3 i {
-  font-size: 16px;
+  font-size: 14px;
   color: #444;
   line-height: 35px;
   text-align: center;
@@ -248,7 +254,7 @@
   margin: 0 auto;
   width: 988px;
   height: 615px;
-  background: url(../images/acts/white/explanation.png);
+  background: url(../images/acts/white/explanation.png?123);
 }
 #white #footer {
   margin-top: 30px;
