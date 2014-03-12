@@ -143,12 +143,15 @@
 	$(window).resize(function(e){
 		winWidth = $(window).width();
 		winHeight = $(window).height();
+		
 		picContainer.style.width=winWidth*total+'px';
 		picContainer.style.height = winHeight+'px';
 		var $pic = $('.pic').width(winWidth);
+		var imgH = $('img',$pic).height();
+		var imgW = $('img',$pic).width();
 		if(winWidth > winHeight){	
 			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
-			$('.wrapper',$pic).css({width:"400px",height:(winHeight-40)+'px'});
+			$('.wrapper',$pic).css({width:(winHeight-40)/imgH*imgW+'px',height:(winHeight-40)+'px'});
 			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
 			//$('img',$pic).css({width:winHeight+'px',height:'auto'})

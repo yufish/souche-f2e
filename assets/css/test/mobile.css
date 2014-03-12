@@ -1809,7 +1809,7 @@ text-align: left;
 #detail-pics #content{
 	position:relative;
 	overflow:hidden;
-	height:440px;
+	height:9999px;
 	background-color:black;
 }
 #detail-pics .pics {
