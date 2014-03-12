@@ -141,6 +141,7 @@
   font-size: 12px;
   color: #fff;
   display: block;
+  overflow: hidden;
 }
 #white #content .wrapper .car-list ul li .car-box .car-title .send {
   float: right;
