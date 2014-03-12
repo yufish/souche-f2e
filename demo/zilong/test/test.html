@@ -145,14 +145,14 @@
 		winHeight = $(window).height();
 		picContainer.style.width=winWidth*total+'px';
 		picContainer.style.height = winHeight+'px';
-		$('.pic').width(winWidth);
+		var $pic = $('.pic').width(winWidth);
 		if(winWidth > winHeight){	
-			$('.pic img').css({width:'auto',height:'100%'})
-			$('.pic .wrapper').css({width:$('.pic img').width()});
+			//$('img',$pic).css({width:'auto',height:winHeight+'px'})
+			$('.wrapper',$pic).css({width:"400px",height:(winHeight-40)+'px'});
 			//$('.pic wrapper').css({width:$('.pic img').width(),height:winHeight+'px'})
 		}else{
-			$('.pic img').css({width:'100%',height:'auto'})
-			$('.pic .wrapper').css({width:winWidth+'px',height:'auto'})
+			//$('img',$pic).css({width:winHeight+'px',height:'auto'})
+			$('.wrapper',$pic).css({width:winWidth+'px',height:'auto'})
 			//$('.pic .wrapper').css({height:$('.pic img').height()});
 			//$('.pic wrapper').css({width:winWidth+'px',height:$('.pic img').height()+'px'});
 		}
