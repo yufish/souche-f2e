@@ -147,10 +147,11 @@
 		picContainer.style.height = winHeight+'px';
 		$('.pic').width(winWidth);
 		if(winWidth > winHeight){	
-			$('.pic img').css({height:'100%'})
+			$('.pic img').css({width:'auto',height:'100%'})
 		}else{
-			$('.pic img').css({width:'100%'})
+			$('.pic img').css({width:'100%',height:'auto'})
 		}
+		$('#pic-container').animate({left:-curIndex*winWidth+'px'});
 	});
       //image lazy load
       /*
