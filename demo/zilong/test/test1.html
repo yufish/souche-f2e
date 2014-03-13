@@ -45,8 +45,8 @@
 				<div class="lft">
 					<div class="title">现代 2010款 新胜达-2.4L-手自一体至尊版七座四驱</div>
 				</div>
-				<div class="rht" style='height:80px;position:relative;'>									 									
-					<div  id="pic-container" style="position:absolute;height:80px;overflow:hidden;"></div>
+				<div class="rht" style='position:relative;'>									 									
+					<div  id="pic-container" style="position:absolute;overflow:hidden;"></div>
 				</div>
 				<!-- change to small pic --> 
 				 <script>
@@ -95,16 +95,20 @@
 				        imgSrc.push('http://souche.cdn.aliyuncs.com/files/carpicture/392C8ACEBE1E60873C614FBCF9E4DCF0_700x460.jpg_325x10000.jpg');
 			    	
 			    	
+			    	var w=325;
+			    	var h =213;
 			    	var winWidth = $(window).width()
 			    		,winHeight = $(window).height();
 			    	var picContainer = document.getElementById('pic-container');
 			    	var total = imgSrc.length;
 			    	$(picContainer).css({width:(winWidth*total/3)+'px'});
+			    	
+			    	$('.rht').css({height:winWidth*h/w/3+'px'})
 			    	var curIndex = 0;
 			    	//var note = '<div class="pic-item" style="width:' + winWidth + 'px">'
 			    	//var postDiv='</div>'
 		    	  	for(var i =0;i<total;i+=3){
-		    	  		var node = '<div class="pic-item" style="overflow:hidden;float:left;width: ' + winWidth+'px">'
+		    	  		var node = '<div class="pic-item" style="float:left;width: ' + winWidth+'px">'
 		    	    	var nodeText ='<div class="pic" > <img src="ajax-loader.gif"> </div>';
 		    	    	for(var j = i;j<i+3;j++){
 		    	    		if(j<total)
@@ -168,21 +172,27 @@
 			    	      e.stopPropagation();
 			    	  }
 			    	  picContainer.addEventListener('touchstart',onTouchstart,false);
-					  $(window).resize(function(e){
-						winWidth = $(window).width();
-						//winHeight = $(window).height();
-						
-						picContainer.style.width=winWidth*total/3+'px';
-						var $picItem = $('.pic-item').width(winWidth);
-						var imgH = $('img',$pic).height();
-						var imgW = $('img',$pic).width();
-						if(winWidth > winHeight){	
-							$('.rht').css({height:80*700/460+'px'});
-							
-						}else{
-							$('.rht').css({height:80+'px'});
-						$('#pic-container').css({left:-curIndex*winWidth+'px'});
-					});
+			    	  
+			    	  
+			    		$(window).resize(function(e){
+			    			winWidth = $(window).width();
+			    			winHeight = $(window).height();
+			    			var picContainer = document.getElementById('pic-container');
+			    			picContainer.style.width=winWidth*total/3+'px';
+			    			//picContainer.style.height = winHeight+'px';
+			    			//var $pic = $('.pic').width(winWidth);
+			    			//var imgH = $('img',picContainer).height();
+			    			//var imgW = $('img',picContainer).width();
+			    			
+			    			var winWidth = $(window).width()
+				    		,winHeight = $(window).height();
+					    	var picContainer = document.getElementById('pic-container');
+					    	var total = imgSrc.length;
+					    	$(picContainer).css({width:(winWidth*total/3)+'px'});
+					    	
+					    	$('.rht').css({height:winWidth*h/w/3+'px'})
+					    	$('.pic-item').css({width:winWidth+'px'})
+					    });
 			    	  
 			    </script>
 			</div>
