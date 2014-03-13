@@ -121,6 +121,15 @@ var bdTimer = setInterval(function(){
     
   }
 },100);
+  //展开动画
+  $(".sidetoolbar .side-box").mouseover(function(){
+   $(".sidetoolbar").animate({
+    width:"70px"
+   },500)
+  })
+  $(".sidetoolbar .side-box").mouseout(function(){
+
+  })
 
   //ie6 fixed 
   if((parseFloat($.browser.version) <= 6.0)){
