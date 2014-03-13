@@ -187,7 +187,7 @@
 				    		,winHeight = $(window).height();
 					    	var picContainer = document.getElementById('pic-container');
 					    	var total = imgSrc.length;
-					    	$(picContainer).css({width:(winWidth*total/3)+'px',left:-curIndex*winWidth+'px'});
+					    	$(picContainer).css({width:(winWidth*Math.ceil(total/3)+10)+'px',left:-curIndex*winWidth+'px'});
 					    	
 					    	$('.rht').css({height:winWidth*h/w/3+'px'})
 					    	$('.pic-item').css({width:winWidth+'px'})
