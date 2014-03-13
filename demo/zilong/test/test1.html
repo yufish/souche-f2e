@@ -45,7 +45,7 @@
 				<div class="lft">
 					<div class="title">现代 2010款 新胜达-2.4L-手自一体至尊版七座四驱</div>
 				</div>
-				<div class="rht" style='height:100px;position:relative;'>									 									
+				<div class="rht" style='height:80px;position:relative;'>									 									
 					<div  id="pic-container" style="position:absolute;height:80px;overflow:hidden;"></div>
 				</div>
 				<!-- change to small pic --> 
@@ -168,6 +168,21 @@
 			    	      e.stopPropagation();
 			    	  }
 			    	  picContainer.addEventListener('touchstart',onTouchstart,false);
+					  $(window).resize(function(e){
+						winWidth = $(window).width();
+						//winHeight = $(window).height();
+						
+						picContainer.style.width=winWidth*total/3+'px';
+						var $picItem = $('.pic-item').width(winWidth);
+						var imgH = $('img',$pic).height();
+						var imgW = $('img',$pic).width();
+						if(winWidth > winHeight){	
+							$('.rht').css({height:80*700/460+'px'});
+							
+						}else{
+							$('.rht').css({height:80+'px'});
+						$('#pic-container').css({left:-curIndex*winWidth+'px'});
+					});
 			    	  
 			    </script>
 			</div>
