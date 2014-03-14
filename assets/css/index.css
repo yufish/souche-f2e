@@ -685,10 +685,11 @@
 #index .whybuy .whybuy-wrap .whybuy-box .morecar {
   height: 40px;
   width: 100%;
-  position: relative;
+  left: 0;
+  position: absolute;
   cursor: pointer;
   line-height: 40px;
-  bottom: 84px;
+  bottom: 0;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar .morecar-title {
   font-size: 14px;
@@ -709,8 +710,9 @@
 #index .whybuy .whybuy-wrap .whybuy-box .morecar-bg {
   width: 100%;
   height: 40px;
-  position: relative;
-  top: -44px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   background-color: #000;
   opacity: 0.6;
 }
