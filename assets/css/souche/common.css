@@ -58,7 +58,7 @@ body{
 #header .search .search-text {
   width: 490px;
   height: 35px;
-  border: 2px solid #e5e5e5;
+  border: 2px solid #FC7000;
   
   line-height: 35px;
   font-size:12px;
@@ -121,8 +121,8 @@ body{
 }
 #nav .other-navs a {
   font-size: 12px;
-  padding: 0 10px;
-  border-right: 1px solid #e6e6e6;
+  padding: 0 8px;
+  border-right: 1px solid #666;
 }
 #nav .other-navs a.last {
   border: none;
