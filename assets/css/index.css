@@ -685,12 +685,10 @@
 #index .whybuy .whybuy-wrap .whybuy-box .morecar {
   height: 40px;
   width: 100%;
-  background-color: #000;
-  position: absolute;
+  position: relative;
   cursor: pointer;
   line-height: 40px;
-  bottom: 0;
-  opacity: 0.5;
+  bottom: 84px;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar .morecar-title {
   font-size: 14px;
@@ -707,6 +705,14 @@
   float: right;
   margin-top: 10px;
   margin-right: 10px;
+}
+#index .whybuy .whybuy-wrap .whybuy-box .morecar-bg {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  top: -44px;
+  background-color: #000;
+  opacity: 0.6;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-img {
   width: 228px;
