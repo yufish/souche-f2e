@@ -667,22 +667,35 @@
           </div>
           <div class="mod-side">
             <div class="buyforme"><a target="_blank" href="/soucheweb/pages/caruser/sellCarNew.html" class="go"></a>
-              <div class="qiugou-history">
-              <div class="slides">
-              <ul class="">
-                
-                  <li class="item"> 想买 宝马 1系两厢五门版</li>
-                
-                  <li class="item">sou****min 想买 宝马5系</li>
-                
-                  <li class="item">188****222 想买 川汽 野马F99</li>
-                
-                </ul>
+              <div class="qiugou-history" style="width:198px;height:69px;overflow:hidden">
+              <div class="slides" style="width:198px;height:207px;overflow:hidden">
+              <ul class="ul1" style="width:198px;height:69px;padding-bottom:10px;">
+                <li class="item"> 想买 宝马 1系两厢五门版</li>
+                <li class="item">sou****min 想买 宝马5系</li>
+                <li class="item">188****222 想买 川汽 野马F99</li>
+              </ul>
+              <ul class="" style="width:198px;height:69px;">
+                <li class="item"> 想买 奔驰 1系两厢五门版</li>
+                <li class="item"> 想买 吉普 1系两厢五门版</li>
+                <li class="item"> 想买 宝马 1系两厢五门版</li>
+              </ul>
+              <ul class="" style="width:198px;height:69px;">
+                <li class="item"> 1232132312想买 宝马 1系两厢五门版</li>
+                <li class="item"> 1232131231想买 宝马 1系两厢五门版</li>
+                <li class="item"> 1121324312想买 宝马 1系两厢五门版</li>
+              </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <script type="text/javascript">
+         $(document).ready(function(){
+          $(".slides .ul1")
+
+         });
+       });
+        </script>
        <!-- <script>
         $(document).ready(function(){
         $('.qiugou-history .slides').marquee({
@@ -1608,43 +1621,43 @@
     </div>
   <div class="sidetoolbar">
     <div class="collectside side-box">
-      <a class="collect-box" href='#'>
-        <div class="collect-img"></div>
-        <i>收藏</i>
-      </a>
-      <div class="point">
-         <i class="point-num">1</i>
-      </div>
+      <a class="collect-box" href='#'><div class="collect-img"></div><i>收藏</i></a>
+      <div class="point"><i class="point-num">1</i></div>
     </div>
     <div class="reserveside side-box">
-       <a class="reserve-box " href='#'>
-         <div class="reserve-img"></div>
-         <i>预约</i>
-       </a>
-       <div class="point">
-         <i class="point-num">1</i>
-       </div>
+       <a class="reserve-box " href='#'><div class="reserve-img"></div><i>预约</i></a>
+       <div class="point"><i class="point-num">1</i></div>
     </div>
     <div class="sellside side-box">
-      <a class="sell-box" href='#'>
-        <div class="sell-img"></div>
-        <i>降价</i>
-      </a>
-      <div class="point">
-         <i class="point-num">1</i>
-      </div>
+      <a class="sell-box" href='#'><div class="sell-img"></div><i>降价</i></a>
+      <div class="point"><i class="point-num">1</i></div>
     </div>
     <div class="scanside side-box">
-      <a class="scan-box" href='#'>
-        <div class="scan-img"></div>
-        <i>浏览</i>
-      </a>
-      <div class="point">
-         <i class="point-num">1</i>
-      </div>
+      <a class="scan-box" href='#'><div class="scan-img"></div><i>浏览</i></a>
+      <div class="point"><i class="point-num">1</i></div>
     </div>
   </div> 
-  <iframe src="" class="pop"></iframe>
+  <iframe src="" class="pop">
+    <div class="nav">
+      <div class="collectside side-box">
+        <a class="collect-box" href='#'><div class="collect-img"></div><i>收藏</i></a>
+        <div class="point"><i class="point-num">1</i></div>
+      </div>
+    <div class="reserveside side-box">
+       <a class="reserve-box " href='#'><div class="reserve-img"></div><i>预约</i></a>
+       <div class="point"><i class="point-num">1</i></div>
+    </div>
+    <div class="sellside side-box">
+      <a class="sell-box" href='#'><div class="sell-img"></div><i>降价</i></a>
+      <div class="point"><i class="point-num">1</i></div>
+    </div>
+    <div class="scanside side-box">
+      <a class="scan-box" href='#'><div class="scan-img"></div><i>浏览</i></a>
+      <div class="point"><i class="point-num">1</i></div>
+    </div>
+    </div>
+    <div class="content"></div>
+  </iframe>
   <script>
     require(['index'], function (Index){
       Index.init({
