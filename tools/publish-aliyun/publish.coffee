@@ -4,25 +4,39 @@ walkdo = require 'walkdo'
 queuedo = require 'queuedo'
 path = require 'path'
 properties = require 'properties'
+fs = require 'fs'
+argv = require('optimist').argv
 oss = new ossApi.OssClient(config)
 timestampData = {}
 OSS = 
-  pubFile:(_path)->
-    console.log "start uploading "+_path
-    oss.putObject config.bucketName, _path.replace(/^\.\//,''), _path,(err)->
-      console.log 'end'
-      if err
-        console.log err
-      else
-        console.log _path.replace(/^\.\//,'')+' success'
+  pubFile:(_path,callback)->
+    console.log '开始处理：'+_path
+    clearPath = _path.replace(/^\.\//,'/')
+    etag = oss.getObjectEtag(_path)
+    this.getFile _path,(error,info)->
+      etagOnline = oss.getObjectEtag(info)
+      if etagOnline != etag
+        console.log "start uploading "+_path
+        if timestampData[clearPath]
+          timestampData[clearPath] = timestampData[clearPath]*1+1
+        else
+          timestampData[clearPath] = 1
+        oss.putObject config.bucketName, _path.replace(/^\.\//,''), _path,(err)->
+          if err
+            console.log err
+          else
+            console.log "upload finished " + _path.replace(/^\.\//,'')
+          callback err
 
-  getFile:(_path)->
-    oss.getObject config.bucketName,_path.replace(/^\.\//,''),"oss_client.test",null,(err,info)->
-      if err
-        console.log err
       else
-        console.log oss.getObjectEtag(info)
-        console.log info
+        console.log "无变化 "
+        callback error
+
+  getFile:(_path,callback)->
+    oss.getObject config.bucketName,_path.replace(/^\.\//,''),"cache.test",(err,info)->
+      if err
+        console.error err
+      callback err,info
   
 # Publish.pubFile('./lib/oss_client.js')
 
@@ -32,7 +46,7 @@ Publish = (_config)->
   self = this
   this.config = 
     properties_file:""
-
+    white_list:['']
   for k,v of _config
     this.config[k]=v
   this.middlewares = []
@@ -54,11 +68,20 @@ Publish.prototype.pub = (_path)->
       next.call(context)
   ,()->
     console.log("all finish!")
+    fs.writeFileSync self.config.properties_file,properties.stringify(timestampData),'utf-8'
 Publish.prototype.handleFile = (file,callback)->
   file = file
   self = this
+  is_in_white = false
+  extname = path.extname(file)
+  for i in [0...this.config.white_list.length]
+    if extname.indexOf(this.config.white_list[i]) != -1
+      is_in_white = true
+  if !is_in_white 
+    callback null
+    return
   queuedo this.middlewares,(mw,next,context)-> 
-    if path.extname(file) == mw.ext
+    if extname == mw.ext
       mw.middleware file,(error,_file)->
         if error
           console.log error
@@ -68,17 +91,19 @@ Publish.prototype.handleFile = (file,callback)->
     else
       next.call(context)
   ,()->
-    self.pubFile(file)
-    callback null
+    self.pubFile(file,callback)
 
-Publish.prototype.pubFile = (file)->
-  OSS.pubFile(file.replace(/^.*assets\//,'assets/'))
+Publish.prototype.pubFile = (file,callback)->
+  OSS.pubFile(file.replace(/^.*assets\//,'assets/'),callback)
+
 
 
 pub = new Publish({
-  properties_file:"./resource.properties"
+  properties_file:"./resource.properties",
+  white_list:['.js','.less','.css','.png','.jpg'], #文件后缀的白名单
+  black_list:[/\.min\.js/] #文件名的黑名单，正则
 });
 pub.addMiddleware(".js",require("./middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./middleware/mw-less.coffee"))
 pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
-pub.pub("./test")
+pub.pub((argv.path?argv.path:"./test"))

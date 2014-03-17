@@ -3,11 +3,6 @@
 }
 .star-box .star {
   width: 227px;
-  height: 340px;
-  border: 1px dashed #c0c0c0;
-  border-right: none;
-  border-bottom: none;
-  float: left;
 }
 .star-box .star ul li .starli {
   width: 74px;
