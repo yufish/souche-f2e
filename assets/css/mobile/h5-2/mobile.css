@@ -1,0 +1,89 @@
+#index #header {
+  position: relative;
+  background-color: #fc7000;
+  height: 40px;
+}
+#index #header .logo {
+  padding: 5px 10px;
+  background: url(../../../images/mobile/h5-2/logo.png) no-repeat center center;
+  background-size: 80px;
+  width: 80px;
+  height: 30px;
+}
+#index #header .header-feature {
+  position: absolute;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  padding-top: 10px;
+}
+#index #header .header-feature .search-icon {
+  float: left;
+  background: url(../../../images/mobile/h5-2/search.png) no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+}
+#index #header .header-feature .search-icon-2 {
+  display: none;
+  float: left;
+  background: url(../../../images/mobile/h5-2/search-2.png) no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+}
+#index #header .header-feature .login-icon {
+  float: left;
+  background: url(../../../images/mobile/h5-2/login.png) no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+}
+#index #header .search-box {
+  position: absolute;
+  top: 40px;
+  display: none;
+  width: 100%;
+}
+#index #header .search-box .search-header {
+  padding: 5px 10px;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+#index #header .search-box .search-header .input {
+  width: 85%;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+}
+#index #header .search-box .search-header .input .cancel-icon {
+  display: inline-block;
+  background: url(../../../images/mobile/h5-2/search-cancel.png) no-repeat center center;
+  width: 18px;
+  height: 18px;
+  background-size: 18px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+#index #header .search-box .search-header .input input[type='text'] {
+  font-size: 14px;
+  border: none;
+  width: 85%;
+  height: 28px;
+}
+#index #header .search-box .search-header #search-btn {
+  cursor: pointer;
+  width: 15%;
+  float: left;
+  height: 30px;
+}
+#index #header .search-box .search-header #search-btn span {
+  padding-left: 10px;
+  line-height: 30px;
+  font-size: 14px;
+}
