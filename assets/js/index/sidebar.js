@@ -122,6 +122,7 @@ var bdTimer = setInterval(function(){
   }
 },100);
 
+
   //ie6 fixed 
   if((parseFloat($.browser.version) <= 6.0)){
     var BDFixed = function(){
@@ -156,9 +157,6 @@ var bdTimer = setInterval(function(){
         });     
       }
     },100);
-    
-    
-    
   }
   
 })();

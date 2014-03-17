@@ -402,7 +402,7 @@
   display: block;
   width: 260px;
   height: 338px;
-  background: url(../images/index/wantbuy.png) no-repeat;
+  background: url(../images/index/wantbuy.png?123) no-repeat;
   overflow: hidden;
 }
 #index .buyforme .flex-control-nav,
@@ -415,7 +415,7 @@
 #index .buyforme .qiugou-history {
   font-size: 12px;
   color: #666;
-  height: 55px;
+  height: 60px;
   overflow: hidden;
   padding: 10px 30px;
 }
@@ -685,28 +685,36 @@
 #index .whybuy .whybuy-wrap .whybuy-box .morecar {
   height: 40px;
   width: 100%;
-  background-color: #000;
+  left: 0;
   position: absolute;
   cursor: pointer;
   line-height: 40px;
   bottom: 0;
-  opacity: 0.5;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar .morecar-title {
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
-  line-height: 40px;
+  line-height: 38px;
   margin-right: 10px;
   float: right;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar span {
   height: 20px;
   width: 20px;
-  background: url(../images/index/arrow.png);
+  background: url(../images/index/arrow.png?123);
   display: block;
   float: right;
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+#index .whybuy .whybuy-wrap .whybuy-box .morecar-bg {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.6;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-img {
   width: 228px;
@@ -1161,6 +1169,83 @@
   color: #666;
   font-style: normal;
   line-height: 20px;
+}
+#index .sidetoolbar {
+  width: 50px;
+  height: 215px;
+  background: #f7f7f7;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border: 1px solid #dedede;
+}
+#index .sidetoolbar .side-box {
+  height: 53px;
+  border-bottom: 1px solid #dedede;
+}
+#index .sidetoolbar .side-box .point {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  background: #FC7000;
+  position: relative;
+  top: -50px;
+  left: -8px;
+}
+#index .sidetoolbar .side-box .point i {
+  font-size: 12px;
+  color: #fff;
+  font-style: normal;
+  text-align: center;
+  display: block;
+  padding: -1px;
+}
+#index .sidetoolbar .side-box a {
+  padding: 6px 5px;
+  display: block;
+}
+#index .sidetoolbar .side-box a div {
+  width: 27px;
+  height: 25px;
+  margin: 0 auto;
+}
+#index .sidetoolbar .side-box a i {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+}
+#index .sidetoolbar .side-box .collect-box .collect-img {
+  background: url(../images/index/collect.png);
+}
+#index .sidetoolbar .side-box .reserve-box .reserve-img {
+  background: url(../images/index/reserve.png);
+}
+#index .sidetoolbar .side-box .sell-box .sell-img {
+  background: url(../images/index/sell.png);
+}
+#index .sidetoolbar .side-box .scan-box .scan-img {
+  background: url(../images/index/scan.png);
+}
+#index .sidetoolbar .side-box:hover {
+  background: #FC7000;
+}
+#index .sidetoolbar .side-box:hover a i {
+  color: #fff8dd;
+}
+#index .sidetoolbar .side-box:hover .collect-box .collect-img {
+  background: url(../images/index/collect-hover.png);
+}
+#index .sidetoolbar .side-box:hover .reserve-box .reserve-img {
+  background: url(../images/index/reserve-hover.png);
+}
+#index .sidetoolbar .side-box:hover .sell-box .sell-img {
+  background: url(../images/index/sell-hover.png);
+}
+#index .sidetoolbar .side-box:hover .scan-box .scan-img {
+  background: url(../images/index/scan-hover.png);
 }
 #index .filter-nav {
   border: 1px solid #e6e6e6;

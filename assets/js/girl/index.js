@@ -2,10 +2,10 @@
     var container = target;
     var now = new Date();
     var counter = {
-      endYear: container.attr("endYear"),
-      endMonth: container.attr("endMonth"),
-      endDay: container.attr("endDay"),
-      endHour: container.attr("endHour"),
+      endYear: now.getFullYear(),//container.attr("endYear"),
+      endMonth:now.getMonth(),// container.attr("endMonth"),
+      endDay:now.getDate(),// container.attr("endDay"),
+      endHour:now.getHours()+7, //container.attr("endHour"),
       serverYear: now.getFullYear(),//container.attr("serverYear"),
       serverMonth: now.getMonth(),//container.attr("serverMonth"),
       serverDay: now.getDate(),//container.attr("serverDay"),
