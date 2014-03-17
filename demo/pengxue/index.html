@@ -667,35 +667,53 @@
           </div>
           <div class="mod-side">
             <div class="buyforme"><a target="_blank" href="/soucheweb/pages/caruser/sellCarNew.html" class="go"></a>
-              <div class="qiugou-history" style="width:198px;height:69px;overflow:hidden">
-              <div class="slides" style="width:198px;height:207px;overflow:hidden">
-              <ul class="ul1" style="width:198px;height:69px;padding-bottom:10px;">
-                <li class="item"> 想买 宝马 1系两厢五门版</li>
-                <li class="item">sou****min 想买 宝马5系</li>
-                <li class="item">188****222 想买 川汽 野马F99</li>
-              </ul>
-              <ul class="" style="width:198px;height:69px;">
-                <li class="item"> 想买 奔驰 1系两厢五门版</li>
-                <li class="item"> 想买 吉普 1系两厢五门版</li>
-                <li class="item"> 想买 宝马 1系两厢五门版</li>
-              </ul>
-              <ul class="" style="width:198px;height:69px;">
-                <li class="item"> 1232132312想买 宝马 1系两厢五门版</li>
-                <li class="item"> 1232131231想买 宝马 1系两厢五门版</li>
-                <li class="item"> 1121324312想买 宝马 1系两厢五门版</li>
+              <div class="qiugou-history" style="width:198px;height:69px;overflow:hidden;clear:both">
+              <div class="slides" style="width:198px;height:69px;overflow:hidden;clear:both">
+              <ul class="ul1" style="clear:both;">
+                <li class="item">这是第一行</li>
+                <li class="item">这是第二行</li>
+                <li class="item">这是第三行</li>
+                <li class="item">这是第四行</li>
+                <li class="item">这是第五行</li>
+                <li class="item">这是第六行</li>
+                <li class="item">这是第七行</li>
+                <li class="item">这是第八行</li>
+                <li class="item">这是第九行</li>
               </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <script type="text/javascript">
+
+<script type="text/javascript">
+// 简单滚动
+   function AutoScroll(obj){
+   $(obj).find(".ul1").animate({
+    marginTop:"-69px"
+  },500,function(){
+    $(this).css({marginTop:"0px"}).find("a:first").appendTo(this);
+  });
+}
+$(function(){
+  setInterval('AutoScroll(".slide")',3000)
+});
+</script>
+        <!--<script type="text/javascript">
          $(document).ready(function(){
-          $(".slides .ul1")
+          $(".slides .ul1").animate({
+            marginTop :"-79px"
+          },500,function(){
+            $(this).css({marginTop:"0px"}).find("li").appendTo(this);
+          });
 
          });
-       });
+         $(function(){
+          setInterval('AutoScroll(".slides")',1500)
+         })
+   
         </script>
+      -->
        <!-- <script>
         $(document).ready(function(){
         $('.qiugou-history .slides').marquee({
