@@ -419,6 +419,9 @@
   overflow: hidden;
   padding: 10px 30px;
 }
+#index .buyforme .qiugou-history .slides {
+  overflow: hidden;
+}
 #index .buyforme .qiugou-history .item {
   color: #666;
   line-height: 23px;
@@ -690,7 +693,7 @@
   cursor: pointer;
   line-height: 40px;
   bottom: 0;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .morecar .morecar-title {
   font-size: 14px;

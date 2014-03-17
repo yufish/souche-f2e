@@ -213,11 +213,14 @@ OssClient.prototype.doRequest = function(method, metas, ossParams, callback) {
             }
         }
     );
-
+    console.log(ossParams)
     // put a file to oss
     if (ossParams.srcFile) {
         var rstream = fs.createReadStream(ossParams.srcFile);
         rstream.pipe(req);
+        rstream.on('finish', function() {
+            callback(null, ossParams.srcFile)
+        })
     }
 
     // get a object from oss and save as a file

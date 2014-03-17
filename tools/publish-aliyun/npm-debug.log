@@ -1,0 +1,79 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'propertiescoffe' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose read json /Users/tianqi/package.json
+5 verbose read json /Users/tianqi/node_modules/forever/package.json
+6 verbose read json /Users/tianqi/node_modules/less/package.json
+7 verbose read json /Users/tianqi/node_modules/node-smushit/package.json
+8 verbose read json /Users/tianqi/node_modules/optimage/package.json
+9 verbose read json /Users/tianqi/node_modules/php/package.json
+10 verbose read json /Users/tianqi/node_modules/properties/package.json
+11 verbose read json /Users/tianqi/node_modules/queuedo/package.json
+12 verbose read json /Users/tianqi/node_modules/request/package.json
+13 verbose read json /Users/tianqi/node_modules/uglify-js/package.json
+14 verbose read json /Users/tianqi/node_modules/walkdo/package.json
+15 verbose read json /Users/tianqi/node_modules/xml2js/package.json
+16 warn package.json php@0.0.1 'repositories' (plural) Not supported.
+16 warn package.json Please pick one as the 'repository' field
+17 warn package.json queuedo@0.9.6 'repositories' (plural) Not supported.
+17 warn package.json Please pick one as the 'repository' field
+18 warn package.json walkdo@0.9.3 'repositories' (plural) Not supported.
+18 warn package.json Please pick one as the 'repository' field
+19 verbose read json /Users/tianqi/package.json
+20 verbose cache add [ 'propertiescoffe', null ]
+21 verbose cache add name=undefined spec="propertiescoffe" args=["propertiescoffe",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'propertiescoffe',
+22 verbose parsed url   path: 'propertiescoffe',
+22 verbose parsed url   href: 'propertiescoffe' }
+23 silly lockFile 7d596ded-propertiescoffe propertiescoffe
+24 verbose lock propertiescoffe /Users/tianqi/.npm/7d596ded-propertiescoffe.lock
+25 silly lockFile 7d596ded-propertiescoffe propertiescoffe
+26 silly lockFile 7d596ded-propertiescoffe propertiescoffe
+27 verbose addNamed [ 'propertiescoffe', '' ]
+28 verbose addNamed [ null, '' ]
+29 silly lockFile 983c4a7c-propertiescoffe propertiescoffe@
+30 verbose lock propertiescoffe@ /Users/tianqi/.npm/983c4a7c-propertiescoffe.lock
+31 silly addNameRange { name: 'propertiescoffe', range: '', hasData: false }
+32 verbose url raw propertiescoffe
+33 verbose url resolving [ 'http://registry.npmjs.org/', './propertiescoffe' ]
+34 verbose url resolved http://registry.npmjs.org/propertiescoffe
+35 info trying registry request attempt 1 at 09:41:07
+36 http GET http://registry.npmjs.org/propertiescoffe
+37 http 404 http://registry.npmjs.org/propertiescoffe
+38 silly registry.get cb [ 404,
+38 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+38 silly registry.get     'content-type': 'application/json',
+38 silly registry.get     'accept-ranges': 'bytes',
+38 silly registry.get     via: '1.1 varnish',
+38 silly registry.get     'cache-control': 'max-age=0',
+38 silly registry.get     'content-length': '52',
+38 silly registry.get     date: 'Mon, 17 Mar 2014 01:41:08 GMT',
+38 silly registry.get     connection: 'keep-alive',
+38 silly registry.get     'x-served-by': 'cache-v44-ASH, cache-ty68-TYO',
+38 silly registry.get     'x-cache': 'MISS, MISS',
+38 silly registry.get     'x-cache-hits': '0, 0',
+38 silly registry.get     'x-timer': 'S1395020468.436559677,VS0,VS-158,VE-58,VE284' } ]
+39 silly lockFile 983c4a7c-propertiescoffe propertiescoffe@
+40 silly lockFile 983c4a7c-propertiescoffe propertiescoffe@
+41 error 404 'propertiescoffe' is not in the npm registry.
+41 error 404 You should bug the author to publish it
+41 error 404
+41 error 404 Note that you can also install from a
+41 error 404 tarball, folder, or http url, or git url.
+42 error System Darwin 13.0.0
+43 error command "node" "/usr/local/bin/npm" "install" "propertiescoffe"
+44 error cwd /Users/tianqi/Documents/souche-assets/souche-f2e/tools/publish-aliyun
+45 error node -v v0.10.12
+46 error npm -v 1.2.32
+47 error code E404
+48 verbose exit [ 1, true ]
