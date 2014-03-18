@@ -1295,7 +1295,7 @@
   border-bottom: 1px solid #dedede;
   border-right: none;
   border-top: 1px solid #dedede;
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 #index .toolbar .toolbar-nav .toolbar-list .collect:hover a .icon-img {
   background: url(../images/index/collect-active.png);
@@ -1309,7 +1309,7 @@
 #index .toolbar .toolbar-nav .toolbar-list .reserve:hover {
   border-bottom: 1px solid #dedede;
   border-right: none;
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 #index .toolbar .toolbar-nav .toolbar-list .reserve:hover a .icon-img {
   background: url(../images/index/reserve-active.png);
@@ -1323,7 +1323,7 @@
 #index .toolbar .toolbar-nav .toolbar-list .sell:hover {
   border-bottom: 1px solid #dedede;
   border-right: none;
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 #index .toolbar .toolbar-nav .toolbar-list .sell:hover a .icon-img {
   background: url(../images/index/sell-active.png);
@@ -1337,7 +1337,7 @@
 #index .toolbar .toolbar-nav .toolbar-list .scan:hover {
   border-bottom: 1px solid #dedede;
   border-right: none;
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 #index .toolbar .toolbar-nav .toolbar-list .scan:hover a .icon-img {
   background: url(../images/index/scan-active.png);
@@ -1353,7 +1353,7 @@
   float: left;
   background-color: #F2F2F2;
 }
-#index .toolbar .toolbar-content span {
+#index .toolbar .toolbar-content i {
   float: right;
   width: 11px;
   height: 11px;
@@ -1968,6 +1968,7 @@ div {
   float: right;
 }
 #toolbar #content .car-wrap .car-box .cancel {
+  display: block;
   width: 76px;
   height: 24px;
   border: 1px solid #e4e4e4;
@@ -1982,6 +1983,7 @@ div {
   cursor: pointer;
 }
 #toolbar #content .car-wrap .car-box .join {
+  display: block;
   height: 24px;
   width: 90px;
   background-color: #FC7000;
@@ -1989,30 +1991,26 @@ div {
   border: 1px solid #f04f12;
   border-radius: 4px;
   margin-top: 10px;
-  line-height: 21px;
+  line-height: 24px;
   cursor: pointer;
-}
-#toolbar #content .car-wrap .car-box .join span {
-  display: block;
-  width: 17px;
-  height: 16px;
-  float: left;
+  color: #fff;
 }
 #toolbar #content .car-wrap .car-box .join i {
-  color: #fff;
+  display: block;
   font-size: 12px;
   font-style: normal;
   float: left;
+  color: #fff;
 }
-#toolbar #content .car-wrap .car-box .join-collect span {
+#toolbar #content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png);
-  margin: 4px 5px;
+  margin: 4px 9px;
 }
-#toolbar #content .car-wrap .car-box .join-sell span {
+#toolbar #content .car-wrap .car-box .join-sell i {
   background: url(../images/index/join-sell.png);
   height: 18px;
   width: 11px;
-  margin: 3px 5px;
+  margin: 3px 8px;
 }
 #toolbar #content .car-wrap .zhijiangcar .car-image .zhijiang {
   position: relative;
@@ -2024,6 +2022,7 @@ div {
   top: -160px;
   left: 144px;
   text-align: center;
+  line-height: 19px;
 }
 #toolbar #content .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
   display: block;
@@ -2035,7 +2034,7 @@ div {
   border-top: 5px solid #FC7000;
   position: relative;
   left: 8px;
-  top: 3px;
+  top: 0;
 }
 #toolbar #content .car-wrap .timebuycar .car-image .price-down {
   background: url("../images/index/zhijiang.png");

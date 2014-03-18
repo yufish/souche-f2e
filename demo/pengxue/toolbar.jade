@@ -45,23 +45,23 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          //.cancel.cancel-collect 取消收藏      
-          .join.join-collect 
-            span.collect
-            i 加入收藏
+          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 加入收藏
         .car-box.timebuycar
           .car-image
             img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
-            .price-down
-              i 2000
+            .price-down 
+              i 5000
           a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          //.cancel.cancel-collect 取消收藏      
-          .join.join-collect 
-            span.collect
-            i 加入收藏
+          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 加入收藏
         .car-box
           .car-image
             img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
@@ -69,21 +69,10 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          //.cancel.cancel-collect 取消收藏      
-          .join.join-collect 
-            span.collect
-            i 加入收藏
-        .car-box
-          .car-image
-            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
-          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
-          .car-price
-            .price 123.7万
-            .time 首次上牌：2013-04
-          //.cancel.cancel-collect 取消收藏      
-          .join.join-collect 
-            span.collect
-            i 加入收藏
+          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 加入收藏
   #no-collect.tool-box.hidden
     #nav
       .title 收藏的车
@@ -91,7 +80,7 @@ body#toolbar
       .nocllect-img
       //收藏的车 end
   //降价通知我 begin
-  #sell.tool-box.hidden
+  #sell.tool-box
     #nav
       .title 降价通知我
       i.number (2辆)
@@ -114,10 +103,10 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          //.cancel.cancel-sell 取消通知     
-          .join.join-sell 
-            span.sell
-            i 降价通知我
+          a.cancel.cancel-sell.hidden(herf="#") 取消通知     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 降价通知我
   #no-sell.tool-box.hidden
     #nav
       .title 降价通知我
