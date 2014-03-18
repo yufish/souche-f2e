@@ -8,15 +8,16 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
         var config = {
             has_qiugou: false
         };
-        $(".timebuy img").lazyload();
-        $(".whybuy img").lazyload();
-        $(".carlife img").lazyload();
-        $(".banners img").lazyload();
-        $(".buy-guide img").lazyload();
-        $(".hotsell-list img").lazyload();
-        $(".starbuy img").lazyload();
-        $(".cars img").lazyload();
-        $(".performance img").lazyload();
+
+        // $(".timebuy img").lazyload();
+        // $(".whybuy img").lazyload();
+        // $(".carlife img").lazyload();
+        // $(".banners img").lazyload();
+        // $(".buy-guide img").lazyload();
+        // $(".hotsell-list img").lazyload();
+        // $(".starbuy img").lazyload();
+        // $(".cars img").lazyload();
+        // $(".performance img").lazyload();
         var slides = $(".qiugou-history .slides");
         var slides2 = slides.clone();
         $(".qiugou-history").append(slides2);
@@ -65,6 +66,7 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                     // 	})
                     // }
                 })
+                //sidebar脚本
 
                 //brand 出来，隐藏效果
 

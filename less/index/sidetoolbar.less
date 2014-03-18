@@ -1,4 +1,4 @@
-.sidetoolbar-top{
+.sidebar-top{
   height: 131px;
   border: 1px solid #e6e6e6;
   margin-bottom: 35px;
@@ -26,7 +26,7 @@
     }
   }
 }
-.sidetoolbar-bottom{
+.sidebar-bottom{
   height: 263px;
   border: 1px solid #e6e6e6;
   .collectside{
@@ -69,14 +69,16 @@
     }
   }
 }
-.sidetoolbar{
+
+.sidebar{
   width: 50px;
   height: 215px;
   background: #f7f7f7;
   position: fixed;
-  right: 50px;
+  right: 0px;
   bottom: 50px;
   border: 1px solid #dedede;
+  z-index: 1000;
   .side-box{
     height: 53px;
     border-bottom: 1px solid #dedede;
@@ -93,101 +95,151 @@
     }
     a{
       padding: 6px 5px;display: block;
-      div{width: 27px;height: 25px;margin: 0 auto;}
-      i{display: block;color: #666;font-size: 12px;text-align: center;font-style: normal;}
+      .icon{width: 27px;height: 25px;margin-left:5px;}
+      i{margin-left:7px;display: block;color: #666;width:30px;font-size: 12px;text-align: left;font-style: normal;height:18px;overflow: hidden;}
     }
     .collect-box{
-      .collect-img{background: url(../images/index/collect.png);}
+      .collect-img{background: url(../images/index/collect.png) no-repeat 0px 0px;}
     }
     .reserve-box{
-      .reserve-img{background: url(../images/index/reserve.png);}
+      .reserve-img{background: url(../images/index/reserve.png) no-repeat 0px 0px;}
     }
     .sell-box{
-      .sell-img{background: url(../images/index/sell.png);}
+      .sell-img{background: url(../images/index/sell.png) no-repeat 0px 0px;}
     }
     .scan-box{
-      .scan-img{background: url(../images/index/scan.png);}
+      .scan-img{background: url(../images/index/scan.png) no-repeat 0px 0px;}
     }
   }
   .side-box:hover{
     background: #FC7000;
+    box-shadow:0px 0px 5px #666 inset;
     a{
       i{color: #fff8dd;}
     }
     .collect-box{
-      .collect-img{background: url(../images/index/collect-hover.png);}
+      .collect-img{background: url(../images/index/collect-hover.png) no-repeat 0px 0px;}
     }
     .reserve-box{
-      .reserve-img{background: url(../images/index/reserve-hover.png);}
+      .reserve-img{background: url(../images/index/reserve-hover.png) no-repeat 0px 0px;}
     }
     .sell-box{
-      .sell-img{background: url(../images/index/sell-hover.png);}
+      .sell-img{background: url(../images/index/sell-hover.png) no-repeat 0px 0px;}
     }
     .scan-box{
-      .scan-img{background: url(../images/index/scan-hover.png);}
+      .scan-img{background: url(../images/index/scan-hover.png) no-repeat 0px 0px;}
     }
   }
 }
-.toolbar{
-  width: 910px;height:652px;
- .toolbar-nav{
-    background-color: #FC7000;
+.sidebar:hover{
+  width:70px;
+  .side-box{
+    width: 70px;
+    a{
+      i{
+        width:70px;
+        }
+      }
+    }
+  }
+
+
+.sidebar{
+  // width: 910px;height:652px;
+ .sidebar-nav{
+    
     width: 50px;
     height: 650px;
     float: left;
-    border-left: 1px solid #d15001;
-    .toolbar-list{
+    
+    .sidebar-list{
       height: 224px;
-      li{
-        border-bottom: 1px solid #d15001;
-        border-right:1px solid #d15001; 
-        height: 55px;
-        a{
-          display: block;
-          padding: 9px 5px;
-          .icon-img{width: 27px;height: 25px;margin: 0 auto;}
-          .title{display: block;color:#fff8dd;font-size: 12px;text-align: center;font-style: normal;}
-        }
+      
+    }
+  }
+  
+  .sidebar-content{
+    width: 855px;
+    height: 650px;
+    border: 1px solid #dedede;
+    border-left: none;
+    float: left;
+    background-color: #F2F2F2;
+    i{float: right;width: 11px;height: 11px;background: url(../images/index.sidebar-close.png);margin-top: 10px;margin-right:10px;display: block;}
+    iframe{}
+  }
+}
+.sidebar-active{
+  width:50px;
+  border-left: none;
+  .sidebar-nav{
+    background-color: #FC7000;
+    border: 1px solid #d15001;
+  .side-box{
+    border-bottom: 1px solid #d15001;
+    height: 55px;
+    a{
+      display: block;
+      padding: 9px 5px;
+      .icon{width: 27px;height: 25px;margin: 0 auto;}
+      i{
+        display: block;color:#fff8dd;
+        font-size: 12px;text-align: center;
+        font-style: normal;width:30px;
       }
-      .collect{
-        border-top:  1px solid transparent;
-        a{.icon-img{background: url(../images/index/collect-hover.png);}}
+    }
+  }
+  .collectside{
+    border-top:  1px solid transparent;
+    a{.icon{background: url(../images/index/collect-hover.png);}}
       }
-      .collect:hover{
+  .collectside:hover{
         border-bottom: 1px solid #dedede;border-right: none;
         border-top:  1px solid #dedede;
         background: #f2f2f2;
         a{
-          .icon-img{background: url(../images/index/collect-active.png);}
-          .title{color: #666;}
+          .icon{background: url(../images/index/collect-active.png);}
+          i{color: #666;}
         }
       }
-      .reserve{a{.icon-img{background: url(../images/index/reserve-hover.png);}}}
-      .reserve:hover{
+      .reserveside{a{.icon{background: url(../images/index/reserve-hover.png);}}}
+      .reserveside:hover{
         border-bottom: 1px solid #dedede;border-right: none;
         background: #f2f2f2;
         a{
-          .icon-img{background: url(../images/index/reserve-active.png);}
-          .title{color: #666;}
+          .icon{background: url(../images/index/reserve-active.png);}
+          i{color: #666;}
         }
       }
-      .sell{a{.icon-img{background: url(../images/index/sell-hover.png);}}}
-      .sell:hover{
+      .sellside{a{.icon{background: url(../images/index/sell-hover.png);}}}
+      .sellside:hover{
         border-bottom: 1px solid #dedede;border-right: none;
         background: #f2f2f2;
         a{
-          .icon-img{background: url(../images/index/sell-active.png);}
-          .title{color: #666;}
+          .icon{background: url(../images/index/sell-active.png);}
+          i{color: #666;}
         }
       }
-      .scan{a{.icon-img{background: url(../images/index/scan-hover.png);}}}
-      .scan:hover{
+      .scanside{a{.icon{background: url(../images/index/scan-hover.png);}}}
+      .scanside:hover{
         border-bottom: 1px solid #dedede;border-right: none;
         background: #f2f2f2;
         a{
-          .icon-img{background: url(../images/index/scan-active.png);}
-          .title{color: #666;}
+          .icon{background: url(../images/index/scan-active.png);}
+          i{color: #666;}
         }
+      }
+}
+
+}
+
+.sidebar-active:hover{
+  width:50px;
+  .side-box{
+    width: 50px;
+    a{
+      i{
+        width:30px;
       }
     }
   }
@@ -202,4 +254,3 @@
     iframe{}
   }
 }
-
