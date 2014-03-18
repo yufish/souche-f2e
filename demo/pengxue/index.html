@@ -27,11 +27,11 @@
     <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
     <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js?t=1"></script>
     <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
-    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/index/sidebar.js?t=1"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/sidebar.js?t=1"></script>
     <script>
       var contextPath = "";
       require.config({
-        baseUrl: "http://souche.cdn.aliyuncs.com/assets/js",
+        baseUrl: "http://f2e.souche.com/assets/js",
         urlArgs:"bust=v4"
       }); 
     </script>
@@ -360,17 +360,7 @@
                   </div>
                   <div class="hr"></div>
                   <div class="brand-show-hd">推荐品牌                                                                                              </div>
-                  <ul class="brand_show feature_brand_show">
-                    <li style="margin-left:0"><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-41"> <img src="http://souche.cdn.aliyuncs.com/images/fed/dz.png">大众</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-30"><img src="http://souche.cdn.aliyuncs.com/images/fed/bk.png">别克</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-15"><img src="http://souche.cdn.aliyuncs.com/images/fed/ad.png">奥迪</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-151"><img src="http://souche.cdn.aliyuncs.com/images/fed/xd.png">现代</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-25"><img src="http://souche.cdn.aliyuncs.com/images/fed/bc.png">奔驰</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-53"><img src="http://souche.cdn.aliyuncs.com/images/fed/fute.png">福特</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-49"><img src="http://souche.cdn.aliyuncs.com/images/fed/ft.png">丰田</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-119"><img src="http://souche.cdn.aliyuncs.com/images/fed/qy.png">起亚</a></li>
-                    <li><a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-121"><img src="http://souche.cdn.aliyuncs.com/images/fed/ms.png">日产</a></li>
-                  </ul>
+                  
                 </div>
               </div>
               <div class="inner">
@@ -1277,14 +1267,14 @@
               </div>
           </div>
         </div>
-        <!-- <div id="side_bar" class="sidetoolbar">
-          <div class="sidetoolbar-top">
+        <!-- <div id="side_bar" class="sidebar">
+          <div class="sidebar-top">
             <div class="suggestside"><a href="#" class="suggest-box">
                 <div class="suggest-img"></div><i>建议</i></a></div>
             <div class="customerside"><a href="#" class="customer-box">
                 <div class="customer-img"></div><i>客服</i></a></div>
           </div>
-          <div class="sidetoolbar-bottom">
+          <div class="sidebar-bottom">
             <div class="collectside"><a href="#" class="collect-box">
                 <div class="collect-img"></div><i>收藏</i></a></div>
             <div class="reserveside"><a href="#" class="reserve-box">
@@ -1295,24 +1285,7 @@
                 <div class="scan-img"></div><i>浏览</i></a></div>
           </div>
         </div> -->
-        <div class="sidetoolbar">
-    <div class="collectside side-box">
-      <a class="collect-box" href='#'><div class="collect-img"></div><i>收藏</i></a>
-      <div class="point"><i class="point-num">1</i></div>
-    </div>
-    <div class="reserveside side-box">
-       <a class="reserve-box " href='#'><div class="reserve-img"></div><i>预约</i></a>
-       <div class="point"><i class="point-num">1</i></div>
-    </div>
-    <div class="sellside side-box">
-      <a class="sell-box" href='#'><div class="sell-img"></div><i>降价</i></a>
-      <div class="point"><i class="point-num">1</i></div>
-    </div>
-    <div class="scanside side-box">
-      <a class="scan-box" href='#'><div class="scan-img"></div><i>浏览</i></a>
-      <div class="point"><i class="point-num">1</i></div>
-    </div>
-  </div> 
+        
       </div>
     </div>
   </div>
@@ -1400,34 +1373,24 @@
         </p>
       </div>
     </div>
-    <div class="toolbar">
-      <div class="toolbar-nav">
-        <ul class="toolbar-list">
-          <li class="collect">
-            <a href="#">
-              <div class="icon-img"></div>
-              <div class="title">收藏</div>
-            </a>
-          </li>
-          <li class="reserve">
-            <a href="#">
-              <div class="icon-img"></div>
-              <div class="title">预约</div>
-            </a>
-          </li>
-          <li class="sell">
-            <a href="#">
-              <div class="icon-img"></div>
-              <div class="title">降价</div>
-            </a>
-          </li>
-          <li class="scan">
-            <a href="#">
-              <div class="icon-img"></div>
-              <div class="title">浏览</div>
-            </a>
-          </li>
-        </ul>
+    <div class="sidebar" id="toolbar">
+      <div class="sidebar-nav">
+        <div class="collectside side-box">
+          <a class="collect-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="collect-img icon"></div><i>收藏的车</i></a>
+          <div class="point"><i class="point-num">1</i></div>
+        </div>
+        <div class="reserveside side-box">
+           <a class="reserve-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="reserve-img icon"></div><i>预约看车</i></a>
+           <div class="point"><i class="point-num">1</i></div>
+        </div>
+        <div class="sellside side-box">
+          <a class="sell-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="sell-img icon"></div><i>降价通知</i></a>
+          <div class="point"><i class="point-num">1</i></div>
+        </div>
+        <div class="scanside side-box">
+          <a class="scan-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="scan-img icon"></div><i>浏览记录</i></a>
+          <div class="point"><i class="point-num">1</i></div>
+        </div>
       </div>
       <div class="toolbar-content">
         <i class="toolbar-close"></i>

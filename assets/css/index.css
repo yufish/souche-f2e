@@ -35,14 +35,6 @@
   position: relative;
   _zoom: 1;
 }
-#index #content .wrapper .sidetoolbar {
-  width: 50px;
-  height: 215px;
-  position: fixed;
-  right: 10px;
-  top: 172px;
-  background-color: #fff;
-}
 #index .qiugou {
   min-height: 427px;
   border: 1px solid #e6e6e6;
@@ -1052,141 +1044,142 @@
 #index .buy-guide .col .list .item i {
   padding: 0 10px 0 5px;
 }
-#index .sidetoolbar-top {
+#index .sidebar-top {
   height: 131px;
   border: 1px solid #e6e6e6;
   margin-bottom: 35px;
 }
-#index .sidetoolbar-top .suggestside {
+#index .sidebar-top .suggestside {
   height: 65px;
   border-bottom: 1px solid #e6e6e6;
 }
-#index .sidetoolbar-top .suggestside .suggest-box {
+#index .sidebar-top .suggestside .suggest-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-top .suggestside .suggest-box .suggest-img {
+#index .sidebar-top .suggestside .suggest-box .suggest-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/suggest.png);
 }
-#index .sidetoolbar-top .suggestside .suggest-box i {
+#index .sidebar-top .suggestside .suggest-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar-top .customerside {
+#index .sidebar-top .customerside {
   height: 65px;
 }
-#index .sidetoolbar-top .customerside .customer-box {
+#index .sidebar-top .customerside .customer-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-top .customerside .customer-box .customer-img {
+#index .sidebar-top .customerside .customer-box .customer-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/customer.png);
 }
-#index .sidetoolbar-top .customerside .customer-box i {
+#index .sidebar-top .customerside .customer-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar-bottom {
+#index .sidebar-bottom {
   height: 263px;
   border: 1px solid #e6e6e6;
 }
-#index .sidetoolbar-bottom .collectside {
+#index .sidebar-bottom .collectside {
   height: 65px;
   border-bottom: 1px solid #e6e6e6;
 }
-#index .sidetoolbar-bottom .collectside .collect-box {
+#index .sidebar-bottom .collectside .collect-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-bottom .collectside .collect-box .collect-img {
+#index .sidebar-bottom .collectside .collect-box .collect-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/collect.png);
 }
-#index .sidetoolbar-bottom .collectside .collect-box i {
+#index .sidebar-bottom .collectside .collect-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar-bottom .reserveside {
+#index .sidebar-bottom .reserveside {
   height: 65px;
   border-bottom: 1px solid #e6e6e6;
 }
-#index .sidetoolbar-bottom .reserveside .reserve-box {
+#index .sidebar-bottom .reserveside .reserve-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-bottom .reserveside .reserve-box .reserve-img {
+#index .sidebar-bottom .reserveside .reserve-box .reserve-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/reserve.png);
 }
-#index .sidetoolbar-bottom .reserveside .reserve-box i {
+#index .sidebar-bottom .reserveside .reserve-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar-bottom .sellside {
+#index .sidebar-bottom .sellside {
   height: 65px;
   border-bottom: 1px solid #e6e6e6;
 }
-#index .sidetoolbar-bottom .sellside .sell-box {
+#index .sidebar-bottom .sellside .sell-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-bottom .sellside .sell-box .sell-img {
+#index .sidebar-bottom .sellside .sell-box .sell-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/sell.png);
 }
-#index .sidetoolbar-bottom .sellside .sell-box i {
+#index .sidebar-bottom .sellside .sell-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar-bottom .scanside {
+#index .sidebar-bottom .scanside {
   height: 65px;
 }
-#index .sidetoolbar-bottom .scanside .scan-box {
+#index .sidebar-bottom .scanside .scan-box {
   padding: 11px;
   display: block;
 }
-#index .sidetoolbar-bottom .scanside .scan-box .scan-img {
+#index .sidebar-bottom .scanside .scan-box .scan-img {
   width: 29px;
   height: 27px;
   background: url(../images/index/scan.png);
 }
-#index .sidetoolbar-bottom .scanside .scan-box i {
+#index .sidebar-bottom .scanside .scan-box i {
   font-size: 13px;
   color: #666;
   font-style: normal;
   line-height: 20px;
 }
-#index .sidetoolbar {
+#index .sidebar {
   width: 50px;
   height: 215px;
   background: #f7f7f7;
   position: fixed;
-  right: 50px;
+  right: 0px;
   bottom: 50px;
   border: 1px solid #dedede;
+  z-index: 1000;
 }
-#index .sidetoolbar .side-box {
+#index .sidebar .side-box {
   height: 53px;
   border-bottom: 1px solid #dedede;
 }
-#index .sidetoolbar .side-box .point {
+#index .sidebar .side-box .point {
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -1196,7 +1189,7 @@
   top: -50px;
   left: -8px;
 }
-#index .sidetoolbar .side-box .point i {
+#index .sidebar .side-box .point i {
   font-size: 12px;
   color: #fff;
   font-style: normal;
@@ -1204,148 +1197,72 @@
   display: block;
   padding: -1px;
 }
-#index .sidetoolbar .side-box a {
+#index .sidebar .side-box a {
   padding: 6px 5px;
   display: block;
 }
-#index .sidetoolbar .side-box a div {
+#index .sidebar .side-box a .icon {
   width: 27px;
   height: 25px;
-  margin: 0 auto;
+  margin-left: 5px;
 }
-#index .sidetoolbar .side-box a i {
+#index .sidebar .side-box a i {
+  margin-left: 7px;
   display: block;
   color: #666;
+  width: 30px;
   font-size: 12px;
-  text-align: center;
+  text-align: left;
   font-style: normal;
+  height: 18px;
+  overflow: hidden;
 }
-#index .sidetoolbar .side-box .collect-box .collect-img {
-  background: url(../images/index/collect.png);
+#index .sidebar .side-box .collect-box .collect-img {
+  background: url(../images/index/collect.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box .reserve-box .reserve-img {
-  background: url(../images/index/reserve.png);
+#index .sidebar .side-box .reserve-box .reserve-img {
+  background: url(../images/index/reserve.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box .sell-box .sell-img {
-  background: url(../images/index/sell.png);
+#index .sidebar .side-box .sell-box .sell-img {
+  background: url(../images/index/sell.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box .scan-box .scan-img {
-  background: url(../images/index/scan.png);
+#index .sidebar .side-box .scan-box .scan-img {
+  background: url(../images/index/scan.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box:hover {
+#index .sidebar .side-box:hover {
   background: #FC7000;
+  box-shadow: 0px 0px 5px #666 inset;
 }
-#index .sidetoolbar .side-box:hover a i {
+#index .sidebar .side-box:hover a i {
   color: #fff8dd;
 }
-#index .sidetoolbar .side-box:hover .collect-box .collect-img {
-  background: url(../images/index/collect-hover.png);
+#index .sidebar .side-box:hover .collect-box .collect-img {
+  background: url(../images/index/collect-hover.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box:hover .reserve-box .reserve-img {
-  background: url(../images/index/reserve-hover.png);
+#index .sidebar .side-box:hover .reserve-box .reserve-img {
+  background: url(../images/index/reserve-hover.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box:hover .sell-box .sell-img {
-  background: url(../images/index/sell-hover.png);
+#index .sidebar .side-box:hover .sell-box .sell-img {
+  background: url(../images/index/sell-hover.png) no-repeat 0px 0px;
 }
-#index .sidetoolbar .side-box:hover .scan-box .scan-img {
-  background: url(../images/index/scan-hover.png);
+#index .sidebar .side-box:hover .scan-box .scan-img {
+  background: url(../images/index/scan-hover.png) no-repeat 0px 0px;
 }
-#index .toolbar {
-  width: 910px;
-  height: 652px;
+#index .sidebar:hover {
+  width: 70px;
 }
-#index .toolbar .toolbar-nav {
-  background-color: #FC7000;
+#index .sidebar:hover .side-box a i {
+  width: 70px;
+}
+#index .sidebar .sidebar-nav {
   width: 50px;
   height: 650px;
   float: left;
-  border-left: 1px solid #d15001;
 }
-#index .toolbar .toolbar-nav .toolbar-list {
+#index .sidebar .sidebar-nav .sidebar-list {
   height: 224px;
 }
-#index .toolbar .toolbar-nav .toolbar-list li {
-  border-bottom: 1px solid #d15001;
-  border-right: 1px solid #d15001;
-  height: 55px;
-}
-#index .toolbar .toolbar-nav .toolbar-list li a {
-  display: block;
-  padding: 9px 5px;
-}
-#index .toolbar .toolbar-nav .toolbar-list li a .icon-img {
-  width: 27px;
-  height: 25px;
-  margin: 0 auto;
-}
-#index .toolbar .toolbar-nav .toolbar-list li a .title {
-  display: block;
-  color: #fff8dd;
-  font-size: 12px;
-  text-align: center;
-  font-style: normal;
-}
-#index .toolbar .toolbar-nav .toolbar-list .collect {
-  border-top: 1px solid transparent;
-}
-#index .toolbar .toolbar-nav .toolbar-list .collect a .icon-img {
-  background: url(../images/index/collect-hover.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .collect:hover {
-  border-bottom: 1px solid #dedede;
-  border-right: none;
-  border-top: 1px solid #dedede;
-  background: #f2f2f2;
-}
-#index .toolbar .toolbar-nav .toolbar-list .collect:hover a .icon-img {
-  background: url(../images/index/collect-active.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .collect:hover a .title {
-  color: #666;
-}
-#index .toolbar .toolbar-nav .toolbar-list .reserve a .icon-img {
-  background: url(../images/index/reserve-hover.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .reserve:hover {
-  border-bottom: 1px solid #dedede;
-  border-right: none;
-  background: #f2f2f2;
-}
-#index .toolbar .toolbar-nav .toolbar-list .reserve:hover a .icon-img {
-  background: url(../images/index/reserve-active.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .reserve:hover a .title {
-  color: #666;
-}
-#index .toolbar .toolbar-nav .toolbar-list .sell a .icon-img {
-  background: url(../images/index/sell-hover.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .sell:hover {
-  border-bottom: 1px solid #dedede;
-  border-right: none;
-  background: #f2f2f2;
-}
-#index .toolbar .toolbar-nav .toolbar-list .sell:hover a .icon-img {
-  background: url(../images/index/sell-active.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .sell:hover a .title {
-  color: #666;
-}
-#index .toolbar .toolbar-nav .toolbar-list .scan a .icon-img {
-  background: url(../images/index/scan-hover.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .scan:hover {
-  border-bottom: 1px solid #dedede;
-  border-right: none;
-  background: #f2f2f2;
-}
-#index .toolbar .toolbar-nav .toolbar-list .scan:hover a .icon-img {
-  background: url(../images/index/scan-active.png);
-}
-#index .toolbar .toolbar-nav .toolbar-list .scan:hover a .title {
-  color: #666;
-}
-#index .toolbar .toolbar-content {
+#index .sidebar .sidebar-content {
   width: 855px;
   height: 650px;
   border: 1px solid #dedede;
@@ -1353,14 +1270,123 @@
   float: left;
   background-color: #F2F2F2;
 }
-#index .toolbar .toolbar-content i {
+#index .sidebar .sidebar-content i {
   float: right;
   width: 11px;
   height: 11px;
-  background: url(../images/index/toolbar-close.png);
+  background: url(../images/index.sidebar-close.png);
   margin-top: 10px;
   margin-right: 10px;
   display: block;
+}
+#index .sidebar-active {
+  width: 50px;
+}
+#index .sidebar-active .side-box a i {
+  width: 30px;
+}
+#index .sidebar-active .sidebar-nav {
+  background-color: #FC7000;
+  border-left: 1px solid #d15001;
+}
+#index .sidebar-active .sidebar-nav li {
+  border-bottom: 1px solid #d15001;
+  border-right: 1px solid #d15001;
+  height: 55px;
+}
+#index .sidebar-active .sidebar-nav li a {
+  display: block;
+  padding: 9px 5px;
+}
+#index .sidebar-active .sidebar-nav li a .icon-img {
+  width: 27px;
+  height: 25px;
+  margin: 0 auto;
+}
+#index .sidebar-active .sidebar-nav li a .title {
+  display: block;
+  color: #fff8dd;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+}
+#index .sidebar-active .sidebar-nav .collect {
+  border-top: 1px solid transparent;
+}
+#index .sidebar-active .sidebar-nav .collect a .icon-img {
+  background: url(../images/index/collect-hover.png);
+}
+#index .sidebar-active .sidebar-nav .collect:hover {
+  border-bottom: 1px solid #dedede;
+  border-right: none;
+  border-top: 1px solid #dedede;
+  background: #f2f2f2;
+}
+#index .sidebar-active .sidebar-nav .collect:hover a .icon-img {
+  background: url(../images/index/collect-active.png);
+}
+#index .sidebar-active .sidebar-nav .collect:hover a .title {
+  color: #666;
+}
+#index .sidebar-active .sidebar-nav .reserve a .icon-img {
+  background: url(../images/index/reserve-hover.png);
+}
+#index .sidebar-active .sidebar-nav .reserve:hover {
+  border-bottom: 1px solid #dedede;
+  border-right: none;
+  background: #f2f2f2;
+}
+#index .sidebar-active .sidebar-nav .reserve:hover a .icon-img {
+  background: url(../images/index/reserve-active.png);
+}
+#index .sidebar-active .sidebar-nav .reserve:hover a .title {
+  color: #666;
+}
+#index .sidebar-active .sidebar-nav .sell a .icon-img {
+  background: url(../images/index/sell-hover.png);
+}
+#index .sidebar-active .sidebar-nav .sell:hover {
+  border-bottom: 1px solid #dedede;
+  border-right: none;
+  background: #f2f2f2;
+}
+#index .sidebar-active .sidebar-nav .sell:hover a .icon-img {
+  background: url(../images/index/sell-active.png);
+}
+#index .sidebar-active .sidebar-nav .sell:hover a .title {
+  color: #666;
+}
+#index .sidebar-active .sidebar-nav .scan a .icon-img {
+  background: url(../images/index/scan-hover.png);
+}
+#index .sidebar-active .sidebar-nav .scan:hover {
+  border-bottom: 1px solid #dedede;
+  border-right: none;
+  background: #f2f2f2;
+}
+#index .sidebar-active .sidebar-nav .scan:hover a .icon-img {
+  background: url(../images/index/scan-active.png);
+}
+#index .sidebar-active .sidebar-nav .scan:hover a .title {
+  color: #666;
+}
+#index .sidebar-active .sidebar-nav .collect-box .collect-img {
+  background: url(../images/index/collect-hover.png) no-repeat 0px 0px;
+}
+#index .sidebar-active .sidebar-nav .reserve-box .reserve-img {
+  background: url(../images/index/reserve-hover.png) no-repeat 0px 0px;
+}
+#index .sidebar-active .sidebar-nav .sell-box .sell-img {
+  background: url(../images/index/sell-hover.png) no-repeat 0px 0px;
+}
+#index .sidebar-active .sidebar-nav .scan-box .scan-img {
+  background: url(../images/index/scan-hover.png) no-repeat 0px 0px;
+}
+#index .sidebar-active:hover {
+  width: 50px;
+}
+#index .sidebar-active:hover .side-box a i {
+  width: 30px;
 }
 #index .filter-nav {
   border: 1px solid #e6e6e6;
