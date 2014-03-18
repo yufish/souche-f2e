@@ -1347,7 +1347,7 @@
 }
 #index .toolbar .toolbar-content {
   width: 855px;
-  height: 650px;
+  height: 648px;
   border: 1px solid #dedede;
   border-left: none;
   float: left;
@@ -2037,7 +2037,7 @@ div {
   top: 0;
 }
 #toolbar #content .car-wrap .timebuycar .car-image .price-down {
-  background: url("../images/index/zhijiang.png");
+  background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
   position: relative;
