@@ -1285,12 +1285,16 @@
   text-align: center;
   font-style: normal;
 }
+#index .toolbar .toolbar-nav .toolbar-list .collect {
+  border-top: 1px solid transparent;
+}
 #index .toolbar .toolbar-nav .toolbar-list .collect a .icon-img {
   background: url(../images/index/collect-hover.png);
 }
 #index .toolbar .toolbar-nav .toolbar-list .collect:hover {
   border-bottom: 1px solid #dedede;
   border-right: none;
+  border-top: 1px solid #dedede;
   background: #f5f5f5;
 }
 #index .toolbar .toolbar-nav .toolbar-list .collect:hover a .icon-img {
