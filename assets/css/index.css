@@ -1274,6 +1274,7 @@
   border: 1px solid #d15001;
 }
 #index .sidebar-active .sidebar-nav .side-box {
+  box-shadow: none;
   border-bottom: 1px solid #d15001;
   height: 55px;
 }
@@ -1363,14 +1364,6 @@
 #index .sidebar-active:hover .side-box a i {
   width: 30px;
 }
-<<<<<<< HEAD
-#index .toolbar-content {
-  width: 850px;
-  float: left;
-}
-#index .toolbar-content .toolbar-close {
-  cursor: pointer;
-=======
 #index .sidebar-active:hover .toolbar-content {
   width: 855px;
   height: 648px;
@@ -1380,7 +1373,6 @@
   background-color: #F2F2F2;
 }
 #index .sidebar-active:hover .toolbar-content i {
->>>>>>> aac4b140113093036096f63687d5ee241f7a861d
   float: right;
   width: 11px;
   height: 11px;
