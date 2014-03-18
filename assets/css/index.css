@@ -1171,7 +1171,7 @@
   background: #f7f7f7;
   position: fixed;
   right: 0px;
-  bottom: 50px;
+  bottom: 20px;
   border: 1px solid #dedede;
   z-index: 1000;
 }
@@ -1261,23 +1261,6 @@
 }
 #index .sidebar .sidebar-nav .sidebar-list {
   height: 224px;
-}
-#index .sidebar .sidebar-content {
-  width: 855px;
-  height: 650px;
-  border: 1px solid #dedede;
-  border-left: none;
-  float: left;
-  background-color: #F2F2F2;
-}
-#index .sidebar .sidebar-content i {
-  float: right;
-  width: 11px;
-  height: 11px;
-  background: url(../images/index.sidebar-close.png);
-  margin-top: 10px;
-  margin-right: 10px;
-  display: block;
 }
 #index .sidebar-active {
   width: 50px;
@@ -1387,6 +1370,20 @@
 }
 #index .sidebar-active:hover .side-box a i {
   width: 30px;
+}
+#index .toolbar-content {
+  width: 850px;
+  float: left;
+}
+#index .toolbar-content .toolbar-close {
+  cursor: pointer;
+  float: right;
+  width: 11px;
+  height: 11px;
+  background: url(../images/index/toolbar-close.png);
+  margin-top: 10px;
+  margin-right: 10px;
+  display: block;
 }
 #index .filter-nav {
   border: 1px solid #e6e6e6;
@@ -1952,7 +1949,7 @@ div {
 }
 #toolbar #content .car-wrap .car-box {
   width: 210px;
-  height: 250px;
+  height: 240px;
   margin-top: 13px;
   background-color: #fff;
   border: 1px solid #e4e4e4;
@@ -1971,7 +1968,9 @@ div {
 #toolbar #content .car-wrap .car-box .car-title {
   font-size: 12px;
   color: #333;
-  margin-top: 10px;
+  line-height: 18px;
+  display: block;
+  margin-top: 5px;
   cursor: pointer;
 }
 #toolbar #content .car-wrap .car-box .car-title:hover {
@@ -1979,13 +1978,13 @@ div {
 }
 #toolbar #content .car-wrap .car-box .car-price {
   height: 20px;
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #e4e4e4;
 }
 #toolbar #content .car-wrap .car-box .car-price .price {
   color: #db2400;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: normal;
   float: left;
 }
 #toolbar #content .car-wrap .car-box .car-price .time {
@@ -2010,22 +2009,23 @@ div {
 }
 #toolbar #content .car-wrap .car-box .join {
   display: block;
-  height: 24px;
+  height: 20px;
   width: 90px;
   background-color: #FC7000;
   margin: 0 auto;
   border: 1px solid #f04f12;
   border-radius: 4px;
-  margin-top: 10px;
-  line-height: 24px;
+  margin-top: 5px;
+  line-height: 20px;
   cursor: pointer;
   color: #fff;
 }
 #toolbar #content .car-wrap .car-box .join i {
-  display: block;
+  vertical-align: 2px;
   font-size: 12px;
   font-style: normal;
   float: left;
+  display: inline;
   color: #fff;
 }
 #toolbar #content .car-wrap .car-box .join-collect i {
@@ -2036,7 +2036,7 @@ div {
   background: url(../images/index/join-sell.png);
   height: 18px;
   width: 11px;
-  margin: 3px 8px;
+  margin: 1px 8px;
 }
 #toolbar #content .car-wrap .zhijiangcar .car-image .zhijiang {
   position: relative;

@@ -41,7 +41,7 @@
       height: 550px;
       .car-box{
        width: 210px;
-       height: 250px;
+       height: 240px;
        margin-top: 13px;
        background-color: #fff;
        border: 1px solid #e4e4e4;
@@ -52,13 +52,13 @@
           width: 210px;height: 140px;
           img{width: 210px;height: 140px;}
         }
-      .car-title{font-size: 12px;color: #333;margin-top: 10px;cursor: pointer;}
+      .car-title{font-size: 12px;color: #333;line-height:18px;display:block;margin-top: 5px;cursor: pointer;}
       .car-title:hover{color: #FC7000;}
       .car-price{
         height: 20px;
-        padding: 10px 0;
+        padding: 8px 0;
         border-bottom: 1px solid #e4e4e4;
-        .price{color: #db2400;font-size: 14px;font-weight: bold;float: left;}
+        .price{color: #db2400;font-size: 14px;font-weight: normal;float: left;}
         .time{color: #999;font-size: 12px;float: right;}
       }
       .cancel{
@@ -73,22 +73,23 @@
       }
       .join{
         display: block;
-        height: 24px;width: 90px;
+        height: 20px;width: 90px;
         background-color: #FC7000;
         margin: 0 auto;border: 1px solid #f04f12;
-        border-radius: 4px;margin-top: 10px;
-        line-height: 24px;cursor: pointer;
+        border-radius: 4px;margin-top: 5px;
+        line-height: 20px;cursor: pointer;
         color: #fff;
         i{
-          display: block;float: left; 
+          vertical-align: 2px;
           font-size: 12px;
           font-style: normal;
           float: left;
+          display: inline;
           color: #fff;
         }
       }
       .join-collect{i{background: url(../images/index/join-collect.png);margin: 4px 9px;}}
-      .join-sell{i{background: url(../images/index/join-sell.png);height: 18px;width: 11px;margin: 3px 8px;}}
+      .join-sell{i{background: url(../images/index/join-sell.png);height: 18px;width: 11px;margin: 1px 8px;}}
     }
     .zhijiangcar{
       .car-image{

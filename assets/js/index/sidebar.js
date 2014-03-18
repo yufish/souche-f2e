@@ -3,7 +3,7 @@
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             $("#toolbar").animate({
-                width: 900,
+                width: 905,
                 height: 652
             }, 500, function() {
                 $("#toolbar").addClass("sidebar-active")
@@ -11,8 +11,10 @@
         })
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
-                right: -910,
-                bottom: -652
+                width: 50,
+                height: 215
+            }, 500, function() {
+                $("#toolbar").removeClass("sidebar-active")
             })
         })
         var Q_Buy_active = false;
