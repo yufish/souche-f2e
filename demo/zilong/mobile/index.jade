@@ -48,7 +48,7 @@ html
     $('.cancel-icon').click(function(e){
       $('#keyword').val('');
     })
-    $('search-form').submit(function(e){
+    $('#search-form').submit(function(e){
       e.preventDefault();
       if($('#keyword').val().trim()==''){
         searchHidden();
