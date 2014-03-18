@@ -1,0 +1,66 @@
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/h5-2/mobile.css" rel="stylesheet" type="text/css" />
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.flexslider-min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
+  body#index
+    #header
+      .logo
+      .header-feature
+        .search-icon
+        .search-icon-2
+        a.login-icon(href='#')
+
+      .search-box
+        .search-header 
+          .input
+            form#search-form(action='http://www.souche.com/pages/mobile/list.html' method='get')
+              input#keyword(type='text',name='keyword') 
+              span.cancel-icon
+          #search-btn
+            span 搜索
+      .nav
+        .nav-item
+  script.
+    function searchActive(){
+      $('.search-box').css({display:'block'});
+      $('.search-icon').css({display:'none'});
+      $('.search-icon-2').css({display:'block'});
+      $('#keyword').focus();
+    }
+    function searchHidden(){
+      $('.search-box').css({display:'none'});
+      $('.search-icon').css({display:'block'});
+      $('.search-icon-2').css({display:'none'});
+    }
+
+    $('.search-icon').click(function(e){
+      searchActive();
+    })
+    $('.search-icon-2').click(function(e){
+      searchHidden();
+    });
+    $('.cancel-icon').click(function(e){
+      $('#keyword').val('');
+    })
+    $('#search-form').submit(function(e){
+      e.preventDefault();
+      if($('#keyword').val().trim()==''){
+        searchHidden();
+      }else{
+        $('#search-form').submit();
+      }
+    });
+    $('#search-btn').click(function(e){
+      e.preventDefault();
+      if($('#keyword').val().trim()==''){
+        $('keyword').val('');
+      }else{
+        $('#search-form').submit();
+      }
+    });

@@ -419,6 +419,9 @@
   overflow: hidden;
   padding: 10px 30px;
 }
+#index .buyforme .qiugou-history .slides {
+  overflow: hidden;
+}
 #index .buyforme .qiugou-history .item {
   color: #666;
   line-height: 23px;
