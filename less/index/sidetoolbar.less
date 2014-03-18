@@ -130,7 +130,7 @@
 }
 .toolbar{
   width: 910px;height:652px;
-  .toolbar-nav{
+ .toolbar-nav{
     background-color: #FC7000;
     width: 50px;
     height: 650px;
@@ -149,9 +149,13 @@
           .title{display: block;color:#fff8dd;font-size: 12px;text-align: center;font-style: normal;}
         }
       }
-      .collect{a{.icon-img{background: url(../images/index/collect-hover.png);}}}
+      .collect{
+        border-top:  1px solid transparent;
+        a{.icon-img{background: url(../images/index/collect-hover.png);}}
+      }
       .collect:hover{
         border-bottom: 1px solid #dedede;border-right: none;
+        border-top:  1px solid #dedede;
         background: #f5f5f5;
         a{
           .icon-img{background: url(../images/index/collect-active.png);}
