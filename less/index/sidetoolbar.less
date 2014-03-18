@@ -128,6 +128,74 @@
     }
   }
 }
-.pop{
-  
+.toolbar{
+  width: 910px;height:652px;
+  .toolbar-nav{
+    background-color: #FC7000;
+    width: 50px;
+    height: 650px;
+    float: left;
+    border-left: 1px solid #d15001;
+    .toolbar-list{
+      height: 224px;
+      li{
+        border-bottom: 1px solid #d15001;
+        border-right:1px solid #d15001; 
+        height: 55px;
+        a{
+          display: block;
+          padding: 9px 5px;
+          .icon-img{width: 27px;height: 25px;margin: 0 auto;}
+          .title{display: block;color:#fff8dd;font-size: 12px;text-align: center;font-style: normal;}
+        }
+      }
+      .collect{a{.icon-img{background: url(../images/index/collect-hover.png);}}}
+      .collect:hover{
+        border-bottom: 1px solid #dedede;border-right: none;
+        background: #f5f5f5;
+        a{
+          .icon-img{background: url(../images/index/collect-active.png);}
+          .title{color: #666;}
+        }
+      }
+      .reserve{a{.icon-img{background: url(../images/index/reserve-hover.png);}}}
+      .reserve:hover{
+        border-bottom: 1px solid #dedede;border-right: none;
+        background: #f5f5f5;
+        a{
+          .icon-img{background: url(../images/index/reserve-active.png);}
+          .title{color: #666;}
+        }
+      }
+      .sell{a{.icon-img{background: url(../images/index/sell-hover.png);}}}
+      .sell:hover{
+        border-bottom: 1px solid #dedede;border-right: none;
+        background: #f5f5f5;
+        a{
+          .icon-img{background: url(../images/index/sell-active.png);}
+          .title{color: #666;}
+        }
+      }
+      .scan{a{.icon-img{background: url(../images/index/scan-hover.png);}}}
+      .scan:hover{
+        border-bottom: 1px solid #dedede;border-right: none;
+        background: #f5f5f5;
+        a{
+          .icon-img{background: url(../images/index/scan-active.png);}
+          .title{color: #666;}
+        }
+      }
+    }
+  }
+  .toolbar-content{
+    width: 855px;
+    height: 650px;
+    border: 1px solid #dedede;
+    border-left: none;
+    float: left;
+    background-color: #F2F2F2;
+    span{float: right;width: 11px;height: 11px;background: url(../images/index/toolbar-close.png);margin-top: 10px;margin-right:10px;display: block;}
+    iframe{}
+  }
 }
+
