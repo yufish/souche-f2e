@@ -157,6 +157,9 @@
   display: inline;
   color: #fff;
 }
+#toolbar #content .car-wrap .car-box .join:hover {
+  background-color: #e66600;
+}
 #toolbar #content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png);
   margin: 4px 9px;

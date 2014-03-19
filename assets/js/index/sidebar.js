@@ -4,14 +4,17 @@
             e.preventDefault();
             $(".sidebar .side-box").removeClass("active")
             $(this.parentNode).addClass("active")
-            $("#toolbar").animate({
-                width: 905,
-                height: 652
-            }, 500, function() {
+            if (!$("#toolbar").hasClass("sidebar-active")) {
+                $("#toolbar").animate({
+                    width: 905,
+                    height: 652
+                }, 500, function() {
 
-            })
-            $("#toolbar").addClass("sidebar-active")
-            $(".sidebar").removeClass("active")
+                })
+                $("#toolbar").addClass("sidebar-active")
+                $(".sidebar").removeClass("active")
+            }
+            $(".toolbar-content iframe").src = $(this).attr("href")
         })
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
