@@ -1,0 +1,326 @@
+#toolbar {
+  width: 855px;
+  height: 630px;
+  background-color: #F2F2F2;
+}
+#toolbar .tool-box {
+  padding-left: 45px;
+  width: 720px;
+}
+#toolbar .tool-box #nav {
+  width: 717px;
+  height: 40px;
+}
+#toolbar .tool-box #nav .title {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  float: left;
+}
+#toolbar .tool-box #nav .number {
+  font-size: 16px;
+  font-weight: normal;
+  float: left;
+  font-style: normal;
+  line-height: 35px;
+}
+#toolbar .tool-box #nav .path {
+  float: right;
+  width: 88px;
+  height: 40px;
+}
+#toolbar .tool-box #nav .path div {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b3b3b3;
+  margin-left: 5px;
+  background-color: #f2f2f2;
+  float: left;
+}
+#toolbar .tool-box #nav .path div span {
+  width: 13px;
+  height: 18px;
+  display: block;
+  margin: 9px 10px;
+}
+#toolbar .tool-box #nav .path div:hover {
+  background-color: #FC7000;
+}
+#toolbar .tool-box #nav .path .going span {
+  background: url(../images/index/going.png);
+}
+#toolbar .tool-box #nav .path .going:hover span {
+  background: url(../images/index/going-hover.png);
+}
+#toolbar .tool-box #nav .path .back span {
+  background: url(../images/index/back.png);
+}
+#toolbar .tool-box #nav .path .back:hover span {
+  background: url(../images/index/back-hover.png);
+}
+#toolbar .tool-box #nav .pages {
+  font-size: 14px;
+  color: #333;
+  margin-right: 20px;
+  line-height: 39px;
+  float: right;
+}
+#toolbar .tool-box #nav .pages div {
+  float: left;
+}
+#toolbar #content {
+  width: 855px;
+  height: 630px;
+  float: left;
+}
+#toolbar #content .car-wrap {
+  width: 730px;
+  height: 550px;
+}
+#toolbar #content .car-wrap .car-box {
+  width: 210px;
+  height: 240px;
+  margin-top: 13px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+  float: left;
+  margin-right: 10px;
+}
+#toolbar #content .car-wrap .car-box .car-image {
+  width: 210px;
+  height: 140px;
+}
+#toolbar #content .car-wrap .car-box .car-image img {
+  width: 210px;
+  height: 140px;
+}
+#toolbar #content .car-wrap .car-box .car-title {
+  font-size: 12px;
+  color: #333;
+  line-height: 18px;
+  display: block;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#toolbar #content .car-wrap .car-box .car-title:hover {
+  color: #FC7000;
+}
+#toolbar #content .car-wrap .car-box .car-price {
+  height: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+#toolbar #content .car-wrap .car-box .car-price .price {
+  color: #db2400;
+  font-size: 14px;
+  font-weight: normal;
+  float: left;
+}
+#toolbar #content .car-wrap .car-box .car-price .time {
+  color: #999;
+  font-size: 12px;
+  float: right;
+}
+#toolbar #content .car-wrap .car-box .cancel {
+  display: block;
+  width: 76px;
+  height: 24px;
+  border: 1px solid #e4e4e4;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  line-height: 21px;
+  cursor: pointer;
+}
+#toolbar #content .car-wrap .car-box .join {
+  display: block;
+  height: 20px;
+  width: 90px;
+  background-color: #FC7000;
+  margin: 0 auto;
+  border: 1px solid #f04f12;
+  border-radius: 4px;
+  margin-top: 5px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+#toolbar #content .car-wrap .car-box .join i {
+  vertical-align: 2px;
+  font-size: 12px;
+  font-style: normal;
+  float: left;
+  display: inline;
+  color: #fff;
+}
+#toolbar #content .car-wrap .car-box .join-collect i {
+  background: url(../images/index/join-collect.png);
+  margin: 4px 9px;
+}
+#toolbar #content .car-wrap .car-box .join-sell i {
+  background: url(../images/index/join-sell.png);
+  height: 18px;
+  width: 11px;
+  margin: 1px 8px;
+}
+#toolbar #content .car-wrap .zhijiangcar .car-image .zhijiang {
+  position: relative;
+  width: 65px;
+  height: 19px;
+  background-color: #FC7000;
+  border-radius: 3px;
+  color: #fff;
+  top: -160px;
+  left: 144px;
+  text-align: center;
+  line-height: 19px;
+}
+#toolbar #content .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #FC7000;
+  position: relative;
+  left: 8px;
+  top: 0;
+}
+#toolbar #content .car-wrap .timebuycar .car-image .price-down {
+  background: url(../images/index/zhijiang.png);
+  height: 75px;
+  width: 40px;
+  position: relative;
+  top: -153px;
+  left: 171px;
+}
+#toolbar #content .car-wrap .timebuycar .car-image .price-down i {
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 40px;
+}
+#toolbar #reserve #content .car-wrap .car-box .car-price {
+  border: none;
+}
+#toolbar #scan #content {
+  overflow-y: auto;
+  width: 780px;
+  height: 900px;
+  scrollbar-face-color: #d7d7d7;
+  scrollbar-highlight-color: #fff;
+}
+#toolbar #scan #content .day-list {
+  width: 100%;
+  overflow: hidden;
+  margin: 15px 0;
+}
+#toolbar #scan #content .day-list .list-title {
+  height: 30px;
+  overflow: hidden;
+}
+#toolbar #scan #content .day-list .list-title span {
+  display: block;
+  height: 12px;
+  background: #FC7000;
+  border-radius: 12px;
+  float: left;
+  width: 12px;
+  margin: 8px 6px;
+}
+#toolbar #scan #content .day-list .list-title .day {
+  font-size: 14px;
+  color: #000;
+  float: left;
+  font-weight: bold;
+  line-height: 25px;
+}
+#toolbar #scan #content .day-list .list-title .carnum {
+  font-size: 12px;
+  color: #666;
+  float: left;
+  line-height: 26px;
+  margin-left: 6px;
+}
+#toolbar #scan #content .day-list .list-title .carnum i {
+  font-style: normal;
+}
+#toolbar #scan #content .day-list .car-list {
+  width: 100%;
+}
+#toolbar #scan #content .day-list .car-list .carbox {
+  width: 230px;
+  height: 50px;
+  border: 1px solid #dedede;
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 10px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-image {
+  width: 75px;
+  height: 50px;
+  float: left;
+  display: block;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-image img {
+  width: 75px;
+  height: 50px;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail {
+  margin-left: 10px;
+  float: left;
+  width: 145px;
+  height: 48px;
+  font-size: 12px;
+  color: #333;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail a {
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  height: 32px;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail i {
+  font-style: normal;
+  color: #db2400;
+  font-size: 14px;
+}
+#toolbar #no-collect .nocllect-img {
+  width: 768px;
+  height: 404px;
+  background: url(../images/index/no-collect.png);
+  margin-top: 80px;
+}
+#toolbar #no-sell .nosell-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-sell.png);
+  margin-top: 80px;
+}
+#toolbar #no-reserve .noreserve-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-reserve.png);
+  margin-top: 80px;
+}
+#toolbar #no-scan .noscan-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-scan.png);
+  margin-top: 80px;
+}
