@@ -46,8 +46,8 @@ body#toolbar
             .price 123.7万
             .time 首次上牌：2013-04
           a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
-          a.join.join-sell(herf="#") 
-            i.sell
+          a.join.join-collect(herf="#") 
+            i.collect
             | 加入收藏
         .car-box.timebuycar
           .car-image
@@ -58,10 +58,10 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
-          a.join.join-sell(herf="#") 
+          a.cancel.cancel-collect.hidden(herf="#") 取消收藏     
+          a.join.join-collect.disabled(herf="#") 
             i.sell
-            | 加入收藏
+            | 取消收藏
         .car-box
           .car-image
             img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
@@ -168,4 +168,11 @@ body#toolbar
       .noscan-img    
       //浏览记录 end
 
-
+  script.
+    var api = {
+      fav:"",
+      unfav:""
+    }
+    (function(){
+      
+    })();

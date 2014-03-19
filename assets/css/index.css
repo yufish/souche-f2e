@@ -46,7 +46,7 @@
   padding-top: 30px;
 }
 #index .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-bg.jpg) no-repeat 0 0;
+  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
   position: absolute;
   bottom: 0;
   right: 1px;
@@ -66,7 +66,15 @@
   color: #222;
   line-height: 35px;
 }
+#index .qiugou .title em {
+  color: #fc7000;
+}
 #index .qiugou .sub-title {
+  font-size: 14px;
+  color: #666;
+  line-height: 30px;
+}
+#index .qiugou .searching-sub-title {
   font-size: 14px;
   color: #666;
   line-height: 30px;
@@ -81,7 +89,7 @@
   font-size: 28px;
   color: #222;
   line-height: 35px;
-  height: 60px;
+  height: 35px;
   width: 540px;
 }
 #index .qiugou .searching-title em {
@@ -372,9 +380,7 @@
   cursor: pointer;
 }
 #index .qiugou .form .submit.loading {
-  background-image: url(../images/common/loading.gif);
-  background-position: 10px center;
-  background-repeat: no-repeat;
+  background: #ffa053;
 }
 #index .qiugou .form .go-login {
   margin-left: 30px;
@@ -422,7 +428,7 @@
   background-position: 427px 50%;
 }
 #index .has-qiugou .head-inner {
-  margin-top: -120px;
+  margin-top: -130px;
 }
 #index .has-qiugou .result .result-inner {
   margin-left: 0px;

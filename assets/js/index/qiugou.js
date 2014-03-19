@@ -108,24 +108,13 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                 } else {
                     Souche.PhoneRegister($("#qiugou-phone").val(), function() {
                         $(".go-login").addClass("hidden")
+                        $("#qiugou-popup").addClass("hidden")
+                        $(".wrapGrayBg").hide();
                         self._submit();
                     })
 
                 }
             });
-
-            // //自动开始提交
-            // if(config.has_qiugou){
-            //   var hasSubmit = false;
-            //   $(window).on("scroll",function(e){
-            //     if(hasSubmit) return;
-            //     if($(window).scrollTop()+$(window).height()>$(".qiugou .submit").offset().top){
-            //       self._submit();
-            //       hasSubmit = true;
-            //     }
-            //   });
-            // }
-
         },
         _submit: function() {
             var self = this;
@@ -136,7 +125,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
 
             })
 
-            $(".submit").addClass("loading").html("正在提交");
+            $(".qiugou .submit").addClass("loading").html("提交中  ...");
             is_submiting = true;
             $.ajax({
                 url: contextPath + "/pages/homePageAction/saveBuyInfo.json",
@@ -160,7 +149,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
 
                         })
                         $(".qiugou .head .head-inner").animate({
-                            marginTop: -120
+                            marginTop: -130
                         }, 300)
                     } else {
                         self._renderResult();
@@ -183,7 +172,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
             }, 300)
             setTimeout(function() {
                 $(".qiugou .head .head-inner").animate({
-                    marginTop: -120
+                    marginTop: -130
                 }, 300)
                 setTimeout(function() {
                     self._hideForm();
