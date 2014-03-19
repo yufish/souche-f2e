@@ -1,0 +1,446 @@
+@orange:#fc7000;
+
+#mylist{
+  font-family: 'Microsoft YaHei',Tahoma,Verdana;
+  color:#333;
+  a{
+    color:#444;
+    cursor: pointer;
+  }
+  a:hover{
+  color:@orange;
+}
+  .module{
+    margin-top:10px;
+    .mod-main{
+      width:920px;
+      float:left;
+      display: inline;
+    }
+    .mod-side{
+      width:260px;
+      float:left;
+      margin-left:10px;
+      display: inline;
+    }
+    .hd{
+      font-size: 16px;
+      line-height: 35px;
+      color:#333;
+    }
+  }
+  #header{
+    height:115px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+      position: relative;
+    
+    .logo{
+      display: block;
+      position: absolute;
+      top:40px;
+      left:0px;
+    }
+    .search{
+      position: absolute;
+      left:300px;
+      top:40px;
+      .search-text{
+        width:490px;
+        height:35px;
+        border:2px solid #e5e5e5;
+        vertical-align: top;
+        padding-left:10px;
+      }
+      .search-submit{
+        background: @orange;
+        color:#fff;
+        font-size: 16px;
+        width:88px;
+        height:38px;
+        border:none;
+        vertical-align: top;
+        margin-left: -5px;
+        cursor: pointer;
+      }
+      .hot-keywords{
+        line-height:30px;
+        a{
+          color:#666;
+          margin-left: 10px;
+        }
+        a:hover{
+          color:@orange;
+        }
+      }
+
+    }
+    .adviser{
+      position: absolute;
+      right:0;
+      top:40px;
+      width: 180px;
+      height: 35px;
+      color: #7d7d7d;
+      #pulldown{
+        position: absolute;
+        top: 16px;
+        left: 165px;
+        width: 0;
+        height: 0;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-top: 5px solid #666;
+      }
+      .mylist{
+        width: 80px;
+        height: 98px;
+        border: 1px solid #e6e6e6;
+        position: absolute;
+        top: 35px;
+        left: 94px;
+        background: #fff;
+        z-index: 100;
+        ul{
+          padding: 10px;
+          li{
+            height: 30px;
+          }
+        }
+      }
+      .text{
+        float: right;
+        font-size: 12px;
+        border-right: 1px solid #7d7d7d;
+        padding-right: 20px;
+        margin-top: 10px;
+        height: 20px;
+        color: #7d7d7d;
+      }
+      .text:hover{
+        color: @orange;
+      }
+      .myadviser{
+        float: right;
+        width: 65px;
+        height: 20px;
+        margin-left: 20px;
+        padding-top: 10px;
+        color: #7d7d7d;
+        border:none;
+        
+      }
+    }
+   }
+  }
+  #nav{
+    background-color: #f9f9f9;
+    height: 235px;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+    border-bottom:  1px solid #e5e5e5;
+    .wrapper{
+    width:1191px;
+    margin:0 auto;
+    position: relative;
+    padding: 15px 0;
+    height: 205px;
+    .demand{
+      width: 1000px;
+      float: left;
+      height: 205px;
+      .demand-title{color: #666;font-size: 16px;line-height: 25px;margin-bottom: 10px;}
+      .chosecar{
+        li{
+          font-size: 12px;
+          color: #666;
+          font-weight: bold;
+          line-height: 25px;
+          .chosecentent{
+            cursor: pointer;
+            font-weight: normal;
+            margin-left: 20px;
+          }
+        }
+      }
+      .choseagain{
+        margin-top: 15px;
+        color: @orange;
+        font-size: 12px;
+        font-weight: bold;
+        display: block;
+        height: 25px;
+        width: 100px;
+        i{
+          background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+          height: 20px;
+          width: 20px;
+          float: left;
+          margin-right: 10px;
+        }
+        a{
+          color: @orange;
+          line-height: 20px;
+        }
+      }
+    }
+    .erweima{
+      width: 191px;
+      float: left;
+      .erweima-img{
+        margin-top: 10px;
+        width: 100px;
+        height: 173px;
+        background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+    }
+  }
+  #content{
+    .wrapper{
+      width:1191px;
+      margin:0 auto;
+      position: relative;
+      _zoom:1;
+      .date-wrap{
+        width: 1180px;
+        border-left: 1px solid #e4e4e4;
+        margin-left: 10px;
+        margin-top: 25px;
+        .hourcar{
+          width: 280px;
+          height: 32px;
+          background-color: #fff8e8;
+          position: absolute;
+          right: 0;
+          top: -5px;
+           .hour{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: url("../images/index/24hour.png");
+            position: absolute;
+            left: 5px;
+            top: 9px;
+           }
+           .findcar{
+            padding-left: 25px;
+            font-size: 12px;color: @orange;
+            line-height: 32px;
+           }
+        }
+        .date-box{
+          height: 310px;
+          margin-bottom: 20px;
+          .date-title{
+            height: 25px;
+            .today-yesterday{
+              display: block;
+              width: 13px;
+              height: 13px;
+              background-color: @orange;
+              border-radius: 13px;
+              left: 4px;
+              position: absolute;
+              
+            }
+            .old{
+              display: block;
+              width: 13px;
+              height: 13px;
+              background-color: #999;
+              border-radius: 13px;
+              left: 4px;
+              position: absolute;
+            }
+            .day{
+              font-size: 15px;
+              color: #3f3f3f;
+              display:inline;
+              float: left;
+              line-height: 13px;
+              margin:0 15px;
+            }
+            .carnum{
+              font-size: 12px;
+              color: #666;
+              line-height: 15px;
+            }
+            .num{
+              color: @orange;
+              line-height: 15px;
+            }
+          }
+          .car-wrap{
+            height: 280px;
+            padding-top: 20px;
+            padding-left: 25px;
+            
+            .car-box{
+              width: 209px;
+              height: 230px;
+              background-color: #fff;
+              border: 1px solid #e4e4e4;
+              padding: 10px;
+              float: left;
+              display: inline;
+              .car-image{
+                width: 210px;height: 140px;display: block;
+                img{width: 210px;height: 140px;}
+              }
+              .car-title{font-size: 12px;color: #333;margin-top: 10px;cursor: pointer;display: block;}
+              .car-title:hover{color: #FC7000;}
+              .car-price{
+                height: 20px;
+                padding: 10px 0;
+                .price{color: #db2400;font-size: 16px;float: left;}
+                .time{color: #999;font-size: 12px;float: right;line-height: 20px;}
+              }
+            }
+            .zhijiangcar{
+              .car-image{
+                .zhijiang{
+                  position: relative;width: 65px;height: 19px;
+                  background-color: #FC7000;
+                  border-radius: 3px;color: #fff;
+                  top:-160px;left:144px;
+                  text-align: center;
+                  line-height: 19px;
+                  .triangle{
+                    display: block;width: 0;height: 0;
+                    border-bottom: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                    border-top: 5px solid #FC7000;
+                    position: relative;
+                    left: 8px;
+                    top:0;
+                    }
+                  }
+                }
+              }
+              .timebuycar{
+                .car-image{
+                  .price-down{
+                    background: url(../images/index/zhijiang.png);
+                    height: 75px;
+                    width: 40px;
+                    position: relative;
+                    top:-153px;
+                    left: 171px;
+                    i{
+                      color: #FFFFFF;
+                      display: block;
+                      font-family: 'Microsoft YaHei',Tahoma,Verdana;
+                      font-size: 14px;
+                      font-style: normal;
+                      line-height: 20px;
+                      text-align: center;
+                      padding-top: 40px;
+                    }
+                  }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+  #footer{
+    margin-top: 30px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+      overflow: hidden;
+    }
+    .friendlinks{
+      text-align: center;
+      margin-bottom: 15px;
+      .wrapper{
+      width:1190px;
+      margin:0 auto;
+      
+      a{
+        font-size:12px;
+        color:#333;
+        padding:0 20px;
+        border-right: 1px solid #e6e6e6;
+      }
+      a.last{
+        border:none;
+      }
+    }
+  }
+    .footer-content{
+      background: #f5f5f5;
+      border-top:1px solid #e6e6e6;
+    }
+    .performance{
+      padding: 40px 0;
+      border-bottom: 1px solid #e6e6e6;
+      width:1400px;
+      i{
+        display: block;
+        width:40px;
+        height:40px;
+        position: absolute;
+        top:8px;
+        left:20px;
+
+      }
+      .per{
+        position: relative;
+        float:left;
+        width:380px;
+        padding-left:70px;
+        display: inline;
+      }
+      .t{
+        font-size: 16px;
+        line-height: 30px;
+        color:#666;
+      }
+      .st{
+        font-size: 14px;
+        color:#999;
+        line-height: 20px;
+      }
+      .per-1{
+
+        i{
+          background: url(../images/index/per-1.png) no-repeat;
+        }
+      }
+      .per-2{
+        i{
+          background: url(../images/index/per-2.png) no-repeat;
+        }
+      }
+      .per-3{
+        i{
+          background: url(../images/index/per-3.png) no-repeat;
+        }
+      }
+    }
+    .company_info{
+      padding:20px 0px;
+      .wrap{
+        text-align: center;
+        a{
+          color:#666;
+          padding:0 10px;
+        }
+      }
+      p{
+        text-align: center;
+        line-height: 30px;
+        color:#999;
+      }
+    }
+  }
+}
+
+
+

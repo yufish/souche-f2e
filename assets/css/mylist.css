@@ -1,0 +1,449 @@
+#mylist {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  color: #333;
+}
+#mylist a {
+  color: #444;
+  cursor: pointer;
+}
+#mylist a:hover {
+  color: #fc7000;
+}
+#mylist .module {
+  margin-top: 10px;
+}
+#mylist .module .mod-main {
+  width: 920px;
+  float: left;
+  display: inline;
+}
+#mylist .module .mod-side {
+  width: 260px;
+  float: left;
+  margin-left: 10px;
+  display: inline;
+}
+#mylist .module .hd {
+  font-size: 16px;
+  line-height: 35px;
+  color: #333;
+}
+#mylist #header {
+  height: 115px;
+}
+#mylist #header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#mylist #header .wrapper .logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+#mylist #header .wrapper .search {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+#mylist #header .wrapper .search .search-text {
+  width: 490px;
+  height: 35px;
+  border: 2px solid #e5e5e5;
+  vertical-align: top;
+  padding-left: 10px;
+}
+#mylist #header .wrapper .search .search-submit {
+  background: #fc7000;
+  color: #fff;
+  font-size: 16px;
+  width: 88px;
+  height: 38px;
+  border: none;
+  vertical-align: top;
+  margin-left: -5px;
+  cursor: pointer;
+}
+#mylist #header .wrapper .search .hot-keywords {
+  line-height: 30px;
+}
+#mylist #header .wrapper .search .hot-keywords a {
+  color: #666;
+  margin-left: 10px;
+}
+#mylist #header .wrapper .search .hot-keywords a:hover {
+  color: #fc7000;
+}
+#mylist #header .wrapper .adviser {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 180px;
+  height: 35px;
+  color: #7d7d7d;
+}
+#mylist #header .wrapper .adviser #pulldown {
+  position: absolute;
+  top: 16px;
+  left: 165px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #666;
+}
+#mylist #header .wrapper .adviser .mylist {
+  width: 80px;
+  height: 98px;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  top: 35px;
+  left: 94px;
+  background: #fff;
+  z-index: 100;
+}
+#mylist #header .wrapper .adviser .mylist ul {
+  padding: 10px;
+}
+#mylist #header .wrapper .adviser .mylist ul li {
+  height: 30px;
+}
+#mylist #header .wrapper .adviser .text {
+  float: right;
+  font-size: 12px;
+  border-right: 1px solid #7d7d7d;
+  padding-right: 20px;
+  margin-top: 10px;
+  height: 20px;
+  color: #7d7d7d;
+}
+#mylist #header .wrapper .adviser .text:hover {
+  color: #fc7000;
+}
+#mylist #header .wrapper .adviser .myadviser {
+  float: right;
+  width: 65px;
+  height: 20px;
+  margin-left: 20px;
+  padding-top: 10px;
+  color: #7d7d7d;
+  border: none;
+}
+#mylist #nav {
+  background-color: #f9f9f9;
+  height: 235px;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+#mylist #nav .wrapper {
+  width: 1191px;
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 0;
+  height: 205px;
+}
+#mylist #nav .wrapper .demand {
+  width: 1000px;
+  float: left;
+  height: 205px;
+}
+#mylist #nav .wrapper .demand .demand-title {
+  color: #666;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+#mylist #nav .wrapper .demand .chosecar li {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  line-height: 25px;
+}
+#mylist #nav .wrapper .demand .chosecar li .chosecentent {
+  cursor: pointer;
+  font-weight: normal;
+  margin-left: 20px;
+}
+#mylist #nav .wrapper .demand .choseagain {
+  margin-top: 15px;
+  color: #fc7000;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  height: 25px;
+  width: 100px;
+}
+#mylist #nav .wrapper .demand .choseagain i {
+  background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-right: 10px;
+}
+#mylist #nav .wrapper .demand .choseagain a {
+  color: #fc7000;
+  line-height: 20px;
+}
+#mylist #nav .wrapper .erweima {
+  width: 191px;
+  float: left;
+}
+#mylist #nav .wrapper .erweima .erweima-img {
+  margin-top: 10px;
+  width: 100px;
+  height: 173px;
+  background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#mylist #content .wrapper {
+  width: 1191px;
+  margin: 0 auto;
+  position: relative;
+  _zoom: 1;
+}
+#mylist #content .wrapper .date-wrap {
+  width: 1180px;
+  border-left: 1px solid #e4e4e4;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+#mylist #content .wrapper .date-wrap .hourcar {
+  width: 280px;
+  height: 32px;
+  background-color: #fff8e8;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+#mylist #content .wrapper .date-wrap .hourcar .hour {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: url("../images/index/24hour.png");
+  position: absolute;
+  left: 5px;
+  top: 9px;
+}
+#mylist #content .wrapper .date-wrap .hourcar .findcar {
+  padding-left: 25px;
+  font-size: 12px;
+  color: #fc7000;
+  line-height: 32px;
+}
+#mylist #content .wrapper .date-wrap .date-box {
+  height: 310px;
+  margin-bottom: 20px;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title {
+  height: 25px;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title .today-yesterday {
+  display: block;
+  width: 13px;
+  height: 13px;
+  background-color: #fc7000;
+  border-radius: 13px;
+  left: 4px;
+  position: absolute;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title .old {
+  display: block;
+  width: 13px;
+  height: 13px;
+  background-color: #999;
+  border-radius: 13px;
+  left: 4px;
+  position: absolute;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title .day {
+  font-size: 15px;
+  color: #3f3f3f;
+  display: inline;
+  float: left;
+  line-height: 13px;
+  margin: 0 15px;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title .carnum {
+  font-size: 12px;
+  color: #666;
+  line-height: 15px;
+}
+#mylist #content .wrapper .date-wrap .date-box .date-title .num {
+  color: #fc7000;
+  line-height: 15px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap {
+  height: 280px;
+  padding-top: 20px;
+  padding-left: 25px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box {
+  width: 209px;
+  height: 230px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+  float: left;
+  display: inline;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-image {
+  width: 210px;
+  height: 140px;
+  display: block;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-image img {
+  width: 210px;
+  height: 140px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-title {
+  font-size: 12px;
+  color: #333;
+  margin-top: 10px;
+  cursor: pointer;
+  display: block;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-title:hover {
+  color: #FC7000;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-price {
+  height: 20px;
+  padding: 10px 0;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-price .price {
+  color: #db2400;
+  font-size: 16px;
+  float: left;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-price .time {
+  color: #999;
+  font-size: 12px;
+  float: right;
+  line-height: 20px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
+  position: relative;
+  width: 65px;
+  height: 19px;
+  background-color: #FC7000;
+  border-radius: 3px;
+  color: #fff;
+  top: -160px;
+  left: 144px;
+  text-align: center;
+  line-height: 19px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #FC7000;
+  position: relative;
+  left: 8px;
+  top: 0;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
+  background: url(../images/index/zhijiang.png);
+  height: 75px;
+  width: 40px;
+  position: relative;
+  top: -153px;
+  left: 171px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 40px;
+}
+#mylist #footer {
+  margin-top: 30px;
+}
+#mylist #footer .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#mylist #footer .friendlinks {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#mylist #footer .friendlinks .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+}
+#mylist #footer .friendlinks .wrapper a {
+  font-size: 12px;
+  color: #333;
+  padding: 0 20px;
+  border-right: 1px solid #e6e6e6;
+}
+#mylist #footer .friendlinks .wrapper a.last {
+  border: none;
+}
+#mylist #footer .footer-content {
+  background: #f5f5f5;
+  border-top: 1px solid #e6e6e6;
+}
+#mylist #footer .performance {
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e6e6;
+  width: 1400px;
+}
+#mylist #footer .performance i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+#mylist #footer .performance .per {
+  position: relative;
+  float: left;
+  width: 380px;
+  padding-left: 70px;
+  display: inline;
+}
+#mylist #footer .performance .t {
+  font-size: 16px;
+  line-height: 30px;
+  color: #666;
+}
+#mylist #footer .performance .st {
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+}
+#mylist #footer .performance .per-1 i {
+  background: url(../images/index/per-1.png) no-repeat;
+}
+#mylist #footer .performance .per-2 i {
+  background: url(../images/index/per-2.png) no-repeat;
+}
+#mylist #footer .performance .per-3 i {
+  background: url(../images/index/per-3.png) no-repeat;
+}
+#mylist #footer .company_info {
+  padding: 20px 0px;
+}
+#mylist #footer .company_info .wrap {
+  text-align: center;
+}
+#mylist #footer .company_info .wrap a {
+  color: #666;
+  padding: 0 10px;
+}
+#mylist #footer .company_info p {
+  text-align: center;
+  line-height: 30px;
+  color: #999;
+}
