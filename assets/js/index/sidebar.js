@@ -2,20 +2,32 @@
     $(document).ready(function() {
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
+            $(".sidebar .side-box").removeClass("active")
+            $(this.parentNode).addClass("active")
             $("#toolbar").animate({
                 width: 905,
                 height: 652
             }, 500, function() {
-                $("#toolbar").addClass("sidebar-active")
+
             })
+            $("#toolbar").addClass("sidebar-active")
+            $(".sidebar").removeClass("active")
+        })
+        $(".sidebar").on("mouseenter", function() {
+            if (!$(".sidebar").hasClass("sidebar-active")) {
+                $(".sidebar").addClass("active")
+            }
+        }).mouseleave(function() {
+            $(".sidebar").removeClass("active")
         })
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
                 width: 50,
                 height: 215
             }, 500, function() {
-                $("#toolbar").removeClass("sidebar-active")
+
             })
+            $("#toolbar").removeClass("sidebar-active")
         })
         var Q_Buy_active = false;
         $(window).scroll(function() {

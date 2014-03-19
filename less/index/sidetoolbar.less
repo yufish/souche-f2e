@@ -131,13 +131,13 @@
     }
   }
 }
-.sidebar:hover{
-  width:70px;
+.sidebar.active{
+  width:70px !important;
   .side-box{
-    width: 70px;
+    width: 70px !important;
     a{
       i{
-        width:70px;
+        width:70px !important;
       }
     }
   }
@@ -222,7 +222,16 @@
       }
     }
   }
-
+  .toolbar-content{
+    width: 850px;
+    height: 648px;
+    border: 1px solid #dedede;
+    border-left: none;
+    float: left;
+    background-color: #F2F2F2;
+    i{cursor:pointer;float: right;width: 11px;height: 11px;background: url(../images/index/toolbar-close.png);margin-top: 10px;margin-right:10px;display: block;}
+    iframe{}
+  }
 }
 
 .sidebar-active:hover{
@@ -235,15 +244,6 @@
       }
     }
   }
-  .toolbar-content{
-    width: 855px;
-    height: 648px;
-    border: 1px solid #dedede;
-    border-left: none;
-    float: left;
-    background-color: #F2F2F2;
-    i{float: right;width: 11px;height: 11px;background: url(../images/index/toolbar-close.png);margin-top: 10px;margin-right:10px;display: block;}
-    iframe{}
-  }
+  
 }
 
