@@ -2,18 +2,35 @@
     $(document).ready(function() {
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
-            $("#toolbar").animate({
-                width: 900,
-                height: 652
-            }, 500, function() {
+            $(".sidebar .side-box").removeClass("active")
+            $(this.parentNode).addClass("active")
+            if (!$("#toolbar").hasClass("sidebar-active")) {
+                $("#toolbar").animate({
+                    width: 905,
+                    height: 652
+                }, 500, function() {
+
+                })
                 $("#toolbar").addClass("sidebar-active")
-            })
+                $(".sidebar").removeClass("active")
+            }
+            $(".toolbar-content iframe").src = $(this).attr("href")
+        })
+        $(".sidebar").on("mouseenter", function() {
+            if (!$(".sidebar").hasClass("sidebar-active")) {
+                $(".sidebar").addClass("active")
+            }
+        }).mouseleave(function() {
+            $(".sidebar").removeClass("active")
         })
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
-                right: -910,
-                bottom: -652
+                width: 50,
+                height: 215
+            }, 500, function() {
+
             })
+            $("#toolbar").removeClass("sidebar-active")
         })
         var Q_Buy_active = false;
         $(window).scroll(function() {

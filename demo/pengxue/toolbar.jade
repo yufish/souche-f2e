@@ -7,7 +7,7 @@ html
     <meta name="viewport" id="viewport" content="width=1340" /> 
     <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/sidebar.css?t=128" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/sidebar-content.css?t=128" rel="stylesheet" type="text/css" />
     <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
@@ -27,9 +27,9 @@ body#toolbar
       .title 收藏的车
       i.number (2辆)
       .path
-        .back
+        a.back(href="#")
           span
-        .going
+        a.going(href="#")
           span
       .pages
         .now-page 2 /
@@ -46,8 +46,8 @@ body#toolbar
             .price 123.7万
             .time 首次上牌：2013-04
           a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
-          a.join.join-sell(herf="#") 
-            i.sell
+          a.join.join-collect(herf="#") 
+            i.collect
             | 加入收藏
         .car-box.timebuycar
           .car-image
@@ -58,10 +58,10 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
-          a.join.join-sell(herf="#") 
+          a.cancel.cancel-collect.hidden(herf="#") 取消收藏     
+          a.join.join-collect.disabled(herf="#") 
             i.sell
-            | 加入收藏
+            | 取消收藏
         .car-box
           .car-image
             img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
@@ -73,7 +73,7 @@ body#toolbar
           a.join.join-sell(herf="#") 
             i.sell
             | 加入收藏
-  #no-collect.tool-box.hidden
+  #no-collect.tool-box
     #nav
       .title 收藏的车
     #content
@@ -85,9 +85,9 @@ body#toolbar
       .title 降价通知我
       i.number (2辆)
       .path
-        .back
+        a.back(href="#")
           span
-        .going
+        a.going(href="#")
           span
       .pages
         .now-page 2 /
@@ -107,21 +107,21 @@ body#toolbar
           a.join.join-sell(herf="#") 
             i.sell
             | 降价通知我
-  #no-sell.tool-box.hidden
+  #no-sell.tool-box
     #nav
       .title 降价通知我
     #content
       .nosell-img
       //降价通知我 end 
       //预约看车 begin
-  #reserve.tool-box.hidden
+  #reserve.tool-box
     #nav
       .title 预约看车
       i.number (2辆)
       .path
-        .back
+        a.back(href="#")
           span
-        .going
+        a.going(href="#")
           span
       .pages
         .now-page 2 /
@@ -137,7 +137,7 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-  #no-reserve.tool-box.hidden
+  #no-reserve.tool-box
     #nav
       .title 预约看车
     #content
@@ -161,11 +161,18 @@ body#toolbar
             .car-detail
               a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
               i.car-price 123.7万
-  #no-scan.tool-box.hidden
+  #no-scan.tool-box
     #nav
       .title 浏览记录
     #content
       .noscan-img    
       //浏览记录 end
 
-
+  script.
+    var api = {
+      fav:"",
+      unfav:""
+    }
+    (function(){
+      
+    })();

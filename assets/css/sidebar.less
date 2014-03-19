@@ -1,222 +1,260 @@
-#toolbar{
-  width: 855px;height: 630px;
-  background-color: #F2F2F2;
-  .tool-box{
-    padding-left: 45px;
-    width: 720px;
-    #nav{
-      width: 717px;
-      height: 40px;
-      .title{font-size: 24px;color: #333;font-weight: bold;float: left;}
-      .number {font-size: 16px;font-weight: normal;float: left;font-style: normal;line-height: 35px;}
-      .path{
-        float: right;width: 88px;height: 40px;
-        div{
-          width: 36px;height: 36px;border: 1px solid #b3b3b3;margin-left: 5px;background-color: #f2f2f2;float: left;
-          span{width: 13px;height: 18px;display: block;margin: 9px 10px;}
-        }
-        div:hover{background-color: #FC7000;}
-        .going{span{background: url(../images/index/going.png);}}
-        .going:hover{span{background: url(../images/index/going-hover.png);}}
-        .back{span{background: url(../images/index/back.png);}}
-        .back:hover{span{background: url(../images/index/back-hover.png);}}
+.sidebar-top{
+  height: 131px;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 35px;
+  .suggestside{
+    height: 65px;
+    border-bottom: 1px solid #e6e6e6;
+    .suggest-box{
+      padding: 11px;
+      display: block;
+      .suggest-img{
+        width: 29px;
+        height: 27px;
+        background: url(../images/index/suggest.png);
       }
-      .pages{
-        font-size: 14px;
-        color: #333;
-        margin-right: 20px;
-        line-height: 39px;
-        float: right;
-        div{float: left;}
-      }
-    }   
-  }
-  
-  #content{
-    width: 855px;
-    height: 630px;
-    float: left;
-    .car-wrap{
-      width: 730px;
-      height: 550px;
-      .car-box{
-       width: 210px;
-       height: 250px;
-       margin-top: 13px;
-       background-color: #fff;
-       border: 1px solid #e4e4e4;
-       padding: 10px;
-       float: left;
-       margin-right: 10px;
-        .car-image{
-          width: 210px;height: 140px;
-          img{width: 210px;height: 140px;}
-        }
-      .car-title{font-size: 12px;color: #333;margin-top: 10px;cursor: pointer;}
-      .car-title:hover{color: #FC7000;}
-      .car-price{
-        height: 20px;
-        padding: 10px 0;
-        border-bottom: 1px solid #e4e4e4;
-        .price{color: #db2400;font-size: 14px;font-weight: bold;float: left;}
-        .time{color: #999;font-size: 12px;float: right;}
-      }
-      .cancel{
-        display: block;
-        width: 76px;height: 24px;
-        border: 1px solid #e4e4e4;
-        background-color: #f2f2f2;
-        margin: 0 auto;text-align: center;
-        border-radius: 4px;font-size: 12px;
-        color: #666;margin-top: 10px;
-        line-height: 21px; cursor: pointer;
-      }
-      .join{
-        display: block;
-        height: 24px;width: 90px;
-        background-color: #FC7000;
-        margin: 0 auto;border: 1px solid #f04f12;
-        border-radius: 4px;margin-top: 10px;
-        line-height: 24px;cursor: pointer;
-        color: #fff;
-        i{
-          display: block;float: left; 
-          font-size: 12px;
-          font-style: normal;
-          float: left;
-          color: #fff;
-        }
-      }
-      .join-collect{i{background: url(../images/index/join-collect.png);margin: 4px 9px;}}
-      .join-sell{i{background: url(../images/index/join-sell.png);height: 18px;width: 11px;margin: 3px 8px;}}
-    }
-    .zhijiangcar{
-      .car-image{
-          .zhijiang{
-          position: relative;width: 65px;height: 19px;
-          background-color: #FC7000;
-          border-radius: 3px;color: #fff;
-          top:-160px;left:144px;
-          text-align: center;
-          line-height: 19px;
-            .triangle{
-            display: block;width: 0;height: 0;
-            border-bottom: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
-            border-top: 5px solid #FC7000;
-            position: relative;
-            left: 8px;
-            top:0;
-            }
-          }
-      }
-    }
-    .timebuycar{
-      .car-image{
-        .price-down{
-          background: url(../images/index/zhijiang.png);
-          height: 75px;
-          width: 40px;
-          position: relative;
-          top:-153px;
-          left: 171px;
-          i{
-            color: #FFFFFF;
-            display: block;
-            font-family: 'Microsoft YaHei',Tahoma,Verdana;
-            font-size: 14px;
-            font-style: normal;
-            line-height: 20px;
-            text-align: center;
-            padding-top: 40px;
-          }
-        }
-      }
-    }
-    }
-    }
-  #reserve{
-    #content{
-      .car-wrap{
-        .car-box{
-          .car-price{border: none;}
-        }
-      }
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
     }
   }
-  #scan{
-    #content{
-      overflow-y: auto;
-      width: 780px;
-      height: 900px;
-      scrollbar-face-color:#d7d7d7;
-      scrollbar-highlight-color:#fff;
-      .day-list{
-        width: 100%;
-        overflow: hidden;
-        margin: 15px 0;
-        .list-title{
-          height: 30px;
-          overflow: hidden;
-          span{
-            display: block;height: 12px;background: #FC7000;
-            border-radius: 12px;float: left;width: 12px;margin: 8px 6px;
-          }
-          .day{font-size: 14px;color: #000;float: left;font-weight: bold;line-height: 25px;}
-          .carnum{
-            font-size: 12px;color: #666;float: left;line-height :26px;
-            margin-left: 6px;
-            i{font-style: normal;}
-          }
-        }
-        .car-list{
-          width: 100%;
-          .carbox{
-            width: 230px;height: 50px;
-            border: 1px solid #dedede;
-            margin-top: 8px;margin-right: 8px;
-            padding: 10px;
-            background: #fff;
-            float: left;
-            overflow: hidden;
-            .car-image{
-              width: 75px;height: 50px;float: left;display: block;
-              img{width: 75px;height: 50px;}
-            }
-            .car-detail{
-              margin-left: 10px;float: left;width: 145px;height: 48px;font-size: 12px;
-              color: #333;
-              a{font-size: 12px;color: #333;cursor: pointer;display: block;overflow: hidden;height: 32px;}
-              i{font-style: normal;color: #db2400;font-size: 14px;}
-            }
-          }
-        }
-      }
-    }
-  }
-  #no-collect{
-    .nocllect-img{
-      width: 768px;height: 404px;background: url(../images/index/no-collect.png);
-      margin-top: 80px;
-    }
-  }
-  #no-sell{
-    .nosell-img{
-      width: 768px;height: 403px;background: url(../images/index/no-sell.png);
-      margin-top: 80px;
-    }
-  }
-  #no-reserve{
-    .noreserve-img{
-      width: 768px;height: 403px;background: url(../images/index/no-reserve.png);
-      margin-top: 80px;
-    }
-  }
-  #no-scan{
-    .noscan-img{
-      width: 768px;height: 403px;background: url(../images/index/no-scan.png);
-      margin-top: 80px;
+  .customerside{
+    height: 65px;
+    .customer-box{
+      padding: 11px;
+      display: block;
+      .customer-img{width: 29px;height: 27px;background: url(../images/index/customer.png);}
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
     }
   }
 }
+.sidebar-bottom{
+  height: 263px;
+  border: 1px solid #e6e6e6;
+  .collectside{
+    height: 65px;
+    border-bottom: 1px solid #e6e6e6;
+    .collect-box{
+      padding: 11px;
+      display: block;
+      .collect-img{width: 29px;height: 27px;background: url(../images/index/collect.png);}
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
+    }
+  }
+  .reserveside{
+    height: 65px;
+    border-bottom: 1px solid #e6e6e6;
+    .reserve-box{
+      padding: 11px;
+      display: block;
+      .reserve-img{width: 29px;height: 27px;background: url(../images/index/reserve.png);}
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
+    }
+  }
+  .sellside{
+    height: 65px;
+    border-bottom: 1px solid #e6e6e6;
+    .sell-box{
+      padding: 11px;
+      display: block;
+      .sell-img{width: 29px;height: 27px;background: url(../images/index/sell.png);}
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
+    }
+  }
+  .scanside{
+    height: 65px;
+    .scan-box{
+      padding: 11px;
+      display: block;
+      .scan-img{width: 29px;height: 27px;background: url(../images/index/scan.png);}
+      i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
+    }
+  }
+}
+
+.sidebar{
+  width: 50px;
+  height: 215px;
+  background: #f7f7f7;
+  position: fixed;
+  right: 0px;
+  bottom: 20px;
+  border: 1px solid #dedede;
+  z-index: 1000;
+  background-color: #F2F2F2;
+  .side-box{
+    height: 53px;
+    border-bottom: 1px solid #dedede;
+    .point{
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      border: 2px solid #fff;
+      background: #FC7000;
+      position: relative;
+      top: -50px;
+      left: -8px;
+      i{font-size: 12px;color: #fff;font-style: normal;text-align: center;display: block;padding: -1px;}
+    }
+    a{
+      padding: 6px 5px;display: block;
+      .icon{width: 27px;height: 25px;margin-left:5px;}
+      i{margin-left:7px;display: block;color: #666;width:30px;font-size: 12px;text-align: left;font-style: normal;height:18px;overflow: hidden;}
+    }
+    .collect-box{
+      .collect-img{background: url(../images/index/collect.png) no-repeat 0px 0px;}
+    }
+    .reserve-box{
+      .reserve-img{background: url(../images/index/reserve.png) no-repeat 0px 0px;}
+    }
+    .sell-box{
+      .sell-img{background: url(../images/index/sell.png) no-repeat 0px 0px;}
+    }
+    .scan-box{
+      .scan-img{background: url(../images/index/scan.png) no-repeat 0px 0px;}
+    }
+  }
+  .side-box:hover{
+    background: #FC7000;
+    box-shadow:0px 0px 5px #666 inset;
+    a{
+      i{color: #fff8dd;}
+    }
+    .collect-box{
+      .collect-img{background: url(../images/index/collect-hover.png) no-repeat 0px 0px;}
+    }
+    .reserve-box{
+      .reserve-img{background: url(../images/index/reserve-hover.png) no-repeat 0px 0px;}
+    }
+    .sell-box{
+      .sell-img{background: url(../images/index/sell-hover.png) no-repeat 0px 0px;}
+    }
+    .scan-box{
+      .scan-img{background: url(../images/index/scan-hover.png) no-repeat 0px 0px;}
+    }
+  }
+}
+.sidebar.active{
+  width:70px !important;
+  -moz-transition: width 0.2s ease-in;
+    -webkit-transition: width 0.2s ease-in;
+    -o-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+  .side-box{
+    width: 70px !important;
+    a{
+      i{
+        width:70px !important;
+      }
+    }
+  }
+}
+
+
+.sidebar{
+  // width: 910px;height:652px;
+  .sidebar-nav{
+
+    width: 50px;
+    height: 653px;
+    float: left;
+    
+    .sidebar-list{
+      height: 224px;
+      
+    }
+  }
+  
+  
+}
+.sidebar-active{
+  width:50px;
+  border-left: none;
+  box-shadow: -1px -1px 5px #666;
+  .sidebar-nav{
+    background-color: #FC7000;
+    
+    .side-box{
+      box-shadow: none;
+      border-bottom: 1px solid #d15001;
+      height: 55px;
+      border:1px solid #FC7000;
+      a{
+        display: block;
+        padding: 9px 5px;
+        .icon{width: 27px;height: 25px;margin: 0 auto;}
+        i{
+          display: block;color:#fff8dd;
+          font-size: 12px;text-align: center;
+          font-style: normal;width:30px;
+        }
+      }
+    }
+    .side-box:hover,.side-box.active{
+      border: 1px solid #d15001;
+      border-right:0;
+    }
+    .collectside{
+      border-top:  1px solid transparent;
+      a{.icon{background: url(../images/index/collect-hover.png);}}
+    }
+    .collectside:hover,.collectside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      border-top:  1px solid #dedede;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/collect-active.png);}
+        i{color: #666;}
+      }
+    }
+    .reserveside{a{.icon{background: url(../images/index/reserve-hover.png);}}}
+    .reserveside:hover,.reserveside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/reserve-active.png);}
+        i{color: #666;}
+      }
+    }
+    .sellside{a{.icon{background: url(../images/index/sell-hover.png);}}}
+    .sellside:hover,.sellside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/sell-active.png);}
+        i{color: #666;}
+      }
+    }
+    .scanside{a{.icon{background: url(../images/index/scan-hover.png);}}}
+    .scanside:hover,.scanside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/scan-active.png);}
+        i{color: #666;}
+      }
+    }
+  }
+  .toolbar-content{
+    width: 850px;
+    height: 648px;
+    border-left: none;
+    float: left;
+    overflow: hidden;
+      background-color: #F2F2F2;
+    i{cursor:pointer;float: right;width: 20px;height: 20px;background: url(../images/index/toolbar-close.png) no-repeat center center;margin-top: 10px;margin-right:10px;display: block;}
+    iframe{}
+  }
+}
+
+.sidebar-active:hover{
+  width:50px;
+  .side-box{
+    width: 50px;
+    a{
+      i{
+        width:30px;
+      }
+    }
+  }
+  
+}
+
