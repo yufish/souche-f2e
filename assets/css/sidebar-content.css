@@ -29,7 +29,7 @@
   width: 88px;
   height: 40px;
 }
-#toolbar .tool-box #nav .path div {
+#toolbar .tool-box #nav .path a {
   width: 36px;
   height: 36px;
   border: 1px solid #b3b3b3;
@@ -37,13 +37,13 @@
   background-color: #f2f2f2;
   float: left;
 }
-#toolbar .tool-box #nav .path div span {
+#toolbar .tool-box #nav .path a span {
   width: 13px;
   height: 18px;
   display: block;
   margin: 9px 10px;
 }
-#toolbar .tool-box #nav .path div:hover {
+#toolbar .tool-box #nav .path a:hover {
   background-color: #FC7000;
 }
 #toolbar .tool-box #nav .path .going span {
