@@ -10,6 +10,9 @@
                 $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
+        $(".advisor-tip-close").click(function() {
+            $(".my-advisor-tip").addClass("hidden")
+        })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             $(".sidebar .side-box").removeClass("active")
@@ -18,7 +21,7 @@
                 $("#toolbar").animate({
                     width: 905,
                     height: 652
-}, 500,                function() {
+                }, 500, function() {
 
                 })
                 $("#toolbar").addClass("sidebar-active")
