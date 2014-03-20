@@ -134,23 +134,18 @@
   height: 53px;
   border-bottom: 1px solid #dedede;
 }
-.sidebar .side-box .point {
-  width: 15px;
-  height: 15px;
+.sidebar .side-box .point-num {
   border-radius: 15px;
   border: 2px solid #fff;
   background: #FC7000;
   position: relative;
   top: -50px;
   left: -8px;
-}
-.sidebar .side-box .point i {
   font-size: 12px;
   color: #fff;
   font-style: normal;
   text-align: center;
-  display: block;
-  padding: -1px;
+  padding: 0 5px;
 }
 .sidebar .side-box a {
   padding: 6px 5px;
