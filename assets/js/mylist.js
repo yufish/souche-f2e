@@ -1,4 +1,4 @@
-define(['souche/custom-select'], function(CustomSelect) {
+define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -47,6 +47,7 @@ define(['souche/custom-select'], function(CustomSelect) {
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
+            $(".car-image img").lazyload();
             $.ajax({
                 url: contextPath + "/pages/dicAction/loadRootLevel.json",
                 dataType: "json",

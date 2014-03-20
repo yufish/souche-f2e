@@ -37,6 +37,10 @@
   width: 100%;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
+  -moz-transition: height 0.2s ease-in;
+  -webkit-transition: height 0.2s ease-in;
+  -o-transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in;
 }
 #mylist #qiugou-container .wrapper {
   width: 1191px;
