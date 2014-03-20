@@ -15,19 +15,23 @@
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
-            $(".sidebar .side-box").removeClass("active")
-            $(this.parentNode).addClass("active")
-            if (!$("#toolbar").hasClass("sidebar-active")) {
-                $("#toolbar").animate({
-                    width: 905,
-                    height: 652
-                }, 500, function() {
+            var self = this;
+            Souche.MiniLogin.checkLogin(function(isLogin) {
+                $(".sidebar .side-box").removeClass("active")
+                $(self.parentNode).addClass("active")
+                if (!$("#toolbar").hasClass("sidebar-active")) {
+                    $("#toolbar").animate({
+                        width: 905,
+                        height: 652
+                    }, 500, function() {
 
-                })
-                $("#toolbar").addClass("sidebar-active")
-                $(".sidebar").removeClass("active")
-            }
-            $(".toolbar-content iframe").src = $(this).attr("href")
+                    })
+                    $("#toolbar").addClass("sidebar-active")
+                    $(".sidebar").removeClass("active")
+                }
+                $(".toolbar-content iframe").src = $(this).attr("href")
+            })
+
         });
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
