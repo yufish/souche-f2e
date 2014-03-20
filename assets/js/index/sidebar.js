@@ -18,7 +18,7 @@
                 $("#toolbar").animate({
                     width: 905,
                     height: 652
-                }, 500, function() {
+}, 500,                function() {
 
                 })
                 $("#toolbar").addClass("sidebar-active")
@@ -35,8 +35,8 @@
         });
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
-                width: 50,
-                height: 215
+                width: 58,
+                height: 160
             }, 500, function() {
 
             })

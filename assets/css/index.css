@@ -1,12 +1,12 @@
+a {
+  color: #444;
+}
+a:hover {
+  color: #fc7000;
+}
 #index {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
   color: #333;
-}
-#index a {
-  color: #444;
-}
-#index a:hover {
-  color: #fc7000;
 }
 #index .module {
   margin-top: 10px;
