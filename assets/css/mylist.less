@@ -29,91 +29,67 @@
       color:#333;
     }
   }
-  #header{
-    height:115px;
-    .wrapper{
-      width:1190px;
-      margin:0 auto;
-
-      position: relative;
-    }
-    .logo{
-      display: block;
-      position: absolute;
-      top:40px;
-      left:0px;
-    }
-    .search{
-      position: absolute;
-      left:300px;
-      top:40px;
-      .search-text{
-        width:490px;
-        height:35px;
-        border:2px solid #e5e5e5;
-        vertical-align: top;
-        padding-left:10px;
-      }
-      .search-submit{
-        background: @orange;
-        color:#fff;
-        font-size: 16px;
-        width:88px;
-        height:38px;
-        border:none;
-        vertical-align: top;
-        margin-left: -5px;
-        cursor: pointer;
-      }
-      .hot-keywords{
-        line-height:30px;
-        a{
-          color:#666;
-          margin-left: 10px;
-        }
-        a:hover{
-          color:@orange;
-        }
-      }
-
-    }
-    .adviser{
-      position: absolute;
-      right:0;
-      top:40px;
-      a{
-        margin: 10px;
-
-      }
-    }
-  }
+  
   
   #qiugou-container{
     background-color: #f9f9f9;
     width: 100%;
     border-top: 1px solid #e5e5e5;
     border-bottom:  1px solid #e5e5e5;
-    height: 230px;
+    height:340px;
     .wrapper{
     width:1191px;
     margin:0 auto;
     position: relative;
+    background: url("../images/index/qiugou-container.png")no-repeat scroll;
+    background-position: right;
+
     .qiugou-filter{
-      padding: 15px 0;
-    height: 205px;
+    height: 340px;
+    .qiugou-title{
+     height: 64px;
+     padding-top: 15px;
+     font-size: 25px;
+     color: #222222;
+     line-height: 60px;
+     span{color: @orange;margin: 10px;}
+    }
+    }
+    .wedo{
+      width: 70px;
+      height: 123px;
+      position: absolute;
+      right: 250px;
+      top: 0;
+      background:  url("../images/index/wedo.png")no-repeat scroll;
     }
     .demand{
-      width: 1000px;
+      width: 783px;
       float: left;
-      height: 205px;
-      
-      .demand-title{color: #666;font-size: 16px;line-height: 25px;margin-bottom: 10px;}
+      height: 260px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      border-bottom: none;
+      padding-left: 20px;
+      .demand-title{
+        color: #222;font-size: 16px;
+        line-height: 25px;margin-bottom: 10px;
+        margin-top: 25px;
+        margin-left: 15px;
+      }
+      .chosecar-box{
+        height: 180px;
+        float: left;
       .chosecar{
+        
         li{
+          padding-left: 15px;
+          width: 555px;
+          border-bottom: 1px solid #e4e4e4;
           font-size: 12px;
-          color: #666;
+          color: #222;
           font-weight: bold;
-          line-height: 25px;
+          line-height: 27px;
           .chosecentent{
             cursor: pointer;
             font-weight: normal;
@@ -121,20 +97,21 @@
           }
         }
       }
+    }
       .choseagain{
-        margin-top: 15px;
+        margin-top: 20px;
         color: @orange;
         font-size: 12px;
-        font-weight: bold;
-        display: block;
+        
+        font-size: 16px;
         height: 25px;
-        width: 100px;
+        
         i{
           background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
           height: 20px;
           width: 20px;
           float: left;
-          margin-right: 10px;
+          margin: 2px 15px;
         }
         a{
           color: @orange;
@@ -143,10 +120,10 @@
       }
     }
     .erweima{
-      width: 191px;
-      float: left;
+      width: 155px;
+      float: right;
       .erweima-img{
-        margin-top: 10px;
+       
         width: 100px;
         height: 173px;
         background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);

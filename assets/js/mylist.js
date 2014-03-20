@@ -1,4 +1,4 @@
-define(['souche/custom-select'], function(CustomSelect) {
+define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -21,6 +21,8 @@ define(['souche/custom-select'], function(CustomSelect) {
 
     }
     var is_submiting = false;
+    var isLoadingMore = false;
+    var nowPage = 1;
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -41,9 +43,11 @@ define(['souche/custom-select'], function(CustomSelect) {
             })
             this._bindBrandChange();
             this._onlyNum();
+            this._bindLoadMore();
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
+            $(".car-image img").lazyload();
             $.ajax({
                 url: contextPath + "/pages/dicAction/loadRootLevel.json",
                 dataType: "json",
@@ -116,6 +120,32 @@ define(['souche/custom-select'], function(CustomSelect) {
 
                 }
             });
+        },
+        _bindLoadMore: function() {
+            isLoadingMore;
+            var self = this;
+            $(window).on("scroll", function() {
+                if (isLoadingMore) return;
+                if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                    self._loadMore();
+                }
+            })
+
+        },
+        _loadMore: function() {
+            isLoadingMore = true;
+            $(".load-more").removeClass("hidden");
+            $.ajax({
+                url: contextPath + "",
+                data: {
+                    page: nowPage++
+                },
+                success: function(data) {
+                    $(".load-more").addClass("hidden");
+                    isLoadingMore = false;
+                    $("#cars_con").append(data);
+                }
+            })
         },
         _submit: function() {
             var self = this;

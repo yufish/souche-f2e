@@ -1,5 +1,15 @@
 (function() {
     $(document).ready(function() {
+        //加载未读数
+        $.ajax({
+            url: contextPath + "",
+            dataType: "json",
+            success: function(data) {
+                $("#fav_notice").html(data).removeClass("hidden")
+                $("#yuyue_notice").html(data).removeClass("hidden")
+                $("#pricedown_notice").html(data).removeClass("hidden")
+            }
+        })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             $(".sidebar .side-box").removeClass("active")
@@ -15,14 +25,14 @@
                 $(".sidebar").removeClass("active")
             }
             $(".toolbar-content iframe").src = $(this).attr("href")
-        })
+        });
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
                 $(".sidebar").addClass("active")
             }
         }).mouseleave(function() {
             $(".sidebar").removeClass("active")
-        })
+        });
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
                 width: 50,
@@ -31,7 +41,7 @@
 
             })
             $("#toolbar").removeClass("sidebar-active")
-        })
+        });
         var Q_Buy_active = false;
         $(window).scroll(function() {
             if ($(window).scrollTop() > $(window).height()) {
