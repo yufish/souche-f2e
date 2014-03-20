@@ -119,9 +119,76 @@
   font-style: normal;
   line-height: 20px;
 }
+#my-advisor {
+  width: 60px;
+  height: 90px;
+  position: fixed;
+  right: 0px;
+  bottom: 200px;
+}
+#my-advisor img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 0px auto;
+  margin-bottom: 5px;
+}
+#my-advisor a:hover {
+  color: #fff;
+}
+#my-advisor .my-advisor-box {
+  background: #fc7000;
+  width: 60px;
+  height: 85px;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding-top: 5px;
+  position: relative;
+  z-index: 2;
+}
+#my-advisor .my-advisor-box .point-num {
+  border-radius: 15px;
+  border: 2px solid #fff;
+  background: #FC7000;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font-size: 12px;
+  color: #fff;
+  font-style: normal;
+  text-align: center;
+  padding: 0 5px;
+}
+#my-advisor .my-advisor-tip {
+  background: #fd9243;
+  color: #fff;
+  width: 180px;
+  position: absolute;
+  height: 50px;
+  left: -220px;
+  font-size: 14px;
+  line-height: 26px;
+  top: 0;
+  padding: 20px;
+}
+#my-advisor .my-advisor-tip i {
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-style: normal;
+}
 .sidebar {
-  width: 50px;
-  height: 215px;
+  width: 58px;
+  height: 160px;
   background: #f7f7f7;
   position: fixed;
   right: 0px;
@@ -133,14 +200,15 @@
 .sidebar .side-box {
   height: 53px;
   border-bottom: 1px solid #dedede;
+  position: relative;
 }
 .sidebar .side-box .point-num {
   border-radius: 15px;
   border: 2px solid #fff;
   background: #FC7000;
-  position: relative;
-  top: -50px;
-  left: -8px;
+  position: absolute;
+  top: -5px;
+  left: -10px;
   font-size: 12px;
   color: #fff;
   font-style: normal;
@@ -154,10 +222,10 @@
 .sidebar .side-box a .icon {
   width: 27px;
   height: 25px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .sidebar .side-box a i {
-  margin-left: 7px;
+  margin-left: 11px;
   display: block;
   color: #666;
   width: 30px;
@@ -199,20 +267,20 @@
   background: url(../images/index/scan-hover.png) no-repeat 0px 0px;
 }
 .sidebar.active {
-  width: 70px !important;
+  width: 80px !important;
   -moz-transition: width 0.2s ease-in;
   -webkit-transition: width 0.2s ease-in;
   -o-transition: width 0.2s ease-in;
   transition: width 0.2s ease-in;
 }
 .sidebar.active .side-box {
-  width: 70px !important;
+  width: 80px !important;
 }
 .sidebar.active .side-box a i {
   width: 70px !important;
 }
 .sidebar .sidebar-nav {
-  width: 50px;
+  width: 58px;
   height: 653px;
   float: left;
 }
@@ -220,7 +288,7 @@
   height: 224px;
 }
 .sidebar-active {
-  width: 50px;
+  width: 58px;
   border-left: none;
   box-shadow: -1px -1px 5px #666666;
 }
@@ -328,7 +396,7 @@
   color: #666;
 }
 .sidebar-active .toolbar-content {
-  width: 850px;
+  width: 840px;
   height: 648px;
   border-left: none;
   float: left;
@@ -346,10 +414,10 @@
   display: block;
 }
 .sidebar-active:hover {
-  width: 50px;
+  width: 57px;
 }
 .sidebar-active:hover .side-box {
-  width: 50px;
+  width: 57px;
 }
 .sidebar-active:hover .side-box a i {
   width: 30px;

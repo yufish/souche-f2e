@@ -98,6 +98,7 @@
   padding: 10px;
   float: left;
   margin-right: 10px;
+  position: relative;
 }
 #toolbar #content .car-wrap .car-box .car-image {
   width: 210px;
@@ -202,8 +203,9 @@
   background-color: #FC7000;
   border-radius: 3px;
   color: #fff;
-  top: -160px;
-  left: 144px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
   text-align: center;
   line-height: 19px;
 }
@@ -223,9 +225,9 @@
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
-  position: relative;
-  top: -153px;
-  left: 171px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
 }
 #toolbar #content .car-wrap .car-box .price-down i {
   color: #FFFFFF;

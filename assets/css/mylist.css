@@ -33,26 +33,32 @@
   width: 100%;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
-  height: 340px;
 }
 #mylist #qiugou-container .wrapper {
   width: 1191px;
   margin: 0 auto;
   position: relative;
-  background: url("../images/index/qiugou-container.png") no-repeat scroll;
-  background-position: right;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
   height: 340px;
 }
-#mylist #qiugou-container .wrapper .qiugou-filter .qiugou-title {
+#mylist #qiugou-container .wrapper .qiugou-box {
+  width: 1191px;
+  background: url("../images/index/qiugou-container.png") no-repeat scroll;
+  background-position: right;
+  height: 340px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title {
   height: 64px;
   padding-top: 15px;
   font-size: 25px;
   color: #222222;
   line-height: 60px;
 }
-#mylist #qiugou-container .wrapper .qiugou-filter .qiugou-title span {
+#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title span {
   color: #fc7000;
   margin: 10px;
 }

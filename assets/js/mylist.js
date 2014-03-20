@@ -43,7 +43,10 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             })
             this._bindBrandChange();
             this._onlyNum();
-            this._bindLoadMore();
+            if (config.withCar) {
+                this._bindLoadMore();
+            }
+
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
