@@ -28,6 +28,10 @@
   line-height: 35px;
   color: #333;
 }
+#mylist .load-more {
+  background: url(../images/mylist/loading.gif) no-repeat center center;
+  height: 50px;
+}
 #mylist #qiugou-container {
   background-color: #f9f9f9;
   width: 100%;
