@@ -133,6 +133,9 @@
   margin: 0px auto;
   margin-bottom: 5px;
 }
+#my-advisor a:hover {
+  color: #fff;
+}
 #my-advisor .my-advisor-box {
   background: #fc7000;
   width: 60px;
