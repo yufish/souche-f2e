@@ -222,7 +222,7 @@
   float: right;
   line-height: 20px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -234,7 +234,7 @@
   text-align: center;
   line-height: 19px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -246,7 +246,7 @@
   left: 8px;
   top: 0;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -254,7 +254,7 @@
   top: -153px;
   left: 171px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
