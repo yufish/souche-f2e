@@ -119,21 +119,21 @@
   font-style: normal;
   line-height: 20px;
 }
-.my-advisor {
+#my-advisor {
   width: 60px;
   height: 90px;
   position: fixed;
   right: 0px;
   bottom: 200px;
 }
-.my-advisor img {
+#my-advisor img {
   display: block;
   width: 42px;
   height: 42px;
   margin: 0px auto;
   margin-bottom: 5px;
 }
-.my-advisor .my-advisor-box {
+#my-advisor .my-advisor-box {
   background: #fc7000;
   width: 60px;
   height: 85px;
@@ -144,7 +144,7 @@
   position: relative;
   z-index: 2;
 }
-.my-advisor .my-advisor-box .point-num {
+#my-advisor .my-advisor-box .point-num {
   border-radius: 15px;
   border: 2px solid #fff;
   background: #FC7000;
@@ -157,7 +157,7 @@
   text-align: center;
   padding: 0 5px;
 }
-.my-advisor .my-advisor-tip {
+#my-advisor .my-advisor-tip {
   background: #fd9243;
   color: #fff;
   width: 180px;
@@ -169,7 +169,7 @@
   top: 0;
   padding: 20px;
 }
-.my-advisor .my-advisor-tip i {
+#my-advisor .my-advisor-tip i {
   color: #fff;
   font-size: 12px;
   cursor: pointer;
