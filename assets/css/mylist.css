@@ -1,13 +1,13 @@
-#mylist {
-  font-family: 'Microsoft YaHei', Tahoma, Verdana;
-  color: #333;
-}
-#mylist a {
+a {
   color: #444;
   cursor: pointer;
 }
-#mylist a:hover {
+a:hover {
   color: #fc7000;
+}
+#mylist {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  color: #333;
 }
 #mylist .module {
   margin-top: 10px;
