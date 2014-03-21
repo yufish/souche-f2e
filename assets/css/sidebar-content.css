@@ -111,6 +111,7 @@
 #toolbar #content .car-wrap .car-box .car-title {
   font-size: 12px;
   color: #333;
+  height: 35px;
   line-height: 18px;
   display: block;
   margin-top: 5px;
