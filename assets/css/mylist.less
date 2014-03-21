@@ -29,7 +29,17 @@ a{
       color:#333;
     }
   }
-  
+  .no-result{
+    
+      .wrapper{
+        .date-wrap{
+          .hourcar{
+           display: none;
+          }
+        }
+      }
+    
+  }
   
   #qiugou-container{
     background-color: #f9f9f9;
@@ -51,6 +61,7 @@ a{
     position: absolute;
     top:0px;
     left: 0;
+    overflow: hidden;
     .qiugou-title{
      height: 64px;
      padding-top: 15px;
@@ -62,11 +73,14 @@ a{
     }
     .wedo{
       width: 70px;
-      height: 123px;
+      height: 174px;
       position: absolute;
       right: 250px;
-      top: 0;
-      background:  url("../images/index/wedo.png")no-repeat scroll;
+      top: 0px;
+      cursor: pointer;
+      background:  url("../images/index/wedo.png") no-repeat scroll;
+      background-position: 0 -40px;
+      z-index: 100;
     }
     .demand{
       width: 783px;
@@ -237,10 +251,22 @@ a{
                 .price{color: #db2400;font-size: 16px;float: left;}
                 .time{color: #999;font-size: 12px;float: right;line-height: 20px;}
               }
-            }
-            .zhijiangcar{
-              .car-image{
-                .zhijiang{
+              .icon{
+                width:14px;
+                height:14px;
+                display: inline-block;
+                margin-right: 2px;
+vertical-align: -1px;
+              }
+              .icon-jian{
+                background: url(../images/mylist/icon-jian.png) no-repeat;
+
+              }
+              .icon-new{
+                background: url(../images/mylist/icon-new.png) no-repeat;
+                
+              }
+              .zhijiang{
                   position: relative;width: 65px;height: 19px;
                   background-color: #FC7000;
                   border-radius: 3px;color: #fff;
@@ -259,10 +285,7 @@ a{
                     }
                   }
                 }
-              }
-              .timebuycar{
-                .car-image{
-                  .price-down{
+                .price-down{
                     background: url(../images/index/zhijiang.png);
                     height: 75px;
                     width: 40px;
@@ -280,122 +303,30 @@ a{
                       padding-top: 40px;
                     }
                   }
-                }
-              }
+            
           }
         }
       }
     }
   }
-  #footer{
-    margin-top: 30px;
-    .wrapper{
-      width:1190px;
-      margin:0 auto;
-      overflow: hidden;
-    }
-    .friendlinks{
-      text-align: center;
-      margin-bottom: 15px;
-      .wrapper{
-      width:1190px;
-      margin:0 auto;
-      
-      a{
-        font-size:12px;
-        color:#333;
-        padding:0 20px;
-        border-right: 1px solid #e6e6e6;
-      }
-      a.last{
-        border:none;
-      }
-    }
-  }
-    .footer-content{
-      background: #f5f5f5;
-      border-top:1px solid #e6e6e6;
-    }
-    .performance{
-      padding: 40px 0;
-      border-bottom: 1px solid #e6e6e6;
-      width:1400px;
-      i{
-        display: block;
-        width:40px;
-        height:40px;
-        position: absolute;
-        top:8px;
-        left:20px;
-
-      }
-      .per{
-        position: relative;
-        float:left;
-        width:380px;
-        padding-left:70px;
-        display: inline;
-      }
-      .t{
-        font-size: 16px;
-        line-height: 30px;
-        color:#666;
-      }
-      .st{
-        font-size: 14px;
-        color:#999;
-        line-height: 20px;
-      }
-      .per-1{
-
-        i{
-          background: url(../images/index/per-1.png) no-repeat;
-        }
-      }
-      .per-2{
-        i{
-          background: url(../images/index/per-2.png) no-repeat;
-        }
-      }
-      .per-3{
-        i{
-          background: url(../images/index/per-3.png) no-repeat;
-        }
-      }
-    }
-    .company_info{
-      padding:20px 0px;
-      .wrap{
-        text-align: center;
-        a{
-          color:#666;
-          padding:0 10px;
-        }
-      }
-      p{
-        text-align: center;
-        line-height: 30px;
-        color:#999;
-      }
-    }
-  }
+  
 
 .qiugou{
-  min-height:427px;
   background:#f9f9f9;
   position: relative;
   .inner{
-    padding-left:30px;
-  padding-top:30px;
+    
+    padding-top:30px;
   }
   .person-bg{
-    background:#f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
+    background:#f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
+    background-position: bottom;
     position: absolute;
     bottom: 0;
     right:1px;
-    width:365px;
+    width:386px;
     height:377px;
-    z-index: 3;
+    z-index: 2;
   }
   .head{
     height:60px;
@@ -403,6 +334,7 @@ a{
     position: relative;
     z-index: 2;
     width:540px;
+
   }
   .title{
     font-size: 28px;
@@ -410,6 +342,7 @@ a{
     line-height: 35px;
     em{
       color:@orange;
+      margin: 10px;
     }
   }
   .sub-title{
@@ -440,12 +373,29 @@ a{
   }
   
   .form{
-    padding-bottom: 40px;
-    margin-left: 30px;
-    position: relative;
     z-index:5;
+    width: 801px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    .shadow{
+      width: 22px;
+      height: 136px;
+      position: absolute;
+      top: 105px;
+      right: 366px;
+      background: url(../images/index/shadow.png?123) no-repeat 0 0;
+      z-index: 200;
+    }
     .form-inner{
-
+     margin-left: 50px;
+     margin-top: 20px;
+     .form-title{
+      font-size: 15px;
+      color: #666;
+      line-height: 30px;
+     }
     }
 
     .form-item{

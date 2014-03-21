@@ -1,3 +1,6 @@
+html {
+  background-color: #f2f2f2;
+}
 #toolbar {
   width: 855px;
   height: 630px;
@@ -6,6 +9,7 @@
 #toolbar .tool-box {
   padding-left: 45px;
   width: 720px;
+  background-color: #F2F2F2;
 }
 #toolbar .tool-box #toolbar-nav {
   width: 717px;
@@ -172,9 +176,12 @@
   display: inline;
   color: #fff;
 }
+<<<<<<< HEAD
 #toolbar #toolbar-content .car-wrap .car-box .join:hover {
   background-color: #e66600;
 }
+=======
+>>>>>>> f91fcee02a41e91edc52f99e8b0c5a51c004f6fa
 #toolbar #toolbar-content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png) no-repeat;
   margin: 2px 5px;

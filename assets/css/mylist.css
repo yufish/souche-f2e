@@ -28,6 +28,9 @@ a:hover {
   line-height: 35px;
   color: #333;
 }
+#mylist .no-result .wrapper .date-wrap .hourcar {
+  display: none;
+}
 #mylist #qiugou-container {
   background-color: #f9f9f9;
   width: 100%;
@@ -50,6 +53,7 @@ a:hover {
   position: absolute;
   top: 0px;
   left: 0;
+  overflow: hidden;
 }
 #mylist #qiugou-container .wrapper .qiugou-box .qiugou-title {
   height: 64px;
@@ -64,11 +68,14 @@ a:hover {
 }
 #mylist #qiugou-container .wrapper .wedo {
   width: 70px;
-  height: 123px;
+  height: 174px;
   position: absolute;
   right: 250px;
-  top: 0;
+  top: 0px;
+  cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
+  background-position: 0 -40px;
+  z-index: 100;
 }
 #mylist #qiugou-container .wrapper .demand {
   width: 783px;
@@ -259,7 +266,20 @@ a:hover {
   float: right;
   line-height: 20px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: -1px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-jian {
+  background: url(../images/mylist/icon-jian.png) no-repeat;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-new {
+  background: url(../images/mylist/icon-new.png) no-repeat;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -271,7 +291,7 @@ a:hover {
   text-align: center;
   line-height: 19px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -283,7 +303,7 @@ a:hover {
   left: 8px;
   top: 0;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -291,7 +311,7 @@ a:hover {
   top: -153px;
   left: 171px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
@@ -301,106 +321,22 @@ a:hover {
   text-align: center;
   padding-top: 40px;
 }
-#mylist #footer {
-  margin-top: 30px;
-}
-#mylist #footer .wrapper {
-  width: 1190px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-#mylist #footer .friendlinks {
-  text-align: center;
-  margin-bottom: 15px;
-}
-#mylist #footer .friendlinks .wrapper {
-  width: 1190px;
-  margin: 0 auto;
-}
-#mylist #footer .friendlinks .wrapper a {
-  font-size: 12px;
-  color: #333;
-  padding: 0 20px;
-  border-right: 1px solid #e6e6e6;
-}
-#mylist #footer .friendlinks .wrapper a.last {
-  border: none;
-}
-#mylist #footer .footer-content {
-  background: #f5f5f5;
-  border-top: 1px solid #e6e6e6;
-}
-#mylist #footer .performance {
-  padding: 40px 0;
-  border-bottom: 1px solid #e6e6e6;
-  width: 1400px;
-}
-#mylist #footer .performance i {
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 8px;
-  left: 20px;
-}
-#mylist #footer .performance .per {
-  position: relative;
-  float: left;
-  width: 380px;
-  padding-left: 70px;
-  display: inline;
-}
-#mylist #footer .performance .t {
-  font-size: 16px;
-  line-height: 30px;
-  color: #666;
-}
-#mylist #footer .performance .st {
-  font-size: 14px;
-  color: #999;
-  line-height: 20px;
-}
-#mylist #footer .performance .per-1 i {
-  background: url(../images/index/per-1.png) no-repeat;
-}
-#mylist #footer .performance .per-2 i {
-  background: url(../images/index/per-2.png) no-repeat;
-}
-#mylist #footer .performance .per-3 i {
-  background: url(../images/index/per-3.png) no-repeat;
-}
-#mylist #footer .company_info {
-  padding: 20px 0px;
-}
-#mylist #footer .company_info .wrap {
-  text-align: center;
-}
-#mylist #footer .company_info .wrap a {
-  color: #666;
-  padding: 0 10px;
-}
-#mylist #footer .company_info p {
-  text-align: center;
-  line-height: 30px;
-  color: #999;
-}
 #mylist .qiugou {
-  min-height: 427px;
   background: #f9f9f9;
   position: relative;
 }
 #mylist .qiugou .inner {
-  padding-left: 30px;
   padding-top: 30px;
 }
 #mylist .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
+  background: #f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
+  background-position: bottom;
   position: absolute;
   bottom: 0;
   right: 1px;
-  width: 365px;
+  width: 386px;
   height: 377px;
-  z-index: 3;
+  z-index: 2;
 }
 #mylist .qiugou .head {
   height: 60px;
@@ -416,6 +352,7 @@ a:hover {
 }
 #mylist .qiugou .title em {
   color: #fc7000;
+  margin: 10px;
 }
 #mylist .qiugou .sub-title {
   font-size: 14px;
@@ -444,10 +381,30 @@ a:hover {
   color: #fc7000;
 }
 #mylist .qiugou .form {
-  padding-bottom: 40px;
-  margin-left: 30px;
-  position: relative;
   z-index: 5;
+  width: 801px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+#mylist .qiugou .form .shadow {
+  width: 22px;
+  height: 136px;
+  position: absolute;
+  top: 105px;
+  right: 366px;
+  background: url(../images/index/shadow.png?123) no-repeat 0 0;
+  z-index: 200;
+}
+#mylist .qiugou .form .form-inner {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+#mylist .qiugou .form .form-inner .form-title {
+  font-size: 15px;
+  color: #666;
+  line-height: 30px;
 }
 #mylist .qiugou .form .form-item {
   margin-top: 10px;

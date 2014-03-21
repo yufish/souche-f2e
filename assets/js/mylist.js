@@ -22,7 +22,8 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     }
     var is_submiting = false;
     var isLoadingMore = false;
-    var nowPage = 1;
+    var hasMore = true;
+    var nowPage = 2;
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -46,7 +47,31 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             if (config.withCar) {
                 this._bindLoadMore();
             }
+            //拉手蹦一下
+            var shakeWedo = function(callback) {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300, null, function() {
+                    $(".wedo").animate({
+                        backgroundPositionY: -40
+                    }, 300, null, function() {
+                        callback && callback()
+                    })
+                })
+            }
+            setTimeout(function() {
+                shakeWedo(shakeWedo);
+            }, 500)
 
+            $(".wedo").mouseenter(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300);
+            }).mouseleave(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -40
+                }, 300);
+            })
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
@@ -128,7 +153,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             isLoadingMore;
             var self = this;
             $(window).on("scroll", function() {
-                if (isLoadingMore) return;
+                if (isLoadingMore || !hasMore) return;
                 if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
                     self._loadMore();
                 }
@@ -138,12 +163,18 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
         _loadMore: function() {
             isLoadingMore = true;
             $(".load-more").removeClass("hidden");
+            var days = $(".date-title .day");
+
             $.ajax({
-                url: contextPath + "",
+                url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {
-                    page: nowPage++
+                    page: nowPage++,
+                    key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
+                    if (data.replace(/\s/, '') == "") {
+                        hasMore = false;
+                    }
                     $(".load-more").addClass("hidden");
                     isLoadingMore = false;
                     $("#cars_con").append(data);

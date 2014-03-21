@@ -125,6 +125,7 @@
   position: fixed;
   right: 0px;
   bottom: 200px;
+  z-index: 1000;
 }
 #my-advisor img {
   display: block;
@@ -194,7 +195,7 @@
   right: 0px;
   bottom: 20px;
   border: 1px solid #dedede;
-  z-index: 1000;
+  z-index: 1001;
   background-color: #F2F2F2;
 }
 .sidebar .side-box {
@@ -300,6 +301,7 @@
   border-bottom: 1px solid #d15001;
   height: 55px;
   border: 1px solid #FC7000;
+  border-right: none;
 }
 .sidebar-active .sidebar-nav .side-box a {
   display: block;
