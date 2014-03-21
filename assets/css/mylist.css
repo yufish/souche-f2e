@@ -272,7 +272,7 @@ a:hover {
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-new {
   background: url(../images/mylist/icon-new.png) no-repeat;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -284,7 +284,7 @@ a:hover {
   text-align: center;
   line-height: 19px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -296,7 +296,7 @@ a:hover {
   left: 8px;
   top: 0;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -304,7 +304,7 @@ a:hover {
   top: -153px;
   left: 171px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
