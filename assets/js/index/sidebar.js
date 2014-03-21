@@ -2,16 +2,30 @@
     $(document).ready(function() {
         //加载未读数
         $.ajax({
-            url: contextPath + "",
+            url: contextPath + "/pages/toolbarAction/selectToolbarCount.json",
             dataType: "json",
             success: function(data) {
-                $("#fav_notice").html(data).removeClass("hidden")
+                if (data.buyer_car_recommand * 1 > 0) {
+                    $("#advisor_notice").html(data.buyer_car_recommand).removeClass("hidden")
+                    $("#advisor_count").html(data.buyer_car_recommand)
+                    if (!$.cookie("f2e_guwen_close")) {
+                        $(".my-advisor-tip").removeClass("hidden")
+                    }
+                }
+                if (data.buyer_car_recommand * 1 > 0) {
+                    $("#fav_notice").html(data).removeClass("hidden")
+                }
+
                 $("#yuyue_notice").html(data).removeClass("hidden")
                 $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
         $(".advisor-tip-close").click(function(e) {
-            $(".my-advisor-tip").addClass("hidden")
+            e.preventDefault();
+            $(".my-advisor-tip").addClass("hidden");
+            $.cookie('f2e_guwen_close', '1', {
+                expires: 1
+            });
             e.stopPropagation();
         })
         $(".sidebar .side-trigger").click(function(e) {

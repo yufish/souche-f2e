@@ -22,7 +22,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     }
     var is_submiting = false;
     var isLoadingMore = false;
-    var nowPage = 1;
+    var nowPage = 2;
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -138,10 +138,13 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
         _loadMore: function() {
             isLoadingMore = true;
             $(".load-more").removeClass("hidden");
+            var days = $(".date-title .day");
+
             $.ajax({
-                url: contextPath + "",
+                url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {
-                    page: nowPage++
+                    page: nowPage++,
+                    key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
                     $(".load-more").addClass("hidden");

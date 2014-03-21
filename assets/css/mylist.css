@@ -260,7 +260,20 @@ a:hover {
   float: right;
   line-height: 20px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: -1px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-jian {
+  background: url(../images/mylist/icon-jian.png) no-repeat;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-new {
+  background: url(../images/mylist/icon-new.png) no-repeat;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -272,7 +285,7 @@ a:hover {
   text-align: center;
   line-height: 19px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -284,7 +297,7 @@ a:hover {
   left: 8px;
   top: 0;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -292,7 +305,7 @@ a:hover {
   top: -153px;
   left: 171px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
@@ -301,89 +314,6 @@ a:hover {
   line-height: 20px;
   text-align: center;
   padding-top: 40px;
-}
-#mylist #footer {
-  margin-top: 30px;
-}
-#mylist #footer .wrapper {
-  width: 1190px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-#mylist #footer .friendlinks {
-  text-align: center;
-  margin-bottom: 15px;
-}
-#mylist #footer .friendlinks .wrapper {
-  width: 1190px;
-  margin: 0 auto;
-}
-#mylist #footer .friendlinks .wrapper a {
-  font-size: 12px;
-  color: #333;
-  padding: 0 20px;
-  border-right: 1px solid #e6e6e6;
-}
-#mylist #footer .friendlinks .wrapper a.last {
-  border: none;
-}
-#mylist #footer .footer-content {
-  background: #f5f5f5;
-  border-top: 1px solid #e6e6e6;
-}
-#mylist #footer .performance {
-  padding: 40px 0;
-  border-bottom: 1px solid #e6e6e6;
-  width: 1400px;
-}
-#mylist #footer .performance i {
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 8px;
-  left: 20px;
-}
-#mylist #footer .performance .per {
-  position: relative;
-  float: left;
-  width: 380px;
-  padding-left: 70px;
-  display: inline;
-}
-#mylist #footer .performance .t {
-  font-size: 16px;
-  line-height: 30px;
-  color: #666;
-}
-#mylist #footer .performance .st {
-  font-size: 14px;
-  color: #999;
-  line-height: 20px;
-}
-#mylist #footer .performance .per-1 i {
-  background: url(../images/index/per-1.png) no-repeat;
-}
-#mylist #footer .performance .per-2 i {
-  background: url(../images/index/per-2.png) no-repeat;
-}
-#mylist #footer .performance .per-3 i {
-  background: url(../images/index/per-3.png) no-repeat;
-}
-#mylist #footer .company_info {
-  padding: 20px 0px;
-}
-#mylist #footer .company_info .wrap {
-  text-align: center;
-}
-#mylist #footer .company_info .wrap a {
-  color: #666;
-  padding: 0 10px;
-}
-#mylist #footer .company_info p {
-  text-align: center;
-  line-height: 30px;
-  color: #999;
 }
 #mylist .qiugou {
   min-height: 427px;
