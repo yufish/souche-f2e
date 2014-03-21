@@ -300,6 +300,7 @@
   border-bottom: 1px solid #d15001;
   height: 55px;
   border: 1px solid #FC7000;
+  border-right: none;
 }
 .sidebar-active .sidebar-nav .side-box a {
   display: block;
