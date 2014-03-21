@@ -11,6 +11,7 @@
             }
         })
         $(".advisor-tip-close").click(function(e) {
+            e.preventDefault();
             $(".my-advisor-tip").addClass("hidden")
             e.stopPropagation();
         })
