@@ -6,6 +6,7 @@
 #toolbar .tool-box {
   padding-left: 45px;
   width: 720px;
+  background-color: #F2F2F2;
 }
 #toolbar .tool-box #toolbar-nav {
   width: 717px;
