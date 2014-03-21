@@ -50,10 +50,10 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             //拉手蹦一下
             var shakeWedo = function(callback) {
                 $(".wedo").animate({
-                    top: -20
+                    backgroundPositionY: -20
                 }, 300, null, function() {
                     $(".wedo").animate({
-                        top: -40
+                        backgroundPositionY: -40
                     }, 300, null, function() {
                         callback && callback()
                     })
@@ -65,11 +65,11 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
 
             $(".wedo").mouseenter(function() {
                 $(".wedo").animate({
-                    top: -20
+                    backgroundPositionY: -20
                 }, 300);
             }).mouseleave(function() {
                 $(".wedo").animate({
-                    top: -40
+                    backgroundPositionY: -40
                 }, 300);
             })
             //没有默认值，则只需要一个请求即可初始化

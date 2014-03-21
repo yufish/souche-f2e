@@ -68,9 +68,10 @@ a:hover {
   height: 174px;
   position: absolute;
   right: 250px;
-  top: -40px;
+  top: 0px;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
+  background-position: 0 -40px;
   z-index: 100;
 }
 #mylist #qiugou-container .wrapper .demand {
