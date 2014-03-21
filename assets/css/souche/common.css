@@ -317,3 +317,17 @@ body{
   color: #7d7d7d;
   border: none;
 }
+#simple-header .other-navs {
+  float: right;
+  
+  margin-top: 50px;
+  *margin-top: 0px;
+}
+#simple-header .other-navs a {
+  font-size: 12px;
+  padding: 0 8px;
+  border-right: 1px solid #666;
+}
+#simple-header .other-navs a.last {
+  border: none;
+}

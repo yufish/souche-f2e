@@ -50,6 +50,7 @@ a:hover {
   position: absolute;
   top: 0px;
   left: 0;
+  overflow: hidden;
 }
 #mylist #qiugou-container .wrapper .qiugou-box .qiugou-title {
   height: 64px;
@@ -67,7 +68,8 @@ a:hover {
   height: 174px;
   position: absolute;
   right: 250px;
-  top: 0;
+  top: -40px;
+  cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
   z-index: 100;
 }

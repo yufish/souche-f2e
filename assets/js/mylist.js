@@ -46,7 +46,31 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             if (config.withCar) {
                 this._bindLoadMore();
             }
+            //拉手蹦一下
+            var shakeWedo = function(callback) {
+                $(".wedo").animate({
+                    top: -20
+                }, 300, null, function() {
+                    $(".wedo").animate({
+                        top: -40
+                    }, 300, null, function() {
+                        callback && callback()
+                    })
+                })
+            }
+            setTimeout(function() {
+                shakeWedo(shakeWedo);
+            }, 500)
 
+            $(".wedo").mouseenter(function() {
+                $(".wedo").animate({
+                    top: -20
+                }, 300);
+            }).mouseleave(function() {
+                $(".wedo").animate({
+                    top: -40
+                }, 300);
+            })
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
