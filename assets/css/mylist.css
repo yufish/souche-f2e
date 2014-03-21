@@ -318,7 +318,6 @@ a:hover {
   padding-top: 40px;
 }
 #mylist .qiugou {
-  min-height: 427px;
   background: #f9f9f9;
   position: relative;
 }
@@ -378,10 +377,9 @@ a:hover {
   color: #fc7000;
 }
 #mylist .qiugou .form {
-  position: relative;
   z-index: 5;
   width: 801px;
-  height: 340px;
+  padding-bottom: 20px;
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;

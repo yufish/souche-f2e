@@ -12,12 +12,12 @@
                         $(".my-advisor-tip").removeClass("hidden")
                     }
                 }
-                if (data.buyer_car_recommand * 1 > 0) {
-                    $("#fav_notice").html(data).removeClass("hidden")
-                }
+                // if (data.buyer_car_recommand * 1 > 0) {
+                //     $("#fav_notice").html(data).removeClass("hidden")
+                // }
 
-                $("#yuyue_notice").html(data).removeClass("hidden")
-                $("#pricedown_notice").html(data).removeClass("hidden")
+                // $("#yuyue_notice").html(data).removeClass("hidden")
+                // $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
         $(".advisor-tip-close").click(function(e) {
