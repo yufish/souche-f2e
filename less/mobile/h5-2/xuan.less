@@ -1,0 +1,239 @@
+.header{
+  position: relative;
+  background-color: @orange;
+  height: 45px;
+  
+  .text{
+    float: left;
+    color:#fff;
+    width: 60%;
+    text-align: center;
+    padding-top: 12px
+  }
+  .back-icon{
+    padding:25px 0 0 15px;
+    background: url(../../../images/mobile/h5-2/back.png) no-repeat center center;
+    background-size: 10px;
+    width:10%;
+    height: 17px;
+    float: left
+  }
+  .header-feature{
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    top:0px;
+    padding-top: 12px;
+    .search-icon{
+      float: left;
+      background: url(../../../images/mobile/h5-2/search.png) no-repeat center center;
+      background-size: 16px;
+      width:17px;
+      height: 17px;
+      margin-right: 25px;
+    }
+    .search-icon-2{
+      display: none;
+      float: left;
+      background: url(../../../images/mobile/h5-2/search-2.png) no-repeat center center;
+      background-size: 16px;
+      width:17px;
+      height: 17px;
+      margin-right: 25px;
+    }
+    .tel-icon{
+      float: left;
+      background: url(../../../images/mobile/h5-2/tel.png) no-repeat center center;
+      background-size: 16px;
+      width:17px;
+      height: 17px;
+      margin-right: 20px;
+    }
+  }
+  .search-box{ 
+    position: absolute;
+    top:40px;
+    z-index: 5;
+    width: 100%;
+    display: none;
+    .search-header{
+      padding: 5px 10px; 
+      overflow: hidden;
+      background-color: #eaeaea;
+      .input{
+        width: 85%;
+        border-radius: 5px;
+        background-color:#fff;
+        height: 30px;
+        line-height: 30px;
+        float: left;
+        .cancel-icon{
+          display: inline-block;
+          background: url(../../../images/mobile/h5-2/search-cancel.png) no-repeat center center; 
+          width: 18px;
+          height: 18px;
+          background-size: 18px;
+          vertical-align: middle;
+          margin-left: 10px;
+        }
+        
+        input[type='text']{
+          font-size: 14px;
+          border:none;
+          width: 85%;
+          height: 28px;
+        }
+      }
+      .search-btn{
+        cursor: pointer;
+        width:15%;
+        float: left;
+        height: 30px;
+        span{
+          padding-left: 10px;
+          line-height: 30px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.hr20{
+    background-color: #f3f3f3;
+}
+
+.content{
+  .array-r{
+    background:url(../../../images/mobile/h5-2/array.png) no-repeat;
+    background-size:8px;
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 22px 10px 0 0;
+  }
+  .array-d{
+    background:url(../../../images/mobile/h5-2/array.png) no-repeat;
+    background-size:8px;
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 25px 10px 0 0;
+  }
+  .array-l{
+    background:url(../../../images/mobile/h5-2/array.png) no-repeat;
+    background-size:8px;
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+  }
+  .array-u{
+    background:url(../../../images/mobile/h5-2/array.png) no-repeat;
+    background-size:8px;
+    -webkit-transform:rotate(270deg);
+    transform:rotate(270deg);
+  }
+
+   #opt-main{
+        .text{
+          width:25%;
+        }
+  }
+  .options{
+   
+    .selected-text{
+        float: right;
+        margin: 22px 8px 0 0;
+        font-size:14px;
+        color: #797979;
+        font-size: 12px;
+      }
+    #option-advance,#car-saletype{
+      border-bottom:1px solid #d0d0d0;
+    }
+    #option-advance-show{
+      display: none;
+    }
+    #car-mile,#car-model,#car-saletype{
+      select{
+        background: none;
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        opacity: 0;
+      }
+    } 
+    .option-group{
+      height:35px;
+      background-color:#dbdbdb;
+      line-height:35px;
+      padding-left:  5px;
+     
+    }
+      
+    
+    .option-item{
+      height: 60px;
+      border-top:1px solid #d0d0d0;
+      position: relative;
+      .text{
+        padding-left:  5px;
+        line-height: 60px;
+        /*font-weight: bold;*/
+        float: left;
+        width: 50%; 
+        color:#444;
+        font-size: 14px;
+      }
+      .select-content{
+        padding-top: 12px;
+        float: left;
+        width: 73%;
+        text-align: center;
+        span{
+          padding-left: 5px;
+        }
+        select{
+          -webkit-appearance: none;
+          appearance:none;
+          width: 40%;
+          height: 38px;
+          border:2px solid #b1b1b1;
+          border-radius: 8px;
+          background:url(../../../images/mobile/h5-2/dropdown.png) no-repeat right transparent;
+          background-size: 32px;  
+          background-color: #fff;
+        }
+      }  
+
+    }
+  }
+  .btns{
+
+    text-align: center;
+    padding: 30px 0;
+    #clear-btn{
+      background-color: #c4b09f;
+      width:100px;
+      height: 40px;
+      color:#fff;
+      border-radius: 8px;
+      border:none;
+      font-size:16px;
+
+    }
+    #search-btn{
+      background-color: @orange;
+      width:160px;
+      height: 40px;
+      color:#fff;
+      border-radius: 8px;
+      border:none;
+      font-size:16px;
+      margin-left: 20px;
+    }
+  }
+}

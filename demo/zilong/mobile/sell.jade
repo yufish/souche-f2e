@@ -1,0 +1,284 @@
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/h5-2/mobile.css" rel="stylesheet" type="text/css" />
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.flexslider-min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
+  body#sell-h5-2
+    #page-1
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 我要卖车
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+        
+      .hr20  
+      .content
+        .options#opt-main
+          .option-item#choose-brand
+              .text 品牌和型号
+              .array-r
+              .selected-text
+          .option-item#choose-place
+              .text 车辆所在地
+              .array-r
+              .selected-text
+          .option-item#telephone
+              .text 手机号*
+              .input-content
+                input#input-tel(type='tel') 
+          .btns
+            button#submit-btn 提交
+        .sell-info
+          .wrapper
+            .info-item
+              .info-title
+                .circle
+                .text 大搜车卖车流程如下，详询
+                  a.tel(href='tel:4008-010-010') 4008-010-010
+              .info-content
+                .process
+                  .icon.icon-1
+                  登记信息
+                .array-r-gray
+                .process
+                  .icon.icon-2
+                  质量检测
+                .array-r-gray
+                .process
+                  .icon.icon-3
+                  交易过户
+                .array-r-gray
+                .process
+                  .icon.icon-4
+                  费用结算
+                  
+                
+            .info-item
+              .info-title 
+                .circle
+                .text 在大搜车卖车需带什么东西？
+              .info-content
+                p.text 1.身份证、行驶证、车辆登记证
+                p.text 2.全部车辆钥匙
+                p.text 3.交强险单
+                p.text 4.购置税本及购置税发票
+                p.text 5.购车发票/最近一次过户发票
+                p.text 6.车示标(环保标、检字标、交强险标)
+            .info-item
+              .info-title 
+                .circle
+                .text 为什么选择在大搜车卖车？
+              .info-content
+                p.text 1.价格透明，不赚差价
+                p.text 2.平均每小时卖掉一辆
+                p.text 3.全程协助办理交易过户手续
+                p.text 4.超豪华二手车实体店
+                  a.addr(href="http://t.cn/8kDj35v" class="" click_type="mobile_index_daohang") (点击导航)
+
+
+    #page-2
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 选择品牌
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+      .hr20  
+      .content
+        .options#opt-brand
+
+
+    #page-3
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 选择车系
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+      .hr20  
+      .content
+        .options#opt-series
+        
+    #page-4
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 选择型号
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+      .hr20  
+      .content
+        .options#opt-model
+          .option-item
+            .text 假数据
+
+    #page-5
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 选择所在省
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+      .hr20  
+      .content
+        .options#opt-province
+
+    #page-6
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 选择所在市
+        .header-feature
+          a.tel-icon(href='tel:4008-010-010')
+      .hr20  
+      .content
+        .options#opt-city
+
+      script.
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        var dataObj={
+
+        }
+
+        var curPageIndex=1;
+        
+        //var total-page=6;
+        var pages = [$('#page-1'),$('#page-2'),
+              $('#page-3'),$('#page-4'),
+              $('#page-5'),$('#page-6')]
+        function gotoPage(pageIndex){
+          
+          var $curPage = pages[curPageIndex-1];
+          var $page = pages[pageIndex-1];
+          $page.css({left:'100%'}).show();
+          $curPage.animate({left:'-100%'},function(){
+            $curPage.hide();
+          });
+          $page.animate({left:'0'});
+          curPageIndex=pageIndex;
+        }
+
+        function backPage(pageIndex){
+          
+          var $curPage = pages[curPageIndex-1];
+          var $page = pages[pageIndex-1];
+          $page.css({left:'-100%'}).show();
+          $curPage.animate({left:'100%'},function(){
+            $curPage.hide();
+          });
+          $page.animate({left:'0'});
+          curPageIndex=pageIndex;
+        }
+
+
+        $('#opt-main #choose-brand').click(function(e){
+          $.ajax({
+            //url:contextPath+"/pages/dicAction/loadRootLevel.json",
+            url:'http://f2e.souche.com/demo/yutou/index/brand.json',
+            dataType:"json",
+            data:{
+              type:"car-subdivision"
+            },
+            success:function(data){
+              var $brandContainer = $('#opt-brand');
+              var items =data.items;
+              for(var i in items){
+                var item = items[i];
+                var name=item['enName'];
+                var code = item['code'];
+                var html='<div class="option-item" data-code='+code+'>'
+                          + '<div class="text">'+name+'</div>'
+                          + '<div class="array-r">'
+                          + '</div>'
+                $brandContainer.append(html);
+              }
+              brandAjax =true; 
+              $('#page-2').show();
+            },  
+            error:function(){},
+            failure:function(){}
+          });
+          gotoPage(2);
+        })
+        
+
+        $('#opt-main #choose-place').on('click',function(e){
+          gotoPage(5);
+        })
+
+
+        $('#opt-brand').on('click','.option-item',function(e){
+          var brandCode = $(this).attr('data-code');
+          $.ajax({
+            //url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+            url:'http://f2e.souche.com/demo/yutou/index/series.json',
+            dataType:"json",
+            data:{
+              type:"car-subdivision",
+              code:brandCode
+            },
+            success:function(data){
+              var $seriesContainer = $('#opt-series')
+              var codes = data.codes;
+              for(var i in codes){
+                var b = codes[i];
+                var name = i;
+                $seriesContainer.append('<div style="" class="option-group">'+name+'</div>');
+                for(var n =0;n<b.length;n++){
+                  var series = b[n];
+                  var html='<div class="option-item" data-code='+series.code+'>'
+                        + '<div class="text">'+series.enName+'</div>'
+                        + '<div class="array-r">'
+                        + '</div>'
+                  $seriesContainer.append(html);
+                } 
+              }
+              $('#page-3').show();
+            },  
+            error:function(){},
+            failure:function(){}
+          });
+          gotoPage(3);
+        })
+
+        $('#opt-series').on('click','.option-item',function(e){
+          gotoPage(4);
+        })
+        $('#opt-model').on('click','.option-item',function(e){
+          gotoPage(1);
+        })
+        $('#opt-province').on('click','.option-item',function(e){
+          gotoPage(6);
+        })
+        $('#opt-city').on('click','.option-item',function(e){
+          gotoPage(1);
+        })
+
+        $('#page-1 .back-icon').on('click',function(e){
+          history.back();
+        })
+        $('#page-2 .back-icon').on('click',function(e){
+          backPage(1);
+        })
+        $('#page-3 .back-icon').on('click',function(e){
+          backPage(2);
+        })
+        $('#page-4 .back-icon').on('click',function(e){
+          backPage(3);
+        })
+        $('#page-5 .back-icon').on('click',function(e){
+          backPage(1);
+        })
+        $('#page-6 .back-icon').on('click',function(e){
+          backPage(6);
+        })
+
+        $('#submit-btn').click(function(e){
+          var phoneNum = $('#telephone').val();
+          if(!phoneReg.test(phoneNum)){
+            alert('手机号填写错误，请输入正确的手机号码');
+            return;
+          }
+
+        })
+        
