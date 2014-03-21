@@ -379,7 +379,11 @@ a:hover {
 #mylist .qiugou .form {
   z-index: 5;
   width: 801px;
+<<<<<<< HEAD
   padding-bottom: 20px;
+=======
+  padding-bottom: 40px;
+>>>>>>> a4c4e1830e3c1c21dfe9429c325c9f513e345f03
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;
