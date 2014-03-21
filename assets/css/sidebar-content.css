@@ -7,29 +7,29 @@
   padding-left: 45px;
   width: 720px;
 }
-#toolbar .tool-box #nav {
+#toolbar .tool-box #fav-nav {
   width: 717px;
   height: 40px;
 }
-#toolbar .tool-box #nav .title {
+#toolbar .tool-box #fav-nav .title {
   font-size: 24px;
   color: #333;
   font-weight: bold;
   float: left;
 }
-#toolbar .tool-box #nav .number {
+#toolbar .tool-box #fav-nav .number {
   font-size: 16px;
   font-weight: normal;
   float: left;
   font-style: normal;
   line-height: 35px;
 }
-#toolbar .tool-box #nav .path {
+#toolbar .tool-box #fav-nav .path {
   float: right;
   width: 88px;
   height: 40px;
 }
-#toolbar .tool-box #nav .path a {
+#toolbar .tool-box #fav-nav .path a {
   width: 36px;
   height: 36px;
   border: 1px solid #b3b3b3;
@@ -37,59 +37,59 @@
   background-color: #f2f2f2;
   float: left;
 }
-#toolbar .tool-box #nav .path a span {
+#toolbar .tool-box #fav-nav .path a span {
   width: 13px;
   height: 18px;
   display: block;
   margin: 9px 10px;
 }
-#toolbar .tool-box #nav .path .going span {
+#toolbar .tool-box #fav-nav .path .going span {
   background: url(../images/index/going.png);
 }
-#toolbar .tool-box #nav .path .back span {
+#toolbar .tool-box #fav-nav .path .back span {
   background: url(../images/index/back.png);
 }
-#toolbar .tool-box #nav .path a:hover {
+#toolbar .tool-box #fav-nav .path a:hover {
   background-color: #FC7000;
 }
-#toolbar .tool-box #nav .path .going:hover span {
+#toolbar .tool-box #fav-nav .path .going:hover span {
   background: url(../images/index/going-hover.png);
 }
-#toolbar .tool-box #nav .path .back:hover span {
+#toolbar .tool-box #fav-nav .path .back:hover span {
   background: url(../images/index/back-hover.png);
 }
-#toolbar .tool-box #nav .path a.disabled {
+#toolbar .tool-box #fav-nav .path a.disabled {
   border: 1px solid #ddd;
 }
-#toolbar .tool-box #nav .path a.disabled:hover {
+#toolbar .tool-box #fav-nav .path a.disabled:hover {
   background-color: #f2f2f2;
   cursor: default;
 }
-#toolbar .tool-box #nav .path .going.disabled:hover span {
+#toolbar .tool-box #fav-nav .path .going.disabled:hover span {
   background: url(../images/index/going.png);
 }
-#toolbar .tool-box #nav .path .back.disabled:hover span {
+#toolbar .tool-box #fav-nav .path .back.disabled:hover span {
   background: url(../images/index/back.png);
 }
-#toolbar .tool-box #nav .pages {
+#toolbar .tool-box #fav-nav .pages {
   font-size: 14px;
   color: #333;
   margin-right: 20px;
   line-height: 39px;
   float: right;
 }
-#toolbar .tool-box #nav .pages div {
+#toolbar .tool-box #fav-nav .pages div {
   float: left;
 }
-#toolbar #content {
+#toolbar #fav-content {
   width: 855px;
   height: 630px;
 }
-#toolbar #content .car-wrap {
+#toolbar #fav-content .car-wrap {
   width: 730px;
   height: 550px;
 }
-#toolbar #content .car-wrap .car-box {
+#toolbar #fav-content .car-wrap .car-box {
   width: 210px;
   height: 240px;
   margin-top: 13px;
@@ -100,15 +100,15 @@
   margin-right: 10px;
   position: relative;
 }
-#toolbar #content .car-wrap .car-box .car-image {
+#toolbar #fav-content .car-wrap .car-box .car-image {
   width: 210px;
   height: 140px;
 }
-#toolbar #content .car-wrap .car-box .car-image img {
+#toolbar #fav-content .car-wrap .car-box .car-image img {
   width: 210px;
   height: 140px;
 }
-#toolbar #content .car-wrap .car-box .car-title {
+#toolbar #fav-content .car-wrap .car-box .car-title {
   font-size: 12px;
   color: #333;
   height: 35px;
@@ -117,26 +117,26 @@
   margin-top: 5px;
   cursor: pointer;
 }
-#toolbar #content .car-wrap .car-box .car-title:hover {
+#toolbar #fav-content .car-wrap .car-box .car-title:hover {
   color: #FC7000;
 }
-#toolbar #content .car-wrap .car-box .car-price {
+#toolbar #fav-content .car-wrap .car-box .car-price {
   height: 20px;
   padding: 8px 0;
   border-bottom: 1px solid #e4e4e4;
 }
-#toolbar #content .car-wrap .car-box .car-price .price {
+#toolbar #fav-content .car-wrap .car-box .car-price .price {
   color: #db2400;
   font-size: 14px;
   font-weight: normal;
   float: left;
 }
-#toolbar #content .car-wrap .car-box .car-price .time {
+#toolbar #fav-content .car-wrap .car-box .car-price .time {
   color: #999;
   font-size: 12px;
   float: right;
 }
-#toolbar #content .car-wrap .car-box .cancel {
+#toolbar #fav-content .car-wrap .car-box .cancel {
   display: block;
   height: 20px;
   background-color: #f2f2f2;
@@ -151,7 +151,7 @@
   width: 80px;
   text-align: center;
 }
-#toolbar #content .car-wrap .car-box .join {
+#toolbar #fav-content .car-wrap .car-box .join {
   display: block;
   height: 20px;
   width: 90px;
@@ -164,7 +164,7 @@
   cursor: pointer;
   color: #fff;
 }
-#toolbar #content .car-wrap .car-box .join i {
+#toolbar #fav-content .car-wrap .car-box .join i {
   vertical-align: 2px;
   font-size: 12px;
   font-style: normal;
@@ -172,32 +172,32 @@
   display: inline;
   color: #fff;
 }
-#toolbar #content .car-wrap .car-box .join:hover {
+#toolbar #fav-content .car-wrap .car-box .join:hover {
   background-color: #e66600;
 }
-#toolbar #content .car-wrap .car-box .join-collect i {
+#toolbar #fav-content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png) no-repeat;
   margin: 2px 5px;
   height: 18px;
   width: 15px;
 }
-#toolbar #content .car-wrap .car-box .join-sell i {
+#toolbar #fav-content .car-wrap .car-box .join-sell i {
   background: url(../images/index/join-sell.png) no-repeat;
   height: 18px;
   width: 11px;
   margin: 1px 8px;
 }
-#toolbar #content .car-wrap .car-box .join.cancel {
+#toolbar #fav-content .car-wrap .car-box .join.cancel {
   background: #f2f2f2;
   border: 1px solid #ddd;
   color: #666;
   width: 80px;
   text-align: center;
 }
-#toolbar #content .car-wrap .car-box .join.cancel i {
+#toolbar #fav-content .car-wrap .car-box .join.cancel i {
   display: none;
 }
-#toolbar #content .car-wrap .car-box .zhijiang {
+#toolbar #fav-content .car-wrap .car-box .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -210,7 +210,7 @@
   text-align: center;
   line-height: 19px;
 }
-#toolbar #content .car-wrap .car-box .zhijiang .triangle {
+#toolbar #fav-content .car-wrap .car-box .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -222,7 +222,7 @@
   left: 8px;
   top: 0;
 }
-#toolbar #content .car-wrap .car-box .price-down {
+#toolbar #fav-content .car-wrap .car-box .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -230,7 +230,7 @@
   right: 10px;
   top: 0px;
 }
-#toolbar #content .car-wrap .car-box .price-down i {
+#toolbar #fav-content .car-wrap .car-box .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
