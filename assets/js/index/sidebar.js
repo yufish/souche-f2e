@@ -10,8 +10,9 @@
                 $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
-        $(".advisor-tip-close").click(function() {
+        $(".advisor-tip-close").click(function(e) {
             $(".my-advisor-tip").addClass("hidden")
+            e.stopPropagation();
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
