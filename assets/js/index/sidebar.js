@@ -29,7 +29,7 @@
                     $("#toolbar").addClass("sidebar-active")
                     $(".sidebar").removeClass("active")
                 }
-                $(".toolbar-content iframe").src = $(this).attr("href")
+                $(".toolbar-content iframe").src = $(self).attr("href")
             })
 
         });
