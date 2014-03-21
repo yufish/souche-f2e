@@ -28,19 +28,11 @@ a:hover {
   line-height: 35px;
   color: #333;
 }
-#mylist .load-more {
-  background: url(../images/mylist/loading.gif) no-repeat center center;
-  height: 50px;
-}
 #mylist #qiugou-container {
   background-color: #f9f9f9;
   width: 100%;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
-  -moz-transition: height 0.2s ease-in;
-  -webkit-transition: height 0.2s ease-in;
-  -o-transition: height 0.2s ease-in;
-  transition: height 0.2s ease-in;
 }
 #mylist #qiugou-container .wrapper {
   width: 1191px;
@@ -48,57 +40,94 @@ a:hover {
   position: relative;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
-  padding: 15px 0;
-  height: 205px;
+  height: 340px;
+}
+#mylist #qiugou-container .wrapper .qiugou-box {
+  width: 1191px;
+  background: url("../images/index/qiugou-container.png") no-repeat scroll;
+  background-position: right;
+  height: 340px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title {
+  height: 64px;
+  padding-top: 15px;
+  font-size: 25px;
+  color: #222222;
+  line-height: 60px;
+}
+#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title span {
+  color: #fc7000;
+  margin: 10px;
+}
+#mylist #qiugou-container .wrapper .wedo {
+  width: 70px;
+  height: 123px;
+  position: absolute;
+  right: 250px;
+  top: 0;
+  background: url("../images/index/wedo.png") no-repeat scroll;
 }
 #mylist #qiugou-container .wrapper .demand {
-  width: 1000px;
+  width: 783px;
   float: left;
-  height: 205px;
+  height: 260px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-bottom: none;
+  padding-left: 20px;
 }
 #mylist #qiugou-container .wrapper .demand .demand-title {
-  color: #666;
+  color: #222;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: 10px;
+  margin-top: 25px;
+  margin-left: 15px;
 }
-#mylist #qiugou-container .wrapper .demand .chosecar li {
+#mylist #qiugou-container .wrapper .demand .chosecar-box {
+  height: 180px;
+  float: left;
+}
+#mylist #qiugou-container .wrapper .demand .chosecar-box .chosecar li {
+  padding-left: 15px;
+  width: 555px;
+  border-bottom: 1px solid #e4e4e4;
   font-size: 12px;
-  color: #666;
+  color: #222;
   font-weight: bold;
-  line-height: 25px;
+  line-height: 27px;
 }
-#mylist #qiugou-container .wrapper .demand .chosecar li .chosecentent {
+#mylist #qiugou-container .wrapper .demand .chosecar-box .chosecar li .chosecentent {
   cursor: pointer;
   font-weight: normal;
   margin-left: 20px;
 }
 #mylist #qiugou-container .wrapper .demand .choseagain {
-  margin-top: 15px;
+  margin-top: 20px;
   color: #fc7000;
   font-size: 12px;
-  font-weight: bold;
-  display: block;
+  font-size: 16px;
   height: 25px;
-  width: 100px;
 }
 #mylist #qiugou-container .wrapper .demand .choseagain i {
   background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   height: 20px;
   width: 20px;
   float: left;
-  margin-right: 10px;
+  margin: 2px 15px;
 }
 #mylist #qiugou-container .wrapper .demand .choseagain a {
   color: #fc7000;
   line-height: 20px;
 }
 #mylist #qiugou-container .wrapper .erweima {
-  width: 191px;
-  float: left;
+  width: 155px;
+  float: right;
 }
 #mylist #qiugou-container .wrapper .erweima .erweima-img {
-  margin-top: 10px;
   width: 100px;
   height: 173px;
   background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -230,7 +259,7 @@ a:hover {
   float: right;
   line-height: 20px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
   position: relative;
   width: 65px;
   height: 19px;
@@ -242,7 +271,7 @@ a:hover {
   text-align: center;
   line-height: 19px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .zhijiang .triangle {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang .triangle {
   display: block;
   width: 0;
   height: 0;
@@ -254,7 +283,7 @@ a:hover {
   left: 8px;
   top: 0;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
@@ -262,7 +291,7 @@ a:hover {
   top: -153px;
   left: 171px;
 }
-#mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .timebuycar .car-image .price-down i {
   color: #FFFFFF;
   display: block;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;

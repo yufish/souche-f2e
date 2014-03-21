@@ -45,8 +45,8 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
-          a.join.join-collect(herf="#") 
+          a.cancel.cancel-sell(herf="#",data-id="123") 取消收藏     
+          a.join.join-collect.hidden(herf="#",data-id="123") 
             i.collect
             | 加入收藏
         .car-box.timebuycar
@@ -58,10 +58,10 @@ body#toolbar
           .car-price
             .price 123.7万
             .time 首次上牌：2013-04
-          a.cancel.cancel-collect.hidden(herf="#") 取消收藏     
-          a.join.join-collect.disabled(herf="#") 
+          a.cancel.cancel-collect(herf="#") 取消收藏     
+          a.join.join-collect.hidden(herf="#") 
             i.sell
-            | 取消收藏
+            | 加入收藏
         .car-box
           .car-image
             img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
@@ -170,9 +170,35 @@ body#toolbar
 
   script.
     var api = {
-      fav:"",
-      unfav:""
-    }
+      fav:'http://f2e.souche.com/demo/yutou/index/brand.json',
+      unfav:"http://f2e.souche.com/demo/yutou/index/brand.json"
+    };
     (function(){
 
+      $(".cancel").click(function(){
+        var self = this;
+        $.ajax({
+          url:api.unfav,
+          data:{carId:$(this).attr("data-id")},
+          dataType:"json",
+          success:function(){
+            $(self).addClass("hidden");
+            $(".join",self.parentNode).removeClass("hidden");
+          }
+        })
+      });
+    })();
+    (function(){
+      $(".join").click(function(){
+        var self = this;
+        $.ajax({
+          url:api.fav,
+          data:{carId:$(this).attr("data-id")},
+          dataType:"json",
+          success:function(){
+            $(self).addClass("hidden");
+            $(".cancel",self.parentNode).removeClass("hidden");
+          }
+        })
+      });
     })();

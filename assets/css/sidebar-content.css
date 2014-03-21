@@ -137,18 +137,18 @@
 }
 #toolbar #content .car-wrap .car-box .cancel {
   display: block;
-  width: 76px;
-  height: 24px;
-  border: 1px solid #e4e4e4;
+  height: 20px;
   background-color: #f2f2f2;
   margin: 0 auto;
-  text-align: center;
   border-radius: 4px;
   font-size: 12px;
-  color: #666;
-  margin-top: 10px;
-  line-height: 21px;
+  margin-top: 5px;
+  line-height: 20px;
   cursor: pointer;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 80px;
+  text-align: center;
 }
 #toolbar #content .car-wrap .car-box .join {
   display: block;

@@ -214,6 +214,8 @@ body{
 
 #simple-header {
   height: 115px;
+  background: #fff;
+  
 }
 #simple-header .wrapper {
   width: 1190px;
@@ -233,8 +235,8 @@ body{
 }
 #simple-header .wrapper .search .search-text {
   width: 490px;
-  height: 35px;
-  border: 2px solid #e5e5e5;
+  height: 34px;
+  border: 2px solid #FC7000;
   vertical-align: top;
   padding-left: 10px;
 }
