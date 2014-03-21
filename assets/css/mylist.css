@@ -329,7 +329,7 @@ a:hover {
   padding-top: 30px;
 }
 #mylist .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-container.png?123) no-repeat;
+  background: #f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
   background-position: bottom;
   position: absolute;
   bottom: 0;
@@ -387,6 +387,15 @@ a:hover {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;
+}
+#mylist .qiugou .form .shadow {
+  width: 22px;
+  height: 136px;
+  position: absolute;
+  top: 105px;
+  right: 366px;
+  background: url(../images/index/shadow.png?123) no-repeat 0 0;
+  z-index: 200;
 }
 #mylist .qiugou .form .form-inner {
   margin-left: 50px;
