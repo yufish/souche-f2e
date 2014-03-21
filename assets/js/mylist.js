@@ -22,6 +22,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     }
     var is_submiting = false;
     var isLoadingMore = false;
+    var hasMore = true;
     var nowPage = 2;
     return {
         init: function(_config) {
@@ -152,7 +153,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             isLoadingMore;
             var self = this;
             $(window).on("scroll", function() {
-                if (isLoadingMore) return;
+                if (isLoadingMore || !hasMore) return;
                 if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
                     self._loadMore();
                 }
@@ -171,6 +172,9 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                     key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
+                    if (data.replace(/\s/, '') == "") {
+                        hasMore = false;
+                    }
                     $(".load-more").addClass("hidden");
                     isLoadingMore = false;
                     $("#cars_con").append(data);
