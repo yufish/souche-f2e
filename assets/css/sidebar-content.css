@@ -1,3 +1,6 @@
+html {
+  background-color: #f2f2f2;
+}
 #toolbar {
   width: 855px;
   height: 630px;
@@ -172,9 +175,6 @@
   float: left;
   display: inline;
   color: #fff;
-}
-#toolbar #toolbar-content .car-wrap .car-box .join:hover {
-  background-color: #e66600;
 }
 #toolbar #toolbar-content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png) no-repeat;

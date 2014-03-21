@@ -67,6 +67,7 @@ a{
       right: 250px;
       top: 0;
       background:  url("../images/index/wedo.png")no-repeat scroll;
+      z-index: 100;
     }
     .demand{
       width: 783px;
@@ -385,17 +386,18 @@ a{
   background:#f9f9f9;
   position: relative;
   .inner{
-    padding-left:30px;
-  padding-top:30px;
+    
+    padding-top:30px;
   }
   .person-bg{
-    background:#f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
+    background:#f9f9f9 url(../images/index/qiugou-container.png?123) no-repeat;
+    background-position: bottom;
     position: absolute;
     bottom: 0;
     right:1px;
-    width:365px;
+    width:392px;
     height:377px;
-    z-index: 3;
+    z-index: 2;
   }
   .head{
     height:60px;
@@ -403,6 +405,7 @@ a{
     position: relative;
     z-index: 2;
     width:540px;
+
   }
   .title{
     font-size: 28px;
@@ -410,6 +413,7 @@ a{
     line-height: 35px;
     em{
       color:@orange;
+      margin: 10px;
     }
   }
   .sub-title{
@@ -440,12 +444,23 @@ a{
   }
   
   .form{
-    padding-bottom: 40px;
-    margin-left: 30px;
+    
+    
     position: relative;
     z-index:5;
+    width: 801px;
+    height: 340px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
     .form-inner{
-
+     margin-left: 50px;
+     margin-top: 20px;
+     .form-title{
+      font-size: 15px;
+      color: #666;
+      line-height: 30px;
+     }
     }
 
     .form-item{

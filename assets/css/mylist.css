@@ -69,6 +69,7 @@ a:hover {
   right: 250px;
   top: 0;
   background: url("../images/index/wedo.png") no-repeat scroll;
+  z-index: 100;
 }
 #mylist #qiugou-container .wrapper .demand {
   width: 783px;
@@ -390,17 +391,17 @@ a:hover {
   position: relative;
 }
 #mylist .qiugou .inner {
-  padding-left: 30px;
   padding-top: 30px;
 }
 #mylist .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
+  background: #f9f9f9 url(../images/index/qiugou-container.png?123) no-repeat;
+  background-position: bottom;
   position: absolute;
   bottom: 0;
   right: 1px;
-  width: 365px;
+  width: 392px;
   height: 377px;
-  z-index: 3;
+  z-index: 2;
 }
 #mylist .qiugou .head {
   height: 60px;
@@ -416,6 +417,7 @@ a:hover {
 }
 #mylist .qiugou .title em {
   color: #fc7000;
+  margin: 10px;
 }
 #mylist .qiugou .sub-title {
   font-size: 14px;
@@ -444,10 +446,22 @@ a:hover {
   color: #fc7000;
 }
 #mylist .qiugou .form {
-  padding-bottom: 40px;
-  margin-left: 30px;
   position: relative;
   z-index: 5;
+  width: 801px;
+  height: 340px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+#mylist .qiugou .form .form-inner {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+#mylist .qiugou .form .form-inner .form-title {
+  font-size: 15px;
+  color: #666;
+  line-height: 30px;
 }
 #mylist .qiugou .form .form-item {
   margin-top: 10px;
