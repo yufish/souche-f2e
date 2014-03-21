@@ -28,6 +28,9 @@ a:hover {
   line-height: 35px;
   color: #333;
 }
+#mylist .no-result .wrapper .date-wrap .hourcar {
+  display: none;
+}
 #mylist #qiugou-container {
   background-color: #f9f9f9;
   width: 100%;
