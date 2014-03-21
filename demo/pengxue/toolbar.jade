@@ -1,0 +1,204 @@
+doctype html
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" id="viewport" content="width=1340" /> 
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/sidebar-content.css?t=128" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
+    <script>
+      var contextPath = "http://www.souche.com/";
+      require.config({
+        baseUrl: "http://f2e.souche.com/assets/js"
+      });
+    </script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+
+body#toolbar
+  //收藏的车 begin
+  #collect.tool-box
+    #nav
+      .title 收藏的车
+      i.number (2辆)
+      .path
+        a.back.disabled(href="#")
+          span
+        a.going(href="#")
+          span
+      .pages
+        .now-page 2 /
+        .all-page 6
+    #content
+      .car-wrap
+        .car-box.zhijiangcar
+          .car-image
+            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+            .zhijiang 直降500元
+              span.triangle
+          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+          .car-price
+            .price 123.7万
+            .time 首次上牌：2013-04
+          a.cancel.cancel-sell(herf="#",data-id="123") 取消收藏     
+          a.join.join-collect.hidden(herf="#",data-id="123") 
+            i.collect
+            | 加入收藏
+        .car-box.timebuycar
+          .car-image
+            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+            .price-down 
+              i 5000
+          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+          .car-price
+            .price 123.7万
+            .time 首次上牌：2013-04
+          a.cancel.cancel-collect(herf="#") 取消收藏     
+          a.join.join-collect.hidden(herf="#") 
+            i.sell
+            | 加入收藏
+        .car-box
+          .car-image
+            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+          .car-price
+            .price 123.7万
+            .time 首次上牌：2013-04
+          a.cancel.cancel-sell.hidden(herf="#") 取消收藏     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 加入收藏
+  #no-collect.tool-box
+    #nav
+      .title 收藏的车
+    #content
+      .nocllect-img
+      //收藏的车 end
+  //降价通知我 begin
+  #sell.tool-box
+    #nav
+      .title 降价通知我
+      i.number (2辆)
+      .path
+        a.back(href="#")
+          span
+        a.going(href="#")
+          span
+      .pages
+        .now-page 2 /
+        .all-page 6
+    #content
+      .car-wrap
+        .car-box.zhijiangcar
+          .car-image
+            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+            .zhijiang 直降500元
+              span.triangle
+          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+          .car-price
+            .price 123.7万
+            .time 首次上牌：2013-04
+          a.cancel.cancel-sell.hidden(herf="#") 取消通知     
+          a.join.join-sell(herf="#") 
+            i.sell
+            | 降价通知我
+  #no-sell.tool-box
+    #nav
+      .title 降价通知我
+    #content
+      .nosell-img
+      //降价通知我 end 
+      //预约看车 begin
+  #reserve.tool-box
+    #nav
+      .title 预约看车
+      i.number (2辆)
+      .path
+        a.back(href="#")
+          span
+        a.going(href="#")
+          span
+      .pages
+        .now-page 2 /
+        .all-page 6
+    #content
+      .car-wrap
+        .car-box.zhijiangcar
+          .car-image
+            img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+            .zhijiang 直降500元
+              span.triangle
+          a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+          .car-price
+            .price 123.7万
+            .time 首次上牌：2013-04
+  #no-reserve.tool-box
+    #nav
+      .title 预约看车
+    #content
+      .noreserve-img    
+      //预约看车 end    
+      //浏览记录 begin
+  #scan.tool-box.hidden
+    #nav
+      .title 浏览记录
+      i.number (2辆)
+    #content
+      .day-list
+        .list-title
+          span
+          .day 今天
+          <div class="carnum">浏览了<i>7</i>辆车</div>
+        .car-list
+          .carbox
+            a.car-image(herf="#")
+              img(src="http://souche.cdn.aliyuncs.com/files/carpicture/01440D614342C92192F227A939E0E6C5_700x460.jpg_700x10000.jpg")
+            .car-detail
+              a.car-title(herf="#") 2011款 宝马1系Coupe 120i-2.0手自一体双门轿跑
+              i.car-price 123.7万
+  #no-scan.tool-box
+    #nav
+      .title 浏览记录
+    #content
+      .noscan-img    
+      //浏览记录 end
+
+  script.
+    var api = {
+      fav:contextPath+'/pages/saleDetailAction/savaCarFavorite.json',
+      unfav:contextPath+'/pages/saleDetailAction/delCarFavorite.json'
+    };
+    (function(){
+
+      $(".cancel").click(function(){
+        var self = this;
+        $.ajax({
+          url:api.unfav,
+          data:{carId:$(this).attr("data-id")},
+          dataType:"json",
+          success:function(){
+            $(self).addClass("hidden");
+            $(".join",self.parentNode).removeClass("hidden");
+          }
+        })
+      });
+    })();
+    (function(){
+      $(".join").click(function(){
+        var self = this;
+        $.ajax({
+          url:api.fav,
+          data:{carId:$(this).attr("data-id")},
+          dataType:"json",
+          success:function(){
+            $(self).addClass("hidden");
+            $(".cancel",self.parentNode).removeClass("hidden");
+          }
+        })
+      });
+    })();

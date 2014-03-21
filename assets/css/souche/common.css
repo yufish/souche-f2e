@@ -210,3 +210,124 @@ body{
   line-height: 30px;
   color: #999;
 }
+
+
+#simple-header {
+  height: 115px;
+  background: #fff;
+  
+}
+#simple-header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#simple-header .wrapper .logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+#simple-header .wrapper .search {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+#simple-header .wrapper .search .search-text {
+  width: 490px;
+  height: 34px;
+  border: 2px solid #FC7000;
+  vertical-align: top;
+  padding-left: 10px;
+}
+#simple-header .wrapper .search .search-submit {
+  background: #fc7000;
+  color: #fff;
+  font-size: 16px;
+  width: 88px;
+  height: 38px;
+  border: none;
+  vertical-align: top;
+  margin-left: -5px;
+  cursor: pointer;
+}
+#simple-header .wrapper .search .hot-keywords {
+  line-height: 30px;
+}
+#simple-header .wrapper .search .hot-keywords a {
+  color: #666;
+  margin-left: 10px;
+}
+#simple-header .wrapper .search .hot-keywords a:hover {
+  color: #fc7000;
+}
+#simple-header .wrapper .adviser {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 180px;
+  height: 35px;
+  color: #7d7d7d;
+}
+#simple-header .wrapper .adviser #pulldown {
+  position: absolute;
+  top: 16px;
+  left: 165px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #666;
+}
+#simple-header .wrapper .adviser .adviser-list {
+  width: 80px;
+  height: 98px;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  top: 35px;
+  left: 94px;
+  background: #fff;
+  z-index: 100;
+}
+#simple-header .wrapper .adviser .adviser-list ul {
+  padding: 10px;
+}
+#simple-header .wrapper .adviser .adviser-list ul li {
+  height: 30px;
+}
+#simple-header .wrapper .adviser .text {
+  float: right;
+  font-size: 12px;
+  border-right: 1px solid #7d7d7d;
+  padding-right: 20px;
+  margin-top: 10px;
+  height: 20px;
+  color: #7d7d7d;
+}
+#simple-header .wrapper .adviser .text:hover {
+  color: #fc7000;
+}
+#simple-header .wrapper .adviser .myadviser {
+  float: right;
+  width: 65px;
+  height: 20px;
+  margin-left: 20px;
+  padding-top: 10px;
+  color: #7d7d7d;
+  border: none;
+}
+#simple-header .other-navs {
+  float: right;
+  
+  margin-top: 50px;
+  *margin-top: 0px;
+}
+#simple-header .other-navs a {
+  font-size: 12px;
+  padding: 0 8px;
+  border-right: 1px solid #666;
+}
+#simple-header .other-navs a.last {
+  border: none;
+}

@@ -1,0 +1,190 @@
+#toolbar{
+  width: 855px;height: 630px;
+  background-color: #F2F2F2;
+  .tool-box{
+    padding-left: 45px;
+    width: 720px;
+    #nav{
+      width: 717px;
+      height: 40px;
+      .title{font-size: 24px;color: #333;font-weight: bold;float: left;}
+      .number {font-size: 16px;font-weight: normal;float: left;font-style: normal;line-height: 35px;}
+      .path{
+        float: right;width: 88px;height: 40px;
+        div{
+          width: 36px;height: 36px;border: 1px solid #b3b3b3;margin-left: 5px;background-color: #f2f2f2;float: left;
+          span{width: 13px;height: 18px;display: block;margin: 9px 10px;}
+        }
+        div:hover{background-color: #FC7000;}
+        .going{span{background: url(../images/index/going.png);}}
+        .going:hover{span{background: url(../images/index/going-hover.png);}}
+        .back{span{background: url(../images/index/back.png);}}
+        .back:hover{span{background: url(../images/index/back-hover.png);}}
+      }
+      .pages{
+        font-size: 14px;
+        color: #333;
+        margin-right: 20px;
+        line-height: 39px;
+        float: right;
+        div{float: left;}
+      }
+    }   
+  }
+  
+  #content{
+    width: 855px;
+    height: 630px;
+    float: left;
+    .car-wrap{
+      width: 730px;
+      height: 550px;
+      .car-box{
+       width: 210px;
+       height: 240px;
+       margin-top: 13px;
+       background-color: #fff;
+       border: 1px solid #e4e4e4;
+       padding: 10px;
+       float: left;
+       margin-right: 10px;
+        .car-image{
+          width: 210px;height: 140px;
+          img{width: 210px;height: 140px;}
+        }
+      .car-title{font-size: 12px;color: #333;line-height:18px;display:block;margin-top: 5px;cursor: pointer;}
+      .car-title:hover{color: #FC7000;}
+      .car-price{
+        height: 20px;
+        padding: 8px 0;
+        border-bottom: 1px solid #e4e4e4;
+        .price{color: #db2400;font-size: 14px;font-weight: normal;float: left;}
+        .time{color: #999;font-size: 12px;float: right;}
+      }
+      .cancel{
+        display: block;
+        width: 76px;height: 24px;
+        border: 1px solid #e4e4e4;
+        background-color: #f2f2f2;
+        margin: 0 auto;text-align: center;
+        border-radius: 4px;font-size: 12px;
+        color: #666;margin-top: 10px;
+        line-height: 21px; cursor: pointer;
+      }
+      .join{
+        display: block;
+        height: 20px;width: 90px;
+        background-color: #FC7000;
+        margin: 0 auto;border: 1px solid #f04f12;
+        border-radius: 4px;margin-top: 5px;
+        line-height: 20px;cursor: pointer;
+        color: #fff;
+        i{
+          vertical-align: 2px;
+          font-size: 12px;
+          font-style: normal;
+          float: left;
+          display: inline;
+          color: #fff;
+        }
+      }
+      .join-collect{i{background: url(../images/index/join-collect.png);margin: 4px 9px;}}
+      .join-sell{i{background: url(../images/index/join-sell.png);height: 18px;width: 11px;margin: 1px 8px;}}
+      
+    }
+    .zhijiangcar{
+      .car-image{
+          
+      }
+    }
+    .timebuycar{
+      .car-image{
+        
+      }
+    }
+    }
+    }
+  #reserve{
+    #content{
+      .car-wrap{
+        .car-box{
+          .car-price{border: none;}
+        }
+      }
+    }
+  }
+  #scan{
+    #content{
+      overflow-y: auto;
+      width: 780px;
+      height: 900px;
+      scrollbar-face-color:#d7d7d7;
+      scrollbar-highlight-color:#fff;
+      .day-list{
+        width: 100%;
+        overflow: hidden;
+        margin: 15px 0;
+        .list-title{
+          height: 30px;
+          overflow: hidden;
+          span{
+            display: block;height: 12px;background: #FC7000;
+            border-radius: 12px;float: left;width: 12px;margin: 8px 6px;
+          }
+          .day{font-size: 14px;color: #000;float: left;font-weight: bold;line-height: 25px;}
+          .carnum{
+            font-size: 12px;color: #666;float: left;line-height :26px;
+            margin-left: 6px;
+            i{font-style: normal;}
+          }
+        }
+        .car-list{
+          width: 100%;
+          .carbox{
+            width: 230px;height: 50px;
+            border: 1px solid #dedede;
+            margin-top: 8px;margin-right: 8px;
+            padding: 10px;
+            background: #fff;
+            float: left;
+            overflow: hidden;
+            .car-image{
+              width: 75px;height: 50px;float: left;display: block;
+              img{width: 75px;height: 50px;}
+            }
+            .car-detail{
+              margin-left: 10px;float: left;width: 145px;height: 48px;font-size: 12px;
+              color: #333;
+              a{font-size: 12px;color: #333;cursor: pointer;display: block;overflow: hidden;height: 32px;}
+              i{font-style: normal;color: #db2400;font-size: 14px;}
+            }
+          }
+        }
+      }
+    }
+  }
+  #no-collect{
+    .nocllect-img{
+      width: 768px;height: 404px;background: url(../images/index/no-collect.png);
+      margin-top: 80px;
+    }
+  }
+  #no-sell{
+    .nosell-img{
+      width: 768px;height: 403px;background: url(../images/index/no-sell.png);
+      margin-top: 80px;
+    }
+  }
+  #no-reserve{
+    .noreserve-img{
+      width: 768px;height: 403px;background: url(../images/index/no-reserve.png);
+      margin-top: 80px;
+    }
+  }
+  #no-scan{
+    .noscan-img{
+      width: 768px;height: 403px;background: url(../images/index/no-scan.png);
+      margin-top: 80px;
+    }
+  }
+}

@@ -8,6 +8,7 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
         var config = {
             has_qiugou: false
         };
+
         $(".timebuy img").lazyload();
         $(".whybuy img").lazyload();
         $(".carlife img").lazyload();
@@ -65,6 +66,7 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                     // 	})
                     // }
                 })
+                //sidebar脚本
 
                 //brand 出来，隐藏效果
 

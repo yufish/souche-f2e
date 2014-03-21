@@ -1,12 +1,12 @@
+a {
+  color: #444;
+}
+a:hover {
+  color: #fc7000;
+}
 #index {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
   color: #333;
-}
-#index a {
-  color: #444;
-}
-#index a:hover {
-  color: #fc7000;
 }
 #index .module {
   margin-top: 10px;
@@ -35,14 +35,6 @@
   position: relative;
   _zoom: 1;
 }
-#index #content .wrapper .sidetoolbar {
-  width: 50px;
-  height: 430px;
-  position: fixed;
-  right: 10px;
-  top: 172px;
-  background-color: #fff;
-}
 #index .qiugou {
   min-height: 427px;
   border: 1px solid #e6e6e6;
@@ -54,7 +46,7 @@
   padding-top: 30px;
 }
 #index .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-bg.jpg) no-repeat 0 0;
+  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
   position: absolute;
   bottom: 0;
   right: 1px;
@@ -74,7 +66,15 @@
   color: #222;
   line-height: 35px;
 }
+#index .qiugou .title em {
+  color: #fc7000;
+}
 #index .qiugou .sub-title {
+  font-size: 14px;
+  color: #666;
+  line-height: 30px;
+}
+#index .qiugou .searching-sub-title {
   font-size: 14px;
   color: #666;
   line-height: 30px;
@@ -89,7 +89,7 @@
   font-size: 28px;
   color: #222;
   line-height: 35px;
-  height: 60px;
+  height: 35px;
   width: 540px;
 }
 #index .qiugou .searching-title em {
@@ -380,9 +380,7 @@
   cursor: pointer;
 }
 #index .qiugou .form .submit.loading {
-  background-image: url(../images/common/loading.gif);
-  background-position: 10px center;
-  background-repeat: no-repeat;
+  background: #ffa053;
 }
 #index .qiugou .form .go-login {
   margin-left: 30px;
@@ -430,7 +428,7 @@
   background-position: 427px 50%;
 }
 #index .has-qiugou .head-inner {
-  margin-top: -120px;
+  margin-top: -130px;
 }
 #index .has-qiugou .result .result-inner {
   margin-left: 0px;
@@ -1051,204 +1049,6 @@
 }
 #index .buy-guide .col .list .item i {
   padding: 0 10px 0 5px;
-}
-#index .sidetoolbar-top {
-  height: 131px;
-  border: 1px solid #e6e6e6;
-  margin-bottom: 35px;
-}
-#index .sidetoolbar-top .suggestside {
-  height: 65px;
-  border-bottom: 1px solid #e6e6e6;
-}
-#index .sidetoolbar-top .suggestside .suggest-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-top .suggestside .suggest-box .suggest-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/suggest.png);
-}
-#index .sidetoolbar-top .suggestside .suggest-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar-top .customerside {
-  height: 65px;
-}
-#index .sidetoolbar-top .customerside .customer-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-top .customerside .customer-box .customer-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/customer.png);
-}
-#index .sidetoolbar-top .customerside .customer-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar-bottom {
-  height: 263px;
-  border: 1px solid #e6e6e6;
-}
-#index .sidetoolbar-bottom .collectside {
-  height: 65px;
-  border-bottom: 1px solid #e6e6e6;
-}
-#index .sidetoolbar-bottom .collectside .collect-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-bottom .collectside .collect-box .collect-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/collect.png);
-}
-#index .sidetoolbar-bottom .collectside .collect-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar-bottom .reserveside {
-  height: 65px;
-  border-bottom: 1px solid #e6e6e6;
-}
-#index .sidetoolbar-bottom .reserveside .reserve-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-bottom .reserveside .reserve-box .reserve-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/reserve.png);
-}
-#index .sidetoolbar-bottom .reserveside .reserve-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar-bottom .sellside {
-  height: 65px;
-  border-bottom: 1px solid #e6e6e6;
-}
-#index .sidetoolbar-bottom .sellside .sell-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-bottom .sellside .sell-box .sell-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/sell.png);
-}
-#index .sidetoolbar-bottom .sellside .sell-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar-bottom .scanside {
-  height: 65px;
-}
-#index .sidetoolbar-bottom .scanside .scan-box {
-  padding: 11px;
-  display: block;
-}
-#index .sidetoolbar-bottom .scanside .scan-box .scan-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/scan.png);
-}
-#index .sidetoolbar-bottom .scanside .scan-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
-}
-#index .sidetoolbar {
-  width: 50px;
-  height: 215px;
-  background: #f7f7f7;
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-  border: 1px solid #dedede;
-}
-#index .sidetoolbar .side-box {
-  height: 53px;
-  border-bottom: 1px solid #dedede;
-}
-#index .sidetoolbar .side-box .point {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  border: 2px solid #fff;
-  background: #FC7000;
-  position: relative;
-  top: -50px;
-  left: -8px;
-}
-#index .sidetoolbar .side-box .point i {
-  font-size: 12px;
-  color: #fff;
-  font-style: normal;
-  text-align: center;
-  display: block;
-  padding: -1px;
-}
-#index .sidetoolbar .side-box a {
-  padding: 6px 5px;
-  display: block;
-}
-#index .sidetoolbar .side-box a div {
-  width: 27px;
-  height: 25px;
-  margin: 0 auto;
-}
-#index .sidetoolbar .side-box a i {
-  display: block;
-  color: #666;
-  font-size: 12px;
-  text-align: center;
-  font-style: normal;
-}
-#index .sidetoolbar .side-box .collect-box .collect-img {
-  background: url(../images/index/collect.png);
-}
-#index .sidetoolbar .side-box .reserve-box .reserve-img {
-  background: url(../images/index/reserve.png);
-}
-#index .sidetoolbar .side-box .sell-box .sell-img {
-  background: url(../images/index/sell.png);
-}
-#index .sidetoolbar .side-box .scan-box .scan-img {
-  background: url(../images/index/scan.png);
-}
-#index .sidetoolbar .side-box:hover {
-  background: #FC7000;
-}
-#index .sidetoolbar .side-box:hover a i {
-  color: #fff8dd;
-}
-#index .sidetoolbar .side-box:hover .collect-box .collect-img {
-  background: url(../images/index/collect-hover.png);
-}
-#index .sidetoolbar .side-box:hover .reserve-box .reserve-img {
-  background: url(../images/index/reserve-hover.png);
-}
-#index .sidetoolbar .side-box:hover .sell-box .sell-img {
-  background: url(../images/index/sell-hover.png);
-}
-#index .sidetoolbar .side-box:hover .scan-box .scan-img {
-  background: url(../images/index/scan-hover.png);
 }
 #index .filter-nav {
   border: 1px solid #e6e6e6;

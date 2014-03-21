@@ -1,4 +1,4 @@
-define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], function(CustomSelect, Select) {
+define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -21,6 +21,9 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
 
     }
     var is_submiting = false;
+    var isLoadingMore = false;
+    var hasMore = true;
+    var nowPage = 2;
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -41,9 +44,38 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
             })
             this._bindBrandChange();
             this._onlyNum();
+            if (config.withCar) {
+                this._bindLoadMore();
+            }
+            //拉手蹦一下
+            var shakeWedo = function(callback) {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300, null, function() {
+                    $(".wedo").animate({
+                        backgroundPositionY: -40
+                    }, 300, null, function() {
+                        callback && callback()
+                    })
+                })
+            }
+            setTimeout(function() {
+                shakeWedo(shakeWedo);
+            }, 500)
+
+            $(".wedo").mouseenter(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300);
+            }).mouseleave(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -40
+                }, 300);
+            })
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
+            $(".car-image img").lazyload();
             $.ajax({
                 url: contextPath + "/pages/dicAction/loadRootLevel.json",
                 dataType: "json",
@@ -74,7 +106,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     // alert("品牌信息请求出错，刷新后再试")
                 }
             });
-            $("#qiugou-form").on("submit", function(e) {
+            $("#qiugou-form .submit").on("click", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
                     $(".warning", self.ele).removeClass("hidden")
@@ -91,8 +123,9 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     }
                 })
             })
-            $("#qiugou_redo").on("click", function(e) {
-                self._redo();
+            $(".choseagain").on("click", function(e) {
+                e.preventDefault();
+                $("#qiugou-container").addClass("show-form")
             })
             $("#qiugou_login").on("click", function(e) {
                 e.preventDefault();
@@ -116,163 +149,56 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                 }
             });
         },
-        _submit: function() {
+        _bindLoadMore: function() {
+            isLoadingMore;
             var self = this;
-            if (is_submiting) return;
-            $(".qiugou .person-bg").animate({
-                backgroundPosition: 0
-            }, 800, 'easeOutExpo', function() {
-
-            })
-
-            $(".qiugou .submit").addClass("loading").html("提交中  ...");
-            is_submiting = true;
-            $.ajax({
-                url: contextPath + "/pages/homePageAction/saveBuyInfo.json",
-                dataType: "json",
-                data: $("#qiugou-form").serialize(),
-                success: function(data) {
-                    qiugouData = data;
-                    $("#qiugou-popup").addClass("hidden")
-                    setTimeout(function() {
-                        $(".submit").removeClass("loading").html("重新定制");
-                        is_submiting = false;
-                    }, 1500)
-
-                    $(".wrapGrayBg").hide();
-                    $("#qiugou_count").html(data.totalNumber)
-                    if (!data.totalNumber) {
-                        $(".qiugou .submit").html("重新定制")
-                        $(".qiugou .person-bg").animate({
-                            backgroundPosition: -402
-                        }, 800, 'easeOutExpo', function() {
-
-                        })
-                        $(".qiugou .head .head-inner").animate({
-                            marginTop: -130
-                        }, 300)
-                    } else {
-                        self._renderResult();
-                        self._successAnim();
-                    }
-
-                },
-                error: function() {
-
+            $(window).on("scroll", function() {
+                if (isLoadingMore || !hasMore) return;
+                if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                    self._loadMore();
                 }
             })
 
         },
-        _successAnim: function() {
-            var self = this;
-            $(".qiugou .head .head-inner").css({
-                marginTop: 0
-            }).animate({
-                marginTop: -60
-            }, 300)
-            setTimeout(function() {
-                $(".qiugou .head .head-inner").animate({
-                    marginTop: -130
-                }, 300)
-                setTimeout(function() {
-                    self._hideForm();
-                }, 600)
-            }, 800)
-        },
-        _hideForm: function() {
-            $("#qiugou_redo").removeClass("hidden")
-            if (qiugouData && qiugouData.items && qiugouData.items.length) {
-                $(".qiugou .form").css({
-                    height: $(".qiugou .form").height(),
-                    overflow: "hidden"
-                })
-                $(".qiugou .form .form-inner").animate({
-                    marginTop: $(".qiugou .form").height() + 50
-                }, 800, 'easeOutExpo', function() {
-                    $(".qiugou .form").addClass("hidden")
-                })
-            }
-            setTimeout(function() {
-                $(".qiugou .person-bg").animate({
-                    backgroundPosition: ($(".qiugou .person-bg").height() + 50)
-                }, 800, 'easeOutExpo', function() {
+        _loadMore: function() {
+            isLoadingMore = true;
+            $(".load-more").removeClass("hidden");
+            var days = $(".date-title .day");
 
-                })
-            }, 200)
-            setTimeout(function() {
-                $(".qiugou .person-bg").addClass("hidden")
-                $(".qiugou").css({
-                    overflow: "hidden"
-                })
-                $(".qiugou .result-inner").animate({
-                    marginLeft: 0
-                }, 800, 'easeOutExpo')
-            }, 500)
+            $.ajax({
+                url: contextPath + "/pages/onsale/match_car_page.html",
+                data: {
+                    page: nowPage++,
+                    key: days.get(days.length - 1).innerHTML
+                },
+                success: function(data) {
+                    if (data.replace(/\s/, '') == "") {
+                        hasMore = false;
+                    }
+                    $(".load-more").addClass("hidden");
+                    isLoadingMore = false;
+                    $("#cars_con").append(data);
+                }
+            })
         },
+        _submit: function() {
+            var self = this;
+            if (is_submiting) return;
+            $(".qiugou .submit").addClass("loading").html("提交中  ...");
+            $("#qiugou-form").submit();
+
+        },
+        _successAnim: function() {
+
+        },
+
         _onlyNum: function() {
             setInterval(function() {
                 $("#price_low_select").val($("#price_low_select").val().replace(/[^0-9]/, ""))
                 $("#price_hight_select").val($("#price_hight_select").val().replace(/[^0-9]/, ""))
             }, 200)
         },
-        _renderResult: function() {
-            if (qiugouData && qiugouData.items && qiugouData.items.length >= 3) {
-                //渲染更多的模式
-                $(".qiugou .cars").html("")
-                for (var i = 0; i < qiugouData.items.length; i++) {
-                    var car = qiugouData.items[i];
-                    var html = '<a href="' + car.link + '" class="car" target="_blank">' +
-                        '<div class="pic"><img src="' + car.pic + '"></div>' +
-                        '<div class="title">' + car.name + '</div>' +
-                        '<div class="price"><em>' + car.price + '万 </em><span class="time">上牌：' + car.time + '</span></div></a>'
-                    $(".qiugou .cars").append(html)
-                }
-                $(".qiugou .cars").append("<a class='car more' target='_blank' href='" + contextPath + "/pages/onsale/sale_car_list.html?match=" + qiugouData.user + "'></a>")
-            } else {
-                //渲染寻找中的模式
-                $(".qiugou .cars").html("")
-                for (var i = 0; i < qiugouData.items.length; i++) {
-                    var car = qiugouData.items[i];
-                    var html = '<a href="' + car.link + '" class="car" target="_blank">' +
-                        '<div class="pic"><img src="' + car.pic + '"></div>' +
-                        '<div class="title">' + car.name + '</div>' +
-                        '<div class="price"><em>' + car.price + '万 </em><span class="time">上牌：' + car.time + '</span></div></a>'
-                    $(".qiugou .cars").append(html)
-                }
-                for (var i = 0; i < 4 - qiugouData.items.length; i++) {
-                    $(".qiugou .cars").append("<a class='car no'></a>")
-                }
-            }
-        },
-        _redo: function() {
-            $(".qiugou .result-inner").animate({
-                marginLeft: 930
-            }, 800, 'easeOutExpo', function() {
-                $(".qiugou").css({
-                    overflow: "visible"
-                })
-            })
-            setTimeout(function() {
-                $(".qiugou .person-bg").removeClass("hidden").animate({
-                    backgroundPosition: 0
-                }, 800, 'easeOutExpo')
-            }, 800)
-            setTimeout(function() {
-                $(".qiugou .form").removeClass("hidden")
-                $(".qiugou .form .form-inner").animate({
-                    marginTop: 0
-                }, 800, 'easeOutExpo', function() {
-                    $(".qiugou .form").css({
-                        height: "auto",
-                        overflow: "visible"
-                    })
-                })
-            }, 1000)
-            $(".qiugou .head .head-inner").animate({
-                marginTop: 0
-            }, 300)
-            $("#qiugou_redo").addClass("hidden")
-        },
+
         _bindBrandChange: function() {
             var self = this;
             if (brandSelect.selected.length == 0 && seriesSelect.selected.length == 0) {
