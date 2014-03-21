@@ -259,6 +259,19 @@ a:hover {
   float: right;
   line-height: 20px;
 }
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: -1px;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-jian {
+  background: url(../images/mylist/icon-jian.png) no-repeat;
+}
+#mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .icon-new {
+  background: url(../images/mylist/icon-new.png) no-repeat;
+}
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .zhijiangcar .car-image .zhijiang {
   position: relative;
   width: 65px;
