@@ -71,9 +71,10 @@ a:hover {
   height: 174px;
   position: absolute;
   right: 250px;
-  top: -40px;
+  top: 0px;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
+  background-position: 0 -40px;
   z-index: 100;
 }
 #mylist #qiugou-container .wrapper .demand {
@@ -321,7 +322,6 @@ a:hover {
   padding-top: 40px;
 }
 #mylist .qiugou {
-  min-height: 427px;
   background: #f9f9f9;
   position: relative;
 }
@@ -334,7 +334,7 @@ a:hover {
   position: absolute;
   bottom: 0;
   right: 1px;
-  width: 392px;
+  width: 386px;
   height: 377px;
   z-index: 2;
 }
@@ -381,7 +381,6 @@ a:hover {
   color: #fc7000;
 }
 #mylist .qiugou .form {
-  position: relative;
   z-index: 5;
   width: 801px;
   padding-bottom: 40px;

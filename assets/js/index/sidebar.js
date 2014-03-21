@@ -5,19 +5,19 @@
             url: contextPath + "/pages/toolbarAction/selectToolbarCount.json",
             dataType: "json",
             success: function(data) {
-                if (data.buyer_car_recommand * 1 > 0) {
-                    $("#advisor_notice").html(data.buyer_car_recommand).removeClass("hidden")
-                    $("#advisor_count").html(data.buyer_car_recommand)
+                if (data.dayCarNum * 1 > 0) {
+                    $("#advisor_notice").html(data.dayCarNum).removeClass("hidden")
+                    $("#advisor_count").html(data.dayCarNum)
                     if (!$.cookie("f2e_guwen_close")) {
                         $(".my-advisor-tip").removeClass("hidden")
                     }
                 }
-                if (data.buyer_car_recommand * 1 > 0) {
-                    $("#fav_notice").html(data).removeClass("hidden")
-                }
+                // if (data.buyer_car_recommand * 1 > 0) {
+                //     $("#fav_notice").html(data).removeClass("hidden")
+                // }
 
-                $("#yuyue_notice").html(data).removeClass("hidden")
-                $("#pricedown_notice").html(data).removeClass("hidden")
+                // $("#yuyue_notice").html(data).removeClass("hidden")
+                // $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
         $(".advisor-tip-close").click(function(e) {
