@@ -136,7 +136,7 @@ html {
 #mylist #qiugou-container .wrapper .qiugou-filter .erweima .erweima-img {
   width: 100px;
   height: 173px;
-  background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: url("../images/index/erweima-img.png") no-repeat;
 }
 #mylist #content .wrapper {
   width: 1191px;
