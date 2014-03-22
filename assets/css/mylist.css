@@ -31,6 +31,9 @@ html {
   line-height: 35px;
   color: #333;
 }
+#mylist .no-result .wrapper .qiugou .inner .form .no-result {
+  display: block;
+}
 #mylist .no-result .wrapper .date-wrap .hourcar {
   display: none;
 }
@@ -45,7 +48,7 @@ html {
   margin: 0 auto;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
-  background: url("../images/index/qiugou-container.png") no-repeat scroll right bottom;
+  background: url("../images/index/qiugou-container.png?123") no-repeat scroll right bottom;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box {
   width: 1191px;
@@ -343,7 +346,7 @@ html {
   padding-top: 30px;
 }
 #mylist .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
+  background: #f9f9f9 url(../images/index/qiugou-container.png?125) no-repeat;
   background-position: bottom;
   position: absolute;
   bottom: -2px;
@@ -401,6 +404,14 @@ html {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;
+}
+#mylist .qiugou .form img.no-result {
+  width: 277px;
+  height: 263px;
+  position: absolute;
+  top: 125px;
+  left: 475px;
+  display: none;
 }
 #mylist .qiugou .form .shadow {
   width: 22px;
