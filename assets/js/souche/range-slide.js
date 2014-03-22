@@ -2,7 +2,7 @@ define(function() {
     var slider = function(_config) {
         this.config = {
             ele: "",
-            steps: ["0万", "5万", "8万", "12万", "16万", "20万", "25万", "30万"],
+            steps: ["0万", "3万", "5万", "6万", "7万", "8万", "9万", "10万", "11万", "12万", "13万", "14万", "15万", "16万", "17万", "18万", "19万", "20万", "21万", "22万", "23万", "24万", "25万", "30万", "35万", "40万", "50万", "60万", "70万", "100万", "无限"],
             min: "8万",
             max: "20万",
             tpl: "%"
@@ -11,16 +11,15 @@ define(function() {
         this.ele = $(this.config.ele);
         this.controlMin = $(".sc-rangeslider-min", this.ele);
         this.controlMax = $(".sc-rangeslider-max", this.ele);
-        this.min = 0;
-        this.max = 1;
+        this.data = {
+            min: null,
+            max: null
+        }
         this._init();
     }
     $.extend(slider.prototype, {
-        getValue: function() {
-            return {
-                min: this.min,
-                max: this.max
-            }
+        getData: function() {
+            return this.data;
         }
     })
     $.extend(slider.prototype, {
@@ -37,7 +36,6 @@ define(function() {
                 for (var i = 0; i < total - 1; i++) {
                     var min = i * eleWidth / (total - 1);
                     var max = (i + 1) * eleWidth / (total - 1);
-                    console.log("min:" + min + " max:" + max + " num:" + num + " i:" + i)
                     if (num >= min && num <= max) {
                         var middle = (min + max) / 2;
                         if (num < middle) return {
@@ -56,15 +54,37 @@ define(function() {
             $(self).on("minchange", function(e, data) {
                 $(".sc-rangeslider-tip-inner span", self.controlMin).html(self.config.tpl.replace("%", data.value))
                 $(".min-input", self.ele).val(data.value)
-                self.min = data.value;
-                $(self).trigger("change", self.getValue())
+                self.data.min = data;
+                $(self).trigger("change", self.getData())
             })
             $(self).on("maxchange", function(e, data) {
                 $(".sc-rangeslider-tip-inner span", self.controlMax).html(self.config.tpl.replace("%", data.value))
                 $(".max-input", self.ele).val(data.value)
-                self.max = data.value;
-                $(self).trigger("change", self.getValue())
+                self.data.max = data;
+                $(self).trigger("change", self.getData())
+            }).on("change", function(e, data) {
+                if (data.min && data.max)
+                    self.drawHighlight(data.min.pix, data.max.pix)
             })
+            // $(self.ele).on("click", function(e) {
+            //     console.log("click")
+            //     var x = e.pageX;
+            //     var middle = (self.data.min.pix + self.data.max.pix) / 2
+            //     if (x > middle) {
+            //         real = toStep(x - self.ele.offset().left)
+            //         $(self).trigger("maxchange", real)
+            //         self.controlMax.css({
+            //             left: real.pix - 10
+            //         })
+            //     } else {
+            //         real = toStep(x - self.ele.offset().left)
+            //         $(self).trigger("minchange", real)
+            //         self.controlMin.css({
+            //             left: real.pix - 10
+            //         })
+            //     }
+
+            // })
             if (this.config.min) {
                 var index = 0;
                 for (var i = 0; i < this.config.steps.length; i++) {
@@ -92,7 +112,9 @@ define(function() {
                 })
             }
             $(document.body).on("mousemove", function(e) {
+                console.log("move")
                 if (self.controlMin.dragging) {
+                    self.controlMax.dragging = false;
                     var mousePos = {
                         x: e.pageX,
                         y: e.pageY
@@ -104,11 +126,13 @@ define(function() {
                     if (x >= maxPos - stepLength) x = maxPos - stepLength;
 
                     real = toStep(x)
+                    real.pix = x - 10;
                     $(self).trigger("minchange", real)
                     self.controlMin.css({
-                        left: real.pix - 10
+                        left: x - 10
                     })
                 } else if (self.controlMax.dragging) {
+                    self.controlMin.dragging = false;
                     var mousePos = {
                         x: e.pageX,
                         y: e.pageY
@@ -119,24 +143,32 @@ define(function() {
                     if (x > self.ele.width()) x = self.ele.width();
                     if (x <= minPos + stepLength) x = minPos + stepLength;
                     real = toStep(x)
+                    real.pix = x - 10;
                     $(self).trigger("maxchange", real)
                     self.controlMax.css({
-                        left: real.pix - 10
+                        left: x - 10
                     })
                 }
-            }).on("mouseup", function() {
+            }).on("mouseup", function(e) {
+                e.stopPropagation();
                 self.controlMin.dragging = false;
                 self.controlMax.dragging = false;
             })
             this.controlMin.on("mousedown", function() {
                 self.controlMin.dragging = true;
-            }).on("mouseup", function() {
-                self.controlMin.dragging = false;
+            }).on("click", function(e) {
+                e.stopPropagation();
             })
             this.controlMax.on("mousedown", function() {
                 self.controlMax.dragging = true;
-            }).on("mouseup", function() {
-                self.controlMax.dragging = false;
+            }).on("click", function(e) {
+                e.stopPropagation();
+            })
+        },
+        drawHighlight: function(min, max) {
+            $(".sc-rangeslider-highlight", this.ele).css({
+                left: min,
+                width: max - min
             })
         }
     })
