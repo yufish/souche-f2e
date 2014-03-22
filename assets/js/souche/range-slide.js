@@ -15,7 +15,14 @@ define(function() {
         this.max = 1;
         this._init();
     }
-
+    $.extend(slider.prototype, {
+        getValue: function() {
+            return {
+                min: this.min,
+                max: this.max
+            }
+        }
+    })
     $.extend(slider.prototype, {
         _init: function() {
             this._bindControls();
@@ -49,10 +56,14 @@ define(function() {
             $(self).on("minchange", function(e, data) {
                 $(".sc-rangeslider-tip-inner span", self.controlMin).html(self.config.tpl.replace("%", data.value))
                 $(".min-input", self.ele).val(data.value)
+                self.min = data.value;
+                $(self).trigger("change", self.getValue())
             })
             $(self).on("maxchange", function(e, data) {
                 $(".sc-rangeslider-tip-inner span", self.controlMax).html(self.config.tpl.replace("%", data.value))
                 $(".max-input", self.ele).val(data.value)
+                self.max = data.value;
+                $(self).trigger("change", self.getValue())
             })
             if (this.config.min) {
                 var index = 0;
