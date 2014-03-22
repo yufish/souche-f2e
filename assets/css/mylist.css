@@ -42,6 +42,7 @@ html {
   width: 100%;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
+  position: relative;
 }
 #mylist #qiugou-container .wrapper {
   width: 1191px;
@@ -49,6 +50,7 @@ html {
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
   background: url("../images/index/qiugou-container.png?123") no-repeat scroll right bottom;
+  position: relative;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box {
   width: 1191px;
@@ -63,20 +65,10 @@ html {
   color: #fc7000;
   margin: 10px;
 }
-#mylist #qiugou-container .wrapper .qiugou-filter .wedo {
-  width: 70px;
-  height: 174px;
-  position: absolute;
-  right: 630px;
-  top: 115px;
-  cursor: pointer;
-  background: url("../images/index/wedo.png") no-repeat scroll;
-  background-position: 0 -40px;
-  z-index: 100;
-}
 #mylist #qiugou-container .wrapper .qiugou-filter .demand {
   width: 783px;
   padding-top: 20px;
+  position: relative;
   background: #fff;
   border: 1px solid #e4e4e4;
   border-bottom: none;
@@ -86,7 +78,7 @@ html {
   width: 22px;
   height: 136px;
   position: absolute;
-  right: 721px;
+  right: -23px;
   background: url(../images/index/shadow.png?123) no-repeat 0 0;
   z-index: 200;
 }
@@ -115,7 +107,6 @@ html {
   min-height: 30px;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .chosecentent {
-  cursor: pointer;
   font-weight: normal;
   margin-left: 20px;
   line-height: 20px;
@@ -128,7 +119,7 @@ html {
   height: 25px;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain i {
-  background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: url("../images/index/choseagain.png") no-repeat 0 0;
   height: 20px;
   width: 20px;
   float: left;
@@ -336,7 +327,7 @@ html {
   width: 70px;
   height: 174px;
   position: absolute;
-  right: 266px;
+  right: 274px;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
   background-position: 0 -40px;
