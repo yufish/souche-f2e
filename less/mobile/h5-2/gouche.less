@@ -12,7 +12,7 @@
 }
 .wrapper-320{
   overflow: hidden;
-  width: 320px;
+  width: 320;
   margin: 0 auto;
 }
 .header{
@@ -190,12 +190,12 @@
       border:none;
       font-size:18px;
       display: block;
-      margin: 0 auto;
+      margin: 0 8px;
     }
   }
   .brand{
     .selected-brand{
-      width: 300px;
+      width: 95%;
       margin: 0 auto;
       border: 1px dashed rgb(233,233,233);
       border-radius: 8px;
@@ -219,18 +219,94 @@
     }
 
     .brand-icons-container{
-      margin:10px 0 0 10px;
-      .icon-item{
-        width: 30px;
-        margin:0 23px 20px 23px;
-        float: left;
-        img{
-          width: 25px;
+      margin:10px 0 0 0;
+      .icon-group{
+        width: 100%;
+        margin: 0 auto; 
+        overflow: hidden;
+        text-align: center;
+        margin-top:15px;
+        #more-brand{
+          width:40px;
+          height: 40px;
+          border-radius: 80%;
+          background-color: rgb(223,223,223);
+          margin: 0 auto;
+          .more-circle{
+            width:24px;
+            margin: 0 auto;
+            overflow: hidden;
+          }
+          .more-inner-circle{
+            width: 4px;
+            height: 4px;
+            float: left;
+            border-radius: 80%;
+            margin:10px 2px 6px 2px;
+            background-color: rgb(102,102,102);
+          }
         }
-        .brand-name{
-          margin-top: 5px;
+        .icon-item{
+          width: 25%;
+          float: left;
+          position: relative;
+          .brand-img{
+            position: relative;
+            width: 28px;
+            margin: 0 auto;
+            .brand-array{
+              position: absolute;
+              background: url(../../../images/mobile/h5-2/brand-array.png) no-repeat center center; 
+              background-size: 13px;
+              left:7px;
+              bottom:-28px;
+              width:13px;
+              height: 7px;
+            }
+          }
+          img{
+            width: 28px;
+            height: 28px;
+          }
+          .brand-name{
+            margin-top: 5px;
+          }
+       
+        }
+
+        .fold-series{
+          width:100%;
+          clear:both;   
+          padding:8px 0;
+          .wrapper{
+            padding:20px;
+            overflow: hidden;
+            background-color:rgb(223,223,223);            
+            .series-item{   
+              width: 50%;
+              float: left;
+              margin: 8px 0;
+              .text{
+                text-align: center;
+                height: 35px;
+                line-height: 35px;
+                background-color: #fff;
+                margin: 0 8px;
+                border-radius: 8px;
+                color:rgb(71, 71, 71)
+              }
+              .text.selected{
+                border:2px solid @orange;
+                background:rgb(255,255,255,0) url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom; 
+              }
+            }
+
+          }
         }
       }
+
+    
+
 
     }
   }
