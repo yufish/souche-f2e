@@ -146,7 +146,7 @@ define(function() {
                     self.controlMin.css({
                         left: x - 10
                     })
-                    e.stopPropagation();
+                    e.preventDefault();
                 } else if (self.controlMax.dragging) {
                     self.controlMin.dragging = false;
                     var mousePos = {
@@ -170,12 +170,15 @@ define(function() {
                     self.controlMax.css({
                         left: x - 10
                     })
-                    e.stopPropagation();
+                    e.preventDefault();
                 }
             }).on(mouseup_key, function(e) {
                 e.stopPropagation();
                 self.controlMin.dragging = false;
                 self.controlMax.dragging = false;
+            })
+            this.ele.on(mousemove_key, function(e) {
+                e.comesFromScrollable = true;
             })
             this.controlMin.on(mousedown_key, function() {
                 self.controlMin.dragging = true;
