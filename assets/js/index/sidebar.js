@@ -23,6 +23,7 @@
         $(".advisor-tip-close").click(function(e) {
             e.preventDefault();
             $(".my-advisor-tip").addClass("hidden");
+            $("#advisor_notice").addClass("hidden")
             $.cookie('f2e_guwen_close', '1', {
                 expires: 1
             });
@@ -37,9 +38,12 @@
                 if (!$("#toolbar").hasClass("sidebar-active")) {
                     $("#toolbar").animate({
                         width: 905,
-                        height: 652
+                        height: ($(window).height() - 20) > 652 ? 652 : ($(window).height() - 20)
                     }, 500, function() {
 
+                    })
+                    $(".sidebar  iframe").css({
+                        height: (($(window).height() - 20) > 652 ? 652 : ($(window).height() - 20)) - 32
                     })
                     $("#toolbar").addClass("sidebar-active")
                     $(".sidebar").removeClass("active")
