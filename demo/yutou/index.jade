@@ -9,8 +9,8 @@ html
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
     <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
-    <link href="http://f2e.souche.com/assets/css/common.css?t=150" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/index.css?t=129" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
     <script>
       var contextPath = "";
     </script>
@@ -22,57 +22,27 @@ html
 
 
   body
-    div(style="margin-top:20px;").
-      <div class="sc-option" data-ui="dropdown" id="brand_option">
-        <div class="sc-option-hd">
-          <div class="sc-option-content">请选择价格</div>
-          <div class="sc-option-action"><i></i></div>
-        </div>
-        <ul class="sc-option-list hidden">
-          <li>
-            <a href="#">5万以下</a>
-          </li>
-        </ul>
-      </div>
-    div(style="margin-top:20px;").
-      <div class="sc-select" id="brand_select">
-        <div class="sc-select-hd">
-          <div class="sc-select-content">请选择价格</div>
-          <div class="sc-select-action"><i></i></div>
-        </div>
-        <ul class="sc-select-list hidden">
-          <li>
-            <a href="#" data-value="5">5万以下</a>
-          </li>
-        </ul>
-        <input type="hidden" name="" class="selected_value"/>
-      </div>
-    div(style="margin-top:20px;").
-      <div class="sc-select sc-multi-select" id="multi_select">
-        <div class="sc-select-hd">
-          <div class="sc-select-content clearfix"></div>
-          <div class="sc-select-action hidden"><i></i></div>
-        </div>
-        <ul class="sc-select-list hidden">
-          <li>
-            <a href="#" data-value="5"><input type="checkbox"/><span class='value'>5万以下</span></a>
-          </li>
-        </ul>
-        <input type="hidden" name="2,3,4" class="selected_values"/>
-      </div>
+    div.sc-rangeslider(style="margin:100px;")
+      div.sc-rangeslider-bg
+      div.sc-rangeslider-highlight
+      div.sc-rangeslider-controls
+        div.sc-rangeslider-min.sc-rangeslider-control(style="left:30%;")
+          div.sc-rangeslider-tip
+            div.sc-rangeslider-tip-inner
+              span 1万
+        div.sc-rangeslider-max.sc-rangeslider-control(style="left:60%;")
+          div.sc-rangeslider-tip
+            div.sc-rangeslider-tip-inner
+              span
   script.
     require.config({
       baseUrl: "http://f2e.souche.com/assets/js"
     });
-    require(['souche/select'], function (CustomSelect){
-      var select = new CustomSelect("brand_select")
-      $(select).bind("change",function(e,obj){
-        console.log(obj)
-      })
-      for(var i=0;i<100;i++){
-        select.addOption(i,"元素"+i)
-      }
-      select.removeOption(2)
+    require(['souche/range-slide'], function (Range){
+      var range = new Range({
+        ele:".sc-rangeslider"
+        });
+
     });
 //- script.
 //-   var select = new Souche.UI.CustomMultiSelect("multi_select")

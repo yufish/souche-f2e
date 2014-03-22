@@ -94,7 +94,6 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                             html += ('<a href="#" data-value="' + brand.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + brand.name + '</span></a>');
                         }
                         html += "</div></div>"
-
                     }
                     brandSelect.addOptions(html)
 
@@ -172,7 +171,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                     key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
-                    if (data.replace(/\s/, '') == "") {
+                    if (data.replace(/\s/, '') == "false") {
                         hasMore = false;
                     }
                     $(".load-more").addClass("hidden");
