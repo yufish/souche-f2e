@@ -177,6 +177,9 @@ define(function() {
                 self.controlMin.dragging = false;
                 self.controlMax.dragging = false;
             })
+            this.ele.on(mousemove_key, function(e) {
+                e.stopImmediatePropagation()
+            })
             this.controlMin.on(mousedown_key, function() {
                 self.controlMin.dragging = true;
             }).on("click", function(e) {
