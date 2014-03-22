@@ -138,7 +138,7 @@ define(function() {
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x < 0) x = 0;
-                    if (x >= maxPos - stepLength) x = maxPos - stepLength;
+                    if (x >= maxPos - 3 * stepLength) x = maxPos - 3 * stepLength;
 
                     real = toStep(x)
                     real.pix = x - 10;
@@ -163,7 +163,7 @@ define(function() {
                     var minPos = self.controlMin.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x > self.ele.width()) x = self.ele.width();
-                    if (x <= minPos + stepLength) x = minPos + stepLength;
+                    if (x <= minPos + 3 * stepLength) x = minPos + 3 * stepLength;
                     real = toStep(x)
                     real.pix = x - 10;
                     $(self).trigger("maxchange", real)
