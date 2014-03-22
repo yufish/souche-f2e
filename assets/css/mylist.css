@@ -31,6 +31,9 @@ html {
   line-height: 35px;
   color: #333;
 }
+#mylist .no-result .wrapper .qiugou .inner .form .no-result {
+  display: block;
+}
 #mylist .no-result .wrapper .date-wrap .hourcar {
   display: none;
 }
@@ -401,6 +404,14 @@ html {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;
+}
+#mylist .qiugou .form img.no-result {
+  width: 277px;
+  height: 263px;
+  position: absolute;
+  top: 125px;
+  left: 475px;
+  display: none;
 }
 #mylist .qiugou .form .shadow {
   width: 22px;
