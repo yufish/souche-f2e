@@ -99,7 +99,7 @@ Publish.prototype.pubFile = (file,callback)->
 
 
 pub = new Publish({
-  properties_file:"./resource.properties",
+  properties_file:argv.resource?argv.resource:"./resource.properties",
   white_list:['.js','.less','.css','.png','.jpg'], #文件后缀的白名单
   black_list:[/\.min\.js/] #文件名的黑名单，正则
 });
