@@ -1,4 +1,12 @@
 define(function() {
+    var mousedown_key = "mousedown";
+    var mouseup_key = "mouseup";
+    var mousemove_key = "mousemove";
+    if ('ontouchstart' in document.documentElement) {
+        mousedown_key = "touchstart";
+        mouseup_key = "touchend";
+        mousemove_key = "touchmove"
+    }
     var slider = function(_config) {
         this.config = {
             ele: "",
@@ -111,7 +119,7 @@ define(function() {
                     left: real.pix - 10
                 })
             }
-            $(document.body).on("mousemove", function(e) {
+            $(document.body).on(mousemove_key, function(e) {
                 console.log("move")
                 if (self.controlMin.dragging) {
                     self.controlMax.dragging = false;
@@ -149,17 +157,17 @@ define(function() {
                         left: x - 10
                     })
                 }
-            }).on("mouseup", function(e) {
+            }).on(mouseup_key, function(e) {
                 e.stopPropagation();
                 self.controlMin.dragging = false;
                 self.controlMax.dragging = false;
             })
-            this.controlMin.on("mousedown", function() {
+            this.controlMin.on(mousedown_key, function() {
                 self.controlMin.dragging = true;
             }).on("click", function(e) {
                 e.stopPropagation();
             })
-            this.controlMax.on("mousedown", function() {
+            this.controlMax.on(mousedown_key, function() {
                 self.controlMax.dragging = true;
             }).on("click", function(e) {
                 e.stopPropagation();
