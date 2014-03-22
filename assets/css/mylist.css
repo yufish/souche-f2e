@@ -250,6 +250,7 @@ html {
   margin-top: 10px;
   cursor: pointer;
   display: block;
+  min-height: 35px;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-title:hover {
   color: #FC7000;
