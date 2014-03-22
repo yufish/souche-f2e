@@ -147,6 +147,7 @@ define(function() {
                         left: x - 10
                     })
                     e.stopPropagation();
+                    e.preventDefault();
                 } else if (self.controlMax.dragging) {
                     self.controlMin.dragging = false;
                     var mousePos = {
@@ -171,6 +172,7 @@ define(function() {
                         left: x - 10
                     })
                     e.stopPropagation();
+                    e.preventDefault();
                 }
             }).on(mouseup_key, function(e) {
                 e.stopPropagation();
@@ -178,7 +180,7 @@ define(function() {
                 self.controlMax.dragging = false;
             })
             this.ele.on(mousemove_key, function(e) {
-                e.stopImmediatePropagation()
+                e.comesFromScrollable = true;
             })
             this.controlMin.on(mousedown_key, function() {
                 self.controlMin.dragging = true;
