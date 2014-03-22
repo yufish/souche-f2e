@@ -47,13 +47,12 @@ html
     });
     $('.cancel-icon').click(function(e){
       $('#keyword').val('');
+      $('#keyword').focus();
     })
     $('#search-form').submit(function(e){
-      e.preventDefault();
       if($('#keyword').val().trim()==''){
+        e.preventDefault();
         searchHidden();
-      }else{
-        $('#search-form').submit();
       }
     });
     $('#search-btn').click(function(e){

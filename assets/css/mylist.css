@@ -5,6 +5,9 @@ a {
 a:hover {
   color: #fc7000;
 }
+html {
+  background: #f5f5f5;
+}
 #mylist {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
   color: #333;
@@ -27,6 +30,9 @@ a:hover {
   font-size: 16px;
   line-height: 35px;
   color: #333;
+}
+#mylist .no-result .wrapper .date-wrap .hourcar {
+  display: none;
 }
 #mylist #qiugou-container {
   background-color: #f9f9f9;
@@ -244,6 +250,7 @@ a:hover {
   margin-top: 10px;
   cursor: pointer;
   display: block;
+  min-height: 35px;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-title:hover {
   color: #FC7000;
@@ -326,10 +333,10 @@ a:hover {
   padding-top: 30px;
 }
 #mylist .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-container.png?123) no-repeat;
+  background: #f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
   background-position: bottom;
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   right: 1px;
   width: 386px;
   height: 377px;
@@ -384,6 +391,15 @@ a:hover {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-bottom: none;
+}
+#mylist .qiugou .form .shadow {
+  width: 22px;
+  height: 136px;
+  position: absolute;
+  top: 105px;
+  right: 366px;
+  background: url(../images/index/shadow.png?123) no-repeat 0 0;
+  z-index: 200;
 }
 #mylist .qiugou .form .form-inner {
   margin-left: 50px;
