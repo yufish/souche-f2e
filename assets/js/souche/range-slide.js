@@ -2,10 +2,10 @@ define(function() {
     var mousedown_key = "mousedown";
     var mouseup_key = "mouseup";
     var mousemove_key = "mousemove";
-    if ('ontouchstart' in document.documentElement) {
+    if ('ontouchstart' in window) {
         mousedown_key = "touchstart";
         mouseup_key = "touchend";
-        mousemove_key = "touchmove"
+        mousemove_key = "touchmove";
     }
     var slider = function(_config) {
         this.config = {
@@ -122,10 +122,18 @@ define(function() {
             $(document.body).on(mousemove_key, function(e) {
                 if (self.controlMin.dragging) {
                     self.controlMax.dragging = false;
+
                     var mousePos = {
                         x: e.pageX,
                         y: e.pageY
                     }
+                    if (e.originalEvent.targetTouches && e.originalEvent.targetTouches[0]) {
+                        var mousePos = {
+                            x: e.originalEvent.targetTouches[0].pageX,
+                            y: e.originalEvent.targetTouches[0].pageY
+                        }
+                    }
+                    console.log(mousePos)
                     var sliderPos = self.ele.offset();
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
@@ -144,6 +152,12 @@ define(function() {
                     var mousePos = {
                         x: e.pageX,
                         y: e.pageY
+                    }
+                    if (e.originalEvent.targetTouches && e.originalEvent.targetTouches[0]) {
+                        var mousePos = {
+                            x: e.originalEvent.targetTouches[0].pageX,
+                            y: e.originalEvent.targetTouches[0].pageY
+                        }
                     }
                     var sliderPos = self.ele.offset()
                     var minPos = self.controlMin.offset().left - sliderPos.left;
