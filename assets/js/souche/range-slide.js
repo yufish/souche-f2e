@@ -120,7 +120,6 @@ define(function() {
                 })
             }
             $(document.body).on(mousemove_key, function(e) {
-                console.log("move")
                 if (self.controlMin.dragging) {
                     self.controlMax.dragging = false;
                     var mousePos = {
@@ -139,6 +138,7 @@ define(function() {
                     self.controlMin.css({
                         left: x - 10
                     })
+                    e.stopPropagation();
                 } else if (self.controlMax.dragging) {
                     self.controlMin.dragging = false;
                     var mousePos = {
@@ -156,6 +156,7 @@ define(function() {
                     self.controlMax.css({
                         left: x - 10
                     })
+                    e.stopPropagation();
                 }
             }).on(mouseup_key, function(e) {
                 e.stopPropagation();
