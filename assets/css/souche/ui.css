@@ -270,13 +270,15 @@ color: #ed9763;
   width:100%;
 }
 .sc-rangeslider-tip{
-  bottom:-30px;
-  text-align: center;
+  bottom:-50px;
    left: 50%;
    float: left;
+   position: relative;
 }
 .sc-rangeslider-tip-inner{
-  margin-left: -50%;
+  left: -50%;
+  text-align: center;
+  position: relative;
 }
 .sc-rangeslider-tip span{
   border:1px solid #ddd;
