@@ -43,65 +43,65 @@ html {
 #mylist #qiugou-container .wrapper {
   width: 1191px;
   margin: 0 auto;
-  position: relative;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
-  height: 340px;
+  background: url("../images/index/qiugou-container.png") no-repeat scroll right bottom;
 }
-#mylist #qiugou-container .wrapper .qiugou-box {
+#mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box {
   width: 1191px;
-  background: url("../images/index/qiugou-container.png") no-repeat scroll;
-  background-position: right;
-  height: 340px;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  overflow: hidden;
+  margin-top: 30px;
 }
-#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title {
-  height: 64px;
-  padding-top: 15px;
-  font-size: 25px;
+#mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box .qiugou-title {
+  height: 60px;
+  font-size: 28px;
   color: #222222;
-  line-height: 60px;
 }
-#mylist #qiugou-container .wrapper .qiugou-box .qiugou-title span {
+#mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box .qiugou-title span {
   color: #fc7000;
   margin: 10px;
 }
-#mylist #qiugou-container .wrapper .wedo {
+#mylist #qiugou-container .wrapper .qiugou-filter .wedo {
   width: 70px;
   height: 174px;
   position: absolute;
-  right: 250px;
-  top: 0px;
+  right: 630px;
+  top: 115px;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
   background-position: 0 -40px;
   z-index: 100;
 }
-#mylist #qiugou-container .wrapper .demand {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand {
   width: 783px;
-  float: left;
-  height: 260px;
+  padding-top: 20px;
   background: #fff;
   border: 1px solid #e4e4e4;
   border-bottom: none;
   padding-left: 20px;
 }
-#mylist #qiugou-container .wrapper .demand .demand-title {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .shadow {
+  width: 22px;
+  height: 136px;
+  position: absolute;
+  right: 721px;
+  background: url(../images/index/shadow.png?123) no-repeat 0 0;
+  z-index: 200;
+}
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .demand-title {
   color: #222;
-  font-size: 16px;
-  line-height: 25px;
-  margin-bottom: 10px;
-  margin-top: 25px;
+  font-size: 15px;
+  line-height: 30px;
   margin-left: 15px;
 }
-#mylist #qiugou-container .wrapper .demand .chosecar-box {
-  height: 180px;
-  float: left;
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap {
+  width: 100%;
+  padding-bottom: 20px;
 }
-#mylist #qiugou-container .wrapper .demand .chosecar-box .chosecar li {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box {
+  float: left;
+  display: inline;
+}
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li {
   padding-left: 15px;
   width: 555px;
   border-bottom: 1px solid #e4e4e4;
@@ -109,35 +109,37 @@ html {
   color: #222;
   font-weight: bold;
   line-height: 27px;
+  min-height: 30px;
 }
-#mylist #qiugou-container .wrapper .demand .chosecar-box .chosecar li .chosecentent {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .chosecentent {
   cursor: pointer;
   font-weight: normal;
   margin-left: 20px;
+  line-height: 20px;
 }
-#mylist #qiugou-container .wrapper .demand .choseagain {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain {
   margin-top: 20px;
   color: #fc7000;
   font-size: 12px;
   font-size: 16px;
   height: 25px;
 }
-#mylist #qiugou-container .wrapper .demand .choseagain i {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain i {
   background: url("../images/index/choseagain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   height: 20px;
   width: 20px;
   float: left;
   margin: 2px 15px;
 }
-#mylist #qiugou-container .wrapper .demand .choseagain a {
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain a {
   color: #fc7000;
   line-height: 20px;
 }
-#mylist #qiugou-container .wrapper .erweima {
+#mylist #qiugou-container .wrapper .qiugou-filter .erweima {
   width: 155px;
   float: right;
 }
-#mylist #qiugou-container .wrapper .erweima .erweima-img {
+#mylist #qiugou-container .wrapper .qiugou-filter .erweima .erweima-img {
   width: 100px;
   height: 173px;
   background: url("../images/index/erweima-img.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -178,7 +180,6 @@ html {
   line-height: 32px;
 }
 #mylist #content .wrapper .date-wrap .date-box {
-  height: 310px;
   margin-bottom: 20px;
 }
 #mylist #content .wrapper .date-wrap .date-box .date-title {
@@ -220,7 +221,6 @@ html {
   line-height: 15px;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap {
-  height: 252px;
   margin-top: 20px;
   margin-left: 25px;
   border-left: 1px solid #e4e4e4;
@@ -328,6 +328,16 @@ html {
 #mylist .qiugou {
   background: #f9f9f9;
   position: relative;
+}
+#mylist .qiugou .wedo {
+  width: 70px;
+  height: 174px;
+  position: absolute;
+  right: 266px;
+  cursor: pointer;
+  background: url("../images/index/wedo.png") no-repeat scroll;
+  background-position: 0 -40px;
+  z-index: 100;
 }
 #mylist .qiugou .inner {
   padding-top: 30px;
