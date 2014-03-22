@@ -220,6 +220,76 @@ color: #ed9763;
     overflow: auto;
     padding:10px 0;
 }
+
+.sc-rangeslider{
+  height:130px;
+  position: relative;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.sc-rangeslider-bg{
+  height:15px;
+  background:#d9d9d9;
+  border-radius: 15px;
+  margin-top: 10px;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+.sc-rangeslider-highlight{
+  height:15px;
+  background:#a8d081;
+  border-radius: 15px;
+  margin-top: 10px;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+.sc-rangeslider-control{
+  width:20px;
+  border:1px solid #ddd;
+  height:35px;
+  background:#fff;
+  border-radius: 20px;
+  position: absolute;
+  top:0;
+  box-shadow: 1px 1px 1px #ccc;
+  cursor: pointer;
+}
+.sc-rangeslider-controls{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+.sc-rangeslider-tip{
+  bottom:-50px;
+   left: 50%;
+   float: left;
+   position: relative;
+}
+.sc-rangeslider-tip-inner{
+  left: -50%;
+  text-align: center;
+  position: relative;
+}
+.sc-rangeslider-tip span{
+  border:1px solid #ddd;
+  background:#fff;
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 20px;
+  padding:0 5px;
+  line-height: 18px;
+  white-space:nowrap;
+}
 .apply_popup .tip{line-height: 40px;font-size: 20px;color: #111;}
 .apply_popup{
   width:600px;

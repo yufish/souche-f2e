@@ -5,6 +5,9 @@ a {
 a:hover {
   color: #fc7000;
 }
+html {
+  background: #f5f5f5;
+}
 #mylist {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
   color: #333;
@@ -247,6 +250,7 @@ a:hover {
   margin-top: 10px;
   cursor: pointer;
   display: block;
+  min-height: 35px;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-title:hover {
   color: #FC7000;
@@ -332,7 +336,7 @@ a:hover {
   background: #f9f9f9 url(../images/index/qiugou-container.png?124) no-repeat;
   background-position: bottom;
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   right: 1px;
   width: 386px;
   height: 377px;
