@@ -870,15 +870,6 @@
 #guwen {
   position: relative;
 }
-#guwen-list .content .gouche-info .text {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-#guwen-list .content .gouche-info .text p {
-  line-height: 45px;
-}
 #guwen-list .header .back-icon {
   padding: 0;
   padding-left: 12px;
@@ -899,6 +890,15 @@
 #guwen-list .content .gouche-info {
   margin-bottom: 10px;
 }
+#guwen-list .content .gouche-info .text.found {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#guwen-list .content .gouche-info .text.found p {
+  line-height: 45px;
+}
 #guwen-list .content .modify-demand {
   width: 300px;
   margin-bottom: 10px;
@@ -911,6 +911,7 @@
   border: none;
   height: 28px;
   border-radius: 8px;
+  color: #fff;
 }
 #guwen-list .content .all-group {
   padding: 7px 0 0 10px;
