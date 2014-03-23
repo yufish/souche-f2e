@@ -114,11 +114,13 @@ padding-left: 0;
   position: relative;
   border:1px solid #bababa;
   cursor:pointer;
+  white-space:nowrap; 
 }
 .sc-select.sc-active .sc-select-hd .sc-selected-item{
 background: #fff7ec;
 border:1px solid #ed9763;
 color: #ed9763;
+white-space:nowrap; 
     }
 .sc-select-hd .sc-selected-item .sc-close{
   font-style: normal;
@@ -244,7 +246,6 @@ color: #ed9763;
 .sc-rangeslider-highlight{
   height:15px;
   background:#a8d081;
-  border-radius: 15px;
   margin-top: 10px;
   position: absolute;
   top:0;
