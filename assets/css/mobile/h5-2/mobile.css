@@ -541,9 +541,9 @@
 #gouche-h5-2 #page-2,
 #gouche-h5-2 #page-3,
 #gouche-h5-2 #page-4 {
-  /*width:100%;
+  width: 100%;
   position: absolute;
-  top:0;*/
+  top: 0;
 }
 #gouche-h5-2 #page-1 {
   /*left:0;*/
@@ -551,8 +551,8 @@
 #gouche-h5-2 #page-2,
 #gouche-h5-2 #page-3,
 #gouche-h5-2 #page-4 {
-  /*left:100%;
-  display: none;*/
+  left: 100%;
+  display: none;
 }
 #gouche-h5-2 .wrapper-320 {
   overflow: hidden;
@@ -720,7 +720,7 @@
 #gouche-h5-2 .content .gouche-info .text .step #step-circle-3 {
   left: 216px;
 }
-#gouche-h5-2 .content .btns .next-btn {
+#gouche-h5-2 .content .btns button {
   background-color: #fc7000;
   width: 300px;
   height: 40px;
@@ -730,53 +730,55 @@
   font-size: 18px;
   display: block;
   margin: 0 8px;
+  margin-top: 30px;
 }
-#gouche-h5-2 .content .brand .selected-brand {
-  width: 95%;
+#gouche-h5-2 .content #brand .selected-brand {
+  width: 90%;
   margin: 0 auto;
   border: 1px dashed #e9e9e9;
   border-radius: 8px;
   padding: 9px 3px 3px 0;
   overflow: hidden;
 }
-#gouche-h5-2 .content .brand .selected-brand .sb-item {
+#gouche-h5-2 .content #brand .selected-brand .sb-item {
   margin: 0 0 6px 6px;
   float: left;
   border: 2px solid #e9e9e9;
   border-radius: 8px;
   padding: 9px;
 }
-#gouche-h5-2 .content .brand .selected-brand .sb-item .close-icon {
+#gouche-h5-2 .content #brand .selected-brand .sb-item .close-icon {
   display: inline-block;
   background: url(../../../images/mobile/h5-2/search-cancel.png) no-repeat center center;
   width: 18px;
   height: 18px;
   background-size: 18px;
   vertical-align: -3px;
+  margin-left: 3px;
 }
-#gouche-h5-2 .content .brand .brand-icons-container {
+#gouche-h5-2 .content #brand #brand-icons-container {
   margin: 10px 0 0 0;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
   text-align: center;
   margin-top: 15px;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group #more-brand {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group #more-brand {
   width: 40px;
   height: 40px;
   border-radius: 80%;
   background-color: #dfdfdf;
   margin: 0 auto;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group #more-brand .more-circle {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group #more-brand .more-circle {
   width: 24px;
   margin: 0 auto;
   overflow: hidden;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group #more-brand .more-inner-circle {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group #more-brand .more-inner-circle {
   width: 4px;
   height: 4px;
   float: left;
@@ -784,17 +786,17 @@
   margin: 10px 2px 6px 2px;
   background-color: #666666;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .icon-item {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .icon-item {
   width: 25%;
   float: left;
   position: relative;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .icon-item .brand-img {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .icon-item .brand-img {
   position: relative;
   width: 28px;
   margin: 0 auto;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .icon-item .brand-img .brand-array {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .icon-item .brand-img .brand-array {
   position: absolute;
   background: url(../../../images/mobile/h5-2/brand-array.png) no-repeat center center;
   background-size: 13px;
@@ -802,30 +804,32 @@
   bottom: -28px;
   width: 13px;
   height: 7px;
+  display: none;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .icon-item img {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .icon-item img {
   width: 28px;
   height: 28px;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .icon-item .brand-name {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .icon-item .brand-name {
   margin-top: 5px;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .fold-series {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .fold-series {
   width: 100%;
   clear: both;
   padding: 8px 0;
+  display: none;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .fold-series .wrapper {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .fold-series .wrapper {
   padding: 20px;
   overflow: hidden;
   background-color: #dfdfdf;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .fold-series .wrapper .series-item {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .fold-series .wrapper .series-item {
   width: 50%;
   float: left;
   margin: 8px 0;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .fold-series .wrapper .series-item .text {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .fold-series .wrapper .series-item .text {
   text-align: center;
   height: 35px;
   line-height: 35px;
@@ -833,8 +837,35 @@
   margin: 0 8px;
   border-radius: 8px;
   color: #474747;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 2px solid #fff;
 }
-#gouche-h5-2 .content .brand .brand-icons-container .icon-group .fold-series .wrapper .series-item .text.selected {
+#gouche-h5-2 .content #brand #brand-icons-container .icon-group .fold-series .wrapper .series-item .text.selected {
+  border: 2px solid #fc7000;
+  background: #ffffff url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom;
+}
+#gouche-h5-2 .content #carYearContainer {
+  margin: 25px 0 100px 0px;
+  padding: 0 20px;
+}
+#gouche-h5-2 .content #carYearContainer .year-group {
+  overflow: hidden;
+}
+#gouche-h5-2 .content #carYearContainer .year-item {
+  text-align: center;
+  float: left;
+  width: 33.3%;
+}
+#gouche-h5-2 .content #carYearContainer .year-item .text {
+  border: 2px solid #dfdfdf;
+  height: 35px;
+  line-height: 35px;
+  margin: 5px;
+  border-radius: 8px;
+}
+#gouche-h5-2 .content #carYearContainer .year-item .text.selected {
   border: 2px solid #fc7000;
   background: #ffffff url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom;
 }

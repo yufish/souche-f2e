@@ -24,8 +24,7 @@ html
                 input#keyword-1(type='text',name='keyword') 
                 span.cancel-icon#cancel-icon-1
             .search-btn#search-btn-1
-              span 搜索
-      
+              span 搜索  
       .content
         .wrapper-320
           .gouche-info
@@ -70,140 +69,175 @@ html
                 .circle#step-circle-3
               p 您喜欢的品牌是?
               .hi-img
-        .brand
+        #brand
           .selected-brand
-            .sb-item
-              span.text 宝马1系
-              i.close-icon
-            .sb-item
-              span.text 宝马7系
-              i.close-icon
-            .sb-item
-              span.text 保时捷Panamear
-              i.close-icon
-            .sb-item
-              span.text 大众宝来
-              i.close-icon
+            
 
-          .brand-icons-container
-            .icon-group(data-index='1')
-              .icon-item(data-index='1')
+          #brand-icons-container
+            .icon-group
+              .icon-item(data-code='1' data-index='1')
                 .brand-img
                   img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
                   .brand-array
                 .brand-name 宝马
-              .icon-item(data-index='2')
+             
+              .icon-item(data-code='2' data-index='2')
                 .brand-img
                   img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
                   .brand-array
                 .brand-name 奔驰
-              .icon-item(data-index='3')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 奥迪
-              .icon-item(data-index='4')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 大众
-              .fold-series
-                  .wrapper
-                    .series-item 
-                      .text 全部车系
-                    .series-item 
-                      .text.selected 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-            .icon-group(data-index='2')
-              .icon-item(data-index='1')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 宝马
-              .icon-item(data-index='2')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 奔驰
-              .icon-item(data-index='3')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 奥迪
-              .icon-item(data-index='4')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 大众
-              .fold-series
-                  .wrapper
-                    .series-item 
-                      .text 全部车系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-            .icon-group(data-index='3')
-              .icon-item(data-index='1')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 宝马
-              .icon-item(data-index='2')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 奔驰
-              .icon-item(data-index='3')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 奥迪
-              .icon-item(data-index='4')
-                .brand-img
-                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
-                  .brand-array
-                .brand-name 大众
-              .fold-series
-                  .wrapper
-                    .series-item 
-                      .text 全部车系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
 
-            .icon-group#group-has-more(data-index='4')
-              .icon-item(data-index='1')
+              .icon-item(data-code='3' data-index='3')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 奥迪
+
+              .icon-item(data-code='4' data-index='4')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 大众
+              .fold-series(data-index='1')
+                .wrapper
+                  .series-item(data-code='' data-hidden-text='宝马') 
+                    .text 全部车系
+                  .series-item(data-code='2') 
+                    .text 宝马3系
+                  .series-item(data-code='3')
+                    .text 全部7系
+                  .series-item(data-code='4')
+                    .text 宝马3系
+                  .series-item(data-code='5') 
+                    .text 全部7系
+                  .series-item(data-code='6') 
+                    .text 宝马3系
+              .fold-series(data-index='2')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1')
+                    .text 宝马3系
+              .fold-series(data-index='3')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1') 
+                    .text 宝马3系                    
+              .fold-series(data-index='4')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1')  
+                    .text 宝马3系 
+
+            .icon-group
+              .icon-item(data-code='5' data-index='1')
                 .brand-img
                   img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
                   .brand-array
                 .brand-name 宝马
-              .icon-item(data-index='2')
+             
+              .icon-item(data-code='6' data-index='2')
                 .brand-img
                   img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
                   .brand-array
                 .brand-name 奔驰
-              .icon-item(data-index='3')
+              
+              .icon-item(data-code='7' data-index='3')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 奥迪
+                           
+              .icon-item(data-code='8' data-index='4')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 大众
+              .fold-series(data-index='1')
+                .wrapper
+                  .series-item(data-code='')  
+                    .text 全部车系
+                  .series-item(data-code='1') 
+                    .text 宝马3系
+              .fold-series(data-index='2')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1') 
+                    .text 宝马3系
+              .fold-series(data-index='3')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1') 
+                    .text 宝马3系                    
+              .fold-series(data-index='4')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item(data-code='1')  
+                    .text 宝马3系 
+
+            .icon-group
+              .icon-item(data-code='9' data-index='1')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 宝马
+              .icon-item(data-code='10' data-index='2')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 奔驰
+              .icon-item(data-code='11' data-index='3')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 奥迪
+              .icon-item(data-code='12' data-index='4')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 大众
+              .fold-series(data-index='1')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系
+              .fold-series(data-index='2')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系
+              .fold-series(data-index='3')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系                    
+              .fold-series(data-index='4')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系 
+
+            .icon-group#group-has-more
+              .icon-item(data-code='13' data-index='1')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 宝马
+              .icon-item(data-code='14' data-index='2')
+                .brand-img
+                  img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
+                  .brand-array
+                .brand-name 奔驰
+              .icon-item(data-code='15' data-index='3')
                 .brand-img
                   img(src="http://souche.cdn.aliyuncs.com/files/brand/brand-20.jpg_100x10000.jpg")
                   .brand-array
@@ -215,19 +249,29 @@ html
                     .more-inner-circle
                     .more-inner-circle
                   .text 更多
+              .fold-series(data-index='1' )
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系
+              .fold-series(data-index='2')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系
+              .fold-series(data-index='3')
+                .wrapper
+                  .series-item(data-code='') 
+                    .text 全部车系
+                  .series-item 
+                    .text 宝马3系 
                 
-              .fold-series
+                .fold-series
                   .wrapper
                     .series-item 
                       .text 全部车系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
-                    .series-item 
-                      .text 宝马3系
-                    .series-item 
-                      .text 全部7系
                     .series-item 
                       .text 宝马3系
         .btns
@@ -264,6 +308,35 @@ html
               .hi-img
 
         #carYearContainer
-          
+            .year-group
+              .year-item(data-code='')
+                .text 不限
+              .year-item(data-code='') 
+                .text 不限
+              .year-item(data-code='')
+                .text 不限
+            .year-group(data-code='')
+              .year-item(data-code='')
+                .text 不限
+              .year-item(data-code='')
+                .text 不限
+              .year-item(data-code='')
+                .text 不限
+        .btns
+          .wrapper-320
+            button#submit-btn 完成定制
+    <div class="loading-cover-layer hidden"></div>
+
+    script(src='../../../assets/js/mobile/h5-2/gouche.js')
+
+      
+
+      
+
+
+
+
+
+
 
 

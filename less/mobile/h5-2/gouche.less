@@ -1,14 +1,14 @@
 #page-1,#page-2,#page-3,#page-4{
-  /*width:100%;
+  width:100%;
   position: absolute;
-  top:0;*/
+  top:0;
 }
 #page-1{
   /*left:0;*/
 }
 #page-2,#page-3,#page-4{
-  /*left:100%;
-  display: none;*/
+  left:100%;
+  display: none;
 }
 .wrapper-320{
   overflow: hidden;
@@ -181,7 +181,7 @@
     }
   }
   .btns{
-    .next-btn{
+    button{
       background-color: @orange;
       width:300px;
       height: 40px;
@@ -191,11 +191,13 @@
       font-size:18px;
       display: block;
       margin: 0 8px;
+      margin-top:30px;
     }
   }
-  .brand{
+  //page-2
+  #brand{
     .selected-brand{
-      width: 95%;
+      width: 90%;
       margin: 0 auto;
       border: 1px dashed rgb(233,233,233);
       border-radius: 8px;
@@ -214,11 +216,12 @@
           height: 18px;
           background-size: 18px;
           vertical-align: -3px;
+          margin-left: 3px;
         }
       }
     }
 
-    .brand-icons-container{
+    #brand-icons-container{
       margin:10px 0 0 0;
       .icon-group{
         width: 100%;
@@ -262,6 +265,7 @@
               bottom:-28px;
               width:13px;
               height: 7px;
+              display: none;
             }
           }
           img{
@@ -274,40 +278,66 @@
        
         }
 
-        .fold-series{
-          width:100%;
-          clear:both;   
-          padding:8px 0;
-          .wrapper{
-            padding:20px;
-            overflow: hidden;
-            background-color:rgb(223,223,223);            
-            .series-item{   
-              width: 50%;
-              float: left;
-              margin: 8px 0;
-              .text{
-                text-align: center;
-                height: 35px;
-                line-height: 35px;
-                background-color: #fff;
-                margin: 0 8px;
-                border-radius: 8px;
-                color:rgb(71, 71, 71)
-              }
-              .text.selected{
-                border:2px solid @orange;
-                background:rgb(255,255,255,0) url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom; 
-              }
+      .fold-series{
+        width:100%;
+        clear:both;   
+        padding:8px 0;
+        display: none;
+        .wrapper{
+          padding:20px;
+          overflow: hidden;
+          background-color:rgb(223,223,223);            
+          .series-item{   
+            width: 50%;
+            float: left;
+            margin: 8px 0;
+            .text{
+              text-align: center;
+              height: 35px;
+              line-height: 35px;
+              background-color: #fff;
+              margin: 0 8px;
+              border-radius: 8px;
+              color:rgb(71, 71, 71);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              border:2px solid #fff;
             }
-
+            .text.selected{
+              border:2px solid @orange;
+              background:rgb(255,255,255,0) url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom; 
+            }
           }
+
         }
       }
+      }
+    }
+  }//end of page-2
 
-    
-
-
+  //page-3
+  #carYearContainer{
+    margin:25px 0 100px 0px;
+    padding:0 20px;
+    .year-group{
+      overflow: hidden;
+    }
+    .year-item{
+      text-align: center;
+      float: left;
+      width: 33.3%;
+      .text{
+        border:2px solid rgb(223,223,223);
+        height: 35px;
+        line-height: 35px;
+        margin: 5px;
+        border-radius: 8px;
+      }
+      .text.selected{
+         border:2px solid @orange;
+         background:rgb(255,255,255,0) url(../../../images/mobile/h5-2/selected-corner.png) no-repeat right bottom;   
+      }
     }
   }
 }
