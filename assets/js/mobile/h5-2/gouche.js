@@ -1,29 +1,15 @@
 function createBrandsManager(_container){
   var container = _container;
 
-  var removeSeries=function(bObj,sCode){
-      if(!(sCode in bObj))return;
-      var sObj = bObj[sCode];
-      sObj[0].remove();
-      sObj[1].removeClass('selected')
-      delete bObj[sCode];
-  }
-  var addSeries=function(bObj,sCode,jqObjArr){
-      bObj[sCode]=jqObjArr;
-      container.append(jqObjArr[0]);
-      jqObjArr[1].addClass('selected');
-  }
-  
-
   var brandsManager = {
     brands:{},//{bCode:{sCode:$}}
     //sCode='' for 不限
     toggleSeries:function(bCode,sCode,jqObjArr){
       var brands = this.brands;
-      var bObj = brands[bCode] = brands[bCode] || {};
+      var bObj = brands[bCode]// = brands[bCode] || {};
       
-      if(bObj[sCode]){
-        removeSeries(bObj,sCode);
+      if(bObj && bObj[sCode]){
+        this.removeSeries(bCode,sCode);
         if($.isEmptyObject(brands)){
           container.hide();
         }
@@ -32,24 +18,36 @@ function createBrandsManager(_container){
         if($.isEmptyObject(brands)){
           container.show();
         }
+        bObj = brands[bCode] = (brands[bCode] || {});
         if(sCode==''){
           for(var i in bObj){
-            removeSeries(bObj,i);
+            this.removeSeries(bCode,i);
           }
         }else{
-          removeSeries(bObj,'');
+          this.removeSeries(bCode,'');
         }
-        addSeries(bObj,sCode,jqObjArr);
+        this.addSeries(bCode,sCode,jqObjArr);
 
       }
     },
-
-    removeByBrands:function(bCode){
-      var sObj = brands[bCode];
-      for(var i in sObj){
-        sObj[i].remove();
+    removeSeries:function(bCode,sCode){
+      var bObj = this.brands[bCode];
+      if(!(sCode in bObj))return;
+      var sObj = bObj[sCode];
+      sObj[0].remove();
+      sObj[1].removeClass('selected')
+      delete bObj[sCode];
+      if($.isEmptyObject(bObj))
+      {
+        delete this.brands[bCode];
       }
-      brands[bCode]=undefined;
+    },
+    addSeries:function(bCode,sCode,jqObjArr){
+      var brands =this.brands;
+      var bObj = brands[bCode]=(brands[bCode]||{})
+      bObj[sCode]=jqObjArr;
+      container.append(jqObjArr[0]);
+      jqObjArr[1].addClass('selected');
     }
   }
   return brandsManager;
@@ -93,14 +91,9 @@ function backPage(){
   curPageIndex=pageIndex;
 }
 
-$('#page-1 .next-btn').click(function(){
+$('#page-1,#page-2 .next-btn').click(function(){
   gotoPage();
 })
-
-$('#page-2 .next-btn').click(function(){
-  gotoPage();
-})
-
 
 $('.back-icon').click(function(){
   backPage();
@@ -131,12 +124,17 @@ $('.icon-item').click(function(){
   var $self = $(this);
 
   var loaclBrandCode=$self.attr('data-code');
+
   if(curBrandCode===loaclBrandCode){
     return;
   }
   if($curFold){
     $curFold.hide();
     $curBrandArray.hide();
+  }
+  //click '更多'
+  if(!loaclBrandCode){
+    return;
   }
   var dataIndex = $self.attr('data-index')
   curBrandCode = $self.attr('data-code');
@@ -147,10 +145,12 @@ $('.icon-item').click(function(){
   });
 })
 
-var _dataObj={
-  brands:[],
-  series:[],
-}
+$('#more-brand').click(function(){
+  //ajax
+  //remove self
+  //pick first one add to group which contains #more-brand
+  //loop to add group(4 icon-item ;4 fold-series )
+})
 
 
 
@@ -165,4 +165,10 @@ $('.series-item').click(function(){
             +'</div>';
   //$(this).find('.text').toggleClass('selected');
   brandsManager.toggleSeries(curBrandCode,sCode,[$(html),textDiv]);
+})
+
+
+$('.year-item').click(function(){
+  $('.year-item .text').removeClass('selected');
+  $(this).find('.text').addClass('selected')
 })
