@@ -31,12 +31,30 @@
 }
 
 //下面两个公用
-@import '../../../../less/mobile/h5-2/gouche.less';
-#guwen{
-  position: relative;
-}
 
-#guwen-list{
+
+#guwen-h5-2{
+  #page-1,#page-2,#page-3,#page-4{
+  width:100%;
+  position: absolute;
+  top:0;
+  }
+  #page-1{
+    /*left:0;*/
+  }
+  #page-2,#page-3,#page-4{
+    left:100%;
+    display: none;
+  }
+    position: relative;
+}
+@import '../../../../less/mobile/h5-2/gouche.less';
+
+#guwen-list-h5-2{
  
   @import '../../../../less/mobile/h5-2/guwen-list.less';
 }
+#index-h5-2{
+  @import '../../../../less/mobile/h5-2/index_new.less';
+}
+
