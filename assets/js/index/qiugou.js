@@ -223,7 +223,10 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     var car = qiugouData.items[i];
                     var html = '<a href="' + car.link + '" class="car" target="_blank">' +
                         '<div class="pic"><img src="' + car.pic + '"></div>' +
-                        '<div class="title">' + car.name + '</div>' +
+                        '<div class="title">' +
+                        (car.isJian ? '<i class="icon-jian icon"></i>' : '') +
+                        (car.isNew ? '<i class="icon-new icon"></i>' : '') +
+                        car.name + '</div>' +
                         '<div class="price"><em>' + car.price + '万 </em><span class="time">上牌：' + car.time + '</span></div></a>'
                     $(".qiugou .cars").append(html)
                 }
@@ -235,7 +238,10 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     var car = qiugouData.items[i];
                     var html = '<a href="' + car.link + '" class="car" target="_blank">' +
                         '<div class="pic"><img src="' + car.pic + '"></div>' +
-                        '<div class="title">' + car.name + '</div>' +
+                        '<div class="title">' +
+                        (car.isJian ? '<i class="icon-jian icon"></i>' : '') +
+                        (car.isNew ? '<i class="icon-new icon"></i>' : '') +
+                        car.name + '</div>' +
                         '<div class="price"><em>' + car.price + '万 </em><span class="time">上牌：' + car.time + '</span></div></a>'
                     $(".qiugou .cars").append(html)
                 }
