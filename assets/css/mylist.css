@@ -47,6 +47,7 @@ html {
 #mylist #qiugou-container .wrapper {
   width: 1191px;
   margin: 0 auto;
+  position: relative;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter {
   background: url("../images/index/qiugou-container.png?123") no-repeat scroll right bottom;
