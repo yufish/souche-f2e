@@ -1013,6 +1013,7 @@
 #index-h5-2 .card-box {
   opacity: 0.85;
   -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 #index-h5-2 .row {
   margin: 10px 0;
@@ -1133,4 +1134,5 @@
 }
 #index-h5-2 .scale {
   -webkit-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
 }
