@@ -227,7 +227,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                         '<div class="price"><em>' + car.price + '万 </em><span class="time">上牌：' + car.time + '</span></div></a>'
                     $(".qiugou .cars").append(html)
                 }
-                $(".qiugou .cars").append("<a class='car more' target='_blank' href='" + contextPath + "/pages/onsale/sale_car_list.html?match=" + qiugouData.user + "'></a>")
+                $(".qiugou .cars").append("<a class='car more' target='_blank' href='" + contextPath + "/pages/onsale/match_car_list.html'></a>")
             } else {
                 //渲染寻找中的模式
                 $(".qiugou .cars").html("")

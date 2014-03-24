@@ -10,7 +10,7 @@ define(function() {
     var slider = function(_config) {
         this.config = {
             ele: "",
-            steps: ["0万", "3万", "5万", "6万", "7万", "8万", "9万", "10万", "11万", "12万", "13万", "14万", "15万", "16万", "17万", "18万", "19万", "20万", "21万", "22万", "23万", "24万", "25万", "30万", "35万", "40万", "50万", "60万", "70万", "100万", "无限"],
+            steps: ["0万", "3万", "5万", "6万", "7万", "8万", "9万", "10万", "12万", "14万", "15万", "16万", "18万", "20万", "22万", "24万", "25万", "30万", "35万", "40万", "50万", "60万", "70万", "100万", "无限"],
             min: "8万",
             max: "20万",
             tpl: "%"
@@ -40,6 +40,12 @@ define(function() {
             var eleWidth = self.ele.width();
             var total = steps.length;
             var stepLength = eleWidth / (total - 1);
+            $(window).on("resize", function() {
+                eleWidth = self.ele.width();
+                total = steps.length;
+                stepLength = eleWidth / (total - 1);
+                initConfig(self.data.min.value, self.data.max.value);
+            })
             var toStep = function(num) {
                 for (var i = 0; i < total - 1; i++) {
                     var min = i * eleWidth / (total - 1);
@@ -74,51 +80,54 @@ define(function() {
                 if (data.min && data.max)
                     self.drawHighlight(data.min.pix, data.max.pix)
             })
-            // $(self.ele).on("click", function(e) {
-            //     console.log("click")
-            //     var x = e.pageX;
-            //     var middle = (self.data.min.pix + self.data.max.pix) / 2
-            //     if (x > middle) {
-            //         real = toStep(x - self.ele.offset().left)
-            //         $(self).trigger("maxchange", real)
-            //         self.controlMax.css({
-            //             left: real.pix - 10
-            //         })
-            //     } else {
-            //         real = toStep(x - self.ele.offset().left)
-            //         $(self).trigger("minchange", real)
-            //         self.controlMin.css({
-            //             left: real.pix - 10
-            //         })
-            //     }
 
-            // })
-            if (this.config.min) {
-                var index = 0;
-                for (var i = 0; i < this.config.steps.length; i++) {
-                    if (this.config.steps[i] == this.config.min) {
-                        index = i;
-                    }
-                }
-                real = toStep(index * self.ele.width() / (self.config.steps.length - 1))
+            var setMin = function(pix) {
+                real = toStep(pix)
                 $(self).trigger("minchange", real)
                 self.controlMin.css({
                     left: real.pix - 10
                 })
             }
-            if (this.config.max) {
-                var index = 0;
-                for (var i = 0; i < this.config.steps.length; i++) {
-                    if (this.config.steps[i] == this.config.max) {
-                        index = i;
-                    }
-                }
-                real = toStep(index * self.ele.width() / (self.config.steps.length - 1))
+            var setMax = function(pix) {
+                real = toStep(pix)
                 $(self).trigger("maxchange", real)
                 self.controlMax.css({
                     left: real.pix - 10
                 })
             }
+            var self = this;
+            var initConfig = function(min, max) {
+                var min = min ? min : self.config.min;
+                var max = max ? max : self.config.max;
+                if (min) {
+                    var index = 0;
+                    for (var i = 0; i < self.config.steps.length; i++) {
+                        if (self.config.steps[i] == min) {
+                            index = i;
+                        }
+                    }
+                    real = toStep(index * self.ele.width() / (self.config.steps.length - 1))
+                    $(self).trigger("minchange", real)
+                    self.controlMin.css({
+                        left: real.pix - 10
+                    })
+                }
+                if (max) {
+                    var index = 0;
+                    for (var i = 0; i < self.config.steps.length; i++) {
+                        if (self.config.steps[i] == max) {
+                            index = i;
+                        }
+                    }
+                    real = toStep(index * self.ele.width() / (self.config.steps.length - 1))
+
+                    $(self).trigger("maxchange", real)
+                    self.controlMax.css({
+                        left: real.pix - 10
+                    })
+                }
+            }
+            initConfig();
             $(document.body).on(mousemove_key, function(e) {
                 if (self.controlMin.dragging) {
                     self.controlMax.dragging = false;
@@ -138,7 +147,9 @@ define(function() {
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x < 0) x = 0;
-                    if (x >= maxPos - stepLength) x = maxPos - stepLength;
+                    if (x >= maxPos - 2 * stepLength) {
+                        setMax(x + 2 * stepLength)
+                    }
 
                     real = toStep(x)
                     real.pix = x - 10;
@@ -163,7 +174,9 @@ define(function() {
                     var minPos = self.controlMin.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x > self.ele.width()) x = self.ele.width();
-                    if (x <= minPos + stepLength) x = minPos + stepLength;
+                    if (x <= minPos + 2 * stepLength) {
+                        setMin(x - 2 * stepLength)
+                    }
                     real = toStep(x)
                     real.pix = x - 10;
                     $(self).trigger("maxchange", real)
