@@ -93,6 +93,20 @@ define(function() {
             //     }
 
             // })
+            var setMin = function(pix) {
+                real = toStep(pix)
+                $(self).trigger("minchange", real)
+                self.controlMin.css({
+                    left: real.pix - 10
+                })
+            }
+            var setMax = function(pix) {
+                real = toStep(pix)
+                $(self).trigger("maxchange", real)
+                self.controlMax.css({
+                    left: real.pix - 10
+                })
+            }
             if (this.config.min) {
                 var index = 0;
                 for (var i = 0; i < this.config.steps.length; i++) {
@@ -114,6 +128,7 @@ define(function() {
                     }
                 }
                 real = toStep(index * self.ele.width() / (self.config.steps.length - 1))
+
                 $(self).trigger("maxchange", real)
                 self.controlMax.css({
                     left: real.pix - 10
@@ -138,7 +153,9 @@ define(function() {
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x < 0) x = 0;
-                    if (x >= maxPos - stepLength) x = maxPos - stepLength;
+                    if (x >= maxPos - stepLength) {
+                        setMax(x + stepLength)
+                    }
 
                     real = toStep(x)
                     real.pix = x - 10;
@@ -163,7 +180,9 @@ define(function() {
                     var minPos = self.controlMin.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x > self.ele.width()) x = self.ele.width();
-                    if (x <= minPos + stepLength) x = minPos + stepLength;
+                    if (x <= minPos + stepLength) {
+                        setMin(minPos - stepLength)
+                    }
                     real = toStep(x)
                     real.pix = x - 10;
                     $(self).trigger("maxchange", real)
