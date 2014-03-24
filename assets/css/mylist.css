@@ -319,19 +319,20 @@ html {
   text-align: center;
   padding-top: 40px;
 }
-#mylist .qiugou {
-  background: #f9f9f9;
-  position: relative;
-}
-#mylist .qiugou .wedo {
+#mylist .wedo {
   width: 70px;
   height: 174px;
   position: absolute;
-  right: 274px;
+  right: 275px;
+  top: 0;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
   background-position: 0 -40px;
   z-index: 100;
+}
+#mylist .qiugou {
+  background: #f9f9f9;
+  position: relative;
 }
 #mylist .qiugou .inner {
   padding-top: 30px;

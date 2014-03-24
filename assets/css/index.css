@@ -133,6 +133,7 @@ a:hover {
   float: left;
   width: 210px;
   margin-right: 10px;
+  position: relative;
 }
 #index .qiugou .result .car .pic {
   width: 210px;
@@ -174,6 +175,61 @@ a:hover {
   background: #fffcf6 url(../images/index/qiugou-no.png) no-repeat center center;
   width: 210px;
   height: 225px;
+}
+#index .qiugou .result .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: -1px;
+}
+#index .qiugou .result .icon-jian {
+  background: url(../images/mylist/icon-jian.png) no-repeat;
+}
+#index .qiugou .result .icon-new {
+  background: url(../images/mylist/icon-new.png) no-repeat;
+}
+#index .qiugou .result .zhijiang {
+  position: relative;
+  width: 65px;
+  height: 19px;
+  background-color: #FC7000;
+  border-radius: 3px;
+  color: #fff;
+  top: -160px;
+  left: 144px;
+  text-align: center;
+  line-height: 19px;
+}
+#index .qiugou .result .zhijiang .triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #FC7000;
+  position: relative;
+  left: 8px;
+  top: 0;
+}
+#index .qiugou .result .price-down {
+  background: url(../images/index/zhijiang.png);
+  height: 75px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#index .qiugou .result .price-down i {
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 40px;
 }
 #index .qiugou .form {
   padding-bottom: 40px;
