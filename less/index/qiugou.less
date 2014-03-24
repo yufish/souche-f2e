@@ -97,6 +97,7 @@
       float:left;
       width:210px;
       margin-right:10px;
+      position: relative;
       .pic{
         width:210px;
         height:135px;
@@ -152,7 +153,7 @@
     }
     .icon-new{
       background: url(../images/mylist/icon-new.png) no-repeat;
-      
+
     }
     .zhijiang{
       position: relative;width: 65px;height: 19px;
@@ -176,9 +177,9 @@
     background: url(../images/index/zhijiang.png);
     height: 75px;
     width: 40px;
-    position: relative;
-    top:-153px;
-    left: 171px;
+    position: absolute;
+    top:0;
+    right:0;
     i{
       color: #FFFFFF;
       display: block;
@@ -224,7 +225,7 @@
       font-size: 14px;
     }
   }
-  
+
   .brand-select{
     width:257px;height:auto;display:block;
     .close{
@@ -283,7 +284,7 @@
     border:2px solid @orange;
     background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
     color:@orange;
-    
+
   }
   .option:hover{
     color: @orange;
