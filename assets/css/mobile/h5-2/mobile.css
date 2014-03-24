@@ -534,20 +534,23 @@
   width: 10px;
   height: 30px;
 }
-#page-1,
-#page-2,
-#page-3,
-#page-4 {
+#guwen-h5-2 {
+  position: relative;
+}
+#guwen-h5-2 #page-1,
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
   width: 100%;
   position: absolute;
   top: 0;
 }
-#page-1 {
+#guwen-h5-2 #page-1 {
   /*left:0;*/
 }
-#page-2,
-#page-3,
-#page-4 {
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
   left: 100%;
   display: none;
 }
@@ -867,10 +870,7 @@
   border: 2px solid #fc7000;
   background: #ffffff url(../../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
 }
-#guwen {
-  position: relative;
-}
-#guwen-list .header .back-icon {
+#guwen-list-h5-2 .header .back-icon {
   padding: 0;
   padding-left: 12px;
   background: url(../../../images/mob/h5-2/back.png) no-repeat left center;
@@ -881,30 +881,30 @@
   float: left;
   color: #fff;
 }
-#guwen-list .header .header-feature .search-icon {
+#guwen-list-h5-2 .header .header-feature .search-icon {
   margin-right: 20px;
 }
-#guwen-list .header .header-feature .search-icon-2 {
+#guwen-list-h5-2 .header .header-feature .search-icon-2 {
   margin-right: 20px;
 }
-#guwen-list .content .gouche-info {
+#guwen-list-h5-2 .content .gouche-info {
   margin-bottom: 10px;
 }
-#guwen-list .content .gouche-info .text.found {
+#guwen-list-h5-2 .content .gouche-info .text.found {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
 }
-#guwen-list .content .gouche-info .text.found p {
+#guwen-list-h5-2 .content .gouche-info .text.found p {
   line-height: 45px;
 }
-#guwen-list .content .modify-demand {
+#guwen-list-h5-2 .content .modify-demand {
   width: 300px;
   margin-bottom: 10px;
   overflow: hidden;
 }
-#guwen-list .content .modify-demand #change-btn {
+#guwen-list-h5-2 .content .modify-demand #change-btn {
   float: right;
   background-color: #c4b09f;
   width: 72px;
@@ -913,17 +913,17 @@
   border-radius: 8px;
   color: #fff;
 }
-#guwen-list .content .all-group {
+#guwen-list-h5-2 .content .all-group {
   padding: 7px 0 0 10px;
   margin-left: 10px;
   border-left: 1px solid #e5e5e5;
   position: relative;
 }
-#guwen-list .content .all-group .car-group {
+#guwen-list-h5-2 .content .all-group .car-group {
   position: relative;
   margin-bottom: 50px;
 }
-#guwen-list .content .all-group .car-group .guwen-circle {
+#guwen-list-h5-2 .content .all-group .car-group .guwen-circle {
   background: url(../../../images/mob/h5-2/guwen-circle.png) no-repeat center center;
   background-size: 7px;
   height: 7px;
@@ -932,28 +932,28 @@
   left: -14px;
   top: -20px;
 }
-#guwen-list .content .all-group .car-group .title {
+#guwen-list-h5-2 .content .all-group .car-group .title {
   position: absolute;
   top: -25px;
 }
-#guwen-list .content .all-group .car-group .title .today {
+#guwen-list-h5-2 .content .all-group .car-group .title .today {
   color: #7f7f7f;
 }
-#guwen-list .content .all-group .car-group .car-item {
+#guwen-list-h5-2 .content .all-group .car-group .car-item {
   margin: 7px 0;
   overflow: hidden;
 }
-#guwen-list .content .all-group .car-group .car-item .left {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .left {
   position: relative;
   float: left;
   width: 105px;
   height: 70px;
   overflow: hidden;
 }
-#guwen-list .content .all-group .car-group .car-item .left img {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .left img {
   width: 100%;
 }
-#guwen-list .content .all-group .car-group .car-item .left .time-icon {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .left .time-icon {
   background: url(../../../images/mob/i-shangou.png) no-repeat center center;
   background-size: 27px;
   height: 27px;
@@ -962,36 +962,175 @@
   top: 2px;
   left: 2px;
 }
-#guwen-list .content .all-group .car-group .car-item .right {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right {
   margin-left: 105px;
   padding: 3px 7px;
 }
-#guwen-list .content .all-group .car-group .car-item .right .brand {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand {
   line-height: 20px;
   min-height: 40px;
 }
-#guwen-list .content .all-group .car-group .car-item .right .brand .good {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand .good {
   padding: 2px;
   margin-right: 2px;
   background-color: #fc7000;
   color: #fff;
   height: 16px;
 }
-#guwen-list .content .all-group .car-group .car-item .right .brand .new {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand .new {
   padding: 2px;
   margin-right: 2px;
   background-color: #77b154;
   color: #fff;
 }
-#guwen-list .content .all-group .car-group .car-item .right .bottom {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom {
   margin-top: 10px;
   overflow: hidden;
 }
-#guwen-list .content .all-group .car-group .car-item .right .bottom .price {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom .price {
   float: left;
   color: #fc7000;
 }
-#guwen-list .content .all-group .car-group .car-item .right .bottom .time {
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom .time {
   float: right;
   color: #999999;
+}
+#index-h5-2 .wrapper-250 {
+  width: 250px;
+  margin: 0 auto;
+  padding-top: 32px;
+  overflow: hidden;
+}
+#index-h5-2 .wrapper-1 {
+  padding: 10px;
+}
+#index-h5-2 .wrapper-2 {
+  margin-right: 10px;
+}
+#index-h5-2 .wrapper-3 {
+  margin-right: 10px;
+}
+#index-h5-2 .card-box {
+  opacity: 0.85;
+  -webkit-transition: all 0.2s;
+}
+#index-h5-2 .row {
+  margin: 10px 0;
+  position: relative;
+}
+#index-h5-2 .img-container {
+  top: 0;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  position: absolute;
+}
+#index-h5-2 .img-container .recom-img {
+  display: none;
+  left: 100%;
+  position: absolute;
+}
+#index-h5-2 .img-container .recom-img img {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+#index-h5-2 .content #car4you {
+  position: relative;
+  z-index: 10;
+  background-color: #30b3d9;
+  height: 130px;
+  box-shadow: 2px 2px 2px #b5b5b5;
+  opacity: 0.85;
+}
+#index-h5-2 .content #car4you .index-head-photo {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  background: url(../../../images/mob/h5-2/index-head-photo.png) no-repeat center center transparent;
+  background-size: 68px;
+  float: left;
+}
+#index-h5-2 .content #car4you .index-head-photo .num-tip {
+  border-radius: 15px;
+  background: #e23f3f;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  font-size: 12px;
+  color: #fff;
+  font-style: normal;
+  text-align: center;
+  padding: 0 5px;
+  line-height: 15px;
+}
+#index-h5-2 .content #car4you .text {
+  float: left;
+  margin-left: 8px;
+  padding-top: 10px;
+  color: #fff;
+}
+#index-h5-2 .content #car4you .text .big {
+  font-size: 26px;
+  line-height: 30px;
+}
+#index-h5-2 .content #car4you .text .small {
+  font-size: 16px;
+}
+#index-h5-2 #filter-car {
+  height: 75px;
+  background-color: #3d972f;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 .col-1-2 .text {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 27px;
+}
+#index-h5-2 .col-1-3 .text {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 27px;
+}
+#index-h5-2 #walk-around {
+  background-color: #76a412;
+  height: 75px;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 #footprint {
+  background-color: #eab118;
+  height: 70px;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 #sell-car {
+  background-color: #fc8800;
+  height: 70px;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 #promise {
+  background-color: #eab118;
+  height: 70px;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 #footer-picture {
+  height: 70px;
+  background-color: black;
+  box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 .col-1-2 {
+  float: left;
+  width: 50%;
+}
+#index-h5-2 .col-1-3 {
+  float: left;
+  width: 33.3%;
+}
+#index-h5-2 #first-row {
+  -webkit-transition: all 0.3s;
+  transition: all 0.2s;
+}
+#index-h5-2 .scale {
+  -webkit-transform: scale(0.95, 0.95);
 }
