@@ -37,7 +37,7 @@
                 $(self.parentNode).addClass("active")
                 if (!$("#toolbar").hasClass("sidebar-active")) {
                     $("#toolbar").animate({
-                        width: 905,
+                        width: 870,
                         height: ($(window).height() - 20) > 652 ? 652 : ($(window).height() - 20)
                     }, 500, function() {
 
