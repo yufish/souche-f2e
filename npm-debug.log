@@ -1,20 +1,199 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'D:\\Program Files\\nodejs\\\\node.exe',
-1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install' ]
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'pm2',
+1 verbose cli   '-g' ]
 2 info using npm@1.3.24
 3 info using node@v0.10.25
-4 verbose node symlink D:\Program Files\nodejs\\node.exe
-5 error install Couldn't read dependencies
-6 error package.json ENOENT, open 'E:\souche\souche-f2e\souche-f2e\package.json'
-6 error package.json This is most likely not a problem with npm itself.
-6 error package.json npm can't find a package.json file in your current directory.
-7 error System Windows_NT 6.1.7601
-8 error command "D:\\Program Files\\nodejs\\\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-9 error cwd E:\souche\souche-f2e\souche-f2e
-10 error node -v v0.10.25
-11 error npm -v 1.3.24
-12 error path E:\souche\souche-f2e\souche-f2e\package.json
-13 error code ENOPACKAGEJSON
-14 error errno 34
-15 verbose exit [ 34, true ]
+4 verbose cache add [ 'pm2', null ]
+5 verbose cache add name=undefined spec="pm2" args=["pm2",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'pm2',
+6 verbose parsed url   path: 'pm2',
+6 verbose parsed url   href: 'pm2' }
+7 silly lockFile b1fbedd8-pm2 pm2
+8 verbose lock pm2 /home/souche/.npm/b1fbedd8-pm2.lock
+9 silly lockFile b1fbedd8-pm2 pm2
+10 silly lockFile b1fbedd8-pm2 pm2
+11 verbose addNamed [ 'pm2', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile d1072219-pm2 pm2@
+14 verbose lock pm2@ /home/souche/.npm/d1072219-pm2.lock
+15 silly addNameRange { name: 'pm2', range: '*', hasData: false }
+16 verbose url raw pm2
+17 verbose url resolving [ 'http://registry.cnpmjs.org/', './pm2' ]
+18 verbose url resolved http://registry.cnpmjs.org/pm2
+19 info trying registry request attempt 1 at 19:32:45
+20 verbose etag "1393235299000"
+21 http GET http://registry.cnpmjs.org/pm2
+22 http 304 http://registry.cnpmjs.org/pm2
+23 silly registry.get cb [ 304,
+23 silly registry.get   { server: 'nginx/1.4.1 (Ubuntu)',
+23 silly registry.get     date: 'Mon, 24 Mar 2014 11:32:55 GMT',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'x-powered-by': 'koa',
+23 silly registry.get     etag: '"1393235299000"',
+23 silly registry.get     'x-readtime': '13243' } ]
+24 verbose etag pm2 from cache
+25 silly addNameRange number 2 { name: 'pm2', range: '*', hasData: true }
+26 silly addNameRange versions [ 'pm2',
+26 silly addNameRange   [ '0.7.8',
+26 silly addNameRange     '0.7.7',
+26 silly addNameRange     '0.7.6',
+26 silly addNameRange     '0.7.5',
+26 silly addNameRange     '0.7.4',
+26 silly addNameRange     '0.7.3',
+26 silly addNameRange     '0.7.2',
+26 silly addNameRange     '0.7.1',
+26 silly addNameRange     '0.7.0',
+26 silly addNameRange     '0.6.15',
+26 silly addNameRange     '0.6.14',
+26 silly addNameRange     '0.6.13',
+26 silly addNameRange     '0.6.12',
+26 silly addNameRange     '0.6.11',
+26 silly addNameRange     '0.6.10',
+26 silly addNameRange     '0.6.9',
+26 silly addNameRange     '0.6.8',
+26 silly addNameRange     '0.6.7',
+26 silly addNameRange     '0.6.6',
+26 silly addNameRange     '0.6.5',
+26 silly addNameRange     '0.6.4',
+26 silly addNameRange     '0.6.3',
+26 silly addNameRange     '0.6.2',
+26 silly addNameRange     '0.5.7',
+26 silly addNameRange     '0.5.6',
+26 silly addNameRange     '0.5.5',
+26 silly addNameRange     '0.5.4',
+26 silly addNameRange     '0.5.3',
+26 silly addNameRange     '0.5.2',
+26 silly addNameRange     '0.5.1',
+26 silly addNameRange     '0.5.0',
+26 silly addNameRange     '0.4.14',
+26 silly addNameRange     '0.4.13',
+26 silly addNameRange     '0.4.12',
+26 silly addNameRange     '0.4.11',
+26 silly addNameRange     '0.4.10',
+26 silly addNameRange     '0.4.8',
+26 silly addNameRange     '0.4.7',
+26 silly addNameRange     '0.4.6',
+26 silly addNameRange     '0.4.5',
+26 silly addNameRange     '0.4.4',
+26 silly addNameRange     '0.4.3',
+26 silly addNameRange     '0.4.2',
+26 silly addNameRange     '0.4.1',
+26 silly addNameRange     '0.4.0' ] ]
+27 verbose addNamed [ 'pm2', '0.7.8' ]
+28 verbose addNamed [ '0.7.8', '0.7.8' ]
+29 silly lockFile 2d9da024-pm2-0-7-8 pm2@0.7.8
+30 verbose lock pm2@0.7.8 /home/souche/.npm/2d9da024-pm2-0-7-8.lock
+31 silly lockFile 2d9da024-pm2-0-7-8 pm2@0.7.8
+32 silly lockFile 2d9da024-pm2-0-7-8 pm2@0.7.8
+33 silly lockFile d1072219-pm2 pm2@
+34 silly lockFile d1072219-pm2 pm2@
+35 silly resolved [ { name: 'pm2',
+35 silly resolved     preferGlobal: 'true',
+35 silly resolved     version: '0.7.8',
+35 silly resolved     engines: { node: '>=0.8' },
+35 silly resolved     author:
+35 silly resolved      { name: 'Strzelewicz Alexandre',
+35 silly resolved        email: 'as@unitech.io',
+35 silly resolved        url: 'http://pm2.io' },
+35 silly resolved     contributors:
+35 silly resolved      [ [Object],
+35 silly resolved        [Object],
+35 silly resolved        [Object],
+35 silly resolved        [Object],
+35 silly resolved        [Object],
+35 silly resolved        [Object],
+35 silly resolved        [Object] ],
+35 silly resolved     homepage: 'https://github.com/Unitech/pm2',
+35 silly resolved     description: 'Modern CLI process manager for Node apps with a builtin load-balancer',
+35 silly resolved     main: 'index.js',
+35 silly resolved     scripts: { test: 'bash ./test/cli.sh && bash ./test/json_file.sh && bash ./test/harmony.sh && bash ./test/reload.sh && bash ./test/gracefulReload.sh && bash ./test/cli2.sh && bash ./test/misc.sh && bash ./test/fork.sh && bash ./test/infinite_loop.sh && NODE_ENV=test ./node_modules/mocha/bin/mocha test' },
+35 silly resolved     keywords:
+35 silly resolved      [ 'cli',
+35 silly resolved        'fault tolerant',
+35 silly resolved        'sysadmin',
+35 silly resolved        'tools',
+35 silly resolved        'pm2',
+35 silly resolved        'harmony',
+35 silly resolved        'node-pm2',
+35 silly resolved        'monitoring',
+35 silly resolved        'process manager',
+35 silly resolved        'forever',
+35 silly resolved        'keep process alive',
+35 silly resolved        'process configuration',
+35 silly resolved        'clustering',
+35 silly resolved        'cluster cli',
+35 silly resolved        'cluster',
+35 silly resolved        'cron',
+35 silly resolved        'devops',
+35 silly resolved        'dev ops' ],
+35 silly resolved     bin: { pm2: './bin/pm2' },
+35 silly resolved     dependencies:
+35 silly resolved      { commander: '2.1.0',
+35 silly resolved        'cli-table': '0.2.0',
+35 silly resolved        'pm2-multimeter': '0.1.2',
+35 silly resolved        'pm2-interface': '0.1.0',
+35 silly resolved        usage: '0.3.9',
+35 silly resolved        'axon-rpc': '0.0.2',
+35 silly resolved        watch: '0.8.0',
+35 silly resolved        axon: '1.0.0',
+35 silly resolved        cron: '1.0.1',
+35 silly resolved        colors: '0.6.2',
+35 silly resolved        'coffee-script': '1.7.0',
+35 silly resolved        eventemitter2: '0.4.13',
+35 silly resolved        debug: '*',
+35 silly resolved        async: '0.2.9' },
+35 silly resolved     devDependencies: { mocha: '1.x', should: '1.x', 'better-assert': '*' },
+35 silly resolved     repository: { type: 'git', url: 'git://github.com/Unitech/pm2.git' },
+35 silly resolved     license: 'AGPLv3',
+35 silly resolved     readme: '# ![Monit](https://github.com/unitech/pm2/raw/master/pres/top-logo-wo.png)\n\npm2 is a process manager for Node apps with a builtin load-balancer.\n\n## Tech notes\n\npm2 is perfect when you need to spread your stateless NodeJS code accross all CPUs available on a server, to keep all processes alive forever and to 0s reload them.\n\n# Main features\n\n- Builtin load-balancer (using the native cluster module)\n- Script daemonization\n- 0s downtime reload for Node\n- Startup scripts for Ubuntu/CentOS (use updaterc.d for Ubuntu and chkconfig for others)\n- Stop unstable process (avoid infinite loop)\n- Monitoring in console\n- HTTP API\n- [Remote control and real time interface API](https://github.com/Unitech/pm2-interface)\n\nTested with Node v0.11, v0.10, v0.8 (https://travis-ci.org/Unitech/pm2).\nCompatible with CoffeeScript.\nWorks on Linux & MacOS.\n\n[![Build Status](https://david-dm.org/Unitech/pm2.png)](https://david-dm.org/Unitech/pm2)\n[![NPM version](https://badge.fury.io/js/pm2.png)](http://badge.fury.io/js/pm2)\n\n<!-- [![NPM](https://nodei.co/npm/pm2.png?downloads=true)](https://nodei.co/npm/pm2.png?downloads=true) -->\n\n### Build Status\n\nMaster : [![Build Status](https://api.travis-ci.org/Unitech/pm2.png?branch=master)](https://api.travis-ci.org/Unitech/pm2.png?branch=master)\n\nDevelopment : [![Build Status](https://api.travis-ci.org/Unitech/pm2.png?branch=development)](https://api.travis-ci.org/Unitech/pm2.png?branch=development)\n\n# Monitoring dashboard\n\n![Dashboard](http://leapfrogui.com/controlfrog/img/cf-layout-1.png)\n\nWe gonna release a very nice product, a dashboard to monitor every part of your NodeJS applications. Here are some links :\n\n- [Pitch + Survey](https://docs.google.com/forms/d/1FuCjIhrGg-ItxInq2nLreoe9GS-gZWJNkNWE0JJajw8/viewform) People who fill the survey will be elligible for free license\n- [Newsletter](http://signup.pm2.io/) Subscribe to be kept informed\n\nWe are also looking for AngularJS developers and designers contact us at contact AT unitech DOT io\n\nThanks in advance and we hope that you like pm2 !\n\n# Readme Contents\n\n- [Installation](#a1)\n- [Usage/Features](#a2)\n- [Tutorial : How To Use PM2 to Setup a Node.js Production Environment](#a89)\n- [Pid file, error and out Log files](#a34)\n- [Different ways to launch a process](#a3)\n- [0s downtime reload](#a16)\n- [CoffeeScript](#a19)\n- [Enabling Harmony](#a66)\n- [Accept JSON app configuration via pipe from standard input](#a96)\n- [Is my production server ready for PM2](#a4)\n- [Listing processes : pm2 list](#a6)\n- [Monitoring processes (CPU/RAM) : pm2 monit](#a7)\n- [Startup script generation : pm2 startup](#a8)\n- [Log aggregation : pm2 logs](#a9)\n- [Fork mode](#a23)\n- [Customization](#a24)\n- [API health end point : pm2 web](#a12)\n- [JSON processes declaration](#a13)\n- [Contributing/Development mode](#a27)\n- [Known bugs](#a21)\n- [Launching the tests](#a4)\n- [They talk about it](#a20)\n- [License](#a15)\n\n<a name="a1"/>\n# Installation\n\n```bash\nnpm install pm2@latest -g\n```\n\n<a name="a2"/>\n# Usage/Features\n\n```bash\n$ npm install pm2@latest -g     # Install pm2 command line globally\n$ pm2 start app.js -i 4  # Daemonize pm2 and Start 4 clustered instances of app.js\n                         # You can also pass the \'max\' params to start\n                         # the right numbers of processes depending of CPUs\n\n$ pm2 start app.js --name my-api # Name process\n\n$ pm2 start app.js --no-daemon   # Don\'t daemonize pm2\n\n$ pm2 list               # Display all processes status\n$ pm2 monit              # Monitor all processes\n$ pm2 logs               # Display all processes logs in streaming\n$ pm2 flush              # Empty all log file\n\n$ pm2 stop all           # Stop all processes\n$ pm2 restart all        # Restart all processes\n\n$ pm2 reload all         # Will 0s downtime reload (for NETWORKED processes)\n\n$ pm2 stop 0             # Stop specific process id\n$ pm2 restart 0          # Restart specific process id\n\n$ pm2 delete 0           # Will remove process from pm2 list\n$ pm2 delete all         # Will remove all processes from pm2 list\n\n$ pm2 ping               # Ensure pm2 dameon has been launched\n\n$ pm2 startup ubuntu     # Generate init script for ubuntu to keep processes alive on restart\n                         # ubuntu/centos\n\n$ pm2 web                # Launch Health computer API endpoint (http://localhost:9615)\n\n$ pm2 dump               # Backup current processes managed by pm2\n$ pm2 resurrect          # Restore backup\n\n$ pm2 sendSignal SIGUSR2 signal.js # Send system signal to script\n```\n\nFor other nature scripts :\n\n```bash\n$ pm2 start echo.php\n$ pm2 start echo.py\n$ pm2 start echo.sh\n$ pm2 start echo.rb\n$ pm2 start echo.pl\n```\n\n<a name="a3"/>\n## Different ways to launch a process\n\n```bash\n$ pm2 start app.js -i max  # Will start maximum processes depending on available CPUs\n\n$ pm2 start app.js -i 3    # Will start 3 processes\n\n$ pm2 start app.js --node-args="--debug=7001 --trace-deprecation" # --node-args command line option to pass options to node\n\n$ pm2 start app.js -x            # Start app.js in fork mode instead of cluster\n$ pm2 start app.js -x -- -a 23   # Start app.js in fork mode and pass arguments (-a 23)\n\n$ pm2 start app.js --name serverone # Start a process an name it as server one\n                                    # you can now stop the process by doing\n                                    # pm2 stop serverone\n\n$ pm2 start app.json                # Start processes with options declared in app.json\n                                    # Go to chapter Multi process JSON declaration for more\n\n$ pm2 start app.js -i max -- -a 23  # Pass arguments after -- to app.js\n\n$ pm2 start app.js -i max -e err.log -o out.log  # Will start and generate a configuration file\n```\n\nYou can also execute app in other languages ([the fork mode](#a23)):\n```bash\n$ pm2 start my-bash-script.sh -x --interpreter bash\n\n$ pm2 start my-python-script.py -x --interpreter python\n```\n\n<a name="a89"/>\n## Tutorial\n\n[How To Use PM2 to Setup a Node.js Production Environment On An Ubuntu VPS](https://www.digitalocean.com/community/articles/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps)\n\n\n<a name="a34"/>\n## Pid file, error and out Log files\n\nBy default every logs (error and out), pids files, dump, pm2 logs are located in `~/.pm2/`\n\n```\n.pm2/\n├── dump.pm2\n├── custom_options.sh\n├── pm2.log\n├── pm2.pid\n├── logs\n└── pids\n```\n\n<a name="a16"/>\n## 0s downtime reload\n\nThis feature permits to reload code without losing in process connections.\nWorks for apps in cluster_mode (the default mode) that uses sockets (express or other).\n\n```bash\n$ pm2 reload all\n$ pm2 reload my-api\n```\n\nThanks to TruongSinh Tran-Nguyen https://github.com/truongsinh\n\n### Graceful reload\n\n```bash\n$ pm2 gracefulReload all\n```\n\nInstead of just processing remaining connections, `gracefulReload` will also send a `shutdown` message to your process, so you can close all database/socket.io/* connections and be sure that your process will properly exit.\n\n```javascript\nprocess.on(\'message\', function(msg) {\n  if (msg == \'shutdown\') {\n    // Your process is going to be reloaded\n    // Close all database/socket.io/* connections\n    console.log(\'Closing all connections...\');\n    setTimeout(function() {\n      console.log(\'Finished closing connections\');\n      // You can exit to faster the process or it will be\n      // automatically killed after 4000ms.\n      // You can override the timeout by modifying PM2_GRACEFUL_TIMEOUT\n      process.exit(0);\n    }, 1500);\n  }\n});\n\nvar http = require(\'http\');\n\nhttp.createServer(function(req, res) {\n  res.writeHead(200);\n  res.end(\'hey\');\n}).listen(8000, function() {\n  console.log(\'listening\');\n});\n```\n\n<a name="a19"/>\n## CoffeeScript\n\n```bash\n$ pm2 start my_app.coffee\n```\n\nThat\'s all !\n\n<a name="a66"/>\n## Enabling Harmony ES6\n\n### Enable by default for all processes\n\nYou can enable Harmony ES6 by setting `PM2_NODE_OPTIONS=\'--harmony\'` environment variable option when you start pm2 (pm2 should not be already daemonized).\n\nTo pass this option by default, you can edit `~/.pm2/custom_options.sh` and add :\n\n```bash\nexport PM2_NODE_OPTIONS=\'--harmony\'\n```\n\nThen :\n\n```bash\n$ pm2 dump\n$ pm2 exit\n$ pm2 resurrect\n```\n\nIf ES6 has been enabled you should see this message at the beggining of each pm2 commands :\n\n```\n● ES6 mode\n```\n\n### Enable for specific processes\n\n```bash\n$ pm2 start my_app.js --node-args="--harmony"\n```\n\n<a name="a23"/>\n## Fork mode - execute script in different languages\n\nThe default mode of PM2 consists of wrapping the code of your node app into the Node Cluster module. It\'s called the **cluster mode**.\nThere is also a more classical way to execute your app, like node-forever does, called the **fork mode**.\n\nIn fork mode almost all options are the same as the cluster mode. But no reload, gracefulReload.\n\n**By using the fork mode you will lose core features of PM2 like the automatic clusterization of your code over all CPUs available and the 0s reload.**\n\nSo use it if you only need a forever-like behaviour.\n\nHere is how to start your app in fork :\n\n```bash\n$ pm2 start app.js -x   # Will start your app.js in fork mode\n$ pm2 list              # You will see that on the row "mode" it\'s written "fork"\n```\n\nYou can also exec scripts in other languages :\n\n```bash\n$ pm2 start my-bash-script.sh -x --interpreter bash\n\n$ pm2 start my-python-script.py -x --interpreter python\n```\n\n<a name="a96"/>\n## Accept JSON app configuration via pipe from standard input\n\nPR :\n- [#273](https://github.com/Unitech/pm2/pull/273)\n- [#279](https://github.com/Unitech/pm2/pull/279)\n\n```bash\n#!/bin/bash\n\nread -d \'\' my_json <<_EOF_\n[{\n    "name"       : "app1",\n    "script"     : "/home/projects/pm2_nodetest/app.js",\n    "instances"  : "4",\n    "error_file" : "./logz/child-err.log",\n    "out_file"   : "./logz/child-out.log",\n    "pid_file"   : "./logz/child.pid",\n    "exec_mode"  : "cluster_mode",\n    "port"       : 4200\n}]\n_EOF_\n\necho $my_json | pm2 start -\n```\n\n<a name="a4"/>\n## Is my production server ready for PM2 ?\n\nJust try the tests before using PM2 on your production server\n\n```bash\n$ git clone https://github.com/Unitech/pm2.git\n$ cd pm2\n$ npm install  # Or do NODE_ENV=development npm install if some packages are missing\n$ npm test\n```\n\nIf a test is broken please report us issues [here](https://github.com/Unitech/pm2/issues?state=open)\nAlso make sure you have all dependencies needed. For Ubuntu :\n\n```bash\n$ sudo apt-get install build-essential\n$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh\n$ nvm install v0.11.9\n$ nvm use v0.11.9\n$ nvm alias default v0.11.9\n```\n\n\n<a name="a6"/>\n## pm2 list\n\nList infos about all processes managed by pm2. It shows also how many times a process has been restarted because of an unhandled exception.\n\n![Monit](https://github.com/unitech/pm2/raw/master/pres/pm2-list.png)\n\n<a name="a7"/>\n## pm2 monit\n\nMonitor CPU and memory usage of every node process (and also clustered processes) managed by pm2.\n\n![Monit](https://github.com/unitech/pm2/raw/master/pres/pm2-monit.png)\n\n<a name="a8"/>\n## Startup script generation : pm2 startup\n\nPM2 provides an automatic way to keep Node processes alive on server restart.\nOn exit it will dump the process list and their environment and will resurrect them on startup.\n\nIt uses **System V init script** compatible with **Ubuntu/CentOS/Redhat** (maybe it works on other sys but not 100% sure).\n\n```bash\n$ pm2 startup ubuntu # then follow the command instruction\n$ pm2 startup centos # will use chkconfig instead of updaterc.d\n$ pm2 startup redhat # not very stable for redhat\n```\n\nInit script generated are located in /etc/init.d/pm2-init.sh.\n\n### Running script as a different user\n\nThe `-u username` option permits to specify which user has to start the process at startup.\n**NOTE** that this user must have access to npm, apps and node ! So the best way is to log with this user `su -l www`, then do `pm2 startup -u www`.\n\nInternally it uses `sudo -u $USER`.\n\n\n<a name="a9"/>\n## pm2 logs\n\nDisplay logs in streaming of all processes, without having to do a tail -f or something else.\nYou can also pass [name|id] as parameter to stream only the log of a specified process.\n\n![Monit](https://github.com/unitech/pm2/raw/master/pres/pm2-logs.png)\n\n<a name="a12"/>\n## pm2 health web api endpoint\n\nPM2 can disserve an API endpoint to monitor processes and computer health (cpu usage, memory, network interfaces...)\n\n```\npm2 web\n```\n\n<a name="a24"/>\n## Configuration / Customization\n\nYou can edit these options by editing the file `~/.pm2/custom_options.sh`\n\nThese variables can be customized :\n\n```\n  DAEMON_BIND_HOST   : process.env.PM2_BIND_ADDR || \'localhost\',\n  DAEMON_RPC_PORT    : process.env.PM2_RPC_PORT  || 6666, // RPC commands\n  DAEMON_PUB_PORT    : process.env.PM2_PUB_PORT  || 6667, // Realtime events\n  DEBUG              : process.env.PM2_DEBUG || false,\n  WEB_INTERFACE      : process.env.PM2_API_PORT  || 9615,\n  GRACEFUL_TIMEOUT   : parseInt(process.env.PM2_GRACEFUL_TIMEOUT) || 4000,\n  PM2_NODE_OPTIONS   : \'\'\n```\n\n\n\n\n<a name="a13"/>\n# Multi process JSON declaration\n\nprocesses.json :\n\n```json\n[{\n  "name"      : "echo",\n  "script"    : "./examples/args.js",\n  "args"      : "[\'--toto=heya coco\', \'-d\', \'1\']",\n  "env": {\n      "NODE_ENV": "production",\n      "AWESOME_SERVICE_API_TOKEN": "xxx"\n  }\n}\n,{\n    "name"       : "api",\n    "script"     : "./examples/child.js",\n    "instances"  : "4",\n    "error_file" : "./examples/child-err.log",\n    "out_file"   : "./examples/child-out.log",\n    "pid_file"   : "./examples/child.pid",\n    "exec_mode"  : "cluster_mode",\n    "port"       : 9005\n},{\n  "min_uptime" : "100",\n  "name" : "auto-kill",\n  "exec_mode" : "fork_mode",\n  "script" : "./examples/killfast.js"\n}]\n```\n\nThen with the cli :\n```bash\n$ pm2 start processes.json\n$ pm2 stop processes.json\n$ pm2 delete processes.json\n$ pm2 restart processes.json\n```\n\n<a name="a27"/>\n# Contributing/Development mode\n\nTo hack PM2, it\'s pretty simple :\n\n```bash\n$ pm2 kill   # kill the current pm2\n$ git clone my_pm2_fork.git\n$ cd pm2/\n$ DEBUG=* PM2_DEBUG=true ./bin/pm2 --no-daemon\n```\n\nEach time you edit the code be sure to restart pm2 to make changes taking effect.\n\n## Install pm2 development\n\n```bash\n$ npm install git://github.com/Unitech/pm2#development -g\n```\n\n# MISC Notes\n\n- Remove init script : `sudo update-rc.d -f pm2-init.sh remove`\n\n\n<a name="a21"/>\n# Known bugs and workarounds\n\nFirst, install the lastest pm2 version :\n\n```bash\n$ npm install -g pm2@latest\n```\n\n- Node 0.10.x doesn\'t free script port when stopped. It\'s due to the NodeJS cluster module.\nSo if you feel that this problem is important for your use case, use the fork mode the [fork mode](#a23) instead.\nBy using the fork mode you will lose core features of PM2 like the automatic clusterization of your code over all CPUs available and the 0s reload.\n\n```\n$ pm2 start index.js -x  # start my app in fork mode\n```\n\nFor more informations about this issue : [#74](https://github.com/Unitech/pm2/issues/74)\n\n- `Cannot read property \'getsockname\' of undefined`\n\nWhen using the cluster mode (by default) you can\'t use ports from 0 to 1024. If you really need to exec in this range use the [fork mode](#a23) with the `-x` parameter.\nBy using the fork mode you will lose core features of PM2 like the automatic clusterization of your code over all CPUs available and the 0s reload.\n\n<a name="a14"/>\n# Test\n\n```bash\nnpm test\n```\n\n<a name="a20"/>\n# They talk about it\n\n- http://devo.ps/blog/2013/06/26/goodbye-node-forever-hello-pm2.html\n- https://coderwall.com/p/igdqyw\n- http://revdancatt.com/2013/09/17/node-day-1-getting-the-server-installing-node-and-pm2/\n- https://medium.com/tech-talk/e7c0b0e5ce3c\n\n# MISC\n\n## Code structure\n\n![Monit](https://github.com/unitech/pm2/raw/master/pres/Drawing1.png)\n\n## Features\n\n- Clusterize your Node networked script without adding one line of code\n- Fully tested\n- Monitor process/cluster processes health (status, memory, cpu usage, restarted time) via CLI (htop like)\n- Monitor server health (processes, cpu core...) via JSON api (pm2 web)\n- Launch multiple applications via JSON\n- Forever keep alive processes\n- Log streaming in realtime (pm2 logs)\n- Log uncaught exceptions in error logs\n- Track restarted time\n- Auto stop processes who exit too fast\n- Dump current processes and resurrect (upstart)\n\n## Idea bucket\n\n- Remote administration/status checking\n- Builtin Inter process communication channel (message bus)\n- Auto start of the script at start (upstart)\n- V8 GC memory leak detection\n- Web interface\n- Keeping monitoring data\n- Integrated wrk utils endpoint benchmark\n\n## Sponsors\n\nThanks to [Devo.ps](http://devo.ps/) and [Wiredcraft](http://wiredcraft.com/) for their knowledge and expertise.\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Unitech/pm2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n\n<a name="a15"/>\n# License\n\nFiles in lib/ are made available under the terms of the GNU Affero General Public License (AGPL).\npm2-interface is made under the terms of the Apache V2 license.\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     bugs: { url: 'https://github.com/Unitech/pm2/issues' },
+35 silly resolved     _id: 'pm2@0.7.8',
+35 silly resolved     _from: 'pm2@' } ]
+36 info install pm2@0.7.8 into /usr/local/lib
+37 info installOne pm2@0.7.8
+38 info /usr/local/lib/node_modules/pm2 unbuild
+39 info preuninstall pm2@0.7.8
+40 info uninstall pm2@0.7.8
+41 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild pm2@0.7.8
+42 verbose /usr/local/bin,[object Object] binRoot
+43 info postuninstall pm2@0.7.8
+44 info /usr/local/lib/node_modules/pm2 unbuild
+45 info preuninstall pm2@0.7.8
+46 info uninstall pm2@0.7.8
+47 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild pm2@0.7.8
+48 verbose /usr/local/bin,[object Object] binRoot
+49 info postuninstall pm2@0.7.8
+50 error error rolling back Error: EACCES, unlink '/usr/local/lib/node_modules/pm2'
+50 error error rolling back  pm2@0.7.8 { [Error: EACCES, unlink '/usr/local/lib/node_modules/pm2']
+50 error error rolling back   errno: 3,
+50 error error rolling back   code: 'EACCES',
+50 error error rolling back   path: '/usr/local/lib/node_modules/pm2' }
+51 error Error: EACCES, unlink '/usr/local/lib/node_modules/pm2'
+51 error  { [Error: EACCES, unlink '/usr/local/lib/node_modules/pm2']
+51 error   errno: 3,
+51 error   code: 'EACCES',
+51 error   path: '/usr/local/lib/node_modules/pm2' }
+52 error Please try running this command again as root/Administrator.
+53 error System Linux 3.2.0-29-generic
+54 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "pm2" "-g"
+55 error cwd /home/souche/souche-f2e
+56 error node -v v0.10.25
+57 error npm -v 1.3.24
+58 error path /usr/local/lib/node_modules/pm2
+59 error code EACCES
+60 error errno 3
+61 error stack Error: EACCES, unlink '/usr/local/lib/node_modules/pm2'
+62 verbose exit [ 3, true ]
