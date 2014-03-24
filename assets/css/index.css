@@ -133,6 +133,7 @@ a:hover {
   float: left;
   width: 210px;
   margin-right: 10px;
+  position: relative;
 }
 #index .qiugou .result .car .pic {
   width: 210px;
@@ -216,9 +217,9 @@ a:hover {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
-  position: relative;
-  top: -153px;
-  left: 171px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 #index .qiugou .result .price-down i {
   color: #FFFFFF;
