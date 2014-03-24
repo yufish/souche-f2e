@@ -230,13 +230,22 @@
 .mod-side{
   overflow:hidden;
   .service{
-    background-color:#f5f5f5;
-    height: 278px;
+    
+    height: 490px;
     width: 258px;
     border: 1px solid @module1-ligth-gray;
     margin-bottom: 10px;
     .inner{
-      padding-top: 15px;
+     
+      .service-title{
+        height: 50px;
+        background-color: #fc7000;
+        border-bottom: #d06e32;
+        font-size: 20px;
+        color: #fff;
+        line-height: 50px;
+        padding-left: 35px;
+      }
       i{
         display: block;
         width:40px;
@@ -247,8 +256,10 @@
       }
       .per{
         position: relative;
-        width:260px;
-        padding:25px 0 0px 70px;
+        
+        padding:25px 0 25px 35px;
+        border-bottom: 1px dotted #cccccc;
+        height: 96px;
         a{
           display: block;
         }
@@ -256,11 +267,17 @@
       .t{
         font-size: 16px;
         line-height: 30px;
-        color:#666;
+        color:#333333;
+        span{
+          font-size: 32px;
+          color: #f25b00;
+          font-weight: bold;
+          padding-right: 3px;
+        }
       }
       .st{
-        font-size: 14px;
-        color:#999;
+        font-size: 12px;
+        color:#666666;
         line-height: 20px;
       }
       .per-1{
@@ -274,8 +291,10 @@
         }
       }
       .per-3{
+        border-bottom: none;
         i{
           background: url(../images/index/per-3.png) no-repeat;
+
         }
       }
     }
