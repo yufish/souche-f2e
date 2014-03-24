@@ -6,11 +6,6 @@ rainbow        = require './lib/rainbow.js'
 lessmiddle     = require 'less-middleware'
 less           = require 'less'
 fs             = require 'fs'
-<<<<<<< HEAD
-#expressUglify = require('express-uglify')
-=======
-
->>>>>>> 7eaf7088cf54d10af9f8105b777b45f369e980fa
 #log4js
 log4js         = require 'log4js'
 log4js.configure({
