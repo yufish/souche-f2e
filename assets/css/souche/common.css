@@ -235,10 +235,13 @@ body{
 }
 #simple-header .wrapper .search .search-text {
   width: 490px;
-  height: 34px;
+  height: 18px;
   border: 2px solid #FC7000;
   vertical-align: top;
   padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 18px;
 }
 #simple-header .wrapper .search .search-submit {
   background: #fc7000;
