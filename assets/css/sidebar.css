@@ -426,6 +426,13 @@
   margin-right: 10px;
   display: block;
 }
+.sidebar-active .toolbar-content .iframe-loading {
+  width: 855px;
+  height: 648px;
+  background: url(../images/index/ajax-loader.gif) no-repeat center;
+  position: fixed;
+  background-color: #f2f2f2;
+}
 .sidebar-active:hover {
   width: 57px;
 }

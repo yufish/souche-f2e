@@ -18,7 +18,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var qiugouData = null;
     var phoneReg = /^1[3458][0-9]{9}$/;
     var config = {
-
+        totalPage: 1
     }
     var is_submiting = false;
     var isLoadingMore = false;
@@ -163,7 +163,10 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             isLoadingMore = true;
             $(".load-more").removeClass("hidden");
             var days = $(".date-title .day");
-
+            if (nowPage > config.totalPage * 1) {
+                hasMore = false;
+                return;
+            }
             $.ajax({
                 url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {
@@ -171,7 +174,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                     key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
-                    if (data.replace(/\s/, '') == "false") {
+                    if (data.replace(/\s/, '') == "") {
                         hasMore = false;
                     }
                     $(".load-more").addClass("hidden");
