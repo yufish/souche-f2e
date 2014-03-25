@@ -29,3 +29,6 @@
 2014-03-25 10:02:42,946 [http-10080-8] INFO  com.souche.search.query.SoucheSearchServiceImpl - search query for car_require: -USER_STRS:13811362999 AND SALEPRICE_L:([225000 TO 308000]) AND YEAR_I:([0 TO 10000]) AND BRAND_LEVEL_STR:luxury
 2014-03-25 10:06:56,823 [http-10080-7] INFO  com.souche.search.query.SoucheSearchServiceImpl - search query for car_require: -USER_STRS:13811362999 AND SALEPRICE_L:([225000 TO 308000]) AND YEAR_I:([0 TO 10000]) AND BRAND_LEVEL_STR:luxury
 2014-03-25 10:06:56,823 [http-10080-7] INFO  com.souche.search.query.SoucheSearchServiceImpl - search query for car_require: -USER_STRS:13811362999 AND SALEPRICE_L:([225000 TO 308000]) AND YEAR_I:([0 TO 10000]) AND BRAND_LEVEL_STR:luxury
+2014-03-25 10:10:16,167 [http-10080-11] INFO  com.souche.search.query.SoucheSearchServiceImpl - search query for car_require: -USER_STRS:18005816453 AND BRAND_LEVEL_STR:luxury
+2014-03-25 10:10:16,167 [http-10080-11] INFO  com.souche.search.query.SoucheSearchServiceImpl - search query for car_require: -USER_STRS:18005816453 AND BRAND_LEVEL_STR:luxury
+2014-03-25 10:10:52,820 [http-10080-8] INFO  com.souche.service.shortlink.ShortLinkServiceImpl - short link id AKVmvfK generated for url http://www.souche.com/pages/mobile/my-list.html?user=18005816453
