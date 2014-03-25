@@ -121,7 +121,7 @@ define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider)
 				var allBrands = [];
 				
 				$('#page-1 .next-btn').one('click',function() {
-					gotoPage();
+					
 					loadingLayer.removeClass('hidden');
 					BrandAjaxUtil.getRecomBrands(function(data) {
 						var brands = data.brands;
@@ -138,6 +138,7 @@ define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider)
 						}
 						load11(allBrands);
 						loadingLayer.addClass('hidden');
+						gotoPage();
 					})
 					$(this).click(function(){gotoPage()});
 				})
