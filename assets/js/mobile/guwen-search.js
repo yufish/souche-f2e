@@ -1,4 +1,4 @@
-define(['lib/mustache'],function(Mustache){
+define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider){
 	var GuWen = (function() {
 		function createBrandsManager(_container) {
 			var container = _container;
@@ -57,6 +57,17 @@ define(['lib/mustache'],function(Mustache){
 		return {
 
 			init : function() {
+
+				var range = new PriceRangeSlider({
+				        ele:".sc-rangeslider",
+				        steps: ["0万", "3万", "5万", "6万", "7万", "8万", "9万", "10万", "12万", "14万", "15万", "16万", "18万", "20万", "22万", "24万", "25万", "30万", "35万", "40万", "50万", "60万", "70万", "100万", "无限"],
+				        min: "8万",
+				        max: "20万",
+				        tpl: "%"
+				        });
+				
+				var brandsManager = createBrandsManager($('.selected-brand'));
+				
 
 				var brandsManager = createBrandsManager($('.selected-brand'));
 
@@ -171,29 +182,20 @@ define(['lib/mustache'],function(Mustache){
 				$('.back-icon').click(function() {
 					backPage();
 				})
-				/*$(".selected-brand").on(
-						'click',
-						'.close-icon',
-						function() {
-							var $sbItem, $selectedBrand;
-							var $parent = $(this).parent();
-							while ($parent) {
-								if ($parent.hasClass('sb-item')) {
-									$sbItem = $parent;
-									break;
-								}
-								$parent = $parent.parent();
-							}
-							var bCode = $sbItem.attr('brand-code'), sCode = $sbItem
-									.attr('series-code');
-							brandsManager.toggleSeries(bCode, sCode);
-							//$sbItem.remove();
-						})*/
+				$('.selected-brand').on('click','.sb-item',function(){
+						var $self = $(this)
+						var bCode = $self.attr('brand-code')
+								,sCode = $self.attr('series-code');
+						brandsManager.toggleSeries(bCode, sCode);
+				});
 
 				var $curBrandArray;
 				var $curFold;
 				var curBrandCode;
 				var loadingLayer = $('.loading-cover-layer');
+
+
+
 				$('#brand-icons-container').on('click','.icon-item',
 					function() {
 						var $self = $(this);
@@ -211,19 +213,32 @@ define(['lib/mustache'],function(Mustache){
 								,html='';
 							loadingLayer.removeClass('hidden');
 							BrandAjaxUtil.getSeries(function(data){
-								var codes = data.codes;
+								var codes = data.items;
+								var hasCreateMore=true;
+								var seriesNum=0;
 								html='<div data-code="" class="series-item"> <div data-brand-name="'+brandName+'" class="text">全部车系</div></div>'
-					            for(var i in codes){
-					            	var b = codes[i];
-					                var name = i;
-					                for(var n =0;n<b.length;n++){
-					                  var seriesCode = b[n].code;
-					                  var seriesName = b[n].enName;
-					                  html+=Mustache.render(tplSeries, {'series':{'seriesCode':seriesCode,'seriesName':seriesName}});
-					                } 
-					            }
-					            $self.parent('.icon-group').append(start+html+end);
-					            if (curBrandCode === loaclBrandCode) {
+		            for(var i in codes){
+		            	var b = codes[i];
+		                var name = i;
+		                for(var n =0;n<b.length;n++){
+		                  var seriesCode = b[n].code;
+		                  var seriesName = b[n].enName;
+
+		                  if(seriesNum>11){
+		                  	if(hasCreateMore){
+			                  	html+=Mustache.render(tplSeries, {'series':{'seriesCode':'__more__','seriesName':'更多'}});
+			                  	hasCreateMore=false;
+			                  }
+			                  html+=Mustache.render(tplSeries, {'series':{'seriesCode':seriesCode,'seriesName':seriesName,'display':'none'}});
+		                  }
+		                  else{
+		                  	html+=Mustache.render(tplSeries, {'series':{'seriesCode':seriesCode,'seriesName':seriesName}});
+		                  }
+		                  seriesNum++;
+		                } 
+		            }
+		            $self.parent('.icon-group').append(start+html+end);
+		            if (curBrandCode === loaclBrandCode) {
 									$curFold.hide();
 									$curBrandArray.hide();
 									curBrandCode = '';
@@ -247,9 +262,7 @@ define(['lib/mustache'],function(Mustache){
 								loadingLayer.addClass('hidden');
 							},loaclBrandCode);
 							return;
-						}
-						
-						
+						}						
 
 						if (curBrandCode === loaclBrandCode) {
 							$curFold.hide();
@@ -276,7 +289,6 @@ define(['lib/mustache'],function(Mustache){
 
 				var brandIndex = 0;
 				$('#brand-icons-container').one('click','#more-brand',function() {
-					console.log(allBrands);
 					var start = '<div class="icon-group">', end = '</div>', html = '';
 					var bound;
 					var brands = allBrands;
@@ -299,18 +311,22 @@ define(['lib/mustache'],function(Mustache){
 						}
 						$('#brand-icons-container').append(start + html + end);
 						html = '';
-					
 					}
-					//remove self
-					//pick first one add to group which contains #more-brand
-					//loop to add group(4 icon-item ;4 fold-series )
+
 				});
 
 				$('#brand-icons-container').on('click','.series-item',
 						function() {
-							var dIndex = $(this).attr('data-index');
-							var sCode = $(this).attr('data-code');
-							var textDiv = $(this).find('.text');
+							var $self = $(this);
+							var dIndex = $self.attr('data-index');
+							var sCode = $self.attr('data-code');
+							var textDiv = $self.find('.text');
+							//click 更多
+							if( sCode=='__more__'){
+								$self.siblings('.series-item').show();
+								$self.remove();
+								return;
+							}
 							var text
 							if(textDiv.attr('data-brand-name')){
 								text = textDiv.attr('data-brand-name');
@@ -326,16 +342,87 @@ define(['lib/mustache'],function(Mustache){
 									$(html), textDiv ]);
 						})
 
+
+				var yearCode='';
 				$('.year-item').click(function() {
 					$('.year-item .text').removeClass('selected');
 					$(this).find('.text').addClass('selected')
+					yearCode = $(this).attr('data-code');
 				})
 
+				function sumbitGuWenInfo(){
+					var price = range.getData();
+					var brands = brandsManager.brands;
+					var minPrice = price.min.value.replace('万','')
+							,maxPrice = price.max.value.replace('万','');
+					if(maxPrice =='无限')
+						maxPrice= 10000;
+					var bStr = ''
+							,sStr = '';
+					for(var brand in brands){
+						for(var series in brands[brand]){
+								if(series==''){
+									bStr+=','+brand
+								}else{
+									sStr+=','+series;
+								}						
+						}
+					}
+					bStr=bStr.substring(1);
+					sStr = sStr.substring(1);
+
+		      $.ajax({
+		      	url:contextPath+'/mobile/carCustomAction/saveBuyInfo.json',
+		      	dataType:'json',
+		      	data:{
+		      		brands:bStr,
+							series:sStr,
+							year:yearCode,
+							minPrice:minPrice,
+							maxPrice:maxPrice
+		      	},
+		      	success:function(){
+		      		window.location.href=contextPath+'/mobile/carcustom.html';
+		      	}
+
+		      });
+				}
+
+				function showPopup(){
+					$('.cover-layer').removeClass('hidden');
+					var width = $(window).width();
+					var left = (width-300)/2;
+					$('#phone-popup').css({'left':left}).removeClass('hidden');
+				}
+
+
+				$('#submit-btn').click(function(){
+		      SM.checkPhoneExist(function(is_login) {
+						if (is_login) {
+							sumbitGuWenInfo();
+						} else {
+							showPopup();
+						}
+					})
+				})
+
+				var phoneReg = /^1[3458][0-9]{9}$/;
+				$('#phone-form').submit(function(){
+					var phoneNum = $("#phone-num").val();
+					if (!phoneReg.test(phoneNum)) {
+						alert('请输入正确的手机号码');
+						e.preventDefault();
+					}else{
+						SM.PhoneRegister($("#yuyue-phone").val(), function() {
+							sumbitGuWenInfo();
+						})
+					}
+				})
 			}
 		}
 
 	})();
-	window.GuWen = GuWen;
+	//window.GuWen = GuWen;
 	return GuWen;
 });
 

@@ -870,6 +870,61 @@
   border: 2px solid #fc7000;
   background: #ffffff url(../../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
 }
+#phonePopup {
+  z-index: 1000;
+  background-color: #fff;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  padding-top: 30px;
+  border-radius: 8px;
+}
+#phonePopup .wrapper-300 {
+  width: 300px;
+}
+#phonePopup .wrapper-234 {
+  margin: 0 auto;
+  width: 234px;
+}
+#phonePopup #phone-form {
+  margin-top: 20px;
+}
+#phonePopup #phone-form input {
+  height: 35px;
+  width: 230px;
+  border-radius: 8px;
+  padding-left: 10px;
+  border: 2px solid #b1b1b1;
+}
+#phonePopup #phone-form .btn {
+  width: 150px;
+  margin: 0 auto;
+}
+#phonePopup #phone-form .btn #phone-btn {
+  background-color: #fc7000;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  display: block;
+  margin: 30px 8px 30px 8px;
+}
+#phonePopup .text {
+  font-size: 18px;
+  text-align: center;
+}
+.cover-layer {
+  width: 99999px;
+  height: 99999px;
+  z-index: 100;
+  background-color: #7f7f7f;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 #guwen-list-h5-2 .header .back-icon {
   padding: 0;
   padding-left: 12px;
@@ -1013,6 +1068,7 @@
 #index-h5-2 .card-box {
   opacity: 0.85;
   -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 #index-h5-2 .row {
   margin: 10px 0;
@@ -1133,4 +1189,5 @@
 }
 #index-h5-2 .scale {
   -webkit-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
 }
