@@ -371,7 +371,7 @@ define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider)
 					}
 					bStr=bStr.substring(1);
 					sStr = sStr.substring(1);
-
+					loadingLayer.removeClass('hidden');
 		      $.ajax({
 		      	url:contextPath+'/mobile/carCustomAction/saveBuyInfo.json',
 		      	dataType:'json',
@@ -383,6 +383,7 @@ define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider)
 							maxPrice:maxPrice
 		      	},
 		      	success:function(){
+		      		loadingLayer.removeClass('hidden');
 		      		window.location.href=contextPath+'/mobile/carcustom.html';
 		      	}
 
