@@ -1,11 +1,2 @@
-2014-03-21 10:05:53,751 [http-10080-1] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
-2014-03-21 10:05:53,876 [http-10080-2] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
-2014-03-21 10:06:10,870 [http-10080-2] INFO  org.bimu.framework.controller.InitController - [122.224.68.242] 访问 [http://115.29.10.121:10080/soucheweb/pages/car/index.html]{id=1, parentTabId=undefined, __ip=122.224.68.242, tabId=e20ecd5f-a3cf-4c8c-a2e0-8a66230eca74, __url=/soucheweb/pages/car/index.html?id=1&tabId=e20ecd5f-a3cf-4c8c-a2e0-8a66230eca74&parentTabId=undefined}
-2014-03-21 10:06:10,870 [http-10080-2] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
-2014-03-21 10:06:11,367 [http-10080-2] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
-2014-03-21 10:06:13,335 [http-10080-1] INFO  org.bimu.framework.controller.InitController - [122.224.68.242] 访问 [http://115.29.10.121:10080/soucheweb/pages/car/index.html]{id=3, parentTabId=undefined, __ip=122.224.68.242, tabId=e799c35a-313d-4447-ade7-620544fe3214, __url=/soucheweb/pages/car/index.html?id=3&tabId=e799c35a-313d-4447-ade7-620544fe3214&parentTabId=undefined}
-2014-03-21 10:06:13,335 [http-10080-1] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:http://115.29.10.121:10080/soucheweb/pages/admin/index.html
-2014-03-21 10:06:13,353 [http-10080-1] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:http://115.29.10.121:10080/soucheweb/pages/admin/index.html
-2014-03-21 10:06:16,936 [http-10080-6] INFO  org.bimu.framework.controller.InitController - [122.224.68.242] 访问 [http://115.29.10.121:10080/soucheweb/pages/car/index.html]{id=1, parentTabId=undefined, __ip=122.224.68.242, tabId=e20ecd5f-a3cf-4c8c-a2e0-8a66230eca74, __url=/soucheweb/pages/car/index.html?id=1&tabId=e20ecd5f-a3cf-4c8c-a2e0-8a66230eca74&parentTabId=undefined}
-2014-03-21 10:06:16,936 [http-10080-6] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:http://115.29.10.121:10080/soucheweb/pages/admin/index.html
-2014-03-21 10:06:16,977 [http-10080-6] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:http://115.29.10.121:10080/soucheweb/pages/admin/index.html
+2014-03-25 10:00:09,746 [http-10080-1] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
+2014-03-25 10:00:12,742 [http-10080-7] INFO  org.bimu.framework.controller.InitController - holdUrl in cookie:/soucheweb
