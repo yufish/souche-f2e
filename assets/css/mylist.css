@@ -55,7 +55,7 @@ html {
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box {
   width: 1191px;
-  margin-top: 30px;
+  padding-top: 30px;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .qiugou-box .qiugou-title {
   height: 60px;

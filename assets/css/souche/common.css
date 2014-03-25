@@ -334,3 +334,31 @@ body{
 #simple-header .other-navs a.last {
   border: none;
 }
+
+.guwen-slider-global{
+  width:100%;
+  height:550px;
+  background: #fdf6e3;
+  position:absolute;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:100001;
+  top:-560px;
+  box-shadow: 1px 1px 3px #aaa;
+}
+.guwen-show-global{
+  width:60px;
+  height:30px;
+  line-height: 30px;
+  text-align: center;
+  background: #aaa;
+  color:#fff;
+  position:absolute;
+  position: fixed;
+  top:0;
+  right:0;
+  box-shadow: 1px 1px 3px #aaa;
+  z-index: 100000;
+
+}
