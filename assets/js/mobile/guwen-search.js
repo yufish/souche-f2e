@@ -407,13 +407,13 @@ define(['lib/mustache','souche/range-slide'],function(Mustache,PriceRangeSlider)
 				})
 
 				var phoneReg = /^1[3458][0-9]{9}$/;
-				$('#phone-form').submit(function(){
+				$('#phone-form').submit(function(e){
 					var phoneNum = $("#phone-num").val();
+					e.preventDefault();
 					if (!phoneReg.test(phoneNum)) {
 						alert('请输入正确的手机号码');
-						e.preventDefault();
 					}else{
-						SM.PhoneRegister($("#yuyue-phone").val(), function() {
+						SM.PhoneRegister(phoneNum, function() {
 							sumbitGuWenInfo();
 						})
 					}
