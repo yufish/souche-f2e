@@ -491,4 +491,41 @@ $(document).ready(function() {
         $(".apply_popup").addClass("hidden")
         $(".wrapGrayBg").hide();
     })
+    if (!$.cookie("show_guwen_tip")) {
+        setTimeout(function() {
+            $("#guwen_slider_global").animate({
+                top: 0
+            }, 600)
+            $("#guwen_show_global").css({
+                top: -30
+            })
+        }, 500)
+    }
+
+    $("#guwen_show_global").click(function(e) {
+        e.stopPropagation();
+        $("#guwen_slider_global").animate({
+            top: 0
+        }, 600)
+        $("#guwen_show_global").css({
+            top: -30
+        })
+    })
+    var closeTip = function() {
+        $("#guwen_slider_global").animate({
+            top: -560
+        }, 600, null, function() {
+            $("#guwen_show_global").animate({
+                top: 0
+            }, 400)
+        })
+        $.cookie("show_guwen_tip", "1", {
+            expires: 100,
+            path: '/'
+        })
+    }
+    $(document.body).click(function() {
+        closeTip();
+    })
+
 })
