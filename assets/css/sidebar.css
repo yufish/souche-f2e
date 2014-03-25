@@ -428,7 +428,7 @@
 }
 .sidebar-active .toolbar-content .iframe-loading {
   width: 855px;
-  height: 630px;
+  height: 648px;
   background: url(../images/index/ajax-loader.gif) no-repeat center;
   position: fixed;
   background-color: #f2f2f2;
