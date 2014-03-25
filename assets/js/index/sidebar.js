@@ -48,7 +48,12 @@
                     $("#toolbar").addClass("sidebar-active")
                     $(".sidebar").removeClass("active")
                 }
-                $(".toolbar-content iframe").attr("src", $(self).attr("href"))
+                $(".toolbar-content iframe").attr("src", $(self).attr("href"));
+                $(".toolbar-content .iframe-loading").removeClass("hidden");
+                $(".toolbar-content iframe").load(function() {
+                    $(this).removeClass("hidden");
+                    $(".toolbar-content .iframe-loading").addClass("hidden");
+                })
             })
 
         });
@@ -191,6 +196,7 @@
 
         }
     }, 100);
+
 
 
     //ie6 fixed 
