@@ -1113,6 +1113,7 @@ a:hover {
   height: 488px;
   position: relative;
   z-index: 10;
+  background: #f9f9f9;
   /*end of brand*/
 }
 #index .filter-nav #brand {
