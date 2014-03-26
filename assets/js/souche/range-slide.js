@@ -142,7 +142,7 @@ define(function() {
                             y: e.originalEvent.targetTouches[0].pageY
                         }
                     }
-                    console.log(mousePos)
+
                     var sliderPos = self.ele.offset();
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
