@@ -13,11 +13,10 @@ var BrandAjaxUtil=(function(){
 		getSeries:function(success,brandCode,loading){
 			var ctxPath = this.config.contextPath;
 			 $.ajax({
-		            url:ctxPath+"/pages/dicAction/loadRootLevelForCar.json",
+		            url:ctxPath+"/mobile/carCustomAction/listSeriesByBrand.json",
 		            dataType:"json",
 		            data:{
-		              type:"car-subdivision",
-		              code:brandCode
+		              brand:brandCode
 		            },
 		            success:success,
 		            error:function(){},
@@ -32,7 +31,7 @@ var BrandAjaxUtil=(function(){
 			loading=loading||true;
 
 			$.ajax({
-              url:ctxPath+ '/mobile/carCustomAction/listRecommandBrands.json',
+              url:ctxPath+ '/mobile/carCustomAction/listBrands.json',
               dataType:"json",
               success:success,
               error:noopFunc,
