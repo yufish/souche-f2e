@@ -367,6 +367,7 @@ Souche.NoRegLogin = function() {
 
         },
         _show: function() {
+            var self = this;
             if (minilogin) {
                 minilogin.css({
                     display: "block"
@@ -380,17 +381,7 @@ Souche.NoRegLogin = function() {
                     display: "block",
                     zIndex: 100000001
                 });
-                $("#noreg-phone-form").on("submit", function(e) {
-                    e.preventDefault();
-                    if (!phoneReg.test($("#noreg-phone").val())) {
-                        $(".warning", this).removeClass("hidden");
-                    } else {
-                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
-                            self.callback && self.callback();
-                        })
 
-                    }
-                })
                 minilayer = $("<div id='minilayer'></div>");
                 minilayer.css({
                     display: "block",
@@ -411,6 +402,19 @@ Souche.NoRegLogin = function() {
                 //                      left:$(window).width()/2-300
                 //                  })
                 //              })
+                $("#noreg-phone-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", this).removeClass("hidden");
+                    } else {
+                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
+                            self.callback && self.callback();
+                        })
+                    }
+                })
+                $("#noreg-popup .apply_close").on("click", function(e) {
+                    self.close();
+                })
             }
         },
         checkLogin: function(_callback) {
@@ -582,11 +586,21 @@ $(document).ready(function() {
     var hasShow = false;
     var initTip = function() {
         if (!hasShow) {
-            $('.guwen-flexslider .slides li').each(function(i, li) {
-                $(li).css({
-                    background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+            if ($(window).height() < 500) {
+                $("#guwen_slider_global").addClass("small-global")
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-small-image") + ") no-repeat center center"
+                    })
                 })
-            })
+            } else {
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+                    })
+                })
+            }
+
             $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
                 $('.guwen-flexslider').flexslider({
                     animation: "slide",

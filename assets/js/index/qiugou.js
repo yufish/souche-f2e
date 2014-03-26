@@ -149,7 +149,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
 
                         })
                         $(".qiugou .head .head-inner").animate({
-                            marginTop: -130
+                            marginTop: -190
                         }, 300)
                     } else {
                         self._renderResult();
