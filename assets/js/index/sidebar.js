@@ -57,6 +57,12 @@
             })
 
         });
+        $("#my-advisor").on("mouseenter", function() {
+            $("#my-advisor").addClass("active")
+        }).mouseleave(function() {
+            $("#my-advisor").removeClass("active")
+        });
+
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
                 $(".sidebar").addClass("active")
