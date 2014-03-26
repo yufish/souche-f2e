@@ -1113,6 +1113,7 @@ a:hover {
   height: 488px;
   position: relative;
   z-index: 10;
+  background-color: #f9f9f9;
   /*end of brand*/
 }
 #index .filter-nav #brand {
@@ -1131,6 +1132,9 @@ a:hover {
 #index .filter-nav #brand .inner {
   padding: 15px 25px;
   width: 690px;
+}
+#index .filter-nav #brand .inner #nav-item-brand:hover {
+  background-color: #fff;
 }
 #index .filter-nav #brand .inner .brand-title {
   font-weight: bold;

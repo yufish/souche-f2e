@@ -92,10 +92,15 @@
   height:85px;
   display: block;
   color:#fff;
-  text-align: center;
   padding-top: 5px;
   position: relative;
   z-index: 2;
+  span{
+    margin-left: 18px;
+  }
+  p{
+    margin-left: 5px;
+  }
   .point-num{
       border-radius: 15px;
       border: 2px solid #fff;
@@ -131,6 +136,26 @@
       line-height: 20px;
       text-align: center;
       font-style: normal;
+    }
+  }
+}
+#my-advisor.active{
+  width:80px !important;
+  -moz-transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;
+  -o-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+  .my-advisor-box{
+    width: 80px !important;
+    img{
+        margin-left: 9px;
+        margin-right: 29px;
+      }
+    span{
+      
+    }
+    p{
+
     }
   }
 }
@@ -180,7 +205,7 @@
   }
   .side-box.flash{
     background: #FC7000;
-    box-shadow:0px 0px 5px #666 inset;
+    
     a{
       i{color: #fff8dd;}
     }
@@ -190,7 +215,8 @@
   }
   .side-box:hover{
     background: #FC7000;
-    box-shadow:0px 0px 5px #666 inset;
+    
+
     a{
       i{color: #fff8dd;}
     }
@@ -244,7 +270,7 @@
 .sidebar-active{
   width:58px;
   border-left: none;
-  box-shadow: -1px -1px 5px #666;
+  
   .sidebar-nav{
     background-color: #FC7000;
     
@@ -274,8 +300,10 @@
       a{.icon{background: url(../images/index/collect-hover.png);}}
     }
     .collectside:hover,.collectside.active{
-      border-bottom: 1px solid #dedede;border-right: none;
-      border-top:  1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      border-right: none;
+      border-left: 1px solid #f2f2f2;
+      border-top:  1px solid #f2f2f2;
       background: #f2f2f2;
       a{
         .icon{background: url(../images/index/collect-active.png);}
@@ -284,7 +312,10 @@
     }
     .reserveside{a{.icon{background: url(../images/index/reserve-hover.png);}}}
     .reserveside:hover,.reserveside.active{
-      border-bottom: 1px solid #dedede;border-right: none;
+      border-bottom: 1px solid #dedede;
+      border-left: 1px solid #f2f2f2;
+
+      border-right: none;
       background: #f2f2f2;
       a{
         .icon{background: url(../images/index/reserve-active.png);}
@@ -293,7 +324,9 @@
     }
     .sellside{a{.icon{background: url(../images/index/sell-hover.png);}}}
     .sellside:hover,.sellside.active{
-      border-bottom: 1px solid #dedede;border-right: none;
+      border-bottom: 1px solid #dedede;
+      border-left: 1px solid #f2f2f2;
+      border-right: none;
       background: #f2f2f2;
       a{
         .icon{background: url(../images/index/sell-active.png);}

@@ -143,10 +143,15 @@
   height: 85px;
   display: block;
   color: #fff;
-  text-align: center;
   padding-top: 5px;
   position: relative;
   z-index: 2;
+}
+#my-advisor .my-advisor-box span {
+  margin-left: 18px;
+}
+#my-advisor .my-advisor-box p {
+  margin-left: 5px;
 }
 #my-advisor .my-advisor-box .point-num {
   border-radius: 15px;
@@ -186,6 +191,20 @@
   line-height: 20px;
   text-align: center;
   font-style: normal;
+}
+#my-advisor.active {
+  width: 80px !important;
+  -moz-transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;
+  -o-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+#my-advisor.active .my-advisor-box {
+  width: 80px !important;
+}
+#my-advisor.active .my-advisor-box img {
+  margin-left: 9px;
+  margin-right: 29px;
 }
 .sidebar {
   width: 58px;
@@ -251,7 +270,6 @@
 }
 .sidebar .side-box.flash {
   background: #FC7000;
-  box-shadow: 0px 0px 5px #666 inset;
 }
 .sidebar .side-box.flash a i {
   color: #fff8dd;
@@ -261,7 +279,6 @@
 }
 .sidebar .side-box:hover {
   background: #FC7000;
-  box-shadow: 0px 0px 5px #666 inset;
 }
 .sidebar .side-box:hover a i {
   color: #fff8dd;
@@ -302,7 +319,6 @@
 .sidebar-active {
   width: 58px;
   border-left: none;
-  box-shadow: -1px -1px 5px #666666;
 }
 .sidebar-active .sidebar-nav {
   background-color: #FC7000;
@@ -346,7 +362,8 @@
 .sidebar-active .sidebar-nav .collectside.active {
   border-bottom: 1px solid #dedede;
   border-right: none;
-  border-top: 1px solid #dedede;
+  border-left: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
   background: #f2f2f2;
 }
 .sidebar-active .sidebar-nav .collectside:hover a .icon,
@@ -363,6 +380,7 @@
 .sidebar-active .sidebar-nav .reserveside:hover,
 .sidebar-active .sidebar-nav .reserveside.active {
   border-bottom: 1px solid #dedede;
+  border-left: 1px solid #f2f2f2;
   border-right: none;
   background: #f2f2f2;
 }
@@ -380,6 +398,7 @@
 .sidebar-active .sidebar-nav .sellside:hover,
 .sidebar-active .sidebar-nav .sellside.active {
   border-bottom: 1px solid #dedede;
+  border-left: 1px solid #f2f2f2;
   border-right: none;
   background: #f2f2f2;
 }
