@@ -623,6 +623,7 @@ $(document).ready(function() {
                 top: -30
             })
         }, 900)
+        $("#guwen_slider_global").blur();
     }
 
     $("#guwen_show_global").click(function(e) {
