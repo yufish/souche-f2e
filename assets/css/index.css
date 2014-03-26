@@ -492,6 +492,9 @@ a:hover {
 #index .has-qiugou .form .form-inner {
   margin-top: 335px;
 }
+#index .no-result .head-inner {
+  margin-top: -190px;
+}
 #index .timebuy .hd {
   height: 45px;
 }

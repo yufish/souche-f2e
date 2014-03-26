@@ -586,11 +586,21 @@ $(document).ready(function() {
     var hasShow = false;
     var initTip = function() {
         if (!hasShow) {
-            $('.guwen-flexslider .slides li').each(function(i, li) {
-                $(li).css({
-                    background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+            if ($(window).height() < 500) {
+                $("#guwen_slider_global").addClass("small-global")
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-small-image") + ") no-repeat center center"
+                    })
                 })
-            })
+            } else {
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+                    })
+                })
+            }
+
             $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
                 $('.guwen-flexslider').flexslider({
                     animation: "slide",
