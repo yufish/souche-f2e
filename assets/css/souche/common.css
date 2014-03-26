@@ -508,6 +508,7 @@ body {
   height: 510px;
   overflow: hidden;
   box-shadow: 1px 1px 3px #aaa;
+  border-bottom: 1px solid #aaa;
 }
 .guwen-slider-global.small-global {
   height: 390px;
