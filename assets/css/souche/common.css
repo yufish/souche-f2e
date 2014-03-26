@@ -509,6 +509,9 @@ body {
   overflow: hidden;
   box-shadow: 1px 1px 3px #aaa;
 }
+.guwen-slider-global.small-global {
+  height: 390px;
+}
 .guwen-slider-global iframe {
   width: 100%;
   margin: 0 auto;
@@ -628,6 +631,18 @@ body {
   float: left;
   margin-top: 28px;
   margin-left: 20px;
+}
+.guwen-slider-global.small-global {
+  height: 390px;
+}
+.guwen-slider-global.small-global .guwen-flexslider {
+  height: 290px;
+}
+.guwen-slider-global.small-global .guwen-flexslider .slides {
+  height: 290px;
+}
+.guwen-slider-global.small-global .guwen-flexslider .slides li {
+  height: 290px;
 }
 .guwen-show-global {
   width: 60px;
