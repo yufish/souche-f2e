@@ -491,7 +491,25 @@ $(document).ready(function() {
         $(".apply_popup").addClass("hidden")
         $(".wrapGrayBg").hide();
     })
+    var hasShow = false;
+    var initTip = function() {
+        if (!hasShow) {
+            $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
+                $('.guwen-flexslider').flexslider({
+                    animation: "slide",
+                    animationSpeed: 300,
+                    initDelay: 0,
+                    slideshowSpeed: 5000,
+                    useCSS: false
+                });
+                hasShow = true;
+            })
+        }
+    }
     if (!$.cookie("show_guwen_tip")) {
+        initTip(function() {
+
+        });
         setTimeout(function() {
             $("#guwen_slider_global").animate({
                 top: 0
@@ -504,6 +522,9 @@ $(document).ready(function() {
 
     $("#guwen_show_global").click(function(e) {
         e.stopPropagation();
+        initTip(function() {
+
+        });
         $("#guwen_slider_global").animate({
             top: 0
         }, 600)
@@ -524,7 +545,8 @@ $(document).ready(function() {
             path: '/'
         })
     }
-    $(document.body).click(function() {
+    $("#guwen_slider_global .close").on("click", function(e) {
+        e.preventDefault();
         closeTip();
     })
 

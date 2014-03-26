@@ -1113,7 +1113,11 @@ a:hover {
   height: 488px;
   position: relative;
   z-index: 10;
+<<<<<<< HEAD
+  background: #f9f9f9;
+=======
   background-color: #f9f9f9;
+>>>>>>> 6a7b83bccbc2ed2220666976870faf039a482c0b
   /*end of brand*/
 }
 #index .filter-nav #brand {
