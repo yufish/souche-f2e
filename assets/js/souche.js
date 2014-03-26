@@ -367,6 +367,7 @@ Souche.NoRegLogin = function() {
 
         },
         _show: function() {
+            var self = this;
             if (minilogin) {
                 minilogin.css({
                     display: "block"
@@ -380,17 +381,7 @@ Souche.NoRegLogin = function() {
                     display: "block",
                     zIndex: 100000001
                 });
-                $("#noreg-phone-form").on("submit", function(e) {
-                    e.preventDefault();
-                    if (!phoneReg.test($("#noreg-phone").val())) {
-                        $(".warning", this).removeClass("hidden");
-                    } else {
-                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
-                            self.callback && self.callback();
-                        })
 
-                    }
-                })
                 minilayer = $("<div id='minilayer'></div>");
                 minilayer.css({
                     display: "block",
@@ -411,6 +402,19 @@ Souche.NoRegLogin = function() {
                 //                      left:$(window).width()/2-300
                 //                  })
                 //              })
+                $("#noreg-phone-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", this).removeClass("hidden");
+                    } else {
+                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
+                            self.callback && self.callback();
+                        })
+                    }
+                })
+                $("#noreg-popup .apply_close").on("click", function(e) {
+                    self.close();
+                })
             }
         },
         checkLogin: function(_callback) {
