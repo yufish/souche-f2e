@@ -32,7 +32,7 @@
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            Souche.MiniLogin.checkLogin(function(isLogin) {
+            Souche.NoRegLogin.checkLogin(function(isLogin) {
                 $(".sidebar .side-box").removeClass("active")
                 $(self.parentNode).addClass("active")
                 if (!$("#toolbar").hasClass("sidebar-active")) {
