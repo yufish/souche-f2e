@@ -343,7 +343,7 @@ body{
   position: fixed;
   top:0;
   left:0;
-  z-index:100001;
+  z-index:9001;
   top:-560px;
   box-shadow: 1px 1px 3px #aaa;
 }
@@ -359,6 +359,6 @@ body{
   top:0;
   right:0;
   box-shadow: 1px 1px 3px #aaa;
-  z-index: 100000;
+  z-index: 9000;
 
 }
