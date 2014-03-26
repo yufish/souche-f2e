@@ -18,9 +18,9 @@ html
             .wrapper-250
               .index-head-photo
                 .num-tip 1
-              .text
-                .big 我的买车顾问
-                .small 为您选好车
+              .title-text
+                .big 买车顾问
+                .small 为我选好车
           .img-container
             .recom-img
               img(src='http://souche.cdn.aliyuncs.com/files/carpicture/74D85E71914417E8144540391D961DC7_700x460.jpg_325x10000.jpg')
@@ -35,30 +35,42 @@ html
         .row.clearfix
           .col-1-2
             .wrapper-2
+              #filter-car-bg
               #filter-car.card-box
-                .text 筛选二手车
+                .title-text 筛选二手车
+              
 
           .col-1-2
             .wrapper
+              #walk-around-bg
               #walk-around.card-box
-                .text 随便逛逛
+                .title-text 随便逛逛
         .row.clearfix
           .col-1-3
             .wrapper-3
+              #footprint-bg
               #footprint.card-box
-                .text 我的足迹
+                .title-text 我的足迹
           .col-1-3
             .wrapper-3
+              #sell-car-bg
               #sell-car.card-box
-                .text 我要卖车
+                .title-text 我要卖车
           .col-1-3
             .wrapper
+              #promise-bg
               #promise.card-box
-                .text 服务承诺
-      .wrapper
-        .row.clearfix
-          #footer-picture
-      
+                .title-text 服务承诺
+      #footer-mobile    
+        #footer-nav.clearfix
+          .col-1-3
+            a(href='#') 用户反馈
+          .col-1-3
+            a.noactive 触屏版
+          .col-1-3
+            a(href='http://www.souche.com').text 电脑版
+        #footer-beian
+          .text 京 ICP备 13012136号
     script.
       var pages=$('.recom-img');
       var curPageIndex= -1
@@ -84,7 +96,7 @@ html
       },3000);
       //setTimeout(nextPage,500);
       nextPage();
-      pageAnimate=false;
+      //pageAnimate=false;
       
       $('#first-row').on('touchstart',function(){
         var touched = true;
