@@ -603,12 +603,17 @@ body {
   background: #fff;
   display: block;
 }
+.guwen-slider-global .link .text-box {
+  height: 100px;
+  margin: 0 auto;
+  width: 525px;
+}
 .guwen-slider-global .link .label {
   font-size: 26px;
   color: #fc7000;
   line-height: 100px;
-  margin-left: 350px;
   float: left;
+  display: block;
 }
 .guwen-slider-global .link .btn {
   font-size: 20px;
