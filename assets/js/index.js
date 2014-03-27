@@ -76,7 +76,9 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                         var zIndex = (+$('#brand').css('z-index')) + 1;
                         clearTimeout(brandTimer);
                         if (brandSelectActive == true) {
-                            $('#nav-item-brand .hr').addClass('hidden');
+                            $('#nav-item-brand .hr').css({
+                                'border-bottom': '1px solid #fff'
+                            });
                             $('#nav-item-brand').css({
                                 border: '1px solid #fc7000',
                                 'border-right': '1px solid #fff',
@@ -93,7 +95,9 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                                 avoidTransforms: true
                             }, showDelayT, function() {
                                 $('#brand').hide();
-                                $('#nav-item-brand .hr').removeClass('hidden');
+                                $('#nav-item-brand .hr').css({
+                                    'border-bottom': '1px solid #e6e6e6'
+                                });
                                 $('#nav-item-brand').css({
                                     border: '1px solid #f9f9f9',
                                     'z-index': 0,
