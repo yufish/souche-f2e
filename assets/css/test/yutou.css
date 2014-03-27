@@ -198,6 +198,7 @@ body {
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+  cursor: pointer;
 }
 #order .byhot {
   border-radius: 10px;
@@ -210,9 +211,11 @@ body {
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+  cursor: pointer;
+  float: right;
 }
 #content {
-  margin: 5px;
+  margin: 10px;
 }
 #content .items .item {
   background: #fff;
@@ -227,6 +230,7 @@ body {
 }
 #content .items .item .pic img {
   width: 100%;
+  min-height: 200px;
 }
 #content .items .item .info {
   height: 30px;
@@ -240,7 +244,7 @@ body {
 #content .items .item .master {
   padding-left: 10px;
   font-size: 14px;
-  color: #333;
+  color: #666;
   position: absolute;
   left: 0;
   top: 0;
@@ -252,6 +256,7 @@ body {
   margin-right: 10px;
   background: url(like.png) no-repeat right center;
   background-size: 16px;
+  color: #666;
 }
 #content .search-result {
   margin-bottom: 10px;
@@ -263,4 +268,24 @@ body {
   background: url(loading.gif) no-repeat center center;
   height: 30px;
   width: 100%;
+}
+.loading-tip {
+  position: fixed;
+  top: 300px;
+  left: 45%;
+  height: 50px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  line-height: 50px;
+  padding: 2px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  background: #aaa;
+  color: #fff;
+  border: 1px solid #aaa;
+  opacity: 0;
+  z-index: 10000;
+}
+.loading-tip.show {
+  opacity: 1;
 }
