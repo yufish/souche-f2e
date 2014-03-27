@@ -1,0 +1,55 @@
+doctype html
+html
+  head.
+    <title>ß</title>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1" /> 
+    <link href="http://f2e.souche.com/assets/css/test/yutou.css?t=150" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+  body
+    div#search
+        form
+            input(type="search",name="keyword",placeholder="以Photo ID找出最可爱宠物")
+    div#order
+        div.bytime
+            | 按时间
+            i.arrow.up
+        div.byhot
+            | 按人气
+            i.arrow.down
+    div#content
+        div.search-result.items
+            div.item(data-id="3")
+                .wrapper
+                    .pic
+                        img(src="http://souche.cdn.aliyuncs.com/files/carpicture/D334300D2D6A0313EEECB2624A8074D9_700x460.JPG_240x10000.JPG")
+                    .info
+                        .master 主人ID：我是傻逼
+                        .like 
+                            span.like-count 1234
+                            a.like-action 
+        div.normal-result.items
+            div.item(data-id="1")
+                .wrapper
+                    .pic
+                        img(src="http://souche.cdn.aliyuncs.com/files/carpicture/D334300D2D6A0313EEECB2624A8074D9_700x460.JPG_240x10000.JPG")
+                    .info
+                        .master 主人ID：我是傻逼
+                        .like 
+                            span.like-count 1234
+                            a.like-action 
+            div.item(data-id="2")
+                .wrapper
+                    .pic
+                        img(src="http://souche.cdn.aliyuncs.com/files/carpicture/D334300D2D6A0313EEECB2624A8074D9_700x460.JPG_240x10000.JPG")
+                    .info
+                        .master 主人ID：我是傻逼
+                        .like 
+                            span.like-count 1234
+                            a.like-action 
+        div.loading
+
+    script(src="http://f2e.souche.com/assets/css/test/yutou.js")
+    script
+        Pet.init({
+            likeApi:"like"
+            })
