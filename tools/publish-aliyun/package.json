@@ -1,22 +1,22 @@
 {
-    "name": "publish-aliyun",
-    "version": "0.0.0",
-    "description": "阿里云发布服务。",
-    "main": "service.coffee",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "BSD",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/xinyu198736/souche-f2e"
-    },
-    "dependencies": {
-        "walkdo": "*",
-        "queuedo": "*",
-        "properties": "*",
-        "optimist": "*",
-        "queuedo": "*"
-    }
+  "name": "publish-aliyun",
+  "version": "0.0.0",
+  "description": "阿里云发布服务。",
+  "main": "service.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinyu198736/souche-f2e"
+  },
+  "dependencies": {
+    "walkdo": "*",
+    "queuedo": "*",
+    "properties": "*",
+    "optimist": "*",
+    "fs-extra": "~0.8.1"
+  }
 }

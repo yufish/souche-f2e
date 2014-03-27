@@ -6,7 +6,7 @@ rainbow        = require './lib/rainbow.js'
 lessmiddle     = require 'less-middleware'
 less           = require 'less'
 fs             = require 'fs'
-
+expressUglify = require('express-uglify')
 #log4js
 log4js         = require 'log4js'
 log4js.configure({
@@ -36,6 +36,7 @@ app.configure ->
   # app.use express.bodyParser()
   # app.use express.cookieParser()
   # app.use express.cookieSession(secret: 'fd2afdsafdvcxzjaklfdsa')
+
   app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}))
   # app.locals.assets_head = config.assets_head
   # 直接输出静态jade的route，无需自己配置route
