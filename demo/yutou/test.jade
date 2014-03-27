@@ -10,19 +10,17 @@ html
         form#search_form
             input#search_input(type="text",name="keyword",placeholder="以Photo ID找出最可爱宠物")
     div#order
-        div.bytime
+        a.bytime(class="#{query.sort_time?'active':''}",href="?sort_time=#{query.sort_time==1?-1:1}")
             | 按时间
-            i.arrow.down
-        div.byhot
+            i.arrow(class="#{query.sort_time==1?'down':'up'}")
+        a.byhot(class="#{query.sort_hot?'active':''}",href="?sort_hot=#{query.sort_hot==1?-1:1}")
             | 按人气
-            i.arrow.down
+            i.arrow(class="#{query.sort_hot==1?'down':'up'}")
     div.provision 
-        a.left(href="#") 
-            img(src="http://f2e.souche.com/assets/css/test/1.jpeg")
         .logo 宠·爱
-        a.right(href="#")
-            img(src="http://f2e.souche.com/assets/css/test/1.jpeg")
-        a.link(href="#") “宠·爱”之条款及细则
+        .link
+            a(href="#") “宠·爱”之条款及细则
+            a(href="#") “宠·爱”之条款及细则
     a.shai 立即晒可爱宠物
     div#content
         div.search-result.items.hidden
@@ -50,7 +48,7 @@ html
                         a.like-action 
         {{/pets}}
     .layer.hidden
-        img(src="")
+        img(src="http://f2e.souche.com/assets/css/test/share.jpg")
     script(src="http://f2e.souche.com/assets/css/test/mustache.js")
     script(src="http://f2e.souche.com/assets/css/test/yutou.js")
     script.
@@ -58,5 +56,7 @@ html
             likeApi:"like.json",
             moreApi:"pets.json",
             searchApi:"search.json",
-            favGoUrl:"#"
+            favGoUrl:"#",
+            sort_time:#{query.sort_time?query.sort_time:0},
+            sort_hot:#{query.sort_hot?query.sort_hot:0}
         })
