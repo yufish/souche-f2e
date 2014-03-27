@@ -239,7 +239,7 @@ color: #ed9763;
   border-radius: 15px;
   margin-top: 10px;
   position: absolute;
-  top:0;
+  top:30px;
   left:0;
   width:100%;
 }
@@ -248,7 +248,7 @@ color: #ed9763;
   background:#a8d081;
   margin-top: 10px;
   position: absolute;
-  top:0;
+  top:30px;
   left:0;
   width:100%;
 }
@@ -260,7 +260,7 @@ color: #ed9763;
   background:#fff;
   border-radius: 20px;
   position: absolute;
-  top:0;
+  top:30px;
   box-shadow: 1px 1px 1px #ccc;
   cursor: pointer;
 }
@@ -271,7 +271,7 @@ color: #ed9763;
   width:100%;
 }
 .sc-rangeslider-tip{
-  bottom:-50px;
+  bottom:30px;
    left: 50%;
    float: left;
    position: relative;
