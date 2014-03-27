@@ -17,7 +17,12 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library.
  */
-
+define(function() {
+    var obj = {
+        "ss": "dd"
+    }
+    return obj;
+})
 var fs = require('fs')
 var path = require('path')
 var util = require('util')

@@ -4,3 +4,4 @@ module.exports =
   OSS_ENDPOINT : 'http://oss.aliyuncs.com/'
   bucketName : 'souche'
   RESOURCE_BUCKET : 'souche'
+  output_path:__dirname+"/output"

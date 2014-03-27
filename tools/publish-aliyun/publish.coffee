@@ -1,5 +1,5 @@
 ossApi = require './lib/oss_client.js'
-config = require './config.coffee'
+global.config = config = require './config.coffee'
 walkdo = require 'walkdo'
 queuedo = require 'queuedo'
 path = require 'path'
@@ -99,11 +99,12 @@ Publish.prototype.pubFile = (file,callback)->
 
 
 pub = new Publish({
-  properties_file:argv.resource?argv.resource:"./resource.properties",
+  properties_file: if argv.resource then argv.resource else "./resource.properties",
   white_list:['.js','.less','.css','.png','.jpg'], #文件后缀的白名单
   black_list:[/\.min\.js/] #文件名的黑名单，正则
 });
 pub.addMiddleware(".js",require("./middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./middleware/mw-less.coffee"))
 pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
-pub.pub((argv.path?argv.path:"./test"))
+
+pub.pub((if argv.path then argv.path else "/Users/tianqi/Documents/souche-assets/souche-f2e/assets/js/test"))
