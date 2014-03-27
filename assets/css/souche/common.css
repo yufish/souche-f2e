@@ -508,6 +508,7 @@ body {
   height: 510px;
   overflow: hidden;
   box-shadow: 1px 1px 3px #aaa;
+  border-bottom: 1px solid #aaa;
 }
 .guwen-slider-global.small-global {
   height: 390px;
@@ -660,6 +661,7 @@ body {
   height: 40px;
   text-indent: -10000px;
   overflow: hidden;
+  display: block;
   background: url(../../images/common/guwen-slides/hover.png) no-repeat 0 -41px;
 }
 .guwen-show-global:hover {
