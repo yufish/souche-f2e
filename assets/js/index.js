@@ -93,7 +93,7 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                             }, showDelayT, function() {
                                 $('#brand').hide();
                                 $('#nav-item-brand').css({
-                                    border: '1px solid #fff',
+                                    border: '1px solid #f9f9f9',
                                     'z-index': 0,
                                     'background-color': "#f9f9f9"
                                 });
