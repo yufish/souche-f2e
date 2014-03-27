@@ -372,3 +372,6 @@ body {
   background: #fff;
   opacity: 0.8;
 }
+.layer img {
+  width: 100%;
+}
