@@ -340,6 +340,98 @@ Souche.MiniLogin = function() {
         }
     };
 }();
+Souche.NoRegLogin = Souche.NoRegLogin || {};
+Souche.NoRegLogin = function() {
+    var minilogin = null;
+    var minilayer = null;
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    var callback = function() {
+
+    };
+    return {
+        callback: function() {
+            this.close();
+            callback();
+        },
+        close: function() {
+            if (minilogin) {
+                minilogin.css({
+                    display: "none"
+                });
+            }
+            if (minilayer) {
+                minilayer && minilayer.css({
+                    display: "none"
+                });
+            }
+
+        },
+        _show: function() {
+            var self = this;
+            if (minilogin) {
+                minilogin.css({
+                    display: "block"
+                });
+                minilayer.css({
+                    display: "block"
+                });
+            } else {
+                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="tip">输入您的手机号码，完成后续操作</div>            <div class="phone">            <label>手机号码</label>            <input type="text" name="" value="" id="noreg-phone"  placeholder="在此输入手机号码"/>            <s class="warning hidden">请输入正确的手机号码</s>            </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin.css({
+                    display: "block",
+                    zIndex: 100000001
+                });
+
+                minilayer = $("<div id='minilayer'></div>");
+                minilayer.css({
+                    display: "block",
+                    width: $(document.body).width(),
+                    left: 0,
+                    top: 0,
+                    height: $(document.body).height(),
+                    position: "absolute",
+                    opacity: 0.7,
+                    background: "#111",
+                    zIndex: 100000000
+                });
+                $(document.body).append(minilayer);
+                $(document.body).append(minilogin);
+                //              $(window).scroll(function(){
+                //                  minilogin.css({
+                //                      top:$(window).scrollTop()+100,
+                //                      left:$(window).width()/2-300
+                //                  })
+                //              })
+                $("#noreg-phone-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", this).removeClass("hidden");
+                    } else {
+                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
+                            self.callback && self.callback();
+                        })
+                    }
+                })
+                $("#noreg-popup .apply_close").on("click", function(e) {
+                    self.close();
+                })
+            }
+        },
+        checkLogin: function(_callback) {
+            callback = _callback;
+            var self = this;
+            Souche.checkPhoneExist(function(isLogin) {
+                if (isLogin) {
+                    self.callback && self.callback();
+                } else {
+                    self._show();
+                }
+            })
+
+        }
+    };
+}();
+
 //检查是否填过手机号
 Souche.checkPhoneExist = function(callback) {
     $.ajax({
@@ -491,7 +583,38 @@ $(document).ready(function() {
         $(".apply_popup").addClass("hidden")
         $(".wrapGrayBg").hide();
     })
+    var hasShow = false;
+    var initTip = function() {
+        if (!hasShow) {
+            if ($(window).height() < 650) {
+                $("#guwen_slider_global").addClass("small-global")
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-small-image") + ") no-repeat center center"
+                    })
+                })
+            } else {
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+                    })
+                })
+            }
+
+            $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
+                $('.guwen-flexslider').flexslider({
+                    animation: "slide",
+                    animationSpeed: 300,
+                    initDelay: 0,
+                    slideshowSpeed: 5000,
+                    useCSS: false
+                });
+                hasShow = true;
+            })
+        }
+    }
     if (!$.cookie("show_guwen_tip")) {
+        initTip();
         setTimeout(function() {
             $("#guwen_slider_global").animate({
                 top: 0
@@ -499,11 +622,21 @@ $(document).ready(function() {
             $("#guwen_show_global").css({
                 top: -30
             })
-        }, 500)
+        }, 900)
+        $("#guwen_slider_global").focus();
     }
 
     $("#guwen_show_global").click(function(e) {
-        e.stopPropagation();
+        initTip();
+        $("#guwen_slider_global").animate({
+            top: 0
+        }, 600)
+        $("#guwen_show_global").css({
+            top: -30
+        })
+    })
+    $(".wedo").click(function() {
+        initTip();
         $("#guwen_slider_global").animate({
             top: 0
         }, 600)
@@ -524,7 +657,11 @@ $(document).ready(function() {
             path: '/'
         })
     }
-    $(document.body).click(function() {
+    $("#guwen_slider_global .close").on("click", function(e) {
+        e.preventDefault();
+        closeTip();
+    })
+    $("#guwen_slider_global .link").on("click", function(e) {
         closeTip();
     })
 

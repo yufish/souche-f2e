@@ -1,266 +1,131 @@
 Souche.UI.CustomSelect = function() {
-    var select = function(id, _config) {
-        this.id = id;
-        this.ele = typeof(id) != "string" ? $(id) : $("#" + this.id);
-        this.config = {
-            isAutoDrop: true,
+    var e = function(e, t) {
+        this.id = e, this.ele = $("string" != typeof e ? e : "#" + this.id), this.config = {
+            isAutoDrop: !0,
             placeholder: "请选择品牌",
-            multi: true,
+            multi: !0,
             listContainer: ".sc-select-list .sc-popup-bd"
-        };
-        $.extend(this.config, _config)
-        this.selected = [];
-        this._init();
-        this._defaultHeadHeight = 30;
-        this._enable = true;
+        }, $.extend(this.config, t), this.selected = [], this._init(), this._defaultHeadHeight = 30, this._enable = !0
     };
-    /**
-     * 自定义事件：select unselect
-     */
-    $.extend(select.prototype, {
-        //添加下拉里的html，并且激活相应的option
-        addOptions: function(html) {
-            $(this.config.listContainer, this.ele).append(html)
-            for (var i = 0; i < this.selected.length; i++) {
-                $(".sc-select-list .option[data-value='" + this.selected[i].key + "']").addClass("active");
-            }
+    return $.extend(e.prototype, {
+        addOptions: function(e) {
+            $(this.config.listContainer, this.ele).append(e);
+            for (var t = 0; t < this.selected.length; t++) $(".sc-select-list .option[data-value='" + this.selected[t].key + "']").addClass("active")
         },
-        removeSelected: function(key) {
-            this._delKey(key);
-            this._renderSelected();
+        removeSelected: function(e) {
+            this._delKey(e), this._renderSelected()
         },
         removeAllOption: function() {
-            $(this.config.listContainer, this.ele).html("");
+            $(this.config.listContainer, this.ele).html("")
         },
         showOptions: function() {
-            if (!this._enable) return;
-            $(".sc-select-list", this.ele).removeClass("hidden");
-            this.ele.addClass("sc-active");
-            $(this).trigger("show");
+            this._enable && ($(".sc-select-list", this.ele).removeClass("hidden"), this.ele.addClass("sc-active"), $(this).trigger("show"))
         },
         hideOptions: function() {
-            $(".sc-select-list", this.ele).addClass("hidden");
-            this.ele.removeClass("sc-active");
-            $(this).trigger("hide");
+            $(".sc-select-list", this.ele).addClass("hidden"), this.ele.removeClass("sc-active"), $(this).trigger("hide")
         },
-        disable: function(txt) {
-            $(".sc-select-content", this.ele).html("<span class='placeholder'>" + txt + "</span>");
-            this._enable = false;
+        disable: function(e) {
+            $(".sc-select-content", this.ele).html("<span class='placeholder'>" + e + "</span>"), this._enable = !1
         },
-        enable: function(txt) {
-            this._enable = true;
-            this._renderSelected();
+        enable: function() {
+            this._enable = !0, this._renderSelected()
         }
-    })
-    $.extend(select.prototype, {
-        _init: function(_config) {
-            var self = this;
-            Souche.Util.mixin(this.config, _config);
-
-            this._defaultHeadHeight = $(".sc-select-hd").height();
-            $(".sc-selected-item", self.ele).each(function(i, v) {
-                self.selected.push({
-                    key: $(v).attr("data-value"),
-                    value: $(v).text().replace("x", "")
+    }), $.extend(e.prototype, {
+        _init: function(e) {
+            var t = this;
+            Souche.Util.mixin(this.config, e), this._defaultHeadHeight = $(".sc-select-hd").height(), $(".sc-selected-item", t.ele).each(function(e, s) {
+                t.selected.push({
+                    key: $(s).attr("data-value"),
+                    value: $(s).text().replace("x", "")
                 })
-            })
-
-            $(document.body).on("click", function() {
-                self.hideOptions();
-            });
-            this._bindClick();
-            this._bindSelect();
-            if (this.config.multi) {
-                this._renderSelected();
-            } else {
-                this._renderSingleSelected();
-            }
-
+            }), $(document.body).on("click", function() {
+                t.hideOptions()
+            }), this._bindClick(), this._bindSelect(), this.config.multi ? this._renderSelected() : this._renderSingleSelected()
         },
-        //绑定输入框的点击事件
         _bindClick: function() {
-            var self = this;
-
-            $(".sc-select-hd", this.ele).click(function(e) {
-                var list = $(".sc-select-list", self.ele);
-                if ($(".sc-select-list", self.ele).hasClass("hidden")) {
-                    $(".sc-select-list").addClass("hidden");
-                    self.showOptions();
-                    $(".sc-select-list", self.ele).css({
-                        top: $(".sc-select-hd", self.ele).height() + 2
-                    });
-                    if (self.config.isAutoDrop) {
-                        self._autoDrop(list);
-                    }
-                    $(".sc-select-list", self.ele).scrollTop(0)
-                    $(list[0].parentNode).css({
-                        zIndex: Souche.Data.DropdownzIndex++
-                    });
-                } else {
-                    self.hideOptions();
-                    list.css({
-                        top: 30
-                    });
-                }
-
-                e.stopPropagation();
-            });
-
-
-
+            var e = this;
+            $(".sc-select-hd", this.ele).click(function(t) {
+                var s = $(".sc-select-list", e.ele);
+                $(".sc-select-list", e.ele).hasClass("hidden") ? ($(".sc-select-list").addClass("hidden"), e.showOptions(), $(".sc-select-list", e.ele).css({
+                    top: $(".sc-select-hd", e.ele).height() + 2
+                }), e.config.isAutoDrop && e._autoDrop(s), $(".sc-select-list", e.ele).scrollTop(0), $(s[0].parentNode).css({
+                    zIndex: Souche.Data.DropdownzIndex++
+                })) : (e.hideOptions(), s.css({
+                    top: 30
+                })), t.stopPropagation()
+            })
         },
-        //绑定选择事件
         _bindSelect: function() {
-            var self = this;
-            $(".sc-select-list", self.ele).on("click", "a.option", function(e) {
-                e.preventDefault();
-                var key = $(this).attr("data-value");
-                var value = $(".value", this).html();
-                var $this = $(this);
-
-                if (self.config.multi) {
-                    if ($this.hasClass("active")) {
-                        self._delKey(key);
-                        $this.removeClass("active");
-                        $(self).trigger("unselect", {
-                            key: key,
-                            value: value
-                        })
-                    } else {
-                        self._addKey(key, value);
-                        $this.addClass("active");
-                        $(self).trigger("select", {
-                            key: key,
-                            value: value
-                        })
-                    }
-                    self._renderSelected();
-                } else {
-                    self.selected = [{
-                        key: key,
-                        value: value
-                    }];
-                    self._renderSingleSelected();
-                }
-                $(self).trigger("change", {
-                    key: key,
-                    value: value
-                })
-                // $(".sc-select-content",self.ele).html(value)
-                // $(".selected_value",self.ele).val(key)
-                e.stopPropagation();
-            })
-            $(".sc-select-list", self.ele).on("click", function(e) {
-                e.stopPropagation();
-            });
-            $(".close", self.ele).on("click", function(e) {
-                self.hideOptions();
-            })
-            $(".sc-select-list", self.ele).on("scroll", function(e) {
-                e.stopPropagation();
+            var e = this;
+            $(".sc-select-list", e.ele).on("click", "a.option", function(t) {
+                t.preventDefault();
+                var s = $(this).attr("data-value"),
+                    l = $(".value", this).html(),
+                    i = $(this);
+                e.config.multi ? (i.hasClass("active") ? (e._delKey(s), i.removeClass("active"), $(e).trigger("unselect", {
+                    key: s,
+                    value: l
+                })) : (e._addKey(s, l), i.addClass("active"), $(e).trigger("select", {
+                    key: s,
+                    value: l
+                })), e._renderSelected()) : (e.selected = [{
+                    key: s,
+                    value: l
+                }], e._renderSingleSelected()), $(e).trigger("change", {
+                    key: s,
+                    value: l
+                }), t.stopPropagation()
+            }), $(".sc-select-list", e.ele).on("click", function(e) {
+                e.stopPropagation()
+            }), $(".close", e.ele).on("click", function() {
+                e.hideOptions()
+            }), $(".sc-select-list", e.ele).on("scroll", function(e) {
+                e.stopPropagation()
             })
         },
-        _delKey: function(key) {
-            var self = this;
-            for (var i = 0; i < self.selected.length; i++) {
-                var s = self.selected[i];
-                if (s && s.key == key) {
-                    self.selected.splice(i, 1)
-                }
+        _delKey: function(e) {
+            for (var t = this, s = 0; s < t.selected.length; s++) {
+                var l = t.selected[s];
+                l && l.key == e && t.selected.splice(s, 1)
             }
         },
-        _addKey: function(key, value) {
-            var self = this;
-            var alreadySelected = false;
-            for (var i = 0; i < self.selected.length; i++) {
-                var s = self.selected[i];
-                if (s && s.key == key) {
-                    alreadySelected = true;
-                }
+        _addKey: function(e, t) {
+            for (var s = this, l = !1, i = 0; i < s.selected.length; i++) {
+                var c = s.selected[i];
+                c && c.key == e && (l = !0)
             }
-            if (!alreadySelected) {
-                self.selected.push({
-                    key: key,
-                    value: value
-                })
-            } else {
-
-            }
+            l || s.selected.push({
+                key: e,
+                value: t
+            })
         },
-        //渲染选择框里的item
         _renderSelected: function() {
-            var self = this;
-            var s = []
-            for (var i = 0; i < self.selected.length; i++) {
-                s.push(self.selected[i].key)
+            for (var e = this, t = [], s = 0; s < e.selected.length; s++) t.push(e.selected[s].key);
+            $(".selected_values", e.ele).val(t.join(",")), $(".sc-select-content", e.ele).html("");
+            for (var s = 0; s < e.selected.length; s++) {
+                var t = e.selected[s];
+                $(".sc-select-content", e.ele).append("<div class=sc-selected-item data-value='" + t.key + "'>" + t.value + "<i class=sc-close>x</i></div>")
             }
-            $(".selected_values", self.ele).val(s.join(","))
-            $(".sc-select-content", self.ele).html("")
-            for (var i = 0; i < self.selected.length; i++) {
-                var s = self.selected[i];
-                $(".sc-select-content", self.ele).append("<div class=sc-selected-item data-value='" + s.key + "'>" + s.value + "<i class=sc-close>x</i></div>")
-
-            }
-            $(".sc-selected-item", self.ele).on("click", function(e) {
-                var key = $(this).attr("data-value");
-                for (var i = 0; i < self.selected.length; i++) {
-                    var s = self.selected[i];
-                    if (s && s.key == key) {
-                        self.selected.splice(i, 1)
-                    }
+            $(".sc-selected-item", e.ele).on("click", function(t) {
+                for (var s = $(this).attr("data-value"), l = 0; l < e.selected.length; l++) {
+                    var i = e.selected[l];
+                    i && i.key == s && e.selected.splice(l, 1)
                 }
-                $(self).trigger("unselect", {
-                    key: key
-                })
-                self._renderSelected();
-                // self.hideOptions();
-                $(".sc-select-list a.option[data-value='" + key + "']", self.ele).removeClass("active")
-
-                e.stopPropagation();
+                $(e).trigger("unselect", {
+                    key: s
+                }), e._renderSelected(), $(".sc-select-list a.option[data-value='" + s + "']", e.ele).removeClass("active"), t.stopPropagation()
+            }), e.selected.length || $(".sc-select-content", e.ele).html("<span class='placeholder'>" + e.config.placeholder + "</span>"), $(".sc-select-list", e.ele).css({
+                top: $(".sc-select-hd", e.ele).height() + 2
             })
-            if (self.selected.length) {} else {
-                $(".sc-select-content", self.ele).html("<span class='placeholder'>" + self.config.placeholder + "</span>")
-            }
-
-            $(".sc-select-list", self.ele).css({
-                top: $(".sc-select-hd", self.ele).height() + 2
-            });
-
         },
         _renderSingleSelected: function() {
-            var self = this;
-            var s = []
-            for (var i = 0; i < self.selected.length; i++) {
-                s.push(self.selected[i].key)
-            }
-            $(".selected_values", self.ele).val(s.join(","))
-            if (this.selected.length) {
-                $(".sc-select-content", this.ele).html(this.selected[0].value);
-            } else {
-
-                $(".sc-select-content", this.ele).html("<span class='placeholder'>" + this.config.placeholder + "</span>")
-            }
-            this.hideOptions();
+            for (var e = this, t = [], s = 0; s < e.selected.length; s++) t.push(e.selected[s].key);
+            $(".selected_values", e.ele).val(t.join(",")), $(".sc-select-content", this.ele).html(this.selected.length ? this.selected[0].value : "<span class='placeholder'>" + this.config.placeholder + "</span>"), this.hideOptions()
         },
-        _autoDrop: function(list) {
-            var c = this.config
-            //自适应滚屏,求实现，如果select被覆盖，自动缩短其高度
-            // if(list.offset().top+list.height()>$(window).scrollTop()+$(window).height()){
-            //   list.css({
-            //     height:c.optionHeight-list.offset().top-list.height()+23
-            //   });
-
-            // }else{
-            //   list.css({
-            //     top:25
-            //   });
-            // }
+        _autoDrop: function() {
+            this.config
         }
-    })
-
-    return select;
-}();
-
-define(function() {
-    return Souche.UI.CustomSelect;
+    }), e
+}(), define(function() {
+    return Souche.UI.CustomSelect
 });

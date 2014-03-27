@@ -32,7 +32,7 @@
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            Souche.MiniLogin.checkLogin(function(isLogin) {
+            Souche.NoRegLogin.checkLogin(function(isLogin) {
                 $(".sidebar .side-box").removeClass("active")
                 $(self.parentNode).addClass("active")
                 if (!$("#toolbar").hasClass("sidebar-active")) {
@@ -57,6 +57,12 @@
             })
 
         });
+        $("#my-advisor").on("mouseenter", function() {
+            $("#my-advisor").addClass("active")
+        }).mouseleave(function() {
+            $("#my-advisor").removeClass("active")
+        });
+
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
                 $(".sidebar").addClass("active")

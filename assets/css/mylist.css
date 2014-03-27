@@ -229,6 +229,7 @@ html {
   padding: 10px;
   float: left;
   display: inline;
+  position: relative;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .car-box .car-image {
   width: 210px;
@@ -285,8 +286,9 @@ html {
   background-color: #FC7000;
   border-radius: 3px;
   color: #fff;
-  top: -160px;
-  left: 144px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
   text-align: center;
   line-height: 19px;
 }
@@ -306,9 +308,9 @@ html {
   background: url(../images/index/zhijiang.png);
   height: 75px;
   width: 40px;
-  position: relative;
-  top: -153px;
-  left: 171px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
 }
 #mylist #content .wrapper .date-wrap .date-box .car-wrap .price-down i {
   color: #FFFFFF;
@@ -563,7 +565,7 @@ html {
 }
 #mylist .qiugou .form .series-select .option.active {
   border: 2px solid #fc7000;
-  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  background: #ffedda url(../images/index/popup-active.png?123) no-repeat right bottom;
   color: #fc7000;
 }
 #mylist .qiugou .form .series-select .word-container:last-child {

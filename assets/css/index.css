@@ -46,13 +46,13 @@ a:hover {
   padding-top: 30px;
 }
 #index .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?1) no-repeat 0 0;
+  background: #f9f9f9 url(../images/index/qiugou-bg.jpg?123) no-repeat 0 0;
   position: absolute;
   bottom: 0;
   right: 1px;
   width: 365px;
   height: 377px;
-  z-index: 3;
+  z-index: 2;
 }
 #index .qiugou .head {
   height: 60px;
@@ -86,7 +86,7 @@ a:hover {
   height: 60px;
 }
 #index .qiugou .searching-title {
-  font-size: 28px;
+  font-size: 27px;
   color: #222;
   line-height: 35px;
   height: 35px;
@@ -491,6 +491,9 @@ a:hover {
 }
 #index .has-qiugou .form .form-inner {
   margin-top: 335px;
+}
+#index .no-result .head-inner {
+  margin-top: -190px;
 }
 #index .timebuy .hd {
   height: 45px;
@@ -1113,6 +1116,7 @@ a:hover {
   height: 488px;
   position: relative;
   z-index: 10;
+  background-color: #f9f9f9;
   /*end of brand*/
 }
 #index .filter-nav #brand {
@@ -1131,6 +1135,9 @@ a:hover {
 #index .filter-nav #brand .inner {
   padding: 15px 25px;
   width: 690px;
+}
+#index .filter-nav #brand .inner #nav-item-brand:hover {
+  background-color: #fff;
 }
 #index .filter-nav #brand .inner .brand-title {
   font-weight: bold;
@@ -1221,7 +1228,7 @@ a:hover {
 }
 #index .filter-nav .inner #nav-item-brand {
   padding-top: 15px;
-  border: 1px solid #fff;
+  border: 1px solid #f9f9f9;
 }
 #index .filter-nav .inner #nav-item-brand .right-arrow {
   background-image: url(../images/index/right-arrow.png);

@@ -76,10 +76,14 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                         var zIndex = (+$('#brand').css('z-index')) + 1;
                         clearTimeout(brandTimer);
                         if (brandSelectActive == true) {
+                            $('#nav-item-brand .hr').css({
+                                'border-bottom': '1px solid #fff'
+                            });
                             $('#nav-item-brand').css({
                                 border: '1px solid #fc7000',
                                 'border-right': '1px solid #fff',
-                                'z-index': zIndex
+                                'z-index': zIndex,
+                                'background-color': "#fff"
                             });
                             $('#brand').show().animate({
                                 width: '690px',
@@ -91,9 +95,13 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                                 avoidTransforms: true
                             }, showDelayT, function() {
                                 $('#brand').hide();
+                                $('#nav-item-brand .hr').css({
+                                    'border-bottom': '1px solid #e6e6e6'
+                                });
                                 $('#nav-item-brand').css({
-                                    border: '1px solid #fff',
-                                    'z-index': 0
+                                    border: '1px solid #f9f9f9',
+                                    'z-index': 0,
+                                    'background-color': "#f9f9f9"
                                 });
                             });
                         }
@@ -104,6 +112,7 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
 
                 $('#nav-item-brand,#brand').on('mouseenter', function() {
                     brandSelectActive = true;
+
                     checkDisplayStatus();
 
                 }).on('mouseleave', function() {
