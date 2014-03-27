@@ -122,7 +122,7 @@ html {
   top: -10px;
   background: url(../images/index/car-collect.png) no-repeat 0 0;
 }
-#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon:hover {
+#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon.active {
   background: url(../images/index/car-nocollect.png) no-repeat 0 0;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image img {
