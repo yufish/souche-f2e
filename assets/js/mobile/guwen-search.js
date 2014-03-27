@@ -74,7 +74,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 var curPageIndex = 1;
                 var pageStack = [];
                 pageStack.push(0);
-                var pages = [$('#page-1'), $('#page-2'), $('#page-3')];
+                var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
 
                 function gotoPage(pageIndex) {
                     pageStack.push(curPageIndex);
@@ -100,7 +100,11 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     document.body.scrollTop = 0
                     var pageIndex = pageStack.pop();
                     if (pageIndex == 0) {
-                        history.back();
+                        if (document.referrer.indexOf("souche") != -1) {
+                            history.back();
+                        } else {
+                            window.location.href = 'index.html';
+                        }
                         return;
                     }
                     var $curPage = pages[curPageIndex - 1];
@@ -194,9 +198,25 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 var curBrandCode;
                 var loadingLayer = $('.loading-cover-layer');
 
+                $('#brand-icons-container').on('click', '.icon-item', function() {
+                    var $self = $(this);
+                    var curBrandCode = $self.attr('data-code');
+                    var text = $self.find('.brand-name').text();
+                    var html = '<div class="sb-item" brand-code=' + curBrandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
+                    //$(this).find('.text').toggleClass('selected');
+                    brandsManager.toggleSeries(curBrandCode, '', [
+                        $(html), $('body')
+                    ]);
+
+                })
 
 
-                $('#brand-icons-container').on('click', '.icon-item',
+                function initDataObj() {
+                    if (dataObj) {
+
+                    }
+                }
+                /*$('#brand-icons-container').on('click', '.icon-item',
                     function() {
                         var $self = $(this);
 
@@ -299,7 +319,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         $curFold.slideDown(500, function() {
                             $curBrandArray.show();
                         });
-                    })
+                    })*/
 
                 var brandIndex = 0;
                 $('#brand-icons-container').one('click', '#more-brand', function() {
@@ -386,7 +406,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     }
                     bStr = bStr.substring(1);
                     sStr = sStr.substring(1);
-                    loadingLayer.removeClass('hidden');
+                    gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
                         dataType: 'json',
@@ -398,10 +418,11 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                             maxPrice: maxPrice
                         },
                         success: function() {
-                            loadingLayer.removeClass('hidden');
                             window.location.href = contextPath + '/mobile/carcustom.html';
+                        },
+                        error: function() {
+                            alert('error');
                         }
-
                     });
                 }
 
@@ -437,6 +458,60 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         })
                     }
                 })
+
+                $('.search-icon').click(function() {
+                    var $icon2 = $(this).siblings('.search-icon-2');
+                    $(this).parent().siblings('.search-box').show();
+                    $(this).hide();
+                    $icon2.show();
+                })
+
+                $('.search-icon-2').click(function() {
+                    var $icon = $(this).siblings('.search-icon');
+                    $(this).parent().siblings('.search-box').hide();
+                    $(this).hide();
+                    $icon.show();
+                })
+
+                $('.cancel-icon').click(function(e) {
+                    var $input = $(this).siblings('input[name=keyword]');
+                    $input.val('');
+                    $input.focus();
+                })
+
+                $('.search-form').submit(function(e) {
+                    var $input = $(this).find('input[name=keyword]');
+                    if ($input.val().trim() == '') {
+                        $input.val('');
+                        e.preventDefault();
+                    }
+                })
+
+                $('.search-btn').click(function(e) {
+                    var $input = $(this).siblings('.input').find('input[name=keyword]');
+                    if ($input.val().trim() == '') {
+                        $input.val('');
+                    } else {
+                        $input.parent().submit();
+                    }
+                });
+
+                var curNumOfEllipsis = 1;
+                $ellipsis = $('#page-4 .ellipsis');
+                setInterval(function() {
+                    var txt = '';
+                    for (var i = 0; i < curNumOfEllipsis; i++) {
+                        txt += '.'
+                    }
+                    $ellipsis.text(txt);
+                    if (curNumOfEllipsis == 3) {
+                        curNumOfEllipsis = 1;
+                    } else {
+                        curNumOfEllipsis++;
+                    }
+
+                }, 500)
+
             }
         }
 
