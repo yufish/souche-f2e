@@ -156,10 +156,11 @@ body {
   height: 30px;
 }
 #search input {
-  width: 100%;
+  width: 97%;
   height: 30px;
   border: none;
   border-radius: 10px;
+  padding-left: 3%;
 }
 #order {
   margin: 0 10px;
@@ -214,6 +215,18 @@ body {
   cursor: pointer;
   float: right;
 }
+#order .bytime.active,
+#order .byhot.active {
+  color: #ff6700;
+}
+#order .bytime.active .down,
+#order .byhot.active .down {
+  border-color: #ff6700 #fff #fff #fff;
+}
+#order .bytime.active .up,
+#order .byhot.active .up {
+  border-color: #fff #fff #ff6700 #fff;
+}
 #content {
   margin: 10px;
 }
@@ -257,6 +270,7 @@ body {
   background: url(like.png) no-repeat right center;
   background-size: 16px;
   color: #666;
+  cursor: pointer;
 }
 #content .search-result {
   margin-bottom: 10px;
@@ -268,6 +282,63 @@ body {
   background: url(loading.gif) no-repeat center center;
   height: 30px;
   width: 100%;
+}
+.provision {
+  background: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  position: relative;
+  height: 60px;
+  box-shadow: 1px 1px 3px #aaa;
+}
+.provision .left {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.provision .left img {
+  width: 40px;
+  height: 40px;
+}
+.provision .right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.provision .right img {
+  width: 40px;
+  height: 40px;
+}
+.provision .logo {
+  color: #ff6700;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+.provision .link {
+  display: block;
+  text-align: center;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7faadb;
+}
+.shai {
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 10px;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #aaa;
 }
 .loading-tip {
   position: fixed;

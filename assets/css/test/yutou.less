@@ -31,10 +31,11 @@ body{
   margin:10px;
   height:30px;
   input{
-    width:100%;
+    width:97%;
     height:30px;
     border:none;
      border-radius: 10px;
+     padding-left:3%;
   }
 }
 #order{
@@ -90,6 +91,15 @@ body{
     cursor: pointer;
     float: right;
   }
+  .bytime.active,.byhot.active{
+    color:#ff6700;
+    .down{
+      border-color: #ff6700 #fff #fff #fff;
+      }
+      .up{
+      border-color: #fff #fff #ff6700 #fff;
+      }
+  }
 }
 
 #content{
@@ -136,6 +146,7 @@ body{
         background: url(like.png) no-repeat right center;
         background-size: 16px;
         color:#666;
+        cursor: pointer;
       }
     }
   }
@@ -154,7 +165,63 @@ body{
 
 }
 
-
+.provision{
+  background: #fff;
+  border-radius: 5px;
+  margin:10px;
+  position: relative;
+  height:60px;
+  .left{
+    position: absolute;
+    left:10px;
+    top:10px;
+    width:40px;
+    height:40px;
+    img{
+      width:40px;
+      height:40px;
+    }
+  }
+  .right{
+    position: absolute;
+    right:10px;
+    top:10px;
+    width:40px;
+    height:40px;
+    img{
+      width:40px;
+      height:40px;
+    }
+  }
+  .logo{
+    color:#ff6700;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+  }
+  .link{
+    display: block;
+    text-align: center;
+    width:150px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 13px;
+    color:#7faadb;
+  }
+  box-shadow: 1px 1px 3px #aaa;
+}
+.shai{
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  margin:10px;
+  color:#333;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #aaa;
+}
 .loading-tip{
   position:fixed;
   top:300px;

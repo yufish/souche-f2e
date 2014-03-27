@@ -101,6 +101,8 @@ var Pet = (function() {
                 })
             })
             $(".bytime").on("click", function(e) {
+                $(this).addClass("active")
+                $(".byhot").removeClass("active")
                 if (order_time == 0) {
                     order_time = 1;
                 } else if (order_time == 1) {
@@ -117,6 +119,8 @@ var Pet = (function() {
             })
 
             $(".byhot").on("click", function(e) {
+                $(".bytime").removeClass("active")
+                $(this).addClass("active")
                 if (order_hot == 0) {
                     order_hot = 1;
                 } else if (order_hot == 1) {
