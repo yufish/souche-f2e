@@ -161,12 +161,13 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
         },
         _loadMore: function() {
             isLoadingMore = true;
-            $(".load-more").removeClass("hidden");
+
             var days = $(".date-title .day");
             if (nowPage > config.totalPage * 1) {
                 hasMore = false;
                 return;
             }
+            $(".load-more").removeClass("hidden");
             $.ajax({
                 url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {

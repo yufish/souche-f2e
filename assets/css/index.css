@@ -111,6 +111,9 @@ a:hover {
   height: 250px;
   margin-top: 130px;
 }
+#index .qiugou .result .cars {
+  margin-left: 3px;
+}
 #index .qiugou .result .redo {
   color: #fc7000;
   font-size: 14px;
@@ -1411,7 +1414,7 @@ a:hover {
 }
 #index .mod-side .service .inner .per {
   position: relative;
-  padding: 25px 0 25px 35px;
+  padding: 25px 0 25px 25px;
   border-bottom: 1px dotted #cccccc;
   height: 96px;
 }
