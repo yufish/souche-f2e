@@ -17,7 +17,11 @@ var Pet = (function() {
                         id: id
                     },
                     success: function(data) {
+                        if (data.success) {
 
+                        } else {
+                            alert(data.info)
+                        }
                     }
                 })
             })

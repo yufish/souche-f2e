@@ -43,7 +43,7 @@ Souche.Util = function() {
 
 Souche.Util.init();
 Souche.Data = {
-    DropdownzIndex: 10000
+    DropdownzIndex: 1000
 }
 Souche.UI = Souche.UI || {};
 Souche.UI.Select = function() {
