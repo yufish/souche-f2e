@@ -135,14 +135,14 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     qiugouData = data;
                     $("#qiugou-popup").addClass("hidden")
                     setTimeout(function() {
-                        $(".submit").removeClass("loading").html("重新定制");
+                        $(".submit").removeClass("loading").html("重新提交");
                         is_submiting = false;
                     }, 1500)
 
                     $(".wrapGrayBg").hide();
                     $("#qiugou_count").html(data.totalNumber)
                     if (!data.totalNumber) {
-                        $(".qiugou .submit").html("重新定制")
+                        $(".qiugou .submit").html("重新提交")
                         $(".qiugou .person-bg").animate({
                             backgroundPosition: -402
                         }, 800, 'easeOutExpo', function() {

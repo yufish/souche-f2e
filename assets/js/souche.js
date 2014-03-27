@@ -586,7 +586,7 @@ $(document).ready(function() {
     var hasShow = false;
     var initTip = function() {
         if (!hasShow) {
-            if ($(window).height() < 500) {
+            if ($(window).height() < 650) {
                 $("#guwen_slider_global").addClass("small-global")
                 $('.guwen-flexslider .slides li').each(function(i, li) {
                     $(li).css({
