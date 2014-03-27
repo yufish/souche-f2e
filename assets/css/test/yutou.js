@@ -95,7 +95,7 @@ var Pet = (function() {
                         if (data.success) {
                             $(".like-count", $(e.target).closest(".item")).html($(".like-count", $(e.target).closest(".item")).html() * 1 + 1)
                         } else {
-                            alert(data.info)
+                            window.location.href = config.favGoUrl
                         }
                     }
                 })
