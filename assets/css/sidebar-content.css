@@ -99,7 +99,6 @@ html {
 }
 #toolbar #toolbar-content .car-wrap .car-box {
   width: 210px;
-  height: 240px;
   margin-top: 13px;
   background-color: #fff;
   border: 1px solid #e4e4e4;
@@ -131,7 +130,6 @@ html {
 #toolbar #toolbar-content .car-wrap .car-box .car-price {
   height: 20px;
   padding: 8px 0;
-  border-bottom: 1px solid #e4e4e4;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-price .price {
   color: #db2400;
@@ -143,6 +141,10 @@ html {
   color: #999;
   font-size: 12px;
   float: right;
+}
+#toolbar #toolbar-content .car-wrap .car-box .action {
+  height: 20px;
+  border-top: 1px solid #e4e4e4;
 }
 #toolbar #toolbar-content .car-wrap .car-box .cancel {
   display: block;
