@@ -10,8 +10,8 @@ var Pet = (function() {
                 tip.innerHTML = text || "加载中"
 
                 $(tip).css("display", "block").animate({
-                    opacity: 1
-                })
+                    opacity: 0.9
+                }, 500)
             },
             hide: function() {
                 $(tip).animate({
@@ -29,11 +29,11 @@ var Pet = (function() {
     }
     isLoadingMore = false;
     hasMore = true;
-    nowPage = 2;
+    nowPage = 1;
     var tpl = "";
     var order_time = 0;
     var order_hot = 0;
-    var loadMore = function() {
+    var loadMore = function(callback) {
         isLoadingMore = true;
 
         $(".loading").removeClass("hidden");
@@ -51,6 +51,7 @@ var Pet = (function() {
             },
             dataType: "json",
             success: function(data) {
+                callback && callback();
                 if (!data.hasMore) {
                     hasMore = false;
                 }
@@ -60,6 +61,7 @@ var Pet = (function() {
                     pets: data.pets
                 }));
                 loadingTip.hide();
+
             },
             error: function() {
                 loadingTip.hide();
@@ -70,8 +72,10 @@ var Pet = (function() {
         nowPage = 1;
         isLoadingMore = false;
         hasMore = true;
-        $(".normal-result").html("")
-        loadMore();
+
+        loadMore(function() {
+            $(".normal-result").html("")
+        });
     }
     return {
         init: function(_config) {
@@ -79,7 +83,7 @@ var Pet = (function() {
             tpl = $("#car_tpl").html();
             $("#content").on("click", ".like", function(e) {
                 e.preventDefault();
-                var id = $(this).closest(".item").attr("data-id");
+                var id = $(e.target).closest(".item").attr("data-id");
                 $.ajax({
                     url: config.likeApi,
                     type: "get",
@@ -89,7 +93,7 @@ var Pet = (function() {
                     },
                     success: function(data) {
                         if (data.success) {
-                            $(".like-count").html($(".like-count").html() * 1 + 1)
+                            $(".like-count", $(e.target).closest(".item")).html($(".like-count", $(e.target).closest(".item")).html() * 1 + 1)
                         } else {
                             alert(data.info)
                         }
@@ -134,19 +138,29 @@ var Pet = (function() {
                     loadMore();
                 }
             })
+            //搜索
             $("#search_form").on("submit", function(e) {
                 e.preventDefault();
                 loadingTip.show();
+                if (!$("#search_input").val()) {
+                    alert("ID不能为空")
+                    return;
+                }
                 $.ajax({
                     url: config.searchApi,
                     dataType: "json",
+                    data: {
+                        id: $("#search_input").val()
+                    },
                     success: function(data) {
                         if (data.success) {
-                            hasMore = false;
+                            $(".search-result").html(Mustache.render(tpl, {
+                                pets: data.pets
+                            })).removeClass("hidden");
+                        } else {
+                            alert(data.info)
                         }
-                        $(".search-result").append(Mustache.render(tpl, {
-                            pets: data.pets
-                        }));
+
                         loadingTip.hide();
                     },
                     error: function() {
@@ -155,6 +169,8 @@ var Pet = (function() {
                 })
                 $("#search_input").val("")
             })
+
+            loadMore(); //加载第一次
         }
     }
 })();
