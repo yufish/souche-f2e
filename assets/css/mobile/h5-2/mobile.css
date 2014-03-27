@@ -1058,12 +1058,18 @@
 }
 #index-h5-2 .wrapper-1 {
   padding: 10px;
+  position: relative;
 }
 #index-h5-2 .wrapper-2 {
+  position: relative;
   margin-right: 10px;
 }
 #index-h5-2 .wrapper-3 {
   margin-right: 10px;
+  position: relative;
+}
+#index-h5-2 .wrapper {
+  position: relative;
 }
 #index-h5-2 .card-box {
   opacity: 0.85;
@@ -1077,19 +1083,22 @@
 #index-h5-2 .img-container {
   top: 0;
   width: 100%;
-  height: 130px;
   overflow: hidden;
   position: absolute;
+  height: 130px;
 }
 #index-h5-2 .img-container .recom-img {
+  height: 130px;
   display: none;
   left: 100%;
+  width: 100%;
   position: absolute;
 }
 #index-h5-2 .img-container .recom-img img {
   display: block;
   margin: 0 auto;
-  width: 300px;
+  width: 100%;
+  height: 130px;
 }
 #index-h5-2 .content #car4you {
   position: relative;
@@ -1120,50 +1129,98 @@
   padding: 0 5px;
   line-height: 15px;
 }
-#index-h5-2 .content #car4you .text {
+#index-h5-2 .content #car4you .title-text {
   float: left;
   margin-left: 8px;
   padding-top: 10px;
   color: #fff;
 }
-#index-h5-2 .content #car4you .text .big {
+#index-h5-2 .content #car4you .title-text .big {
   font-size: 26px;
   line-height: 30px;
 }
-#index-h5-2 .content #car4you .text .small {
+#index-h5-2 .content #car4you .title-text .small {
   font-size: 16px;
 }
 #index-h5-2 #filter-car {
   height: 75px;
-  background-color: #3d972f;
   box-shadow: 2px 2px 2px #b5b5b5;
+  background-color: #3d972f;
+  z-index: 10;
 }
-#index-h5-2 .col-1-2 .text {
+#index-h5-2 #filter-car-bg {
+  position: absolute;
+  height: 75px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url(../../../images/mob/h5-2/filter-car-bg.jpg) no-repeat center center;
+  background-size: 100% 75px;
+}
+#index-h5-2 .col-1-2 .title-text {
   color: #fff;
   font-size: 20px;
   text-align: center;
   padding-top: 27px;
 }
-#index-h5-2 .col-1-3 .text {
+#index-h5-2 .col-1-3 .title-text {
   color: #fff;
   font-size: 18px;
   text-align: center;
   padding-top: 27px;
 }
+#index-h5-2 #walk-around-bg {
+  position: absolute;
+  height: 75px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url(../../../images/mob/h5-2/walk-around-bg.jpg) no-repeat center center;
+  background-size: 100% 75px;
+}
 #index-h5-2 #walk-around {
   background-color: #76a412;
   height: 75px;
   box-shadow: 2px 2px 2px #b5b5b5;
+  z-index: 10;
+}
+#index-h5-2 #footprint-bg {
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url(../../../images/mob/h5-2/footprint-bg.jpg) no-repeat center center;
+  background-size: 100% 70px;
 }
 #index-h5-2 #footprint {
   background-color: #eab118;
   height: 70px;
   box-shadow: 2px 2px 2px #b5b5b5;
+  z-index: 10;
+}
+#index-h5-2 #sell-car-bg {
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url(../../../images/mob/h5-2/sell-car-bg.jpg) no-repeat center center;
+  background-size: 100% 70px;
 }
 #index-h5-2 #sell-car {
   background-color: #fc8800;
   height: 70px;
   box-shadow: 2px 2px 2px #b5b5b5;
+}
+#index-h5-2 #promise-bg {
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url(../../../images/mob/h5-2/promise-bg.jpg) no-repeat center center;
+  background-size: 100% 70px;
 }
 #index-h5-2 #promise {
   background-color: #eab118;
@@ -1190,4 +1247,20 @@
 #index-h5-2 .scale {
   -webkit-transform: scale(0.95, 0.95);
   transform: scale(0.95, 0.95);
+}
+#index-h5-2 #footer-mobile #footer-nav a {
+  display: block;
+  text-align: center;
+  border-left: 1px solid #b5b5b5;
+  color: #000;
+}
+#index-h5-2 #footer-mobile #footer-nav a.noactive {
+  color: #b5b5b5;
+}
+#index-h5-2 #footer-mobile #footer-beian {
+  margin-top: 10px;
+}
+#index-h5-2 #footer-mobile #footer-beian .text {
+  color: #b5b5b5;
+  text-align: center;
 }
