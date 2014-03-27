@@ -30,7 +30,7 @@ app.configure ->
   app.set "views", config.demo_path
   app.set "view engine", "jade"
   app.use express.favicon()
-  app.use '/assets/js',expressUglify.middleware(src:config.assets+"/cache","reserved-names":'require,define')
+  app.use '/assets/js',expressUglify.middleware({src:config.assets_path+"/js","reserved-names":'require,define'})
   app.use "/assets",lessmiddle({src:config.assets_path,compress:false,force:true})
   app.use "/assets", express.static(config.assets_path)
   # app.use express.logger("dev")
