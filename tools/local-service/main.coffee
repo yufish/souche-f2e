@@ -6,6 +6,7 @@ rainbow        = require './lib/rainbow.js'
 lessmiddle     = require 'less-middleware'
 less           = require 'less'
 fs             = require 'fs'
+expressUglify = require('express-uglify')
 #log4js
 log4js         = require 'log4js'
 log4js.configure({
@@ -29,6 +30,7 @@ app.configure ->
   app.set "views", config.demo_path
   app.set "view engine", "jade"
   app.use express.favicon()
+  app.use '/assets/js',expressUglify.middleware(src:config.assets+"/cache","reserved-names":'require,define')
   app.use "/assets",lessmiddle({src:config.assets_path,compress:false,force:true})
   app.use "/assets", express.static(config.assets_path)
   # app.use express.logger("dev")
