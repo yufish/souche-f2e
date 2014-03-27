@@ -43,6 +43,7 @@ app.configure ->
   app.locals.pretty = true;
   app.get /^\/demo\/(.*)$/,(req,res,next)->
     console.log req.params[0]
+    res.locals.query = req.query
     _path = path.join config.demo_path,req.params[0]+".jade"
     if fs.existsSync _path
       res.render req.params[0]+".jade",{pretty:true}

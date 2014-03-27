@@ -46,8 +46,8 @@ var Pet = (function() {
             url: config.moreApi,
             data: {
                 page: nowPage++,
-                time_order: order_time,
-                hot_order: order_hot
+                time_order: config.sort_time,
+                hot_order: config.sort_hot
             },
             dataType: "json",
             success: function(data) {
@@ -100,41 +100,41 @@ var Pet = (function() {
                     }
                 })
             })
-            $(".bytime").on("click", function(e) {
-                $(this).addClass("active")
-                $(".byhot").removeClass("active")
-                if (order_time == 0) {
-                    order_time = 1;
-                } else if (order_time == 1) {
-                    order_time = -1;
-                } else {
-                    order_time = 1;
-                }
-                if (order_time == -1) {
-                    $(".arrow", this).removeClass("up").addClass("down");
-                } else {
-                    $(".arrow", this).removeClass("down").addClass("up");
-                }
-                reload();
-            })
+            // $(".bytime").on("click", function(e) {
+            //     $(this).addClass("active")
+            //     $(".byhot").removeClass("active")
+            //     if (order_time == 0) {
+            //         order_time = 1;
+            //     } else if (order_time == 1) {
+            //         order_time = -1;
+            //     } else {
+            //         order_time = 1;
+            //     }
+            //     if (order_time == -1) {
+            //         $(".arrow", this).removeClass("up").addClass("down");
+            //     } else {
+            //         $(".arrow", this).removeClass("down").addClass("up");
+            //     }
+            //     reload();
+            // })
 
-            $(".byhot").on("click", function(e) {
-                $(".bytime").removeClass("active")
-                $(this).addClass("active")
-                if (order_hot == 0) {
-                    order_hot = 1;
-                } else if (order_hot == 1) {
-                    order_hot = -1;
-                } else {
-                    order_hot = 1;
-                }
-                if (order_hot == -1) {
-                    $(".arrow", this).removeClass("up").addClass("down");
-                } else {
-                    $(".arrow", this).removeClass("down").addClass("up");
-                }
-                reload();
-            })
+            // $(".byhot").on("click", function(e) {
+            //     $(".bytime").removeClass("active")
+            //     $(this).addClass("active")
+            //     if (order_hot == 0) {
+            //         order_hot = 1;
+            //     } else if (order_hot == 1) {
+            //         order_hot = -1;
+            //     } else {
+            //         order_hot = 1;
+            //     }
+            //     if (order_hot == -1) {
+            //         $(".arrow", this).removeClass("up").addClass("down");
+            //     } else {
+            //         $(".arrow", this).removeClass("down").addClass("up");
+            //     }
+            //     reload();
+            // })
             //滚到底部自动加载更多
             $(window).on("scroll", function() {
                 if (isLoadingMore || !hasMore) return;

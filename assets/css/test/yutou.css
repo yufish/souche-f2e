@@ -322,10 +322,12 @@ body {
 .provision .link {
   display: block;
   text-align: center;
-  width: 150px;
   margin: 0 auto;
   margin-top: 7px;
   font-size: 13px;
+}
+.provision .link a {
+  margin: 0 10px;
   color: #7faadb;
 }
 .shai {
@@ -369,8 +371,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background: #fff;
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.8);
+}
+.layer img {
+  width: 100%;
 }
 .layer img {
   width: 100%;
