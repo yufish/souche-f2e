@@ -37,13 +37,13 @@
                 $(self.parentNode).addClass("active")
                 if (!$("#toolbar").hasClass("sidebar-active")) {
                     $("#toolbar").animate({
-                        width: 870,
-                        height: ($(window).height() - 20) > 652 ? 652 : ($(window).height() - 20)
+                        width: 925,
+                        height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
                     }, 500, function() {
 
                     })
                     $(".sidebar  iframe").css({
-                        height: (($(window).height() - 20) > 652 ? 652 : ($(window).height() - 20)) - 32
+                        height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
                     })
                     $("#toolbar").addClass("sidebar-active")
                     $(".sidebar").removeClass("active")

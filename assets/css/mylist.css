@@ -520,6 +520,7 @@ html {
 }
 #mylist .qiugou .form .brand-select .sc-popup {
   padding-right: 0;
+  z-index: 5px;
 }
 #mylist .qiugou .form .series-select {
   width: 257px;

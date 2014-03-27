@@ -310,7 +310,7 @@
 }
 .sidebar .sidebar-nav {
   width: 58px;
-  height: 653px;
+  height: 500px;
   float: left;
 }
 .sidebar .sidebar-nav .sidebar-list {
@@ -428,8 +428,8 @@
   color: #666;
 }
 .sidebar-active .toolbar-content {
-  width: 810px;
-  height: 648px;
+  width: 855px;
+  height: 490px;
   border-left: none;
   float: left;
   overflow: hidden;
@@ -447,7 +447,7 @@
 }
 .sidebar-active .toolbar-content .iframe-loading {
   width: 855px;
-  height: 648px;
+  height: 500px;
   background: url(../images/index/ajax-loader.gif) no-repeat center;
   position: fixed;
   background-color: #f2f2f2;
