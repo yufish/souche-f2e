@@ -111,6 +111,19 @@ html {
 #toolbar #toolbar-content .car-wrap .car-box .car-image {
   width: 180px;
   height: 120px;
+  position: relative;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  position: absolute;
+  left: 3px;
+  top: -10px;
+  background: url(../images/index/car-collect.png) no-repeat 0 0;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon:hover {
+  background: url(../images/index/car-nocollect.png) no-repeat 0 0;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image img {
   width: 180px;
