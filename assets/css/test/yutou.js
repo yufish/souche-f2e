@@ -173,7 +173,14 @@ var Pet = (function() {
                 })
                 $("#search_input").val("")
             })
-
+            $(".shai").click(function() {
+                $(".layer").css({
+                    height: $(document.body).height()
+                }).removeClass("hidden")
+            })
+            $(".layer").click(function() {
+                $(this).addClass("hidden")
+            })
             loadMore(); //加载第一次
         }
     }
