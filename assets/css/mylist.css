@@ -565,7 +565,7 @@ html {
 }
 #mylist .qiugou .form .series-select .option.active {
   border: 2px solid #fc7000;
-  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  background: #ffedda url(../images/index/popup-active.png?123) no-repeat right bottom;
   color: #fc7000;
 }
 #mylist .qiugou .form .series-select .word-container:last-child {
