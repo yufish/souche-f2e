@@ -152,7 +152,7 @@ html {
   margin-top: 25px;
 }
 #mylist #content .wrapper .date-wrap .hourcar {
-  width: 280px;
+  padding-right: 10px;
   height: 32px;
   background-color: #fff8e8;
   position: absolute;
