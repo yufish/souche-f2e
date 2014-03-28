@@ -168,7 +168,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                             brandName = initBrands[key];
                         var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + brandName + '</span>' + '<i class="close-icon"></i>' + '</div>';
                         brandsManager.toggleSeries(brandCode, '', [
-                            $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-name')
+                            $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
                         ]);
                     }
                 }
@@ -236,12 +236,12 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
 
                 $('#brand-icons-container').on('click', '.icon-item', function() {
                     var $self = $(this);
-                    var curBrandCode = $self.attr('data-code');
+                    var brandCode = $self.attr('data-code');
                     var text = $self.find('.brand-name').text();
-                    var html = '<div class="sb-item" brand-code=' + curBrandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
+                    var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
                     //$(this).find('.text').toggleClass('selected');
-                    brandsManager.toggleSeries(curBrandCode, '', [
-                        $(html), $self.find('.brand-name')
+                    brandsManager.toggleSeries(brandCode, '', [
+                        $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
                     ]);
 
                 })
