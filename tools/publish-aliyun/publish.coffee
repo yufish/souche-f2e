@@ -9,19 +9,20 @@ argv = require('optimist').argv
 oss = new ossApi.OssClient(config)
 timestampData = {}
 OSS = 
-  pubFile:(_path,callback)->
-    console.log '开始处理：'+_path
-    clearPath = _path.replace(/^\.\//,'/')
-    etag = oss.getObjectEtag(_path)
+  #第一个参数是发布的路径，第二个参数是真实发布的文件路径，发布完成调用callback
+  pubFile:(_path,realPath,callback)->
+    console.log '开始处理：'+_path+" 真实路径："+realPath
+    clearPath = "/"+_path
+    etag = oss.getObjectEtag(realPath)
     this.getFile _path,(error,info)->
       etagOnline = oss.getObjectEtag(info)
       if etagOnline != etag
-        console.log "start uploading "+_path
+        console.log "start uploading "+clearPath
         if timestampData[clearPath]
           timestampData[clearPath] = timestampData[clearPath]*1+1
         else
           timestampData[clearPath] = 1
-        oss.putObject config.bucketName, _path.replace(/^\.\//,''), _path,(err)->
+        oss.putObject config.bucketName, _path.replace(/^\.\//,''), realPath,null,(err)->
           if err
             console.log err
           else
@@ -70,7 +71,9 @@ Publish.prototype.pub = (_path)->
     console.log("all finish!")
     fs.writeFileSync self.config.properties_file,properties.stringify(timestampData),'utf-8'
 Publish.prototype.handleFile = (file,callback)->
-  file = file
+  obj = 
+    path:file
+    realPath:file
   self = this
   is_in_white = false
   extname = path.extname(file)
@@ -82,19 +85,20 @@ Publish.prototype.handleFile = (file,callback)->
     return
   queuedo this.middlewares,(mw,next,context)-> 
     if extname == mw.ext
-      mw.middleware file,(error,_file)->
+      mw.middleware obj.realPath,(error,result)->
         if error
           console.log error
         else
-          file = _file
+          obj.path = result.path
+          obj.realPath = result.realPath
         next.call(context)
     else
       next.call(context)
   ,()->
-    self.pubFile(file,callback)
+    self.pubFile(obj.path,obj.realPath,callback)
 
-Publish.prototype.pubFile = (file,callback)->
-  OSS.pubFile(file.replace(/^.*assets\//,'assets/'),callback)
+Publish.prototype.pubFile = (_path,realPath,callback)->
+  OSS.pubFile(_path.replace(/^.*assets\//,'assets/'),realPath,callback)
 
 
 

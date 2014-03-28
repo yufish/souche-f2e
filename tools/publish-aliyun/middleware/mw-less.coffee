@@ -7,4 +7,4 @@ module.exports = (file,callback)->
       if error then console.error error
       else
         console.log 'compile less to ' + result_file
-      callback error,result_file
+      callback error,{path:result_file,realPath:result_file}
