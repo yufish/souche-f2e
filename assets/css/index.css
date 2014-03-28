@@ -128,7 +128,7 @@ a:hover {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url(../images/index/qiugou-re.png) no-repeat;
+  background: url(../images/index/qiugou-re.png?1) no-repeat;
   vertical-align: -8px;
 }
 #index .qiugou .result .car {
@@ -171,12 +171,12 @@ a:hover {
   color: #666;
 }
 #index .qiugou .result .more {
-  background: #ffffff url(../images/index/qiugou-more.png) no-repeat center center;
+  background: #ffffff url(../images/index/qiugou-more.png?1) no-repeat center center;
   width: 210px;
   height: 225px;
 }
 #index .qiugou .result .no {
-  background: #fffcf6 url(../images/index/qiugou-no.png) no-repeat center center;
+  background: #fffcf6 url(../images/index/qiugou-no.png?1) no-repeat center center;
   width: 210px;
   height: 225px;
 }
@@ -188,10 +188,10 @@ a:hover {
   vertical-align: -1px;
 }
 #index .qiugou .result .icon-jian {
-  background: url(../images/mylist/icon-jian.png) no-repeat;
+  background: url(../images/mylist/icon-jian.png?1) no-repeat;
 }
 #index .qiugou .result .icon-new {
-  background: url(../images/mylist/icon-new.png) no-repeat;
+  background: url(../images/mylist/icon-new.png?1) no-repeat;
 }
 #index .qiugou .result .zhijiang {
   position: relative;
@@ -218,7 +218,7 @@ a:hover {
   top: 0;
 }
 #index .qiugou .result .price-down {
-  background: url(../images/index/zhijiang.png);
+  background: url(../images/index/zhijiang.png?1);
   height: 75px;
   width: 40px;
   position: absolute;
@@ -323,7 +323,7 @@ a:hover {
 }
 #index .qiugou .form .brand-select .option.active {
   border: 2px solid #fc7000;
-  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  background: #ffedda url(../images/index/popup-active.png?1) no-repeat right bottom;
   color: #fc7000;
 }
 #index .qiugou .form .brand-select .option:hover {
@@ -380,7 +380,7 @@ a:hover {
 }
 #index .qiugou .form .series-select .option.active {
   border: 2px solid #fc7000;
-  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  background: #ffedda url(../images/index/popup-active.png?1) no-repeat right bottom;
   color: #fc7000;
 }
 #index .qiugou .form .series-select .word-container:last-child {
