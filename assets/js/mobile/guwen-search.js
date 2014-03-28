@@ -257,8 +257,10 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 function sumbitGuWenInfo() {
                     var price = range.getData();
                     var brands = brandsManager.brands;
-                    var minPrice = price.min.value.replace('万', ''),
-                        maxPrice = price.max.value.replace('万', '');
+                    //var minPrice = price.min.value.replace('万', ''),
+                    //maxPrice = price.max.value.replace('万', '');
+                    var minPrice = $('.min-input').val().replace('万', '');
+                    var maxPrice = $('.max-input').val().replace('万', '');
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
