@@ -113,6 +113,7 @@ html {
   width: 180px;
   height: 120px;
   position: relative;
+  display: block;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon {
   width: 20px;
@@ -120,7 +121,7 @@ html {
   border-radius: 2px;
   position: absolute;
   left: 3px;
-  top: -10px;
+  bottom: 5px;
   background: url(../images/index/car-collect.png) no-repeat 0 0;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon.active {
