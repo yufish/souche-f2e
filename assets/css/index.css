@@ -119,8 +119,9 @@ a:hover {
   font-size: 14px;
   font-weight: bold;
   position: absolute;
-  left: 780px;
+  left: 750px;
   top: 45px;
+  width: 120px;
   cursor: pointer;
 }
 #index .qiugou .result .redo i {

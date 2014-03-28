@@ -12,11 +12,11 @@ OSS =
   #第一个参数是发布的路径，第二个参数是真实发布的文件路径，发布完成调用callback
   pubFile:(_path,realPath,callback)->
     console.log '开始处理：'+_path+" 真实路径："+realPath
-    clearPath = "/"+_path
+    clearPath = _path.replace(/^.*?\//,'/')
     etag = oss.getObjectEtag(realPath)
     this.getFile _path,(error,info)->
-      etagOnline = oss.getObjectEtag(info)
-      if etagOnline != etag
+      if error 
+        
         console.log "start uploading "+clearPath
         if timestampData[clearPath]
           timestampData[clearPath] = timestampData[clearPath]*1+1
@@ -24,14 +24,28 @@ OSS =
           timestampData[clearPath] = 1
         oss.putObject config.bucketName, _path.replace(/^\.\//,''), realPath,null,(err)->
           if err
-            console.log err
+            console.error err
           else
             console.log "upload finished " + _path.replace(/^\.\//,'')
           callback err
-
       else
-        console.log "无变化 "
-        callback error
+        etagOnline = oss.getObjectEtag(info)
+        if etagOnline != etag
+          console.log "start uploading "+clearPath
+          if timestampData[clearPath]
+            timestampData[clearPath] = timestampData[clearPath]*1+1
+          else
+            timestampData[clearPath] = 1
+          oss.putObject config.bucketName, _path.replace(/^\.\//,''), realPath,null,(err)->
+            if err
+              console.error err
+            else
+              console.log "upload finished " + _path.replace(/^\.\//,'')
+            callback err
+
+        else
+          console.log "无变化 "
+          callback error
 
   getFile:(_path,callback)->
     oss.getObject config.bucketName,_path.replace(/^\.\//,''),"cache.test",(err,info)->
