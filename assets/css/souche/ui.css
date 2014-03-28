@@ -316,6 +316,7 @@ text-indent: 20px;
 }
 .apply_popup .apply_close {
 position: absolute;
+display: block;
 width: 35px;
 height: 35px;
 background: url("../../images/common/popup-close.png") no-repeat ;

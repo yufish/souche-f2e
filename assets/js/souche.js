@@ -371,7 +371,7 @@ Souche.NoRegLogin = function() {
             if (minilogin) {
                 minilogin.css({
                     display: "block"
-                });
+                }).removeClass("hidden");
                 minilayer.css({
                     display: "block"
                 });
@@ -380,7 +380,7 @@ Souche.NoRegLogin = function() {
                 minilogin.css({
                     display: "block",
                     zIndex: 100000001
-                });
+                }).removeClass("hidden");
 
                 minilayer = $("<div id='minilayer'></div>");
                 minilayer.css({
