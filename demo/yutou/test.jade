@@ -8,16 +8,22 @@ html
   body
     div#search
         form#search_form
-            input#search_input(type="search",name="keyword",placeholder="以Photo ID找出最可爱宠物")
+            input#search_input(type="text",name="keyword",placeholder="以Photo ID找出最可爱宠物")
     div#order
-        div.bytime
+        a.bytime(class="#{query.sort_time?'active':''}",href="?sort_time=#{query.sort_time==1?-1:1}")
             | 按时间
-            i.arrow.down
-        div.byhot
+            i.arrow(class="#{query.sort_time==1?'down':'up'}")
+        a.byhot(class="#{query.sort_hot?'active':''}",href="?sort_hot=#{query.sort_hot==1?-1:1}")
             | 按人气
-            i.arrow.down
+            i.arrow(class="#{query.sort_hot==1?'down':'up'}")
+    div.provision 
+        .logo 宠·爱
+        .link
+            a(href="#") “宠·爱”之条款及细则
+            a(href="#") “宠·爱”之条款及细则
+    a.shai 立即晒可爱宠物
     div#content
-        div.search-result.items
+        div.search-result.items.hidden
             div.item(data-id="3")
                 .wrapper
                     .pic
@@ -28,24 +34,6 @@ html
                             span.like-count 1234
                             a.like-action 
         div.normal-result.items
-            div.item(data-id="1")
-                .wrapper
-                    .pic
-                        img(src="http://souche.cdn.aliyuncs.com/files/carpicture/D334300D2D6A0313EEECB2624A8074D9_700x460.JPG_240x10000.JPG")
-                    .info
-                        .master 主人ID：我是傻逼
-                        .like 
-                            span.like-count 1234
-                            a.like-action 
-            div.item(data-id="2")
-                .wrapper
-                    .pic
-                        img(src="http://souche.cdn.aliyuncs.com/files/carpicture/D334300D2D6A0313EEECB2624A8074D9_700x460.JPG_240x10000.JPG")
-                    .info
-                        .master 主人ID：我是傻逼
-                        .like 
-                            span.like-count 1234
-                            a.like-action 
         div.loading
     script#car_tpl(type="text/tpl")
         {{#pets}}
@@ -59,11 +47,16 @@ html
                         span.like-count {{likeCount}}
                         a.like-action 
         {{/pets}}
+    .layer.hidden
+        img(src="http://f2e.souche.com/assets/css/test/back.png")
     script(src="http://f2e.souche.com/assets/css/test/mustache.js")
     script(src="http://f2e.souche.com/assets/css/test/yutou.js")
     script.
         Pet.init({
             likeApi:"like.json",
             moreApi:"pets.json",
-            searchApi:"search.json"
+            searchApi:"search.json",
+            favGoUrl:"#",
+            sort_time:#{query.sort_time?query.sort_time:0},
+            sort_hot:#{query.sort_hot?query.sort_hot:0}
         })
