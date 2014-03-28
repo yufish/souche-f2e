@@ -12,11 +12,11 @@ OSS =
   #第一个参数是发布的路径，第二个参数是真实发布的文件路径，发布完成调用callback
   pubFile:(_path,realPath,callback)->
     console.log '开始处理：'+_path+" 真实路径："+realPath
-    clearPath = _path.replace(/^.*?\//,'/')
+    clearPath = _path.replace(/^.*?\//,'/assets/')
     etag = oss.getObjectEtag(realPath)
     this.getFile _path,(error,info)->
       if error 
-        
+
         console.log "start uploading "+clearPath
         if timestampData[clearPath]
           timestampData[clearPath] = timestampData[clearPath]*1+1
