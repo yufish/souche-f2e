@@ -1,3 +1,4 @@
+var helloworld = "dds";
 Souche.UI.CustomSelect = function() {
     var select = function(id, _config) {
         this.id = id;

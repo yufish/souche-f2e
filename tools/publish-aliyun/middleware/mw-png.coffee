@@ -8,4 +8,4 @@ module.exports = (file,callback)->
   ,(err,res)->
     if err
       console.error err
-    callback err,file
+    callback err,{path:file,realPath:file}
