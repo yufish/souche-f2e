@@ -107,9 +107,18 @@ html {
   line-height: 27px;
   min-height: 30px;
 }
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .label {
+  float: left;
+  width: 44px;
+}
+#mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .con {
+  float: left;
+  width: 500px;
+}
 #mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .chosecentent {
+  white-space: nowrap;
   font-weight: normal;
-  margin-left: 20px;
+  margin-right: 20px;
   line-height: 20px;
 }
 #mylist #qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain {
