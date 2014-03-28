@@ -428,8 +428,8 @@
   color: #666;
 }
 .sidebar-active .toolbar-content {
-  width: 855px;
-  height: 490px;
+  width: 845px;
+  height: 500px;
   border-left: none;
   float: left;
   overflow: hidden;
@@ -440,13 +440,11 @@
   float: right;
   width: 20px;
   height: 20px;
-  background: url(../images/index/toolbar-close.png) no-repeat center center;
-  margin-top: 10px;
-  margin-right: 10px;
+  background: url(../images/index/toolbar-close.png?123) no-repeat center center;
   display: block;
 }
 .sidebar-active .toolbar-content .iframe-loading {
-  width: 855px;
+  width: 845px;
   height: 500px;
   background: url(../images/index/ajax-loader.gif) no-repeat center;
   position: fixed;
