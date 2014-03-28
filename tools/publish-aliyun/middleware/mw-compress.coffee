@@ -12,4 +12,4 @@ module.exports = (file,callback)->
     if error then console.error error
     else
       console.log 'compress js to ' + result_file
-    callback error,result_file
+    callback error,{path:file,realPath:result_file}
