@@ -272,6 +272,15 @@ body {
   color: #666;
   cursor: pointer;
 }
+#content .items .item .liked {
+  text-align: right;
+  padding-right: 30px;
+  margin-right: 10px;
+  background: url(liked.png) no-repeat right center;
+  background-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
 #content .search-result {
   margin-bottom: 10px;
 }

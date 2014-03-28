@@ -47,7 +47,8 @@ var Pet = (function() {
             data: {
                 page: nowPage++,
                 time_order: config.sort_time,
-                hot_order: config.sort_hot
+                hot_order: config.sort_hot,
+                wechat_id: config.wechat_id
             },
             dataType: "json",
             success: function(data) {
@@ -84,16 +85,20 @@ var Pet = (function() {
             $("#content").on("click", ".like", function(e) {
                 e.preventDefault();
                 var id = $(e.target).closest(".item").attr("data-id");
+                var likecount = $(".like-count", $(e.target).closest(".item"));
                 $.ajax({
                     url: config.likeApi,
                     type: "get",
                     dataType: "json",
                     data: {
-                        id: id
+                        id: id,
+                        wechat_id: config.wechat_id
                     },
                     success: function(data) {
                         if (data.success) {
-                            $(".like-count", $(e.target).closest(".item")).html($(".like-count", $(e.target).closest(".item")).html() * 1 + 1)
+                            $(likecount).html(likecount.html() * 1 + 1)
+                            console.log($(e.target))
+                            $(e.target).addClass("liked")
                         } else {
                             window.location.href = config.favGoUrl
                         }
@@ -154,7 +159,8 @@ var Pet = (function() {
                     url: config.searchApi,
                     dataType: "json",
                     data: {
-                        id: $("#search_input").val()
+                        id: $("#search_input").val(),
+                        wechat_id: config.wechat_id
                     },
                     success: function(data) {
                         if (data.success) {

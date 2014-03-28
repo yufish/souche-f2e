@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ß</title>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1" /> 
+    <link href="yutou.css?t=150" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+    <div id="search">
+      <form id="search_form">
+        <input id="search_input" type="text" name="keyword" placeholder="以Photo ID找出最可爱宠物">
+      </form>
+    </div>
+    <div id="order"><a href="?sort_time=1" class="bytime">按时间<i class="arrow up"></i></a><a href="?sort_hot=1" class="byhot active">按人气<i class="arrow up"></i></a></div>
+    <div class="provision">
+      <div class="logo">宠·爱</div>
+      <div class="link"><a href="#">“宠·爱”之条款及细则</a><a href="#">“宠·爱”之条款及细则</a></div>
+    </div><a class="shai">立即晒可爱宠物</a>
+    <div id="content">
+      <div class="search-result items hidden">
+        
+      </div>
+      <div class="normal-result items"></div>
+      <div class="loading"></div>
+    </div>
+    <script id="car_tpl" type="text/tpl">{{#pets}}
+      <div data-id="{{id}}" class="item">
+        <div class="wrapper">
+          <div class="pic"><img src="{{pic}}"></div>
+          <div class="info">
+            <div class="master">主人ID：{{nick}}</div>
+            <div class="like"><span class="like-count">{{likeCount}}</span><a class="like-action"></a></div>
+          </div>
+        </div>
+      </div>{{/pets}}
+    </script>
+    <div class="layer hidden"><img src="back.png"></div>
+    <script src="mustache.js"></script>
+    <script src="yutou.js"></script>
+    <script>
+      Pet.init({
+          likeApi:"like.json",
+          moreApi:"pets.json",
+          searchApi:"search.json",
+          favGoUrl:"#",
+          sort_time:0,
+          sort_hot:-1
+      })
+    </script>
+  </body>
+</html>
