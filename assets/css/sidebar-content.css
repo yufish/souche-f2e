@@ -10,7 +10,7 @@ html {
 }
 #toolbar .tool-box {
   padding-left: 20px;
-  width: 850px;
+  width: 830px;
   background-color: #F2F2F2;
   overflow: hidden;
 }
@@ -89,13 +89,14 @@ html {
   float: left;
 }
 #toolbar #toolbar-content {
-  width: 855px;
+  width: 825px;
   height: 415px;
   overflow: hidden;
 }
 #toolbar #toolbar-content .car-wrap {
-  width: 850px;
-  height: 490px;
+  width: 825px;
+  height: 420px;
+  margin-top: 10px;
 }
 #toolbar #toolbar-content .car-wrap .car-box {
   width: 180px;
