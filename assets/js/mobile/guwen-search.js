@@ -286,7 +286,9 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                             maxPrice: maxPrice
                         },
                         success: function() {
-                            window.location.href = contextPath + '/mobile/carcustom.html';
+                            setTimeout(function() {
+                                window.location.href = contextPath + '/mobile/carcustom.html';
+                            }, 500)
                         },
                         error: function() {
                             alert('error');
