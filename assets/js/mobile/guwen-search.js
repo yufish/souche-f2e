@@ -65,7 +65,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
                 if (dataObj.maxPrice) {
                     maxP = dataObj.maxPrice + '万';
-                    if (dataObj.maxPirce == '10000') maxP = '无限'
+                    if (dataObj.maxPrice == '10000') maxP = '无限'
                 }
                 var yearCode = '';
                 if (dataObj.year) {
