@@ -429,7 +429,7 @@
 }
 .sidebar-active .toolbar-content {
   width: 845px;
-  height: 490px;
+  height: 500px;
   border-left: none;
   float: left;
   overflow: hidden;
@@ -440,7 +440,7 @@
   float: right;
   width: 20px;
   height: 20px;
-  background: url(../images/index/toolbar-close.png) no-repeat center center;
+  background: url(../images/index/toolbar-close.png?123) no-repeat center center;
   display: block;
 }
 .sidebar-active .toolbar-content .iframe-loading {
