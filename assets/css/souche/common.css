@@ -334,32 +334,35 @@ body {
   left: 20px;
 }
 #footer .performance .per {
-  position: relative;
   float: left;
   width: 380px;
-  padding-left: 70px;
 }
 #footer .performance .per a {
   display: block;
+}
+#footer .performance .per-1 a {
+  background: url(../../images/index/per-1.png) no-repeat;
+  background-position: left;
+}
+#footer .performance .per-2 a {
+  background: url(../../images/index/per-2.png) no-repeat;
+  background-position: left;
+}
+#footer .performance .per-3 a {
+  background: url(../../images/index/per-3.png) no-repeat;
+  background-position: left;
 }
 #footer .performance .t {
   font-size: 16px;
   line-height: 30px;
   color: #666;
+  margin-left: 50px;
 }
 #footer .performance .st {
   font-size: 14px;
   color: #999;
   line-height: 20px;
-}
-#footer .performance .per-1 i {
-  background: url(../../images/index/per-1.png) no-repeat;
-}
-#footer .performance .per-2 i {
-  background: url(../../images/index/per-2.png) no-repeat;
-}
-#footer .performance .per-3 i {
-  background: url(../../images/index/per-3.png) no-repeat;
+  margin-left: 50px;
 }
 #footer .company_info {
   padding: 20px 0px;
