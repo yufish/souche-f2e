@@ -181,7 +181,7 @@ padding-left: 50px;
 .media_photos{float:left;padding-right:40px}
 .media_ditie{float:left}
 .promise_content{float:left;display:inline;width:425px;margin-left:50px;margin-top:40px}
-.promise_content ins{width:76px;height:76px;background:url(../../images/fed/souche_sprite2.jpg) no-repeat 1px -377px;display:block;margin:0 auto;margin-bottom:22px}
+.promise_content ins{width:76px;height:76px;background:url(../../images/fed/souche_sprite2.jpg?123) no-repeat 1px -377px;display:block;margin:0 auto;margin-bottom:22px}
 .promise_content dl{border:1px dotted #b2b2b2;height:133px;color:#333}
 .promise_content dt{width:130px;margin:0 auto;text-align:center;font-size:18px;margin-bottom:24px;margin-top:-13px;_margin-top:5px;_margin-bottom:14px;background-color:#fff;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
 .promise_content dd{font-size:14px;width:380px;margin:0 auto;line-height:1.6em;*margin-top:-44px}
