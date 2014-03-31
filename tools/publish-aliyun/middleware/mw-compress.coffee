@@ -3,7 +3,7 @@ fse = require 'fs-extra'
 
 module.exports = (file,callback)->
   try 
-    result = UglifyJS.minify(file,{"reserved-names":'require,define'})
+    result = UglifyJS.minify(file,{"reserved-names":'require,define',output:{beautify:true}})
   catch e
     callback null,{path:file,realPath:file}
     return

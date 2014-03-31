@@ -1,1 +1,168 @@
-function OssClient(e){this._accessId=e.accessId,this._accessKey=e.accessKey,this._host="oss.aliyuncs.com",this._port="8080",this._timeout=3e6}function debug(e){debugLevel>0&&console.log(e)}define(function(){var e={ss:"dd"};return e});var fs=require("fs"),path=require("path"),util=require("util"),crypto=require("crypto"),xml2js=require("xml2js"),request=require("request"),mimetypes=require("./mimetypes");OssClient.prototype.getSign=function(e,t,r,s,o,n){var i=[e,t||"",r||"",s];if(o)for(var u=Object.keys(o).sort(),a=0,c=u.length;c>a;a++){var p=u[a];i.push(p.toLowerCase()+":"+o[p])}i.push(n),debug(i);var l=crypto.createHmac("sha1",this._accessKey);return l.update(i.join("\n")),"OSS "+this._accessId+":"+l.digest("base64")},OssClient.prototype.getResource=function(e){var t="";return"string"==typeof e.bucket&&(t="/"+e.bucket),"string"==typeof e.object&&(t=t+"/"+e.object),"boolean"==typeof e.isAcl&&(t+="?acl"),"boolean"==typeof e.isGroup&&(t+="?group"),t},OssClient.prototype.getUrl=function(e){var t="http://"+this._host+":"+this._port,r=[];return"string"==typeof e.bucket&&(t=t+"/"+e.bucket),"string"==typeof e.object&&(t=t+"/"+e.object),"string"==typeof e.prefix&&r.push("prefix="+e.prefix),"string"==typeof e.marker&&r.push("marker="+e.marker),"string"==typeof e.maxKeys&&r.push("max-keys="+e.maxKeys),"string"==typeof e.delimiter&&r.push("delimiter="+e.delimiter),r.length>0&&(t=t+"?"+r.join("&")),"boolean"==typeof e.isAcl&&(t+="?acl"),"boolean"==typeof e.isGroup&&(t+="?group"),t},OssClient.prototype.getHeaders=function(e,t,r){var s=(new Date).toGMTString(),o={Date:s};if(r.srcFile){o["content-type"]=mimetypes.lookup(path.extname(r.srcFile)),o["content-Length"]=fs.statSync(r.srcFile).size;var n=crypto.createHash("md5");n.update(fs.readFileSync(r.srcFile)),o["content-Md5"]=n.digest("hex")}if(r.isGroup&&(o["content-type"]="txt/xml"),r.userMetas){t=t||{};for(i in r.userMetas)t[i]=r.userMetas[i]}for(var i in t)o[i]=t[i];for(var i in r.userHeaders)o[i]=r.userHeaders[i];var u=this.getResource(r);return o.Authorization=this.getSign(e,o["content-Md5"],o["content-type"],s,t,u),o},OssClient.prototype.doRequest=function(e,t,r,s){var o={};o.method=e,o.url=this.getUrl(r),o.headers=this.getHeaders(e,t,r),o.timeout=this._timeout,debug(r),debug(o),r.isGroup&&(o.body=this.getObjectGroupPostBody(r.bucket,r.objectArray));var n=request(o,function(t,o,n){if(t&&s)return s(t);if(200!=o.statusCode&&204!=o.statusCode){var i=new Error(n);i.code=o.statusCode,s&&s(i)}else if(n&&!r.dstFile){var u=new xml2js.Parser;u.parseString(n,function(e,t){s(e,t)})}else"HEAD"==e&&s(t,o.headers)});if(r.srcFile){var i=fs.createReadStream(r.srcFile);i.pipe(n)}if(r.dstFile){var u=fs.createWriteStream(r.dstFile);n.pipe(u)}},OssClient.prototype.createBucket=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="PUT",o={"X-OSS-ACL":t},n={bucket:e};this.doRequest(s,o,n,r)},OssClient.prototype.listBucket=function(e){var t="GET",r={bucket:""};this.doRequest(t,null,r,e)},OssClient.prototype.deleteBucket=function(e,t){if(!e)throw new Error("error arguments!");var r="DELETE",s={bucket:e};this.doRequest(r,null,s,t)},OssClient.prototype.getBucketAcl=function(e,t){if(!e)throw new Error("error arguments!");var r="GET",s={bucket:e,isAcl:!0};this.doRequest(r,null,s,t)},OssClient.prototype.setBucketAcl=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="PUT",o={"X-OSS-ACL":t},n={bucket:e};this.doRequest(s,o,n,r)},OssClient.prototype.putObject=function(e,t,r){if(!e||!t||!r)throw new Error("error arguments!");var s=this;args=arguments,fs.stat(r,function(o){if(o)return u(o);var n="PUT",i={bucket:e,object:t,srcFile:r};"object"==typeof arguments[3]&&(i.userMetas=arguments[3]);var u=args[args.length-1];s.doRequest(n,null,i,u)})},OssClient.prototype.copyObject=function(e,t,r,s){if(!e||!t||!r)throw new Error("error arguments!");var o="PUT",n={bucket:e,object:t},i={"x-oss-copy-source":"/"+e+"/"+r};this.doRequest(o,i,n,s)},OssClient.prototype.deleteObject=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="DELETE",o={bucket:e,object:t};this.doRequest(s,null,o,r)},OssClient.prototype.getObject=function(e,t,r,s){if(!e||!t||!r)throw new Error("error arguments!");var o="GET",n={bucket:e,object:t,dstFile:r};"object"==typeof arguments[3]&&(n.userHeaders=arguments[3]);var s=arguments[arguments.length-1];this.doRequest(o,null,n,s)},OssClient.prototype.headObject=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="HEAD",o={bucket:e,object:t};this.doRequest(s,null,o,r)},OssClient.prototype.listObject=function(e,t){if(!e)throw new Error("error arguments!");var r="GET",s={bucket:e};s.prefix=arguments[1]?arguments[1]:null,s.marker=arguments[2]?arguments[2]:null,s.delimiter=arguments[3]?arguments[3]:null,s.maxKeys=arguments[4]?arguments[4]:null;var t=arguments[arguments.length-1];this.doRequest(r,null,s,t)},OssClient.prototype.getObjectEtag=function(e){var t=crypto.createHash("md5");return t.update(fs.readFileSync(e)),t.digest("hex").toUpperCase()},OssClient.prototype.getObjectGroupPostBody=function(e,t){var r="<CreateFileGroup>",s=0;for(i in t){s++;var o=this.getObjectEtag(t[i]);r+="<Part>",r+="<PartNumber>"+s+"</PartNumber>",r+="<PartName>"+t[i]+"</PartName>",r+="<ETag>"+o+"</ETag>",r+="</Part>"}return r+="</CreateFileGroup>"},OssClient.prototype.createObjectGroup=function(e,t,r,s){if(!e||!t||!r)throw new Error("error arguments!");var o="POST",n={bucket:e,object:t,objectArray:r,isGroup:!0};this.doRequest(o,null,n,s)},OssClient.prototype.getObjectGroup=function(e,t,r,s){if(!e||!t||!r)throw new Error("error arguments!");var o="GET",n={bucket:e,object:t,isGroup:!0,dstFile:r};this.doRequest(o,null,n,s)},OssClient.prototype.getObjectGroupIndex=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="GET",o={bucket:e,object:t},n={"X-OSS-FILE-GROUP":""};this.doRequest(s,n,o,r)},OssClient.prototype.headObjectGroup=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="HEAD",o={bucket:e,object:t};this.doRequest(s,null,o,r)},OssClient.prototype.deleteObjectGroup=function(e,t,r){if(!e||!t)throw new Error("error arguments!");var s="DELETE",o={bucket:e,object:t};this.doRequest(s,null,o,r)};var debugLevel=process.env.NODE_DEBUG_OSSCLIENT?1:0;exports.OssClient=OssClient;
+define([ "souche/custom-select", "lib/lazyload" ], function(e) {
+    var a, n, o, i, t = function(e) {
+        var a = {};
+        for (var n in e) {
+            var o = e[n], i = o.name.charAt(0).toUpperCase();
+            a[i] || (a[i] = []), o.name = o.name.substr(2, o.name.length), a[i].push(o);
+        }
+        return a;
+    }, s = /^1[3458][0-9]{9}$/, l = {
+        totalPage: 1
+    }, c = !1, d = !1, r = !0, u = 2;
+    return {
+        init: function(c) {
+            $.extend(l, c);
+            var d = this;
+            a = new e("brand_select", {
+                placeholder: "请选择品牌，可多选"
+            }), n = new e("series_select", {
+                placeholder: "请选择车系，可多选"
+            }), o = new e("age_select", {
+                placeholder: "请选择",
+                multi: !1
+            }), i = new e("model_select", {
+                placeholder: "请选择",
+                multi: !1
+            }), this._bindBrandChange(), this._onlyNum(), l.withCar && this._bindLoadMore();
+            var r = function(e) {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300, null, function() {
+                    $(".wedo").animate({
+                        backgroundPositionY: -40
+                    }, 300, null, function() {
+                        e && e();
+                    });
+                });
+            };
+            setTimeout(function() {
+                r(r);
+            }, 500), $(".wedo").mouseenter(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300);
+            }).mouseleave(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -40
+                }, 300);
+            }), a.removeAllOption(), n.removeAllOption(), $(".car-image img").lazyload(), $.ajax({
+                url: contextPath + "/pages/dicAction/loadRootLevel.json",
+                dataType: "json",
+                data: {
+                    type: "car-subdivision"
+                },
+                success: function(e) {
+                    var n = "";
+                    e = t(e.items);
+                    for (var o in e) {
+                        var i = e[o], s = o;
+                        n += "<div data-name='" + s + "' class='clearfix word-container'><div class='word-title'>" + s + "</div><div class='word-brands'>";
+                        for (var l = 0; l < i.length; l++) {
+                            var c = i[l];
+                            n += '<a href="#" data-value="' + c.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + c.name + "</span></a>";
+                        }
+                        n += "</div></div>";
+                    }
+                    a.addOptions(n);
+                },
+                error: function() {},
+                failure: function() {}
+            }), $("#qiugou-form .submit").on("click", function(e) {
+                return e.preventDefault(), $("#brand_select .selected_values").val() || $("#series_select .selected_values").val() || $("#age_select .selected_values").val() || $("#model_select .selected_values").val() || $("#price_low_select").val() && $("#price_hight_select").val() ? ($(".warning", d.ele).addClass("hidden"), 
+                void Souche.checkPhoneExist(function(e) {
+                    e ? d._submit() : ($("#qiugou-popup").removeClass("hidden"), $(".wrapGrayBg").show());
+                })) : void $(".warning", d.ele).removeClass("hidden");
+            }), $(".choseagain").on("click", function(e) {
+                e.preventDefault(), $("#qiugou-container").addClass("show-form");
+            }), $("#qiugou_login").on("click", function(e) {
+                e.preventDefault(), Souche.MiniLogin.checkLogin(function() {
+                    $(".qiugou .go-login").addClass("hidden"), window.location.href = window.location.href + "#qiugou-cur";
+                });
+            }), $("#qiugou-phone-form").on("submit", function(e) {
+                e.preventDefault(), s.test($("#qiugou-phone").val()) ? Souche.PhoneRegister($("#qiugou-phone").val(), function() {
+                    $(".go-login").addClass("hidden"), $("#qiugou-popup").addClass("hidden"), $(".wrapGrayBg").hide(), 
+                    d._submit();
+                }) : $(".warning", this).removeClass("hidden");
+            });
+        },
+        _bindLoadMore: function() {
+            var e = this;
+            $(window).on("scroll", function() {
+                !d && r && $(window).scrollTop() + $(window).height() >= $(document.body).height() && e._loadMore();
+            });
+        },
+        _loadMore: function() {
+            d = !0;
+            var e = $(".date-title .day");
+            return u > 1 * l.totalPage ? void (r = !1) : ($(".load-more").removeClass("hidden"), 
+            void $.ajax({
+                url: contextPath + "/pages/onsale/match_car_page.html",
+                data: {
+                    page: u++,
+                    key: e.get(e.length - 1).innerHTML
+                },
+                success: function(e) {
+                    "" == e.replace(/\s/, "") && (r = !1), $(".load-more").addClass("hidden"), d = !1, 
+                    $("#cars_con").append(e);
+                }
+            }));
+        },
+        _submit: function() {
+            c || ($(".qiugou .submit").addClass("loading").html("提交中  ..."), $("#qiugou-form").submit());
+        },
+        _successAnim: function() {},
+        _onlyNum: function() {
+            setInterval(function() {
+                $("#price_low_select").val($("#price_low_select").val().replace(/[^0-9]/, "")), 
+                $("#price_hight_select").val($("#price_hight_select").val().replace(/[^0-9]/, ""));
+            }, 200);
+        },
+        _bindBrandChange: function() {
+            var e = this;
+            0 == a.selected.length && 0 == n.selected.length && n.disable("请先选择品牌"), $(a).on("select", function(a, o) {
+                e._addSeries(o.key), n.enable();
+            }).on("unselect", function(o, i) {
+                e._removeSeries(i.key), 0 == a.selected.length && n.disable("请先选择品牌");
+            }).on("show", function() {
+                $("html,body").animate({
+                    scrollTop: $(".qiugou").offset().top
+                }, 200);
+            }), a.selected;
+            for (var o = 0; o < a.selected.length; o++) e._addSeries(a.selected[o].key);
+        },
+        _addSeries: function(e) {
+            $("#series_select .sc-select-list div[data-brandid=" + e + "]").length || $.ajax({
+                url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
+                dataType: "json",
+                data: {
+                    type: "car-subdivision",
+                    code: e
+                },
+                success: function(a) {
+                    var o = "";
+                    for (var i in a.codes) {
+                        var t = a.codes[i], s = i;
+                        o += "<div data-name='" + s + "' data-brandid='" + e + "' class='clearfix word-container'><div class='brand-title'>" + s + "</div>";
+                        for (var l = 0; l < t.length; l++) {
+                            var c = t[l];
+                            o += '<a href="#" data-value="' + c.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + c.name + "</span></a>";
+                        }
+                        o += "</div>";
+                    }
+                    n.addOptions(o);
+                },
+                error: function() {},
+                failure: function() {}
+            });
+        },
+        _removeSeries: function(e) {
+            $("#series_select .sc-select-list div[data-brandid=" + e + "]").each(function() {
+                var e = $(".option", $(this));
+                e.each(function(e, a) {
+                    var o = $(a).attr("data-value");
+                    n.removeSelected(o);
+                }), $(this).remove();
+            });
+        }
+    };
+});

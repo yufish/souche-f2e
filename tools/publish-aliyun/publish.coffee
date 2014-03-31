@@ -125,4 +125,4 @@ pub.addMiddleware(".js",require("./middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./middleware/mw-less.coffee"))
 pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
 
-pub.pub((if argv.path then argv.path else "/Users/tianqi/Documents/souche-assets/souche-f2e/assets/js/test"))
+pub.pub((if argv.path then argv.path else "./test"))
