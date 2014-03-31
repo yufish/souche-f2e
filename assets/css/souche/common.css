@@ -601,9 +601,6 @@ body {
 .guwen-slider-global .flex-control-nav .flex-active {
   background-color: #e70;
 }
-.guwen-slider-global .flex-direction-nav {
-  display: none;
-}
 .guwen-slider-global .link {
   height: 100px;
   background: #fff;
@@ -681,6 +678,10 @@ body {
   text-indent: -9999px;
   -webkit-transition: all .3s ease;
 }
+.flex-direction-nav .flex-prev {
+  left: 100px;
+}
 .flex-direction-nav .flex-next {
   background-position: 100% 0;
+  right: 100px;
 }

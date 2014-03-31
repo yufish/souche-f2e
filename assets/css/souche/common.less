@@ -399,7 +399,7 @@
     .flex-control-nav a{overflow: hidden;text-indent:1000px;float:left;display:inline;width:15px;height:15px;line-height:12px;text-align:center;color:#fff;background-color:#666;margin-right:12px;cursor:pointer;border-radius:50%;}
     .flex-control-nav a:hover{background-color:#e70;}
     .flex-control-nav .flex-active{background-color:#e70;}
-    .flex-direction-nav{display:none;}
+    .flex-direction-nav{}
     .link{height:100px;background:#fff;display:block;
       .text-box{
         height: 100px;margin: 0 auto;width: 525px;
@@ -448,7 +448,12 @@
   cursor: pointer;
   text-indent: -9999px;
   -webkit-transition: all .3s ease;
+  
+}
+.flex-direction-nav .flex-prev{
+  left: 100px;
 }
 .flex-direction-nav .flex-next {
  background-position: 100% 0;
+ right: 100px;
 }
