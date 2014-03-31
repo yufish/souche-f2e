@@ -65,7 +65,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
                 if (dataObj.maxPrice) {
                     maxP = dataObj.maxPrice + '万';
-                    if (dataObj.maxPirce == '10000') maxP = '无限'
+                    if (dataObj.maxPrice == '10000') maxP = '无限'
                 }
                 var yearCode = '';
                 if (dataObj.year) {
@@ -257,8 +257,10 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 function sumbitGuWenInfo() {
                     var price = range.getData();
                     var brands = brandsManager.brands;
-                    var minPrice = price.min.value.replace('万', ''),
-                        maxPrice = price.max.value.replace('万', '');
+                    //var minPrice = price.min.value.replace('万', ''),
+                    //maxPrice = price.max.value.replace('万', '');
+                    var minPrice = $('.min-input').val().replace('万', '');
+                    var maxPrice = $('.max-input').val().replace('万', '');
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
@@ -286,7 +288,9 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                             maxPrice: maxPrice
                         },
                         success: function() {
-                            window.location.href = contextPath + '/mobile/carcustom.html';
+                            setTimeout(function() {
+                                window.location.href = contextPath + '/mobile/carcustom.html';
+                            }, 500)
                         },
                         error: function() {
                             alert('error');
