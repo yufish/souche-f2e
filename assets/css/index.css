@@ -477,8 +477,16 @@ a:hover {
   overflow: hidden;
   padding: 10px 30px;
 }
-#index .buyforme .qiugou-history .slides {
+#index .buyforme .qiugou-history .slide {
+  width: 300px;
+  height: 100px;
+  line-height: 25px;
   overflow: hidden;
+}
+#index .buyforme .qiugou-history .slide li {
+  height: 25px;
+  display: block;
+  padding-left: 10px;
 }
 #index .buyforme .qiugou-history .item {
   color: #666;
