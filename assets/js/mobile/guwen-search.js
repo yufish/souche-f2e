@@ -130,9 +130,9 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     pageStack.push(curPageIndex);
                     pageIndex = pageIndex || (curPageIndex + 1);
                     document.body.scrollTop = 0;
-
+					$('#submit-btn').removeAttr('click_type');
                     if (pageIndex == 3) {
-                        $('#submit-btn').text('完成定制').show();
+                        $('#submit-btn').text('完成定制').attr('click_type','H5_CUSTOM_ORDER').show();
                     } else if (pageIndex == 4) {
                         $('#submit-btn').hide();
                     } else {
@@ -166,6 +166,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         }
                         return;
                     }
+					$('#submit-btn').removeAttr('click_type');
                     if (pageIndex == 3) {
                         $('#submit-btn').text('完成定制').show();
                     } else if (pageIndex == 4) {
@@ -288,10 +289,10 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 function sumbitGuWenInfo() {
                     var price = range.getData();
                     var brands = brandsManager.brands;
-                    //var minPrice = price.min.value.replace('万', ''),
-                    //maxPrice = price.max.value.replace('万', '');
-                    var minPrice = $('.min-input').val().replace('万', '');
-                    var maxPrice = $('.max-input').val().replace('万', '');
+                    var minPrice = price.min.value.replace('万', ''),
+						maxPrice = price.max.value.replace('万', '');
+                    //var minPrice = $('.min-input').val().replace('万', '');
+                    //var maxPrice = $('.max-input').val().replace('万', '');
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
