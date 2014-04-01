@@ -54,6 +54,34 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
             return brandsManager;
         }
 
+		//lft>rht ,return 1;
+		function comparePrice(lft,rht){
+			lft = (lft=='无限'?'10000':lft);
+			rht = (rht=='无限'?'10000':rht);
+			var l =  parseInt(lft.replace('万','')),
+				r = parseInt(rht.replace('万',''));
+			if(l>r)return 1;
+			if(l<r)return -1;
+			return 0;
+		}
+		function changePrice(min,max,priceArr){
+			var len = priceArr.length;
+			var realMin=priceArr[0] ,realMax=priceArr[len-1];
+			for(var i=0;i<len;i++){
+				if(comparePrice(min,priceArr[i])!=-1){
+					realMin = priceArr[i];
+					//break;
+				}
+			}
+			for(var i = len-1;i>=0;i--){
+				if(comparePrice(max,priceArr[i])!=1){
+					realMax = priceArr[i];
+					//break
+				}
+			}
+			return {min:realMin,max:realMax};
+		}
+		
         return {
 
             init: function() {
@@ -73,11 +101,14 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
                 $('.year-item[data-code=' + yearCode + '] .text').addClass('selected');
 
+				
+				var priceArray = ["0万", "5万", "8万","10万","12万","15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
+				var priceVal = changePrice(minP,maxP,priceArray);
                 var range = new PriceRangeSlider({
                     ele: ".sc-rangeslider",
                     steps: ["0万", "5万", "8万","10万","12万","15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
-                    min: minP,
-                    max: maxP,
+                    min: priceVal.min,
+                    max: priceVal.max,
                     tpl: "%"
                 });
                 //brand init
@@ -265,7 +296,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         maxPrice = 10000;
                     var bStr = '',
                         sStr = '';
-                    for (var brand in brands) {
+                    /*for (var brand in brands) {
                         for (var series in brands[brand]) {
                             if (series == '') {
                                 bStr += ',' + brand
@@ -273,9 +304,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                                 sStr += ',' + series;
                             }
                         }
-                    }
+                    }*/
+					for (var brand in brands) {
+                         bStr += ',' + brand;
+					}
                     bStr = bStr.substring(1);
-                    sStr = sStr.substring(1);
+                    //sStr = sStr.substring(1);
+					sStr = dataObj.series;
                     gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
