@@ -75,7 +75,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
 
                 var range = new PriceRangeSlider({
                     ele: ".sc-rangeslider",
-                    steps: ["0万", "5万", "8万", "12万","10万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
+                    steps: ["0万", "5万", "8万","10万","12万","15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
                     min: minP,
                     max: maxP,
                     tpl: "%"
