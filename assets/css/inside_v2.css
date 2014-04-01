@@ -526,7 +526,8 @@ line-height: 30px;
 #detail_flow{height:350px;background:url(../../images/fed/detail_flow5.png) no-repeat center 86px #fff}
 #detail_check{height:450px;background:url(../../images/fed/detail_check_big.jpg) no-repeat center 134px #fff}
 #detail_check p{color:#666;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:1.6em}
-#detail_service{height:565px;background:url(../../images/fed/detail_service_big1.png) no-repeat center 86px #fff;margin-bottom:25px}
+#detail_service{height:565px;background:url(../../images/fed/detail_service_big1.png?123) no-repeat center 86px #fff;margin-bottom:25px}
+
 .detail-door{margin-bottom: 20px;border-top: 1px solid #d9d9d9;}
 .detail-door h3{margin-top:10px;color:#111;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:20px;font-weight:bold;}
 .detail-door .tab-item{float: left;display: inline;width: 399px;line-height: 58px;margin-right:-1px;text-align: center;font-size: 20px;color: #333;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;border:1px solid #d9d9d9;background-color: #f6f6f6;}
