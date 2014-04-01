@@ -147,8 +147,8 @@ define(function() {
                     var maxPos = self.controlMax.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x < 0) x = 0;
-                    if (x >= maxPos - 2 * stepLength) {
-                        setMax(x + 2 * stepLength)
+                    if (x >= maxPos - 1 * stepLength) {
+                        setMax(x + 1 * stepLength)
                     }
 
                     real = toStep(x)
@@ -174,8 +174,8 @@ define(function() {
                     var minPos = self.controlMin.offset().left - sliderPos.left;
                     var x = mousePos.x - sliderPos.left
                     if (x > self.ele.width()) x = self.ele.width();
-                    if (x <= minPos + 2 * stepLength) {
-                        setMin(x - 2 * stepLength)
+                    if (x <= minPos + 1 * stepLength) {
+                        setMin(x - 1 * stepLength)
                     }
                     real = toStep(x)
                     real.pix = x - 10;
