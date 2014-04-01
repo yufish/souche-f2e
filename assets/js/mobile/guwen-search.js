@@ -75,7 +75,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
 
                 var range = new PriceRangeSlider({
                     ele: ".sc-rangeslider",
-                    steps: ["0万", "5万", "8万", "10万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
+                    steps: ["0万", "5万", "8万", "12万","10万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
                     min: minP,
                     max: maxP,
                     tpl: "%"
@@ -289,7 +289,11 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         },
                         success: function() {
                             setTimeout(function() {
-                                window.location.href = contextPath + '/mobile/carcustom.html';
+								if(window.location.href.toString().toLowerCase().indexOf('from=sms') != - 1){
+									window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
+								}else{
+									window.location.href = contextPath + '/mobile/carcustom.html';
+								}  
                             }, 500)
                         },
                         error: function() {
