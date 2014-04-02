@@ -54,6 +54,34 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
             return brandsManager;
         }
 
+		//lft>rht ,return 1;
+		function comparePrice(lft,rht){
+			lft = (lft=='无限'?'10000':lft);
+			rht = (rht=='无限'?'10000':rht);
+			var l =  parseInt(lft.replace('万','')),
+				r = parseInt(rht.replace('万',''));
+			if(l>r)return 1;
+			if(l<r)return -1;
+			return 0;
+		}
+		function changePrice(min,max,priceArr){
+			var len = priceArr.length;
+			var realMin=priceArr[0] ,realMax=priceArr[len-1];
+			for(var i=0;i<len;i++){
+				if(comparePrice(min,priceArr[i])!=-1){
+					realMin = priceArr[i];
+					//break;
+				}
+			}
+			for(var i = len-1;i>=0;i--){
+				if(comparePrice(max,priceArr[i])!=1){
+					realMax = priceArr[i];
+					//break
+				}
+			}
+			return {min:realMin,max:realMax};
+		}
+		
         return {
 
             init: function() {
@@ -73,11 +101,14 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
                 $('.year-item[data-code=' + yearCode + '] .text').addClass('selected');
 
+				
+				var priceArray = ["0万", "5万", "8万","10万","12万","15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
+				var priceVal = changePrice(minP,maxP,priceArray);
                 var range = new PriceRangeSlider({
                     ele: ".sc-rangeslider",
-                    steps: ["0万", "5万", "8万", "10万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
-                    min: minP,
-                    max: maxP,
+                    steps: ["0万", "5万", "8万","10万","12万","15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
+                    min: priceVal.min,
+                    max: priceVal.max,
                     tpl: "%"
                 });
                 //brand init
@@ -99,13 +130,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     pageStack.push(curPageIndex);
                     pageIndex = pageIndex || (curPageIndex + 1);
                     document.body.scrollTop = 0;
-
+					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
                     if (pageIndex == 3) {
-                        $('#submit-btn').text('完成定制').show();
+                        $('.submit-btn').text('完成定制').attr('click_type','H5_CUSTOM_ORDER').show();
                     } else if (pageIndex == 4) {
-                        $('#submit-btn').hide();
+                        $('.submit-btn').hide();
                     } else {
-                        $('#submit-btn').text('下一步').show();
+                        $('.submit-btn').text('下一步').show();
                     }
 
                     var $curPage = pages[curPageIndex - 1];
@@ -135,12 +166,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         }
                         return;
                     }
+					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
                     if (pageIndex == 3) {
-                        $('#submit-btn').text('完成定制').show();
+                        $('.submit-btn').text('完成定制').show();
                     } else if (pageIndex == 4) {
-                        $('#submit-btn').hide();
+                        $('.submit-btn').hide();
                     } else {
-                        $('#submit-btn').text('下一步').show();
+                        $('.submit-btn').text('下一步').show();
                     }
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
@@ -257,15 +289,15 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 function sumbitGuWenInfo() {
                     var price = range.getData();
                     var brands = brandsManager.brands;
-                    //var minPrice = price.min.value.replace('万', ''),
-                    //maxPrice = price.max.value.replace('万', '');
-                    var minPrice = $('.min-input').val().replace('万', '');
-                    var maxPrice = $('.max-input').val().replace('万', '');
+                    var minPrice = price.min.value.replace('万', ''),
+						maxPrice = price.max.value.replace('万', '');
+                    //var minPrice = $('.min-input').val().replace('万', '');
+                    //var maxPrice = $('.max-input').val().replace('万', '');
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
                         sStr = '';
-                    for (var brand in brands) {
+                    /*for (var brand in brands) {
                         for (var series in brands[brand]) {
                             if (series == '') {
                                 bStr += ',' + brand
@@ -273,9 +305,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                                 sStr += ',' + series;
                             }
                         }
-                    }
+                    }*/
+					for (var brand in brands) {
+                         bStr += ',' + brand;
+					}
                     bStr = bStr.substring(1);
-                    sStr = sStr.substring(1);
+                    //sStr = sStr.substring(1);
+					sStr = dataObj.series;
                     gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
@@ -289,7 +325,11 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         },
                         success: function() {
                             setTimeout(function() {
-                                window.location.href = contextPath + '/mobile/carcustom.html';
+								if(window.location.href.toString().toLowerCase().indexOf('from=sms') != - 1){
+									window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
+								}else{
+									window.location.href = contextPath + '/mobile/carcustom.html';
+								}  
                             }, 500)
                         },
                         error: function() {
@@ -308,7 +348,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
 
 
-                $('#submit-btn').click(function() {
+                $('.submit-btn').click(function() {
                     if (curPageIndex != 3) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();

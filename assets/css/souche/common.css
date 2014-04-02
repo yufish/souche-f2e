@@ -601,9 +601,6 @@ body {
 .guwen-slider-global .flex-control-nav .flex-active {
   background-color: #e70;
 }
-.guwen-slider-global .flex-direction-nav {
-  display: none;
-}
 .guwen-slider-global .link {
   height: 100px;
   background: #fff;
@@ -667,4 +664,24 @@ body {
 }
 .guwen-show-global:hover {
   background: url(../../images/common/guwen-slides/hover.png) no-repeat 0 0;
+}
+.flex-direction-nav a {
+  width: 39px;
+  height: 49px;
+  margin: -20px 0 0;
+  display: block;
+  background: url(../../images/index/nav-arrow.png) no-repeat 0 0;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-transition: all .3s ease;
+}
+.flex-direction-nav .flex-prev {
+  left: 100px;
+}
+.flex-direction-nav .flex-next {
+  background-position: 100% 0;
+  right: 100px;
 }
