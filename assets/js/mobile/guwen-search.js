@@ -130,13 +130,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     pageStack.push(curPageIndex);
                     pageIndex = pageIndex || (curPageIndex + 1);
                     document.body.scrollTop = 0;
-					$('#submit-btn').removeAttr('click_type');
+					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
                     if (pageIndex == 3) {
-                        $('#submit-btn').text('完成定制').attr('click_type','H5_CUSTOM_ORDER').show();
+                        $('.submit-btn').text('完成定制').attr('click_type','H5_CUSTOM_ORDER').show();
                     } else if (pageIndex == 4) {
-                        $('#submit-btn').hide();
+                        $('.submit-btn').hide();
                     } else {
-                        $('#submit-btn').text('下一步').show();
+                        $('.submit-btn').text('下一步').show();
                     }
 
                     var $curPage = pages[curPageIndex - 1];
@@ -166,13 +166,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         }
                         return;
                     }
-					$('#submit-btn').removeAttr('click_type');
+					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
                     if (pageIndex == 3) {
-                        $('#submit-btn').text('完成定制').show();
+                        $('.submit-btn').text('完成定制').show();
                     } else if (pageIndex == 4) {
-                        $('#submit-btn').hide();
+                        $('.submit-btn').hide();
                     } else {
-                        $('#submit-btn').text('下一步').show();
+                        $('.submit-btn').text('下一步').show();
                     }
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
@@ -348,7 +348,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 }
 
 
-                $('#submit-btn').click(function() {
+                $('.submit-btn').click(function() {
                     if (curPageIndex != 3) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
