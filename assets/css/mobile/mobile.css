@@ -5424,10 +5424,15 @@ background:#fff;
   top: 0;
   left: 0;
 }
-#footer-mobile #footer-nav{
-	margin:30px 0 20px 0;
+
+#list .footer-mobile .footer-nav{
+	margin:30px 0 60px 0;
 }
-#footer-mobile #footer-nav a {
+
+.footer-mobile .footer-nav{
+	margin:30px 0 30px 0;
+}
+.footer-mobile .footer-nav a {
   display: block;
   text-align: center;
   border-right: 1px solid #b5b5b5;
@@ -5435,10 +5440,10 @@ background:#fff;
   font-size:14px;
 }
 
-#footer-mobile #footer-beian {
+.footer-mobile #footer-beian {
   margin-top: 10px;
 }
-#footer-mobile #footer-beian .text {
+.footer-mobile #footer-beian .text {
   color: #b5b5b5;
   text-align: center;
 }
