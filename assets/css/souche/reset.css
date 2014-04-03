@@ -21,3 +21,27 @@ blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 .clearfix{display:block}
 body{font-size:12px;font-family:Tahoma,Verdana;color:#000;background-color:#fff}
 .hidden{display:none !important;}
+
+
+a{
+    color:#444;
+}
+
+a.a1{
+    color:#111;
+}
+a.a4{
+    color:#444;
+}
+a.a3{
+    color:#333;
+}
+a.a6{
+    color:#666;
+}
+a.a9{
+    color:#999;
+}
+a:hover,a.a1:hover,a.a4:hover,a.a3:hover,a.a6:hover,a.a9:hover{
+    color:#fc7000;
+}
