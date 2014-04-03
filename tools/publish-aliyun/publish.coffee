@@ -5,9 +5,15 @@ queuedo = require 'queuedo'
 path = require 'path'
 properties = require 'properties'
 fs = require 'fs'
+fse = require 'fs-extra'
 argv = require('optimist').argv
 oss = new ossApi.OssClient(config)
 timestampData = {}
+countObject = (obj)->
+  count = 0
+  for i of obj
+    count++
+  return count
 OSS = 
   #第一个参数是发布的路径，第二个参数是真实发布的文件路径，发布完成调用callback
   pubFile:(_path,realPath,callback)->
@@ -16,7 +22,6 @@ OSS =
     etag = oss.getObjectEtag(realPath)
     this.getFile _path,(error,info)->
       if error 
-
         console.log "start uploading "+clearPath
         if timestampData[clearPath]
           timestampData[clearPath] = timestampData[clearPath]*1+1
@@ -42,7 +47,6 @@ OSS =
             else
               console.log "upload finished " + _path.replace(/^\.\//,'')
             callback err
-
         else
           console.log "无变化 "
           callback error
@@ -83,7 +87,11 @@ Publish.prototype.pub = (_path)->
       next.call(context)
   ,()->
     console.log("all finish!")
-    fs.writeFileSync self.config.properties_file,properties.stringify(timestampData),'utf-8'
+    fse.copy self.config.properties_file,self.config.properties_file+".backup",(error)->
+      if error then console.log error
+      fs.writeFile self.config.properties_file,properties.stringify(timestampData),'utf-8',(error)->
+        if error then console.log error
+        console.log 'properties length:'+countObject(timestampData)
 Publish.prototype.handleFile = (file,callback)->
   obj = 
     path:file
