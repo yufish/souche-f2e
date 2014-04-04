@@ -34,7 +34,6 @@ a:hover{
       }
     }
   }
-
   #nav{
     background-color: #333;
     height: 40px;
@@ -937,6 +936,263 @@ a:hover{
         text-align: center;
         line-height: 30px;
         color:#999;
+      }
+    }
+  }
+  #content-detail{
+    margin-top: 5px;
+    .wrapper{
+      width: 1190px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      .mod-main{
+        width: 890px;
+        float: left;
+        display: inline;
+        .details-nav{
+          width: 100%;
+          height: 40px;
+          border-bottom: 1px solid #e6e6e6;
+          line-height: 40px;
+          a{
+            color: #666;
+            font-size: 12px;
+          }
+        }
+        .news-article{
+          .art-title{
+            height: 120px;
+            border-bottom: 1px solid #e6e6e6;
+            h1{
+              color: #333;
+              font-size: 30px;
+              font-weight: bold;
+              padding: 15px 0;
+            }
+            span{
+              color: #666;
+              padding-right: 15px;
+            }
+          }
+          .art-detail{
+            width: 700px;
+            padding-top: 20px;
+            p{
+              padding-bottom: 15px;
+              font-size: 14px;
+              color: #666;
+              line-height: 30px;
+            }
+          }
+          .art-share{
+            margin: 20px 0;
+            height: 30px;
+            .share-tit{
+              line-height: 30px;
+              width: 60px;
+              color: #666;
+              font-size: 12px;
+              float: left;
+            }
+            .con{
+              width: 500px;
+              float: left;
+              height: 30px;
+              i{
+                display: block;
+                width: 25px;
+                height: 25px;
+                margin-top: 2px;
+                float: left;
+                margin-right: 15px;
+              }
+              .douban{
+                background: url(../images/news/douban.png) no-repeat;
+              }
+              .sina{
+                background: url(../images/news/sina.png) no-repeat;
+              }
+              .qq{
+                background: url(../images/news/qq.png) no-repeat;
+              }
+              .weixin{
+                background: url(../images/news/weixin.png) no-repeat;
+              }
+              .tenxun{
+                background: url(../images/news/tenxun.png) no-repeat;
+              }
+            }
+          }
+        }
+        .news-tag{
+            height: 50px;
+            .tag-title{
+              font-size: 15px;
+              color: #666;
+              float: left;
+            }
+            .tag{
+              float: left;
+              font-size: 13px;
+              color: #666;
+              margin-left: 15px;
+              a{
+                padding-right: 15px;
+              }
+            }
+          }
+        .related{
+          height: 270px;
+          .related-title{
+            height: 44px;
+            width: 100%;
+            border-bottom: 3px solid #e6e6e6;
+            .title{
+              width: 80px;
+              font-size: 19px;
+              color: #434343;
+              float: left;
+              height: 44px;
+              line-height: 44px;
+            }
+          }
+          .related-list{
+            margin-top: 20px;
+            ul{
+              padding-left: 15px;
+              width: 385px;
+              margin-right: 40px;
+              float: left;
+              li{
+                list-style-type: disc;
+                color: #e4e4e4;
+                margin-bottom: 15px;
+                position: relative;
+                a{
+                  color: #666;
+                  font-size: 14px;
+                }
+                a:hover{
+                  color:@orange;
+                }
+                span{
+                  color: #a9a9a9;
+                  position: absolute;
+                  font-size: 12px;
+                  left: 290px;
+                  line-height: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .mod-side{
+        width: 288px;
+        float: left;
+        margin-left: 10px;
+        display: inline;
+        .act-img2{
+          width: 290px;
+          height: 240px;
+          margin-top: 25px;
+          img{
+            width: 290px;
+            height: 240px;
+          }
+        }
+        .newest{
+          margin-top: 20px;
+          height: 355px;
+          border: 1px solid #e6e6e6;
+          padding: 15px;
+          .title-box{
+            width: 100%;
+            border-bottom: 1px solid #e4e4e4;
+            padding-bottom: 8px;
+            i{
+              width: 3px;
+              height: 18px;
+              background-color: #fc7000;
+              margin-left: 5px;
+              display: block;
+              float: left;
+            }
+            span{
+              padding-left: 10px;
+              font-size: 17px;
+              color: #333333;
+              line-height: 17px;
+            }
+          }
+          .newest-list{
+            margin-top: 15px;
+            padding-left: 15px;
+            li{
+              list-style-type: disc;
+              color: #e4e4e4;
+              margin-bottom: 15px;
+              a{
+                color: #666;
+              }
+              a:hover{
+                  color:@orange;
+              }
+            }
+          }
+        }
+        .related{
+          margin-top: 20px;
+          height: 355px;
+          border: 1px solid #e6e6e6;
+          padding: 15px;
+          .title-box{
+            width: 100%;
+            padding-bottom: 8px;
+            i{
+              width: 3px;
+              height: 18px;
+              background-color: #fc7000;
+              margin-left: 5px;
+              display: block;
+              float: left;
+            }
+            span{
+              padding-left: 10px;
+              font-size: 17px;
+              color: #333333;
+              line-height: 17px;
+            }
+          }
+          .related-box{
+            border-top: 1px solid #e6e6e6;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            .car-img{
+              display: block;
+              float: left;
+              width: 60px;
+              height: 40px;
+              img{
+                width: 60px;
+                height: 40px;
+              }
+            }
+            .related-text{
+              float: left;
+              padding-left: 20px;
+              .related-car{
+                display:block;
+                color: #666;
+                padding-bottom: 5px;
+              }
+              a:hover{
+                  color:@orange;
+              }
+            }
+          }
+        }
       }
     }
   }
