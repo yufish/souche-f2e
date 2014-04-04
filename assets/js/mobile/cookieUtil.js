@@ -15,20 +15,10 @@ var CookieUtil = function(){
 		},
 		getCookie:function(cName){
 			return cookieMap[cName];
+		},
+		setCookie:function(key,value){
+			cookie = key +'='+ value;
 		}
 	}
 }()
 
-var CompletePhone =function($input){
-	var phoneReg = /^1[3458][0-9]{9}$/;
-	var username = CookieUtil.getCookie('username')
-	if(phoneReg.test(username)){
-		$input.val(username);
-		return;
-	}
-	var noregisteruser = CookieUtil.getCookie('noregisteruser');
-	if(phoneReg.test(noregisteruser)){
-		$input.val(username);
-		return;
-	}
-}
