@@ -126,10 +126,9 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 pageStack.push(0);
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
 
-                function gotoPage(pageIndex) {
-                    pageStack.push(curPageIndex);
-                    pageIndex = pageIndex || (curPageIndex + 1);
-                    document.body.scrollTop = 0;
+				
+				function beforePage(pageIndex){
+					window.location.hash = 'page'+pageIndex;
 					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
                     if (pageIndex == 3) {
                         $('.submit-btn').text('完成定制').attr('click_type','H5_CUSTOM_ORDER').show();
@@ -138,7 +137,13 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                     } else {
                         $('.submit-btn').text('下一步').show();
                     }
-
+				}
+                function gotoPage(pageIndex) {
+                    pageStack.push(curPageIndex);
+                    pageIndex = pageIndex || (curPageIndex + 1);
+                    document.body.scrollTop = 0;
+					
+					beforePage(pageIndex);
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
                     $page.css({
@@ -158,7 +163,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 function backPage() {
                     document.body.scrollTop = 0
                     var pageIndex = pageStack.pop();
-                    if (pageIndex == 0) {
+					if (pageIndex == 0|| pageIndex==undefined) {
                         if (document.referrer.indexOf("souche") != -1) {
                             history.back();
                         } else {
@@ -166,14 +171,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         }
                         return;
                     }
-					$('.submit-btn').removeAttr('click_type').attr('id','submit-btn-'+pageIndex);
-                    if (pageIndex == 3) {
-                        $('.submit-btn').text('完成定制').show();
-                    } else if (pageIndex == 4) {
-                        $('.submit-btn').hide();
-                    } else {
-                        $('.submit-btn').text('下一步').show();
-                    }
+					beforePage(pageIndex);
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
                     $page.css({
