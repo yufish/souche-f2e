@@ -122,7 +122,39 @@ html
                 li
                   a(herf="#") 摄影师镜头下的多彩南疆（组图）
                   span 2014-04-01
-              .tag-right
+            .tag-news.clearfix.hidden
+              ul.list-left
+                li
+                  a(herf="#") 新福克斯2.0AT豪华运动提车作业2
+                  span 2014-04-01
+                li
+                  a(herf="#") 北京周边油菜花田景区逐一盘点2
+                  span 2014-04-01
+                li
+                  a(herf="#") 2013款至酷卡罗拉运动版提车作业2
+                  span 2014-04-01
+                li
+                  a(herf="#") 塞班岛上陶醉于风起云涌（组图）2
+                  span 2014-04-01
+                li
+                  a(herf="#") 摄影师镜头下的多彩南疆（组图）
+                  span 2014-04-01
+              ul.list-right
+                li
+                  a(herf="#") 新福克斯2.0AT豪华运动提车作业
+                  span 2014-04-01
+                li
+                  a(herf="#") 北京周边油菜花田景区逐一盘点
+                  span 2014-04-01
+                li
+                  a(herf="#") 2013款至酷卡罗拉运动版提车作业
+                  span 2014-04-01
+                li
+                  a(herf="#") 塞班岛上陶醉于风起云涌（组图）
+                  span 2014-04-01
+                li
+                  a(herf="#") 摄影师镜头下的多彩南疆（组图）
+                  span 2014-04-01
           .related
             .related-title
               .title 相关文章
@@ -247,3 +279,15 @@ html
               <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+    script.
+      $('.tag-name').each(function(index){
+        $(this).click(function(e){
+          $('.tag-news').each(function(_index){
+            if(_index==index){
+              $(this).removeClass('hidden');
+            }else{
+              $(this).addClass('hidden');
+            }
+          })
+        })
+      })

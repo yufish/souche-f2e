@@ -55,22 +55,22 @@ html
             a.banner(herf="#")
               img(src="http://f2e.souche.com/assets/images/news/banner.png")
             .nav-list
-              .list-box
+              .list-box(data-index ='0')
                 i.arrow
                 .text-box
                   a(herf="#") 奥迪A4L最高优惠2.6万元 少量现车供应中
                   span 唐唯实出任标致雪铁龙CEO，通用反思召回拟简化流程
-              .list-box
+              .list-box(data-index ='1')
                 i.arrow
                 .text-box
                   a 奥迪A4L最高优惠2.6万元 少量现车供应中
                   span 唐唯实出任标致雪铁龙CEO，通用反思召回拟简化流程
-              .list-box
+              .list-box(data-index ='2')
                 i.arrow
                 .text-box
                   a 奥迪A4L最高优惠2.6万元 少量现车供应中
                   span 唐唯实出任标致雪铁龙CEO，通用反思召回拟简化流程
-              .list-box
+              .list-box(data-index ='3')
                 i.arrow
                 .text-box
                   a 奥迪A4L最高优惠2.6万元 少量现车供应中
@@ -574,3 +574,12 @@ html
               <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+  script.
+    var img= ['http://souche.cdn.aliyuncs.com/files/default/31B33321688915E4ECF1DB1A2BE2EB58_680x340.jpg',
+              'http://souche.cdn.aliyuncs.com/files/default/AC9DD13EB00CEBACD5D0870E411E672B_680x340.jpg',
+              'http://souche.cdn.aliyuncs.com/files/default/31B33321688915E4ECF1DB1A2BE2EB58_680x340.jpg',
+              'http://souche.cdn.aliyuncs.com/files/default/AC9DD13EB00CEBACD5D0870E411E672B_680x340.jpg'];
+    $('.list-box').on('mouseenter',function(){
+      var index = $(this).attr('data-index');
+      $('.banner img').attr('src',img[index]);
+    })
