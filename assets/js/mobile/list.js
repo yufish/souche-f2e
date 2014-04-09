@@ -47,7 +47,7 @@ var List = function() {
                     $("#xuan").addClass("hidden")
                 
             })
-            $("#xuan").on("click",function(e){
+            /*$("#xuan").on("click",function(e){
                 e.preventDefault()
                // if($("#filter").height()<$(window).height()){
                     //$("#filter").css("height",$(window).height())
@@ -62,7 +62,7 @@ var List = function() {
                 //     })
                 window.history.pushState({time:new Date().getTime()},"",window.location.href.replace(/#filter/g,"")+"#filter");
                 $("#xuan").addClass("hidden")
-            })
+            })*/
             $("#filter .back").on("click",function(){
                 $("#filter").animate({left:-$(window).width()},300)
                 $("#content").css("height","auto")
@@ -73,9 +73,96 @@ var List = function() {
                 loadMore();
             })
             
+            
+            //do fav
+            !function(){
+	             var api = {
+	            	fav:contextPath+'/pages/saleDetailAction/savaCarFavorite.json',
+	            	unfav:contextPath+'/pages/saleDetailAction/delCarFavorite.json'
+			    };
+	            
+				function showPopup(){
+	            	$('.wrapPhoneBg').removeClass('hidden');
+					var $popup = $('#phone-popup');
+	            	$popup.removeClass('hidden').css({'left':( $(window).width() - $popup.width()) / 2});
+					
+				}
+	            function hidePopup(){
+	            	$('.wrapPhoneBg').addClass('hidden');
+	            	$('#phone-popup').addClass('hidden');
+	            }
+	            function saveFav($node){
+	            	var $node = $node;
+	            	$.ajax({
+	      	          url:api.fav,
+	      	          data:{carId:$node.attr("data-id")},
+	      	          dataType:"json",
+	      	          success:function(){
+	      	            $node.addClass("star");
+	      	          }
+	      	        })
+	            }
+	            function delFav($node){
+	            	 $.ajax({
+	       	          url:api.unfav,
+	       	          data:{'carId':$node.attr("data-id")},
+	       	          dataType:"json",
+	       	          success:function(){
+	       	            $node.removeClass("star");
+	       	          }
+	       	        })
+	            }
+	            
+	            function doFav($node){
+	            	if($node.hasClass('star')){
+	            		delFav($curFav);
+	            	}else{
+	            		saveFav($curFav);
+	            	}
+	            }
+	            
+				var isLogin = false;
+	            var $curFav;
+				 var phoneReg = /^1[3458][0-9]{9}$/;
+	             $('#phone-form').submit(function(e) {
+	                 var phoneNum = $("#phone-num").val();
+	                 e.preventDefault();
+	                 if (!phoneReg.test(phoneNum)) {
+	                     alert('请输入正确的手机号码');
+	                 } else {
+	                     SM.PhoneRegister(phoneNum, function() {
+	                         hidePopup();
+	                         isLogin = true;
+	                         doFav($curFav);
+	                     })
+	                 }
+	             })
+				
+				$('#back-btn').click(function(){
+					hidePopup();
+				})
+	            $('.cars').on('click','.fav',function(e){
+	            	e.preventDefault();
+	            	$curFav = $(this);
+	            	
+	            	if(isLogin){
+	            		doFav($curFav);
+	            		return;
+	    			}
+	        
+	            	SM.checkPhoneExist(function(is_login) {
+	    				if(is_login) {
+	    					doFav($curFav);
+	    				}else {
+	    					showPopup()
+	    				}
+	    			})
+	            })
+            }();
+            //do fav end
+            
             window.onpopstate=function()
-            {
-                
+            {    
                 if(window.location.hash!="#filter"){
                // $("#filter").css("left",-$(window).width())
                 $("#filter").animate({left:-$(window).width()},300)

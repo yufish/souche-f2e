@@ -1,0 +1,87 @@
+﻿p{
+	margin:0;
+	padding:0;
+}
+#guajiang{
+	background-color:#eabd23;
+	font-family:'华文黑体','黑体';
+}
+.img-container{
+	width:217px;
+	margin:0 auto;
+}
+.img-container img{
+	width:217px;
+}
+.gua{
+	width:290px;
+	height:160px;
+	margin:0 auto;
+	margin-top:30px;
+	background:url('../../../images/mob/wx/frame-bg.png') no-repeat center;
+	background-size:100%;
+	overflow:hidden;
+}
+.before-bind{
+	padding:50px 0;
+	background-color:#d7d7d7;
+	
+}
+
+
+.wrapper-btn{
+	text-align:center;
+}
+
+.wrapper-btn button{
+	height:40px;
+	width:160px;
+	background-color:#5aba34;
+	border:none;
+	border-radius:8px;
+	color:#fff;
+	font-size:18px;
+}
+
+.intro{
+	width:320px;
+	padding:0 10px;
+	margin:0 auto;
+	margin-top:35px;
+}
+
+.action-detail{
+	background-color:#c95500;
+	padding:3px 8px;
+	border-radius:8px;
+	color:#eabd23;
+	margin-bottom:8px;
+}
+.intro .text{
+	margin-top:8px;
+}
+
+.intro .text .text-item {
+	line-height:24px;
+	font-size:14px;
+	overflow:hidden;
+}
+.intro .text .text-item  p{
+	line-height:24px;
+	width:290px;
+	float:left;
+}
+.intro .text .text-item  .seq{
+	float:left;
+}
+#canvas-container{
+	margin:10px;
+	height:140px;
+	position:relative;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
