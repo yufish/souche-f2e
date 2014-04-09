@@ -98,7 +98,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                 e.preventDefault();
                 Souche.MiniLogin.checkLogin(function() {
                     $(".qiugou .go-login").addClass("hidden")
-                    window.location.href = window.location.href + "#qiugou-cur";
+                    window.location.href = window.location.href + "?123#qiugou-cur";
                 })
             })
             $("#qiugou-phone-form").on("submit", function(e) {
