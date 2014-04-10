@@ -33,7 +33,7 @@ OSS =
           timestampData[clearPath] = timestampData[clearPath]*1+1
         else
           timestampData[clearPath] = 1
-        client.upload _path.replace(/^\.\//,''), realPath,(err, data)->
+        client.upload realPath,_path.replace(/^\.\//,''),(err, data)->
           if err
             console.error err
           else
@@ -47,7 +47,7 @@ OSS =
             timestampData[clearPath] = timestampData[clearPath]*1+1
           else
             timestampData[clearPath] = 1
-          client.upload _path.replace(/^\.\//,''), realPath,(err, data)->
+          client.upload realPath,_path.replace(/^\.\//,''),(err, data)->
             if err
               console.error err
             else
