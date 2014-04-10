@@ -14,7 +14,7 @@ define([ "souche/custom-select", "lib/lazyload" ], function(e) {
             $.extend(l, c);
             var d = this;
             a = new e("brand_select", {
-                placeholder: "请选择品牌，可多选"
+                placeholder: "请选择品牌dddd，可多选"
             }), n = new e("series_select", {
                 placeholder: "请选择车系，可多选"
             }), o = new e("age_select", {

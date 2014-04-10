@@ -17,6 +17,8 @@
     "queuedo": "*",
     "properties": "*",
     "optimist": "*",
-    "fs-extra": "~0.8.1"
+    "fs-extra": "~0.8.1",
+    "ali-oss": "0.0.2",
+    "co": "~3.0.5"
   }
 }
