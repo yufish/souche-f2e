@@ -1,4 +1,6 @@
 ossApi = require './lib/oss_client.js'
+OSS = require('ali-oss')
+co = require('co')
 global.config = config = require './config.coffee'
 walkdo = require 'walkdo'
 queuedo = require 'queuedo'
@@ -8,40 +10,44 @@ fs = require 'fs'
 fse = require 'fs-extra'
 argv = require('optimist').argv
 oss = new ossApi.OssClient(config)
+client = OSS.create(config)
+client.upload = co(client.upload)
+client.get = co(client.get)
+client.remove = co(client.remove)
 timestampData = {}
 countObject = (obj)->
   count = 0
   for i of obj
     count++
   return count
-OSS = 
+OSS =
   #第一个参数是发布的路径，第二个参数是真实发布的文件路径，发布完成调用callback
   pubFile:(_path,realPath,callback)->
     console.log '开始处理：'+_path+" 真实路径："+realPath
     clearPath = _path.replace(/^.*?\//,'/assets/')
     etag = oss.getObjectEtag(realPath)
-    this.getFile _path,(error,info)->
-      if error 
+    client.get _path,"cache.test",(error,info)->
+      if error
         console.log "start uploading "+clearPath
         if timestampData[clearPath]
           timestampData[clearPath] = timestampData[clearPath]*1+1
         else
           timestampData[clearPath] = 1
-        oss.putObject config.bucketName, _path.replace(/^\.\//,''), realPath,null,(err)->
+        client.upload realPath,_path.replace(/^\.\//,''),(err, data)->
           if err
             console.error err
           else
             console.log "upload finished " + _path.replace(/^\.\//,'')
           callback err
       else
-        etagOnline = oss.getObjectEtag(info)
+        etagOnline = oss.getObjectEtag(__dirname+"/cache.test")
         if etagOnline != etag
           console.log "start uploading "+clearPath
           if timestampData[clearPath]
             timestampData[clearPath] = timestampData[clearPath]*1+1
           else
             timestampData[clearPath] = 1
-          oss.putObject config.bucketName, _path.replace(/^\.\//,''), realPath,null,(err)->
+          client.upload realPath,_path.replace(/^\.\//,''),(err, data)->
             if err
               console.error err
             else
