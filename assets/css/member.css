@@ -1,5 +1,5 @@
 body{background-color:transparent}
-.member{width:580px;height:500px;background-color:#fff;margin-bottom: 20px;}
+.member{width:290px;height:300px;background-color:#fff;}
 .member .member-feed{padding: 20px 20px 0;}
 .member .member-feed .member_title{padding-bottom:18px;text-indent:4px;color:#333;font-size:30px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;border-bottom: 1px solid #d8d8d8}
 .member .member-close{float:right;width:30px;height:30px;margin:4px;background:url(../../images/fed/member/login2.png) no-repeat 0 0px;cursor:pointer}
