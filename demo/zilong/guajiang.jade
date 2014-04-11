@@ -145,6 +145,23 @@ html
 			#phone-popup #phone-num{
 				width:190px;
 			}
+			.fixed-award{
+				text-align:center;
+				padding:44px 0;
+				background-color:#fff0bc;
+			}
+			.fixed-award .cong{
+				font-size:16px;
+			}
+			.fixed-award .big-award{
+				margin-top:12px;
+				font-size:20px;
+				font-weight:bold;
+				color:#c95500;
+			}
+			.hidden{
+				display:none;
+			}
 		<script src="http://f2e.souche.com/assets/js/mobile/jquery-1.9.1.min.js?t=11"></script>
 	body#guajiang
 		.img-container
@@ -154,7 +171,7 @@ html
 				.before-bind
 					.wrapper-btn
 						button.bind 开始刮奖
-		
+					
 		.intro
 			span.action-detail 夺宝小攻略
 			.text
@@ -188,7 +205,12 @@ html
 					button#get-code 获取验证码
 				.btns
 					button#bind-mob 绑定
-			
+		
+		.fixed-award.hidden
+			.cong 恭喜您获得了
+			.big-award 300元代金券
+		
+		
 		<script src="http://f2e.souche.com/assets/js/mobile/wx/Lottery.js"></script>
 		<script src="http://f2e.souche.com/assets/js/mobile/wx/gua.js"></script>
 		script.
@@ -197,7 +219,13 @@ html
 				var $popup = $('#phone-popup');
 				$popup.show().css({left:(winWidth-$popup.width())/2});;
 			}();
+			/*!function addAward(){
+				$('#canvas-container .before-bind').remove();
+				$('#canvas-container').prepend($('.fixed-award').removeClass('hidden'));
+			}();*/
+			
 			$('.close').click(function(){
 				$(this).parent().hide();
+				
 			})
 			
