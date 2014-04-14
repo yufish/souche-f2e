@@ -103,6 +103,9 @@ Lottery.prototype = {
             _this.drawPoint(x, y);
         }, false);
     },
+	reset:function(){
+		this.drawLottery();
+	},
     drawLottery: function () {
         this.background = this.background || this.createElement('canvas', {
             style: 'position:absolute;left:0;top:0;'
