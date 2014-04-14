@@ -250,7 +250,7 @@ Souche.Form = function() {
 
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function() {
-    var static_login_url = contextPath + "/pages/minlogin.html";
+    var static_login_url = contextPath + "/pages/minilogin.html";
     var minilogin = null;
     var minilayer = null;
     var callback = function() {
@@ -289,8 +289,8 @@ Souche.MiniLogin = function() {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
                     display: "block",
-                    width: 580,
-                    height: 500,
+                    width: 400,
+                    height: 340,
                     position: "fixed",
                     top: 100,
                     left: $(window).width() / 2 - 290,

@@ -291,6 +291,7 @@ color: #ed9763;
   line-height: 18px;
   white-space:nowrap;
 }
+
 .apply_popup .tip{line-height: 40px;font-size: 20px;color: #111;}
 .apply_popup{
   width:600px;
@@ -306,7 +307,7 @@ border-radius: 5px;
 z-index: 100000;
 }
 .apply_popup .popup-title{
-    font-size: 22px;
+font-size: 22px;
 color: #111;
 font-family: "\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
 line-height: 60px;
