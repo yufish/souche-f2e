@@ -98,21 +98,23 @@ a:hover {
   font-size: 43px;
   color: #feed55;
 }
-#travel #content .wrapper .model1 .rule .rule-content .rule-left button {
-  width: 130px;
+#travel #content .wrapper .model1 .rule .rule-content .rule-left .yuyue-but {
+  display: block;
+  width: 100px;
   height: 27px;
   background-color: #feed55;
   color: #c42937;
   font-size: 14px;
   border-radius: 15px;
   border: none;
+  padding-left: 35px;
   margin-left: 90px;
   margin-top: 20px;
   position: relative;
   line-height: 27px;
   cursor: pointer;
 }
-#travel #content .wrapper .model1 .rule .rule-content .rule-left button i {
+#travel #content .wrapper .model1 .rule .rule-content .rule-left .yuyue-but i {
   width: 20px;
   height: 20px;
   background: url('../../images/acts/travel/button.png') no-repeat;
@@ -172,12 +174,12 @@ a:hover {
 }
 #travel .whybuy-car {
   width: 236px;
-  height: 298px;
+  height: 273px;
   float: left;
   display: inline;
   padding-left: 10px;
   overflow: hidden;
-  padding-top: 10px;
+  padding-top: 35px;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -234,4 +236,277 @@ a:hover {
 }
 #travel .whybuy-car .cai-tag i:last-child {
   border-right: none;
+}
+#act-yuyue {
+  width: 430px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+}
+#act-yuyue label {
+  font-size: 15px;
+  color: #444;
+}
+#act-yuyue #form_phone {
+  margin-left: 6px;
+  width: 247px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  padding-left: 10px;
+}
+#act-yuyue #yuyue_submit {
+  margin-top: 15px;
+  background-color: #fc7000;
+  width: 165px;
+  height: 35px;
+  border: none;
+  margin-left: 50px;
+  background: url("../../images/acts/travel/yuyue_submit.png") no-repeat;
+  cursor: pointer;
+}
+#act-yuyue .yuyue-close {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/common/popup-close2.png") no-repeat;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+#act-yuyue-success {
+  width: 390px;
+  height: 65px;
+  background-color: #c42937;
+  padding: 20px;
+  border: none;
+  border-radius: 0;
+}
+#act-yuyue-success .yuyue-close {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/common/popup-close2.png") no-repeat;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+#act-yuyue-success p {
+  font-size: 12px;
+  color: #feed55;
+  line-height: 20px;
+}
+.form {
+  padding-bottom: 40px;
+  margin-left: 50px;
+  position: relative;
+  z-index: 5;
+  margin-top: 55px;
+}
+.form .form-item {
+  margin-top: 10px;
+}
+.form .form-item label {
+  color: #444;
+  float: left;
+  line-height: 30px;
+}
+.form .form-item .input {
+  margin-left: 10px;
+  float: left;
+  color: #444;
+  font-size: 14px;
+}
+.form .form-item .warning {
+  color: #fc7000;
+  font-weight: bold;
+  line-height: 30px;
+  font-size: 14px;
+}
+.form .brand-select {
+  width: 257px;
+  height: auto;
+  display: block;
+}
+.form .brand-select .close {
+  background: #fc7000;
+  color: #fff;
+  font-size: 12px;
+  float: right;
+  margin-right: 10px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+  *margin-top: -30px;
+}
+.form .brand-select .sc-select-list {
+  overflow: hidden;
+  width: 500px;
+  height: 400px !important;
+}
+.form .brand-select .sc-select-content {
+  padding-left: 0;
+}
+.form .brand-select .placeholder {
+  padding-left: 10px;
+}
+.form .brand-select .sc-popup-bd {
+  height: 370px;
+  padding-bottom: 60px;
+}
+.form .brand-select .word-title {
+  float: left;
+  color: #fc7000;
+  font-size: 18px;
+  line-height: 30px;
+  width: 30px;
+}
+.form .brand-select .word-brands {
+  float: left;
+  display: inline;
+  width: 450px;
+}
+.form .brand-select .option {
+  padding: 0 5px;
+  margin-left: 7px;
+  color: #666;
+  display: inline-block;
+  font-size: 12px;
+  border: 2px solid #fff;
+  line-height: 20px;
+  margin-top: 3px;
+}
+.form .brand-select .word-container:last-child {
+  margin-bottom: 60px;
+}
+.form .brand-select .option.active {
+  border: 2px solid #fc7000;
+  background: #ffedda url(../images/index/popup-active.png?1) no-repeat right bottom;
+  color: #fc7000;
+}
+.form .brand-select .option:hover {
+  color: #fc7000;
+}
+.form .brand-select .sc-popup {
+  padding-right: 0;
+}
+.form .series-select {
+  width: 257px;
+  height: auto;
+  display: block;
+}
+.form .series-select .sc-select-list {
+  overflow: hidden;
+  width: 500px;
+  height: 400px !important;
+}
+.form .series-select .close {
+  background: #fc7000;
+  color: #fff;
+  font-size: 12px;
+  float: right;
+  margin-right: 10px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+  *margin-top: -30px;
+}
+.form .series-select .sc-select-content {
+  padding-left: 0;
+}
+.form .series-select .placeholder {
+  padding-left: 10px;
+}
+.form .series-select .sc-popup-bd {
+  height: 370px;
+}
+.form .series-select .brand-title {
+  color: #fc7000;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 30px;
+}
+.form .series-select .option {
+  padding: 0 5px;
+  margin-right: 5px;
+  color: #333;
+  display: inline-block;
+  font-size: 12px;
+  border: 2px solid #fff;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.form .series-select .option.active {
+  border: 2px solid #fc7000;
+  background: #ffedda url(../images/index/popup-active.png?1) no-repeat right bottom;
+  color: #fc7000;
+}
+.form .series-select .word-container:last-child {
+  margin-bottom: 60px;
+}
+.form .series-select .option:hover {
+  color: #fc7000;
+}
+.form .series-select .sc-popup {
+  padding-right: 0;
+}
+.form .age-select,
+.form .model-select {
+  width: 257px;
+  display: block;
+}
+.form .age-select .option,
+.form .model-select .option {
+  display: block;
+  float: none;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 30px;
+  color: #333;
+}
+.form .age-select .option:hover,
+.form .model-select .option:hover {
+  background: #fc7000;
+  color: #fff;
+}
+.form .price-select-low {
+  width: 103px;
+  padding-left: 10px;
+  color: #666;
+  margin-right: 5px;
+  height: 30px;
+  margin-left: 0;
+  border: 1px solid #ddd;
+  *margin-left: -20px;
+}
+.form .price-select-high {
+  width: 103px;
+  padding-left: 10px;
+  color: #666;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 30px;
+  border: 1px solid #ddd;
+}
+.form .submit {
+  background: #fc7000;
+  color: #fff;
+  height: 35px;
+  border: none;
+  width: 165px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.form .submit.loading {
+  background: #ffa053;
+}
+.form .go-login {
+  margin-left: 30px;
+  font-size: 12px;
+}
+.form .go-login a {
+  color: #fc7000;
+  text-decoration: underline;
 }
