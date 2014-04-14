@@ -1,172 +1,123 @@
-function Lottery(id, cover,coverText, coverType, width, height, drawPercentCallback) {
-    this.conId = id;
-    this.conNode = document.getElementById(this.conId);
-    this.cover = cover;
-	this.coverText = coverText;
-    this.coverType = coverType;
-    this.background = null;
-    this.backCtx = null;
-    this.mask = null;
-    this.maskCtx = null;
-    this.lottery = null;
-    this.lotteryType = 'image';
-    this.width = width || 300;
-    this.height = height || 100;
-    this.clientRect = null;
-    this.drawPercentCallback = drawPercentCallback;
+/**
+ * 为指定的图片生成刮刮卡图层
+ * @param imgId img标签ID
+ * @param condition 刮开比例 作为触发callback的条件 即 刮开百分之XX之后触发callback 默认为90%
+ * @param isOnce callback是否只调用1次 默认为否
+ */
+function createScratchCard(imgId, condition, callback, isOnce) {
+
+    var img = document.getElementById(imgId);
+    if (img.complete || img.readyState == 'loading' || img.readyState == 'complete') {
+        generate();
+    } else {
+        img.onload = generate;
+    }
+
+    function generate() {
+        var cvs = document.createElement('canvas');
+        cvs.style.position = 'absolute';
+        cvs.style.left = img.offsetLeft + 'px';
+        cvs.style.top = img.offsetTop + 'px';
+        cvs.width = img.width;
+        cvs.height = img.height;
+        img.parentNode.insertBefore(cvs, img);
+        var context = cvs.getContext('2d');
+        context.fillStyle = '#bbb';
+        context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        context.globalCompositeOperation = 'destination-out';
+        context.strokeStyle = "fff";
+        context.lineJoin = "round";
+        context.lineWidth = 35;
+        var offsetParent = cvs,
+            offsetLeft = 0,
+            offsetTop = 0;
+        while (offsetParent) {
+            offsetLeft += offsetParent.offsetLeft;
+            offsetTop += offsetParent.offsetTop;
+            offsetParent = offsetParent.offsetParent;
+        }
+        var pathPoints = [];
+        var x, y;
+        var start = 'mousedown',
+            move = 'mousemove',
+            end = 'mouseup';
+        if (document.createTouch) {
+            start = "touchstart";
+            move = "touchmove";
+            end = "touchend";
+        }
+        cvs.addEventListener(start, onTouchStart);
+
+
+        function onTouchStart(e) {
+            e.preventDefault();
+            if (e.changedTouches) {
+                e = e.changedTouches[e.changedTouches.length - 1];
+            }
+            console.log(e.pageX, offsetLeft);
+            x = e.pageX - offsetLeft;
+            y = e.pageY - offsetTop;
+            context.beginPath();
+            context.arc(x, y, 35 / 2, 0, Math.PI * 2, true);
+            context.closePath();
+            context.fill();
+            document.addEventListener(end, onTouchEnd);
+            cvs.addEventListener(move, onTouch)
+
+        }
+
+        function onTouch(e) {
+            if (e.changedTouches) {
+                e = e.changedTouches[e.changedTouches.length - 1];
+            }
+            context.beginPath();
+            context.moveTo(x, y);
+            context.lineTo(e.pageX - offsetLeft, e.pageY - offsetTop);
+            x = e.pageX - offsetLeft;
+            y = e.pageY - offsetTop;
+            context.closePath();
+            context.stroke();
+            var n = (Math.random() * 10000000) | 0;
+            context.canvas.style.color = '#' + n.toString(16); //fix android 4.2 bug force repaint
+
+        }
+
+        function onTouchEnd() {
+            cvs.removeEventListener(move, onTouch);
+            pathPoints = [];
+            check();
+        }
+
+        function check() {
+            var st = +new Date();
+            data = context.getImageData(0, 0, cvs.width, cvs.height).data;
+            var length = data.length,
+                k = 0;
+            for (var i = 0; i < length - 3; i += 4) {
+                if (data[i] == 0 && data[i + 1] == 0 && data[i + 2] == 0 && data[i + 3] == 0) {
+                    k++;
+                }
+            }
+            var f = k * 100 / (cvs.width * cvs.height);
+            if (f > (condition || 90)) {
+                if (callback) {
+                    callback(f, t);
+                    if (isOnce) {
+                        callback = null;
+                    }
+
+                }
+
+            }
+            var t = +new Date() - st;
+            console.log('刮开面积:' + f.toFixed(2) + '% 检测耗时' + t + 'ms ');
+            data = null;
+        }
+    }
 }
 
-Lottery.prototype = {
-    createElement: function (tagName, attributes) {
-        var ele = document.createElement(tagName);
-        for (var key in attributes) {
-            ele.setAttribute(key, attributes[key]);
-        }
-        return ele;
-    },
-    getTransparentPercent: function(ctx, width, height) {
-        var imgData = ctx.getImageData(0, 0, width, height),
-            pixles = imgData.data,
-            transPixs = [];
-        for (var i = 0, j = pixles.length; i < j; i += 4) {
-            var a = pixles[i + 3];
-            if (a < 128) {
-                transPixs.push(i);
-            }
-        }
-        return (transPixs.length / (pixles.length / 4) * 100).toFixed(2);
-    },
-    resizeCanvas: function (canvas, width, height) {
-        canvas.width = width;
-        canvas.height = height;
-        canvas.getContext('2d').clearRect(0, 0, width, height);
-    },
-    drawPoint: function (x, y) {
-        this.maskCtx.beginPath();
-        var radgrad = this.maskCtx.createRadialGradient(x, y, 0, x, y, 30);
-        radgrad.addColorStop(0, 'rgba(0,0,0,0.6)');
-        radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-        this.maskCtx.fillStyle = radgrad;
-        this.maskCtx.arc(x, y, 30, 0, Math.PI * 2, true);
-        this.maskCtx.fill();
-        if (this.drawPercentCallback) {
-            this.drawPercentCallback.call(null, this.getTransparentPercent(this.maskCtx, this.width, this.height));
-        }
-    },
-    bindEvent: function () {
-        var _this = this;
-        var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
-        var clickEvtName = device ? 'touchstart' : 'mousedown';
-        var moveEvtName = device? 'touchmove': 'mousemove';
-        if (!device) {
-            var isMouseDown = false;
-            document.addEventListener('mouseup', function(e) {
-                isMouseDown = false;
-            }, false);
-        } else {
-            document.addEventListener("touchmove", function(e) {
-                if (isMouseDown) {
-                    e.preventDefault();
-                }
-            }, false);
-            document.addEventListener('touchend', function(e) {
-                isMouseDown = false;
-            }, false);
-        }
-        this.mask.addEventListener(clickEvtName, function (e) {
-            isMouseDown = true;
-            var docEle = document.documentElement;
-            if (!_this.clientRect) {
-                _this.clientRect = {
-                    left: 0,
-                    top:0
-                };
-            }
-            var x = (device ? e.touches[0].clientX : e.clientX) - _this.clientRect.left + docEle.scrollLeft - docEle.clientLeft;
-            var y = (device ? e.touches[0].clientY : e.clientY) - _this.clientRect.top + docEle.scrollTop - docEle.clientTop;
-            _this.drawPoint(x, y);
-        }, false);
 
-        this.mask.addEventListener(moveEvtName, function (e) {
-            if (!device && !isMouseDown) {
-                return false;
-            }
-            var docEle = document.documentElement;
-            if (!_this.clientRect) {
-                _this.clientRect = {
-                    left: 0,
-                    top:0
-                };
-            }
-            var x = (device ? e.touches[0].clientX : e.clientX) - _this.clientRect.left + docEle.scrollLeft - docEle.clientLeft;
-            var y = (device ? e.touches[0].clientY : e.clientY) - _this.clientRect.top + docEle.scrollTop - docEle.clientTop;
-            _this.drawPoint(x, y);
-        }, false);
-    },
-	reset:function(){
-		this.drawLottery();
-	},
-    drawLottery: function () {
-        this.background = this.background || this.createElement('canvas', {
-            style: 'position:absolute;left:0;top:0;'
-        });
-        this.mask = this.mask || this.createElement('canvas', {
-            style: 'position:absolute;left:0;top:0;'
-        });
-		
-        if (!this.conNode.innerHTML.replace(/[\w\W]| /g, '')) {
-            //this.conNode.appendChild(this.background);
-            this.conNode.appendChild(this.mask);
-            this.clientRect = this.conNode ? this.conNode.getBoundingClientRect() : null;
-            this.bindEvent();
-        }
 
-        //this.backCtx = this.backCtx || this.background.getContext('2d');
-        this.maskCtx = this.maskCtx || this.mask.getContext('2d');
-		
-        this.drawMask()
-    },
-    drawMask: function() {
-        this.resizeCanvas(this.mask, this.width, this.height);
-		
-        if (this.coverType == 'color') {
-            this.maskCtx.fillStyle = this.cover;
-			this.maskCtx.fillRect(0, 0, this.width, this.height);
-			this.maskCtx.save();
-            var fontSize = 30;
-            this.maskCtx.font = 'Bold ' + fontSize + 'px Arial';
-            this.maskCtx.textAlign = 'center';
-			this.maskCtx.fillStyle = '#dfa87c';
-            this.maskCtx.fillText(this.coverText, this.width / 2, this.height / 2 + fontSize / 2);
-            this.maskCtx.restore();
-            this.maskCtx.globalCompositeOperation = 'destination-out';
-			
-		} else if (this.coverType == 'image'){
-			this.maskCtx.fillRect(0,0,this.width,this.height);
-            var image = new Image(),
-                _this = this;
-            image.onload = function () {
-                _this.maskCtx.drawImage(this, 0, 0,_this.width,_this.height);
-                _this.maskCtx.globalCompositeOperation = 'destination-out';
-            }
-            image.src = this.cover;
-		}else if(this.coverType=='text'){
-            this.maskCtx.save();
-            this.maskCtx.fillStyle = '#FFF';
-            this.maskCtx.fillRect(0, 0, this.width, this.height);
-            this.maskCtx.restore();
-            this.maskCtx.save();
-            var fontSize = 30;
-            this.maskCtx.font = 'Bold ' + fontSize + 'px Arial';
-            this.maskCtx.textAlign = 'center';
-            this.maskCtx.fillStyle = '#F60';
-            this.maskCtx.fillText(this.lottery, this.width / 2, this.height / 2 + fontSize / 2);
-            this.maskCtx.restore();
-		}
-    },
-    init: function (lottery, lotteryType) {
-        this.lottery = lottery;
-        this.lotteryType = lotteryType || 'image';
-        this.drawLottery();
-    }
+var Lottery = function(id, callback) {
+    createScratchCard(id, 1, callback);
 }
