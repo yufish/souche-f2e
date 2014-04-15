@@ -101,6 +101,7 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     window.location.href = window.location.href + "?123#qiugou-cur";
                 })
             })
+
             $("#qiugou-phone-form").on("submit", function(e) {
                 e.preventDefault();
                 if (!phoneReg.test($("#qiugou-phone").val())) {
