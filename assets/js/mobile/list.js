@@ -16,16 +16,11 @@ var List = function() {
 			 var $cars = $('.cars')
              for(var i =0;i<items.length;i++){
 				item = items[i];
-				console.log(item.flashPurchase);
-				if(item.carPriceVo)
-				{
-					console.log(item.carPriceVo.fenqi);
-				}
 				tpl_data={
 					id:item.id,
 					detailUrl:item.carVo.status=='zaishou'?'detail':'yushou-detail',
 					flashPurchase:item.flashPurchase,
-					fenqi:(!!item.carPriceVo&&item.carPriceVo.fenqi==1),
+					fenqi:(!!item.carPriceVO&&item.carPriceVO.fenqi==1),
 					downPrice:(!!item.flashPurchaseVO)?item.flashPurchaseVO.totalMasterOutPriceToString*1000:undefined,
 					favorite:item.favorite,
 					favCount:item.count,
