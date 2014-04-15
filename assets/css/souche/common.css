@@ -501,6 +501,9 @@ body {
 #simple-header .other-navs a.last {
   border: none;
 }
+#simple-header .other-navs .head-login {
+  border-right: none;
+}
 .guwen-slider-global {
   width: 100%;
   background: #fff2e1;
