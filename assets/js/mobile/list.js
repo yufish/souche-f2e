@@ -11,8 +11,37 @@ var List = function() {
          dataType:"json",
          success:function(data){
              //console.log(data)
-             var html = Mustache.render (tpl_cars,{cars:data.page?data.page.items:[],yushouCars:data.yushouPage?data.yushouPage.items:[]})
-             $(".cars").append(html)
+			 var items = data.page.items;
+			 var tpl_data,item,html;
+			 var $cars = $('.cars')
+             for(var i =0;i<items.length;i++){
+				item = items[i];
+				console.log(item.flashPurchase);
+				if(item.carPriceVo)
+				{
+					console.log(item.carPriceVo.fenqi);
+				}
+				tpl_data={
+					id:item.id,
+					detailUrl:item.carVo.status=='zaishou'?'detail':'yushou-detail',
+					flashPurchase:item.flashPurchase,
+					fenqi:(!!item.carPriceVo&&item.carPriceVo.fenqi==1),
+					downPrice:(!!item.flashPurchaseVO)?item.flashPurchaseVO.totalMasterOutPriceToString*1000:undefined,
+					favorite:item.favorite,
+					favCount:item.count,
+					year:item.carVo.yearShow,
+					month:item.carVo.mouthShow,
+					newPrice:item.carVo.newPriceToString,
+					levelName:item.carVo.levelName,
+					pictureBig:item.carPicturesVO.pictureBig,
+					carOtherAllNameShow:item.carVo.carOtherAllNameShow,
+					price:item.price
+				}
+				html  = Mustache.render (tpl_cars,{'cars':tpl_data});
+
+				$cars.append(html);
+             }
+             
              if(data.totalPage==config.page){
                  $("#load_more").addClass("hidden")
              }
