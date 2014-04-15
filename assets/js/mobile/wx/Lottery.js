@@ -12,6 +12,7 @@ function createScratchCard(imgId, condition, callback, isOnce) {
     } else {
         img.onload = generate;
     }
+    generate();
 
     function generate() {
         var cvs = document.createElement('canvas');
