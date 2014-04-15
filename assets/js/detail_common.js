@@ -547,4 +547,53 @@
     $("#onsale_detail .showBig").click(function() {
         appendIframe(0);
     });
-})()
+})();
+
+Souche.DetailCommon = function() {
+    var config = {
+
+    }
+    return {
+        init: function(_config) {
+            $.extend(config, _config)
+            var carPrice = config.carPrice;
+            var nowPrice = carPrice;
+            var nowStr = nowPrice.toString();
+            var start = '<div class="price-num">',
+                end = '</div>';
+            for (var i = 0; i < nowStr.length; i++) {
+                $('.cutprice').append(start + nowStr[i] + end);
+            }
+
+            $("#jiangyidian").click(function() {
+                if (100 * (carPrice - nowPrice) / carPrice > 5) {
+                    $("#jiangyidian").css({
+                        "background-position": "0 0",
+                        'cursor': 'auto'
+                    });
+                    $(".price-toolow").removeClass("hidden")
+                    return;
+                }
+                var length = nowPrice.toString().length;
+                var curIndex = 0;
+                var lowPrice = nowPrice - 1000;
+                var now_s = nowPrice.toString(),
+                    low_s = lowPrice.toString();
+                var $cutPrice = $('.cutprice');
+                $cutPrice.find('.price-num').fadeOut(function() {
+                    curIndex++;
+                    if (curIndex == length)
+                        $cutPrice.find('.price-num.hidden').removeClass('hidden')
+                    $(this).remove();
+                });
+                var start = '<div class="price-num hidden">',
+                    end = '</div>';
+                for (var i = 0; i < low_s.length; i++) {
+                    $cutPrice.append(start + low_s[i] + end);
+                }
+
+                nowPrice -= 1000;
+            })
+        }
+    }
+}();
