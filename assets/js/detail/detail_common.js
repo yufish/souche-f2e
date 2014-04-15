@@ -556,10 +556,9 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
-            var carPrice = config.carPrice;
+            var carPrice = parseInt($('.price-now.now').text());
             var nowPrice = carPrice;
             var nowStr = nowPrice.toString();
-            alert(nowPrice)
             var start = '<div class="price-num">',
                 end = '</div>';
             for (var i = 0; i < nowStr.length; i++) {
