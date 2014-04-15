@@ -190,8 +190,17 @@
     }
     //降一点
     $("#jiangyidian").click(function() {
-        var nowPrice = parseFloat($('.price-now.now').text());
+        var nowPrice = parseInt($('.price-now.now').text());
         var lowPrice = nowPrice - 1000;
+        var $cutPrice = $('.cutprice');
+        $cutPrice.find('.price-num').remove();
+        var start = '<div class="price-num">',
+            end = '</div>';
+        while (lowPrice / 10 != 0) {
+            var curNum = Math.floor(lowPrice % 10);
+            $cutPrice.prepend(start + curNum + end);
+            lowPrice = Math.floor(lowPrice / 10);
+        }
     })
     //降价通知提交
     $("#jiangjia-form").submit(function(e) {

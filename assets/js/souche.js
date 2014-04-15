@@ -293,7 +293,7 @@ Souche.MiniLogin = function() {
                     height: 340,
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 290,
+                    left: $(window).width() / 2 - 200,
                     zIndex: 100000001
                 });
 

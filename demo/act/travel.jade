@@ -6,20 +6,21 @@ html
     <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
     <meta name="viewport" id="viewport" content="width=1340" /> 
     <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/index.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css?t=129" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/act/travel.css?t=129" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
-
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
     <script>
       var contextPath = "http://www.souche.com/";
       require.config({
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+    
   body#travel
     #header
       .wrapper
@@ -49,15 +50,15 @@ html
       #banner
         ul.jiangxiang-list.clearfix
           li.jiang5000
-            a(href="#")
+            a.yuyue-but
           li.jiang3000
-            a(href="#")
+            a.yuyue-but
           li.jiang1000
-            a(href="#")
+            a.yuyue-but
           li.jiang500
-            a(href="#")
+            a.yuyue-but
           li.anwei
-            a(href="#")
+            a.yuyue-but
       .wrapper
         .model1.clearfix
           .bg-left
@@ -68,12 +69,12 @@ html
                 h1 路费红包最高
                 h2 100元
                 h3 100%中奖
-                button 预约申请
+                a.yuyue-but 预约申请
                   i
               .rule-right
                 h1 大搜车返现月活动规则：
                 p 奖金规则：当日剩余奖金，次日不累加。
-                p 抽奖条件：任意顾客购车日期在4月10 -5月10日之间，在成交车辆过户后，车主即可凭借身份证当日抽取奖励。
+                p 抽奖条件：任意顾客购车日期在4月15 -5月15日之间，在成交车辆过户后，车主即可凭借身份证当日抽取奖励。
                 p 优惠形式：现金红包返利
                 p 领取时间及方式：车辆过户7日后在不退换的情况下，工作日9：00-18：00凭借身份证号到店领取奖金。
                 p 个人所得税：中奖客户自行承担个人所得税（中奖金额的20%）
@@ -244,11 +245,6 @@ html
                   .cai-tag
                     i 准新车
                     i 1万公里以内
-        .act-popup
-          .yuyue-close
-          from.yuyue-popup
-            .yuyue-con
-
     #footer
       .footer-content
         .wrapper
@@ -275,3 +271,158 @@ html
               <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+    #act-yuyue.apply_popup.
+          <div class="yuyue-close"></div>
+          <div class="form " style="">
+            <div class="form-inner">
+              <form id="qiugou-form">
+                <label>手机</label>
+                <input placeholder="请填写预约手机号" type="text" name="phone" id="form_phone"/>
+                <div class="form-item clearfix">
+                  <label>品牌</label>
+                  <div class="input">
+                    <div class="sc-select sc-custom-select brand-select" id="brand_select">
+                      <div class="sc-select-hd">
+                        <div class="sc-select-content clearfix"></div>
+                        <div class="sc-select-action hidden"><i></i></div>
+                      </div>
+                      <div class="sc-select-list hidden sc-popup">
+                        <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
+                        <div class="sc-popup-bd"></div>
+                      </div>
+                      <input type="hidden" name="brands" class="selected_values"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-item clearfix">
+                  <label>价格</label>
+                  <div class="input">
+                   <input id="price_low_select" type="text"   name="minPrice" class="price-select-low">至
+                    <input id="price_hight_select" type="text"    name="maxPrice" class="price-select-high">万元
+                  </div>
+                </div>
+                <div class="form-item clearfix">
+                  <label>车龄</label>
+                  <div class="input">
+                    <div class="sc-select sc-custom-select age-select" id="age_select">
+                      <div class="sc-select-hd">
+                        <div class="sc-select-content clearfix">
+                        
+                        </div>
+                        <div class="sc-select-action"><i></i></div>
+                      </div>
+                      <div class="sc-select-list hidden">
+                       
+                       <a target="_blank" href="#" data-value="0-1" class="option"><input type="checkbox" class="hidden"><span class="value">1年以内</span></a>
+                          
+                       <a target="_blank" href="#" data-value="1-2" class="option"><input type="checkbox" class="hidden"><span class="value">2年以内</span></a>
+                          
+                       <a target="_blank" href="#" data-value="2-3" class="option"><input type="checkbox" class="hidden"><span class="value">3年以内</span></a>
+                          
+                       <a target="_blank" href="#" data-value="3-5" class="option"><input type="checkbox" class="hidden"><span class="value">3-5年</span></a>
+                          
+                       <a target="_blank" href="#" data-value="5-1000" class="option"><input type="checkbox" class="hidden"><span class="value">5年以上</span></a>
+                          
+                          <a target="_blank" href="#" data-value="" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a>
+                      </div>
+                      
+                      <input type="hidden" name="year" class="selected_values"/>
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" value="" id="yuyue_submit"/>
+    #act-yuyue-success.apply_popup.hidden
+      span.yuyue-close
+      p 正在申请
+      p 稍后会跟您电话确认是否满足资格，确认后会发送正式红包领取短信，
+      p 凭短信到店抽取红包。
+script.
+  require(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], function(CustomSelect, Select) {
+    var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
+    var brandSort = function(data) {
+        var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        var obj = {}
+        for (var i in data) {
+            var brand = data[i]
+            var firstword = brand.name.charAt(0).toUpperCase();
+            if (!obj[firstword]) {
+                obj[firstword] = []
+            }
+            brand.name = brand.name.substr(2, brand.name.length)
+            obj[firstword].push(brand);
+        }
+
+        return obj;
+    }
+    var qiugouData = null;
+    brandSelect = new CustomSelect("brand_select", {
+        placeholder: "请选择品牌，可多选"
+    });
+    
+    ageSelect = new CustomSelect("age_select", {
+        placeholder: "请选择",
+        multi: false
+    })
+    modelSelect = new CustomSelect("model_select", {
+        placeholder: "请选择",
+        multi: false
+    })
+    $.ajax({
+      url: contextPath + "/pages/dicAction/loadRootLevel.json",
+      dataType: "json",
+      data: {
+          type: "car-subdivision"
+      },
+      success: function(data) {
+          var html = "";
+          data = brandSort(data.items);
+          for (var i in data) {
+              var b = data[i];
+              var name = i;
+              html += "<div data-name='" + name + "' class='clearfix word-container'><div class='word-title'>" + name + "</div><div class='word-brands'>"
+              for (var n = 0; n < b.length; n++) {
+                  var brand = b[n]
+                  html += ('<a href="#" data-value="' + brand.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + brand.name + '</span></a>');
+              }
+              html += "</div></div>"
+
+          }
+          brandSelect.addOptions(html)
+
+      },
+      error: function() {
+          // alert("品牌信息请求出错，刷新后再试")
+      },
+      failure: function() {
+          // alert("品牌信息请求出错，刷新后再试")
+      }
+    });
+ 
+
+    $(".yuyue-close").click(function(){
+      $("#act-yuyue").addClass("hidden");
+      })
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    $("#qiugou-form").on("submit",function(e){
+      e.preventDefault();
+      if(!phoneReg.test($("#form_phone").val())){
+        alert("请填写正确的手机号")
+        return;
+      }
+      $.ajax({
+        url:this.action,
+        type:"post",
+        dataType:"json",
+        data:$("#qiugou-form").serialize(),
+        success:function(data){
+          if(data.errorMessage){
+            alert(data.errorMessage)
+          }else{
+            //提交成功
+            $("#act-yuyue").addClass("hidden");
+            $("#act-yuyue-success").removeClass("hidden");
+          }
+        }
+        })
+      })
+  });
