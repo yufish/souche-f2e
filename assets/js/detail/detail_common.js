@@ -598,7 +598,7 @@ Souche.DetailCommon = function() {
                 }
 
                 nowPrice -= 1000;
-                $('#expectedPrice').val(nowPrice);
+                $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
             })
         }
     }
