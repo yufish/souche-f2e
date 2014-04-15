@@ -764,7 +764,7 @@ background:#fff;
   display: block;
   border-right: 1px solid #e5e5e5;
   color: #333;
-  margin:15px 0;
+  padding:15px 0;
 }
 
 #list #order li a i {
@@ -776,7 +776,8 @@ background:#fff;
   vertical-align: -3px;
 }
 #list #order li a.active {
-  color: #db5d30;
+  color: #fc7000;
+  border-bottom:4px solid #fc7000;
 }
 #list #order li a.active i {
   background: url(../../images/mob/order-1.png) no-repeat;
@@ -5900,6 +5901,10 @@ overflow:hidden;
 #list #no-result .advice a{
 	color:#0090e2;
 }
+#list #order{
+	border-bottom:1px solid #e5e5e5;
+}
+
 body{
 	font-family:'华文黑体','黑体';
 }
