@@ -559,6 +559,7 @@ Souche.DetailCommon = function() {
             var carPrice = config.carPrice;
             var nowPrice = carPrice;
             var nowStr = nowPrice.toString();
+            alert(nowPrice)
             var start = '<div class="price-num">',
                 end = '</div>';
             for (var i = 0; i < nowStr.length; i++) {
