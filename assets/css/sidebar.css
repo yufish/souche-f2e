@@ -472,6 +472,13 @@
   padding-left: 80px;
   padding-top: 40px;
 }
+.advisor-unfold .wrapper {
+  background: url("../images/common/advisor-bg.png") no-repeat;
+  background-position: right bottom;
+  width: 740px;
+  height: 360px;
+  z-index: 10000;
+}
 .advisor-unfold .advisor-close {
   position: absolute;
   display: block;
