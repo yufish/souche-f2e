@@ -8,8 +8,4 @@ config =
   upload_path:__dirname+"/uploads/"
   assets_path:path.join __dirname,'./../../assets/'
   demo_path:path.join __dirname,'./../../demo/'
-<<<<<<< HEAD
 module.exports = config
-=======
-module.exports = config
->>>>>>> 70150487c8d16be48e969bb485ab5784c681529b
