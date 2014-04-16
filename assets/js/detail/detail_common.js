@@ -200,7 +200,7 @@
             return;
         }
         Souche.PhoneRegister($("#jiangjia-phone").val(), function() {
-            $('#expectedPrice').val(window.nowPrice);
+
             submitJiangjia();
         })
     })
@@ -598,6 +598,7 @@ Souche.DetailCommon = function() {
                 }
 
                 nowPrice -= 1000;
+                $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
             })
         }
     }
