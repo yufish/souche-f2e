@@ -317,7 +317,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         dataType: 'json',
                         data: {
                             brands: bStr,
-                            series: sStr,
+                            series: '',
                             year: yearCode,
                             minPrice: minPrice,
                             maxPrice: maxPrice
