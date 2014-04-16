@@ -200,7 +200,7 @@ a:hover {
   background-color: #FC7000;
   border-radius: 3px;
   color: #fff;
-  top: -160px;
+  top: -159.99999999px;
   left: 144px;
   text-align: center;
   line-height: 19px;
@@ -842,7 +842,7 @@ a:hover {
   font-style: normal;
   float: right;
   line-height: 30px;
-  _margin-top: -29.99999999px;
+  _margin-top: -30px;
   padding-right: 10px;
 }
 #index .whybuy .whybuy-wrap .whybuy-box .whybuy-car .cai-tag {
