@@ -116,7 +116,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 if (dataObj.brands) {
 					var bArr = dataObj.brands.split(',');
 					for(var item in bArr){
-						initBrands[item]='';
+						initBrands[ bArr[item] ]='';
 					}
                 }
 
@@ -317,7 +317,7 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                         dataType: 'json',
                         data: {
                             brands: bStr,
-                            series: sStr,
+                            series: '',
                             year: yearCode,
                             minPrice: minPrice,
                             maxPrice: maxPrice
