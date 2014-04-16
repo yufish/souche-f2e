@@ -567,7 +567,7 @@ Souche.DetailCommon = function() {
             var start = '<div class="price-num"><em>',
                 end = '</em></div>';
             for (var i = 0; i < nowStr.length; i++) {
-                $('.cutprice').append(start + nowStr[i] + end);
+                $('.cutprice').append(start + nowStr.charAt(i) + end);
             }
 
             $("#jiangyidian").click(function() {
@@ -594,7 +594,7 @@ Souche.DetailCommon = function() {
                 var start = '<div class="price-num hidden"><em>',
                     end = '</em></div>';
                 for (var i = 0; i < low_s.length; i++) {
-                    $cutPrice.append(start + low_s[i] + end);
+                    $cutPrice.append(start + low_s.charAt(i) + end);
                 }
 
                 nowPrice -= 1000;
