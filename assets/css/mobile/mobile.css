@@ -899,6 +899,7 @@ background:#fff;
 }
 #list #cars .car .rht .price {
   line-height: 20px;
+  position:relative;
 }
 #list #cars .car .rht .price s {
   color: #999;
@@ -5837,10 +5838,15 @@ overflow:hidden;
 }
 
 #list #cars .fav{
-	float:right;
-	margin-left:20px;
+	padding-top:20px;
+	position:absolute;
+	right:3px;
+	top:-18px;
 	line-height:14px;
 	color:#000;
+	width:80px;
+	height:50px;
+	text-align:center;
 }
 #list #cars .fav i{
 	display:inline-block;
