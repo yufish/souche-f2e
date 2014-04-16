@@ -394,7 +394,6 @@ background-color: #000;
 z-index: 10000;
 }
 .input-error-tip{
-      width:150px;
       height:25px;
       border:1px solid #f29797;
       background-color:#ffe8ef;
