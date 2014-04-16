@@ -564,8 +564,8 @@ Souche.DetailCommon = function() {
             var carPrice = parseInt($('.price-now.now').text());
             var nowPrice = carPrice;
             var nowStr = nowPrice.toString();
-            var start = '<div class="price-num">',
-                end = '</div>';
+            var start = '<div class="price-num"><em>',
+                end = '</em></div>';
             for (var i = 0; i < nowStr.length; i++) {
                 $('.cutprice').append(start + nowStr.charAt(i) + end);
             }
@@ -585,14 +585,14 @@ Souche.DetailCommon = function() {
                 var now_s = nowPrice.toString(),
                     low_s = lowPrice.toString();
                 var $cutPrice = $('.cutprice');
-                $cutPrice.find('.price-num').fadeOut(function() {
+                $cutPrice.find('.price-num em').fadeOut(function() {
                     curIndex++;
                     if (curIndex == length)
                         $cutPrice.find('.price-num.hidden').removeClass('hidden')
-                    $(this).remove();
+                    $(this.parentNode).remove();
                 });
-                var start = '<div class="price-num hidden">',
-                    end = '</div>';
+                var start = '<div class="price-num hidden"><em>',
+                    end = '</em></div>';
                 for (var i = 0; i < low_s.length; i++) {
                     $cutPrice.append(start + low_s.charAt(i) + end);
                 }
