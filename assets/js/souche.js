@@ -305,10 +305,9 @@ Souche.MiniLogin = function() {
                     top: 0,
                     height: $(document.body).height(),
                     position: "absolute",
-                    opacity: 0.7,
                     background: "#111",
                     zIndex: 100000000
-                });
+                }).css("opacity", 0.7);
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
                 //				$(window).scroll(function(){
@@ -390,10 +389,9 @@ Souche.NoRegLogin = function() {
                     top: 0,
                     height: $(document.body).height(),
                     position: "absolute",
-                    opacity: 0.7,
                     background: "#111",
                     zIndex: 100000000
-                });
+                }).css("opacity", 0.7);
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
                 //              $(window).scroll(function(){
