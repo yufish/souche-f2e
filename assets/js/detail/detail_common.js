@@ -68,7 +68,7 @@
                     break;
                 case "36":
                     timeArrow = "3";
-                    mortArrow = "0";
+                    mortArrow = "4";
                     break;
             }
         } else {
