@@ -114,9 +114,10 @@ define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlid
                 //brand init
                 var initBrands = {};
                 if (dataObj.brands) {
-                    dataObj.brands.split(',').forEach(function(item) {
-                        initBrands[item] = '';
-                    })
+					var bArr = dataObj.brands.split(',');
+					for(var item in bArr){
+						initBrands[item]='';
+					}
                 }
 
                 var brandsManager = createBrandsManager($('.selected-brand'));
