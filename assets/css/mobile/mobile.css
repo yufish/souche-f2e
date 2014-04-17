@@ -759,7 +759,7 @@ background:#fff;
   display: block;
   border-right: 1px solid #e5e5e5;
   color: #333;
-  padding:15px 0;
+  padding:13px 0;
 }
 
 #list #order li a i {
@@ -1364,7 +1364,13 @@ padding-bottom:70px;
 }
 #detail #detail-main .base-info .go-config {
  font-weight:bold;
-  border-radius: 5px;
+  line-height: 22px;
+  margin-top: 4px;
+  color: #0090e2;
+}
+
+#detail #detail-main .go-fenqi {
+ font-weight:bold;
   line-height: 22px;
   margin-top: 4px;
   color: #0090e2;
@@ -1605,6 +1611,7 @@ padding-bottom:70px;
   line-height: 40px;
   text-align:center;
   position:relative;
+  border-bottom: 1px solid #d5d5d5;
 }
 #detail #quality-test .mod .hd i{
   width: 20px;
@@ -4152,7 +4159,8 @@ padding-bottom:10px;
   z-index: 1000;
   text-align: center;
   cursor: pointer;
-  color: #a56952;
+  color: #000;
+  font-weight: bold;
   font-size: 16px;
 }
 #xuan span {
@@ -6027,7 +6035,6 @@ text-indent: -9999px;
 	background-size: 100%;
 	right: 5px;
 }
-
 
 #fenqi{
 	background-color: #fff;
