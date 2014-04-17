@@ -43,6 +43,7 @@
     var $arrowTime = $("#arrow-time"),
         $mortgage = $("#arrow-mortgage"),
         $arrowrate = $("#arrow-rate"),
+        $interest = $("#arrow-rate").attr('interest'),
         $fenqiList = $("#fenqi_list"),
         $fenqiTime = $("#fenqi_list li"),
         $fenqiTimeWrap = $("#fenqi-wrap");
@@ -51,20 +52,42 @@
     var changeArrow = function(time) {
         var timeArrow, mortArrow,
             str = "fenqi-arrow arrow";
-        switch (time) {
-            case "12":
-                timeArrow = "1";
-                mortArrow = "3";
-                break;
-            case "24":
-                timeArrow = "2";
-                mortArrow = "2";
-                break;
-            case "36":
-                timeArrow = "3";
-                mortArrow = "1";
-                break;
+        if ($interest == "1") {
+            switch (time) {
+                case "6":
+                    timeArrow = "0";
+                    mortArrow = "3";
+                    break;
+                case "12":
+                    timeArrow = "1";
+                    mortArrow = "2";
+                    break;
+                case "24":
+                    timeArrow = "2";
+                    mortArrow = "1";
+                    break;
+                case "36":
+                    timeArrow = "3";
+                    mortArrow = "4";
+                    break;
+            }
+        } else {
+            switch (time) {
+                case "12":
+                    timeArrow = "1";
+                    mortArrow = "3";
+                    break;
+                case "24":
+                    timeArrow = "2";
+                    mortArrow = "2";
+                    break;
+                case "36":
+                    timeArrow = "3";
+                    mortArrow = "1";
+                    break;
+            }
         }
+
         $arrowTime.attr("class", str + timeArrow);
         $mortgage.attr("class", str + mortArrow);
     };
@@ -576,7 +599,55 @@ $(".unfold").on("submit", function(e) {
         appendIframe(0);
     });
 })()
+Souche.Detail = Souche.Detail || {}
+Souche.Detail.PriceDown = function() {
+    var carPrice, nowPrice, nowStr, start, end
+    return {
+        init: function(config) {
+            carPrice = parseInt($('.price-now.now').text());
+            nowPrice = carPrice - 1000;
+            nowStr = nowPrice.toString();
+            start = '<div class="price-num"><em>'
+            end = '</em></div>';
+            for (var i = 0; i < nowStr.length; i++) {
+                $('.cutprice').append(start + nowStr.charAt(i) + end);
+            }
+            $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
 
+            $("#jiangyidian").click(this.downPriceStep)
+            // this.downPriceStep();
+        },
+        downPriceStep: function() {
+            if (100 * (carPrice - nowPrice) / carPrice > 5) {
+                $("#jiangyidian").css({
+                    "background-position": "0 0",
+                    'cursor': 'auto'
+                });
+                $(".price-toolow").removeClass("hidden")
+                return;
+            }
+            var length = nowPrice.toString().length;
+            var curIndex = 0;
+            var lowPrice = nowPrice - 1000;
+            var now_s = nowPrice.toString(),
+                low_s = lowPrice.toString();
+            var $cutPrice = $('.cutprice');
+            $cutPrice.find('.price-num em').fadeOut(function() {
+                curIndex++;
+                if (curIndex == length)
+                    $cutPrice.find('.price-num.hidden').removeClass('hidden')
+                $(this.parentNode).remove();
+            });
+            var s = '<div class="price-num hidden"><em>',
+                e = '</em></div>';
+            for (var i = 0; i < low_s.length; i++) {
+                $cutPrice.append(s + low_s.charAt(i) + e);
+            }
+            nowPrice -= 1000;
+            $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
+        }
+    }
+}();
 Souche.DetailCommon = function() {
     var config = {
 
@@ -584,6 +655,7 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
+<<<<<<< HEAD
 
             var carPrice = parseInt($('.price-now.now').text());
             var nowPrice = carPrice;
@@ -593,37 +665,10 @@ Souche.DetailCommon = function() {
             for (var i = 0; i < nowStr.length; i++) {
                 $('.cutprice').append(start + nowStr.charAt(i) + end);
             }
+=======
+>>>>>>> abb9a6de4ce7575c48ebdc9cc448887152549d5d
 
-            $("#jiangyidian").click(function() {
-                if (100 * (carPrice - nowPrice) / carPrice > 5) {
-                    $("#jiangyidian").css({
-                        "background-position": "0 0",
-                        'cursor': 'auto'
-                    });
-                    $(".price-toolow").removeClass("hidden")
-                    return;
-                }
-                var length = nowPrice.toString().length;
-                var curIndex = 0;
-                var lowPrice = nowPrice - 1000;
-                var now_s = nowPrice.toString(),
-                    low_s = lowPrice.toString();
-                var $cutPrice = $('.cutprice');
-                $cutPrice.find('.price-num em').fadeOut(function() {
-                    curIndex++;
-                    if (curIndex == length)
-                        $cutPrice.find('.price-num.hidden').removeClass('hidden')
-                    $(this.parentNode).remove();
-                });
-                var start = '<div class="price-num hidden"><em>',
-                    end = '</em></div>';
-                for (var i = 0; i < low_s.length; i++) {
-                    $cutPrice.append(start + low_s.charAt(i) + end);
-                }
-
-                nowPrice -= 1000;
-                $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
-            })
+            Souche.Detail.PriceDown.init(config);
         }
     }
 }();

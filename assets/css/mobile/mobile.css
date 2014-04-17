@@ -178,7 +178,6 @@ body {
 	color:#595959;
 	margin-bottom:20px;
 }
-
 #footer #ft-actions a {
   display: inline-block;
   width: 32%;
@@ -188,7 +187,6 @@ body {
   color: #999999;
   font-size: 14px;
 }
-
 #footer #ft-actions .actions-top img{
 
 width:25px;
@@ -220,7 +218,6 @@ text-align:center;
 #footer .ft-logo .wpr{
 	width:250px;
 	margin:0 auto;
-
 }
 #footer .ft-logo img{
 	width:50px;
@@ -237,7 +234,6 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
-
 #index .header .back-icon {
   padding: 0;
   padding-left: 12px;
@@ -250,7 +246,6 @@ body {
   float: left;
   color: #fff;
 }
-
 #index .header .back-text{
 	color:#fff;
 }
@@ -5784,7 +5779,7 @@ overflow:hidden;
 #to-main-screen{
 	border-radius:8px;
 	display:none;
-	position:absolute;
+	position:fixed;
 	bottom:15px;
 	width:216px;
 	height:75px;
@@ -5936,5 +5931,162 @@ body{
 	margin-top:70px;
 }
 
+#index-h5-2  {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+}
+#index-h5-2 .flexslider {
+  overflow: hidden;
+  width: 100%;
+  height: 125px;
+  position: relative;
+  z-index: 10;
+}
+#index-h5-2 .flexslider .slides li {
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+#index-h5-2 .flexslider .slides img {
+  display: block;
+  margin: 0 auto;
+  width:100%;
+  height: 125px;
+}
+
+#index-h5-2  .flexslider .flex-viewport a {
+  display: block;
+  width: 678px;
+  margin: 0 auto;
+  height: 340px;
+}
+#index-h5-2  .flex-control-nav {
+  position: absolute;
+  bottom: 10px;
+  width: 400px;
+  text-align: center;
+  margin-left: -200px;
+  left: 50%;
+}
+#index-h5-2  .flex-control-nav li {
+  display: inline-block;
+}
+#index-h5-2  .flex-control-nav a {
+  overflow: hidden;
+  text-indent: 1000px;
+  float: left;
+  display: inline;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #666;
+  margin-right: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#index-h5-2  .flex-control-nav a:hover {
+  background-color: #e70;
+}
+#index-h5-2  .flex-control-nav .flex-active {
+  background-color: #e70;
+}
+#index-h5-2  .flexslider .text{
+	position: absolute;
+	font-size:18px;
+	line-height: 22px;
+	color:#fff;
+	top:40px;
+	left:40px;
+}
+#index-h5-2  .flexslider .single-line{
+	top:53px;
+}
+#index-h5-2 .flexslider .slides li{
+	position:relative;
+}
+#index-h5-2  .flex-direction-nav a {
+width: 24px;
+height: 42px;
+margin: -20px 0 0;
+display: block;
+position: absolute;
+top: 50%;
+text-indent: -9999px;
+-webkit-transition: all .3s ease;
+}
+#index-h5-2  .flex-direction-nav a.flex-prev {
+	background: url(../../images/mob/h5-2/flex-left.png) no-repeat 0 0;
+	background-size: 100%;
+	left:5px;
+}
+#index-h5-2  .flex-direction-nav a.flex-next {
+	background: url(../../images/mob/h5-2/flex-right.png) no-repeat 0 0;
+	background-size: 100%;
+	right: 5px;
+}
 
 
+#fenqi{
+	background-color: #fff;
+}
+#fenqi .content .options .option-item {
+  height: 60px;
+  border-top: 1px solid #d0d0d0;
+  position: relative;
+}
+#fenqi .content .option-item{
+border-bottom:1px solid  #d0d0d0;
+width:100%;
+}
+
+#fenqi .content  .option-item .text {
+  padding-left: 9px;
+  line-height: 60px;
+  height:60px;
+  overflow:hidden;
+  float: left;
+  width: 50px;
+  color: #444;
+  font-size: 14px;
+}
+#fenqi .content .option-item .content {
+  text-align: right;
+  
+}
+#fenqi .content .option-item .content .content-text {
+  line-height: 60px;
+  margin-right: 47px;
+}
+#fenqi .content .option-item .content select {
+	margin-top:12px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 38px;
+  margin-right: 10px;
+ width:192px;
+  border: 2px solid #b1b1b1;
+  border-radius: 8px;
+  background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+  background-size: 32px;
+  background-color: #fff;
+  padding-left:65px;
+}
+#fenqi .hr20 {
+	background-color: #f3f3f3;
+}
+#fenqi .condition{
+	padding:20px 0 18px 10px;
+	background-color: #f3f3f3;
+}
+#fenqi .b{
+	font-size:14px;
+	line-height: 20px;
+}
+
+#fenqi .s{
+	font-size:13px;
+	line-height: 18px;
+}
