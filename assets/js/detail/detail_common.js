@@ -532,6 +532,29 @@
         return false;
     });
 })();
+//买车顾问弹出
+$(".advisor-close").click(function() {
+    $(".advisor-unfold").addClass("hidden");
+
+});
+$(".advisor-unfold").click(function() {
+    $(".advisor-unfold").animate({
+        width: "820px",
+        height: "400px",
+        bottom: "10px"
+    }, 800)
+});
+var phoneReg = /^1[3458][0-9]{9}$/;
+$(".unfold").on("submit", function(e) {
+    e.preventDefault();
+    if (!phoneReg.test($("#unfold-phone").val())) {
+        $(".input-error-tip").removeClass("hidden")
+        return;
+    }
+    Souche.PhoneRegister($("#unfold-phone").val(), function() {
+        window.location.href = contextPath + "/pages/onsale/match_car_list.html"
+    })
+});
 //查看大图
 (function() {
     var bigImages = null;
@@ -632,6 +655,18 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
+<<<<<<< HEAD
+
+            var carPrice = parseInt($('.price-now.now').text());
+            var nowPrice = carPrice;
+            var nowStr = nowPrice.toString();
+            var start = '<div class="price-num"><em>',
+                end = '</em></div>';
+            for (var i = 0; i < nowStr.length; i++) {
+                $('.cutprice').append(start + nowStr.charAt(i) + end);
+            }
+=======
+>>>>>>> abb9a6de4ce7575c48ebdc9cc448887152549d5d
 
             Souche.Detail.PriceDown.init(config);
         }
