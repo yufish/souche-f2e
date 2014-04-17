@@ -655,8 +655,6 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
-<<<<<<< HEAD
-
             var carPrice = parseInt($('.price-now.now').text());
             var nowPrice = carPrice;
             var nowStr = nowPrice.toString();
@@ -665,9 +663,6 @@ Souche.DetailCommon = function() {
             for (var i = 0; i < nowStr.length; i++) {
                 $('.cutprice').append(start + nowStr.charAt(i) + end);
             }
-=======
->>>>>>> abb9a6de4ce7575c48ebdc9cc448887152549d5d
-
             Souche.Detail.PriceDown.init(config);
         }
     }

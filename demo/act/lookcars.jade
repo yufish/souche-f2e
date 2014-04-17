@@ -67,9 +67,10 @@ html
               <a href="#" id="baoming"></a>
               <div class="number">已有 <span>28</span> 位</div>
             .lookcar-box.clearfix
-              .car-box.fenqicar
+              .car-box
                 a.car-img(href="#" target="_blank")
                   .fenqi-icon
+                  .sellout
                   img(src="http://f2e.souche.com/assets/images/acts/lookcars/car-img.png")
                 .car-detail
                   a.car-title(href="#" target="_blank") 别克 2010款 君越3.0-手自一体旗舰型豪华型【进口】
@@ -742,9 +743,6 @@ html
         $('.nav-link').removeClass('nav-link-active');
         $(this).addClass("nav-link-active")
         });
-      $("#baoming").click(function{
-
-        })
       $(".success-close").click(function(){
 
         $("#baoming-success").addClass("hidden");
