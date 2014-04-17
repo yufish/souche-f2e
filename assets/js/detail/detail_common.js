@@ -68,7 +68,7 @@
                     break;
                 case "36":
                     timeArrow = "3";
-                    mortArrow = "0";
+                    mortArrow = "4";
                     break;
             }
         } else {
@@ -576,7 +576,55 @@
         appendIframe(0);
     });
 })()
+Souche.Detail = Souche.Detail || {}
+Souche.Detail.PriceDown = function() {
+    var carPrice, nowPrice, nowStr, start, end
+    return {
+        init: function(config) {
+            carPrice = parseInt($('.price-now.now').text());
+            nowPrice = carPrice - 1000;
+            nowStr = nowPrice.toString();
+            start = '<div class="price-num"><em>'
+            end = '</em></div>';
+            for (var i = 0; i < nowStr.length; i++) {
+                $('.cutprice').append(start + nowStr.charAt(i) + end);
+            }
+            $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
 
+            $("#jiangyidian").click(this.downPriceStep)
+            // this.downPriceStep();
+        },
+        downPriceStep: function() {
+            if (100 * (carPrice - nowPrice) / carPrice > 5) {
+                $("#jiangyidian").css({
+                    "background-position": "0 0",
+                    'cursor': 'auto'
+                });
+                $(".price-toolow").removeClass("hidden")
+                return;
+            }
+            var length = nowPrice.toString().length;
+            var curIndex = 0;
+            var lowPrice = nowPrice - 1000;
+            var now_s = nowPrice.toString(),
+                low_s = lowPrice.toString();
+            var $cutPrice = $('.cutprice');
+            $cutPrice.find('.price-num em').fadeOut(function() {
+                curIndex++;
+                if (curIndex == length)
+                    $cutPrice.find('.price-num.hidden').removeClass('hidden')
+                $(this.parentNode).remove();
+            });
+            var s = '<div class="price-num hidden"><em>',
+                e = '</em></div>';
+            for (var i = 0; i < low_s.length; i++) {
+                $cutPrice.append(s + low_s.charAt(i) + e);
+            }
+            nowPrice -= 1000;
+            $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
+        }
+    }
+}();
 Souche.DetailCommon = function() {
     var config = {
 
@@ -584,45 +632,8 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
-            var carPrice = parseInt($('.price-now.now').text());
-            var nowPrice = carPrice;
-            var nowStr = nowPrice.toString();
-            var start = '<div class="price-num"><em>',
-                end = '</em></div>';
-            for (var i = 0; i < nowStr.length; i++) {
-                $('.cutprice').append(start + nowStr.charAt(i) + end);
-            }
 
-            $("#jiangyidian").click(function() {
-                if (100 * (carPrice - nowPrice) / carPrice > 5) {
-                    $("#jiangyidian").css({
-                        "background-position": "0 0",
-                        'cursor': 'auto'
-                    });
-                    $(".price-toolow").removeClass("hidden")
-                    return;
-                }
-                var length = nowPrice.toString().length;
-                var curIndex = 0;
-                var lowPrice = nowPrice - 1000;
-                var now_s = nowPrice.toString(),
-                    low_s = lowPrice.toString();
-                var $cutPrice = $('.cutprice');
-                $cutPrice.find('.price-num em').fadeOut(function() {
-                    curIndex++;
-                    if (curIndex == length)
-                        $cutPrice.find('.price-num.hidden').removeClass('hidden')
-                    $(this.parentNode).remove();
-                });
-                var start = '<div class="price-num hidden"><em>',
-                    end = '</em></div>';
-                for (var i = 0; i < low_s.length; i++) {
-                    $cutPrice.append(start + low_s.charAt(i) + end);
-                }
-
-                nowPrice -= 1000;
-                $('#expectedPrice').val((nowPrice / 10000).toFixed(2));
-            })
+            Souche.Detail.PriceDown.init(config);
         }
     }
 }();
