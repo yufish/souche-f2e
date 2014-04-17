@@ -178,7 +178,6 @@ body {
 	color:#595959;
 	margin-bottom:20px;
 }
-
 #footer #ft-actions a {
   display: inline-block;
   width: 32%;
@@ -188,7 +187,6 @@ body {
   color: #999999;
   font-size: 14px;
 }
-
 #footer #ft-actions .actions-top img{
 
 width:25px;
@@ -220,7 +218,6 @@ text-align:center;
 #footer .ft-logo .wpr{
 	width:250px;
 	margin:0 auto;
-
 }
 #footer .ft-logo img{
 	width:50px;
@@ -237,7 +234,6 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
-
 #index .header .back-icon {
   padding: 0;
   padding-left: 12px;
@@ -250,7 +246,6 @@ body {
   float: left;
   color: #fff;
 }
-
 #index .header .back-text{
 	color:#fff;
 }
@@ -764,7 +759,7 @@ background:#fff;
   display: block;
   border-right: 1px solid #e5e5e5;
   color: #333;
-  padding:15px 0;
+  padding:13px 0;
 }
 
 #list #order li a i {
@@ -1369,7 +1364,13 @@ padding-bottom:70px;
 }
 #detail #detail-main .base-info .go-config {
  font-weight:bold;
-  border-radius: 5px;
+  line-height: 22px;
+  margin-top: 4px;
+  color: #0090e2;
+}
+
+#detail #detail-main .go-fenqi {
+ font-weight:bold;
   line-height: 22px;
   margin-top: 4px;
   color: #0090e2;
@@ -1610,6 +1611,7 @@ padding-bottom:70px;
   line-height: 40px;
   text-align:center;
   position:relative;
+  border-bottom: 1px solid #d5d5d5;
 }
 #detail #quality-test .mod .hd i{
   width: 20px;
@@ -4157,7 +4159,8 @@ padding-bottom:10px;
   z-index: 1000;
   text-align: center;
   cursor: pointer;
-  color: #a56952;
+  color: #000;
+  font-weight: bold;
   font-size: 16px;
 }
 #xuan span {
@@ -6012,7 +6015,6 @@ body{
 #index-h5-2 .flexslider .slides li{
 	position:relative;
 }
-
 #index-h5-2  .flex-direction-nav a {
 width: 24px;
 height: 42px;
@@ -6023,7 +6025,6 @@ top: 50%;
 text-indent: -9999px;
 -webkit-transition: all .3s ease;
 }
-
 #index-h5-2  .flex-direction-nav a.flex-prev {
 	background: url(../../images/mob/h5-2/flex-left.png) no-repeat 0 0;
 	background-size: 100%;
@@ -6033,4 +6034,66 @@ text-indent: -9999px;
 	background: url(../../images/mob/h5-2/flex-right.png) no-repeat 0 0;
 	background-size: 100%;
 	right: 5px;
+}
+
+#fenqi{
+	background-color: #fff;
+}
+#fenqi .content .options .option-item {
+  height: 60px;
+  border-top: 1px solid #d0d0d0;
+  position: relative;
+}
+#fenqi .content .option-item{
+border-bottom:1px solid  #d0d0d0;
+width:100%;
+}
+
+#fenqi .content  .option-item .text {
+  padding-left: 9px;
+  line-height: 60px;
+  height:60px;
+  overflow:hidden;
+  float: left;
+  width: 50px;
+  color: #444;
+  font-size: 14px;
+}
+#fenqi .content .option-item .content {
+  text-align: right;
+  
+}
+#fenqi .content .option-item .content .content-text {
+  line-height: 60px;
+  margin-right: 47px;
+}
+#fenqi .content .option-item .content select {
+	margin-top:12px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 38px;
+  margin-right: 10px;
+ width:192px;
+  border: 2px solid #b1b1b1;
+  border-radius: 8px;
+  background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+  background-size: 32px;
+  background-color: #fff;
+  padding-left:65px;
+}
+#fenqi .hr20 {
+	background-color: #f3f3f3;
+}
+#fenqi .condition{
+	padding:20px 0 18px 10px;
+	background-color: #f3f3f3;
+}
+#fenqi .b{
+	font-size:14px;
+	line-height: 20px;
+}
+
+#fenqi .s{
+	font-size:13px;
+	line-height: 18px;
 }
