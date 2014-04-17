@@ -176,7 +176,6 @@
         });
 
 
-
     });
 
     var bdTimer = setInterval(function() {
@@ -202,7 +201,6 @@
 
         }
     }, 100);
-
 
 
     //ie6 fixed 
