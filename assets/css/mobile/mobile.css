@@ -6025,6 +6025,8 @@ text-indent: -9999px;
 	background: url(../../images/mob/h5-2/flex-left.png) no-repeat 0 0;
 	background-size: 100%;
 	left:5px;
+}
+#index-h5-2 .flex-direction-nav .flex-disabled{
 	display: none;
 }
 #index-h5-2 .flex-direction-nav a.flex-next {
@@ -6034,7 +6036,7 @@ text-indent: -9999px;
 }
 #index-h5-2 .flex-direction-nav li{
 	height: 100%;
-	width:30px;
+	width:40px;
 	position: absolute;
 	top:0;
 }
