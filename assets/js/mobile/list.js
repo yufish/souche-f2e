@@ -30,7 +30,8 @@ var List = function() {
 					levelName:item.carVo.levelName,
 					pictureBig:item.carPicturesVO.pictureBig,
 					carOtherAllNameShow:item.carVo.carOtherAllNameShow,
-					price:item.price
+					price:item.price,
+					zaishou:(item.carVo.status=='zaishou')
 				}
 				html  = Mustache.render (tpl_cars,{'cars':tpl_data});
 
