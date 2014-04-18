@@ -5,8 +5,11 @@ html
         style.
             .item{
             background:#ff6700;
-            height:10px;
+            height:14px;
             margin-bottom:10px;
+            text-align:right;
+            color:#ff6700;
+            line-height:14px;
             }
     body
         script.
@@ -33,6 +36,7 @@ html
                     .transition().duration(500) 
                 .style("width",function(d){return d*100+"px";})
                     .style("background-color",function(d,i){d=255-i*10;return "rgb("+d+","+d+","+d+")";})
+                        .text(function(d){return Math.floor(d)})
             //- d3.select("body").append("svg")
             //-     .attr("class", "axis")
             //-     .attr("width", 1440)
@@ -48,6 +52,6 @@ html
                     data[i]=Math.random()*5
                 }
                 d3.selectAll(".item").data(data).transition().style("width",function(d){return d*100+"px";})
-
+                     .text(function(d){return Math.floor(d)})
                     
                 },700)
