@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        script(src="/assets/js/lib/d3.min.js")
+        style.
+            .item{
+            background:#ff6700;
+            height:14px;
+            margin-bottom:10px;
+            text-align:right;
+            color:#ff6700;
+            line-height:14px;
+            }
+    body
+        script.
+            var n = 40,
+                random = d3.random.normal(0, .2),
+                data = d3.range(n).map(random);
+             
+            var margin = {top: 20, right: 20, bottom: 20, left: 40},
+                width = 960 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+             
+            var x = d3.scale.linear()
+                .domain([0, n - 1])
+                .range([0, width]);
+            var body = d3.select("#con");
+            var data = [0,2,3,4,5]
+            for(var i=0;i<20;i++){
+                    data[i]=Math.random()*10
+                }
+            body.data(data).enter()
+                .append("div")
+                .classed("item",true)
+                    .style("width","0")
+                    .transition().duration(500) 
+                .style("width",function(d){return d*100+"px";})
+                    .style("background-color",function(d,i){d=255-i*10;return "rgb("+d+","+d+","+d+")";})
+                        .text(function(d){return Math.floor(d)})
+            //- d3.select("body").append("svg")
+            //-     .attr("class", "axis")
+            //-     .attr("width", 1440)
+            //-     .attr("height", 30)
+            //-     .append("g")
+            //-     .attr("transform", "translate(0,30)")
+            //- d3.svg.axis()
+            //- .scale(x)
+            //- .tickValues([1, 2, 3, 5, 8, 13, 21]);
+            
+            setInterval(function(){
+                for(var i=0;i<20;i++){
+                    data[i]=Math.random()*5
+                }
+                d3.selectAll(".item").data(data).transition().style("width",function(d){return d*100+"px";})
+                     .text(function(d){return Math.floor(d)})
+                    
+                },700)

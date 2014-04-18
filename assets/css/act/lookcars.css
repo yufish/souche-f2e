@@ -133,6 +133,25 @@
   width: 300px;
   height: 199px;
   display: block;
+  position: relative;
+}
+#lookcars #content .wrapper .car-content .lookcars-wrapper .lookcar-box .car-box .car-img .fenqi-icon {
+  width: 82px;
+  height: 82px;
+  background: url("../../images/acts/lookcars/fenqi-icon.png") no-repeat;
+  position: absolute;
+  z-index: 10000;
+  top: 0px;
+  left: 0px;
+}
+#lookcars #content .wrapper .car-content .lookcars-wrapper .lookcar-box .car-box .car-img .sellout {
+  width: 150px;
+  height: 150px;
+  background: url("../../images/acts/lookcars/sellout.png") no-repeat;
+  position: absolute;
+  z-index: 10000;
+  top: 30px;
+  left: 75px;
 }
 #lookcars #content .wrapper .car-content .lookcars-wrapper .lookcar-box .car-box .car-detail {
   width: 298px;
