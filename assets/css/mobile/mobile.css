@@ -5976,20 +5976,20 @@ body{
   margin-left: -200px;
   left: 50%;
 }
-#index-h5-2  .flex-control-nav li {
+#index-h5-2 .flex-control-nav li {
   display: inline-block;
 }
-#index-h5-2  .flex-control-nav a {
+#index-h5-2 .flex-control-nav a {
   overflow: hidden;
   text-indent: 1000px;
   float: left;
   display: inline;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   line-height: 12px;
   text-align: center;
   color: #fff;
-  background-color: #666;
+  background-color: #6fcae4;
   margin-right: 12px;
   cursor: pointer;
   border-radius: 50%;
@@ -6000,7 +6000,7 @@ body{
 }
 #index-h5-2 .flexslider .text{
 	position: absolute;
-	font-size:14px;
+	font-size:17px;
 	line-height: 22px;
 	color:#fff;
 	top:40px;
@@ -6008,6 +6008,7 @@ body{
 }
 #index-h5-2 .flexslider .text.single-line{
 	top:53px;
+	font-size:14px;
 }
 #index-h5-2 .flexslider .slides li{
 	position:relative;
