@@ -14,7 +14,7 @@
         "        <div class=\"unfolf-form\">" +
         "          <form class=\"unfold\" id='advisor-form'>" +
         "             <p>输入手机号码，立即查看为我精选的车</p > " +
-        " <input id = \"unfold-phone\" placeholder=\"输入你的手机号\" type=\"text\"/>" +
+        " <input id = \"unfold-phone\" placeholder=\"输入你的手机号\" type=\"text\" name='phone'/>" +
         "             <div class=\"input-error-wrapper clearfix\">" +
         "             <div class=\"input-error-tip hidden\"><span class=\"error-icon\"></span>请输入正确的手机号</div>" +
         "             </div>" +
