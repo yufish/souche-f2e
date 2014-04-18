@@ -98,7 +98,7 @@
   margin-right: 15px;
   line-height: 74px;
 }
-#lookcars #content .wrapper .car-content .lookcars-wrapper .lookcars-title #baoming {
+#lookcars #content .wrapper .car-content .lookcars-wrapper .lookcars-title .baoming {
   display: block;
   float: right;
   width: 195px;
@@ -249,7 +249,6 @@
   height: 325px;
   position: fixed;
   bottom: 150px;
-  right: 100px;
 }
 #lookcars #nav-left .nav-title {
   background: url("../../images/acts/lookcars/nav-left-head.png") no-repeat;
