@@ -21,7 +21,6 @@ input,
 button,
 textarea,
 p,
-
 blockquote {
   margin: 0;
   padding: 0;
@@ -5977,63 +5976,93 @@ body{
   margin-left: -200px;
   left: 50%;
 }
-#index-h5-2  .flex-control-nav li {
+#index-h5-2 .flex-control-nav li {
   display: inline-block;
 }
-#index-h5-2  .flex-control-nav a {
+#index-h5-2 .flex-control-nav a {
   overflow: hidden;
   text-indent: 1000px;
   float: left;
   display: inline;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   line-height: 12px;
   text-align: center;
   color: #fff;
-  background-color: #666;
+  background-color: #6fcae4;
   margin-right: 12px;
   cursor: pointer;
   border-radius: 50%;
 }
-#index-h5-2  .flex-control-nav a:hover {
-  background-color: #e70;
+
+#index-h5-2 .flex-control-nav .flex-active {
+  background-color: #fff;
 }
-#index-h5-2  .flex-control-nav .flex-active {
-  background-color: #e70;
-}
-#index-h5-2  .flexslider .text{
+#index-h5-2 .flexslider .text{
 	position: absolute;
-	font-size:18px;
+	font-size:17px;
 	line-height: 22px;
 	color:#fff;
 	top:40px;
 	left:40px;
 }
-#index-h5-2  .flexslider .single-line{
+#index-h5-2 .flexslider .text.single-line{
 	top:53px;
+	font-size:14px;
 }
 #index-h5-2 .flexslider .slides li{
 	position:relative;
 }
 #index-h5-2  .flex-direction-nav a {
-width: 24px;
-height: 42px;
-margin: -20px 0 0;
-display: block;
+width: 12px;
+height: 21px;
+margin-top: -10px;
 position: absolute;
 top: 50%;
 text-indent: -9999px;
 -webkit-transition: all .3s ease;
 }
-#index-h5-2  .flex-direction-nav a.flex-prev {
+#index-h5-2 .flex-direction-nav a.flex-prev {
 	background: url(../../images/mob/h5-2/flex-left.png) no-repeat 0 0;
 	background-size: 100%;
 	left:5px;
 }
-#index-h5-2  .flex-direction-nav a.flex-next {
+#index-h5-2 .flex-direction-nav .flex-disabled{
+	display: none;
+}
+#index-h5-2 .flex-direction-nav a.flex-next {
 	background: url(../../images/mob/h5-2/flex-right.png) no-repeat 0 0;
 	background-size: 100%;
 	right: 5px;
+}
+#index-h5-2 .flex-direction-nav li{
+	height: 100%;
+	width:40px;
+	position: absolute;
+	top:0;
+}
+#index-h5-2 #go-carcustom{
+	height: 45px;
+	box-shadow: 0 5px 5px #b6b5b5;
+	border:1px solid #eaeaea;
+	margin-top:-10px;
+	padding:0 15px;
+}
+#index-h5-2 #go-carcustom a{
+	background-color:#30b3d9;
+	border-radius: 8px;
+	height: 27px;
+	line-height: 27px;
+	float:right;
+	color:#fff;
+	padding: 0 10px;
+	margin-top:9px;
+}
+#index-h5-2 #go-carcustom span{
+	color: #666;
+	display: inline-block;
+	height: 45px;
+	line-height: 45px;
 }
 
 #fenqi{
@@ -6049,7 +6078,7 @@ border-bottom:1px solid  #d0d0d0;
 width:100%;
 }
 
-#fenqi .content  .option-item .text {
+#fenqi .content .option-item .text {
   padding-left: 9px;
   line-height: 60px;
   height:60px;
