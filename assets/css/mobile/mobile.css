@@ -6045,7 +6045,7 @@ text-indent: -9999px;
 	height: 45px;
 	box-shadow: 0 5px 5px #b6b5b5;
 	border:1px solid #eaeaea;
-	margin-top:-10px;
+
 	padding:0 15px;
 }
 #index-h5-2 #go-carcustom a{
@@ -6125,4 +6125,13 @@ width:100%;
 #fenqi .s{
 	font-size:13px;
 	line-height: 18px;
+}
+
+#index-h5-2 .for-carcustom .photo-frame{
+	width:237px;
+	height:171px;
+	margin:0 auto;
+	background: url(../../images/mob/h5-2/photo-frame.png) no-repeat center center;
+	background-size:100%;
+	
 }
