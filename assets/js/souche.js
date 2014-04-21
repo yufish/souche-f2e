@@ -583,6 +583,7 @@ $(document).ready(function() {
     })
     var hasShow = false;
     var initTip = function() {
+
         if (!hasShow) {
             if ($(window).height() < 650) {
                 $("#guwen_slider_global").addClass("small-global")
@@ -612,16 +613,19 @@ $(document).ready(function() {
         }
     }
     if (!$.cookie("show_guwen_tip")) {
-        initTip();
-        setTimeout(function() {
-            $("#guwen_slider_global").animate({
-                top: 0
-            }, 600)
-            $("#guwen_show_global").css({
-                top: -30
-            })
-        }, 900)
-        $("#guwen_slider_global").focus();
+        if (window.location.href.indexOf("sellCarNew.html") == -1) {
+            initTip();
+            setTimeout(function() {
+                $("#guwen_slider_global").animate({
+                    top: 0
+                }, 600)
+                $("#guwen_show_global").css({
+                    top: -30
+                })
+            }, 900)
+            $("#guwen_slider_global").focus();
+        }
+
     }
 
     $("#guwen_show_global").click(function(e) {
