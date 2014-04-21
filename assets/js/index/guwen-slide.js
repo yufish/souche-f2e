@@ -28,27 +28,27 @@
         url: contextPath + "/pages/toolbarAction/newUserTip.json",
         dataType: "json",
         success: function(data) {
-            // if (code == 200) {
-            $(document.body).append(tpl.replace("{{message}}", data.message))
-            $(".advisor-unfold").animate({
-                width: 820,
-                height: 402
-            })
-            $("#advisor-form").on("submit", function(e) {
-                e.preventDefault();
-                if (!phoneReg.test($("#unfold-phone").val())) {
-                    $(".advisor-unfold .input-error-tip").removeClass("hidden")
-                    return;
-                }
-                $.ajax({
-                    url: contextPath + "/pages/toolbarAction/newUserLogin.json",
-                    dataType: "json",
-                    success: function() {
-                        window.location.href = contextPath + "/pages/onsale/match_car_list.html"
-                    }
+            if (code == 200) {
+                $(document.body).append(tpl.replace("{{message}}", data.message))
+                $(".advisor-unfold").animate({
+                    width: 820,
+                    height: 402
                 })
-            })
-            // }
+                $("#advisor-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#unfold-phone").val())) {
+                        $(".advisor-unfold .input-error-tip").removeClass("hidden")
+                        return;
+                    }
+                    $.ajax({
+                        url: contextPath + "/pages/toolbarAction/newUserLogin.json",
+                        dataType: "json",
+                        success: function() {
+                            window.location.href = contextPath + "/pages/onsale/match_car_list.html"
+                        }
+                    })
+                })
+            }
         }
     })
 })();
