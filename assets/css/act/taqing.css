@@ -1,0 +1,57 @@
+#taqing {
+  background: #efefef;
+}
+#taqing a {
+  color: #444;
+}
+#taqing a:hover {
+  color: #fc7000;
+}
+#taqing #content {
+  background: #efefef;
+  width: 100%;
+  height: 1772px;
+}
+#taqing #content #banner {
+  background: url("../../images/acts/taqing/banner.jpg") no-repeat;
+  width: 100%;
+  height: 648px;
+  background-position: center;
+}
+#taqing #content .wrapper {
+  width: 1258px;
+  margin: 0 auto;
+}
+#taqing #content .wrapper .model1 {
+  width: 100%;
+  height: 253px;
+  background: url("../../images/acts/taqing/img1.jpg") no-repeat;
+  position: relative;
+}
+#taqing #content .wrapper .model1 .act-link {
+  position: absolute;
+  width: 85px;
+  height: 30px;
+  top: 95px;
+  right: 300px;
+}
+#taqing #content .wrapper .model1 .act-link a {
+  display: block;
+  width: 85px;
+  height: 30px;
+}
+#taqing #content .wrapper .model2 {
+  width: 100%;
+  height: 290px;
+  background: url("../../images/acts/taqing/img2.jpg") no-repeat;
+}
+#taqing #content .wrapper .model3 {
+  width: 100%;
+  height: 368px;
+  background: url("../../images/acts/taqing/img3.jpg") no-repeat;
+}
+#taqing #content .wrapper .erweima {
+  width: 100%;
+  height: 215px;
+  background: url("../../images/acts/taqing/img4.jpg") no-repeat;
+}
