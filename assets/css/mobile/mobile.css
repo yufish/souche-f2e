@@ -5864,9 +5864,25 @@ overflow:hidden;
 	background: #ffffff url(../../images/mob/h5-2/fav-star.png) no-repeat center center;
 	background-size:100%;
 }
-#list #cars .fav.hot i{
-	background: #ffffff url(../../images/mob/h5-2/hot.png) no-repeat center center;
+#list #act-for-suv .hot{
+	padding-top:20px;
+	position:absolute;
+	right:-10px;
+	top:-18px;
+	line-height:14px;
+	color:#000;
+	width:60px;
+	height:50px;
+	text-align:center;
+}
+#list #act-for-suv .hot i{
+	display:inline-block;
+	height:13px;
+	width:13px;
+	background:url(../../images/mob/h5-2/hot.png) no-repeat center center;
 	background-size:100%;
+	vertical-align:-1px;
+	margin:0 5px 0 0;
 }
 
 #list #cars a{
