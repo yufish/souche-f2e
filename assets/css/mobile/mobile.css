@@ -6067,9 +6067,7 @@ text-indent: -9999px;
 	height: 45px;
 	box-shadow: 0 5px 5px #b6b5b5;
 	border:1px solid #eaeaea;
-
 	padding:0 15px;
-  display: block;
 }
 #index-h5-2 #go-carcustom .go{
 	background-color:#30b3d9;
@@ -6080,6 +6078,7 @@ text-indent: -9999px;
 	color:#fff;
 	padding: 0 10px;
 	margin-top:9px;
+	border:none;
 }
 #index-h5-2 #go-carcustom span{
 	color: #666;
@@ -6164,6 +6163,7 @@ width:100%;
 	margin: 0 auto;
 	margin-top:25px;
 	display:none;
+	position:relative;
 }
 #index-h5-2 .for-carcustom .photo-frame .img-wrapper:first-child{
 	display:block;
@@ -6171,6 +6171,32 @@ width:100%;
 #index-h5-2 .for-carcustom .photo-frame .img-wrapper img{
 	width:100%;
 	height:100%;
+}
+#index-h5-2 .for-carcustom .photo-frame .img-wrapper .car-info{
+	position:absolute;
+	height:24px;
+	bottom:0;
+	line-height:24px;
+	color:#fff;
+	width:100%;
+	
+}
+#index-h5-2 .for-carcustom .photo-frame .img-wrapper .car-info .price{
+	color:#ff4301;
+	float:right;
+	margin-right:8px;
+}
+#index-h5-2 .for-carcustom .photo-frame .img-wrapper .car-info .brand{
+	float:left;
+	margin-left:8px;
+}
+#index-h5-2 .bg{
+	background-color:#000;
+	opacity:0.6;
+	position:absolute;
+	height:24px;
+	bottom:0;
+	width:100%;
 }
 #index-h5-2 .for-carcustom .photo-frame{
 	overflow:hidden;
