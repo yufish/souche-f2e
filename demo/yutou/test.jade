@@ -2,6 +2,14 @@ doctype html
 html
     head
         |<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        |<script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js?t=12"></script>
+        script.
+          var contextPath = "/soucheweb";
+          require.config({
+            baseUrl: "http://f2e.souche.com/assets/js",
+            urlArgs:"bust=v5"
+          });
+
         style.
             .content{width: 100%;float: left;}
             .right {
@@ -32,3 +40,7 @@ html
         div(style="height:300px;overflow:auto;width:100%;")
             div(style="height:800px;background:#ddd;") 
                 |aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>
+        script.
+            require(['framework/jquery/core.js'],function(Core){
+                console.log(Core);
+            })

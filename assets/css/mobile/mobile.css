@@ -5503,6 +5503,9 @@ background:#fff;
   margin: 10px 0;
   position: relative;
 }
+#index-h5-2 .row a{
+  display: block;
+}
 #index-h5-2 .img-container {
   top: 0;
   width: 100%;
@@ -5957,18 +5960,19 @@ body{
   background-position: center top;
   background-repeat: no-repeat;
 }
-#index-h5-2 .flexslider .slides img {
-  display: block;
-  margin: 0 auto;
-  width:100%;
-  height: 125px;
-}
+
 
 #index-h5-2  .flexslider .flex-viewport a {
   display: block;
   width: 678px;
   margin: 0 auto;
   height: 340px;
+}
+#index-h5-2 .flexslider .slides a ,#index-h5-2 .flexslider .slides img{
+  display: block;
+  margin: 0 auto;
+  width:100%;
+  height: 125px;
 }
 #index-h5-2  .flex-control-nav {
   position: absolute;
@@ -6049,8 +6053,9 @@ text-indent: -9999px;
 	border:1px solid #eaeaea;
 
 	padding:0 15px;
+  display: block;
 }
-#index-h5-2 #go-carcustom a{
+#index-h5-2 #go-carcustom .go{
 	background-color:#30b3d9;
 	border-radius: 8px;
 	height: 27px;
