@@ -12,7 +12,7 @@
   border-top: none;
   cursor: pointer;
   display: none;
-  background: url(../../images/common/float-layer3.png) no-repeat -38px -394px;
+  background: url(../../images/common/float-layer3.png) no-repeat -37.99999999px -394px;
 }
 #toTop.toTopActive {
   background-position: -101px -394px;
@@ -512,7 +512,7 @@ body {
   top: 0;
   left: 0;
   z-index: 11001;
-  top: -559.99999999px;
+  top: -560px;
   height: 510px;
   overflow: hidden;
   box-shadow: 1px 1px 3px #aaa;
