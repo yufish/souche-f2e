@@ -52,6 +52,7 @@
                     }
                     $.ajax({
                         url: contextPath + "/pages/toolbarAction/newUserLogin.json",
+                        data:$("#unfold-phone").val(),
                         dataType: "json",
                         success: function() {
                             window.location.href = contextPath + "/pages/onsale/match_car_list.html"
