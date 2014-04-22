@@ -5,10 +5,7 @@ html
         |<script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js?t=12"></script>
         script.
           var contextPath = "/soucheweb";
-          require.config({
-            baseUrl: "http://f2e.souche.com/assets/js",
-            urlArgs:"bust=v5"
-          });
+          
 
         style.
             .content{width: 100%;float: left;}
@@ -41,6 +38,9 @@ html
             div(style="height:800px;background:#ddd;") 
                 |aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>
         script.
-            require(['framework/jquery/core.js'],function(Core){
+            require.config({
+                baseUrl: "http://f2e.souche.com/assets/js"
+            });
+            require(['framework/jquery/core'],function(Core){
                 console.log(Core);
-            })
+            });
