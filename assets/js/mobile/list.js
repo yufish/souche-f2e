@@ -48,6 +48,19 @@ var List = function() {
          }
        }) 
     }
+    
+    var storage =function(){
+        var db = window.localStorage;
+        /*{
+            timestamp
+            carList
+            url
+            }
+        */
+        db.setItem('timestamp',new Date().getTime());
+        db.setItem('url',window.location.href);
+    }
+    
     return {
 
         init : function(_config) {
