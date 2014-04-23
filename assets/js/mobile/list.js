@@ -4,6 +4,7 @@ var List = function() {
             moreURL:""
     }
     var tpl_cars;
+    var carList = [];
     var loadMore = function(){
        SM.LoadingTip.show("正在加载中")
        $.ajax({
@@ -33,6 +34,7 @@ var List = function() {
 					price:item.price,
 					zaishou:(item.carVo.status=='zaishou')
 				}
+                carList.push(tpl_data);
 				html  = Mustache.render (tpl_cars,{'cars':tpl_data});
 
 				$cars.append(html);
@@ -49,16 +51,48 @@ var List = function() {
        }) 
     }
     
-    var storage =function(){
+
+    
+    var store =function(){
         var db = window.localStorage;
-        /*{
-            timestamp
-            carList
-            url
-            }
-        */
-        db.setItem('timestamp',new Date().getTime());
+        db.setItem('timestamp',Date.now());
         db.setItem('url',window.location.href);
+        db.setItem('carlist',JSON.stringify(carList));
+    }
+    var recover =function(){
+        var db = window.localStorage;
+        var time = parseInt (db.getItem('timestamp'));
+        var url = db.getItem('url');
+        
+        if(!checkCond({time:time,url:url})){
+            return;
+        }
+        
+        var carList = JSON.parse(db.getItem('carlist'));
+        makeDom(carList);
+    }
+    
+    var makeDom=function(carList){
+        var $cars = $('.cars');
+        var html;
+        for(var i = 0;i<carList.length;i++){
+            html  = Mustache.render (tpl_cars,{'cars':carList[i]});
+            $cars.append(html);
+        }
+    }
+    var checkCond=function(obj){
+        var time = obj.time
+            ,url = obj.url;
+        
+        //10 minutes 1000*60*10
+        if(time && (Date.now()- time<600000) ){
+            return ture; 
+        }
+        var url = db.getItem('url');
+        if(url && (url ==window.location.href)){
+            return true;
+        }
+        return false;
     }
     
     return {
