@@ -1,9 +1,9 @@
 souche-f2e
 ==========
-
+ 
 大搜车前端整体项目
-
-
+  
+ 
 ####文档导航
 
  * [前端静态和demo服务，开发测试发布 使用说明](https://github.com/souche/souche-f2e/tree/master/tools/local-service)
@@ -40,5 +40,5 @@ project  : souche-f2e
     77  jzlxiaohei              21.3%
     77  px_Jagten               21.3%
      6  pe_Jagten               1.7%
-     1  芋头                  0.3%
+     1  芋头                  0.3% 
 ```
