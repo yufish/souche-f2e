@@ -49,6 +49,8 @@
                     if (!phoneReg.test($("#unfold-phone").val())) {
                         $(".advisor-unfold .input-error-tip").removeClass("hidden")
                         return;
+                    } else {
+                        $(".advisor-unfold .input-error-tip").addClass("hidden")
                     }
                     $.ajax({
                         url: contextPath + "/pages/toolbarAction/newUserLogin.json",

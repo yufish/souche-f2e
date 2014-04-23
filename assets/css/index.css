@@ -1265,16 +1265,16 @@ a:hover {
   background-position: center center;
 }
 #index .filter-nav .inner .nav-item-hd i.item1 {
-  background-image: url(http://f2e.souche.com/assets/images/index/r-small.png?1);
+  background-image: url(../images/index/r-small.png?1);
 }
 #index .filter-nav .inner .nav-item-hd i.item2 {
-  background-image: url(http://f2e.souche.com/assets/images/index/m-small.png?1);
+  background-image: url(../images/index/m-small.png?1);
 }
 #index .filter-nav .inner .nav-item-hd i.item3 {
-  background-image: url(http://f2e.souche.com/assets/images/index/c-small.png?1);
+  background-image: url(../images/index/c-small.png?1);
 }
 #index .filter-nav .inner .nav-item-hd i.item4 {
-  background-image: url(http://f2e.souche.com/assets/images/index/t-small.png?1);
+  background-image: url(../images/index/t-small.png?1);
 }
 #index .filter-nav .inner .nav-item-hd span {
   position: absolute;
