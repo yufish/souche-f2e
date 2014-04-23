@@ -15,7 +15,7 @@
 10 error node -v v0.10.25
 11 error npm -v 1.3.24
 12 error path E:\souche\souche-f2e\souche-f2e\package.json
-13 error code ENOPACKAGEJSON
+13 error code ENOPACKAGEJSON 
 14 error errno 34
 15 verbose exit [ 34, true ]
 dd 
