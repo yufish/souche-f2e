@@ -5479,7 +5479,7 @@ background:#fff;
 
 }
 #index-h5-2 .wrapper-1 {
-  padding: 10px;
+  padding: 0 10px;
   position: relative;
 }
 #index-h5-2 .wrapper-2 {
@@ -6156,6 +6156,7 @@ width:100%;
 	background: url(../../images/mob/h5-2/photo-frame.png) no-repeat center center;
 	background-size:100%;
 	position:relative;
+    padding-top: 10px;
 }
 #index-h5-2 .for-carcustom .photo-frame .img-wrapper{
 	width: 183px;
@@ -6218,7 +6219,7 @@ width:100%;
 #index-h5-2 .for-carcustom .carcustom-tip .num{
 	color:#ff4301;
 }
-#index-h5-2 .for-carcustom .page-corner{
+#index-h5-2 #first-row .page-corner{
 	width:24px;
 	height:28px;
 	background: url(../../images/mob/h5-2/page-corner.png) no-repeat center center;
@@ -6226,6 +6227,11 @@ width:100%;
 	position:absolute;
 	top:0;
 	left:0;
+}
+#index-h5-2 #first-row .page-corner.back{
+	background: url(../../images/mob/h5-2/page-corner-1.png) no-repeat center center;
+	background-size:100%;
+    z-index: 1000;
 }
 #index-h5-2 .for-carcustom .left-arrow{
 	height:120px;
@@ -6247,4 +6253,7 @@ width:100%;
 	background-size:13px 22px;
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
+}
+#index-h5-2 .flex-wrapper{
+    padding-top: 10px;
 }
