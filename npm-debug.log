@@ -9,7 +9,7 @@
 6 error package.json ENOENT, open 'E:\souche\souche-f2e\souche-f2e\package.json'
 6 error package.json This is most likely not a problem with npm itself.
 6 error package.json npm can't find a package.json file in your current directory.
-7 error System Windows_NT 6.1.7601
+7 error System Windows_NT 6.1.7601d
 8 error command "D:\\Program Files\\nodejs\\\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
 9 error cwd E:\souche\souche-f2e\souche-f2e
 10 error node -v v0.10.25
