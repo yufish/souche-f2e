@@ -5,8 +5,7 @@ require('./../lib/functionLoader.coffee')
 var moment = require("moment")
 var data = process.argv[2].split(";;;")
 var func_change = __F('changefile')
-process.argv.splice(2).forEach(function(path) {
-    console.log(path)
+if (/^assets/.test(data[3])) {
     func_change.add({
         path: data[3],
         is_publish: 0,
@@ -14,4 +13,4 @@ process.argv.splice(2).forEach(function(path) {
         commit_time: moment(data[1]).toDate(),
         log: data[2]
     })
-})
+}
