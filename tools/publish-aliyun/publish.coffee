@@ -1,3 +1,4 @@
+argv = require('optimist').argv
 Publish = require './put.coffee'
 pub = new Publish({
   properties_file: if argv.resource then argv.resource else "./resource.properties",
@@ -6,6 +7,6 @@ pub = new Publish({
 });
 pub.addMiddleware(".js",require("./middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./middleware/mw-less.coffee"))
-pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
+# pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
 
 pub.pub((if argv.path then argv.path else "./test"))
