@@ -15,6 +15,10 @@ if (/^assets/.test(data[3])) {
                 commit_time: moment(data[1]).toDate(),
                 log: data[2]
             })
+        else
+            func_change.update(path.id, {
+                is_publish: 0
+            })
     })
 
 }
