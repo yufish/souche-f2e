@@ -17,7 +17,7 @@ module.exports.controllers =
             res.render "publish-list.jade"
         post:(req,res,next)->
             console.log req.body.filelist
-            if typeof(req.body.filelist).toLowerCase() == 'string'
+            if typeof(req.body.filelist) == 'string'
                 req.body.filelist = [req.body.filelist]
 
             queuedo req.body.filelist,(file,next,context)->
