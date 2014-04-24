@@ -8,11 +8,7 @@ config =
   upload_path:__dirname+"/uploads/"
   assets_path:path.join __dirname,'./../../assets/'
   demo_path:path.join __dirname,'./../../demo/'
-<<<<<<< HEAD
-module.exports = config
-=======
   base_path:__dirname
   script_ext:".coffee"
   base_host:"http://f2e.souche.com"
 module.exports = config
->>>>>>> 6c05d7b701b2be4f497d9eb4514e17be55bfa390
