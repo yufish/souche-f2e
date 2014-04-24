@@ -8,7 +8,6 @@ path = require 'path'
 properties = require 'properties'
 fs = require 'fs'
 fse = require 'fs-extra'
-argv = require('optimist').argv
 oss = new ossApi.OssClient(config)
 client = OSS.create(config)
 client.upload = co(client.upload)
