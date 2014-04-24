@@ -149,15 +149,16 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
                 function beforePage(pageIndex) {
                     var pageStep = pageIndex - 1;
+                    var trackData = {};
                     if (!stepRecords[pageStep]) {
                         if (pageStep == 1) {
                             var price = range.getData();
-                            var trackData = {
+                            trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
-                                car_price_min: price.min.value,
-                                car_price_max: price.max.value
+                                car_price_min: price.min.value.replace('万', ''),
+                                car_price_max: price.max.value.replace('万', '')
                             }
-                            userTrack(trackData);
+                            //userTrack(trackData);
 
                         } else if (pageStep == 2) {
                             var brands = brandsManager.brands;
@@ -166,7 +167,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 bStr += ',' + brand;
                             }
                             bStr = bStr.substring(1);
-                            var trackData = {
+                            trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
                                 car_brands: bStr
                             }
@@ -180,13 +181,13 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 min_year = yArr[0];
                                 max_year = yArr[1];
                             }
-                            var trackData = {
+                            trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
                                 car_year_min: min_year,
                                 car_year_max: max_year
                             }
-                            userTrack(trackData);
                         }
+                        userTrack(trackData);
                         stepRecords.push(pageStep);
                         console.log(trackData);
                     }
