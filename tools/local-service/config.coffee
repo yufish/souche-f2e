@@ -7,8 +7,10 @@ config =
   mysql_host:"115.29.10.121"
   upload_path:__dirname+"/uploads/"
   assets_path:path.join __dirname,'./../../assets/'
+  f2e_path:path.join __dirname,'./../../'
   demo_path:path.join __dirname,'./../../demo/'
   base_path:__dirname
   script_ext:".coffee"
   base_host:"http://f2e.souche.com"
+  resource_path:"/home/souche/dev/souche-trunk/souche-web/config/resource.properties"
 module.exports = config
