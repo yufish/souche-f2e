@@ -6,7 +6,7 @@ pub = new Publish({
 });
 pub.addMiddleware(".js",require("./../../publish-aliyun/middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./../../publish-aliyun/middleware/mw-less.coffee"))
-pub.addMiddleware(".png",require("./../../publish-aliyun/middleware/mw-png.coffee"))
+# pub.addMiddleware(".png",require("./../../publish-aliyun/middleware/mw-png.coffee"))
 
 queuedo = require 'queuedo'
 func_changefile = __F 'changefile'
