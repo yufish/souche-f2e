@@ -137,8 +137,20 @@ q:after {
 a {
     text-decoration: none;
 }
-body {
-    font-family: "黑体";
+.col-1-2 {
+    display: block;
+    float: left;
+    width: 50%;
+}
+.col-1-3 {
+    display: block;
+    float: left;
+    width: 33.3%;
+}
+.col-1-4 {
+    display: block;
+    float: left;
+    width: 25%;
 }
 #header {
     background: #db5d30;
@@ -230,49 +242,6 @@ body {
     background: #eaeaea;
     overflow-x: hidden;
     width: 100%;
-}
-#index .header .back-icon {
-    padding: 0;
-    padding-left: 12px;
-    margin-left: 10px;
-    background: url(../../images/mob/h5-2/back.png) no-repeat left center;
-    background-size: 10px;
-    width: 10%;
-    height: 45px;
-    line-height: 45px;
-    float: left;
-    color: #fff;
-}
-#index .header .back-text {
-    color: #fff;
-}
-#index .flex-direction-nav {
-    display: none;
-}
-#index .flex-control-nav {
-    text-align: center;
-    height: 30px;
-    padding: 0;
-    margin: 0;
-    margin-top: -15px;
-}
-#index .flex-control-nav li {
-    display: inline-block;
-    padding: 5px;
-    height: 5px;
-    margin: 0;
-}
-#index .flex-control-nav li a {
-    width: 5px;
-    height: 5px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    font-size: 0px;
-    line-height: 0;
-    display: block;
-}
-#index .flex-control-nav li .flex-active {
-    background: #aaa;
 }
 #index-h5-2 .header img {
     width: 100%;
@@ -988,156 +957,6 @@ body {
     background-size: 100%;
     vertical-align: -10px;
     margin-right: 5px;
-}
-#filter {
-    position: absolute;
-    left: -100%;
-    top: 0;
-    background: #eaeaea;
-    width: 100%;
-    z-index: 10000;
-    padding-bottom: 70px;
-}
-#filter .ok {
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    background: #f0d8b1;
-    color: #df5d16;
-    font-size: 16px;
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-}
-#filter .filter {
-    padding: 5px;
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    margin: 10px;
-}
-#filter .filter .t {
-    float: left;
-    line-height: 30px;
-    color: #666;
-    font-size: 14px;
-}
-#filter .filter .item {
-    background: #e3e3e3;
-    float: left;
-    padding: 5px;
-    margin-right: 5px;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-}
-#filter .filter .item .close {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: url(../../images/mob/filter-close.png) no-repeat;
-    background-size: 100%;
-    vertical-align: 0px;
-    margin-left: 5px;
-}
-#filter .filter .filter-list {
-    display: inline;
-}
-#filter #options label {
-    margin: 0 10px;
-}
-#filter label {
-    font-size: 14px;
-    color: #333;
-}
-#filter .group {
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-#filter .group .option {
-    height: 40px;
-    line-height: 40px;
-    position: relative;
-    background: #f6f6f6;
-    border-bottom: 1px solid #ccc;
-}
-#filter .group .option select {
-    background: none;
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    opacity: 0;
-}
-#filter .group .option .name {
-    padding-left: 10px;
-    font-size: 14px;
-    color: #666;
-    height: 40px;
-    overflow: hidden;
-    padding-right: 15px;
-}
-#filter .group .option .value {
-    position: absolute;
-    right: 30px;
-    top: 0px;
-    font-size: 14px;
-    color: #666;
-    height: 40px;
-    overflow: hidden;
-    color: #999;
-}
-#filter .group .option i {
-    position: absolute;
-    top: 13px;
-    right: 10px;
-    width: 10px;
-    height: 15px;
-    display: inline-block;
-    background: url(../../images/mob/filter-i.png) no-repeat;
-    background-size: 100%;
-}
-#filter .action {
-    margin: 10px;
-    height: 40px;
-}
-#filter .action .reset-btn {
-    float: left;
-    width: 36%;
-    background: #68a447;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size: 18px;
-    border-radius: 5px;
-}
-#filter .action .submit-btn {
-    float: left;
-    width: 60%;
-    margin-left: 4%;
-    background: #dd5e25;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 5px;
-    line-height: 50px;
-}
-#filter .history {
-    margin-top: 20px;
-}
-#filter .history label {
-    padding: 10px;
-}
-#filter .history .no {
-    color: #999;
-    padding: 10px;
-    font-size: 12px;
 }
 #detail {
     background-color: #fff;
@@ -4132,10 +3951,6 @@ body {
     background-color: #fff;
     opacity: 0.85;
 }
-#index #xuan {
-    width: 110px;
-    margin-left: -65px;
-}
 .wrapGrayBg {
     height: 100%;
     width: 100%;
@@ -5579,16 +5394,6 @@ body {
     -webkit-transform: scale(0.95, 0.95);
     transform: scale(0.95, 0.95);
 }
-.col-1-2 {
-    display: block;
-    float: left;
-    width: 50%;
-}
-.col-1-3 {
-    display: block;
-    float: left;
-    width: 33.3%;
-}
 #index-h5-2 {
     background-color: #fff;
 }
@@ -6143,51 +5948,135 @@ body {
 #index-h5-2 .flex-wrapper {
     padding-top: 10px;
 }
-#filtercar-new {
-    background-color: #fff;
+.hr-10-gray {
+    height: 10px;
+    background-color: #e3e3e3;
 }
-#filtercar-new .filter-option-item {
+.hr-1-gray {
+    height: 1px;
+    background-color: #e3e3e3;
+}
+#walk-around a {
+    color: #000;
+}
+#walk-around .brand {
+    display: block;
+    margin: 10px 0;
+}
+#walk-around .brand img {
+    width: 30px;
+}
+#walk-around .brand .name {
+    line-height: 14px;
+}
+#walk-around .brand .brand-wrapper {
+    text-align: center;
+}
+#walk-around .border-b {
+    border-bottom: 1px solid #e3e3e3;
+}
+#walk-around .hd {
     padding: 0 10px;
-    border-bottom: 1px solid #d0d0d0;
+    line-height: 45px;
 }
-#filtercar-new .filter-option-item .text {
-    float: left;
-    width: 75px;
-    line-height: 60px;
+#walk-around .hd .title {
+    font-size: 14px;
+    font-weight: bold;
+    height: 45px;
+    display: inline-block;
 }
-#filtercar-new .hr20 {
-    background-color: #f3f3f3;
-}
-#filtercar-new .filter-option-item .filter-content {
+#walk-around .hd .more {
     float: right;
-    width: 220px;
-    padding-top: 13px;
+    display: block;
+    background: url(../../images/mob/h5-2/more-item.png) no-repeat center right;
+    background-size: 11px 11px;
+    padding-right: 11px;
+    font-size: 12px;
+    font-weight: normal;
+    height: 45px;
 }
-#filtercar-new #car-price select,
-#filtercar-new #car-year select {
-    width: 92px;
+#walk-around .bd {
+    font-size: 12px;
 }
-#filtercar-new select {
-    width: 220px;
-    height: 35px;
-    -webkit-appearance: none;
-    appearance: none;
-    border: 2px solid #b1b1b1;
-    border-radius: 8px;
-    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
-    background-size: 32px;
-    background-color: #fff;
+#walk-around .bd .box {
+    margin: 0 auto;
+    width: 140px;
+    padding-bottom: 30px;
 }
-#filtercar-new .filter-option-item .span-to {
-    margin: 0 8px 0 6px;
+#walk-around .bd .box .img-box {
+    width: 140px;
+    height: 92px;
 }
-#filtercar-new .content .array-d {
-    background: url(../../images/mob/h5-2/array.png) no-repeat;
-    background-size: 8px;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    height: 13px;
+#walk-around .bd .box .img-box img {
+    width: 100%;
+    height: 100%;
+}
+#walk-around .bd .box .car-intro {
+    height: 40px;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#walk-around .bd .box .price {
+    color: #ff4301;
+    line-height: 16px;
+}
+#walk-around .bd .box .time-limit-price {
+    background-color: #fc7000;
+    float: right;
+    color: #fff;
+    padding: 0 10px;
+    line-height: 16px;
+}
+#walk-around .bd .box .time-limit-price i {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: url(../../images/mob/h5-2/time-limit-down.png) no-repeat center center;
+    background-size: 100%;
+    vertical-align: -1px;
+    margin: 0 3px 0 0;
+}
+#walk-around .bd .box .car-extra {
+    box-sizing: border-box;
+}
+#walk-around .bd .box .hr-wrapper {
+    margin: 10px 0;
+}
+#walk-around .bd .box .time-limit {
+    margin: 0 5px;
+    background: url(../../images/mob/h5-2/time-limit.png) no-repeat left center;
+    background-size: 14px 14px;
+    padding-left: 18px;
+}
+#walk-around .bd .box .border-r {
+    box-sizing: border-box;
+    border-right: 1px solid #e3e3e3;
+}
+#walk-around .bd .box .fav {
+    float: right;
+    margin-right: 12px;
+    box-sizing: border-box;
+}
+#walk-around .bd .box .fav .fav-num {
+    line-height: 14px;
+}
+#walk-around .bd .box .fav i {
+    display: inline-block;
     width: 13px;
-    float: right;
-    margin: 25px 20px 0 5px;
+    height: 13px;
+    background: url(../../images/mob/h5-2/fav-unstar.png) no-repeat center center;
+    background-size: 100%;
+    margin-right: 7px;
+}
+#walk-around .bd .tag-wrapper {
+    margin: 0 10px;
+}
+#walk-around .bd .tag-text,
+#walk-around .bd .price-text,
+#walk-around .bd .model-text {
+    display: block;
+    line-height: 30px;
+    text-align: center;
 }
