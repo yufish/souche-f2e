@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        |<link href="http://f2e.souche.com/assets/css/bootstrap/bootstrap3.css " rel="stylesheet" type="text/css" />
+        style.
+            body{
+            padding:20px;
+            }
+            table{
+                border:1px solid #ddd;
+                font-size:12px;
+            }
+            .path{
+            color:#ff6600;
+            }
+    body
+        h1 前端发布系统
+        form(action="",method="post")
+            .table-responsive
+                table.table.table-striped.table-hover.table-condensed
+                    tr
+                        td 操作
+                        td 路径
+                        td 提交者
+                        td 提交时间
+                        td 提交说明
+                    each file in files
+                        tr
+                            td
+                                input(type="checkbox",name="filelist",value="#{file.path}")
+                            td.path #{file.path}
+                            td.commiter #{file.commiter}
+                            td.commit_time #{moment(file.commit_time).format("LLL")}
+                            td.log #{file.log}
+            .submit
+                button.btn.btn-primary(type="submit") 立即发布

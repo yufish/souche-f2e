@@ -4,7 +4,6 @@ require('./../lib/modelLoader.coffee')
 require('./../lib/functionLoader.coffee')
 var moment = require("moment")
 var data = process.argv[2].split(";;;")
-console.log(process.argv)
 var func_change = __F('changefile')
 process.argv.splice(2).forEach(function(path) {
     console.log(path)
