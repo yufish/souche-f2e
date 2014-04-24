@@ -79,7 +79,7 @@
 	    var flagD = false;
 	    $("#J_yuyue,#J_nav_yuyue").click(function(e) {
 	        e.preventDefault();
-	        $(this).addClass('yuyue-loading');
+	        $(this).addClass('yuyue-loading').html("预约中...");
 	        $(this).removeClass('detail-yuyue');
 	        if ($(this).hasClass('yuyue-haved') || flagD) {
 	            return;
@@ -100,17 +100,17 @@
 	        })
 	    });
 	    $('#yuyue-popup .apply_close').live('click', function() {
-	        $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
+	        $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading').html("预约看车");
 	        $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
 	    });
 	    $('#yuyue-result-popup .apply_close').live('click', function() {
 
 	        if (!$("#yuyue-result-popup .yuyue-full").length) {
 	            $("#J_yuyue,#J_nav_yuyue").remove();
-	            $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'></div>");
+            $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
 	            $('.detail-nav-right').append("<div class='detail-nav-yuyue nav-yuyue-haved'></div>");
 	        } else {
-	            $("#J_yuyue").removeClass("yuyue-loading").addClass("detail-yuyue");
+	            $("#J_yuyue").removeClass("yuyue-loading").addClass("detail-yuyue").html("预约看车");
 	        }
 
 	        $(this).parent().addClass('hidden');
