@@ -6,7 +6,7 @@ pub = new Publish({
 });
 pub.addMiddleware(".js",require("./../../publish-aliyun/middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./../../publish-aliyun/middleware/mw-less.coffee"))
-pub.addMiddleware(".png",require("./../../publish-aliyun/middleware/mw-png.coffee"))
+# pub.addMiddleware(".png",require("./../../publish-aliyun/middleware/mw-png.coffee"))
 
 queuedo = require 'queuedo'
 func_changefile = __F 'changefile'
@@ -17,7 +17,7 @@ module.exports.controllers =
             res.render "publish-list.jade"
         post:(req,res,next)->
             console.log req.body.filelist
-            if typeof(req.body.filelist).toLowerCase() == 'string'
+            if typeof(req.body.filelist) == 'string'
                 req.body.filelist = [req.body.filelist]
 
             queuedo req.body.filelist,(file,next,context)->
