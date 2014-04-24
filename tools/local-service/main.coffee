@@ -1,5 +1,7 @@
 express = require 'express'
 http = require 'http'
+require 'modelLoader.coffee'
+require 'functionLoader.coffee'
 path           = require 'path'
 config         = require './config.coffee'
 rainbow        = require './lib/rainbow.js'
@@ -55,11 +57,11 @@ app.configure ->
           res.send content
   app.use app.router
   
-  # rainbow.route(app, {  
-  #   controllers: '/controllers/',
-  #   filters:'/filters/',      
-  #   template:'/views/'   
-  # })
+  rainbow.route(app, {  
+    controllers: '/controllers/',
+    filters:'/filters/',      
+    template:'/views/'   
+  })
   #404
   app.all "*",(req, res, next)->
       res.send "页面不存在",404
