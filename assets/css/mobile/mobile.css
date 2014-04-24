@@ -6102,6 +6102,7 @@ body {
     background: url(../../images/mob/h5-2/time-limit.png) no-repeat left center;
     background-size: 14px 14px;
     padding-left: 18px;
+    text-align: center;
 }
 #walk-around .bd .box .border-r {
     box-sizing: border-box;
@@ -6122,6 +6123,10 @@ body {
     background: url(../../images/mob/h5-2/fav-unstar.png) no-repeat center center;
     background-size: 100%;
     margin-right: 7px;
+}
+#walk-around .bd .box .fav.star i {
+    background: url(../../images/mob/h5-2/fav-star.png) no-repeat center center;
+    background-size: 100%;
 }
 #walk-around .bd .tag-wrapper {
     margin: 0 10px;
