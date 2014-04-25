@@ -1640,6 +1640,7 @@ body {
   background: #f9f9f9;
   margin: 20px 0;
   padding: 20px;
+  margin-bottom: 30px;
 }
 #detail_main .detail-price .tejia-tip {
   background: url(../../images/detail/tejia-tip.png) no-repeat;
@@ -1794,7 +1795,7 @@ body {
   float: left;
   width: 100px;
   border-left: 1px solid #ddd;
-  height: 50px;
+  height: 40px;
   color: #999;
   font-size: 12px;
   text-align: left;
@@ -1805,6 +1806,7 @@ body {
   color: #333;
   font-size: 14px;
   font-weight: bold;
+  line-height: 18px;
 }
 #detail_main .detail_price_souche {
   margin-bottom: 5px;
@@ -1842,6 +1844,8 @@ body {
   padding: 30px 0;
   height: 50px;
   overflow: hidden;
+  padding-bottom: 15px;
+  padding-top: 35px;
 }
 #detail_main .detail-yuyue {
   float: left;
