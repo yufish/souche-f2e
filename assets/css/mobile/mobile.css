@@ -3522,8 +3522,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(251, 251, 251);
-    z-index: 100000;
+    background-color: #7f7f7f;
+    z-index: 1000;
     opacity: 0.6;
 }
 #yuyue-popup {
@@ -5719,4 +5719,52 @@ body {
     width: 13px;
     float: right;
     margin: 25px 20px 0 5px;
+}
+#detail .popup-wrapper {
+    z-index: 10000;
+    position: absolute;
+    width: 100%;
+}
+.mobile-popup {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-color: #fff;
+    padding-top: 30px;
+    border-radius: 8px
+}
+.mobile-popup .title {
+    text-align: center;
+    font-size: 18px;
+}
+.mobile-popup .phone-input {
+    height: 35px;
+    width: 230px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #b1b1b1;
+}
+.mobile-popup .btn-wrapper {
+    text-align: center;
+    padding: 30px;
+}
+.mobile-popup .input-wrapper {
+    text-align: center;
+    margin: 20px 0 5px 0;
+}
+.mobile-popup .btn-main {
+    background-color: #fc7000;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+.mobile-popup .wrong-tip {
+    color: #ff0000;
+    font-size: 12px;
+    width: 230px;
+    margin: 0 auto;
 }
