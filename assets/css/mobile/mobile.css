@@ -378,6 +378,16 @@ body {
     line-height: 30px;
     font-size: 14px;
 }
+#index-h5-2 .new-tip {
+    width: 26px;
+    height: 15px;
+    background: url(../../images/mob/h5-2/new-tip.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 17px;
+    margin-left: 42px;
+}
 #index .mod {
     padding: 10px;
     padding-bottom: 0px;
@@ -5351,12 +5361,14 @@ body {
     font-size: 20px;
     text-align: center;
     padding-top: 27px;
+    position: relative;
 }
 #index-h5-2 .col-1-3 .title-text {
     color: #fff;
     font-size: 18px;
     text-align: center;
     padding-top: 27px;
+    z-index: 10000;
 }
 #index-h5-2 #walk-around-bg {
     position: absolute;
