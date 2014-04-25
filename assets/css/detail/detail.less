@@ -380,11 +380,12 @@ body{background-color:#f2f2f2}
     border:1px solid #fc7000;
 }
 #detail_main .yuyue-haved,#detail_main .yuyue-haved:hover{
-background-color: #f6f6f6;color:#5aad21;border:1px solid #ddd;
+background: #f6f6f6;color:#5aad21;border:1px solid #ddd;
 text-align: center;
 width:174px;
 padding:0;
 border:1px solid #f6f6f6;
+border:1px solid #ddd;
 }
 
 #detail_main .detail-no{
@@ -392,11 +393,12 @@ border:1px solid #f6f6f6;
     background-color: #f6f6f6;color:#414141;border:1px solid #ddd;
     border-radius:5px;font-size:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
     text-align:center;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;
+    border:1px solid #ddd;
 }
 #detail_main .detail-button{
     .fav,.jiangjia_tongzhi_wo{
-        padding-left:40px;
-        padding-right: 20px;
+        padding-left:35px;
+        padding-right: 10px;
         height:40px;
         line-height: 40px;
         
@@ -414,14 +416,22 @@ border:1px solid #f6f6f6;
         cursor: pointer;
     }
     .fav{
-        background: #fff url(../../images/detail/fav-btn.png) no-repeat 15px center;
+        background: #fff url(../../images/detail/fav-btn.png) no-repeat 10px center;
         i{
             font-style:normal;
             padding-left: 5px;
+
+        }
+        *{
+            cursor: pointer;
         }
     }
+    .faved{
+        color:#666;
+        background: #fff url(../../images/detail/faved-btn.png) no-repeat 12px center;
+    }
     .jiangjia_tongzhi_wo{
-        background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 15px center;
+        background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
     }
 }
 #detail_main .detail-zixun{float:left;display:inline;width: 143px;height: 55px;margin-left:50px;background:url("../../images/fed/detail_sprite_common.png?123") no-repeat 0 -155px;}
@@ -436,31 +446,52 @@ border:1px solid #f6f6f6;
 #detail_main .detail-collect a.faved:hover{border:1px solid #d8d8d8;cursor: default;}
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
-#detail_main .detail-share{float: right;color: #666;height: 20px;padding-top:10px;}
-#detail_main .detail-share a{color: #0077a8;opacity: 0.75;}
+#detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;}
+#detail_main .detail-share a{vertical-align:middle;color: #0077a8;opacity: 0.75;display:inline-block;overflow:hidden;width:25px;height:30px;text-indent: -1000px;}
 #detail_main .detail-share a:hover{color:#0090cc;opacity: 1;text-decoration: underline;}
-#detail_main .detail-share .ph{background: url(../../images/fed/detail-phone-icon.png) no-repeat 0 center;overflow: hidden;padding:3px;padding-left: 15px;margin-right: 10px;cursor: pointer;}
+#detail_main .detail-share .ph{
+
+    background: url(../../images/detail/share-phone.png) no-repeat 0 center;
+    overflow: hidden;
+    padding:3px;
+    cursor: pointer;
+
+}
 #detail_main .detail-share .wx{
-background: url(../../images/fed/detail-icon-wx.png) no-repeat 0 center;
+background: url(../../images/detail/share-weixin.png) no-repeat 0 center;
 overflow: hidden;
 padding:3px;
-padding-left: 18px;
 cursor: pointer;
 }
 #detail_main .detail-share .weibo{
-background: url(../../images/fed/detail-weibo.png) no-repeat 0 center;
+background: url(../../images/detail/share-weibo.png) no-repeat 0 center;
 overflow: hidden;
 padding:3px;
-margin-left: 10px;
-padding-left: 20px;
 cursor: pointer;
+margin-left:5px;
 }
 #detail_main .detail-feed{
 width: 460px;
 }
 #detail_main .detail-feed-hd{
-  border-bottom: 1px solid #ddd;
-  
+  .qq-zixun{
+    float: right;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #007eca url(../../images/detail/qq-zixun.png) no-repeat 10px center !important;
+    color:#fff;
+    padding-left:30px;
+    padding-right: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor:pointer;
+    width:auto  !important;
+    border:none  !important;
+  }
+  .qq-zixun:hover{
+    background-color: #0a8fe0 !important;
+  }
   
 }
 #detail_main .detail-feed-bd{
@@ -499,6 +530,56 @@ line-height: 30px;
   text-decoration: underline;
   color: #0090cc;
   opacity: 1;
+}
+#detail_main .zhijian-tip{
+    width:110%;
+    .zhijian-item{
+        width:360px;
+        height:80px;
+        border:1px solid #e4e3e3;
+        float: left;
+        margin:10px;
+    }
+    .zhijian-item-1{
+        background:#f2f2f2 url(../../images/detail/zhijian-1.png) no-repeat 20px center;
+    }
+    .zhijian-item-2{
+        background:#f2f2f2 url(../../images/detail/zhijian-2.png) no-repeat 20px center;
+    }
+    .zhijian-item-3{
+        background:#f2f2f2 url(../../images/detail/zhijian-3.png) no-repeat 20px center;
+    }
+    .t{
+        padding-top: 10px;
+        font-size: 16px;
+        color: #333;
+        line-height: 20px;
+        padding-left: 90px;
+        display: block;
+    }
+    .b{
+        font-size: 12px;
+        color:#999;
+        line-height: 20px;
+        padding-left: 90px;
+        display: block;
+    }
+    .zhijian-item:hover{
+        background: #fc7000;
+        border:1px solid #fc7000;
+        *{
+            color:#fff;
+        }
+    }
+    .zhijian-item-1:hover{
+        background:#fc7000 url(../../images/detail/zhijian-1-hover.png) no-repeat 20px center;
+    }
+    .zhijian-item-2:hover{
+        background:#fc7000 url(../../images/detail/zhijian-2-hover.png) no-repeat 20px center;
+    }
+    .zhijian-item-3:hover{
+        background:#fc7000 url(../../images/detail/zhijian-3-hover.png) no-repeat 20px center;
+    }
 }
 #detail_main .detail_service{border-top:1px dotted #ddd;border-bottom:1px dotted #ddd;padding:15px 0;margin-top:10px;}
 #detail_main .detail_service .service-item{width:140px;height:33px;float:left;line-height: 30px;color: #333;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size: 18px;}
@@ -1227,8 +1308,17 @@ height:228px;
 }
 
 #wx-popup{
-  width:600px;
-height:288px;
+  width:208px;
+height:215px;
+background: url(../../images/detail/wx-popup.png) no-repeat ;
+position: absolute;
+top:0;
+left:0;
+img{
+    margin:4px;
+    display: block;
+    width:95%;
+}
 }
 #wx-popup .result_p{
   width:auto;

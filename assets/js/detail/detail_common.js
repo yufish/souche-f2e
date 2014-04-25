@@ -139,11 +139,17 @@
             //$(this).attr("disabled",true);
         }
     })
-    $(".detail-share .wx").click(function() {
-        $("#wx-popup").removeClass("hidden")
-        $(".wrapGrayBg").show();
+    $(".detail-share .wx").click(function(e) {
+        e.stopPropagation()
+        $("#wx-popup").removeClass("hidden").css({
+            left: $(".detail-share .wx").offset().left - 98,
+            top: $(".detail-share .wx").offset().top - 210
+        })
         $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
-    })
+    });
+    $(document.body).click(function() {
+        $("#wx-popup").addClass("hidden")
+    });
     var submitToPhone = function() {
         $.ajax({
             url: $("#ph-form")[0].action,
