@@ -20,5 +20,14 @@ func.updateByPath = (path,data,callback)->
             callback new Error '不存在的文件'
     .error (error)->
         callback error
+
+func.getByPath = (path,callback)->
+    Changefiles.find
+        where:
+            path:path
+    .success (file)->
+        callback null,file
+    .error (error)->
+        callback error
 module.exports = func
 
