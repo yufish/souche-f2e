@@ -1705,6 +1705,8 @@ body {
   display: inline-block;
   overflow: hidden;
   vertical-align: -2px;
+  *height: 18px;
+  *vertical-align: 0px;
   margin-right: 5px;
 }
 #detail_main .price-others .detail_price_other i.tejia {
@@ -1715,6 +1717,8 @@ body {
   overflow: hidden;
   vertical-align: -2px;
   margin-right: 5px;
+  *height: 18px;
+  *vertical-align: 0px;
 }
 #detail_main .price-others .detail_price_other a {
   background: url(../../images/detail/fenqi-drop.png) no-repeat center center;
