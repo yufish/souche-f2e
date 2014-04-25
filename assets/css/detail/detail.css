@@ -1617,7 +1617,6 @@ body {
 #detail_main .detail_main_info {
   float: right;
   width: 460px;
-  height: 600px;
   margin-top: 5px;
   margin-right: 10px;
   position: relative;
@@ -1705,7 +1704,6 @@ body {
   width: 14px;
   height: 14px;
   display: inline-block;
-  text-indent: -1000px;
   overflow: hidden;
   vertical-align: -2px;
   margin-right: 5px;
@@ -1715,7 +1713,6 @@ body {
   width: 14px;
   height: 14px;
   display: inline-block;
-  text-indent: -1000px;
   overflow: hidden;
   vertical-align: -2px;
   margin-right: 5px;
@@ -3332,9 +3329,6 @@ body {
 }
 #onsale_detail #detail_main .detail_photosGallary .photosSmall li img {
   width: 90px;
-}
-#onsale_detail #detail_main .detail_main_info {
-  height: 619px;
 }
 #onsale_detail #timebuy-detail .detail-yuyue {
   background-position: 0 -212px;
