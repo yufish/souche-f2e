@@ -1643,6 +1643,21 @@ body {
   margin: 20px 0;
   padding: 20px;
 }
+#detail_main .detail-price .tejia-tip {
+  background: url(../../images/detail/tejia-tip.png) no-repeat;
+  width: 287px;
+  padding-left: 100px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+  height: 24px;
+  margin-left: -23px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+#detail_main .detail-price .tejia-tip em {
+  color: #f35b00;
+}
 #detail_main .detail-price .detail_price_left {
   width: 40%;
   float: left;
@@ -1651,6 +1666,7 @@ body {
 #detail_main .detail-price .detail_price_left em {
   font-size: 30px;
   color: #f35b00;
+  font-weight: bold;
 }
 #detail_main .detail-price .detail_price_left label {
   display: block;
@@ -1661,12 +1677,13 @@ body {
 #detail_main .detail-price .detail_price_right {
   width: 59%;
   float: left;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 #detail_main .detail-price .detail_price_right em {
   color: #f35b00;
-  font-size: 14px;
+  font-size: 16px;
   padding-left: 15px;
+  line-height: 25px;
 }
 #detail_main .detail-price .detail_price_right label {
   display: block;
@@ -1678,12 +1695,23 @@ body {
   margin-bottom: 20px;
 }
 #detail_main .price-others .detail_price_other {
+  line-height: 25px;
   font-size: 14px;
   color: #666;
   padding-left: 15px;
 }
 #detail_main .price-others .detail_price_other i.fenqi {
   background: url(../../images/detail/icon-fenqi.png) no-repeat center center;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  text-indent: -1000px;
+  overflow: hidden;
+  vertical-align: -2px;
+  margin-right: 5px;
+}
+#detail_main .price-others .detail_price_other i.tejia {
+  background: url(../../images/detail/icon-tejia.png) no-repeat center center;
   width: 14px;
   height: 14px;
   display: inline-block;
@@ -1702,6 +1730,9 @@ body {
   vertical-align: -1px;
   margin-right: 5px;
   margin-left: 5px;
+}
+#detail_main .price-others .detail_price_tejia {
+  color: #f35b00;
 }
 #detail_main .detail_main_info .apply_sell {
   float: right;
@@ -1849,13 +1880,13 @@ body {
 }
 #detail_main .yuyue-haved,
 #detail_main .yuyue-haved:hover {
-  background-color: #f6f6f6;
+  background: #f6f6f6;
   color: #5aad21;
-  border: 1px solid #ddd;
   text-align: center;
   width: 174px;
   padding: 0;
   border: 1px solid #f6f6f6;
+  border: 1px solid #ddd;
 }
 #detail_main .detail-no {
   float: left;
@@ -1864,7 +1895,6 @@ body {
   margin-right: 5px;
   background-color: #f6f6f6;
   color: #414141;
-  border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 20px;
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
@@ -1872,11 +1902,12 @@ body {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  border: 1px solid #ddd;
 }
 #detail_main .detail-button .fav,
 #detail_main .detail-button .jiangjia_tongzhi_wo {
-  padding-left: 40px;
-  padding-right: 20px;
+  padding-left: 35px;
+  padding-right: 10px;
   height: 40px;
   line-height: 40px;
   border: 1px solid #e4e3e3;
@@ -1893,14 +1924,21 @@ body {
   font-style: normal;
 }
 #detail_main .detail-button .fav {
-  background: #ffffff url(../../images/detail/fav-btn.png) no-repeat 15px center;
+  background: #ffffff url(../../images/detail/fav-btn.png) no-repeat 10px center;
 }
 #detail_main .detail-button .fav i {
   font-style: normal;
   padding-left: 5px;
 }
+#detail_main .detail-button .fav * {
+  cursor: pointer;
+}
+#detail_main .detail-button .faved {
+  color: #666;
+  background: #ffffff url(../../images/detail/faved-btn.png) no-repeat 12px center;
+}
 #detail_main .detail-button .jiangjia_tongzhi_wo {
-  background: #ffffff url(../../images/detail/jiangjia-btn.png) no-repeat 15px center;
+  background: #ffffff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
 }
 #detail_main .detail-zixun {
   float: left;
@@ -1969,14 +2007,20 @@ body {
   opacity: 1;
 }
 #detail_main .detail-share {
-  float: right;
+  float: left;
   color: #666;
-  height: 20px;
+  height: 40px;
   padding-top: 10px;
 }
 #detail_main .detail-share a {
+  vertical-align: middle;
   color: #0077a8;
   opacity: 0.75;
+  display: inline-block;
+  overflow: hidden;
+  width: 25px;
+  height: 30px;
+  text-indent: -1000px;
 }
 #detail_main .detail-share a:hover {
   color: #0090cc;
@@ -1984,33 +2028,44 @@ body {
   text-decoration: underline;
 }
 #detail_main .detail-share .ph {
-  background: url(../../images/fed/detail-phone-icon.png) no-repeat 0 center;
+  background: url(../../images/detail/share-phone.png) no-repeat 0 center;
   overflow: hidden;
   padding: 3px;
-  padding-left: 15px;
-  margin-right: 10px;
   cursor: pointer;
 }
 #detail_main .detail-share .wx {
-  background: url(../../images/fed/detail-icon-wx.png) no-repeat 0 center;
+  background: url(../../images/detail/share-weixin.png) no-repeat 0 center;
   overflow: hidden;
   padding: 3px;
-  padding-left: 18px;
   cursor: pointer;
 }
 #detail_main .detail-share .weibo {
-  background: url(../../images/fed/detail-weibo.png) no-repeat 0 center;
+  background: url(../../images/detail/share-weibo.png) no-repeat 0 center;
   overflow: hidden;
   padding: 3px;
-  margin-left: 10px;
-  padding-left: 20px;
   cursor: pointer;
+  margin-left: 5px;
 }
 #detail_main .detail-feed {
   width: 460px;
 }
-#detail_main .detail-feed-hd {
-  border-bottom: 1px solid #ddd;
+#detail_main .detail-feed-hd .qq-zixun {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  background: #007eca url(../../images/detail/qq-zixun.png) no-repeat 10px center !important;
+  color: #fff;
+  padding-left: 30px;
+  padding-right: 10px;
+  border-radius: 3px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: auto  !important;
+  border: none  !important;
+}
+#detail_main .detail-feed-hd .qq-zixun:hover {
+  background-color: #0a8fe0 !important;
 }
 #detail_main .detail-feed-bd {
   padding-top: 11px;
@@ -2048,6 +2103,56 @@ body {
   text-decoration: underline;
   color: #0090cc;
   opacity: 1;
+}
+#detail_main .zhijian-tip {
+  width: 110%;
+}
+#detail_main .zhijian-tip .zhijian-item {
+  width: 360px;
+  height: 80px;
+  border: 1px solid #e4e3e3;
+  float: left;
+  margin: 10px;
+}
+#detail_main .zhijian-tip .zhijian-item-1 {
+  background: #f2f2f2 url(../../images/detail/zhijian-1.png) no-repeat 20px center;
+}
+#detail_main .zhijian-tip .zhijian-item-2 {
+  background: #f2f2f2 url(../../images/detail/zhijian-2.png) no-repeat 20px center;
+}
+#detail_main .zhijian-tip .zhijian-item-3 {
+  background: #f2f2f2 url(../../images/detail/zhijian-3.png) no-repeat 20px center;
+}
+#detail_main .zhijian-tip .t {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #333;
+  line-height: 20px;
+  padding-left: 90px;
+  display: block;
+}
+#detail_main .zhijian-tip .b {
+  font-size: 12px;
+  color: #999;
+  line-height: 20px;
+  padding-left: 90px;
+  display: block;
+}
+#detail_main .zhijian-tip .zhijian-item:hover {
+  background: #fc7000;
+  border: 1px solid #fc7000;
+}
+#detail_main .zhijian-tip .zhijian-item:hover * {
+  color: #fff;
+}
+#detail_main .zhijian-tip .zhijian-item-1:hover {
+  background: #fc7000 url(../../images/detail/zhijian-1-hover.png) no-repeat 20px center;
+}
+#detail_main .zhijian-tip .zhijian-item-2:hover {
+  background: #fc7000 url(../../images/detail/zhijian-2-hover.png) no-repeat 20px center;
+}
+#detail_main .zhijian-tip .zhijian-item-3:hover {
+  background: #fc7000 url(../../images/detail/zhijian-3-hover.png) no-repeat 20px center;
 }
 #detail_main .detail_service {
   border-top: 1px dotted #ddd;
@@ -4458,8 +4563,17 @@ body {
   margin-top: -10px;
 }
 #wx-popup {
-  width: 600px;
-  height: 288px;
+  width: 208px;
+  height: 215px;
+  background: url(../../images/detail/wx-popup.png) no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#wx-popup img {
+  margin: 4px;
+  display: block;
+  width: 95%;
 }
 #wx-popup .result_p {
   width: auto;
