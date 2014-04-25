@@ -40,4 +40,4 @@ module.exports.controllers =
             # pub.pub 
 module.exports.filters = 
     "/":
-        get:['no-publish-files']
+        get:['checkLogin','no-publish-files']
