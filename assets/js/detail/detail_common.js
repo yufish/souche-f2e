@@ -139,11 +139,17 @@
             //$(this).attr("disabled",true);
         }
     })
-    $(".detail-share .wx").click(function() {
-        $("#wx-popup").removeClass("hidden")
-        $(".wrapGrayBg").show();
+    $(".detail-share .wx").click(function(e) {
+        e.stopPropagation()
+        $("#wx-popup").removeClass("hidden").css({
+            left: $(".detail-share .wx").offset().left - 98,
+            top: $(".detail-share .wx").offset().top - 210
+        })
         $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
-    })
+    });
+    $(document.body).click(function() {
+        $("#wx-popup").addClass("hidden")
+    });
     var submitToPhone = function() {
         $.ajax({
             url: $("#ph-form")[0].action,
@@ -655,14 +661,14 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
-            var carPrice = parseInt($('.price-now.now').text());
-            var nowPrice = carPrice;
-            var nowStr = nowPrice.toString();
-            var start = '<div class="price-num"><em>',
-                end = '</em></div>';
-            for (var i = 0; i < nowStr.length; i++) {
-                $('.cutprice').append(start + nowStr.charAt(i) + end);
-            }
+            // var carPrice = parseInt($('.price-now.now').text());
+            // var nowPrice = carPrice;
+            // var nowStr = nowPrice.toString();
+            // var start = '<div class="price-num"><em>',
+            //     end = '</em></div>';
+            // for (var i = 0; i < nowStr.length; i++) {
+            //     $('.cutprice').append(start + nowStr.charAt(i) + end);
+            // }
             Souche.Detail.PriceDown.init(config);
         }
     }

@@ -304,8 +304,8 @@ body{background-color:#f2f2f2}
 #detail_main .detail_photosGallary .soucheNum{float: left;width: 106px;height: 28px;line-height:28px;text-align: center;background:#000;opacity:0.7;border:1px solid #aaa;}
 #detail_main .detail_photosGallary .soucheNum i{font-style: normal;color: #ff4301;font-family: Arial;}
 #detail_main .detail_photosGallary .showBig{float: left;width: 67px;height: 28px;line-height: 28px;text-align: center; background:#000;opacity:0.7;border:1px solid #aaa;border-left:0px;cursor:pointer;}
-#detail_main .detail_main_info{float:right;width:460px;height:600px;margin-top:5px;margin-right: 10px;position: relative;}
-#detail_main .detail_main_info h1{color:#333;font-size:30px;font-weight:normal;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:35px;width:460px;height:55px;overflow:hidden;display:table;}
+#detail_main .detail_main_info{float:right;width:460px;margin-top:5px;margin-right: 10px;position: relative;}
+#detail_main .detail_main_info h1{color:#333;font-size:30px;font-weight:normal;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:35px;width:460px;overflow:hidden;display:table;}
 #detail_main .detail_main_info h1 ins {display:table-cell;vertical-align:middle;}
 @import "./../../../less/detail/price.less";
 #detail_main .detail_main_info .apply_sell{float:right;margin-top:12px;*margin-top:-53px;margin-right:85px;width:105px;height:41px;background:url("../../images/fed/inside_sprite3.png") no-repeat -77px 0;color:#fff;font-size:18px;text-align:center;line-height:41px;text-indent:0;}
@@ -332,7 +332,7 @@ body{background-color:#f2f2f2}
   float:left;
   width:100px;
   border-left:1px solid #ddd;
-  height:50px;
+  height:40px;
   color:#999;
   font-size: 12px;
   text-align: left;
@@ -344,6 +344,7 @@ body{background-color:#f2f2f2}
   color: #333;
   font-size: 14px;
   font-weight: bold;
+  line-height: 18px;
 }
 
 
@@ -353,7 +354,7 @@ body{background-color:#f2f2f2}
 #detail_main .detail_price_souche del{color:#333;font-size: 18px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";margin-right: 5px;}
 #detail_main .detail_price_new{margin-top:12px;margin-bottom: 0px;}
 #detail_main .detail_price_youhui ins{display:inline-block;padding:3px 5px;margin-right:8px;color: #fff;background-color: #ff8914;}
-#detail_main .detail-button{padding: 30px 0;height:50px;overflow: hidden;}
+#detail_main .detail-button{padding: 30px 0;height:50px;overflow: hidden;padding-bottom: 15px;padding-top: 35px;}
 #detail_main .detail-yuyue{
     float:left;display:inline;width:104px;height: 40px;
     margin-right:5px;font-size:18px;line-height:40px;
@@ -380,11 +381,12 @@ body{background-color:#f2f2f2}
     border:1px solid #fc7000;
 }
 #detail_main .yuyue-haved,#detail_main .yuyue-haved:hover{
-background-color: #f6f6f6;color:#5aad21;border:1px solid #ddd;
+background: #f6f6f6;color:#5aad21;border:1px solid #ddd;
 text-align: center;
 width:174px;
 padding:0;
 border:1px solid #f6f6f6;
+border:1px solid #ddd;
 }
 
 #detail_main .detail-no{
@@ -392,11 +394,12 @@ border:1px solid #f6f6f6;
     background-color: #f6f6f6;color:#414141;border:1px solid #ddd;
     border-radius:5px;font-size:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
     text-align:center;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;
+    border:1px solid #ddd;
 }
 #detail_main .detail-button{
     .fav,.jiangjia_tongzhi_wo{
-        padding-left:40px;
-        padding-right: 20px;
+        padding-left:35px;
+        padding-right: 10px;
         height:40px;
         line-height: 40px;
         
@@ -414,14 +417,22 @@ border:1px solid #f6f6f6;
         cursor: pointer;
     }
     .fav{
-        background: #fff url(../../images/detail/fav-btn.png) no-repeat 15px center;
+        background: #fff url(../../images/detail/fav-btn.png) no-repeat 10px center;
         i{
             font-style:normal;
             padding-left: 5px;
+
+        }
+        *{
+            cursor: pointer;
         }
     }
+    .faved{
+        color:#666;
+        background: #fff url(../../images/detail/faved-btn.png) no-repeat 12px center;
+    }
     .jiangjia_tongzhi_wo{
-        background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 15px center;
+        background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
     }
 }
 #detail_main .detail-zixun{float:left;display:inline;width: 143px;height: 55px;margin-left:50px;background:url("../../images/fed/detail_sprite_common.png?123") no-repeat 0 -155px;}
@@ -436,31 +447,52 @@ border:1px solid #f6f6f6;
 #detail_main .detail-collect a.faved:hover{border:1px solid #d8d8d8;cursor: default;}
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
-#detail_main .detail-share{float: right;color: #666;height: 20px;padding-top:10px;}
-#detail_main .detail-share a{color: #0077a8;opacity: 0.75;}
+#detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;}
+#detail_main .detail-share a{vertical-align:middle;color: #0077a8;opacity: 0.75;display:inline-block;overflow:hidden;width:25px;height:30px;text-indent: -1000px;}
 #detail_main .detail-share a:hover{color:#0090cc;opacity: 1;text-decoration: underline;}
-#detail_main .detail-share .ph{background: url(../../images/fed/detail-phone-icon.png) no-repeat 0 center;overflow: hidden;padding:3px;padding-left: 15px;margin-right: 10px;cursor: pointer;}
+#detail_main .detail-share .ph{
+
+    background: url(../../images/detail/share-phone.png) no-repeat 0 center;
+    overflow: hidden;
+    padding:3px;
+    cursor: pointer;
+
+}
 #detail_main .detail-share .wx{
-background: url(../../images/fed/detail-icon-wx.png) no-repeat 0 center;
+background: url(../../images/detail/share-weixin.png) no-repeat 0 center;
 overflow: hidden;
 padding:3px;
-padding-left: 18px;
 cursor: pointer;
 }
 #detail_main .detail-share .weibo{
-background: url(../../images/fed/detail-weibo.png) no-repeat 0 center;
+background: url(../../images/detail/share-weibo.png) no-repeat 0 center;
 overflow: hidden;
 padding:3px;
-margin-left: 10px;
-padding-left: 20px;
 cursor: pointer;
+margin-left:5px;
 }
 #detail_main .detail-feed{
 width: 460px;
 }
 #detail_main .detail-feed-hd{
-  border-bottom: 1px solid #ddd;
-  
+  .qq-zixun{
+    float: right;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #007eca url(../../images/detail/qq-zixun.png) no-repeat 10px center !important;
+    color:#fff;
+    padding-left:30px;
+    padding-right: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor:pointer;
+    width:auto  !important;
+    border:none  !important;
+  }
+  .qq-zixun:hover{
+    background-color: #0a8fe0 !important;
+  }
   
 }
 #detail_main .detail-feed-bd{
@@ -499,6 +531,56 @@ line-height: 30px;
   text-decoration: underline;
   color: #0090cc;
   opacity: 1;
+}
+#detail_main .zhijian-tip{
+    width:110%;
+    .zhijian-item{
+        width:360px;
+        height:80px;
+        border:1px solid #e4e3e3;
+        float: left;
+        margin:10px;
+    }
+    .zhijian-item-1{
+        background:#f2f2f2 url(../../images/detail/zhijian-1.png) no-repeat 20px center;
+    }
+    .zhijian-item-2{
+        background:#f2f2f2 url(../../images/detail/zhijian-2.png) no-repeat 20px center;
+    }
+    .zhijian-item-3{
+        background:#f2f2f2 url(../../images/detail/zhijian-3.png) no-repeat 20px center;
+    }
+    .t{
+        padding-top: 10px;
+        font-size: 16px;
+        color: #333;
+        line-height: 20px;
+        padding-left: 90px;
+        display: block;
+    }
+    .b{
+        font-size: 12px;
+        color:#999;
+        line-height: 20px;
+        padding-left: 90px;
+        display: block;
+    }
+    .zhijian-item:hover{
+        background: #fc7000;
+        border:1px solid #fc7000;
+        *{
+            color:#fff;
+        }
+    }
+    .zhijian-item-1:hover{
+        background:#fc7000 url(../../images/detail/zhijian-1-hover.png) no-repeat 20px center;
+    }
+    .zhijian-item-2:hover{
+        background:#fc7000 url(../../images/detail/zhijian-2-hover.png) no-repeat 20px center;
+    }
+    .zhijian-item-3:hover{
+        background:#fc7000 url(../../images/detail/zhijian-3-hover.png) no-repeat 20px center;
+    }
 }
 #detail_main .detail_service{border-top:1px dotted #ddd;border-bottom:1px dotted #ddd;padding:15px 0;margin-top:10px;}
 #detail_main .detail_service .service-item{width:140px;height:33px;float:left;line-height: 30px;color: #333;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size: 18px;}
@@ -742,7 +824,6 @@ top: 139px !important;}
 #onsale_detail #detail_main .detail_photosGallary .photosSmallWrap{width:546px;height:121px;overflow:hidden;float:left;position:relative}#onsale_detail #detail_main .detail_photosGallary .photosSmallWrap div{width:1249px}
 #onsale_detail #detail_main .detail_photosGallary .photosSmall{float:left;width:546px}#onsale_detail #detail_main .detail_photosGallary .photosSmall li{width:90px;height:60px;border:none;margin-right:1px;margin-bottom:1px;position:relative}#onsale_detail #detail_main .detail_photosGallary .photosSmall li span{width:86px;height:56px;border:2px solid #e70;position:absolute;top:0;left:0;display:none}
 #onsale_detail #detail_main .detail_photosGallary .photosSmall li img{width:90px;}
-#onsale_detail #detail_main .detail_main_info{height:619px;}
 
 
 #onsale_detail #timebuy-detail .detail-yuyue{background-position:  0 -212px;}
@@ -1227,8 +1308,17 @@ height:228px;
 }
 
 #wx-popup{
-  width:600px;
-height:288px;
+  width:208px;
+height:215px;
+background: url(../../images/detail/wx-popup.png) no-repeat ;
+position: absolute;
+top:0;
+left:0;
+img{
+    margin:4px;
+    display: block;
+    width:95%;
+}
 }
 #wx-popup .result_p{
   width:auto;
