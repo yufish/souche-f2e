@@ -1730,8 +1730,8 @@ body {
   vertical-align: -1px;
   margin-right: 5px;
   margin-left: 5px;
-  *height: 18px;
-  *vertical-align: 0px;
+  *height: 20px;
+  *vertical-align: 3px;
 }
 #detail_main .price-others .detail_price_tejia {
   color: #f35b00;
