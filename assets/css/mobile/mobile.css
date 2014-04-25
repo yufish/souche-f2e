@@ -6044,12 +6044,12 @@ body {
     background: url(../../images/mob/h5-2/more-item.png) no-repeat center right;
     background-size: 11px 11px;
     padding-right: 11px;
-    font-size: 12px;
     font-weight: normal;
     height: 45px;
+    font-size: 12px;
 }
 #walk-around .bd {
-    font-size: 12px;
+    font-size: 13px;
 }
 #walk-around .bd .box {
     margin: 0 auto;
@@ -6066,7 +6066,7 @@ body {
 }
 #walk-around .bd .box .car-intro {
     height: 40px;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
     overflow: hidden;
     margin-bottom: 10px;
@@ -6074,6 +6074,8 @@ body {
 #walk-around .bd .box .price {
     color: #ff4301;
     line-height: 16px;
+    font-weight: bold;
+    font-size: 14px;
 }
 #walk-around .bd .box .time-limit-price {
     background-color: #fc7000;
@@ -6089,7 +6091,6 @@ body {
     background: url(../../images/mob/h5-2/time-limit-down.png) no-repeat center center;
     background-size: 100%;
     vertical-align: -1px;
-    margin: 0 3px 0 0;
 }
 #walk-around .bd .box .car-extra {
     box-sizing: border-box;
@@ -6102,6 +6103,7 @@ body {
     background: url(../../images/mob/h5-2/time-limit.png) no-repeat left center;
     background-size: 14px 14px;
     padding-left: 18px;
+    text-align: center;
 }
 #walk-around .bd .box .border-r {
     box-sizing: border-box;
@@ -6122,6 +6124,10 @@ body {
     background: url(../../images/mob/h5-2/fav-unstar.png) no-repeat center center;
     background-size: 100%;
     margin-right: 7px;
+}
+#walk-around .bd .box .fav.star i {
+    background: url(../../images/mob/h5-2/fav-star.png) no-repeat center center;
+    background-size: 100%;
 }
 #walk-around .bd .tag-wrapper {
     margin: 0 10px;
