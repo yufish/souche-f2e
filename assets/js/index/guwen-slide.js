@@ -27,6 +27,7 @@
     $.ajax({
         url: contextPath + "/pages/toolbarAction/newUserTip.json",
         dataType: "json",
+        type: "get",
         success: function(data) {
             if (data.code == 200) {
                 $(document.body).append(tpl.replace("{{message}}", data.message))
@@ -54,7 +55,9 @@
                     }
                     $.ajax({
                         url: contextPath + "/pages/toolbarAction/newUserLogin.json",
-                        data:{'phone': $("#unfold-phone").val()},
+                        data: {
+                            'phone': $("#unfold-phone").val()
+                        },
                         dataType: "json",
                         success: function() {
                             window.location.href = contextPath + "/pages/onsale/match_car_list.html"
