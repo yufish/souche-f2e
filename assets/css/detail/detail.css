@@ -1643,21 +1643,6 @@ body {
   margin: 20px 0;
   padding: 20px;
 }
-#detail_main .detail-price .tejia-tip {
-  background: url(../../images/detail/tejia-tip.png) no-repeat;
-  width: 287px;
-  padding-left: 100px;
-  font-size: 14px;
-  line-height: 24px;
-  color: #333;
-  height: 24px;
-  margin-left: -23px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-#detail_main .detail-price .tejia-tip em {
-  color: #f35b00;
-}
 #detail_main .detail-price .detail_price_left {
   width: 40%;
   float: left;
@@ -1666,7 +1651,6 @@ body {
 #detail_main .detail-price .detail_price_left em {
   font-size: 30px;
   color: #f35b00;
-  font-weight: bold;
 }
 #detail_main .detail-price .detail_price_left label {
   display: block;
@@ -1677,13 +1661,12 @@ body {
 #detail_main .detail-price .detail_price_right {
   width: 59%;
   float: left;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 #detail_main .detail-price .detail_price_right em {
   color: #f35b00;
-  font-size: 16px;
+  font-size: 14px;
   padding-left: 15px;
-  line-height: 25px;
 }
 #detail_main .detail-price .detail_price_right label {
   display: block;
@@ -1695,23 +1678,12 @@ body {
   margin-bottom: 20px;
 }
 #detail_main .price-others .detail_price_other {
-  line-height: 25px;
   font-size: 14px;
   color: #666;
   padding-left: 15px;
 }
 #detail_main .price-others .detail_price_other i.fenqi {
   background: url(../../images/detail/icon-fenqi.png) no-repeat center center;
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  text-indent: -1000px;
-  overflow: hidden;
-  vertical-align: -2px;
-  margin-right: 5px;
-}
-#detail_main .price-others .detail_price_other i.tejia {
-  background: url(../../images/detail/icon-tejia.png) no-repeat center center;
   width: 14px;
   height: 14px;
   display: inline-block;
@@ -1730,9 +1702,6 @@ body {
   vertical-align: -1px;
   margin-right: 5px;
   margin-left: 5px;
-}
-#detail_main .price-others .detail_price_tejia {
-  color: #f35b00;
 }
 #detail_main .detail_main_info .apply_sell {
   float: right;
