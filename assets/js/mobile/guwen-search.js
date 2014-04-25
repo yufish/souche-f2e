@@ -98,7 +98,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
         return {
 
             init: function () {
-
+                //change demand,ugly fixed
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
@@ -117,6 +117,9 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 var yearCode = '';
                 if (dataObj.year) {
                     yearCode = dataObj.year;
+                    if (yearCode == '1-2' || yearCode == '2-3') {
+                        yearCode = '1-3';
+                    }
                 }
                 $('.year-item[data-code=' + yearCode + '] .text').addClass('selected');
 
