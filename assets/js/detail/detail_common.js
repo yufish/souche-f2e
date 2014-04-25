@@ -661,14 +661,14 @@ Souche.DetailCommon = function() {
     return {
         init: function(_config) {
             $.extend(config, _config)
-            var carPrice = parseInt($('.price-now.now').text());
-            var nowPrice = carPrice;
-            var nowStr = nowPrice.toString();
-            var start = '<div class="price-num"><em>',
-                end = '</em></div>';
-            for (var i = 0; i < nowStr.length; i++) {
-                $('.cutprice').append(start + nowStr.charAt(i) + end);
-            }
+            // var carPrice = parseInt($('.price-now.now').text());
+            // var nowPrice = carPrice;
+            // var nowStr = nowPrice.toString();
+            // var start = '<div class="price-num"><em>',
+            //     end = '</em></div>';
+            // for (var i = 0; i < nowStr.length; i++) {
+            //     $('.cutprice').append(start + nowStr.charAt(i) + end);
+            // }
             Souche.Detail.PriceDown.init(config);
         }
     }
