@@ -24,7 +24,7 @@ var List = function () {
                         fenqi: ( !! item.carPriceVO && item.carPriceVO.fenqi == 1),
                         downPrice: ( !! item.flashPurchaseVO) ? item.flashPurchaseVO.totalMasterOutPriceToString * 1000 : undefined,
                         favorite: item.favorite,
-                        favCount: item.carFavoriteNum,
+                        favCount: item.count,
                         year: item.carVo.yearShow,
                         month: item.carVo.mouthShow,
                         newPrice: item.carVo.newPriceToString,
