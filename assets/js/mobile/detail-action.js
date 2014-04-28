@@ -73,7 +73,6 @@ var Action = (function () {
                 }
             });
 
-
             var submitYuyue = function () {
                 $("#yuyue_submit").html('预约中...');
                 $("#btn-yuyue").val('预约中...');
