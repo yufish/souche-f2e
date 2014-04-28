@@ -27,21 +27,37 @@
     $.ajax({
         url: contextPath + "/pages/toolbarAction/newUserTip.json",
         dataType: "json",
+        type: "get",
         success: function(data) {
-            if (code == 200) {
+            if (data.code == 200) {
                 $(document.body).append(tpl.replace("{{message}}", data.message))
-                $(".advisor-unfold").animate({
-                    width: 820,
-                    height: 402
+                $(".advisor-close").click(function() {
+                    $(".advisor-unfold").animate({
+                        width: 0,
+                        height: 0,
+                        bottom: 430,
+                        right: -50
+                    }, 700)
                 })
+                $(".advisor-unfold").animate({
+                    width: 900,
+                    height: 442,
+                    bottom: 0,
+                    right: 0
+                }, 700)
                 $("#advisor-form").on("submit", function(e) {
                     e.preventDefault();
                     if (!phoneReg.test($("#unfold-phone").val())) {
                         $(".advisor-unfold .input-error-tip").removeClass("hidden")
                         return;
+                    } else {
+                        $(".advisor-unfold .input-error-tip").addClass("hidden")
                     }
                     $.ajax({
                         url: contextPath + "/pages/toolbarAction/newUserLogin.json",
+                        data: {
+                            'phone': $("#unfold-phone").val()
+                        },
                         dataType: "json",
                         success: function() {
                             window.location.href = contextPath + "/pages/onsale/match_car_list.html"

@@ -1,7 +1,9 @@
 express = require 'express'
 http = require 'http'
+require './lib/modelLoader.coffee'
+require './lib/functionLoader.coffee'
 path           = require 'path'
-config         = require './config.coffee'
+config = global.__CONFIG         = require './config.coffee'
 rainbow        = require './lib/rainbow.js'
 lessmiddle     = require 'less-middleware'
 less           = require 'less'
@@ -33,9 +35,9 @@ app.configure ->
   app.use "/assets",lessmiddle({src:config.assets_path,compress:false,force:true})
   app.use "/assets", express.static(config.assets_path)
   # app.use express.logger("dev")
-  # app.use express.bodyParser()
-  # app.use express.cookieParser()
-  # app.use express.cookieSession(secret: 'fd2afdsafdvcxzjaklfdsa')
+  app.use express.bodyParser()
+  app.use express.cookieParser()
+  app.use express.cookieSession(secret: 'fd2afdsafdvcxzjaklfdsa')
 
   app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}))
   # app.locals.assets_head = config.assets_head
@@ -55,11 +57,11 @@ app.configure ->
           res.send content
   app.use app.router
   
-  # rainbow.route(app, {  
-  #   controllers: '/controllers/',
-  #   filters:'/filters/',      
-  #   template:'/views/'   
-  # })
+  rainbow.route(app, {  
+    controllers: '/controllers/',
+    filters:'/filters/',      
+    template:'/views/'   
+  })
   #404
   app.all "*",(req, res, next)->
       res.send "页面不存在",404
@@ -68,8 +70,8 @@ app.configure ->
     console.trace err
     res.send err.message,404
   
-  # app.locals.moment= require 'moment'
-  # app.locals.moment.lang('zh-cn');
+  app.locals.moment= require 'moment'
+  app.locals.moment.lang('zh-cn');
 app.set('env', 'development');
 console.log process.env.NODE_ENV
 app.configure "development", ->
