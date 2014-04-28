@@ -51,19 +51,23 @@ html {
   margin: 9px 10px;
 }
 #toolbar .tool-box #toolbar-nav .path .going span {
-  background: url(../images/index/going.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back span {
-  background: url(../images/index/back.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -120px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path a:hover {
   background-color: #FC7000;
 }
 #toolbar .tool-box #toolbar-nav .path .going:hover span {
-  background: url(../images/index/going-hover.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -240px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path .back:hover span {
-  background: url(../images/index/back-hover.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -200px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path a.disabled {
   border: 1px solid #ddd;
@@ -73,10 +77,12 @@ html {
   cursor: default;
 }
 #toolbar .tool-box #toolbar-nav .path .going.disabled:hover span {
-  background: url(../images/index/going.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back.disabled:hover span {
-  background: url(../images/index/back.png);
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -120px -30px;
 }
 #toolbar .tool-box #toolbar-nav .pages {
   font-size: 14px;
@@ -122,10 +128,12 @@ html {
   position: absolute;
   left: 3px;
   bottom: 5px;
-  background: url(../images/index/car-collect.png) no-repeat 0 0;
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -200px -30px;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon.active {
-  background: url(../images/index/car-nocollect.png) no-repeat 0 0;
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -240px -30px;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image img {
   width: 180px;

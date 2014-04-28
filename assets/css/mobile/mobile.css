@@ -5688,19 +5688,17 @@ body {
 }
 #filtercar-new .filter-option-item .text {
     float: left;
-    width: 75px;
     line-height: 60px;
+    font-weight: bold;
 }
 #filtercar-new .hr20 {
     background-color: #f3f3f3;
 }
 #filtercar-new .filter-option-item .filter-content {
     float: right;
-    width: 230px;
     text-align: center;
     padding-top: 13px;
 }
-#filtercar-new select,
 #filtercar-new select.s {
     width: 92px;
     padding-left: 8px;
@@ -5763,10 +5761,25 @@ body {
     margin-left: 10px;
     line-height: 35px;
     height: 35px;
+    font-weight: bold;
+    float: left;
+}
+#filtercar-new .filter-popup .buxian {
+    float: right;
+    margin: 8px 10px 0 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    line-height: 20px;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: normal;
 }
 #filtercar-new .filter-popup .item {
     text-align: center;
     line-height: 50px;
+}
+#filtercar-new .filter-popup .item.selected {
+    color: #ff4400;
 }
 #filtercar-new .filter-popup #other-brands {
     text-align: center;
@@ -5797,16 +5810,26 @@ body {
     height: 45px;
     line-height: 45px;
 }
+#filtercar-new .filter-popup .series-name.selected {
+    color: #ff4400;
+}
 #filtercar-new .btns {
     text-align: center;
     margin: 30px 0;
+}
+#filtercar-new .mobile-popup .title {
+    font-size: 16px;
+    text-align: left;
+}
+#filtercar-new .mobile-popup .cond {
+    color: #ff4400;
 }
 #detail .popup-wrapper {
     z-index: 10000;
     position: absolute;
     width: 100%;
 }
-#detail .mobile-popup {
+.mobile-popup {
     width: 300px;
     position: absolute;
     left: 50%;
@@ -5815,26 +5838,26 @@ body {
     padding-top: 30px;
     border-radius: 8px
 }
-#detail .mobile-popup .title {
+.mobile-popup .title {
     text-align: center;
     font-size: 18px;
 }
-#detail .mobile-popup .phone-input {
+.mobile-popup .phone-input {
     height: 35px;
     width: 230px;
     border-radius: 8px;
     padding-left: 10px;
     border: 2px solid #b1b1b1;
 }
-#detail .mobile-popup .btn-wrapper {
+.mobile-popup .btn-wrapper {
     text-align: center;
     padding: 30px;
 }
-#detail .mobile-popup .input-wrapper {
+.mobile-popup .input-wrapper {
     text-align: center;
     margin: 20px 0 5px 0;
 }
-#detail .mobile-popup .btn-main {
+.mobile-popup .btn-main {
     background-color: #ff4400;
     width: 130px;
     height: 40px;
@@ -5843,9 +5866,18 @@ body {
     border: none;
     font-size: 18px;
 }
-#detail .mobile-popup .wrong-tip {
+.mobile-popup .wrong-tip {
     color: #ff0000;
     font-size: 12px;
     width: 230px;
     margin: 0 auto;
+}
+#footer-user {
+    text-align: center;
+}
+#footer-user a {
+    color: #000;
+}
+#footer-user .username {
+    color: #ff4400;
 }
