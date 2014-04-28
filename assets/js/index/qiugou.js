@@ -1,4 +1,4 @@
-define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], function(CustomSelect, Select) {
+define(['souche/custom-select', 'lib/jquery.easing.min'], function(CustomSelect, Select) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -115,6 +115,55 @@ define(['souche/custom-select', 'souche/select', 'lib/jquery.easing.min'], funct
                     })
 
                 }
+            });
+            //求购历史滚动
+            (function($) {
+                $.fn.myScroll = function(options) {
+
+                    var opts = $.extend({}, options),
+                        intId = [];
+
+                    function marquee(obj, step) {
+
+                        obj.find("ul").animate({
+                            marginTop: '-=1'
+                        }, 0, function() {
+                            var s = Math.abs(parseInt($(this).css("margin-top")));
+                            if (s >= step) {
+                                $(this).find("li").slice(0, 1).appendTo($(this));
+                                $(this).css("margin-top", 0);
+                            }
+                        });
+                    }
+
+                    this.each(function(i) {
+                        var sh = 25,
+                            speed = 50,
+                            _this = $(this);
+                        intId[i] = setInterval(function() {
+                            if (_this.find("ul").height() <= _this.height()) {
+                                clearInterval(intId[i]);
+                            } else {
+                                marquee(_this, sh);
+                            }
+                        }, speed);
+
+                        _this.hover(function() {
+                            clearInterval(intId[i]);
+                        }, function() {
+                            intId[i] = setInterval(function() {
+                                if (_this.find("ul").height() <= _this.height()) {
+                                    clearInterval(intId[i]);
+                                } else {
+                                    marquee(_this, sh);
+                                }
+                            }, speed);
+                        });
+                    });
+                }
+            })(jQuery);
+            $(function() {
+                $(".slide").myScroll({});
             });
         },
         _submit: function() {

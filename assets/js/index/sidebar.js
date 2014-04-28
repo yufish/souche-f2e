@@ -104,25 +104,25 @@
             $(".erweima-small").removeClass("erweima-active");
             $(".erweima-big").hide();
         });
-        //建议
-        $("#suggest").mouseenter(function() {
-            $('.suggest-tag').addClass("suggest-tag-active");
-        }).mouseleave(function() {
-            $('.suggest-tag').removeClass("suggest-tag-active");
-        });
-        $(".suggest-tag").click(function() {
-            $(".suggest-area").val('在这里输入您的建议，感谢您对大搜车的帮助！');
-            if (!$('.suggest-remind').hasClass('hidden')) {
-                $('.suggest-remind').addClass('hidden');
-            }
-            $('.suggest-popup').removeClass("hidden");
-            $('.wrapGrayBg').show();
-        });
+        // //建议
+        // $("#suggest").mouseenter(function() {
+        //     $('.suggest-tag').addClass("suggest-tag-active");
+        // }).mouseleave(function() {
+        //     $('.suggest-tag').removeClass("suggest-tag-active");
+        // });
+        // $(".suggest-tag").click(function() {
+        //     $(".suggest-area").val('在这里输入您的建议，感谢您对大搜车的帮助！');
+        //     if (!$('.suggest-remind').hasClass('hidden')) {
+        //         $('.suggest-remind').addClass('hidden');
+        //     }
+        //     $('.suggest-popup').removeClass("hidden");
+        //     $('.wrapGrayBg').show();
+        // });
 
-        $(".suggest-close").click(function() {
-            $(".suggest-popup").addClass("hidden");
-            $('.wrapGrayBg').hide();
-        });
+        // $(".suggest-close").click(function() {
+        //     $(".suggest-popup").addClass("hidden");
+        //     $('.wrapGrayBg').hide();
+        // });
         var oldVal = $(".suggest-area").val();
         var numLen = parseInt($(".suggest-num ins").text());
         $(".suggest-area").focus(function() {

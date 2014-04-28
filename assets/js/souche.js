@@ -23,8 +23,7 @@ Souche.Util = function() {
         init: function() {
             var viewportWidth = $(window).width();
             var viewportHeight = $(window).height();
-
-            $(window).scroll(function() {
+            var check = function() {
                 var windowScrollTop = $(window).scrollTop();
                 for (var i in appearKV) {
                     var offset = $(i).offset();
@@ -36,7 +35,11 @@ Souche.Util = function() {
                         appearKV[i] = [];
                     }
                 }
-            });
+            };
+            $(document).ready(function() {
+                check();
+            })
+            $(window).scroll(check);
         }
     };
 }();
