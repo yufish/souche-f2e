@@ -124,7 +124,7 @@
   height: 90px;
   position: fixed;
   right: 0px;
-  bottom: 350px;
+  bottom: 250px;
   z-index: 10000;
 }
 #my-advisor img {
@@ -463,7 +463,7 @@
   width: 0px;
   height: 0px;
   position: fixed;
-  right: -49.99999999px;
+  right: -50px;
   bottom: 430px;
   z-index: 20000;
   background-color: #fff;
