@@ -1,4 +1,4 @@
-define(['souche/custom-select', 'lib/jquery.easing.min'], function(CustomSelect, Select) {
+define(['souche/custom-select', 'souche/util/load-info', 'lib/jquery.easing.min', ], function(CustomSelect, LoadInfo) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -39,41 +39,28 @@ define(['souche/custom-select', 'lib/jquery.easing.min'], function(CustomSelect,
                 placeholder: "请选择",
                 multi: false
             })
-            this._bindBrandChange();
-            this._onlyNum();
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
-            $.ajax({
-                url: contextPath + "/pages/dicAction/loadRootLevel.json",
-                dataType: "json",
-                data: {
-                    type: "car-subdivision"
-                },
-                success: function(data) {
-                    var html = "";
-                    data = brandSort(data.items);
-                    for (var i in data) {
-                        var b = data[i];
-                        var name = i;
-                        html += "<div data-name='" + name + "' class='clearfix word-container'><div class='word-title'>" + name + "</div><div class='word-brands'>"
-                        for (var n = 0; n < b.length; n++) {
-                            var brand = b[n]
-                            html += ('<a href="#" data-value="' + brand.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + brand.name + '</span></a>');
-                        }
-                        html += "</div></div>"
+            this._bindBrandChange();
+            this._onlyNum();
 
+            LoadInfo.loadBrands(function(data) {
+                var html = "";
+                data = brandSort(data.items);
+                for (var i in data) {
+                    var b = data[i];
+                    var name = i;
+                    html += "<div data-name='" + name + "' class='clearfix word-container'><div class='word-title'>" + name + "</div><div class='word-brands'>"
+                    for (var n = 0; n < b.length; n++) {
+                        var brand = b[n]
+                        html += ('<a href="#" data-value="' + brand.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + brand.name + '</span></a>');
                     }
-                    brandSelect.addOptions(html)
+                    html += "</div></div>"
 
-                },
-                error: function() {
-                    // alert("品牌信息请求出错，刷新后再试")
-                },
-                failure: function() {
-                    // alert("品牌信息请求出错，刷新后再试")
                 }
-            });
+                brandSelect.addOptions(html)
+            })
             $("#qiugou-form").on("submit", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
@@ -350,7 +337,6 @@ define(['souche/custom-select', 'lib/jquery.easing.min'], function(CustomSelect,
                     scrollTop: $(".qiugou").offset().top
                 }, 200)
             })
-            brandSelect.selected
             for (var i = 0; i < brandSelect.selected.length; i++) {
                 self._addSeries(brandSelect.selected[i].key)
             }
@@ -359,36 +345,23 @@ define(['souche/custom-select', 'lib/jquery.easing.min'], function(CustomSelect,
             if ($("#series_select .sc-select-list div[data-brandid=" + brandCode + "]").length) {
                 return;
             }
-            $.ajax({
-                url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
-                dataType: "json",
-                data: {
-                    type: "car-subdivision",
-                    code: brandCode
-                },
-                success: function(data) {
-                    var html = "";
+            LoadInfo.loadSeries(brandCode, function(data) {
+                var html = "";
 
-                    for (var i in data.codes) {
-                        var b = data.codes[i];
-                        var name = i;
-                        html += "<div data-name='" + name + "' data-brandid='" + brandCode + "' class='clearfix word-container'><div class='brand-title'>" + name + "</div>"
-                        for (var n = 0; n < b.length; n++) {
-                            var series = b[n]
-                            html += ('<a href="#" data-value="' + series.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + series.name + '</span></a>');
-                        }
-                        html += "</div>"
-
+                for (var i in data.codes) {
+                    var b = data.codes[i];
+                    var name = i;
+                    html += "<div data-name='" + name + "' data-brandid='" + brandCode + "' class='clearfix word-container'><div class='brand-title'>" + name + "</div>"
+                    for (var n = 0; n < b.length; n++) {
+                        var series = b[n]
+                        html += ('<a href="#" data-value="' + series.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + series.name + '</span></a>');
                     }
-                    seriesSelect.addOptions(html)
-                },
-                error: function() {
-                    // alert("车系信息请求出错，刷新后再试")
-                },
-                failure: function() {
-                    // alert("车系信息请求出错，刷新后再试")
+                    html += "</div>"
+
                 }
-            });
+                seriesSelect.addOptions(html)
+            })
+
         },
         _removeSeries: function(brandCode) {
 

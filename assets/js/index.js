@@ -1,4 +1,4 @@
-define(['lib/lazyload'], function(Lazyload) {
+define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyload) {
     Souche.Index = (function() {
         var config = {
             has_qiugou: false
@@ -29,7 +29,7 @@ define(['lib/lazyload'], function(Lazyload) {
                 $(".performance img").lazyload();
                 //限时优惠的初始化
                 Souche.Util.appear(".timebuy", function() {
-                    require(['souche/down-counter'], function(downCounter) {
+                    require(['index/timedown'], function(downCounter) {
                         $('.down-counter').each(function() {
                             var $this = $(this);
                             downCounter($this);
