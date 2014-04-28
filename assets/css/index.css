@@ -128,7 +128,8 @@ a:hover {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url(../images/index/qiugou-re.png?1) no-repeat;
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: 0 -20px;
   vertical-align: -8px;
 }
 #index .qiugou .result .car {
@@ -188,10 +189,12 @@ a:hover {
   vertical-align: -1px;
 }
 #index .qiugou .result .icon-jian {
-  background: url(../images/mylist/icon-jian.png?1) no-repeat;
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -70px 0;
 }
 #index .qiugou .result .icon-new {
-  background: url(../images/mylist/icon-new.png?1) no-repeat;
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -90px 0;
 }
 #index .qiugou .result .zhijiang {
   position: relative;
@@ -576,7 +579,8 @@ a:hover {
   height: 76px;
 }
 #index .timebuy .timebuy-wrap .timebuy-box .timebuy-list .timebuy-price .price-down {
-  background: url(../images/index/zhijiang.png) no-repeat;
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -190px 0;
   width: 40px;
   height: 35px;
   float: left;
@@ -968,7 +972,8 @@ a:hover {
   height: 7px;
   font-size: 0;
   line-height: 0;
-  background: url(../images/index/triangle.png);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -130px 0;
   position: relative;
   top: -7px;
   left: 15px;
@@ -1010,7 +1015,8 @@ a:hover {
 #index .recentsell .recentsell-wrap .recentsell-box ul li .triangle {
   width: 10px;
   height: 7px;
-  background: url(../images/index/triangle.png);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -130px 0;
   position: relative;
   top: -7px;
   left: 15px;
@@ -1044,7 +1050,8 @@ a:hover {
   padding: 10px;
 }
 #index .souche-wx .wx-wrap .wx-box .wx-code {
-  background: url(../images/index/souchewx.png);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -190px -80px;
   width: 70px;
   height: 70px;
   float: left;
@@ -1268,13 +1275,16 @@ a:hover {
   background-image: url(../images/index/r-small.png?1);
 }
 #index .filter-nav .inner .nav-item-hd i.item2 {
-  background-image: url(../images/index/m-small.png?1);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: 0 0;
 }
 #index .filter-nav .inner .nav-item-hd i.item3 {
-  background-image: url(../images/index/c-small.png?1);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -20px 0;
 }
 #index .filter-nav .inner .nav-item-hd i.item4 {
-  background-image: url(../images/index/t-small.png?1);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -40px 0;
 }
 #index .filter-nav .inner .nav-item-hd span {
   position: absolute;
@@ -1596,7 +1606,8 @@ a:hover {
 #index .carlife .bd .carlife-item .back .person .look span {
   height: 15px;
   width: 15px;
-  background-image: url(../images/index/to-look.png);
+  background-image: url(../images/index/index_sprite.png?123);
+  background-position: -110px 0;
   display: inline-block;
   margin-left: 10px;
   vertical-align: -4px;
