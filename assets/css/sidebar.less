@@ -35,7 +35,7 @@
     .collect-box{
       padding: 11px;
       display: block;
-      .collect-img{width: 29px;height: 27px;background: url(../images/index/collect.png?1);}
+      .collect-img{width: 29px;height: 27px;background: url(../images/index/toolbar_sprite.png?123);background-position: 0 0;}
       i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
     }
   }
@@ -187,17 +187,17 @@
     }
     a{
       padding: 6px 5px;display: block;
-      .icon{width: 27px;height: 25px;margin-left:10px;}
+      .icon{width: 27px;height: 25px;margin-left:10px;background: url(../images/index/toolbar_sprite.png?123);}
       i{margin-left:11px;display: block;color: #666;width:30px;font-size: 12px;text-align: left;font-style: normal;height:18px;overflow: hidden;}
     }
     .collect-box{
-      .collect-img{background: url(../images/index/collect.png?1) no-repeat 0px 0px;}
+      .collect-img{background-position: 0 0;}
     }
     .reserve-box{
-      .reserve-img{background: url(../images/index/reserve.png?1) no-repeat 0px 0px;}
+      .reserve-img{background-position: -40px 0;}
     }
     .sell-box{
-      .sell-img{background: url(../images/index/sell.png?1) no-repeat 0px 0px;}
+      .sell-img{background-position: -80px 0;}
     }
     .scan-box{
       .scan-img{background: url(../images/index/scan.png?1) no-repeat 0px 0px;}
@@ -222,16 +222,16 @@
       i{color: #fff8dd;}
     }
     .collect-box{
-      .collect-img{background: url(../images/index/collect-hover.png?1) no-repeat 0px 0px;}
+      .collect-img{background-position: -120px 0;}
     }
     .reserve-box{
-      .reserve-img{background: url(../images/index/reserve-hover.png?1) no-repeat 0px 0px;}
+      .reserve-img{background-position: -160px 0;}
     }
     .sell-box{
-      .sell-img{background: url(../images/index/sell-hover.png?1) no-repeat 0px 0px;}
+      .sell-img{background-position: -200px 0;}
     }
     .scan-box{
-      .scan-img{background: url(../images/index/scan-hover.png?1) no-repeat 0px 0px;}
+      .scan-img{}
     }
   }
 }
@@ -298,7 +298,7 @@
     }
     .collectside{
       border-top:  1px solid transparent;
-      a{.icon{background: url(../images/index/collect-hover.png?1);}}
+      a{.icon{background: url(../images/index/toolbar_sprite.png?123); background-position: -120px 0;}}
     }
     .collectside:hover,.collectside.active{
       border-bottom: 1px solid #dedede;
@@ -307,11 +307,11 @@
       border-top:  1px solid #f2f2f2;
       background: #f2f2f2;
       a{
-        .icon{background: url(../images/index/collect-active.png?1);}
+        .icon{background: url(../images/index/toolbar_sprite.png?123); background-position: 0 -30px;}
         i{color: #666;}
       }
     }
-    .reserveside{a{.icon{background: url(../images/index/reserve-hover.png?1);}}}
+    .reserveside{a{.icon{background: url(../images/index/toolbar_sprite.png?123); background-position: -160px 0;}}}
     .reserveside:hover,.reserveside.active{
       border-bottom: 1px solid #dedede;
       border-left: 1px solid #f2f2f2;
@@ -319,18 +319,18 @@
       border-right: none;
       background: #f2f2f2;
       a{
-        .icon{background: url(../images/index/reserve-active.png?1);}
+        .icon{background: url(../images/index/toolbar_sprite.png?123); background-position: -40px -30px;}
         i{color: #666;}
       }
     }
-    .sellside{a{.icon{background: url(../images/index/sell-hover.png?1);}}}
+    .sellside{a{.icon{background: url(../images/index/toolbar_sprite.png?123); background-position: -200px 0;}}}
     .sellside:hover,.sellside.active{
       border-bottom: 1px solid #dedede;
       border-left: 1px solid #f2f2f2;
       border-right: none;
       background: #f2f2f2;
       a{
-        .icon{background: url(../images/index/sell-active.png?1);}
+        .icon{background: url(../images/index/toolbar_sprite.png?123); background-position: -80px -30px;}
         i{color: #666;}
       }
     }
@@ -351,7 +351,7 @@
     float: left;
     overflow: hidden;
       background-color: #F2F2F2;
-    i{cursor:pointer;float: right;width: 20px;height: 20px;background: url(../images/index/toolbar-close.png?123) no-repeat center center;display: block;}
+    i{cursor:pointer;float: right;width: 11px;height: 11px;background: url(../images/index/toolbar_sprite.png?123) no-repeat; background-position: -240px 0;display: block;margin-top: 9px;margin-right: 9px;}
     .iframe-loading{
       width: 845px;
       height: 500px;
