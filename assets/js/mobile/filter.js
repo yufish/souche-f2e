@@ -48,7 +48,7 @@
             var s = codes[i];
             for (var j in s) {
                 var b = s[j];
-                html += '<div data-code="' + b.code + '"class="series-name">' + b.enName + '</div>';
+                html += '<div data-code="' + b.code + '"class="series-name">' + b.name + '</div>';
             }
             html += end;
         }
@@ -81,20 +81,20 @@
     var selectedBrand = '';
     var selectedSeries = '';
     var brandLoaded = false;
-    $('#btn-select-brand ').click(function () {
+    $('#btn-select-brand').click(function () {
         showPopup_b();
 
         if (!brandLoaded) {
             //add hotbrand first;
             var b, hotBrandsStr = '';
-            var $hotCtn = $('#brand-list #hot-brands ');
+            var $hotCtn = $('#brand-list #hot-brands');
             for (var i in hotBrands_g) {
                 hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4">' + hotBrands_g[i] + ' </div>';
             }
             $hotCtn.append(hotBrandsStr);
 
             $.ajax({
-                url: contextPath + "/pages/dicAction/loadAllExistBrands.json ",
+                url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
                 dataType: "json ",
                 success: function (data) {
                     makeBrands(data.items);
@@ -131,14 +131,18 @@
     })
 
     function setBrands(code, name) {
+        if (selectedBrand != code) {
+            $('#btn-select-series').css({
+                color: '#000'
+            }).text('选择车系');
+            selectedSeries = '';
+        }
         selectedBrand = code;
         $('#btn-select-brand').text(name);
         $('#brand-wrapper').addClass('hidden');
-        $('#btn-select-series').css({
-            color: '#000'
-        }).text('选择车系');
         $('#series-list .title').text(name);
         $('.wrapGrayBg').addClass('hidden');
+        $('#hot-brands .item').removeClass('selected');
     }
 
     function setSeries(code, name) {
@@ -146,12 +150,14 @@
         $('#btn-select-series').text(name).attr('data-brand', selectedBrand);
         $('#series-wrapper').addClass('hidden');
         $('.wrapGrayBg').addClass('hidden');
+        $('#series-wrapper .series-name').removeClass('selected');
     }
     $('#series-wrapper').on('click', '.series-name', function () {
         var $self = $(this);
         var code = $self.attr('data-code');
         var name = $self.text();
         setSeries(code, name);
+        $self.addClass('selected');
     })
 
     $('#hot-brands').on('click', '.item', function () {
@@ -159,6 +165,7 @@
         var code = $self.attr('data-code');
         var name = $self.text();
         setBrands(code, name);
+        $self.addClass('selected');
     });
     $('#other-brands-select').change(function () {
         var $self = $(this);
@@ -184,6 +191,13 @@
         $('#brand-wrapper').addClass('hidden');
         $('#series-wrapper').addClass('hidden');
     });
+
+    $('#brand-buxian').click(function () {
+        setBrands('', '选择品牌')
+    })
+    $('#series-buxian').click(function () {
+        setSeries('', '选择车系');
+    })
 
     $('#go-list-btn').click(function () {
         var dataObj = {
@@ -223,6 +237,7 @@
         dataObj.carModel = $('#select-model').val();
         dataObj.carEngineVolume = $('#select-volume').val();
         dataObj.transmissionType = $('#select-transmission').val();
+        //$.ajax for no reuslt
         var addr = contextPath + '/pages/mobile/list.html?';
         for (var i in dataObj) {
             addr += (i + '=' + dataObj[i] + '&');
