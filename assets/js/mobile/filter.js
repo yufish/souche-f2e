@@ -23,6 +23,8 @@
         "brand-155": "雪铁龙"
     };
 
+    var prices = [5, 8, 12, 16, 20, 25, 50, 70, 100];
+
     function makeBrands(brands) {
         var b, otherBrandsStr = '';
         var brandList = $('#brand-list');
@@ -80,6 +82,8 @@
     }
     var selectedBrand = '';
     var selectedSeries = '';
+    var selectedBrandName = '';
+    var selectedSeriesName = '';
     var brandLoaded = false;
     $('#btn-select-brand').click(function () {
         showPopup_b();
@@ -133,12 +137,21 @@
     function setBrands(code, name) {
         if (selectedBrand != code) {
             $('#btn-select-series').css({
-                color: '#000'
+                color: '#999'
             }).text('选择车系');
             selectedSeries = '';
         }
         selectedBrand = code;
-        $('#btn-select-brand').text(name);
+        selectedBrandName = name;
+        //重置所有与品牌有个的界面设置； 调用本方法的函数，要在后面自己设置选择状态
+        $('#btn-select-brand').text(name).css({
+            color: '#000'
+        });
+        var $other = $('#other-brands-select').css({
+            color: '#999'
+        })
+        $other.find('option').removeAttr('selected');
+        $other.find('.placeholder-option').attr('selected', 'selected');
         $('#brand-wrapper').addClass('hidden');
         $('#series-list .title').text(name);
         $('.wrapGrayBg').addClass('hidden');
@@ -147,7 +160,10 @@
 
     function setSeries(code, name) {
         selectedSeries = code;
-        $('#btn-select-series').text(name).attr('data-brand', selectedBrand);
+        selectedSeriesName = name;
+        $('#btn-select-series').text(name).attr('data-brand', selectedBrand).css({
+            color: '#000'
+        });
         $('#series-wrapper').addClass('hidden');
         $('.wrapGrayBg').addClass('hidden');
         $('#series-wrapper .series-name').removeClass('selected');
@@ -169,9 +185,16 @@
     });
     $('#other-brands-select').change(function () {
         var $self = $(this);
-        var code = $self.attr('data-code');
-        var name = $self.find('option:selected').text();
+        var code = $self.val();
+        var $selectedOpt = $self.find('option:selected')
+        var name = $selectedOpt.text();
+
         setBrands(code, name);
+        $self.css({
+            color: '#000'
+        });
+        $self.find('option').removeAttr('selected');
+        $selectedOpt.attr('selected', 'selected');
     })
 
 
@@ -199,6 +222,71 @@
         setSeries('', '选择车系');
     })
 
+    $('#select-price-1').change(function () {
+        var lowP = $(this).val();
+        var $highP = $('#select-price-2');
+        var curHighP = $highP.val();
+        $highP.empty();
+        var findSelected = false;
+        var html = '';
+        for (var i = 0; i < prices.length; i++) {
+            var p = prices[i];
+            if (p > lowP) {
+                if (p == curHighP) {
+                    findSelected = true;
+                    html += '<option selected="selected" value="' + p + '">' + p + '万</option>'
+                } else {
+                    html += '<option value="' + p + '">' + p + '万</option>'
+                }
+            }
+        }
+        if (findSelected) {
+            html += '<option value="100000000">不限</option>'
+        } else {
+            html += '<option selected="selected" value="100000000">不限</option>'
+        }
+        $highP.append(html)
+    });
+    $('#select-price-2').change(function () {
+        var highP = $(this).val();
+        var $lowP = $('#select-price-1');
+        var curLowP = $lowP.val();
+        $lowP.empty();
+        var html = '';
+        var findSelected = false;
+        for (var i = 0; i < prices.length; i++) {
+            var p = prices[i];
+            if (p < highP) {
+                if (p == curLowP) {
+                    findSelected = true;
+                    html += '<option selected="selected" value="' + p + '">' + p + '万</option>'
+                } else {
+                    html += '<option value="' + p + '">' + p + '万</option>'
+                }
+            }
+        }
+        if (findSelected) {
+            html = '<option value="0">不限</option>' + html;
+        } else {
+            html = '<option selected="selected" value="0">不限</option>' + html;
+        }
+        $lowP.append(html)
+    });
+
+    function hasResult(queryObj) {
+        $.ajax({
+            url: contextPath + '/pages/mobile/listAction/queryCars.json?index=9999',
+            data: queryObj,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                if (data.page.totalPage == 0) {
+                    $('.mobile-popup .cond').text(getAllCond());
+                }
+            }
+        })
+    }
+
     $('#go-list-btn').click(function () {
         var dataObj = {
             carBrand: '',
@@ -211,24 +299,19 @@
             transmissionType: ''
         };
 
-        var year1 = $('#select-year-1').val();
-        var year2 = $('#select-year-2').val();
-        if (year1 > year2) {
-            alert('请检查起止时间的选择.')
-            return;
+        var year = $('#select-year').val();
+        if (year == '') {
+            year = '0000-9999'
+        } else {
+            year = year + '-9999'
         }
-        var thisYear = (new Date()).getFullYear();
-        if (year2 == thisYear) {
-            year2 = '9999';
-        }
-
         var price1 = $('#select-price-1').val();
         var price2 = $('#select-price-2').val();
-
+        /*
         if ((+price1) > (+price2)) {
             alert('请检查价格范围的选择.')
             return;
-        }
+        }*/
         dataObj.carYear = year1 + '-' + year2;
         dataObj.carPrice = price1 + '-' + price2;
         dataObj.carBrand = selectedBrand;
@@ -238,10 +321,65 @@
         dataObj.carEngineVolume = $('#select-volume').val();
         dataObj.transmissionType = $('#select-transmission').val();
         //$.ajax for no reuslt
+        hasResult(dataObj);
         var addr = contextPath + '/pages/mobile/list.html?';
         for (var i in dataObj) {
             addr += (i + '=' + dataObj[i] + '&');
         }
-        window.location.href = addr;
+        //window.location.href = addr;
+    })
+
+    function getAllCond() {
+        var conds = [];
+        var price1 = $('#select-price-1').val();
+        var price2 = $('#select-price-2').val();
+        if (price1 == '0' && price2 == '100000000') {
+            //nothing to do
+        } else {
+            price2 = (price2 == '100000000' ? '不限' : price2 + '万')
+            conds.push(price1 + '万-' + price2);
+        }
+        if (selectedBrand) {
+            conds.push(selectedBrandName)
+        }
+        if (selectedSeries) {
+            conds.push(selectedSeriesName)
+        }
+        var mile = $('#select-mile').find('option:selected').text();
+        if (mile != '不限') {
+            conds.push(mile);
+        }
+        var year1 = $('#select-year-1').val();
+        var year2 = $('#select-year-2').val();
+        if (year1 == '0000' && year2 == '9999') {
+            //noting to do;
+        } else {
+            year1 = (year1 == '0000' ? '不限' : year1);
+            year2 = (year2 == '9999' ? (new Date).getFullYear() : year2);
+            conds.push(year1 + '-' + year2);
+        }
+
+        var model = $('#select-model').find('option:selected').text();
+        if (model != '不限') {
+            conds.push(model);
+        }
+        var volume = $('#select-volume').find('option:selected').text();
+        if (volume != '不限') {
+            conds.push(volume);
+        }
+        var transm = $('#select-transmission').find('option:selected').text();
+        if (transm != '不限') {
+            conds.push(transm);
+        }
+
+        if (conds.length) {
+            return conds.join('/');
+        }
+
+    }
+    $('.filter-content select').change(function () {
+        $(this).css({
+            color: '#000'
+        });
     })
 }(window.jQuery, undefined)
