@@ -344,7 +344,8 @@ body {
   display: block;
 }
 #footer .performance .per-1 a {
-  background: url(../../images/index/per-1.png) no-repeat;
+  background: url(../../images/index/toolbar_sprite.png?123);
+  background-position: 0 -60px;
   background-position: left;
 }
 #footer .performance .per-2 a {
