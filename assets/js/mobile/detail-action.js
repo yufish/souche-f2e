@@ -132,6 +132,10 @@ var Action = (function () {
                 })
 
             };
+
+            $('.phone-input').focus(function () {
+                $('.wrong-tip').addClass('hidden');
+            })
         }
     }
 })();
