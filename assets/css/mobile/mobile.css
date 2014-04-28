@@ -3522,8 +3522,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(251, 251, 251);
-    z-index: 100000;
+    background-color: #7f7f7f;
+    z-index: 1000;
     opacity: 0.6;
 }
 #yuyue-popup {
@@ -3736,6 +3736,10 @@ body {
 .hr20 {
     height: 20px;
     clear: both;
+}
+.hr1-gray {
+    height: 1px;
+    background-color: #e3e3e3;
 }
 #filtercar-h5-2 {
     position: relative;
@@ -5679,6 +5683,9 @@ body {
     padding: 0 10px;
     border-bottom: 1px solid #d0d0d0;
 }
+#filtercar-new .filter-option-item#car-price {
+    border-top: 1px solid #d0d0d0;
+}
 #filtercar-new .filter-option-item .text {
     float: left;
     width: 75px;
@@ -5689,12 +5696,14 @@ body {
 }
 #filtercar-new .filter-option-item .filter-content {
     float: right;
-    width: 220px;
+    width: 230px;
+    text-align: center;
     padding-top: 13px;
 }
-#filtercar-new #car-price select,
-#filtercar-new #car-year select {
+#filtercar-new select,
+#filtercar-new select.s {
     width: 92px;
+    padding-left: 8px;
 }
 #filtercar-new select {
     width: 220px;
@@ -5705,12 +5714,21 @@ body {
     border-radius: 8px;
     background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
     background-size: 32px;
-    background-color: #fff;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+#filtercar-new .for-select {
+    width: 220px;
+    height: 35px;
+    border: 2px solid #b1b1b1;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    border-radius: 8px;
 }
 #filtercar-new .filter-option-item .span-to {
-    margin: 0 8px 0 6px;
+    margin: 0 6px;
 }
-#filtercar-new .content .array-d {
+#filtercar-new .filter-option-item .array-d {
     background: url(../../images/mob/h5-2/array.png) no-repeat;
     background-size: 8px;
     -webkit-transform: rotate(90deg);
@@ -5719,4 +5737,115 @@ body {
     width: 13px;
     float: right;
     margin: 25px 20px 0 5px;
+}
+#filtercar-new .filter-option-item.reverse .array-d {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+#filtercar-new .popup-wrapper {
+    position: absolute;
+    z-index: 10000;
+    left: 10px;
+}
+#filtercar-new filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+}
+#filtercar-new .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+}
+#filtercar-new .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+}
+#filtercar-new .filter-popup .title {
+    margin-left: 10px;
+    line-height: 35px;
+    height: 35px;
+}
+#filtercar-new .filter-popup .item {
+    text-align: center;
+    line-height: 50px;
+}
+#filtercar-new .filter-popup #other-brands {
+    text-align: center;
+    padding: 20px 0;
+}
+#filtercar-new .filter-popup .series-title {
+    text-align: center;
+    min-width: 25%;
+    float: left;
+    height: 45px;
+}
+#filtercar-new .filter-popup .series-title .text {
+    display: inline-block;
+    border-radius: 8px 0 0 8px;
+    margin-top: 10px;
+    padding: 4px;
+    color: #fff;
+    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center right;
+    background-color: #ff4400;
+    background-size: 8px 24px;
+    padding-right: 12px;
+    min-width: 56px;
+}
+#filtercar-new .filter-popup .series-name {
+    text-align: center;
+    min-width: 25%;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+}
+#filtercar-new .btns {
+    text-align: center;
+    margin: 30px 0;
+}
+#detail .popup-wrapper {
+    z-index: 10000;
+    position: absolute;
+    width: 100%;
+}
+#detail .mobile-popup {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-color: #fff;
+    padding-top: 30px;
+    border-radius: 8px
+}
+#detail .mobile-popup .title {
+    text-align: center;
+    font-size: 18px;
+}
+#detail .mobile-popup .phone-input {
+    height: 35px;
+    width: 230px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #b1b1b1;
+}
+#detail .mobile-popup .btn-wrapper {
+    text-align: center;
+    padding: 30px;
+}
+#detail .mobile-popup .input-wrapper {
+    text-align: center;
+    margin: 20px 0 5px 0;
+}
+#detail .mobile-popup .btn-main {
+    background-color: #ff4400;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+#detail .mobile-popup .wrong-tip {
+    color: #ff0000;
+    font-size: 12px;
+    width: 230px;
+    margin: 0 auto;
 }
