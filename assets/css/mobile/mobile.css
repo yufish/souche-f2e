@@ -5872,3 +5872,12 @@ body {
     width: 230px;
     margin: 0 auto;
 }
+#footer-user {
+    text-align: center;
+}
+#footer-user a {
+    color: #000;
+}
+#footer-user .username {
+    color: #ff4400;
+}
