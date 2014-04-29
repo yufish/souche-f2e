@@ -143,26 +143,45 @@
         }
         selectedBrand = code;
         selectedBrandName = name;
-        //重置所有与品牌有个的界面设置； 调用本方法的函数，要在后面自己设置选择状态
+        $('#hot-brands .item').removeClass('selected');
+        var $other = $('#other-brands-select')
+        $other.find('option').removeAttr('selected');
         $('#btn-select-brand').text(name).css({
             color: '#000'
         });
-        var $other = $('#other-brands-select').css({
-            color: '#999'
-        })
-        $other.find('option').removeAttr('selected');
-        $other.find('.placeholder-option').attr('selected', 'selected');
+        if (code == '') {
+            $('#btn-select-brand').css({
+                color: '#999'
+            });
+        } else if (hotBrands_g[code]) {
+            $('#hot-brands .item[data-code=' + code + ']').addClass('selected')
+            $other.css({
+                color: '#999'
+            })
+            $other.find('.placeholder-option').attr('selected', 'selected');
+        } else {
+            $other.css({
+                color: '#ff4400'
+            }).find('option[value=' + code + ']')
+                .attr('selected', 'selected');
+        }
+
+
         $('#brand-wrapper').addClass('hidden');
         $('#series-list .title').text(name);
         $('.wrapGrayBg').addClass('hidden');
-        $('#hot-brands .item').removeClass('selected');
     }
 
     function setSeries(code, name) {
         selectedSeries = code;
         selectedSeriesName = name;
+        if ('' == code) {
+            var color = '#999';
+        } else {
+            var color = '#000'
+        }
         $('#btn-select-series').text(name).attr('data-brand', selectedBrand).css({
-            color: '#000'
+            'color': color
         });
         $('#series-wrapper').addClass('hidden');
         $('.wrapGrayBg').addClass('hidden');
@@ -186,17 +205,9 @@
     $('#other-brands-select').change(function () {
         var $self = $(this);
         var code = $self.val();
-        var $selectedOpt = $self.find('option:selected')
-        var name = $selectedOpt.text();
-
+        var name = $self.find('option:selected').text();
         setBrands(code, name);
-        $self.css({
-            color: '#000'
-        });
-        $self.find('option').removeAttr('selected');
-        $selectedOpt.attr('selected', 'selected');
     })
-
 
     $('#option-advance').click(function () {
         var $self = $(this);
@@ -330,6 +341,13 @@
     })
 
     function getAllCond() {
+        function buildUtil(item, prefix, suffix) {
+            prefix = prefix || '';
+            suffix = suffix || '';
+            if (item && item != '不限' && item != '') {
+                conds.push(prefix + item + suffix);
+            }
+        }
         var conds = [];
         var price1 = $('#select-price-1').val();
         var price2 = $('#select-price-2').val();
@@ -345,37 +363,13 @@
         if (selectedSeries) {
             conds.push(selectedSeriesName)
         }
-        var mile = $('#select-mile').find('option:selected').text();
-        if (mile != '不限') {
-            conds.push(mile);
-        }
-        var year1 = $('#select-year-1').val();
-        var year2 = $('#select-year-2').val();
-        if (year1 == '0000' && year2 == '9999') {
-            //noting to do;
-        } else {
-            year1 = (year1 == '0000' ? '不限' : year1);
-            year2 = (year2 == '9999' ? (new Date).getFullYear() : year2);
-            conds.push(year1 + '-' + year2);
-        }
+        buildUtil($('#select-mile').find('option:selected').text());
+        buildUtil($('#select-year').find('option:selected').text(), '最远年份');
+        buildUtil($('#select-model').find('option:selected').text());
+        buildUtil($('#select-volume').find('option:selected').text());
+        buildUtil($('#select-transmission').find('option:selected').text());
 
-        var model = $('#select-model').find('option:selected').text();
-        if (model != '不限') {
-            conds.push(model);
-        }
-        var volume = $('#select-volume').find('option:selected').text();
-        if (volume != '不限') {
-            conds.push(volume);
-        }
-        var transm = $('#select-transmission').find('option:selected').text();
-        if (transm != '不限') {
-            conds.push(transm);
-        }
-
-        if (conds.length) {
-            return conds.join('/');
-        }
-
+        return conds.join('/');
     }
     $('.filter-content select').change(function () {
         $(this).css({

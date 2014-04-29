@@ -1,5 +1,5 @@
-Souche = window.Souche || {};
 Souche.Sidebar = (function() {
+    Souche = window.Souche || {};
     $(document).ready(function() {
         //加载未读数
         $.ajax({

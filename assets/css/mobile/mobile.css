@@ -5725,6 +5725,9 @@ body {
     box-sizing: border-box;
     coLor: #999;
 }
+#filtercar-new select option {
+    coLor: #000;
+}
 #filtercar-new .for-select {
     width: 220px;
     height: 35px;
@@ -5831,6 +5834,7 @@ body {
 #filtercar-new .mobile-popup .title {
     font-size: 16px;
     text-align: left;
+    line-height: 20px;
 }
 #filtercar-new .mobile-popup .cond {
     color: #ff4400;
