@@ -52,7 +52,7 @@ html {
 }
 #toolbar .tool-box #toolbar-nav .path .going span {
   background: url(../images/index/toolbar_sprite.png?123);
-  background-position: -160px -30px;
+  background-position: -159.99999999px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back span {
   background: url(../images/index/toolbar_sprite.png?123);

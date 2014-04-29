@@ -1,5 +1,5 @@
+Souche = window.Souche || {};
 Souche.Sidebar = (function () {
-    Souche = window.Souche || {};
     $(document).ready(function () {
         //加载未读数
         $.ajax({
@@ -242,8 +242,8 @@ Souche.Sidebar = (function () {
 
 })();
 
-if (typeof (define) != "undefined") {
-    define(['souche'], function () {
-        return Souche.Sidebar;
-    })
-}
+// if (typeof(define) != "undefined") {
+//     define(['souche'], function() {
+//         return Souche.Sidebar;
+//     })
+// }
