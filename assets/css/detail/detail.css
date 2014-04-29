@@ -1942,6 +1942,7 @@ body {
 #detail_main .detail-button .faved {
   color: #666;
   background: #ffffff url(../../images/detail/faved-btn.png) no-repeat 12px center;
+  cursor: default;
 }
 #detail_main .detail-button .jiangjia_tongzhi_wo {
   background: #ffffff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
@@ -2706,7 +2707,7 @@ body {
   background: url(../../images/fed/detail_sprite_common.png?4) no-repeat;
 }
 .apply_popup .result_p span.buy_success {
-  background-position: -224.99999999px -680px;
+  background-position: -225px -680px;
 }
 .apply_popup .result_p span.buy_failed {
   background: url(../../images/fed/buy_faild.png) no-repeat;
@@ -4470,7 +4471,7 @@ body {
 }
 .yuyue-full span {
   background: url(../../images/fed/detail_sprite_common.png?4) no-repeat;
-  background-position: -179.99999999px -800px;
+  background-position: -180px -800px;
   display: block;
   width: 40px;
   height: 40px;

@@ -1,8 +1,19 @@
-(function() {
+define(function() {
 
     var SCDB = function(_namespace) {
         this.namespace = (_namespace || 'souche') + "_";
     }
+    // if (typeof(localStorage) == "undefined") {
+    //     alert(typeof(localStorage))
+    //     var localStorage = {
+    //         getItem: function() {
+    //             return "";
+    //         },
+    //         setItem: function() {
+
+    //         }
+    //     }
+    // }
     var util = {
         /**
          * 将任何值转换为数组，如果已经是直接返回。
@@ -68,7 +79,5 @@
             localStorage.setItem(key, '');
         }
     }
-    define(function() {
-        return SCDB;
-    });
-})();
+    return SCDB;
+});
