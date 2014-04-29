@@ -46,7 +46,7 @@
 
         for (var i in codes) {
             html += start;
-            html += '<div class="series-title"><span class = "text" >' + i + '</span></div >'
+            html += '<div class="series-title"><span class = "text" >' + i + '</span><span class="bg"></span></div >'
             var s = codes[i];
             for (var j in s) {
                 var b = s[j];
@@ -228,10 +228,10 @@
     });
 
     $('#brand-buxian').click(function () {
-        setBrands('', '选择品牌')
+        setBrands('', '不限')
     })
     $('#series-buxian').click(function () {
-        setSeries('', '选择车系');
+        setSeries('', '不限');
     })
 
     $('#select-price-1').change(function () {
@@ -253,9 +253,9 @@
             }
         }
         if (findSelected) {
-            html += '<option value="100000000">不限</option>'
+            html = '<option value="100000000">不限</option>' + html;
         } else {
-            html += '<option selected="selected" value="100000000">不限</option>'
+            html = '<option selected="selected" value="100000000">不限</option>' + html;
         }
         $highP.append(html)
     });
