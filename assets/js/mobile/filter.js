@@ -46,7 +46,7 @@
 
         for (var i in codes) {
             html += start;
-            html += '<div class="series-title"><span class = "text" >' + i + '</span></div >'
+            html += '<div class="series-title"><span class = "text" >' + i + '</span><span class="bg"></span></div >'
             var s = codes[i];
             for (var j in s) {
                 var b = s[j];

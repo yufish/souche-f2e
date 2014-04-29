@@ -5812,11 +5812,17 @@ body {
     padding: 4px;
     color: #fff;
     background-color: #ff4400;
-    background-size: 8px 24px;
     min-width: 56px;
+    vertical-align: top;
 }
-#fuck {
-    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center right;
+#filtercar-new .filter-popup .series-title .bg {
+    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center center;
+    background-size: 8px 24px;
+    display: inline-block;
+    width: 8px;
+    height: 24px;
+    margin-top: 10px;
+    vertical-align: top;
 }
 #filtercar-new .filter-popup .series-name {
     text-align: center;
@@ -5909,6 +5915,8 @@ body {
     padding: 15px 30px;
     z-index: 10000;
     position: absolute;
+    left: 50%;
+    margin-left: -146px;
 }
 .login-popup input {
     border: 1px solid #b1b1b1;
@@ -5925,6 +5933,7 @@ body {
 .login-popup button {
     border-radius: 8px;
     border: none;
+    color: #fff;
 }
 .login-popup .get-code {
     background-color: #9caed2;
