@@ -1,2 +1,46 @@
-script.
-  alert(window.navigator.userAgent)
+doctype html
+html
+    head.
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+        <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+          <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
+          <link href="http://f2e.souche.com/assets/css/ui/brand-series-select.css" rel="stylesheet" type="text/css" />
+          <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
+          <script>
+          var contextPath = "http://localhost:8080/soucheweb/";
+          require.config({
+            baseUrl: "http://f2e.souche.com/assets/js"
+          });
+          </script>
+          <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+
+    body
+        p.
+            <div class="sc-select sc-custom-select brand-select" id="brand_select">
+              <div class="sc-select-hd">
+                <div class="sc-select-content clearfix"></div>
+                <div class="sc-select-action hidden"><i></i></div>
+              </div>
+              <div class="sc-select-list hidden sc-popup">
+                <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
+                <div class="sc-popup-bd"></div>
+              </div>
+              <input type="hidden" name="brands" class="selected_values"/>
+            </div>
+           
+        p.
+            <div class="sc-select sc-custom-select series-select" id="series_select">
+            <div class="sc-select-hd">
+              <div class="sc-select-content clearfix"></div>
+              <div class="sc-select-action hidden"><i></i></div>
+            </div>
+            <div class="sc-select-list hidden sc-popup">
+              <div class="sc-popup-hd">请选择您喜欢的车系<a class="close">确认</a></div>
+              <div class="sc-popup-bd"></div>
+            </div>
+            <input type="hidden" name="sereies" class="selected_values"/>
+          </div>
+        script.
+            require(['backend/brand-series-select'],function(select){
+              select.init();
+            })

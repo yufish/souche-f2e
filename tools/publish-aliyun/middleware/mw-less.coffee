@@ -6,7 +6,8 @@ module.exports = (file,callback)->
     paths: [path.dirname(file)],
     filename: 'style.less'
   })
-  result_file = file.replace(/^(.*)\.less$/,'$1.css')
+  css_file = file.replace(/^(.*)\.less$/,'$1.css')
+  result_file = css_file.replace(/^.*?\/assets/,config.output_path)
   parser.parse fs.readFileSync(file,'utf-8'),(e, css)->
     if e 
       console.error e
@@ -16,4 +17,4 @@ module.exports = (file,callback)->
         if error then console.error error
         else
           console.log 'compile less to ' + result_file
-        callback error,{path:result_file,realPath:result_file}
+        callback error,{path:css_file,realPath:result_file}
