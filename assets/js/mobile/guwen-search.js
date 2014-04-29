@@ -194,7 +194,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                         }*/
                         userTrack(trackData);
                         stepRecords.push(pageStep);
-                        console.log(trackData);
+                        //console.log(trackData);
                     }
                     window.location.hash = 'page' + pageIndex;
 
