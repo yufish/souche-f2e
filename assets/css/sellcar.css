@@ -1,0 +1,243 @@
+body {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+.wrapper {
+  width: 1191px;
+  margin: 0 auto;
+  position: relative;
+}
+#sellcar #content .banner {
+  width: 100%;
+  height: 538px;
+  background: url(../images/sellcar/banner.png) no-repeat;
+  background-position: center;
+  background-color: #ffb722;
+}
+#sellcar #content .banner .wrapper {
+  height: 538px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform {
+  width: 330px;
+  height: 360px;
+  background-color: #fff;
+  padding: 30px;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform h1 {
+  font-size: 22px;
+  color: #262626;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from {
+  clear: both;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list label {
+  font-size: 16px;
+  color: #545454;
+  line-height: 35px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list select {
+  width: 250px;
+  margin-left: 10px;
+  border: 1px solid #d1d1d1;
+  height: 33px;
+  padding-left: 5px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list input {
+  border: 1px solid #d1d1d1;
+  width: 243px;
+  margin-left: 3px;
+  height: 33px;
+  padding-left: 5px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list .sell-phone {
+  margin-bottom: 20px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .sellcar-submit button {
+  display: block;
+  width: 185px;
+  height: 35px;
+  background-color: #fc7000;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  margin-top: 20px;
+  margin-left: 64px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform .qiugou-history {
+  font-size: 12px;
+  color: #666;
+  height: 20px;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+#sellcar #content .sell-mod .mod-title {
+  font-size: 42px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#sellcar #content .sell-mod p {
+  color: #929292;
+  font-size: 16px;
+  line-height: 25px;
+}
+#sellcar #content #findbuyer {
+  height: 550px;
+  background-color: #f3f3f3;
+}
+#sellcar #content #findbuyer .mod-text {
+  width: 355px;
+  margin-left: 110px;
+  float: left;
+  margin-top: 180px;
+}
+#sellcar #content #realvalue {
+  height: 540px;
+  background-color: #fff;
+}
+#sellcar #content #realvalue .mod-text {
+  width: 426px;
+  float: right;
+  margin-right: 40px;
+  margin-top: 195px;
+}
+#sellcar #content #helpsell {
+  height: 550px;
+  background-color: #f3f3f3;
+}
+#sellcar #content #helpsell .mod-text {
+  width: 385px;
+  margin-top: 220px;
+  float: left;
+  margin-left: 75px;
+}
+#sellcar #content #timeandprice {
+  height: 755px;
+  background-color: #fff;
+}
+#sellcar #content #timeandprice .title {
+  padding-top: 80px;
+  width: 430px;
+  margin: 0 auto;
+}
+#sellcar #content #timeandprice .title h1 {
+  font-size: 42px;
+  color: #000000;
+  text-align: center;
+}
+#sellcar #content #sellstep {
+  height: 300px;
+  background-color: #f3f3f3;
+}
+#sellcar #content #sellstep .title {
+  padding-top: 40px;
+  width: 280px;
+  margin: 0 auto;
+}
+#sellcar #content #sellstep .title h1 {
+  color: #262626;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+#sellcar #content #faq {
+  height: 1110px;
+  background-color: #fff;
+}
+#sellcar #content #faq .title {
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+#sellcar #content #faq .title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #262626;
+}
+#sellcar #content #faq .faq-content {
+  width: 1015px;
+  margin: 0 auto;
+}
+#sellcar #content #faq .faq-content .faq-left {
+  width: 510px;
+  float: left;
+}
+#sellcar #content #faq .faq-content .faq-left .question {
+  margin-bottom: 80px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title {
+  height: 40px;
+  border-bottom: 3px solid #262626;
+  width: 100%;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title i {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/sellcar/q.png) no-repeat;
+  float: left;
+  margin-right: 5px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title span {
+  display: block;
+  float: left;
+  font-size: 24px;
+  color: #262626;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer {
+  margin-top: 15px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer p {
+  font-size: 14px;
+  color: #444444;
+  line-height: 25px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer p a {
+  color: #0090cc;
+  cursor: pointer;
+}
+#sellcar #content #faq .faq-content .faq-left .q2 .q-answer h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+  margin-top: 15px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer ul li {
+  font-size: 14px;
+  color: #444444;
+  line-height: 25px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer .answer-left {
+  float: left;
+  margin-right: 60px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer .answer-right {
+  float: left;
+}
+#sellcar #content #faq .faq-content .faq-right {
+  float: right;
+  width: 300px;
+}
+#sellcar #content #faq .faq-content .faq-right .faq-button {
+  width: 298px;
+  height: 298px;
+  background: url(../images/sellcar/sellcar.png) no-repeat;
+  margin-top: 100px;
+}
+#sellcar #content #faq .faq-content .faq-right .faq-button a {
+  width: 298px;
+  height: 298px;
+  display: block;
+}
