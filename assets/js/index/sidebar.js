@@ -242,8 +242,8 @@ Souche.Sidebar = (function() {
 
 })();
 
-if (typeof(define) != "undefined") {
-    define(['souche'], function() {
-        return Souche.Sidebar;
-    })
-}
+// if (typeof(define) != "undefined") {
+//     define(['souche'], function() {
+//         return Souche.Sidebar;
+//     })
+// }
