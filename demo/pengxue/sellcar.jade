@@ -1,0 +1,183 @@
+doctype html
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" id="viewport" content="width=1340" /> 
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/index.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/sellcar.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+    <script>
+      var contextPath = "http://www.souche.com/";
+      require.config({
+        baseUrl: "http://f2e.souche.com/assets/js"
+      });
+    </script>
+  body#sellcar
+    #header
+      .wrapper
+        a.logo(href="#")
+          img(src="http://f2e.souche.com/assets/images/index/logo.png")
+        .search
+          form(action="")
+            input.search-text(type="text",name="keyword",placeholder="提示")
+            button.search-submit(type="submit") 搜 索
+          .hot-keywords
+            a(href="#") 热搜词
+            a(href="#") 热搜词
+            a(href="#") 热搜词
+        .head-tel
+          img(src="http://f2e.souche.com/assets/images/index/head-tel.png")
+    #nav
+      .wrapper
+        span.main-navs
+          a.active(href="#") 首页
+          a(href="#") 我要买车
+          a(href="#") 我要卖车
+        span.other-navs
+          a(href="#") 我的大搜车
+          a(href="#") 登录
+          a.last(href="#") 注册
+    #content
+      .banner.clearfix
+        .wrapper.clearfix
+          #J_sellcarform.applyInfo.evaluate_counter
+            h1 填写车辆信息，我们帮你买车
+            from#sellcar-from.clearfix(action="" method="post").
+              <div class="error_remind" style="display:none;"></div>
+              <div class="from-list">
+                <label for="sell_brand">品&nbsp;&nbsp;&nbsp;牌</label> 
+                <select id="sell_brand" name="brand" >
+                  <option value="">请选择品牌</option>
+                </select>
+              </div> 
+              <div class="from-list">
+                <label for="sell_set">车&nbsp;&nbsp;&nbsp;系</label> 
+                <select id="sell_set" name="series" >
+                  <option value="">请选择车系</option>
+                </select>
+              </div>
+              <div class="from-list">
+                <label for="sell_type">型&nbsp;&nbsp;&nbsp;号</label> 
+                <select id="sell_type" name="model" >
+                    <option value="">请选择型号</option>
+                </select>
+              </div>
+              <div class="from-list">
+                <label for="sell_dis">*手机号</label> 
+                <input type="text" id="sell_phone" name="phone"  value="" placeholder="请填写手机号"/>
+                  <div class="warning hidden">请输入正确的手机号码</div>
+              </div>
+              <div class="sellcar-submit">
+                <button click_type="sellcar-submit" type="submit" class="evaluate_button" id="sellcar-submit">提交</button>
+              </div>
+            .qiugou-history
+              .slide
+                ul.qiugou-list
+                  li.item 136XXXX9340在大搜车成功卖出了一辆111
+                  li.item 136XXXX9340在大搜车成功卖出了一辆222
+                  li.item 136XXXX9340在大搜车成功卖出了一辆333
+                  li.item 136XXXX9340在大搜车成功卖出了一辆444
+      #findbuyer.sell-mod
+        .wrapper
+          .mod-text
+            .mod-title 帮你找到最终买家
+            p 大搜车是专业第三方平台，帮你跳过4S店、车商、黄牛等传统二手车倒卖环节，获得更大价值
+      #realvalue.sell-mod
+        .wrapper
+          .mod-text
+            .mod-title 帮你还原爱车真正价值
+            p 大搜车提供的检测+全面清洗服务
+            p 让你的车干干净净，车况透明，更容易卖出
+      #helpsell.sell-mod
+        .wrapper
+          .mod-text
+            .mod-title 帮你轻松卖车
+            p 大搜车帮你料理找买家、过户、打款、提供后续服务等
+            p 一系列卖车的麻烦事，卖车从此不再难
+      #timeandprice
+        .wrapper
+          .title
+            h1 我们帮你达到了
+            h1 时间和价格的完美平衡
+      #sellstep
+        .wrapper
+          .title
+            h1 在大搜车卖车只需三步
+      #faq
+        .wrapper
+          .title
+            h1 FAQ
+          .faq-content.clearfix
+            .faq-left
+              .q1.question
+                .q-title
+                  i
+                  span 大搜车用什么方式帮你买车？
+                .q-answer.
+                  <p> 大搜车是帮你卖车的平台，不收购车辆。</p>
+                  <p> 在大搜车卖车有三种方式：</p>
+                  <p> 1、把车放在大搜车门店寄售。<a href="#">发送地址到手机</a></p>
+                  <p> 2、通过线上快速竞价卖出。</p>
+                  <p> 3、通过大搜车卖车神器上传车辆信息，有买家感兴趣再出售。</p>
+              .q2.question
+                .q-title
+                  i
+                  span 在大搜车卖车需要什么费用？
+                .q-answer
+                  h2 寄售：
+                  p 卖车成功，大搜车收取3%的服务费（5000元封顶）
+                  p 卖车不成功，不收取寄售服务费
+                  h2 线上快速竞价：
+                  p 无论是否成交，均不收取费用。
+              .q3.question
+                .q-title
+                  i 
+                  span 在大搜车卖车需要带什么东西？
+                .q-answer.clearfix
+                  ul.answer-left
+                    li 1、身份证
+                    li 2、行驶证
+                    li 3、车辆登记证
+                    li 4、全部车辆钥匙
+                  ul.answer-right
+                    li 5、车示标（环保标、检字标、交强险标）
+                    li 6、交强险单
+                    li 7、购置税本及购置税发票
+                    li 8、购车发票/最近一次过户发票
+            .faq-right
+              .faq-button
+                a(href="#")
+    #footer  
+      .footer-content
+        .wrapper
+          .performance.clearfix
+            .per-1.per
+              i
+              .t 绝无火烧车，水淹车
+              .st 365项质检，保证车辆品质
+            .per-2.per
+              i
+              .t 180天免费质保
+              .st 二手车享受新车质保服务
+            .per-3.per
+              i
+              .t 分期付款
+              .st 提供最长3年分期付款服务
+          .company_info.
+            <div class="wrap clearfix">
+              <a target="_blank" rel="nofollow" href="/pages/details/soucheidea.html">大搜车理念</a>|
+              <a target="_blank" rel="nofollow" href="/pages/details/soucheabout.html">关于大搜车</a>|
+              <a target="_blank" rel="nofollow" href="/pages/details/purchase.html">购车指南</a>|
+              <a target="_blank" rel="nofollow" href="/pages/details/consignment.html">寄售指南</a>|
+              <a target="_blank" rel="nofollow" href="/pages/details/contact.html">联系大搜车</a>|
+              <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
+            </div>
+            <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
