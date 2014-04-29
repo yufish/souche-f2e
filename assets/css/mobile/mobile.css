@@ -5811,11 +5811,12 @@ body {
     margin-top: 10px;
     padding: 4px;
     color: #fff;
-    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center right;
     background-color: #ff4400;
     background-size: 8px 24px;
-    padding-right: 12px;
     min-width: 56px;
+}
+#fuck {
+    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center right;
 }
 #filtercar-new .filter-popup .series-name {
     text-align: center;
@@ -5937,4 +5938,8 @@ body {
 }
 .login-popup .center-wrapper {
     margin: 15px 0;
+}
+.login-popup .wrong-tip {
+    text-align: left;
+    font-size: 12px;
 }
