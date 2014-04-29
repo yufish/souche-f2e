@@ -174,7 +174,9 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
                                 car_brands: bStr
                             }
-                        } else if (pageStep == 3) {
+                        }
+                        /*else if (pageStep == 3) {
+                           
                             var min_year, max_year;
                             if (yearCode.trim() == '') {
                                 min_year = '';
@@ -189,16 +191,16 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 car_year_min: min_year,
                                 car_year_max: max_year
                             }
-                        }
+                        }*/
                         userTrack(trackData);
                         stepRecords.push(pageStep);
                         console.log(trackData);
                     }
                     window.location.hash = 'page' + pageIndex;
 
-                    if (pageIndex == 3) {
+                    if (pageIndex == 2) {
                         $('.submit-btn').text('完成定制').show();
-                    } else if (pageIndex == 4) {
+                    } else if (pageIndex == 3) {
                         $('.submit-btn').hide();
                     } else {
                         $('.submit-btn').text('下一步').show();
@@ -383,7 +385,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                         data: {
                             brands: bStr,
                             series: '',
-                            year: yearCode,
+                            //year: yearCode,
                             minPrice: minPrice,
                             maxPrice: maxPrice
                         },
@@ -413,7 +415,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
 
                 $('.submit-btn').click(function () {
-                    if (curPageIndex != 3) {
+                    if (curPageIndex != 2) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
                             loadAllBrands();
@@ -485,7 +487,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 });
 
                 var curNumOfEllipsis = 1;
-                $ellipsis = $('#page-4 .ellipsis');
+                $ellipsis = $('#page-3 .ellipsis');
                 setInterval(function () {
                     var txt = '';
                     for (var i = 0; i < curNumOfEllipsis; i++) {
