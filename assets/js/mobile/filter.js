@@ -224,6 +224,7 @@
         $(this).addClass('hidden');
         $('#brand-wrapper').addClass('hidden');
         $('#series-wrapper').addClass('hidden');
+        $('.mobile-popup').addClass('hidden');
     });
 
     $('#brand-buxian').click(function () {
@@ -284,21 +285,35 @@
         $lowP.append(html)
     });
 
-    function hasResult(queryObj) {
+    function hasResult(dataObj) {
         $.ajax({
-            url: contextPath + '/pages/mobile/listAction/queryCars.json?index=9999',
-            data: queryObj,
+            url: contextPath + '/pages/mobile/listAction/queryCars.json?index=99999',
+            data: dataObj,
             dataType: 'json',
             success: function (data) {
                 console.log(data);
-                if (data.page.totalPage == 0) {
+                if (data.i == 0) {
                     $('.mobile-popup .cond').text(getAllCond());
+                    showSorry();
+                } else {
+                    var addr = contextPath + '/pages/mobile/list.html?';
+                    for (var i in dataObj) {
+                        addr += (i + '=' + dataObj[i] + '&');
+                    }
+                    window.location.href = addr;
                 }
             }
         })
     }
 
     $('#go-list-btn').click(function () {
+        function getCond(val) {
+            if (!val) {
+                return '';
+            } else {
+                return val;
+            }
+        }
         var dataObj = {
             carBrand: '',
             carSeries: '',
@@ -311,7 +326,7 @@
         };
 
         var year = $('#select-year').val();
-        if (year == '') {
+        if (!year || year == '') {
             year = '0000-9999'
         } else {
             year = year + '-9999'
@@ -323,29 +338,31 @@
             alert('请检查价格范围的选择.')
             return;
         }*/
-        dataObj.carYear = year1 + '-' + year2;
+        dataObj.carYear = year;
         dataObj.carPrice = price1 + '-' + price2;
         dataObj.carBrand = selectedBrand;
         dataObj.carSeries = selectedSeries;
-        dataObj.carMileage = $("#select-mile").val();
-        dataObj.carModel = $('#select-model').val();
-        dataObj.carEngineVolume = $('#select-volume').val();
-        dataObj.transmissionType = $('#select-transmission').val();
+        dataObj.carMileage = getCond($("#select-mile").val());
+        dataObj.carModel = getCond($('#select-model').val());
+        dataObj.carEngineVolume = getCond($('#select-volume').val());
+        dataObj.transmissionType = getCond($('#select-transmission').val());
         //$.ajax for no reuslt
         hasResult(dataObj);
-        var addr = contextPath + '/pages/mobile/list.html?';
-        for (var i in dataObj) {
-            addr += (i + '=' + dataObj[i] + '&');
-        }
-        //window.location.href = addr;
+
     })
 
     function getAllCond() {
-        function buildUtil(item, prefix, suffix) {
+        function buildUtil($item, prefix, suffix) {
             prefix = prefix || '';
             suffix = suffix || '';
+            if ($item.val()) {
+                var item = $item.find('option:selected').text();
+            } else {
+                return;
+            }
+
             if (item && item != '不限' && item != '') {
-                conds.push(prefix + item + suffix);
+                conds.push(prefix + item.trim() + suffix);
             }
         }
         var conds = [];
@@ -363,17 +380,56 @@
         if (selectedSeries) {
             conds.push(selectedSeriesName)
         }
-        buildUtil($('#select-mile').find('option:selected').text());
-        buildUtil($('#select-year').find('option:selected').text(), '最远年份');
-        buildUtil($('#select-model').find('option:selected').text());
-        buildUtil($('#select-volume').find('option:selected').text());
-        buildUtil($('#select-transmission').find('option:selected').text());
+        buildUtil($('#select-mile'));
+        buildUtil($('#select-year'), '最远年份');
+        buildUtil($('#select-model'));
+        buildUtil($('#select-volume'));
+        buildUtil($('#select-transmission'));
 
         return conds.join('/');
     }
     $('.filter-content select').change(function () {
         $(this).css({
             color: '#000'
+        });
+    })
+
+    function showSorry() {
+        var $popup = $('.mobile-popup').removeClass('hidden');
+        $('.wrapGrayBg').removeClass('hidden');
+        var scrollTop = $(window).scrollTop();
+        $popup.removeClass('hidden').css({
+            //left: (winW - $popup.width()) / 2,
+            top: scrollTop + 50,
+            zIndex: 10000
+        });
+        var phoneNum = checkUserLocal().phoneNum
+        if (phoneNum) {
+            $popup.find('#phone-for-notify').val(phoneNum);
+        }
+    }
+    $('#notify-form').submit(function (e) {
+        e.preventDefault();
+        var minP = $('#select-price-1').val();
+        var maxP = $('#select-price-2').val();
+        var brand = selectedBrand;
+        $.ajax({
+            url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
+            data: {
+                brands: brand,
+                minPrice: minP,
+                maxPrice: maxP
+            },
+            success: function () {
+                if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
+                    window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
+                } else {
+                    window.location.href = contextPath + '/mobile/carcustom.html';
+                }
+            },
+            error: function () {
+                alert('error');
+            }
         });
     })
 }(window.jQuery, undefined)
