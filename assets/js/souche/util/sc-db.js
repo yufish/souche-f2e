@@ -45,7 +45,7 @@ define(function() {
             try {
                 localStorage.setItem(key, JSON.stringify(value));
             } catch (e) {
-                console.trace(e)
+
             }
 
         },
@@ -61,7 +61,7 @@ define(function() {
             try {
                 localStorage.setItem(key, JSON.stringify(value));
             } catch (e) {
-                console.trace(e)
+
             }
         },
         add: function(key, value) {
