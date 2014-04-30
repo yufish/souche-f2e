@@ -159,7 +159,7 @@ require(['souche/util/action-list'], function(ActionList) {
 
             this.each(function(i) {
                 var sh = 25,
-                    speed = 80,
+                    speed = 100,
                     _this = $(this);
                 intId[i] = setInterval(function() {
                     if (_this.find("ul").height() <= _this.height()) {
