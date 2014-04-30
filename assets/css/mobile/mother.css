@@ -14,6 +14,7 @@
   top: 0;
   position: fixed;
   left: 0;
+  z-index: 10000;
 }
 #mother-h5 .wrapper .banner {
   width: 100%;
@@ -59,25 +60,28 @@
 #mother-h5 .wrapper #mama1 {
   background-color: #ffe762;
 }
+#mother-h5 .wrapper #mama1 .content-img {
+  margin-top: 60px;
+}
 #mother-h5 .wrapper #mama2 {
   background-color: #8f79b1;
   color: #fff;
 }
 #mother-h5 .wrapper #mama2 .content-img {
-  margin-top: 15px;
+  margin-top: 60px;
 }
 #mother-h5 .wrapper #mama3 {
   background-color: #ef746f;
 }
 #mother-h5 .wrapper #mama3 .content-img {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 #mother-h5 .wrapper #mama4 {
   background-color: #7a7a7a;
   color: #fff;
 }
 #mother-h5 .wrapper #mama4 .content-img {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 #mother-h5 .wrapper #mama5 {
   background-color: #ff8c40;
