@@ -5062,13 +5062,13 @@ body {
     background-size: 14px;
     border-radius: 8px;
 }
-#filtercar-h5-2 .group {
+#filtercar-new .group {
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
 }
-#filtercar-h5-2 .group .option {
+#filtercar-new .group .option {
     height: 40px;
     line-height: 40px;
     position: relative;
@@ -5076,7 +5076,7 @@ body {
     border-bottom: 1px solid #ccc;
     display: block;
 }
-#filtercar-h5-2 .group .option .name {
+#filtercar-new .group .option .name {
     padding-left: 10px;
     font-size: 14px;
     color: #666;
