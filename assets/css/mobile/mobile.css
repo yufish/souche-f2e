@@ -54,6 +54,11 @@ h6 {
     font-size: 100%;
     font-weight: normal;
 }
+input,
+button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 abbr,
 acronym {
     border: 0;
@@ -5765,10 +5770,7 @@ body {
 #filtercar-new .filter-popup {
     background-color: #fff;
     border-radius: 8px;
-}
-#filtercar-new .filter-popup {
-    background-color: #fff;
-    border-radius: 8px;
+    min-height: 200px;
 }
 #filtercar-new .filter-popup .title {
     margin-left: 10px;
