@@ -75,6 +75,11 @@ var msgLogin = function () {
                 nextUrl = '/pages/mobile/center-fav.html'
                 showPopup();
             })
+
+            $('.wrapGrayBg').click(function () {
+                $(this).addClass('hidden');
+                $('.login-popup').addClass('hidden');
+            })
         }
     }
 

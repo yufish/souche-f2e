@@ -54,6 +54,11 @@ h6 {
     font-size: 100%;
     font-weight: normal;
 }
+input,
+button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 abbr,
 acronym {
     border: 0;
@@ -5690,6 +5695,13 @@ body {
     float: left;
     line-height: 60px;
     font-weight: bold;
+    font-size: 15px;
+}
+#filtercar-new #option-advance .text {
+    float: right;
+    line-height: 60px;
+    font-weight: bold;
+    color: #999;
 }
 #filtercar-new .hr20 {
     background-color: #f3f3f3;
@@ -5702,12 +5714,6 @@ body {
 #filtercar-new select.s {
     width: 92px;
     padding-left: 8px;
-}
-#filtercar-new select.select-4-word {
-    padding-left: 65px;
-}
-#filtercar-new select.select-5-word {
-    padding-left: 60px;
 }
 #filtercar-new select.select-6-word {
     padding-left: 55px;
@@ -5740,19 +5746,17 @@ body {
 #filtercar-new .filter-option-item .span-to {
     margin: 0 6px;
 }
-#filtercar-new .filter-option-item .array-d {
-    background: url(../../images/mob/h5-2/array.png) no-repeat;
-    background-size: 8px;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+#filtercar-new #option-advance .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-1.png) no-repeat;
+    background-size: 13px;
     height: 13px;
     width: 13px;
     float: right;
     margin: 25px 20px 0 5px;
 }
-#filtercar-new .filter-option-item.reverse .array-d {
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+#filtercar-new #option-advance.reverse .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-2.png) no-repeat;
+    background-size: 13px;
 }
 #filtercar-new .popup-wrapper {
     position: absolute;
@@ -5766,10 +5770,7 @@ body {
 #filtercar-new .filter-popup {
     background-color: #fff;
     border-radius: 8px;
-}
-#filtercar-new .filter-popup {
-    background-color: #fff;
-    border-radius: 8px;
+    min-height: 200px;
 }
 #filtercar-new .filter-popup .title {
     margin-left: 10px;
@@ -5800,36 +5801,21 @@ body {
     padding: 20px 0;
 }
 #filtercar-new .filter-popup .series-title {
-    text-align: center;
-    min-width: 25%;
-    float: left;
-    height: 45px;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
 }
-#filtercar-new .filter-popup .series-title .text {
-    display: inline-block;
-    border-radius: 8px 0 0 8px;
-    margin-top: 10px;
-    padding: 4px;
-    color: #fff;
-    background-color: #ff4400;
-    min-width: 56px;
-    vertical-align: top;
-}
-#filtercar-new .filter-popup .series-title .bg {
-    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center center;
-    background-size: 8px 24px;
-    display: inline-block;
-    width: 8px;
-    height: 24px;
-    margin-top: 10px;
-    vertical-align: top;
+#filtercar-new .filter-popup .series-name-wrapper {
+    padding-left: 10px;
 }
 #filtercar-new .filter-popup .series-name {
-    text-align: center;
-    min-width: 25%;
     float: left;
-    height: 45px;
-    line-height: 45px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    margin-left: 15px;
 }
 #filtercar-new .filter-popup .series-name.selected {
     color: #ff4400;
@@ -5880,7 +5866,7 @@ body {
     margin: 20px 0 5px 0;
 }
 .mobile-popup .btn-main {
-    background-color: #ff4400;
+    background: #ff4400;
     width: 130px;
     height: 40px;
     color: #fff;
