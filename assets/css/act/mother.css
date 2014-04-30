@@ -10,12 +10,12 @@
 #mother #content .wrapper {
   width: 100%;
   background: url(../../images/acts/mother/bg.jpg) repeat-y;
-  height: 3740px;
+  height: 4360px;
 }
 #mother #content .wrapper .wrapper-box {
   width: 1215px;
   margin: 0 auto;
-  height: 3740px;
+  height: 4360px;
 }
 #mother #content .wrapper .wrapper-box .paoxiao {
   width: 100%;
@@ -187,7 +187,7 @@
 }
 .guangchang {
   width: 100%;
-  height: 585px;
+  height: 720px;
 }
 .guangchang .car-left {
   float: right;
@@ -356,7 +356,7 @@
 }
 .furong {
   width: 100%;
-  height: 585px;
+  height: 715px;
 }
 .furong .image-left {
   float: left;
@@ -535,7 +535,7 @@
 }
 .aojiao {
   width: 100%;
-  height: 585px;
+  height: 710px;
 }
 .aojiao .car-left {
   float: right;
@@ -704,7 +704,7 @@
 }
 .paiyou {
   width: 100%;
-  height: 585px;
+  height: 775px;
 }
 .paiyou .image-left {
   float: left;
@@ -879,4 +879,52 @@
   line-height: 35px;
   font-size: 17px;
   text-decoration: line-through;
+}
+.weixin {
+  width: 100%;
+  height: 620px;
+  margin-top: 90px;
+}
+.weixin .weixin-title {
+  width: 100%;
+  font-size: 40px;
+  color: #000000;
+  text-align: center;
+  line-height: 50px;
+}
+.weixin .weixin-content {
+  width: 100%;
+  height: 310px;
+  margin-top: 20px;
+}
+.weixin .weixin-content .weixin-box {
+  float: left;
+  margin-right: 50px;
+}
+.weixin .weixin-content .weixin-box .weixin-text {
+  width: 200px;
+  height: 90px;
+}
+.weixin .weixin-content .weixin-box .weixin-text p {
+  font-size: 13px;
+  color: #222;
+  text-align: center;
+  line-height: 20px;
+}
+.weixin .weixin-content .weixin-box .dianzan {
+  width: 50px;
+  height: 20px;
+  margin: 0 auto;
+}
+.weixin .weixin-content .weixin-box .dianzan i {
+  display: block;
+  float: left;
+  width: 21px;
+  height: 18px;
+  background: url(../../images/acts/mother/zan.png) no-repeat;
+  margin-right: 5px;
+}
+.weixin .weixin-content .weixin-box .dianzan span {
+  font-size: 13px;
+  color: #222;
 }
