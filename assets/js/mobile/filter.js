@@ -134,7 +134,7 @@
         showPopup_s();
     })
 
-    function setBrands(code, name) {
+    function setBrands(code, name, $selectOpt) {
         if (selectedBrand != code) {
             $('#btn-select-series').css({
                 color: '#999'
@@ -162,8 +162,8 @@
         } else {
             $other.css({
                 color: '#ff4400'
-            }).find('option[value=' + code + ']')
-                .attr('selected', 'selected');
+            });
+            $selectOpt.attr('selected', 'selected');
         }
 
 
@@ -205,8 +205,9 @@
     $('#other-brands-select').change(function () {
         var $self = $(this);
         var code = $self.val();
-        var name = $self.find('option:selected').text();
-        setBrands(code, name);
+        var $selectOpt = $self.find('option:selected');
+        var name = $selectOpt.text();
+        setBrands(code, name, $self.find('option:selected'));
     })
 
     $('#option-advance').click(function () {
