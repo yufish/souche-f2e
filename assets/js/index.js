@@ -6,12 +6,22 @@ define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyloa
         return {
             init: function(_config) {
                 $.extend(config, _config);
+                var first = $($('.slides li').get(0))
+                first.css("background", "url(" + first.attr("data-image") + ")")
                 $('.flexslider').flexslider({
                     animation: "slide",
                     animationSpeed: 300,
                     initDelay: 0,
                     slideshowSpeed: 5000,
-                    useCSS: false
+                    useCSS: false,
+                    before: function(index) {
+                        console.log(index.getTarget())
+                        var next = $($('.slides li').get(index.currentSlide + 1))
+                        next.css("background", "url(" + next.attr("data-image") + ")")
+                    },
+                    start: function(index) {
+
+                    }
                 });
                 $(".flexslider").mouseenter(function() {
                     $(this).flexslider("stop");
