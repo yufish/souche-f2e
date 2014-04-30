@@ -32,37 +32,40 @@ body {
   text-align: center;
   margin-bottom: 30px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form {
   clear: both;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list {
   height: 35px;
   width: 100%;
   margin-bottom: 10px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list label {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list label {
   font-size: 16px;
   color: #545454;
   line-height: 35px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list select {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list select {
   width: 250px;
   margin-left: 10px;
   border: 1px solid #d1d1d1;
   height: 33px;
   padding-left: 5px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list input {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list input {
   border: 1px solid #d1d1d1;
   width: 243px;
   margin-left: 3px;
   height: 33px;
   padding-left: 5px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .from-list .sell-phone {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list .sell-phone {
   margin-bottom: 20px;
 }
-#sellcar #content .banner .wrapper #J_sellcarform #sellcar-from .sellcar-submit button {
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit {
+  margin-top: 30px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit button {
   display: block;
   width: 185px;
   height: 35px;

@@ -12,9 +12,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data1, function() {
-            console.log("end")
-        })
+        ActionList(data1, function() {})
     }, 500);
 
     Souche.Util.appear("#realvalue", function() {
@@ -40,9 +38,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {
-            console.log("end")
-        })
+        ActionList(data, function() {})
     }, 500);
     Souche.Util.appear("#realvalue", function() {
         var data = [
@@ -67,9 +63,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {
-            console.log("end")
-        })
+        ActionList(data, function() {})
     }, 500);
     Souche.Util.appear("#helpsell", function() {
         var data = [
@@ -90,9 +84,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {
-            console.log("end")
-        })
+        ActionList(data, function() {})
     }, 500);
 
     Souche.Util.appear("#timeandprice", function() {
@@ -130,9 +122,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {
-            console.log("end")
-        })
+        ActionList(data, function() {})
     }, 500);
     Souche.Util.appear("#sellstep", function() {
         var data = [
@@ -144,8 +134,6 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {
-            console.log("end")
-        })
+        ActionList(data, function() {})
     }, 500);
 });
