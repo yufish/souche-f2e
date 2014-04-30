@@ -285,12 +285,12 @@
   line-height: 18px;
   white-space: nowrap;
 }
-.apply_popup .tip {
+body .apply_popup .tip {
   line-height: 40px;
   font-size: 20px;
   color: #111;
 }
-.apply_popup {
+body .apply_popup {
   width: 600px;
   height: 290px;
   position: fixed;
@@ -303,7 +303,7 @@
   border-radius: 5px;
   z-index: 100000;
 }
-.apply_popup .popup-title {
+body .apply_popup .popup-title {
   font-size: 22px;
   color: #111;
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
@@ -312,7 +312,8 @@
   margin: 0 auto;
   text-indent: 20px;
 }
-.apply_popup .apply_close {
+body .apply_popup .apply_close,
+body .apply_popup .apply_close:hover {
   position: absolute;
   display: block;
   width: 35px;
@@ -322,29 +323,29 @@
   top: 10px;
   cursor: pointer;
 }
-.apply_popup .phone {
+body .apply_popup .phone {
   margin-left: 150px;
   text-align: left;
   width: 400px;
 }
-.apply_popup .tip {
+body .apply_popup .tip {
   line-height: 30px;
   font-size: 20px;
   color: #111;
 }
-.apply_popup .phone {
+body .apply_popup .phone {
   width: 640px;
 }
-.apply_popup label {
+body .apply_popup label {
   font-size: 12px;
   padding-right: 10px;
 }
-.apply_popup input {
+body .apply_popup input {
   line-height: 27px;
   width: 184px;
   height: 27px;
 }
-.apply_popup .result_p {
+body .apply_popup .result_p {
   width: auto;
   margin: 0 20px;
   padding: 30px 0;
@@ -355,13 +356,13 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.apply_popup .result_p .warning {
+body .apply_popup .result_p .warning {
   text-decoration: none;
   color: #ff0000;
   font-size: 12px;
   margin-left: 10px;
 }
-.apply_popup .submit {
+body .apply_popup .submit {
   width: 120px;
   display: block;
   height: 40px;
@@ -376,21 +377,21 @@
   line-height: 40px;
   letter-spacing: 3px;
 }
-.popup-result {
+body .popup-result {
   height: 220px;
 }
-.popup-result .result_p ins {
+body .popup-result .result_p ins {
   color: #111;
   font-size: 20px;
   line-height: 44px;
 }
-.popup-result .result_p i {
+body .popup-result .result_p i {
   font-size: 16px;
   color: #ff4301;
   font-style: normal;
   font-weight: bold;
 }
-.wrapGrayBg {
+body .wrapGrayBg {
   height: 100%;
   width: 100%;
   position: fixed;
@@ -399,7 +400,7 @@
   background-color: #000;
   z-index: 10000;
 }
-.input-error-tip {
+body .input-error-tip {
   height: 25px;
   border: 1px solid #f29797;
   background-color: #ffe8ef;
@@ -410,14 +411,14 @@
   margin-top: 10px;
   position: relative;
 }
-.input-error-wrapper {
+body .input-error-wrapper {
   width: 225px;
   height: 37px;
   position: absolute;
   top: 30px;
   left: 265px;
 }
-.input-error-tip .error-icon {
+body .input-error-tip .error-icon {
   width: 12px;
   height: 12px;
   background: url(../../images/common/input-error-tip.png) no-repeat;
