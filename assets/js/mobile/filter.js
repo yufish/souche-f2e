@@ -226,6 +226,7 @@
         $('#brand-wrapper').addClass('hidden');
         $('#series-wrapper').addClass('hidden');
         $('.mobile-popup').addClass('hidden');
+        document.body.scrollTop = 0;
     });
 
     $('#brand-buxian').click(function () {
