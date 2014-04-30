@@ -1,4 +1,5 @@
 less = require("less")
+fse = require 'fs-extra'
 fs = require 'fs'
 path = require 'path'
 module.exports = (file,callback)->
@@ -13,7 +14,7 @@ module.exports = (file,callback)->
       console.error e
       callback e,{path:file,realPath:file}
     else
-      fs.writeFile result_file,css.toCSS({compress: true}),(error)->
+      fse.outputFile result_file,css.toCSS({compress: true}),{flags:"w"},(error)->
         if error then console.error error
         else
           console.log 'compile less to ' + result_file

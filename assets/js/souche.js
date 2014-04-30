@@ -45,6 +45,14 @@ Souche.Util = function() {
                 check();
             })
             $(window).scroll(check);
+        },
+        /**
+         * [actionList 串行动作]
+         * @param  {[array]} data [{0,function},{100,function}]
+         * @return {[type]}      [description]
+         */
+        actionList: function(data) {
+
         }
     };
 }();

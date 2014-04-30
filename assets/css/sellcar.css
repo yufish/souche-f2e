@@ -96,6 +96,7 @@ body {
 #sellcar #content #findbuyer {
   height: 550px;
   background-color: #f3f3f3;
+  position: relative;
 }
 #sellcar #content #findbuyer .mod-text {
   width: 355px;
@@ -103,9 +104,52 @@ body {
   float: left;
   margin-top: 180px;
 }
+#sellcar #content #findbuyer .mod-pics {
+  position: absolute;
+  width: 580px;
+  left: 570px;
+  top: 0;
+}
+#sellcar #content #findbuyer .mod-pics img {
+  position: absolute;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-1 {
+  top: 90px;
+  z-index: 3;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-2 {
+  top: 145px;
+  z-index: 2;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-3 {
+  top: 287px;
+  z-index: 4;
+  left: -10px;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-4 {
+  top: 374px;
+  z-index: 3;
+}
+#sellcar #content #findbuyer .mod-pics .layer1-1 {
+  background: #f3f3f3;
+  position: absolute;
+  top: 90px;
+  height: 200px;
+  width: 580px;
+  z-index: 2;
+}
+#sellcar #content #findbuyer .mod-pics .layer1-2 {
+  background: #f3f3f3;
+  position: absolute;
+  top: 250px;
+  height: 200px;
+  width: 580px;
+  z-index: 3;
+}
 #sellcar #content #realvalue {
   height: 540px;
   background-color: #fff;
+  position: relative;
 }
 #sellcar #content #realvalue .mod-text {
   width: 426px;
@@ -113,15 +157,64 @@ body {
   margin-right: 40px;
   margin-top: 195px;
 }
+#sellcar #content #realvalue .mod-pics {
+  position: absolute;
+  width: 580px;
+  left: 0px;
+  top: 0;
+}
+#sellcar #content #realvalue .mod-pics img {
+  position: absolute;
+}
+#sellcar #content #realvalue .mod-pics .pic2-1 {
+  top: 140px;
+  z-index: 3;
+  left: -500px;
+  opacity: 0;
+}
+#sellcar #content #realvalue .mod-pics .pic2-2 {
+  top: -100px;
+  z-index: 4;
+  left: 350px;
+  opacity: 0;
+}
+#sellcar #content #realvalue .mod-pics .pic2-3 {
+  top: 158px;
+  z-index: 5;
+  left: -500px;
+  opacity: 0;
+}
 #sellcar #content #helpsell {
   height: 550px;
   background-color: #f3f3f3;
+  position: relative;
 }
 #sellcar #content #helpsell .mod-text {
   width: 385px;
   margin-top: 220px;
   float: left;
   margin-left: 75px;
+}
+#sellcar #content #helpsell .mod-pics {
+  position: absolute;
+  width: 580px;
+  left: 580px;
+  top: 0;
+}
+#sellcar #content #helpsell .mod-pics img {
+  position: absolute;
+}
+#sellcar #content #helpsell .mod-pics .pic3-1 {
+  top: 400px;
+  z-index: 3;
+  left: 0;
+  opacity: 0;
+}
+#sellcar #content #helpsell .mod-pics .pic3-2 {
+  top: 180px;
+  z-index: 4;
+  left: -5px;
+  opacity: 0;
 }
 #sellcar #content #timeandprice {
   height: 755px;
@@ -137,6 +230,35 @@ body {
   color: #000000;
   text-align: center;
 }
+#sellcar #content #timeandprice .mod-pics {
+  position: absolute;
+  width: 580px;
+  left: 300px;
+  top: 250px;
+}
+#sellcar #content #timeandprice .mod-pics img {
+  position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-2 {
+  left: 115px;
+  top: 300px;
+  opacity: 0;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-3 {
+  left: 189px;
+  top: 300px;
+  opacity: 0;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-4 {
+  left: 277px;
+  top: 300px;
+  opacity: 0;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-5 {
+  left: 362px;
+  top: 300px;
+  opacity: 0;
+}
 #sellcar #content #sellstep {
   height: 300px;
   background-color: #f3f3f3;
@@ -151,6 +273,39 @@ body {
   font-size: 28px;
   font-weight: bold;
   text-align: center;
+}
+#sellcar #content #sellstep .mod-pics {
+  position: absolute;
+  width: 580px;
+  left: 150px;
+  top: 0;
+}
+#sellcar #content #sellstep .mod-pics img {
+  position: absolute;
+}
+#sellcar #content #sellstep .mod-pics .pic5-1 {
+  left: 0;
+  top: 130px;
+  z-index: 2;
+  position: absolute;
+  -webkit-mask-image: url(http://f2e.souche.com/assets/images/sellcar/5-layer.png);
+  width: 0;
+  height: 90px;
+}
+#sellcar #content #sellstep .mod-pics .pic5-2 {
+  left: 0;
+  top: 128px;
+  z-index: 1;
+}
+#sellcar #content #sellstep .mod-pics .pic5-3 {
+  left: 0;
+  top: 210px;
+}
+#sellcar #content #sellstep .mod-pics .layer5-1 {
+  position: absolute;
+  top: 130px;
+  height: 90px;
+  width: 100%;
 }
 #sellcar #content #faq {
   height: 1110px;
