@@ -83,3 +83,12 @@ html
           span 35
       .foot
         img(src="../../assets/images/mob/huodong/mother/foot.jpg" width="86px" height="43px")
+
+  script.
+    var h = $('.fenxiang').height();
+    $('.banner').css({'margin-top':h});
+    $(window).resize(function(){
+      var h = $('.fenxiang').height();
+      $('.banner').css({'margin-top':h});
+    })
+    

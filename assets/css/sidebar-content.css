@@ -62,12 +62,12 @@ html {
   background-color: #FC7000;
 }
 #toolbar .tool-box #toolbar-nav .path .going:hover span {
-  background: url(../images/index/toolbar_sprite.png?123);
-  background-position: -240px -60px;
+  background: url(../images/index/toolbar_sprite.png?124);
+  background-position: -160px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path .back:hover span {
-  background: url(../images/index/toolbar_sprite.png?123);
-  background-position: -200px -60px;
+  background: url(../images/index/toolbar_sprite.png?124);
+  background-position: -120px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path a.disabled {
   border: 1px solid #ddd;
