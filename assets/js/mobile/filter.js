@@ -163,7 +163,7 @@
             $other.css({
                 color: '#ff4400'
             });
-            $selectOpt.attr('selected', 'selected');
+            $selectOpt.prop('selected', true);
         }
 
 
