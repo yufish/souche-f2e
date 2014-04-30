@@ -41,12 +41,12 @@
 
     function makeSeries(codes) {
         var start = '<div class="clearfix">',
-            end = '</div>';
+            end = '</div></div>';
         var html = '';
 
         for (var i in codes) {
             html += start;
-            html += '<div class="series-title"><span class = "text" >' + i + '</span><span class="bg"></span></div >'
+            html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
             var s = codes[i];
             for (var j in s) {
                 var b = s[j];
@@ -375,10 +375,10 @@
             conds.push(price1 + '万-' + price2);
         }
         if (selectedBrand) {
-            conds.push(selectedBrandName)
+            conds.push(selectedBrandName.trim())
         }
         if (selectedSeries) {
-            conds.push(selectedSeriesName)
+            conds.push(selectedSeriesName.trim())
         }
         buildUtil($('#select-mile'));
         buildUtil($('#select-year'), '最远年份');
@@ -394,12 +394,30 @@
         });
     })
 
+
+
+    function goToCustom() {
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        var phoneNum = $('#phone-for-notify').val();
+        if (!phoneReg.test(phoneNum)) {
+            $('#notify-form .wrong-tip').removeClass('hidden');
+            return;
+        }
+        $('#notify-form .wrong-tip').addClass('hidden');
+        SM.PhoneRegister(phoneNum, function () {
+            if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
+                window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
+            } else {
+                window.location.href = contextPath + '/mobile/carcustom.html';
+            }
+        });
+    }
+
     function showSorry() {
         var $popup = $('.mobile-popup').removeClass('hidden');
         $('.wrapGrayBg').removeClass('hidden');
         var scrollTop = $(window).scrollTop();
         $popup.removeClass('hidden').css({
-            //left: (winW - $popup.width()) / 2,
             top: scrollTop + 50,
             zIndex: 10000
         });
@@ -407,29 +425,28 @@
         if (phoneNum) {
             $popup.find('#phone-for-notify').val(phoneNum);
         }
-    }
-    $('#notify-form').submit(function (e) {
-        e.preventDefault();
-        var minP = $('#select-price-1').val();
-        var maxP = $('#select-price-2').val();
-        var brand = selectedBrand;
-        $.ajax({
-            url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
-            data: {
-                brands: brand,
-                minPrice: minP,
-                maxPrice: maxP
-            },
-            success: function () {
-                if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
-                    window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
-                } else {
-                    window.location.href = contextPath + '/mobile/carcustom.html';
+
+        $('#notify-form').submit(function (e) {
+            e.preventDefault();
+            var minP = $('#select-price-1').val();
+            var maxP = $('#select-price-2').val();
+            var brand = selectedBrand;
+            $.ajax({
+                url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
+                data: {
+                    brands: brand,
+                    minPrice: minP,
+                    maxPrice: maxP
+                },
+                success: function () {
+                    goToCustom();
+                },
+                error: function () {
+                    alert('error');
                 }
-            },
-            error: function () {
-                alert('error');
-            }
-        });
-    })
+            });
+        })
+    }
+
+
 }(window.jQuery, undefined)

@@ -5800,36 +5800,21 @@ body {
     padding: 20px 0;
 }
 #filtercar-new .filter-popup .series-title {
-    text-align: center;
-    min-width: 25%;
-    float: left;
-    height: 45px;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
 }
-#filtercar-new .filter-popup .series-title .text {
-    display: inline-block;
-    border-radius: 8px 0 0 8px;
-    margin-top: 10px;
-    padding: 4px;
-    color: #fff;
-    background-color: #ff4400;
-    min-width: 56px;
-    vertical-align: top;
-}
-#filtercar-new .filter-popup .series-title .bg {
-    background: url(../../images/mob/h5-2/filter-arrow.png) no-repeat center center;
-    background-size: 8px 24px;
-    display: inline-block;
-    width: 8px;
-    height: 24px;
-    margin-top: 10px;
-    vertical-align: top;
+#filtercar-new .filter-popup .series-name-wrapper {
+    padding-left: 10px;
 }
 #filtercar-new .filter-popup .series-name {
-    text-align: center;
-    min-width: 25%;
     float: left;
-    height: 45px;
-    line-height: 45px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    margin-left: 15px;
 }
 #filtercar-new .filter-popup .series-name.selected {
     color: #ff4400;
