@@ -1,12 +1,12 @@
-define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSlider) {
-    var GuWen = (function () {
+define(['lib/mustache', 'souche/range-slide'], function(Mustache, PriceRangeSlider) {
+    var GuWen = (function() {
         function createBrandsManager(_container) {
             var container = _container;
 
             var brandsManager = {
                 brands: {}, //{bCode:{sCode:$}}
                 //sCode='' for 不限
-                toggleSeries: function (bCode, sCode, jqObjArr) {
+                toggleSeries: function(bCode, sCode, jqObjArr) {
                     var brands = this.brands;
                     var bObj = brands[bCode] // = brands[bCode] || {};
 
@@ -31,7 +31,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
                     }
                 },
-                removeSeries: function (bCode, sCode) {
+                removeSeries: function(bCode, sCode) {
                     var bObj = this.brands[bCode];
                     if (!(sCode in bObj))
                         return;
@@ -43,7 +43,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                         delete this.brands[bCode];
                     }
                 },
-                addSeries: function (bCode, sCode, jqObjArr) {
+                addSeries: function(bCode, sCode, jqObjArr) {
                     var brands = this.brands;
                     var bObj = brands[bCode] = (brands[bCode] || {})
                     bObj[sCode] = jqObjArr;
@@ -97,7 +97,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
         return {
 
-            init: function () {
+            init: function() {
                 //change demand,ugly fixed
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
@@ -199,7 +199,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     window.location.hash = 'page' + pageIndex;
 
                     if (pageIndex == 2) {
-                        $('.submit-btn').text('完成定制').show();
+                        $('.submit-btn').text('下一步').show();
                     } else if (pageIndex == 3) {
                         $('.submit-btn').hide();
                     } else {
@@ -221,7 +221,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     }).show();
                     $curPage.animate({
                         left: '-100%'
-                    }, function () {
+                    }, function() {
                         $curPage.hide();
                     });
                     $page.animate({
@@ -249,7 +249,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     }).show();
                     $curPage.animate({
                         left: '100%'
-                    }, function () {
+                    }, function() {
                         $curPage.hide();
                     });
                     $page.animate({
@@ -268,8 +268,8 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                             brandName = initBrands[key];
                         var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + brandName + '</span>' + '<i class="close-icon"></i>' + '</div>';
                         brandsManager.toggleSeries(brandCode, '', [
-                    $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
-                ]);
+                            $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
+                        ]);
                     }
                 }
 
@@ -282,7 +282,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
                 function loadAllBrands() {
                     loadingLayer.removeClass('hidden');
-                    BrandAjaxUtil.getRecomBrands(function (data) {
+                    BrandAjaxUtil.getRecomBrands(function(data) {
                         var brands = data.brands;
                         var container = $('#brand-icons-container');
                         var start = '<div class="icon-group">',
@@ -317,10 +317,10 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     tplSeries = $('#tpl_series').text();
 
 
-                $('.back-icon').click(function () {
+                $('.back-icon').click(function() {
                     backPage();
                 })
-                $('.selected-brand').on('click', '.sb-item', function () {
+                $('.selected-brand').on('click', '.sb-item', function() {
                     var $self = $(this)
                     var bCode = $self.attr('brand-code'),
                         sCode = $self.attr('series-code');
@@ -332,21 +332,21 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 var curBrandCode;
                 var loadingLayer = $('.loading-cover-layer');
 
-                $('#brand-icons-container').on('click', '.icon-item', function () {
+                $('#brand-icons-container').on('click', '.icon-item', function() {
                     var $self = $(this);
                     var brandCode = $self.attr('data-code');
                     var text = $self.find('.brand-name').text();
                     var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
                     //$(this).find('.text').toggleClass('selected');
                     brandsManager.toggleSeries(brandCode, '', [
-                $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
-            ]);
+                        $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
+                    ]);
 
                 })
 
                 var brandIndex = 0;
 
-                $('.year-item').click(function () {
+                $('.year-item').click(function() {
                     $('.year-item .text').removeClass('selected');
                     $(this).find('.text').addClass('selected')
                     yearCode = $(this).attr('data-code');
@@ -389,8 +389,8 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                             minPrice: minPrice,
                             maxPrice: maxPrice
                         },
-                        success: function () {
-                            setTimeout(function () {
+                        success: function() {
+                            setTimeout(function() {
                                 if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
                                     window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
                                 } else {
@@ -398,7 +398,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 }
                             }, 500)
                         },
-                        error: function () {
+                        error: function() {
                             alert('error');
                         }
                     });
@@ -414,7 +414,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 }
 
 
-                $('.submit-btn').click(function () {
+                $('.submit-btn').click(function() {
                     if (curPageIndex != 2) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
@@ -425,7 +425,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                         }
                         return;
                     }
-                    SM.checkPhoneExist(function (is_login) {
+                    SM.checkPhoneExist(function(is_login) {
                         if (is_login) {
                             sumbitGuWenInfo();
                         } else {
@@ -435,13 +435,13 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 })
 
                 var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function (e) {
+                $('#phone-form').submit(function(e) {
                     var phoneNum = $("#phone-num").val();
                     e.preventDefault();
                     if (!phoneReg.test(phoneNum)) {
                         alert('请输入正确的手机号码');
                     } else {
-                        SM.PhoneRegister(phoneNum, function () {
+                        SM.PhoneRegister(phoneNum, function() {
                             $('#phone-popup').hide();
                             $('.cover-layer').addClass('hidden');
                             sumbitGuWenInfo();
@@ -449,27 +449,27 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     }
                 })
 
-                $('.search-icon').click(function () {
+                $('.search-icon').click(function() {
                     var $icon2 = $(this).siblings('.search-icon-2');
                     $(this).parent().siblings('.search-box').show();
                     $(this).hide();
                     $icon2.show();
                 })
 
-                $('.search-icon-2').click(function () {
+                $('.search-icon-2').click(function() {
                     var $icon = $(this).siblings('.search-icon');
                     $(this).parent().siblings('.search-box').hide();
                     $(this).hide();
                     $icon.show();
                 })
 
-                $('.cancel-icon').click(function (e) {
+                $('.cancel-icon').click(function(e) {
                     var $input = $(this).siblings('input[name=keyword]');
                     $input.val('');
                     $input.focus();
                 })
 
-                $('.search-form').submit(function (e) {
+                $('.search-form').submit(function(e) {
                     var $input = $(this).find('input[name=keyword]');
                     if ($input.val().trim() == '') {
                         $input.val('');
@@ -477,7 +477,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     }
                 })
 
-                $('.search-btn').click(function (e) {
+                $('.search-btn').click(function(e) {
                     var $input = $(this).siblings('.input').find('input[name=keyword]');
                     if ($input.val().trim() == '') {
                         $input.val('');
@@ -488,7 +488,7 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
                 var curNumOfEllipsis = 1;
                 $ellipsis = $('#page-3 .ellipsis');
-                setInterval(function () {
+                setInterval(function() {
                     var txt = '';
                     for (var i = 0; i < curNumOfEllipsis; i++) {
                         txt += '.'
