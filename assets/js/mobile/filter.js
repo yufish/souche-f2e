@@ -170,6 +170,7 @@
         $('#brand-wrapper').addClass('hidden');
         $('#series-list .title').text(name);
         $('.wrapGrayBg').addClass('hidden');
+        document.body.scrollTop = 0;
     }
 
     function setSeries(code, name) {
@@ -186,6 +187,7 @@
         $('#series-wrapper').addClass('hidden');
         $('.wrapGrayBg').addClass('hidden');
         $('#series-wrapper .series-name').removeClass('selected');
+        document.body.scrollTop = 0;
     }
     $('#series-wrapper').on('click', '.series-name', function () {
         var $self = $(this);
