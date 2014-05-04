@@ -243,22 +243,44 @@ body {
   left: -500px;
   opacity: 0;
   filter: alpha(opacity=0);
+  position: absolute;
+}
+#sellcar #content #realvalue .mod-pics .pic2-1 .pic2-1-cont {
+  background: url("../images/sellcar/2-1.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/2-1.png');
+  zoom: 1;
+  width: 511px;
+  height: 221px;
 }
 #sellcar #content #realvalue .mod-pics .pic2-2 {
+  position: absolute;
   top: -100px;
   z-index: 4;
   left: 350px;
   opacity: 0;
   filter: alpha(opacity=0);
-  background: transparent;
+}
+#sellcar #content #realvalue .mod-pics .pic2-2 .pic2-2-cont {
+  width: 223px;
+  height: 278px;
+  background: url("../images/sellcar/2-2.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/2-2.png');
   zoom: 1;
 }
 #sellcar #content #realvalue .mod-pics .pic2-3 {
+  position: absolute;
   top: 158px;
   z-index: 5;
   left: -500px;
   opacity: 0;
   filter: alpha(opacity=0);
+}
+#sellcar #content #realvalue .mod-pics .pic2-3 .pic2-3-cont {
+  width: 316px;
+  height: 133px;
+  background: url("../images/sellcar/2-3.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/2-3.png');
+  zoom: 1;
 }
 #sellcar #content #helpsell {
   background-color: #f3f3f3;
@@ -283,18 +305,34 @@ body {
   position: absolute;
 }
 #sellcar #content #helpsell .mod-pics .pic3-1 {
+  position: absolute;
   top: 400px;
   z-index: 3;
   left: 0;
   opacity: 0;
   filter: alpha(opacity=0);
 }
+#sellcar #content #helpsell .mod-pics .pic3-1 .pic3-1-cont {
+  width: 620px;
+  height: 193px;
+  background: url("../images/sellcar/3-1.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/3-1.png');
+  zoom: 1;
+}
 #sellcar #content #helpsell .mod-pics .pic3-2 {
+  position: absolute;
   top: 180px;
   z-index: 4;
   left: -5px;
   opacity: 0;
   filter: alpha(opacity=0);
+}
+#sellcar #content #helpsell .mod-pics .pic3-2 .pic3-2-cont {
+  width: 620px;
+  height: 32px;
+  background: url("../images/sellcar/3-2.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/3-2.png');
+  zoom: 1;
 }
 #sellcar #content #timeandprice {
   background-color: #fff;
@@ -321,29 +359,78 @@ body {
 #sellcar #content #timeandprice .mod-pics img {
   position: absolute;
 }
+#sellcar #content #timeandprice .mod-pics .pic4-1 {
+  width: 615px;
+  height: 428px;
+  position: absolute;
+  z-index: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-1 .pic4-1-cont {
+  width: 615px;
+  height: 428px;
+  background: url("../images/sellcar/4-1.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-1.png');
+  zoom: 1;
+}
 #sellcar #content #timeandprice .mod-pics .pic4-2 {
   left: 115px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
+  z-index: 2;
+  position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-2 .pic4-2-cont {
+  width: 80px;
+  height: 80px;
+  background: url("../images/sellcar/4-2.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-1.png');
+  zoom: 1;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-3 {
   left: 189px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
+  z-index: 3;
+  position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-3 .pic4-3-cont {
+  width: 105px;
+  height: 102px;
+  background: url("../images/sellcar/4-3.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-3.png');
+  zoom: 1;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-4 {
   left: 277px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
+  z-index: 4;
+  position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-4 .pic4-4-cont {
+  width: 101px;
+  height: 98px;
+  background: url("../images/sellcar/4-4.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-4.png');
+  zoom: 1;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-5 {
   left: 362px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
+  z-index: 5;
+  position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-5 .pic4-5-cont {
+  width: 76px;
+  height: 76px;
+  background: url("../images/sellcar/4-5.png");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-5.png');
+  zoom: 1;
 }
 #sellcar #content #sellstep {
   background-color: #f3f3f3;
