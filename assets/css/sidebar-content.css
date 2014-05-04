@@ -51,22 +51,22 @@ html {
   margin: 9px 10px;
 }
 #toolbar .tool-box #toolbar-nav .path .going span {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back span {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path a:hover {
   background-color: #FC7000;
 }
 #toolbar .tool-box #toolbar-nav .path .going:hover span {
-  background: url(../images/index/toolbar_sprite.png?124);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path .back:hover span {
-  background: url(../images/index/toolbar_sprite.png?124);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path a.disabled {
@@ -77,11 +77,11 @@ html {
   cursor: default;
 }
 #toolbar .tool-box #toolbar-nav .path .going.disabled:hover span {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back.disabled:hover span {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -30px;
 }
 #toolbar .tool-box #toolbar-nav .pages {
