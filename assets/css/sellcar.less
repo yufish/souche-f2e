@@ -6,6 +6,7 @@ body{
   width: 1191px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 #sellcar{
   #content{
@@ -73,6 +74,7 @@ body{
           border: none;
           margin-top: 20px;
           margin-left: 64px;
+          cursor: pointer;
           }
         }
       }
@@ -84,6 +86,68 @@ body{
         width: 100%;
         text-align: center;
         margin-top: 40px;
+        }
+      }
+      .sellcar-success{
+        width: 330px;
+        height: 360px;
+        background-color: #fff;
+        padding: 30px;
+        position: absolute;
+        right: 20px;
+        top: 50px;
+        text-align: center;
+        .success-icon{
+          margin-top: 20px;
+          width: 100%;
+          height: 52px;
+          background: url(../images/sellcar/success.png) no-repeat;
+          background-position: center;
+        }
+        h1{
+          font-size: 22px;
+          text-align: center;
+          font-weight: bold;
+          color: #262626;
+          margin-top: 30px;
+        }
+        .success-jump{
+          margin-top: 20px;
+          color: #333;
+          font-size: 14px;
+          line-height: 25px;
+          span{
+            color: @orange;
+            margin-right: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 20px;
+          }
+        }
+        .success-link{
+          color: @orange;
+          font-size: 14px;
+          margin-top: 5px;
+          a{
+            color: @orange;
+            border-bottom: 1px solid @orange;
+            font-size: 14px;
+          }
+        }
+        .success-explain{
+          border: 1px solid #d1d1d1;
+          border-radius: 5px;
+          height: 50px;
+          background-color: #f9f9f9;
+          padding: 20px;
+          margin-top: 30px;
+          margin-left: 5px;
+          margin-right: 5px;
+          p{
+            color: #333;
+            font-size: 14px;
+            line-height: 25px;
+          }
         }
       }
     }
@@ -102,9 +166,12 @@ body{
     }
   }
   #findbuyer{
-    height: 550px;
+    
     background-color: #f3f3f3;
     position: relative;
+    .wrapper{
+      height: 550px;
+    }
     .mod-text{
       width: 355px;
       margin-left: 110px;
@@ -155,9 +222,12 @@ body{
     }
   }
   #realvalue{
-    height: 540px;
+   
     background-color: #fff;
     position: relative;
+    .wrapper{
+       height: 540px;
+    }
     .mod-text{
       width: 426px;
       float: right;
@@ -177,25 +247,34 @@ body{
         z-index:3;
         left:-500px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
       .pic2-2{
         top:-100px;
         z-index:4;
         left:350px;
         opacity: 0;
+        filter:alpha(opacity=0);
+        background: transparent;
+
+        zoom: 1;
       }
       .pic2-3{
         top:158px;
         z-index:5;
         left:-500px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
     }
   }
   #helpsell{
-    height: 550px;
+    
     background-color: #f3f3f3;
     position: relative;
+    .wrapper{
+      height: 550px;
+    }
     .mod-text{
       width: 385px;
       margin-top: 220px;
@@ -215,19 +294,24 @@ body{
         z-index:3;
         left:-0;
         opacity:0;
+        filter:alpha(opacity=0);
       }
       .pic3-2{
         top:180px;
         z-index:4;
         left:-5px;
         opacity:0;
+        filter:alpha(opacity=0);
       }
       
     }
   }
   #timeandprice{
-    height: 755px;
+    
     background-color: #fff;
+    .wrapper{
+      height: 755px;
+    }
     .title{
       padding-top: 80px;
       width: 430px;
@@ -252,28 +336,35 @@ body{
         left: 115px;
         top: 300px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
       .pic4-3{
         left: 189px;
         top: 300px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
       .pic4-4{
         left: 277px;
         top:300px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
       .pic4-5{
         left: 362px;
         top: 300px;
         opacity: 0;
+        filter:alpha(opacity=0);
       }
       
     }
   }
   #sellstep{
-    height: 300px;
+   
     background-color: #f3f3f3;
+    .wrapper{
+      height: 300px;
+    }
     .title{
       padding-top: 40px;
       width: 280px;
@@ -299,9 +390,10 @@ body{
         top:130px;
         z-index:2;
         position: absolute;
-        -webkit-mask-image: url(http://f2e.souche.com/assets/images/sellcar/5-layer.png); 
+       
         width:0;
         height:90px;
+        overflow: hidden;
       }
       .pic5-2{
         left:0;
@@ -322,8 +414,11 @@ body{
     }
   }
   #faq{
-    height: 1110px;
+    
     background-color: #fff;
+    .wrapper{
+      height: 1110px;
+    }
     .title{
       margin-top: 100px;
       margin-left: 30px;
@@ -413,6 +508,7 @@ body{
           height: 298px;
           background: url(../images/sellcar/sellcar.png) no-repeat;
           margin-top: 100px;
+          cursor: pointer;
           a{
             width: 298px;
             height: 298px;

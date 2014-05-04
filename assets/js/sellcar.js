@@ -13,7 +13,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data1, function() {})
-    }, 500);
+    }, 300);
 
     Souche.Util.appear("#realvalue", function() {
         var data = [
@@ -39,7 +39,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 500);
+    }, 300);
     Souche.Util.appear("#realvalue", function() {
         var data = [
             [0,
@@ -64,7 +64,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 500);
+    }, 300);
     Souche.Util.appear("#helpsell", function() {
         var data = [
             [0,
@@ -85,7 +85,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 500);
+    }, 300);
 
     Souche.Util.appear("#timeandprice", function() {
         var data = [
@@ -123,7 +123,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 500);
+    }, 300);
     Souche.Util.appear("#sellstep", function() {
         var data = [
             [0,
@@ -135,7 +135,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 500);
+    }, 300);
 
     //求购历史滚动
     (function($) {
