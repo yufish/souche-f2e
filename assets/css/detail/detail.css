@@ -3576,8 +3576,7 @@ body {
 }
 .onsale_wrap .onsale_content .checker {
   color: #666;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #dfe0e0;
+  padding-bottom: 4px;
 }
 .onsale_wrap .onsale_content .checker .check_report {
   float: right;
@@ -3594,6 +3593,12 @@ body {
   margin-top: -5px;
   background: url("../../images/fed/onsale_sprite3.png") no-repeat -224px -115px;
 }
+.onsale_wrap .onsale_content .check_explain {
+  border-bottom: 1px solid #dfe0e0;
+  color: #999;
+  font-size: 12px;
+  padding-bottom: 8px;
+}
 .onsale_wrap .onsale_content .img_title {
   color: #333;
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
@@ -3607,6 +3612,10 @@ body {
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
   font-size: 20px;
   font-weight: bold;
+}
+.onsale_wrap .onsale_content .check_callout {
+  color: #999;
+  margin-top: 5px;
 }
 #onsale_sum {
   background: url(../../images/fed/check_tag.png) no-repeat 1081px 18px #ffffff;
@@ -3836,7 +3845,7 @@ body {
   height: 430px;
   border: 1px solid #ddd;
   background-color: #f1f1f1;
-  margin-top: 48px;
+  margin-top: 25px;
 }
 #onsale_qimian .qimian_img img {
   display: block;
