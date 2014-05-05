@@ -4310,6 +4310,7 @@ body .apply_popup .popup-title {
 }
 #jiangjia-popup .phone {
   width: 400px;
+  margin-left: 0;
 }
 #jiangjia-popup .warning {
   text-decoration: none;
