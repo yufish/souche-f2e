@@ -123,7 +123,7 @@ require(['souche/util/action-list'], function(ActionList) {
             ]
         ]
         ActionList(data, function() {})
-    }, 300);
+    }, 500);
     Souche.Util.appear("#sellstep", function() {
         var data = [
             [0,
