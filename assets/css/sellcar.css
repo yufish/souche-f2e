@@ -63,6 +63,12 @@ body {
 #sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list .sell-phone {
   margin-bottom: 20px;
 }
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form #sell-phone {
+  margin: -7px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form #sell-phone label {
+  margin-right: 7px;
+}
 #sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit {
   margin-top: 30px;
 }
@@ -223,7 +229,7 @@ body {
   height: 540px;
 }
 #sellcar #content #realvalue .mod-text {
-  width: 426px;
+  width: 480px;
   float: right;
   margin-right: 40px;
   margin-top: 195px;
