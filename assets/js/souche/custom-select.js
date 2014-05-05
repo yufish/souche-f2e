@@ -1,3 +1,6 @@
+/**
+ * [CustomSelect 自定义下拉框，可以多选，可定义下拉样式]
+ */
 Souche.UI.CustomSelect = function() {
     var select = function(id, _config) {
         this.id = id;
