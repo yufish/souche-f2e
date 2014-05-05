@@ -3193,16 +3193,16 @@ body {
   color: #666;
 }
 #fenqi-popup #arrow-time {
-  left: 207px;
+  left: 160px;
 }
 #fenqi-popup #arrow-pay {
-  left: 393px;
+  left: 345px;
   top: 114px;
   width: 125px;
   padding-top: 104px;
 }
 #fenqi-popup #arrow-mortgage {
-  left: 600px;
+  left: 560px;
 }
 #fenqi-popup .arrow0 {
   background-image: url(../../images/fed/arrow0.png);
@@ -3226,7 +3226,7 @@ body {
 #fenqi-popup .fenqi-time {
   position: absolute;
   top: 254px;
-  left: 208px;
+  left: 165px;
 }
 #fenqi-popup .fenqi-time-wrap {
   color: #333;
@@ -3263,14 +3263,14 @@ body {
 #fenqi-popup .fenqi-pay {
   position: absolute;
   top: 247px;
-  left: 427px;
+  left: 385px;
   color: #ff6701;
   font-size: 24px;
 }
 #fenqi-popup .fenqi-mortgage {
   position: absolute;
   top: 247px;
-  left: 632px;
+  left: 590px;
   color: #ff6701;
   font-size: 24px;
 }
