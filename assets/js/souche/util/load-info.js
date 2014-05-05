@@ -1,3 +1,8 @@
+/**
+ * 带有缓存的品牌和车系等得请求方法
+ * @param  {[type]} DB [description]
+ * @return {[type]}    [description]
+ */
 define(['souche/util/sc-db'], function(DB) {
     var BRAND_KEY = "BRAND_CACHE_KEY";
     var SERIES_KEY = "SERIES_CACHE_KEY";

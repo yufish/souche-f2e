@@ -1,3 +1,8 @@
+/**
+ * 一个本地存储的类，带有错误处理，在ie不会抛错，只会存储失败
+ *
+ * @return {[type]} [description]
+ */
 define(function() {
 
     var SCDB = function(_namespace) {
