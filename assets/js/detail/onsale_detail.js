@@ -79,7 +79,7 @@
         var flagD = false;
         $("#J_yuyue,#J_nav_yuyue").click(function(e) {
             e.preventDefault();
-            $(this).addClass('yuyue-loading').html("预约中...");
+            if (this.id == "J_yuyue") $(this).addClass('yuyue-loading').html("预约中...");
             $(this).removeClass('detail-yuyue');
             if ($(this).hasClass('yuyue-haved') || flagD) {
                 return;

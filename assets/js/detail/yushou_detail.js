@@ -132,7 +132,7 @@
 			    var askForSale = function() {
 			        $("#J_yuyue,#J_nav_yuyue").click(function() {
 
-			            $(this).addClass('yuyue-loading').html("预约中...");
+            if (this.id == "J_yuyue") $(this).addClass('yuyue-loading').html("预约中...");
 			            $(this).removeClass('detail-yuyue');
 
 			            Souche.checkPhoneExist(function(is_login) {
