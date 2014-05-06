@@ -1,4 +1,4 @@
-define(['common/cookieUtil'], function (CookieUtil) {
+define(['mobile/common/cookieUtil'], function (CookieUtil) {
     var checkUserLocal = function () {
         CookieUtil.update();
         var phoneReg = /^1[3458][0-9]{9}$/;
