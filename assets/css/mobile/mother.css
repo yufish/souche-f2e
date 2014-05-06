@@ -47,7 +47,7 @@
     display: block;
     float: left;
 }
-#mother-h5 .wrapper .content .zan.praised {
+#mother-h5 .wrapper .content .zan.praised i {
     background: url(../../images/mob/huodong/mother/liang.png) no-repeat center center;
     background-size: 100%;
 }
