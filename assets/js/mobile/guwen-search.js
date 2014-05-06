@@ -223,7 +223,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     window.location.hash = 'page' + pageIndex;
 
                     if (pageIndex == pages.length - 1) {
-                        $('.submit-btn').text('完成定制').show();
+                        $('.submit-btn').text('下一步').show();
                     } else if (pageIndex == pages.length) {
                         $('.submit-btn').hide();
                     } else {
