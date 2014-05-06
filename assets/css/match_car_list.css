@@ -1,0 +1,360 @@
+#match_car_list {
+  background-color: #f5f5f5;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+#match_car_list #content {
+  background-color: #f5f5f5;
+}
+#match_car_list #content .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#match_car_list #content .wrapper .qiugou-head {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+#match_car_list #content .wrapper .qiugou-head .qiugou-title {
+  float: left;
+  margin-left: 25px;
+}
+#match_car_list #content .wrapper .qiugou-head .qiugou-title span {
+  font-size: 15px;
+  color: #222;
+  line-height: 60px;
+  margin-right: 15px;
+}
+#match_car_list #content .wrapper .qiugou-head .qiugou-title span em {
+  color: #fc7000;
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 60px;
+}
+#match_car_list #content .wrapper .qiugou-head .choseagain {
+  float: right;
+  position: relative;
+}
+#match_car_list #content .wrapper .qiugou-head .choseagain .button {
+  background: url("../images/mylist/choseagain.png") no-repeat;
+  width: 130px;
+  height: 25px;
+  cursor: pointer;
+  margin-right: 120px;
+  margin-top: 17px;
+}
+#match_car_list #content .wrapper .qiugou-head .choseagain img {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .pushcar-title {
+  height: 55px;
+  width: 100%;
+  margin-top: 25px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .pushcar-title .push-date {
+  float: left;
+  width: 56px;
+  height: 53px;
+  background: url("../images/mylist/date.png") no-repeat;
+  margin-right: 15px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .pushcar-title .push-date .years {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .pushcar-title .push-date .days {
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  line-height: 33px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .pushcar-title .title {
+  float: left;
+  font-size: 25px;
+  color: #424242;
+  line-height: 55px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar {
+  margin-top: 15px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box {
+  width: 385px;
+  height: 460px;
+  border: 1px solid #e4e3e3;
+  background-color: #fff;
+  margin-bottom: 15px;
+  float: left;
+  margin-right: 9px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image {
+  display: block;
+  width: 385px;
+  height: 260px;
+  position: relative;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .faver {
+  position: absolute;
+  background: url("../images/mylist/faver.png") no-repeat;
+  width: 50px;
+  height: 20px;
+  top: 15px;
+  right: 75px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .faver:hover {
+  background: url("../images/mylist/faver-hover.png") no-repeat;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .hadfav {
+  position: absolute;
+  background: url("../images/mylist/hadfav.png") no-repeat;
+  width: 50px;
+  height: 20px;
+  top: 15px;
+  right: 75px;
+  opacity: 0.8;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .hadfav:hover {
+  background: url("../images/mylist/hadfav-hover.png") no-repeat;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .hate {
+  position: absolute;
+  background: url("../images/mylist/hate.png") no-repeat;
+  width: 60px;
+  height: 20px;
+  top: 15px;
+  right: 10px;
+  opacity: 0.8;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .hate:hover {
+  background: url("../images/mylist/hate-hover.png") no-repeat;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .jiangjia {
+  position: absolute;
+  bottom: 0px;
+  background-color: #333333;
+  opacity: 0.8;
+  width: 385px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .jiangjia i {
+  display: block;
+  float: left;
+  width: 14px;
+  height: 14px;
+  background: url("../images/mylist/jiangjia.png") no-repeat;
+  margin-left: 15px;
+  margin-top: 13px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .jiangjia span {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .jiangjia em {
+  display: block;
+  float: left;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .youhui {
+  position: absolute;
+  bottom: 0px;
+  background-color: #333333;
+  opacity: 0.8;
+  width: 385px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .youhui i {
+  display: block;
+  float: left;
+  width: 14px;
+  height: 14px;
+  background: url("../images/mylist/youhui.png") no-repeat;
+  margin-left: 15px;
+  margin-top: 13px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .youhui span {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .youhui em {
+  display: block;
+  float: left;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .youhui .down-counter {
+  float: left;
+  margin-left: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .xinche {
+  position: absolute;
+  bottom: 0px;
+  background-color: #333333;
+  opacity: 0.8;
+  width: 385px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .xinche i {
+  display: block;
+  float: left;
+  width: 14px;
+  height: 14px;
+  background: url("../images/mylist/xin.png") no-repeat;
+  margin-left: 15px;
+  margin-top: 13px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-image .xinche span {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail {
+  height: 100px;
+  width: 355px;
+  border-bottom: 1px solid #e4e3e3;
+  padding: 15px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-title {
+  font-size: 17px;
+  color: #333333;
+  font-weight: bold;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-title:hover {
+  color: #fc7000;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price {
+  margin-top: 10px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-now {
+  float: left;
+  width: 120px;
+  border-right: 1px solid #e4e3e3;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-now .price {
+  font-size: 20px;
+  color: #fc7000;
+  font-weight: bold;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-now .price-caption {
+  font-size: 13px;
+  color: #999999;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-save {
+  margin-left: 20px;
+  float: left;
+  width: 200px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-save .save {
+  font-size: 18px;
+  color: #fc7000;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-save .save span {
+  font-weight: bold;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-detail .car-price .price-save .price-old {
+  font-size: 13px;
+  color: #999999;
+  margin-top: 2px;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-advise {
+  background-color: #fcfcfc;
+  height: 39px;
+  width: 355px;
+  padding: 15px;
+  position: relative;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-advise .title {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  color: #999;
+}
+#match_car_list #content .wrapper .pushcar .pushcar-today .todaycar .car-box .car-advise p {
+  color: #666;
+  font-size: 14px;
+}
+.pushcar-box {
+  width: 385px;
+  height: 460px;
+  border: 1px solid #e4e3e3;
+  background-color: #fff;
+  margin-bottom: 15px;
+  float: left;
+  margin-right: 9px;
+}
+.pushcar-box .push-content {
+  height: 270px;
+  width: 100%;
+  border-bottom: 1px solid #e4e3e3;
+}
+.pushcar-box .push-content .pushcar-image {
+  background: url("../images/mylist/next-advise.png") no-repeat;
+  width: 158px;
+  height: 55px;
+  margin-top: 120px;
+  margin-left: 110px;
+}
+.pushcar-box .push-content h1 {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #6f6f6f;
+  margin-left: 110px;
+}
+.pushcar-box .push-content .push-time {
+  margin-left: 125px;
+  font-size: 18px;
+  color: #6f6f6f;
+  margin-top: 10px;
+}
+.pushcar-box .push-content .push-time span {
+  color: #fc7000;
+}
+.pushcar-box .choseagain {
+  background-color: #fcfcfc;
+}
+.pushcar-box .choseagain .title {
+  float: left;
+  line-height: 69px;
+  color: #666;
+  font-size: 14px;
+  margin-left: 35px;
+}
+.pushcar-box .choseagain .button {
+  float: left;
+  margin-left: 15px;
+  color: #fff;
+  border: 6px solid #fc7000;
+  border-radius: 25px;
+  height: 28px;
+  width: 180px;
+  margin-top: 15px;
+  background: url("../images/mylist/chose.png") no-repeat;
+  background-position: right;
+  background-color: #fc7000;
+  line-height: 28px;
+  padding-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.push-history {
+  margin-top: 40px;
+  position: relative;
+}
+.push-history .title {
+  float: left;
+}
+.push-history .fliter-box {
+  float: right;
+  margin-right: 10px;
+}
