@@ -430,7 +430,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 
 
                 $('.submit-btn').click(function () {
-                    if (curPageIndex != 2) {
+                    if (curPageIndex != pages.length - 1) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
                             loadAllBrands();
