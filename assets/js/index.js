@@ -22,7 +22,6 @@ define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyloa
                             $img = $slide.find('img[data-src]');
                         $img.attr("src", $img.attr('data-src'));
                         var nextnext = $(".slides li:nth-child(" + (_index + 2) + ") img")
-                        console.log(nextnext)
                         nextnext.attr("src", nextnext.attr("data-src"))
                     }
                 });
