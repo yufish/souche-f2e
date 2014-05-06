@@ -139,7 +139,7 @@ var List = function () {
             })
 
 
-            $('#cars a.car').click(function (e) {
+            $('#cars').on('click', 'a.car', function (e) {
                 e.preventDefault();
                 storeStorage();
                 window.location.href = $(this).attr('href');
