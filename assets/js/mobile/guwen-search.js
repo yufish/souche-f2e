@@ -1,4 +1,4 @@
-define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSlider) {
+define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], function (Mustache, PriceRangeSlider, cookieUtil) {
     var GuWen = (function () {
         function createBrandsManager(_container) {
             var container = _container;
@@ -87,8 +87,24 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
             };
         }
 
+        function test_AB() {
+            cookieUtil.update();
+            var tag = cookieUtil.getCookie('usertag');
+            var sum = 0;
+            for (var i = 0; i < tag.length; i++) {
+                sum += tag.charCodeAt(i);
+            };
+            return sum % 2;
+        }
+        //'0' means: has yearCode
+        //'1' no
+        var tagNum = test_AB();
+        var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
+
         function userTrack(userData) {
-            var url = contextPath + '/common/trackAction/set.json?platform=PLATFORM_H5';
+            var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
+            userData['taskId'] = taskStr,
+            userData['ua'] = navigator.userAgent,
             $.ajax({
                 url: url,
                 data: userData,
@@ -99,9 +115,13 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
 
             init: function () {
                 //change demand,ugly fixed
+                var tag = test_AB();
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
+
+
+
                 var stepRecords = [];
                 stepRecords.push(1);
                 //init search option
@@ -148,10 +168,9 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                 var pageStack = [];
                 pageStack.push(0);
 
-                var testTag // 'A' or 'B'
 
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
-                if (testTag == 'A') {
+                if (tagNum == 1) {
                     pages = [$('#page-1'), $('#page-2'), $('#page-4')];
                 }
 
@@ -179,9 +198,9 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
                                 car_brands: bStr
                             }
-                        }
-                        /*else if (pageStep == 3) {
-                           
+                        } else if (pageStep == 3) {
+                            if (tagNum != 1)
+                                return;
                             var min_year, max_year;
                             if (yearCode.trim() == '') {
                                 min_year = '';
@@ -196,16 +215,16 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                                 car_year_min: min_year,
                                 car_year_max: max_year
                             }
-                        }*/
+                        }
                         userTrack(trackData);
                         stepRecords.push(pageStep);
                         //console.log(trackData);
                     }
                     window.location.hash = 'page' + pageIndex;
 
-                    if (pageIndex == 2) {
+                    if (pageIndex == pages.length - 1) {
                         $('.submit-btn').text('完成定制').show();
-                    } else if (pageIndex == 3) {
+                    } else if (pageIndex == pages.length) {
                         $('.submit-btn').hide();
                     } else {
                         $('.submit-btn').text('下一步').show();
@@ -362,21 +381,16 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                     var brands = brandsManager.brands;
                     var minPrice = price.min.value.replace('万', ''),
                         maxPrice = price.max.value.replace('万', '');
-                    //var minPrice = $('.min-input').val().replace('万', '');
-                    //var maxPrice = $('.max-input').val().replace('万', '');
+                    if (tagNum == 0) {
+                        var minPrice = $('.min-input').val().replace('万', '');
+                        var maxPrice = $('.max-input').val().replace('万', '');
+                    }
+
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
                         sStr = '';
-                    /*for (var brand in brands) {
-                for (var series in brands[brand]) {
-                    if (series == '') {
-                        bStr += ',' + brand
-                    } else {
-                        sStr += ',' + series;
-                    }
-                }
-            }*/
+
                     for (var brand in brands) {
                         bStr += ',' + brand;
                     }
@@ -389,18 +403,14 @@ define(['lib/mustache', 'souche/range-slide'], function (Mustache, PriceRangeSli
                         dataType: 'json',
                         data: {
                             brands: bStr,
-                            series: '',
-                            //year: yearCode,
+                            //series: '',
+                            year: (tagNum == 0 ? yearCode : ''),
                             minPrice: minPrice,
                             maxPrice: maxPrice
                         },
                         success: function () {
                             setTimeout(function () {
-                                if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
-                                    window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
-                                } else {
-                                    window.location.href = contextPath + '/mobile/carcustom.html';
-                                }
+                                window.location.href = contextPath + '/mobile/carcustom.html' + location.search;
                             }, 500)
                         },
                         error: function () {
