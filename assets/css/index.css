@@ -1337,6 +1337,7 @@ a:hover {
 #index .main-slider .flexslider .slides img {
   display: block;
   margin: 0 auto;
+  width: 100%;
 }
 #index .main-slider .flexslider .flex-direction-nav {
   display: none;

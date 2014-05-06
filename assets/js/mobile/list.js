@@ -26,7 +26,7 @@ var List = function () {
                         favorite: item.favorite,
                         favCount: item.count,
                         year: item.carVo.yearShow,
-                        month: item.carVo.mouthShow,
+                        month: item.carVo.monthShow,
                         newPrice: item.carVo.newPriceToString,
                         levelName: item.carVo.levelName,
                         pictureBig: item.carPicturesVO.pictureBig,
@@ -55,14 +55,15 @@ var List = function () {
 
 
 
-    var store = function () {
-        var db = window.localStorage;
+    var storeStorage = function () {
+        var db = window.sessionStorage;
         db.setItem('timestamp', Date.now());
         db.setItem('url', window.location.href);
         db.setItem('carlist', JSON.stringify(carList));
     }
-    var recover = function () {
-        var db = window.localStorage;
+
+    var backRecover = function () {
+        var db = window.sessionStorage;
         var time = parseInt(db.getItem('timestamp'));
         var url = db.getItem('url');
 
@@ -92,15 +93,16 @@ var List = function () {
             url = obj.url;
 
         //10 minutes 1000*60*10
-        if (!time || (Date.now() - time < 600000)) {
-            return ture;
+        if (!time || (Date.now() - time > 600000)) {
+            return false;
         }
-        var url = db.getItem('url');
-        if (url && (url == window.location.href)) {
-            return true;
+        if (!url || (url != window.location.href)) {
+            return false;
         }
-        return false;
+        return true;
     }
+
+
 
     return {
 
@@ -109,10 +111,10 @@ var List = function () {
                 config[i] = _config[i]
             }
             tpl_cars = $("#tpl_cars").html();
+            backRecover();
             this.bind()
         },
         bind: function () {
-            $("#filter").css("left", -$(window).width())
             $("#list .filter .t").on("click", function (e) {
                 setTimeout(function () {
                     $("#content").css("height", 0)
@@ -136,6 +138,12 @@ var List = function () {
                 loadMore();
             })
 
+
+            $('#cars').on('click', 'a.car', function (e) {
+                e.preventDefault();
+                storeStorage();
+                window.location.href = $(this).attr('href');
+            })
 
             //do fav
             ! function () {
@@ -240,15 +248,6 @@ var List = function () {
             }();
             //do fav end
 
-
-
-            // $(window).on("scroll",function(e){
-            //     if($("#filter").offset().left==0){
-            //         $("#filter .action").css({
-            //             top:$(window).height()+$(window).scrollTop()-70
-            //         })
-            //     }
-            // })
         }
 
     }
