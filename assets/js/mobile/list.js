@@ -26,7 +26,7 @@ var List = function () {
                         favorite: item.favorite,
                         favCount: item.count,
                         year: item.carVo.yearShow,
-                        month: item.carVo.mouthShow,
+                        month: item.carVo.monthShow,
                         newPrice: item.carVo.newPriceToString,
                         levelName: item.carVo.levelName,
                         pictureBig: item.carPicturesVO.pictureBig,
