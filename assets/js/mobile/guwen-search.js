@@ -90,11 +90,8 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
         function test_AB() {
             cookieUtil.update();
             var tag = cookieUtil.getCookie('usertag');
-            var sum = 0;
-            for (var i = 0; i < tag.length; i++) {
-                sum += tag.charCodeAt(i);
-            };
-            return sum % 2;
+            var lastCode = tag.charCodeAt(tag.length - 1);
+            return lastCode % 2;
         }
         //'0' means: has yearCode
         //'1' no
