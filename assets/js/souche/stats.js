@@ -40,4 +40,25 @@ $(document).ready(function() {
             success: function(data) {}
         });
     });
+
+    $(document).on("click", function(e) {
+        var data = {
+            page_x: e.pageX - ($(window).width() / 2 - 595),
+            page_y: e.pageY,
+            element_id: e.target.id || "",
+            page_url: window.location.href.replace(/#.*?$/, ""),
+            refer_url: window.location.referrer,
+            user_agent: navigator.userAgent,
+            user_screenwidth: screen.width,
+            user_screenheight: screen.height,
+            user_viewwidth: $(window).width(),
+            user_viewheight: $(window).height(),
+            cookie: document.cookie
+        }
+        var param = ""
+        for (var d in data) {
+            param += d + "=" + data[d] + "&"
+        }
+        new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
+    })
 });
