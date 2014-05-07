@@ -14,4 +14,12 @@ module.exports.controllers =
                 req.query.user_tag = tag_match[1]
             func_click.add req.query,(error,click)->
                 res.send 'ok'
-            
+    "/click-chart":
+        get:(req,res)->
+            res.render 'performance/clicks'
+    "/click-data":
+        get:(req,res)->
+            url = req.query.url
+            console.log url
+            func_click.getAll 1,20000,{page_url:url},"id desc",(error,clicks)->
+                res.send clicks

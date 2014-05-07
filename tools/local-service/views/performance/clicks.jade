@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        title 热力图
+        script(src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11")
+        script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
+        style.
+            .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:1000px;}
+    body
+        iframe.refer-page(src="http://www.souche.com")
+        .map#map
+        script.
+            $.ajax({
+                url:"/performance/click-data",
+                dataType:"json",
+                data:{
+                    url:"http://www.souche.com/"
+                },
+                success:function(data){
+                    var hdata = [
+                    ]
+                    data.forEach(function(d){
+                        hdata.push({
+                            x:d.page_x,
+                            y:d.page_y,
+                            count:1
+                            })
+                        })
+                    var config = {
+                        element: document.getElementById("map"),
+                        radius: 10,
+                        opacity: 50
+                    };
+                    
+                    //creates and initializes the heatmap
+                    var heatmap = h337.create(config);
+                 
+                    // let's get some data
+                    var data = {
+                        max: 20,
+                        data:hdata
+                    };
+                 
+                    heatmap.store.setDataSet(data);
+                }
+            })
