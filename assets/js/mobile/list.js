@@ -74,7 +74,7 @@ var List = function () {
             return;
         }
 
-        var carList = JSON.parse(db.getItem('carlist'));
+        carList = JSON.parse(db.getItem('carlist'));
         makeDom(carList);
     }
 
