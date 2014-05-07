@@ -1,4 +1,4 @@
-Changefiles = new __BaseModel("changefiles")
+Changefiles = new __BaseModel("f2e_changefiles")
 Changefiles.sync()
 func = new __BaseFunction(Changefiles)
 func.updateByPath = (path,data,callback)->
