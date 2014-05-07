@@ -1,5 +1,5 @@
 ({
-    baseUrl: "../",
-    name: "index/index",
+    baseUrl: ".",
+    name: "index",
     out: "index.r.js"
 })
