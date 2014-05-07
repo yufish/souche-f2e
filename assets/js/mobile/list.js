@@ -71,6 +71,7 @@ var List = function () {
             time: time,
             url: url
         })) {
+            db.setItem('carlist', '');
             return;
         }
 
