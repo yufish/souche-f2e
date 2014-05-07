@@ -1,10 +1,10 @@
 path = require 'path'
 config =
   run_port:3232
-  mysql_table:"f2e"
-  mysql_username:"root" #数据库用户名
-  mysql_password:"123" #数据库密码
-  mysql_host:"115.29.10.121"
+  mysql_table:"souchecar"
+  mysql_username:"souche" #数据库用户名
+  mysql_password:"souchewang010" #数据库密码
+  mysql_host:"soucherds.mysql.rds.aliyuncs.com"
   upload_path:__dirname+"/uploads/"
   assets_path:path.join __dirname,'./../../assets/'
   f2e_path:path.join __dirname,'./../../'

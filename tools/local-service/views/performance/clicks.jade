@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        title 热力图
+        script(src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11")
+            
+        script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
+        style.
+            .container{position:relative;}
+            .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:4000px;}
+            .refer-page{opacity:0.5}
+    body
+        label
+            | 选择页面
+            select#select
+                |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
+                |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
+                |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
+                |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
+                |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
+
+        .container
+            iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
+            .map#map
+        script.
+            $("#select").on("change",function(){
+                window.location.href="?url="+this.value
+                })
+            var url = "#{locals.url?locals.url:"http://www.souche.com/"}"
+            if(url=="http://www.souche.com/pages/choosecarpage/choose-car-detail.html"){
+                $(".refer-page").attr("src",url+"?carId=qU6uBbS")
+            }
+            $.ajax({
+                url:"/performance/click-data",
+                dataType:"json",
+                data:{
+                    url:url
+                },
+                success:function(data){
+                    var hdata = [
+                    ]
+                    data.forEach(function(d){
+                        hdata.push({
+                            x:d.page_x,
+                            y:d.page_y,
+                            count:1
+                            })
+                        })
+                    var config = {
+                        element: document.getElementById("map"),
+                        radius: 10,
+                        opacity: 50
+                    };
+                    
+                    //creates and initializes the heatmap
+                    var heatmap = h337.create(config);
+                 
+                    // let's get some data
+                    var data = {
+                        max: 30,
+                        data:hdata
+                    };
+                 
+                    heatmap.store.setDataSet(data);
+                }
+            })
