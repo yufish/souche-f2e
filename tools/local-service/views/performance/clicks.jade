@@ -3,23 +3,25 @@ html
     head
         title 热力图
         script(src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11")
-            
+        |<link href="http://res.souche.com/assets/css/bootstrap/bootstrap3.css?t=1150" rel="stylesheet" type="text/css" />
+        |<link href="http://res.souche.com/assets/css/souche/reset.css?t=1150" rel="stylesheet" type="text/css" />
         script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
         style.
-            .container{position:relative;}
+            .con{position:relative;font-size:14px;}
             .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:4000px;}
             .refer-page{opacity:0.5}
     body
-        label
-            | 选择页面
-            select#select
-                |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
-                |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
-                |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
-                |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
-                |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
-
-        .container
+        div.clearfix(style="margin:20px;")
+            label
+                | 选择页面
+                select#select
+                    |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
+                    |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
+                    |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
+                    |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
+                    |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
+            span.loading.well.well-sm(style="margin-left:10px;") 加载中,请稍后
+        .con
             iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
             .map#map
         script.
@@ -30,6 +32,7 @@ html
             if(url=="http://www.souche.com/pages/choosecarpage/choose-car-detail.html"){
                 $(".refer-page").attr("src",url+"?carId=qU6uBbS")
             }
+
             $.ajax({
                 url:"/performance/click-data",
                 dataType:"json",
@@ -37,6 +40,7 @@ html
                     url:url
                 },
                 success:function(data){
+                    $(".loading").css("display","none");
                     var hdata = [
                     ]
                     data.forEach(function(d){
@@ -57,7 +61,7 @@ html
                  
                     // let's get some data
                     var data = {
-                        max: 30,
+                        max: 70,
                         data:hdata
                     };
                  
