@@ -1,4 +1,4 @@
-User = __M 'users'
+User = __M 'f2e_users'
 User.sync()
 pinyin = require './../lib/PinYin.js'
 cache = 
