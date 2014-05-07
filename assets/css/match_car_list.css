@@ -380,6 +380,17 @@
   padding: 15px;
   position: relative;
 }
+.car-box .car-advise .selled {
+  position: absolute;
+  width: 33px;
+  height: 20px;
+  font-size: 14px;
+  background-color: #cccccc;
+  color: #fcfcfc;
+  top: 14px;
+  right: 15px;
+  padding-left: 5px;
+}
 .car-box .car-advise .title {
   position: absolute;
   right: 15px;
