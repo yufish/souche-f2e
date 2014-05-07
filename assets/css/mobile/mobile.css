@@ -5854,7 +5854,8 @@ body {
     margin-left: -150px;
     background-color: #fff;
     padding-top: 30px;
-    border-radius: 8px
+    border-radius: 8px;
+    z-index: 10000;
 }
 .mobile-popup .title {
     text-align: center;
