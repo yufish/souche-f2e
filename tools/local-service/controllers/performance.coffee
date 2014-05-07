@@ -2,7 +2,7 @@ func_click = __F 'performance/click'
 module.exports.controllers = 
     "/click":
         get:(req,res)->
-            if not req.query 
+            if not req.query || !req.query.cookie
                 res.send 'error'
                 return
             req.query.user_ip = req.headers['x-real-ip'] || req.headers['x-forwarded-for']
