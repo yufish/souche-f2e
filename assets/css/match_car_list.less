@@ -84,207 +84,6 @@
           }
           .todaycar{
             margin-top: 15px;
-            .car-box{
-              width: 385px;
-              height: 460px;
-              border: 1px solid #e4e3e3;
-              background-color: #fff;
-              margin-bottom: 15px;
-              float: left;
-              margin-right: 9px;
-              .car-image{
-                display: block;
-                width: 385px;
-                height: 260px;
-                position: relative;
-                .faver{
-                  position: absolute;
-                  background: url("../images/mylist/faver.png") no-repeat;
-                  width: 50px;
-                  height: 20px;
-                  top: 15px;
-                  right: 75px;
-                }
-                .faver:hover{
-                  background: url("../images/mylist/faver-hover.png") no-repeat;
-                }
-                .hadfav{
-                  position: absolute;
-                  background: url("../images/mylist/hadfav.png") no-repeat;
-                  width: 50px;
-                  height: 20px;
-                  top: 15px;
-                  right: 75px;
-                  opacity: 0.8;
-                }
-                .hadfav:hover{
-                  background: url("../images/mylist/hadfav-hover.png") no-repeat;
-                }
-                .hate{
-                  position: absolute;
-                  background: url("../images/mylist/hate.png") no-repeat;
-                  width: 60px;
-                  height: 20px;
-                  top: 15px;
-                  right: 10px;
-                  opacity: 0.8;
-                }
-                .hate:hover{
-                  background: url("../images/mylist/hate-hover.png") no-repeat;
-
-                }
-                .jiangjia{
-                  position: absolute;
-                  bottom: 0px;
-                  background-color: #333333;
-                  opacity: 0.8;
-                  width: 385px;
-                  height: 40px;
-                  line-height: 40px;
-                  color: #fff;
-                  i{
-                    display: block;
-                    float: left;
-                    width: 14px;
-                    height: 14px;
-                    background: url("../images/mylist/jiangjia.png") no-repeat;
-                    margin-left: 15px;
-                    margin-top: 13px;
-                  }
-                  span{
-                    display: block;
-                    float: left;
-                    margin-left: 10px;
-                  }
-                  em{
-                    display: block;
-                    float: left;
-                  }
-                }
-                .youhui{
-                  position: absolute;
-                  bottom: 0px;
-                  background-color: #333333;
-                  opacity: 0.8;
-                  width: 385px;
-                  height: 40px;
-                  line-height: 40px;
-                  color: #fff;
-                  i{
-                    display: block;
-                    float: left;
-                    width: 14px;
-                    height: 14px;
-                    background: url("../images/mylist/youhui.png") no-repeat;
-                    margin-left: 15px;
-                    margin-top: 13px;
-                  }
-                  span{
-                    display: block;
-                    float: left;
-                    margin-left: 10px;
-                  }
-                  em{
-                    display: block;
-                    float: left;
-                  }
-                  .down-counter{
-                    float: left;
-                    margin-left: 10px;
-                  }
-                }
-                .xinche{
-                  position: absolute;
-                  bottom: 0px;
-                  background-color: #333333;
-                  opacity: 0.8;
-                  width: 385px;
-                  height: 40px;
-                  line-height: 40px;
-                  color: #fff;
-                  i{
-                    display: block;
-                    float: left;
-                    width: 14px;
-                    height: 14px;
-                    background: url("../images/mylist/xin.png") no-repeat;
-                    margin-left: 15px;
-                    margin-top: 13px;
-                  }
-                  span{
-                    display: block;
-                    float: left;
-                    margin-left: 10px;
-                  }
-                }
-              }
-              .car-detail{
-                height: 100px;
-                width: 355px;
-                border-bottom: 1px solid #e4e3e3;
-                padding: 15px;
-                .car-title{
-                  font-size: 17px;
-                  color: #333333;
-                  font-weight: bold;
-                }
-                .car-title:hover{
-                  color: @orange;
-                }
-                .car-price{
-                  margin-top: 10px;
-                  .price-now{
-                    float: left;
-                    width: 120px;
-                    border-right: 1px solid #e4e3e3;
-                    .price{
-                      font-size: 20px;
-                      color: @orange;
-                      font-weight: bold;
-                    }
-                    .price-caption{
-                      font-size: 13px;
-                      color: #999999;
-                    }
-                  }
-                  .price-save{
-                    margin-left: 20px;
-                    float: left;
-                    width: 200px;
-                    .save{
-                      font-size: 18px;
-                      color: @orange;
-                      span{
-                        font-weight: bold;
-                      }
-                    }
-                    .price-old{
-                      font-size: 13px;
-                      color: #999999;
-                      margin-top: 2px;
-                    }
-                  }
-                }
-              }
-              .car-advise{
-                background-color: #fcfcfc;
-                height: 39px;
-                width: 355px;
-                padding: 15px;
-               
-                position: relative;
-                .title{
-                  position: absolute;
-                  right: 15px;
-                  top: 40px;
-                  color: #999;
-                }
-                p{
-                  color: #666;
-                  font-size: 14px;
-                }
-              }
-            }
           }
         }
       }
@@ -357,11 +156,258 @@
 .push-history{
   margin-top: 40px;
   position: relative;
+  .push-title{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+  }
   .title{
     float: left;
+    height: 40px;
+
+    i{
+      display: block;
+      width: 20px;
+      height: 21px;
+      background: url("../images/mylist/history.png") no-repeat;
+      float: left;
+      margin-top: 12px;
+      margin-right: 10px;
+    }
+    span{
+      float: left;
+      font-size: 25px;
+      color: #424242;
+      line-height: 40px;
+    }
   }
   .fliter-box{
    float: right;
    margin-right: 10px;
+   .fliter{
+    margin-top: 15px;
+    font-size: 14px;
+    .showall{
+      float: left;
+      margin-right: 25px;
+    }
+    .showsell{
+      float: left;
+    }
+   }
+  }
+}
+.history-car{
+
+}
+.car-box{
+  width: 385px;
+  height: 460px;
+  border: 1px solid #e4e3e3;
+  background-color: #fff;
+  margin-bottom: 15px;
+  float: left;
+  margin-right: 9px;
+  .car-image{
+    display: block;
+    width: 385px;
+    height: 260px;
+    position: relative;
+    .faver{
+      position: absolute;
+      background: url("../images/mylist/faver.png") no-repeat;
+      width: 50px;
+      height: 20px;
+      top: 15px;
+      right: 75px;
+    }
+    .faver:hover{
+      background: url("../images/mylist/faver-hover.png") no-repeat;
+    }
+    .hadfav{
+      position: absolute;
+      background: url("../images/mylist/hadfav.png") no-repeat;
+      width: 50px;
+      height: 20px;
+      top: 15px;
+      right: 75px;
+      opacity: 0.8;
+    }
+    .hadfav:hover{
+      background: url("../images/mylist/hadfav-hover.png") no-repeat;
+    }
+    .hate{
+      position: absolute;
+      background: url("../images/mylist/hate.png") no-repeat;
+      width: 60px;
+      height: 20px;
+      top: 15px;
+      right: 10px;
+      opacity: 0.8;
+    }
+    .hate:hover{
+      background: url("../images/mylist/hate-hover.png") no-repeat;
+
+    }
+    .jiangjia{
+      position: absolute;
+      bottom: 0px;
+      background-color: #333333;
+      opacity: 0.8;
+      width: 385px;
+      height: 40px;
+      line-height: 40px;
+      color: #fff;
+      i{
+        display: block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        background: url("../images/mylist/jiangjia.png") no-repeat;
+        margin-left: 15px;
+        margin-top: 13px;
+      }
+      span{
+        display: block;
+        float: left;
+        margin-left: 10px;
+      }
+      em{
+        display: block;
+        float: left;
+      }
+    }
+    .youhui{
+      position: absolute;
+      bottom: 0px;
+      background-color: #333333;
+      opacity: 0.8;
+      width: 385px;
+      height: 40px;
+      line-height: 40px;
+      color: #fff;
+      i{
+        display: block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        background: url("../images/mylist/youhui.png") no-repeat;
+        margin-left: 15px;
+        margin-top: 13px;
+      }
+      span{
+        display: block;
+        float: left;
+        margin-left: 10px;
+      }
+      em{
+        display: block;
+        float: left;
+      }
+      .down-counter{
+        float: left;
+        margin-left: 10px;
+      }
+    }
+    .xinche{
+      position: absolute;
+      bottom: 0px;
+      background-color: #333333;
+      opacity: 0.8;
+      width: 385px;
+      height: 40px;
+      line-height: 40px;
+      color: #fff;
+      i{
+        display: block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        background: url("../images/mylist/xin.png") no-repeat;
+        margin-left: 15px;
+        margin-top: 13px;
+      }
+      span{
+        display: block;
+        float: left;
+        margin-left: 10px;
+      }
+    }
+  }
+  .car-detail{
+    height: 100px;
+    width: 355px;
+    border-bottom: 1px solid #e4e3e3;
+    padding: 15px;
+    .car-title{
+      font-size: 17px;
+      color: #333333;
+      font-weight: bold;
+    }
+    .car-title:hover{
+      color: @orange;
+    }
+    .car-price{
+      margin-top: 10px;
+      .price-now{
+        float: left;
+        width: 120px;
+        border-right: 1px solid #e4e3e3;
+        .price{
+          font-size: 20px;
+          color: @orange;
+          font-weight: bold;
+        }
+        .price-caption{
+          font-size: 13px;
+          color: #999999;
+        }
+      }
+      .price-save{
+        margin-left: 20px;
+        float: left;
+        width: 200px;
+        .save{
+          font-size: 18px;
+          color: @orange;
+          span{
+            font-weight: bold;
+          }
+        }
+        .price-old{
+          font-size: 13px;
+          color: #999999;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  .car-advise{
+    background-color: #fcfcfc;
+    height: 39px;
+    width: 355px;
+    padding: 15px;
+    position: relative;
+    .selled{
+      position: absolute;
+      width: 33px;
+      height: 20px;
+      font-size: 14px;
+      background-color: #cccccc;
+      color: #fcfcfc;
+      top: 14px;
+      right: 15px;
+      padding-left: 5px;
+    }
+    .title{
+      position: absolute;
+      right: 15px;
+      top: 40px;
+      color: #999;
+    }
+    p{
+      color: #666;
+      font-size: 14px;
+    }
   }
 }

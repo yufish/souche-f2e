@@ -1580,6 +1580,17 @@ body {
     font-size: 14px;
     color: #666;
 }
+#center .car .sold-out {
+    width: 54px;
+    height: 27px;
+    background: url(../../images/mob/h5-2/sold-out.png) no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
 #center .car .price {
     line-height: 25px;
 }
@@ -2369,7 +2380,6 @@ body {
     font-size: 12px;
 }
 .common-cars .car .rht .first-time {
-    display: inline;
     float: right;
     color: #999;
     font-size: 12px;
@@ -5844,7 +5854,8 @@ body {
     margin-left: -150px;
     background-color: #fff;
     padding-top: 30px;
-    border-radius: 8px
+    border-radius: 8px;
+    z-index: 10000;
 }
 .mobile-popup .title {
     text-align: center;
