@@ -57,11 +57,11 @@ app.configure ->
           res.send content
   app.use app.router
   
-  rainbow.route(app, {  
-    controllers: '/controllers/',
-    filters:'/filters/',      
-    template:'/views/'   
-  })
+  # rainbow.route(app, {  
+  #   controllers: '/controllers/',
+  #   filters:'/filters/',      
+  #   template:'/views/'   
+  # })
   #404
   app.all "*",(req, res, next)->
       res.send "页面不存在",404
