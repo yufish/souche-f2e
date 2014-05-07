@@ -5,16 +5,30 @@ html
         script(src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11")
         script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
         style.
-            .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:1000px;}
+            .container{position:relative;}
+            .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:4000px;}
+            .refer-page{opacity:0.5}
     body
-        iframe.refer-page(src="http://www.souche.com")
-        .map#map
+        label
+            | 选择页面
+            select#select
+                |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
+                |<option value="http://souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
+                |<option value="http://souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
+                |<option value="http://souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
+
+        .container
+            iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
+            .map#map
         script.
+            $("#select").on("change",function(){
+                window.location.href="?url="+this.value
+                })
             $.ajax({
                 url:"/performance/click-data",
                 dataType:"json",
                 data:{
-                    url:"http://www.souche.com/"
+                    url:"#{locals.url?locals.url:"http://www.souche.com/"}"
                 },
                 success:function(data){
                     var hdata = [

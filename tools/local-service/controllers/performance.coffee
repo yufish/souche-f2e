@@ -16,6 +16,7 @@ module.exports.controllers =
                 res.send 'ok'
     "/click-chart":
         get:(req,res)->
+            res.locals.url = req.query.url
             res.render 'performance/clicks'
     "/click-data":
         get:(req,res)->
