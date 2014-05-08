@@ -70,7 +70,7 @@ body {
   margin-right: 7px;
 }
 #sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 #sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit button {
   display: block;
@@ -416,9 +416,9 @@ body {
   position: absolute;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-4 .pic4-4-cont {
-  width: 101px;
-  height: 98px;
-  background: url("../images/sellcar/4-4.png");
+  width: 90px;
+  height: 91px;
+  background: url("../images/sellcar/4-4.png?t=2") no-repeat;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://f2e.souche.com/assets/images/sellcar/4-4.png');
   zoom: 1;
 }
