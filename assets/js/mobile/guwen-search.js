@@ -196,7 +196,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                                 car_brands: bStr
                             }
                         } else if (pageStep == 3) {
-                            if (tagNum != 1)
+                            if (tagNum == 1)
                                 return;
                             var min_year, max_year;
                             if (yearCode.trim() == '') {
