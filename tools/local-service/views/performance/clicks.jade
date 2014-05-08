@@ -6,12 +6,18 @@ html
         |<link href="http://res.souche.com/assets/css/bootstrap/bootstrap3.css?t=1150" rel="stylesheet" type="text/css" />
         |<link href="http://res.souche.com/assets/css/souche/reset.css?t=1150" rel="stylesheet" type="text/css" />
         |<link href="http://f2e.souche.com/assets/css/ui/tips.css?t=1150" rel="stylesheet" type="text/css" />
+        |<link href="http://f2e.souche.com/assets/backend/jcrop/css/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" />
         script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
-        
+        script(src="http://f2e.souche.com/assets/backend/jcrop/js/jquery.Jcrop.min.js")
         style.
             .con{position:relative;font-size:14px;width:1190px;margin:0 auto;}
-            .refer-page,.map{position:absolute;left:0;top:0;width:1190px;height:4000px;}
+            .refer-page,.map,.jcrop-holder,.jcrop-container{position:absolute;left:0;top:0;width:1190px;height:4000px;}
             .refer-page{opacity:0.5}
+            .map{
+            z-index:5;
+            }
+            .jcrop-holder{background:rgba(1,1,1,0) !important;z-index:10;}
+            .area-p{position:absolute;background:#fff;opacity:0.6;text-align:center;font-size:14px;z-index:18;pointer-events:none;}
     body
         include header
         div.clearfix(style="width:1190px;margin:20px auto;")
@@ -28,6 +34,7 @@ html
         .con
             iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
             .map#map
+            .jcrop-container
         script(src="http://f2e.souche.com/assets/js/souche/ui/loadingTip.js")
         script.
             $("#select").on("change",function(){
@@ -38,6 +45,13 @@ html
                 $(".refer-page").attr("src",url+"?carId=qU6uBbS")
             }
             loadingTip.show("正在加载中，请稍后")
+                var inIn = function(data,d){
+                    if(d.page_x>data.x&&d.page_x<data.x2&&d.page_y>data.y&&d.page_y<data.y2){
+                    return true;
+                    }
+                    return false;
+                }
+            var globalData = [];
             $.ajax({
                 url:"/performance/click-data",
                 dataType:"json",
@@ -45,6 +59,25 @@ html
                     url:url
                 },
                 success:function(data){
+                globalData = data;
+                $('.jcrop-container').Jcrop({
+                    bgColor:     'black',
+                onSelect:function(data){
+                    var count = 0;
+                       
+                    globalData.forEach(function(d){
+                        if(inIn(data,d)){
+                            count++;
+                        }
+                        })
+                         $("<div class='area-p'></div>").appendTo($(".con")).css({
+                            left:data.x,
+                            top:data.y,
+                            width:data.w,
+                            height:data.h
+                            }).html(count)
+                }
+                }); 
                     $(".loading").css("display","none");
                     var hdata = [
                     ]
