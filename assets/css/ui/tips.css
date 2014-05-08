@@ -1,0 +1,98 @@
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+  }
+}
+@-moz-keyframes zoomOut {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+@-o-keyframes zoomOut {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    -o-transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.loading-tip {
+  position: fixed;
+  top: 200px;
+  left: 45%;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px 10px;
+  background: #f4e8ab;
+  color: #333;
+  display: none;
+  z-index: 10000;
+  box-shadow: 1px 1px 1px #ddd;
+}
+.message-tip {
+  position: fixed;
+  top: 200px;
+  left: 45%;
+  height: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  line-height: 20px;
+  padding: 2px 10px;
+  border-radius: 15px;
+  background: #f4e8ab;
+  color: #333;
+  border: 1px solid #dac55f;
+  opacity: 0;
+  z-index: 10000;
+  /*    box-shadow: 1px 1px 1px #999;*/
+  -webkit-animation: zoomIn 400ms ease both;
+  -webkit-backface-visibility: visible;
+  -moz-animation: zoomIn 400ms ease both;
+  -moz-backface-visibility: visible;
+  -o-animation: zoomIn 400ms ease both;
+  -o-backface-visibility: visible;
+  animation: zoomIn 400ms ease both;
+}
+.message-tip.show {
+  opacity: 1;
+  -webkit-animation: zoomOut 200ms ease both;
+  -webkit-backface-visibility: visible;
+  -moz-animation: zoomOut 200ms ease both;
+  -moz-backface-visibility: visible;
+  -o-animation: zoomOut 200ms ease both;
+  -o-backface-visibility: visible;
+  animation: zoomOut 200ms ease both;
+}
