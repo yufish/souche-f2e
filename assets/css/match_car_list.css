@@ -132,7 +132,7 @@
   font-size: 14px;
   margin-left: 35px;
 }
-.pushcar-box .choseagain .button {
+.pushcar-box .choseagain #again-button {
   float: left;
   margin-left: 15px;
   color: #fff;
@@ -149,6 +149,12 @@
   font-size: 18px;
   cursor: pointer;
   display: block;
+}
+.pushcar-box .choseagain #again-button:hover {
+  border: 6px solid #fb560d;
+  background: url("../images/mylist/chose-hover.png") no-repeat;
+  background-position: right;
+  background-color: #fb560d;
 }
 .push-history {
   margin-top: 40px;
