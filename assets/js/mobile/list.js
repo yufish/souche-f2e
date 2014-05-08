@@ -71,10 +71,11 @@ var List = function () {
             time: time,
             url: url
         })) {
+            db.setItem('carlist', '');
             return;
         }
 
-        var carList = JSON.parse(db.getItem('carlist'));
+        carList = JSON.parse(db.getItem('carlist'));
         makeDom(carList);
     }
 
