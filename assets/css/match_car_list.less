@@ -416,112 +416,21 @@
 #qiugou-container{
   background-color: #fff;
   width: 100%;
-  border-top: 1px solid #e5e5e5;
-  border-bottom:  1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
   position: relative;
+  margin-top: 20px;
   .wrapper{
+    background-color: #fff;
     width:1191px;
     margin:0 auto;
     position: relative;
     .qiugou-filter{
       background: url("../images/index/qiugou-container.png?123")no-repeat scroll right bottom;
       position: relative;
-      .qiugou-box{
-       width:1191px;
-       padding-top: 30px;
-       .qiugou-title{
-         height: 60px;
-         font-size: 28px;
-         color: #222222;
-         span{color: @orange;margin: 10px;}
-       }
-     }
-     
-     .demand{
-      width: 783px;
-      padding-top: 20px;
-      position: relative;
-      background: #fff;
-      border: 1px solid #e4e4e4;
-      border-bottom: none;
-      padding-left: 20px;
-      .shadow{
-        width: 22px;
-        height: 136px;
-        position: absolute;
-        right: -23px;
-        background: url(../images/index/shadow.png?123) no-repeat 0 0;
-        z-index: 200;
-      }
-      .demand-title{
-        color: #222;font-size: 15px;
-        line-height: 30px;
-        margin-left: 15px;
-      }
-      .chosecar-wrap{
-        width: 100%;
-        padding-bottom: 20px;
-        .chosecar-box{
-          float: left;
-          display: inline;
-          .chosecar{
-            
-            .chosecar-li{
-              padding-left: 15px;
-              width: 555px;
-              border-bottom: 1px solid #e4e4e4;
-              font-size: 12px;
-              color: #222;
-              font-weight: bold;
-              line-height: 27px;
-              min-height: 30px;
-              .label{
-                float:left;
-                width:44px;
-              }
-              .con{
-                float:left;
-                width:500px;
-
-              }
-              .chosecentent{
-                white-space:nowrap;
-                font-weight: normal;
-                margin-right: 20px;
-                line-height: 20px;
-              }
-            }
-            .choseagain{
-              margin-top: 20px;
-              color: @orange;
-              font-size: 12px;
-              
-              font-size: 16px;
-              height: 25px;
-              
-              i{
-                background: url("../images/index/choseagain.png") no-repeat 0 0;
-                
-                height: 20px;
-                width: 20px;
-                float: left;
-                margin: 2px 15px;
-              }
-              a{
-                color: @orange;
-                line-height: 20px;
-              }
-            }
-          }
-        }
-      }
-
-    }
     .erweima{
       width: 155px;
       float: right;
       .erweima-img{
-       
         width: 100px;
         height: 173px;
         background: url("../images/index/erweima-img.png") no-repeat;
@@ -531,32 +440,36 @@
 }
 }
 .qiugou{
-  background:#f9f9f9;
+  background:#fff;
   position: relative;
   .inner{
-    padding-top:30px;
+    margin:30px;
+    width: 885px;
+    float: left;
+    border-right: 1px solid #d9d9d9;
+    padding-left: 70px;
   }
   .person-bg{
-    background:#f9f9f9 url(../images/index/qiugou-container.png?125) no-repeat;
+    background:url(../images/mylist/qiugou.png?123) no-repeat;
     background-position: bottom;
     position: absolute;
-    bottom: -2px;
-    right:1px;
+    bottom: 0;
+    right:170px;
     width:386px;
     height:377px;
     z-index: 2;
   }
   .head{
-    height:60px;
+    height:50px;
     overflow: hidden;
     position: relative;
     z-index: 2;
-    width:540px;
   }
   .title{
-    font-size: 28px;
+    font-size: 25px;
     color:#222;
     line-height: 35px;
+    
     em{
       color:@orange;
       margin: 10px;
@@ -591,9 +504,7 @@
   .form{
     z-index:5;
     width: 801px;
-    padding-bottom: 40px;
     background-color: #fff;
-    border: 1px solid #e5e5e5;
     border-bottom: none;
     img.no-result{
       width: 277px;
@@ -613,9 +524,9 @@
       z-index: 200;
     }
     .form-inner{
-     margin-left: 50px;
-     margin-top: 20px;
-     .form-title{
+     margin-left: 20px;
+     margin-bottom: 20px;
+    .form-title{
       font-size: 15px;
       color: #666;
       line-height: 30px;
@@ -629,12 +540,11 @@
       font-size: 14px;
       float:left;
       line-height: 30px;
-      font-weight: bold;
       width:30px;
       height:30px;
     }
     .input{
-      margin-left: 20px;
+      margin-left: 10px;
       float:left;
       color:#444;
       font-size: 14px;
@@ -721,7 +631,6 @@
     font-size: 14px;
     float:left;
     line-height: 30px;
-    font-weight: bold;
     width:30px;
     height:30px;
   }
@@ -857,13 +766,12 @@
       // background-position: 10px center;
       // background-repeat: no-repeat;
       background: #ffa053;
-      
- }
+}
 .wedo{
   width: 70px;
   height: 174px;
   position: absolute;
-  right: 275px;
+  right: 465px;
   top:0;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
@@ -873,4 +781,16 @@
 .load-more{
   height:40px;
   background: url(../images/mylist/loading.gif) no-repeat center center;
+}
+.erweima{
+  float: right;
+  width: 130px;
+  padding-top: 125px;
+  padding-right: 35px;
+  text-align: center;
+  color: #a9a9a9;
+  font-size: 14px;
+  img{
+    margin-bottom: 15px;
+  }
 }

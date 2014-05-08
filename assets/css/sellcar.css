@@ -393,7 +393,7 @@ body {
   zoom: 1;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-3 {
-  left: 189px;
+  left: 175px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -408,7 +408,7 @@ body {
   zoom: 1;
 }
 #sellcar #content #timeandprice .mod-pics .pic4-4 {
-  left: 277px;
+  left: 260px;
   top: 300px;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -567,9 +567,9 @@ body {
   width: 300px;
 }
 #sellcar #content #faq .faq-content .faq-right .faq-button {
-  width: 298px;
-  height: 298px;
-  background: url(../images/sellcar/sellcar.png) no-repeat;
+  width: 296px;
+  height: 296px;
+  background: url(../images/sellcar/sellcar.png?124) no-repeat;
   margin-top: 100px;
   cursor: pointer;
 }
@@ -578,6 +578,33 @@ body {
   height: 298px;
   display: block;
 }
+#sellcar #content #faq .faq-content .faq-right .faq-button:hover {
+  background: url(../images/sellcar/sellcar-hover.png) no-repeat;
+}
 .slide {
   height: 13px;
+}
+.history {
+  height: 30px;
+  width: 100%;
+  background: #fff;
+}
+.history .qiugou-history {
+  font-size: 14px;
+  color: #666;
+  height: 20px;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.history .qiugou-history .slide {
+  height: 14px;
+}
+.history .qiugou-history .slide span {
+  margin-right: 120px;
+}
+.history .qiugou-history .slide span em {
+  color: #fc7000;
+  font-weight: bold;
 }
