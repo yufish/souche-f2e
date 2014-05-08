@@ -22,5 +22,5 @@ module.exports.controllers =
         get:(req,res)->
             url = req.query.url
             console.log url
-            func_click.getAll 1,20000,{page_url:url},"id desc",(error,clicks)->
+            func_click.getAll 1,20000,{page_url:url},"id desc",['page_x','page_y'],(error,clicks)->
                 res.send clicks
