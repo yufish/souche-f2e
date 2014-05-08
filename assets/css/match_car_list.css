@@ -404,13 +404,14 @@
   font-size: 14px;
 }
 #qiugou-container {
-  background-color: #f9f9f9;
+  background-color: #fff;
   width: 100%;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
   position: relative;
+  margin-top: 20px;
 }
 #qiugou-container .wrapper {
+  background-color: #fff;
   width: 1191px;
   margin: 0 auto;
   position: relative;
@@ -418,92 +419,6 @@
 #qiugou-container .wrapper .qiugou-filter {
   background: url("../images/index/qiugou-container.png?123") no-repeat scroll right bottom;
   position: relative;
-}
-#qiugou-container .wrapper .qiugou-filter .qiugou-box {
-  width: 1191px;
-  padding-top: 30px;
-}
-#qiugou-container .wrapper .qiugou-filter .qiugou-box .qiugou-title {
-  height: 60px;
-  font-size: 28px;
-  color: #222222;
-}
-#qiugou-container .wrapper .qiugou-filter .qiugou-box .qiugou-title span {
-  color: #fc7000;
-  margin: 10px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand {
-  width: 783px;
-  padding-top: 20px;
-  position: relative;
-  background: #fff;
-  border: 1px solid #e4e4e4;
-  border-bottom: none;
-  padding-left: 20px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .shadow {
-  width: 22px;
-  height: 136px;
-  position: absolute;
-  right: -23px;
-  background: url(../images/index/shadow.png?123) no-repeat 0 0;
-  z-index: 200;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .demand-title {
-  color: #222;
-  font-size: 15px;
-  line-height: 30px;
-  margin-left: 15px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap {
-  width: 100%;
-  padding-bottom: 20px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box {
-  float: left;
-  display: inline;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li {
-  padding-left: 15px;
-  width: 555px;
-  border-bottom: 1px solid #e4e4e4;
-  font-size: 12px;
-  color: #222;
-  font-weight: bold;
-  line-height: 27px;
-  min-height: 30px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .label {
-  float: left;
-  width: 44px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .con {
-  float: left;
-  width: 500px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .chosecar-li .chosecentent {
-  white-space: nowrap;
-  font-weight: normal;
-  margin-right: 20px;
-  line-height: 20px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain {
-  margin-top: 20px;
-  color: #fc7000;
-  font-size: 12px;
-  font-size: 16px;
-  height: 25px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain i {
-  background: url("../images/index/choseagain.png") no-repeat 0 0;
-  height: 20px;
-  width: 20px;
-  float: left;
-  margin: 2px 15px;
-}
-#qiugou-container .wrapper .qiugou-filter .demand .chosecar-wrap .chosecar-box .chosecar .choseagain a {
-  color: #fc7000;
-  line-height: 20px;
 }
 #qiugou-container .wrapper .qiugou-filter .erweima {
   width: 155px;
@@ -515,31 +430,34 @@
   background: url("../images/index/erweima-img.png") no-repeat;
 }
 .qiugou {
-  background: #f9f9f9;
+  background: #fff;
   position: relative;
 }
 .qiugou .inner {
-  padding-top: 30px;
+  margin: 30px;
+  width: 885px;
+  float: left;
+  border-right: 1px solid #d9d9d9;
+  padding-left: 70px;
 }
 .qiugou .person-bg {
-  background: #f9f9f9 url(../images/index/qiugou-container.png?125) no-repeat;
+  background: url(../images/mylist/qiugou.png?123) no-repeat;
   background-position: bottom;
   position: absolute;
-  bottom: -2px;
-  right: 1px;
+  bottom: 0;
+  right: 170px;
   width: 386px;
   height: 377px;
   z-index: 2;
 }
 .qiugou .head {
-  height: 60px;
+  height: 50px;
   overflow: hidden;
   position: relative;
   z-index: 2;
-  width: 540px;
 }
 .qiugou .title {
-  font-size: 28px;
+  font-size: 25px;
   color: #222;
   line-height: 35px;
 }
@@ -576,9 +494,7 @@
 .qiugou .form {
   z-index: 5;
   width: 801px;
-  padding-bottom: 40px;
   background-color: #fff;
-  border: 1px solid #e5e5e5;
   border-bottom: none;
 }
 .qiugou .form img.no-result {
@@ -599,8 +515,8 @@
   z-index: 200;
 }
 .qiugou .form .form-inner {
-  margin-left: 50px;
-  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 .qiugou .form .form-inner .form-title {
   font-size: 15px;
@@ -615,12 +531,11 @@
   font-size: 14px;
   float: left;
   line-height: 30px;
-  font-weight: bold;
   width: 30px;
   height: 30px;
 }
 .qiugou .form-item .input {
-  margin-left: 20px;
+  margin-left: 10px;
   float: left;
   color: #444;
   font-size: 14px;
@@ -707,7 +622,6 @@
   font-size: 14px;
   float: left;
   line-height: 30px;
-  font-weight: bold;
   width: 30px;
   height: 30px;
 }
@@ -845,7 +759,7 @@
   width: 70px;
   height: 174px;
   position: absolute;
-  right: 275px;
+  right: 465px;
   top: 0;
   cursor: pointer;
   background: url("../images/index/wedo.png") no-repeat scroll;
@@ -855,4 +769,16 @@
 .load-more {
   height: 40px;
   background: url(../images/mylist/loading.gif) no-repeat center center;
+}
+.erweima {
+  float: right;
+  width: 130px;
+  padding-top: 125px;
+  padding-right: 35px;
+  text-align: center;
+  color: #a9a9a9;
+  font-size: 14px;
+}
+.erweima img {
+  margin-bottom: 15px;
 }
