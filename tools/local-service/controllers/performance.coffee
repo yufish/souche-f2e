@@ -24,3 +24,13 @@ module.exports.controllers =
             console.log url
             func_click.getAll 1,20000,{page_url:url},"id desc",['page_x','page_y'],(error,clicks)->
                 res.send clicks
+    "/click-data-area":
+        get:(req,res)->
+            url = req.query.url
+            console.log url
+            x_min = req.query.x_min
+            x_max = req.query.x_max
+            y_min = req.query.y_min
+            y_max = req.query.y_max
+            func_click.getAll 1,20000,{page_url:url,page_x:{gt:x_min,lt:x_max},page_y:{gt:y_min,lt:y_max}},"id desc",['page_x','page_y'],(error,clicks)->
+                res.send clicks
