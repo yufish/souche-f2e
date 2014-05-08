@@ -108,7 +108,7 @@ require(['souche/util/action-list'], function(ActionList) {
             [300,
                 function() {
                     $(".pic4-4").animate({
-                        top: 136,
+                        top: 120,
                         opacity: 1
                     }, 700)
                 }
@@ -116,7 +116,7 @@ require(['souche/util/action-list'], function(ActionList) {
             [300,
                 function() {
                     $(".pic4-5").animate({
-                        top: 96,
+                        top: 120,
                         opacity: 1
                     }, 700)
                 }
@@ -158,7 +158,7 @@ require(['souche/util/action-list'], function(ActionList) {
             }
 
             this.each(function(i) {
-                var sh = 25,
+                var sh = 20,
                     speed = 100,
                     _this = $(this);
                 intId[i] = setInterval(function() {
