@@ -403,7 +403,8 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                             //series: '',
                             year: (tagNum == 0 ? yearCode : ''),
                             minPrice: minPrice,
-                            maxPrice: maxPrice
+                            maxPrice: maxPrice,
+                            taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
                         },
                         success: function () {
                             setTimeout(function () {
