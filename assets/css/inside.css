@@ -534,14 +534,32 @@ border-bottom-left-radius: 3px;
 #detail_zaishou .car_info .car_price{color:#e70}
 #detail_zaishou .car_list .car_info dt a:hover{color:#e70}
 #detail_zaishou .car_tag_zhijian{right:15px;top:15px}
-.apply_popup{width:800px;height:530px;position:fixed;top:100px;left:50%;margin-left:-400px;background-color:#fff;z-index:100000}
-.apply_popup .apply_close{float:right;width:30px;height:30px;background:url("../../assets/images/fed/inside_sprite3.png") no-repeat -102px -147px;margin:10px 10px 0 0;cursor:pointer}
+.apply_popup{
+  width:500px;
+  height:300px;
+  position: fixed;
+  left: 50%;
+  top: 160px;
+  margin-left: -300px;
+  background-color: #fff;
+  z-index: 100000;
+}
+.apply_popup .apply_close{
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/fed/member/popup-close2.png") no-repeat ;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
 .apply_popup .apply_close:hover{background:url("../../assets/images/fed/onsale_sprite3.png") -297px -114px;}
-.apply_popup .result_p{padding:80px;padding-left:170px;padding-bottom:60px;color:#333;font-size:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
-.apply_popup .result_p p{padding-top:20px;font-weight: bold;}
-.apply_popup .result_p ins{font-size:14px;color:#666;font-weight: normal;}
-.apply_popup .result_p i{font-size:24px;color:#ff4301;font-weight: normal;font-style: normal;}
-.apply_popup .result_p span{float:left;width:84px;height:80px;margin-right:30px;margin-top:23px;background:url(../../assets/images/fed/souche_sprite2.jpg) no-repeat}
+.apply_popup .result_p{}
+.apply_popup .result_p p{}
+.apply_popup .result_p ins{}
+.apply_popup .result_p i{}
+.apply_popup .result_p span{}
 .apply_popup .result_p span.buy_success{background-position:-174px -376px}
 .apply_popup .result_p span.buy_failed{background:url(../../assets/images/fed/buy_faild.png) no-repeat}
 .apply_popup .result_p span.buy_fail{background:url(../../assets/images/fed/no.jpg) no-repeat 0 10px}
@@ -744,7 +762,16 @@ border-bottom-left-radius: 3px;
 
 
 #fav-popup{width:600px;height:530px;position:fixed;top:60px;left:50%;margin-left:-400px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;z-index:100000}
-#fav-popup .apply_close{position:absolute;width:35px;height:35px;background:url("../../assets/images/fed/detail_sprite_common.png?1") no-repeat -103px -567px;right:10px;top:10px;cursor:pointer}
+#fav-popup .apply_close{
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/fed/member/popup-close2.png") no-repeat ;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
 #fav-popup .result_p{width:564px;padding:25px 0 32px 135px;margin:70px 0 24px 50px;background-color: #fff;border:1px dotted #9d9d9d;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 #fav-popup .result_p p{color:#666;line-height: 18px;}
 #fav-popup .result_p ins{color:#111;font-size:20px;line-height: 44px;}
