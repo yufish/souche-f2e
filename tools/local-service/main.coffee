@@ -48,7 +48,7 @@ app.configure ->
     res.locals.query = req.query
     _path = path.join config.demo_path,req.params[0]+".jade"
     if fs.existsSync _path
-      res.render req.params[0]+".jade",{pretty:true}
+      res.render "./../../../demo/"+req.params[0]+".jade",{pretty:true}
     else
       fs.readFile (path.join config.demo_path,req.params[0]),'utf-8',(error,content)->
         if error 

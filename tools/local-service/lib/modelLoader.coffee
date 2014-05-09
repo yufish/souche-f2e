@@ -40,41 +40,41 @@ global.__FC = (func,model,methods)->
         .error (e)->
           callback e
     else if m == 'getAll'
-      func.getAll = (page,count,condition,order,include,callback)->
+      func.getAll = (page,count,condition,order,fields,callback)->
         if arguments.length == 4
           callback = order
           order = null
-          include = null
+          fields = null
         else if arguments.length == 5
-          callback = include
-          include = null
+          callback = fields
+          fields = null
         query = 
           offset: (page - 1) * count
           limit: count
           order: order || "id desc"
           raw:true
         if condition then query.where = condition
-        if include then query.include = include
+        if fields then query.attributes = fields
         model.findAll(query)
         .success (ms)->
           callback null,ms
         .error (e)->
           callback e
     else if m == 'getAllAndCount'
-      func.getAllAndCount = (page,count,condition,order,include,callback)->
+      func.getAllAndCount = (page,count,condition,order,fields,callback)->
         if arguments.length == 4
           callback = order
           order = null
-          include = null
+          fields = null
         else if arguments.length == 5
-          callback = include
-          include = null
+          callback = fields
+          fields = null
         query = 
           offset: (page - 1) * count
           limit: count
           order: order || "id desc"
         if condition then query.where = condition
-        if include then query.include = include
+        if fields then query.attributes = fields
         model.findAndCountAll(query)
         .success (ms)->
           callback null,ms.count,ms.rows
@@ -162,50 +162,45 @@ __BaseFunction.prototype =
       callback null,m
     .error (e)->
       callback e
-  getAll: (page,count,condition,order,include,callback)->
+  getAll: (page,count,condition,order,fields,callback)->
     if arguments.length == 4
       callback = order
       order = null
-      include = null
+      fields = null
     else if arguments.length == 5
-      callback = include
-      include = null
+      callback = fields
+      fields = null
     query = 
       offset: (page - 1) * count
       limit: count
       order: order || "id desc"
       raw:true
     if condition then query.where = condition
-    if include then query.include = include
+    if fields then query.attributes = fields
     this.model.findAll(query)
     .success (ms)->
       callback null,ms
     .error (e)->
       callback e
-  getAllAndCount: (page,count,condition,order,include,callback)->
+  getAllAndCount :(page,count,condition,order,fields,callback)->
     if arguments.length == 4
       callback = order
       order = null
-      include = null
+      fields = null
     else if arguments.length == 5
-      callback = include
-      include = null
+      callback = fields
+      fields = null
     query = 
       offset: (page - 1) * count
       limit: count
       order: order || "id desc"
     if condition then query.where = condition
-    if include then query.include = include
-    self = this 
-    this.count condition,(error,c)->
-      if error then callback error
-      else
-
-        self.model.findAll(query)
-        .success (ms)->
-          callback null,c,ms
-        .error (e)->
-          callback e
+    if fields then query.attributes = fields
+    this.model.findAndCountAll(query)
+    .success (ms)->
+      callback null,ms.count,ms.rows
+    .error (e)->
+      callback e
   add:(data,callback)->
     data.uuid = uuid.v4()
     this.model.create(data)
