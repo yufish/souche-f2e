@@ -18,7 +18,7 @@
         "             <div class=\"input-error-wrapper clearfix\">" +
         "             <div class=\"input-error-tip hidden\"><span class=\"error-icon\"></span>请输入正确的手机号</div>" +
         "             </div>" +
-        "             <input id=\"unfold-submit\" type=\"submit\"/>" +
+        "             <input id=\"unfold-submit\" type=\"submit\" click_type=\"newusertip\"/>" +
         "          </form>" +
         "        </div>" +
         "        </div>" +
