@@ -741,7 +741,7 @@ body .input-error-tip .error-icon {
   z-index: 100000;
   top: 180px;
   left: 50%;
-  margin-left: -290px;
+  margin-left: -289.99999999px;
   width: 580px;
   padding: 25px 0;
   background-color: #eee;
