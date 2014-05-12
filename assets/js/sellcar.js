@@ -1,8 +1,9 @@
-require(['souche/util/action-list'], function(ActionList) {
-    Souche.Util.appear("#findbuyer", function() {
+require(['souche/util/action-list'], function (ActionList) {
+    var defaultDistance = 600;
+    Souche.Util.appear("#findbuyer", function () {
         var data1 = [
             [0,
-                function() {
+                function () {
                     $(".layer1-1").animate({
                         left: 600
                     }, 2000)
@@ -12,13 +13,13 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data1, function() {})
-    }, 300);
+        ActionList(data1, function () {})
+    }, defaultDistance);
 
-    Souche.Util.appear("#realvalue", function() {
+    Souche.Util.appear("#realvalue", function () {
         var data = [
             [0,
-                function() {
+                function () {
                     $(".pic2-1").animate({
                         left: 0,
                         opacity: 1
@@ -30,7 +31,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [600,
-                function() {
+                function () {
                     $(".pic2-2").animate({
                         opacity: 1,
                         top: 100
@@ -38,12 +39,12 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {})
-    }, 300);
-    Souche.Util.appear("#realvalue", function() {
+        ActionList(data, function () {})
+    }, defaultDistance);
+    Souche.Util.appear("#realvalue", function () {
         var data = [
             [0,
-                function() {
+                function () {
                     $(".pic2-1").animate({
                         left: 0,
                         opacity: 1
@@ -55,7 +56,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [600,
-                function() {
+                function () {
                     $(".pic2-2").animate({
                         opacity: 1,
                         top: 100
@@ -63,12 +64,12 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {})
-    }, 300);
-    Souche.Util.appear("#helpsell", function() {
+        ActionList(data, function () {})
+    }, defaultDistance);
+    Souche.Util.appear("#helpsell", function () {
         var data = [
             [0,
-                function() {
+                function () {
                     $(".pic3-1").animate({
                         top: 210,
                         opacity: 1
@@ -77,20 +78,20 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [1000,
-                function() {
+                function () {
                     $(".pic3-2").animate({
                         opacity: 1
                     }, 700)
                 }
             ]
         ]
-        ActionList(data, function() {})
-    }, 300);
+        ActionList(data, function () {})
+    }, defaultDistance);
 
-    Souche.Util.appear("#timeandprice", function() {
+    Souche.Util.appear("#timeandprice", function () {
         var data = [
             [0,
-                function() {
+                function () {
                     $(".pic4-2").animate({
                         top: 275,
                         opacity: 1
@@ -98,7 +99,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [300,
-                function() {
+                function () {
                     $(".pic4-3").animate({
                         top: 192,
                         opacity: 1
@@ -106,7 +107,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [300,
-                function() {
+                function () {
                     $(".pic4-4").animate({
                         top: 120,
                         opacity: 1
@@ -114,7 +115,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ],
             [300,
-                function() {
+                function () {
                     $(".pic4-5").animate({
                         top: 120,
                         opacity: 1
@@ -122,24 +123,24 @@ require(['souche/util/action-list'], function(ActionList) {
                 }
             ]
         ]
-        ActionList(data, function() {})
+        ActionList(data, function () {})
     }, 500);
-    Souche.Util.appear("#sellstep", function() {
+    Souche.Util.appear("#sellstep", function () {
         var data = [
             [0,
-                function() {
+                function () {
                     $(".pic5-1").animate({
                         width: 900
                     }, 1000)
                 }
             ]
         ]
-        ActionList(data, function() {})
-    }, 300);
+        ActionList(data, function () {})
+    }, defaultDistance);
 
     //求购历史滚动
-    (function($) {
-        $.fn.myScroll = function(options) {
+    (function ($) {
+        $.fn.myScroll = function (options) {
 
             var opts = $.extend({}, options),
                 intId = [];
@@ -148,7 +149,7 @@ require(['souche/util/action-list'], function(ActionList) {
 
                 obj.find("ul").animate({
                     marginTop: '-=1'
-                }, 0, function() {
+                }, 0, function () {
                     var s = Math.abs(parseInt($(this).css("margin-top")));
                     if (s >= step) {
                         $(this).find("li").slice(0, 1).appendTo($(this));
@@ -157,11 +158,11 @@ require(['souche/util/action-list'], function(ActionList) {
                 });
             }
 
-            this.each(function(i) {
+            this.each(function (i) {
                 var sh = 20,
                     speed = 100,
                     _this = $(this);
-                intId[i] = setInterval(function() {
+                intId[i] = setInterval(function () {
                     if (_this.find("ul").height() <= _this.height()) {
                         clearInterval(intId[i]);
                     } else {
@@ -169,10 +170,10 @@ require(['souche/util/action-list'], function(ActionList) {
                     }
                 }, speed);
 
-                _this.hover(function() {
+                _this.hover(function () {
                     clearInterval(intId[i]);
-                }, function() {
-                    intId[i] = setInterval(function() {
+                }, function () {
+                    intId[i] = setInterval(function () {
                         if (_this.find("ul").height() <= _this.height()) {
                             clearInterval(intId[i]);
                         } else {
@@ -183,7 +184,7 @@ require(['souche/util/action-list'], function(ActionList) {
             });
         }
     })(jQuery);
-    $(function() {
+    $(function () {
         $(".slide").myScroll({});
     });
 });

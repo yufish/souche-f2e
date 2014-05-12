@@ -464,50 +464,41 @@ body .apply_popup .tip {
   color: #111;
 }
 body .apply_popup {
-  width: 600px;
-  height: 290px;
+  width: 500px;
+  height: 300px;
   position: fixed;
   left: 50%;
   top: 160px;
   margin-left: -300px;
-  background-color: #f1f1f1;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  background-color: #fff;
   z-index: 100000;
+  padding: 25px;
 }
 body .apply_popup .popup-title {
-  font-size: 22px;
-  color: #111;
+  font-size: 18px;
+  color: #333;
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
-  line-height: 60px;
-  width: 710px;
-  margin: 0 auto;
   text-indent: 20px;
 }
 body .apply_popup .apply_close,
 body .apply_popup .apply_close:hover {
   position: absolute;
   display: block;
-  width: 35px;
-  height: 35px;
-  background: url("../../images/common/popup-close.png") no-repeat;
-  right: 10px;
-  top: 10px;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/fed/member/popup-close2.png") no-repeat;
+  right: 20px;
+  top: 20px;
   cursor: pointer;
 }
 body .apply_popup .phone {
-  margin-left: 150px;
   text-align: left;
   width: 400px;
 }
 body .apply_popup .tip {
   line-height: 30px;
-  font-size: 20px;
-  color: #111;
-}
-body .apply_popup .phone {
-  width: 640px;
+  font-size: 16px;
+  color: #333apply_popup;
 }
 body .apply_popup label {
   font-size: 12px;
@@ -515,19 +506,14 @@ body .apply_popup label {
 }
 body .apply_popup input {
   line-height: 27px;
-  width: 184px;
-  height: 27px;
+  width: 250px;
+  height: 32px;
+  border: 2px solid #eaeaea;
+  padding-left: 5px;
 }
 body .apply_popup .result_p {
-  width: auto;
-  margin: 0 20px;
-  padding: 30px 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px dotted #9d9d9d;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  margin-top: 55px;
+  margin-left: 80px;
 }
 body .apply_popup .result_p .warning {
   text-decoration: none;
@@ -540,8 +526,8 @@ body .apply_popup .submit {
   display: block;
   height: 40px;
   border: none;
-  margin: 0 auto;
   margin-top: 20px;
+  margin-left: 80px;
   cursor: pointer;
   background: #ff8914;
   color: #fff;
