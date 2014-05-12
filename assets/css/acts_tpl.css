@@ -161,6 +161,26 @@
 #acts_tpl .wrapper-1190 {
   margin-top: 5px;
 }
+#acts_tpl .banner {
+  position: relative;
+}
+#acts_tpl .banner .act-nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -65px;
+  width: 65px;
+  height: 130px;
+}
+#acts_tpl .banner .pre-act {
+  left: 0;
+  background: url(../images/acts/template/pre-act.png) no-repeat center;
+  background-size: 100% 100%;
+}
+#acts_tpl .banner .next-act {
+  right: 0;
+  background: url(../images/acts/template/next-act.png) no-repeat center;
+  background-size: 100% 100%;
+}
 #acts_tpl .banner .banner-img {
   width: 778px;
   float: left;
