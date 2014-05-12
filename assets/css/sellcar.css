@@ -433,8 +433,8 @@ body {
 #sellcar #content #timeandprice .mod-pics .pic4-5 .pic4-5-cont {
     width: 76px;
     height: 76px;
-    background: url("../images/sellcar/4-5.png");
-    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-5.png');
+    background: url("../images/sellcar/4-5-x.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-5-x.png');
     zoom: 1;
 }
 #sellcar #content #sellstep {
