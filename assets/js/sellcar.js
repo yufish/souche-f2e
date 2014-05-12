@@ -1,5 +1,5 @@
 require(['souche/util/action-list'], function (ActionList) {
-    //var defaultDist = 800;
+    var defaultDist = $(window).height() * 0.7;
     Souche.Util.appear("#findbuyer", function () {
         var data1 = [
             [0,
@@ -14,7 +14,7 @@ require(['souche/util/action-list'], function (ActionList) {
             ]
         ]
         ActionList(data1, function () {})
-    }, 800);
+    }, defaultDist);
 
     Souche.Util.appear("#realvalue", function () {
         var data = [
@@ -40,7 +40,7 @@ require(['souche/util/action-list'], function (ActionList) {
             ]
         ]
         ActionList(data, function () {})
-    }, 800);
+    }, defaultDist);
     Souche.Util.appear("#realvalue", function () {
         var data = [
             [0,
@@ -65,7 +65,7 @@ require(['souche/util/action-list'], function (ActionList) {
             ]
         ]
         ActionList(data, function () {})
-    }, 800);
+    }, defaultDist);
     Souche.Util.appear("#helpsell", function () {
         var data = [
             [0,
@@ -86,7 +86,7 @@ require(['souche/util/action-list'], function (ActionList) {
             ]
         ]
         ActionList(data, function () {})
-    }, 800);
+    }, defaultDist);
 
     Souche.Util.appear("#timeandprice", function () {
         var data = [
@@ -136,7 +136,7 @@ require(['souche/util/action-list'], function (ActionList) {
             ]
         ]
         ActionList(data, function () {})
-    }, 800);
+    }, defaultDist);
 
     //求购历史滚动
     (function ($) {
