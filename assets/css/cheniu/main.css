@@ -277,3 +277,107 @@ a.a9:hover {
   margin-top: 10px;
   font-size: 14px;
 }
+#car {
+  background: #f5f5f5;
+}
+#car .mod-head {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+#car .mod-head .sliders {
+  width: 100%;
+}
+#car .mod-head .sliders img {
+  width: 100%;
+}
+#car .mod-head .flex-direction-nav,
+#car .mod-head .flex-control-nav {
+  display: none;
+}
+#car .mod-baseinfo {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+#car .mod-baseinfo .title {
+  font-size: 14px;
+  color: #000;
+  padding: 0 16px;
+  line-height: 20px;
+  padding-top: 10px;
+}
+#car .mod-baseinfo .price {
+  padding: 0 16px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #df4135;
+}
+#car .mod-baseinfo .price em {
+  font-weight: bold;
+}
+#car .mod-baseinfo .item {
+  padding: 10px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+#car .mod-baseinfo .item .k {
+  width: 70px;
+  float: left;
+  color: #666;
+}
+#car .mod-baseinfo .item .v {
+  padding-left: 80px;
+  color: #333;
+}
+#car .goto-configs {
+  background: #fff;
+  margin: 10px 0;
+  display: block;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+#car .mod-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 44px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
+#car .mod-actions a {
+  width: 32%;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 44px;
+}
+#car .mod-actions a i {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 13px;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+#car .mod-actions .gotostore {
+  border-right: 1px solid #ddd;
+}
+#car .mod-actions .gotostore i {
+  background: url(../../images/cheniu/icon-user.png) no-repeat;
+  background-size: 100%;
+}
+#car .mod-actions .call {
+  border-right: 1px solid #ddd;
+}
+#car .mod-actions .call i {
+  background: url(../../images/cheniu/icon-call.png) no-repeat;
+  background-size: 100%;
+}
+#car .mod-actions .message i {
+  background: url(../../images/cheniu/icon-message.png) no-repeat;
+  background-size: 100%;
+}
