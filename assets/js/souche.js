@@ -391,7 +391,7 @@ Souche.NoRegLogin = function() {
                     display: "block"
                 });
             } else {
-                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="tip">输入您的手机号码，完成后续操作</div>            <div class="phone">            <label>手机号码</label>            <input type="text" name="" value="" id="noreg-phone"  placeholder="在此输入手机号码"/>            <s class="warning hidden">请输入正确的手机号码</s>            </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>            <s class="warning hidden">请输入正确的手机号码</s>            </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
                 minilogin.css({
                     display: "block",
                     zIndex: 100000001
