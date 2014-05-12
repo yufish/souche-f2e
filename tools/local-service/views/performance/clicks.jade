@@ -7,8 +7,12 @@ html
         |<link href="http://res.souche.com/assets/css/souche/reset.css?t=1150" rel="stylesheet" type="text/css" />
         |<link href="http://f2e.souche.com/assets/css/ui/tips.css?t=1150" rel="stylesheet" type="text/css" />
         |<link href="http://f2e.souche.com/assets/backend/jcrop/css/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" />
+        |<link href="http://f2e.souche.com/assets/backend/jquery-date-range-picker/daterangepicker.css" rel="stylesheet" type="text/css" />
         script(src="http://f2e.souche.com/assets/js/framework/heatmap/heatmap.js")
         script(src="http://f2e.souche.com/assets/backend/jcrop/js/jquery.Jcrop.min.js")
+
+        script(src="http://f2e.souche.com/assets/backend/jquery-date-range-picker/moment.min.js")
+        script(src="http://f2e.souche.com/assets/backend/jquery-date-range-picker/daterangepicker.js")
         style.
             .con{position:relative;font-size:14px;width:1190px;margin:0 auto;}
             .refer-page,.map,.jcrop-holder,.jcrop-container{position:absolute;left:0;top:0;width:1190px;height:4000px;}
@@ -16,94 +20,36 @@ html
             .map{
             z-index:5;
             }
+            .date-picker-wrapper{z-index:1000;}
             .jcrop-holder{background:rgba(1,1,1,0) !important;z-index:10;}
             .area-p{position:absolute;background:#fff;opacity:0.6;text-align:center;font-size:14px;z-index:18;pointer-events:none;}
     body
         include header
         div.clearfix(style="width:1190px;margin:20px auto;")
-            .form-group
-                label.control-label
-                    | 选择页面
-                    select#select.form-control
-                        |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
-                        |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
-                        |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
-                        |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
-                        |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
-                span.loading.well.well-sm(style="margin-left:10px;") 加载中,请稍后
+            form#filter-form
+                .form-group
+                    label.control-label
+                        | 选择页面
+                        select#select.form-control
+                            |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
+                            |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
+                            |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
+                            |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
+                            |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
+
+                    label.control-label
+                        | 选择时间段
+                        input#time.form-control(type="text",style="width:300px;",value="#{locals.time}")
+                    button.btn.btn-default(type="submit") 提交
+        .summery.hidden
+            .alert.alert-warning 总浏览量：<em id="total_count"></em>
         .con
             iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
             .map#map
             .jcrop-container
         script(src="http://f2e.souche.com/assets/js/souche/ui/loadingTip.js")
         script.
-            $("#select").on("change",function(){
-                window.location.href="?url="+this.value
-                })
-            var url = "#{locals.url?locals.url:"http://www.souche.com/"}"
-            if(url=="http://www.souche.com/pages/choosecarpage/choose-car-detail.html"){
-                $(".refer-page").attr("src",url+"?carId=qU6uBbS")
-            }
-            loadingTip.show("正在加载中，请稍后")
-                var inIn = function(data,d){
-                    if(d.page_x>data.x&&d.page_x<data.x2&&d.page_y>data.y&&d.page_y<data.y2){
-                    return true;
-                    }
-                    return false;
-                }
-            var globalData = [];
-            $.ajax({
-                url:"/performance/click-data",
-                dataType:"json",
-                data:{
-                    url:url
-                },
-                success:function(data){
-                globalData = data;
-                $('.jcrop-container').Jcrop({
-                    bgColor:     'black',
-                onSelect:function(data){
-                    var count = 0;
-                       
-                    globalData.forEach(function(d){
-                        if(inIn(data,d)){
-                            count++;
-                        }
-                        })
-                         $("<div class='area-p'></div>").appendTo($(".con")).css({
-                            left:data.x,
-                            top:data.y,
-                            width:data.w,
-                            height:data.h
-                            }).html(count)
-                }
-                }); 
-                    $(".loading").css("display","none");
-                    var hdata = [
-                    ]
-                    data.forEach(function(d){
-                        hdata.push({
-                            x:d.page_x,
-                            y:d.page_y,
-                            count:1
-                            })
-                        })
-                    var config = {
-                        element: document.getElementById("map"),
-                        radius: 10,
-                        opacity: 50
-                    };
-                    
-                    //creates and initializes the heatmap
-                    var heatmap = h337.create(config);
-                 
-                    // let's get some data
-                    var data = {
-                        max: 70,
-                        data:hdata
-                    };
-                 
-                    heatmap.store.setDataSet(data);
-                    loadingTip.hide()
-                }
-            })
+            var url = "#{locals.url?locals.url:"http: //www.souche.com/"}"
+            var time = "#{locals.time?locals.time:""}"
+
+        script(src="http://f2e.souche.com/assets/backend/js/clicks.js")
