@@ -1,5 +1,5 @@
 require(['souche/util/action-list'], function (ActionList) {
-    var defaultDistance = 600;
+    var defaultDistance = 800;
     Souche.Util.appear("#findbuyer", function () {
         var data1 = [
             [0,
