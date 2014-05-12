@@ -1,0 +1,279 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+dl {
+  border: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+:focus {
+  outline: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+code,
+kbd,
+samp,
+tt {
+  font-size: 100%;
+}
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+sup,
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+:link,
+:visited,
+ins {
+  text-decoration: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+body {
+  font-size: 12px;
+  font-family: Tahoma,Verdana;
+  color: #000;
+  background-color: #ffffff;
+}
+.hidden {
+  display: none !important;
+}
+a {
+  color: #444;
+}
+a.a1 {
+  color: #111;
+}
+a.a4 {
+  color: #444;
+}
+a.a3 {
+  color: #333;
+}
+a.a6 {
+  color: #666;
+}
+a.a9 {
+  color: #999;
+}
+a:hover,
+a.a1:hover,
+a.a4:hover,
+a.a3:hover,
+a.a6:hover,
+a.a9:hover {
+  color: #fc7000;
+}
+#store .mod-head {
+  width: 100%;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+#store .mod-head .head-container {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 155px;
+  position: relative;
+}
+#store .mod-head .headpic {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #aaa;
+  border-radius: 60px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -30px;
+}
+#store .mod-head .headpic img {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+#store .mod-head .store-title {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 25px;
+  text-align: center;
+}
+#store .mod-head .store-action {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#store .mod-head .store-action a {
+  display: inline-block;
+  height: 36px;
+  width: 130px;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 14px;
+  line-height: 36px;
+  border-radius: 3px;
+}
+#store .mod-head .store-action a i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-left: 20px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+#store .mod-head .store-action .lookinfo {
+  margin-left: 20px;
+}
+#store .mod-head .store-action .lookinfo i {
+  background: url(../../images/cheniu/store-lookinfo.png) no-repeat center center;
+  background-size: 100%;
+}
+#store .mod-head .store-action .call {
+  margin-right: 20px;
+  float: right;
+}
+#store .mod-head .store-action .call i {
+  background: url(../../images/cheniu/store-call.png) no-repeat center center;
+  background-size: 100%;
+}
+#store .mod-cars .car {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+#store .mod-cars .car .pic {
+  float: left;
+  width: 145px;
+  height: 95px;
+  border: 1px solid #ddd;
+}
+#store .mod-cars .car .pic img {
+  width: 145px;
+}
+#store .mod-cars .car .infos {
+  padding-left: 155px;
+}
+#store .mod-cars .car .infos .title {
+  font-size: 14px;
+  color: #000;
+  line-height: 20px;
+}
+#store .mod-cars .car .infos .price {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #df4135;
+}
+#store .mod-cars .car .infos .price em {
+  font-weight: bold;
+}
+#store .mod-cars .car .infos .others {
+  color: #999;
+  line-height: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+}
