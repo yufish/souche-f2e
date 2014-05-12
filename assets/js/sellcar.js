@@ -1,5 +1,5 @@
 require(['souche/util/action-list'], function (ActionList) {
-    var defaultDist = 600;
+    var defaultDist = $(window).height() * 0.7;
     Souche.Util.appear("#findbuyer", function () {
         var data1 = [
             [0,
