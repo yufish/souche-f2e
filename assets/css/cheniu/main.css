@@ -277,6 +277,29 @@ a.a9:hover {
   margin-top: 10px;
   font-size: 14px;
 }
+#store .mod-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+#store .mod-info .item {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+#store .mod-info .item .hd {
+  color: #000;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+#store .mod-info .item .bd {
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  text-indent: 40px;
+}
 #car {
   background: #f5f5f5;
 }
@@ -291,9 +314,35 @@ a.a9:hover {
 #car .mod-head .sliders img {
   width: 100%;
 }
-#car .mod-head .flex-direction-nav,
-#car .mod-head .flex-control-nav {
+#car .mod-head .flex-viewport {
+  height: 210px;
+}
+#car .mod-head .flex-direction-nav {
   display: none;
+}
+#car .mod-head .flex-control-nav {
+  margin-top: -20px;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+#car .mod-head .flex-control-nav li {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 5px;
+}
+#car .mod-head .flex-control-nav li a {
+  background: #ddd;
+  width: 12px;
+  height: 12px;
+  line-height: 100px;
+  overflow: hidden;
+  border-radius: 12px;
+  display: inline-block;
+  vertical-align: top;
+}
+#car .mod-head .flex-control-nav li a.flex-active {
+  background: #dc423b;
 }
 #car .mod-baseinfo {
   background: #fff;
@@ -325,7 +374,7 @@ a.a9:hover {
 #car .mod-baseinfo .item .k {
   width: 70px;
   float: left;
-  color: #666;
+  color: #999;
 }
 #car .mod-baseinfo .item .v {
   padding-left: 80px;
@@ -347,6 +396,7 @@ a.a9:hover {
   height: 44px;
   border-top: 1px solid #ddd;
   width: 100%;
+  background: #f5f5f5;
 }
 #car .mod-actions a {
   width: 32%;
@@ -380,4 +430,27 @@ a.a9:hover {
 #car .mod-actions .message i {
   background: url(../../images/cheniu/icon-message.png) no-repeat;
   background-size: 100%;
+}
+#config .mod .hd {
+  background: #f5f5f5;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+#config .mod .bd table {
+  width: 100%;
+}
+#config .mod .bd tr {
+  padding: 10px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+#config .mod .bd tr .key {
+  width: 150px;
+  color: #999;
+  padding: 10px 10px;
+}
+#config .mod .bd tr .val {
+  color: #333;
 }

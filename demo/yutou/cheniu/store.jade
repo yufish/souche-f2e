@@ -4,6 +4,7 @@ html
         link(href="/assets/css/cheniu/main.css",rel="stylesheet",type="text/css")
         title 车牛
         meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+        script(src="/assets/js/lib/jquery-2.1.1.min.js")
     body#store
         .mod-head
             .head-container(style="background-image:url(http://res.souche.com/files/carpicture/5E05F61A39E5EC900D9DFBF37C30B99B_700x460.jpg_325x10000.jpg);")
@@ -14,7 +15,7 @@ html
                 a.lookinfo(href="") 
                     i
                     |店铺信息
-                a.call(href="")
+                a.call(href="tel:18667046650")
                     i
                     |打电话
         .mod-cars
@@ -47,3 +48,19 @@ html
                     .title 斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴
                     .price ￥<em>23.52</em>万
                     .others 4.33万公里/2012年上牌
+        .mod-info.hidden
+            .item
+                .hd 店铺介绍
+                .bd 斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴
+            .item 
+                .hd 店铺地址
+                .bd 斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手
+
+
+        script.
+            $(".lookinfo").on("click",function(e){
+                e.preventDefault();
+                $(".mod-info").removeClass("hidden").css({
+                    height:$(window).height()
+                })
+            })
