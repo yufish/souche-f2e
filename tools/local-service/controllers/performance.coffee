@@ -17,12 +17,21 @@ module.exports.controllers =
     "/click-chart":
         get:(req,res)->
             res.locals.url = req.query.url
+            res.locals.time = req.query.time
             res.render 'performance/clicks'
     "/click-data":
         get:(req,res)->
-            url = req.query.url
+            url = decodeURIComponent req.query.url
+            time = req.query.time
+            if time
+                times = time.split ' to '
+                minTime = times[0]+" 00:00:00"
+                maxTime = times[1]+" 23:59:59"
             console.log url
-            func_click.getAll 1,20000,{page_url:url},"id desc",['page_x','page_y'],(error,clicks)->
+            condition = {page_url:url}
+            if time
+                condition.createdAt = {gt:minTime,lt:maxTime}
+            func_click.getAll 1,1000000,condition,"id desc",['page_x','page_y'],(error,clicks)->
                 res.send clicks
     "/click-data-area":
         get:(req,res)->
