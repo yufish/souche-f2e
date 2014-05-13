@@ -7,15 +7,8 @@ html
         script(src="/assets/js/lib/jquery-2.1.1.min.js")
         script(src="/assets/js/lib/jquery.flexslider-min.js")
     body#config.
-        <div id="header">
-          <a href="javascript:history.go(-1);" class="back"></a>
-          <div class="title">车辆全部配置参数</div>
-        </div>
         <div id="content">
         <div id="tab-params">
-          <div class="car-title">
-            2013款  雷诺科雷傲2.5-无级变速四驱舒适型
-          </div>
           <div class="base-info mod">
                         <div class="hd">基本信息</div>
                         <div class="bd">
@@ -320,46 +313,5 @@ html
             </div>  
           </div>
           
-          <!--add by zilong.jiang-->
-            <div class="apply_popup popup-result hidden" id="yuyue-popup">
-                <img class=logo src="http://res.souche.com/images/mob/logo-new.png?t=13"/>
-                <div class="hr" style="width:80%;height:1px;background-color:#EEE;margin:5px auto 15px auto"></div>
-                <form id="yuyue-form" action="">
-                    <div class="result_p">
-                        <div class="tip">  输入您的手机号码,一键完成预约.</div>
-                        <div class="yuyue-con" >
-                            <img class="mobile-png">
-                            <input type="text"  name="" value="" id="yuyue-phone" placeholder="  您的手机号码">
-                            <s class="warning hidden">请输入正确的手机号码</s>
-                        </div>
-                    </div>
-                    <button type="submit" id="yuyue-sumbit-btn" class="yuyue-submit" style="height:48px">预约</button>
-                    <button type="button" id="yuyue-back" class="yuyue-submit" >返回</button>
-                </form>
-            </div>
-            
-         
-          <div id="actions" class="clearfix">
-                    <div class="lft">
-                        
-                        <a class="yuyue-btn btn" id="yuyue_submit" href="/pages/mobile/yuyueAction/yuyue.json?carId=fBM7rzw">预约到店看车</a>
-                   
-                   <label>已有<span id="contactNum">0</span>人预约</label>
-                    </div>
-                    <div class="fav">
-                        
-                            
-                                <a click_type="mobile_detail_fav" class="fav-btn btn" id="fav_submit"
-                                    href="/pages/mobile/favAction/savaCarFavorite.json?carId=fBM7rzw">收藏</a>
-                            
-                            
-                            
-                        
-                        <label>已有<span id="carFavoriteNum">10</span>人收藏</label>
-                    </div>
-                    <div class="rht"><a class="tel-btn" href="tel:4008-010-010"  click_type="H5_CALL">客服</a>
-                        <label>电话咨询</label>
-                    </div>
-                </div>
-        </div>
+          
         </div>
