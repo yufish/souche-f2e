@@ -190,6 +190,7 @@ a.a9:hover {
   position: absolute;
   bottom: -10px;
   left: 50%;
+  background: #fff;
   margin-left: -30px;
 }
 #store .mod-head .headpic img {
@@ -249,7 +250,7 @@ a.a9:hover {
 #store .mod-cars .car .pic {
   float: left;
   width: 145px;
-  height: 95px;
+  height: 110px;
   border: 1px solid #ddd;
 }
 #store .mod-cars .car .pic img {
