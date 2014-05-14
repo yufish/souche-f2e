@@ -98,6 +98,14 @@
 
         <script src='../../assets/js/mobile/animation/domAnim.js'></script>
         <script>
+            function repeat(time, next) {
+                return function() {
+                    if (--time == 0) {
+                        next();
+                    }
+                }
+            }
+
             function cutImage(img) {
                 img.width = Math.ceil(img.width / 2);
                 img.height = Math.ceil(img.height / 2);
@@ -142,12 +150,14 @@
             next.use(preLoadImg)
                 .use(
                     function(next) {
+                        var repeatNext = repeat(2, next);
                         $('#other-title')
                             .velocity({
                                 left: 0
                             }, {
                                 easing: 'easeOutBounce',
-                                duration: 1000
+                                duration: 1000,
+                                complete: repeatNext
                             })
                         $('#sc-title')
                             .velocity({
@@ -155,7 +165,7 @@
                             }, {
                                 easing: 'easeOutBounce',
                                 duration: 1000,
-                                complete: next
+                                complete: repeatNext
                             });
                     })
                 .use(
