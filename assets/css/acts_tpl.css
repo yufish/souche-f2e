@@ -308,6 +308,13 @@
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;
 }
+#acts_all .hr1 {
+  width: 1170px;
+  margin: 0 auto;
+  height: 1px;
+  background: #999;
+  margin-top: 20px;
+}
 #acts_all #content {
   padding-top: 10px;
 }
@@ -329,12 +336,12 @@
 #acts_all .placeholder .left-arrow {
   background: url(../images/acts/template/left.png) no-repeat center;
   background-size: 100% 100%;
-  left: 0;
+  left: 20px;
 }
 #acts_all .placeholder .right-arrow {
   background: url(../images/acts/template/right.png) no-repeat center;
   background-size: 100% 100%;
-  right: 0;
+  right: 20px;
 }
 #acts_all .placeholder .look-this-act {
   position: absolute;
@@ -382,6 +389,7 @@
 #acts_all #banner-container .banner-item .banner-desc .banner-title {
   font-size: 30px;
   font-weight: 900;
+  margin-top: 60px;
 }
 #acts_all #banner-container .banner-item .banner-desc .banner-sub-title {
   margin-top: 15px;
@@ -389,13 +397,16 @@
   background: #000;
   padding: 5px 35px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 }
 #acts_all #banner-container .banner-item .banner-desc .banner-content {
   margin-top: 12px;
   color: #585858;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
+}
+#acts_all #history-acts {
+  margin-top: 30px;
 }
 #acts_all #history-acts .acts-month {
   position: relative;
@@ -420,7 +431,7 @@
   color: #343434;
 }
 #acts_all #history-acts .acts-month .acts-items {
-  margin: 0 0 45px 130px;
+  margin: 0 0 90px 130px;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item {
   border: 2px solid #e4e3e3;
