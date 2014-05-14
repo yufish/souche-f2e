@@ -26,8 +26,6 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var nowPage = 2;
     var loadMoreByType = function(type) {
         isLoadingMore = true;
-
-
         $(".load-more").removeClass("hidden");
         $(".history-car").empty()
         $.ajax({
@@ -158,13 +156,15 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 $("#qiugou-container").removeClass("hidden");
             })
 
-            $(".car-image").mouseenter(function() {
+            $('.history-car').on('mouseenter', '.car-image', function() {
                 $(".faver", $(this)).removeClass("hidden");
                 $(".hate", $(this)).removeClass("hidden");
+                $(".hadfav", $(this)).removeClass("hidden");
             })
-            $(".car-image").mouseleave(function() {
+            $('.history-car').on('mouseleave', '.car-image', function() {
                 $(".faver", $(this)).addClass("hidden");
                 $(".hate", $(this)).addClass("hidden");
+                $(".hadfav", $(this)).addClass("hidden");
             })
             $("#qiugou_login").on("click", function(e) {
                 e.preventDefault();
