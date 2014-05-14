@@ -44,7 +44,7 @@ var animateFucs = function (exports) {
     app.use(
         function (next) {
             var repeatNext = repeat(2, next);
-            repeatNext = undefined;
+
             $('#other-title')
                 .velocity({
                     left: 0
