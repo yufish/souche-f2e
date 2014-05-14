@@ -173,7 +173,7 @@ var animateFucs = function (exports) {
 
         }
     )
-    app.use(
+    /*app.use(
         function (next) {
             $('#s1-left-word').velocity({
                 rotateZ: '30deg'
@@ -186,7 +186,7 @@ var animateFucs = function (exports) {
                 rotateZ: '-70deg'
             }, next)
         }
-    )
+    )*/
     return {
         funcs: funcs
     }
