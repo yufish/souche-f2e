@@ -1,4 +1,4 @@
-var animateFucs = function (exports) {
+var animateFucs_head = function (exports) {
     var funcs = [];
     var app = {
         use: function (f) {
@@ -37,7 +37,7 @@ var animateFucs = function (exports) {
                 }
             }(key)
         }
-        window.images = images;
+        exports.images = images;
     })
 
 
@@ -73,7 +73,18 @@ var animateFucs = function (exports) {
                 complete: next
             })
         });
+    return funcs;
+}(window, undefined);
 
+//screen 1
+var animateFucs_s1 = function (exports) {
+
+    var funcs = [];
+    var app = {
+        use: function (f) {
+            funcs.push(f);
+        }
+    }
     //drawCircle
     app.use(
         function (next) {
@@ -173,6 +184,22 @@ var animateFucs = function (exports) {
 
         }
     )
+    app.use(
+        function (next) {
+            $('#s1-left').velocity({
+                rotateZ: '-70deg',
+                top: '+=20'
+            }, 600, next)
+        }
+    );
+    app.use(
+        function (next) {
+            $('#other-title').velocity({
+                width: '*=0.67'
+            })
+        }
+    )
+
     /*app.use(
         function (next) {
             $('#s1-left-word').velocity({
@@ -187,10 +214,8 @@ var animateFucs = function (exports) {
             }, next)
         }
     )*/
-    return {
-        funcs: funcs
-    }
+    return funcs
 
 
 
-}(window, undefined)
+}()
