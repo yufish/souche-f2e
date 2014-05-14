@@ -24,6 +24,30 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var isLoadingMore = false;
     var hasMore = true;
     var nowPage = 2;
+    var loadMoreByType = function(type) {
+        isLoadingMore = true;
+
+
+        $(".load-more").removeClass("hidden");
+        $(".history-car").empty()
+        $.ajax({
+            url: contextPath + "/pages/onsale/match_car_page.html",
+            data: {
+                page: 1,
+                type: type
+                //key: days.get(days.length - 1).innerHTML
+            },
+            success: function(data) {
+
+                if (data.replace(/\s/, '') == "") {
+                    hasMore = false;
+                }
+                $(".load-more").addClass("hidden");
+                isLoadingMore = false;
+                $(".history-car").append(data);
+            }
+        })
+    };
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -122,9 +146,25 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                     }
                 })
             })
-            $(".choseagain").on("click", function(e) {
-                e.preventDefault();
-                $("#qiugou-container").addClass("show-form")
+            $(".chosecar .button").click(function() {
+                $(".qiugou-head").addClass("hidden");
+                $("#qiugou-container").removeClass("hidden");
+            })
+            $("#again-button").click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 1000);
+                $(".qiugou-head").addClass("hidden");
+                $("#qiugou-container").removeClass("hidden");
+            })
+
+            $(".car-image").mouseenter(function() {
+                $(".faver", $(this)).removeClass("hidden");
+                $(".hate", $(this)).removeClass("hidden");
+            })
+            $(".car-image").mouseleave(function() {
+                $(".faver", $(this)).addClass("hidden");
+                $(".hate", $(this)).addClass("hidden");
             })
             $("#qiugou_login").on("click", function(e) {
                 e.preventDefault();
@@ -147,6 +187,13 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
 
                 }
             });
+
+            $('#showall').change(function() {
+                loadMoreByType('all');
+            });
+            $('#showsell').change(function() {
+                loadMoreByType('sale');
+            });
         },
         _bindLoadMore: function() {
             isLoadingMore;
@@ -159,7 +206,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             })
 
         },
-        _loadMore: function() {
+        _loadMore: function(type) {
             isLoadingMore = true;
 
             var days = $(".date-title .day");
@@ -168,11 +215,17 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 return;
             }
             $(".load-more").removeClass("hidden");
+            if ($('#showall').prop('checked')) {
+                var type = 'all';
+            } else {
+                var type = 'sale';
+            }
             $.ajax({
                 url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {
                     page: nowPage++,
-                    key: days.get(days.length - 1).innerHTML
+                    type: type
+                    //key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
                     if (data.replace(/\s/, '') == "") {
@@ -180,7 +233,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                     }
                     $(".load-more").addClass("hidden");
                     isLoadingMore = false;
-                    $("#cars_con").append(data);
+                    $(".history-car").append(data);
                 }
             })
         },

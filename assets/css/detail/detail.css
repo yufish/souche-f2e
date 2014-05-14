@@ -2644,6 +2644,8 @@ body {
 #buy_zaishou .car_info .car_price {
     color: #ee7700;
 }
+<<<<<<< HEAD
+=======
 .popup-result {
     width: 520px;
     height: 166px;
@@ -2656,6 +2658,7 @@ body {
     padding: 10px 0 15px;
     text-align: center;
 }
+>>>>>>> 504937c842600ef3eeba99f7434208133b125d5b
 .popup-result .popup-sure {
     width: 100px;
     line-height: 32px;
@@ -4054,6 +4057,8 @@ body {
     font-size: 20px;
     padding-left: 5px;
 }
+<<<<<<< HEAD
+=======
 body .apply_popup {
     width: 800px;
     height: 530px;
@@ -4187,6 +4192,7 @@ body .apply_popup .popup-title {
     text-indent: 20px;
     height: 50px;
 }
+>>>>>>> 504937c842600ef3eeba99f7434208133b125d5b
 .car-otherItem {
     color: #999;
     float: left;
@@ -4423,6 +4429,8 @@ body .apply_popup .popup-title {
   text-align: center;
   margin-top:15px;
 }*/
+<<<<<<< HEAD
+=======
 
 #yuyue-popup .tip {
     line-height: 30px;
@@ -4480,6 +4488,7 @@ body .apply_popup .popup-title {
     font-size: 16px;
     color: #fff;
 }
+>>>>>>> 504937c842600ef3eeba99f7434208133b125d5b
 .yuyue-full .popup-title {
     font-size: 22px;
     color: #111;
@@ -4614,6 +4623,10 @@ body .apply_popup .popup-title {
     padding-right: 70px;
     line-height: 25px;
 }
+<<<<<<< HEAD
+#yuyue-popup .tip.popup-result {
+  height: 220px;
+=======
 #ph-popup .tip {
     line-height: 30px;
     font-size: 20px;
@@ -4769,6 +4782,7 @@ body .apply_popup .popup-title {
 }
 .popup-result {
     height: 220px;
+>>>>>>> 504937c842600ef3eeba99f7434208133b125d5b
 }
 .popup-result .result_p ins {
     color: #111;
