@@ -1,13 +1,12 @@
 var animateFucs = function (exports) {
     var funcs = [];
-    var group = {};
     var app = {
         use: function (f) {
             funcs.push(f);
         }
     }
     //preload images for smooth animation
-    app.use(function () {
+    app.use(function (next) {
         var imgDir = '../../assets/images/mob/animation/';
         var imgStrs = [
                     '1-left.png',
@@ -41,9 +40,11 @@ var animateFucs = function (exports) {
         window.images = images;
     })
 
+
     app.use(
         function (next) {
             var repeatNext = repeat(2, next);
+
             $('#other-title')
                 .velocity({
                     left: 0
@@ -61,6 +62,7 @@ var animateFucs = function (exports) {
                     complete: repeatNext
                 });
         });
+    //vs
     app.use(
         function (next) {
             var img = cutImage(images['vs.png']);
@@ -70,39 +72,123 @@ var animateFucs = function (exports) {
                 easing: 'easeOutBounce',
                 complete: next
             })
-        })
+        });
 
+    //drawCircle
     app.use(
-        function circleAnimate(next) {
+        function (next) {
+            var repeatNext = repeat(2, next);
             var ctx = document.getElementById('circle').getContext('2d');
             ctx.strokeStyle = "#bebebe";
             ctx.lineWidth = 2;
-            var deg = 0;
+            var deg = 90;
+            var fenMu = Math.PI / 180;
+            var startR = deg * fenMu;
             var ft = 1000 / 360;
             var drawHandler = setInterval(drawCircle, ft);
 
             function drawCircle() {
-                if (deg > 360) {
+                if (deg > 450) {
                     clearInterval(drawHandler);
-                    next();
+                    repeatNext();
                     return;
                 } else {
-                    //setTimeout(function() {
                     ctx.clearRect(0, 0, 110, 110);
                     ctx.beginPath();
-                    ctx.arc(55, 55, 50, 0, deg / 180 * Math.PI);
+                    ctx.arc(55, 55, 50, startR, deg * fenMu);
                     ctx.stroke();
                     deg += 2;
-                    //}, ft)
                 }
             }
+
+            $('#vs-text').velocity({
+                opacity: 1
+            }, {
+                easing: 'easeInCirc',
+                duration: 1000,
+                complete: repeatNext
+            })
+        }
+
+    )
+    //drawLine
+    app.use(
+        function (next) {
+            var h = $(window).height();
+            $('#line').velocity({
+                height: h - 180
+            }, 1000, next)
         }
     )
 
+    app.use(
+        function (next) {
+            var img = cutImage(images['1-left.png']);
+            $('#s1-left').append(img).velocity({
+                left: 0
+            }, 500, next)
+        }
+    )
 
+    app.use(
+        function (next) {
+            var img = cutImage(images['1-left-word.png']);
+            $('#s1-left-word').append(img).velocity({
+                left: 0
+            }, 500, next);
+        }
+    )
+    app.use(
+        function (next) {
+            var img = cutImage(images['1-right.png']);
+            $('#s1-right').append(img).velocity({
+                right: 30
+            }, 1000, next);
+        }
+    )
+    app.use(
+        function (next) {
+            var img = cutImage(images['1-right-car.png']);
+            $('#s1-right-car').append(img).velocity({
+                opacity: 1
+            }, {
+                easing: 'easeInCirc',
+                duration: 600,
+                complete: next
+            })
+        }
+    )
+    app.use(
+        function (next) {
+            var img = cutImage(images['1-right-word.png']);
+            var rWord = $('#s1-right-word');
+            rWord.append(img).velocity({
+                opacity: 1.5,
+                top: 340
+            }, {
+                easing: 'easeOutBounce',
+                duration: 1000,
+                complete: next
+            });
+
+        }
+    )
+    /*app.use(
+        function (next) {
+            $('#s1-left-word').velocity({
+                rotateZ: '30deg'
+            }, next)
+        }
+    )
+    app.use(
+        function (next) {
+            $('#s1-left').velocity({
+                rotateZ: '-70deg'
+            }, next)
+        }
+    )*/
     return {
-        funcs: funcs,
-        group: group
+        funcs: funcs
     }
 
 
