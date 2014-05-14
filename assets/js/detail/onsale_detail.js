@@ -76,6 +76,15 @@
                 })
             }
         })
+        $("#yuyue-phone").blur(function(e) {
+            e.preventDefault();
+            if (!phoneReg.test($("#yuyue-phone").val())) {
+                $(".warning", $("#yuyue-form")).removeClass("hidden");
+            } else {
+                $(".warning", $("#yuyue-form")).addClass("hidden");
+                $(".phone-true").removeClass("hidden");
+            }
+        })
         var flagD = false;
         $("#J_yuyue,#J_nav_yuyue").click(function(e) {
             e.preventDefault();

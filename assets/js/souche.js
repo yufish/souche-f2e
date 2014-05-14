@@ -391,7 +391,7 @@ Souche.NoRegLogin = function() {
                     display: "block"
                 });
             } else {
-                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>            <s class="warning hidden">请输入正确的手机号码</s>            </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="warning hidden clearfix">       <div class="input-error-tip">     <span class="error-icon"></span>    请输入正确的手机号</div>     </div>  <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>    <i class="phone-true hidden"></i>      </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
                 minilogin.css({
                     display: "block",
                     zIndex: 100000001
@@ -424,6 +424,15 @@ Souche.NoRegLogin = function() {
                         Souche.PhoneRegister($("#noreg-phone").val(), function() {
                             self.callback && self.callback();
                         })
+                    }
+                })
+                $("#noreg-phone").blur(function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", $("#noreg-phone-form")).removeClass("hidden");
+                    } else {
+                        $(".warning", $("#noreg-phone-form")).addClass("hidden");
+                        $(".phone-true").removeClass("hidden");
                     }
                 })
                 $("#noreg-popup .apply_close").on("click", function(e) {

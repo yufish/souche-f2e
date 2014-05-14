@@ -191,6 +191,15 @@
 
         }
     })
+    $("#ph-phone").blur(function(e) {
+        e.preventDefault();
+        if (!phoneReg.test($("#ph-phone").val())) {
+            $(".warning", $("#ph-form")).removeClass("hidden");
+        } else {
+            $(".warning", $("#ph-form")).addClass("hidden");
+            $(".phone-true").removeClass("hidden");
+        }
+    })
     $(".send_addr_tophone").click(function() {
         $("#ph-popup .popup-title").html("发地址到手机")
         $("#ph-popup .tip").html("输入手机号码，即可发送")
