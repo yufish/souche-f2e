@@ -16,9 +16,9 @@ function viewPageStat(url) {
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     viewPageStat(document.location.href);
-    $("a, [type=submit]").bind('click', function() {
+    $('body').on('click', 'a,[type=submit]', function () {
         var href = $(this).attr("href");
         var clickType = $(this).attr("click_type");
         if (!clickType) {
@@ -36,12 +36,12 @@ $(document).ready(function() {
             },
             dataType: 'json',
             timeout: 5000,
-            error: function(XMLHttpRequest, textStatus, errorThrown) {},
-            success: function(data) {}
+            error: function (XMLHttpRequest, textStatus, errorThrown) {},
+            success: function (data) {}
         });
     });
 
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
         var data = {
             page_x: e.pageX - ($(window).width() / 2 - 595),
             page_y: e.pageY,

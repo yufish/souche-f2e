@@ -1,8 +1,8 @@
-(function() {
+(function () {
     var tpl =
         "     <div class=\"advisor-unfold\">" +
         "        <div class=\"wrapper-bg\">" +
-        "        <span class=\"advisor-close\"></span>" +
+        "        <a class=\"advisor-close\" click_type='advisor-close'></a>" +
         "        <div class=\"unfold-title\">" +
         "           <span>你最近浏览过</span>" +
         "           <em>{{message}}</em>" +
@@ -28,10 +28,10 @@
         url: contextPath + "/pages/toolbarAction/newUserTip.json",
         dataType: "json",
         type: "get",
-        success: function(data) {
+        success: function (data) {
             if (data.code == 200) {
                 $(document.body).append(tpl.replace("{{message}}", data.message))
-                $(".advisor-close").click(function() {
+                $(".advisor-close").click(function () {
                     $(".advisor-unfold").animate({
                         width: 0,
                         height: 0,
@@ -45,7 +45,7 @@
                     bottom: 0,
                     right: 0
                 }, 700)
-                $("#advisor-form").on("submit", function(e) {
+                $("#advisor-form").on("submit", function (e) {
                     e.preventDefault();
                     if (!phoneReg.test($("#unfold-phone").val())) {
                         $(".advisor-unfold .input-error-tip").removeClass("hidden")
@@ -59,7 +59,7 @@
                             'phone': $("#unfold-phone").val()
                         },
                         dataType: "json",
-                        success: function() {
+                        success: function () {
                             window.location.href = contextPath + "/pages/onsale/match_car_list.html"
                         }
                     })
