@@ -115,11 +115,15 @@
 }
 .pushcar-box .push-content .push-time {
   margin-left: 125px;
-  font-size: 18px;
+  font-size: 14px;
   color: #6f6f6f;
   margin-top: 10px;
 }
-.pushcar-box .push-content .push-time span {
+.pushcar-box .push-content .push-time .down-counter {
+  font-size: 14px;
+  color: #6f6f6f;
+}
+.pushcar-box .push-content .push-time .down-counter ins {
   color: #fc7000;
 }
 .pushcar-box .choseagain {
@@ -787,4 +791,8 @@
 }
 .erweima img {
   margin-bottom: 15px;
+}
+.load-more {
+  height: 40px;
+  background: url(../images/mylist/loading.gif) no-repeat center center;
 }

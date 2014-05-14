@@ -325,7 +325,8 @@ body .apply_popup .phone {
 body .apply_popup .tip {
   line-height: 30px;
   font-size: 16px;
-  color: #333apply_popup;
+  color: #333;
+  margin-bottom: 10px;
 }
 body .apply_popup label {
   font-size: 12px;
@@ -337,6 +338,17 @@ body .apply_popup input {
   height: 32px;
   border: 2px solid #eaeaea;
   padding-left: 5px;
+  background: url(../../images/common/phone.png) no-repeat;
+  background-position: right center;
+}
+body .apply_popup .phone-true {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 152px;
+  right: 155px;
+  background: url(../../images/common/true.png) no-repeat;
 }
 body .apply_popup .result_p {
   margin-top: 55px;
@@ -346,14 +358,18 @@ body .apply_popup .result_p .warning {
   text-decoration: none;
   color: #ff0000;
   font-size: 12px;
-  margin-left: 10px;
+  position: absolute;
+  top: 50px;
+  left: 106px;
+  width: 259px;
+  height: 35px;
 }
 body .apply_popup .submit {
   width: 120px;
   display: block;
   height: 40px;
   border: none;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-left: 80px;
   cursor: pointer;
   background: #ff8914;
@@ -363,13 +379,23 @@ body .apply_popup .submit {
   line-height: 40px;
   letter-spacing: 3px;
 }
-body .popup-result {
-  height: 220px;
+body .popup-result .result_p {
+  margin-top: 115px;
+  margin-left: 155px;
+  height: 52px;
 }
-body .popup-result .result_p ins {
-  color: #111;
-  font-size: 20px;
-  line-height: 44px;
+body .popup-result .success-popup {
+  display: block;
+  width: 50px;
+  height: 52px;
+  background: url(../../images/common/success-popup.png) no-repeat;
+  float: left;
+}
+body .popup-result .result_p span {
+  color: #333;
+  font-size: 18px;
+  margin-left: 15px;
+  line-height: 55px;
 }
 body .popup-result .result_p i {
   font-size: 16px;

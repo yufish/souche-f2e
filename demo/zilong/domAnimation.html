@@ -4,10 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         #bg {
+            padding-top: 20px;
             background: url(../../assets/images/mob/animation/bg.png) repeat center center;
         }
-        #canvas {
+        .canvas {
             width: 300px;
             margin: 0 auto;
             overflow: hidden;
@@ -41,7 +46,54 @@
         #circle {
             position: absolute;
             left: 95px;
-            top: 60px;
+            top: 75px;
+        }
+        #line {
+            left: 150px;
+            top: 180px;
+            width: 2px;
+            height: 0px;
+            background: #bebebe;
+        }
+        #vs-text {
+            text-align: center;
+            width: 100px;
+            top: 115px;
+            left: 100px;
+            opacity: 0;
+            font-weight: 900;
+        }
+        #s1-left {
+            left: -100px;
+            top: 195px;
+        }
+        #s1-left-word {
+            left: -100px;
+            top: 340px;
+        }
+        #s1-right {
+            right: -100px;
+            top: 190px;
+        }
+        #s1-right-car-wrapper {
+            right: 0;
+            top: 150px;
+            width: 83px;
+            height: 39px;
+        }
+        #s1-right-car {
+            opacity: 0;
+            overflow: hidden;
+        }
+        #s1-right-word {
+            top: 315px;
+            right: 20px;
+            opacity: 0;
+        }
+        .header {
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
         }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
@@ -49,131 +101,99 @@
 </head>
 
 <body id='bg'>
-    <div id='canvas'>
+    <div class='header'>
         <div id='other-title' class='title'>普通二手车市场</div>
         <div id='vs'></div>
         <div id='sc-title' class='title'>大搜车</div>
+    </div>
 
+    <div id='canvas-1' class='canvas'>
         <canvas id='circle' width='110px' height="110px">
 
         </canvas>
+        <div id='vs-text'>
+            <div id='firstL' style="position:static">想买辆大众</div>
+            <div id='secondL' style="position:static">开开</div>
+        </div>
+        <div id='line'></div>
+        <div id='s1-left'></div>
+        <div id='s1-left-word'></div>
+        <div id='s1-right'></div>
 
-        <script>
-            ! function(exports) {
+        <div id='s1-right-car-wrapper'>
+            <div id='s1-right-car'></div>
+        </div>
+        <div id='s1-right-word'></div>
+    </div>
+    <div id='canvas-2' class="canvas">
+        <canvas id='circle-1' width='110px' height="110px">
 
-                function Next(funcs) {
-                    this.funcs = funcs || [];
-                    this.complete = function() {};
-                }
-                var fn = Next.prototype;
-                fn.use = function(f) {
-                    if (isArray(f)) {
-                        for (var i in f) {
-                            this.funcs.push(f[i]);
-                        }
-                    } else {
+        </canvas>
 
-                        this.funcs.push(f);
+    </div>
+    <script>
+        ! function(exports) {
+
+            function Next(funcs) {
+                this.funcs = funcs || [];
+                this.complete = function() {};
+            }
+            var fn = Next.prototype;
+            fn.use = function(f) {
+                if (isArray(f)) {
+                    for (var i in f) {
+                        this.funcs.push(f[i]);
                     }
-                    return this;
-                }
-                fn.start = function() {
-                    var funcs = this.funcs;
+                } else {
 
-                    function next() {
-                        var f = funcs.shift();
-                        if (f) {
-                            f(next);
-                        }
+                    this.funcs.push(f);
+                }
+                return this;
+            }
+            fn.start = function() {
+                var funcs = this.funcs;
+
+                function next() {
+                    var f = funcs.shift();
+                    if (f) {
+                        f(next);
                     }
+                }
+                next();
+            }
+            exports.Next = Next;
+        }(window, undefined);
+
+        var toString = Object.prototype.toString;
+        var isArray = function(obj) {
+            return toString.call(obj) == '[object Array]';
+        };
+
+        function repeat(time, next) {
+            return function() {
+                if (--time == 0) {
                     next();
                 }
-                exports.Next = Next;
-            }(window, undefined);
-            var toString = Object.prototype.toString;
-            var isArray = function(obj) {
-                return toString.call(obj) == '[object Array]';
             }
-        </script>
+        }
 
-        <script src='../../assets/js/mobile/animation/domAnim.js'></script>
-        <script>
-            function cutImage(img) {
-                img.width = Math.ceil(img.width / 2);
-                img.height = Math.ceil(img.height / 2);
-                return img;
-            }
+        function cutImage(img) {
+            img.width = Math.ceil(img.width / 2);
+            img.height = Math.ceil(img.height / 2);
+            return img;
+        }
+    </script>
 
-            function preLoadImg(next) {
-                var imgDir = '../../assets/images/mob/animation/';
-                var imgStrs = [
-                    '1-left.png',
-                    '1-left-word.png',
-                    '1-right.png',
-                    '1-right-car.png',
-                    '1-right-word.png',
-                    'vs.png',
-                    'cir-top-left.png',
-                    'cir-top-right.png',
-                    'cir-bottom-left.png',
-                    'cir-bottom-right.png'
-                ]
-                var j = 0;
-                var len = imgStrs.length;
-                var images = {};
-                for (var i = 0; i < imgStrs.length; i++) {
-                    var tempImg = new Image()
-                    var key = imgStrs[i]
-                    var srcUri = imgDir + key
-                    tempImg.src = srcUri;
-                    tempImg.onload = function(key) {
-                        return function() {
-                            images[key] = this;
-                            if (++j == len) {
-                                next();
-                            }
-                        }
-                    }(key)
-                }
-                window.images = images;
-            }
-
-            var next = new Next();
-            next.use(preLoadImg)
-                .use(
-                    function(next) {
-                        $('#other-title')
-                            .velocity({
-                                left: 0
-                            }, {
-                                easing: 'easeOutBounce',
-                                duration: 1000
-                            })
-                        $('#sc-title')
-                            .velocity({
-                                right: 0
-                            }, {
-                                easing: 'easeOutBounce',
-                                duration: 1000,
-                                complete: next
-                            });
-                    })
-                .use(
-                    function(next) {
-                        var img = cutImage(images['vs.png']);
-                        $('#vs').append(images['vs.png']).velocity({
-                            top: 5
-                        }, {
-                            easing: 'easeOutBounce',
-                            complete: next
-                        })
-                    })
-                .use(animateFucs.funcs)
-             next.start();
+    <script src='../../assets/js/mobile/animation/domAnim.js'></script>
+    <script>
+        var next = new Next();
+        next.use(animateFucs_head)
+            .use(animateFucs_s1)
+         next.start();
 
 
-             //drawCircle();
-        </script>
+         //drawCircle();
+    </script>
 </body>
 
 </html>

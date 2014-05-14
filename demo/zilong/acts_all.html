@@ -131,6 +131,7 @@
             </div>
         </div>
         <div class='wrapper-1190'>
+            <div class='hr1'></div>
             <div id='history-acts'>
                 <div class='acts-month'>
                     <div class='month-year'>
@@ -281,14 +282,15 @@
         var len = banners.length;
         var totalPx = len * picWidth;
 
+        var curIndex = 0;
 
         ! function clone() {
             var clone = banners.clone();
-            container.append(clone);
+            container.prepend(clone);
         }()
          container.css({
             width: totalPx * 2,
-            left: -2 * picWidth
+            left: -len * picWidth
         });
 
         $('.left-arrow').click(function() {
@@ -301,7 +303,7 @@
                 first.remove();
                 container.append(firstClone);
             })
-
+            curIndex--;
         })
          $('.right-arrow').click(function() {
             var last = $('#banner-container .banner-item').last();
@@ -314,6 +316,14 @@
             lastClone.animate({
                 width: picWidth
             })
+            curIndex++;
+        })
+
+        function coverHref() {
+
+        }
+
+        $('.cover-left').click(function() {
 
         })
     </script>
