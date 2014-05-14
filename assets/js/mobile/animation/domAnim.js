@@ -184,6 +184,22 @@ var animateFucs_s1 = function (exports) {
 
         }
     )
+    app.use(
+        function (next) {
+            $('#s1-left').velocity({
+                rotateZ: '-70deg',
+                top: '+=20'
+            }, 600, next)
+        }
+    );
+    app.use(
+        function (next) {
+            $('#other-title').velocity({
+                width: '*=0.67'
+            })
+        }
+    )
+
     /*app.use(
         function (next) {
             $('#s1-left-word').velocity({
