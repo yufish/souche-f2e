@@ -118,11 +118,15 @@
     }
     .push-time{
       margin-left: 125px;
-      font-size: 18px;
+      font-size: 14px;
       color: #6f6f6f;
       margin-top: 10px;
-      span{
-        color: @orange;
+      .down-counter{
+        font-size: 14px;
+        color: #6f6f6f;
+        ins{
+          color: @orange;
+        }
       }
     }
   }
@@ -801,4 +805,8 @@
   img{
     margin-bottom: 15px;
   }
+}
+.load-more{
+  height:40px;
+  background: url(../images/mylist/loading.gif) no-repeat center center;
 }
