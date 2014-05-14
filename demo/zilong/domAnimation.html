@@ -90,17 +90,24 @@
             right: 20px;
             opacity: 0;
         }
+        .header {
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
     <script src='../../assets/js/mobile/lib/jquery.velocity.js'></script>
 </head>
 
 <body id='bg'>
-    <div id='canvas-1'>
+    <div class='header'>
         <div id='other-title' class='title'>普通二手车市场</div>
         <div id='vs'></div>
         <div id='sc-title' class='title'>大搜车</div>
+    </div>
 
+    <div id='canvas-1' class='canvas'>
         <canvas id='circle' width='110px' height="110px">
 
         </canvas>
@@ -116,9 +123,13 @@
         <div id='s1-right-car-wrapper'>
             <div id='s1-right-car'></div>
         </div>
-        <div id='s1-right-word'>
+        <div id='s1-right-word'></div>
+    </div>
+    <div id='canvas-2' class="canvas">
+        <canvas id='circle-1' width='110px' height="110px">
 
-        </div>
+        </canvas>
+
     </div>
     <script>
         ! function(exports) {
@@ -176,8 +187,9 @@
     <script src='../../assets/js/mobile/animation/domAnim.js'></script>
     <script>
         var next = new Next();
-        next.use(animateFucs.funcs);
-        next.start();
+        next.use(animateFucs_head)
+            .use(animateFucs_s1)
+         next.start();
 
 
          //drawCircle();
