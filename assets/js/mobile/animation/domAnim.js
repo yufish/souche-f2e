@@ -6,7 +6,71 @@ var animateFucs = function (exports) {
             funcs.push(f);
         }
     }
+    //preload images for smooth animation
+    app.use(function () {
+        var imgDir = '../../assets/images/mob/animation/';
+        var imgStrs = [
+                    '1-left.png',
+                    '1-left-word.png',
+                    '1-right.png',
+                    '1-right-car.png',
+                    '1-right-word.png',
+                    'vs.png',
+                    'cir-top-left.png',
+                    'cir-top-right.png',
+                    'cir-bottom-left.png',
+                    'cir-bottom-right.png'
+                ]
+        var j = 0;
+        var len = imgStrs.length;
+        var images = {};
+        for (var i = 0; i < imgStrs.length; i++) {
+            var tempImg = new Image()
+            var key = imgStrs[i]
+            var srcUri = imgDir + key
+            tempImg.src = srcUri;
+            tempImg.onload = function (key) {
+                return function () {
+                    images[key] = this;
+                    if (++j == len) {
+                        next();
+                    }
+                }
+            }(key)
+        }
+        window.images = images;
+    })
 
+    app.use(
+        function (next) {
+            var repeatNext = repeat(2, next);
+            $('#other-title')
+                .velocity({
+                    left: 0
+                }, {
+                    easing: 'easeOutBounce',
+                    duration: 1000,
+                    complete: repeatNext
+                })
+            $('#sc-title')
+                .velocity({
+                    right: 0
+                }, {
+                    easing: 'easeOutBounce',
+                    duration: 1000,
+                    complete: repeatNext
+                });
+        });
+    app.use(
+        function (next) {
+            var img = cutImage(images['vs.png']);
+            $('#vs').append(images['vs.png']).velocity({
+                top: 5
+            }, {
+                easing: 'easeOutBounce',
+                complete: next
+            })
+        })
 
     app.use(
         function circleAnimate(next) {
