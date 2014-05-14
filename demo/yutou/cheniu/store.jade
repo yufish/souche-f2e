@@ -12,7 +12,7 @@ html
                     img(src="http://res.souche.com/files/default/1EA943E35340ABACC1B9020D8E940EF6_130x130.jpg")
             h1.store-title 苏州嘉城二手车
             .store-action
-                a.lookinfo(href="") 
+                a.lookinfo(href="store-info") 
                     i
                     |店铺信息
                 a.call(href="tel:18667046650")
@@ -57,10 +57,4 @@ html
                 .bd 斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手自一体逸俊版节能补贴斯柯达 2010款 明锐1.4T-手
 
 
-        script.
-            $(".lookinfo").on("click",function(e){
-                e.preventDefault();
-                $(".mod-info").removeClass("hidden").css({
-                    height:$(window).height()
-                })
-            })
+       
