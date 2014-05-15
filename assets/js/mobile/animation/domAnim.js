@@ -518,6 +518,7 @@ var animateFuncs_s3 = function () {
                     rotateZ: '0'
                 })
             }
+            forerverShake();
             setInterval(forerverShake, 2000);
         }
     )
