@@ -159,6 +159,29 @@
      )
      app.use(
          function (next) {
+             var img1 = images['circle-1-1.png']
+             var img2 = images['circle-1-2.png']
+             var img3 = images['circle-1-3.png']
+             $('#circle-tag-1-1').append(img1).velocity({
+                 right: 100
+             }, 600)
+             $('#circle-tag-1-2').append(img2).velocity({
+                 right: 50
+             }, {
+                 delay: 200,
+                 duration: 600
+             })
+             $('#circle-tag-1-3').append(img3).velocity({
+                 right: 0
+             }, {
+                 delay: 400,
+                 duration: 600,
+                 complete: next
+             })
+         }
+     )
+     app.use(
+         function (next) {
              var img = (images['1-right-word.png']);
              var rWord = $('#s1-right-word');
              rWord.append(img).velocity({
@@ -183,7 +206,7 @@
      app.use(
          function (next) {
              $('#other-title').velocity({
-                 width: '*=0.67'
+                 width: 130 * 0.67
              }, 600, next)
          }
      )
@@ -314,6 +337,11 @@
          $('#s2-right-word').append(img).velocity({
              right: 0,
              opacity: 1
+         }, 1000, next)
+     })
+     app.use(function (next) {
+         $('#other-title').velocity({
+             width: 130 * 0.33
          }, 1000, next)
      })
 
