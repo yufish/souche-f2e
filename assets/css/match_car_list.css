@@ -220,44 +220,42 @@
 }
 .car-box .car-image .faver {
   position: absolute;
-  background: url("../images/mylist/faver.png") no-repeat;
+  background: url("../images/mylist/faver.png?123") no-repeat;
   width: 50px;
   height: 20px;
   top: 15px;
   right: 75px;
 }
 .car-box .car-image .faver:hover {
-  background: url("../images/mylist/faver-hover.png") no-repeat;
+  background: url("../images/mylist/faver-hover.png?123") no-repeat;
 }
 .car-box .car-image .hadfav {
   position: absolute;
-  background: url("../images/mylist/hadfav.png") no-repeat;
+  background: url("../images/mylist/hadfav.png?123") no-repeat;
   width: 50px;
   height: 20px;
   top: 15px;
   right: 75px;
-  opacity: 0.8;
 }
 .car-box .car-image .hadfav:hover {
-  background: url("../images/mylist/hadfav-hover.png") no-repeat;
+  background: url("../images/mylist/hadfav-hover.png?123") no-repeat;
+  cursor: normal;
 }
 .car-box .car-image .hate {
   position: absolute;
-  background: url("../images/mylist/hate.png") no-repeat;
+  background: url("../images/mylist/hate.png?123") no-repeat;
   width: 60px;
   height: 20px;
   top: 15px;
   right: 10px;
-  opacity: 0.8;
 }
 .car-box .car-image .hate:hover {
-  background: url("../images/mylist/hate-hover.png") no-repeat;
+  background: url("../images/mylist/hate-hover.png?123") no-repeat;
 }
 .car-box .car-image .jiangjia {
   position: absolute;
   bottom: 0px;
   background-color: #333333;
-  opacity: 0.8;
   width: 385px;
   height: 40px;
   line-height: 40px;
