@@ -4058,7 +4058,62 @@ body {
 }
 #yuyue-result-popup,
 #yushou-order-popup {
-  margin-left: -400px;
+  margin-left: -355px;
+}
+#yuyue-result-popup {
+  margin-left: -355px;
+}
+#yuyue-result-popup .apply_close {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/fed/member/popup-close2.png") no-repeat;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+#yuyue-result-popup .result_p {
+  width: 490px;
+  height: 50px;
+  background-color: #f9f9f9;
+  border-radius: 7px;
+  border: 1px solid #d1d1d1;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 15px;
+}
+#yuyue-result-popup .result_p .buy_success {
+  display: block;
+  width: 49px;
+  height: 52px;
+  background: url(../../images/common/result-success.png) no-repeat;
+  float: left;
+  margin-left: 15px;
+}
+#yuyue-result-popup .result_p .buy_failed {
+  display: block;
+  width: 49px;
+  height: 52px;
+  background: url(../../images/common/result-failed.png) no-repeat;
+  float: left;
+  margin-left: 15px;
+}
+#yuyue-result-popup .result_p .result-text {
+  font-size: 18px;
+  color: #333;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin-right: 30px;
+  line-height: 50px;
+}
+#yuyue-result-popup .result_p p {
+  color: #333;
+  font-size: 14px;
+  display: block;
+  float: left;
+  margin-top: 5px;
 }
 #jiangjia-popup {
   width: 500px;
@@ -4411,9 +4466,6 @@ body {
   margin-left: 240px;
   padding-right: 70px;
   line-height: 25px;
-}
-#yuyue-popup .tip.popup-result {
-  height: 220px;
 }
 .popup-result .result_p ins {
   color: #111;
