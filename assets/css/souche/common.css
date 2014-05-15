@@ -62,7 +62,7 @@
   height: 90px;
   border: 1px solid #ddd;
   border-top: none;
-  background: url(../../images/common/float-layer3.png) no-repeat -36px -555px;
+  background: url(../../images/common/float-layer3.png) no-repeat -36px -554.99999999px;
   cursor: pointer;
 }
 #suggest .suggest-tag-active {
