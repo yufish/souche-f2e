@@ -90,8 +90,13 @@ var animateFuncs_s1 = function (exports) {
             function drawCircle() {
                 if (deg > 450) {
                     clearInterval(drawHandler);
+
+                    ctx.clearRect(0, 0, 110, 110);
+                    ctx.beginPath();
+                    ctx.arc(55, 55, 50, startR, deg * fenMu);
+                    ctx.stroke();
+
                     repeatNext();
-                    return;
                 } else {
                     ctx.clearRect(0, 0, 110, 110);
                     ctx.beginPath();

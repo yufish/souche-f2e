@@ -344,6 +344,8 @@
   font-size: 17px;
   color: #333333;
   font-weight: bold;
+  display: block;
+  height: 48px;
 }
 .car-box .car-detail .car-title:hover {
   color: #fc7000;
