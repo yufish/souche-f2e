@@ -287,6 +287,8 @@
   height: 40px;
   line-height: 40px;
   color: #fff;
+  left: 0;
+  z-index: 10;
 }
 .car-box .car-image .youhui i {
   display: block;
