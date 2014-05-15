@@ -99,7 +99,7 @@
         }
         .right-word {
             top: 260px;
-            right: 20px;
+            right: 10px;
             opacity: 0;
         }
         .header {
@@ -150,6 +150,39 @@
             top: 240px;
             right: -50px;
         }
+        #s3-left {
+            top: 175px;
+            left: 60px;
+        }
+        #s3-left-2 {
+            top: 170px;
+            left: 100px;
+        }
+        #s3-left-3 {
+            top: 165px;
+            left: 110px;
+        }
+        #s3-right-1 {
+            top: 175px;
+            right: 50px;
+            opacity: 0;
+        }
+        #s3-right-2 {
+            top: 145px;
+            right: 35px;
+            opacity: 0;
+        }
+        #circle-tag-3-1,
+        #circle-tag-3-2,
+        #circle-tag-3-3 {
+            top: 185px;
+            right: 15px;
+        }
+        .start-button {
+            top: 400px;
+            left: 41px;
+            opacity: 0;
+        }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
     <script src='../../assets/js/mobile/lib/jquery.velocity.js'></script>
@@ -180,6 +213,7 @@
             <div id='circle-tag-1-3'></div>
             <div id='s1-right-car' class='right-car'></div>
             <div id='s1-right-word' class='right-word'></div>
+            <div id='start1' class='start-button'></div>
         </div>
 
         <div id='canvas-2' class='canvas'>
@@ -201,6 +235,28 @@
 
             <div id='s2-right'></div>
             <div id='s2-right-word' class='right-word'></div>
+            <div id='start2' class='start-button'></div>
+        </div>
+        <div id='canvas-3' class='canvas'>
+            <canvas id='circle-3' class='circle' width='110px' height="110px">
+
+            </canvas>
+            <div id='vs-text-3' class='vs-text'>
+                <div id='firstL' style="position:static">车况好吗</div>
+            </div>
+            <div id='line-3' class="line"></div>
+            <div id='s3-left'></div>
+            <div id='s3-left-2'></div>
+            <div id='s3-left-3'></div>
+            <div id='circle-tag-3-1'></div>
+            <div id='circle-tag-3-2'></div>
+            <div id='circle-tag-3-3'></div>
+            <div id='s3-left-word' class='left-word'></div>
+
+            <div id='s3-right-1'></div>
+            <div id='s3-right-2'></div>
+            <div id='s3-right-word' class='right-word'></div>
+            <div id='start3' class='start-button'></div>
         </div>
     </div>
 
@@ -236,6 +292,11 @@
             exports.Next = Next;
         }(window, undefined);
 
+        var wait = function(t) {
+            return function(next) {
+                setTimeout(next, t)
+            }
+        }
         var toString = Object.prototype.toString;
         var isArray = function(obj) {
             return toString.call(obj) == '[object Array]';
@@ -278,12 +339,25 @@
             '2-right-word.png',
             'circle-2-1.png',
             'circle-2-2.png',
-            'circle-2-3.png'
+            'circle-2-3.png',
+            'left-3-1.png',
+            'left-3-2.png',
+            'left-3-3.png',
+            'right-3-1.png',
+            'right-3-2.png',
+            'circle-3-1.png',
+            'circle-3-2.png',
+            'circle-3-3.png',
+            '3-left-word.png',
+            '3-right-word.png',
+            'start.png'
         ]
+
         var next = new Next();
         next.use(animateFuncs_head)
             .use(animateFuncs_s1)
-            .use(animateFuncs_s2);
+            .use(animateFuncs_s2)
+            .use(animateFuncs_s3);
         next.start();
     </script>
 </body>
