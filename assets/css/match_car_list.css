@@ -239,7 +239,6 @@
 }
 .car-box .car-image .hadfav:hover {
   background: url("../images/mylist/hadfav-hover.png?123") no-repeat;
-  cursor: normal;
 }
 .car-box .car-image .hate {
   position: absolute;
