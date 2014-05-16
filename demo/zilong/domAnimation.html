@@ -186,15 +186,46 @@
             -webkit-appearance: none;
             appearance: none;
             left: 50%;
-            width: 300px;
+            width: 260px;
             height: 30px;
-            margin-left: -150px;
+            margin-left: -130px;
+            position: absolute;
+            top: 200px;
+            background-color: #f3f3f3;
+            border: 0;
+            border-radius: 9px;
+            box-sizing: border-box;
         }
-        #load-screen {
-            background: #999;
+        progress::-webkit-progress-inner-element {
+            -webkit-appearance: inherit;
+            box-sizing: inherit;
             height: 100%;
             width: 100%;
+        }
+        progress::-webkit-progress-bar {
+            background-color: gray;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        progress::-webkit-progress-value {
+            background-color: green;
+            height: 100%;
+            width: 50%;
+            /* should be removed later */
+            box-sizing: border-box;
+        }
+        #load-screen {
+            height: 9999px;
+            width: 100%;
             z-index: 10;
+            position: relative
+        }
+        #load-msg {
+            top: 200px;
+            z-index: 10;
+            line-height: 30px;
+            left: 80px;
         }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
@@ -270,7 +301,8 @@
 
         <div id='start' class='start-button'></div>
         <div id='load-screen'>
-            <progress max="100" value="80"></progress>
+            <div id='load-msg'>资源加载中,请稍后</div>
+            <progress id='progress' max="100" value="0"></progress>
         </div>
     </div>
 

@@ -8,7 +8,16 @@ var animateFuncs_head = function (exports) {
     }
     //preload images for smooth animation
     app.use(function (next) {
-
+        var once = function (next) {
+            var i = 0;
+            return function () {
+                if (i == 0) {
+                    next();
+                    i++;
+                }
+            }
+        }(next);
+        setTimeout(once, 5000);
         var j = 0;
         var len = imgStrs.length;
         var images = {};
@@ -21,8 +30,9 @@ var animateFuncs_head = function (exports) {
                 return function () {
                     images[key] = cutImage(this);
                     if (++j == len) {
-                        next();
+                        once();
                     }
+                    $('#progress').val(j / len * 100);
                 }
             }(key)
         }
