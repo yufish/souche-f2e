@@ -403,13 +403,13 @@
             touchStart = 'click';
         }
 
-        function swipeHandl() {
-            $('#bg').off('click', swipeHandl);
+        function swipeHd() {
+            $('#bg').off('click', swipeHd);
             if (curScreen >= 3) return;
             if (curScreen == 1) {
                 next.use(animateFuncs_s2)
                     .use(function() {
-                        $('#bg').click(swipeHandl);
+                        $('#bg').click(swipeHd);
                     })
             }
             if (curScreen == 2) {
@@ -429,7 +429,7 @@
         next.use(animateFuncs_head)
             .use(animateFuncs_s1)
             .use(function() {
-                $('#bg').click(swipeHandl);
+                $('#bg').on(touchStart, swipeHd)
             })
             .start();
     </script>
