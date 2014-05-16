@@ -121,7 +121,7 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var h = $(window).height();
             $('#line-1').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -154,7 +154,7 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var img = (images['1-right.png']);
             $('#s1-right').append(img).velocity({
-                right: 30
+                right: 20
             }, 1000, next);
         }
     )
@@ -199,7 +199,7 @@ var animateFuncs_s1 = function (exports) {
             var rWord = $('#s1-right-word');
             rWord.append(img).velocity({
                 opacity: 1.5,
-                top: 305
+                top: 260
             }, {
                 easing: 'easeOutBounce',
                 duration: 1000,
@@ -274,7 +274,7 @@ var animateFuncs_s2 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-2').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -295,13 +295,13 @@ var animateFuncs_s2 = function () {
     app.use(function (next) {
         var img = images['left-2-2.png'];
         $('#s2-left-2').append(img).velocity({
-            top: 145
+            top: 130
         }, 1000, next);
     })
     app.use(function (next) {
         var img = images['left-2-3.png'];
         $('#s2-left-3').append(img).velocity({
-            top: 215
+            top: '+=15'
         }, 1000, next);
     })
     app.use(function (next) {
@@ -317,7 +317,7 @@ var animateFuncs_s2 = function () {
             opacity: 1
         }, 600)
             .velocity({
-                top: 160
+                top: '+=20'
             }, {
                 easing: 'easeOutBounce',
                 duration: 1000,
@@ -329,18 +329,18 @@ var animateFuncs_s2 = function () {
         var img2 = images['circle-2-2.png'];
         var img3 = images['circle-2-3.png'];
         $('#circle-tag-2-1').append(img1).velocity({
-            top: 240
+            top: 215
         }, {
             duration: 600
         })
         $('#circle-tag-2-2').append(img2).velocity({
-            top: 240
+            top: 215
         }, {
             delay: 200,
             duration: 600,
         })
         $('#circle-tag-2-3').append(img3).velocity({
-            top: 240
+            top: 215
         }, {
             delay: 400,
             duration: 600,
@@ -415,7 +415,7 @@ var animateFuncs_s3 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-3').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -481,18 +481,18 @@ var animateFuncs_s3 = function () {
             var img2 = images['circle-3-2.png'];
             var img3 = images['circle-3-3.png'];
             $('#circle-tag-3-1').append(img1).velocity({
-                top: 250,
+                top: 220,
                 right: 100
             }, 600)
             $('#circle-tag-3-2').append(img2).velocity({
-                top: 250,
+                top: 220,
                 right: 50
             }, {
                 delay: 200,
                 duration: 600
             })
             $('#circle-tag-3-3').append(img3).velocity({
-                top: 250,
+                top: 220,
                 right: 0
             }, {
                 delay: 400,
@@ -504,7 +504,7 @@ var animateFuncs_s3 = function () {
     app.use(function (next) {
         var img = images['3-right-word.png'];
         $('#s3-right-word').append(img).velocity({
-            top: 305,
+            top: 260,
             opacity: 1,
         }, {
             duration: 1000,
