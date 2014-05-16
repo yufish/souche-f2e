@@ -515,7 +515,7 @@ var animateFuncs_s3 = function () {
     app.use(
         function (next) {
             function forerverShake() {
-                $('#start3').velocity({
+                $('#start').velocity({
                     rotateZ: '5deg'
                 }).velocity({
                     rotateZ: '-5deg'
