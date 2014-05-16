@@ -25,6 +25,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var hasMore = true;
     var nowPage = 2;
     var loadMoreByType = function(type) {
+        nowPage = 2;
         isLoadingMore = true;
         $(".load-more").removeClass("hidden");
         $(".history-car").empty()
@@ -187,13 +188,23 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
 
                 }
             });
-
-            $('#showall').change(function() {
+            $(".showall").click(function() {
+                $("#showall").prop('checked', true);
                 loadMoreByType('all');
-            });
-            $('#showsell').change(function() {
+            })
+
+
+            $('.showsell').click(function() {
+                $('#showsell').prop('checked', true);
                 loadMoreByType('sale');
+
             });
+            // $('#showall').change(function() {
+            //     loadMoreByType('all');
+            // });
+            // $('#showsell').change(function() {
+            //     loadMoreByType('sale');
+            // });
         },
         _bindLoadMore: function() {
             isLoadingMore;
