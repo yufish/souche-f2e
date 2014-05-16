@@ -24,7 +24,6 @@
             margin: 0 auto;
             position: absolute;
             height: 100%;
-            top: 35px;
         }
         div {
             position: absolute;
@@ -359,14 +358,19 @@
             if (curScreen >= 3) return;
             if (curScreen == 1) {
                 next.use(animateFuncs_s2)
+                    .use(function() {
+                        $('body').on('click', swipeHandl);
+                    })
             }
             if (curScreen == 2) {
                 next.use(animateFuncs_s3);
             }
-            curScrren++;
-            $('#canvas-' + curScrren).velocity({
-                top: '100%'
-            }, next.start)
+            $('#canvas-' + curScreen).velocity({
+                top: '-100%'
+            }, 1500, function() {
+                next.start.call(next)
+            })
+            curScreen++;
         }
         var el = document.getElementById('bg');
 
