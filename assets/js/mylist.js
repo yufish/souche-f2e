@@ -1,6 +1,6 @@
-define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
+define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
-    var brandSort = function (data) {
+    var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         var obj = {}
         for (var i in data) {
@@ -24,7 +24,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
     var isLoadingMore = false;
     var hasMore = true;
     var nowPage = 2;
-    var loadMoreByType = function (type) {
+    var loadMoreByType = function(type) {
         nowPage = 2;
         isLoadingMore = true;
         $(".load-more").removeClass("hidden");
@@ -36,7 +36,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 type: type
                 //key: days.get(days.length - 1).innerHTML
             },
-            success: function (data) {
+            success: function(data) {
 
                 if (data.replace(/\s/, '') == "") {
                     hasMore = false;
@@ -48,7 +48,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
         })
     };
     return {
-        init: function (_config) {
+        init: function(_config) {
             $.extend(config, _config);
             var self = this;
             brandSelect = new CustomSelect("brand_select", {
@@ -71,26 +71,26 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 this._bindLoadMore();
             }
             //拉手蹦一下
-            var shakeWedo = function (callback) {
+            var shakeWedo = function(callback) {
                 $(".wedo").animate({
                     backgroundPositionY: -20
-                }, 300, null, function () {
+                }, 300, null, function() {
                     $(".wedo").animate({
                         backgroundPositionY: -40
-                    }, 300, null, function () {
+                    }, 300, null, function() {
                         callback && callback()
                     })
                 })
             }
-            setTimeout(function () {
+            setTimeout(function() {
                 shakeWedo(shakeWedo);
             }, 500)
 
-            $(".wedo").mouseenter(function () {
+            $(".wedo").mouseenter(function() {
                 $(".wedo").animate({
                     backgroundPositionY: -20
                 }, 300);
-            }).mouseleave(function () {
+            }).mouseleave(function() {
                 $(".wedo").animate({
                     backgroundPositionY: -40
                 }, 300);
@@ -105,7 +105,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 data: {
                     type: "car-subdivision"
                 },
-                success: function (data) {
+                success: function(data) {
                     var html = "";
                     data = brandSort(data.items);
                     for (var i in data) {
@@ -121,14 +121,14 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                     brandSelect.addOptions(html)
 
                 },
-                error: function () {
+                error: function() {
                     // alert("品牌信息请求出错，刷新后再试")
                 },
-                failure: function () {
+                failure: function() {
                     // alert("品牌信息请求出错，刷新后再试")
                 }
             });
-            $("#qiugou-form .submit").on("click", function (e) {
+            $("#qiugou-form .submit").on("click", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
                     $(".warning", self.ele).removeClass("hidden")
@@ -136,7 +136,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 } else {
                     $(".warning", self.ele).addClass("hidden")
                 }
-                Souche.checkPhoneExist(function (isLogin) {
+                Souche.checkPhoneExist(function(isLogin) {
                     if (isLogin) {
                         self._submit();
                     } else {
@@ -145,11 +145,11 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                     }
                 })
             })
-            $(".chosecar .button").click(function () {
+            $(".chosecar .button").click(function() {
                 $(".qiugou-head").addClass("hidden");
                 $("#qiugou-container").removeClass("hidden");
             })
-            $("#again-button").click(function () {
+            $("#again-button").click(function() {
                 $('body,html').animate({
                     scrollTop: 0
                 }, 1000);
@@ -157,29 +157,29 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 $("#qiugou-container").removeClass("hidden");
             })
 
-            $('.history-car').on('mouseenter', '.car-image', function () {
+            $('.history-car').on('mouseenter', '.car-image', function() {
                 $(".faver", $(this)).removeClass("hidden");
                 $(".hate", $(this)).removeClass("hidden");
                 $(".hadfav", $(this)).removeClass("hidden");
             })
-            $('.history-car').on('mouseleave', '.car-image', function () {
+            $('.history-car').on('mouseleave', '.car-image', function() {
                 $(".faver", $(this)).addClass("hidden");
                 $(".hate", $(this)).addClass("hidden");
                 $(".hadfav", $(this)).addClass("hidden");
             })
-            $("#qiugou_login").on("click", function (e) {
+            $("#qiugou_login").on("click", function(e) {
                 e.preventDefault();
-                Souche.MiniLogin.checkLogin(function () {
+                Souche.MiniLogin.checkLogin(function() {
                     $(".qiugou .go-login").addClass("hidden")
                     window.location.href = window.location.href + "#qiugou-cur";
                 })
             })
-            $("#qiugou-phone-form").on("submit", function (e) {
+            $("#qiugou-phone-form").on("submit", function(e) {
                 e.preventDefault();
                 if (!phoneReg.test($("#qiugou-phone").val())) {
                     $(".warning", this).removeClass("hidden");
                 } else {
-                    Souche.PhoneRegister($("#qiugou-phone").val(), function () {
+                    Souche.PhoneRegister($("#qiugou-phone").val(), function() {
                         $(".go-login").addClass("hidden")
                         $("#qiugou-popup").addClass("hidden")
                         $(".wrapGrayBg").hide();
@@ -188,18 +188,28 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
 
                 }
             });
-
-            $('#showall').change(function () {
+            $(".showall").click(function() {
+                $("#showall").prop('checked', true);
                 loadMoreByType('all');
-            });
-            $('#showsell').change(function () {
+            })
+
+
+            $('.showsell').click(function() {
+                $('#showsell').prop('checked', true);
                 loadMoreByType('sale');
+
             });
+            // $('#showall').change(function() {
+            //     loadMoreByType('all');
+            // });
+            // $('#showsell').change(function() {
+            //     loadMoreByType('sale');
+            // });
         },
-        _bindLoadMore: function () {
+        _bindLoadMore: function() {
             isLoadingMore;
             var self = this;
-            $(window).on("scroll", function () {
+            $(window).on("scroll", function() {
                 if (isLoadingMore || !hasMore) return;
                 if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
                     self._loadMore();
@@ -207,7 +217,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
             })
 
         },
-        _loadMore: function (type) {
+        _loadMore: function(type) {
             isLoadingMore = true;
 
             var days = $(".date-title .day");
@@ -228,7 +238,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                     type: type
                     //key: days.get(days.length - 1).innerHTML
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data.replace(/\s/, '') == "") {
                         hasMore = false;
                     }
@@ -238,41 +248,41 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 }
             })
         },
-        _submit: function () {
+        _submit: function() {
             var self = this;
             if (is_submiting) return;
             $(".qiugou .submit").addClass("loading").html("提交中  ...");
             $("#qiugou-form").submit();
 
         },
-        _successAnim: function () {
+        _successAnim: function() {
 
         },
 
-        _onlyNum: function () {
-            setInterval(function () {
+        _onlyNum: function() {
+            setInterval(function() {
                 $("#price_low_select").val($("#price_low_select").val().replace(/[^0-9]/, ""))
                 $("#price_hight_select").val($("#price_hight_select").val().replace(/[^0-9]/, ""))
             }, 200)
         },
 
-        _bindBrandChange: function () {
+        _bindBrandChange: function() {
             var self = this;
             if (brandSelect.selected.length == 0 && seriesSelect.selected.length == 0) {
                 seriesSelect.disable("请先选择品牌")
             }
-            $(brandSelect).on("select", function (e, data) {
+            $(brandSelect).on("select", function(e, data) {
 
                 self._addSeries(data.key)
                 seriesSelect.enable();
                 //选中了某品牌
-            }).on("unselect", function (e, data) {
+            }).on("unselect", function(e, data) {
                 self._removeSeries(data.key)
                 if (brandSelect.selected.length == 0) {
                     seriesSelect.disable("请先选择品牌")
                 }
                 //取消选中某品牌，删除其所拥有的车系列表
-            }).on("show", function () {
+            }).on("show", function() {
                 $("html,body").animate({
                     scrollTop: $(".qiugou").offset().top
                 }, 200)
@@ -282,7 +292,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                 self._addSeries(brandSelect.selected[i].key)
             }
         },
-        _addSeries: function (brandCode) {
+        _addSeries: function(brandCode) {
             if ($("#series_select .sc-select-list div[data-brandid=" + brandCode + "]").length) {
                 return;
             }
@@ -293,7 +303,7 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                     type: "car-subdivision",
                     code: brandCode
                 },
-                success: function (data) {
+                success: function(data) {
                     var html = "";
 
                     for (var i in data.codes) {
@@ -309,19 +319,19 @@ define(['souche/custom-select', 'lib/lazyload'], function (CustomSelect) {
                     }
                     seriesSelect.addOptions(html)
                 },
-                error: function () {
+                error: function() {
                     // alert("车系信息请求出错，刷新后再试")
                 },
-                failure: function () {
+                failure: function() {
                     // alert("车系信息请求出错，刷新后再试")
                 }
             });
         },
-        _removeSeries: function (brandCode) {
+        _removeSeries: function(brandCode) {
 
-            $("#series_select .sc-select-list div[data-brandid=" + brandCode + "]").each(function (i, key) {
+            $("#series_select .sc-select-list div[data-brandid=" + brandCode + "]").each(function(i, key) {
                 var options = $(".option", $(this));
-                options.each(function (n, k) {
+                options.each(function(n, k) {
                     var series_id = $(k).attr("data-value")
                     seriesSelect.removeSelected(series_id)
                 })

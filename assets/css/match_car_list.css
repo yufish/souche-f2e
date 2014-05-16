@@ -4,6 +4,7 @@
 }
 #match_car_list #content {
   background-color: #f9f9f9;
+  min-height: 400px;
 }
 #match_car_list #content .wrapper {
   width: 1190px;
@@ -199,9 +200,11 @@
 .push-history .fliter-box .fliter .showall {
   float: left;
   margin-right: 25px;
+  cursor: pointer;
 }
 .push-history .fliter-box .fliter .showsell {
   float: left;
+  cursor: pointer;
 }
 .car-box {
   width: 385px;
@@ -220,41 +223,44 @@
 }
 .car-box .car-image .faver {
   position: absolute;
-  background: url("../images/mylist/faver.png?123") no-repeat;
+  background: url("../images/mylist/faver.png") no-repeat;
   width: 50px;
   height: 20px;
   top: 15px;
   right: 75px;
 }
 .car-box .car-image .faver:hover {
-  background: url("../images/mylist/faver-hover.png?123") no-repeat;
+  background: url("../images/mylist/faver-hover.png") no-repeat;
 }
 .car-box .car-image .hadfav {
   position: absolute;
-  background: url("../images/mylist/hadfav.png?123") no-repeat;
+  background: url("../images/mylist/hadfav.png") no-repeat;
   width: 50px;
   height: 20px;
   top: 15px;
   right: 75px;
+  opacity: 0.8;
 }
 .car-box .car-image .hadfav:hover {
-  background: url("../images/mylist/hadfav-hover.png?123") no-repeat;
+  background: url("../images/mylist/hadfav-hover.png") no-repeat;
 }
 .car-box .car-image .hate {
   position: absolute;
-  background: url("../images/mylist/hate.png?123") no-repeat;
+  background: url("../images/mylist/hate.png") no-repeat;
   width: 60px;
   height: 20px;
   top: 15px;
   right: 10px;
+  opacity: 0.8;
 }
 .car-box .car-image .hate:hover {
-  background: url("../images/mylist/hate-hover.png?123") no-repeat;
+  background: url("../images/mylist/hate-hover.png") no-repeat;
 }
 .car-box .car-image .jiangjia {
   position: absolute;
   bottom: 0px;
   background-color: #333333;
+  opacity: 0.8;
   width: 385px;
   height: 40px;
   line-height: 40px;
@@ -287,8 +293,6 @@
   height: 40px;
   line-height: 40px;
   color: #fff;
-  left: 0;
-  z-index: 10;
 }
 .car-box .car-image .youhui i {
   display: block;
@@ -346,8 +350,6 @@
   font-size: 17px;
   color: #333333;
   font-weight: bold;
-  display: block;
-  height: 48px;
 }
 .car-box .car-detail .car-title:hover {
   color: #fc7000;
