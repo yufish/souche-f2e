@@ -39,6 +39,12 @@ var animateFuncs_head = function (exports) {
         exports.images = images;
     })
 
+    app.use(
+        function (next) {
+            $('#load-screen').hide();
+            next();
+        }
+    )
 
     app.use(
         function (next) {
