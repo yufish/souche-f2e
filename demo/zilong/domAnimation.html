@@ -356,7 +356,8 @@
             if (curScreen == 1) {
                 next.use(animateFuncs_s2)
                     .use(function() {
-                        $('body').on('click', swipeHandl);
+                        Hammer(el).on('swipeup', swipeHandl);
+                        $(el).click(swipeHandl);
                     })
             }
             if (curScreen == 2) {
