@@ -355,14 +355,14 @@ var animateFuncs_s2 = function () {
         }, 1000, next)
 
     })
-    app.use(wait500);
-    app.use(
-        function (next) {
-            $('#canvas-2').velocity({
-                top: '-100%'
-            }, 1500, next)
-        }
-    )
+//    app.use(wait500);
+ //    app.use(
+ //        function (next) {
+ //            $('#canvas-2').velocity({
+ //                top: '-100%'
+ //            }, 1500, next)
+ //        }
+ //    )
 
     return funcs;
 
