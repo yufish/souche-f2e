@@ -79,25 +79,25 @@
         }
         .left-main {
             left: -100px;
-            top: 160px;
+            top: 130px;
         }
         .left-word {
             left: -100px;
-            top: 305px;
+            top: 260px;
         }
         .right-main {
             right: -100px;
-            top: 155px;
+            top: 130px;
         }
         .right-car {
             opacity: 0;
             right: 0;
-            top: 115px;
+            top: 85px;
             width: 83px;
             height: 39px;
         }
         .right-word {
-            top: 260px;
+            top: 200px;
             right: 10px;
             opacity: 0;
         }
@@ -111,63 +111,63 @@
             overflow: hidden;
         }
         #s2-left {
-            top: 175px;
+            top: 160px;
             left: -100px;
         }
         #s2-left-2 {
-            top: 185px;
+            top: 170px;
             left: 80px;
         }
         #s2-left-3 {
-            top: 205px;
+            top: 185px;
             left: 105px;
         }
         #s2-right {
             opacity: 0;
-            top: 140px;
+            top: 120px;
             right: 0;
         }
         #circle-tag-2-1 {
-            top: 215px;
+            top: 165px;
             right: 100px;
         }
         #circle-tag-2-2 {
-            top: 215px;
+            top: 165px;
             right: 50px;
         }
         #circle-tag-2-3 {
-            top: 215px;
+            top: 165px;
             right: 0;
         }
         #s2-right-word {
-            top: 305px;
+            top: 260px;
             right: -150px;
         }
         #circle-tag-1-1,
         #circle-tag-1-2,
         #circle-tag-1-3 {
-            top: 240px;
+            top: 210px;
             right: -50px;
         }
         #s3-left {
-            top: 175px;
+            top: 160px;
             left: 60px;
         }
         #s3-left-2 {
-            top: 170px;
+            top: 155px;
             left: 100px;
         }
         #s3-left-3 {
-            top: 165px;
+            top: 150px;
             left: 110px;
         }
         #s3-right-1 {
-            top: 175px;
+            top: 145px;
             right: 50px;
             opacity: 0;
         }
         #s3-right-2 {
-            top: 145px;
+            top: 125px;
             right: 35px;
             opacity: 0;
         }
@@ -178,9 +178,54 @@
             right: 15px;
         }
         .start-button {
-            top: 400px;
+            top: 330px;
             left: 41px;
             opacity: 0;
+        }
+        progress {
+            -webkit-appearance: none;
+            appearance: none;
+            left: 50%;
+            width: 260px;
+            height: 30px;
+            margin-left: -130px;
+            position: absolute;
+            top: 200px;
+            background-color: #f3f3f3;
+            border: 0;
+            border-radius: 9px;
+            box-sizing: border-box;
+        }
+        progress::-webkit-progress-inner-element {
+            -webkit-appearance: inherit;
+            box-sizing: inherit;
+            height: 100%;
+            width: 100%;
+        }
+        progress::-webkit-progress-bar {
+            background-color: gray;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        progress::-webkit-progress-value {
+            background-color: green;
+            height: 100%;
+            width: 50%;
+            /* should be removed later */
+            box-sizing: border-box;
+        }
+        #load-screen {
+            height: 9999px;
+            width: 100%;
+            z-index: 10;
+            position: relative
+        }
+        #load-msg {
+            top: 200px;
+            z-index: 10;
+            line-height: 30px;
+            left: 80px;
         }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
@@ -190,6 +235,7 @@
 
 <body id='bg'>
     <div class='wrapper'>
+
         <div class='header'>
             <div id='other-title' class='title'>普通二手车市场</div>
             <div id='vs'></div>
@@ -254,6 +300,10 @@
         </div>
 
         <div id='start' class='start-button'></div>
+        <div id='load-screen'>
+            <div id='load-msg'>资源加载中,请稍后</div>
+            <progress id='progress' max="100" value="0"></progress>
+        </div>
     </div>
 
     <script>
@@ -348,16 +398,18 @@
             '3-right-word.png',
             'start.png'
         ];
+        var touchStart = 'touchstart';
+        if (!('ontouchstart' in window)) {
+            touchStart = 'click';
+        }
 
         function swipeHandl() {
-            Hammer(el).off('swipeup', swipeHandl);
-            $(el).off('click', swipeHandl);
+            $('#bg').off('click', swipeHandl);
             if (curScreen >= 3) return;
             if (curScreen == 1) {
                 next.use(animateFuncs_s2)
                     .use(function() {
-                        Hammer(el).on('swipeup', swipeHandl);
-                        $(el).click(swipeHandl);
+                        $('#bg').click(swipeHandl);
                     })
             }
             if (curScreen == 2) {
@@ -377,8 +429,7 @@
         next.use(animateFuncs_head)
             .use(animateFuncs_s1)
             .use(function() {
-                Hammer(el).on('swipeup', swipeHandl);
-                $(el).click(swipeHandl);
+                $('#bg').click(swipeHandl);
             })
             .start();
     </script>
