@@ -128,7 +128,7 @@ var animateFuncs_s1 = function (exports) {
     app.use(
         function (next) {
             var img = images['start.png'];
-            $('#start1').append(img).velocity({
+            $('#start').append(img).velocity({
                 opacity: 1
             }, 200, next)
         }
@@ -216,14 +216,14 @@ var animateFuncs_s1 = function (exports) {
             }, 600, next)
         }
     );
-//    app.use(wait500);
- //    app.use(
- //        function (next) {
- //            $('#canvas-1').velocity({
- //                top: '-100%'
- //            }, 1500, next)
- //        }
- //    )
+    //    app.use(wait500);
+    //    app.use(
+    //        function (next) {
+    //            $('#canvas-1').velocity({
+    //                top: '-100%'
+    //            }, 1500, next)
+    //        }
+    //    )
     return funcs
 }();
 
@@ -278,14 +278,14 @@ var animateFuncs_s2 = function () {
             }, 1000, next)
         }
     )
-    app.use(
-        function (next) {
-            var img = images['start.png'];
-            $('#start2').append(img).velocity({
-                opacity: 1
-            }, 200, next)
-        }
-    )
+    //    app.use(
+    //        function (next) {
+    //            var img = images['start.png'];
+    //            $('#start2').append(img).velocity({
+    //                opacity: 1
+    //            }, 200, next)
+    //        }
+    //    )
     app.use(function (next) {
         var img = images['left-2-1.png'];
         $('#s2-left').append(img).velocity({
@@ -355,14 +355,14 @@ var animateFuncs_s2 = function () {
         }, 1000, next)
 
     })
-    app.use(wait500);
-    app.use(
-        function (next) {
-            $('#canvas-2').velocity({
-                top: '-100%'
-            }, 1500, next)
-        }
-    )
+    //    app.use(wait500);
+    //    app.use(
+    //        function (next) {
+    //            $('#canvas-2').velocity({
+    //                top: '-100%'
+    //            }, 1500, next)
+    //        }
+    //    )
 
     return funcs;
 
@@ -419,14 +419,14 @@ var animateFuncs_s3 = function () {
             }, 1000, next)
         }
     )
-    app.use(
-        function (next) {
-            var img = images['start.png'];
-            $('#start3').append(img).velocity({
-                opacity: 1
-            }, 200, next)
-        }
-    )
+    //    app.use(
+    //        function (next) {
+    //            var img = images['start.png'];
+    //            $('#start3').append(img).velocity({
+    //                opacity: 1
+    //            }, 200, next)
+    //        }
+    //    )
     app.use(
         function (next) {
             var img = images['left-3-1.png'];
@@ -515,7 +515,7 @@ var animateFuncs_s3 = function () {
     app.use(
         function (next) {
             function forerverShake() {
-                $('#start3').velocity({
+                $('#start').velocity({
                     rotateZ: '5deg'
                 }).velocity({
                     rotateZ: '-5deg'
