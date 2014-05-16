@@ -397,8 +397,14 @@ a:hover {
 }
 #index .qiugou .form .age-select,
 #index .qiugou .form .model-select {
-  width: 257px;
-  display: block;
+  width: 113px;
+  display: inline;
+  float: left;
+}
+#index .qiugou .form .age-zhi {
+  float: left;
+  padding: 0 7px;
+  line-height: 30px;
 }
 #index .qiugou .form .age-select .option,
 #index .qiugou .form .model-select .option {
@@ -406,7 +412,7 @@ a:hover {
   float: none;
   padding-left: 15px;
   font-size: 12px;
-  line-height: 30px;
+  line-height: 25px;
   color: #333;
 }
 #index .qiugou .form .age-select .option:hover,
