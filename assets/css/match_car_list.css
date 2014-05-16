@@ -4,6 +4,7 @@
 }
 #match_car_list #content {
   background-color: #f9f9f9;
+  min-height: 400px;
 }
 #match_car_list #content .wrapper {
   width: 1190px;
@@ -199,9 +200,11 @@
 .push-history .fliter-box .fliter .showall {
   float: left;
   margin-right: 25px;
+  cursor: pointer;
 }
 .push-history .fliter-box .fliter .showsell {
   float: left;
+  cursor: pointer;
 }
 .car-box {
   width: 385px;
