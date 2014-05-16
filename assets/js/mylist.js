@@ -171,7 +171,8 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 e.preventDefault();
                 Souche.MiniLogin.checkLogin(function() {
                     $(".qiugou .go-login").addClass("hidden")
-                    window.location.href = window.location.href + "#qiugou-cur";
+                    //window.location.href = window.location.href + "#qiugou-cur";
+                    window.location.reload();
                 })
             })
             $("#qiugou-phone-form").on("submit", function(e) {
