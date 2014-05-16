@@ -239,7 +239,6 @@
 }
 .car-box .car-image .hadfav:hover {
   background: url("../images/mylist/hadfav-hover.png?123") no-repeat;
-  cursor: normal;
 }
 .car-box .car-image .hate {
   position: absolute;
@@ -288,6 +287,8 @@
   height: 40px;
   line-height: 40px;
   color: #fff;
+  left: 0;
+  z-index: 10;
 }
 .car-box .car-image .youhui i {
   display: block;
@@ -345,6 +346,8 @@
   font-size: 17px;
   color: #333333;
   font-weight: bold;
+  display: block;
+  height: 48px;
 }
 .car-box .car-detail .car-title:hover {
   color: #fc7000;
