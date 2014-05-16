@@ -552,7 +552,7 @@ body .apply_popup .submit {
   line-height: 40px;
   letter-spacing: 3px;
 }
-body .popup-result {
+body .apply-popup-result {
   width: 650px;
   height: 420px;
   position: fixed;
