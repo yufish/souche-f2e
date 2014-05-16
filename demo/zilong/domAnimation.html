@@ -185,7 +185,8 @@
         }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
-    <script src='../../assets/js/mobile/lib/jquery.velocity.js'></script>
+    <script src='../../assets/js/mobile/lib/jquery.velocity.min.js'></script>
+    <script src='../../assets/js/mobile/lib/hammer.min.js'></script>
 </head>
 
 <body id='bg'>
@@ -351,14 +352,32 @@
             '3-left-word.png',
             '3-right-word.png',
             'start.png'
-        ]
+        ];
 
+        function swipeHandl() {
+            Hammer(el).off('swipeup', swipeHandl);
+            if (curScreen >= 3) return;
+            if (curScreen == 1) {
+                next.use(animateFuncs_s2)
+            }
+            if (curScreen == 2) {
+                next.use(animateFuncs_s3);
+            }
+            curScrren++;
+            $('#canvas-' + curScrren).velocity({
+                top: '100%'
+            }, next.start)
+        }
+        var el = document.getElementById('bg');
+
+        var curScreen = 1;
         var next = new Next();
         next.use(animateFuncs_head)
             .use(animateFuncs_s1)
-            .use(animateFuncs_s2)
-            .use(animateFuncs_s3);
-        next.start();
+            .use(function() {
+                Hammer(el).on('swipeup', swipeHandl);
+            })
+            .start();
     </script>
 </body>
 

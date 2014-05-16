@@ -216,14 +216,14 @@ var animateFuncs_s1 = function (exports) {
             }, 600, next)
         }
     );
-    app.use(wait500);
-    app.use(
-        function (next) {
-            $('#canvas-1').velocity({
-                top: '-100%'
-            }, 1500, next)
-        }
-    )
+//    app.use(wait500);
+ //    app.use(
+ //        function (next) {
+ //            $('#canvas-1').velocity({
+ //                top: '-100%'
+ //            }, 1500, next)
+ //        }
+ //    )
     return funcs
 }();
 
