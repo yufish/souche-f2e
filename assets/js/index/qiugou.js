@@ -35,7 +35,8 @@ define(['souche/custom-select', 'souche/util/load-info', 'lib/jquery.easing.min'
                 placeholder: "请选择",
                 multi: false
             })
-            modelSelect = new CustomSelect("model_select", {
+
+            modelSelect = new CustomSelect("age_select_high", {
                 placeholder: "请选择",
                 multi: false
             })
