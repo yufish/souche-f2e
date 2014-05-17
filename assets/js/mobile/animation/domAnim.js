@@ -232,14 +232,18 @@ var animateFuncs_s1 = function (exports) {
             }, 600, next)
         }
     );
-    //    app.use(wait500);
-    //    app.use(
-    //        function (next) {
-    //            $('#canvas-1').velocity({
-    //                top: '-100%'
-    //            }, 1500, next)
-    //        }
-    //    )
+    app.use(
+        function(next) {
+            $('#start').velocity({
+                left:'-=30px;'
+            })
+            $('#line-1').velocity({
+                rotateZ:12
+            },function(){
+                $('#next').show();
+            })
+        }
+    )
     return funcs
 }();
 
@@ -371,15 +375,18 @@ var animateFuncs_s2 = function () {
         }, 1000, next)
 
     })
-    //    app.use(wait500);
-    //    app.use(
-    //        function (next) {
-    //            $('#canvas-2').velocity({
-    //                top: '-100%'
-    //            }, 1500, next)
-    //        }
-    //    )
-
+    app.use(
+        function(next) {
+            $('#start').velocity({
+                left:'-=30px;'
+            })
+            $('#line-2').velocity({
+                rotateZ:12
+            },function(){
+                $('#next').show();
+            })
+        }
+    )
     return funcs;
 
 }();
