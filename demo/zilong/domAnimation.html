@@ -60,6 +60,8 @@
             width: 2px;
             height: 0px;
             background: #bebebe;
+            -webkit-transform-origin: top;
+            transform-origin:top;
         }
         .vs-text {
             text-align: center;
@@ -227,10 +229,15 @@
             line-height: 30px;
             left: 80px;
         }
+        #next{
+            top: 330px;
+            right: 5;
+            display:none;
+        }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
     <script src='../../assets/js/mobile/lib/jquery.velocity.min.js'></script>
-    <script src='../../assets/js/mobile/lib/hammer.min.js'></script>
+
 </head>
 
 <body id='bg'>
@@ -247,8 +254,8 @@
 
             </canvas>
             <div id='vs-text-1' class='vs-text-2-lines'>
-                <div id='firstL' style="position:static">想买辆大众</div>
-                <div id='secondL' style="position:static">开开</div>
+                <div  style="position:static">想买辆大众</div>
+                <div  style="position:static">开开</div>
             </div>
             <div id='line-1' class='line'></div>
             <div id='s1-left' class='left-main'></div>
@@ -265,7 +272,7 @@
             <canvas id='circle-2' class='circle' width='110px' height="110px">
             </canvas>
             <div id='vs-text-2' class='vs-text'>
-                <div id='firstL' style="position:static">现场看车</div>
+                <div  style="position:static">现场看车</div>
             </div>
             <div id='line-2' class="line"></div>
             <div id='s2-left'></div>
@@ -284,7 +291,7 @@
 
             </canvas>
             <div id='vs-text-3' class='vs-text'>
-                <div id='firstL' style="position:static">车况好吗</div>
+                <div  style="position:static">车况好吗</div>
             </div>
             <div id='line-3' class="line"></div>
             <div id='s3-left'></div>
@@ -300,6 +307,9 @@
         </div>
 
         <div id='start' class='start-button'></div>
+        <div id ='next' >
+            <img src="../../assets/images/mob/animation/next.gif"/>
+        </div>
         <div id='load-screen'>
             <div id='load-msg'>资源加载中,请稍后</div>
             <progress id='progress' max="100" value="0"></progress>
@@ -311,8 +321,16 @@
             function Next(funcs) {
                 this.funcs = funcs || [];
                 this.complete = function() {};
+                this.stopped = false;
             }
             var fn = Next.prototype;
+            fn.stop =function(){
+                this.stopped = false;
+            }
+            fn.resume = function(){
+                this.stopped =true;
+                this.start();
+            }
             fn.use = function(f) {
                 if (isArray(f)) {
                     for (var i in f) {
@@ -325,12 +343,17 @@
                 return this;
             }
             fn.start = function() {
-                var funcs = this.funcs;
-
+                var self = this;
+                var funcs = self.funcs;
+                var complete = self.complete;
                 function next() {
+                    if(self.stopped) return;
                     var f = funcs.shift();
                     if (f) {
                         f(next);
+                    }
+                    else{
+                        complete();
                     }
                 }
                 next();
@@ -396,42 +419,45 @@
             'circle-3-3.png',
             '3-left-word.png',
             '3-right-word.png',
-            'start.png'
+            'start.png',
+            'next.gif'
         ];
         var touchStart = 'touchstart';
         if (!('ontouchstart' in window)) {
             touchStart = 'click';
         }
 
-        function swipeHd() {
-            $('#bg').off('click', swipeHd);
-            if (curScreen >= 3) return;
-            if (curScreen == 1) {
-                next.use(animateFuncs_s2)
-                    .use(function() {
-                        $('#bg').click(swipeHd);
-                    })
-            }
-            if (curScreen == 2) {
-                next.use(animateFuncs_s3);
-            }
-            $('#canvas-' + curScreen).velocity({
-                top: '-100%'
-            }, 1500, function() {
-                next.start.call(next)
-            })
-            curScreen++;
-        }
-        var el = document.getElementById('bg');
-
         var curScreen = 1;
         var next = new Next();
         next.use(animateFuncs_head)
             .use(animateFuncs_s1)
-            .use(function() {
-                $('#bg').on(touchStart, swipeHd)
-            })
             .start();
+
+        $('#start').on(touchStart,function(){
+            next.stop();
+            window.location.href = 'http://www.souche.com/pages/mobile/custom-search.html';
+        })
+        $('#next').on(touchStart,function(){
+            $(this).hide();
+            if (curScreen == 1) {
+                next.use(animateFuncs_s2)
+            }
+            if (curScreen == 2) {
+                next.use(animateFuncs_s3);
+            }
+            $('#start').velocity({
+                left:'+=30'
+            })
+            $('#line-'+curScreen).velocity({
+                rotateZ:0
+            })
+            $('#canvas-' + curScreen).velocity({
+                top: '-100%'
+            }, 1500, function() {
+                next.start();
+            })
+            curScreen++;
+        })
     </script>
 </body>
 
