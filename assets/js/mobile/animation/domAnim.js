@@ -1,18 +1,18 @@
-! function(exports) {
+! function (exports) {
     function Next(funcs) {
         this.funcs = funcs || [];
-        this.complete = function() {};
+        this.complete = function () {};
         this.stopped = false;
     }
     var fn = Next.prototype;
-    fn.stop =function(){
+    fn.stop = function () {
         this.stopped = false;
     }
-    fn.resume = function(){
-        this.stopped =true;
+    fn.resume = function () {
+        this.stopped = true;
         this.start();
     }
-    fn.use = function(f) {
+    fn.use = function (f) {
         if (isArray(f)) {
             for (var i in f) {
                 this.funcs.push(f[i]);
@@ -23,17 +23,17 @@
         }
         return this;
     }
-    fn.start = function() {
+    fn.start = function () {
         var self = this;
         var funcs = self.funcs;
         var complete = self.complete;
+
         function next() {
-            if(self.stopped) return;
+            if (self.stopped) return;
             var f = funcs.shift();
             if (f) {
                 f(next);
-            }
-            else{
+            } else {
                 complete();
             }
         }
@@ -42,18 +42,18 @@
     exports.Next = Next;
 }(window, undefined);
 
-var wait = function(t) {
-    return function(next) {
+var wait = function (t) {
+    return function (next) {
         setTimeout(next, t)
     }
 }
 var toString = Object.prototype.toString;
-var isArray = function(obj) {
+var isArray = function (obj) {
     return toString.call(obj) == '[object Array]';
 };
 
 function repeat(time, next) {
-    return function() {
+    return function () {
         if (--time == 0) {
             next();
         }
@@ -300,13 +300,13 @@ var animateFuncs_s1 = function (exports) {
         }
     );
     app.use(
-        function(next) {
+        function (next) {
             $('#start').velocity({
-                left:'-=30px;'
+                left: '-=30px;'
             })
             $('#line-1').velocity({
-                rotateZ:12
-            },function(){
+                rotateZ: 12
+            }, function () {
                 $('#next').show();
             })
         }
@@ -449,13 +449,13 @@ var animateFuncs_s2 = function () {
 
     })
     app.use(
-        function(next) {
+        function (next) {
             $('#start').velocity({
-                left:'-=30px;'
+                left: '-=30px;'
             })
             $('#line-2').velocity({
-                rotateZ:12
-            },function(){
+                rotateZ: 12
+            }, function () {
                 $('#next').show();
             })
         }
@@ -633,7 +633,6 @@ var animateFuncs_s3 = function () {
     return funcs;
 }();
 
-var imgDir = '../../assets/images/mob/animation/';
 var imgStrs = [
     '1-left.png',
     '1-left-word.png',
@@ -678,11 +677,11 @@ next.use(animateFuncs_head)
     .use(animateFuncs_s1)
     .start();
 
-$('#start').on(touchStart,function(){
+$('#start').on(touchStart, function () {
     next.stop();
     window.location.href = 'http://www.souche.com/pages/mobile/custom-search.html';
 })
-$('#next').on(touchStart,function(){
+$('#next').on(touchStart, function () {
     $(this).hide();
     if (curScreen == 1) {
         next.use(animateFuncs_s2)
@@ -691,14 +690,14 @@ $('#next').on(touchStart,function(){
         next.use(animateFuncs_s3);
     }
     $('#start').velocity({
-        left:'+=30'
+        left: '+=30'
     })
-    $('#line-'+curScreen).velocity({
-        rotateZ:0
+    $('#line-' + curScreen).velocity({
+        rotateZ: 0
     })
     $('#canvas-' + curScreen).velocity({
         top: '-100%'
-    }, 1500, function() {
+    }, 1500, function () {
         next.start();
     })
     curScreen++;
