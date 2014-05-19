@@ -252,9 +252,13 @@ a.a9:hover {
   width: 145px;
   height: 110px;
   border: 1px solid #ddd;
+  overflow: hidden;
 }
 #store .mod-cars .car .pic img {
-  width: 145px;
+  height: 110px;
+  max-width: 145px;
+  display: block;
+  margin: 0 auto;
 }
 #store .mod-cars .car .infos {
   padding-left: 155px;
@@ -331,7 +335,7 @@ a.a9:hover {
 #car .mod-head .flex-control-nav li {
   vertical-align: top;
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 2px;
 }
 #car .mod-head .flex-control-nav li a {
   background: #ddd;
