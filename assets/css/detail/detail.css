@@ -2068,8 +2068,8 @@ body {
   border-radius: 3px;
   margin-top: 10px;
   cursor: pointer;
-  width: auto  !important;
-  border: none  !important;
+  width: auto !important;
+  border: none !important;
 }
 #detail_main .detail-feed-hd .qq-zixun:hover {
   background-color: #0a8fe0 !important;
@@ -3451,7 +3451,6 @@ body {
   background: url("../../images/fed/onsale_sprite3.png") no-repeat -224px -115px;
 }
 .onsale_wrap .onsale_content .check_explain {
-  border-bottom: 1px solid #dfe0e0;
   color: #999;
   font-size: 12px;
   padding-bottom: 8px;
@@ -4058,7 +4057,7 @@ body {
 }
 #yuyue-result-popup,
 #yushou-order-popup {
-  margin-left: -355px;
+  margin-left: -354.99999999px;
 }
 #yuyue-result-popup {
   margin-left: -355px;
