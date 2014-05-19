@@ -3,7 +3,6 @@ body {
 }
 .wrapGrayBg {
     display: none;
-    position: relative;
 }
 .nowPos {
     line-height: 50px;
