@@ -255,6 +255,12 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     document.body.scrollTop = 0
                     var pageIndex = pageStack.pop();
                     if (pageIndex == 0 || pageIndex == undefined) {
+                        //特殊需求，动画只看一次
+                        if (document.referrer.indexOf("animation") != -1) {
+                            window.location.href = 'index.html';
+                            return;
+                        }
+
                         if (document.referrer.indexOf("souche") != -1) {
                             history.back();
                         } else {
