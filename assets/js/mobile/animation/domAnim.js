@@ -633,39 +633,6 @@ var animateFuncs_s3 = function () {
     return funcs;
 }();
 
-var imgStrs = [
-    '1-left.png',
-    '1-left-word.png',
-    'circle-1-1.png',
-    '1-right.png',
-    '1-right-car.png',
-    '1-right-word.png',
-    'vs.png',
-    'circle-1-1.png',
-    'circle-1-2.png',
-    'circle-1-3.png',
-    'left-2-1.png',
-    'left-2-2.png',
-    'left-2-3.png',
-    '2-left-word.png',
-    'right-2.png',
-    '2-right-word.png',
-    'circle-2-1.png',
-    'circle-2-2.png',
-    'circle-2-3.png',
-    'left-3-1.png',
-    'left-3-2.png',
-    'left-3-3.png',
-    'right-3-1.png',
-    'right-3-2.png',
-    'circle-3-1.png',
-    'circle-3-2.png',
-    'circle-3-3.png',
-    '3-left-word.png',
-    '3-right-word.png',
-    'start.png',
-    'next.gif'
-];
 var touchStart = 'touchstart';
 if (!('ontouchstart' in window)) {
     touchStart = 'click';
@@ -679,7 +646,7 @@ next.use(animateFuncs_head)
 
 $('#start').on(touchStart, function () {
     next.stop();
-    window.location.href = 'http://www.souche.com/pages/mobile/custom-search.html';
+    window.location.href = 'custom-search.html';
 })
 $('#next').on(touchStart, function () {
     $(this).hide();
