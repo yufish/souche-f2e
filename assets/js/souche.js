@@ -259,11 +259,6 @@ Souche.Form = function() {
 }();
 
 
-
-
-
-
-
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function() {
     var static_login_url = contextPath + "/pages/minilogin.html";

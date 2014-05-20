@@ -291,42 +291,50 @@ body .apply_popup .tip {
   color: #111;
 }
 body .apply_popup {
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 290px;
   position: fixed;
   left: 50%;
   top: 160px;
   margin-left: -300px;
-  background-color: #fff;
+  background-color: #f1f1f1;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   z-index: 100000;
-  padding: 25px;
 }
 body .apply_popup .popup-title {
-  font-size: 18px;
-  color: #333;
+  font-size: 22px;
+  color: #111;
   font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
+  line-height: 60px;
+  width: 710px;
+  margin: 0 auto;
   text-indent: 20px;
 }
 body .apply_popup .apply_close,
 body .apply_popup .apply_close:hover {
   position: absolute;
   display: block;
-  width: 18px;
-  height: 18px;
-  background: url("../../images/fed/member/popup-close2.png") no-repeat;
-  right: 20px;
-  top: 20px;
+  width: 35px;
+  height: 35px;
+  background: url("../../images/common/popup-close.png") no-repeat;
+  right: 10px;
+  top: 10px;
   cursor: pointer;
 }
 body .apply_popup .phone {
+  margin-left: 150px;
   text-align: left;
   width: 400px;
 }
 body .apply_popup .tip {
   line-height: 30px;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 20px;
+  color: #111;
+}
+body .apply_popup .phone {
+  width: 640px;
 }
 body .apply_popup label {
   font-size: 12px;
@@ -334,43 +342,33 @@ body .apply_popup label {
 }
 body .apply_popup input {
   line-height: 27px;
-  width: 250px;
-  height: 32px;
-  border: 2px solid #eaeaea;
-  padding-left: 5px;
-  background: url(../../images/common/phone.png) no-repeat;
-  background-position: right center;
-}
-body .apply_popup .phone-true {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  top: 152px;
-  right: 155px;
-  background: url(../../images/common/true.png) no-repeat;
+  width: 184px;
+  height: 27px;
 }
 body .apply_popup .result_p {
-  margin-top: 55px;
-  margin-left: 80px;
+  width: auto;
+  margin: 0 20px;
+  padding: 30px 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px dotted #9d9d9d;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 body .apply_popup .result_p .warning {
   text-decoration: none;
   color: #ff0000;
   font-size: 12px;
-  position: absolute;
-  top: 50px;
-  left: 106px;
-  width: 259px;
-  height: 35px;
+  margin-left: 10px;
 }
 body .apply_popup .submit {
   width: 120px;
   display: block;
   height: 40px;
   border: none;
-  margin-top: 40px;
-  margin-left: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
   cursor: pointer;
   background: #ff8914;
   color: #fff;
@@ -379,34 +377,13 @@ body .apply_popup .submit {
   line-height: 40px;
   letter-spacing: 3px;
 }
-body .apply-popup-result {
-  width: 650px;
-  height: 420px;
-  position: fixed;
-  left: 50%;
-  top: 120px;
-  margin-left: -300px;
-  background-color: #fff;
-  z-index: 100000;
-  padding: 25px;
+body .popup-result {
+  height: 220px;
 }
-body .popup-result .result_p {
-  margin-top: 115px;
-  margin-left: 155px;
-  height: 52px;
-}
-body .popup-result .success-popup {
-  display: block;
-  width: 50px;
-  height: 52px;
-  background: url(../../images/common/success-popup.png) no-repeat;
-  float: left;
-}
-body .popup-result .result_p span {
-  color: #333;
-  font-size: 18px;
-  margin-left: 15px;
-  line-height: 55px;
+body .popup-result .result_p ins {
+  color: #111;
+  font-size: 20px;
+  line-height: 44px;
 }
 body .popup-result .result_p i {
   font-size: 16px;
