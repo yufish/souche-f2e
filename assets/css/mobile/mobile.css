@@ -5802,6 +5802,8 @@ body {
 #filtercar-new .filter-popup .item {
     text-align: center;
     line-height: 50px;
+    box-sizing: border-box;
+    border:1px solid #fff;
 }
 #filtercar-new .filter-popup .item.selected {
     color: #ff4400;

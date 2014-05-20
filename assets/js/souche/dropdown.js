@@ -49,5 +49,5 @@ Souche.UI.CustomDropdown = function(){
 }();
 
 define(function (){
-　　　　return Souche.UI.CustomDropdown;
-　　});
+    return Souche.UI.CustomDropdown;
+});

@@ -302,6 +302,10 @@
 #acts_tpl #more-acts .acts-img {
   margin-top: 25px;
 }
+#acts_tpl #more-acts .acts-img img {
+  width: 400px;
+  height: 180px;
+}
 #acts_tpl #more-acts .acts-img a {
   margin-right: 6px;
 }
@@ -379,6 +383,7 @@
 }
 #acts_all #banner-container .banner-item .banner-img img {
   height: 400px;
+  width: 800px;
 }
 #acts_all #banner-container .banner-item .banner-desc {
   margin-top: 60px;
@@ -445,7 +450,8 @@
   height: 143px;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-img img {
-  width: 100%;
+  width: 288px;
+  height: 143px;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc {
   width: 235px;
@@ -467,4 +473,46 @@
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act a {
   color: #e37c1f;
+}
+#acts_tpl .share {
+  position: absolute;
+  color: #666;
+  height: 40px;
+  padding-top: 10px;
+  right: 100px;
+  bottom: 45px;
+}
+#acts_tpl .share a {
+  vertical-align: middle;
+  color: #0077a8;
+  opacity: 0.75;
+  display: inline-block;
+  overflow: hidden;
+  width: 25px;
+  height: 30px;
+  text-indent: -1000px;
+}
+#acts_tpl .share a:hover {
+  color: #0090cc;
+  opacity: 1;
+  text-decoration: underline;
+}
+#acts_tpl .share .ph {
+  background: url(../images/acts/template/share-phone.png) no-repeat 0 center;
+  overflow: hidden;
+  padding: 3px;
+  cursor: pointer;
+}
+#acts_tpl .share .wx {
+  background: url(../images/acts/template/share-weixin.png) no-repeat 0 center;
+  overflow: hidden;
+  padding: 3px;
+  cursor: pointer;
+}
+#acts_tpl .share .weibo {
+  background: url(../images/acts/template/share-weibo.png) no-repeat 0 center;
+  overflow: hidden;
+  padding: 3px;
+  cursor: pointer;
+  margin-left: 5px;
 }
