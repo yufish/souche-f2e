@@ -366,7 +366,7 @@
   opacity: 0.6;
   height: 670px;
   z-index: 2;
-    filter:alpha(opacity=60);
+  filter: alpha(opacity=60);
 }
 #acts_all .placeholder .cover-left {
   right: 800px;
