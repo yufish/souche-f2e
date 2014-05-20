@@ -291,9 +291,6 @@ body {
   padding: 0 8px;
   border-right: 1px solid #666;
 }
-#nav .other-navs .head-login {
-  border-right: none;
-}
 #nav .other-navs a.last {
   border: none;
 }
@@ -500,9 +497,6 @@ body {
 }
 #simple-header .other-navs a.last {
   border: none;
-}
-#simple-header .other-navs .head-login {
-  border-right: none;
 }
 .guwen-slider-global {
   width: 100%;
