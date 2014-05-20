@@ -5804,7 +5804,8 @@ body {
     line-height: 50px;
 }
 #filtercar-new .filter-popup .item .brand-name{
-
+    padding: 5px 10px;
+    border-radius: 8px;
     border:1px solid #fff;
 }
 #filtercar-new .filter-popup .item .brand-name.selected{
