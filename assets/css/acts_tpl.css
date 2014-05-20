@@ -303,7 +303,7 @@
   margin-top: 25px;
 }
 #acts_tpl #more-acts .acts-img img {
-  width: 400px;
+  width: 389px;
   height: 180px;
 }
 #acts_tpl #more-acts .acts-img a {
@@ -461,12 +461,15 @@
   font-size: 16px;
   font-weight: 900;
   margin: 15px 0;
+  height: 44px;
+  overflow: hidden;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .acts-content {
   font-size: 12px;
   color: #b2b2b2;
   margin: 15px 0;
   height: 52px;
+  overflow: hidden;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act {
   float: right;
