@@ -4,9 +4,11 @@ define(function(){
             init: function (loadMoreUrl,picWidth) {
                 $(window).on("scroll", function() {
                     if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                        if(noMoreData)return;
                         loadMore();
                     }
                 });
+                var noMoreData = false;
                 function loadMore(){
                     $.ajax({
                         url: loadMoreUrl,
@@ -14,6 +16,10 @@ define(function(){
                             index: (pageIndex++)
                         },
                         success: function (data) {
+                            if(data.toString().trim()==''){
+                                noMoreData = true;
+                                return;
+                            }
                             historyActs.append(data);
                         }
                     });
@@ -28,12 +34,7 @@ define(function(){
                 var totalPx = len * picWidth;
                 var curIndex = 0;
 
-                container.mouseenter(function(e){
-                    $('.look-this-act').fadeIn();
-                    $(this).one('mouseleave',function(){
-                        $('.look-this-act').fadeOut();
-                    })
-                })
+
                 ! function clone() {
                     var clone = banners.clone();
                     container.prepend(clone);
@@ -76,8 +77,12 @@ define(function(){
                     }
                 }(len);
                 $('.cover-left').click(function(){
-                    var leftIndex = getIndexSafe(curIndex-1);
-                    window.location.href = banners.eq(leftIndex).attr('href');
+                    var index = getIndexSafe(curIndex-1);
+                    window.location.href = banners.eq(index).attr('href');
+                })
+                $('.cover-right').click(function(){
+                    var index = getIndexSafe(curIndex+1);
+                    window.location.href = banners.eq(index).attr('href');
                 })
             }
         }
