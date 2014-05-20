@@ -4,9 +4,11 @@ define(function(){
             init: function (loadMoreUrl,picWidth) {
                 $(window).on("scroll", function() {
                     if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                        if(noMoreData)return;
                         loadMore();
                     }
                 });
+                var noMoreData = false;
                 function loadMore(){
                     $.ajax({
                         url: loadMoreUrl,
@@ -14,6 +16,10 @@ define(function(){
                             index: (pageIndex++)
                         },
                         success: function (data) {
+                            if(data.toString().trim()==''){
+                                noMoreData = true;
+                                return;
+                            }
                             historyActs.append(data);
                         }
                     });
