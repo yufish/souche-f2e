@@ -2027,7 +2027,7 @@ body {
   overflow: hidden;
   width: 25px;
   height: 30px;
-  text-indent: -999.99999999px;
+  text-indent: -1000px;
 }
 #detail_main .detail-share a:hover {
   color: #0090cc;
@@ -3812,7 +3812,7 @@ body {
   *margin-top: -20px;
 }
 #onsale_ride .explain span {
-  *margin-top: -26.99999999px;
+  *margin-top: -27px;
 }
 #onsale_ride .ride_step .check_ok {
   background-position: -435px -136px;
