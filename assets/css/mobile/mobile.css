@@ -5802,11 +5802,14 @@ body {
 #filtercar-new .filter-popup .item {
     text-align: center;
     line-height: 50px;
-    box-sizing: border-box;
+}
+#filtercar-new .filter-popup .item .brand-name{
+
     border:1px solid #fff;
 }
-#filtercar-new .filter-popup .item.selected {
+#filtercar-new .filter-popup .item .brand-name.selected{
     color: #ff4400;
+    border:1px solid #ff4400;
 }
 #filtercar-new .filter-popup #other-brands {
     text-align: center;
