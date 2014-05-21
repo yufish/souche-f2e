@@ -462,12 +462,13 @@
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc {
   width: 235px;
+  margin-left: 30px;
   margin: 0 auto;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .acts-title {
   font-size: 16px;
   font-weight: 900;
-  margin: 15px 0;
+  margin: 20px 0;
   overflow: hidden;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .acts-content {
