@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" afterPath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.css" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.less" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +31,7 @@
       <file leaf-file-name="filter.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="6900">
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="6900">
               <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
               <folding />
             </state>
@@ -49,8 +51,28 @@
       <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="7125">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="6555">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrandManager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.04" vertical-offset="644" max-vertical-offset="1620">
+              <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkUserLocal.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/checkUserLocal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,18 +91,8 @@
       <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
-              <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpl_all.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/acts/tpl_all.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1485">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.2224554" vertical-offset="7123" max-vertical-offset="8205">
+              <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -89,13 +101,9 @@
       <file leaf-file-name="acts_tpl.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
-              <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
-              <folding>
-                <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
-                <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
-                <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
+              <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,17 +133,18 @@
         <option value="$PROJECT_DIR$/assets/js/mobile/filter.js" />
         <option value="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandMgr.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.less" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
-    <option name="y" value="1" />
     <option name="width" value="1918" />
-    <option name="height" value="1159" />
+    <option name="height" value="1160" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -265,7 +274,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="acts" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,46 +290,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="souche-f2e" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="souche-f2e" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="souche-f2e" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="souche-f2e" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acts_tpl.less" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -359,6 +328,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -369,12 +346,14 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
       <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -382,16 +361,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" />
-      <option name="executablePath" />
-      <option name="filePath" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -412,16 +381,20 @@
       <created>1400291503473</created>
       <updated>1400291503473</updated>
     </task>
+    <task id="LOCAL-00001" summary="dd">
+      <created>1400658744980</created>
+      <updated>1400658744980</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1159" extended-state="0" />
+    <frame x="1" y="0" width="1918" height="1160" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17224881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -431,10 +404,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -452,6 +427,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="dd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -459,6 +436,62 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6900">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3960">
+          <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="8175">
+          <caret line="85" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/checkUserLocal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="86640" max-vertical-offset="89430">
+          <caret line="5780" column="27" selection-start-line="5780" selection-start-column="27" selection-end-line="5780" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1979" max-vertical-offset="8205">
+          <caret line="157" column="4" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
+          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6900">
@@ -654,19 +687,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="6900">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="915">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/acts/tpl_all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1485">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -678,38 +709,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/acts/tpl_all.js">
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1485">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
+          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/checkUserLocal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="999">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="6900">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.04" vertical-offset="644" max-vertical-offset="1620">
+          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="7125">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="6555">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
-          <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
-          <folding>
-            <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
-            <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
-            <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
-          <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.2224554" vertical-offset="7123" max-vertical-offset="8205">
+          <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
           <folding />
         </state>
       </provider>
