@@ -67,7 +67,14 @@ Souche.UI.CustomSelect = function() {
                     value: $(v).text().replace("x", "")
                 })
             })
-
+            if (!this.config.multi) {
+                if ($(".selected_values", self.ele).val()) {
+                    self.selected = [{
+                        key: $(".selected_values", self.ele).val(),
+                        value: $(".selected_values", self.ele).val()
+                    }]
+                }
+            }
             $(document.body).on("click", function() {
                 self.hideOptions();
             });
