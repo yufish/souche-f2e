@@ -5808,7 +5808,7 @@ body {
     border-radius: 8px;
     border:1px solid #fff;
 }
-#filtercar-new .filter-popup .item .brand-name.selected{
+#filtercar-new .filter-popup .item.selected .brand-name{
     color: #ff4400;
     border:1px solid #ff4400;
 }
