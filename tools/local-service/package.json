@@ -33,6 +33,8 @@
         "walkdo": "~0.9.3",
         "fs-extra": "~0.8.1",
         "optimist": "~0.6.1",
-        "ali-oss": "0.0.3"
+        "ali-oss": "0.0.3",
+        "mongoose": "*",
+        "underscore": "*"
     }
 }
