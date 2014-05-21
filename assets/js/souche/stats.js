@@ -95,7 +95,7 @@ $(window).load(function() {
     }
 
     var script = document.createElement("script");
-    script.src = "http://f2e.souche.com/performance/traffic_begin?callback=setTrafficId&" + param;
+    script.src = "http://f2e-monitor.souche.com/performance/traffic_begin?callback=setTrafficId&" + param;
     document.body.appendChild(script);
 })
 
@@ -110,5 +110,5 @@ window.onbeforeunload = function() {
     for (var d in data) {
         param += d + "=" + data[d] + "&"
     }
-    new Image().src = "http://f2e.souche.com/performance/traffic_end?" + param
+    new Image().src = "http://f2e-monitor.souche.com/performance/traffic_end?" + param
 }
