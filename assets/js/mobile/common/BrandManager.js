@@ -1,8 +1,16 @@
 /**
  * Created by zilong on 2014/5/21.
  */
- function()
- {
+!function(name,func,depenpencies){
+    var hasDefine = (typeof define ==='function');
+    if(hasDefine){
+        depenpencies = depenpencies ||[];
+        define(depenpencies,func);
+    }else{
+        this[name] = func();
+    }
+
+}('BrandMgr', function brandMgr(){
         var Brand = function(code,name,series){
             this.name = name;
             this.code = code;
@@ -26,7 +34,8 @@
         }
         Series.NoLimit = 'NoLimit';
 
-        var BrandMgr ={
+        //var BrandMgr =
+        return {
             brands :[],
             ltns :[],
             addLtn :function(ltn){
@@ -81,7 +90,7 @@
             _getBrandByCode:function(code){
                 for(var i = 0;i<this.brands.length;i++){
                     var brand = this.brands[i]
-                    if(bCode == brand.code){
+                    if(code == brand.code){
                         return brand;
                     }
                 }
@@ -89,4 +98,5 @@
             }
 
         }
-}
+    }
+)
