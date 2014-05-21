@@ -1,3 +1,4 @@
+util.print: Use console.log instead
 .wrapper-1190 {
   width: 1190px;
   margin: 0 auto;
@@ -184,12 +185,12 @@
   background-size: 100% 100%;
 }
 #acts_tpl .banner .banner-img {
-  width: 778px;
+  width: 780px;
   float: left;
 }
 #acts_tpl .banner .banner-img img {
   height: 300px;
-  width: 778px;
+  width: 780px;
 }
 #acts_tpl .banner .banner-desc {
   height: 300px;
@@ -361,10 +362,7 @@
   width: 162px;
   height: 81px;
   margin-left: -81px;
-<<<<<<< HEAD
-=======
   display: none;
->>>>>>> 5263aca99ba4325641daab1485bd7a990783bc07
 }
 #acts_all .placeholder .cover {
   position: absolute;
@@ -373,6 +371,7 @@
   opacity: 0.6;
   height: 670px;
   z-index: 2;
+  cursor: pointer;
   filter: alpha(opacity=60);
 }
 #acts_all .placeholder .cover-left {
@@ -449,17 +448,16 @@
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item {
   border: 2px solid #e4e3e3;
-  width: 290px;
   float: left;
   padding-bottom: 20px;
   margin: 0 20px 20px 0;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-img {
-  height: 143px;
+  height: 144px;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-img img {
   width: 288px;
-  height: 143px;
+  height: 144px;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc {
   width: 235px;

@@ -78,11 +78,13 @@ define(function(){
                 }(len);
                 $('.cover-left').click(function(){
                     var index = getIndexSafe(curIndex-1);
-                    window.location.href = banners.eq(index).attr('href');
+                    var url =  banners.eq(index).attr('href')
+                    window.open(url);
                 })
                 $('.cover-right').click(function(){
                     var index = getIndexSafe(curIndex+1);
-                    window.location.href = banners.eq(index).attr('href');
+                    var url =  banners.eq(index).attr('href')
+                    window.open(url);
                 })
             }
         }
