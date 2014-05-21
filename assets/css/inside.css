@@ -282,13 +282,27 @@ padding-left: 50px;
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
 #list_wrap .list_nav .sc-option{*float:right;*display:inline;*margin-top:-30px;width:145px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
-#list_wrap .list_nav .list_nav_wrap{margin-left:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;}
+#list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;position: relative;margin-right: 15px;}
+.nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin-left:2px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title{color:#333;width:224px;line-height:36px;padding-top:20px;font-weight:bold;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title span{float:left;width:25px;height:20px;background:url("../../assets/images/fed/inside_sprite3.png?aa.png") no-repeat 0 -48px;margin-top:8px}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title label{float:left;width:50px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #b2b2b2;}
+.custom-price{position: absolute;width: 145px;height: 45px;border: 1px solid #e4e3e3;background-color: #fff;left: 175px;top: 200px;padding: 5px;}
+.custom-price .custom-title{color: #666;font-size: 12px;font-weight: normal;cursor: pointer;}
+.custom-price .custom{position: relative;line-height: 18px;}
+.custom-price input{width: 38px;height: 16px;border: 1px solid #e4e3e3;margin-top: 5px;margin-right: 3px;margin-left: 3px;padding-left: 4px;font-size: 12px;line-height: 18px;}
+.custom-price .custom-submit{width: 36px;height: 18px;background-color: #fc7000;color: #fff7f0;font-size: 12px;border: none;position: absolute;top: -3px;right:-40px;}
+.price_list_more{color: #666;font-size: 12px;font-weight: normal;float: right;cursor: pointer;}
+.price-sc{height: 25px;width: 100%;margin-top: 15px;}
+.price-sc .price-range{float: left;width: 25px;height: 25px;margin-right: 3px;}
+.price-sc .price-range i{width: 25px;background-color: #d9d9d9;height: 8px;display: block;cursor: pointer;} 
+.price-sc .price-range i:hover{background-color: #fc7000;}
+.price-sc .price-range .price-active{background-color: #fc7000;}
+.price-sc .price-range span{font-size: 12px; color: #8c8c8c;display: block;margin-left: -5px;}
+.unlimited{position: absolute;top: 80px;right: 3px;font-size: 12px; color: #8c8c8c;}
 #list_wrap .list_nav .list_nav_wrap ul li{float:left;display:inline;width:59px;color:#666;line-height:1.8em;white-space:nowrap;overflow:hidden}
 #list_wrap .list_nav .list_nav_wrap ul li a{color:#666}
 #list_wrap .list_nav .list_nav_wrap ul li a.listNav_active{color:#e70}
