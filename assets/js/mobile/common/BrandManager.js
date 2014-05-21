@@ -41,9 +41,9 @@
             addLtn :function(ltn){
                 this.ltns.push(ltn);
             },
-            notify:function(){
+            notify:function(eData){
                 for(var i =0;i<this.ltns.length;i++){
-                    this.ltns[i].process(this.brands);
+                    this.ltns[i].process(eData);
                 }
             },
             addBrand:function(code,name,series){
@@ -51,7 +51,7 @@
                 this.brands.push(b);
                 this.notify({
                     eventType:'addBrand',
-                    newItem:b
+                    item:b
                 });
             },
             addSeries:function(code,name,bCode){
@@ -60,18 +60,18 @@
                 if(brand==null)throw new TypeError('cannot get brand by the given code');
                 brand.addSeries(new Series(code ,name));
             },
-            delBrand:function(code){
-                for(var  i = 0;i<this.brands.lengtth;i++){
+            removeBrand:function(code){
+                for(var  i = 0;i<this.brands.length;i++){
                     if(code==this.brands[i].code){
                         var dItem = this.brands.splice(i,1);
                         this.notify({
-                            eventType:'delBrand',
-                            delItem:dItem
+                            eventType:'removeBrand',
+                            item:dItem
                         })
                     }
                 }
             },
-            delSeries:function(code,bCode){
+            removeSeries:function(code,bCode){
                 if(!bCode)throw new TypeError('bCode should be non empty string');
                 var brand = this._getBrandByCode(bCode);
                 if(brand==null)throw new TypeError('cannot get brand by the given code');
@@ -80,9 +80,9 @@
                     if(code == series[i]){
                         var dItem = series.splice(i,1);
                         this.notify({
-                            eventType:'delSeries',
+                            eventType:'removeSeries',
                             brand:brand,
-                            delItem:dItem
+                            item:dItem
                         })
                     }
                 }

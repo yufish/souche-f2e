@@ -205,7 +205,7 @@
   color: #fff;
 }
 #acts_tpl .banner .banner-desc .inner {
-  padding: 50px 100px 0 75px;
+  padding: 60px 100px 0 75px;
   color: #fff;
 }
 #acts_tpl .banner .banner-desc .banner-title {
@@ -213,8 +213,8 @@
   font-weight: 900;
 }
 #acts_tpl .banner .banner-desc .banner-sub-title {
-  font-size: 14px;
-  margin-top: 25px;
+  font-size: 16px;
+  margin-top: 22px;
 }
 #acts_tpl .banner .banner-desc .banner-content {
   font-size: 12px;
@@ -489,7 +489,7 @@
 #acts_tpl .share {
   color: #fff;
   height: 40px;
-  padding-top: 10px;
+  padding-top: 20px;
   float: right;
   margin-right: 100px;
 }

@@ -13,6 +13,22 @@
 
 function filter(BrandMgr) {
     //BrandMgr
+
+    var bPopupLtn = {
+        container : $('#brand-list .content'),
+        process:function(e){
+            var eType = e.eventType;
+            if(eType=='addBrand'){
+                var code = e.item.code;
+                this.container.find('[data-code='+code+']').addClass('selected');
+            }
+            if(eType=='removeBrand'){
+                var code = e.item.code;
+                this.container.find('[data-code='+code+']').removeClass('selected');
+            }
+        }
+    };
+    BrandMgr.addLtn(bPopupLtn);
     return {
         init:function(){
             var hotBrands_g = {
@@ -79,7 +95,7 @@ function filter(BrandMgr) {
                     scrollTop = $win.scrollTop();
                 $('#brand-wrapper').css({
                     width: winW - 20,
-                    top: scrollTop + 50,
+                    top: scrollTop + 50
                 }).removeClass('hidden');
 
             }
@@ -91,7 +107,7 @@ function filter(BrandMgr) {
                     scrollTop = $win.scrollTop();
                 $('#series-wrapper').css({
                     width: winW - 20,
-                    top: scrollTop + 50,
+                    top: scrollTop + 50
                 }).removeClass('hidden');
 
             }
@@ -149,61 +165,8 @@ function filter(BrandMgr) {
                 showPopup_s();
             })
 
-            function setBrands(code, name, $selectOpt) {
-                if (selectedBrand != code) {
-                    $('#btn-select-series').css({
-                        color: '#999'
-                    }).text('选择车系');
-                    selectedSeries = '';
-                }
-                selectedBrand = code;
-                selectedBrandName = name;
-                $('#hot-brands .item').removeClass('selected');
-                var $other = $('#other-brands-select')
-                $other.find('option').removeAttr('selected');
-                $('#btn-select-brand').text(name).css({
-                    color: '#000'
-                });
-                if (code == '') {
-                    $('#btn-select-brand').css({
-                        color: '#999'
-                    });
-                } else if (hotBrands_g[code]) {
-                    $('#hot-brands .item[data-code=' + code + ']').addClass('selected')
-                    $other.css({
-                        color: '#999'
-                    })
-                    $other.find('.placeholder-option').attr('selected', 'selected');
-                } else {
-                    $other.css({
-                        color: '#ff4400'
-                    });
-                    $selectOpt.prop('selected', true);
-                }
 
 
-                $('#brand-wrapper').addClass('hidden');
-                $('#series-list .title').text(name);
-                $('.wrapGrayBg').addClass('hidden');
-                document.body.scrollTop = 0;
-            }
-
-            function setSeries(code, name) {
-                selectedSeries = code;
-                selectedSeriesName = name;
-                if ('' == code) {
-                    var color = '#999';
-                } else {
-                    var color = '#000'
-                }
-                $('#btn-select-series').text(name).attr('data-brand', selectedBrand).css({
-                    'color': color
-                });
-                $('#series-wrapper').addClass('hidden');
-                $('.wrapGrayBg').addClass('hidden');
-                $('#series-wrapper .series-name').removeClass('selected');
-                document.body.scrollTop = 0;
-            }
             $('#series-wrapper').on('click', '.series-name', function () {
                 var $self = $(this);
                 var code = $self.attr('data-code');
@@ -214,9 +177,12 @@ function filter(BrandMgr) {
 
             $('#brand-list').on('click', '.item', function () {
                 var self = $(this);
-                var name =
+                var code = self.attr('data-code'),
+                    name = self.find('.brand-name').text();
                 if(self.hasClass('selected')){
-                    BrandMgr.addBrand()
+                    BrandMgr.removeBrand(code);
+                }else{
+                    BrandMgr.addBrand(code,name);
                 }
             });
 
