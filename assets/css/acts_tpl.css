@@ -162,6 +162,7 @@ util.print: Use console.log instead
   padding-bottom: 50px;
 }
 #acts_tpl .wrapper-1190 {
+  margin: 0 auto;
   margin-top: 5px;
   width: 1190px;
 }
@@ -197,7 +198,7 @@ util.print: Use console.log instead
   height: 300px;
   background: #272727;
   float: left;
-  width: 412px;
+  width: 410px;
   color: #fff;
 }
 #acts_tpl .banner .banner-desc .inner {
