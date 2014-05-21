@@ -1,7 +1,9 @@
-
 .wrapper-1190 {
   width: 1190px;
   margin: 0 auto;
+}
+.full-screen-banner {
+  overflow: hidden;
 }
 .car-box {
   background-color: #FFFFFF;
@@ -330,8 +332,8 @@
   padding-top: 10px;
 }
 #acts_all .placeholder {
-  height: 670px;
-  width: 800px;
+  height: 570px;
+  width: 780px;
   overflow: visible;
   margin: 0 auto;
   position: relative;
@@ -377,10 +379,10 @@
   filter: alpha(opacity=60);
 }
 #acts_all .placeholder .cover-left {
-  right: 800px;
+  right: 780px;
 }
 #acts_all .placeholder .cover-right {
-  left: 800px;
+  left: 780px;
 }
 #acts_all #banner-container {
   position: absolute;
@@ -388,11 +390,11 @@
 #acts_all #banner-container .banner-item {
   display: block;
   float: left;
-  width: 800px;
+  width: 780px;
 }
 #acts_all #banner-container .banner-item .banner-img img {
-  height: 400px;
-  width: 800px;
+  height: 300px;
+  width: 780px;
 }
 #acts_all #banner-container .banner-item .banner-desc {
   margin-top: 60px;
