@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.css" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.less" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/sidebar.css" afterPath="$PROJECT_DIR$/assets/css/sidebar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
@@ -61,8 +60,8 @@
       <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5655315" vertical-offset="2212" max-vertical-offset="8130">
-              <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.030959751" vertical-offset="0" max-vertical-offset="8130">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -81,8 +80,8 @@
       <file leaf-file-name="index.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.75" vertical-offset="0" max-vertical-offset="915">
-              <caret line="46" column="37" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="37" />
+            <state vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="915">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -91,8 +90,8 @@
       <file leaf-file-name="acts_tpl.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-286.2" vertical-offset="45" max-vertical-offset="7995">
-              <caret line="480" column="1" selection-start-line="480" selection-start-column="1" selection-end-line="480" selection-end-column="1" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="7995">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +122,8 @@
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter.js" />
-        <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
         <option value="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
+        <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.less" />
       </list>
     </option>
@@ -328,7 +327,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="options.lastSelected" value="settings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -676,6 +675,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="915">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/acts/tpl_all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1485">
@@ -684,26 +691,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.75" vertical-offset="0" max-vertical-offset="915">
-          <caret line="46" column="37" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-286.2" vertical-offset="45" max-vertical-offset="7995">
-          <caret line="480" column="1" selection-start-line="480" selection-start-column="1" selection-end-line="480" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7995">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5655315" vertical-offset="2212" max-vertical-offset="8130">
-          <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.030959751" vertical-offset="0" max-vertical-offset="8130">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>
