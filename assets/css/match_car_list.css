@@ -720,8 +720,14 @@
 }
 .age-select,
 .model-select {
-  width: 257px;
-  display: block;
+  width: 113px;
+  display: inline;
+  float: left;
+}
+.age-zhi {
+  float: left;
+  padding: 0 7px;
+  line-height: 30px;
 }
 .age-select .option,
 .model-select .option {
@@ -729,7 +735,7 @@
   float: none;
   padding-left: 15px;
   font-size: 12px;
-  line-height: 30px;
+  line-height: 25px;
   color: #333;
 }
 .age-select .option:hover,

@@ -12,6 +12,9 @@ body a:hover {
 body #content {
   background-color: #d8dfea;
 }
+body #content img {
+  display: block;
+}
 body #content #banner {
   background: url("../../images/acts/cargroupv2/banner.png") no-repeat;
   background-position: center;
@@ -69,6 +72,12 @@ body #content #banner .send-to .rule-link a {
   display: block;
   width: 100%;
   height: 40px;
+}
+body #content .form-pic {
+  float: right;
+}
+body #content .form {
+  float: left;
 }
 body #content .mod2 {
   background: url("../../images/acts/cargroupv2/mod2.png") no-repeat;
