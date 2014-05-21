@@ -303,7 +303,7 @@
   margin-top: 25px;
 }
 #acts_tpl #more-acts .acts-img img {
-  width: 400px;
+  width: 389px;
   height: 180px;
 }
 #acts_tpl #more-acts .acts-img a {
@@ -311,6 +311,9 @@
 }
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;
+}
+#acts_all{
+    overflow: hidden;
 }
 #acts_all .hr1 {
   width: 1170px;
@@ -369,6 +372,7 @@
   opacity: 0.6;
   height: 670px;
   z-index: 2;
+  filter: alpha(opacity=60);
 }
 #acts_all .placeholder .cover-left {
   right: 800px;
@@ -464,12 +468,15 @@
   font-size: 16px;
   font-weight: 900;
   margin: 15px 0;
+  height: 44px;
+  overflow: hidden;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .acts-content {
   font-size: 12px;
   color: #b2b2b2;
   margin: 15px 0;
-  height: 52px;
+  height: 50px;
+  overflow: hidden;
 }
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act {
   float: right;
@@ -479,7 +486,7 @@
 }
 #acts_tpl .share {
   position: absolute;
-  color: #666;
+  color: #fff;
   height: 40px;
   padding-top: 10px;
   right: 100px;

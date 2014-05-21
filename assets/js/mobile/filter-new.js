@@ -61,7 +61,7 @@ Ob.prototype={
         for (var i = 0; i < brands.length; i++) {
             b = brands[i];
             if (!hotBrands_g[b.code]) {
-                otherBrandsStr += '<div data-code="'+ b.code+'" class="item col-1-4">'+ b.enName+'</div>';
+                otherBrandsStr += '<div data-code="'+ b.code+'" class="item col-1-4"><span class="brand-name">'+ b.enName+'</span></div>';
             }
         }
         $otherCtn.append(otherBrandsStr);
@@ -121,7 +121,7 @@ Ob.prototype={
             var b, hotBrandsStr = '';
             var $hotCtn = $('#brand-list #hot-brands');
             for (var i in hotBrands_g) {
-                hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4">' + hotBrands_g[i] + ' </div>';
+                hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
             }
             $hotCtn.append(hotBrandsStr);
 
