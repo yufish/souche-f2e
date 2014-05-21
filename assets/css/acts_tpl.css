@@ -361,7 +361,10 @@
   width: 162px;
   height: 81px;
   margin-left: -81px;
+<<<<<<< HEAD
+=======
   display: none;
+>>>>>>> 5263aca99ba4325641daab1485bd7a990783bc07
 }
 #acts_all .placeholder .cover {
   position: absolute;

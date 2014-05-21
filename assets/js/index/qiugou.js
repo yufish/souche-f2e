@@ -65,7 +65,13 @@ define(['souche/custom-select', 'souche/util/load-info', 'lib/jquery.easing.min'
             $("#qiugou-form").on("submit", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
-                    $(".warning", self.ele).removeClass("hidden")
+                    $(".warning", self.ele).html("请至少选择一项").removeClass("hidden")
+                    return;
+                } else {
+                    $(".warning", self.ele).addClass("hidden")
+                }
+                if ($("#age_select_high_input").val() * 1 < $("#age_select_input").val() * 1) {
+                    $(".warning", self.ele).html("车龄选择错误").removeClass("hidden")
                     return;
                 } else {
                     $(".warning", self.ele).addClass("hidden")
