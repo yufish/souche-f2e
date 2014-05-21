@@ -64,7 +64,7 @@
             scrollTop = $win.scrollTop();
         $('#brand-wrapper').css({
             width: winW - 20,
-            top: scrollTop + 50,
+            top: scrollTop + 50
         }).removeClass('hidden');
 
     }
@@ -76,7 +76,7 @@
             scrollTop = $win.scrollTop();
         $('#series-wrapper').css({
             width: winW - 20,
-            top: scrollTop + 50,
+            top: scrollTop + 50
         }).removeClass('hidden');
 
     }

@@ -44,7 +44,7 @@ define(function(){
                     left: -len * picWidth
                 });
 
-                $('.left-arrow').click(function() {
+                $('.right-arrow').click(function() {
                     var first = $('#banner-container .banner-item').first();
                     // var firstImg = $(first, 'img');
                     var firstClone = first.clone();
@@ -56,7 +56,7 @@ define(function(){
                     })
                     curIndex = getIndexSafe(++curIndex);
                 })
-                $('.right-arrow').click(function() {
+                $('.left-arrow').click(function() {
                     var last = $('#banner-container .banner-item').last();
                     var lastClone = last.clone();
                     lastClone.css({
