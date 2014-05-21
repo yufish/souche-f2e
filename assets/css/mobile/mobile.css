@@ -5803,8 +5803,14 @@ body {
     text-align: center;
     line-height: 50px;
 }
-#filtercar-new .filter-popup .item.selected {
+#filtercar-new .filter-popup .item .brand-name{
+    padding: 5px 10px;
+    border-radius: 8px;
+    border:1px solid #fff;
+}
+#filtercar-new .filter-popup .item.selected .brand-name{
     color: #ff4400;
+    border:1px solid #ff4400;
 }
 #filtercar-new .filter-popup #other-brands {
     text-align: center;

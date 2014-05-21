@@ -61,7 +61,8 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 placeholder: "请选择",
                 multi: false
             })
-            modelSelect = new CustomSelect("model_select", {
+
+            modelSelect = new CustomSelect("age_select_high", {
                 placeholder: "请选择",
                 multi: false
             })
@@ -131,7 +132,13 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             $("#qiugou-form .submit").on("click", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
-                    $(".warning", self.ele).removeClass("hidden")
+                    $(".warning", self.ele).html("请至少选择一项").removeClass("hidden")
+                    return;
+                } else {
+                    $(".warning", self.ele).addClass("hidden")
+                }
+                if ($("#age_select_high_input").val() * 1 < $("#age_select_input").val() * 1) {
+                    $(".warning", self.ele).html("车龄选择错误").removeClass("hidden")
                     return;
                 } else {
                     $(".warning", self.ele).addClass("hidden")
@@ -212,7 +219,7 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             var self = this;
             $(window).on("scroll", function() {
                 if (isLoadingMore || !hasMore) return;
-                if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                if ($(window).scrollTop() + $(window).height() >= $(document.body).height() - $(window).height() * 2 / 3) {
                     self._loadMore();
                 }
             })

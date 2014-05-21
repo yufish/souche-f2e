@@ -1,4 +1,71 @@
-var wait500 = wait(1000);
+! function (exports) {
+    function Next(funcs) {
+        this.funcs = funcs || [];
+        this.complete = function () {};
+        this.stopped = false;
+    }
+    var fn = Next.prototype;
+    fn.stop = function () {
+        this.stopped = false;
+    }
+    fn.resume = function () {
+        this.stopped = true;
+        this.start();
+    }
+    fn.use = function (f) {
+        if (isArray(f)) {
+            for (var i in f) {
+                this.funcs.push(f[i]);
+            }
+        } else {
+
+            this.funcs.push(f);
+        }
+        return this;
+    }
+    fn.start = function () {
+        var self = this;
+        var funcs = self.funcs;
+        var complete = self.complete;
+
+        function next() {
+            if (self.stopped) return;
+            var f = funcs.shift();
+            if (f) {
+                f(next);
+            } else {
+                complete();
+            }
+        }
+        next();
+    }
+    exports.Next = Next;
+}(window, undefined);
+
+var wait = function (t) {
+    return function (next) {
+        setTimeout(next, t)
+    }
+}
+var toString = Object.prototype.toString;
+var isArray = function (obj) {
+    return toString.call(obj) == '[object Array]';
+};
+
+function repeat(time, next) {
+    return function () {
+        if (--time == 0) {
+            next();
+        }
+    }
+}
+
+function cutImage(img) {
+    img.width = Math.ceil(img.width / 2);
+    img.height = Math.ceil(img.height / 2);
+    return img;
+}
+
 var animateFuncs_head = function (exports) {
     var funcs = [];
     var app = {
@@ -8,7 +75,16 @@ var animateFuncs_head = function (exports) {
     }
     //preload images for smooth animation
     app.use(function (next) {
-
+        var once = function (next) {
+            var i = 0;
+            return function () {
+                if (i == 0) {
+                    next();
+                    i++;
+                }
+            }
+        }(next);
+        setTimeout(once, 5000);
         var j = 0;
         var len = imgStrs.length;
         var images = {};
@@ -21,14 +97,21 @@ var animateFuncs_head = function (exports) {
                 return function () {
                     images[key] = cutImage(this);
                     if (++j == len) {
-                        next();
+                        once();
                     }
+                    $('#progress').val(j / len * 100);
                 }
             }(key)
         }
         exports.images = images;
     })
 
+    app.use(
+        function (next) {
+            $('#load-screen').hide();
+            next();
+        }
+    )
 
     app.use(
         function (next) {
@@ -121,7 +204,7 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var h = $(window).height();
             $('#line-1').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -154,7 +237,7 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var img = (images['1-right.png']);
             $('#s1-right').append(img).velocity({
-                right: 30
+                right: 20
             }, 1000, next);
         }
     )
@@ -199,7 +282,7 @@ var animateFuncs_s1 = function (exports) {
             var rWord = $('#s1-right-word');
             rWord.append(img).velocity({
                 opacity: 1.5,
-                top: 305
+                top: 260
             }, {
                 easing: 'easeOutBounce',
                 duration: 1000,
@@ -216,14 +299,18 @@ var animateFuncs_s1 = function (exports) {
             }, 600, next)
         }
     );
-    //    app.use(wait500);
-    //    app.use(
-    //        function (next) {
-    //            $('#canvas-1').velocity({
-    //                top: '-100%'
-    //            }, 1500, next)
-    //        }
-    //    )
+    app.use(
+        function (next) {
+            $('#start').velocity({
+                left: '-=30px;'
+            })
+            $('#line-1').velocity({
+                rotateZ: 12
+            }, function () {
+                $('#next').show();
+            })
+        }
+    )
     return funcs
 }();
 
@@ -250,6 +337,12 @@ var animateFuncs_s2 = function () {
             function drawCircle() {
                 if (deg > 450) {
                     clearInterval(drawHandler);
+
+                    ctx.clearRect(0, 0, 110, 110);
+                    ctx.beginPath();
+                    ctx.arc(55, 55, 50, startR, deg * fenMu);
+                    ctx.stroke();
+
                     repeatNext();
                     return;
                 } else {
@@ -274,7 +367,7 @@ var animateFuncs_s2 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-2').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -295,13 +388,13 @@ var animateFuncs_s2 = function () {
     app.use(function (next) {
         var img = images['left-2-2.png'];
         $('#s2-left-2').append(img).velocity({
-            top: 145
+            top: 130
         }, 1000, next);
     })
     app.use(function (next) {
         var img = images['left-2-3.png'];
         $('#s2-left-3').append(img).velocity({
-            top: 215
+            top: '+=15'
         }, 1000, next);
     })
     app.use(function (next) {
@@ -317,7 +410,7 @@ var animateFuncs_s2 = function () {
             opacity: 1
         }, 600)
             .velocity({
-                top: 160
+                top: '+=20'
             }, {
                 easing: 'easeOutBounce',
                 duration: 1000,
@@ -329,18 +422,18 @@ var animateFuncs_s2 = function () {
         var img2 = images['circle-2-2.png'];
         var img3 = images['circle-2-3.png'];
         $('#circle-tag-2-1').append(img1).velocity({
-            top: 240
+            top: 215
         }, {
             duration: 600
         })
         $('#circle-tag-2-2').append(img2).velocity({
-            top: 240
+            top: 215
         }, {
             delay: 200,
-            duration: 600,
+            duration: 600
         })
         $('#circle-tag-2-3').append(img3).velocity({
-            top: 240
+            top: 215
         }, {
             delay: 400,
             duration: 600,
@@ -355,15 +448,18 @@ var animateFuncs_s2 = function () {
         }, 1000, next)
 
     })
-    //    app.use(wait500);
-    //    app.use(
-    //        function (next) {
-    //            $('#canvas-2').velocity({
-    //                top: '-100%'
-    //            }, 1500, next)
-    //        }
-    //    )
-
+    app.use(
+        function (next) {
+            $('#start').velocity({
+                left: '-=30px;'
+            })
+            $('#line-2').velocity({
+                rotateZ: 12
+            }, function () {
+                $('#next').show();
+            })
+        }
+    )
     return funcs;
 
 }();
@@ -390,6 +486,12 @@ var animateFuncs_s3 = function () {
             function drawCircle() {
                 if (deg > 450) {
                     clearInterval(drawHandler);
+
+                    ctx.clearRect(0, 0, 110, 110);
+                    ctx.beginPath();
+                    ctx.arc(55, 55, 50, startR, deg * fenMu);
+                    ctx.stroke();
+
                     repeatNext();
                     return;
                 } else {
@@ -415,7 +517,7 @@ var animateFuncs_s3 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-3').velocity({
-                height: 255
+                height: 190
             }, 1000, next)
         }
     )
@@ -481,18 +583,18 @@ var animateFuncs_s3 = function () {
             var img2 = images['circle-3-2.png'];
             var img3 = images['circle-3-3.png'];
             $('#circle-tag-3-1').append(img1).velocity({
-                top: 250,
+                top: 220,
                 right: 100
             }, 600)
             $('#circle-tag-3-2').append(img2).velocity({
-                top: 250,
+                top: 220,
                 right: 50
             }, {
                 delay: 200,
                 duration: 600
             })
             $('#circle-tag-3-3').append(img3).velocity({
-                top: 250,
+                top: 220,
                 right: 0
             }, {
                 delay: 400,
@@ -504,7 +606,7 @@ var animateFuncs_s3 = function () {
     app.use(function (next) {
         var img = images['3-right-word.png'];
         $('#s3-right-word').append(img).velocity({
-            top: 305,
+            top: 260,
             opacity: 1,
         }, {
             duration: 1000,
@@ -529,4 +631,41 @@ var animateFuncs_s3 = function () {
     )
 
     return funcs;
-}()
+}();
+
+var touchStart = 'touchstart';
+if (!('ontouchstart' in window)) {
+    touchStart = 'click';
+}
+
+var curScreen = 1;
+var next = new Next();
+next.use(animateFuncs_head)
+    .use(animateFuncs_s1)
+    .start();
+
+$('#start').on(touchStart, function () {
+    next.stop();
+    window.location.href = 'custom-search.html';
+})
+$('#next').on(touchStart, function () {
+    $(this).hide();
+    if (curScreen == 1) {
+        next.use(animateFuncs_s2)
+    }
+    if (curScreen == 2) {
+        next.use(animateFuncs_s3);
+    }
+    $('#start').velocity({
+        left: '+=30'
+    })
+    $('#line-' + curScreen).velocity({
+        rotateZ: 0
+    })
+    $('#canvas-' + curScreen).velocity({
+        top: '-100%'
+    }, 1500, function () {
+        next.start();
+    })
+    curScreen++;
+})

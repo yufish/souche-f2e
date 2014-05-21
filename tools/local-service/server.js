@@ -1,11 +1,10 @@
-
-var CoffeeScript = require ('coffee-script');
+var CoffeeScript = require('coffee-script');
 CoffeeScript.register();
-var config = require ("./config.coffee");
-var server = require ("./main.coffee");
+require("./lib/BaseInit.js");
+var config = require("./config.js");
+var server = require("./index.js");
 
 
-require('http').createServer(server).listen(config.run_port,function(){
+require('http').createServer(server).listen(config.run_port, function() {
     console.log("Express server listening on port " + server.get("port"));
-  }).setMaxListeners(0);
-
+}).setMaxListeners(0);
