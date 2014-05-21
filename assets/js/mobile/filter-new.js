@@ -1,28 +1,21 @@
-function Model(){
-    this.listeners = [];
+var Brand = function(name,code,series){
+    this.name = name;
+    this.code = code;
+    this.series = series ||[];
 }
+Brand.prototype = {
+    addSeries:function(s,bCode){
+        if(bCode && bCode ==this.code){
 
-Model.prototype={
-    constructor:Model,
-    addListen:function(l){
-        this.listeners.push(l);
-    },
-    publish:function(){
-        for(var i=0;i<this.listeners.length;i++){
-            this.listeners[i].doAction();
         }
+        this.series.push(s);
     }
 }
-
-function Ob(){
-
+var Series = function(name,code){
+    this.name = name;
+    this.code = code;
 }
-Ob.prototype={
-    constructor:Ob,
-    doAction:function(e){
 
-    }
-}
 
 ! function ($) {
 
@@ -225,20 +218,14 @@ Ob.prototype={
         $self.addClass('selected');
     })
 
-    $('#hot-brands').on('click', '.item', function () {
+    $('#brand-list').on('click', '.item', function () {
         var $self = $(this);
         var code = $self.attr('data-code');
         var name = $self.text();
-        setBrands(code, name);
+        //setBrands(code, name);
         $self.addClass('selected');
     });
-    $('#other-brands-select').change(function () {
-        var $self = $(this);
-        var code = $self.val();
-        var $selectOpt = $self.find('option:selected');
-        var name = $selectOpt.text();
-        setBrands(code, name, $self.find('option:selected'));
-    })
+
 
     $('#option-advance').click(function () {
         var $self = $(this);
