@@ -69,8 +69,8 @@
       <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5378947" vertical-offset="5144" max-vertical-offset="8175">
-              <caret line="377" column="35" selection-start-line="377" selection-start-column="35" selection-end-line="377" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
+              <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -89,9 +89,13 @@
       <file leaf-file-name="acts_tpl.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.36" vertical-offset="4746" max-vertical-offset="7995">
-              <caret line="342" column="9" selection-start-line="342" selection-start-column="9" selection-end-line="342" selection-end-column="9" />
-              <folding />
+            <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
+              <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+              <folding>
+                <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
+                <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
+                <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -692,16 +696,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.36" vertical-offset="4746" max-vertical-offset="7995">
-          <caret line="342" column="9" selection-start-line="342" selection-start-column="9" selection-end-line="342" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
+          <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+          <folding>
+            <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
+            <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
+            <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5378947" vertical-offset="5144" max-vertical-offset="8175">
-          <caret line="377" column="35" selection-start-line="377" selection-start-column="35" selection-end-line="377" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
+          <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
           <folding />
         </state>
       </provider>
