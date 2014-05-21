@@ -163,6 +163,7 @@ util.print: Use console.log instead
 }
 #acts_tpl .wrapper-1190 {
   margin-top: 5px;
+  width: 1190px;
 }
 #acts_tpl .banner {
   position: relative;

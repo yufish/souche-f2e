@@ -4,10 +4,6 @@
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.css" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.less" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/act/lookcars.css" afterPath="$PROJECT_DIR$/assets/css/act/lookcars.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/match_car_list.css" afterPath="$PROJECT_DIR$/assets/css/match_car_list.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/ui/qiugou.css" afterPath="$PROJECT_DIR$/assets/css/ui/qiugou.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/acts/tpl_all.js" afterPath="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +59,8 @@
       <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2879257" vertical-offset="7131" max-vertical-offset="8100">
-              <caret line="494" column="22" selection-start-line="494" selection-start-column="22" selection-end-line="494" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.503612" vertical-offset="1957" max-vertical-offset="8115">
+              <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -93,15 +89,15 @@
       <file leaf-file-name="acts_tpl.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.12" vertical-offset="7002" max-vertical-offset="7965">
-              <caret line="477" column="1" selection-start-line="477" selection-start-column="1" selection-end-line="477" selection-end-column="1" />
+            <state vertical-scroll-proportion="-6.12" vertical-offset="7017" max-vertical-offset="7980">
+              <caret line="478" column="1" selection-start-line="478" selection-start-column="1" selection-end-line="478" selection-end-column="1" />
               <folding>
-                <marker date="1400641307053" expanded="true" signature="3528:3618" placeholder="{...}" />
-                <marker date="1400641307053" expanded="true" signature="3675:3766" placeholder="{...}" />
-                <marker date="1400641307053" expanded="true" signature="3827:3831" placeholder="{...}" />
-                <marker date="1400641307053" expanded="true" signature="3900:3902" placeholder="{...}" />
-                <marker date="1400641307053" expanded="true" signature="3965:4023" placeholder="{...}" />
-                <marker date="1400641307053" expanded="true" signature="7926:8027" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="3545:3635" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="3692:3783" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="3844:3848" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="3917:3919" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="3982:4040" placeholder="{...}" />
+                <marker date="1400641713574" expanded="true" signature="7943:8044" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -687,15 +683,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.12" vertical-offset="7002" max-vertical-offset="7965">
-          <caret line="477" column="1" selection-start-line="477" selection-start-column="1" selection-end-line="477" selection-end-column="1" />
+        <state vertical-scroll-proportion="-6.12" vertical-offset="7017" max-vertical-offset="7980">
+          <caret line="478" column="1" selection-start-line="478" selection-start-column="1" selection-end-line="478" selection-end-column="1" />
           <folding>
-            <marker date="1400641307053" expanded="true" signature="3528:3618" placeholder="{...}" />
-            <marker date="1400641307053" expanded="true" signature="3675:3766" placeholder="{...}" />
-            <marker date="1400641307053" expanded="true" signature="3827:3831" placeholder="{...}" />
-            <marker date="1400641307053" expanded="true" signature="3900:3902" placeholder="{...}" />
-            <marker date="1400641307053" expanded="true" signature="3965:4023" placeholder="{...}" />
-            <marker date="1400641307053" expanded="true" signature="7926:8027" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="3545:3635" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="3692:3783" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="3844:3848" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="3917:3919" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="3982:4040" placeholder="{...}" />
+            <marker date="1400641713574" expanded="true" signature="7943:8044" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -718,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2879257" vertical-offset="7131" max-vertical-offset="8100">
-          <caret line="494" column="22" selection-start-line="494" selection-start-column="22" selection-end-line="494" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.503612" vertical-offset="1957" max-vertical-offset="8115">
+          <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
           <folding />
         </state>
       </provider>
