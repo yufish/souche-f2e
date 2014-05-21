@@ -5,16 +5,63 @@ var Brand = function(name,code,series){
 }
 Brand.prototype = {
     addSeries:function(s,bCode){
-        if(bCode && bCode ==this.code){
-
+        if(bCode){
+            if(bCode == this.code){
+                this.series.push(s);
+            }
+        }else{
+            this.series.push(s);
         }
-        this.series.push(s);
     }
 }
+Brand.NoLimit = 'NoLimit';
 var Series = function(name,code){
     this.name = name;
     this.code = code;
 }
+Series.NoLimit = 'NoLimit';
+
+var BrandMgr ={
+    brands :[],
+    ltns :[],
+    addLtn :function(ltn){
+        this.ltns.push(ltn);
+    },
+    notify:function(){
+        for(var i =0;i<this.ltns.length;i++){
+            this.ltns[i].process(this.brands);
+        }
+    },
+    addBrand:function(code,name,series){
+        var b = new Brand(code ,name,series);
+        this.brands.push(b);
+        this.notify({
+            eventType:'addBrand',
+            newItem:b
+        });
+    },
+    addSeries:function(code,name,bCode){
+        if(!bCode)return;
+        for(var i = 0;i<this.brands.length;i++){
+            var brand = this.brands[i]
+            if(bCode == brand.code){
+                var s = new Series(code,name);
+                brand.addSeries(s);
+            }
+        }
+    },
+    delBrand:function(code){
+        for(var  i = 0;i<this.brands.lengtth;i++){
+            if(code==this.brands[i].code){
+                var dItem = this.brands.splice(i,1);
+                this.notify({
+
+                })
+            }
+        }
+    }
+}
+
 
 
 ! function ($) {

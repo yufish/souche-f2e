@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.css" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.less" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="7125">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="7830">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,8 +69,8 @@
       <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
-              <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.39578947" vertical-offset="4289" max-vertical-offset="8190">
+              <caret line="311" column="25" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -92,9 +92,15 @@
             <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
               <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
               <folding>
-                <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
-                <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
-                <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="8099:8226" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="8473:8484" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="8687:8729" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="9005:9056" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="9197:9207" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="9414:9555" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="9945:9982" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="10476:10479" placeholder="{...}" />
+                <marker date="1400656326145" expanded="true" signature="10648:10663" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -125,8 +131,8 @@
         <option value="$PROJECT_DIR$/assets/js/mobile/filter.js" />
         <option value="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.less" />
       </list>
     </option>
@@ -678,6 +684,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
+          <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+          <folding>
+            <marker date="1400656326145" expanded="true" signature="8099:8226" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="8473:8484" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="8687:8729" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="9005:9056" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="9197:9207" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="9414:9555" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="9945:9982" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="10476:10479" placeholder="{...}" />
+            <marker date="1400656326145" expanded="true" signature="10648:10663" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/acts/tpl_all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1485">
@@ -688,28 +712,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="7125">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="7830">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.36" vertical-offset="4761" max-vertical-offset="8010">
-          <caret line="343" column="9" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
-          <folding>
-            <marker date="1400653502431" expanded="true" signature="8099:8226" placeholder="{...}" />
-            <marker date="1400653502431" expanded="true" signature="10476:10479" placeholder="{...}" />
-            <marker date="1400653502431" expanded="true" signature="10648:10663" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64842105" vertical-offset="6434" max-vertical-offset="8190">
-          <caret line="470" column="45" selection-start-line="470" selection-start-column="45" selection-end-line="470" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.39578947" vertical-offset="4289" max-vertical-offset="8190">
+          <caret line="311" column="25" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
           <folding />
         </state>
       </provider>
