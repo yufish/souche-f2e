@@ -318,9 +318,6 @@
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;
 }
-#acts_all {
-  overflow: hidden;
-}
 #acts_all .hr1 {
   width: 1170px;
   margin: 0 auto;
