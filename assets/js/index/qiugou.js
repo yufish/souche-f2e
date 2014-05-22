@@ -71,7 +71,7 @@ define(['souche/custom-select', 'souche/util/load-info', 'lib/jquery.easing.min'
                     $(".warning", self.ele).addClass("hidden")
                 }
                 if ($("#age_select_high_input").val() * 1 < $("#age_select_input").val() * 1) {
-                    $(".warning", self.ele).html("车龄选择错误").removeClass("hidden")
+                    $(".warning", self.ele).html("上牌时间选择错误").removeClass("hidden")
                     return;
                 } else {
                     $(".warning", self.ele).addClass("hidden")
