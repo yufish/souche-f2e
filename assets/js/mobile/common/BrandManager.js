@@ -27,12 +27,12 @@
                 }
             }
         }
-        Brand.NoLimit = 'NoLimit';
+        Brand.NoLimit = new Brand('','不限');
         var Series = function(code,name){
             this.name = name;
             this.code = code;
         }
-        Series.NoLimit = 'NoLimit';
+        Series.NoLimit = new Series('','不限')
 
         //var BrandMgr =
         return {
@@ -54,14 +54,29 @@
                     item:b
                 });
             },
+            noLimitBrand:function(){
+                this.brands = [];
+                this.brands.push(Brand.NoLimit);
+                this.notify({
+                    eventType:'noLimitBrand',
+                    item:Brand.NoLimit
+                })
+            },
+            isBrandNoLimit:function(){
+                return (this.brands.length==1&&this.brands[0]==Brand.NoLimit);
+            },
             addSeries:function(code,name,bCode){
                 if(!bCode)throw new TypeError('bCode should be non empty string');
                 var brand = this._getBrandByCode(bCode);
                 if(brand==null)throw new TypeError('cannot get brand by the given code');
                 brand.addSeries(new Series(code ,name));
             },
+            noLimitSeries:function(bCode){
+                var brand = this._getBrandByCode(bCode);
+
+            },
             removeBrand:function(code){
-                for(var  i = 0;i<this.brands.length;i++){
+                for(var i = 0;i<this.brands.length;i++){
                     if(code==this.brands[i].code){
                         var dItem = this.brands.splice(i,1);
                         this.notify({
@@ -95,6 +110,12 @@
                     }
                 }
                 return null;
+            },
+            _checkBrand:function(bCode){
+                if(!bCode)throw new TypeError('bCode should be non empty string');
+                var brand = this._getBrandByCode(bCode);
+                if(brand==null)throw new TypeError('cannot get brand by the given code');
+                return brand;
             }
 
         }

@@ -175,7 +175,7 @@
 #acts_tpl .banner .act-nav {
   position: absolute;
   top: 50%;
-  margin-top: -65px;
+  margin-top: -64.99999999px;
   width: 65px;
   height: 130px;
 }
@@ -314,7 +314,7 @@
   height: 195px;
 }
 #acts_tpl #more-acts .acts-img a {
-  margin-right: 6px;
+  margin-right: 4px;
 }
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;

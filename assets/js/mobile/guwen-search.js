@@ -108,6 +108,11 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
             })
         }
 
+        function mapYearCode(originYear){
+            var year = originYear.substring(0,4);
+            return year+'-2014'
+        }
+
         return {
 
             init: function () {
@@ -116,8 +121,6 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
-
-
 
                 var stepRecords = [];
                 stepRecords.push(1);
@@ -133,10 +136,8 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                 }
                 var yearCode = '';
                 if (dataObj.year) {
-                    yearCode = dataObj.year;
-                    if (yearCode == '1-2' || yearCode == '2-3') {
-                        yearCode = '1-3';
-                    }
+                    yearCode = mapYearCode(dataObj.year);
+
                 }
                 $('.year-item[data-code=' + yearCode + '] .text').addClass('selected');
 
