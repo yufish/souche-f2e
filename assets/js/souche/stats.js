@@ -1,6 +1,12 @@
 if (!window.contextPath) {
     contextPath = "";
 }
+var f2e_begin_load_time = new Date().getTime();
+var f2e_first_load_time = 0;
+var f2e_all_load_time = 0;
+var f2e_traffic_id = 0;
+var f2e_click_count = 0;
+var f2e_scroll_max = 0;
 
 function viewPageStat(url) {
     $.ajax({
@@ -16,9 +22,10 @@ function viewPageStat(url) {
     });
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
+    f2e_first_load_time = new Date().getTime();
     viewPageStat(document.location.href);
-    $('body').on('click', 'a,[type=submit]', function () {
+    $('body').on('click', 'a,[type=submit]', function() {
         var href = $(this).attr("href");
         var clickType = $(this).attr("click_type");
         if (!clickType) {
@@ -36,12 +43,13 @@ $(document).ready(function () {
             },
             dataType: 'json',
             timeout: 5000,
-            error: function (XMLHttpRequest, textStatus, errorThrown) {},
-            success: function (data) {}
+            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+            success: function(data) {}
         });
     });
 
-    $(document).on("click", function (e) {
+    $(document).on("click", function(e) {
+        f2e_click_count++;
         var data = {
             page_x: e.pageX - ($(window).width() / 2 - 595),
             page_y: e.pageY,
@@ -61,4 +69,46 @@ $(document).ready(function () {
         }
         new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
     })
+    $(window).scroll(function() {
+        var top = $(window).scrollTop();
+        if (top > f2e_scroll_max) {
+            f2e_scroll_max = top;
+        }
+    })
+
 });
+var setTrafficId = function(_id) {
+    f2e_traffic_id = _id;
+}
+$(window).load(function() {
+    f2e_all_load_time = new Date().getTime();
+    var data = {
+        url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com"),
+        referrer: document.referrer,
+        load_first_time: f2e_first_load_time - f2e_begin_load_time,
+        load_all_time: f2e_all_load_time - f2e_begin_load_time,
+        cookie: document.cookie
+    }
+    var param = ""
+    for (var d in data) {
+        param += d + "=" + data[d] + "&"
+    }
+
+    var script = document.createElement("script");
+    script.src = "http://f2e-monitor.souche.com/performance/traffic_begin?callback=setTrafficId&" + param;
+    document.body.appendChild(script);
+})
+
+window.onbeforeunload = function() {
+    var data = {
+        _id: f2e_traffic_id,
+        stay_second: new Date().getTime() - f2e_first_load_time,
+        click_count: f2e_click_count,
+        visit_length: f2e_scroll_max
+    }
+    var param = ""
+    for (var d in data) {
+        param += d + "=" + data[d] + "&"
+    }
+    new Image().src = "http://f2e-monitor.souche.com/performance/traffic_end?" + param
+}
