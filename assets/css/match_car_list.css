@@ -1,4 +1,3 @@
-util.print: Use console.log instead
 #match_car_list {
   background-color: #f9f9f9;
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
@@ -545,7 +544,8 @@ util.print: Use console.log instead
   font-size: 14px;
   float: left;
   line-height: 30px;
-  width: 30px;
+  width: 60px;
+  text-align: right;
   height: 30px;
 }
 .qiugou .form-item .input {
