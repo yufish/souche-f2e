@@ -5,7 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" afterPath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.css" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/acts_tpl.less" afterPath="$PROJECT_DIR$/assets/css/acts_tpl.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" afterPath="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/index.css" afterPath="$PROJECT_DIR$/assets/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/local-service/package.json" afterPath="$PROJECT_DIR$/tools/local-service/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/souche.css" afterPath="$PROJECT_DIR$/assets/css/souche/souche.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +65,8 @@
       <file leaf-file-name="BrandManager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.04" vertical-offset="644" max-vertical-offset="1620">
-              <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1935">
+              <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -88,21 +92,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acts_tpl.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="acts_tpl.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2224554" vertical-offset="7123" max-vertical-offset="8205">
-              <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
+            <state vertical-scroll-proportion="-8.918367" vertical-offset="4303" max-vertical-offset="8205">
+              <caret line="316" column="27" selection-start-line="316" selection-start-column="27" selection-end-line="316" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acts_tpl.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="guwen-search.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8040">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="acts_tpl.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
-              <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.4094166" vertical-offset="4355" max-vertical-offset="8025">
+              <caret line="317" column="1" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -133,16 +147,18 @@
         <option value="$PROJECT_DIR$/assets/js/mobile/filter.js" />
         <option value="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
-        <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
         <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandMgr.js" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.less" />
+        <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
+    <option name="x" value="31" />
+    <option name="y" value="27" />
     <option name="width" value="1918" />
     <option name="height" value="1160" />
   </component>
@@ -188,6 +204,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,7 +311,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,14 +344,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -346,14 +354,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" />
-      <option name="executablePath" />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -361,6 +367,16 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -389,7 +405,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1918" height="1160" extended-state="0" />
+    <frame x="31" y="27" width="1918" height="1160" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -404,12 +420,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -436,6 +452,62 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="6555">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="1620">
+          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/checkUserLocal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="86640" max-vertical-offset="89430">
+          <caret line="5780" column="27" selection-start-line="5780" selection-start-column="27" selection-end-line="5780" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7098" max-vertical-offset="8205">
+          <caret line="495" column="0" selection-start-line="495" selection-start-column="0" selection-end-line="495" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1552" max-vertical-offset="8040">
+          <caret line="146" column="50" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
+          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6900">
@@ -709,14 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="8025">
-          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/checkUserLocal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="999">
@@ -733,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.04" vertical-offset="644" max-vertical-offset="1620">
-          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="6555">
@@ -749,10 +805,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8040">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1935">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2224554" vertical-offset="7123" max-vertical-offset="8205">
-          <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
+        <state vertical-scroll-proportion="-8.918367" vertical-offset="4303" max-vertical-offset="8205">
+          <caret line="316" column="27" selection-start-line="316" selection-start-column="27" selection-end-line="316" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4094166" vertical-offset="4355" max-vertical-offset="8025">
+          <caret line="317" column="1" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
           <folding />
         </state>
       </provider>
