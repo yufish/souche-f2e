@@ -262,7 +262,8 @@ padding-left: 50px;
 #choose{position:relative;margin-top:15px;width:100%;zoom:1;}
 #choose .choose_condition{width:795px;height:38px;line-height:38px;border:1px solid #ddd;background-color:#fff;float:left;display:inline;overflow:hidden}
 #choose .choose_condition p{color:#333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;padding-left:15px;float:left;padding-right:5px}
-#choose .choose_condition .choose_item{float:left;padding:0 5px 0 10px;line-height:20px;border:1px solid #ddd;color:#666;margin-top:8px;margin-right:8px;display:inline;*width:70px;height:20px;overflow:hidden}
+#choose .choose_condition .choose_item{float:left;padding:0 5px 0 10px;line-height:20px;border:1px solid #FC7000;color:#666;margin-top:8px;margin-right:8px;display:inline;*width:70px;height:20px;overflow:hidden;border-radius: 2px;background-color: #f9f9f9;}
+#choose .choose_condition .choose_item:hover{border:1px solid #666666;}
 #choose .choose_condition .choose_item span{float:right;width:12px;height:12px;background:url("../../assets/images/fed/inside_sprite3.png?aa.png") no-repeat;margin:4px 0 0 10px;*margin-top:-16px}
 #choose .choose_condition .choose_clear{color:#294c94;cursor:pointer}
 #choose .orderBy{float:right;height:38px;line-height:38px;border:1px solid #ddd;border-right:none;background-color:#fff}
@@ -273,16 +274,16 @@ padding-left: 50px;
 #choose .orderBy .order_asc span{background-position:-61px -52px}
 #choose .orderBy .order_asc_active{color:#e70}
 #choose .orderBy .order_asc_active span{background-position:-65px 0}
-#choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#333;}
-#choose.choose_fixed .choose_condition {border:none;background-color:#333;color:#fff;line-height:50px;height:50px;}
-#choose.choose_fixed .choose_condition p{color:#fff;}
+#choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#fff;}
+#choose.choose_fixed .choose_condition {border:none;background-color:#fff;color:#333;line-height:50px;height:50px;}
+#choose.choose_fixed .choose_condition p{color:#333;}
 #choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px;}
 #choose.choose_fixed .orderBy .order_item {height:30px;line-height:30px;}
 #choose.choose_fixed .orderBy .order_item span {margin-top:10px;*margin-top:-20px;}
-#choose.choose_fixed  .choose_condition .choose_item {margin-top:14px;color:#fff;}
-#choose.choose_fixed .choose_condition .choose_clear{color:#fff;}
+#choose.choose_fixed  .choose_condition .choose_item {margin-top:14px;color:#FC7000;}
+#choose.choose_fixed .choose_condition .choose_clear{color:#666;}
 #footer{position:relative;zoom:1;}
-#choose.choose_fixed  .choose_condition .choose_item span{background:url("../../assets/images/fed/choose-fixed-close.png") no-repeat;margin-top:5px;*margin-top:-16px;}
+#choose.choose_fixed  .choose_condition .choose_item span{background:url("../../assets/images/fed/close-choose.png") no-repeat;margin-top:5px;*margin-top:-16px;}
 #listContain .list-banner{display:block;width:100%;height:100px;background-repeat:no-repeat;margin-top:20px;}
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
 #list_wrap .list_nav .sc-option{width:228px;}
@@ -298,7 +299,15 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .list_nav_title label{width:50px;font-size: 14px;color:#333;font-weight: normal;}
 #list_wrap .list_nav .nav_series .list_nav_title label{width:auto;}
 #list_wrap .list_nav .nav_brand .list_nav_title label{float:left;}
-
+.cars-sc{width: 320px;padding: 20px;background-color: #fff;border: 1px solid #d9d9d9;left: -1px;position: absolute;overflow: auto;z-index: 10000;overflow-x: hidden;height: auto !important;}
+.cars-sc .cars-sc-lists{border-bottom: 1px solid #d9d9d9; margin-bottom: 10px;}
+.cars-sc .cars-sc-last{border-bottom: none;}
+#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li{float: left !important;width: 80px !important;color: #666;line-height: 1.8em;margin-bottom: 5px;}
+#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a:hover{color: #ff6700 !important;background-color: #fff;}
+#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a{font-size: 13px;}
+.cars-sc .panel{color: #333;font-size: 14px;}
+.sc-color{width: 228px; height:15px;}
+.sc-color a{display: block;float: left;width: 19px;height: 15px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #b2b2b2;}
 .custom-price{position: absolute;width: 145px;height: 45px;border: 1px solid #e4e3e3;background-color: #fff;left: 115px;
 top: -12px;padding: 5px;z-index:20;}
