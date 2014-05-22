@@ -277,7 +277,7 @@ padding-left: 50px;
 #choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#fff;box-shadow: 3px 0px 5px #666;}
 #choose.choose_fixed .choose_condition {border:none;background-color:#fff;color:#333;line-height:50px;height:50px;}
 #choose.choose_fixed .choose_condition p{color:#333;}
-#choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px;}
+#choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px; border:1px solid #bfbfbf;}
 #choose.choose_fixed .orderBy .order_item {height:30px;line-height:30px;}
 #choose.choose_fixed .orderBy .order_item span {margin-top:10px;*margin-top:-20px;}
 #choose.choose_fixed  .choose_condition .choose_item {margin-top:14px;color:#FC7000;}
@@ -367,6 +367,7 @@ visibility: hidden;
 #list_wrap .list_nav_absolute{position:absolute;bottom:0}
 #list_wrap .list_main{width:720px;float:left;margin-left:15px;}
 #list_wrap .list_main .list_content{margin-bottom:20px;background-color:#fff;border:1px solid #d9d9d9;position:relative;cursor:pointer}
+#list_wrap .list_main .list_content:visited{border:1px solid #653096;}
 #list_wrap .list_main .list_content .car_tag_zhijian{left:5px;right:auto;top:5px}
 #list_wrap .list_main .list_content_img{display:block;float:left;width:325px;height:214px;overflow:hidden}
 #list_wrap .list_main .list_content_carInfo{float:left;margin-left:24px;padding-top:20px;width:345px;position: relative;}
