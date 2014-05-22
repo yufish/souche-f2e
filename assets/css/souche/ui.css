@@ -1,9 +1,9 @@
 .sc-option {
   display: inline-block;
   border: 1px solid #d9d9d9;
-  height: 25px;
+  height: 30px;
   background: #fff;
-  line-height: 25px;
+  line-height: 30px;
   width: 145px;
   position: relative;
 }
@@ -16,8 +16,8 @@
   font-weight: normal;
 }
 .sc-option-action {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   right: 0;
   top: 0;

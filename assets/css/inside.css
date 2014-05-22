@@ -1,9 +1,14 @@
 body{background-color:#f2f2f2}
 .nowPos{line-height:50px;color:#666}
 .nowPos ins{color:#333}
+#list_wrap,#choose .wrap,#choose_blank .wrap{
+  width:1000px;
+  margin:0 auto;
+}
 #evaluate{
   background: #fff;
 }
+
 #evaluate .wrap{width:1200px;}
 #evaluate_main{background:url(../../assets/images/fed/sell-bg.jpg) repeat-x;border:1px solid #fff;}
 #evaluate_main .wrap{
@@ -280,21 +285,37 @@ padding-left: 50px;
 #choose.choose_fixed  .choose_condition .choose_item span{background:url("../../assets/images/fed/choose-fixed-close.png") no-repeat;margin-top:5px;*margin-top:-16px;}
 #listContain .list-banner{display:block;width:100%;height:100px;background-repeat:no-repeat;margin-top:20px;}
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
-#list_wrap .list_nav .sc-option{*float:right;*display:inline;*margin-top:-30px;width:145px;}
+#list_wrap .list_nav .sc-option{width:228px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
 #list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;position: relative;margin-right: 15px;}
 .nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin-left:2px;}
-#list_wrap .list_nav .list_nav_wrap .list_nav_title{color:#333;width:224px;line-height:36px;padding-top:20px;font-weight:bold;}
+#list_wrap .list_nav .list_nav_wrap  ul.findall{width:280px;}
+#list_wrap .list_nav .nav_type  ul{width:280px;}
+#list_wrap .list_nav .list_nav_wrap .list_nav_title{color:#333;width:230px;line-height:36px;padding-top:10px;font-weight:bold;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title span{float:left;width:25px;height:20px;background:url("../../assets/images/fed/inside_sprite3.png?aa.png") no-repeat 0 -48px;margin-top:8px}
-#list_wrap .list_nav .list_nav_wrap .list_nav_title label{float:left;width:50px;}
+#list_wrap .list_nav .list_nav_wrap .list_nav_title label{width:50px;font-size: 14px;color:#333;font-weight: normal;}
+#list_wrap .list_nav .nav_series .list_nav_title label{width:auto;}
+#list_wrap .list_nav .nav_brand .list_nav_title label{float:left;}
+
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #b2b2b2;}
-.custom-price{position: absolute;width: 145px;height: 45px;border: 1px solid #e4e3e3;background-color: #fff;left: 175px;top: 200px;padding: 5px;}
+.custom-price{position: absolute;width: 145px;height: 45px;border: 1px solid #e4e3e3;background-color: #fff;left: 115px;
+top: -12px;padding: 5px;z-index:20;}
 .custom-price .custom-title{color: #666;font-size: 12px;font-weight: normal;cursor: pointer;}
 .custom-price .custom{position: relative;line-height: 18px;}
-.custom-price input{width: 38px;height: 16px;border: 1px solid #e4e3e3;margin-top: 5px;margin-right: 3px;margin-left: 3px;padding-left: 4px;font-size: 12px;line-height: 18px;}
-.custom-price .custom-submit{width: 36px;height: 18px;background-color: #fc7000;color: #fff7f0;font-size: 12px;border: none;position: absolute;top: -3px;right:-40px;}
+.custom-price input{width: 25px;height: 16px;border: 1px solid #e4e3e3;font-weight:normal;color:#999;margin-top: 5px;margin-right: 3px;margin-left: 3px;padding-left: 4px;font-size: 12px;line-height: 18px;}
+.custom-price .custom-submit{width: 36px;height: 18px;background-color: #fc7000;color: #fff7f0;font-size: 12px;border: none;position: absolute;top: 0px;right:-40px;}
+.custom-price.no-active  .custom-title{
+  visibility: hidden;
+}
+.custom-price.no-active .custom-submit{
+visibility: hidden;
+}
+.custom-price.no-active{
+  border:none;
+  background: none;
+}
 .price_list_more{color: #666;font-size: 12px;font-weight: normal;float: right;cursor: pointer;}
 .price-sc{height: 25px;width: 100%;margin-top: 15px;}
 .price-sc .price-range{float: left;width: 25px;height: 25px;margin-right: 3px;}
@@ -302,9 +323,18 @@ padding-left: 50px;
 .price-sc .price-range i:hover{background-color: #fc7000;}
 .price-sc .price-range .price-active{background-color: #fc7000;}
 .price-sc .price-range span{font-size: 12px; color: #8c8c8c;display: block;margin-left: -5px;}
-.unlimited{position: absolute;top: 80px;right: 3px;font-size: 12px; color: #8c8c8c;}
-#list_wrap .list_nav .list_nav_wrap ul li{float:left;display:inline;width:59px;color:#666;line-height:1.8em;white-space:nowrap;overflow:hidden}
-#list_wrap .list_nav .list_nav_wrap ul li a{color:#666}
+.unlimited{position: absolute;top: 70px;right: 3px;font-size: 12px; color: #8c8c8c;}
+#list_wrap .list_nav .list_nav_wrap ul li{float:left;display:inline;width:60px;color:#666;line-height:1.8em;white-space:nowrap;overflow:hidden}
+#list_wrap .list_nav .nav_type ul li{
+  width:85px;
+}
+#list_wrap .list_nav .nav_age .sc-option{
+  width:101px;
+}
+#list_wrap .list_nav .nav_age .zhi{
+  color:#999;
+}
+#list_wrap .list_nav .list_nav_wrap ul li a{color:#666;font-size: 12px;}
 #list_wrap .list_nav .list_nav_wrap ul li a.listNav_active{color:#e70}
 #list_wrap .list_nav .list_nav_wrap .nav-list{overflow:hidden;}
 #list_wrap .list_nav .list_nav_wrap .nav_list_more{color:#666;font-size:12px;font-weight:normal;float:right;cursor:pointer}
@@ -315,15 +345,15 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl{margin-bottom:15px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dt{float:left;color:#00b0b4;font-size:18px;line-height:18px;width:16px;margin-right:10px}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd{float:left;width:332px;display:inline}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a{float:left;color:#666;font-family:"������",Tahoma,Verdana;font-size:12px;margin-right:18px;line-height:18px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a.allBrandOn{color:#ff4301}
-#list_wrap .list_nav .nav_brand{position:relative;border:1px solid #fff;border-right:none;padding-bottom:10px;height:160px}
-#list_wrap .list_nav .nav_brand_active{border-color:#e70;width:243px;padding-left:20px;margin-left:0px}
+#list_wrap .list_nav .nav_brand{position:relative;border:1px solid #fff;border-right:none;padding-bottom:10px;height:190px;border-bottom:1px solid #e0e0e0;}
+#list_wrap .list_nav .nav_brand_active{border-color:#e70;width:260px;padding-left:17px;margin-left:-2px}
 #list_wrap .list_nav .nav_price .list_nav_title span{background-position:-27px -48px}
 #list_wrap .list_nav .nav_series .list_nav_title span{background-position:-1px -160px}
 #list_wrap .list_nav .nav_type .list_nav_title span{background-position:0 -80px}
 #list_wrap .list_nav .nav_dis .list_nav_title span{background-position:-25px -21px}
 #list_wrap .list_nav .nav_age .list_nav_title span{background-position:-50px -21px}
 #list_wrap .list_nav .nav_use .list_nav_title span{background-position:-34px -78px}
-#list_wrap .list_nav .cover{position:absolute;width:1px;height:145px;background-color:#fff;top:0;right:5px;z-index:20}
+#list_wrap .list_nav .cover{position:absolute;width:1px;height:200px;background-color:#fff;top:0;right:19px;z-index:10}
 #list_wrap .list_nav_fixed{position:fixed;_position:static;bottom:0;z-index:10}
 #list_wrap .list_nav_absolute{position:absolute;bottom:0}
 #list_wrap .list_main{width:720px;float:left;margin-left:15px;}
