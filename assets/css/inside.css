@@ -274,7 +274,7 @@ padding-left: 50px;
 #choose .orderBy .order_asc span{background-position:-61px -52px}
 #choose .orderBy .order_asc_active{color:#e70}
 #choose .orderBy .order_asc_active span{background-position:-65px 0}
-#choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#fff;}
+#choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#fff;box-shadow: 3px 0px 5px #666;}
 #choose.choose_fixed .choose_condition {border:none;background-color:#fff;color:#333;line-height:50px;height:50px;}
 #choose.choose_fixed .choose_condition p{color:#333;}
 #choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px;}
