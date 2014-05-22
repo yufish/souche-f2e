@@ -39,7 +39,15 @@ Souche.Inside = (function() {
                 !isIE && $("#choose_blank").addClass("hidden");
             };
         });
+        $(".custom-price-input").on("click", function() {
+            $(".custom-price").removeClass("no-active")
+        })
+        $(document.body).on("click", function(e) {
+            if (!$(e.target).closest(".custom-price").length) {
+                $(".custom-price").addClass("no-active")
+            }
 
+        })
         //列表页查看更多品牌
         var listBrand = true;
         var listTimer = null;
