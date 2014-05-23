@@ -73,11 +73,7 @@ var animateFuncs_head = function (exports) {
             funcs.push(f);
         }
     }
-    var winW = $(window).width();
-    var left = winW/2-130;
-    $('#progress').css({
-        left:left
-    })
+
     //preload images for smooth animation
     app.use(function (next) {
         var once = function (next) {
@@ -172,7 +168,7 @@ var animateFuncs_s1 = function (exports) {
             var deg = 90;
             var fenMu = Math.PI / 180;
             var startR = deg * fenMu;
-            var ft = 1000 / 360;
+            var ft = 500 / 360;
             var drawHandler = setInterval(drawCircle, ft);
 
             function drawCircle() {
@@ -198,7 +194,7 @@ var animateFuncs_s1 = function (exports) {
                 opacity: 1
             }, {
                 easing: 'easeInCirc',
-                duration: 1000,
+                duration: 500,
                 complete: repeatNext
             })
         }
@@ -336,7 +332,7 @@ var animateFuncs_s2 = function () {
             var deg = 90;
             var fenMu = Math.PI / 180;
             var startR = deg * fenMu;
-            var ft = 1000 / 360;
+            var ft = 500 / 360;
             var drawHandler = setInterval(drawCircle, ft);
 
             function drawCircle() {
@@ -485,7 +481,7 @@ var animateFuncs_s3 = function () {
             var deg = 90;
             var fenMu = Math.PI / 180;
             var startR = deg * fenMu;
-            var ft = 1000 / 360;
+            var ft = 500 / 360;
             var drawHandler = setInterval(drawCircle, ft);
 
             function drawCircle() {
@@ -653,6 +649,54 @@ $('#start').on(touchStart, function () {
     next.stop();
     window.location.href = 'custom-search.html';
 })
+
+var can1 = $('#canvas-1'),
+    can2 = $('#canvas-2'),
+    can3 = $('#canvas-3');
+
+function createTouch(){
+    var startPosY=0;
+    return function(e){
+        var touches = e.touches;
+        if(touches.length!=1){
+            return;
+        }
+        var dst;
+        switch (e.type){
+            case 'touchstart':
+                startPosY = e.pageX;
+                break;
+            case 'touchmove':
+                dst = e.pageX - startPosY
+                can1.css({
+                    'margin-top':dst
+                })
+
+                break;
+            case 'touchend':
+            case 'touchcancel':
+                if(dst>100){
+                    can1.velocity({
+                        'margin-top':dst
+                    },100)
+                }else{
+                    can1.velocity({
+                        'margin-top':0
+                    },100)
+                }
+
+        }
+    }
+}
+
+var touchH = createTouch();
+$('body').on('touchstart',touchH);
+$('body').on('touchend',touchH);
+$('body').on('touchmove',touchH);
+$('body').on('touchcancel',touchH);
+
+
+var winH = $(window).height();
 $('#next').on(touchStart, function () {
     $(this).hide();
     if (curScreen == 1) {
@@ -667,8 +711,9 @@ $('#next').on(touchStart, function () {
     $('#line-' + curScreen).velocity({
         rotateZ: 0
     })
-    $('#canvas-' + curScreen).velocity({
-        top: '-100%'
+
+    $('#canvas-1').velocity({
+        'margin-top': '+='+winH
     }, 1500, function () {
         next.start();
     })
