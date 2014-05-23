@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" afterPath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/zilong/domAnimation.html" afterPath="$PROJECT_DIR$/demo/zilong/domAnimation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" afterPath="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,21 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guwen-search.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="guwen-search.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6505539" vertical-offset="6059" max-vertical-offset="8055">
-              <caret line="447" column="38" selection-start-line="447" selection-start-column="38" selection-end-line="447" selection-end-column="38" />
+            <state vertical-scroll-proportion="-9.64" vertical-offset="6059" max-vertical-offset="8055">
+              <caret line="420" column="44" selection-start-line="420" selection-start-column="44" selection-end-line="420" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="domAnim.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.12" vertical-offset="9447" max-vertical-offset="11025">
-              <caret line="645" column="0" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5448137" vertical-offset="9014" max-vertical-offset="11310">
+              <caret line="637" column="37" selection-start-line="637" selection-start-column="37" selection-end-line="637" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -159,8 +158,8 @@
         <option value="$PROJECT_DIR$/assets/css/detail/price-distribution.css" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/demo/zilong/domAnimation.html" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
       </list>
     </option>
   </component>
@@ -735,6 +734,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.64" vertical-offset="6059" max-vertical-offset="8055">
+          <caret line="420" column="44" selection-start-line="420" selection-start-column="44" selection-end-line="420" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0612245" vertical-offset="3337" max-vertical-offset="4830">
@@ -745,16 +752,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.12" vertical-offset="9447" max-vertical-offset="11025">
-          <caret line="645" column="0" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6505539" vertical-offset="6059" max-vertical-offset="8055">
-          <caret line="447" column="38" selection-start-line="447" selection-start-column="38" selection-end-line="447" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.5448137" vertical-offset="9014" max-vertical-offset="11310">
+          <caret line="637" column="37" selection-start-line="637" selection-start-column="37" selection-end-line="637" selection-end-column="37" />
           <folding />
         </state>
       </provider>
