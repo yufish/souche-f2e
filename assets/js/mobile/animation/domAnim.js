@@ -645,7 +645,7 @@ next.use(animateFuncs_head)
     .use(animateFuncs_s1)
     .start();
 
-$('#start').on(touchStart, function () {
+$('#start').on('click', function () {
     next.stop();
     window.location.href = 'custom-search.html';
 })
@@ -657,6 +657,7 @@ var can1 = $('#canvas-1'),
 function createTouch(){
     var startPosY=0;
     return function(e){
+        alert('fuck');
         var touches = e.touches;
         if(touches.length!=1){
             return;
@@ -697,7 +698,7 @@ $('body').on('touchcancel',touchH);
 
 
 var winH = $(window).height();
-$('#next').on(touchStart, function () {
+$('#next').on('click', function () {
     $(this).hide();
     if (curScreen == 1) {
         next.use(animateFuncs_s2)
@@ -713,7 +714,7 @@ $('#next').on(touchStart, function () {
     })
 
     $('#canvas-1').velocity({
-        'margin-top': '+='+winH
+        'margin-top': '-='+winH
     }, 1500, function () {
         next.start();
     })
