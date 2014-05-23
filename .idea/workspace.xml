@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" afterPath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="" />
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,8 +76,8 @@
       <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5448137" vertical-offset="9014" max-vertical-offset="11310">
-              <caret line="637" column="37" selection-start-line="637" selection-start-column="37" selection-end-line="637" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.22759315" vertical-offset="9014" max-vertical-offset="11310">
+              <caret line="616" column="29" selection-start-line="616" selection-start-column="29" selection-end-line="616" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -329,7 +326,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -752,8 +749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5448137" vertical-offset="9014" max-vertical-offset="11310">
-          <caret line="637" column="37" selection-start-line="637" selection-start-column="37" selection-end-line="637" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.22759315" vertical-offset="9014" max-vertical-offset="11310">
+          <caret line="616" column="29" selection-start-line="616" selection-start-column="29" selection-end-line="616" selection-end-column="29" />
           <folding />
         </state>
       </provider>
