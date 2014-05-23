@@ -22,27 +22,14 @@ config = {
         template: '/views/'
     },
     mysql_config: {
+        database: "souchecar",
+        username: "souche",
+        password: "souchewang010",
+        host: "soucherds.mysql.rds.aliyuncs.com"
         // database: "souchecar",
         // username: "souche",
-        // password: "souchewang010",
-        // host: "soucherds.mysql.rds.aliyuncs.com"
-        database: "soucheweb",
-        username: "root",
-        password: "",
-        host: "127.0.0.1"
-    },
-    mongo_config: {
-        db: {
-            native_parser: true
-        },
-        server: {
-            poolSize: 5
-        },
-        user: 'souche',
-        pass: 'souche2014',
-        host: "121.199.46.167",
-        port: "27017",
-        database: "souche"
+        // password: "souche2013",
+        // host: "115.29.10.121"
     }
 };
 

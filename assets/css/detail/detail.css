@@ -2068,8 +2068,8 @@ body {
   border-radius: 3px;
   margin-top: 10px;
   cursor: pointer;
-  width: auto !important;
-  border: none !important;
+  width: auto  !important;
+  border: none  !important;
 }
 #detail_main .detail-feed-hd .qq-zixun:hover {
   background-color: #0a8fe0 !important;
@@ -3463,6 +3463,7 @@ body {
   background: url("../../images/fed/onsale_sprite3.png") no-repeat -224px -115px;
 }
 .onsale_wrap .onsale_content .check_explain {
+  border-bottom: 1px solid #dfe0e0;
   color: #999;
   font-size: 12px;
   padding-bottom: 8px;
@@ -4788,7 +4789,7 @@ body .apply_popup .popup-title {
   background-color: #000;
   z-index: 10000;
 }
-.icon-fei {
+less .icon-fei {
   position: absolute;
   left: 0;
   right: 0;
@@ -4796,4 +4797,42 @@ body .apply_popup .popup-title {
   height: 15px;
   width: 15px;
   background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;
+}
+.onsale-summary {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.onsale-summary .onsale-tab {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+.onsale-summary .onsale-tab .onsale-tab-item {
+  font-size: 18px;
+  padding: 10px;
+  margin-right: 30px;
+  color: #666;
+  line-height: 30px;
+}
+.onsale-summary .onsale-tab .onsale-tab-item.active {
+  color: #e70;
+}
+.onsale-summary .price-report .report-title {
+  font-size: 24px;
+  line-height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.onsale-summary .price-report .report-item-title {
+  font-size: 16px;
+  padding-right: 20px;
+  color: #444;
+}
+.onsale-summary .price-report .report-item-title hr {
+  background: #eee;
+  border: none;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
 }
