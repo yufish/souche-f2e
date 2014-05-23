@@ -643,7 +643,6 @@ function createTouch(screenIndex){
         var type = e.type;
         if(type == 'touchstart') {
             startPosY = touches[0].pageY;
-
         }
         else if(type=='touchmove'){
 
@@ -659,8 +658,9 @@ function createTouch(screenIndex){
                 },100)
                 var idx = screenIndex+1
                 if(!animationMap[idx]){
-                    if(window['next'+idx])
-                        window['next'+idx].start();
+                    if(window['next'+idx]) {
+                        window['next' + idx].start();
+                    }
                     animationMap[idx] = true;
                 }
             }else if(dst>120){
