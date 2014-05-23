@@ -14,15 +14,18 @@
         }
         .wrapper {
             width: 300px;
-            overflow: hidden;
             left: 50%;
             margin-left: -150px;
-            height: 445px;
+            height: 100%;
         }
         .canvas {
             width: 300px;
             margin: 0 auto;
             position: absolute;
+            height: 100%;
+        }
+        #canvas-1,#canvas-2,#canvas-3{
+            position:relative;
             height: 100%;
         }
         div {
@@ -193,14 +196,14 @@
             opacity:0.6;
         }
         #progress {
-            left: 20px
+            left: 20px;
             width: 0px;
             height: 30px;
             position: absolute;
             top: 200px;
             background-color: #ff4400;
             border: 0;
-            border-radius: 9px;
+            border-radius: 4px;
             box-sizing: border-box;
         }
         #load-screen {
@@ -306,7 +309,6 @@
     </script>
 
     <script src='../../assets/js/mobile/animation/domAnim.js'></script>
-
 </body>
 
 </html>
