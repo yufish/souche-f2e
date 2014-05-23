@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/chart/line.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/detail/price-distribution.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" afterPath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
@@ -58,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="filter-new.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="6555">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.51189244" vertical-offset="0" max-vertical-offset="6600">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -71,8 +69,8 @@
       <file leaf-file-name="BrandManager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1920">
-              <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="1920">
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -108,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="domAnim.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.008377" vertical-offset="162" max-vertical-offset="10140">
+            <state vertical-scroll-proportion="-38.52" vertical-offset="162" max-vertical-offset="10140">
               <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
               <folding />
             </state>
@@ -141,7 +139,7 @@
       <file leaf-file-name="detail.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/detail/detail.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="72075">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="72660">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -174,7 +172,6 @@
         <option value="$PROJECT_DIR$/assets/js/acts/tpl_all.js" />
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
         <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandMgr.js" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.less" />
         <option value="$PROJECT_DIR$/assets/css/acts_tpl.css" />
@@ -182,6 +179,7 @@
         <option value="$USER_HOME$/Desktop/test/line.html" />
         <option value="$PROJECT_DIR$/demo/zilong/chart/line.html" />
         <option value="$PROJECT_DIR$/assets/css/detail/price-distribution.css" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
       </list>
     </option>
   </component>
@@ -431,6 +429,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3960">
           <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -485,6 +484,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3960">
           <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -641,6 +641,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3960">
           <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,26 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="6555">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4303" max-vertical-offset="8205">
           <caret line="316" column="27" selection-start-line="316" selection-start-column="27" selection-end-line="316" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1920">
-          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -768,8 +753,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.008377" vertical-offset="162" max-vertical-offset="10140">
+        <state vertical-scroll-proportion="-38.52" vertical-offset="162" max-vertical-offset="10140">
           <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="1920">
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51189244" vertical-offset="0" max-vertical-offset="6600">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
         </state>
       </provider>
