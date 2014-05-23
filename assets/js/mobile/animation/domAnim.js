@@ -23,6 +23,10 @@
         }
         return this;
     }
+    fn.onComplete=function(f){
+        this.complete = f;
+        return this;
+    }
     fn.start = function () {
         var self = this;
         var funcs = self.funcs;
@@ -209,14 +213,7 @@ var animateFuncs_s1 = function (exports) {
             }, 1000, next)
         }
     )
-    app.use(
-        function (next) {
-            var img = images['start.png'];
-            $('#start').append(img).velocity({
-                opacity: 1
-            }, 200, next)
-        }
-    )
+
     app.use(
         function (next) {
             var img = (images['1-left.png']);
@@ -301,15 +298,9 @@ var animateFuncs_s1 = function (exports) {
         }
     );
     app.use(
-        function (next) {
-            $('#start').velocity({
-                left: '-=30px;'
-            })
-            $('#line-1').velocity({
-                rotateZ: 12
-            }, function () {
-                $('#next').show();
-            })
+        function(next){
+            $('#next').show();
+            next();
         }
     )
     return funcs
@@ -450,15 +441,9 @@ var animateFuncs_s2 = function () {
 
     })
     app.use(
-        function (next) {
-            $('#start').velocity({
-                left: '-=30px;'
-            })
-            $('#line-2').velocity({
-                rotateZ: 12
-            }, function () {
-                $('#next').show();
-            })
+        function(next){
+            $('#next').show()
+            next();
         }
     )
     return funcs;
@@ -522,14 +507,7 @@ var animateFuncs_s3 = function () {
             }, 1000, next)
         }
     )
-    //    app.use(
-    //        function (next) {
-    //            var img = images['start.png'];
-    //            $('#start3').append(img).velocity({
-    //                opacity: 1
-    //            }, 200, next)
-    //        }
-    //    )
+
     app.use(
         function (next) {
             var img = images['left-3-1.png'];
@@ -608,13 +586,21 @@ var animateFuncs_s3 = function () {
         var img = images['3-right-word.png'];
         $('#s3-right-word').append(img).velocity({
             top: 260,
-            opacity: 1,
+            opacity: 1
         }, {
             duration: 1000,
             easing: 'easeOutBounce',
             complete: next
         })
     })
+    app.use(
+        function (next) {
+            var img = images['start.png'];
+            $('#start').append(img).velocity({
+                opacity: 1
+            }, 200, next)
+        }
+    )
     app.use(
         function (next) {
             function forerverShake() {
@@ -628,9 +614,9 @@ var animateFuncs_s3 = function () {
             }
             forerverShake();
             setInterval(forerverShake, 2000);
+            next();
         }
     )
-
     return funcs;
 }();
 
@@ -639,31 +625,21 @@ if (!('ontouchstart' in window)) {
     touchStart = 'click';
 }
 
-var curScreen = 1;
-var next = new Next();
-next.use(animateFuncs_head)
-    .use(animateFuncs_s1)
-    .start();
+
 
 $('#start').on('click', function () {
     next.stop();
     window.location.href = 'custom-search.html';
 })
 
-var can1 = $('#canvas-1'),
-    can2 = $('#canvas-2'),
-    can3 = $('#canvas-3');
 var winH = $(window).height();
 
-function createTouch(){
+function createTouch(screenIndex){
     var startPosY=0;
+    var dst;
     return function(e){
         var touches = e.touches;
-        if(touches.length!=1){
-            return;
-        }
         e.preventDefault();
-        var dst;
         var type = e.type;
         if(type == 'touchstart') {
             startPosY = touches[0].pageY;
@@ -672,48 +648,78 @@ function createTouch(){
         else if(type=='touchmove'){
 
                 dst = touches[0].pageY - startPosY
-                can1.css({
-                    'margin-top':dst
+                $(can1).css({
+                    'margin-top':-(screenIndex-1)*winH+dst
                 })
 
         }else{
-            if(dst>100){
-                can1.velocity({
-                    'margin-top':-winH
+            if(dst<-120){
+                $(can1).velocity({
+                    'margin-top':-screenIndex*winH
+                },100)
+                var idx = screenIndex+1
+                if(!animationMap[idx]){
+                    if(window['next'+idx])
+                        window['next'+idx].start();
+                    animationMap[idx] = true;
+                }
+            }else if(dst>120){
+                $(can1).velocity({
+                    'margin-top':'+='+winH
                 },100)
             }else{
-                can1.velocity({
-                    'margin-top':0
+                $(can1).velocity({
+                    'margin-top':-winH*(screenIndex-1)
                 },100)
             }
-
         }
     }
 }
 
-var touchH = createTouch();
-var bgBody = document.getElementById('bg');
-bgBody.addEventListener('touchstart',touchH,false);
-bgBody.addEventListener('touchmove',touchH,false);
-bgBody.addEventListener('touchend',touchH,false);
-bgBody.addEventListener('touchcancel',touchH,false);
+var can1 = document.getElementById('canvas-1');
+var can2 = document.getElementById('canvas-2');
+var can3 = document.getElementById('canvas-3');
+function addTouchEvent(el,screenIdx){
+    var toucheEvent = createTouch(screenIdx)
+    el.addEventListener('touchstart',toucheEvent,false);
+    el.addEventListener('touchmove',toucheEvent,false);
+    el.addEventListener('touchend',toucheEvent,false);
+    el.addEventListener('touchcancel',toucheEvent,false);
+}
 
+
+var curScreen = 1;
+var next1 = new Next(),
+    next2= new Next(),
+    next3 = new Next();
+next1.use(animateFuncs_head)
+    .use(animateFuncs_s1)
+next2.use(animateFuncs_s2);
+next3.use(animateFuncs_s3)
+
+
+next1.onComplete(function(){
+    addTouchEvent(can1,1);
+}).start();
+next2.onComplete(function(){
+    addTouchEvent(can2,2)
+})
+next3.onComplete(function(){
+    addTouchEvent(can3,3);
+})
+
+var animationMap=[true,false,false]
 
 
 $('#next').on('click', function () {
     $(this).hide();
+    var next;
     if (curScreen == 1) {
-        next.use(animateFuncs_s2)
+        next = next2
     }
     if (curScreen == 2) {
-        next.use(animateFuncs_s3);
+        next = next3
     }
-    $('#start').velocity({
-        left: '+=30'
-    })
-    $('#line-' + curScreen).velocity({
-        rotateZ: 0
-    })
 
     $('#canvas-1').velocity({
         'margin-top': '-='+winH
