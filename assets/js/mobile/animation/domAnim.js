@@ -672,8 +672,8 @@ function createTouch(){
                 can1.css({
                     'margin-top':dst
                 })
+
         }else{
-            //touchcancel or touchend
             if(dst>100){
                 can1.velocity({
                     'margin-top':-winH
@@ -683,6 +683,7 @@ function createTouch(){
                     'margin-top':0
                 },100)
             }
+
         }
     }
 }
@@ -690,9 +691,9 @@ function createTouch(){
 var touchH = createTouch();
 var bgBody = document.getElementById('bg');
 bgBody.addEventListener('touchstart',touchH,false);
-bgBody.addEventListener('touchend',touchH,false);
 bgBody.addEventListener('touchmove',touchH,false);
-bgBody.addEventListener('touchcancel',touchH,false);
+bgBody.addEventListener('touchend',touchH,false);
+//bgBody.addEventListener('touchcancel',touchH,false);
 
 
 
