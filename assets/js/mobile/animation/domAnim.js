@@ -657,7 +657,6 @@ var can1 = $('#canvas-1'),
 function createTouch(){
     var startPosY=0;
     return function(e){
-        alert('fuck');
         var touches = e.touches;
         if(touches.length!=1){
             return;
@@ -665,10 +664,10 @@ function createTouch(){
         var dst;
         switch (e.type){
             case 'touchstart':
-                startPosY = e.pageX;
+                startPosY = touches[0].pageX;
                 break;
             case 'touchmove':
-                dst = e.pageX - startPosY
+                dst = touches[0].pageX - startPosY
                 can1.css({
                     'margin-top':dst
                 })
