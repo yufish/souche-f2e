@@ -653,6 +653,7 @@ $('#start').on('click', function () {
 var can1 = $('#canvas-1'),
     can2 = $('#canvas-2'),
     can3 = $('#canvas-3');
+var winH = $(window).height();
 
 function createTouch(){
     var startPosY=0;
@@ -662,41 +663,39 @@ function createTouch(){
             return;
         }
         var dst;
-        switch (e.type){
-            case 'touchstart':
-                startPosY = touches[0].pageX;
-                break;
-            case 'touchmove':
-                dst = touches[0].pageX - startPosY
+        var type = e.type;
+        if(type == 'touchstart')
+                startPosY = touches[0].pageY;
+        else if(type=='touchmove'){
+
+                dst = touches[0].pageY - startPosY
                 can1.css({
                     'margin-top':dst
                 })
-
-                break;
-            case 'touchend':
-            case 'touchcancel':
-                if(dst>100){
-                    can1.velocity({
-                        'margin-top':dst
-                    },100)
-                }else{
-                    can1.velocity({
-                        'margin-top':0
-                    },100)
-                }
-
+        }else{
+            //touchcancel or touchend
+            if(dst>100){
+                can1.velocity({
+                    'margin-top':-winH
+                },100)
+            }else{
+                can1.velocity({
+                    'margin-top':0
+                },100)
+            }
         }
     }
 }
 
 var touchH = createTouch();
-$('body').on('touchstart',touchH);
-$('body').on('touchend',touchH);
-$('body').on('touchmove',touchH);
-$('body').on('touchcancel',touchH);
+var bgBody = document.getElementById('bg');
+bgBody.addEventListener('touchstart',touchH,false);
+bgBody.addEventListener('touchend',touchH,false);
+bgBody.addEventListener('touchmove',touchH,false);
+bgBody.addEventListener('touchcancel',touchH,false);
 
 
-var winH = $(window).height();
+
 $('#next').on('click', function () {
     $(this).hide();
     if (curScreen == 1) {
