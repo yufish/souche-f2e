@@ -698,7 +698,7 @@ $('body').on('touchcancel',touchH);
 
 
 var winH = $(window).height();
-$('#next').on(touchStart, function () {
+$('#next').on('click', function () {
     $(this).hide();
     if (curScreen == 1) {
         next.use(animateFuncs_s2)

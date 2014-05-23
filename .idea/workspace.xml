@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" afterPath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/zilong/domAnimation.html" afterPath="$PROJECT_DIR$/demo/zilong/domAnimation.html" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +78,8 @@
       <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82722515" vertical-offset="9950" max-vertical-offset="10905">
-              <caret line="716" column="24" selection-start-line="716" selection-start-column="24" selection-end-line="716" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.57591623" vertical-offset="9950" max-vertical-offset="10905">
+              <caret line="700" column="20" selection-start-line="700" selection-start-column="20" selection-end-line="700" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -752,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82722515" vertical-offset="9950" max-vertical-offset="10905">
-          <caret line="716" column="24" selection-start-line="716" selection-start-column="24" selection-end-line="716" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.57591623" vertical-offset="9950" max-vertical-offset="10905">
+          <caret line="700" column="20" selection-start-line="700" selection-start-column="20" selection-end-line="700" selection-end-column="20" />
           <folding />
         </state>
       </provider>
