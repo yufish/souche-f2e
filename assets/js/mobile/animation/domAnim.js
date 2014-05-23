@@ -662,10 +662,13 @@ function createTouch(){
         if(touches.length!=1){
             return;
         }
+        e.preventDefault();
         var dst;
         var type = e.type;
-        if(type == 'touchstart')
-                startPosY = touches[0].pageY;
+        if(type == 'touchstart') {
+            startPosY = touches[0].pageY;
+
+        }
         else if(type=='touchmove'){
 
                 dst = touches[0].pageY - startPosY
@@ -693,7 +696,7 @@ var bgBody = document.getElementById('bg');
 bgBody.addEventListener('touchstart',touchH,false);
 bgBody.addEventListener('touchmove',touchH,false);
 bgBody.addEventListener('touchend',touchH,false);
-//bgBody.addEventListener('touchcancel',touchH,false);
+bgBody.addEventListener('touchcancel',touchH,false);
 
 
 
