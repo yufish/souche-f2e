@@ -26,6 +26,9 @@ function filter(BrandMgr) {
                 var code = e.item.code;
                 this.container.find('[data-code='+code+']').removeClass('selected');
             }
+            if(eType=='noLimitBrand'){
+                this.container.find().removeClass('selected');
+            }
         }
     };
     BrandMgr.addLtn(bPopupLtn);
@@ -185,7 +188,9 @@ function filter(BrandMgr) {
                     BrandMgr.addBrand(code,name);
                 }
             });
-
+            $('#brand-buxian').click(function () {
+                BrandMgr.noLimitBrand();
+            })
 
             $('#option-advance').click(function () {
                 var $self = $(this);
@@ -205,9 +210,7 @@ function filter(BrandMgr) {
                 $('.mobile-popup').addClass('hidden');
             });
 
-            $('#brand-buxian').click(function () {
-                setBrands('', '不限')
-            })
+
             $('#series-buxian').click(function () {
                 setSeries('', '不限');
             })
