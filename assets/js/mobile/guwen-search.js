@@ -445,13 +445,14 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         }
                         return;
                     }
-                    SM.checkPhoneExist(function (is_login) {
-                        if (is_login) {
-                            sumbitGuWenInfo();
-                        } else {
-                            showPopup();
-                        }
-                    })
+                    sumbitGuWenInfo();
+//                    SM.checkPhoneExist(function (is_login) {
+//                        if (is_login) {
+//                            sumbitGuWenInfo();
+//                        } else {
+//                            showPopup();
+//                        }
+//                    })
                 })
 
                 var phoneReg = /^1[3458][0-9]{9}$/;

@@ -299,13 +299,13 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .list_nav_title label{width:50px;font-size: 14px;color:#333;font-weight: normal;}
 #list_wrap .list_nav .nav_series .list_nav_title label{width:auto;}
 #list_wrap .list_nav .nav_brand .list_nav_title label{float:left;}
-.cars-sc{width: 320px;padding: 20px;background-color: #fff;border: 1px solid #d9d9d9;left: -1px;position: absolute;overflow: auto;z-index: 10000;overflow-x: hidden;height: auto !important;}
+.cars-sc{width: 365px;padding: 15px;background-color: #fff;border: 1px solid #d9d9d9;left: -1px;position: absolute;overflow: auto;z-index: 10000;overflow-x: hidden;height: auto !important;}
 .cars-sc .cars-sc-lists{border-bottom: 1px solid #d9d9d9; margin-bottom: 10px;}
 .cars-sc .cars-sc-last{border-bottom: none;}
-#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li{float: left !important;width: 80px !important;color: #666;line-height: 1.8em;margin-bottom: 5px;}
+#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li{float: left !important;width: 90px !important;color: #666;line-height: 1.8em;margin-bottom: 5px;}
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a:hover{color: #ff6700 !important;background-color: #fff;}
-#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a{font-size: 13px;}
-.cars-sc .panel{color: #333;font-size: 14px;}
+#list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a{font-size: 12px;padding-left: 0px;}
+.cars-sc .panel{color: #333;font-size: 14px;padding-left: 5px;}
 .sc-color{width: 228px; height:15px;}
 .sc-color a{display: block;float: left;width: 19px;height: 15px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #b2b2b2;}
@@ -415,6 +415,7 @@ border-bottom-left-radius: 3px;
 #list_wrap .list_main .list_content_carInfo h1{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:1.5em;height:50px;overflow:hidden;font-size:16px;margin-bottom:10px}
 #list_wrap .list_main .list_content_carInfo h1 a{color:#333}
 #list_wrap .list_main .list_content_carInfo h1 a:hover{color:#e70}
+#list_wrap .list_main .list_content_carInfo h1 a:visited{color: #800080;}
 #list_wrap .list_main .list_content_carInfo .list_content_price{margin-bottom:10px}
 #list_wrap .list_main .list_content_carInfo .list_content_price div{color:#666;font-size:16px;width:172px;height:34px;line-height:34px;text-align:center;background-color:#d9d9d9;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;float:left}
 #list_wrap .list_main .list_content_carInfo .list_content_price .list_content_price_new{background-color:#e70;color:#fff;font-size:24px}
