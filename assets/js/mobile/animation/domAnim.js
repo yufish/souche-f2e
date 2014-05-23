@@ -314,6 +314,10 @@ var animateFuncs_s2 = function () {
         }
     }
 
+    app.use(function(next){
+        $('#next').hide();
+        next();
+    })
     app.use(
         function (next) {
             var repeatNext = repeat(2, next);
@@ -457,6 +461,10 @@ var animateFuncs_s3 = function () {
             funcs.push(f);
         }
     }
+    app.use(function(next){
+        $('#next').hide();
+        next();
+    })
     app.use(
         function (next) {
             var repeatNext = repeat(2, next);
@@ -628,12 +636,11 @@ if (!('ontouchstart' in window)) {
 
 
 $('#start').on('click', function () {
-    next.stop();
     window.location.href = 'custom-search.html';
 })
 
 var winH = $(window).height();
-
+var maxMove = 100;
 function createTouch(screenIndex){
     var startPosY=0;
     var dst;
@@ -652,7 +659,13 @@ function createTouch(screenIndex){
                 })
 
         }else{
-            if(dst<-120){
+            if(dst<-maxMove){
+                if(screenIndex==3){
+                    $(can1).velocity({
+                        'margin-top':-2*winH
+                    },100)
+                    return;
+                }
                 $(can1).velocity({
                     'margin-top':-screenIndex*winH
                 },100)
@@ -663,9 +676,15 @@ function createTouch(screenIndex){
                     }
                     animationMap[idx] = true;
                 }
-            }else if(dst>120){
+            }else if(dst>maxMove){
+                if(screenIndex==1){
+                    $(can1).velocity({
+                        'margin-top':0
+                    },100)
+                    return;
+                }
                 $(can1).velocity({
-                    'margin-top':'+='+winH
+                    'margin-top':-winH*(screenIndex-2)
                 },100)
             }else{
                 $(can1).velocity({
