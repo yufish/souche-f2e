@@ -253,7 +253,8 @@ a:hover {
   float: left;
   line-height: 30px;
   font-weight: bold;
-  width: 30px;
+  width: 60px;
+  text-align: right;
   height: 30px;
 }
 #index .qiugou .form .form-item .input {
