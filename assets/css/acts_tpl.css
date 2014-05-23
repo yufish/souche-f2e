@@ -175,7 +175,7 @@
 #acts_tpl .banner .act-nav {
   position: absolute;
   top: 50%;
-  margin-top: -64.99999999px;
+  margin-top: -65px;
   width: 65px;
   height: 130px;
 }
@@ -318,9 +318,6 @@
 }
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;
-}
-#acts_all {
-  overflow: hidden;
 }
 #acts_all .hr1 {
   width: 1170px;
