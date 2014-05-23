@@ -73,6 +73,11 @@ var animateFuncs_head = function (exports) {
             funcs.push(f);
         }
     }
+    var winW = $(window).width();
+    var left = winW/2-130;
+    $('#progress').css({
+        left:left
+    })
     //preload images for smooth animation
     app.use(function (next) {
         var once = function (next) {
@@ -99,7 +104,7 @@ var animateFuncs_head = function (exports) {
                     if (++j == len) {
                         once();
                     }
-                    $('#progress').val(j / len * 100);
+                    $('#progress').css({width:(j/len)*260});
                 }
             }(key)
         }
