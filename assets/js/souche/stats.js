@@ -53,7 +53,7 @@ $(document).ready(function() {
         var data = {
             page_x: e.pageX - ($(window).width() / 2 - 595),
             page_y: e.pageY,
-            element_id: e.target.id || "",
+            element_id: $(e.target).attr("click_type") || "",
             page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com"),
             refer_url: document.referrer,
             user_agent: navigator.userAgent,
