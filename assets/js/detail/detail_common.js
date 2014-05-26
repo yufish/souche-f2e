@@ -18,7 +18,28 @@
     require(['detail/draw-price-down'], function(DrawPriceDown) {
         DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
     })
+    var width = 642;
+    var price = [35.6, 46.3]
+    var length = [45, 520]
 
+        function createInterpolation(minV, maxV, minD, maxD) {
+            var vGap = maxV - minV,
+                dGap = maxD - minD;
+            return function(value) {
+                return (value - minV) / vGap * dGap;
+            }
+        }
+    var getMiddlePoint = createInterpolation(35.6, 46.3, 45, 520);
+    var midD = getMiddlePoint(42.4);
+    $('#sc-price').css({
+        left: 45
+    })
+    $('#new-price').css({
+        left: midD
+    })
+    $('#guide-price').css({
+        left: 520
+    })
     $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();

@@ -15,10 +15,10 @@
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
     <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
-    <link href="http://res.souche.com/assets/css/souche/ui.css " rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css " rel="stylesheet" type="text/css" />
     <link href="http://res.souche.com/css/fed/common_v2.css?t=17" rel="stylesheet" type="text/css" />
-    <link href="http://res.souche.com/assets/css/detail/detail.css?t=15" rel="stylesheet" type="text/css" />
-    <link href="http://res.souche.com/assets/css/souche/common.css?t=25" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/detail/detail.css?t=15" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/common.css?t=25" rel="stylesheet" type="text/css" />
     <script>
       var contextPath = "";
     </script>
@@ -30,25 +30,27 @@
     <script type="text/javascript" src="http://res.souche.com/js/menu/jquery.hoverIntent.minified.js"></script>
     <script type="text/javascript" src="http://res.souche.com/js/menu/jquery.dcmegamenu.1.3.3.min.js"></script>
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="http://res.souche.com/assets/js/souche/stats.js?t=6"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/stats.js?t=6"></script>
     <script type="text/javascript" src="http://res.souche.com/js/fed/common.js?t=1119"></script>
-    <script type="text/javascript" src="http://res.souche.com/assets/js/souche.js?t=18"></script>
-    <link href="http://res.souche.com/assets/css/sidebar.css?t=21" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://res.souche.com/assets/js/index/sidebar.js?t=17"></script>
-    
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js?t=18"></script>
+    <link href="http://f2e.souche.com/assets/css/sidebar.css?t=21" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/sidebar.js?t=17"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/svg.min.js?t=17"></script>
+     <script type="text/javascript" src="http://res.souche.com/assets/js/lib/require.js?t=13"></script>
+    <script>
+      var contextPath = "";
+      require.config({
+        baseUrl: "http://f2e.souche.com/assets/js",
+        urlArgs:"bust=v6"
+      });
+    </script>
+
     
   </head>
   
 <body id="onsale_detail">
-  
-
-
-
-
-
-     
   <div id="header">
-      <div class="wrapper"><a href="http://www.souche.com" class="logo"><img src="http://res.souche.com/assets/images/index/logo.png?1234"></a>
+      <div class="wrapper"><a href="http://www.souche.com" class="logo"><img src="http://f2e.souche.com/assets/images/index/logo.png?1234"></a>
         <div class="search" >
           <form action="/pages/onsale/sale_car_list.html">
             <input click_type="index-keywordsearch" type="text" name="keyword" placeholder="请输入关键字，如奥迪" value="" class="search-text" >
@@ -69,7 +71,7 @@
           <a target="_blank"  href="/pages/onsale/sale_car_list.html?keyword=SUV">SUV</a>
           </div>
         </div>
-        <div class="head-tel"><img src="http://res.souche.com/assets/images/index/head-tel.png?t=11" ></div>
+        <div class="head-tel"><img src="http://f2e.souche.com/assets/images/index/head-tel.png?t=11" ></div>
       </div>
     </div>
     <script>$(".search-text").focus();</script>
@@ -355,9 +357,126 @@
         </div>
     </div>
     <!--detail_main-->
+    <div class="onsale-summary">
+      <div class="onsale-tab">
+        <a class="onsale-tab-item ">检测报告</a>
+        <a class="onsale-tab-item active">价格报告</a>
+        <a class="onsale-tab-item">口碑</a>
+        <a class="onsale-tab-item">配置</a>
+        <a class="onsale-tab-item">资讯</a>
+        <a class="onsale-tab-item">视频图片</a>
+        <a class="onsale-tab-item">保养费用</a>
+      </div>
+      <div class="onsale-content">
+        <div class="onsale-content-item hidden">
+          <div class="net-koubei">
+            <div class="koubei-title">网络口碑</div>
+          </div>
+        </div>
+        <div class="onsale-content-item">
+          <div class="price-report">
+            <div class="report-title">2012款 宝马X1-sDrive20i-2.0T-手自一体领先型后驱 价格报告</div>
+            <div class="report-item">
+              <div class="report-item-title">价格分布<hr/></div>
+              <div class="report-item-content">
+                <div id="price-distribution" class="clearfix">
+                  <div id="price-chart-area">
+                      <div id="sc-price" class="price-point">
+                          <div class="price-circle sc-circle">
+                          </div>
+                          <div class="tri sc-tri"></div>
+                          <div class="price-tag sr-tag">
+                              <div class="price-title sc-title">大搜车价</div>
+                              <div class="price-value sc-value">
+                                  ￥35.6万
+                              </div>
+                          </div>
+                          <div id="price-rate">
+                              <i class="tip"></i>折价率 63%
+                          </div>
+                      </div>
+                      <div id="new-price" class="price-point">
+                          <div class="price-circle new-circle">
 
+                          </div>
+                          <div class="tri new-tri"></div>
+                          <div class="price-tag new-tag">
+                              <div class="price-title new-title">新车平均成交价</div>
+                              <div class="price-value">
+                                  <i class="tip"></i>￥42.4万
+                              </div>
+                          </div>
+                      </div>
+                      <div id="guide-price" class="price-point">
+                          <div class="price-circle guide-circle">
+
+                          </div>
+                          <div class="tri guide-tri"></div>
+                          <div class="price-tag guide-tag">
+
+                              <div class="price-title guide-title">新车厂商指导价</div>
+                              <div class="price-value">
+                                  ￥46.3万
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="price-comment-area">
+                      <div class="souche-price">
+                          大搜车价：<span class="souche-price-text">￥35.6万</span>
+                      </div>
+                      <p>比新车平均成交价(42.4万)省6.8万</p>
+                      <p>折价率63%</p>
+
+                      <div class="comment-tip1 clearfix">
+                          <div>
+                              <div class="formula-1"><i class="tip"></i>折价率 =</div>
+                              <div class="formula-2">
+                                  <div class="fenshu">
+                                      <div class="fenzi">
+                                          大搜车价
+                                      </div>
+                                      <div class="fenmu">
+                                          新车平均成交价
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="formula-3">
+                                  × 100%
+                              </div>
+                          </div>
+                      </div>
+                      <div class="comment-tip2 clearfix">
+                          <i class="tip"></i>
+                          <p class="text">新车平均成交价数据来自于车主最终成交价格，数据真实可靠</p>
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>  
+            <div class="report-item report-zhejiu">
+              <div class="report-item-title">预期折旧曲线<hr/></div>
+              <div class="report-item-content clearfix">
+                <div id="price_zhejiu" ></div>
+                <div id="price-comment-area">
+                      <div class="souche-price">
+                          五年内平均折价率：<span class="souche-price-text">￥35.6万</span>
+                      </div>
+                      <p>平均每年折旧：<em>1.3万元</em></p>
+                      <div class="comment-tip1 clearfix">
+                          <i class="tip"></i>
+                          <p class="text">折旧价格为粗略估值，仅供参考</p>
+                      </div>
+                  </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="onsale-content-item hidden">
     <!--onsale_sum-->
-    <div class="onsale_wrap" id="onsale_sum">
+    <div class="onsale_wrap hidden" id="onsale_sum">
       <div class="onsale_content clearfix">
         <h1>大搜车检测报告</h1>
         <div class="checker">
@@ -939,7 +1058,7 @@
       </div>
     </div>
     <!--onsale_record end-->
-    
+    </div>
 
     <!--detail_door-->
     <div class="detail-door clearfix onsale_wrap" id="detailDoor">
@@ -1263,7 +1382,7 @@
    
 <div class="my-advisor" id="my-advisor">
       <a class="my-advisor-box" click_type="toolbar-matchcar"  href="/pages/onsale/match_car_list.html">
-        <img src="http://res.souche.com/assets/images/common/my-advisor-person.png?t=1"/>
+        <img src="http://f2e.souche.com/assets/images/common/my-advisor-person.png?t=1"/>
         <span>我的</span>
         <p>买车顾问</p>
         <i class="point-num hidden" id="advisor_notice">1</i>
@@ -1306,12 +1425,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <a class="close"></a>
     <div class="guwen-flexslider">
                 <ul class="slides">
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/1.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s1.png?t=1"><a target="_blank" href="http://qiang.souche.com"></a></li>
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/2.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s2.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=b9e53dca-5bc7-482f-9065-0d4f2ff40e9f"></a></li>
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/3.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s3.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=8a7c14d4-0a39-4d43-ad71-5d18fe8a05ee"></a></li>
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/4.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s4.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=edae2b80-0631-421b-ba5e-1329e452dfd4"></a></li>
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/5.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s5.png?t=1"><a target="_blank" href="http://www.souche.com/pages/onsale/sale_car_list.html?carSeries=&carBrand=brand-25&carPrice=0-100000000&carModel=6&carMileage=0-8000&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose"></a></li>
-                    <li data-image="http://res.souche.com/assets/images/common/guwen-slides/6.png?t=1" data-small-image="http://res.souche.com/assets/images/common/guwen-slides/s6.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=edae2b80-0631-421b-ba5e-1329e452dfd4"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/1.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s1.png?t=1"><a target="_blank" href="http://qiang.souche.com"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/2.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s2.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=b9e53dca-5bc7-482f-9065-0d4f2ff40e9f"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/3.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s3.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=8a7c14d4-0a39-4d43-ad71-5d18fe8a05ee"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/4.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s4.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=edae2b80-0631-421b-ba5e-1329e452dfd4"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/5.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s5.png?t=1"><a target="_blank" href="http://www.souche.com/pages/onsale/sale_car_list.html?carSeries=&carBrand=brand-25&carPrice=0-100000000&carModel=6&carMileage=0-8000&carYear=0&carPurpose=&sortCreate=&sortName=&sortType=#choose"></a></li>
+                    <li data-image="http://f2e.souche.com/assets/images/common/guwen-slides/6.png?t=1" data-small-image="http://f2e.souche.com/assets/images/common/guwen-slides/s6.png?t=1"><a target="_blank" href="http://manage.souche.com/pages/huodong/item.html?id=edae2b80-0631-421b-ba5e-1329e452dfd4"></a></li>
                 </ul>
               </div>
               <a class="link" click_type="souche-linkmatchcarlist" href="/pages/onsale/match_car_list.html" target="_parent"><div class="text-box"><span class="label">全新购车之旅从此开始 ></span><span class="btn">定制我的购车需求</span></div></a>
@@ -1319,9 +1438,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </div>
 <a click_type="footerv2-dasouche" class="guwen-show-global" id="guwen_show_global" title="大搜车能做什么？">展开</a>
 
-  <script type="text/javascript" src="http://res.souche.com/assets/js/detail/onsale_detail.js?t=5"></script>
-  <script type="text/javascript" src="http://res.souche.com/assets/js/detail/detail_common.js?t=4"></script>
-  <script type="text/javascript" src="http://res.souche.com/assets/js/index/guwen-slide.js?t=4"></script>
+  <script type="text/javascript" src="http://f2e.souche.com/assets/js/detail/onsale_detail.js?t=5"></script>
+  <script type="text/javascript" src="http://f2e.souche.com/assets/js/detail/detail_common.js?t=4"></script>
+  <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/guwen-slide.js?t=4"></script>
   <script>
   var SaleDetailConfig = {
       api_isLogin:'/pages/evaluateAction/isLogin.json',
