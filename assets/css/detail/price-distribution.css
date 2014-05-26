@@ -77,12 +77,13 @@
     height: 14px;
     display:inline-block;
     vertical-align: -3px;
+    margin-right: 8px;
 }
 #price-distribution #price-rate{
     position: absolute;
     width:100px;
     bottom: -30px;
-    font-size: 14px;
+    font-size: 13px;
     left:-15px
 }
 #price-distribution #price-chart-area{
@@ -92,11 +93,10 @@
     background: url(../../images/detail/price-distribution-bg.png) no-repeat;
 }
 #price-distribution #price-comment-area{
-    height: 295px;
     float:left;
     border-left:1px solid #e4e3e3;
     margin-left: 60px;
-    padding:50px 0 0 35px;
+    padding:40px 0 0 35px;
     font-size:13px;
 }
 #price-distribution #price-comment-area .souche-price-text{
@@ -105,5 +105,43 @@
     font-size: 19px;
 }
 #price-distribution #price-comment-area .souche-price{
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+}
+#price-distribution .comment-tip1{
+    margin-top:75px;
+    color:#999;
+}
+#price-distribution .comment-tip2{
+    color:#999;
+    margin-top: 20px;
+}
+
+#price-distribution .formula-3,
+#price-distribution .formula-1{
+    float:left;
+    line-height: 40px;
+}
+#price-distribution .formula-2{
+    float:left;
+    margin-left: 10px;
+    text-align: center;
+}
+#price-distribution .fenzi{
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+}
+#price-distribution .fenmu{
+    padding:5px;
+}
+#price-distribution .formula-3{
+    float:left;
+    margin-left: 10px;
+    text-align: center;
+}
+#price-distribution .comment-tip2 .tip{
+    float: left;
+}
+#price-distribution .comment-tip2 .text{
+    float: left;
+    width: 275px
 }
