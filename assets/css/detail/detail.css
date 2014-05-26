@@ -2571,6 +2571,7 @@ body {
 }
 .detail_otherCars {
   margin-bottom: 20px;
+  width: 1200px;
 }
 .detail_otherCars .detail_title {
   font-weight: normal;

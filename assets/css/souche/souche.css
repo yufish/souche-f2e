@@ -271,6 +271,7 @@ a.a9:hover {
   color: #aaa;
   font-weight: normal;
   height: auto;
+  cursor: default;
 }
 .sc-select-hd .sc-selected-item {
   border-radius: 3px;
@@ -287,6 +288,7 @@ a.a9:hover {
   border: 1px solid #bababa;
   cursor: pointer;
   white-space: nowrap;
+  cursor: default;
 }
 .sc-select.sc-active .sc-select-hd .sc-selected-item {
   background: #fff7ec;

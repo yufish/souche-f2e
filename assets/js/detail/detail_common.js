@@ -15,6 +15,10 @@
         return false;
     });
 
+    require(['detail/draw-price-down'], function(DrawPriceDown) {
+        DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+    })
+
     $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();
