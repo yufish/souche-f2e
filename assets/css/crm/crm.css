@@ -20,7 +20,7 @@
 #crm #nav {
   width: 110px;
   float: left;
-  height: 1920px;
+  height: 1495px;
   background-color: #363636;
 }
 #crm #nav .nav-title {
@@ -55,7 +55,7 @@
   padding: 15px;
   float: left;
   width: 1170px;
-  height: 1900px;
+  height: 1495px;
 }
 #crm #content .cont .active a {
   background-color: #FAFAFA;
@@ -296,6 +296,10 @@
   color: #EBEBEC;
   background-color: #127BD2;
 }
+#crm #content .daodian .daodian-detail {
+  overflow: auto;
+  height: 185px;
+}
 #crm #content .daodian table tr {
   border-bottom: 1px solid #F5F5F5;
   height: 30px;
@@ -315,7 +319,71 @@
   font-size: 13px;
   color: #666;
 }
+#crm #content .daodian table td i {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #EC5D57;
+  float: left;
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+#crm #content .daodian table td span {
+  float: left;
+}
 #crm #content .daodian table .record {
-  width: 360px;
+  width: 430px;
   text-align: left;
+}
+#crm #content .carchange {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 15px;
+}
+#crm #content .carchange .change .changesum {
+  float: left;
+  line-height: 25px;
+  font-size: 14px;
+  width: 95px;
+  font-weight: bold;
+  margin-right: 25px;
+}
+#crm #content .carchange .change .change-table {
+  float: left;
+  height: 195px;
+  overflow: auto;
+}
+#crm #content .carchange .change .change-table table tr {
+  border-bottom: 1px solid #F5F5F5;
+  height: 30px;
+  width: 100%;
+}
+#crm #content .carchange .change .change-table table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+}
+#crm #content .carchange .change .change-table table td {
+  text-align: left;
+  font-size: 13px;
+  color: #666;
+}
+#crm #content .carchange .change .change-table table .carname {
+  width: 400px;
+}
+#crm #content .carchange .change .change-table table .time {
+  width: 110px;
+}
+#crm #content .carchange .change .change-table table .reason {
+  width: 120px;
+}
+#crm #content .carchange .change .change-table table .price {
+  width: 125px;
+}
+#crm #content .carchange .change .change-table table .condition {
+  width: 130px;
+}
+#crm #content .carchange .change .change-table table .relevance {
+  width: 105px;
 }
