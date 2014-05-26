@@ -90,7 +90,30 @@ Souche.UI.CustomSelect = function() {
         //绑定输入框的点击事件
         _bindClick: function() {
             var self = this;
+            var mouseOverStatus = 0;
 
+            function checkShow() {
+                var list = $(".sc-select-list", self.ele);
+                if (mouseOverStatus) {
+                    $(".sc-select-list").addClass("hidden");
+                    self.showOptions();
+                    $(".sc-select-list", self.ele).css({
+                        top: $(".sc-select-hd", self.ele).height() + 2
+                    });
+                    if (self.config.isAutoDrop) {
+                        self._autoDrop(list);
+                    }
+                    $(".sc-select-list", self.ele).scrollTop(0)
+                    $(list[0].parentNode).css({
+                        zIndex: Souche.Data.DropdownzIndex++
+                    });
+                } else {
+                    self.hideOptions();
+                    list.css({
+                        top: 30
+                    });
+                }
+            }
             $(".sc-select-hd", this.ele).click(function(e) {
                 var list = $(".sc-select-list", self.ele);
                 if ($(".sc-select-list", self.ele).hasClass("hidden")) {
@@ -114,7 +137,20 @@ Souche.UI.CustomSelect = function() {
                 }
 
                 e.stopPropagation();
-            });
+            })
+            $(this.ele).mouseenter(function() {
+                mouseOverStatus = 1;
+
+                setTimeout(function() {
+                    checkShow();
+                }, 500);
+
+            }).mouseleave(function() {
+                mouseOverStatus = 0;
+                setTimeout(function() {
+                    checkShow();
+                }, 500);
+            })
 
 
 
