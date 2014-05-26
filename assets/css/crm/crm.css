@@ -20,6 +20,8 @@
 #crm #nav {
   width: 110px;
   float: left;
+  height: 1920px;
+  background-color: #363636;
 }
 #crm #nav .nav-title {
   background-color: #434343;
@@ -28,4 +30,22 @@
   height: 50px;
   line-height: 50px;
   padding-left: 10px;
+}
+#crm #nav .nav-title i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  float: left;
+  background: url(../../images/crm/hujiao.png) no-repeat;
+  margin-top: 19px;
+  margin-right: 5px;
+}
+#crm #nav .nav-title span {
+  display: block;
+  float: left;
+}
+#crm #content {
+  background-color: #FAFAFA;
+  padding-left: 15px;
+  float: left;
 }
