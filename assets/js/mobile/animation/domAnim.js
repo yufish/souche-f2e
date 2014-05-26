@@ -640,7 +640,7 @@ $('#start').on('click', function () {
 })
 
 var winH = $(window).height();
-var maxMove = 100;
+var maxMove = 80;
 var recoverT=100,
     animateT =500;
 function createTouch(screenIndex){
@@ -665,7 +665,7 @@ function createTouch(screenIndex){
                 if(screenIndex==3){
                     $(can1).velocity({
                         'margin-top':-2*winH
-                    },animateT)
+                    },recoverT)
                     return;
                 }
                 $(can1).velocity({
