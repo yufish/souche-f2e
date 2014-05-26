@@ -5,21 +5,24 @@ define(function() {
             var nowYear = new Date().getFullYear();
             var Years = ["当前", nowYear + 1 + "年", nowYear + 2 + "年", nowYear + 3 + "年", nowYear + 4 + "年", nowYear + 5 + "年"];
             var point = data;
+            var viewWidth = 680;
+            var viewHeight = 420;
             var draw = SVG("price_zhejiu").size(680, 420);
-            var beginX = 20;
-            var beginY = 50;
+            var beginX = 10;
+            var beginY = 0;
             var step = 0; //根据最大最小值换算位置
-            var Max = 0;
-            var Min = data[0];
+            var Max = data[0];
+            var Min = 0;
+            var maxReal = 280;
+            var minReal = 40;
             //获取最大最小值
             for (var i = 0; i < data.length; i++) {
-                if (data[i] < Min) {
-                    Min = data[i];
-                }
+
                 if (data[i] > Max) {
                     Max = data[i];
                 }
             }
+            Min = 0;
             var concat = function(str, arr) {
                 var count = 0;
                 for (var i in arr) {
@@ -36,14 +39,14 @@ define(function() {
                 return str;
             }
             draw.polyline(
-                concat('?,? ?,? ?,?', [0, 10, 0, 330, 640, 330])
+                concat('?,? ?,? ?,?', [20, 10, 20, 330, 640, 330])
             ).fill('none').stroke({
                 width: 3
             });
             //横向箭头
             draw.path(concat("M ?,? L ? ? L ? ? z", [640, 325, 650, 330, 640, 335]))
             //竖向箭头
-            draw.path(concat("M ?,? L ? ? L ? ? z", [20, 20, 5, 10, -5, 10]))
+            draw.path(concat("M ?,? L ? ? L ? ? z", [20, 0, 25, 10, 15, 10]))
             for (var i = 0; i < Years.length; i++) {
                 draw.plain(Years[i]).attr({
                     x: i * 120 + beginX,
@@ -57,16 +60,16 @@ define(function() {
                 var i = i * 1;
                 var pointNow = {
                     x: (i) * 120 + 20,
-                    y: (300 - val) + 4
+                    y: 340 - ((val - Min) * (maxReal - minReal) / (Max - Min) + minReal)
                 }
                 if (i < point.length - 1) {
                     var val2 = point[i + 1];
 
                     var pointNext = {
                         x: ((i + 1) * 120) + 20,
-                        y: (300 - val2) + 4
+                        y: 340 - ((val2 - Min) * (maxReal - minReal) / (Max - Min) + minReal)
                     }
-                    var p = concat("M? ? C? ? ? ? ? ?", [pointNow.x, pointNow.y, pointNow.x + 50, pointNow.y + 40, pointNext.x, pointNext.y - 10, pointNext.x, pointNext.y])
+                    var p = concat("M? ? C? ? ? ? ? ?", [pointNow.x, pointNow.y, pointNow.x + 40, pointNow.y + 30, pointNext.x - 40, pointNext.y - 30, pointNext.x, pointNext.y])
                     draw.path(p).fill("none").stroke({
                         color: "#ddd",
                         width: 10,
@@ -95,24 +98,24 @@ define(function() {
                     }).fill("#ff7700")
                 }
                 if (i == 0) {
-                    draw.circle(14).move(i * 120 + 14 + beginX, 300 - val + beginY).fill({
+                    draw.circle(14).move(pointNow.x - 6 + beginX, pointNow.y - 6 + beginY).fill({
                         color: "#fc7000"
                     }).stroke({
                         color: "#c25701",
-                        width: 2
+                        width: 1
                     })
-                    draw.circle(30).move(i * 120 + 6 + beginX, 300 - val - 8 + beginY).fill({
+                    draw.circle(30).move(pointNow.x - 14 + beginX, pointNow.y - 14 + beginY).fill({
                         color: "#fc7000",
                         opacity: 0.3
                     })
                 } else {
-                    draw.circle(14).move(i * 120 + 14 + beginX, 300 - val + beginY).fill({
+                    draw.circle(14).move(pointNow.x - 6 + beginX, pointNow.y - 6 + beginY).fill({
                         color: "#61b25e"
                     }).stroke({
                         color: "#187541",
-                        width: 2
+                        width: 1
                     })
-                    draw.circle(30).move(i * 120 + 6 + beginX, 300 - val - 8 + beginY).fill({
+                    draw.circle(30).move(pointNow.x - 14 + beginX, pointNow.y - 14 + beginY).fill({
                         color: "#61b25e",
                         opacity: 0.3
                     })

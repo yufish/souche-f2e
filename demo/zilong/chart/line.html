@@ -5,6 +5,18 @@
     <title></title>
     <link rel="stylesheet" href="../../../assets/css/detail/price-distribution.css">
     <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <style>
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {
+            display: block;
+        }
+    </style>
     <script src="../../../assets/js/lib/jquery-1.7.1.min.js"></script>
 </head>
 <body>
@@ -21,7 +33,7 @@
                     </div>
                 </div>
                 <div id="price-rate">
-                    <i class="tip"></i>折价率63%
+                    <i class="tip"></i>折价率${63%}
                 </div>
             </div>
             <div id="new-price" class="price-point">
@@ -55,15 +67,30 @@
                 大搜车价：<span class="souche-price-text">￥35.6万</span>
             </div>
             <p>比新车平均成交价(42.4万)省6.8万</p>
-            <p>折价率</p>
+            <p>折价率63%</p>
 
-            <div class="comment-tip1">
+            <div class="comment-tip1 clearfix">
                 <div>
-                    <div><i class="tip"></i>大搜车价</div>
-                    <div></div>
+                    <div class="formula-1"><i class="tip"></i>折价率 =</div>
+                    <div class="formula-2">
+                        <div class="fenshu">
+                            <div class="fenzi">
+                                大搜车价
+                            </div>
+                            <div class="fenmu">
+                                新车平均成交价
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-3">
+                        × 100%
+                    </div>
                 </div>
             </div>
-            <div class="comment-tip2"></div>
+            <div class="comment-tip2 clearfix">
+                <i class="tip"></i>
+                <p class="text">新车平均成交价数据来自于车主最终成交价格，数据真实可靠</p>
+            </div>
         </div>
     </div>
     <script>
