@@ -78,8 +78,8 @@
       <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74901575" vertical-offset="9529" max-vertical-offset="11340">
-              <caret line="686" column="17" selection-start-line="686" selection-start-column="17" selection-end-line="686" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5570866" vertical-offset="9529" max-vertical-offset="11340">
+              <caret line="673" column="39" selection-start-line="673" selection-start-column="39" selection-end-line="673" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -745,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74901575" vertical-offset="9529" max-vertical-offset="11340">
-          <caret line="686" column="17" selection-start-line="686" selection-start-column="17" selection-end-line="686" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5570866" vertical-offset="9529" max-vertical-offset="11340">
+          <caret line="673" column="39" selection-start-line="673" selection-start-column="39" selection-end-line="673" selection-end-column="39" />
           <folding />
         </state>
       </provider>
