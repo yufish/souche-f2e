@@ -22,7 +22,7 @@
   #nav{
     width: 110px;
     float: left;
-    height: 1920px;
+    height: 1495px;
     background-color: #363636;
     .nav-title{
       background-color: #434343;
@@ -57,7 +57,7 @@
     padding: 15px;
     float: left;
     width: 1170px;
-    height: 1900px;
+    height: 1495px;
     .cont{
       .active{
         a{
@@ -302,6 +302,10 @@
           background-color: #127BD2;
         }
       }
+      .daodian-detail{
+        overflow: auto;
+        height: 185px;
+      }
       table{
         tr{
           border-bottom: 1px solid #F5F5F5;
@@ -321,10 +325,80 @@
           text-align: center;
           font-size: 13px;
           color: #666;
+          i{
+            width: 10px;
+            height: 10px;
+            display: block;
+            background-color: #EC5D57;
+            float: left;
+            margin-top: 5px;
+            margin-right: 5px;
+            border-radius: 10px;
+          }
+          span{
+            float: left;
+          }
         }
         .record{
-          width: 360px;
+          width: 430px;
           text-align: left;
+        }
+      }
+    }
+    .carchange{
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 15px;
+      .change{
+        .changesum{
+          float: left;
+          line-height: 25px;
+          font-size: 14px;
+          width: 95px;
+          font-weight: bold;
+          margin-right: 25px;
+        }
+        .change-table{
+          float: left;
+          height: 195px;
+          overflow: auto;
+          table{
+            tr{
+              border-bottom: 1px solid #F5F5F5;
+              height: 30px;
+              width: 100%;
+            }
+            th{
+              text-align: left;
+              
+              font-size: 13px;
+              font-weight: bold;
+            }
+            td{
+             
+              text-align: left;
+              font-size: 13px;
+              color: #666;
+            }
+            .carname{
+              width: 400px;
+            }
+            .time{
+              width: 110px;
+            }
+            .reason{
+              width: 120px;
+            }
+            .price{
+              width: 125px;
+            }
+            .condition{
+              width: 130px;
+            }
+            .relevance{
+              width: 105px;
+            }
+          }
         }
       }
     }
