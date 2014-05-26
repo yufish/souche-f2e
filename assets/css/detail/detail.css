@@ -4853,6 +4853,7 @@ less .icon-fei {
 }
 .onsale-summary .report-item-content {
   padding: 100px 0;
+  padding-left: 50px;
 }
 .onsale-summary #price_zhejiu {
   float: left;
