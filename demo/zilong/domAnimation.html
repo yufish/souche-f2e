@@ -9,21 +9,28 @@
             padding: 0;
         }
         #bg {
-            padding-top: 20px;
             background: url(../../assets/images/mob/animation/bg.png) repeat center center;
         }
         .wrapper {
+            box-sizing: border-box;
             width: 300px;
-            overflow: hidden;
             left: 50%;
             margin-left: -150px;
-            height: 445px;
+            height: 100%;
+            overflow: hidden;
         }
         .canvas {
             width: 300px;
             margin: 0 auto;
             position: absolute;
             height: 100%;
+        }
+        #canvas-1,
+        #canvas-2,
+        #canvas-3 {
+            position: relative;
+            height: 100%;
+            top: 20px
         }
         div {
             position: absolute;
@@ -111,6 +118,7 @@
             margin-left: -150px;
             height: 35px;
             overflow: hidden;
+            top: 20px
         }
         #s2-left {
             top: 160px;
@@ -180,7 +188,7 @@
             right: 15px;
         }
         .start-button {
-            top: 330px;
+            top: 350px;
             left: 41px;
             opacity: 0;
         }
@@ -189,18 +197,18 @@
             z-index: 10;
             line-height: 30px;
             left: 80px;
-            color:#fff;
-            opacity:0.6;
+            color: #fff;
+            opacity: 0.6;
         }
         #progress {
-            left: 20px
+            left: 20px;
             width: 0px;
             height: 30px;
             position: absolute;
             top: 200px;
             background-color: #ff4400;
             border: 0;
-            border-radius: 9px;
+            border-radius: 4px;
             box-sizing: border-box;
         }
         #load-screen {
@@ -210,9 +218,13 @@
             position: relative
         }
         #next {
-            top: 330px;
-            right: 5;
+            top: 350px;
+            left: 140px;
             display: none;
+        }
+        #next img {
+            width: 22px;
+            height: 17px;
         }
     </style>
     <script src='../../assets/js/lib/jquery-1.9.1.min.js'></script>
@@ -292,21 +304,21 @@
         </div>
         <div id='load-screen'>
             <div id='load-msg'>资源加载中,请稍后</div>
-            <div id='progress' ></div>
+            <div id='progress'></div>
         </div>
     </div>
     <script>
         var imgDir = '../../assets/images/mob/animation/';
-        var imgStrs = ['1-left.png','1-left-word.png','circle-1-1.png','1-right.png', '1-right-car.png','1-right-word.png',
-            'vs.png','circle-1-1.png','circle-1-2.png','circle-1-3.png','left-2-1.png','left-2-2.png',
-            'left-2-3.png','2-left-word.png','right-2.png','2-right-word.png',
-            'circle-2-1.png', 'circle-2-2.png','circle-2-3.png','left-3-1.png','left-3-2.png',
-            'left-3-3.png', 'right-3-1.png','right-3-2.png','circle-3-1.png','circle-3-2.png',
-            'circle-3-3.png','3-left-word.png','3-right-word.png','start.png','next.gif'];
+        var imgStrs = ['1-left.png', '1-left-word.png', 'circle-1-1.png', '1-right.png', '1-right-car.png', '1-right-word.png',
+            'vs.png', 'circle-1-1.png', 'circle-1-2.png', 'circle-1-3.png', 'left-2-1.png', 'left-2-2.png',
+            'left-2-3.png', '2-left-word.png', 'right-2.png', '2-right-word.png',
+            'circle-2-1.png', 'circle-2-2.png', 'circle-2-3.png', 'left-3-1.png', 'left-3-2.png',
+            'left-3-3.png', 'right-3-1.png', 'right-3-2.png', 'circle-3-1.png', 'circle-3-2.png',
+            'circle-3-3.png', '3-left-word.png', '3-right-word.png', 'start.png', 'next.gif'
+        ];
     </script>
 
     <script src='../../assets/js/mobile/animation/domAnim.js'></script>
-
 </body>
 
 </html>

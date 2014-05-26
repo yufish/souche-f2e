@@ -4824,15 +4824,20 @@ less .icon-fei {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.onsale-summary .price-report .report-item {
+  margin-bottom: 40px;
+}
 .onsale-summary .price-report .report-item-title {
-  font-size: 16px;
-  padding-right: 20px;
+  font-size: 18px;
   color: #444;
 }
 .onsale-summary .price-report .report-item-title hr {
-  background: #eee;
+  background: #ddd;
   border: none;
-  height: 1px;
+  height: 2px;
   font-size: 0;
   line-height: 0;
+  float: right;
+  width: 1010px;
+  margin-top: 13px;
 }
