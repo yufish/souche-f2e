@@ -289,7 +289,7 @@ padding-left: 50px;
 #list_wrap .list_nav .sc-option{width:228px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
 #list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;position: relative;margin-right: 15px;}
-.nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;}
+.nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;margin-top: 20px;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin-left:2px;}
 #list_wrap .list_nav .list_nav_wrap  ul.findall{width:280px;}
@@ -299,7 +299,7 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .list_nav_title label{width:50px;font-size: 14px;color:#333;font-weight: normal;}
 #list_wrap .list_nav .nav_series .list_nav_title label{width:auto;}
 #list_wrap .list_nav .nav_brand .list_nav_title label{float:left;}
-.cars-sc{width: 365px;padding: 15px;background-color: #fff;border: 1px solid #d9d9d9;left: -1px;position: absolute;overflow: auto;z-index: 10000;overflow-x: hidden;height: auto !important;}
+.cars-sc{width: 365px;padding: 15px;background-color: #fff;border: 1px solid #d9d9d9;left: -1px;position: absolute;overflow: auto;z-index: 20000;overflow-x: hidden;height: auto !important;}
 .cars-sc .cars-sc-lists{border-bottom: 1px solid #d9d9d9; margin-bottom: 10px;}
 .cars-sc .cars-sc-last{border-bottom: none;}
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li{float: left !important;width: 90px !important;color: #666;line-height: 1.8em;margin-bottom: 5px;}
