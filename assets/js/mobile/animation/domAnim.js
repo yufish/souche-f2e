@@ -209,8 +209,8 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var h = $(window).height();
             $('#line-1').velocity({
-                height: 190
-            }, 1000, next)
+                height: 185
+            }, 800, next)
         }
     )
 
@@ -219,38 +219,31 @@ var animateFuncs_s1 = function (exports) {
             var img = (images['1-left.png']);
             $('#s1-left').append(img).velocity({
                 left: 0
-            }, 500, next)
+            }, 500)
+            var img = (images['1-left-word.png']);
+            $('#s1-left-word').append(img).velocity({
+                left: 0
+            }, 500, next);
         }
     )
 
     app.use(
         function (next) {
-            var img = (images['1-left-word.png']);
-            $('#s1-left-word').append(img).velocity({
-                left: 0
-            }, 600, next);
-        }
-    )
-    app.use(
-        function (next) {
             var img = (images['1-right.png']);
             $('#s1-right').append(img).velocity({
                 right: 20
-            }, 1000, next);
-        }
-    )
-    app.use(
-        function (next) {
+            }, 1000);
             var img = (images['1-right-car.png']);
             $('#s1-right-car').append(img).velocity({
                 opacity: 1
             }, {
                 easing: 'easeInCirc',
-                duration: 600,
+                duration: 1200,
                 complete: next
             })
         }
     )
+
     app.use(
         function (next) {
             var img1 = images['circle-1-1.png']
@@ -283,10 +276,9 @@ var animateFuncs_s1 = function (exports) {
                 top: 260
             }, {
                 easing: 'easeOutBounce',
-                duration: 1000,
+                duration: 800,
                 complete: next
             });
-
         }
     )
     app.use(
@@ -299,7 +291,7 @@ var animateFuncs_s1 = function (exports) {
     );
     app.use(
         function(next){
-            $('#next').show();
+            $('#next').velocity({opacity:1})
             next();
         }
     )
@@ -315,7 +307,7 @@ var animateFuncs_s2 = function () {
     }
 
     app.use(function(next){
-        $('#next').hide();
+        $('#next').css({opacity:0})
         next();
     })
     app.use(
@@ -363,41 +355,32 @@ var animateFuncs_s2 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-2').velocity({
-                height: 190
-            }, 1000, next)
+                height: 185
+            }, 800, next)
         }
     )
-    //    app.use(
-    //        function (next) {
-    //            var img = images['start.png'];
-    //            $('#start2').append(img).velocity({
-    //                opacity: 1
-    //            }, 200, next)
-    //        }
-    //    )
     app.use(function (next) {
         var img = images['left-2-1.png'];
         $('#s2-left').append(img).velocity({
             left: 0
-        }, 600, next);
+        }, 600);
+        var img = images['2-left-word.png'];
+        $('#s2-left-word').append(img).velocity({
+            left: 0
+        }, 600, next)
     })
     app.use(function (next) {
         var img = images['left-2-2.png'];
         $('#s2-left-2').append(img).velocity({
             top: 130
-        }, 1000, next);
+        }, 600,next);
     })
-    app.use(function (next) {
+
+    app.use(function(next){
         var img = images['left-2-3.png'];
         $('#s2-left-3').append(img).velocity({
             top: '+=15'
         }, 1000, next);
-    })
-    app.use(function (next) {
-        var img = images['2-left-word.png'];
-        $('#s2-left-word').append(img).velocity({
-            left: 0
-        }, 600, next)
     })
 
     app.use(function (next) {
@@ -432,21 +415,19 @@ var animateFuncs_s2 = function () {
             top: 215
         }, {
             delay: 400,
-            duration: 600,
-            complete: next
+            duration: 600
+            //complete: next
         })
-    })
-    app.use(function (next) {
         var img = images['2-right-word.png'];
         $('#s2-right-word').append(img).velocity({
             right: 0,
             opacity: 1
         }, 1000, next)
-
     })
+
     app.use(
         function(next){
-            $('#next').show()
+            $('#next').velocity({opacity:1})
             next();
         }
     )
@@ -462,7 +443,7 @@ var animateFuncs_s3 = function () {
         }
     }
     app.use(function(next){
-        $('#next').hide();
+        $('#next').css({opacity:0})
         next();
     })
     app.use(
@@ -511,8 +492,8 @@ var animateFuncs_s3 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-3').velocity({
-                height: 190
-            }, 1000, next)
+                height: 185
+            }, 800, next)
         }
     )
 
@@ -526,6 +507,10 @@ var animateFuncs_s3 = function () {
             }, 400).velocity({
                 rotateY: '0'
             }, 600, next)
+            var img = images['3-left-word.png'];
+            $('#s3-left-word').append(img).velocity({
+                left: 20
+            }, 600)
         }
     )
     app.use(
@@ -542,12 +527,6 @@ var animateFuncs_s3 = function () {
             wait(500)(next);
         }
     )
-    app.use(function (next) {
-        var img = images['3-left-word.png'];
-        $('#s3-left-word').append(img).velocity({
-            left: 20
-        }, 600, next)
-    })
     app.use(
         function (next) {
             var img = images['right-3-1.png'];
@@ -586,21 +565,21 @@ var animateFuncs_s3 = function () {
             }, {
                 delay: 400,
                 duration: 600,
+                //complete: next
+            })
+
+            var img = images['3-right-word.png'];
+            $('#s3-right-word').append(img).velocity({
+                top: 260,
+                opacity: 1
+            }, {
+                duration: 1000,
+                easing: 'easeOutBounce',
                 complete: next
             })
         }
     )
-    app.use(function (next) {
-        var img = images['3-right-word.png'];
-        $('#s3-right-word').append(img).velocity({
-            top: 260,
-            opacity: 1
-        }, {
-            duration: 1000,
-            easing: 'easeOutBounce',
-            complete: next
-        })
-    })
+
     app.use(
         function (next) {
             var img = images['start.png'];
@@ -633,14 +612,14 @@ if (!('ontouchstart' in window)) {
     touchStart = 'click';
 }
 
-
-
 $('#start').on('click', function () {
     window.location.href = 'custom-search.html';
 })
 
 var winH = $(window).height();
-var maxMove = 100;
+var maxMove = 80;
+var recoverT=100,
+    animateT =500;
 function createTouch(screenIndex){
     var startPosY=0;
     var dst;
@@ -663,12 +642,12 @@ function createTouch(screenIndex){
                 if(screenIndex==3){
                     $(can1).velocity({
                         'margin-top':-2*winH
-                    },100)
+                    },recoverT)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-screenIndex*winH
-                },100)
+                },animateT)
                 var idx = screenIndex+1
                 if(!animationMap[idx]){
                     if(window['next'+idx]) {
@@ -680,16 +659,16 @@ function createTouch(screenIndex){
                 if(screenIndex==1){
                     $(can1).velocity({
                         'margin-top':0
-                    },100)
+                    },recoverT)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-2)
-                },100)
+                },animateT)
             }else{
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-1)
-                },100)
+                },animateT)
             }
         }
     }
@@ -731,7 +710,7 @@ var animationMap=[true,false,false]
 
 
 $('#next').on('click', function () {
-    $(this).hide();
+    $(this).css({opacity:0});
     var next;
     if (curScreen == 1) {
         next = next2
@@ -742,7 +721,7 @@ $('#next').on('click', function () {
 
     $('#canvas-1').velocity({
         'margin-top': '-='+winH
-    }, 1500, function () {
+    }, 1000, function () {
         next.start();
     })
     curScreen++;
