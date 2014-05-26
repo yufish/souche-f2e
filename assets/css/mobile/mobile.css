@@ -3915,6 +3915,9 @@ body {
     position: relative;
     background-color: white;
 }
+#sell-h5-2 img{
+    vertical-align: middle;
+}
 #sell-h5-2 #page-1,
 #sell-h5-2 #page-2,
 #sell-h5-2 #page-3,
