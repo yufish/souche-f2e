@@ -4071,64 +4071,150 @@ body {
     border: none;
     font-size: 16px;
 }
-#sell-h5-2 .content .sell-info {
-    background-color: #f3f3f3;
+#sell-h5-2 .img-ad{
+    box-sizing: border-box;
+}
+#sell-h5-2 .img-ad .intro{
+    padding-left: 45px;
+}
+#sell-h5-2 .img-ad .title{
     font-size: 14px;
-    padding-top: 15px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-#sell-h5-2 .content .sell-info .wrapper {
-    width: 320px;
-    margin: 0 auto;
-    overflow: hidden;
+#sell-h5-2 .img-ad .spec-title{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-title .circle {
-    background: url(../../images/mob/h5-2/sell-circle.png) no-repeat center center;
-    background-size: 7px;
-    width: 14px;
-    height: 14px;
-    float: left;
+#sell-h5-2 .img-ad .content{
+    color: #666;
+    font-size: 12px;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-title .text .tel {
-    color: #007cca;
-    font-size: 16px;
+#sell-h5-2 .img-ad .image-wrapper img{
+    width: 100%;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content {
-    overflow: hidden;
-    margin: 15px 0 40px 15px;
-    padding-left: 10px;
+#sell-h5-2 .img-ad p{
+    line-height: 18px;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process {
-    width: 60px;
-    height: 50px;
-    float: left;
+#sell-h5-2 .ad-1{
+    padding:23px 0 45px;
+    background-color: #f3f3f3;
+}
+#sell-h5-2 .ad-2{
+    padding:32px 0 30px;
+    background-color: #fff;
+}
+#sell-h5-2 .ad-3{
+    padding:35px 0 40px;
+    background-color: #f3f3f3;
+}
+#sell-h5-2 .ad-4{
+    padding:35px 0 40px;
+    background-color: #fff;
+}
+#sell-h5-2 .image-w-1{
+    margin:0 auto;
+    margin-top: 15px;
+    width: 218px;
+    height: 141px;
+}
+#sell-h5-2 .image-w-2{
+    margin:0 auto;
+    margin-top: 30px;
+    width: 232px;
+    height: 115px;
+}
+#sell-h5-2 .image-w-3{
+    margin:0 auto;
+    margin-top: 45px;
+    width: 265px;
+    height: 97px;
+}
+#sell-h5-2 .image-w-4{
+    margin:0 auto;
+    margin-top: 22px;
+    width: 273px;
+    height: 181px;
+}
+#sell-h5-2 .text-center{
     text-align: center;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process .icon {
-    width: 29px;
-    height: 29px;
+#sell-h5-2 .content #faq {
+    background-color: #f3f3f3;
+    padding: 58px 0 30px 45px;
+}
+#sell-h5-2 .content #faq .title {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+}
+#sell-h5-2 .content #faq .title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #262626;
+}
+#sell-h5-2 .content #faq .faq-content {
     margin: 0 auto;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process .icon-1 {
-    background: url(../../images/mob/h5-2/sell-icon-1.png) no-repeat center center;
-    background-size: 29px;
+#sell-h5-2 .content #faq .faq-content .faq-left {
+    float: left;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process .icon-2 {
-    background: url(../../images/mob/h5-2/sell-icon-2.png) no-repeat center center;
-    background-size: 29px;
+#sell-h5-2 .content #faq .faq-content .faq-left .question {
+    margin-bottom: 35px;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process .icon-3 {
-    background: url(../../images/mob/h5-2/sell-icon-1.png) no-repeat center center;
-    background-size: 29px;
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title {
+    border-bottom: 3px solid #262626;
+    margin-right: 45px;
+
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .process .icon-4 {
-    background: url(../../images/mob/h5-2/sell-icon-1.png) no-repeat center center;
-    background-size: 29px;
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title i {
+    display: inline-block;
+    vertical-align: -3px;
+    width: 15px;
+    height: 15px;
+    background: url(../../images/mob/sellcar/q.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: 5px;
 }
-#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .text {
-    padding-left: 10px;
-    width: 280px;
-    margin: 5px 0;
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title span {
+    font-size: 14px;
+    color: #262626;
+    line-height: 20px;
 }
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer {
+    margin-top: 15px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer p {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer p a {
+    color: #0090cc;
+    cursor: pointer;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q2 .q-answer h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    margin-top: 15px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer ul li {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer .answer-left {
+    float: left;
+    margin-right: 60px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer .answer-right {
+    float: left;
+}
+
 .addr {
     color: #007cca;
 }
