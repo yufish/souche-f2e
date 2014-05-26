@@ -663,12 +663,12 @@ function createTouch(screenIndex){
                 if(screenIndex==3){
                     $(can1).velocity({
                         'margin-top':-2*winH
-                    },100)
+                    },1000)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-screenIndex*winH
-                },100)
+                },1000)
                 var idx = screenIndex+1
                 if(!animationMap[idx]){
                     if(window['next'+idx]) {
@@ -680,16 +680,16 @@ function createTouch(screenIndex){
                 if(screenIndex==1){
                     $(can1).velocity({
                         'margin-top':0
-                    },100)
+                    },1000)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-2)
-                },100)
+                },1000)
             }else{
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-1)
-                },100)
+                },1000)
             }
         }
     }
@@ -742,7 +742,7 @@ $('#next').on('click', function () {
 
     $('#canvas-1').velocity({
         'margin-top': '-='+winH
-    }, 1500, function () {
+    }, 1000, function () {
         next.start();
     })
     curScreen++;
