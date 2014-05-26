@@ -52,7 +52,7 @@ app.configure(function() {
         _path = path.join(config.demo_path, req.params[0] + ".jade");
         console.log(_path)
         if (fs.existsSync(_path)) {
-            return res.render("./../../../demo/" + req.params[0] + ".jade", {
+            return res.render(_path, {
                 pretty: true
             });
         } else {
