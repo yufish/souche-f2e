@@ -641,6 +641,8 @@ $('#start').on('click', function () {
 
 var winH = $(window).height();
 var maxMove = 100;
+var recoverT=100,
+    animateT =500;
 function createTouch(screenIndex){
     var startPosY=0;
     var dst;
@@ -663,12 +665,12 @@ function createTouch(screenIndex){
                 if(screenIndex==3){
                     $(can1).velocity({
                         'margin-top':-2*winH
-                    },1000)
+                    },animateT)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-screenIndex*winH
-                },1000)
+                },animateT)
                 var idx = screenIndex+1
                 if(!animationMap[idx]){
                     if(window['next'+idx]) {
@@ -680,16 +682,16 @@ function createTouch(screenIndex){
                 if(screenIndex==1){
                     $(can1).velocity({
                         'margin-top':0
-                    },1000)
+                    },recoverT)
                     return;
                 }
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-2)
-                },1000)
+                },animateT)
             }else{
                 $(can1).velocity({
                     'margin-top':-winH*(screenIndex-1)
-                },1000)
+                },animateT)
             }
         }
     }
