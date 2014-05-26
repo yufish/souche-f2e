@@ -69,7 +69,7 @@ define(function() {
                         x: ((i + 1) * 120) + 20,
                         y: 340 - ((val2 - Min) * (maxReal - minReal) / (Max - Min) + minReal)
                     }
-                    var p = concat("M? ? C? ? ? ? ? ?", [pointNow.x, pointNow.y, pointNow.x + 50, pointNow.y + 40, pointNext.x, pointNext.y - 10, pointNext.x, pointNext.y])
+                    var p = concat("M? ? C? ? ? ? ? ?", [pointNow.x, pointNow.y, pointNow.x + 40, pointNow.y + 30, pointNext.x - 40, pointNext.y - 30, pointNext.x, pointNext.y])
                     draw.path(p).fill("none").stroke({
                         color: "#ddd",
                         width: 10,
