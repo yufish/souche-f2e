@@ -85,7 +85,7 @@
   height: 30px;
   margin: 20px 13px;
   cursor: pointer;
-  background: url(../../images/common/float-layer3.png) no-repeat 0px -560px;
+  background: url(../../images/common/float-layer3.png) no-repeat 0px -559.99999999px;
 }
 #suggest .suggest-popup .suggest-close:hover {
   background-position: 0px -597px;

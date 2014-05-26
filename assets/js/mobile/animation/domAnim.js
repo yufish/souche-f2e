@@ -210,7 +210,7 @@ var animateFuncs_s1 = function (exports) {
             var h = $(window).height();
             $('#line-1').velocity({
                 height: 190
-            }, 1000, next)
+            }, 800, next)
         }
     )
 
@@ -219,38 +219,31 @@ var animateFuncs_s1 = function (exports) {
             var img = (images['1-left.png']);
             $('#s1-left').append(img).velocity({
                 left: 0
-            }, 500, next)
+            }, 500)
+            var img = (images['1-left-word.png']);
+            $('#s1-left-word').append(img).velocity({
+                left: 0
+            }, 500, next);
         }
     )
 
     app.use(
         function (next) {
-            var img = (images['1-left-word.png']);
-            $('#s1-left-word').append(img).velocity({
-                left: 0
-            }, 600, next);
-        }
-    )
-    app.use(
-        function (next) {
             var img = (images['1-right.png']);
             $('#s1-right').append(img).velocity({
                 right: 20
-            }, 1000, next);
-        }
-    )
-    app.use(
-        function (next) {
+            }, 1000);
             var img = (images['1-right-car.png']);
             $('#s1-right-car').append(img).velocity({
                 opacity: 1
             }, {
                 easing: 'easeInCirc',
-                duration: 600,
+                duration: 1200,
                 complete: next
             })
         }
     )
+
     app.use(
         function (next) {
             var img1 = images['circle-1-1.png']
@@ -283,10 +276,9 @@ var animateFuncs_s1 = function (exports) {
                 top: 260
             }, {
                 easing: 'easeOutBounce',
-                duration: 1000,
+                duration: 800,
                 complete: next
             });
-
         }
     )
     app.use(
@@ -364,40 +356,31 @@ var animateFuncs_s2 = function () {
             var h = $(window).height();
             $('#line-2').velocity({
                 height: 190
-            }, 1000, next)
+            }, 800, next)
         }
     )
-    //    app.use(
-    //        function (next) {
-    //            var img = images['start.png'];
-    //            $('#start2').append(img).velocity({
-    //                opacity: 1
-    //            }, 200, next)
-    //        }
-    //    )
     app.use(function (next) {
         var img = images['left-2-1.png'];
         $('#s2-left').append(img).velocity({
             left: 0
-        }, 600, next);
+        }, 600);
+        var img = images['2-left-word.png'];
+        $('#s2-left-word').append(img).velocity({
+            left: 0
+        }, 600, next)
     })
     app.use(function (next) {
         var img = images['left-2-2.png'];
         $('#s2-left-2').append(img).velocity({
             top: 130
-        }, 1000, next);
+        }, 600,next);
     })
-    app.use(function (next) {
+
+    app.use(function(next){
         var img = images['left-2-3.png'];
         $('#s2-left-3').append(img).velocity({
             top: '+=15'
         }, 1000, next);
-    })
-    app.use(function (next) {
-        var img = images['2-left-word.png'];
-        $('#s2-left-word').append(img).velocity({
-            left: 0
-        }, 600, next)
     })
 
     app.use(function (next) {
@@ -432,18 +415,16 @@ var animateFuncs_s2 = function () {
             top: 215
         }, {
             delay: 400,
-            duration: 600,
-            complete: next
+            duration: 600
+            //complete: next
         })
-    })
-    app.use(function (next) {
         var img = images['2-right-word.png'];
         $('#s2-right-word').append(img).velocity({
             right: 0,
             opacity: 1
         }, 1000, next)
-
     })
+
     app.use(
         function(next){
             $('#next').show()
@@ -512,7 +493,7 @@ var animateFuncs_s3 = function () {
             var h = $(window).height();
             $('#line-3').velocity({
                 height: 190
-            }, 1000, next)
+            }, 800, next)
         }
     )
 
@@ -588,19 +569,19 @@ var animateFuncs_s3 = function () {
                 duration: 600,
                 complete: next
             })
+
+            var img = images['3-right-word.png'];
+            $('#s3-right-word').append(img).velocity({
+                top: 260,
+                opacity: 1
+            }, {
+                duration: 1000,
+                easing: 'easeOutBounce',
+                complete: next
+            })
         }
     )
-    app.use(function (next) {
-        var img = images['3-right-word.png'];
-        $('#s3-right-word').append(img).velocity({
-            top: 260,
-            opacity: 1
-        }, {
-            duration: 1000,
-            easing: 'easeOutBounce',
-            complete: next
-        })
-    })
+
     app.use(
         function (next) {
             var img = images['start.png'];
