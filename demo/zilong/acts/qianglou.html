@@ -95,20 +95,21 @@
             <div class="title">抢楼倒计时:</div>
             <div id="down-time">
                 <div id="hours" class="float-left">
-                    <div class="time">1</div>
-                    <div class="time">1</div>
+                    <div class="time" id="h1">0</div>
+                    <div class="time" id="h2">0</div>
                 </div>
                 <div class="dot"></div>
                 <div id="minutes" class="float-left">
-                    <div class="time">1</div>
-                    <div class="time">1</div>
+                    <div class="time" id="m1">0</div>
+                    <div class="time" id="m2">0</div>
                 </div>
                 <div class="dot"></div>
                 <div id="seconds" class="float-left">
-                    <div class="time">1</div>
-                    <div class="time">1</div>
+                    <div class="time" id="s1">0</div>
+                    <div class="time" id="s2">0</div>
                 </div>
             </div>
+            <div id ='serverTime' style="display: none"></div>
         </div>
         <div id="ql-intro">
             <div class="title">参与方式</div>
@@ -124,5 +125,113 @@
 
             </div>
         </div>
+        <script>
+            var DownCount= function() {
+                var floor = Math.floor;
+                function _core(remainTime, func) {
+                    if (remainTime > 0) {
+                        var data = {
+                            sec: remainTime % 60,
+                            minute: floor((remainTime / 60) % 60),
+                            hour: floor((remainTime / 3600) % 24),
+                            day: floor((remainTime / 86400) % 30)
+                        }
+                    }
+                    func(data)
+                }
+                function DownCount(cfg) {
+                    //var startDate = new Date(cfg.startYear,cfg.startMonth,cfg.startDay,cfg.startHour,cfg.startMinute, cfg.startSecond,cfg.startMillSecond);
+                    //var endDate = new Date(cfg.endYear,cfg.endMonth,cfg.endDay,cfg.endHour,cfg.endMinute,cfg.endSecond,cfg.endMillSecond);
+                    this.startDate = cfg.startDate;
+                    this.endDate = cfg.endDate;
+                    this.ft = cfg.ft || 1000;
+                    this.offset = this.endDate.getTime() - this.startDate.getTime();
+                    if (this.offset <= 0)throw new Error('init error');
+                }
+
+                DownCount.prototype = {
+                    start: function (func) {
+                        //var initTime = (new Date()).getTime();
+                        var time = this.offset + (new Date).getTime();
+                        var nowTime = (new Date).getTime();
+                        var remainTime = (time - nowTime) / 1000;
+                        _core(remainTime, func);
+                        this.intervalFunc = setInterval(function () {
+                            var nowTime = (new Date).getTime();
+                            var remainTime = (time - nowTime) / 1000;
+                            _core(remainTime, func);
+                        }, this.ft)
+                    },
+                    clearInterval: function () {
+                        clearInterval(this.intervalFunc);
+                    }
+
+                }
+                return DownCount;
+            }();
+            !function(){
+                var container = $('#serverTime')
+                var c = {
+                    serverYear: container.attr("serverYear"),
+                    serverMonth: container.attr("serverMonth"),
+                    serverDay: container.attr("serverDay"),
+                    serverHour: container.attr("serverHour"),
+                    serverMin: container.attr("serverMin"),
+                    serverSec: container.attr("serverSec")
+                };
+                //var serverDate = new Date(c.serverYear, c.serverMonth, c.serverDay, c.serverHour, c.serverMin, c.serverSec);
+                var serverDate =new Date();
+                serverDate.setHours(9);
+                serverDate.setMinutes(59);
+                serverDate.setSeconds(55);
+                var serverTime = serverDate.getTime();
+                var minDate = new Date(serverTime),
+                        maxDate = new Date(serverTime);
+                minDate.setHours(10);
+                minDate.setMinutes(0);
+                maxDate.setHours(10);
+                maxDate.setMinutes(10);
+
+                if(serverTime>=minDate.getTime()&& serverTime<=maxDate.getTime()){
+                    return;
+                }else{
+                    var timeSpan = 0;
+                    if(serverDate.getHours()>10){
+                        timeSpan = 1000*3600*24;
+                    }
+                    var endDate = new Date(serverTime+timeSpan);
+                    endDate.setHours(10);
+                    endDate.setMinutes(0);
+                    endDate.setSeconds(0);
+                }
+                var dc = new DownCount({
+                    startDate:serverDate,
+                    endDate:endDate
+                })
+                var zero = function(n){
+                    var n = parseInt(n, 10);
+                    if(n > 0){
+                        if(n <= 9){
+                            n = "0" + n;
+                        }
+                        return String(n);
+                    }else{
+                        return "00";
+                    }
+                };
+                dc.start(function(data){
+                    var hour = zero(data.hour);
+                    $('#h1').text(hour[0]);
+                    $('#h2').text(hour[1]);
+                    var min = zero(data.minute);
+                    var sec = zero(data.sec);
+                    $('#m1').text(min[0]);
+                    $('#m2').text(min[1]);
+                    $('#s1').text(sec[0]);
+                    $('#s2').text(sec[1]);
+                })
+            }();
+
+        </script>
     </body>
 </html>
