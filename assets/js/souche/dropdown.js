@@ -21,7 +21,7 @@ Souche.UI.CustomDropdown = function() {
 
                     } else {
                         list.css({
-                            top: 30
+                            top: 25
                         });
                     }
                     $(list[0].parentNode).css({
@@ -30,7 +30,7 @@ Souche.UI.CustomDropdown = function() {
                 } else {
                     $(".sc-option-list").addClass("hidden");
                     list.css({
-                        top: 30
+                        top: 25
                     });
                 }
             }
@@ -46,7 +46,7 @@ Souche.UI.CustomDropdown = function() {
 
                     } else {
                         list.css({
-                            top: 30
+                            top: 25
                         });
                     }
                     $(list[0].parentNode).css({
@@ -55,7 +55,7 @@ Souche.UI.CustomDropdown = function() {
                 } else {
                     $(".sc-option-list").addClass("hidden");
                     list.css({
-                        top: 30
+                        top: 25
                     });
                 }
 
@@ -80,7 +80,7 @@ Souche.UI.CustomDropdown = function() {
             $(document.body).click(function() {
                 $(".sc-option-list", self.ele).addClass("hidden");
                 $(".sc-option-list").css({
-                    top: 30
+                    top: 25
                 });
             });
         }
