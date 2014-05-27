@@ -277,7 +277,7 @@ padding-left: 50px;
 #choose.choose_fixed{position:fixed;top:0;left:0;z-index:100;margin-top:0;background-color:#fff;box-shadow: 3px 0px 5px #666;}
 #choose.choose_fixed .choose_condition {border:none;background-color:#fff;color:#333;line-height:50px;height:50px;}
 #choose.choose_fixed .choose_condition p{color:#333;}
-#choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px; border:1px solid #bfbfbf;}
+#choose.choose_fixed .orderBy {border:none;height:30px;line-height:30px;margin-top:10px; border:1px solid #bfbfbf;border-right:none;margin-right: 2px;}
 #choose.choose_fixed .orderBy .order_item {height:30px;line-height:30px;}
 #choose.choose_fixed .orderBy .order_item span {margin-top:10px;*margin-top:-20px;}
 #choose.choose_fixed  .choose_condition .choose_item {margin-top:14px;color:#FC7000;}
@@ -291,7 +291,7 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;position: relative;margin-right: 15px;}
 .nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;margin-top: 20px;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
-#list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin-left:2px;}
+#list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;margin-left:2px;}
 #list_wrap .list_nav .list_nav_wrap  ul.findall{width:280px;}
 #list_wrap .list_nav .nav_type  ul{width:280px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title{color:#333;width:230px;line-height:36px;padding-top:10px;}
