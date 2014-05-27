@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/acts/qianglou.jade" />
-      <change type="DELETED" beforePath="E:\souche\souche-f2e\assets\css\mobile\fenqi.less" afterPath="" />
-      <change type="DELETED" beforePath="E:\souche\souche-f2e\assets\css\mobile\mobile.bak.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/crm/crm.css" afterPath="$PROJECT_DIR$/assets/css/crm/crm.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/detail/detail.html" afterPath="$PROJECT_DIR$/demo/detail/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mobile/mobile.css" afterPath="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mobile/walk-around.css" afterPath="$PROJECT_DIR$/assets/css/mobile/walk-around.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/mob/animation/next.png" afterPath="$PROJECT_DIR$/assets/images/mob/animation/next.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/common.css" afterPath="$PROJECT_DIR$/assets/css/souche/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" afterPath="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/sidebar.css" afterPath="$PROJECT_DIR$/assets/css/sidebar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/ui.css" afterPath="$PROJECT_DIR$/assets/css/souche/ui.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
@@ -28,6 +24,26 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="down-counter.js" pinned="false" current="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/assets/js/souche/down-counter.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.3220339" vertical-offset="0" max-vertical-offset="1995">
+                    <caret line="18" column="10" selection-start-line="3" selection-start-column="7" selection-end-line="18" selection-end-column="10" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="souche-f2e" />
@@ -38,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="8740">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+              <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -64,21 +80,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="domAnimation.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="domAnimation.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27070707" vertical-offset="5261" max-vertical-offset="6251">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5261" max-vertical-offset="6251">
               <caret line="291" column="43" selection-start-line="291" selection-start-column="43" selection-end-line="291" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qianglou.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="qianglou.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.964286" vertical-offset="1354" max-vertical-offset="2527">
-              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.5010101" vertical-offset="2962" max-vertical-offset="4598">
+              <caret line="182" column="44" selection-start-line="182" selection-start-column="44" selection-end-line="182" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guwen-search.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8099" max-vertical-offset="10203">
+              <caret line="450" column="45" selection-start-line="450" selection-start-column="30" selection-end-line="450" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -87,7 +115,7 @@
       <file leaf-file-name="gouche.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/gouche.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6954">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6954">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="86" />
               <folding />
             </state>
@@ -97,7 +125,7 @@
       <file leaf-file-name="acts_all.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/acts_all.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.464286" vertical-offset="0" max-vertical-offset="6384">
+            <state vertical-scroll-proportion="85.5" vertical-offset="2603" max-vertical-offset="6384">
               <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding />
             </state>
@@ -121,7 +149,7 @@
       <file leaf-file-name="mobile.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.24" vertical-offset="100920" max-vertical-offset="114969">
+            <state vertical-scroll-proportion="0.0" vertical-offset="100920" max-vertical-offset="114969">
               <caret line="5329" column="4" selection-start-line="5329" selection-start-column="4" selection-end-line="5329" selection-end-column="30" />
               <folding />
             </state>
@@ -587,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/souche/down-counter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8126951" vertical-offset="299" max-vertical-offset="1575">
-          <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/actsTpl/orange.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
@@ -678,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23720473" vertical-offset="6059" max-vertical-offset="8055">
-          <caret line="420" column="44" selection-start-line="420" selection-start-column="44" selection-end-line="420" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/acts_tpl.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4405242" vertical-offset="4303" max-vertical-offset="8205">
@@ -706,19 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="6900">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/detail/price-distribution.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1786" max-vertical-offset="2888">
           <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3392" max-vertical-offset="4484">
           <caret line="230" column="1" selection-start-line="230" selection-start-column="1" selection-end-line="230" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9332024" vertical-offset="1824" max-vertical-offset="3477">
           <caret line="146" column="17" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.96070725" vertical-offset="1530" max-vertical-offset="2622">
           <caret line="132" column="1" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,9 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3270" max-vertical-offset="76005">
           <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <marker date="1401093009464" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,14 +759,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="2261">
           <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/detail/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27968">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/fenqi.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.24" vertical-offset="0" max-vertical-offset="589">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/gouche.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6954">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6600">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="100920" max-vertical-offset="114969">
+          <caret line="5329" column="4" selection-start-line="5329" selection-start-column="4" selection-end-line="5329" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5261" max-vertical-offset="6251">
+          <caret line="291" column="43" selection-start-line="291" selection-start-column="43" selection-end-line="291" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8099" max-vertical-offset="10203">
+          <caret line="450" column="45" selection-start-line="450" selection-start-column="30" selection-end-line="450" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -780,26 +823,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/detail/detail.html">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27968">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6600">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/fenqi.jade">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.24" vertical-offset="0" max-vertical-offset="589">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="8740">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -818,41 +853,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/acts_all.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286" vertical-offset="0" max-vertical-offset="6384">
+        <state vertical-scroll-proportion="85.5" vertical-offset="2603" max-vertical-offset="6384">
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/gouche.jade">
+    <entry file="file://$PROJECT_DIR$/assets/js/souche/down-counter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6954">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.24" vertical-offset="100920" max-vertical-offset="114969">
-          <caret line="5329" column="4" selection-start-line="5329" selection-start-column="4" selection-end-line="5329" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.3220339" vertical-offset="0" max-vertical-offset="1995">
+          <caret line="18" column="10" selection-start-line="3" selection-start-column="7" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.964286" vertical-offset="1354" max-vertical-offset="2527">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27070707" vertical-offset="5261" max-vertical-offset="6251">
-          <caret line="291" column="43" selection-start-line="291" selection-start-column="43" selection-end-line="291" selection-end-column="43" />
-          <folding />
+        <state vertical-scroll-proportion="0.5010101" vertical-offset="2962" max-vertical-offset="4598">
+          <caret line="182" column="44" selection-start-line="182" selection-start-column="44" selection-end-line="182" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
