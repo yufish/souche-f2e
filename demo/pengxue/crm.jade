@@ -5,6 +5,7 @@ html
     <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="http://f2e.souche.com/assets/css/crm/crm.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/bootstrap/bootstrap3.css" rel="stylesheet" type="text/css" />
     <script src="http://f2e.souche.com/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
@@ -27,7 +28,310 @@ html
           li
             a(href="#") 车辆信息
       #content.clearfix
-        ul.nav.nav-tabs
-          li.active
-            a(href="#") 工作台首页
+        .cont
+          ul.nav.nav-tabs
+            li.active
+              a(href="#") 工作台首页
+          .notice
+            .title 通知
+            ul.notice-list
+              li
+                span.title 我是通知我是通知我是通知
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+              li
+                span.title 我是通知我是通知我是通知
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+              li
+                span.title 我是通知我是通知我是通知
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+              li
+                span.title 我是通知我是通知我是通知
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+              li
+                span.title 我是通知我是通知我是通知
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+          .cont-wrap.clearfix
+            .task.clearfix
+              .tit 今日任务
+              ul.task-tit
+                li 今日待确认
+                li 未处理
+                li 今日已处理
+              ul.task-num
+                li
+                  i(style="width:80px;background-color:#1B73BC;")
+                  span 23
+                  a(href="#") 详情 >
+                li
+                  i(style="width:190px;background-color:#1B73BC;")
+                  span 86
+                  a(href="#") 详情 >
+                li
+                  i(style="width:305px;background-color:#70BF41;")
+                  span 124
+                  a(href="#") 详情 >
+            .champion
+              .tit 销售冠军
+              .champion-box.clearfix
+                .lastmouth
+                  .title 四月份冠军
+                  ul
+                    li
+                      img(src="../../assets/images/crm/avatar.png")
+                      span 森碟 
+                      span 成交23台
+                    li
+                      img(src="../../assets/images/crm/avatar.png")
+                      span 石头 
+                      span 成交23台
+                .thismouth
+                  .title 本月(截至昨天)
+                  ul
+                    li
+                      img(src="../../assets/images/crm/avatar.png")
+                      span 森碟 
+                      span 成交23台
+                    li
+                      img(src="../../assets/images/crm/avatar.png")
+                      span 石头 
+                      span 成交23台
+            .myclient
+              .tit 我的客户
+              table.client
+                tr(bgcolor="#F5F5F5")
+                  th(style="text-align:left;padding-left: 10px;") 客户等级
+                  th 客户数量
+                  th 重要客户
+                  th 待处理任务
+                tr 
+                  td.grade H (有指标，预计7天内购买)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade A (需求明确，到店)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade A- (需求明确，未到店)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade B (需求不明确，到店)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade B- (需求不明确，未到店)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade C (无效客户)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade O1 (成交，在大搜车)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade O2 (成交，不在大搜车)
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade 卖家
+                  td.num 923
+                  td.num 234
+                  td.num 23
+                tr 
+                  td.grade 全部客户
+                  td.num 923
+                  td.num 234
+                  td.num 23
+            .myassess
+              .tit 我的考核：本月
+              .assess
+                .sum
+                  .num 总客户数：897
+                  .rate(style="left: 130px;")
+                    img(src="../../assets/images/crm/down.png")
+                    span 预约到店率：20%
+                .yuyue
+                  .num 预约在本月到店：109人
+                  .rate(style="left: 70px;")
+                    img(src="../../assets/images/crm/down.png")
+                    span 实际到店率：80%
+                .shiji
+                  .num 实际到店：20人
+                  .rate(style="left: 65px;")
+                    img(src="../../assets/images/crm/down.png")
+                    span 到店试驾率：20%
+                .kanche
+                  .num 试驾看车：20人
+                  .rate(style="left: 60px;")
+                    img(src="../../assets/images/crm/down.png")
+                    span 到店成交率：30%
+                .success
+                  .num 成交车辆：8人
+          ul.nav.nav-tabs(style="margin-top:30px;")
+            li.active
+              a(href="#") 预约到店
+            li
+              a(href="#") 未预约直接到店 
+          .daodian.clearfix
+            .time-but
+              .btn-group.btn-group-justified 
+                a.btn.btn-default(role="button") 昨天6
+                a.btn.btn-default(role="button") 今天8
+                a.btn.btn-default(role="button") 明天8  
+            .daodian-detail
+              table 
+                tr(bgcolor="#F5F5F5")
+                  th 客户
+                  th 联系方式
+                  th 最近沟通记录
+                  th 最近到店日期
+                  th 销售顾问
+                  th 销售顾问手机
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+                tr
+                  td
+                    i
+                    span 张女士
+                  td 18768195422
+                  td.record 到店，已成交
+                  td 上周六
+                  td 薛松
+                  td 13456749800
+          .carchange
+            .tit 车辆变更
+            .change.clearfix
+              .changesum
+                .shangjia 最新上架23台
+                .jiangjia 最新降价29台
+                .xiajia 最新下架2台
+                .yishou 最新已售12台
+              .change-table
+                table
+                  tr(bgcolor="#F5F5F5")
+                    th(style="padding-left: 10px;") 变更时间
+                    th 车辆名称
+                    th 变更原因
+                    th 现价
+                    th 车况
+                    th 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+                  tr
+                    td.time 今天13:09
+                    td.carname 2013款奔驰GLK300-4Mz自动C-3.0手自一体 豪华版
+                    td.reason 最新上架
+                    td.price 上周六
+                    td.condition 薛松
+                    td.relevance 关联客户
+        .cont
+
 
