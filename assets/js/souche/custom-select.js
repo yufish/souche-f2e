@@ -143,7 +143,7 @@ Souche.UI.CustomSelect = function() {
 
                 setTimeout(function() {
                     checkShow();
-                }, 500);
+                }, 1500);
 
             }).mouseleave(function() {
                 mouseOverStatus = 0;

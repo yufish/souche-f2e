@@ -10,20 +10,16 @@ Souche.UI.CustomDropdown = function() {
             var mouseOverStatus = 0;
 
             function checkShow() {
-                var list = $(".sc-select-list", self.ele);
+                var list = $(".sc-option-list", self.ele);
                 if (mouseOverStatus) {
                     $(".sc-option-list").addClass("hidden");
                     $(".sc-option-list", self.ele).removeClass("hidden");
-                    if (list.offset().top + list.height() > $(window).scrollTop() + $(window).height()) {
-                        list.css({
-                            top: $(window).scrollTop() + $(window).height() - list.offset().top - list.height() + 23
-                        });
 
-                    } else {
-                        list.css({
-                            top: 25
-                        });
-                    }
+                    list.css({
+                        top: 25
+                    });
+                    console.log(list)
+                    console.log(list.get(0))
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
@@ -39,16 +35,11 @@ Souche.UI.CustomDropdown = function() {
                 if ($(".sc-option-list", self.ele).hasClass("hidden")) {
                     $(".sc-option-list").addClass("hidden");
                     $(".sc-option-list", self.ele).removeClass("hidden");
-                    if (list.offset().top + list.height() > $(window).scrollTop() + $(window).height()) {
-                        list.css({
-                            top: $(window).scrollTop() + $(window).height() - list.offset().top - list.height() + 23
-                        });
 
-                    } else {
-                        list.css({
-                            top: 25
-                        });
-                    }
+                    list.css({
+                        top: 25
+                    });
+                    console.log(list)
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
@@ -69,7 +60,7 @@ Souche.UI.CustomDropdown = function() {
 
                 setTimeout(function() {
                     checkShow();
-                }, 500);
+                }, 1500);
 
             }).mouseleave(function() {
                 mouseOverStatus = 0;

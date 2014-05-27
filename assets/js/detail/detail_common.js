@@ -18,6 +18,48 @@
     require(['detail/draw-price-down'], function(DrawPriceDown) {
         DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
     })
+    require(['detail/draw-koubei'],
+        function(DrawKoubei) {
+            var koubeiData = [{
+                name: "细节",
+                rate: 0.7,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.8,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.9,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.5,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.8,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.5,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.2,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.3,
+                labels: ["价格高", "储物空间大"]
+            }, {
+                name: "细节",
+                rate: 0.8,
+                labels: ["价格高", "储物空间大"]
+            }]
+            DrawKoubei.draw(koubeiData)
+        }
+    )
     var width = 642;
     var price = [35.6, 46.3]
     var length = [45, 520]
