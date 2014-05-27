@@ -288,8 +288,8 @@ padding-left: 50px;
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
 #list_wrap .list_nav .sc-option{width:228px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
-#list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;position: relative;margin-right: 15px;}
-.nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;margin-top: 20px;}
+#list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;margin-right: 15px;}
+.nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;margin-top: 20px;position: relative;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;margin-left:2px;}
 #list_wrap .list_nav .list_nav_wrap  ul.findall{width:280px;}
@@ -305,7 +305,7 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li{float: left !important;width: 90px !important;color: #666;line-height: 1.8em;margin-bottom: 5px;}
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a:hover{color: #ff6700 !important;background-color: #fff;}
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a{font-size: 12px;padding-left: 0px;}
-.cars-sc .panel{color: #333;font-size: 14px;padding-left: 5px;}
+.cars-sc .panel{color: #333;font-size: 14px;padding-left: 0px;}
 .sc-color{width: 228px; height:15px;}
 .sc-color a{display: block;float: left;width: 19px;height: 15px;position: relative;}
 .sc-color .color-active{display: block;position: absolute;width: 19px;height: 2px;background-color: #666666;top: 17px;}
@@ -342,9 +342,12 @@ visibility: hidden;
 }
 #list_wrap .list_nav .nav_age .sc-option{
   width:99px;
+ float:left;
 }
 #list_wrap .list_nav .nav_age .zhi{
   color:#999;
+  float:left;
+  margin:0 6px;
 }
 #list_wrap .list_nav .list_nav_wrap ul li a{color:#666;font-size: 12px;}
 #list_wrap .list_nav .list_nav_wrap ul li a.listNav_active{color:#e70}
