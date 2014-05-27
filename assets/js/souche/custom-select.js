@@ -138,16 +138,20 @@ Souche.UI.CustomSelect = function() {
 
                 e.stopPropagation();
             })
+            var openTimer, closeTimer;
             $(this.ele).mouseenter(function() {
                 mouseOverStatus = 1;
-
-                setTimeout(function() {
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                openTimer = setTimeout(function() {
                     checkShow();
-                }, 500);
+                }, 1000);
 
             }).mouseleave(function() {
                 mouseOverStatus = 0;
-                setTimeout(function() {
+                clearTimeout(closeTimer);
+                clearTimeout(openTimer);
+                closeTimer = setTimeout(function() {
                     checkShow();
                 }, 500);
             })

@@ -10,27 +10,21 @@ Souche.UI.CustomDropdown = function() {
             var mouseOverStatus = 0;
 
             function checkShow() {
-                var list = $(".sc-select-list", self.ele);
+                var list = $(".sc-option-list", self.ele);
                 if (mouseOverStatus) {
                     $(".sc-option-list").addClass("hidden");
                     $(".sc-option-list", self.ele).removeClass("hidden");
-                    if (list.offset().top + list.height() > $(window).scrollTop() + $(window).height()) {
-                        list.css({
-                            top: $(window).scrollTop() + $(window).height() - list.offset().top - list.height() + 23
-                        });
 
-                    } else {
-                        list.css({
-                            top: 30
-                        });
-                    }
+                    list.css({
+                        top: 25
+                    });
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
                 } else {
                     $(".sc-option-list").addClass("hidden");
                     list.css({
-                        top: 30
+                        top: 25
                     });
                 }
             }
@@ -39,23 +33,17 @@ Souche.UI.CustomDropdown = function() {
                 if ($(".sc-option-list", self.ele).hasClass("hidden")) {
                     $(".sc-option-list").addClass("hidden");
                     $(".sc-option-list", self.ele).removeClass("hidden");
-                    if (list.offset().top + list.height() > $(window).scrollTop() + $(window).height()) {
-                        list.css({
-                            top: $(window).scrollTop() + $(window).height() - list.offset().top - list.height() + 23
-                        });
 
-                    } else {
-                        list.css({
-                            top: 30
-                        });
-                    }
+                    list.css({
+                        top: 25
+                    });
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
                 } else {
                     $(".sc-option-list").addClass("hidden");
                     list.css({
-                        top: 30
+                        top: 25
                     });
                 }
 
@@ -64,23 +52,27 @@ Souche.UI.CustomDropdown = function() {
             if ($(".sc-option-list li", this.ele).length > 10) {
                 $(".sc-option-list", this.ele).css("height", 300);
             }
+            var openTimer, closeTimer;
             $(this.ele).mouseenter(function() {
                 mouseOverStatus = 1;
-
-                setTimeout(function() {
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                openTimer = setTimeout(function() {
                     checkShow();
-                }, 500);
+                }, 1000);
 
             }).mouseleave(function() {
                 mouseOverStatus = 0;
-                setTimeout(function() {
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                closeTimer = setTimeout(function() {
                     checkShow();
                 }, 500);
             })
             $(document.body).click(function() {
                 $(".sc-option-list", self.ele).addClass("hidden");
                 $(".sc-option-list").css({
-                    top: 30
+                    top: 25
                 });
             });
         }

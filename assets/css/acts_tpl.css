@@ -175,7 +175,7 @@
 #acts_tpl .banner .act-nav {
   position: absolute;
   top: 50%;
-  margin-top: -64.99999999px;
+  margin-top: -65px;
   width: 65px;
   height: 130px;
 }
@@ -482,7 +482,7 @@
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act {
   float: right;
 }
-#acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act a {
+#acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act span {
   color: #e37c1f;
   font-size: 14px;
 }
