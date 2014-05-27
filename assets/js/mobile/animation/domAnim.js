@@ -564,7 +564,7 @@ var animateFuncs_s3 = function () {
                 right: 0
             }, {
                 delay: 400,
-                duration: 600,
+                duration: 600
                 //complete: next
             })
 
