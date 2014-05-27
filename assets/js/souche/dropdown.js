@@ -18,8 +18,6 @@ Souche.UI.CustomDropdown = function() {
                     list.css({
                         top: 25
                     });
-                    console.log(list)
-                    console.log(list.get(0))
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
@@ -39,7 +37,6 @@ Souche.UI.CustomDropdown = function() {
                     list.css({
                         top: 25
                     });
-                    console.log(list)
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
@@ -55,16 +52,20 @@ Souche.UI.CustomDropdown = function() {
             if ($(".sc-option-list li", this.ele).length > 10) {
                 $(".sc-option-list", this.ele).css("height", 300);
             }
+            var openTimer, closeTimer;
             $(this.ele).mouseenter(function() {
                 mouseOverStatus = 1;
-
-                setTimeout(function() {
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                openTimer = setTimeout(function() {
                     checkShow();
-                }, 1500);
+                }, 1000);
 
             }).mouseleave(function() {
                 mouseOverStatus = 0;
-                setTimeout(function() {
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                closeTimer = setTimeout(function() {
                     checkShow();
                 }, 500);
             })
