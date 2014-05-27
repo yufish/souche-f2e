@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://localhost:8080/soucheweb/pages/mobile/filter-car.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网</title>
+<meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务">
+<meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="http://f2e.souche.com/assets/css/mobile/mobile.css?t=12">
+<script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript" src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/stats.js"></script>
+<script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/require.js"></script>
+<script>
+      var contextPath = "/soucheweb";
+      require.config({
+	        baseUrl: "http://f2e.souche.com/assets/js/mobile",
+	        urlArgs:"bust=v5"
+	      }); 
+    </script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="filter-new" src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/filter-new.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/BrandManager" src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/BrandManager.js"></script></head>
+<body id="filtercar-new">
+
+	<div class="header">
+        <div class="back-icon"></div>
+        <div id="header-text" class="text">筛选二手车</div>
+      <div class="header-feature">
+            <div id="search-icon-1" class="search-icon"></div>
+            <div class="search-icon-2"></div>
+            <a href="tel:4008-010-010" id="H5_TEL_ICON" click_type="H5_CALL" class="tel-icon"></a>
+        </div>
+      <div class="search-box">
+        <div class="search-header">
+          <div class="input">
+            <form id="search-form" method="get" action="http://localhost:8080/soucheweb/pages/mobile/list.html">
+              <input id="keyword" type="text" name="keyword"><span class="cancel-icon"></span>
+            </form>
+          </div>
+          <div id="search-btn" class="search-btn"><span>搜索</span></div>
+        </div>
+      </div>
+    </div>
+		<div class="hr20"></div>
+		<div class="content">
+			<div id="opt-main" class="options">
+			
+				<div id="car-price" class="filter-option-item clearfix">
+					<div class="text">价格</div>
+						<div class="filter-content">
+							<select id="select-price-1" class="s" name="car-price-1">
+								<option value="0" selected="selected">不限</option>
+								<option value="5">5万</option>
+								<option value="8">8万</option>
+								<option value="12">12万</option>
+								<option value="16">16万</option>
+								<option value="20">20万</option>
+								<option value="25">25万</option>
+								<option value="30">30万</option>
+								<option value="50">50万</option>
+								<option value="70">70万</option>
+								<option value="100">100万</option>
+							</select><span class="span-to">至</span> <select id="select-price-2" class="s" name="car-price-2">
+								<option value="100000000" selected="selected">不限</option>
+								<option value="5">5万</option>
+								<option value="8">8万</option>
+								<option value="12">12万</option>
+								<option value="16">16万</option>
+								<option value="20">20万</option>
+								<option value="25">25万</option>
+								<option value="30">30万</option>
+								<option value="50">50万</option>
+								<option value="70">70万</option>
+								<option value="100">100万</option>
+							</select>
+						</div>
+				</div>
+				<div id="car-brand" class="filter-option-item clearfix">
+					<div class="text">品牌</div>
+					<div class="filter-content">
+						<button class="for-select" id="btn-select-brand">选择品牌</button>
+					</div>
+				</div>
+				<div id="car-series" class="filter-option-item clearfix">
+					<div class="text">车系</div>
+					<div class="filter-content">
+						<button class="for-select" id="btn-select-series">选择车系</button>
+					</div>
+				</div>
+				
+				
+				<div id="option-advance" class="filter-option-item clearfix">
+					<div class="array-d"></div>
+					<div class="text">高级筛选</div>	
+				</div>
+				<div id="option-advance-show" class="hidden">
+					<div id="car-mile" class="filter-option-item clearfix">
+						<div class="text">里程(公里)</div>
+						<div class="filter-content">
+							<select id="select-mile" class="select-6-word">
+								<option value="" disabled="" selected="" style="display:none;">选择最大里程</option>
+								<option value="">不限</option>
+								<option value="0-10000">1万以内</option>
+								<option value="0-20000">2万以内</option>
+								<option value="0-30000">3万以内</option>
+								<option value="0-40000">4万以内</option>
+								<option value="0-50000">5万以内</option>
+								<option value="0-60000">6万以内</option>
+								<option value="0-70000">7万以内</option>
+								<option value="0-80000">8万以内</option>
+							</select>
+						</div>
+					</div>
+					<div id="car-year" class="filter-option-item clearfix">
+					<div class="text">上牌时间</div>
+					<div class="filter-content">
+						<select id="select-year" class="select-6-word">
+							<option value="" disabled="" selected="" style="display:none;">选择上牌时间</option>
+							<option value="">不限</option>
+							<option value="2014">2014年</option>
+							<option value="2013">2013年后</option>
+							<option value="2012">2012年后</option>
+							<option value="2011">2011年后</option>
+							<option value="2010">2010年后</option>
+							<option value="2009">2009年后</option>
+							<option value="2008">2008年后</option>
+							<option value="2007">2007年后</option>		
+						</select>
+						
+					</div>
+				</div>
+					<div id="car-model" class="filter-option-item clearfix">
+						<div class="text">车型</div>
+						<div class="filter-content">
+							<select id="select-model" class="select-6-word">
+								<option value="" disabled="" selected="" style="display:none;">选择车型</option>
+								<option value="">不限</option>
+								<option value="tinyCar">微小型车</option>
+								<option value="compactCar">紧凑型车</option>
+								<option value="midSize">中型车</option>
+								<option value="PremiumMidsize">中大型车</option>
+								<option value="SUV">SUV</option>
+								<option value="MPV">MPV</option>
+								<option value="SportsCar">跑车</option>
+							</select>
+						</div>
+					</div>
+					<div id="car-engine-volume" class="filter-option-item clearfix">
+						<div class="text">排量</div>
+						<div class="filter-content">
+							<select id="select-volume" class="select-6-word">
+								<option value="" disabled="" selected="" style="display:none;">选择排量</option>
+								<option value="">不限</option>
+								<option value="1.1-1.6">1.1-1.6L</option>
+								<option value="1.6-2.0">1.6-2.0L</option>
+								<option value="2.0-2.5">2.0-2.5L</option>
+								<option value="2.5-3.0">2.5-3.0L</option>
+								<option value="3.0-4.0">3.0-4.0L</option>
+								<option value="4.0-1000">4.0L以上</option>
+							</select>
+						</div>
+					</div>
+					<div id="transmission-type" class="filter-option-item clearfix">
+						<div class="text">变速箱</div>
+						<div class="filter-content">
+							<select id="select-transmission" class="select-6-word">
+								<option value="" disabled="" selected="" style="display:none;">选择变速箱</option>
+								<option value="">不限</option>
+								<option value="2">自动</option>
+								<option value="1">手动</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="btns">
+					<button id="go-list-btn">搜索</button>
+				</div>
+
+                
+                    
+                        <div class="group">
+                            <a class="option" href="http://localhost:8080/soucheweb/pages/mobile/list.html?sortName=&sortType=&carMileage=&carModel=&carPrice=0-100000000&carYear=2012-9999">
+                                <div class="name">2012-不限</div>
+                                <i></i></a>
+                        </div>
+                    
+                        <div class="group">
+                            <a class="option" href="http://localhost:8080/soucheweb/pages/mobile/list.html?sortName=&sortType=&carMileage=&carModel=&carBrand=brand-41&carPrice=0-100000000&carYear=2014-9999">
+                                <div class="name">大众 2014-不限</div>
+                                <i></i></a>
+                        </div>
+                    
+                        <div class="group">
+                            <a class="option" href="http://localhost:8080/soucheweb/pages/mobile/list.html?sortName=&sortType=&carMileage=&carModel=&carBrand=brand-41&carPrice=0-100000000&carYear=2014-9999">
+                                <div class="name">大众 2014-不限</div>
+                                <i></i></a>
+                        </div>
+                    
+                        <div class="group">
+                            <a class="option" href="http://localhost:8080/soucheweb/pages/mobile/list.html?sortName=&sortType=&carMileage=&carModel=&carBrand=brand-108&carPrice=0-100000000&carYear=0000-9999">
+                                <div class="name">迷你</div>
+                                <i></i></a>
+                        </div>
+                    
+                        <div class="group">
+                            <a class="option" href="http://localhost:8080/soucheweb/pages/mobile/list.html?sortName=&sortType=&carMileage=&carModel=&carBrand=brand-20&carPrice=0-100000000&carYear=0000-9999">
+                                <div class="name">宝马</div>
+                                <i></i></a>
+                        </div>
+                    
+                
+
+				
+
+
+
+  <div class="footer-mobile">   
+        <div class="footer-nav clearfix">
+        <div class="col-1-3"><a href="http://localhost:8080/soucheweb/pages/mobile/index.html">回到首页</a></div>
+        <div class="col-1-3"><a href="javascript:document.body.scrollTop=0">回到顶部</a></div>
+          <div class="col-1-3"><a class="feedback" href="http://localhost:8080/soucheweb/pages/mobile/fankui.html">意见反馈</a></div>
+        </div>
+      </div>
+			</div>
+
+		</div>
+	
+	<div>
+		
+	</div>
+	<div class="wrapGrayBg"></div>
+	<div class="popup-wrapper" id="brand-wrapper" style="width: 378px; top: 50px;">
+		<div class="filter-popup" id="brand-list">
+			<div class="clearfix">
+				<div class="title">热门品牌</div>
+				<div class="buxian" id="brand-buxian">不限品牌</div>
+			</div>
+			<div class="hr1-gray"></div>
+			<div class="content">
+				<div id="hot-brands" class="clearfix">
+					
+				<div data-code="brand-15" class="item col-1-4"><span class="brand-name">奥迪 </span></div><div data-code="brand-20" class="item col-1-4"><span class="brand-name">宝马 </span></div><div data-code="brand-25" class="item col-1-4"><span class="brand-name">奔驰 </span></div><div data-code="brand-27" class="item col-1-4"><span class="brand-name">本田 </span></div><div data-code="brand-29" class="item col-1-4"><span class="brand-name">标致 </span></div><div data-code="brand-30" class="item col-1-4"><span class="brand-name">别克 </span></div><div data-code="brand-41" class="item col-1-4"><span class="brand-name">大众 </span></div><div data-code="brand-49" class="item col-1-4"><span class="brand-name">丰田 </span></div><div data-code="brand-53" class="item col-1-4"><span class="brand-name">福特 </span></div><div data-code="brand-99" class="item col-1-4"><span class="brand-name">路虎 </span></div><div data-code="brand-102" class="item col-1-4"><span class="brand-name">马自达 </span></div><div data-code="brand-108" class="item col-1-4"><span class="brand-name">迷你 </span></div><div data-code="brand-119" class="item col-1-4"><span class="brand-name">起亚 </span></div><div data-code="brand-121" class="item col-1-4"><span class="brand-name">日产 </span></div><div data-code="brand-134" class="item col-1-4"><span class="brand-name">斯巴鲁 </span></div><div data-code="brand-135" class="item col-1-4"><span class="brand-name">斯柯达 </span></div><div data-code="brand-146" class="item col-1-4"><span class="brand-name">沃尔沃 </span></div><div data-code="brand-151" class="item col-1-4"><span class="brand-name">现代 </span></div><div data-code="brand-154" class="item col-1-4"><span class="brand-name">雪佛兰 </span></div><div data-code="brand-155" class="item col-1-4"><span class="brand-name">雪铁龙 </span></div></div>
+				<div id="other-brands" class="clearfix">
+					<div class="clearfix">
+						<div class="title">其他品牌</div>
+					</div>
+					<div class="hr1-gray"></div>
+				<div data-code="brand-18" class="item col-1-4"><span class="brand-name">宝骏</span></div><div data-code="brand-21" class="item col-1-4"><span class="brand-name">宝马M</span></div><div data-code="brand-22" class="item col-1-4"><span class="brand-name">保时捷</span></div><div data-code="brand-23" class="item col-1-4"><span class="brand-name">北京汽车</span></div><div data-code="brand-24" class="item col-1-4"><span class="brand-name">北汽制造</span></div><div data-code="brand-26" class="item col-1-4"><span class="brand-name">奔腾</span></div><div data-code="brand-28" class="item col-1-4"><span class="brand-name">比亚迪</span></div><div data-code="brand-1" class="item col-1-4"><span class="brand-name">brand-1</span></div><div data-code="brand-14" class="item col-1-4"><span class="brand-name">brand-14</span></div><div data-code="brand-16" class="item col-1-4"><span class="brand-name">brand-16</span></div><div data-code="brand-19" class="item col-1-4"><span class="brand-name">brand-19</span></div><div data-code="brand-38" class="item col-1-4"><span class="brand-name">brand-38</span></div><div data-code="brand-55" class="item col-1-4"><span class="brand-name">brand-55</span></div><div data-code="brand-164" class="item col-1-4"><span class="brand-name">长安</span></div><div data-code="brand-165" class="item col-1-4"><span class="brand-name">长城</span></div><div data-code="brand-166" class="item col-1-4"><span class="brand-name">长丰</span></div><div data-code="brand-42" class="item col-1-4"><span class="brand-name">道奇</span></div><div data-code="brand-44" class="item col-1-4"><span class="brand-name">东风</span></div><div data-code="brand-45" class="item col-1-4"><span class="brand-name">东南</span></div><div data-code="brand-48" class="item col-1-4"><span class="brand-name">菲亚特</span></div><div data-code="brand-3" class="item col-1-4"><span class="brand-name">GMC</span></div><div data-code="brand-58" class="item col-1-4"><span class="brand-name">海马</span></div><div data-code="brand-68" class="item col-1-4"><span class="brand-name">黄海</span></div><div data-code="brand-65" class="item col-1-4"><span class="brand-name">华泰</span></div><div data-code="brand-75" class="item col-1-4"><span class="brand-name">江淮</span></div><div data-code="brand-78" class="item col-1-4"><span class="brand-name">捷豹</span></div><div data-code="brand-72" class="item col-1-4"><span class="brand-name">吉利</span></div><div data-code="brand-79" class="item col-1-4"><span class="brand-name">金杯</span></div><div data-code="brand-74" class="item col-1-4"><span class="brand-name">吉普</span></div><div data-code="brand-84" class="item col-1-4"><span class="brand-name">凯迪拉克</span></div><div data-code="brand-86" class="item col-1-4"><span class="brand-name">克莱斯勒</span></div><div data-code="brand-92" class="item col-1-4"><span class="brand-name">雷克萨斯</span></div><div data-code="brand-93" class="item col-1-4"><span class="brand-name">雷诺</span></div><div data-code="brand-97" class="item col-1-4"><span class="brand-name">铃木</span></div><div data-code="brand-103" class="item col-1-4"><span class="brand-name">玛莎拉蒂</span></div><div data-code="brand-109" class="item col-1-4"><span class="brand-name">名爵</span></div><div data-code="brand-111" class="item col-1-4"><span class="brand-name">纳智捷</span></div><div data-code="brand-114" class="item col-1-4"><span class="brand-name">欧宝</span></div><div data-code="brand-113" class="item col-1-4"><span class="brand-name">讴歌</span></div><div data-code="brand-118" class="item col-1-4"><span class="brand-name">奇瑞</span></div><div data-code="brand-122" class="item col-1-4"><span class="brand-name">荣威</span></div><div data-code="brand-126" class="item col-1-4"><span class="brand-name">三菱</span></div><div data-code="brand-10" class="item col-1-4"><span class="brand-name">Smart</span></div><div data-code="brand-138" class="item col-1-4"><span class="brand-name">天津一汽</span></div><div data-code="brand-144" class="item col-1-4"><span class="brand-name">威麟</span></div><div data-code="brand-150" class="item col-1-4"><span class="brand-name">西雅特</span></div><div data-code="brand-158" class="item col-1-4"><span class="brand-name">英菲尼迪</span></div><div data-code="brand-160" class="item col-1-4"><span class="brand-name">英伦</span></div><div data-code="brand-156" class="item col-1-4"><span class="brand-name">一汽</span></div><div data-code="brand-167" class="item col-1-4"><span class="brand-name">中华</span></div></div>
+			</div>
+		</div>
+	</div>
+	<div class="popup-wrapper hidden" id="series-wrapper">
+		<div class="filter-popup" id="series-list">
+		<div></div>
+			<div class="clearfix">
+				<div class="title"></div>
+				<div class="buxian" id="series-buxian">不限车系</div>
+			</div>
+			<div class="hr1-gray clearfix"></div>
+			<div class="content">
+				
+			</div>
+		</div>
+	</div>
+	<div class="mobile-popup hidden">
+		<div style="padding:0 15px;">
+			<div class="title">抱歉，暂时没有<span class="cond">满足您筛选条件</span>的车。买车顾问会继续帮您找车，找到后立即通知您！</div>
+		</div>
+		<form id="notify-form">
+			<div class="input-wrapper">
+				<input type="text" id="phone-for-notify" class="phone-input" placeholder="您的手机号">
+			</div>
+			<div class="wrong-tip hidden">您输入的手机号有误</div>
+			<div class="btn-wrapper">
+				<input type="submit" class="btn-main" id="btn-yuyue" value="有车通知我">
+			</div>
+		</form>
+	</div>
+	<script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/header-index.js"></script>
+    <script>   	
+      	Index.init();
+    </script>
+    <script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/cookieUtil.js"></script>
+    <script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/souche-mobile.js"></script>
+    <!--<script src="http://f2e.souche.com/assets/js/mobile/filter.js"></script>-->
+	<script>
+		require(['filter-new'],function(filter){
+			filter.init();
+		})
+    </script>
+	 <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14b4aac5aa4127a195c3dd1a4049180f' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/h.js" type="text/javascript"></script>
+    
+
+<script src="./大搜车,为我选好车-北京二手车交易市场_北京二手车市场_二手车网_files/traffic_begin"></script></body></html>
