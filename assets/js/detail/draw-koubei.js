@@ -1,4 +1,4 @@
-define(['lib/mustache'], function(Mustache) {
+define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
     var rateData = [];
     var concat = function(str, arr) {
         var count = 0;
