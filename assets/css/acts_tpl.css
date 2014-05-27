@@ -482,7 +482,7 @@
 #acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act {
   float: right;
 }
-#acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act a {
+#acts_all #history-acts .acts-month .acts-items .acts-item .acts-desc .go-to-act span {
   color: #e37c1f;
   font-size: 14px;
 }
