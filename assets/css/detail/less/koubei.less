@@ -1,0 +1,118 @@
+#koubei_svg{
+    margin: 0px auto;
+    width:500px;
+    height:500px;
+}
+.net-koubei{
+    position: relative;
+    .koubei-title{
+        font-size: 20px;
+        line-height: 50px;
+        margin-top:20px;
+    }
+    .koubei-desc{
+        margin:20px 80px;
+        background: #f9f9f9;
+        border:1px solid #eee;
+        padding:20px;
+        text-align: center;
+        .koubei-l{
+            font-size: 16px;
+            line-height:40px;
+        }
+        .koubei-labels{
+            label{
+                background: #70b86f;
+                color:#fff;
+                font-size: 18px;
+                line-height: 30px;
+                padding:0 10px;
+                display: inline-block;
+            }
+        }
+    }
+    .all-score{
+        width:100px;
+        text-align: center;
+        font-size: 16px;
+        color:#51944f;
+        position: absolute;
+        top:320px;
+        left:528px;
+        em{
+            font-size: 30px;
+            font-weight: bold;
+            display: block;
+        }
+    }
+    .koubei-content{
+        position: relative;
+        padding:68px 0;
+    }
+    .koubei-item{
+        position: absolute;
+        top:0;
+        left:0;
+        .koubei-item-title{
+            font-size: 14px;
+            color:#444;
+            .rate{
+                height:20px;
+                background: url(../../images/detail/rate-star.png) repeat-x;
+                width:70px;
+                display: inline-block;
+                margin:0 5px;
+                vertical-align: top;
+                margin-top:2px;
+                .rate-real{
+                    display: block;
+                    height:20px;
+                background: url(../../images/detail/rate-star-light.png) repeat-x;
+                overflow: hidden;
+
+                }
+            }
+        }
+        .koubei-item-labels{
+            display: block;
+            .koubei-label{
+                background: #f8f8f8;
+                border:1px solid #eee;
+                line-height: 20px;
+                color:#999;
+                padding:0 5px;
+                display: inline-block;
+            }
+        }
+    }
+    .float-left-item{
+        .koubei-item-title{
+            text-align: right;
+            label{
+                float:right;
+            }
+            .rate{
+float:right;
+            }
+        }
+    }
+    .koubei-series{
+        text-align: center;
+        .series-t{
+            padding-right: 10px;
+            float:left;
+        }
+        .series-tab{
+            float:left;
+            border:1px solid #eee;
+            .series-tab-item{
+                padding:0 15px;
+                line-height: 20px;
+                font-size: 12px;
+                color:#999;
+                border-right:1px solid #eee;
+                float:left;
+            }
+        }
+    }
+}
