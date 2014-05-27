@@ -373,7 +373,8 @@
   width: 400px;
 }
 #crm #content .carchange .change .change-table table .time {
-  width: 110px;
+  width: 100px;
+  padding-left: 10px;
 }
 #crm #content .carchange .change .change-table table .reason {
   width: 120px;
