@@ -1,0 +1,178 @@
+#filtercar-new .group {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#filtercar-new .group .option {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    background: #f6f6f6;
+    border-bottom: 1px solid #ccc;
+    display: block;
+}
+#filtercar-new .group .option .name {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    height: 40px;
+}
+#filtercar-new {
+    background-color: #fff;
+}
+#filtercar-new .filter-option-item {
+    padding: 0 10px;
+    border-bottom: 1px solid #d0d0d0;
+}
+#filtercar-new .filter-option-item#car-price {
+    border-top: 1px solid #d0d0d0;
+}
+#filtercar-new .filter-option-item .text {
+    float: left;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#filtercar-new #option-advance .text {
+    float: right;
+    line-height: 60px;
+    font-weight: bold;
+    color: #999;
+}
+#filtercar-new .hr20 {
+    background-color: #f3f3f3;
+}
+#filtercar-new .filter-option-item .filter-content {
+    float: right;
+    text-align: center;
+    padding-top: 13px;
+}
+#filtercar-new select.s {
+    width: 92px;
+    padding-left: 8px;
+}
+#filtercar-new select.select-6-word {
+    padding-left: 55px;
+}
+#filtercar-new select {
+    width: 220px;
+    height: 35px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    coLor: #999;
+}
+#filtercar-new select option {
+    coLor: #000;
+}
+#filtercar-new .for-select {
+    width: 220px;
+    height: 35px;
+    border: 2px solid #b1b1b1;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    border-radius: 8px;
+    color: #999;
+}
+#filtercar-new .filter-option-item .span-to {
+    margin: 0 6px;
+}
+#filtercar-new #option-advance .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-1.png) no-repeat;
+    background-size: 13px;
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 25px 20px 0 5px;
+}
+#filtercar-new #option-advance.reverse .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-2.png) no-repeat;
+    background-size: 13px;
+}
+#filtercar-new .popup-wrapper {
+    position: absolute;
+    z-index: 10000;
+    left: 10px;
+}
+#filtercar-new .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+}
+#filtercar-new .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+    min-height: 200px;
+}
+#filtercar-new .filter-popup .title {
+    margin-left: 10px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: bold;
+    float: left;
+}
+#filtercar-new .filter-popup .buxian {
+    float: right;
+    margin: 8px 10px 0 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    line-height: 20px;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: normal;
+}
+#filtercar-new .filter-popup .item {
+    text-align: center;
+    line-height: 50px;
+}
+#filtercar-new .filter-popup .item .brand-name{
+    padding: 5px 10px;
+    border-radius: 8px;
+    border:1px solid #fff;
+}
+#filtercar-new .filter-popup .item.selected .brand-name{
+    color: #ff4400;
+    border:1px solid #ff4400;
+}
+#filtercar-new .filter-popup #other-brands {
+    text-align: center;
+    padding: 20px 0;
+}
+#filtercar-new .filter-popup .series-title {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
+}
+#filtercar-new .filter-popup .series-name-wrapper {
+    padding-left: 10px;
+}
+#filtercar-new .filter-popup .series-name {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+#filtercar-new .filter-popup .series-name.selected {
+    color: #ff4400;
+}
+#filtercar-new .btns {
+    text-align: center;
+    margin: 30px 0;
+}
+#filtercar-new .mobile-popup .title {
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+}
+#filtercar-new .mobile-popup .cond {
+    color: #ff4400;
+}
