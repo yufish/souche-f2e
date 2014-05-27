@@ -21,6 +21,7 @@ Souche.UI.CustomDropdown = function() {
                     $(list[0].parentNode).css({
                         zIndex: Souche.Data.DropdownzIndex++
                     });
+
                 } else {
                     $(".sc-option-list").addClass("hidden");
                     list.css({
