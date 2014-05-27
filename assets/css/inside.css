@@ -268,6 +268,7 @@ padding-left: 50px;
 #choose .choose_condition .choose_clear{color:#294c94;cursor:pointer}
 #choose .orderBy{float:right;height:38px;line-height:38px;border:1px solid #ddd;border-right:none;background-color:#fff}
 #choose .orderBy .order_item{float:left;display:block;border-right:1px solid #ddd;color:#666;padding:0 15px;*width:34px}
+#choose .orderBy .order_item:hover{color:#e70;}
 #choose .orderBy .order_item span{float:right;width:9px;height:12px;background:url("../../assets/images/fed/inside_sprite3.png") no-repeat -45px 0;margin:13px 0 0 4px;*margin-top:-24px}
 #choose .orderBy .order_active{color:#e70}
 #choose .orderBy .order_active span{background-position:-22px 0}
