@@ -325,7 +325,7 @@ visibility: hidden;
   border:none;
   background: none;
 }
-.sc-option-content{cursor: default;}
+.sc-option-content{cursor:pointer;}
 .price_list_more{color: #666;font-size: 12px;font-weight: normal;float: right;cursor: pointer;}
 .price-sc{height: 25px;width: 100%;margin-top: 15px;}
 .price-sc .price-range{float: left;width: 25px;height: 25px;margin-right: 3px;}
