@@ -1511,7 +1511,7 @@ body {
     height: 40px;
 }
 #detail .standard table .report-no {
-    background: url("../../images/mob/test-right.png") no-repeat;
+    background: url("../../images/mob/test_right.png") no-repeat;
 }
 #detail .standard table .currentStand {
     background-color: #e4f9b2;
@@ -3009,7 +3009,7 @@ body {
     background-color: #e16e12;
 }
 #intro .packup {
-    background-image: url(../../images/mob/ad-shouqi.png);
+    background-image: url(../../images/mob/ad-shouji.png);
     background-size: 100%;
     width: 50px;
     height: 50px;
@@ -5862,7 +5862,7 @@ body {
     z-index: 10000;
     left: 10px;
 }
-#filtercar-new filter-popup {
+#filtercar-new .filter-popup {
     background-color: #fff;
     border-radius: 8px;
 }
