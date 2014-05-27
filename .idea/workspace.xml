@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" afterPath="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" afterPath="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="domAnim.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="domAnim.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12909" max-vertical-offset="13927">
-              <caret line="712" column="26" selection-start-line="712" selection-start-column="26" selection-end-line="712" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.18369351" vertical-offset="10567" max-vertical-offset="13927">
+              <caret line="566" column="29" selection-start-line="566" selection-start-column="29" selection-end-line="566" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -78,18 +78,18 @@
       <file leaf-file-name="domAnimation.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5261" max-vertical-offset="6251">
-              <caret line="291" column="43" selection-start-line="291" selection-start-column="43" selection-end-line="291" selection-end-column="43" />
+            <state vertical-scroll-proportion="-9.571428" vertical-offset="5261" max-vertical-offset="6251">
+              <caret line="291" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="323" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qianglou.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="qianglou.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5010101" vertical-offset="2962" max-vertical-offset="4598">
-              <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
+            <state vertical-scroll-proportion="-6.178571" vertical-offset="3190" max-vertical-offset="4598">
+              <caret line="177" column="61" selection-start-line="177" selection-start-column="61" selection-end-line="177" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -181,7 +181,6 @@
         <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/guwen-search.js" />
         <option value="$PROJECT_DIR$/demo/zilong/domAnimation.html" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
         <option value="$PROJECT_DIR$/demo/zilong/chart/line.html" />
         <option value="$PROJECT_DIR$/assets/css/detail/price-distribution.css" />
         <option value="$PROJECT_DIR$/assets/css/mobile/mobile.css" />
@@ -191,6 +190,7 @@
         <option value="$PROJECT_DIR$/demo/detail/detail.html" />
         <option value="$PROJECT_DIR$/demo/zilong/acts/qianglou.jade" />
         <option value="$PROJECT_DIR$/demo/zilong/acts/qianglou.html" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js" />
       </list>
     </option>
   </component>
@@ -794,26 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5261" max-vertical-offset="6251">
-          <caret line="291" column="43" selection-start-line="291" selection-start-column="43" selection-end-line="291" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/guwen-search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="8099" max-vertical-offset="10203">
           <caret line="450" column="45" selection-start-line="450" selection-start-column="30" selection-end-line="450" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13528" max-vertical-offset="13927">
-          <caret line="712" column="26" selection-start-line="712" selection-start-column="26" selection-end-line="712" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -864,11 +848,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5010101" vertical-offset="2962" max-vertical-offset="4598">
-          <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
+        <state vertical-scroll-proportion="-6.178571" vertical-offset="3190" max-vertical-offset="4598">
+          <caret line="177" column="61" selection-start-line="177" selection-start-column="61" selection-end-line="177" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/domAnimation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.571428" vertical-offset="5261" max-vertical-offset="6251">
+          <caret line="291" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="323" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/animation/domAnim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18369351" vertical-offset="10567" max-vertical-offset="13927">
+          <caret line="566" column="29" selection-start-line="566" selection-start-column="29" selection-end-line="566" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
