@@ -2161,6 +2161,59 @@ body {
 #detail_main .zhijian-tip .zhijian-item-3:hover {
   background: #fc7000 url(../../images/detail/zhijian-3-hover.png) no-repeat 20px center;
 }
+.yushou-tip {
+  width: 1110px;
+  height: 80px;
+  background: url(../../images/detail/yushou-zhijian.png) repeat-x;
+  border-left: 5px solid #f2f2f2;
+  border-right: 5px solid #f2f2f2;
+}
+.yushou-tip .yushou-item {
+  float: left;
+  width: 255px;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.yushou-tip .yushou-item i {
+  display: block;
+  width: 35px;
+  height: 36px;
+  margin-top: 22px;
+  float: left;
+  margin-right: 5px;
+}
+.yushou-tip .yushou-item em {
+  font-weight: bold;
+}
+.yushou-tip .yushou-item span {
+  color: #666;
+}
+.yushou-tip .yushou-item-1 i {
+  background: url(../../images/detail/yuyue.png) no-repeat;
+}
+.yushou-tip .yushou-item-2 {
+  width: 245px;
+  padding-left: 30px;
+}
+.yushou-tip .yushou-item-2 i {
+  background: url(../../images/detail/lianxi.png) no-repeat;
+}
+.yushou-tip .yushou-item-3 {
+  width: 235px;
+  padding-left: 40px;
+}
+.yushou-tip .yushou-item-3 i {
+  background: url(../../images/detail/zhijian-icon.png) no-repeat;
+}
+.yushou-tip .yushou-item-4 {
+  width: 225px;
+  padding-left: 50px;
+}
+.yushou-tip .yushou-item-4 i {
+  background: url(../../images/detail/sell.png) no-repeat;
+}
 #detail_main .detail_service {
   border-top: 1px dotted #ddd;
   border-bottom: 1px dotted #ddd;
