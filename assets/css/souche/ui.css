@@ -436,20 +436,6 @@ body .input-error-tip .error-icon {
   right: 0;
   z-index: 10000;
 }
-#toTop {
-  width: 60px;
-  height: 56px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-top: none;
-  cursor: pointer;
-  display: none;
-  background: url(../../images/fed/float-layer3.png) no-repeat -38px -394px;
-}
-#toTop.toTopActive {
-  background-position: -101px -394px;
-  background-color: #d9d9d9;
-}
 #BizQQWPA {
   background: url(../../images/fed/float-layer3.png) no-repeat -34px -451px !important;
   width: 60px;
