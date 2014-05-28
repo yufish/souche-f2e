@@ -1,4 +1,4 @@
-define(['lib/mustache'], function(Mustache) {
+define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
     var rateData = [];
     var concat = function(str, arr) {
         var count = 0;
@@ -94,7 +94,6 @@ define(['lib/mustache'], function(Mustache) {
         drawLabel: function() {
             for (var i = 0; i < data.length; i++) {
                 data[i].width = data[i].rate * 100;
-                console.log(data[i])
                 var label = $(Mustache.render(item_tpl, data[i]));
                 $(".koubei-content").append(label);
 
