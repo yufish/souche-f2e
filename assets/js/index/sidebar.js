@@ -117,7 +117,14 @@ Souche.Sidebar = (function() {
                 $('.suggest-remind').addClass('hidden');
             }
             $('.suggest-popup').removeClass("hidden");
-            $('.wrapGrayBg').show();
+            if ($('.wrapGrayBg').length) {
+                $('.wrapGrayBg').show();
+            } else {
+                $('<div class="wrapGrayBg" style="opacity: 0.7; display: block;"></div>').appendTo(document.body).css({
+                    opacity: 0.7
+                })
+            }
+
         });
 
         $(".suggest-close").click(function() {
