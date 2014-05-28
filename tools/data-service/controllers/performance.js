@@ -22,6 +22,7 @@
                     if (tag_match) {
                         req.query.user_tag = tag_match[1];
                     }
+                    req.query.time = new Date();
                     ClickModel.add(req.query).done(function(err) {
                         res.send('ok');
                     })
@@ -53,14 +54,13 @@
                         page_url: url
                     };
                     if (time) {
-                        condition.createdAt = {
-                            gt: minTime,
-                            lt: maxTime
+                        condition.time = {
+                            $gt: minTime,
+                            $lt: maxTime
                         };
                     }
-                    ClickModel.getAll().offset(1).limit(1000000).order({
-                        id: "desc"
-                    }).where(condition).fields(['page_x', 'page_y']).done(function(error, clicks) {
+                    ClickModel.findAll().offset(0).limit(1000000).where(condition).fields(['page_x', 'page_y']).done(function(error, clicks) {
+                        console.log(clicks)
                         res.send(clicks);
                     });
 
@@ -87,6 +87,7 @@
                     req.query.stay_second = 0;
                     req.query.click_count = 0;
                     req.query.visit_length = 0;
+                    req.query.time = new Date();
                     TrafficModel.add(req.query).done(function(error, traffic) {
                         res.send(req.query.callback + "('" + traffic._id + "')");
                     })
