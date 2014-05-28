@@ -43,111 +43,119 @@
   margin-right: -7px;
   margin-top: 130px;
 }
-#suggest .suggest-tag {
-  width: 60px;
-  height: 90px;
-  border: 1px solid #ddd;
-  border-top: none;
-  background: url(../../images/common/float-layer3.png) no-repeat -36px -555px;
-  cursor: pointer;
-}
-#suggest .suggest-tag-active {
+.suggest-tag-active {
   background-position: -102px -555px;
-  background-color: #d9d9d9;
 }
-#suggest .suggest-popup {
+.suggest-popup {
   position: fixed;
   z-index: 100000;
   top: 100px;
   left: 50%;
-  margin-left: -290px;
-  width: 580px;
-  height: 387px;
-  background-color: #eee;
-}
-#suggest .suggest-popup .suggest-close {
-  float: right;
-  width: 30px;
-  height: 30px;
-  margin: 20px 13px;
-  cursor: pointer;
-  background: url(../../images/common/float-layer3.png) no-repeat 0px -560px;
-}
-#suggest .suggest-popup .suggest-close:hover {
-  background-position: 0px -597px;
-}
-#suggest .suggest-popup .suggest-title {
-  margin: 20px 0 20px 17px;
-  color: #666;
-}
-#suggest .suggest-popup .suggest-title ins {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
-  color: #333;
-  padding-right: 5px;
-}
-#suggest .suggest-popup .suggest-area {
-  width: 528px;
-  height: 235px;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
+  margin-left: -200px;
+  width: 400px;
+  height: 340px;
   background-color: #fff;
-  margin-left: 15px;
-  color: #b5b5b5;
-  font-size: 14px;
-  resize: none;
 }
-#suggest .suggest-popup .suggest-area-active {
+.suggest-close {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/fed/member/popup-close2.png") no-repeat;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.suggest-popup .suggest-form {
+  width: 270px;
+  margin: 0 auto;
+}
+.suggest-popup .suggest-title {
+  margin: 20px 0 20px 17px;
+  color: #333;
+}
+.suggest-popup .suggest-area {
+  width: 254px;
+  height: 80px;
+  border: 1px solid #d1d1d1;
+  padding: 7px;
+}
+.suggest-popup .suggest-area-active {
   color: #333333;
 }
-#suggest .suggest-popup .suggest-num {
+.suggest-popup .suggest-num {
   float: left;
   color: #666;
   line-height: 50px;
   margin-left: 15px;
 }
-#suggest .suggest-popup .suggest-num ins {
+.suggest-popup .suggest-num ins {
   color: #ee7700;
 }
-#suggest .suggest-popup .suggest-remind {
+.suggest-popup .suggest-remind {
   float: left;
   margin-left: 15px;
   color: #ff0000;
   line-height: 50px;
 }
-#suggest .suggest-popup .suggest-button {
+.suggest-popup .suggest-button {
   float: right;
-  width: 130px;
-  margin-right: 16px;
-  margin-top: 10px;
+  width: 270px;
+  margin-top: 40px;
   line-height: 35px;
   height: 35px;
-  background-color: #a0a0a0;
+  background-color: #fc7000;
   border: none;
   font-weight: bold;
   color: #fff;
   font-size: 14px;
   text-align: center;
 }
-#suggest .suggest-popup .suggest-submit {
+.suggest-popup .suggest-submit {
   cursor: pointer;
-  background-color: #33b600;
+  background-color: #fc7000;
 }
-#suggest .suggest-result {
+.suggest-result {
   position: fixed;
   z-index: 100000;
-  top: 180px;
+  top: 100px;
   left: 50%;
-  margin-left: -290px;
-  width: 580px;
-  padding: 25px 0;
-  background-color: #eee;
-  text-align: center;
+  margin-left: -200px;
+  width: 400px;
+  height: 340px;
+  background-color: #fff;
+}
+.suggest-result .result-title {
+  line-height: 30px;
   font-size: 20px;
-  color: #313131;
-  font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana;
-  font-weight: bold;
+  color: #333;
+  text-indent: 0;
+  width: 330px;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+.suggest-result .result-title i {
+  display: block;
+  width: 50px;
+  height: 52px;
+  background: url("../../images/fed/jiangjia-success.png") no-repeat;
+  float: left;
+  margin-left: 135px;
+  margin-right: 10px;
+}
+.suggest-result .result-title span {
+  line-height: 52px;
+}
+.suggest-result .result-text {
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  padding: 20px 0;
+  width: 320px;
+  text-align: center;
+  background: #F9F9F9;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
 }
 .popup_remind {
   width: 340px;
