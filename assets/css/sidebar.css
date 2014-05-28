@@ -1,44 +1,55 @@
 .sidebar-top {
-  height: 131px;
-  border: 1px solid #e6e6e6;
-  margin-bottom: 35px;
+  width: 58px;
+  background-color: #f7f7f7;
+  position: fixed;
+  right: 0px;
+  top: 100px;
+  border: 1px solid #cccccc;
+  z-index: 10000;
 }
-.sidebar-top .suggestside {
-  height: 65px;
-  border-bottom: 1px solid #e6e6e6;
+.sidebar-top .scroll-top {
+  width: 100%;
+  height: 52px;
+  padding: 0 12px;
+  padding-top: 3px;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+  opacity: 0.6;
 }
-.sidebar-top .suggestside .suggest-box {
-  padding: 11px;
+.sidebar-top .scroll-top i {
   display: block;
+  width: 21px;
+  height: 26px;
+  margin-left: 7px;
+  background: url(../images/index/scrolltop.png) no-repeat;
 }
-.sidebar-top .suggestside .suggest-box .suggest-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/suggest.png?1);
+.sidebar-top .scroll-top span {
+  color: #999999;
 }
-.sidebar-top .suggestside .suggest-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
+.sidebar-top .scroll-top:hover {
+  opacity: 1;
 }
-.sidebar-top .customerside {
-  height: 65px;
+.sidebar-top .feedback {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  padding-top: 10px;
+  cursor: pointer;
+  opacity: 0.6;
 }
-.sidebar-top .customerside .customer-box {
-  padding: 11px;
+.sidebar-top .feedback i {
   display: block;
+  width: 21px;
+  height: 17px;
+  background: url(../images/index/feedback.png) no-repeat;
+  margin-left: 8px;
 }
-.sidebar-top .customerside .customer-box .customer-img {
-  width: 29px;
-  height: 27px;
-  background: url(../images/index/customer.png?1);
+.sidebar-top .feedback span {
+  color: #999999;
+  margin-left: 6px;
 }
-.sidebar-top .customerside .customer-box i {
-  font-size: 13px;
-  color: #666;
-  font-style: normal;
-  line-height: 20px;
+.sidebar-top .feedback:hover {
+  opacity: 1;
 }
 .sidebar-bottom {
   height: 263px;
@@ -173,7 +184,7 @@
   width: 180px;
   position: absolute;
   height: 50px;
-  left: -219.99999999px;
+  left: -220px;
   font-size: 14px;
   line-height: 26px;
   top: 0;
