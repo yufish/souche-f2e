@@ -5865,6 +5865,7 @@ body {
 #filtercar-new .filter-popup {
     background-color: #fff;
     border-radius: 8px;
+    position: fixed;
 }
 #filtercar-new .filter-popup {
     background-color: #fff;
@@ -5894,7 +5895,7 @@ body {
 }
 #filtercar-new .filter-popup .item .brand-name{
     padding: 5px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     border:1px solid #fff;
 }
 #filtercar-new .filter-popup .item.selected .brand-name{
