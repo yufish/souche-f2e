@@ -22,9 +22,55 @@ function viewPageStat(url) {
     });
 }
 
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
 $(document).ready(function() {
     f2e_first_load_time = new Date().getTime();
     viewPageStat(document.location.href);
+    //加载点击数据
+    if (getQueryString("load_data")) {
+        var click_types = {};
+        var url = "http://f2e-monitor.souche.com/performance/click-data?url=" + window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com")
+        if (getQueryString("time")) {
+            url += "&time" + getQueryString("time")
+        }
+        $.ajax({
+            url: url,
+            dataType: "jsonp",
+            success: function(data) {
+                data.forEach(function(click) {
+                    if (click.element_id) {
+                        if (click_types[click.element_id]) {
+                            click_types[click.element_id] += 1;
+                        } else {
+                            click_types[click.element_id] = 1;
+                        }
+                    }
+                })
+                for (var i in click_types) {
+                    var ele = $("*[click_type='" + i + "']");
+                    var offset = ele.offset();
+                    $("<div style=''></div>").appendTo(document.body).css({
+                        position: "absolute",
+                        top: offset.top,
+                        left: offset.left,
+                        background: "#111",
+                        color: "#fff",
+                        padding: "0px 5px",
+                        fontSize: 12,
+                        opacity: 0.6,
+                        zIndex: 1000000000
+                    }).html(click_types[i])
+                }
+                console.log(click_types)
+            }
+
+        });
+    }
     $('body').on('click', 'a,[type=submit]', function() {
         var href = $(this).attr("href");
         var clickType = $(this).attr("click_type");

@@ -209,7 +209,7 @@ var animateFuncs_s1 = function (exports) {
         function (next) {
             var h = $(window).height();
             $('#line-1').velocity({
-                height: 185
+                height: 187
             }, 800, next)
         }
     )
@@ -355,7 +355,7 @@ var animateFuncs_s2 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-2').velocity({
-                height: 185
+                height: 187
             }, 800, next)
         }
     )
@@ -492,7 +492,7 @@ var animateFuncs_s3 = function () {
         function (next) {
             var h = $(window).height();
             $('#line-3').velocity({
-                height: 185
+                height: 187
             }, 800, next)
         }
     )
@@ -583,6 +583,7 @@ var animateFuncs_s3 = function () {
     app.use(
         function (next) {
             var img = images['start.png'];
+            $('#next').hide();
             $('#start').append(img).velocity({
                 opacity: 1
             }, 200, next)
