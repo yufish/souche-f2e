@@ -143,14 +143,16 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 } else {
                     $(".warning", self.ele).addClass("hidden")
                 }
-                Souche.checkPhoneExist(function(isLogin) {
-                    if (isLogin) {
-                        self._submit();
-                    } else {
-                        $("#qiugou-popup").removeClass("hidden")
-                        $(".wrapGrayBg").show();
-                    }
-                })
+                self._submit();
+                // return
+                // Souche.checkPhoneExist(function(isLogin) {
+                //     if (isLogin) {
+                //         self._submit();
+                //     } else {
+                //         $("#qiugou-popup").removeClass("hidden")
+                //         $(".wrapGrayBg").show();
+                //     }
+                // })
             })
             $(".chosecar .button").click(function() {
                 $(".qiugou-head").addClass("hidden");

@@ -1,4 +1,4 @@
-define(function() {
+define(['lib/svg.min'], function(SVG) {
 
     return {
         draw: function(data) {

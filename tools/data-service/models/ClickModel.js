@@ -12,5 +12,6 @@
       user_screenwidth: Number,
       user_screenheight: Number,
       user_viewwidth: Number,
-      user_viewheight: Number
+      user_viewheight: Number,
+      time: Date
   };

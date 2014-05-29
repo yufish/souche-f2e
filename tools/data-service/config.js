@@ -43,6 +43,11 @@ config = {
         host: "121.199.46.167",
         port: "27017",
         database: "souche"
+        // user: 'root',
+        // pass: '',
+        // host: "127.0.0.1",
+        // port: "27017",
+        // database: "souche"
     }
 };
 

@@ -92,26 +92,89 @@
                 float:right;
             }
             .rate{
-float:right;
+                float:right;
             }
         }
     }
     .koubei-series{
         text-align: center;
+        padding:40px 0;
+        .series-wrapper{
+            display: inline-block;
+
+        }
         .series-t{
             padding-right: 10px;
             float:left;
+            line-height: 25px;
         }
         .series-tab{
             float:left;
-            border:1px solid #eee;
+            border:1px solid #dcdcdc;
+            border-radius: 3px;
             .series-tab-item{
                 padding:0 15px;
-                line-height: 20px;
+                line-height: 25px;
                 font-size: 12px;
                 color:#999;
-                border-right:1px solid #eee;
+                border-right:1px solid #dcdcdc;
                 float:left;
+                cursor: pointer;
+
+            }
+            .item-active,.series-tab-item:hover{
+                background: #f2f2f2;
+
+            }
+        }
+    }
+    .koubei-advantage{
+        background: #f9f9f9;
+        border:1px solid #eee;
+        margin:0 80px;
+        padding:20px;
+        .advantage-title{
+            font-size:18px;
+            line-height:40px;
+        }
+        .advantage-left{
+            float:left;
+            width:45%;
+            border-right:1px solid #eee;
+            padding:20px;
+            font-size: 14px;
+            line-height: 20px;
+            color:#666;
+            .advantage-title{
+                color:#fa7022;
+                i{
+                    background: url(../../images/detail/koubei_good.png) no-repeat;
+                    display: inline-block;
+                    width:20px;
+                    height:20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+            }
+
+        }
+        .advantage-right{
+            float:left;
+            width:45%;
+            font-size: 14px;
+            line-height: 20px;
+            padding:20px;
+            color:#666;
+             .advantage-title{
+                color:#8c5476;
+                i{
+                    background: url(../../images/detail/koubei_bad.png) no-repeat;
+                    display: inline-block;
+                    width:20px;
+                    height:20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
             }
         }
     }
