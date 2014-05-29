@@ -1452,6 +1452,10 @@ body {
   right: auto;
   top: -5px;
 }
+.yushou-explain {
+  color: #999;
+  margin-top: 78px;
+}
 #list_wrap .list_main .yushou-carInfo .list_content_carInfo h1 {
   margin-bottom: 30px;
 }
@@ -2052,6 +2056,9 @@ body {
   padding: 3px;
   cursor: pointer;
   margin-left: 5px;
+}
+#detail_main .detail-share span {
+  margin-right: 10px;
 }
 #detail_main .detail-feed {
   width: 460px;
