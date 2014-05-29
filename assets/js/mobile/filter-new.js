@@ -8,30 +8,12 @@
         this[name] = func();
     }
 
-}('BrandMgr',filter,['common/BrandManager']);
+}('BrandMgr',filter,['common/BrandManager','filter/addListener']);
 
 
-function filter(BrandMgr) {
+function filter(BrandMgr,addListener) {
     //BrandMgr
-
-    var bPopupLtn = {
-        container : $('#brand-list .content'),
-        process:function(e){
-            var eType = e.eventType;
-            if(eType=='addBrand'){
-                var code = e.item.code;
-                this.container.find('[data-code='+code+']').addClass('selected');
-            }
-            if(eType=='removeBrand'){
-                var code = e.item.code;
-                this.container.find('[data-code='+code+']').removeClass('selected');
-            }
-            if(eType=='noLimitBrand'){
-                this.container.find('.item').removeClass('selected');
-            }
-        }
-    };
-    BrandMgr.addLtn(bPopupLtn);
+    addListener(BrandMgr);
     return {
         init:function(){
             var hotBrands_g = {
@@ -121,7 +103,6 @@ function filter(BrandMgr) {
             var brandLoaded = false;
             $('#btn-select-brand').click(function () {
                 showPopup_b();
-
                 if (!brandLoaded) {
                     //add hotbrand first;
                     var b, hotBrandsStr = '';
@@ -149,11 +130,22 @@ function filter(BrandMgr) {
                 if(self.hasClass('selected')){
                     BrandMgr.removeBrand(code);
                 }else{
+                    if(BrandMgr.brands.length>=5){
+                        console.log('brands len should be less or equal 5');
+                        return;
+                    }
                     BrandMgr.addBrand(code,name);
                 }
             });
             $('#brand-buxian').click(function () {
                 BrandMgr.noLimitBrand();
+            })
+
+
+            $('#brand-pane').on('click','.selected-item',function(){
+                var self = $(this);
+                var code = self.attr('data-code');
+                BrandMgr.removeBrand(code);
             })
 
             $('#btn-select-series').click(function () {
@@ -164,32 +156,40 @@ function filter(BrandMgr) {
                     });
                     return;
                 }
-
-                if ($self.attr('data-brand') != selectedBrand) {
-                    $('#series-wrapper .content').empty();
-                    $.ajax({
-                        url: contextPath + "/pages/dicAction/loadExistSeries.json",
-                        dataType: "json",
-                        data: {
-                            type: "car-subdivision",
-                            code: selectedBrand
-                        },
-                        success: function (data) {
-                            makeSeries(data.codes);
-                        }
-                    })
+                $('.tab-items .pane-selected-item').each(function(idx,item){
+                    $(this).attr('data-index',idx);
+                })
+                if($('.tab-items .pane-selected-item.selected').length==0){
+                    selectBrandTab(0)
                 }
                 showPopup_s();
             })
+            $('.tab-items').on('click','.selected-brand-item',function(){
+                var i = $(this).attr('data-index');
+                selectBrandTab(i);
+            })
 
+            var seriesPopupTitle = $('#series-list .title');
+            function selectBrandTab(index){
+                $('.content-tabs .content').removeClass('selected').eq(index).addClass('selected');
 
+                var pSelectItem = $('.tab-items .pane-selected-item').removeClass('selected').eq(index);
+                pSelectItem.addClass('selected');
+                var bName = pSelectItem.find('.selected-brand-name').text();
+                seriesPopupTitle.text(bName);
+            }
 
-            $('#series-wrapper').on('click', '.series-name', function () {
-                var $self = $(this);
-                var code = $self.attr('data-code');
-                var name = $self.text();
-                setSeries(code, name);
-                $self.addClass('selected');
+            $('#series-wrapper').on('click', '.series-item', function () {
+                var self = $(this);
+                var bCode = self.closest('.content').attr('data-code');
+                var code = self.attr('data-code');
+                var name = self.text();
+                if(self.hasClass('selected')){
+                    BrandMgr.removeSeries(code,bCode)
+                }else{
+                    BrandMgr.addSeries(code,name,bCode);
+                }
+
             })
 
 

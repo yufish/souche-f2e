@@ -1,618 +1,6 @@
 (function() {
 
-    $(".apply_close, .popup-sure").live("click", function() {
-        $(".apply_popup").addClass("hidden");
-        $('.wrapGrayBg').hide();
-    });
 
-
-
-
-
-    $("#link-to-fenqi").click(function() {
-        $("#fenqi-popup").removeClass("hidden");
-        $(".wrapGrayBg").show();
-        return false;
-    });
-
-    require(['detail/draw-price-down'], function(DrawPriceDown) {
-        DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-    })
-    require(['detail/draw-koubei'],
-        function(DrawKoubei) {
-            var koubeiData = [{
-                name: "细节",
-                rate: 0.7,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.9,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.5,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.5,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.2,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.3,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }]
-            DrawKoubei.draw(koubeiData)
-        }
-    )
-    var width = 642;
-    var price = [35.6, 46.3]
-    var length = [45, 520]
-
-        function createInterpolation(minV, maxV, minD, maxD) {
-            var vGap = maxV - minV,
-                dGap = maxD - minD;
-            return function(value) {
-                return (value - minV) / vGap * dGap;
-            }
-        }
-    var getMiddlePoint = createInterpolation(35.6, 46.3, 45, 520);
-    var midD = getMiddlePoint(42.4);
-    $('#sc-price').css({
-        left: 45
-    })
-    $('#new-price').css({
-        left: midD
-    })
-    $('#guide-price').css({
-        left: 520
-    })
-    $("#detailDoor .tab-item").mouseenter(function() {
-        var $this = $(this);
-        var index = $this.index();
-        var target = null;
-        var active = $(".tab-content-active");
-
-        $(".tab-item-active").removeClass("tab-item-active");
-        $this.addClass("tab-item-active");
-        switch (index) {
-            case 0:
-                target = $("#J_tabService");
-                break;
-            case 1:
-                target = $("#J_tabCqi");
-                break;
-            default:
-                target = $("#J_tabAddr");
-        }
-        if (target.attr("class").indexOf("tab-content-active") == -1) {
-            target.addClass("tab-content-active");
-            active.removeClass("tab-content-active");
-        }
-    });
-    //分期付款
-    var phoneReg = /^1[3458][0-9]{9}$/;
-    var $arrowTime = $("#arrow-time"),
-        $mortgage = $("#arrow-mortgage"),
-        $arrowrate = $("#arrow-rate"),
-        $interest = $("#arrow-rate").attr('interest'),
-        $fenqiList = $("#fenqi_list"),
-        $fenqiTime = $("#fenqi_list li"),
-        $fenqiTimeWrap = $("#fenqi-wrap");
-    $fenqiMort = $("#fenqi-mort")
-
-    var changeArrow = function(time) {
-        var timeArrow, mortArrow,
-            str = "fenqi-arrow arrow";
-        if ($interest == "1") {
-            switch (time) {
-                case "6":
-                    timeArrow = "0";
-                    mortArrow = "3";
-                    break;
-                case "12":
-                    timeArrow = "1";
-                    mortArrow = "2";
-                    break;
-                case "24":
-                    timeArrow = "2";
-                    mortArrow = "1";
-                    break;
-                case "36":
-                    timeArrow = "3";
-                    mortArrow = "4";
-                    break;
-            }
-        } else {
-            switch (time) {
-                case "12":
-                    timeArrow = "1";
-                    mortArrow = "3";
-                    break;
-                case "24":
-                    timeArrow = "2";
-                    mortArrow = "2";
-                    break;
-                case "36":
-                    timeArrow = "3";
-                    mortArrow = "1";
-                    break;
-            }
-        }
-
-        $arrowTime.attr("class", str + timeArrow);
-        $mortgage.attr("class", str + mortArrow);
-    };
-
-    $("#fenqi_select").click(function(event) {
-        $fenqiList.show();
-        event.stopPropagation();
-    });
-    $("body, html").click(function() {
-        $fenqiList.hide();
-    });
-    $fenqiTime.click(function() {
-        var $this = $(this),
-            time = $this.attr("time"),
-            mortgage = $this.attr("mortpay"),
-            rate = $this.attr("rate"),
-            text = $this.text();
-
-        $fenqiTimeWrap.text(text);
-        $arrowrate.text(rate);
-        $fenqiMort.text(mortgage);
-        changeArrow(time);
-    });
-    //在线咨询
-    var dialogGetMes = $("#dialog-getMes"),
-        afterSubmit = $("#dialog-showMes, #dialog-apply2"),
-        dialogLoginRemind = $("#dialog-login").find(".dialog-user-remind"),
-        dialogRegRemind = $("#dialog-reg").find(".dialog-user-remind"),
-        showPrice = $("#dialog-showPrice"),
-        showText = $("#dialog-showText"),
-        priceVal = $("#dialog-priceVal"),
-        salePrice = $("#dialog-apply1").attr("price"),
-        textVal = $("#dialog-textVal");
-
-    //取得用户填写的信息
-    var showMes = function() {
-        showPrice.text(priceVal.val());
-        showText.text(textVal.val());
-        afterSubmit.removeClass("hidden");
-    };
-
-    //是否超过字数
-    var mesNum = $("#dialog-mes-num");
-    $("#dialog-textVal").keyup(function() {
-
-        var length = $(this).val().length;
-        mesNum.text(length);
-        if (length >= 250) {
-            //$(this).attr("disabled",true);
-        }
-    })
-    $(".detail-share .wx").click(function(e) {
-        e.stopPropagation()
-        $("#wx-popup").removeClass("hidden").css({
-            left: $(".detail-share .wx").offset().left - 98,
-            top: $(".detail-share .wx").offset().top - 210
-        })
-        $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
-    });
-    $(document.body).click(function() {
-        $("#wx-popup").addClass("hidden")
-    });
-    var submitToPhone = function() {
-        $.ajax({
-            url: $("#ph-form")[0].action,
-            data: {
-                carId: SaleDetailConfig.carId
-            },
-            type: "post",
-            success: function(data) {
-                $('body').append(data);
-                $(".wrapGrayBg").show();
-                $("#ph-popup").addClass("hidden")
-                $("#ph-result-popup").removeClass('hidden');
-            }
-        })
-    }
-    $(".detail-share .ph").click(function() {
-        $("#ph-popup .popup-title").html("保存到手机")
-        $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendCarClose)
-        $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
-        $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
-        $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
-                submitToPhone();
-            } else {
-                $("#ph-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
-            }
-        })
-    })
-    $("#ph-form").on("submit", function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#ph-phone").val())) {
-            $(".warning", this).removeClass("hidden");
-        } else {
-            Souche.PhoneRegister($("#ph-phone").val(), function() {
-                submitToPhone();
-            })
-
-        }
-    })
-    $("#ph-phone").blur(function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#ph-phone").val())) {
-            $(".warning", $("#ph-form")).removeClass("hidden");
-        } else {
-            $(".warning", $("#ph-form")).addClass("hidden");
-            $(".phone-true").removeClass("hidden");
-        }
-    })
-    $(".send_addr_tophone").click(function() {
-        $("#ph-popup .popup-title").html("发地址到手机")
-        $("#ph-popup .tip").html("输入手机号码，即可发送")
-        $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendAddressClose)
-        $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendAddressSubmit)
-        $("#ph-form")[0].action = SaleDetailConfig.api_sendAddressToPhone
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
-                submitToPhone();
-            } else {
-                $("#ph-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
-            }
-        })
-    })
-    var submitJiangjia = function() {
-        $.ajax({
-            url: $("#jiangjia-form").attr('action'),
-            data: $("#jiangjia-form").serialize(),
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#jiangjia-popup").addClass("hidden");
-                    $("#jiangjia-success-popup").removeClass("hidden");
-                    $(".wrapGrayBg").show();
-                }
-            }
-        })
-    }
-    //降价通知提交
-    $("#jiangjia-form").submit(function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#jiangjia-phone").val())) {
-            $(".warning", this).removeClass("hidden");
-            return;
-        }
-        Souche.PhoneRegister($("#jiangjia-phone").val(), function() {
-
-            submitJiangjia();
-        })
-    })
-    $("#J_jiangjia").click(function() {
-        Souche.checkPhoneExist(function(is_login) {
-            //          if(is_login){
-            //              submitJiangjia();
-            //          }else{
-            $("#jiangjia-popup").removeClass("hidden");
-            $(".wrapGrayBg").show();
-            //          }
-        })
-    });
-    Bimu.form.selfValidate("J_dialogForm", "dialog-sendMes", function() {
-        if (!(/^\+?[1-9][0-9]*$/.test(priceVal.val()))) {
-            $("#price-valid").show();
-            return false;
-        }
-
-        if (parseInt(priceVal.val()) >= parseInt(salePrice)) {
-            $("#price-illegal").show();
-            return false;
-        }
-        var content = $("#dialog-textVal").val();
-        if (content && content.length > 250) {
-            $("#content-valid").show();
-            return false;
-        }
-        $("#content-valid").hide();
-        $("#price-illegal").hide();
-        $("#price-valid").hide();
-        //是否登录
-        $.ajax({
-            url: contextPath + "/pages/evaluateAction/isLogin.json",
-            type: "post",
-            dataType: "json",
-            async: false,
-            success: function(data) {
-                if (data.result == "true") {
-
-                    ///
-                    Bimu.ajax.formPost("J_dialogForm", function() {
-                        showMes();
-                        afterSubmit.removeClass("hidden");
-                        dialogGetMes.removeClass("dialog-error").addClass("hidden");
-                        $(".zixun-main").scrollTop($(".zixun-main").height())
-                    });
-                    ///
-                    return true;
-                } else {
-                    dialogGetMes.addClass("dialog-error");
-                    $(".zixun-main").scrollTop($(".zixun-main").height())
-                    return false;
-                }
-            },
-            error: function() {
-                dialogGetMes.addClass("dialog-error");
-                $(".zixun-main").scrollTop($(".zixun-main").height())
-                return false;
-            }
-        });
-    })
-    var doubleClickFlag = false;
-    var submitFav = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_saveFavorite,
-            data: {
-                phone: $("#fav-phone").val(),
-                carType: SaleDetailConfig.carType,
-                carId: SaleDetailConfig.carId
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    //$('#shoucang-popup').removeClass('hidden');
-                    var favPos = $("#J_shoucang").offset();
-                    $("<div class='icon-fei'></div>").css({
-                        left: favPos.left + 7,
-                        top: favPos.top + 7
-                    })
-                        .appendTo(document.body)
-                        .animate({
-                            left: $(".sidebar").offset().left + 10,
-                            top: $(".sidebar").offset().top + 10,
-                            opacity: 0
-                        }, 700, function() {
-                            $(".collectside").addClass("flash")
-                            setTimeout(function() {
-                                $(".collectside").removeClass("flash")
-                            }, 500)
-                        })
-                    $("#fav-popup").addClass("hidden")
-                    $(".wrapGrayBg").hide();
-                    $("#J_shoucang label").html('已收藏')
-                    $("#J_shoucang").attr('value', '1').addClass("faved");
-                    var num = $('#J_car_favorite').html();
-                    $('#J_car_favorite').html(parseInt(num) + 1);
-                    doubleClickFlag = false;
-                }
-            }
-        })
-    }
-    $("#J_shoucang").live('click', function(e) {
-
-        e.preventDefault();
-
-        if ($(this).hasClass("faved")) {
-            return;
-        }
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
-
-                submitFav();
-            } else {
-                $("#fav-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
-            }
-        })
-
-    });
-    $("#fav-form").on("submit", function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#fav-phone").val())) {
-            $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
-        } else {
-
-            Souche.PhoneRegister($("#fav-phone").val(), function() {
-                submitFav();
-            })
-        }
-    })
-    $('#shoucang-popup .apply_close').click(function() {
-
-        $(this).parent().addClass('hidden');
-        $(".wrapGrayBg").hide();
-    });
-
-    Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function() {
-
-        //登录验证
-        if (!$('#user-phone').val()) {
-            dialogLoginRemind.html("请输入手机号");
-            return false;
-        }
-        if (!$('#user-psd').val()) {
-            dialogLoginRemind.html("请输入密码");
-            return false;
-        }
-        $("#dialog-loginBtn").val("登陆中...");
-
-        return true;
-    }, function(data) {
-        if (data.errorMessage == "") {
-            Bimu.ajax.formPost("J_dialogForm", function() {
-                showMes();
-                afterSubmit.removeClass("hidden");
-                dialogGetMes.removeClass("dialog-error").addClass("hidden");
-            });
-        } else {
-            dialogLoginRemind.html(data.errorMessage);
-        }
-        $(".zixun-main").scrollTop($(".zixun-main").height())
-    });
-    $("#user-phone").blur(function() {
-        var phoneT = $(this).val();
-        if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
-            dialogLoginRemind.html("请正确填写手机号码！");
-        } else {
-            dialogLoginRemind.html("");
-        }
-    });
-
-    //注册                
-    var uuid = guid();
-    $("#uuid").val(uuid);
-
-    Bimu.form.validate("dialog-reg", "dialog-regBtn", function(data) {
-
-        if (data.id) {
-            if (data.msg) {
-                dialogRegRemind.html(data.msg);
-            }
-
-            return;
-        } else {
-            dialogRegRemind.html("");
-            $("#user-phone").val($("#user-regPhone").val());
-            $("#user-psd").val($("#user-regPsd").val());
-            Bimu.ajax.loginForm("dialog-login", function(data) {
-                if (data.errorMessage == "") {
-                    //登陆       
-                    Bimu.ajax.formPost("J_dialogForm", function() {
-                        showMes();
-                        afterSubmit.removeClass("hidden");
-                        dialogGetMes.removeClass("dialog-error dialog-register").addClass("hidden");
-                    });
-                }
-            }, null);
-        }
-
-    }, function() {}, {
-        noclear: true
-    });
-
-    $("#user-regPhone").blur(function() {
-        var phoneT = $(this).val();
-        if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
-            dialogRegRemind.html("请正确填写手机号码");
-        } else {
-            dialogRegRemind.html("");
-        }
-    });
-
-    function setButtonValue(obj) {
-        var interVal = null;
-        var phone = $("#user-regPhone").val();
-        if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phone) && phone.length == 11)) {
-            dialogRegRemind.html("请正确填写手机号码");
-            if (interVal != null)
-                clearInterval(interVal);
-
-            obj.attr("disabled", false);
-            obj.val("获取验证码");
-            return;
-        }
-        var it = 0;
-
-        obj.attr("disabled", true);
-
-        setTimeout(function() {
-            obj.attr("disabled", false);
-            if (interVal != null) {
-                clearInterval(interVal);
-            }
-            obj.val("获取验证码");
-        }, 60000);
-
-        interVal = setInterval(function() {
-
-            if (it < 60) {
-                obj.val((60 - it) + "秒后可重发");
-                it++;
-            }
-
-        }, 1000);
-
-        var uuid = $("#user-test").val();
-
-        Bimu.ajax.post("sendMessageAction", "sendMessage", {
-            phoneNumber: phone,
-            type: "register",
-            uuid: uuid
-        }, function(data) {
-            if (data.id) {
-                dialogRegRemind.html("该手机号码已经注册");
-                if (interVal != null) {
-
-                    clearInterval(interVal);
-                }
-                obj.val("获取验证码");
-                obj.attr("disabled", false);
-            } else {
-                dialogRegRemind.html("");
-            }
-        }, function() {});
-    }
-
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    };
-
-    function guid() {
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-            s4() + '-' + s4() + s4() + s4();
-    }
-    $(".dialog-get-yz").click(function() {
-        setButtonValue($(this));
-    })
-
-    $("#J_zixunPrice").click(function() {
-        $("#dialog-apply1,#dialog-getMes").removeClass("hidden").slideDown(200);
-        afterSubmit.addClass('hidden');
-        $('#dialog-priceVal').val('');
-        $("#dialog-textVal").val('');
-        $(".zixun-main").scrollTop($(".zixun-main").height())
-    });
-    //  $(".J_linkShangqiao").click(function(){
-    //      $("#bridgehead").trigger("click");
-    //  });
-    $(".J_linkShangqiao").mouseenter(function() {
-        $(".shangqiao-remind", this.parentNode).show();
-    }).mouseleave(function() {
-        $(".shangqiao-remind", this.parentNode).hide();
-    });
-    $("#link-reg").click(function() {
-        $("#dialog-getMes").addClass("dialog-register");
-        return false;
-    });
-    $("#link-login").click(function() {
-        $("#dialog-getMes").removeClass("dialog-register");
-        return false;
-    });
 })();
 //买车顾问弹出
 $(".advisor-close").click(function() {
@@ -746,6 +134,653 @@ Souche.DetailCommon = function() {
             //     $('.cutprice').append(start + nowStr.charAt(i) + end);
             // }
             Souche.Detail.PriceDown.init(config);
+
+
+            //******************************
+            $(".apply_close, .popup-sure").live("click", function() {
+                $(".apply_popup").addClass("hidden");
+                $('.wrapGrayBg').hide();
+            });
+            $("#link-to-fenqi").click(function() {
+                $("#fenqi-popup").removeClass("hidden");
+                $(".wrapGrayBg").show();
+                return false;
+            });
+
+            // require(['detail/draw-price-down'], function(DrawPriceDown) {
+            //     DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+            // })
+            // require(['detail/draw-koubei'],
+            //     function(DrawKoubei) {
+            //         var koubeiData = [{
+            //             name: "细节",
+            //             rate: 0.7,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.8,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.9,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.5,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.8,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.5,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.2,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.3,
+            //             labels: ["价格高", "储物空间大"]
+            //         }, {
+            //             name: "细节",
+            //             rate: 0.8,
+            //             labels: ["价格高", "储物空间大"]
+            //         }]
+            //         DrawKoubei.draw(koubeiData)
+            //     }
+            // )
+
+            // require(['detail/draw-baoyang'], function(Baoyang) {
+            //     Baoyang.draw([])
+            // })
+            var width = 642;
+            var price = [35.6, 46.3]
+            var length = [45, 520]
+
+                function createInterpolation(minV, maxV, minD, maxD) {
+                    var vGap = maxV - minV,
+                        dGap = maxD - minD;
+                    return function(value) {
+                        return (value - minV) / vGap * dGap;
+                    }
+                }
+            var getMiddlePoint = createInterpolation(35.6, 46.3, 45, 520);
+            var midD = getMiddlePoint(42.4);
+            $('#sc-price').css({
+                left: 45
+            })
+            $('#new-price').css({
+                left: midD
+            })
+            $('#guide-price').css({
+                left: 520
+            })
+            $("#detailDoor .tab-item").mouseenter(function() {
+                var $this = $(this);
+                var index = $this.index();
+                var target = null;
+                var active = $(".tab-content-active");
+
+                $(".tab-item-active").removeClass("tab-item-active");
+                $this.addClass("tab-item-active");
+                switch (index) {
+                    case 0:
+                        target = $("#J_tabService");
+                        break;
+                    case 1:
+                        target = $("#J_tabCqi");
+                        break;
+                    default:
+                        target = $("#J_tabAddr");
+                }
+                if (target.attr("class").indexOf("tab-content-active") == -1) {
+                    target.addClass("tab-content-active");
+                    active.removeClass("tab-content-active");
+                }
+            });
+            //分期付款
+            var phoneReg = /^1[3458][0-9]{9}$/;
+            var $arrowTime = $("#arrow-time"),
+                $mortgage = $("#arrow-mortgage"),
+                $arrowrate = $("#arrow-rate"),
+                $interest = $("#arrow-rate").attr('interest'),
+                $fenqiList = $("#fenqi_list"),
+                $fenqiTime = $("#fenqi_list li"),
+                $fenqiTimeWrap = $("#fenqi-wrap");
+            $fenqiMort = $("#fenqi-mort")
+
+            var changeArrow = function(time) {
+                var timeArrow, mortArrow,
+                    str = "fenqi-arrow arrow";
+                if ($interest == "1") {
+                    switch (time) {
+                        case "6":
+                            timeArrow = "0";
+                            mortArrow = "3";
+                            break;
+                        case "12":
+                            timeArrow = "1";
+                            mortArrow = "2";
+                            break;
+                        case "24":
+                            timeArrow = "2";
+                            mortArrow = "1";
+                            break;
+                        case "36":
+                            timeArrow = "3";
+                            mortArrow = "4";
+                            break;
+                    }
+                } else {
+                    switch (time) {
+                        case "12":
+                            timeArrow = "1";
+                            mortArrow = "3";
+                            break;
+                        case "24":
+                            timeArrow = "2";
+                            mortArrow = "2";
+                            break;
+                        case "36":
+                            timeArrow = "3";
+                            mortArrow = "1";
+                            break;
+                    }
+                }
+
+                $arrowTime.attr("class", str + timeArrow);
+                $mortgage.attr("class", str + mortArrow);
+            };
+
+            $("#fenqi_select").click(function(event) {
+                $fenqiList.show();
+                event.stopPropagation();
+            });
+            $("body, html").click(function() {
+                $fenqiList.hide();
+            });
+            $fenqiTime.click(function() {
+                var $this = $(this),
+                    time = $this.attr("time"),
+                    mortgage = $this.attr("mortpay"),
+                    rate = $this.attr("rate"),
+                    text = $this.text();
+
+                $fenqiTimeWrap.text(text);
+                $arrowrate.text(rate);
+                $fenqiMort.text(mortgage);
+                changeArrow(time);
+            });
+            //在线咨询
+            var dialogGetMes = $("#dialog-getMes"),
+                afterSubmit = $("#dialog-showMes, #dialog-apply2"),
+                dialogLoginRemind = $("#dialog-login").find(".dialog-user-remind"),
+                dialogRegRemind = $("#dialog-reg").find(".dialog-user-remind"),
+                showPrice = $("#dialog-showPrice"),
+                showText = $("#dialog-showText"),
+                priceVal = $("#dialog-priceVal"),
+                salePrice = $("#dialog-apply1").attr("price"),
+                textVal = $("#dialog-textVal");
+            //门店地址
+            $(".detail-share .address").mousemove(function() {
+                $(".adress-open").removeClass("hidden");
+            })
+            $(document.body).on("click", function(e) {
+                if (!$(e.target).closest(".adress-open").length) {
+                    $(".adress-open").addClass("hidden");
+                }
+            })
+            var submitAddress = function() {
+                $.ajax({
+                    url: config.api_AddressToPhone,
+                    data: {
+                        phone: $("#address-phone").val()
+                    },
+                    type: "post",
+                    success: function() {
+
+                        $(".adress-open").addClass("hidden");
+                    }
+                })
+            }
+            $("#adress-from").on("submit", function(e) {
+                e.preventDefault();
+                if (!phoneReg.test($("#address-phone").val())) {
+                    alert("请输入正确手机号码");
+                } else {
+                    Souche.PhoneRegister($("#address-phone").val(), function() {
+                        submitAddress();
+                    })
+                }
+            })
+            //取得用户填写的信息
+            var showMes = function() {
+                showPrice.text(priceVal.val());
+                showText.text(textVal.val());
+                afterSubmit.removeClass("hidden");
+            };
+
+            //是否超过字数
+            var mesNum = $("#dialog-mes-num");
+            $("#dialog-textVal").keyup(function() {
+
+                var length = $(this).val().length;
+                mesNum.text(length);
+                if (length >= 250) {
+                    //$(this).attr("disabled",true);
+                }
+            })
+            $(".detail-share .wx").click(function(e) {
+                e.stopPropagation()
+                $("#wx-popup").removeClass("hidden").css({
+                    left: $(".detail-share .wx").offset().left - 98,
+                    top: $(".detail-share .wx").offset().top - 210
+                })
+                $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
+            });
+            $(document.body).click(function() {
+                $("#wx-popup").addClass("hidden")
+            });
+            var submitToPhone = function() {
+                $.ajax({
+                    url: $("#ph-form")[0].action,
+                    data: {
+                        carId: SaleDetailConfig.carId
+                    },
+                    type: "post",
+                    success: function(data) {
+                        $('body').append(data);
+                        $(".wrapGrayBg").show();
+                        $("#ph-popup").addClass("hidden")
+                        $("#ph-result-popup").removeClass('hidden');
+                    }
+                })
+            }
+            $(".detail-share .ph").click(function() {
+                $("#ph-popup .popup-title").html("保存到手机")
+                $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendCarClose)
+                $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
+                $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
+                $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
+                Souche.checkPhoneExist(function(is_login) {
+                    if (is_login) {
+                        submitToPhone();
+                    } else {
+                        $("#ph-popup").removeClass("hidden")
+                        $(".wrapGrayBg").show();
+                    }
+                })
+            })
+            $("#ph-form").on("submit", function(e) {
+                e.preventDefault();
+                if (!phoneReg.test($("#ph-phone").val())) {
+                    $(".warning", this).removeClass("hidden");
+                } else {
+                    Souche.PhoneRegister($("#ph-phone").val(), function() {
+                        submitToPhone();
+                    })
+
+                }
+            })
+            $("#ph-phone").blur(function(e) {
+                e.preventDefault();
+                if (!phoneReg.test($("#ph-phone").val())) {
+                    $(".warning", $("#ph-form")).removeClass("hidden");
+                } else {
+                    $(".warning", $("#ph-form")).addClass("hidden");
+                    $(".phone-true").removeClass("hidden");
+                }
+            })
+            $(".send_addr_tophone").click(function() {
+                $("#ph-popup .popup-title").html("发地址到手机")
+                $("#ph-popup .tip").html("输入手机号码，即可发送")
+                $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendAddressClose)
+                $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendAddressSubmit)
+                $("#ph-form")[0].action = SaleDetailConfig.api_sendAddressToPhone
+                Souche.checkPhoneExist(function(is_login) {
+                    if (is_login) {
+                        submitToPhone();
+                    } else {
+                        $("#ph-popup").removeClass("hidden")
+                        $(".wrapGrayBg").show();
+                    }
+                })
+            })
+            var submitJiangjia = function() {
+                $.ajax({
+                    url: $("#jiangjia-form").attr('action'),
+                    data: $("#jiangjia-form").serialize(),
+                    success: function(data) {
+                        if (data.errorMessage) {
+                            alert(data.errorMessage)
+                        } else {
+                            $("#jiangjia-popup").addClass("hidden");
+                            $("#jiangjia-success-popup").removeClass("hidden");
+                            $(".wrapGrayBg").show();
+                        }
+                    }
+                })
+            }
+            //降价通知提交
+            $("#jiangjia-form").submit(function(e) {
+                e.preventDefault();
+                if (!phoneReg.test($("#jiangjia-phone").val())) {
+                    $(".warning", this).removeClass("hidden");
+                    return;
+                }
+                Souche.PhoneRegister($("#jiangjia-phone").val(), function() {
+
+                    submitJiangjia();
+                })
+            })
+            $("#J_jiangjia").click(function() {
+                Souche.checkPhoneExist(function(is_login) {
+                    //          if(is_login){
+                    //              submitJiangjia();
+                    //          }else{
+                    $("#jiangjia-popup").removeClass("hidden");
+                    $(".wrapGrayBg").show();
+                    //          }
+                })
+            });
+            Bimu.form.selfValidate("J_dialogForm", "dialog-sendMes", function() {
+                if (!(/^\+?[1-9][0-9]*$/.test(priceVal.val()))) {
+                    $("#price-valid").show();
+                    return false;
+                }
+
+                if (parseInt(priceVal.val()) >= parseInt(salePrice)) {
+                    $("#price-illegal").show();
+                    return false;
+                }
+                var content = $("#dialog-textVal").val();
+                if (content && content.length > 250) {
+                    $("#content-valid").show();
+                    return false;
+                }
+                $("#content-valid").hide();
+                $("#price-illegal").hide();
+                $("#price-valid").hide();
+                //是否登录
+                $.ajax({
+                    url: contextPath + "/pages/evaluateAction/isLogin.json",
+                    type: "post",
+                    dataType: "json",
+                    async: false,
+                    success: function(data) {
+                        if (data.result == "true") {
+
+                            ///
+                            Bimu.ajax.formPost("J_dialogForm", function() {
+                                showMes();
+                                afterSubmit.removeClass("hidden");
+                                dialogGetMes.removeClass("dialog-error").addClass("hidden");
+                                $(".zixun-main").scrollTop($(".zixun-main").height())
+                            });
+                            ///
+                            return true;
+                        } else {
+                            dialogGetMes.addClass("dialog-error");
+                            $(".zixun-main").scrollTop($(".zixun-main").height())
+                            return false;
+                        }
+                    },
+                    error: function() {
+                        dialogGetMes.addClass("dialog-error");
+                        $(".zixun-main").scrollTop($(".zixun-main").height())
+                        return false;
+                    }
+                });
+            })
+            var doubleClickFlag = false;
+            var submitFav = function() {
+                $.ajax({
+                    url: SaleDetailConfig.api_saveFavorite,
+                    data: {
+                        phone: $("#fav-phone").val(),
+                        carType: SaleDetailConfig.carType,
+                        carId: SaleDetailConfig.carId
+                    },
+                    dataType: "json",
+                    type: "post",
+                    success: function(data) {
+                        if (data.errorMessage) {
+                            alert(data.errorMessage)
+                        } else {
+                            //$('#shoucang-popup').removeClass('hidden');
+                            var favPos = $("#J_shoucang").offset();
+                            $("<div class='icon-fei'></div>").css({
+                                left: favPos.left + 7,
+                                top: favPos.top + 7
+                            })
+                                .appendTo(document.body)
+                                .animate({
+                                    left: $(".sidebar").offset().left + 10,
+                                    top: $(".sidebar").offset().top + 10,
+                                    opacity: 0
+                                }, 700, function() {
+                                    $(".collectside").addClass("flash")
+                                    setTimeout(function() {
+                                        $(".collectside").removeClass("flash")
+                                    }, 500)
+                                })
+                            $("#fav-popup").addClass("hidden")
+                            $(".wrapGrayBg").hide();
+                            $("#J_shoucang label").html('已收藏')
+                            $("#J_shoucang").attr('value', '1').addClass("faved");
+                            var num = $('#J_car_favorite').html();
+                            $('#J_car_favorite').html(parseInt(num) + 1);
+                            doubleClickFlag = false;
+                        }
+                    }
+                })
+            }
+            $("#J_shoucang").live('click', function(e) {
+
+                e.preventDefault();
+
+                if ($(this).hasClass("faved")) {
+                    return;
+                }
+                Souche.checkPhoneExist(function(is_login) {
+                    if (is_login) {
+
+                        submitFav();
+                    } else {
+                        $("#fav-popup").removeClass("hidden")
+                        $(".wrapGrayBg").show();
+                    }
+                })
+
+            });
+            $("#fav-form").on("submit", function(e) {
+                e.preventDefault();
+                if (!phoneReg.test($("#fav-phone").val())) {
+                    $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
+                } else {
+
+                    Souche.PhoneRegister($("#fav-phone").val(), function() {
+                        submitFav();
+                    })
+                }
+            })
+            $('#shoucang-popup .apply_close').click(function() {
+
+                $(this).parent().addClass('hidden');
+                $(".wrapGrayBg").hide();
+            });
+
+            Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function() {
+
+                //登录验证
+                if (!$('#user-phone').val()) {
+                    dialogLoginRemind.html("请输入手机号");
+                    return false;
+                }
+                if (!$('#user-psd').val()) {
+                    dialogLoginRemind.html("请输入密码");
+                    return false;
+                }
+                $("#dialog-loginBtn").val("登陆中...");
+
+                return true;
+            }, function(data) {
+                if (data.errorMessage == "") {
+                    Bimu.ajax.formPost("J_dialogForm", function() {
+                        showMes();
+                        afterSubmit.removeClass("hidden");
+                        dialogGetMes.removeClass("dialog-error").addClass("hidden");
+                    });
+                } else {
+                    dialogLoginRemind.html(data.errorMessage);
+                }
+                $(".zixun-main").scrollTop($(".zixun-main").height())
+            });
+            $("#user-phone").blur(function() {
+                var phoneT = $(this).val();
+                if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
+                    dialogLoginRemind.html("请正确填写手机号码！");
+                } else {
+                    dialogLoginRemind.html("");
+                }
+            });
+
+            //注册                
+            var uuid = guid();
+            $("#uuid").val(uuid);
+
+            Bimu.form.validate("dialog-reg", "dialog-regBtn", function(data) {
+
+                if (data.id) {
+                    if (data.msg) {
+                        dialogRegRemind.html(data.msg);
+                    }
+
+                    return;
+                } else {
+                    dialogRegRemind.html("");
+                    $("#user-phone").val($("#user-regPhone").val());
+                    $("#user-psd").val($("#user-regPsd").val());
+                    Bimu.ajax.loginForm("dialog-login", function(data) {
+                        if (data.errorMessage == "") {
+                            //登陆       
+                            Bimu.ajax.formPost("J_dialogForm", function() {
+                                showMes();
+                                afterSubmit.removeClass("hidden");
+                                dialogGetMes.removeClass("dialog-error dialog-register").addClass("hidden");
+                            });
+                        }
+                    }, null);
+                }
+
+            }, function() {}, {
+                noclear: true
+            });
+
+            $("#user-regPhone").blur(function() {
+                var phoneT = $(this).val();
+                if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
+                    dialogRegRemind.html("请正确填写手机号码");
+                } else {
+                    dialogRegRemind.html("");
+                }
+            });
+
+            function setButtonValue(obj) {
+                var interVal = null;
+                var phone = $("#user-regPhone").val();
+                if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phone) && phone.length == 11)) {
+                    dialogRegRemind.html("请正确填写手机号码");
+                    if (interVal != null)
+                        clearInterval(interVal);
+
+                    obj.attr("disabled", false);
+                    obj.val("获取验证码");
+                    return;
+                }
+                var it = 0;
+
+                obj.attr("disabled", true);
+
+                setTimeout(function() {
+                    obj.attr("disabled", false);
+                    if (interVal != null) {
+                        clearInterval(interVal);
+                    }
+                    obj.val("获取验证码");
+                }, 60000);
+
+                interVal = setInterval(function() {
+
+                    if (it < 60) {
+                        obj.val((60 - it) + "秒后可重发");
+                        it++;
+                    }
+
+                }, 1000);
+
+                var uuid = $("#user-test").val();
+
+                Bimu.ajax.post("sendMessageAction", "sendMessage", {
+                    phoneNumber: phone,
+                    type: "register",
+                    uuid: uuid
+                }, function(data) {
+                    if (data.id) {
+                        dialogRegRemind.html("该手机号码已经注册");
+                        if (interVal != null) {
+
+                            clearInterval(interVal);
+                        }
+                        obj.val("获取验证码");
+                        obj.attr("disabled", false);
+                    } else {
+                        dialogRegRemind.html("");
+                    }
+                }, function() {});
+            }
+
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            };
+
+            function guid() {
+                return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                    s4() + '-' + s4() + s4() + s4();
+            }
+            $(".dialog-get-yz").click(function() {
+                setButtonValue($(this));
+            })
+
+            $("#J_zixunPrice").click(function() {
+                $("#dialog-apply1,#dialog-getMes").removeClass("hidden").slideDown(200);
+                afterSubmit.addClass('hidden');
+                $('#dialog-priceVal').val('');
+                $("#dialog-textVal").val('');
+                $(".zixun-main").scrollTop($(".zixun-main").height())
+            });
+            //  $(".J_linkShangqiao").click(function(){
+            //      $("#bridgehead").trigger("click");
+            //  });
+            $(".J_linkShangqiao").mouseenter(function() {
+                $(".shangqiao-remind", this.parentNode).show();
+            }).mouseleave(function() {
+                $(".shangqiao-remind", this.parentNode).hide();
+            });
+            $("#link-reg").click(function() {
+                $("#dialog-getMes").addClass("dialog-register");
+                return false;
+            });
+            $("#link-login").click(function() {
+                $("#dialog-getMes").removeClass("dialog-register");
+                return false;
+            });
+            //*****************************
         }
     }
 }();

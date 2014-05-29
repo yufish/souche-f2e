@@ -14,4 +14,5 @@ module.exports = {
     "load_all_time": Number,
     "visit_length": Number, //页面往下拉的最长长度
     "click_count": Number, //页面点击次数
+    time: Date
 }

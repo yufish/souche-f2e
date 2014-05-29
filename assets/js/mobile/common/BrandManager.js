@@ -38,6 +38,11 @@
         return {
             brands :[],
             ltns :[],
+            //pres:[],
+            //前置检查，如果不满足要求，不在执行后面的通知
+//            addPre:function(pre){
+//              this.pres.push(pre);
+//            },
             addLtn :function(ltn){
                 this.ltns.push(ltn);
             },
@@ -51,7 +56,8 @@
                 this.brands.push(b);
                 this.notify({
                     eventType:'addBrand',
-                    item:b
+                    item:b,
+                    bLen:this.brands.length
                 });
             },
             noLimitBrand:function(){
@@ -63,11 +69,17 @@
                 })
             },
             isBrandNoLimit:function(){
-                return (this.brands.length==1&&this.brands[0]==Brand.NoLimit);
+                return (this.brands.length==0);
             },
             addSeries:function(code,name,bCode){
                 var brand = this._checkBrand(bCode);
-                brand.addSeries(new Series(code ,name));
+                var s = new Series(code ,name)
+                brand.addSeries(s);
+                this.notify({
+                    eventType:'addSeries',
+                    item:s,
+                    brandCode:bCode
+                })
             },
             noLimitSeries:function(bCode){
                 var brand = this._checkBrand(bCode);
@@ -82,7 +94,8 @@
                         var dItem = this.brands.splice(i,1)[0];
                         this.notify({
                             eventType:'removeBrand',
-                            item:dItem
+                            item:dItem,
+                            bLen:this.brands.length
                         })
                         return;
                     }
@@ -92,11 +105,11 @@
                 var brand = this._checkBrand(bCode);
                 var series = brand.series;
                 for(var i = 0;i<series.length;i++){
-                    if(code == series[i]){
-                        var dItem = series.splice(i,1);
+                    if(code == series[i].code){
+                        var dItem = series.splice(i,1)[0];
                         this.notify({
                             eventType:'removeSeries',
-                            brand:brand,
+                            brandCode:bCode,
                             item:dItem
                         })
                     }
@@ -117,7 +130,14 @@
                 if(brand==null)throw new TypeError('cannot get brand by the given code');
                 return brand;
             }
-
+//            _preCheck:function(){
+//                for(var i=0;i<this.pres.length;i++){
+//                    if(!this.pres[i].check(eData)){
+//                        return false;
+//                    }
+//                }
+//                return true;
+//            }
         }
     }
 )
