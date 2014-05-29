@@ -44,7 +44,8 @@ html
         .summery.hidden
             .alert.alert-warning 总浏览量：<em id="total_count"></em>
         .con
-            iframe.refer-page(src="#{locals.url?locals.url:'http://www.souche.com/'}")
+            - 
+            iframe.refer-page(src="#{locals.iframeurl}")
             .map#map
             .jcrop-container
         script(src="http://f2e.souche.com/assets/js/souche/ui/loadingTip.js")
