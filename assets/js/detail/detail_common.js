@@ -4,62 +4,61 @@
         $(".apply_popup").addClass("hidden");
         $('.wrapGrayBg').hide();
     });
-
-
-
-
-
     $("#link-to-fenqi").click(function() {
         $("#fenqi-popup").removeClass("hidden");
         $(".wrapGrayBg").show();
         return false;
     });
 
-    require(['detail/draw-price-down'], function(DrawPriceDown) {
-        DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-    })
-    require(['detail/draw-koubei'],
-        function(DrawKoubei) {
-            var koubeiData = [{
-                name: "细节",
-                rate: 0.7,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.9,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.5,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.5,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.2,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.3,
-                labels: ["价格高", "储物空间大"]
-            }, {
-                name: "细节",
-                rate: 0.8,
-                labels: ["价格高", "储物空间大"]
-            }]
-            DrawKoubei.draw(koubeiData)
-        }
-    )
+    // require(['detail/draw-price-down'], function(DrawPriceDown) {
+    //     DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+    // })
+    // require(['detail/draw-koubei'],
+    //     function(DrawKoubei) {
+    //         var koubeiData = [{
+    //             name: "细节",
+    //             rate: 0.7,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.8,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.9,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.5,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.8,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.5,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.2,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.3,
+    //             labels: ["价格高", "储物空间大"]
+    //         }, {
+    //             name: "细节",
+    //             rate: 0.8,
+    //             labels: ["价格高", "储物空间大"]
+    //         }]
+    //         DrawKoubei.draw(koubeiData)
+    //     }
+    // )
+
+    // require(['detail/draw-baoyang'], function(Baoyang) {
+    //     Baoyang.draw([])
+    // })
     var width = 642;
     var price = [35.6, 46.3]
     var length = [45, 520]
@@ -188,7 +187,25 @@
         priceVal = $("#dialog-priceVal"),
         salePrice = $("#dialog-apply1").attr("price"),
         textVal = $("#dialog-textVal");
+    //门店地址
+    $(".detail-share .address").mousemove(function() {
+        $(".adress-open").removeClass("hidden");
+    })
+    // var submitAddress = function() {
+    //     $.ajax({
+    //         url: config.api_saleCarOrder,
+    //         data: {
+    //             phone: $("#address-phone").val(),
+    //             carId: config.carId
+    //         },
+    //         type: "post",
+    //         success: function(data) {
+    //             $('body').append(data);
+    //             $(".adress-open").addClass("hidden");
 
+    //         }
+    //     })
+    // }
     //取得用户填写的信息
     var showMes = function() {
         showPrice.text(priceVal.val());
