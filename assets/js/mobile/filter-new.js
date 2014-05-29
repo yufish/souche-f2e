@@ -179,12 +179,17 @@ function filter(BrandMgr,addListener) {
                 seriesPopupTitle.text(bName);
             }
 
-            $('#series-wrapper').on('click', '.series-name', function () {
-                var $self = $(this);
-                var code = $self.attr('data-code');
-                var name = $self.text();
-                setSeries(code, name);
-                $self.addClass('selected');
+            $('#series-wrapper').on('click', '.series-item', function () {
+                var self = $(this);
+                var bCode = self.closest('.content').attr('data-code');
+                var code = self.attr('data-code');
+                var name = self.text();
+                if(self.hasClass('selected')){
+                    BrandMgr.removeSeries(code,bCode)
+                }else{
+                    BrandMgr.addSeries(code,name,bCode);
+                }
+
             })
 
 
