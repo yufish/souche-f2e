@@ -2064,7 +2064,7 @@ body {
   width: 270px;
   height: 100px;
   top: -5px;
-  right: -197px;
+  right: -215px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding: 15px;
@@ -2092,25 +2092,22 @@ body {
   color: #666;
   margin-top: 8px;
 }
-#detail_main .detail-share .adress-open .adress-from {
+#detail_main .detail-share .adress-open #adress-from {
   margin-top: 8px;
 }
-#detail_main .detail-share .adress-open .adress-from input {
+#detail_main .detail-share .adress-open #adress-from input {
   height: 24px;
   width: 138px;
   border: 1px solid #E4E3E3;
   padding: 3px 5px;
 }
-#detail_main .detail-share .adress-open .adress-from button {
+#detail_main .detail-share .adress-open #adress-from .adress-submit {
   width: 80px;
   height: 32px;
   background: #FC7000;
   border: none;
   color: #fff;
   margin-left: 15px;
-}
-#detail_main .detail-share span {
-  margin-right: 5px;
 }
 #detail_main .detail-feed {
   width: 460px;
