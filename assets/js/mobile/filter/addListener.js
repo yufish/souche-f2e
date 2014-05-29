@@ -11,7 +11,7 @@
     }
 
 }('ltns',function(){
-    var bPopupLtn = {
+    var brandPaneLtn = {
         container : $('#brand-list .content'),
         process:function(e){
             var eType = e.eventType;
@@ -121,10 +121,30 @@
         }
     }
 
+    var seriesPaneLtn={
+        container :$('.content-tabs'),
+        process:function(e){
+            var eType = e.eventType;
+            if(eType=='addSeries'){
+                var sCode = e.item.code;
+                this.container.find('.content[data-code="'+ e.brandCode+'"]')
+                    .find('.series-item[data-code="'+sCode+'"]')
+                    .addClass('selected');
+            }
+            if(eType=='removeSeries'){
+                var sCode = e.item.code;
+                this.container.find('.content[data-code="'+ e.brandCode+'"]')
+                    .find('.series-item[data-code="'+sCode+'"]')
+                    .removeClass('selected')
+            }
+        }
+    }
+
     function addLtns(BrandMgr){
-        BrandMgr.addLtn(bPopupLtn);
+        BrandMgr.addLtn(brandPaneLtn);
         BrandMgr.addLtn(makeSeriesDomByBrandLtn);
         BrandMgr.addLtn(selectedBrandsLtn);
+        BrandMgr.addLtn(seriesPaneLtn);
     }
     return addLtns;
 })
