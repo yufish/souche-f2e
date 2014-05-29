@@ -159,14 +159,21 @@
 #filter-car .filter-popup .series-name-wrapper {
     padding-left: 10px;
 }
-#filter-car .filter-popup .series-name {
+#filter-car  .series-item .series-name {
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #fff;
-    font-size: 13px;
+    font-weight: bold;
 }
-#filter-car .filter-popup .series-name.selected {
+#filter-car .series-item.selected .series-name {
     color: #ff4400;
+    border: 1px solid #ff4400;
+}
+#filter-car #series-list .series-item{
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
 }
 #filter-car .btns {
     text-align: center;
@@ -269,9 +276,4 @@
 #filter-car .content-tabs .content.selected{
     display: block;
 
-}
-#filter-car #series-list .series-item{
-    text-align: center;
-    line-height: 50px;
-    float: left;
 }

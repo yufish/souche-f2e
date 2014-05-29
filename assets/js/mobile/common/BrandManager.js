@@ -47,7 +47,6 @@
                 this.ltns.push(ltn);
             },
             notify:function(eData){
-
                 for(var i =0;i<this.ltns.length;i++){
                     this.ltns[i].process(eData);
                 }
@@ -74,7 +73,13 @@
             },
             addSeries:function(code,name,bCode){
                 var brand = this._checkBrand(bCode);
-                brand.addSeries(new Series(code ,name));
+                var s = new Series(code ,name)
+                brand.addSeries(s);
+                this.notify({
+                    eventType:'addSeries',
+                    item:s,
+                    brandCode:bCode
+                })
             },
             noLimitSeries:function(bCode){
                 var brand = this._checkBrand(bCode);
@@ -100,11 +105,11 @@
                 var brand = this._checkBrand(bCode);
                 var series = brand.series;
                 for(var i = 0;i<series.length;i++){
-                    if(code == series[i]){
-                        var dItem = series.splice(i,1);
+                    if(code == series[i].code){
+                        var dItem = series.splice(i,1)[0];
                         this.notify({
                             eventType:'removeSeries',
-                            brand:brand,
+                            brandCode:bCode,
                             item:dItem
                         })
                     }
