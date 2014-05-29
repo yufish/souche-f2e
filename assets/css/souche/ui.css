@@ -402,6 +402,7 @@ body .wrapGrayBg {
   left: 0;
   background-color: #000;
   z-index: 10000;
+  filter: alpha(opacity=70);
 }
 body .input-error-tip {
   height: 25px;
@@ -505,7 +506,7 @@ body .input-error-tip .error-icon {
 .suggest-popup .suggest-title {
   margin: 20px 0 20px 17px;
   color: #333;
-  font-size: 20px;
+  font-size: 18px;
 }
 .suggest-popup .suggest-area {
   width: 100%;
