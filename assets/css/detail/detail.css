@@ -1957,7 +1957,7 @@ body {
   width: 143px;
   height: 55px;
   margin-left: 50px;
-  background: url("../../images/fed/detail_sprite_common.png?123") no-repeat 0 -155px;
+  background: url("../../images/fed/detail_sprite_common.png?124") no-repeat 0 -155px;
 }
 #detail_main .detail-collect {
   float: left;
@@ -2022,6 +2022,7 @@ body {
   color: #666;
   height: 40px;
   padding-top: 10px;
+  position: relative;
 }
 #detail_main .detail-share a {
   vertical-align: middle;
@@ -2029,8 +2030,8 @@ body {
   opacity: 0.75;
   display: inline-block;
   overflow: hidden;
-  width: 25px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
   text-indent: -1000px;
 }
 #detail_main .detail-share a:hover {
@@ -2039,26 +2040,77 @@ body {
   text-decoration: underline;
 }
 #detail_main .detail-share .ph {
-  background: url(../../images/detail/share-phone.png) no-repeat 0 center;
+  background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
   overflow: hidden;
-  padding: 3px;
   cursor: pointer;
 }
 #detail_main .detail-share .wx {
-  background: url(../../images/detail/share-weixin.png) no-repeat 0 center;
+  background: url(../../images/detail/share-weixin.png?123) no-repeat 0 center;
   overflow: hidden;
-  padding: 3px;
   cursor: pointer;
 }
 #detail_main .detail-share .weibo {
-  background: url(../../images/detail/share-weibo.png) no-repeat 0 center;
+  background: url(../../images/detail/share-weibo.png?123) no-repeat 0 center;
   overflow: hidden;
-  padding: 3px;
   cursor: pointer;
-  margin-left: 5px;
+}
+#detail_main .detail-share .address {
+  background: url(../../images/detail/address.png?123) no-repeat 0 center;
+  overflow: hidden;
+  cursor: pointer;
+}
+#detail_main .detail-share .adress-open {
+  position: absolute;
+  width: 270px;
+  height: 100px;
+  top: -5px;
+  right: -197px;
+  background-color: #F9F9F9;
+  border: 1px solid #E4E3E3;
+  padding: 15px;
+}
+#detail_main .detail-share .adress-open .adress-title {
+  color: #666;
+  font-size: 12px;
+}
+#detail_main .detail-share .adress-open .adress-title i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(../../images/detail/address.png?123) no-repeat 0 center;
+  float: left;
+  margin-right: 5px;
+}
+#detail_main .detail-share .adress-open .adress-title a {
+  color: #FC7000;
+  display: block;
+  float: right;
+  text-indent: 1px;
+  width: 55px;
+}
+#detail_main .detail-share .adress-open p {
+  color: #666;
+  margin-top: 8px;
+}
+#detail_main .detail-share .adress-open .adress-from {
+  margin-top: 8px;
+}
+#detail_main .detail-share .adress-open .adress-from input {
+  height: 24px;
+  width: 138px;
+  border: 1px solid #E4E3E3;
+  padding: 3px 5px;
+}
+#detail_main .detail-share .adress-open .adress-from button {
+  width: 80px;
+  height: 32px;
+  background: #FC7000;
+  border: none;
+  color: #fff;
+  margin-left: 15px;
 }
 #detail_main .detail-share span {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 #detail_main .detail-feed {
   width: 460px;
@@ -2066,20 +2118,14 @@ body {
 #detail_main .detail-feed-hd .qq-zixun {
   float: right;
   height: 30px;
-  line-height: 30px;
-  font-size: 14px;
-  background: #007eca url(../../images/detail/qq-zixun.png) no-repeat 10px center !important;
-  color: #fff;
-  padding-left: 30px;
-  padding-right: 10px;
-  border-radius: 3px;
-  margin-top: 10px;
+  background: url(../../images/detail/zixun.png) no-repeat !important;
   cursor: pointer;
-  width: auto  !important;
+  width: 80px;
   border: none  !important;
+  display: block;
 }
 #detail_main .detail-feed-hd .qq-zixun:hover {
-  background-color: #0a8fe0 !important;
+  background: url(../../images/detail/zixun-hover.png) no-repeat !important;
 }
 #detail_main .detail-feed-bd {
   padding-top: 11px;

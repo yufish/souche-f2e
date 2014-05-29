@@ -449,32 +449,81 @@ border:1px solid #ddd;
 #detail_main .detail-collect a.faved:hover{border:1px solid #d8d8d8;cursor: default;}
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
-#detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;}
+#detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;position: relative;}
 #detail_main .detail-share a{vertical-align:middle;color: #0077a8;opacity: 0.75;display:inline-block;overflow:hidden;width:18px;height:18px;text-indent: -1000px;}
 #detail_main .detail-share a:hover{color:#0090cc;opacity: 1;text-decoration: underline;}
 #detail_main .detail-share .ph{
-
-    background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
-    overflow: hidden;
-    padding:3px;
-    cursor: pointer;
-
+  background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
+  overflow: hidden;
+  cursor: pointer;
 }
 #detail_main .detail-share .wx{
 background: url(../../images/detail/share-weixin.png?123) no-repeat 0 center;
 overflow: hidden;
-padding:3px;
 cursor: pointer;
 }
 #detail_main .detail-share .weibo{
 background: url(../../images/detail/share-weibo.png?123) no-repeat 0 center;
 overflow: hidden;
-padding:3px;
 cursor: pointer;
-margin-left:5px;
+}
+#detail_main .detail-share .address{
+background: url(../../images/detail/address.png?123) no-repeat 0 center;
+overflow: hidden;
+cursor: pointer;
+}
+#detail_main .detail-share .adress-open{
+  position: absolute;
+  width: 270px;
+  height: 100px;
+  top: -5px;
+  right: -197px;
+  background-color: #F9F9F9;
+  border: 1px solid #E4E3E3;
+  padding:15px;
+  .adress-title{
+    color: #666;
+    font-size: 12px;
+    i{
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: url(../../images/detail/address.png?123) no-repeat 0 center;
+      float: left;
+      margin-right: 5px;
+    }
+    a{
+      color: #FC7000;
+      display: block;
+      float: right;
+      text-indent: 1px;
+      width: 55px;
+    }
+  }
+  p{
+    color: #666;
+    margin-top: 8px;
+  }
+  .adress-from{
+    margin-top: 8px;
+    input{
+      height: 24px;
+      width: 138px;
+      border: 1px solid #E4E3E3;
+      padding:3px 5px;
+    }
+    button{
+      width: 80px;
+      height: 32px;
+      background: #FC7000;
+      border: none;
+      color: #fff;
+      margin-left: 15px;
+    }
+  }
 }
 #detail_main .detail-share span{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 #detail_main .detail-feed{
 width: 460px;
@@ -483,20 +532,14 @@ width: 460px;
   .qq-zixun{
     float: right;
     height:30px;
-    line-height: 30px;
-    font-size: 14px;
-    background: #007eca url(../../images/detail/qq-zixun.png) no-repeat 10px center !important;
-    color:#fff;
-    padding-left:30px;
-    padding-right: 10px;
-    border-radius: 3px;
-    margin-top: 10px;
+    background:url(../../images/detail/zixun.png) no-repeat!important;
     cursor:pointer;
-    width:auto  !important;
+    width:80px;
     border:none  !important;
+    display: block;
   }
   .qq-zixun:hover{
-    background-color: #0a8fe0 !important;
+    background:url(../../images/detail/zixun-hover.png) no-repeat!important;
   }
   
 }

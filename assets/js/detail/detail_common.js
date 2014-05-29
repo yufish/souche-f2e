@@ -4,11 +4,6 @@
         $(".apply_popup").addClass("hidden");
         $('.wrapGrayBg').hide();
     });
-
-
-
-
-
     $("#link-to-fenqi").click(function() {
         $("#fenqi-popup").removeClass("hidden");
         $(".wrapGrayBg").show();
@@ -188,7 +183,25 @@
         priceVal = $("#dialog-priceVal"),
         salePrice = $("#dialog-apply1").attr("price"),
         textVal = $("#dialog-textVal");
+    //门店地址
+    $(".detail-share .address").mousemove(function() {
+        $(".adress-open").removeClass("hidden");
+    })
+    // var submitAddress = function() {
+    //     $.ajax({
+    //         url: config.api_saleCarOrder,
+    //         data: {
+    //             phone: $("#address-phone").val(),
+    //             carId: config.carId
+    //         },
+    //         type: "post",
+    //         success: function(data) {
+    //             $('body').append(data);
+    //             $(".adress-open").addClass("hidden");
 
+    //         }
+    //     })
+    // }
     //取得用户填写的信息
     var showMes = function() {
         showPrice.text(priceVal.val());
