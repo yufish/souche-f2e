@@ -36,7 +36,13 @@ html
                             |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
                             |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
                             |<option value="http://www.souche.com/pages/choosecarpage/choose-car-detail.html" #{locals.url=='http://www.souche.com/pages/choosecarpage/choose-car-detail.html'?'selected':'false'}>详情</option>
-
+                            |<option value="http://www.souche.com/pages/mobile/index.html" #{locals.url=='http://www.souche.com/pages/mobile/index.html'?'selected':'false'}>H5首页</option>
+                            |<option value="http://www.souche.com/pages/mobile/walk-around.html" #{locals.url=='http://www.souche.com/pages/mobile/walk-around.html'?'selected':'false'}>H5随便逛逛</option>
+                            |<option value="http://www.souche.com/pages/mobile/filter-car.html" #{locals.url=='http://www.souche.com/pages/mobile/filter-car.html'?'selected':'false'}>H5筛选二手车</option>
+                            |<option value="http://www.souche.com/pages/mobile/custom-search.html" #{locals.url=='http://www.souche.com/pages/mobile/custom-search.html'?'selected':'false'}>H5买车顾问</option>
+                            |<option value="http://www.souche.com/pages/mobile/sell-car.html" #{locals.url=='http://www.souche.com/pages/mobile/sell-car.html'?'selected':'false'}>H5我要卖车</option>
+                            |<option value="http://www.souche.com/pages/mobile/center-fav.html" #{locals.url=='http://www.souche.com/pages/mobile/center-fav.html'?'selected':'false'}>H5个人中心</option>
+                            |<option value="http://www.souche.com/pages/mobile/detail.html" #{locals.url=='http://www.souche.com/pages/mobile/detail.html'?'selected':'false'}>H5详情</option>
                     label.control-label
                         | 选择时间段
                         input#time.form-control(type="text",style="width:300px;",value="#{locals.time}")
@@ -50,7 +56,7 @@ html
             .jcrop-container
         script(src="http://f2e.souche.com/assets/js/souche/ui/loadingTip.js")
         script.
-            var url = "#{locals.url?locals.url:"http: //www.souche.com/"}"
+            var url = "#{locals.url?locals.url:"http://www.souche.com"}"
             var time = "#{locals.time?locals.time:""}"
 
         script(src="http://f2e.souche.com/assets/backend/js/clicks.js")

@@ -36,7 +36,7 @@ $(document).ready(function() {
         var click_types = {};
         var url = "http://f2e-monitor.souche.com/performance/click-data?url=" + window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com")
         if (getQueryString("time")) {
-            url += "&time" + getQueryString("time")
+            url += "&time=" + getQueryString("time")
         }
         $.ajax({
             url: url,

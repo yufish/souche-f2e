@@ -34,7 +34,7 @@
                 return function(req, res) {
                     res.locals.url = req.query.url;
                     if (!res.locals.url) {
-                        res.locals.url = "http://www.souche.com/"
+                        res.locals.url = "http://www.souche.com"
                     }
                     res.locals.iframeurl = res.locals.url
                     if (res.locals.iframeurl.indexOf("?") == -1) {
@@ -43,7 +43,7 @@
                         res.locals.iframeurl = res.locals.iframeurl + "&load_data=1"
                     }
                     if (req.query.time) {
-                        res.locals.iframeurl += "&time" + req.query.time;
+                        res.locals.iframeurl += "&time=" + req.query.time;
                     } else {
 
                     }
