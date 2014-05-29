@@ -33,6 +33,19 @@
             get: function() {
                 return function(req, res) {
                     res.locals.url = req.query.url;
+                    if (!res.locals.url) {
+                        res.locals.url = "http://www.souche.com/"
+                    }
+                    if (res.locals.url.indexOf("?") == -1) {
+                        res.locals.url = res.locals.url + "?load_data=1"
+                    } else {
+                        res.locals.url = res.locals.url + "&load_data=1"
+                    }
+                    if (req.query.time) {
+                        res.locals.url += "&time" + req.query.time;
+                    } else {
+
+                    }
                     res.locals.time = req.query.time;
                     return res.render('performance/clicks');
                 }
@@ -41,6 +54,7 @@
         "/click-data": {
             get: function() {
                 return function(req, res) {
+
                     var condition, maxTime, minTime, time, times, url;
                     url = decodeURIComponent(req.query.url);
                     time = req.query.time;
@@ -59,9 +73,13 @@
                             $lt: maxTime
                         };
                     }
-                    ClickModel.findAll().offset(0).limit(1000000).where(condition).fields(['page_x', 'page_y']).done(function(error, clicks) {
-                        console.log(clicks)
-                        res.send(clicks);
+                    ClickModel.findAll().offset(0).limit(1000000).where(condition).fields(['page_x', 'page_y', 'element_id']).done(function(error, clicks) {
+
+                        if (req.query.callback) {
+                            res.send(req.query.callback + "(" + JSON.stringify(clicks) + ")");
+                        } else {
+                            res.send(clicks);
+                        }
                     });
 
                 }
