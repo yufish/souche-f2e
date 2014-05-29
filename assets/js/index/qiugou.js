@@ -228,6 +228,7 @@ define(['souche/custom-select', 'souche/util/load-info', 'lib/jquery.easing.min'
         _hideForm: function() {
             $("#qiugou_redo").removeClass("hidden")
             if (qiugouData && qiugouData.items && qiugouData.items.length) {
+
                 $(".qiugou .form").css({
                     height: $(".qiugou .form").height(),
                     overflow: "hidden"
