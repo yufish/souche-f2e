@@ -256,7 +256,7 @@ a.a9:hover {
 }
 #store .mod-cars .car .pic img {
   height: 110px;
-  width: 145px;
+  max-width: 145px;
   display: block;
   margin: 0 auto;
 }
