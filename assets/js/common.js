@@ -4,6 +4,7 @@
         var Q_Buy_active = false;
         $(window).scroll(function() {
             if ($(window).scrollTop() > 0) {
+
                 $("#toTop").show("slow");
             } else {
                 $("#toTop").hide("slow");

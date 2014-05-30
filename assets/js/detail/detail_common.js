@@ -4,61 +4,123 @@
         $(".apply_popup").addClass("hidden");
         $('.wrapGrayBg').hide();
     });
+
+
+
+
+
     $("#link-to-fenqi").click(function() {
         $("#fenqi-popup").removeClass("hidden");
         $(".wrapGrayBg").show();
         return false;
     });
 
-    // require(['detail/draw-price-down'], function(DrawPriceDown) {
-    //     DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-    // })
-    // require(['detail/draw-koubei'],
-    //     function(DrawKoubei) {
-    //         var koubeiData = [{
-    //             name: "细节",
-    //             rate: 0.7,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.8,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.9,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.5,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.8,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.5,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.2,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.3,
-    //             labels: ["价格高", "储物空间大"]
-    //         }, {
-    //             name: "细节",
-    //             rate: 0.8,
-    //             labels: ["价格高", "储物空间大"]
-    //         }]
-    //         DrawKoubei.draw(koubeiData)
-    //     }
-    // )
 
-    // require(['detail/draw-baoyang'], function(Baoyang) {
-    //     Baoyang.draw([])
-    // })
+
+
+
+    $(".onsale-tab-item").on("click", function(e) {
+        var id = $(this).attr("data-id");
+        $(".onsale-content-item").addClass("hidden")
+        $("#" + id).removeClass("hidden");
+        $(".onsale-tab-item").removeClass("active");
+        $(this).addClass("active")
+        $(window).trigger("tab_change", id);
+    });
+    var hasInitTab = {
+
+    }
+    $(window).on("tab_change", function(e, id) {
+        if (!hasInitTab[id]) {
+            if (id == "onsale_price") {
+                $.ajax({
+                    url: "",
+                    dataType: "jsonp",
+                    success: function(data) {
+
+                    }
+                })
+                require(['detail/draw-price-down'], function(DrawPriceDown) {
+                    DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+                })
+            } else if (id == "onsale_baoyang") {
+                require(['detail/draw-baoyang'], function(Baoyang) {
+                    Baoyang.draw({
+                        feiyongs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8],
+                        nowDistance: 3.4
+                    })
+                })
+            } else if (id == "onsale_koubei") {
+                require(['detail/draw-koubei'],
+                    function(DrawKoubei) {
+                        var koubeiData = [{
+                            name: "细节",
+                            rate: 0.7,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.9,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.5,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.5,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.2,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.3,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }]
+                        DrawKoubei.draw(koubeiData)
+                    }
+                )
+            }
+            hasInitTab[id] = 1;
+        }
+    })
+
+    $("#detailDoor .tab-item").mouseenter(function() {
+        var $this = $(this);
+        var index = $this.index();
+        var target = null;
+        var active = $(".tab-content-active");
+
+        $(".tab-item-active").removeClass("tab-item-active");
+        $this.addClass("tab-item-active");
+        switch (index) {
+            case 0:
+                target = $("#J_tabService");
+                break;
+            case 1:
+                target = $("#J_tabCqi");
+                break;
+            default:
+                target = $("#J_tabAddr");
+        }
+        if (target.attr("class").indexOf("tab-content-active") == -1) {
+            target.addClass("tab-content-active");
+            active.removeClass("tab-content-active");
+        }
+    });
     var width = 642;
     var price = [35.6, 46.3]
     var length = [45, 520]
@@ -187,25 +249,7 @@
         priceVal = $("#dialog-priceVal"),
         salePrice = $("#dialog-apply1").attr("price"),
         textVal = $("#dialog-textVal");
-    //门店地址
-    $(".detail-share .address").mousemove(function() {
-        $(".adress-open").removeClass("hidden");
-    })
-    // var submitAddress = function() {
-    //     $.ajax({
-    //         url: config.api_saleCarOrder,
-    //         data: {
-    //             phone: $("#address-phone").val(),
-    //             carId: config.carId
-    //         },
-    //         type: "post",
-    //         success: function(data) {
-    //             $('body').append(data);
-    //             $(".adress-open").addClass("hidden");
 
-    //         }
-    //     })
-    // }
     //取得用户填写的信息
     var showMes = function() {
         showPrice.text(priceVal.val());
@@ -284,20 +328,52 @@
             $(".phone-true").removeClass("hidden");
         }
     })
-    $(".send_addr_tophone").click(function() {
-        $("#ph-popup .popup-title").html("发地址到手机")
-        $("#ph-popup .tip").html("输入手机号码，即可发送")
-        $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendAddressClose)
-        $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendAddressSubmit)
-        $("#ph-form")[0].action = SaleDetailConfig.api_sendAddressToPhone
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
-                submitToPhone();
-            } else {
-                $("#ph-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
+    // $(".send_addr_tophone").click(function() {
+    //     $("#ph-popup .popup-title").html("发地址到手机")
+    //     $("#ph-popup .tip").html("输入手机号码，即可发送")
+    //     $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendAddressClose)
+    //     $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendAddressSubmit)
+    //     $("#ph-form")[0].action = SaleDetailConfig.api_sendAddressToPhone
+    //     Souche.checkPhoneExist(function(is_login) {
+    //         if (is_login) {
+    //             submitToPhone();
+    //         } else {
+    //             $("#ph-popup").removeClass("hidden")
+    //             $(".wrapGrayBg").show();
+    //         }
+    //     })
+    // })
+    //门店地址
+    $(".detail-share .address").mousemove(function() {
+        $(".adress-open").removeClass("hidden");
+    })
+    $(document.body).on("click", function(e) {
+        if (!$(e.target).closest(".adress-open").length) {
+            $(".adress-open").addClass("hidden");
+        }
+    })
+    var submitAddress = function() {
+        $.ajax({
+            url: config.api_AddressToPhone,
+            data: {
+                phone: $("#address-phone").val()
+            },
+            type: "post",
+            success: function() {
+
+                $(".adress-open").addClass("hidden");
             }
         })
+    }
+    $("#adress-from").on("submit", function(e) {
+        e.preventDefault();
+        if (!phoneReg.test($("#address-phone").val())) {
+            alert("请输入正确手机号码");
+        } else {
+            Souche.PhoneRegister($("#address-phone").val(), function() {
+                submitAddress();
+            })
+        }
     })
     var submitJiangjia = function() {
         $.ajax({

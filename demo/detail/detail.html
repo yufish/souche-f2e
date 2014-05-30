@@ -353,16 +353,60 @@
     <!--detail_main-->
     <div class="onsale-summary">
       <div class="onsale-tab">
-        <a class="onsale-tab-item ">检测报告</a>
-        <a class="onsale-tab-item active">价格报告</a>
-        <a class="onsale-tab-item">口碑</a>
-        <a class="onsale-tab-item">配置</a>
-        <a class="onsale-tab-item">资讯</a>
-        <a class="onsale-tab-item">视频图片</a>
-        <a class="onsale-tab-item">保养费用</a>
+        <a class="onsale-tab-item active" data-id="onsale_report">检测报告</a>
+        <a class="onsale-tab-item " data-id="onsale_price">价格报告</a>
+        <a class="onsale-tab-item" data-id="onsale_koubei">口碑</a>
+        <a class="onsale-tab-item" data-id="onsale_config">配置</a>
+        <a class="onsale-tab-item" data-id="onsale_baoyang">保养费用</a>
       </div>
       <div class="onsale-content">
-        <div class="onsale-content-item">
+        
+        <div class="onsale-content-item hidden" id="onsale_baoyang">
+          <div class="baoyang">
+            <div class="baoyang-title">保养费用</div>
+            <div class="baoyang-filter">
+              每年行驶 <div class="sc-option" data-ui="dropdown" id="brand_option" style="z-index: 999;">
+              <div class="sc-option-hd">
+                <div class="sc-option-content">30000公里</div>
+                <div class="sc-option-action"><i></i></div>
+              </div>
+              <ul class="sc-option-list hidden" style="top: 25px;">
+                <li>
+                  <a href="#">5万以下</a>
+                </li>
+              </ul>
+            </div> 年保养费用约为 <em>￥6325元</em>
+            </div>
+            <div class="baoyang-main">
+              <div class="baoyang-projects clearfix">
+                <div class="t">本次保养项目</div>
+                <div class="baoyang-project"><i class="icon-1"></i>机油</div>
+                <div class="baoyang-project"><i class="icon-2"></i>机油滤芯</div>
+                <div class="baoyang-project baoyang-project-disabled"><i class="icon-2"></i>空气滤芯</div>
+                <div class="baoyang-project"><i class="icon-2"></i>空调滤芯</div>
+                <div class="baoyang-project"><i   class="icon-2"></i>燃油滤芯</div>
+                <div class="baoyang-project"><i class="icon-1"></i>刹车油</div>
+                <div class="baoyang-project"><i class="icon-1"></i>变速箱油</div>
+                <div class="baoyang-project"><i class="icon-1"></i>转向助力油</div>
+                <div class="baoyang-project"><i  class="icon-3"></i>火花塞</div>
+                <div class="baoyang-project"><i class="icon-4"></i>正时皮带</div>
+              </div>
+              <div class="baoyang-chart" id="baoyang_chart">
+
+              </div>
+              <div  class="price-point">
+                    <div class="price-tag new-tag">
+                        <div class="price-title new-title">本次保养费用</div>
+                        <div class="price-value">
+                            ￥2000
+                        </div>
+                    </div>
+                    <div class="tri new-tri"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="onsale-content-item hidden" id="onsale_koubei">
           <div class="net-koubei">
             <div class="koubei-title">网络口碑</div>
             <div class="koubei-desc">
@@ -410,7 +454,7 @@
             </div>
           </div>
         </div>
-        <div class="onsale-content-item hidden">
+        <div class="onsale-content-item hidden" id="onsale_price">
           <div class="price-report">
             <div class="report-title">2012款 宝马X1-sDrive20i-2.0T-手自一体领先型后驱 价格报告</div>
             <div class="report-item">
@@ -425,11 +469,11 @@
                           <div class="price-tag sr-tag">
                               <div class="price-title sc-title">大搜车价</div>
                               <div class="price-value sc-value">
-                                  ￥35.6万
+                                  ￥<span class="souche-price-min">42.4</span>万
                               </div>
                           </div>
                           <div id="price-rate">
-                              <i class="tip"></i>折价率 63%
+                              <i class="tip"></i>折价率 <span class="souche-price-lv">63%</span>
                           </div>
                       </div>
                       <div id="new-price" class="price-point">
@@ -440,7 +484,7 @@
                           <div class="price-tag new-tag">
                               <div class="price-title new-title">新车平均成交价</div>
                               <div class="price-value">
-                                  <i class="tip"></i>￥42.4万
+                                  <i class="tip"></i>￥<span class="souche-price-middle">42.4</span>万
                               </div>
                           </div>
                       </div>
@@ -453,7 +497,7 @@
 
                               <div class="price-title guide-title">新车厂商指导价</div>
                               <div class="price-value">
-                                  ￥46.3万
+                                  ￥<span class="souche-price-max">42.4</span>万
                               </div>
                           </div>
                       </div>
@@ -462,8 +506,8 @@
                       <div class="souche-price">
                           大搜车价：<span class="souche-price-text">￥35.6万</span>
                       </div>
-                      <p>比新车平均成交价(42.4万)省6.8万</p>
-                      <p>折价率63%</p>
+                      <p>比新车平均成交价(<span class="souche-price-middle">42.4</span>万)省<span class="souche-price-down">6.8</span>万</p>
+                      <p>折价率<span class="souche-price-lv">63%</span></p>
 
                       <div class="comment-tip1 clearfix">
                           <div>
@@ -509,11 +553,115 @@
             </div>  
           </div>
         </div>
+      
+    <div class="onsale-content-item hidden" id="onsale_config">
+      <!--detail_para-->
+    <div class="onsale_wrap" id="detail_para">
+      <div class="onsale_content clearfix">
+        
+        <h3>配置</h3>
+        <div class="check_group clearfix">
+          <p>图示说明：</p>
+          <div class="para_standard para_check"><span></span><ins>标配</ins>表示车辆标准配置</div>
+          <div class="para_plus para_check"><span></span><ins>加配</ins>表示车主自行添加的配置</div>
+          <div class="para_select para_check"><span></span><ins>选配</ins>表示您在大搜车购车时可以选购此项配置</div>
+        </div>
+        <div class="para-table clearfix">
+          <table>
+            <caption>安全配置</caption>
+            <tr><th>安全带未系提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>发动机启动防盗锁装置</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>车门关闭提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>车门自动落锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>遥控中控锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>遥控钥匙</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>安全气囊</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+          </table>
+          <table class="marginRight0 floatRight">
+            <caption>外部配置</caption>
+            <tr><th>前后电动升降窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>四门电动窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>电动天窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>电动折叠后视镜</th><td>——</td></tr>
+            <tr><th>全景天窗</th><td>——</td></tr>
+            <tr><th>卤素前大灯</th><td>——</td></tr>
+            <tr><th>氙气灯</th><td>——</td></tr>
+            <tr><th></th><td></td></tr>
+            <tr><th></th><td></td></tr>
+            <tr><th></th><td></td></tr>
+            <tr><th></th><td></td></tr>
+          </table>
+          <table class="floatRight">
+            <caption>内饰配置</caption>
+            <tr><th>手动调节前座椅</th><td>——</td></tr>
+            <tr><th>电动调节前座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>真皮座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>倒车影像系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>自动恒温空调系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>手动空调</th><td>——</td></tr>
+            <tr><th>车载电话（蓝牙系统）</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>车载雷达</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>DVD多媒体语音导航系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>智能语音导航系统</th><td>——</td></tr>
+            <tr><th>MP3播放器</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+          </table>
+          
+          <table>
+            <caption>操控配置</caption>
+            <tr><th>电子制动力分配系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>TRC牵引力控制系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+            <tr><th>防抱死制动系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
+          </table>  
+        </div>
+        <h3>参数</h3>
+        <div class="para-table clearfix">
+          <table>
+            <caption>基本参数</caption>
+            <tr><th>车型</th><td>SUV</td></tr>
+            <tr><th>车辆颜色</th><td>白色</td></tr>
+            <tr><th>变速箱</th><td>手自一体</td></tr>
+            <tr><th>变速箱档位</th><td>8档</td></tr>
+            <tr><th>车门数</th><td>五门</td></tr>
+            <tr><th>座位数</th><td>五座</td></tr>
+            <tr><th>长*宽*高(mm*mm*mm)</th><td>4469*1798*1583</td></tr>
+            <tr><th>行李箱容积(L)</th><td></td></tr>
+            <tr><th>轮毂材料</th><td>铝合金</td></tr>
+          </table>
+          <table>
+            <caption>发动机参数</caption>
+            <tr><th>百公里油耗(L)</th><td>9.4</td></tr>
+            <tr><th>排量(L)</th><td>2.0</td></tr>
+            <tr><th>油箱容积(L)</th><td>63</td></tr>
+            <tr><th>进气形式</th><td>增压</td></tr>
+            <tr><th>最大扭矩(N·m)</th><td>270.0</td></tr>
+            <tr><th>燃油</th><td>汽油</td></tr>
+            <tr><th>燃油标号</th><td>97</td></tr>
+            <tr><th>排放标准</th><td>国四</td></tr>
+            <tr><th></th><td></td></tr>
+          </table>
+          <table class="marginRight0">
+            <caption>底盘参数</caption>
+            <tr><th>驱动方式</th><td>后驱</td></tr>
+            <tr><th>转向系统</th><td>电动转向助力</td></tr>
+            <tr><th>前悬挂</th><td>双球节弹簧减震支柱前桥</td></tr>
+            <tr><th>后悬挂</th><td>多连杆</td></tr>
+          </table>
+          <table class="marginRight0">
+            <caption>车轮制动</caption>
+            <tr><th>前制动</th><td>盘式</td></tr>
+            <tr><th>后制动</th><td>盘式</td></tr>
+            <tr><th>前轮胎规格(mm)</th><td>225</td></tr>
+            <tr><th>后轮胎规格(mm)</th><td>225</td></tr>
+          </table>
+        </div>
+        
       </div>
     </div>
-    <div class="onsale-content-item hidden">
+    <!--detail_para end-->
+    </div>
+    <div class="onsale-content-item" id="onsale_report">
     <!--onsale_sum-->
-    <div class="onsale_wrap hidden" id="onsale_sum">
+    <div class="onsale_wrap" id="onsale_sum">
       <div class="onsale_content clearfix">
         <h1>大搜车检测报告</h1>
         <div class="checker">
@@ -968,110 +1116,9 @@
       </div>
     </div>
     <!--onsale_ride-->
-
-    <!--detail_para-->
-    <div class="onsale_wrap" id="detail_para">
-      <div class="onsale_content clearfix">
-        
-        <h3>配置</h3>
-        <div class="check_group clearfix">
-          <p>图示说明：</p>
-          <div class="para_standard para_check"><span></span><ins>标配</ins>表示车辆标准配置</div>
-          <div class="para_plus para_check"><span></span><ins>加配</ins>表示车主自行添加的配置</div>
-          <div class="para_select para_check"><span></span><ins>选配</ins>表示您在大搜车购车时可以选购此项配置</div>
-        </div>
-        <div class="para-table clearfix">
-          <table>
-            <caption>安全配置</caption>
-            <tr><th>安全带未系提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>发动机启动防盗锁装置</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>车门关闭提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>车门自动落锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>遥控中控锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>遥控钥匙</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>安全气囊</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-          </table>
-          <table class="marginRight0 floatRight">
-            <caption>外部配置</caption>
-            <tr><th>前后电动升降窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>四门电动窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>电动天窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>电动折叠后视镜</th><td>——</td></tr>
-            <tr><th>全景天窗</th><td>——</td></tr>
-            <tr><th>卤素前大灯</th><td>——</td></tr>
-            <tr><th>氙气灯</th><td>——</td></tr>
-            <tr><th></th><td></td></tr>
-            <tr><th></th><td></td></tr>
-            <tr><th></th><td></td></tr>
-            <tr><th></th><td></td></tr>
-          </table>
-          <table class="floatRight">
-            <caption>内饰配置</caption>
-            <tr><th>手动调节前座椅</th><td>——</td></tr>
-            <tr><th>电动调节前座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>真皮座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>倒车影像系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>自动恒温空调系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>手动空调</th><td>——</td></tr>
-            <tr><th>车载电话（蓝牙系统）</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>车载雷达</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>DVD多媒体语音导航系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>智能语音导航系统</th><td>——</td></tr>
-            <tr><th>MP3播放器</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-          </table>
-          
-          <table>
-            <caption>操控配置</caption>
-            <tr><th>电子制动力分配系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>TRC牵引力控制系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            <tr><th>防抱死制动系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-          </table>  
-        </div>
-        <h3>参数</h3>
-        <div class="para-table clearfix">
-          <table>
-            <caption>基本参数</caption>
-            <tr><th>车型</th><td>SUV</td></tr>
-            <tr><th>车辆颜色</th><td>白色</td></tr>
-            <tr><th>变速箱</th><td>手自一体</td></tr>
-            <tr><th>变速箱档位</th><td>8档</td></tr>
-            <tr><th>车门数</th><td>五门</td></tr>
-            <tr><th>座位数</th><td>五座</td></tr>
-            <tr><th>长*宽*高(mm*mm*mm)</th><td>4469*1798*1583</td></tr>
-            <tr><th>行李箱容积(L)</th><td></td></tr>
-            <tr><th>轮毂材料</th><td>铝合金</td></tr>
-          </table>
-          <table>
-            <caption>发动机参数</caption>
-            <tr><th>百公里油耗(L)</th><td>9.4</td></tr>
-            <tr><th>排量(L)</th><td>2.0</td></tr>
-            <tr><th>油箱容积(L)</th><td>63</td></tr>
-            <tr><th>进气形式</th><td>增压</td></tr>
-            <tr><th>最大扭矩(N·m)</th><td>270.0</td></tr>
-            <tr><th>燃油</th><td>汽油</td></tr>
-            <tr><th>燃油标号</th><td>97</td></tr>
-            <tr><th>排放标准</th><td>国四</td></tr>
-            <tr><th></th><td></td></tr>
-          </table>
-          <table class="marginRight0">
-            <caption>底盘参数</caption>
-            <tr><th>驱动方式</th><td>后驱</td></tr>
-            <tr><th>转向系统</th><td>电动转向助力</td></tr>
-            <tr><th>前悬挂</th><td>双球节弹簧减震支柱前桥</td></tr>
-            <tr><th>后悬挂</th><td>多连杆</td></tr>
-          </table>
-          <table class="marginRight0">
-            <caption>车轮制动</caption>
-            <tr><th>前制动</th><td>盘式</td></tr>
-            <tr><th>后制动</th><td>盘式</td></tr>
-            <tr><th>前轮胎规格(mm)</th><td>225</td></tr>
-            <tr><th>后轮胎规格(mm)</th><td>225</td></tr>
-          </table>
-        </div>
-        
-      </div>
+</div>
     </div>
-    <!--detail_para end-->
+    
 
 
   
@@ -1471,12 +1518,11 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 </ul>
               </div>
               <a class="link" click_type="souche-linkmatchcarlist" href="/pages/onsale/match_car_list.html" target="_parent"><div class="text-box"><span class="label">全新购车之旅从此开始 ></span><span class="btn">定制我的购车需求</span></div></a>
-              
 </div>
 <a click_type="footerv2-dasouche" class="guwen-show-global" id="guwen_show_global" title="大搜车能做什么？">展开</a>
 
   <script type="text/javascript" src="http://f2e.souche.com/assets/js/detail/onsale_detail.js?t=5"></script>
-  <script type="text/javascript" src="http://f2e.souche.com/assets/js/detail/detail_common.js?t=4"></script>
+  <script type="text/javascript" src="http://f2e.souche.com/assets/js/detail/detail_common_v2.js?t=4"></script>
   <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/guwen-slide.js?t=4"></script>
   <script>
   var SaleDetailConfig = {
@@ -1495,11 +1541,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       sendAddressClose:'onsaledetail-saveaddressclose',
       sendCarSubmit:'onsaledetail-savecarsubmitphone',
       sendAddressSubmit:'onsaledetail-saveaddresssubmitphone',
-      carType:'zaishou'
+      carType:'zaishou',
+      modelCode:"133358",
+      price:10.99
   };
     Souche.OnsaleDetail.init(SaleDetailConfig);
-    Souche.DetailCommon.init({
-    });
+    Souche.DetailCommon.init(SaleDetailConfig);
     BizQQWPA.addCustom([{aty: '0', a: '0', nameAccount: 4008010010, selector: 'J_zixunother'},{aty: '0', a: '0', nameAccount: 4008010010, selector: 'BizQQWPA'},{aty: '0', a: '0', nameAccount: 4008010010, selector: 'J_onlinezixun'}]);
   </script>
   <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>

@@ -1454,7 +1454,7 @@ body {
 }
 .yushou-explain {
   color: #999;
-  margin-top: 78px;
+  margin-top: 77px;
 }
 #list_wrap .list_main .yushou-carInfo .list_content_carInfo h1 {
   margin-bottom: 30px;
@@ -2026,23 +2026,23 @@ body {
 }
 #detail_main .detail-share a {
   vertical-align: middle;
-  color: #0077a8;
+  color: #666666;
   opacity: 0.75;
   display: inline-block;
   overflow: hidden;
-  width: 18px;
+  width: 50px;
   height: 18px;
-  text-indent: -1000px;
+  text-indent: 25px;
+  cursor: pointer;
 }
 #detail_main .detail-share a:hover {
-  color: #0090cc;
   opacity: 1;
-  text-decoration: underline;
 }
 #detail_main .detail-share .ph {
   background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
   overflow: hidden;
   cursor: pointer;
+  width: 80px;
 }
 #detail_main .detail-share .wx {
   background: url(../../images/detail/share-weixin.png?123) no-repeat 0 center;
@@ -2058,13 +2058,14 @@ body {
   background: url(../../images/detail/address.png?123) no-repeat 0 center;
   overflow: hidden;
   cursor: pointer;
+  width: 80px;
 }
 #detail_main .detail-share .adress-open {
   position: absolute;
   width: 270px;
   height: 100px;
   top: -5px;
-  right: -197px;
+  right: -206px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding: 15px;
@@ -2079,7 +2080,7 @@ body {
   height: 18px;
   background: url(../../images/detail/address.png?123) no-repeat 0 center;
   float: left;
-  margin-right: 5px;
+  margin-right: 7px;
 }
 #detail_main .detail-share .adress-open .adress-title a {
   color: #FC7000;
@@ -2092,25 +2093,22 @@ body {
   color: #666;
   margin-top: 8px;
 }
-#detail_main .detail-share .adress-open .adress-from {
+#detail_main .detail-share .adress-open #adress-from {
   margin-top: 8px;
 }
-#detail_main .detail-share .adress-open .adress-from input {
+#detail_main .detail-share .adress-open #adress-from input {
   height: 24px;
   width: 138px;
   border: 1px solid #E4E3E3;
   padding: 3px 5px;
 }
-#detail_main .detail-share .adress-open .adress-from button {
+#detail_main .detail-share .adress-open #adress-from .adress-submit {
   width: 80px;
   height: 32px;
   background: #FC7000;
   border: none;
   color: #fff;
   margin-left: 15px;
-}
-#detail_main .detail-share span {
-  margin-right: 5px;
 }
 #detail_main .detail-feed {
   width: 460px;
@@ -2219,7 +2217,7 @@ body {
   height: 80px;
   background: url(../../images/detail/yushou-zhijian.png) repeat-x;
   border-left: 5px solid #f2f2f2;
-  border-right: 5px solid #f2f2f2;
+  border-right: 20px solid #f2f2f2;
 }
 .yushou-tip .yushou-item {
   float: left;
@@ -2251,14 +2249,14 @@ body {
   padding-left: 30px;
 }
 .yushou-tip .yushou-item-2 i {
-  background: url(../../images/detail/lianxi.png) no-repeat;
+  background: url(../../images/detail/zhijian-icon.png) no-repeat;
 }
 .yushou-tip .yushou-item-3 {
   width: 240px;
   padding-left: 35px;
 }
 .yushou-tip .yushou-item-3 i {
-  background: url(../../images/detail/zhijian-icon.png) no-repeat;
+  background: url(../../images/detail/kanche.png) no-repeat;
 }
 .yushou-tip .yushou-item-4 {
   width: 230px;
@@ -2417,7 +2415,7 @@ body {
   margin: 20px 0;
 }
 #detail_para table {
-  width: 365px;
+  width: 345px;
   border: 1px solid #d9d9d9;
   margin-right: 13px;
   float: left;
@@ -3410,7 +3408,6 @@ body {
   background-position: 0 -949px;
 }
 .onsale_wrap {
-  width: 1190px;
   background-color: #fff;
   margin-bottom: 20px;
 }
@@ -3594,7 +3591,7 @@ body {
   margin-top: 5px;
 }
 #onsale_sum {
-  background: url(../../images/fed/check_tag.png) no-repeat 1081px 18px #ffffff;
+  background: url(../../images/fed/check_tag.png) no-repeat 981px 18px #ffffff;
   border-top: 1px solid #d9d9d9;
 }
 #onsale_sum h1 {
@@ -3783,7 +3780,7 @@ body {
   float: left;
   display: inline;
   width: 180px;
-  margin-right: 63px;
+  margin-right: 43px;
   margin-bottom: 20px;
 }
 #onsale_fadongji .fadongji_views .fadongji_view .fadongji_title {
@@ -3985,7 +3982,7 @@ body {
   border-top: 1px solid #d9d9d9;
 }
 #onsale_record table {
-  width: 1140px;
+  width: 100%;
   margin-top: 33px;
   border: 1px solid #d9d9d9;
 }
@@ -4908,7 +4905,7 @@ less .icon-fei {
 .onsale-summary {
   padding: 30px;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   margin-bottom: 20px;
 }
 .onsale-summary .onsale-tab {
@@ -4921,9 +4918,13 @@ less .icon-fei {
   margin-right: 30px;
   color: #666;
   line-height: 30px;
+  cursor: pointer;
 }
 .onsale-summary .onsale-tab .onsale-tab-item.active {
   color: #e70;
+}
+.onsale-summary #onsale_report {
+  padding-top: 30px;
 }
 .onsale-summary .price-report .report-title {
   font-size: 24px;
@@ -5337,4 +5338,220 @@ less .icon-fei {
   height: 20px;
   vertical-align: middle;
   margin-right: 10px;
+}
+.baoyang .baoyang-title {
+  font-size: 20px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.baoyang .baoyang-filter {
+  font-size: 18px;
+  text-align: center;
+  color: #444;
+}
+.baoyang .baoyang-filter em {
+  color: #fc5a34;
+  font-weight: bold;
+}
+.baoyang .baoyang-main {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 30px 70px;
+  position: relative;
+}
+.baoyang .baoyang-main .baoyang-projects {
+  width: 800px;
+  margin: 20px auto;
+}
+.baoyang .baoyang-main .baoyang-projects .t {
+  line-height: 30px;
+  font-size: 14px;
+  color: #444;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project {
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  color: #444;
+  margin-right: 30px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i {
+  width: 46px;
+  height: 44px;
+  margin: 0 auto;
+  background: url(../../images/detail/baoyang-icons.png) no-repeat;
+  display: block;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
+  background-position-x: 0;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
+  background-position-x: -53px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
+  background-position-x: -106px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
+  background-position-x: -161px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
+  background-position-y: -52px;
+}
+.baoyang .baoyang-main .baoyang-chart {
+  margin-top: 80px;
+}
+.baoyang .baoyang-main .price-point {
+  width: 90px;
+  position: absolute;
+  top: 240px;
+  left: 270px;
+}
+.baoyang .baoyang-main .price-tag {
+  font-size: 12px;
+  text-align: center;
+}
+.baoyang .baoyang-main .sr-tag {
+  border: 1px solid #FC7000;
+  color: #FC7000;
+}
+.baoyang .baoyang-main .new-tag {
+  border: 1px solid #60B25E;
+  color: #60B25E;
+}
+.baoyang .baoyang-main .guide-tag {
+  border: 1px solid #5AB6A2;
+  color: #5AB6A2;
+}
+.baoyang .baoyang-main .price-value {
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 13px;
+  background: #63b162;
+  color: #fff;
+}
+.baoyang .baoyang-main .tri {
+  position: relative;
+  width: 8px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+.baoyang .baoyang-main .tri.new-tri {
+  background: url(../../images/detail/baoyang-cursor.png);
+}
+.baoyang .baoyang-main .tri.guide-tri {
+  background: url(../../images/detail/guide-price-tri.png);
+}
+.baoyang .baoyang-main .tip {
+  background: url(../../images/detail/price-tip.png) no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
+}
+.net-brand .brand-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 20px;
+}
+.net-brand .brand-wrapper {
+  width: 100%;
+  margin-top: 30px;
+}
+.net-brand .brand-nav {
+  width: 16%;
+  float: left;
+}
+.net-brand .brand-nav .brand-list {
+  position: fixed;
+  top: 1100px;
+}
+.net-brand .brand-nav .brand-list li {
+  height: 25px;
+}
+.net-brand .brand-nav .brand-list li i {
+  display: block;
+  width: 8px;
+  height: 25px;
+  background: url(../../images/detail/brand-navbg.png) no-repeat;
+  margin-right: 5px;
+  float: left;
+}
+.net-brand .brand-nav .brand-list li a {
+  color: #666;
+  font-size: 12px;
+}
+.net-brand .brand-cont {
+  width: 78%;
+  float: right;
+}
+.net-brand .brand-cont .brand-item {
+  width: 100%;
+  border-bottom: 1px solid #E6E6E6;
+  margin-top: 30px;
+}
+.net-brand .brand-cont .brand-item .content-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+.net-brand .brand-cont .brand-item .content-text {
+  line-height: 20px;
+  font-size: 14px;
+}
+.net-brand .brand-cont .background {
+  width: 100%;
+  border-bottom: 1px solid #E6E6E6;
+}
+.net-brand .brand-cont .background .bron-image {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .background .born-text {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .background .born-text .content-title {
+  float: left;
+  width: 30%;
+}
+.net-brand .brand-cont .background .born-text .content-text {
+  float: right;
+  width: 70%;
+}
+.net-brand .brand-cont .brand-next {
+  width: 100%;
+}
+.net-brand .brand-cont .brand-next .next-box {
+  float: left;
+  width: 400px;
+  padding: 20px;
+}
+.net-brand .brand-cont .brand-next .next-box .next-image {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .brand-next .next-box .next-text {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .brand-next .next-box .next-text .content-title {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .brand-next .next-box .next-text .content-text {
+  margin-bottom: 30px;
+}
+.net-brand .brand-cont .brand-age {
+  width: 100%;
+}
+.net-brand .brand-cont .brand-age .age-title {
+  width: 35%;
+  float: left;
+}
+.net-brand .brand-cont .brand-age .age-content {
+  width: 65%;
+  float: right;
+  margin-bottom: 50px;
+}
+.net-brand .brand-cont .brand-age .age-content .one-image {
+  width: 100%;
+  margin-top: 30px;
 }

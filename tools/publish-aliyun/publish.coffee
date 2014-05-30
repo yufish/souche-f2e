@@ -12,3 +12,4 @@ pub.addMiddleware(".jpeg",require("./middleware/mw-png.coffee"))
 pub.addMiddleware(".jpg",require("./middleware/mw-png.coffee"))
 pub.addMiddleware(".rjs",require("./middleware/mw-requirejs.coffee"))
 pub.pub((if argv.path then argv.path else "./test"))
+
