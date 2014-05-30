@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/list.js" afterPath="$PROJECT_DIR$/assets/js/mobile/list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,21 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="filter-new.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7582">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.26923078" vertical-offset="4967" max-vertical-offset="7565">
+              <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09081197" vertical-offset="0" max-vertical-offset="4471">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -192,8 +193,8 @@
         <option value="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
         <option value="$PROJECT_DIR$/assets/css/mobile/common.css" />
         <option value="$PROJECT_DIR$/assets/css/mobile/ui.css" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/list.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
       </list>
     </option>
   </component>
@@ -913,18 +914,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7582">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/list.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09081197" vertical-offset="0" max-vertical-offset="4471">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.26923078" vertical-offset="4967" max-vertical-offset="7565">
+          <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
           <folding />
         </state>
       </provider>
