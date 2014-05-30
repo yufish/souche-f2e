@@ -25,14 +25,7 @@ app.configure(function() {
     app.set("views", config.demo_path);
     app.set('view engine', 'jade');
     app.use(express.favicon());
-
-    //静态文件访问支持，less实时编译
-    app.use("/assets", lessmiddle({
-        src: config.assets_path,
-        compress: false,
-        force: true
-    }));
-    app.use("/assets", express["static"](config.assets_path));
+    app.charset = 'utf-8';
     //日志支持
     log4js.configure({
         appenders: [{
@@ -44,6 +37,14 @@ app.configure(function() {
     app.use(log4js.connectLogger(logger, {
         level: log4js.levels.INFO
     }));
+    //静态文件访问支持，less实时编译
+    app.use("/assets", lessmiddle({
+        src: config.assets_path,
+        compress: false,
+        force: true
+    }));
+    app.use("/assets", express["static"](config.assets_path));
+
     app.locals.pretty = true;
     app.get(/^\/demo\/(.*)$/, function(req, res, next) {
         var _path;
