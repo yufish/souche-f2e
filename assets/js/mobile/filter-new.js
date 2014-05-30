@@ -307,7 +307,7 @@ function filter(BrandMgr,addListener) {
                     success: function (data) {
                         console.log(data);
                         if (data.i == 0) {
-                            $('.mobile-popup .cond').text(getAllCond());
+
                             showSorry();
                         } else {
                             var addr = contextPath + '/pages/mobile/list.html?';
@@ -321,11 +321,20 @@ function filter(BrandMgr,addListener) {
             }
 
             //TODO brand series
-            function buildBrand(){
+            function buildBsQueryString(){
                 var brands = BrandMgr.brands;
-                var bStr = '';
-                for(var i in brands){
-                    bStr+=
+                var bStr = brands.map(function(b){
+                    return b['code'];
+                }).join(';')
+
+                var sStr = brands.map(function(b){
+                    return b['series'].map(function(s){
+                        return s['code'];
+                    }).join(',');
+                }).join(';');
+                return {
+                    brandStr:bStr,
+                    seriesStr:sStr
                 }
             }
 
@@ -354,12 +363,13 @@ function filter(BrandMgr,addListener) {
                 } else {
                     year = year + '-9999'
                 }
+                var brandSeries = buildBsQueryString();
                 var price1 = $('#select-price-1').val();
                 var price2 = $('#select-price-2').val();
                 dataObj.carYear = year;
                 dataObj.carPrice = price1 + '-' + price2;
-                dataObj.carBrand = selectedBrand;
-                dataObj.carSeries = selectedSeries;
+                dataObj.carBrand = brandSeries.brandStr;
+                dataObj.carSeries = brandSeries.seriesStr;
                 dataObj.carMileage = getCond($("#select-mile").val());
                 dataObj.carModel = getCond($('#select-model').val());
                 dataObj.carEngineVolume = getCond($('#select-volume').val());
@@ -386,11 +396,7 @@ function filter(BrandMgr,addListener) {
                 }
                 $('#notify-form .wrong-tip').addClass('hidden');
                 SM.PhoneRegister(phoneNum, function () {
-                    if (window.location.href.toString().toLowerCase().indexOf('from=sms') != -1) {
-                        window.location.href = contextPath + '/mobile/carcustom.html?from=sms';
-                    } else {
-                        window.location.href = contextPath + '/mobile/carcustom.html';
-                    }
+                    window.location.href = contextPath + '/mobile/carcustom.html'+window.location.search;
                 });
             }
 
@@ -412,7 +418,9 @@ function filter(BrandMgr,addListener) {
                     e.preventDefault();
                     var minP = $('#select-price-1').val();
                     var maxP = $('#select-price-2').val();
-                    var brand = selectedBrand;
+                    var brand = BrandMgr.brands.map(function(b){
+                                    return b['code'];
+                                }).join(',');
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
                         data: {
