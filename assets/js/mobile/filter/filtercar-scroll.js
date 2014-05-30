@@ -2,8 +2,8 @@
 $(document).ready(function(){
     var win = $(window);
     var winH = win.height();
-    var okBtn =$('.popup-btns');
-    okBtn.css({
+    var okBtnWrapper =$('.popup-btns-wrapper');
+    okBtnWrapper.css({
         width:win.width()-20
     })
     win.scroll(function(){
@@ -11,11 +11,12 @@ $(document).ready(function(){
     })
     function popupBtnPositioned(){
         var srTop = win.scrollTop();
-        okBtn.css({
+        okBtnWrapper.css({
             top:winH +srTop -  60
         })
     }
     popupBtnPositioned();
     //window.popupBtnPositioned = popupBtnPositioned;
-})
+});
+
 

@@ -137,6 +137,86 @@
                     .find('.series-item[data-code="'+sCode+'"]')
                     .removeClass('selected')
             }
+            if(eType=='noLimitSeries'){
+                var bCode = e.brandCode;
+                this.container.find('.content[data-code="'+ e.brandCode+'"]')
+                    .find('.series-item')
+                    .removeClass('selected')
+            }
+        }
+
+    }
+
+    var selectedSeriesLtn={
+        container:$('#series-pane .selected-items'),
+        parent:$('#series-pane'),
+        process:function(e){
+            var eType = e.eventType;
+            if(eType=='addSeries'){
+                var code = e.item.code,
+                    name = e.item.name,
+                    bCode = e.brandCode;
+                this._addSelectSeries(code,name,bCode);
+                this.parent.show();
+            }
+            if(eType=='removeSeries'){
+                var code= e.item.code;
+                this.container.find('.selected-item[data-code='+code+']').remove();
+                if(this.container.find('.selected-item').length==0){
+                    this.parent.hide();
+                }
+            }
+            if(eType=='noLimitSeries'){
+                var bCode = e.brandCode;
+                this.container.find('.selected-item[data-brand-code='+bCode+']').remove();
+                if(this.container.find('.selected-item').length==0){
+                    this.parent.hide();
+                }
+            }
+            if(eType=='removeBrand'){
+                var bCode = e.item.code;
+                this.container.find('.selected-item[data-brand-code='+bCode+']').remove();
+                if(this.container.find('.selected-item').length==0){
+                    this.parent.hide();
+                }
+            }
+        },
+        _addSelectSeries:function(code,name,bCode){
+            var html =''
+                +'<div class="selected-item" data-brand-code= "'+bCode+'" data-code="'+code+'">'
+                +'<span class="selected-text">'+name+'</span>'
+                +'<i class="close-icon"></i></div>';
+            this.container.append(html);
+        }
+    };
+
+    var seriesNumLtn={
+        container:$('.tab-items'),
+        process:function(e){
+            var eType = e.eventType;
+            if(eType=='addSeries'){
+                var bCode = e.brandCode;
+                var sNumDom = this.container
+                    .find('.selected-brand-item[data-code="'+bCode+'"]')
+                    .find('.selected-num');
+                var i = (+sNumDom.text());
+                sNumDom.text(i+1);
+            }
+            if(eType=='removeSeries'){
+                var bCode = e.brandCode;
+                var sNumDom = this.container
+                    .find('.selected-brand-item[data-code="'+bCode+'"]')
+                    .find('.selected-num');
+                var i = (+sNumDom.text());
+                sNumDom.text(i-1);
+            }
+            if(eType=='noLimitSeries'){
+                var bCode = e.brandCode;
+                var sNumDom = this.container
+                    .find('.selected-brand-item[data-code="'+bCode+'"]')
+                    .find('.selected-num');
+                sNumDom.text(0);
+            }
         }
     }
 
@@ -145,6 +225,8 @@
         BrandMgr.addLtn(makeSeriesDomByBrandLtn);
         BrandMgr.addLtn(selectedBrandsLtn);
         BrandMgr.addLtn(seriesPaneLtn);
+        BrandMgr.addLtn(selectedSeriesLtn);
+        BrandMgr.addLtn(seriesNumLtn);
     }
     return addLtns;
 })

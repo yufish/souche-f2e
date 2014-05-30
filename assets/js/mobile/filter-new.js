@@ -73,6 +73,8 @@ function filter(BrandMgr,addListener) {
                 $('#series-list .content').append(html);
             }
 
+
+
             function showPopup_b() {
                 $('.wrapGrayBg').removeClass('hidden');
                 var $win = $(window);
@@ -82,7 +84,7 @@ function filter(BrandMgr,addListener) {
                     width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
-
+                $('.popup-btns-wrapper').removeClass('hidden');
             }
 
             function showPopup_s() {
@@ -94,12 +96,10 @@ function filter(BrandMgr,addListener) {
                     width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
-
+                $('.popup-btns-wrapper').removeClass('hidden');
             }
-            var selectedBrand = '';
-            var selectedSeries = '';
-            var selectedBrandName = '';
-            var selectedSeriesName = '';
+
+
             var brandLoaded = false;
             $('#btn-select-brand').click(function () {
                 showPopup_b();
@@ -137,15 +137,18 @@ function filter(BrandMgr,addListener) {
                     BrandMgr.addBrand(code,name);
                 }
             });
-            $('#brand-buxian').click(function () {
-                BrandMgr.noLimitBrand();
-            })
 
 
             $('#brand-pane').on('click','.selected-item',function(){
                 var self = $(this);
                 var code = self.attr('data-code');
                 BrandMgr.removeBrand(code);
+            })
+            $('#series-pane').on('click','.selected-item',function(){
+                var self = $(this);
+                var code = self.attr('data-code'),
+                    bCode = self.attr('data-brand-code');
+                BrandMgr.removeSeries(code,bCode);
             })
 
             $('#btn-select-series').click(function () {
@@ -154,6 +157,11 @@ function filter(BrandMgr,addListener) {
                     $self.text('请先选择品牌 ↑').css({
                         color: '#f00'
                     });
+                    setTimeout(function(){
+                        $self.text('选择车系').css({
+                            color: '#999'
+                        });
+                    },2000);
                     return;
                 }
                 $('.tab-items .pane-selected-item').each(function(idx,item){
@@ -169,15 +177,26 @@ function filter(BrandMgr,addListener) {
                 selectBrandTab(i);
             })
 
+            //车系弹出层的title
             var seriesPopupTitle = $('#series-list .title');
             function selectBrandTab(index){
                 $('.content-tabs .content').removeClass('selected').eq(index).addClass('selected');
 
                 var pSelectItem = $('.tab-items .pane-selected-item').removeClass('selected').eq(index);
                 pSelectItem.addClass('selected');
-                var bName = pSelectItem.find('.selected-brand-name').text();
-                seriesPopupTitle.text(bName);
+                var bName = pSelectItem.find('.selected-brand-name').text(),
+                    bCode = pSelectItem.attr('data-code');
+                seriesPopupTitle.text(bName).attr('data-code',bCode);
             }
+            $('#brand-buxian').click(function () {
+                BrandMgr.noLimitBrand();
+            })
+
+            $('#series-buxian').click(function () {
+                var bCode =seriesPopupTitle.attr('data-code');
+                BrandMgr.noLimitSeries(bCode);
+            })
+
 
             $('#series-wrapper').on('click', '.series-item', function () {
                 var self = $(this);
@@ -206,16 +225,28 @@ function filter(BrandMgr,addListener) {
             });
 
             $('.wrapGrayBg').click(function () {
-                $(this).addClass('hidden');
+                _hidePopup();
+            });
+
+            $('.ok-btn').click(function(){
+                _hidePopup();
+            })
+            $('#brand-pane .plus-icon').click(function(){
+                showPopup_b();
+            })
+            $('#series-pane .plus-icon').click(function(){
+                showPopup_s();
+            })
+
+            function _hidePopup(){
+                $('.wrapGrayBg').addClass('hidden');
                 $('#brand-wrapper').addClass('hidden');
                 $('#series-wrapper').addClass('hidden');
                 $('.mobile-popup').addClass('hidden');
-            });
+                $('.popup-btns-wrapper').addClass('hidden')
+                document.body.scrollTop=0;
+            }
 
-
-            $('#series-buxian').click(function () {
-                setSeries('', '不限');
-            })
 
             $('#select-price-1').change(function () {
                 var lowP = $(this).val();
@@ -289,6 +320,15 @@ function filter(BrandMgr,addListener) {
                 })
             }
 
+            //TODO brand series
+            function buildBrand(){
+                var brands = BrandMgr.brands;
+                var bStr = '';
+                for(var i in brands){
+                    bStr+=
+                }
+            }
+
             $('#go-list-btn').click(function () {
                 function getCond(val) {
                     if (!val) {
@@ -316,11 +356,6 @@ function filter(BrandMgr,addListener) {
                 }
                 var price1 = $('#select-price-1').val();
                 var price2 = $('#select-price-2').val();
-                /*
-                 if ((+price1) > (+price2)) {
-                 alert('请检查价格范围的选择.')
-                 return;
-                 }*/
                 dataObj.carYear = year;
                 dataObj.carPrice = price1 + '-' + price2;
                 dataObj.carBrand = selectedBrand;
@@ -334,43 +369,6 @@ function filter(BrandMgr,addListener) {
 
             })
 
-            function getAllCond() {
-                function buildUtil($item, prefix, suffix) {
-                    prefix = prefix || '';
-                    suffix = suffix || '';
-                    if ($item.val()) {
-                        var item = $item.find('option:selected').text();
-                    } else {
-                        return;
-                    }
-
-                    if (item && item != '不限' && item != '') {
-                        conds.push(prefix + item.trim() + suffix);
-                    }
-                }
-                var conds = [];
-                var price1 = $('#select-price-1').val();
-                var price2 = $('#select-price-2').val();
-                if (price1 == '0' && price2 == '100000000') {
-                    //nothing to do
-                } else {
-                    price2 = (price2 == '100000000' ? '不限' : price2 + '万')
-                    conds.push(price1 + '万-' + price2);
-                }
-                if (selectedBrand) {
-                    conds.push(selectedBrandName.trim())
-                }
-                if (selectedSeries) {
-                    conds.push(selectedSeriesName.trim())
-                }
-                buildUtil($('#select-mile'));
-                buildUtil($('#select-year'), '最远年份');
-                buildUtil($('#select-model'));
-                buildUtil($('#select-volume'));
-                buildUtil($('#select-transmission'));
-
-                return conds.join('/');
-            }
             $('.filter-content select').change(function () {
                 $(this).css({
                     color: '#000'
@@ -409,6 +407,7 @@ function filter(BrandMgr,addListener) {
                     $popup.find('#phone-for-notify').val(phoneNum);
                 }
 
+                //TODO brand
                 $('#notify-form').submit(function (e) {
                     e.preventDefault();
                     var minP = $('#select-price-1').val();
@@ -425,7 +424,7 @@ function filter(BrandMgr,addListener) {
                             goToCustom();
                         },
                         error: function () {
-                            alert('error');
+                            alert('系统出现错误，我们将尽快修复。因此给您带来不便，万分抱歉');
                         }
                     });
                 })

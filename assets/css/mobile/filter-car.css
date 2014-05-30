@@ -102,7 +102,7 @@
     position: absolute;
     z-index: 10000;
     left: 10px;
-    padding-bottom: 55px;
+    margin-bottom: 55px;
 }
 #filter-car .filter-popup {
     background-color: #fff;
@@ -136,7 +136,7 @@
     line-height: 50px;
 }
 #filter-car .filter-popup .item .brand-name{
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 5px;
     border:1px solid #fff;
     font-size:13px;
@@ -147,7 +147,6 @@
 }
 #filter-car .filter-popup #other-brands {
     text-align: center;
-
 }
 #filter-car .filter-popup .series-title {
     padding-left: 10px;
@@ -159,11 +158,11 @@
 #filter-car .filter-popup .series-name-wrapper {
     padding-left: 10px;
 }
-#filter-car  .series-item .series-name {
+#filter-car .series-item .series-name {
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #fff;
-    font-weight: bold;
+
 }
 #filter-car .series-item.selected .series-name {
     color: #ff4400;
@@ -221,6 +220,9 @@
     border-radius: 8px;
     margin:4px 5px 0 0;
 }
+#filter-car .selected-item .selected-text{
+    font-size: 13px;
+}
 #filter-car .plus-icon{
     position: absolute;
     top:9px;
@@ -231,15 +233,17 @@
     float: right;
     width:25px;
 }
-#filter-car .popup-btns{
+#filter-car .popup-btns-wrapper{
     position: absolute;
+    z-index:10001;
+    margin:0 10px
+}
+#filter-car .popup-btns{
+    border-top:1px solid #ff4400;
     text-align: center;
     background: #fff;
-    border-top:1px solid #ff4400;
-    z-index:10001;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    margin:0 10px
 }
 #filter-car .ok-btn{
     background-color: #ff4400;
@@ -251,7 +255,7 @@
     font-size: 18px;
     margin: 5px 8px;
 }
-#filter-car .popup-btns .bottom{
+#filter-car .popup-btns-wrapper .bottom{
     height: 8px;
     background: #bfbfbf;
 }
