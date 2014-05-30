@@ -306,14 +306,13 @@ function filter(BrandMgr, addListener) {
                     success: function(data) {
                         console.log(data);
                         if (data.i == 0) {
-
                             showSorry();
                         } else {
                             var addr = contextPath + '/pages/mobile/list.html?';
                             for (var i in dataObj) {
                                 addr += (i + '=' + dataObj[i] + '&');
                             }
-                            window.location.href = addr;
+                            window.location.href = addr.substr(0,addr.length-1);
                         }
                     }
                 })
