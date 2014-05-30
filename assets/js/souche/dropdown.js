@@ -29,6 +29,15 @@ Souche.UI.CustomDropdown = function() {
                     });
                 }
             }
+            $(document.body).click(function(e) {
+                if (!$(e.target).closest(".sc-option").length) {
+                    $(".sc-option-list", self.ele).addClass("hidden");
+                    $(".sc-option-list").css({
+                        top: 25
+                    });
+                }
+
+            });
             $(".sc-option-hd", this.ele).click(function(e) {
                 var list = $(".sc-option-list", self.ele);
                 if ($(".sc-option-list", self.ele).hasClass("hidden")) {
@@ -48,7 +57,6 @@ Souche.UI.CustomDropdown = function() {
                     });
                 }
 
-                e.stopPropagation();
             });
             if ($(".sc-option-list li", this.ele).length > 10) {
                 $(".sc-option-list", this.ele).css("height", 300);
@@ -70,12 +78,7 @@ Souche.UI.CustomDropdown = function() {
                     checkShow();
                 }, 500);
             })
-            $(document.body).click(function() {
-                $(".sc-option-list", self.ele).addClass("hidden");
-                $(".sc-option-list").css({
-                    top: 25
-                });
-            });
+
         }
 
     };
