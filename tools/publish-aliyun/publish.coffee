@@ -7,14 +7,9 @@ pub = new Publish({
 });
 pub.addMiddleware(".js",require("./middleware/mw-compress.coffee"))
 pub.addMiddleware(".less",require("./middleware/mw-less.coffee"))
-<<<<<<< HEAD
-# pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
-
-pub.pub((if argv.path then argv.path else "./test"))
-=======
 pub.addMiddleware(".png",require("./middleware/mw-png.coffee"))
 pub.addMiddleware(".jpeg",require("./middleware/mw-png.coffee"))
 pub.addMiddleware(".jpg",require("./middleware/mw-png.coffee"))
 pub.addMiddleware(".rjs",require("./middleware/mw-requirejs.coffee"))
 pub.pub((if argv.path then argv.path else "./test"))
->>>>>>> 3211e4eaf45d8636ddd5e3745cdd5e1fdab674fd
+
