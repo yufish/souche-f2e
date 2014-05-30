@@ -385,8 +385,6 @@ function filter(BrandMgr,addListener) {
                 });
             })
 
-
-
             function goToCustom() {
                 var phoneReg = /^1[3458][0-9]{9}$/;
                 var phoneNum = $('#phone-for-notify').val();
