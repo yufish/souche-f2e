@@ -96,10 +96,14 @@ $(document).ready(function() {
 
     $(document).on("click", function(e) {
         f2e_click_count++;
+        var clickType = $(e.target).attr("click_type");
+        if (!clickType) {
+            clickType = $(e.target).closest("[click_type]").attr("click_type");
+        }
         var data = {
             page_x: e.pageX - ($(window).width() / 2 - 595),
             page_y: e.pageY,
-            element_id: $(e.target).attr("click_type") || "",
+            element_id: clickType || "",
             page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com"),
             refer_url: document.referrer,
             user_agent: navigator.userAgent,
