@@ -1,0 +1,64 @@
+//
+   Created by zilong on 2014/6/3.
+doctype html
+head.
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>使用说明</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            color:#000;
+            text-decoration : none;
+        }
+        #feature{
+            width:210px;
+            margin:0 auto;
+        }
+        .feature-item{
+            width:79px;
+            text-align:center;
+            margin-bottom:40px;
+            display:block
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+        img{
+            width:79px;
+        }
+        .text{
+            font-size:13px;
+            margin-top:8px;
+        }
+        #feature{
+            margin-top:95px;
+        }
+    </style>
+
+body
+    #content
+        #feature
+            a.feature-item.left(href='help1')
+                img(src='../../../assets/images/cheniu/help/get-car.png')
+                .text 如何收车
+            a.feature-item.right(href='help2')
+                img(src='../../../assets/images/cheniu/help/send-car.png')
+                .text 如何发车
+            a.feature-item.left(href='help3')
+                img(src='../../../assets/images/cheniu/help/manager.png')
+                .text 管理车源
+            a.feature-item.right(href='help4')
+                img(src='../../../assets/images/cheniu/help/friends.png')
+                .text 添加好友
