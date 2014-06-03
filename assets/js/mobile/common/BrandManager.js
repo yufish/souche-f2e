@@ -85,7 +85,8 @@
                 var brand = this._checkBrand(bCode);
                 brand.series = [];
                 this.notify({
-                    eventType:'noLimitSeries'
+                    eventType:'noLimitSeries',
+                    brandCode:bCode
                 })
             },
             removeBrand:function(code){

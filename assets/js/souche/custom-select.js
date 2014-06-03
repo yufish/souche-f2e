@@ -75,8 +75,12 @@ Souche.UI.CustomSelect = function() {
                     }]
                 }
             }
-            $(document.body).on("click", function() {
-                self.hideOptions();
+            $(document.body).on("click", function(e) {
+
+                if (!$(e.target).closest(".sc-select").length) {
+                    self.hideOptions();
+                }
+
             });
             this._bindClick();
             this._bindSelect();
@@ -136,7 +140,6 @@ Souche.UI.CustomSelect = function() {
                     });
                 }
 
-                e.stopPropagation();
             })
             var openTimer, closeTimer;
             $(this.ele).mouseenter(function() {

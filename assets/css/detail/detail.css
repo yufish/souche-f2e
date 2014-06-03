@@ -5698,3 +5698,76 @@ less .icon-fei {
 .net-brand {
   margin-bottom: 100px;
 }
+.pic-video {
+  margin-top: 30px;
+}
+.pic-video .pv-nav {
+  width: 360px;
+  float: left;
+}
+.pic-video .pv-nav .nav-ul {
+  margin-left: 20px;
+}
+.pic-video .pv-nav .nav-ul .nav-list {
+  height: 46px;
+  font-size: 14px;
+}
+.pic-video .pv-nav .nav-ul .nav-list .first-nav {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #CCCCCC;
+  display: block;
+  float: left;
+  margin-top: 36px;
+}
+.pic-video .pv-nav .nav-ul .nav-list span {
+  background: url(../../images/detail/pv-nav.png) no-repeat;
+  width: 8px ;
+  height: 46px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+.pic-video .pv-nav .nav-ul .nav-list a {
+  color: #999;
+  line-height: 80px;
+}
+.pic-video .pv-nav .nav-ul .nav-list a:hover {
+  color: #e70;
+}
+.pic-video .pv-nav .nav-ul .nav-list:hover .first-nav {
+  background: #e70;
+}
+.pic-video .pv-nav .nav-ul .nav-list:hover span {
+  background: url(../../images/detail/pv-nav-hover.png) no-repeat;
+}
+.pic-video .pv-nav .nav-ul .nab-list-active .first-nav {
+  background: #e70;
+}
+.pic-video .pv-nav .nav-ul .nab-list-active span {
+  background: url(../../images/detail/pv-nav-hover.png) no-repeat;
+}
+.pic-video .pv-content {
+  width: 760px;
+  float: right;
+}
+.pic-video .pv-content .pv-box {
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 20px;
+}
+.pic-video .pv-content .pv-box .title {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.pic-video .pv-content .pv-box .pic-image {
+  margin-bottom: 30px;
+}
+.pic-video .pv-content .pv-box .pic-image img {
+  margin-bottom: 10px;
+}
+.pic-video .pv-content .pv-box .pic-image .pic-explain {
+  font-size: 13px;
+}
