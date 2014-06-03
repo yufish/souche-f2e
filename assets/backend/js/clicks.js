@@ -7,6 +7,9 @@ $("#filter-form").on("submit", function(e) {
 if (url == "http://www.souche.com/pages/choosecarpage/choose-car-detail.html") {
     $(".refer-page").attr("src", url + "?carId=qU6uBbS")
 }
+if (url == "http://www.souche.com/pages/mobile/detail.html") {
+    $(".refer-page").attr("src", url + "??carId=2kauoc5")
+}
 loadingTip.show("正在加载中，请稍后")
 var inIn = function(data, d) {
     if (d.page_x > data.x && d.page_x < data.x2 && d.page_y > data.y && d.page_y < data.y2) {
@@ -24,7 +27,6 @@ $.ajax({
     },
     success: function(data) {
         globalData = data;
-        alert(globalData.length)
         $('.jcrop-container').Jcrop({
             bgColor: 'black',
             onSelect: function(_d) {

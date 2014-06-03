@@ -2415,7 +2415,7 @@ body {
   margin: 20px 0;
 }
 #detail_para table {
-  width: 365px;
+  width: 345px;
   border: 1px solid #d9d9d9;
   margin-right: 13px;
   float: left;
@@ -3408,7 +3408,6 @@ body {
   background-position: 0 -949px;
 }
 .onsale_wrap {
-  width: 1190px;
   background-color: #fff;
   margin-bottom: 20px;
 }
@@ -3592,7 +3591,7 @@ body {
   margin-top: 5px;
 }
 #onsale_sum {
-  background: url(../../images/fed/check_tag.png) no-repeat 1081px 18px #ffffff;
+  background: url(../../images/fed/check_tag.png) no-repeat 981px 18px #ffffff;
   border-top: 1px solid #d9d9d9;
 }
 #onsale_sum h1 {
@@ -3781,7 +3780,7 @@ body {
   float: left;
   display: inline;
   width: 180px;
-  margin-right: 63px;
+  margin-right: 43px;
   margin-bottom: 20px;
 }
 #onsale_fadongji .fadongji_views .fadongji_view .fadongji_title {
@@ -3983,7 +3982,7 @@ body {
   border-top: 1px solid #d9d9d9;
 }
 #onsale_record table {
-  width: 1140px;
+  width: 100%;
   margin-top: 33px;
   border: 1px solid #d9d9d9;
 }
@@ -4906,7 +4905,7 @@ less .icon-fei {
 .onsale-summary {
   padding: 30px;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   margin-bottom: 20px;
 }
 .onsale-summary .onsale-tab {
@@ -4919,9 +4918,13 @@ less .icon-fei {
   margin-right: 30px;
   color: #666;
   line-height: 30px;
+  cursor: pointer;
 }
 .onsale-summary .onsale-tab .onsale-tab-item.active {
   color: #e70;
+}
+.onsale-summary #onsale_report {
+  padding-top: 30px;
 }
 .onsale-summary .price-report .report-title {
   font-size: 24px;
@@ -5335,6 +5338,117 @@ less .icon-fei {
   height: 20px;
   vertical-align: middle;
   margin-right: 10px;
+}
+.baoyang .baoyang-title {
+  font-size: 20px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.baoyang .baoyang-filter {
+  font-size: 18px;
+  text-align: center;
+  color: #444;
+}
+.baoyang .baoyang-filter em {
+  color: #fc5a34;
+  font-weight: bold;
+}
+.baoyang .baoyang-main {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 30px 70px;
+  position: relative;
+}
+.baoyang .baoyang-main .baoyang-projects {
+  width: 800px;
+  margin: 20px auto;
+}
+.baoyang .baoyang-main .baoyang-projects .t {
+  line-height: 30px;
+  font-size: 14px;
+  color: #444;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project {
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  color: #444;
+  margin-right: 30px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i {
+  width: 46px;
+  height: 44px;
+  margin: 0 auto;
+  background: url(../../images/detail/baoyang-icons.png) no-repeat;
+  display: block;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
+  background-position-x: 0;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
+  background-position-x: -53px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
+  background-position-x: -106px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
+  background-position-x: -161px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
+  background-position-y: -52px;
+}
+.baoyang .baoyang-main .baoyang-chart {
+  margin-top: 80px;
+}
+.baoyang .baoyang-main .price-point {
+  width: 90px;
+  position: absolute;
+  top: 240px;
+  left: 270px;
+}
+.baoyang .baoyang-main .price-tag {
+  font-size: 12px;
+  text-align: center;
+}
+.baoyang .baoyang-main .sr-tag {
+  border: 1px solid #FC7000;
+  color: #FC7000;
+}
+.baoyang .baoyang-main .new-tag {
+  border: 1px solid #60B25E;
+  color: #60B25E;
+}
+.baoyang .baoyang-main .guide-tag {
+  border: 1px solid #5AB6A2;
+  color: #5AB6A2;
+}
+.baoyang .baoyang-main .price-value {
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 13px;
+  background: #63b162;
+  color: #fff;
+}
+.baoyang .baoyang-main .tri {
+  position: relative;
+  width: 8px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+.baoyang .baoyang-main .tri.new-tri {
+  background: url(../../images/detail/baoyang-cursor.png);
+}
+.baoyang .baoyang-main .tri.guide-tri {
+  background: url(../../images/detail/guide-price-tri.png);
+}
+.baoyang .baoyang-main .tip {
+  background: url(../../images/detail/price-tip.png) no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
 }
 .net-brand .brand-title {
   font-size: 24px;

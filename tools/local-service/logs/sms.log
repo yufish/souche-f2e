@@ -1,0 +1,3 @@
+2014-03-25 09:59:53,231 [main] INFO  com.souche.service.base.SmsServiceImplByEmay - 3SDK-EMY-0130-PDVMS:687858
+2014-03-25 09:59:56,640 [main] INFO  com.souche.service.base.SmsServiceImplByEmay - client result : 0
+2014-03-25 10:10:52,959 [http-10080-8] INFO  com.souche.service.base.SmsServiceImplByEmay - sms log cellphone:18005816453,[测试环境短信]【小刘】本周大搜车小伙伴又为您找到了一些专属车辆哦！有疑问，致电 4008-010-010客户经理随时恭候；关注微信号"大搜车"，私人掌上购车顾问随身带！ 查看车辆：http://souche.com/AKVmvfK 退订回复TD【大搜车】,user,0
