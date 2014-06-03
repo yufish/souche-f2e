@@ -101,10 +101,10 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
         function userTrack(userData) {
             var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
             userData['taskId'] = taskStr,
-            userData['ua'] = navigator.userAgent,
+            //userData['ua'] = navigator.userAgent,
             $.ajax({
                 url: url,
-                data: userData,
+                data: userData
             })
         }
 
