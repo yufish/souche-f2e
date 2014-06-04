@@ -303,7 +303,7 @@
                     for (var i in dataObj) {
                         addr += (i + '=' + dataObj[i] + '&');
                     }
-                    window.location.href = addr;
+                    window.location.href = addr.substr(0,addr.length-1);
                 }
             }
         })
@@ -435,7 +435,7 @@
             var maxP = $('#select-price-2').val();
             var brand = selectedBrand;
             $.ajax({
-                url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
+                url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json?pFrom=filter',
                 data: {
                     brands: brand,
                     minPrice: minP,
