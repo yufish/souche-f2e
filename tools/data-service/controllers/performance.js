@@ -89,7 +89,7 @@
         "/traffic_begin": {
             get: function() {
                 return function(req, res) {
-                    if (!req.query || !req.query.cookie) {
+                    if (!req.query) {
                         res.send('error');
                         return;
                     }
@@ -97,6 +97,7 @@
                     req.query.stay_second = 0;
                     req.query.click_count = 0;
                     req.query.visit_length = 0;
+
                     req.query.time = new Date();
                     TrafficModel.add(req.query).done(function(error, traffic) {
                         res.send(req.query.callback + "('" + traffic._id + "')");
