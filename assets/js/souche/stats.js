@@ -92,8 +92,16 @@ $(document).ready(function() {
             success: function(data) {}
         });
     });
+    var eventKey = "mousedown";
+    try {
+        if ("ontouchstart" in window) {
+            eventKey = "click";
+        }
+    } catch (e) {
 
-    $(document).on("mousedown", function(e) {
+    }
+
+    $(document).on(eventKey, function(e) {
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
         if (!clickType) {
