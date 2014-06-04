@@ -8,11 +8,8 @@ var List = function () {
     var loadMore = function () {
         SM.LoadingTip.show("正在加载中")
         $.ajax({
-            url: config.moreURL + window.location.search,
+            url: config.moreURL + "&index=" + (++config.page),
             dataType: "json",
-            data:{
-                index:++config.page
-            },
             success: function (data) {
                 //console.log(data)
                 var items = data.page.items;
