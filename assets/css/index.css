@@ -118,7 +118,7 @@ a:hover {
   font-weight: bold;
   position: absolute;
   left: 650px;
-  top: 45px;
+  top: 55px;
   width: 220px;
   cursor: pointer;
   color: #666;
@@ -1746,7 +1746,7 @@ div {
 .sidebar-bottom .collectside .collect-box .collect-img {
   width: 29px;
   height: 27px;
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1243);
   background-position: 0 0;
 }
 .sidebar-bottom .collectside .collect-box i {
@@ -1816,7 +1816,7 @@ div {
   height: 90px;
   position: fixed;
   right: 0px;
-  bottom: 270px;
+  bottom: 250px;
   z-index: 10000;
 }
 #my-advisor img {
@@ -1904,7 +1904,7 @@ div {
   background: #f7f7f7;
   position: fixed;
   right: 0px;
-  bottom: 100px;
+  bottom: 80px;
   border: 1px solid #dedede;
   z-index: 10001;
   background-color: #f5f5f5;
@@ -1936,7 +1936,7 @@ div {
   width: 27px;
   height: 25px;
   margin-left: 10px;
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
 }
 .sidebar .side-box a i {
   margin-left: 11px;
@@ -2046,7 +2046,7 @@ div {
   border-top: 1px solid transparent;
 }
 .sidebar-active .sidebar-nav .collectside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -120px 0;
 }
 .sidebar-active .sidebar-nav .collectside:hover,
@@ -2059,7 +2059,7 @@ div {
 }
 .sidebar-active .sidebar-nav .collectside:hover a .icon,
 .sidebar-active .sidebar-nav .collectside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: 0 -30px;
 }
 .sidebar-active .sidebar-nav .collectside:hover a i,
@@ -2067,7 +2067,7 @@ div {
   color: #666;
 }
 .sidebar-active .sidebar-nav .reserveside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -160px 0;
 }
 .sidebar-active .sidebar-nav .reserveside:hover,
@@ -2079,7 +2079,7 @@ div {
 }
 .sidebar-active .sidebar-nav .reserveside:hover a .icon,
 .sidebar-active .sidebar-nav .reserveside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -40px -30px;
 }
 .sidebar-active .sidebar-nav .reserveside:hover a i,
@@ -2087,7 +2087,7 @@ div {
   color: #666;
 }
 .sidebar-active .sidebar-nav .sellside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -200px 0;
 }
 .sidebar-active .sidebar-nav .sellside:hover,
@@ -2099,7 +2099,7 @@ div {
 }
 .sidebar-active .sidebar-nav .sellside:hover a .icon,
 .sidebar-active .sidebar-nav .sellside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -80px -30px;
 }
 .sidebar-active .sidebar-nav .sellside:hover a i,
@@ -2136,7 +2136,7 @@ div {
   float: right;
   width: 11px;
   height: 11px;
-  background: url(../images/index/toolbar_sprite.png?123) no-repeat;
+  background: url(../images/index/toolbar_sprite.png?1234) no-repeat;
   background-position: -240px 0;
   display: block;
   margin-top: 9px;

@@ -87,7 +87,7 @@
 .sidebar-bottom .collectside .collect-box .collect-img {
   width: 29px;
   height: 27px;
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1243);
   background-position: 0 0;
 }
 .sidebar-bottom .collectside .collect-box i {
@@ -157,7 +157,7 @@
   height: 90px;
   position: fixed;
   right: 0px;
-  bottom: 270px;
+  bottom: 250px;
   z-index: 10000;
 }
 #my-advisor img {
@@ -245,7 +245,7 @@
   background: #f7f7f7;
   position: fixed;
   right: 0px;
-  bottom: 100px;
+  bottom: 80px;
   border: 1px solid #dedede;
   z-index: 10001;
   background-color: #f5f5f5;
@@ -277,7 +277,7 @@
   width: 27px;
   height: 25px;
   margin-left: 10px;
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
 }
 .sidebar .side-box a i {
   margin-left: 11px;
@@ -387,7 +387,7 @@
   border-top: 1px solid transparent;
 }
 .sidebar-active .sidebar-nav .collectside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -120px 0;
 }
 .sidebar-active .sidebar-nav .collectside:hover,
@@ -400,7 +400,7 @@
 }
 .sidebar-active .sidebar-nav .collectside:hover a .icon,
 .sidebar-active .sidebar-nav .collectside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: 0 -30px;
 }
 .sidebar-active .sidebar-nav .collectside:hover a i,
@@ -408,7 +408,7 @@
   color: #666;
 }
 .sidebar-active .sidebar-nav .reserveside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -160px 0;
 }
 .sidebar-active .sidebar-nav .reserveside:hover,
@@ -420,7 +420,7 @@
 }
 .sidebar-active .sidebar-nav .reserveside:hover a .icon,
 .sidebar-active .sidebar-nav .reserveside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -40px -30px;
 }
 .sidebar-active .sidebar-nav .reserveside:hover a i,
@@ -428,7 +428,7 @@
   color: #666;
 }
 .sidebar-active .sidebar-nav .sellside a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -200px 0;
 }
 .sidebar-active .sidebar-nav .sellside:hover,
@@ -440,7 +440,7 @@
 }
 .sidebar-active .sidebar-nav .sellside:hover a .icon,
 .sidebar-active .sidebar-nav .sellside.active a .icon {
-  background: url(../images/index/toolbar_sprite.png?123);
+  background: url(../images/index/toolbar_sprite.png?1234);
   background-position: -80px -30px;
 }
 .sidebar-active .sidebar-nav .sellside:hover a i,
@@ -477,7 +477,7 @@
   float: right;
   width: 11px;
   height: 11px;
-  background: url(../images/index/toolbar_sprite.png?123) no-repeat;
+  background: url(../images/index/toolbar_sprite.png?1234) no-repeat;
   background-position: -240px 0;
   display: block;
   margin-top: 9px;

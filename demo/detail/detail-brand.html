@@ -368,25 +368,25 @@
           <div class="brand-wrapper clearfix">
             <div class="brand-nav">
               <ul class="brand-list clearfix">
-                <li>
+                <li class="first-list">
                     <i class="first-nav"></i>
-                    <a href="#">诞生背景</a>
+                    <a href="#bron">诞生背景</a>
                 </li>
                 <li>
                     <i></i>
-                    <a href="#">命名原因</a>
+                    <a href="#next">命名原因</a>
                 </li>
                 <li>
                     <i></i>
-                    <a href="#">车型识别特点</a>
+                    <a href="#next">车型识别特点</a>
                 </li>
                 <li>
                     <i></i>
-                    <a href="#">1959-1967 第I代</a>
+                    <a href="#dai-1">1959-1967 第I代</a>
                 </li>
                 <li>
                     <i></i>
-                    <a href="#">1959-1967 第I代</a>
+                    <a href="#dai-2">1959-1967 第I代</a>
                 </li>
                 <li>
                     <i></i>
@@ -407,7 +407,7 @@
               </ul>
             </div>
             <div class="brand-cont">
-              <div class="background brand-item">
+              <div class="background brand-item" id="born">
                 <div class="bron-image clearfix">
                   <img src="../../assets/images/detail/born-image.png" width="100%">
                 </div>
@@ -418,8 +418,8 @@
                     <p>Mini诞生的时代晚于甲壳虫，它从一个人脑中的梦想开始到最终成为量产车型问世也并没有经历过太多曲折。上世纪50年代，埃z及总统对于苏伊士运河的国有化使得石油无法正常运往欧洲市场，这也直接导致欧洲爆发石油危机。英国政府为应对危机而强制开始执行汽油配额供给制度，这一制度给了当时热衷制造大型豪华轿车的汽车制造商们当头一棒，迫使他们必须尽快推出经济性轿车来度过难关。而MINI就是在这样的战后背景下诞生的一款国民用车。</p>
                   </div>
                 </div>
-            </div>
-            <div class="brand-next brand-item clearfix">
+              </div>
+              <div class="brand-next brand-item clearfix" id="next">
               <div class="next-box" style="border-right:1px solid #E6E6E6;">
                 <div class="next-image">
                   <img src="../../assets/images/detail/brand-small.png" width="100%">
@@ -443,7 +443,7 @@
                 </div>
               </div>
             </div>
-            <div class="brand-age brand-item clearfix">
+            <div class="brand-age brand-item clearfix" id="dai-1">
               <div class="age-title">
                 <div class="dai1 dai-icon"></div>
                 <div class="title-time">
@@ -462,8 +462,35 @@
                 </div>
               </div>
             </div>
+            <div class="brand-age brand-item clearfix" id="dai-2">
+              <div class="age-title">
+                <div class="dai2 dai-icon"></div>
+                <div class="title-time">
+                  <h1>1959-1967</h1>
+                  <h1>第一代</h1>
+                </div>
+              </div>
+              <div class="age-content">
+                <div class="age-text">
+                  <p>2007年迷你推出了全新第二代的硬顶/掀背车款，在重新设计后的平台（platform）上结合了许多外观、工程和性能上的变更。它使用了“Prince”引擎，引擎的架构是和标致雪铁龙集团共享，是为了达到降低成本和节省油耗而设计。这个引擎是由宝马位于英国华威郡</p>
+                  <p>（Warwickshire）的工厂生产[16]。引擎的开发工程是由位于英格兰的宝马集团英国引擎工程（BMW Group UK Engineering）、德国慕尼黑宝马集团总部，和其他第三方厂商共同负责。</p>
+                </div>
+                <div class="age-image">
+                  <img class="more-image" src="../../assets/images/detail/one-image.png"> 
+                  <img class="more-image" src="../../assets/images/detail/one-image.png"> 
+                </div>
+              </div>
+            </div>
+            <div class="brand-end brand-item clearfix">
+              <div class="end-title">写在最后</div>
+              <div class="end-content">
+                <p>2007年迷你推出了全新第二代的硬顶/掀背车款，在重新设计后的平台（platform）上结合了许多外观、工程和性能上的变更。它使用了“Prince”引擎，引擎的架构是和标致雪铁龙集团共享，是为了达到降低成本和节省油耗而设计。这个引擎是由宝马位于英国华威郡（Warwickshire）的工厂生产。引擎的开发工程是由位于英格兰的宝马集团英国引擎工程（BMW Group UK Engineering）、德国慕尼黑宝马集团总部，和其他第三方厂商共同负责。</p>
+              </div>
+            </div>
           </div>
+
         </div>
+        <div class="brand-end-image"></div> 
       </div>
     </div>
     <div class="onsale-content-item hidden"></div>
@@ -1367,3 +1394,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   <script type="text/javascript"> document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000) </script>
  </body>
 </html>
+<script type="text/javascript">
+//锚点跳转
+ 
+ $(".more-image").click(function(){
+  $(this).addClass("big-image");
+  $(this).removeClass("more-image");
+
+ })
+</script>

@@ -125,6 +125,9 @@
 #crm #content .task .task-num li {
   margin-bottom: 15px;
 }
+#crm #content .task .task-num .num {
+  width: 360px;
+}
 #crm #content .task .task-num i {
   display: block;
   float: left;
