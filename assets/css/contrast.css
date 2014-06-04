@@ -15,8 +15,46 @@
   font-weight: normal;
   line-height: 20px;
 }
+#contrast #content .wrapper .contrast-nav {
+  width: 125px;
+  border: 1px solid #E4E3E3;
+  position: fixed;
+  top: 200px;
+  left: 20px;
+  background: #F9F9F9;
+}
+#contrast #content .wrapper .contrast-nav .nav-list {
+  padding: 20px 15px;
+  line-height: 43px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+#contrast #content .wrapper .contrast-nav .nav-list li {
+  height: 25px;
+}
+#contrast #content .wrapper .contrast-nav .nav-list li .frist-nav {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  margin-top: 17px;
+  display: block;
+  background: #CCCCCC;
+}
+#contrast #content .wrapper .contrast-nav .nav-list li i {
+  display: block;
+  width: 8px;
+  height: 25px;
+  background: url(../images/contrast/nav-bg.png) no-repeat;
+  float: left;
+  margin-right: 5px;
+}
+#contrast #content .wrapper .contrast-nav .nav-list li:hover i {
+  background: url(../images/contrast/nav-bg-hover.png) no-repeat;
+}
+#contrast #content .wrapper .contrast-nav .nav-list li:hover .frist-nav {
+  background: #FC7000;
+}
 #contrast #content .wrapper .contrast-table {
-  width: 100%;
   margin-top: 20px;
 }
 #contrast #content .wrapper .contrast-table .basic-info {

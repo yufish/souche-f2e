@@ -73,22 +73,34 @@ html
             li
               i
               span 发动机
+            li
+              i
+              span 电动机
+            li
+              i
+              span 变速箱
+            li
+              i
+              span 底盘转向
+            li
+              i
+              span 车轮制动
         .contrast-table
           table.basic-info
             tr.car-title
               th.tab-tit(width="215px")
                 i
                 span 车辆基本信息
-              th.title(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
+              th.title.carname(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
                 i.close-contrast.hidden
                 span.more-detail
-              th.title(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
+              th.title.carname(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
                 i.close-contrast.hidden
                 span.more-detail
-              th.title(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
+              th.title.carname(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
                 i.close-contrast.hidden
                 span.more-detail
-              th.title(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
+              th.title.carname(width="200px") 2008款 奔驰ML级ML350-3.5-手自一体四驱动感型【进口】
                 i.close-contrast.hidden
                 span.more-detail
             tr.car-pic
@@ -356,3 +368,9 @@ html
     script.
       Index.init();
       BizQQWPA.addCustom([{aty: '0', a: '0', nameAccount: 4008010010, selector: 'J_zixunother'},{aty: '0', a: '0', nameAccount: 4008010010, selector: 'BizQQWPA'},{aty: '0', a: '0', nameAccount: 4008010010, selector: 'J_onlinezixun'}]);
+    script.
+      $(".carname").mouseenter(function(){
+        $(".close-contrast",this).removeClass("hidden");
+      }).mouseleave(function(){
+        $(".close-contrast",this).addClass("hidden");
+      })
