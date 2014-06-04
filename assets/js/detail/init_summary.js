@@ -47,13 +47,10 @@ define(function() {
                                 items: data.maitenanceItems[i],
                                 price: prices
                             })
-
                         }
                         distanceData.sort(function(i1, i2) {
                             return i1.distance - i2.distance;
                         })
-                        console.log(distanceData);
-
                         require(['detail/draw-baoyang'], function(Baoyang) {
                             Baoyang.draw({
                                 distanceData: distanceData,
@@ -61,6 +58,7 @@ define(function() {
                             })
 
                         })
+
                     }
                 }
             })
