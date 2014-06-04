@@ -89,20 +89,11 @@
         "/traffic_begin": {
             get: function() {
                 return function(req, res) {
-                    var phone_match, tag_match;
                     if (!req.query || !req.query.cookie) {
                         res.send('error');
                         return;
                     }
                     req.query.ip = req.headers['x-real-ip'] || req.headers['x-forwarded-for'];
-                    phone_match = req.query.cookie.match(/noregisteruser=([0-9]*?);/);
-                    if (phone_match) {
-                        req.query.phone = phone_match[1];
-                    }
-                    tag_match = req.query.cookie.match(/usertag=([0-9a-zA-Z_]*?);/);
-                    if (tag_match) {
-                        req.query.userTag = tag_match[1];
-                    }
                     req.query.stay_second = 0;
                     req.query.click_count = 0;
                     req.query.visit_length = 0;
