@@ -64,7 +64,7 @@ $(document).ready(function() {
                         fontSize: 12,
                         opacity: 0.6,
                         zIndex: 1000000000
-                    }).html(click_types[i])
+                    }).html(click_types[i]).attr("click_type", i)
                 }
                 console.log(click_types)
             }
