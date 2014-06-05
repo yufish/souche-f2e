@@ -15,7 +15,11 @@ html {
   overflow: hidden;
 }
 #toolbar .tool-box #toolbar-nav {
+<<<<<<< HEAD
+  width: 717px;
+=======
   width: 811px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
   height: 40px;
 }
 #toolbar .tool-box #toolbar-nav .title {
@@ -51,23 +55,37 @@ html {
   margin: 9px 10px;
 }
 #toolbar .tool-box #toolbar-nav .path .going span {
+<<<<<<< HEAD
+  background: url(../images/index/going.png);
+}
+#toolbar .tool-box #toolbar-nav .path .back span {
+  background: url(../images/index/back.png);
+=======
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back span {
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -30px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 }
 #toolbar .tool-box #toolbar-nav .path a:hover {
   background-color: #FC7000;
 }
 #toolbar .tool-box #toolbar-nav .path .going:hover span {
+<<<<<<< HEAD
+  background: url(../images/index/going-hover.png);
+}
+#toolbar .tool-box #toolbar-nav .path .back:hover span {
+  background: url(../images/index/back-hover.png);
+=======
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -60px;
 }
 #toolbar .tool-box #toolbar-nav .path .back:hover span {
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -60px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 }
 #toolbar .tool-box #toolbar-nav .path a.disabled {
   border: 1px solid #ddd;
@@ -77,12 +95,19 @@ html {
   cursor: default;
 }
 #toolbar .tool-box #toolbar-nav .path .going.disabled:hover span {
+<<<<<<< HEAD
+  background: url(../images/index/going.png);
+}
+#toolbar .tool-box #toolbar-nav .path .back.disabled:hover span {
+  background: url(../images/index/back.png);
+=======
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -160px -30px;
 }
 #toolbar .tool-box #toolbar-nav .path .back.disabled:hover span {
   background: url(../images/index/toolbar_sprite.png?125);
   background-position: -120px -30px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 }
 #toolbar .tool-box #toolbar-nav .pages {
   font-size: 14px;
@@ -95,6 +120,19 @@ html {
   float: left;
 }
 #toolbar #toolbar-content {
+<<<<<<< HEAD
+  width: 855px;
+  height: 630px;
+}
+#toolbar #toolbar-content .car-wrap {
+  width: 730px;
+  height: 550px;
+}
+#toolbar #toolbar-content .car-wrap .car-box {
+  width: 210px;
+  height: 240px;
+  margin-top: 13px;
+=======
   width: 825px;
   height: 430px;
   overflow: hidden;
@@ -107,6 +145,7 @@ html {
 #toolbar #toolbar-content .car-wrap .car-box {
   width: 180px;
   margin-top: 6px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
   background-color: #fff;
   border: 1px solid #e4e4e4;
   padding: 8px;
@@ -131,6 +170,15 @@ html {
   background: url(../images/index/toolbar_sprite.png?123);
   background-position: -200px -30px;
 }
+<<<<<<< HEAD
+#toolbar #toolbar-content .car-wrap .car-box .car-image {
+  width: 210px;
+  height: 140px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image img {
+  width: 210px;
+  height: 140px;
+=======
 #toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon.active {
   background: url(../images/index/toolbar_sprite.png?123);
   background-position: -240px -30px;
@@ -138,6 +186,7 @@ html {
 #toolbar #toolbar-content .car-wrap .car-box .car-image img {
   width: 180px;
   height: 120px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-title {
   font-size: 12px;
@@ -152,8 +201,14 @@ html {
   color: #FC7000;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-price {
+<<<<<<< HEAD
+  height: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e4e4e4;
+=======
   height: 18px;
   padding: 6px 0;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-price .price {
   color: #db2400;
@@ -167,10 +222,13 @@ html {
   font-size: 12px;
   float: right;
 }
+<<<<<<< HEAD
+=======
 #toolbar #toolbar-content .car-wrap .car-box .action {
   height: 20px;
   border-top: 1px solid #e4e4e4;
 }
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 #toolbar #toolbar-content .car-wrap .car-box .cancel {
   display: block;
   height: 20px;
@@ -207,6 +265,12 @@ html {
   display: inline;
   color: #fff;
 }
+<<<<<<< HEAD
+#toolbar #toolbar-content .car-wrap .car-box .join:hover {
+  background-color: #e66600;
+}
+=======
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
 #toolbar #toolbar-content .car-wrap .car-box .join-collect i {
   background: url(../images/index/join-collect.png) no-repeat;
   margin: 2px 5px;

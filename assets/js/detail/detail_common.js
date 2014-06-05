@@ -354,7 +354,7 @@
     })
     var submitAddress = function() {
         $.ajax({
-            url: config.api_AddressToPhone,
+            url: SaleDetailConfig.api_AddressToPhone,
             data: {
                 phone: $("#address-phone").val()
             },
@@ -363,16 +363,16 @@
 
                 $(".adress-open").addClass("hidden");
             }
-        })
+        });
     }
     $("#adress-from").on("submit", function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#address-phone").val())) {
             alert("请输入正确手机号码");
         } else {
-            Souche.PhoneRegister($("#address-phone").val(), function() {
-                submitAddress();
-            })
+
+            submitAddress();
+
         }
     })
     var submitJiangjia = function() {

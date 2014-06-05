@@ -2,6 +2,6 @@
     baseUrl: ".",
 
     name: "index",
-    include: ["index/sidebar","souche/stats"],
+    include: ["index/sidebar"],
     out: "index.r.js"
 })
