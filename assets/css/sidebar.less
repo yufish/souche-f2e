@@ -1,4 +1,4 @@
-.sidebar-top{
+.sidebar .sidebar-nav.sidebar-top{
   height: 131px;
   border: 1px solid #e6e6e6;
   margin-bottom: 35px;
@@ -147,6 +147,7 @@
     height: 53px;
     border-bottom: 1px solid #dedede;
     position: relative;
+    
     .point-num{
       border-radius: 15px;
       border: 2px solid #fff;
@@ -154,7 +155,8 @@
       position: absolute;
       top: -5px;
       left: -10px;
-      font-size: 12px;color: #fff;font-style: normal;text-align: center;
+      font-size: 12px;color: #fff;
+      font-style: normal;text-align: center;
       padding:0 5px;
     }
     a{
@@ -216,7 +218,7 @@
   // width: 910px;height:652px;
   .sidebar-nav{
 
-    width: 58px;
+    width: 59px;
     height: 653px;
     float: left;
     
@@ -229,7 +231,7 @@
   
 }
 .sidebar-active{
-  width:58px;
+  width:59px;
   border-left: none;
   box-shadow: -1px -1px 5px #666;
   .sidebar-nav{
@@ -240,6 +242,8 @@
       border-bottom: 1px solid #d15001;
       height: 55px;
       border:1px solid #FC7000;
+      border-right: none;
+      line-height: 20px;
       a{
         display: block;
         padding: 9px 5px;
@@ -253,14 +257,16 @@
     }
     .side-box:hover,.side-box.active{
       border: 1px solid #d15001;
-      border-right:0;
+      border-right:none;
+      border-right: none;
     }
     .collectside{
       border-top:  1px solid transparent;
       a{.icon{background: url(../images/index/collect-hover.png);}}
     }
     .collectside:hover,.collectside.active{
-      border-bottom: 1px solid #dedede;border-right: none;
+      border-bottom: 1px solid #dedede;
+      border-right: none;
       border-top:  1px solid #dedede;
       background: #f2f2f2;
       a{
@@ -308,16 +314,5 @@
   }
 }
 
-.sidebar-active:hover{
-  width:57px;
-  .side-box{
-    width: 57px;
-    a{
-      i{
-        width:30px;
-      }
-    }
-  }
-  
-}
+
 
