@@ -758,7 +758,7 @@ body {
   background-color: #4398ca;
 }
 #stockFinance h1 span {
-  background-position: 0 -181px;
+  background-position: 0 -180.99999999px;
   margin-left: 254px;
 }
 .finance_content {
@@ -3564,7 +3564,7 @@ body {
   width: 25px;
   height: 20px;
   margin-top: -5px;
-  background: url("../../images/fed/onsale_sprite3.png") no-repeat -224px -115px;
+  background: url("../../images/fed/onsale_sprite3.png") no-repeat -223.99999999px -115px;
 }
 .onsale_wrap .onsale_content .check_explain {
   border-bottom: 1px solid #dfe0e0;

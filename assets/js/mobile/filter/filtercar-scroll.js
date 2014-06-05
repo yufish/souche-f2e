@@ -12,7 +12,7 @@ $(document).ready(function(){
     function popupBtnPositioned(){
         var srTop = win.scrollTop();
         okBtnWrapper.css({
-            top:winH +srTop -  60
+            top:winH +srTop -  80
         })
     }
     popupBtnPositioned();
