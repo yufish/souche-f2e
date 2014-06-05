@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mobile/filter-car.css" afterPath="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help7.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help8.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html" afterPath="$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
@@ -31,26 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4872" max-vertical-offset="7735">
-              <caret line="312" column="0" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/mobile/list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.24" vertical-offset="2069" max-vertical-offset="4505">
-              <caret line="150" column="52" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="help1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help1.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,7 +43,7 @@
       <file leaf-file-name="help3.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.0" vertical-offset="454" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
               <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
               <folding />
             </state>
@@ -74,7 +53,7 @@
       <file leaf-file-name="help2.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.0" vertical-offset="454" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
               <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
               <folding />
             </state>
@@ -84,7 +63,7 @@
       <file leaf-file-name="help4.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.038462" vertical-offset="454" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="-29.576923" vertical-offset="336" max-vertical-offset="1326">
               <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
               <folding />
             </state>
@@ -94,38 +73,58 @@
       <file leaf-file-name="help5.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0" vertical-offset="336" max-vertical-offset="1326">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter-car.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filter-car.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/mobile/filter-car.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40161452" vertical-offset="1472" max-vertical-offset="4947">
-              <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+            <state vertical-scroll-proportion="-30.2" vertical-offset="1472" max-vertical-offset="4947">
+              <caret line="131" column="19" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="help.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help.jade">
+      <file leaf-file-name="help6.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.04" vertical-offset="300" max-vertical-offset="1173">
-              <caret line="53" column="71" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="71" />
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail_common.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/detail/detail_common.js">
+      <file leaf-file-name="help8.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help8.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.04" vertical-offset="5757" max-vertical-offset="14433">
-              <caret line="349" column="46" selection-start-line="349" selection-start-column="46" selection-end-line="349" selection-end-column="46" />
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="help7.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help7.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="help9.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help9.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1929293" vertical-offset="336" max-vertical-offset="1326">
+              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -189,8 +188,12 @@
         <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help2.html" />
         <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help3.html" />
         <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help4.html" />
-        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html" />
         <option value="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
+        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html" />
+        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help6.html" />
+        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help7.html" />
+        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help8.html" />
+        <option value="$PROJECT_DIR$/demo/zilong/cheniu/help2/help9.html" />
       </list>
     </option>
   </component>
@@ -224,7 +227,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -491,34 +494,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/zilong/chart/line.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="2261">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/detail/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27968">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/fenqi.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.24" vertical-offset="0" max-vertical-offset="589">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/zilong/acts/qianglou.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/mobile/gouche.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6954">
@@ -793,9 +768,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/detail/detail_common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.04" vertical-offset="5757" max-vertical-offset="14450">
-          <caret line="349" column="46" selection-start-line="349" selection-start-column="46" selection-end-line="349" selection-end-column="46" />
-          <folding />
+        <state vertical-scroll-proportion="-7.04" vertical-offset="4839" max-vertical-offset="13498">
+          <caret line="295" column="46" selection-start-line="295" selection-start-column="46" selection-end-line="295" selection-end-column="46" />
+          <folding>
+            <marker date="1401961733241" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;细节&quot;...}" />
+            <marker date="1401961733241" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;细节&quot;...}" />
+            <marker date="1401961733241" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;细节&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -831,9 +810,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/filter-car.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.2" vertical-offset="1472" max-vertical-offset="4947">
+          <caret line="131" column="19" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.0" vertical-offset="454" max-vertical-offset="1326">
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
           <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
           <folding />
         </state>
@@ -841,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.0" vertical-offset="454" max-vertical-offset="1326">
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
           <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
           <folding />
         </state>
@@ -849,7 +836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.038462" vertical-offset="454" max-vertical-offset="1326">
+        <state vertical-scroll-proportion="-29.576923" vertical-offset="336" max-vertical-offset="1326">
           <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
           <folding />
         </state>
@@ -857,16 +844,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0" vertical-offset="336" max-vertical-offset="1326">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mobile/filter-car.css">
+    <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40161452" vertical-offset="1472" max-vertical-offset="4947">
-          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.538462" vertical-offset="336" max-vertical-offset="1326">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/zilong/cheniu/help2/help9.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1929293" vertical-offset="336" max-vertical-offset="1326">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
           <folding />
         </state>
       </provider>
