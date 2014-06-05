@@ -34,7 +34,7 @@ define(function() {
                 url: "http://115.29.10.121:10001/demo/carprice/maintenance?modelcode=" + config.modelCode,
                 dataType: "jsonp",
                 success: function(data) {
-                    if (data.maitenanceItems) {
+                    if (data && data.maitenanceItems) {
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         var distanceData = [];
                         for (var i in data.maitenanceItems) {
