@@ -16,88 +16,33 @@
     });
 
 
-
-
-
-    $(".onsale-tab-item").on("click", function(e) {
-        var id = $(this).attr("data-id");
-        $(".onsale-content-item").addClass("hidden")
-        $("#" + id).removeClass("hidden");
-        $(".onsale-tab-item").removeClass("active");
-        $(this).addClass("active")
-        $(window).trigger("tab_change", id);
-    });
-    var hasInitTab = {
-
-    }
-    $(window).on("tab_change", function(e, id) {
-        if (!hasInitTab[id]) {
-            if (id == "onsale_price") {
-                $.ajax({
-                    url: "",
-                    dataType: "jsonp",
-                    success: function(data) {
-
-                    }
-                })
-                require(['detail/draw-price-down'], function(DrawPriceDown) {
-                    DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-                })
-            } else if (id == "onsale_baoyang") {
-                require(['detail/draw-baoyang'], function(Baoyang) {
-                    Baoyang.draw({
-                        feiyongs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8],
-                        nowDistance: 3.4
-                    })
-                })
-            } else if (id == "onsale_koubei") {
-                require(['detail/draw-koubei'],
-                    function(DrawKoubei) {
-                        var koubeiData = [{
-                            name: "细节",
-                            rate: 0.7,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.8,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.9,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.5,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.8,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.5,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.2,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.3,
-                            labels: ["价格高", "储物空间大"]
-                        }, {
-                            name: "细节",
-                            rate: 0.8,
-                            labels: ["价格高", "储物空间大"]
-                        }]
-                        DrawKoubei.draw(koubeiData)
-                    }
-                )
-            }
-            hasInitTab[id] = 1;
+    var paras = {
+        oldClass: "",
+        $lastNav: $(".activeNav"),
+        $nav: $("#detail-nav"),
+        $win: $(window),
+        $body: $("body, html"),
+        $winTop: "",
+        mainTop: $("#detail_main").offset().top - 50,
+        sumTop: $("#onsale_sum").offset().top - 50,
+        paraTop: $("#detail_para").offset().top - 50,
+        recordTop: $("#onsale_record").offset().top - 50,
+        navVisible: false,
+        cNav: function(current) {
+            paras.$lastNav.removeClass("activeNav");
+            current.addClass("activeNav");
+            paras.$lastNav = current;
         }
-    })
-
+    };
+    $("#detail-nav").find("ul a").click(function() {
+        var $this = $(this);
+        paras.cNav($this);
+        var target = $this.attr("href");
+        paras.$body.animate({
+            scrollTop: $(target).offset().top - 50
+        }, 300);
+        return false;
+    });
     $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();
