@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" afterPath="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter/addListener.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter/addListener.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/common.css" afterPath="$PROJECT_DIR$/assets/css/souche/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/detail/detail.css" afterPath="$PROJECT_DIR$/assets/css/detail/detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mobile/filter-car.css" afterPath="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter/filtercar-scroll.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter/filtercar-scroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/index.css" afterPath="$PROJECT_DIR$/assets/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/sidebar.css" afterPath="$PROJECT_DIR$/assets/css/sidebar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/souche.css" afterPath="$PROJECT_DIR$/assets/css/souche/souche.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/souche/ui.css" afterPath="$PROJECT_DIR$/assets/css/souche/ui.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="souche-f2e.iws" />
@@ -66,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter-new.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="filter-new.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.16" vertical-offset="1377" max-vertical-offset="7769">
-              <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.74214876" vertical-offset="5433" max-vertical-offset="7837">
+              <caret line="346" column="25" selection-start-line="346" selection-start-column="25" selection-end-line="346" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -96,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail_common.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="detail_common.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/detail/detail_common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45" vertical-offset="5859" max-vertical-offset="14450">
-              <caret line="360" column="25" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
+            <state vertical-scroll-proportion="-7.04" vertical-offset="5757" max-vertical-offset="14450">
+              <caret line="349" column="46" selection-start-line="349" selection-start-column="46" selection-end-line="349" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -189,8 +179,8 @@
         <option value="$PROJECT_DIR$/assets/css/mobile/filter-car.css" />
         <option value="$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter/filtercar-scroll.js" />
-        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
         <option value="$PROJECT_DIR$/assets/js/mobile/filter/addListener.js" />
+        <option value="$PROJECT_DIR$/assets/js/mobile/filter-new.js" />
       </list>
     </option>
   </component>
@@ -417,8 +407,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -805,14 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.16" vertical-offset="1377" max-vertical-offset="7769">
-          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mobile/common/BrandManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2550">
@@ -831,8 +813,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/detail/detail_common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45" vertical-offset="5859" max-vertical-offset="14450">
-          <caret line="360" column="25" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
+        <state vertical-scroll-proportion="-7.04" vertical-offset="5757" max-vertical-offset="14450">
+          <caret line="349" column="46" selection-start-line="349" selection-start-column="46" selection-end-line="349" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mobile/filter-new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74214876" vertical-offset="5433" max-vertical-offset="7837">
+          <caret line="346" column="25" selection-start-line="346" selection-start-column="25" selection-end-line="346" selection-end-column="25" />
           <folding />
         </state>
       </provider>

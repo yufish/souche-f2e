@@ -338,9 +338,13 @@ function filter(BrandMgr, addListener) {
                 }).join(';')
 
                 var sStr = brands.map(function(b) {
-                    return b['series'].map(function(s) {
-                        return s['code'];
-                    }).join(',');
+                        if(b['series'].length==0){
+                            return 'null'
+                        }else{
+                            return b['series'].map(function(s) {
+                                return s['code'];
+                            }).join(',');
+                        }
                 }).join(';');
                 return {
                     brandStr: bStr,
