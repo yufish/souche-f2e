@@ -108,11 +108,7 @@
 #filter-car .filter-popup {
     background-color: #fff;
     border-radius: 8px;
-}
-#filter-car .filter-popup {
-    background-color: #fff;
-    border-radius: 8px;
-    min-height: 200px;
+    min-height: 600px;
 }
 #filter-car .filter-popup .title {
     margin-left: 10px;
