@@ -17,8 +17,8 @@ define(function() {
                     if (data.priceInterval_nudeCar) {
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        var maxPrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
-                        var middlePrice = ((data.priceInterval_4s.first + data.priceInterval_4s.second) / 2).toFixed(1)
+                        var maxPrice = (data.price_guide).toFixed(1)
+                        var middlePrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
                         var minPrice = config.price;
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice);
