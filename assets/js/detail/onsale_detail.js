@@ -18,15 +18,7 @@
                 paras.$lastNav = current;
             }
         };
-        paras.$nav.find("ul a").click(function() {
-            var $this = $(this);
-            paras.cNav($this);
-            var target = $this.attr("href");
-            paras.$body.animate({
-                scrollTop: $(target).offset().top - 50
-            }, 300);
-            return false;
-        });
+
         paras.$nav.css("opacity", "0.95");
 
         paras.$win.scroll(function() {

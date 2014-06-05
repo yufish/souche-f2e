@@ -16,6 +16,7 @@ define(function() {
                 success: function(data) {
                     if (data.priceInterval_nudeCar) {
                         $(".onsale-tab-item-price").removeClass("hidden")
+                        $(".float-nav-item-price").removeClass("hidden")
                         var maxPrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
                         var middlePrice = ((data.priceInterval_4s.first + data.priceInterval_4s.second) / 2).toFixed(1)
                         var minPrice = config.price;
@@ -36,6 +37,7 @@ define(function() {
                 success: function(data) {
                     if (data && data.maitenanceItems) {
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
+                        $(".float-nav-item-baoyang").removeClass("hidden")
                         var distanceData = [];
                         for (var i in data.maitenanceItems) {
                             var distance = i.replace(/ 公里.*$/, "") * 1;
@@ -76,11 +78,20 @@ define(function() {
                 $(this).addClass("active")
                 $(window).trigger("tab_change", id);
             });
+
+            $(".float-nav-item").on("click", function(e) {
+                var id = $(this).attr("data-id");
+                $(".onsale-content-item").addClass("hidden")
+                $("#" + id).removeClass("hidden");
+                $(".float-nav-item").removeClass("activeNav");
+                $(this).addClass("activeNav")
+                $(window).trigger("tab_change", id);
+                e.preventDefault();
+            });
             if (SVGsupported) {
                 self.load_price();
                 self.load_baoyang();
             }
-
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {
             //         if (id == "onsale_price") {
