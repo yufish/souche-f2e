@@ -310,13 +310,7 @@ function filter(BrandMgr, addListener) {
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
-                        var addr = contextPath + '/pages/mobile/list.html?';
-                        for (var i in dataObj) {
-                            addr += (i + '=' + dataObj[i] + '&');
-                        }
-                        window.location.href = addr.substr(0,addr.length-1);
-                        //TODO del
-                        return;
+
                         if (data.i == 0) {
                             showSorry();
                         } else {
