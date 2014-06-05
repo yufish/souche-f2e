@@ -13,6 +13,9 @@ Souche.UI.CustomSelect = function() {
         };
         $.extend(this.config, _config)
         this.selected = [];
+        if (this.config.onchange) {
+            $(this).on("change", this.config.onchange);
+        }
         this._init();
         this._defaultHeadHeight = 30;
         this._enable = true;
@@ -293,6 +296,10 @@ Souche.UI.CustomSelect = function() {
 
                 $(".sc-select-content", this.ele).html("<span class='placeholder'>" + this.config.placeholder + "</span>")
             }
+            $(self).trigger("change", {
+                key: this.selected[0].key,
+                value: this.selected[0].value
+            })
             this.hideOptions();
         },
         _autoDrop: function(list) {
