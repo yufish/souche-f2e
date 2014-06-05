@@ -2,6 +2,11 @@ define(function() {
     var hasInitTab = {
 
     }
+
+    var SVGsupported = function() {
+        ns = "http://www.w3.org/2000/svg"
+        return !!document.createElementNS && !! document.createElementNS(ns, "svg").createSVGRect
+    }()
     var config;
     return {
         load_price: function() {
@@ -14,9 +19,6 @@ define(function() {
                         var maxPrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
                         var middlePrice = ((data.priceInterval_4s.first + data.priceInterval_4s.second) / 2).toFixed(1)
                         var minPrice = config.price;
-                        console.log(minPrice)
-                        console.log(middlePrice)
-                        console.log(maxPrice)
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice);
                         })
@@ -74,8 +76,11 @@ define(function() {
                 $(this).addClass("active")
                 $(window).trigger("tab_change", id);
             });
-            self.load_price();
-            self.load_baoyang();
+            if (SVGsupported) {
+                self.load_price();
+                self.load_baoyang();
+            }
+
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {
             //         if (id == "onsale_price") {
