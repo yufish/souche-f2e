@@ -1,0 +1,136 @@
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/h5-2/mobile.css" rel="stylesheet" type="text/css" />
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.flexslider-min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
+  body#index-h5-2
+    .head
+    .content
+      
+      .wrapper-1
+        .row.clearfix#first-row
+          #car4you
+            .wrapper-250
+              .index-head-photo
+                .num-tip 1
+              .title-text
+                .big 买车顾问
+                .small 为我选好车
+          .img-container
+            .recom-img
+              img(src='http://souche.cdn.aliyuncs.com/files/carpicture/74D85E71914417E8144540391D961DC7_700x460.jpg_325x10000.jpg')
+            .recom-img
+              img(src='http://souche.cdn.aliyuncs.com/files/carpicture/068C2C5AE12CAF4C440B1B35DC1E67C6_700x460.jpg_325x10000.jpg')
+            .recom-img
+              img(src='http://souche.cdn.aliyuncs.com/files/carpicture/74D85E71914417E8144540391D961DC7_700x460.jpg_325x10000.jpg')
+            .recom-img
+              img(src='http://souche.cdn.aliyuncs.com/files/carpicture/74D85E71914417E8144540391D961DC7_700x460.jpg_325x10000.jpg')
+            .recom-img
+              img(src='http://souche.cdn.aliyuncs.com/files/carpicture/353AD532100013BE013F9C41AF8B9DE2_700x460.jpg_325x10000.jpg')
+        .row.clearfix
+          .col-1-2
+            .wrapper-2
+              #filter-car-bg
+              #filter-car.card-box
+                .title-text 筛选二手车
+              
+
+          .col-1-2
+            .wrapper
+              #walk-around-bg
+              #walk-around.card-box
+                .title-text 随便逛逛
+        .row.clearfix
+          .col-1-3
+            .wrapper-3
+              #footprint-bg
+              #footprint.card-box
+                .title-text 我的足迹
+          .col-1-3
+            .wrapper-3
+              #sell-car-bg
+              #sell-car.card-box
+                .title-text 我要卖车
+          .col-1-3
+            .wrapper
+              #promise-bg
+              #promise.card-box
+                .title-text 服务承诺
+      #footer-mobile    
+        #footer-nav.clearfix
+          .col-1-3
+            a(href='#') 用户反馈
+          .col-1-3
+            a.noactive 触屏版
+          .col-1-3
+            a(href='http://www.souche.com').text 电脑版
+        #footer-beian
+          .text 京 ICP备 13012136号
+    script.
+      var pages=$('.recom-img');
+      var curPageIndex= -1
+          ,total=pages.length;
+      var nextPage=function(pageIndex){
+          pageIndex = pageIndex || curPageIndex+1;
+          if(pageIndex==total){
+            pageIndex=0;
+          }
+          var $curPage = pages.eq(curPageIndex)
+              ,$page = pages.eq(pageIndex);
+          $page.css({left:'100%'}).show();
+          $curPage.animate({left:'-100%'},function() {
+            $curPage.hide();
+          })
+          $page.animate({left:'0'});
+          curPageIndex = pageIndex;
+      }
+      var pageAnimate = true;
+      setInterval(function(){
+        if(pageAnimate)
+          nextPage();
+      },3000);
+      //setTimeout(nextPage,500);
+      nextPage();
+      //pageAnimate=false;
+      
+      $('#first-row').on('touchstart',function(){
+        var touched = true;
+        var $self =$(this); 
+        pageAnimate=false;
+        $self.one('touchend',function(){
+          touched = false;
+          $self.removeClass('scale');
+          pageAnimate=true;
+        })
+        setTimeout(function(){
+          if(touched){
+            $self.addClass('scale');
+          }
+        },300)
+      })
+
+      $('.card-box').on('touchstart',function(){
+        var touched = true;
+        var $self =$(this); 
+        $self.one('touchend',function(){
+          touched = false;
+          $self.removeClass('scale');
+        })
+        setTimeout(function(){
+          if(touched){
+            $self.addClass('scale');
+          }
+        },300)
+      })
+      
+
+
+        
+
+
+

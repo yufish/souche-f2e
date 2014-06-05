@@ -1,0 +1,44 @@
+.mobile-popup {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-color: #fff;
+    padding-top: 30px;
+    border-radius: 8px;
+    z-index: 10000;
+}
+.mobile-popup .title {
+    text-align: center;
+    font-size: 18px;
+}
+.mobile-popup .phone-input {
+    height: 35px;
+    width: 230px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #b1b1b1;
+}
+.mobile-popup .btn-wrapper {
+    text-align: center;
+    padding: 30px;
+}
+.mobile-popup .input-wrapper {
+    text-align: center;
+    margin: 20px 0 5px 0;
+}
+.mobile-popup .btn-main {
+    background: #ff4400;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+.mobile-popup .wrong-tip {
+    color: #ff0000;
+    font-size: 12px;
+    width: 230px;
+    margin: 0 auto;
+}

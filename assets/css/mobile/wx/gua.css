@@ -1,0 +1,154 @@
+﻿p{
+	margin:0;
+	padding:0;
+}
+#guajiang{
+	background-color:#eabd23;
+	font-family:'华文黑体','黑体';
+}
+.img-container{
+	width:217px;
+	margin:0 auto;
+}
+.img-container img{
+	width:217px;
+}
+.gua{
+	width:290px;
+	height:160px;
+	margin:0 auto;
+	margin-top:30px;
+	background:url('../../../images/mob/wx/frame-bg.png') no-repeat center;
+	background-size:100%;
+	overflow:hidden;
+}
+.before-bind{
+	padding:50px 0;
+	background-color:#d7d7d7;
+	
+}
+
+
+.wrapper-btn{
+	text-align:center;
+}
+
+.wrapper-btn button{
+	height:40px;
+	width:160px;
+	background-color:#5aba34;
+	border:none;
+	border-radius:8px;
+	color:#fff;
+	font-size:18px;
+}
+
+.intro{
+	width:320px;
+	padding:0 10px;
+	margin:0 auto;
+	margin-top:35px;
+}
+
+.action-detail{
+	background-color:#c95500;
+	padding:3px 8px;
+	border-radius:8px;
+	color:#eabd23;
+	margin-bottom:8px;
+}
+.intro .text{
+	margin-top:8px;
+}
+
+.intro .text .text-item {
+	line-height:24px;
+	font-size:14px;
+	overflow:hidden;
+}
+.intro .text .text-item  p{
+	line-height:24px;
+	width:290px;
+	float:left;
+}
+.intro .text .text-item .seq{
+	float:left;
+}
+#canvas-container{
+	margin:10px;
+	height:140px;
+	position:relative;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#phone-popup{
+	background-color:#fff;
+	position:absolute;
+	border-radius:8px;
+	top:30px;
+	display:none;
+}
+
+#phone-popup .close{
+	border-radius:80%;
+	font-weight:900;
+	border:1px solid #666;
+	color:#666;
+	width:24px;
+	height:24px;
+	text-align:center;
+	line-height:24px;
+	position:absolute;
+	right:5px;
+	top:5px;
+}
+.wrapper{
+	width:260px;
+	margin:0 auto;
+	overflow:hidden;
+	margin:0 20px;
+}
+
+#phone-popup input{
+	border-radius:8px;
+	height:35px;
+	border:2px solid #b1b1b1;
+	padding:10px;
+}
+
+#phone-popup .title{
+	margin:30px 0;
+}
+#phone-popup .info-item{
+	margin-bottom:15px;
+}
+
+#phone-popup #valid-code{
+	width:86px;
+}
+#phone-popup button{
+	border:none;
+	height:38px;
+	border-radius:8px;
+	color:white;
+}
+#phone-popup #get-code{
+	width:100px;
+	background-color:#9caed2;
+}
+#phone-popup .btns{
+	text-align:center;
+	margin-bottom:30px;
+}
+#phone-popup #bind-mob{
+	width:136px;
+	background-color:#fc7000;
+}
+#phone-popup #phone-num{
+	width:190px;
+}

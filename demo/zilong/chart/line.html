@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../assets/css/detail/price-distribution.css">
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <style>
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {
+            display: block;
+        }
+    </style>
+    <script src="../../../assets/js/lib/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+    <div id="price-distribution" class="clearfix">
+        <div id="price-chart-area">
+            <div id="sc-price" class="price-point">
+                <div class="price-circle sc-circle">
+                </div>
+                <div class="tri sc-tri"></div>
+                <div class="price-tag sr-tag">
+                    <div class="price-title sc-title">大搜车价</div>
+                    <div class="price-value sc-value">
+                        ￥35.6万
+                    </div>
+                </div>
+                <div id="price-rate">
+                    <i class="tip"></i>折价率${63%}
+                </div>
+            </div>
+            <div id="new-price" class="price-point">
+                <div class="price-circle new-circle">
+
+                </div>
+                <div class="tri new-tri"></div>
+                <div class="price-tag new-tag">
+                    <div class="price-title new-title">新车平均成交价</div>
+                    <div class="price-value">
+                        <i class="tip"></i>￥42.4万
+                    </div>
+                </div>
+            </div>
+            <div id="guide-price" class="price-point">
+                <div class="price-circle guide-circle">
+
+                </div>
+                <div class="tri guide-tri"></div>
+                <div class="price-tag guide-tag">
+
+                    <div class="price-title guide-title">新车厂商指导价</div>
+                    <div class="price-value">
+                        ￥46.3万
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="price-comment-area">
+            <div class="souche-price">
+                大搜车价：<span class="souche-price-text">￥35.6万</span>
+            </div>
+            <p>比新车平均成交价(42.4万)省6.8万</p>
+            <p>折价率63%</p>
+
+            <div class="comment-tip1 clearfix">
+                <div>
+                    <div class="formula-1"><i class="tip"></i>折价率 =</div>
+                    <div class="formula-2">
+                        <div class="fenshu">
+                            <div class="fenzi">
+                                大搜车价
+                            </div>
+                            <div class="fenmu">
+                                新车平均成交价
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-3">
+                        × 100%
+                    </div>
+                </div>
+            </div>
+            <div class="comment-tip2 clearfix">
+                <i class="tip"></i>
+                <p class="text">新车平均成交价数据来自于车主最终成交价格，数据真实可靠</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var width=642;
+        var price = [35.6,46.3]
+        var length = [45,520]
+        function createInterpolation(minV,maxV,minD,maxD){
+            var vGap = maxV-minV,
+                dGap = maxD-minD;
+            return function(value){
+                return (value-minV)/vGap*dGap;
+            }
+        }
+        var getMiddlePoint = createInterpolation(35.6,46.3,45,520);
+        var midD = getMiddlePoint(42.4);
+        $('#sc-price').css({left:45})
+        $('#new-price').css({left:midD})
+        $('#guide-price').css({left:520})
+    </script>
+</body>
+</html>

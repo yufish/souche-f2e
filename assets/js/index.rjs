@@ -1,0 +1,7 @@
+({
+    baseUrl: ".",
+
+    name: "index",
+    include: ["index/sidebar"],
+    out: "index.r.js"
+})

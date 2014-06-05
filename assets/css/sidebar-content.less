@@ -1,11 +1,22 @@
+html{background-color: #f2f2f2; width: 100%;height: 100%;}
+
 #toolbar{
-  width: 855px;height: 630px;
+  width: 100%;height: 100%;
   background-color: #F2F2F2;
   .tool-box{
+<<<<<<< HEAD
     padding-left: 45px;
     width: 720px;
     #toolbar-nav{
       width: 717px;
+=======
+    padding-left: 20px;
+    width: 830px;
+    background-color: #F2F2F2;
+    overflow: hidden;
+    #toolbar-nav{
+      width: 811px;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
       height: 40px;
       .title{font-size: 24px;color: #333;font-weight: bold;float: left;}
       .number {font-size: 16px;font-weight: normal;float: left;font-style: normal;line-height: 35px;}
@@ -17,20 +28,20 @@
         }
 
         
-        .going{span{background: url(../images/index/going.png);}}
+        .going{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -160px -30px;}}
         
-        .back{span{background: url(../images/index/back.png);}}
+        .back{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -120px -30px;}}
         a:hover{
           background-color: #FC7000;
           
         }
-        .going:hover{span{background: url(../images/index/going-hover.png);}}
-        .back:hover{span{background: url(../images/index/back-hover.png);}}
+        .going:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -160px -60px;}}
+        .back:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -120px -60px;}}
         a.disabled{border:1px solid #ddd;}
         a.disabled:hover{background-color: #f2f2f2;cursor: default;}
-        .going.disabled:hover{span{background: url(../images/index/going.png);}}
+        .going.disabled:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -160px -30px;}}
         
-        .back.disabled:hover{span{background: url(../images/index/back.png);}}
+        .back.disabled:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -120px -30px;}}
         
       }
       .pages{
@@ -45,33 +56,60 @@
   }
   
   #toolbar-content{
+<<<<<<< HEAD
     width: 855px;
     height: 630px;
+=======
+    width: 825px;
+    height: 430px;
+    overflow: hidden;
+>>>>>>> 82a769f6775da4f2e880b9d81232cafd147ac6fd
     .car-wrap{
-      width: 730px;
-      height: 550px;
+      width: 825px;
+      height: 430px;
+      margin-top: 5px;
       .car-box{
-       width: 210px;
-       height: 240px;
-       margin-top: 13px;
+       width: 180px;
+       margin-top: 6px;
        background-color: #fff;
        border: 1px solid #e4e4e4;
-       padding: 10px;
+       padding: 8px;
+       padding-bottom: 0;
        float: left;
-       margin-right: 10px;
+       margin-right: 6px;
        position: relative;
        .car-image{
-        width: 210px;height: 140px;
-        img{width: 210px;height: 140px;}
+        width: 180px;height: 120px;
+        position: relative;
+        display: block;
+        .collect-icon{
+          width: 20px;
+          height: 20px;
+          border-radius: 2px;
+          position: absolute;
+          left:3px;
+          bottom: 5px;
+          background: url(../images/index/toolbar_sprite.png?123); 
+          background-position: -200px -30px;
+        }
+        .collect-icon.active{
+          background: url(../images/index/toolbar_sprite.png?123); 
+          background-position: -240px -30px;
+        }
+        img{width: 180px;height: 120px;}
       }
       .car-title{font-size: 12px;color: #333;height:35px;line-height:18px;display:block;margin-top: 5px;cursor: pointer;}
       .car-title:hover{color: #FC7000;}
       .car-price{
-        height: 20px;
-        padding: 8px 0;
-        border-bottom: 1px solid #e4e4e4;
-        .price{color: #db2400;font-size: 14px;font-weight: normal;float: left;}
+        height: 18px;
+        padding: 6px 0;
+        
+        .price{color: #db2400;font-size: 14px;font-weight: normal;float: left;line-height: 15px;}
         .time{color: #999;font-size: 12px;float: right;}
+      }
+      .action{
+        height:20px;
+        border-top: 1px solid #e4e4e4;
       }
       .cancel{
         display: block;
@@ -80,7 +118,7 @@
         margin: 0 auto;
         border-radius: 4px;font-size: 12px;
         color: #666;
-        margin-top: 5px;
+        margin-top: 4px;
         line-height: 20px;
         cursor: pointer;
         border:1px solid #ddd;
@@ -93,7 +131,7 @@
         height: 20px;width: 90px;
         background-color: #FC7000;
         margin: 0 auto;border: 1px solid #f04f12;
-        border-radius: 4px;margin-top: 5px;
+        border-radius: 4px;margin-top: 4px;
         line-height: 20px;cursor: pointer;
         color: #fff;
         i{
@@ -105,9 +143,7 @@
           color: #fff;
         }
       }
-      .join:hover{
-        background-color: #e66600;
-      }
+     
       .join-collect{i{background: url(../images/index/join-collect.png) no-repeat;margin: 2px 5px;height: 18px;width: 15px;}}
       .join-sell{i{background: url(../images/index/join-sell.png) no-repeat;height: 18px;width: 11px;margin: 1px 8px;}}
       .join.cancel{
@@ -222,27 +258,31 @@
   }
 }
 #no-collect{
+  padding-left: 40px;
   .nocllect-img{
     width: 768px;height: 404px;background: url(../images/index/no-collect.png);
-    margin-top: 80px;
+    margin-top: 5px;
   }
 }
 #no-sell{
+  padding-left: 40px;
   .nosell-img{
     width: 768px;height: 403px;background: url(../images/index/no-sell.png);
-    margin-top: 80px;
+    margin-top: 5px;
   }
 }
 #no-reserve{
+  padding-left: 40px;
   .noreserve-img{
     width: 768px;height: 403px;background: url(../images/index/no-reserve.png);
-    margin-top: 80px;
+    margin-top: 5px;
   }
 }
 #no-scan{
+  padding-left: 40px;
   .noscan-img{
     width: 768px;height: 403px;background: url(../images/index/no-scan.png);
-    margin-top: 80px;
+    margin-top: 5px;
   }
 }
 }

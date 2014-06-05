@@ -1,3 +1,6 @@
+/**
+ * [CustomSelect 自定义下拉框，可以多选，可定义下拉样式]
+ */
 Souche.UI.CustomSelect = function() {
     var select = function(id, _config) {
         this.id = id;
@@ -64,9 +67,20 @@ Souche.UI.CustomSelect = function() {
                     value: $(v).text().replace("x", "")
                 })
             })
+            if (!this.config.multi) {
+                if ($(".selected_values", self.ele).val()) {
+                    self.selected = [{
+                        key: $(".selected_values", self.ele).val(),
+                        value: $(".selected_values", self.ele).val()
+                    }]
+                }
+            }
+            $(document.body).on("click", function(e) {
 
-            $(document.body).on("click", function() {
-                self.hideOptions();
+                if (!$(e.target).closest(".sc-select").length) {
+                    self.hideOptions();
+                }
+
             });
             this._bindClick();
             this._bindSelect();
@@ -80,7 +94,30 @@ Souche.UI.CustomSelect = function() {
         //绑定输入框的点击事件
         _bindClick: function() {
             var self = this;
+            var mouseOverStatus = 0;
 
+            function checkShow() {
+                var list = $(".sc-select-list", self.ele);
+                if (mouseOverStatus) {
+                    $(".sc-select-list").addClass("hidden");
+                    self.showOptions();
+                    $(".sc-select-list", self.ele).css({
+                        top: $(".sc-select-hd", self.ele).height() + 2
+                    });
+                    if (self.config.isAutoDrop) {
+                        self._autoDrop(list);
+                    }
+                    $(".sc-select-list", self.ele).scrollTop(0)
+                    $(list[0].parentNode).css({
+                        zIndex: Souche.Data.DropdownzIndex++
+                    });
+                } else {
+                    self.hideOptions();
+                    list.css({
+                        top: 30
+                    });
+                }
+            }
             $(".sc-select-hd", this.ele).click(function(e) {
                 var list = $(".sc-select-list", self.ele);
                 if ($(".sc-select-list", self.ele).hasClass("hidden")) {
@@ -103,8 +140,24 @@ Souche.UI.CustomSelect = function() {
                     });
                 }
 
-                e.stopPropagation();
-            });
+            })
+            var openTimer, closeTimer;
+            $(this.ele).mouseenter(function() {
+                mouseOverStatus = 1;
+                clearTimeout(openTimer);
+                clearTimeout(closeTimer);
+                openTimer = setTimeout(function() {
+                    checkShow();
+                }, 1000);
+
+            }).mouseleave(function() {
+                mouseOverStatus = 0;
+                clearTimeout(closeTimer);
+                clearTimeout(openTimer);
+                closeTimer = setTimeout(function() {
+                    checkShow();
+                }, 500);
+            })
 
 
 

@@ -1,0 +1,232 @@
+html
+	head
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		style.
+			p{
+				margin:0;
+				padding:0;
+			}
+			#guajiang{
+				background-color:#eabd23;
+				font-family:'华文黑体','黑体';
+			}
+			.img-container{
+				width:217px;
+				margin:0 auto;
+			}
+			.img-container img{
+				width:217px;
+			}
+			.gua{
+				width:290px;
+				height:160px;
+				margin:0 auto;
+				margin-top:30px;
+				background:url('../../assets/images/mob/wx/frame-bg.png') no-repeat center;
+				background-size:100%;
+				overflow:hidden;
+			}
+			.before-bind{
+				padding:50px 0;
+				background-color:#d7d7d7;
+				
+			}
+			.wrapper-btn{
+				text-align:center;
+			}
+			.wrapper-btn button{
+				height:40px;
+				width:160px;
+				background-color:#5aba34;
+				border:none;
+				border-radius:8px;
+				color:#fff;
+				font-size:18px;
+			}
+			.intro{
+				width:320px;
+				padding:0 10px;
+				margin:0 auto;
+				margin-top:35px;
+			}
+			.action-detail{
+				background-color:#c95500;
+				padding:3px 8px;
+				border-radius:8px;
+				color:#eabd23;
+				margin-bottom:8px;
+			}
+			.intro .text{
+				margin-top:8px;
+			}
+			.intro .text .text-item {
+				line-height:24px;
+				font-size:14px;
+				overflow:hidden;
+			}
+			.intro .text .text-item  p{
+				line-height:24px;
+				width:290px;
+				float:left;
+			}
+			.intro .text .text-item .seq{
+				float:left;
+			}
+			#canvas-container{
+				margin:10px;
+				height:140px;
+				position:relative;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#phone-popup{
+				background-color:#fff;
+				position:absolute;
+				border-radius:8px;
+				top:30px;
+				display:none;
+			}
+			#phone-popup .close{
+				border-radius:80%;
+				font-weight:900;
+				border:1px solid #666;
+				color:#666;
+				width:24px;
+				height:24px;
+				text-align:center;
+				line-height:24px;
+				position:absolute;
+				right:5px;
+				top:5px;
+			}
+			.wrapper{
+				width:260px;
+				margin:0 auto;
+				overflow:hidden;
+				margin:0 20px;
+			}
+			#phone-popup input{
+				border-radius:8px;
+				height:35px;
+				border:2px solid #b1b1b1;
+				padding:10px;
+			}
+			#phone-popup .title{
+				margin:30px 0;
+			}
+			#phone-popup .info-item{
+				margin-bottom:15px;
+			}
+
+			#phone-popup #valid-code{
+				width:86px;
+			}
+			#phone-popup button{
+				border:none;
+				height:34px;
+				border-radius:8px;
+				color:white;
+			}
+			#phone-popup #get-code{
+				width:100px;
+				background-color:#9caed2;
+			}
+			#phone-popup .btns{
+				text-align:center;
+				margin: 30px 0;
+			}
+			#phone-popup #bind-mob{
+				width:136px;
+				background-color:#fc7000;
+			}
+			#phone-popup #phone-num{
+				width:190px;
+			}
+			.fixed-award{
+				text-align:center;
+				padding:44px 0;
+				background-color:#fff0bc;
+			}
+			.fixed-award .cong{
+				font-size:16px;
+			}
+			.fixed-award .big-award{
+				margin-top:12px;
+				font-size:20px;
+				font-weight:bold;
+				color:#c95500;
+			}
+			.hidden{
+				display:none;
+			}
+		<script src="http://f2e.souche.com/assets/js/mobile/jquery-1.9.1.min.js?t=11"></script>
+	body#guajiang
+		.img-container
+			img(src='../../assets/images/mob/wx/bind-mobile.png')
+		.gua
+			#canvas-container
+				.before-bind
+					.wrapper-btn
+						button.bind 开始刮奖
+					
+		.intro
+			span.action-detail 夺宝小攻略
+			.text
+				.text-item.clearfix
+					.seq 1.
+					p 你只需要绑定手机号码，就能获得中百万大奖的机会，100%中奖。	
+				.text-item.clearfix
+					.seq 2.
+					p 一个奖不过瘾？你可以点击右上角的分享按钮，分享到朋友圈，你将获得再一次刮奖的机会！	
+				.text-item.clearfix  
+					.seq 3.
+					p 刮刮卡活动有效时间2014.4.25-2014.5.25，全天24小时均可刮奖！ps：中午12点前后，大奖出来溜达的机会比较多哦。	
+				.text-item.clearfix  
+					.seq 4.
+					p 要问大奖有哪些：3000元旅行基金、100元话费、50元话费、30元话费、500元购车券、300元购车券等。
+				.text-item.clearfix 
+					.seq 5.
+					p 其他注意事项：刮奖前可以洗手、吃饭、逛逛大搜车，均能增加中大奖概率。
+					
+					
+		#phone-popup
+			.close ×
+			.wrapper
+				.title 绑定手机号即可获得1次刮奖机会
+				.info-item
+					span.label 手机号
+					input#phone-num(type='tel')
+				.info-item
+					span.label 验证码
+					input#valid-code(type='tel')
+					button#get-code 获取验证码
+				.btns
+					button#bind-mob 绑定
+		
+		.fixed-award.hidden
+			.cong 恭喜您获得了
+			.big-award 300元代金券
+		
+		
+		<script src="http://f2e.souche.com/assets/js/mobile/wx/Lottery.js"></script>
+		<script src="http://f2e.souche.com/assets/js/mobile/wx/gua.js"></script>
+		script.
+			!function showPopup(){
+				var winWidth = $(window).width();
+				var $popup = $('#phone-popup');
+				$popup.show().css({left:(winWidth-$popup.width())/2});;
+			}();
+			/*!function addAward(){
+				$('#canvas-container .before-bind').remove();
+				$('#canvas-container').prepend($('.fixed-award').removeClass('hidden'));
+			}();*/
+			
+			$('.close').click(function(){
+				$(this).parent().hide();
+				
+			})
+			

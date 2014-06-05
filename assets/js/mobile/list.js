@@ -1,368 +1,255 @@
-var List = function() {
+var List = function () {
     var config = {
-            page:1,
-            moreURL:""
+        page: 1,
+        moreURL: ""
     }
     var tpl_cars;
-    var loadMore = function(){
-       SM.LoadingTip.show("正在加载中")
-       $.ajax({
-         url:config.moreURL+"&index="+(++config.page),
-         dataType:"json",
-         success:function(data){
-             console.log(data)
-             var html = Mustache.render (tpl_cars,{cars:data.page?data.page.items:[],yushouCars:data.yushouPage?data.yushouPage.items:[]})
-             $(".cars").append(html)
-             if(data.totalPage==config.page){
-                 $("#load_more").addClass("hidden")
-             }
-             SM.LoadingTip.hide();
-         },
-         error:function(){
-             SM.LoadingTip.hide();
-         }
-       }) 
+    var carList = [];
+    var loadMore = function () {
+        SM.LoadingTip.show("正在加载中")
+        $.ajax({
+            url: config.moreURL + "&index=" + (++config.page),
+            dataType: "json",
+            success: function (data) {
+                //console.log(data)
+                var items = data.page.items;
+                var tpl_data, item, html;
+                var $cars = $('.cars')
+                for (var i = 0; i < items.length; i++) {
+                    item = items[i];
+                    tpl_data = {
+                        id: item.id,
+                        detailUrl: item.carVo.status == 'zaishou' ? 'detail' : 'yushou-detail',
+                        flashPurchase: item.flashPurchase,
+                        fenqi: ( !! item.carPriceVO && item.carPriceVO.fenqi == 1),
+                        downPrice: ( !! item.flashPurchaseVO) ? item.flashPurchaseVO.totalMasterOutPriceToString * 1000 : undefined,
+                        favorite: item.favorite,
+                        favCount: item.count,
+                        year: item.carVo.yearShow,
+                        month: item.carVo.monthShow,
+                        newPrice: item.carVo.newPriceToString,
+                        levelName: item.carVo.levelName,
+                        pictureBig: item.carPicturesVO.pictureBig,
+                        carOtherAllNameShow: item.carVo.carOtherAllNameShow,
+                        price: item.price,
+                        zaishou: (item.carVo.status == 'zaishou')
+                    }
+                    carList.push(tpl_data);
+                    html = Mustache.render(tpl_cars, {
+                        'cars': tpl_data
+                    });
+
+                    $cars.append(html);
+                }
+
+                if (data.totalPage == config.page) {
+                    $("#load_more").addClass("hidden")
+                }
+                SM.LoadingTip.hide();
+            },
+            error: function () {
+                SM.LoadingTip.hide();
+            }
+        })
     }
+
+
+
+    var storeStorage = function () {
+        var db = window.sessionStorage;
+        db.setItem('timestamp', Date.now());
+        db.setItem('url', window.location.href);
+        db.setItem('carlist', JSON.stringify(carList));
+    }
+
+    var backRecover = function () {
+        var db = window.sessionStorage;
+        var time = parseInt(db.getItem('timestamp'));
+        var url = db.getItem('url');
+
+        if (!checkCond({
+            time: time,
+            url: url
+        })) {
+            db.setItem('carlist', '');
+            return;
+        }
+
+        carList = JSON.parse(db.getItem('carlist'));
+        makeDom(carList);
+    }
+
+    var makeDom = function (carList) {
+        var $cars = $('.cars');
+        var html;
+        for (var i = 0; i < carList.length; i++) {
+            html = Mustache.render(tpl_cars, {
+                'cars': carList[i]
+            });
+            $cars.append(html);
+        }
+    }
+    var checkCond = function (obj) {
+        var time = obj.time,
+            url = obj.url;
+
+        //10 minutes 1000*60*10
+        if (!time || (Date.now() - time > 600000)) {
+            return false;
+        }
+        if (!url || (url != window.location.href)) {
+            return false;
+        }
+        return true;
+    }
+
+
+
     return {
 
-        init : function(_config) {
-            for ( var i in _config) {
+        init: function (_config) {
+            for (var i in _config) {
                 config[i] = _config[i]
             }
             tpl_cars = $("#tpl_cars").html();
-           this.bind() 
+            backRecover();
+            this.bind()
         },
-        bind:function(){
-            $("#filter").css("left",-$(window).width())
-            $("#list .filter .t").on("click",function(e){
-            		setTimeout(function(){
-                        $("#content").css("height",0)
-                    },400)
-                    $("#filter").animate({left:0},300)
-                    $("html,body").scrollTop(0)
-                    // $("#filter .action").css({
-                    //         top:$(window).height()+$(window).scrollTop()-70
-                    //     })
-                    window.history.pushState({time:new Date().getTime()},"",window.location.href.replace(/#filter/g,"")+"#filter");
-                    $("#xuan").addClass("hidden")
-                
-            })
-            $("#xuan").on("click",function(e){
-                e.preventDefault()
-               // if($("#filter").height()<$(window).height()){
-                    //$("#filter").css("height",$(window).height())
-                //}
-                setTimeout(function(){
-                    $("#content").css("height",0)
-                },400)
-                $("#filter").animate({left:0},300)
+        bind: function () {
+            $("#list .filter .t").on("click", function (e) {
+                setTimeout(function () {
+                    $("#content").css("height", 0)
+                }, 400)
+                $("#filter").animate({
+                    left: 0
+                }, 300)
                 $("html,body").scrollTop(0)
                 // $("#filter .action").css({
                 //         top:$(window).height()+$(window).scrollTop()-70
                 //     })
-                window.history.pushState({time:new Date().getTime()},"",window.location.href.replace(/#filter/g,"")+"#filter");
+                window.history.pushState({
+                    time: new Date().getTime()
+                }, "", window.location.href.replace(/#filter/g, "") + "#filter");
                 $("#xuan").addClass("hidden")
+
             })
-            $("#filter .back").on("click",function(){
-                $("#filter").animate({left:-$(window).width()},300)
-                $("#content").css("height","auto")
-                $("#xuan").removeClass("hidden")
-            })
-            $("#load_more").on("click",function(e){
+
+            $("#load_more").on("click", function (e) {
                 e.preventDefault();
                 loadMore();
             })
-            
-            window.onpopstate=function()
-            {
-                
-                if(window.location.hash!="#filter"){
-               // $("#filter").css("left",-$(window).width())
-                $("#filter").animate({left:-$(window).width()},300)
-                $("#content").css("height","auto")
-                $("#xuan").removeClass("hidden")
-                }
-                
-            }
-            if(window.location.hash=="#filter"){
-                setTimeout(function(){
-                    $("#content").css("height",0)
-                },400)
-                // $("#filter").css("left",0)
-                $("html,body").scrollTop(0)
-                $("#filter").css({left:0})
-                $("#xuan").addClass("hidden")
-                // $("#filter .action").css({
-                //         top:$(window).height()+$(window).scrollTop()-70
-                //     })
-            }
-            // $(window).on("scroll",function(e){
-            //     if($("#filter").offset().left==0){
-            //         $("#filter .action").css({
-            //             top:$(window).height()+$(window).scrollTop()-70
-            //         })
-            //     }
-            // })
-        }
 
-    }
-}();
 
-var Filter = function() {
-    var filters = {
-        carBrand : null,
-        carSeries : null,
-        carPrice : null,
-        carModel : null,
-        carMileage : null,
-        carYear : null,
-        carTime:null,
-        saleType:null
-    }
-    var options = {
-        sellType : null,
-        isFenqi : null
-    }
-    var config = {
-        sortName : "",
-        sortType : "",
-        baseURL:""
-    }
-    var showFilters = function(){
-        var html = "";
-        for(var i in filters){
-            if(filters[i]){
-                $("#"+i).parent().find(".value").html(filters[i].name)
-                html+='<a class="item" data-id="'+i+'">'+filters[i].name+'<s class="close" href=""><span></span></s></a>'
-            }else{
-                $("#"+i).parent().find(".value").html("")
-            }
-            
-        }
-
-        $("#filter_list").html(html)
-    }
-    var resetFilters = function(){
-           filters = {
-            carBrand : null,
-            carSeries : null,
-            carPrice : null,
-            carModel : null,
-            carMileage : null,
-            carYear : null,
-            carTime:null,
-            saleType:null
-        } 
-        showFilters();
-    }
-    var historyKey = 'filter_history'
-    var historys = []
-    var checkFilterEqual = function(a1,a2){
-    	var r = true;
-    	
-    		for(var i in a1){
-    			try{
-        		if(a1[i]!=a2[i]){
-        			if(a1[i]==null){
-        				r = false
-        			}else if(a2[i]==null){
-        				r = false;
-        			}else{
-        				if(a1[i].code!=a2[i].code){
-        					r = false;
-        				}
-        			}
-        		}
-    			}catch(e){
-    	    		alert(e)
-    	    	}
-        	}
-    	
-    	
-    	return r;
-    }  
-    var buildHistory = function(){
-         historys = historys.splice(0, 5);
-         if(historys.length!=0){
-            $("#history_group").html("")
-         }
-        historys.forEach (function(history){
-            var _filters = [];
-            for(var i in history.filters){
-                if(history.filters[i]){
-                    _filters.push(history.filters[i].name)
-                }
-            }
-            
-            // $("#history").append($("<option value='"+JSON.stringify(history)+"'>"+filters.join("+")+"</option>"))
-            var option = $("<div class=option data-attr='"+JSON.stringify(history)+"''><div class=name >"+_filters.join("+")+"</div><i></i></div>")
-            option.on("click",function(){
-                var d = JSON.parse($(this).attr("data-attr"))
-               filters =d.filters
-               showFilters();
-               window.location.href=config.baseURL+(function(){
-                    var params = []
-                    for(var i in filters){
-                        if (filters[i]){
-                            params.push(i+"="+filters[i].code)
-                        }else{
-                            params.push(i+"=")
-                        }
-                    }
-                    return params.join("&")
-                })();
-            })
-
-            $("#history_group").append(option)
-        })
-        
-    }
-    var buildSeries = function(brand_code){
-    	 $("#carSeries").html("<option>选项正在加载中，请稍候</option>")
-        $.ajax({
-            url:config.seriesURL,
-            type:"post",
-            data:{
-                request_message:'{"code":"'+brand_code+'","type":"car-subdivision"}'
-            },
-            dataType:"json",
-            success:function(data){
-            	$("#carSeries").html("<option>-请选择-</option>")
-                for(var i in data.codes){
-                	
-                    var optgroup= $('<optgroup label="'+i+'"/>');
-                    data.codes[i].forEach(function(c){
-                        optgroup.append("<option value="+c.code+">"+c.name+"</option>")
-                    })
-                    $("#carSeries").append(optgroup)
-                }
-            }
-        })
-    }
-    return {
-        
-        init : function(_config) {
-            for ( var i in _config) {
-                config[i] = _config[i]
-            }
-            this.bind();
-            try{
-                historys = JSON.parse(localStorage.getItem(historyKey))
-                if(!historys||!historys.length) throw new Error("error")
-            }catch(e){
-                historys = []
-            }
-            buildHistory()
-            //初始化
-
-            filters = {
-            carBrand : null,
-            carSeries : null,
-            carPrice : null,
-            carModel : null,
-            carMileage : null,
-            carYear : null,
-            carTime:null,
-            saleType:null
-        } 
-           
-        for(var i in filters){
-            if(_config.defaultParams[i]&&_config.defaultParams[i].name){
-                filters[i]=_config.defaultParams[i]
-                if(i=="carBrand"){
-                    buildSeries(filters[i].code)
-                }
-            }
-        }
-        showFilters();
-        },
-        bind : function() {
-            var self = this;
-            Souche.UI.Select.init({
-            eles:['carBrand','carSeries'],
-            type:"car-subdivision",
-            defaultValues:[]
-            })
-            for ( var id in filters) {
-                $("#" + id).on("change", function() {
-                    if (this.value !== "") {
-                        filters[this.id] = {
-                            code : this.value,
-                            name : this.options[this.selectedIndex].innerHTML
-                        }
-                    } else {
-                        filters[this.id] = null;
-                    }
-                    
-                    
-
-                    if(this.id=="carBrand"){
-                    	filters["carSeries"] = null;
-                        buildSeries(this.value)
-                    }
-                    showFilters();
-                })
-            }
-            $("#filter_list").on("click",function(e){
+            $('#cars').on('click', 'a.car', function (e) {
                 e.preventDefault();
-                if($(e.target).hasClass("item")||$(e.target).hasClass("close")){
-                	var dataid = $(e.target).attr("data-id")||$(e.target.parentNode).attr("data-id")
-                    filters[dataid]=null
-                    if(dataid=="carBrand"){
-                        filters['carBrand']=null
-                        filters['carSeries']=null
-                        $("#carSeries").html("")
-                    }
-                    //
-                    $("#"+$(e.target).attr("data-id")).find("option").attr("selected",false)
-                }
-                showFilters();
+                storeStorage();
+                window.location.href = $(this).attr('href');
             })
-            $("#reset_filters").on("click",function(){
-                resetFilters();
-            })
-            $("#submit_filters,#submit_filters2").on("click",function(){
-            	var isIn = false;
-                for(var i=0;i<historys.length;i++){
-                	
-                	if(checkFilterEqual(historys[i].filters,filters)){
-                		historys.splice(i,1)
-                	}
+
+            //do fav
+            ! function () {
+                var api = {
+                    fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
+                    unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
+                };
+
+                function showPopup() {
+                    $('.wrapPhoneBg').removeClass('hidden');
+                    var $popup = $('#phone-popup');
+                    $popup.removeClass('hidden').css({
+                        'left': ($(window).width() - $popup.width()) / 2
+                    });
+
                 }
-                	historys.unshift({
-                        filters:filters,
-                        options:options
-                    })
-                    historys = historys.splice(0, 5);
-                	try{
-                		 localStorage.setItem(historyKey,JSON.stringify(historys))
-                	}catch(e){
-                		
-                	}
-                   
-                
-                window.location.href=config.baseURL+(function(){
-                    var params = []
-                    for(var i in filters){
-                        if (filters[i]){
-                            params.push(i+"="+filters[i].code)
-                        }else{
-                            params.push(i+"=")
+
+                function hidePopup() {
+                    $('.wrapPhoneBg').addClass('hidden');
+                    $('#phone-popup').addClass('hidden');
+                }
+
+                function saveFav($node) {
+                    var $node = $node;
+                    $.ajax({
+                        url: api.fav,
+                        data: {
+                            carId: $node.attr("data-id")
+                        },
+                        dataType: "json",
+                        success: function () {
+                            $node.addClass("star");
+                            var $numSpan = $node.find('span');
+                            var i = parseInt($numSpan.text());
+                            $numSpan.text(i + 1);
                         }
+                    })
+                }
+
+                function delFav($node) {
+                    $.ajax({
+                        url: api.unfav,
+                        data: {
+                            'carId': $node.attr("data-id")
+                        },
+                        dataType: "json",
+                        success: function () {
+                            $node.removeClass("star");
+                            var $numSpan = $node.find('span');
+                            var i = parseInt($numSpan.text());
+                            $numSpan.text(i - 1);
+                        }
+                    })
+                }
+
+                function doFav($node) {
+                    if ($node.hasClass('star')) {
+                        delFav($curFav);
+                    } else {
+                        saveFav($curFav);
                     }
-                    return params.join("&")
-                })();
-            })
-            $("#history").on("change",function(){
-               var d = JSON.parse(this.value)
-               console.log(d.filters)
-               filters =d.filters
-               showFilters();
-            })
-            // $(window).on("resize",function(){
-            //     if($("#filter").height()<$(window).height())
-            //     $("#filter").css("height",$(window).height())
-            // })
+                }
+
+                var isLogin = false;
+                var $curFav;
+                var phoneReg = /^1[3458][0-9]{9}$/;
+                $('#phone-form').submit(function (e) {
+                    var phoneNum = $("#phone-num").val();
+                    e.preventDefault();
+                    if (!phoneReg.test(phoneNum)) {
+                        alert('请输入正确的手机号码');
+                    } else {
+                        SM.PhoneRegister(phoneNum, function () {
+                            hidePopup();
+                            isLogin = true;
+                            doFav($curFav);
+                        })
+                    }
+                })
+
+                $('#back-btn').click(function () {
+                    hidePopup();
+                })
+                $('.cars').on('click', '.fav', function (e) {
+                    e.preventDefault();
+                    $curFav = $(this);
+
+                    if (isLogin) {
+
+                        doFav($curFav);
+                        return;
+                    }
+
+                    SM.checkPhoneExist(function (is_login) {
+                        if (is_login) {
+                            doFav($curFav);
+                        } else {
+                            showPopup()
+                        }
+                    })
+                })
+            }();
+            //do fav end
+
         }
+
     }
 }();

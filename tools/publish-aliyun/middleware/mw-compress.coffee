@@ -1,13 +1,19 @@
 UglifyJS = require("uglify-js")
-fs = require 'fs'
+fse = require 'fs-extra'
+
 module.exports = (file,callback)->
-  result = UglifyJS.minify(file)
-  if /\.min\.js/.test file
-    callback null,file
+  try 
+    result = UglifyJS.minify(file,{"reserved-names":'require,define',output:{}})
+  catch e
+    callback null,{path:file,realPath:file}
     return
-  result_file = file.replace(/^(.*)\.js$/,'$1.min.js')
-  fs.writeFile result_file,result.code,(error)->
+  
+  if /\.min\.js/.test file
+    callback null,{path:file,realPath:file}
+    return
+  result_file = file.replace(/^.*?\/assets/,config.output_path)
+  fse.outputFile result_file,result.code,{flags:"w"},(error)->
     if error then console.error error
     else
       console.log 'compress js to ' + result_file
-    callback error,result_file
+    callback error,{path:file,realPath:result_file}

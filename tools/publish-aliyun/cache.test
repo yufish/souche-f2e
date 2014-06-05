@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <Key>assets/css/test/test.css</Key>
+  <RequestId>536090269979E489371E1369</RequestId>
+  <HostId>oss.aliyuncs.com:8080</HostId>
+</Error>

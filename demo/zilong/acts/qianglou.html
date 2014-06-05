@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+        <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+        <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+        <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+            }
+            img{
+                vertical-align:middle;
+                width:100%;
+            }
+            #qianglou{
+                background: #ffd542;
+                font-family: '华文黑体', '黑体';
+            }
+            #ql-banner{
+                width:300px;
+                height: 119px;
+                margin:18px auto 15px;
+                background: url(../../../assets/images/mob/huodong/qianglou/banner.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            #count-down{
+                width:300px;
+                margin:0 auto;
+                color:#ff6811;
+                font-size:15px;
+                overflow: hidden;
+            }
+            #count-down .title{
+                margin-left: 5px;
+                font-weight: 900;
+            }
+            #down-time .time{
+                float:left;
+                width:41px;
+                height: 62px;
+                background: url(../../../assets/images/mob/huodong/qianglou/num-bg.png) no-repeat;
+                background-size: 100% 100%;
+                margin-right: 3px;
+                line-height: 62px;
+                font-size: 40px;
+                color:#fff;
+                text-align: center;
+                font-weight: 900;
+            }
+            .dot{
+                width:9px;
+                height: 22px;
+                background: url(../../../assets/images/mob/huodong/qianglou/dot.png) no-repeat;
+                background-size: 100% 100%;
+                float: left;
+                margin:20px 5px 0 2px
+            }
+            .float-left{
+                float:left;
+            }
+            #ql-intro{
+                text-align: center;
+                margin-top:30px;
+            }
+            #ql-intro .title{
+                font-size:15px;
+                font-weight: bold;
+                color:#603515;
+            }
+            #ql-intro .content{
+                font-size: 13px;
+                color:#603515;
+                line-height: 25px;
+                margin-top:10px;
+            }
+            .em{
+                font-weight: bold;
+            }
+            .strong{
+                color:#ff4400;
+            }
+            .special-t{
+                color:#973a08;
+            }
+        </style>
+    </head>
+    <body id="qianglou">
+        <img src="../../../assets/images/mob/huodong/qianglou/share.png" alt=""/>
+        <div id="ql-banner"></div>
+        <div id="count-down">
+            <div class="title">抢楼倒计时:</div>
+            <div id="down-time">
+                <div id="hours" class="float-left">
+                    <div class="time" id="h1">0</div>
+                    <div class="time" id="h2">0</div>
+                </div>
+                <div class="dot"></div>
+                <div id="minutes" class="float-left">
+                    <div class="time" id="m1">0</div>
+                    <div class="time" id="m2">0</div>
+                </div>
+                <div class="dot"></div>
+                <div id="seconds" class="float-left">
+                    <div class="time" id="s1">0</div>
+                    <div class="time" id="s2">0</div>
+                </div>
+            </div>
+            <div id ='serverTime' style="display: none"></div>
+        </div>
+        <div id="ql-intro">
+            <div class="title">参与方式</div>
+            <div class="content">
+                <p>搜索关注<span class="em">“大搜车”</span>公共账号</p>
+                <p>在对话框回复<span class="strong">“我喜爱的汽车品牌+手机号”</span></p>
+                <p class="strong">例“奥迪13688888888”</p>
+                <p class="strong">参与抢楼活动赢取话费大奖</p>
+                <p>戳最右上方的按钮，分享到朋友圈，获得再</p>
+                <p>抢一楼的资格。</p>
+                <p class="special-t">活动时间：5月29日-6月15日</p>
+                <p class="special-t">每日早上10点至10点10分开放抢楼通道</p>
+
+            </div>
+        </div>
+        <script>
+            var DownCount= function() {
+                var floor = Math.floor;
+                function _core(remainTime, func) {
+                    if (remainTime > 0) {
+                        var data = {
+                            sec: remainTime % 60,
+                            minute: floor((remainTime / 60) % 60),
+                            hour: floor((remainTime / 3600) % 24),
+                            day: floor((remainTime / 86400) % 30)
+                        }
+                    }
+                    func(data)
+                }
+                function DownCount(cfg) {
+                    //var startDate = new Date(cfg.startYear,cfg.startMonth,cfg.startDay,cfg.startHour,cfg.startMinute, cfg.startSecond,cfg.startMillSecond);
+                    //var endDate = new Date(cfg.endYear,cfg.endMonth,cfg.endDay,cfg.endHour,cfg.endMinute,cfg.endSecond,cfg.endMillSecond);
+                    this.startDate = cfg.startDate;
+                    this.endDate = cfg.endDate;
+                    this.ft = cfg.ft || 1000;
+                    this.offset = this.endDate.getTime() - this.startDate.getTime();
+                    if (this.offset <= 0)throw new Error('init error');
+                }
+
+                DownCount.prototype = {
+                    start: function (func) {
+                        //var initTime = (new Date()).getTime();
+                        var time = this.offset + (new Date).getTime();
+                        var nowTime = (new Date).getTime();
+                        var remainTime = (time - nowTime) / 1000;
+                        _core(remainTime, func);
+                        this.intervalFunc = setInterval(function () {
+                            var nowTime = (new Date).getTime();
+                            var remainTime = (time - nowTime) / 1000;
+                            _core(remainTime, func);
+                        }, this.ft)
+                    },
+                    clearInterval: function () {
+                        clearInterval(this.intervalFunc);
+                    }
+
+                }
+                return DownCount;
+            }();
+            !function(){
+                var container = $('#serverTime')
+                var c = {
+                    serverYear: container.attr("serverYear"),
+                    serverMonth: container.attr("serverMonth"),
+                    serverDay: container.attr("serverDay"),
+                    serverHour: container.attr("serverHour"),
+                    serverMin: container.attr("serverMin"),
+                    serverSec: container.attr("serverSec")
+                };
+                //var serverDate = new Date(c.serverYear, c.serverMonth, c.serverDay, c.serverHour, c.serverMin, c.serverSec);
+                var serverDate =new Date();
+                serverDate.setHours(9);
+                serverDate.setMinutes(59);
+                serverDate.setSeconds(55);
+                var serverTime = serverDate.getTime();
+                var minDate = new Date(serverTime),
+                        maxDate = new Date(serverTime);
+                minDate.setHours(10);
+                minDate.setMinutes(0);
+                maxDate.setHours(10);
+                maxDate.setMinutes(10);
+
+                if(serverTime>=minDate.getTime()&& serverTime<=maxDate.getTime()){
+                    return;
+                }else{
+                    var timeSpan = 0;
+                    if(serverDate.getHours()>10){
+                        timeSpan = 1000*3600*24;
+                    }
+                    var endDate = new Date(serverTime+timeSpan);
+                    endDate.setHours(10);
+                    endDate.setMinutes(0);
+                    endDate.setSeconds(0);
+                }
+                var dc = new DownCount({
+                    startDate:serverDate,
+                    endDate:endDate
+                })
+                var zero = function(n){
+                    var n = parseInt(n, 10);
+                    if(n > 0){
+                        if(n <= 9){
+                            n = "0" + n;
+                        }
+                        return String(n);
+                    }else{
+                        return "00";
+                    }
+                };
+                dc.start(function(data){
+                    var hour = zero(data.hour);
+                    $('#h1').text(hour[0]);
+                    $('#h2').text(hour[1]);
+                    var min = zero(data.minute);
+                    var sec = zero(data.sec);
+                    $('#m1').text(min[0]);
+                    $('#m2').text(min[1]);
+                    $('#s1').text(sec[0]);
+                    $('#s2').text(sec[1]);
+                })
+            }();
+
+        </script>
+    </body>
+</html>

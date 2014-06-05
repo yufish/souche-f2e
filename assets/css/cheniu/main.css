@@ -1,0 +1,462 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+dl {
+  border: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+:focus {
+  outline: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+code,
+kbd,
+samp,
+tt {
+  font-size: 100%;
+}
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+sup,
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+:link,
+:visited,
+ins {
+  text-decoration: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+body {
+  font-size: 12px;
+  font-family: Tahoma,Verdana;
+  color: #000;
+  background-color: #ffffff;
+}
+.hidden {
+  display: none !important;
+}
+a {
+  color: #444;
+}
+a.a1 {
+  color: #111;
+}
+a.a4 {
+  color: #444;
+}
+a.a3 {
+  color: #333;
+}
+a.a6 {
+  color: #666;
+}
+a.a9 {
+  color: #999;
+}
+a:hover,
+a.a1:hover,
+a.a4:hover,
+a.a3:hover,
+a.a6:hover,
+a.a9:hover {
+  color: #fc7000;
+}
+#store .mod-head {
+  width: 100%;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+#store .mod-head .head-container {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 155px;
+  position: relative;
+}
+#store .mod-head .headpic {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #aaa;
+  border-radius: 60px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  background: #fff;
+  margin-left: -30px;
+}
+#store .mod-head .headpic img {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+#store .mod-head .store-title {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 25px;
+  text-align: center;
+}
+#store .mod-head .store-action {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#store .mod-head .store-action a {
+  display: inline-block;
+  height: 36px;
+  width: 130px;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 14px;
+  line-height: 36px;
+  border-radius: 3px;
+}
+#store .mod-head .store-action a i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-left: 20px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+#store .mod-head .store-action .lookinfo {
+  margin-left: 20px;
+}
+#store .mod-head .store-action .lookinfo i {
+  background: url(../../images/cheniu/store-lookinfo.png) no-repeat center center;
+  background-size: 100%;
+}
+#store .mod-head .store-action .call {
+  margin-right: 20px;
+  float: right;
+}
+#store .mod-head .store-action .call i {
+  background: url(../../images/cheniu/store-call.png) no-repeat center center;
+  background-size: 100%;
+}
+#store .mod-cars .car {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+#store .mod-cars .car .pic {
+  float: left;
+  width: 145px;
+  height: 110px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+#store .mod-cars .car .pic img {
+  height: 110px;
+  max-width: 145px;
+  display: block;
+  margin: 0 auto;
+}
+#store .mod-cars .car .infos {
+  padding-left: 155px;
+}
+#store .mod-cars .car .infos .title {
+  font-size: 14px;
+  color: #000;
+  line-height: 20px;
+}
+#store .mod-cars .car .infos .price {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #df4135;
+}
+#store .mod-cars .car .infos .price em {
+  font-weight: bold;
+}
+#store .mod-cars .car .infos .others {
+  color: #999;
+  line-height: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+#store .mod-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+#store .mod-info .item {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+#store .mod-info .item .hd {
+  color: #000;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+#store .mod-info .item .bd {
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  text-indent: 40px;
+}
+#car {
+  background: #f5f5f5;
+  padding-bottom: 50px;
+}
+#car .mod-head {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+#car .mod-head .sliders {
+  width: 100%;
+}
+#car .mod-head .sliders img {
+  width: 100%;
+}
+#car .mod-head .flex-viewport {
+  height: 210px;
+}
+#car .mod-head .flex-direction-nav {
+  display: none;
+}
+#car .mod-head .flex-control-nav {
+  margin-top: -20px;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+#car .mod-head .flex-control-nav li {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 2px;
+}
+#car .mod-head .flex-control-nav li a {
+  background: #ddd;
+  width: 12px;
+  height: 12px;
+  line-height: 100px;
+  overflow: hidden;
+  border-radius: 12px;
+  display: inline-block;
+  vertical-align: top;
+}
+#car .mod-head .flex-control-nav li a.flex-active {
+  background: #dc423b;
+}
+#car .mod-baseinfo {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+#car .mod-baseinfo .title {
+  font-size: 14px;
+  color: #000;
+  padding: 0 16px;
+  line-height: 20px;
+  padding-top: 10px;
+}
+#car .mod-baseinfo .price {
+  padding: 0 16px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #df4135;
+}
+#car .mod-baseinfo .price em {
+  font-weight: bold;
+}
+#car .mod-baseinfo .item {
+  padding: 10px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+#car .mod-baseinfo .item .k {
+  width: 70px;
+  float: left;
+  color: #999;
+}
+#car .mod-baseinfo .item .v {
+  padding-left: 80px;
+  color: #333;
+}
+#car .goto-configs {
+  background: #fff;
+  margin: 10px 0;
+  display: block;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+#car .mod-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 44px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  background: #f5f5f5;
+}
+#car .mod-actions a {
+  width: 32%;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 44px;
+}
+#car .mod-actions a i {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 13px;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+#car .mod-actions .gotostore {
+  border-right: 1px solid #ddd;
+}
+#car .mod-actions .gotostore i {
+  background: url(../../images/cheniu/icon-user.png) no-repeat;
+  background-size: 100%;
+}
+#car .mod-actions .call {
+  border-right: 1px solid #ddd;
+}
+#car .mod-actions .call i {
+  background: url(../../images/cheniu/icon-call.png) no-repeat;
+  background-size: 100%;
+}
+#car .mod-actions .message i {
+  background: url(../../images/cheniu/icon-message.png) no-repeat;
+  background-size: 100%;
+}
+#config .mod .hd {
+  background: #f5f5f5;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+#config .mod .bd table {
+  width: 100%;
+}
+#config .mod .bd tr {
+  padding: 10px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+#config .mod .bd tr .key {
+  width: 150px;
+  color: #999;
+  padding: 10px 10px;
+}
+#config .mod .bd tr .val {
+  color: #333;
+}

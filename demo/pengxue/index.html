@@ -1395,7 +1395,7 @@
       </div>
       <div class="toolbar-content">
         <i class="toolbar-close"></i>
-        <iframe src="http://f2e.souche.com/demo/pengxue/toolbar" height="630px" width="855px" scrolling="no" name="toolbar-open" frameborder="0" ></iframe>
+        <iframe src="http://f2e.souche.com/demo/pengxue/toolbar" height="630px" width="855px" scrolling="no" name="toolbar-open" frameborder="0"></iframe>
       </div>
     </div>
 <div id="floatLayer" style="display: block;">
@@ -1446,7 +1446,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   </script>
-  //求购信息轮播
+  <!--//求购信息轮播
   <script type="text/javascript">
     var index = 1;
     var stop =false;
@@ -1458,9 +1458,9 @@
     function AutoScroll(obj){
       if(stop) return;
       $(obj).find("ul").animate({
-      marginTop:-75*index+'px'
+      marginTop:-25*index+'px'
     },1000,function(){
-      if( index %3 == 0){
+      if( index %9 == 0){
       $(this).css({marginTop:"0px"}).find("li:last").appendTo(this);
       index=0;
     }
@@ -1471,6 +1471,55 @@
   setInterval('AutoScroll(".slide")',3000)
 });
 </script> 
+-->
+<script type="text/javascript">
+ (function($){
+  $.fn.myScroll = function(options){
+  
+  var opts = $.extend({},options),intId = [];
+  
+  function marquee(obj, step){
+  
+    obj.find("ul").animate({
+      marginTop: '-=1'
+    },0,function(){
+        var s = Math.abs(parseInt($(this).css("margin-top")));
+        if(s >= step){
+          $(this).find("li").slice(0, 1).appendTo($(this));
+          $(this).css("margin-top", 0);
+        }
+      });
+    }
+    
+    this.each(function(i){
+      var sh = 25,speed = 50,_this = $(this);
+      intId[i] = setInterval(function(){
+        if(_this.find("ul").height()<=_this.height()){
+          clearInterval(intId[i]);
+        }else{
+          marquee(_this, sh);
+        }
+      }, speed);
+
+      _this.hover(function(){
+        clearInterval(intId[i]);
+      },function(){
+        intId[i] = setInterval(function(){
+          if(_this.find("ul").height()<=_this.height()){
+            clearInterval(intId[i]);
+          }else{
+            marquee(_this, sh);
+          }
+        }, speed);
+      });
+    });
+  }
+})(jQuery);
+$(function(){
+  $(".slide").myScroll({
+   });
+});
+</script>
 
   </body>
 </html>

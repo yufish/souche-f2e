@@ -1,38 +1,69 @@
-(function() {
+Souche = window.Souche || {};
+Souche.Sidebar = (function() {
     $(document).ready(function() {
         //加载未读数
         $.ajax({
-            url: contextPath + "",
+            url: contextPath + "/pages/toolbarAction/selectToolbarCount.json",
             dataType: "json",
             success: function(data) {
-                $("#fav_notice").html(data).removeClass("hidden")
-                $("#yuyue_notice").html(data).removeClass("hidden")
-                $("#pricedown_notice").html(data).removeClass("hidden")
+                if (data.dayCarNum * 1 > 0) {
+                    $("#advisor_notice").html(data.dayCarNum).removeClass("hidden")
+                    $("#advisor_count").html(data.dayCarNum)
+                    if (!$.cookie("f2e_guwen_close")) {
+                        $(".my-advisor-tip").removeClass("hidden")
+                    }
+                }
+                // if (data.buyer_car_recommand * 1 > 0) {
+                //     $("#fav_notice").html(data).removeClass("hidden")
+                // }
+
+                // $("#yuyue_notice").html(data).removeClass("hidden")
+                // $("#pricedown_notice").html(data).removeClass("hidden")
             }
         })
-        $(".advisor-tip-close").click(function() {
-            $(".my-advisor-tip").addClass("hidden")
+        $(".advisor-tip-close").click(function(e) {
+            e.preventDefault();
+            $(".my-advisor-tip").addClass("hidden");
+            $("#advisor_notice").addClass("hidden")
+            $.cookie('f2e_guwen_close', '1', {
+                expires: 1
+            });
+            e.stopPropagation();
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            Souche.MiniLogin.checkLogin(function(isLogin) {
+            Souche.NoRegLogin.checkLogin(function(isLogin) {
                 $(".sidebar .side-box").removeClass("active")
                 $(self.parentNode).addClass("active")
                 if (!$("#toolbar").hasClass("sidebar-active")) {
                     $("#toolbar").animate({
                         width: 905,
-                        height: 652
+                        height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
                     }, 500, function() {
 
+                    })
+                    $(".sidebar  iframe").css({
+                        height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
                     })
                     $("#toolbar").addClass("sidebar-active")
                     $(".sidebar").removeClass("active")
                 }
-                $(".toolbar-content iframe").src = $(this).attr("href")
+                $(".toolbar-content iframe").attr("src", $(self).attr("href"));
+                $(".toolbar-content .iframe-loading").removeClass("hidden");
+                $(".toolbar-content iframe").load(function() {
+                    $(this).removeClass("hidden");
+                    $(".toolbar-content .iframe-loading").addClass("hidden");
+                })
             })
 
         });
+        $("#my-advisor").on("mouseenter", function() {
+            $("#my-advisor").addClass("active")
+        }).mouseleave(function() {
+            $("#my-advisor").removeClass("active")
+        });
+
         $(".sidebar").on("mouseenter", function() {
             if (!$(".sidebar").hasClass("sidebar-active")) {
                 $(".sidebar").addClass("active")
@@ -51,10 +82,11 @@
         });
         var Q_Buy_active = false;
         $(window).scroll(function() {
-            if ($(window).scrollTop() > $(window).height()) {
-                $("#toTop").show();
+            if ($(window).scrollTop() > 0) {
+
+                $("#toTop").show("slow");
             } else {
-                $("#toTop").hide();
+                $("#toTop").hide("slow");
             }
         });
         $("#toTop").click(function() {
@@ -62,18 +94,18 @@
                 scrollTop: 0
             });
         });
-        $("#toTop").mouseenter(function() {
-            $(this).addClass("toTopActive");
-        }).mouseleave(function() {
-            $(this).removeClass("toTopActive");
-        });
-        $("#erweima").mouseenter(function() {
-            $(".erweima-small").addClass("erweima-active");
-            $(".erweima-big").fadeIn(300);
-        }).mouseleave(function() {
-            $(".erweima-small").removeClass("erweima-active");
-            $(".erweima-big").hide();
-        });
+        // $("#toTop").mouseenter(function() {
+        //     $(this).addClass("toTopActive");
+        // }).mouseleave(function() {
+        //     $(this).removeClass("toTopActive");
+        // });
+        // $("#erweima").mouseenter(function() {
+        //     $(".erweima-small").addClass("erweima-active");
+        //     $(".erweima-big").fadeIn(300);
+        // }).mouseleave(function() {
+        //     $(".erweima-small").removeClass("erweima-active");
+        //     $(".erweima-big").hide();
+        // });
         //建议
         $("#suggest").mouseenter(function() {
             $('.suggest-tag').addClass("suggest-tag-active");
@@ -81,16 +113,24 @@
             $('.suggest-tag').removeClass("suggest-tag-active");
         });
         $(".suggest-tag").click(function() {
-            $(".suggest-area").val('在这里输入您的建议，感谢您对大搜车的帮助！');
+            $(".suggest-area").val('请填写反馈，我们会重视每一位用户的意见');
             if (!$('.suggest-remind').hasClass('hidden')) {
                 $('.suggest-remind').addClass('hidden');
             }
             $('.suggest-popup').removeClass("hidden");
-            $('.wrapGrayBg').show();
+            if ($('.wrapGrayBg').length) {
+                $('.wrapGrayBg').show();
+            } else {
+                $('<div class="wrapGrayBg" style="opacity: 0.7; display: block;"></div>').appendTo(document.body).css({
+                    opacity: 0.7
+                })
+            }
+
         });
 
         $(".suggest-close").click(function() {
             $(".suggest-popup").addClass("hidden");
+            $(".suggest-result").addClass("hidden");
             $('.wrapGrayBg').hide();
         });
         var oldVal = $(".suggest-area").val();
@@ -136,78 +176,79 @@
                 success: function() {
                     $(".suggest-popup").addClass("hidden");
                     $(".suggest-result").removeClass("hidden");
-                    setTimeout(function() {
-                        $(".suggest-result").addClass("hidden");
-                        $('.wrapGrayBg').hide();
-                    }, 1000);
                 }
             })
 
         });
 
 
-
     });
 
-    var bdTimer = setInterval(function() {
-        if ($("#BDBridgeMess").length != 0) {
-            clearInterval(bdTimer);
-            $("#BdBPClose").unbind("click").click(function() {
-                $("#BaiduBridgePigeon").hide();
-            });
-            if ($("#BaiduBridgePigeon").is(":visible")) {
-                $("#BaiduBridgePigeon").hide();
-                $("#BDBridgeIconWrap").unbind("click").click(function() {
-                    $("#BaiduBridgePigeon, #BdBPBody, #BdBPFoot").show();
-                    $("#BaiduBridgePigeon").height(320);
-                });
-            }
-            if ($("#BDBridgeIconWrap").length != 0) {
-                $("#BDBridgeIconWrap").mouseenter(function() {
-                    $("#bridgehead").addClass("BDActive");
-                }).mouseleave(function() {
-                    $("#bridgehead").removeClass("BDActive");
-                });
-            }
+    // var bdTimer = setInterval(function() {
+    //     if ($("#BDBridgeMess").length != 0) {
+    //         clearInterval(bdTimer);
+    //         $("#BdBPClose").unbind("click").click(function() {
+    //             $("#BaiduBridgePigeon").hide();
+    //         });
+    //         if ($("#BaiduBridgePigeon").is(":visible")) {
+    //             $("#BaiduBridgePigeon").hide();
+    //             $("#BDBridgeIconWrap").unbind("click").click(function() {
+    //                 $("#BaiduBridgePigeon, #BdBPBody, #BdBPFoot").show();
+    //                 $("#BaiduBridgePigeon").height(320);
+    //             });
+    //         }
+    //         if ($("#BDBridgeIconWrap").length != 0) {
+    //             $("#BDBridgeIconWrap").mouseenter(function() {
+    //                 $("#bridgehead").addClass("BDActive");
+    //             }).mouseleave(function() {
+    //                 $("#bridgehead").removeClass("BDActive");
+    //             });
+    //         }
 
-        }
-    }, 100);
+    //     }
+    // }, 100);
 
 
     //ie6 fixed 
-    if ((parseFloat($.browser.version) <= 6.0)) {
-        var BDFixed = function() {
-            $("#BDBridgeIconWrap").css({
-                position: "absolute",
-                top: $(window).scrollTop() + $(window).height() - 180,
-                right: 0,
-                left: "auto",
-                bottom: "auto",
-                "margin-bottom": 0
-            });
-            $("#floatLayer").css({
-                position: "absolute",
-                top: $(window).scrollTop() + $(window).height() - 125,
-                right: 0
-            });
-            $("#loginInner").css({
-                position: "absolute",
-                top: $(window).scrollTop() + $(window).height() - 450
-            });
-            $(".apply_popup").css({
-                position: "absolute",
-                top: $(window).scrollTop() + $(window).height() - 450
-            });
-        };
-        var timer = setInterval(function() {
-            if ($("#BDBridgeIconWrap").length != 0) {
-                clearInterval(timer);
-                BDFixed();
-                $(window).scroll(function() {
-                    BDFixed();
-                });
-            }
-        }, 100);
-    };
+    // if ((parseFloat($.browser.version) <= 6.0)) {
+    //     var BDFixed = function() {
+    //         $("#BDBridgeIconWrap").css({
+    //             position: "absolute",
+    //             top: $(window).scrollTop() + $(window).height() - 180,
+    //             right: 0,
+    //             left: "auto",
+    //             bottom: "auto",
+    //             "margin-bottom": 0
+    //         });
+    //         $("#floatLayer").css({
+    //             position: "absolute",
+    //             top: $(window).scrollTop() + $(window).height() - 125,
+    //             right: 0
+    //         });
+    //         $("#loginInner").css({
+    //             position: "absolute",
+    //             top: $(window).scrollTop() + $(window).height() - 450
+    //         });
+    //         $(".apply_popup").css({
+    //             position: "absolute",
+    //             top: $(window).scrollTop() + $(window).height() - 450
+    //         });
+    //     };
+    //     var timer = setInterval(function() {
+    //         if ($("#BDBridgeIconWrap").length != 0) {
+    //             clearInterval(timer);
+    //             BDFixed();
+    //             $(window).scroll(function() {
+    //                 BDFixed();
+    //             });
+    //         }
+    //     }, 100);
+    // };
 
 })();
+
+// if (typeof(define) != "undefined") {
+//     define(['souche'], function() {
+//         return Souche.Sidebar;
+//     })
+// }

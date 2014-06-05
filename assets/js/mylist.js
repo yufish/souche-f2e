@@ -18,11 +18,35 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
     var qiugouData = null;
     var phoneReg = /^1[3458][0-9]{9}$/;
     var config = {
-
+        totalPage: 1
     }
     var is_submiting = false;
     var isLoadingMore = false;
-    var nowPage = 1;
+    var hasMore = true;
+    var nowPage = 2;
+    var loadMoreByType = function(type) {
+        nowPage = 2;
+        isLoadingMore = true;
+        $(".load-more").removeClass("hidden");
+        $(".history-car").empty()
+        $.ajax({
+            url: contextPath + "/pages/onsale/match_car_page.html",
+            data: {
+                page: 1,
+                type: type
+                //key: days.get(days.length - 1).innerHTML
+            },
+            success: function(data) {
+
+                if (data.replace(/\s/, '') == "") {
+                    hasMore = false;
+                }
+                $(".load-more").addClass("hidden");
+                isLoadingMore = false;
+                $(".history-car").append(data);
+            }
+        })
+    };
     return {
         init: function(_config) {
             $.extend(config, _config);
@@ -37,7 +61,8 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                 placeholder: "请选择",
                 multi: false
             })
-            modelSelect = new CustomSelect("model_select", {
+
+            modelSelect = new CustomSelect("age_select_high", {
                 placeholder: "请选择",
                 multi: false
             })
@@ -46,7 +71,31 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             if (config.withCar) {
                 this._bindLoadMore();
             }
+            //拉手蹦一下
+            var shakeWedo = function(callback) {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300, null, function() {
+                    $(".wedo").animate({
+                        backgroundPositionY: -40
+                    }, 300, null, function() {
+                        callback && callback()
+                    })
+                })
+            }
+            setTimeout(function() {
+                shakeWedo(shakeWedo);
+            }, 500)
 
+            $(".wedo").mouseenter(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -20
+                }, 300);
+            }).mouseleave(function() {
+                $(".wedo").animate({
+                    backgroundPositionY: -40
+                }, 300);
+            })
             //没有默认值，则只需要一个请求即可初始化
             brandSelect.removeAllOption();
             seriesSelect.removeAllOption();
@@ -69,7 +118,6 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
                             html += ('<a href="#" data-value="' + brand.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + brand.name + '</span></a>');
                         }
                         html += "</div></div>"
-
                     }
                     brandSelect.addOptions(html)
 
@@ -84,29 +132,56 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
             $("#qiugou-form .submit").on("click", function(e) {
                 e.preventDefault();
                 if (!$("#brand_select .selected_values").val() && !$("#series_select .selected_values").val() && !$("#age_select .selected_values").val() && !$("#model_select .selected_values").val() && !($("#price_low_select").val() && $("#price_hight_select").val())) {
-                    $(".warning", self.ele).removeClass("hidden")
+                    $(".warning", self.ele).html("请至少选择一项").removeClass("hidden")
                     return;
                 } else {
                     $(".warning", self.ele).addClass("hidden")
                 }
-                Souche.checkPhoneExist(function(isLogin) {
-                    if (isLogin) {
-                        self._submit();
-                    } else {
-                        $("#qiugou-popup").removeClass("hidden")
-                        $(".wrapGrayBg").show();
-                    }
-                })
+                if ($("#age_select_high_input").val() * 1 < $("#age_select_input").val() * 1) {
+                    $(".warning", self.ele).html("上牌时间选择错误").removeClass("hidden")
+                    return;
+                } else {
+                    $(".warning", self.ele).addClass("hidden")
+                }
+                self._submit();
+                // return
+                // Souche.checkPhoneExist(function(isLogin) {
+                //     if (isLogin) {
+                //         self._submit();
+                //     } else {
+                //         $("#qiugou-popup").removeClass("hidden")
+                //         $(".wrapGrayBg").show();
+                //     }
+                // })
             })
-            $(".choseagain").on("click", function(e) {
-                e.preventDefault();
-                $("#qiugou-container").addClass("show-form")
+            $(".chosecar .button").click(function() {
+                $(".qiugou-head").addClass("hidden");
+                $("#qiugou-container").removeClass("hidden");
+            })
+            $("#again-button").click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 1000);
+                $(".qiugou-head").addClass("hidden");
+                $("#qiugou-container").removeClass("hidden");
+            })
+
+            $('.history-car').on('mouseenter', '.car-image', function() {
+                $(".faver", $(this)).removeClass("hidden");
+                $(".hate", $(this)).removeClass("hidden");
+                $(".hadfav", $(this)).removeClass("hidden");
+            })
+            $('.history-car').on('mouseleave', '.car-image', function() {
+                $(".faver", $(this)).addClass("hidden");
+                $(".hate", $(this)).addClass("hidden");
+                $(".hadfav", $(this)).addClass("hidden");
             })
             $("#qiugou_login").on("click", function(e) {
                 e.preventDefault();
                 Souche.MiniLogin.checkLogin(function() {
                     $(".qiugou .go-login").addClass("hidden")
-                    window.location.href = window.location.href + "#qiugou-cur";
+                    //window.location.href = window.location.href + "#qiugou-cur";
+                    window.location.reload();
                 })
             })
             $("#qiugou-phone-form").on("submit", function(e) {
@@ -123,30 +198,63 @@ define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
 
                 }
             });
+            $(".showall").click(function() {
+                $("#showall").prop('checked', true);
+                loadMoreByType('all');
+            })
+
+
+            $('.showsell').click(function() {
+                $('#showsell').prop('checked', true);
+                loadMoreByType('sale');
+
+            });
+            // $('#showall').change(function() {
+            //     loadMoreByType('all');
+            // });
+            // $('#showsell').change(function() {
+            //     loadMoreByType('sale');
+            // });
         },
         _bindLoadMore: function() {
             isLoadingMore;
             var self = this;
             $(window).on("scroll", function() {
-                if (isLoadingMore) return;
-                if ($(window).scrollTop() + $(window).height() >= $(document.body).height()) {
+                if (isLoadingMore || !hasMore) return;
+                if ($(window).scrollTop() + $(window).height() >= $(document.body).height() - $(window).height() * 2 / 3) {
                     self._loadMore();
                 }
             })
 
         },
-        _loadMore: function() {
+        _loadMore: function(type) {
             isLoadingMore = true;
+
+            var days = $(".date-title .day");
+            if (nowPage > config.totalPage * 1) {
+                hasMore = false;
+                return;
+            }
             $(".load-more").removeClass("hidden");
+            if ($('#showall').prop('checked')) {
+                var type = 'all';
+            } else {
+                var type = 'sale';
+            }
             $.ajax({
-                url: contextPath + "",
+                url: contextPath + "/pages/onsale/match_car_page.html",
                 data: {
-                    page: nowPage++
+                    page: nowPage++,
+                    type: type
+                    //key: days.get(days.length - 1).innerHTML
                 },
                 success: function(data) {
+                    if (data.replace(/\s/, '') == "") {
+                        hasMore = false;
+                    }
                     $(".load-more").addClass("hidden");
                     isLoadingMore = false;
-                    $("#cars_con").append(data);
+                    $(".history-car").append(data);
                 }
             })
         },

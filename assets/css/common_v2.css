@@ -21,7 +21,7 @@ blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 body{font-size:12px;font-family:"������",Tahoma,Verdana;color:#000;background-color:#fff}
 a{color:#000}
 a:hover{text-decoration:none;color:#e70}
-.wrap{width:1200px;margin:0 auto;zoom:1;}
+.wrap{width:1190px;margin:0 auto;zoom:1;}
 .marginRight0{margin-right:0}
 .wrapGrayBg{height:100%;width:100%;position:fixed;top:0;left:0;background-color:#000;z-index:10000}
 .must_write{color:#f00;padding-right:5px}

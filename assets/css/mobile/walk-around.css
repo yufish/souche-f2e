@@ -1,0 +1,133 @@
+#walk-around {
+    background-color: #fff;
+}
+#walk-around a {
+    color: #000;
+}
+#walk-around .brand {
+    display: block;
+    margin: 10px 0;
+}
+#walk-around .brand img {
+    width: 30px;
+}
+#walk-around .brand .name {
+    line-height: 14px;
+}
+#walk-around .brand .brand-wrapper {
+    text-align: center;
+}
+#walk-around .border-b {
+    border-bottom: 1px solid #e3e3e3;
+}
+#walk-around .hd {
+    padding: 0 10px;
+    line-height: 45px;
+}
+#walk-around .hd .title {
+    font-size: 15px;
+    font-weight: bold;
+    height: 45px;
+    display: inline-block;
+}
+#walk-around .hd .more {
+    float: right;
+    display: block;
+    background: url(../../images/mob/h5-2/more-item.png) no-repeat center right;
+    background-size: 11px 11px;
+    padding-right: 11px;
+    font-weight: normal;
+    height: 45px;
+    font-size: 13px;
+}
+#walk-around .bd {
+    font-size: 13px;
+}
+#walk-around .bd .box {
+    margin: 0 auto;
+    width: 140px;
+    padding-bottom: 30px;
+}
+#walk-around .bd .box .img-box {
+    width: 140px;
+    height: 92px;
+}
+#walk-around .bd .box .img-box img {
+    width: 100%;
+    height: 100%;
+}
+#walk-around .bd .box .car-intro {
+    height: 40px;
+    font-size: 13px;
+    line-height: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#walk-around .bd .box .price {
+    color: #ff4301;
+    line-height: 16px;
+    font-weight: bold;
+    font-size: 14px;
+}
+#walk-around .bd .box .time-limit-price {
+    background-color: #fc7000;
+    float: right;
+    color: #fff;
+    padding: 0 10px;
+    line-height: 16px;
+}
+#walk-around .bd .box .time-limit-price i {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: url(../../images/mob/h5-2/time-limit-down.png) no-repeat center center;
+    background-size: 100%;
+    vertical-align: -1px;
+}
+#walk-around .bd .box .car-extra {
+    box-sizing: border-box;
+}
+#walk-around .bd .box .hr-wrapper {
+    margin: 10px 0;
+}
+#walk-around .bd .box .time-limit {
+    margin: 0 5px;
+    background: url(../../images/mob/h5-2/time-limit.png) no-repeat left center;
+    background-size: 14px 14px;
+    padding-left: 18px;
+    text-align: center;
+}
+#walk-around .bd .box .border-r {
+    box-sizing: border-box;
+    border-right: 1px solid #e3e3e3;
+}
+#walk-around .bd .box .fav {
+    float: right;
+    margin-right: 12px;
+    box-sizing: border-box;
+}
+#walk-around .bd .box .fav .fav-num {
+    line-height: 14px;
+}
+#walk-around .bd .box .fav i {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: url(../../images/mob/h5-2/fav-unstar.png) no-repeat center center;
+    background-size: 100%;
+    margin-right: 7px;
+}
+#walk-around .bd .box .fav.star i {
+    background: url(../../images/mob/h5-2/fav-star.png) no-repeat center center;
+    background-size: 100%;
+}
+#walk-around .bd .tag-wrapper {
+    margin: 0 10px;
+}
+#walk-around .bd .tag-text,
+#walk-around .bd .price-text,
+#walk-around .bd .model-text {
+    display: block;
+    line-height: 30px;
+    text-align: center;
+}

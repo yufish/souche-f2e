@@ -1,86 +1,46 @@
 doctype html
 html
-  head.
-    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
-    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
-    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
-    <meta name="viewport" id="viewport" content="width=1340" /> 
-    <meta property="wb:webmaster" content="3a4a81533042fb49" />
-    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
-    <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
-    <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
-    <link href="http://f2e.souche.com/assets/css/common.css?t=150" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/index.css?t=129" rel="stylesheet" type="text/css" />
-    <script>
-      var contextPath = "";
-    </script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
-    <meta name="baidu-site-verification" content="RXtT8X2tNU" />
+    head.
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+        <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+          <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
+          <link href="http://f2e.souche.com/assets/css/ui/brand-series-select.css" rel="stylesheet" type="text/css" />
+          <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
+          <script>
+          var contextPath = "http://localhost:8080/soucheweb/";
+          require.config({
+            baseUrl: "http://f2e.souche.com/assets/js"
+          });
+          </script>
+          <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
 
-
-  body
-    div(style="margin-top:20px;").
-      <div class="sc-option" data-ui="dropdown" id="brand_option">
-        <div class="sc-option-hd">
-          <div class="sc-option-content">请选择价格</div>
-          <div class="sc-option-action"><i></i></div>
-        </div>
-        <ul class="sc-option-list hidden">
-          <li>
-            <a href="#">5万以下</a>
-          </li>
-        </ul>
-      </div>
-    div(style="margin-top:20px;").
-      <div class="sc-select" id="brand_select">
-        <div class="sc-select-hd">
-          <div class="sc-select-content">请选择价格</div>
-          <div class="sc-select-action"><i></i></div>
-        </div>
-        <ul class="sc-select-list hidden">
-          <li>
-            <a href="#" data-value="5">5万以下</a>
-          </li>
-        </ul>
-        <input type="hidden" name="" class="selected_value"/>
-      </div>
-    div(style="margin-top:20px;").
-      <div class="sc-select sc-multi-select" id="multi_select">
-        <div class="sc-select-hd">
-          <div class="sc-select-content clearfix"></div>
-          <div class="sc-select-action hidden"><i></i></div>
-        </div>
-        <ul class="sc-select-list hidden">
-          <li>
-            <a href="#" data-value="5"><input type="checkbox"/><span class='value'>5万以下</span></a>
-          </li>
-        </ul>
-        <input type="hidden" name="2,3,4" class="selected_values"/>
-      </div>
-  script.
-    require.config({
-      baseUrl: "http://f2e.souche.com/assets/js"
-    });
-    require(['souche/select'], function (CustomSelect){
-      var select = new CustomSelect("brand_select")
-      $(select).bind("change",function(e,obj){
-        console.log(obj)
-      })
-      for(var i=0;i<100;i++){
-        select.addOption(i,"元素"+i)
-      }
-      select.removeOption(2)
-    });
-//- script.
-//-   var select = new Souche.UI.CustomMultiSelect("multi_select")
-//-   $(select).bind("change",function(e,obj){
-//-     console.log(obj)
-//-   })
-  
-//-   for(var i=0;i<100;i++){
-//-     select.addOption(i,"元素"+i)
-//-   }
-//-   select.removeOption(2)
+    body
+        p.
+            <div class="sc-select sc-custom-select brand-select" id="brand_select">
+              <div class="sc-select-hd">
+                <div class="sc-select-content clearfix"></div>
+                <div class="sc-select-action hidden"><i></i></div>
+              </div>
+              <div class="sc-select-list hidden sc-popup">
+                <div class="sc-popup-hd">请选择您喜欢的品牌<a class="close">确认</a></div>
+                <div class="sc-popup-bd"></div>
+              </div>
+              <input type="hidden" name="brands" class="selected_values"/>
+            </div>
+           
+        p.
+            <div class="sc-select sc-custom-select series-select" id="series_select">
+            <div class="sc-select-hd">
+              <div class="sc-select-content clearfix"></div>
+              <div class="sc-select-action hidden"><i></i></div>
+            </div>
+            <div class="sc-select-list hidden sc-popup">
+              <div class="sc-popup-hd">请选择您喜欢的车系<a class="close">确认</a></div>
+              <div class="sc-popup-bd"></div>
+            </div>
+            <input type="hidden" name="sereies" class="selected_values"/>
+          </div>
+        script.
+            require(['backend/brand-series-select'],function(select){
+              select.init();
+            })

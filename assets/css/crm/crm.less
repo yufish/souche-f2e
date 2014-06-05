@@ -1,0 +1,410 @@
+@orange:#fc7000;
+*{
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+#crm{
+  .wrapper{
+    width: 1280px;
+    margin: 0 auto;
+  }
+  #head{
+    height: 60px;
+    background-color: #1271BF;
+    width: 1280px;
+    margin: 0 auto;
+    .head-title{
+      line-height: 60px;
+      color: #fff;
+      font-size: 30px;
+      margin-left: 20px;
+    }
+  }
+  #nav{
+    width: 110px;
+    float: left;
+    height: 1495px;
+    background-color: #363636;
+    .nav-title{
+      background-color: #434343;
+      color: #C3C3C3;
+      font-size: 15px;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 10px;
+      i{
+        display: block;
+        width: 14px;
+        height: 14px;
+        float: left;
+        background: url(../../images/crm/hujiao.png) no-repeat;
+        margin-top: 19px;
+        margin-right: 5px;
+      }
+      span{
+        display: block;
+        float: left;
+      }
+    }
+    a{
+      color: #9A9C9D;
+    }
+    a:hover{
+      color: #1271BF;
+    }
+  }
+  #content{
+    background-color: #FAFAFA;
+    padding: 15px;
+    float: left;
+    width: 1170px;
+    height: 1495px;
+    .cont{
+      .active{
+        a{
+          background-color: #FAFAFA;
+        }
+      }
+    }
+    .notice{
+      width: 100%;
+      height: 100px;
+      overflow: auto;
+      padding: 10px 15px;
+      background-color: #FFF6E3;
+      margin-top: 20px;
+      .title{
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .notice-list{
+        font-size: 12px;
+        li{
+          margin-bottom: 5px;
+          position: relative;
+          .title{
+            color: @orange;
+            margin-right: 20px;
+            font-size: 12px;
+          }
+          em{
+            color: #666;
+          }
+          .time{
+            color: #666;
+            position: absolute;
+            right: 1px;
+          }
+        }
+      }
+    }
+    .cont-wrap{
+      padding-top: 20px;
+    }
+    .task{
+      width: 575px;
+      height: 200px;
+      background-color: #fff;
+      float: left;
+      padding: 15px;
+      .tit{
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .task-tit{
+        width: 15%;
+        float: left;
+        height: 130px;
+        text-align: right;
+        li{
+          margin-bottom: 15px;
+        }
+      }
+      .task-num{
+        width: 80%;
+        float: left;
+        height: 130px;
+        margin-left: 10px;
+        li{
+          margin-bottom: 15px;
+        }
+        .num{
+          width: 360px;
+        }
+        i{
+          display: block;
+          float: left;
+          height: 18px;
+        }
+        span{
+          margin-left: 5px;
+        }
+        a{
+          margin-left: 5px;
+        }
+      }
+    }
+    .champion{
+      width: 535px;
+      height: 200px;
+      margin-left: 20px;
+      float: left;
+      background-color: #fff;
+      padding: 15px;
+      .tit{
+         font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .champion-box{
+        padding:0px 30px;
+        .lastmouth{
+          float: left;
+          width: 50%;
+          .title{
+            width: 100%;
+            background: url(../../images/crm/champion.png) no-repeat;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            height: 22px;
+          }
+        }
+        .thismouth{
+          float: left;
+          width: 50%;
+          .title{
+            width: 100%;
+            background: url(../../images/crm/champion.png) no-repeat;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            height: 22px;
+          }
+        }
+        ul{
+          margin-top: 10px;
+          li{
+            padding-left: 25px;
+            margin-bottom: 15px;
+            span{
+              margin-left: 10px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+    .tit{
+         font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    .myclient{
+      width: 575px;
+      height: 415px;
+      background-color: #fff;
+      float: left;
+      padding: 15px;
+      margin-top: 20px;
+      .client{
+        tr{
+          border-bottom: 1px solid #F5F5F5;
+          height: 30px;
+          width: 100%;
+        }
+        th{
+          text-align: right;
+          padding-left: 55px;
+          font-size: 13px;
+          font-weight: bold;
+          padding-right: 10px;
+        }
+        td{
+          padding-left: 40px;
+          padding-right: 10px;
+          text-align: center;
+          font-size: 13px;
+          color: #1B73BC;
+        }
+        .grade{
+          padding-left: 10px;
+          text-align: left;
+          color: #666;
+        }
+      }
+    }
+    .myassess{
+      width: 535px;
+      height: 415px;
+      margin-left: 20px;
+      float: left;
+      background-color: #fff;
+      padding: 15px;
+      margin-top: 20px;
+      .assess{
+        margin-top: 20px;
+        .num{
+          height: 30px;
+          border:1px solid #60A8F2;
+          background-color: #E9F4FE;
+          line-height: 30px;
+          text-align: center;
+          margin-bottom: 45px;
+        }
+        .rate{
+          left: 3px;
+          padding-left: 30px;
+          position: absolute;
+          top: 44px;
+          span{
+            margin-left: 5px;
+          }
+        }
+        .sum{
+          width: 380px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .yuyue{
+          width: 260px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .shiji{
+          width: 250px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .kanche{
+          width: 240px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .success{
+          width: 240px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    }
+    .daodian{
+      background-color: #fff;
+      padding: 15px;
+      .time-but{
+        width: 280px;
+        margin-bottom: 20px;
+        a{
+          color: #127BD2;
+          border-color: #127BD2;
+        }
+        a:hover{
+          color: #EBEBEC;
+          background-color: #127BD2;
+        }
+      }
+      .daodian-detail{
+        overflow: auto;
+        height: 185px;
+      }
+      table{
+        tr{
+          border-bottom: 1px solid #F5F5F5;
+          height: 30px;
+          width: 100%;
+        }
+        th{
+          text-align: left;
+          padding-left: 20px;
+          font-size: 13px;
+          font-weight: bold;
+          padding-right: 40px;
+        }
+        td{
+          padding-left: 20px;
+          padding-right: 40px;
+          text-align: center;
+          font-size: 13px;
+          color: #666;
+          i{
+            width: 10px;
+            height: 10px;
+            display: block;
+            background-color: #EC5D57;
+            float: left;
+            margin-top: 5px;
+            margin-right: 5px;
+            border-radius: 10px;
+          }
+          span{
+            float: left;
+          }
+        }
+        .record{
+          width: 430px;
+          text-align: left;
+        }
+      }
+    }
+    .carchange{
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 15px;
+      .change{
+        .changesum{
+          float: left;
+          line-height: 25px;
+          font-size: 14px;
+          width: 95px;
+          font-weight: bold;
+          margin-right: 25px;
+        }
+        .change-table{
+          float: left;
+          height: 195px;
+          overflow: auto;
+          table{
+            tr{
+              border-bottom: 1px solid #F5F5F5;
+              height: 30px;
+              width: 100%;
+            }
+            th{
+              text-align: left;
+              
+              font-size: 13px;
+              font-weight: bold;
+            }
+            td{
+             
+              text-align: left;
+              font-size: 13px;
+              color: #666;
+            }
+            .carname{
+              width: 400px;
+            }
+            .time{
+              width: 100px;
+              padding-left: 10px;
+            }
+            .reason{
+              width: 120px;
+            }
+            .price{
+              width: 125px;
+            }
+            .condition{
+              width: 130px;
+            }
+            .relevance{
+              width: 105px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

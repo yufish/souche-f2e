@@ -15,35 +15,51 @@ Souche.Util = function() {
         },
         /**
          * 元素第一次出现的时候执行某方法，之后不再执行
+         * @distance 可省略，元素距离窗口下沿多远的时候触发。
          */
-        appear: function(id, bindFunc) {
+        appear: function(id, bindFunc, distance) {
             appearKV[id] = appearKV[id] || [];
             appearKV[id].push(bindFunc);
+            if (!distance) {
+                distance = 0;
+            }
+            appearKV[id].distance = distance;
         },
         init: function() {
             var viewportWidth = $(window).width();
             var viewportHeight = $(window).height();
-
-            $(window).scroll(function() {
+            var check = function() {
                 var windowScrollTop = $(window).scrollTop();
                 for (var i in appearKV) {
                     var offset = $(i).offset();
 
-                    if (offset.top - windowScrollTop > 0 && offset.top - windowScrollTop < viewportHeight) {
+                    if (offset.top - windowScrollTop > 0 && offset.top - windowScrollTop < (viewportHeight - appearKV[i].distance)) {
                         for (var b = 0; b < appearKV[i].length; b++) {
                             appearKV[i][b]();
                         }
                         appearKV[i] = [];
                     }
                 }
-            });
+            };
+            $(document).ready(function() {
+                check();
+            })
+            $(window).scroll(check);
+        },
+        /**
+         * [actionList 串行动作]
+         * @param  {[array]} data [{0,function},{100,function}]
+         * @return {[type]}      [description]
+         */
+        actionList: function(data) {
+
         }
     };
 }();
 
 Souche.Util.init();
 Souche.Data = {
-    DropdownzIndex: 10000
+    DropdownzIndex: 1000
 }
 Souche.UI = Souche.UI || {};
 Souche.UI.Select = function() {
@@ -243,14 +259,9 @@ Souche.Form = function() {
 }();
 
 
-
-
-
-
-
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function() {
-    var static_login_url = contextPath + "/pages/minlogin.html";
+    var static_login_url = contextPath + "/pages/minilogin.html";
     var minilogin = null;
     var minilayer = null;
     var callback = function() {
@@ -289,11 +300,11 @@ Souche.MiniLogin = function() {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
                     display: "block",
-                    width: 580,
-                    height: 500,
+                    width: 400,
+                    height: 340,
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 290,
+                    left: $(window).width() / 2 - 200,
                     zIndex: 100000001
                 });
 
@@ -305,10 +316,9 @@ Souche.MiniLogin = function() {
                     top: 0,
                     height: $(document.body).height(),
                     position: "absolute",
-                    opacity: 0.7,
                     background: "#111",
                     zIndex: 100000000
-                });
+                }).css("opacity", 0.7);
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
                 //				$(window).scroll(function(){
@@ -340,6 +350,106 @@ Souche.MiniLogin = function() {
         }
     };
 }();
+Souche.NoRegLogin = Souche.NoRegLogin || {};
+Souche.NoRegLogin = function() {
+    var minilogin = null;
+    var minilayer = null;
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    var callback = function() {
+
+    };
+    return {
+        callback: function() {
+            this.close();
+            callback();
+        },
+        close: function() {
+            if (minilogin) {
+                minilogin.css({
+                    display: "none"
+                });
+            }
+            if (minilayer) {
+                minilayer && minilayer.css({
+                    display: "none"
+                });
+            }
+
+        },
+        _show: function() {
+            var self = this;
+            if (minilogin) {
+                minilogin.css({
+                    display: "block"
+                }).removeClass("hidden");
+                minilayer.css({
+                    display: "block"
+                });
+            } else {
+                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="warning hidden clearfix">       <div class="input-error-tip">     <span class="error-icon"></span>    请输入正确的手机号</div>     </div>  <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>    <i class="phone-true hidden"></i>      </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin.css({
+                    display: "block",
+                    zIndex: 100000001
+                }).removeClass("hidden");
+
+                minilayer = $("<div id='minilayer'></div>");
+                minilayer.css({
+                    display: "block",
+                    width: $(document.body).width(),
+                    left: 0,
+                    top: 0,
+                    height: $(document.body).height(),
+                    position: "absolute",
+                    background: "#111",
+                    zIndex: 100000000
+                }).css("opacity", 0.7);
+                $(document.body).append(minilayer);
+                $(document.body).append(minilogin);
+                //              $(window).scroll(function(){
+                //                  minilogin.css({
+                //                      top:$(window).scrollTop()+100,
+                //                      left:$(window).width()/2-300
+                //                  })
+                //              })
+                $("#noreg-phone-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", this).removeClass("hidden");
+                    } else {
+                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
+                            self.callback && self.callback();
+                        })
+                    }
+                })
+                $("#noreg-phone").blur(function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", $("#noreg-phone-form")).removeClass("hidden");
+                    } else {
+                        $(".warning", $("#noreg-phone-form")).addClass("hidden");
+                        $(".phone-true").removeClass("hidden");
+                    }
+                })
+                $("#noreg-popup .apply_close").on("click", function(e) {
+                    self.close();
+                })
+            }
+        },
+        checkLogin: function(_callback) {
+            callback = _callback;
+            var self = this;
+            Souche.checkPhoneExist(function(isLogin) {
+                if (isLogin) {
+                    self.callback && self.callback();
+                } else {
+                    self._show();
+                }
+            })
+
+        }
+    };
+}();
+
 //检查是否填过手机号
 Souche.checkPhoneExist = function(callback) {
     $.ajax({
@@ -378,10 +488,203 @@ Souche.PhoneRegister = function(phone, callback) {
             callback(false)
         }
     })
-}
+};
+/*!
+ * jQuery Cookie Plugin v1.4.0
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2013 Klaus Hartl
+ * Released under the MIT license
+ */
+(function() {
+    var pluses = /\+/g;
+
+    function encode(s) {
+        return config.raw ? s : encodeURIComponent(s);
+    }
+
+    function decode(s) {
+        return config.raw ? s : decodeURIComponent(s);
+    }
+
+    function stringifyCookieValue(value) {
+        return encode(config.json ? JSON.stringify(value) : String(value));
+    }
+
+    function parseCookieValue(s) {
+        if (s.indexOf('"') === 0) {
+            // This is a quoted cookie as according to RFC2068, unescape...
+            s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        }
+
+        try {
+            // Replace server-side written pluses with spaces.
+            // If we can't decode the cookie, ignore it, it's unusable.
+            // If we can't parse the cookie, ignore it, it's unusable.
+            s = decodeURIComponent(s.replace(pluses, ' '));
+            return config.json ? JSON.parse(s) : s;
+        } catch (e) {}
+    }
+
+    function read(s, converter) {
+        var value = config.raw ? s : parseCookieValue(s);
+        return $.isFunction(converter) ? converter(value) : value;
+    }
+
+    var config = $.cookie = function(key, value, options) {
+
+        // Write
+
+        if (value !== undefined && !$.isFunction(value)) {
+            options = $.extend({}, config.defaults, options);
+
+            if (typeof options.expires === 'number') {
+                var days = options.expires,
+                    t = options.expires = new Date();
+                t.setTime(+t + days * 864e+5);
+            }
+
+            return (document.cookie = [
+                encode(key), '=', stringifyCookieValue(value),
+                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.path ? '; path=' + options.path : '',
+                options.domain ? '; domain=' + options.domain : '',
+                options.secure ? '; secure' : ''
+            ].join(''));
+        }
+
+        // Read
+
+        var result = key ? undefined : {};
+
+        // To prevent the for loop in the first place assign an empty array
+        // in case there are no cookies at all. Also prevents odd result when
+        // calling $.cookie().
+        var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+        for (var i = 0, l = cookies.length; i < l; i++) {
+            var parts = cookies[i].split('=');
+            var name = decode(parts.shift());
+            var cookie = parts.join('=');
+
+            if (key && key === name) {
+                // If second argument (value) is a function it's a converter...
+                result = read(cookie, value);
+                break;
+            }
+
+            // Prevent storing a cookie that we couldn't decode.
+            if (!key && (cookie = read(cookie)) !== undefined) {
+                result[name] = cookie;
+            }
+        }
+
+        return result;
+    };
+
+    config.defaults = {};
+
+    $.removeCookie = function(key, options) {
+        if ($.cookie(key) === undefined) {
+            return false;
+        }
+
+        // Must not alter options, thus extending a fresh object...
+        $.cookie(key, '', $.extend({}, options, {
+            expires: -1
+        }));
+        return !$.cookie(key);
+    };
+})();
 $(document).ready(function() {
     $(".apply_popup .apply_close").on("click", function() {
         $(".apply_popup").addClass("hidden")
         $(".wrapGrayBg").hide();
     })
+    var hasShow = false;
+    var initTip = function() {
+
+        if (!hasShow) {
+            if ($(window).height() < 650) {
+                $("#guwen_slider_global").addClass("small-global")
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-small-image") + ") no-repeat center center"
+                    })
+                })
+            } else {
+                $('.guwen-flexslider .slides li').each(function(i, li) {
+                    $(li).css({
+                        background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
+                    })
+                })
+            }
+
+            $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
+                $('.guwen-flexslider').flexslider({
+                    animation: "slide",
+                    animationSpeed: 300,
+                    initDelay: 0,
+                    slideshowSpeed: 5000,
+                    useCSS: false
+                });
+                hasShow = true;
+            })
+        }
+    }
+    if (!$.cookie("show_guwen_tip")) {
+        if (window.location.href.indexOf("sellCarNew.html") == -1) {
+            initTip();
+            setTimeout(function() {
+                $("#guwen_slider_global").animate({
+                    top: 0
+                }, 600)
+                $("#guwen_show_global").css({
+                    top: -30
+                })
+            }, 900)
+            $("#guwen_slider_global").focus();
+        }
+
+    }
+
+    $("#guwen_show_global").click(function(e) {
+        initTip();
+        $("#guwen_slider_global").animate({
+            top: 0
+        }, 600)
+        $("#guwen_show_global").css({
+            top: -30
+        })
+    })
+    $(".wedo").click(function() {
+        initTip();
+        $("#guwen_slider_global").animate({
+            top: 0
+        }, 600)
+        $("#guwen_show_global").css({
+            top: -30
+        })
+    })
+    var closeTip = function() {
+        $("#guwen_slider_global").animate({
+            top: -560
+        }, 600, null, function() {
+            $("#guwen_show_global").animate({
+                top: 0
+            }, 400)
+        })
+        $.cookie("show_guwen_tip", "1", {
+            expires: 100,
+            path: '/'
+        })
+    }
+    $("#guwen_slider_global .close").on("click", function(e) {
+        e.preventDefault();
+        closeTip();
+    })
+    $("#guwen_slider_global .link").on("click", function(e) {
+        closeTip();
+    })
+
 })

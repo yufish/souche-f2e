@@ -1,72 +1,65 @@
-define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou, downCounter, Lazyload) {
-
-    $('.down-counter').each(function() {
-        var $this = $(this);
-        downCounter($this);
-    });
+define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyload) {
     Souche.Index = (function() {
         var config = {
             has_qiugou: false
         };
-
-        $(".timebuy img").lazyload();
-        $(".whybuy img").lazyload();
-        $(".carlife img").lazyload();
-        $(".banners img").lazyload();
-        $(".buy-guide img").lazyload();
-        $(".hotsell-list img").lazyload();
-        $(".starbuy img").lazyload();
-        $(".cars img").lazyload();
-        $(".performance img").lazyload();
-        var slides = $(".qiugou-history .slides");
-        var slides2 = slides.clone();
-        $(".qiugou-history").append(slides2);
-        var childHeight = $("li", slides).height();
-        var childCount = $("li", slides).length;
-        var slideIndex = 0;
-        setInterval(function() {
-            if (slideIndex < childCount * -1) {
-                //slideIndex = 0;
-
-            }
-            $("ul", slides).animate({
-                marginTop: slideIndex * childHeight
-            });
-            slideIndex -= childCount;
-        }, 1000)
-
         return {
             init: function(_config) {
                 $.extend(config, _config);
-                QiuGou.init(config);
-                //sidebar自动顶住
-                var contentTop = $("#content").offset().top;
-                var contentHeight = $("#content").height();
-                var sidebarHeight = $("#side_bar").height();
-                var checkSidebar = function() {
-                    var windowTop = $(window).scrollTop();
-                    //顶部对齐
-                    if (windowTop > (contentTop - 20)) {
-                        $("#side_bar").css({
-                            top: 10
-                        })
-                    } else {
-                        $("#side_bar").css({
-                            top: contentTop - windowTop
-                        })
+                var first = $($('.slides li img').get(0))
+                first.attr("src", first.attr('data-src'));
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    animationSpeed: 300,
+                    initDelay: 0,
+                    slideshowSpeed: 5000,
+                    useCSS: true,
+
+                    after: function(slider) {
+                        var slides = slider.slides,
+                            _index = slider.animatingTo,
+                            $slide = $(slides[_index]),
+                            $img = $slide.find('img[data-src]');
+                        $img.attr("src", $img.attr('data-src'));
+                        var nextnext = $(".slides li:nth-child(" + (_index + 2) + ") img")
+                        nextnext.attr("src", nextnext.attr("data-src"))
                     }
-                }
-                checkSidebar()
-                $(window).on("scroll", function(e) {
-                    checkSidebar();
-                    //底部对其
-                    // if(sidebarHeight+windowTop>contentTop+contentHeight){
-                    // 	$("#side_bar").css({
-                    // 		top:contentHeight-sidebarHeight
-                    // 	})
-                    // }
+                });
+                $(".flexslider").mouseenter(function() {
+                    $(this).flexslider("stop");
+                }).mouseleave(function() {
+                    $(this).flexslider("play");
+                });
+                $(".timebuy img").lazyload();
+                $(".whybuy img").lazyload();
+                $(".carlife img").lazyload();
+                $(".banners img").lazyload();
+                $(".buy-guide img").lazyload();
+                $(".hotsell-list img").lazyload();
+                $(".starbuy img").lazyload();
+                $(".cars img").lazyload();
+                $(".performance img").lazyload();
+                //限时优惠的初始化
+                Souche.Util.appear(".timebuy", function() {
+                    require(['index/timedown'], function(downCounter) {
+                        $('.down-counter').each(function() {
+                            var $this = $(this);
+                            downCounter($this);
+                        });
+                    })
                 })
-                //sidebar脚本
+                //求购模块的初始化，包含求购历史的初始化
+                Souche.Util.appear(".qiugou", function() {
+                    require(['index/qiugou'], function(QiuGou) {
+                        QiuGou.init(config);
+                    })
+                })
+                //生活车初始化
+                Souche.Util.appear(".carlife", function() {
+                    require(['index/carlife'], function(CarLife) {
+                        CarLife.init(config);
+                    })
+                })
 
                 //brand 出来，隐藏效果
 
@@ -76,24 +69,33 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
                         var zIndex = (+$('#brand').css('z-index')) + 1;
                         clearTimeout(brandTimer);
                         if (brandSelectActive == true) {
+                            $('#nav-item-brand .hr').css({
+                                'border-bottom': '1px solid #fff'
+                            });
                             $('#nav-item-brand').css({
                                 border: '1px solid #fc7000',
                                 'border-right': '1px solid #fff',
-                                'z-index': zIndex
+                                'z-index': zIndex,
+                                'background-color': "#fff"
                             });
                             $('#brand').show().animate({
                                 width: '690px',
                                 avoidTransforms: true
                             }, showDelayT);
+                            $("#brand img").lazyload();
                         } else {
                             $('#brand').animate({
                                 width: '0px',
                                 avoidTransforms: true
                             }, showDelayT, function() {
                                 $('#brand').hide();
+                                $('#nav-item-brand .hr').css({
+                                    'border-bottom': '1px solid #e6e6e6'
+                                });
                                 $('#nav-item-brand').css({
-                                    border: '1px solid #fff',
-                                    'z-index': 0
+                                    border: '1px solid #f9f9f9',
+                                    'z-index': 0,
+                                    'background-color': "#f9f9f9"
                                 });
                             });
                         }
@@ -104,76 +106,12 @@ define(['index/qiugou', 'souche/down-counter', 'lib/lazyload'], function(QiuGou,
 
                 $('#nav-item-brand,#brand').on('mouseenter', function() {
                     brandSelectActive = true;
+
                     checkDisplayStatus();
 
                 }).on('mouseleave', function() {
                     brandSelectActive = false;
                     checkDisplayStatus();
-                });
-
-
-                //carlife effect
-                var $clItems = $('.carlife-item');
-                var clIndex = 0,
-                    clLength = $clItems.size(),
-                    clAnimateStop = false;
-                var height = $clItems.height();
-                var clAnimation = function() {
-                    if (clAnimateStop) return;
-                    $clItems.each(function(index, ele) {
-                        if (index === clIndex) {
-                            $('.front', ele).animate({
-                                'top': -height
-                            });
-                            $('.back', ele).animate({
-                                'top': -height
-                            });
-                            //$(this).animate({top:-height});
-                        } else {
-                            $('.front', ele).animate({
-                                'top': 0
-                            });
-                            $('.back', ele).animate({
-                                'top': 0
-                            });
-                            //$(this).animate({top:0});
-                        }
-                    });
-                    if (clIndex == clLength - 1) {
-                        clIndex = 0;
-                    } else {
-                        clIndex++;
-                    }
-                }
-                setInterval(clAnimation, 3000);
-
-
-
-
-                $clItems.on('mouseenter', function(e) {
-                    clAnimateStop = true;
-                    var self = this;
-                    $clItems.each(function(index, ele) {
-                        if (ele != self) {
-                            $('.front', ele).stop(true, true).animate({
-                                'top': 0
-                            });
-                            $('.back', ele).stop(true, true).animate({
-                                'top': 0
-                            });
-                        } else {
-                            $('.front', ele).animate({
-                                'top': -height
-                            });
-                            $('.back', ele).animate({
-                                'top': -height
-                            });
-                        }
-                    })
-                    e.stopPropagation();
-                }).on('mouseleave', function(e) {
-                    //$clItems.css({top:0});
-                    clAnimateStop = false;
                 });
 
                 var phoneReg = /^1[3458][0-9]{9}$/;

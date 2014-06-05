@@ -1,0 +1,474 @@
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/h5-2/mobile.css" rel="stylesheet" type="text/css" />
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.flexslider-min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
+  body#filterCar-h5-2
+    #page-1
+      .header
+        .back-icon#back-icon-1
+        .text#header-text 筛选二手车
+        .header-feature
+          .search-icon#search-icon-1
+          .search-icon-2
+          a.tel-icon(href='tel:4008-010-010')
+        .search-box
+          .search-header 
+            .input
+              form#search-form-1(action='pages/mobile/list.html' method='get')
+                input#keyword-1(type='text',name='keyword') 
+                span.cancel-icon#cancel-icon-1
+            .search-btn#search-btn-1
+              span 搜索
+      .hr20  
+      .content
+          .options#opt-main
+            .option-item#car-brand(data-id='page-2' data-intro='选择品牌') 
+                .text 品牌和车系
+                .array-r
+                .selected-text
+                
+            .option-item#car-year       
+                .text 年份
+                .select-content
+                  select(id='select-year-1' name='car-year-1')
+                    option(value='' selected='selected') 不限
+                    option(value=2005) 2005
+                    option(value=2006) 2006
+                    option(value=2007) 2007
+                    option(value=2008) 2008
+                    option(value=2009) 2009
+                    option(value=2010) 2010
+                    option(value=2011) 2011
+                    option(value=2012) 2012
+                    option(value=2013) 2013
+                    option(value=2014) 2014
+                  span 至
+                  select(id='select-year-2' name='car-year-2')
+                    option(value='' ) 不限
+                    option(value=2005) 2005
+                    option(value=2006) 2006
+                    option(value=2007) 2007
+                    option(value=2008) 2008
+                    option(value=2009) 2009
+                    option(value=2010) 2010
+                    option(value=2011) 2011
+                    option(value=2012) 2012
+                    option(value=2013) 2013
+                    option(value=2014 selected='selected') 2014             
+            .option-item#car-price         
+                .text 价格
+                .select-content
+                    select(id = 'select-price-1' name='car-price-1')
+                      option(value='') 不限
+                      option(value=5) 5万
+                      option(value=8) 8万
+                      option(value=12) 12万
+                      option(value=16) 16万
+                      option(value=20) 20万
+                      option(value=25) 25万
+                      option(value=30) 30万
+                      
+                    span 至
+                    select(id='select-price-2' name='car-price-2')
+                      option(value='' selected="selected") 不限
+                      option(value=5) 5万
+                      option(value=8) 8万
+                      option(value=12) 12万
+                      option(value=16) 16万
+                      option(value=20) 20万
+                      option(value=25) 25万
+                      option(value=30) 30万
+                      
+            .option-item#option-advance      
+                .text 高级筛选
+                .array-d
+            #option-advance-show
+              .option-item#car-mile(data-id='choose-mile' data-intro='选择里程')
+                .text 里程(公里)
+                .array-r
+                .selected-text
+                select#select-mile
+                  <option value="">不限</option>
+                  <option value="0-8000">0.8万以内</option>
+                  <option value="0-30000">3万以内</option>
+                  <option value="30000-60000">3-6万</option>   
+                  <option value="60000-100000">6-10万</option>   
+                  <option value="100000-1000000000">10万以上</option>   
+                  
+                  
+              .option-item#car-model(data-id='choose-model' data-intro='选择车形')
+                .text 车形
+                .array-r
+                .selected-text
+                select#select-model
+                  option(value='') 不限
+                  <option value="1">SUV</option>                      
+                  <option value="2">MPV</option>              
+                  <option value="3">敞篷车</option>
+                  <option value="4">跑车</option>              
+                  <option value="5">两厢车</option>              
+                  <option value="6">三厢车</option>             
+                  <option value="7">旅行车</option>
+                  <option value="8">皮卡</option>
+                
+              .option-item#car-saletype(data-id='choose-saletype' data-intro='选择销售方式')
+                .text 销售方式
+                .array-r
+                .selected-text
+                select#select-saletype
+                 <option value="">不限</option>
+                 <option value="1">在销售中</option>
+                 <option value="2">即将开售</option>
+            .btns
+              button#clear-btn 清空
+              button#search-btn 搜索
+    #page-2(style='display:none')
+      .header
+        .back-icon#back-icon-2
+        .text#header-text 选择品牌
+        .header-feature
+          .search-icon#search-icon-2
+          .search-icon-2
+          a.tel-icon(href='tel:4008-010-010')
+        .search-box
+          .search-header 
+            .input
+              form#search-form-2(action='pages/mobile/list.html' method='get')
+                input#keyword-2(type='text',name='keyword') 
+                span.cancel-icon#cancel-icon-2
+            .search-btn#search-btn-2
+              span 搜索
+      .hr20
+      .content
+        .options#opt-brand
+          .option-item(data-code='')
+            .text 不限
+     #page-3(style='display:none')
+      .header
+        .back-icon#back-icon-3
+        .text#header-text 选择车系
+        .header-feature
+          .search-icon#search-icon-3
+          .search-icon-2
+          a.tel-icon(href='tel:4008-010-010')
+        .search-box
+          .search-header 
+            .input
+              form#search-form-3(action='pages/mobile/list.html' method='get')
+                input#keyword-3(type='text',name='keyword') 
+                span.cancel-icon#cancel-icon-3
+            .search-btn#search-btn-3
+              span 搜索
+      .hr20
+      .content
+        .options#opt-series
+          .option-item(data-code='')
+            .text 不限
+     
+    script.
+     
+      var brandAjax = false;
+      var seriesAjax = false;
+      var dataObj={
+        sortName:'',
+        sortType:'',
+        carBrand:'',
+        carSeries:'',
+        carPrice:'',
+        carYear:'',
+        carMileage:'',
+        carModel:'',
+        saleType:''
+      }
+      $('#option-advance').click(function(e){
+        $(this).hide();
+        $("#option-advance-show").show();
+      });
+      
+      
+
+      $('#car-brand').click(function(e){
+        $('#page-1').hide();
+        if(brandAjax){
+           $('#page-2').show();
+           return;
+        }
+        $.ajax({
+          //url:contextPath+"/pages/dicAction/loadRootLevel.json",
+          url:'http://f2e.souche.com/demo/yutou/index/brand.json',
+          dataType:"json",
+          data:{
+            type:"car-subdivision"
+          },
+          success:function(data){
+            var $brandContainer = $('#opt-brand');
+            var items =data.items;
+            for(var i in items){
+              var item = items[i];
+              var name=item['enName'];
+              var code = item['code'];
+              var html='<div class="option-item" data-code='+code+'>'
+                        + '<div class="text">'+name+'</div>'
+                        + '<div class="array-r">'
+                        + '</div>'
+              $brandContainer.append(html);
+            }
+            brandAjax =true; 
+            $('#page-2').show();
+          },  
+          error:function(){},
+          failure:function(){}
+        });
+        searchHidden();
+      })
+      
+      
+
+      $('#opt-brand').on('click','.option-item',function(e){
+        $('#page-2').hide(); 
+        var brandCode = $(this).attr('data-code');
+        dataObj.carBrand=brandCode;
+        var $main = $('#page-1');
+        var txt = $('.text',this).text();
+        $('#car-brand .selected-text',$main).text(txt);
+        if(brandCode==='') {
+          dataObj.carSeries='';
+          $main.show();
+          return;
+        }
+        var $seriesContainer = $('#opt-series');
+        
+        $.ajax({
+          //url:contextPath+"/pages/dicAction/loadRootLevelForCar.json",
+          url:'http://f2e.souche.com/demo/yutou/index/series.json',
+          dataType:"json",
+          data:{
+            type:"car-subdivision",
+            code:brandCode
+          },
+          success:function(data){
+           
+            var codes = data.codes;
+            for(var i in codes){
+              var b = codes[i];
+              var name = i;
+              $seriesContainer.append('<div style="" class="option-group">'+name+'</div>');
+              for(var n =0;n<b.length;n++){
+                var series = b[n];
+                var html='<div class="option-item" data-code='+series.code+'>'
+                      + '<div class="text">'+series.enName+'</div>'
+                      + '</div>'
+                $seriesContainer.append(html);
+              } 
+            }
+            $('#page-3').show();
+          },  
+          error:function(){},
+          failure:function(){}
+        });
+        searchHidden();
+        
+      })
+
+      $('#opt-series').on('click','.option-item',function(e){
+        var dataSeries = $(this).attr('data-code');
+        dataObj.carSeries=dataSeries;
+        var $main = $('#page-1');
+        if(dataSeries!==''){
+          var txt = $('.text',this).text();
+          $('#car-brand .selected-text',$main).text(txt);
+        }
+        $('#page-3').hide();
+        $main.show();
+      })
+     
+      
+
+      $('#clear-btn').click(function(e){   
+        for(var i in dataObj){
+          dataObj[i]='';
+        }
+        $('#select-year-1 option').eq(0).prop('selected',true);
+        $('#select-year-2 option').last().prop('selected',true);
+        $('#select-price-1 option').eq(0).prop('selected',true);
+        $('#select-price-2 option').eq(0).prop('selected',true);
+        $('#select-mile option').eq(0).prop('selected',true);
+        $('#select-saletype option').eq(0).prop('selected',true);
+        $('#select-model option').eq(0).prop('selected',true);
+        
+        $('.selected-text').text('');
+      })
+      function searchActive(){
+        $('.search-box').css({display:'block'});
+        $('.search-icon').css({display:'none'});
+        $('.search-icon-2').css({display:'block'});
+      }
+
+      function searchHidden(){
+        $('.search-box').css({display:'none'});
+        $('.search-icon').css({display:'block'});
+        $('.search-icon-2').css({display:'none'});
+      }
+
+      $('#search-icon-1').click(function(e){
+        searchActive();
+        $('#keyword-1').focus();
+      })
+      $('#search-icon-2').click(function(e){
+        searchActive();
+        $('#keyword-2').focus();
+      })
+      $('#search-icon-3').click(function(e){
+        searchActive();
+        $('#keyword-3').focus();
+      })
+
+      $('.search-icon-2').click(function(e){
+        searchHidden();
+      });
+
+      $('#cancel-icon-1').click(function(e){
+        $('#keyword-1').val('').focus();
+      })
+      $('#cancel-icon-2').click(function(e){
+        $('#keyword-2').val('').focus();
+      })
+      $('#cancel-icon-3').click(function(e){
+        $('#keyword-3').val('').focus();
+      })
+
+
+      $('#search-form-1').submit(function(e){
+        if($('#keyword-1').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+      $('#search-form-2').submit(function(e){
+        if($('#keyword-2').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+      $('#search-form-3').submit(function(e){
+        if($('#keyword-3').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+
+
+
+      $('#search-btn-1').click(function(e){
+        e.preventDefault();
+        if($('#keyword-1').val().trim()==''){
+
+        }else{
+          $('#search-form-1').submit();
+        }
+      });
+      $('#search-btn-2').click(function(e){
+        e.preventDefault();
+        if($('#keyword-2').val().trim()==''){
+
+        }else{
+          $('#search-form-2').submit();
+        }
+      });
+      $('#search-btn-3').click(function(e){
+        e.preventDefault();
+        if($('#keyword-3').val().trim()==''){
+
+        }else{
+          $('#search-form-3').submit();
+        }
+      });
+
+      $('#search-form-1').submit(function(e){
+        if($('#keyword-1').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+      $('#search-form-2').submit(function(e){
+        if($('#keyword-2').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+      $('#search-form-3').submit(function(e){
+        if($('#keyword-3').val().trim()==''){
+          e.preventDefault();
+          searchHidden();
+        }
+      });
+      //back
+      $('#back-icon-1').click(function(){
+        history.back();
+      })
+      $('#back-icon-2').click(function(){
+        $('#page-2').hide();
+        $('#page-1').show();
+      })
+      $('#back-icon-3').click(function(){
+        $('#page-3').hide();
+        $('#page-2').show();
+      })
+      
+      $('#select-mile').change(function(e){
+        var txt = $(this).find('option:selected').text();
+        $('#car-mile .selected-text').text(txt);
+      })
+       $('#select-saletype').change(function(e){
+        var txt = $(this).find('option:selected').text();
+        $('#car-saletype .selected-text').text(txt);
+      })
+        $('#select-model').change(function(e){
+        var txt = $(this).find('option:selected').text();
+        $('#car-model .selected-text').text(txt);
+      })
+
+      $('#search-btn').click(function(e){
+        var year1 = $('#select-year-1').val();
+        var year2 = $('#select-year-2').val();
+        var age1=2014-(+year2)
+          ,age2=2014-(+year1);
+        if(year1==''){
+          age2=1000;
+        }
+        if(year2==''){
+          age1=0;
+        }
+        if(year1>year2){
+          alert('请检查起止时间的选择.')
+        }
+        
+
+        var price1 = $('#select-price-1').val();
+        var price2=$('#select-price-2').val();
+        var priceStr='';
+        if(price1==''){price1=0}
+        if(price2==''){price2=100000000};
+        
+        if( (+price1) > (+price2) ){
+          alert('请检查价格范围的选择.')
+        }
+
+        dataObj.carYear=age1+'-'+age2;
+        dataObj.carPrice =price1+'-'+price2;
+
+        var mile = $("#select-mile").val();
+        var model = $('#select-model').val();
+        var saleType = $('#select-saletype').val();
+        var addr = 'http://115.29.10.121:11080/soucheweb/pages/mobile/list.html?'
+        for(var i in dataObj){
+          addr += (i+'='+dataObj[i]+'&');
+        }
+        window.location.href=addr;
+      })

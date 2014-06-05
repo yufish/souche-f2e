@@ -1,0 +1,283 @@
+#filter-car .group {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#filter-car .group .option {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    background: #f6f6f6;
+    border-bottom: 1px solid #ccc;
+    display: block;
+}
+#filter-car .group .option .name {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    height: 40px;
+}
+#filter-car {
+    background-color: #fff;
+}
+#filter-car .filter-option-item {
+    padding: 0 10px;
+    border-bottom: 1px solid #d0d0d0;
+}
+#filter-car .filter-option-item#car-price {
+    border-top: 1px solid #d0d0d0;
+}
+#filter-car .filter-option-item .text {
+    float: left;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#filter-car #option-advance .text {
+    float: right;
+    line-height: 60px;
+    font-weight: bold;
+    color: #999;
+}
+#filter-car .hr20 {
+    background-color: #f3f3f3;
+}
+#filter-car .filter-option-item .filter-content {
+    float: right;
+    text-align: center;
+    padding-top: 13px;
+}
+#filter-car select.s {
+    width: 92px;
+    padding-left: 8px;
+    font-size: 14px;
+}
+#filter-car select.select-6-word {
+    padding-left: 55px;
+}
+#filter-car select {
+    width: 220px;
+    height: 35px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    coLor: #999;
+}
+#filter-car select option {
+    coLor: #000;
+}
+#filter-car .for-select {
+    width: 220px;
+    height: 35px;
+    border: 2px solid #b1b1b1;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    border-radius: 8px;
+    color: #999;
+    font-size:14px;
+}
+#filter-car .filter-option-item .span-to {
+    margin: 0 6px;
+}
+#filter-car #option-advance .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-1.png) no-repeat;
+    background-size: 13px;
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 25px 20px 0 5px;
+}
+#filter-car #option-advance.reverse .array-d {
+    background: url(../../images/mob/h5-2/advance-arrow-2.png) no-repeat;
+    background-size: 13px;
+}
+#filter-car .popup-wrapper {
+    position: absolute;
+    z-index: 10000;
+    left: 10px;
+    margin-bottom: 55px;
+}
+#filter-car .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+}
+#filter-car .filter-popup {
+    background-color: #fff;
+    border-radius: 8px;
+    min-height: 200px;
+}
+#filter-car .filter-popup .title {
+    margin-left: 10px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: bold;
+    float: left;
+}
+#filter-car .filter-popup .buxian {
+    float: right;
+    margin: 8px 10px 0 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    line-height: 20px;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: normal;
+    color:#b1b1b1;
+}
+#filter-car .filter-popup .item {
+    text-align: center;
+    line-height: 50px;
+}
+#filter-car .filter-popup .item .brand-name{
+    padding: 5px;
+    border-radius: 5px;
+    border:1px solid #fff;
+    font-size:13px;
+}
+#filter-car .filter-popup .item.selected .brand-name{
+    color: #ff4400;
+    border:1px solid #ff4400;
+}
+#filter-car .filter-popup #other-brands {
+    text-align: center;
+}
+#filter-car .filter-popup .series-title {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
+}
+#filter-car .filter-popup .series-name-wrapper {
+    padding-left: 10px;
+}
+#filter-car .series-item .series-name {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+}
+#filter-car .series-item.selected .series-name {
+    color: #ff4400;
+    border: 1px solid #ff4400;
+}
+#filter-car #series-list .series-item{
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+#filter-car .btns {
+    text-align: center;
+    margin: 30px 0;
+}
+#filter-car .mobile-popup .title {
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+}
+#filter-car .mobile-popup .cond {
+    color: #ff4400;
+}
+#go-list-btn {
+    background-color: #ff4400;
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    margin: 0 8px;
+}
+#filter-car .selected-pane{
+    border:1px dashed #DFDFDF;
+    padding:0 32px 4px 4px;
+    clear:both;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 10px;
+}
+#filter-car .close-icon{
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 18px;
+    width:18px;
+    vertical-align: -3px;
+}
+#filter-car .selected-item{
+    border:1px solid #dfdfdf;
+    line-height: 30px;
+    padding:0 8px 0 10px;
+    float: left;
+    border-radius: 8px;
+    margin:4px 5px 0 0;
+}
+#filter-car .selected-item .selected-text{
+    font-size: 13px;
+}
+#filter-car .plus-icon{
+    position: absolute;
+    top:9px;
+    right: 5px;
+    background: url(../../images/mob/h5-2/plus.png) no-repeat top center;
+    background-size: 100% 100%;
+    height: 25px;
+    float: right;
+    width:25px;
+}
+#filter-car .popup-btns-wrapper{
+    position: absolute;
+    z-index:10001;
+    margin:0 10px
+}
+#filter-car .popup-btns{
+    border-top:1px solid #ff4400;
+    text-align: center;
+    background: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#filter-car .ok-btn{
+    background-color: #ff4400;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    margin: 5px 8px;
+}
+#filter-car .popup-btns-wrapper .bottom{
+    height: 8px;
+    background: #bfbfbf;
+}
+#filter-car #selected-brands-pane{
+    background: #ff4400;
+    padding: 0 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color:#fff;
+}
+#filter-car .pane-selected-item{
+    float: left;
+    margin: 8px 0 8px 16px;
+    padding-bottom: 3px;
+}
+#filter-car .pane-selected-item.selected{
+    border-bottom: 1px solid #fff;
+}
+#filter-car .content-tabs .content{
+    display: none;
+}
+#filter-car .content-tabs .content.selected{
+    display: block;
+
+}
