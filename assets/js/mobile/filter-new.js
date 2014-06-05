@@ -121,6 +121,7 @@ function filter(BrandMgr, addListener) {
                 }
             })
 
+            var $remainNum = $('#remain-brand-num');
             $('#brand-list').on('click', '.item', function() {
                 var self = $(this);
                 var code = self.attr('data-code'),
@@ -128,11 +129,16 @@ function filter(BrandMgr, addListener) {
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
                 } else {
-                    if (BrandMgr.brands.length >= 5) {
-                        console.log('brands len should be less or equal 5');
+                    var brandLen = BrandMgr.brands.length
+                    if ( brandLen>= 5) {
+                        $remainNum.css({color:'#ff4400'});
+                        setTimeout(function(){
+                                $remainNum.css({color:'#c1c1c1'})
+                        },1500);
                         return;
                     }
                     BrandMgr.addBrand(code, name);
+                    $remainNum.text(BrandMgr.brands.length);
                 }
             });
 
@@ -304,7 +310,13 @@ function filter(BrandMgr, addListener) {
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data);
+                        var addr = contextPath + '/pages/mobile/list.html?';
+                        for (var i in dataObj) {
+                            addr += (i + '=' + dataObj[i] + '&');
+                        }
+                        window.location.href = addr.substr(0,addr.length-1);
+                        //TODO del
+                        return;
                         if (data.i == 0) {
                             showSorry();
                         } else {

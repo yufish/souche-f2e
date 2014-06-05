@@ -52,7 +52,7 @@
 #filter-car select.s {
     width: 92px;
     padding-left: 8px;
-    font-size: 14px;
+
 }
 #filter-car select.select-6-word {
     padding-left: 55px;
@@ -69,6 +69,7 @@
     padding-left: 8px;
     box-sizing: border-box;
     coLor: #999;
+    font-size: 14px;
 }
 #filter-car select option {
     coLor: #000;
@@ -279,5 +280,10 @@
 }
 #filter-car .content-tabs .content.selected{
     display: block;
-
+}
+#filter-car #brand-limit2five{
+    float: right;
+    margin-right: 10px;
+    line-height: 35px;
+    color:#c1c1c1;
 }
