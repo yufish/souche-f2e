@@ -7,7 +7,7 @@
         this[name] = func();
     }
 
-}('BrandMgr', filter, ['common/BrandManager', 'filter/addListener']);
+}('BrandMgr', filter, ['mobile/common/BrandManager', 'mobile/filter/addListener']);
 
 function filter(BrandMgr, addListener) {
     //BrandMgr
