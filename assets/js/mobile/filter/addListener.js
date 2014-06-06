@@ -114,6 +114,7 @@
             }
         },
         _addSelectedBrand:function(code,name){
+            name=name.trim();
             var html =''
                     +'<div class="selected-item" data-code="'+code+'">'
                         +'<span class="selected-text">'+name+'</span>'

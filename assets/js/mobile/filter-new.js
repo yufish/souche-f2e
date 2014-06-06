@@ -128,13 +128,13 @@ function filter(BrandMgr, addListener) {
                     name = self.find('.brand-name').text();
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
+                    $remainNum.text(BrandMgr.brands.length);
                 } else {
-                    var brandLen = BrandMgr.brands.length
-                    if ( brandLen>= 5) {
-                        $remainNum.css({color:'#ff4400'});
+                    if ( BrandMgr.brands.length>= 5) {
+                        $('#tips4brandLimit5').show();
                         setTimeout(function(){
-                                $remainNum.css({color:'#c1c1c1'})
-                        },1500);
+                            $('#tips4brandLimit5').hide();
+                        },1000)
                         return;
                     }
                     BrandMgr.addBrand(code, name);
