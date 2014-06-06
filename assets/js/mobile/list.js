@@ -146,6 +146,10 @@ var List = function () {
                 window.location.href = $(this).attr('href');
             })
 
+            $('.wrapPhoneBg').click(function(){
+                $(this).addClass('hidden');
+                $('#phone-popup').addClass('hidden')
+            })
             //do fav
             ! function () {
                 var api = {
@@ -230,6 +234,7 @@ var List = function () {
                 })
                 $('.cars').on('click', '.fav', function (e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     $curFav = $(this);
 
                     if (isLogin) {

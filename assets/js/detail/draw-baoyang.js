@@ -103,21 +103,32 @@ define(['lib/mustache', 'lib/svg.min', 'souche/custom-select'], function(Mustach
             }
             nowIndex = Math.floor(data.nowDistance / 0.5)
             this.drawChart();
-            var distanceSelect = new CustomSelect("distance_select", {
+            var distanceSelect;
+            distanceSelect = new CustomSelect("distance_select", {
                 placeholder: "请选择",
-                multi: false
-            })
-            $(distanceSelect).on("change", function(e, data) {
-                console.log(data)
-                var distance = data.key * 10000;
-                var price = 0;
-                for (var i = 0; i < data.distanceData.length; i++) {
-                    if (distance <= data.distanceData[i].distance) {
-                        price += data.distanceData[i].price;
+                multi: false,
+                onchange: function(e, d) {
+                    var distance = d.key.replace(/[^0-9]/g, '') * 1;
+                    var price = 0;
+                    for (var i = 0; i < data.distanceData.length; i++) {
+                        if (distance >= data.distanceData[i].distance) {
+                            price += data.distanceData[i].price * 1;
+                        }
                     }
+                    $("#baoyang_price").html(price)
                 }
-                $("#baoyang_price").html(price)
             })
+            // $(distanceSelect).on("change", function(e, d) {
+            //     var distance = d.key * 10000;
+            //     var price = 0;
+            //     alert("change")
+            //     for (var i = 0; i < data.distanceData.length; i++) {
+            //         if (distance >= data.distanceData[i].distance) {
+            //             price += data.distanceData[i].price * 1;
+            //         }
+            //     }
+            //     $("#baoyang_price").html(price)
+            // })
         }
     }
     return BaoyangDraw;

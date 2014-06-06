@@ -5353,6 +5353,9 @@ less .icon-fei {
   color: #fc5a34;
   font-weight: bold;
 }
+.baoyang .baoyang-filter .sc-select {
+  vertical-align: top;
+}
 .baoyang .distance-select {
   width: 120px;
 }
@@ -5363,6 +5366,8 @@ less .icon-fei {
   display: block;
   font-size: 14px;
   line-height: 30px;
+  text-align: left;
+  padding-left: 20px;
 }
 .baoyang .baoyang-main {
   background: #f9f9f9;
@@ -5552,7 +5557,7 @@ less .icon-fei {
 }
 .net-brand .brand-cont .brand-next .next-box {
   float: left;
-  width: 400px;
+  width: 398px;
   padding: 20px;
 }
 .net-brand .brand-cont .brand-next .next-box .next-image {

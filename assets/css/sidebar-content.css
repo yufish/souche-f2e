@@ -284,7 +284,6 @@ html {
   float: left;
   cursor: pointer;
   margin-right: 15px;
-  margin-top: 15px;
 }
 #toolbar #contrast #toolbar-nav .contrast-car .begin-contrast {
   float: left;
@@ -295,7 +294,8 @@ html {
   font-size: 14px;
   text-align: center;
   line-height: 30px;
-  margin-top: 10px;
+  margin-top: 3px;
+  margin-right: 2px;
   border-radius: 2px;
 }
 #toolbar #contrast #toolbar-content .car-wrap .car-box .car-price .delete {
@@ -304,6 +304,44 @@ html {
 }
 #toolbar #contrast #toolbar-content .car-wrap .car-box .car-price .delete:hover {
   color: #FC7000;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box {
+  width: 180px;
+  margin-top: 6px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 8px;
+  padding-bottom: 0;
+  float: left;
+  margin-right: 6px;
+  position: relative;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .car-num {
+  width: 178px;
+  height: 88px;
+  position: relative;
+  display: block;
+  background: #EAEAEA;
+  border: 1px solid #DEDEDE;
+  padding-top: 30px;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .car-num .num {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  color: #EAEAEA;
+  border-radius: 60px;
+  margin: 0 auto;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .addcar {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 26px;
+  margin-bottom: 27px;
 }
 #toolbar #scan #content {
   overflow-y: auto;
@@ -428,10 +466,10 @@ html {
   background: url(../images/index/no-scan.png);
   margin-top: 5px;
 }
-#toolbar #no-constrat {
+#toolbar #no-contrast {
   padding-left: 40px;
 }
-#toolbar #no-constrat .noconstrat-img {
+#toolbar #no-contrast .nocontrast-img {
   width: 768px;
   height: 403px;
   background: url(../images/index/no-constrat.png);

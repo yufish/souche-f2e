@@ -1,3 +1,6 @@
+html,body{
+    width: 100%;
+}
 #filter-car .group {
     margin: 10px;
     border: 1px solid #ccc;
@@ -52,7 +55,7 @@
 #filter-car select.s {
     width: 92px;
     padding-left: 8px;
-    font-size: 14px;
+
 }
 #filter-car select.select-6-word {
     padding-left: 55px;
@@ -69,6 +72,7 @@
     padding-left: 8px;
     box-sizing: border-box;
     coLor: #999;
+    font-size: 14px;
 }
 #filter-car select option {
     coLor: #000;
@@ -101,17 +105,15 @@
 #filter-car .popup-wrapper {
     position: absolute;
     z-index: 10000;
-    left: 10px;
+    padding:0 10px;
     margin-bottom: 55px;
+    width:100%;
+    box-sizing: border-box;
 }
 #filter-car .filter-popup {
     background-color: #fff;
     border-radius: 8px;
-}
-#filter-car .filter-popup {
-    background-color: #fff;
-    border-radius: 8px;
-    min-height: 200px;
+    min-height: 600px;
 }
 #filter-car .filter-popup .title {
     margin-left: 10px;
@@ -234,9 +236,12 @@
     width:25px;
 }
 #filter-car .popup-btns-wrapper{
-    position: absolute;
+    position: fixed;
+    bottom:0;
     z-index:10001;
-    margin:0 10px
+    padding:0 10px;
+    width:100%;
+    box-sizing: border-box;
 }
 #filter-car .popup-btns{
     border-top:1px solid #ff4400;
@@ -279,5 +284,10 @@
 }
 #filter-car .content-tabs .content.selected{
     display: block;
-
+}
+#filter-car #brand-limit2five{
+    float: right;
+    margin-right: 10px;
+    line-height: 35px;
+    color:#c1c1c1;
 }

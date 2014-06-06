@@ -2,6 +2,11 @@ define(function() {
     var hasInitTab = {
 
     }
+
+    var SVGsupported = function() {
+        ns = "http://www.w3.org/2000/svg"
+        return !!document.createElementNS && !! document.createElementNS(ns, "svg").createSVGRect
+    }()
     var config;
     return {
         load_price: function() {
@@ -11,12 +16,10 @@ define(function() {
                 success: function(data) {
                     if (data.priceInterval_nudeCar) {
                         $(".onsale-tab-item-price").removeClass("hidden")
-                        var maxPrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
-                        var middlePrice = ((data.priceInterval_4s.first + data.priceInterval_4s.second) / 2).toFixed(1)
+                        $(".float-nav-item-price").removeClass("hidden")
+                        var maxPrice = (data.price_guide).toFixed(1)
+                        var middlePrice = ((data.priceInterval_nudeCar.first + data.priceInterval_nudeCar.second) / 2).toFixed(1)
                         var minPrice = config.price;
-                        console.log(minPrice)
-                        console.log(middlePrice)
-                        console.log(maxPrice)
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice);
                         })
@@ -32,8 +35,9 @@ define(function() {
                 url: "http://115.29.10.121:10001/demo/carprice/maintenance?modelcode=" + config.modelCode,
                 dataType: "jsonp",
                 success: function(data) {
-                    if (data.maitenanceItems) {
+                    if (data && data.maitenanceItems) {
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
+                        $(".float-nav-item-baoyang").removeClass("hidden")
                         var distanceData = [];
                         for (var i in data.maitenanceItems) {
                             var distance = i.replace(/ 公里.*$/, "") * 1;
@@ -74,8 +78,20 @@ define(function() {
                 $(this).addClass("active")
                 $(window).trigger("tab_change", id);
             });
-            self.load_price();
-            self.load_baoyang();
+
+            $(".float-nav-item").on("click", function(e) {
+                var id = $(this).attr("data-id");
+                $(".onsale-content-item").addClass("hidden")
+                $("#" + id).removeClass("hidden");
+                $(".float-nav-item").removeClass("activeNav");
+                $(this).addClass("activeNav")
+                $(window).trigger("tab_change", id);
+                e.preventDefault();
+            });
+            if (SVGsupported) {
+                self.load_price();
+                self.load_baoyang();
+            }
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {
             //         if (id == "onsale_price") {
