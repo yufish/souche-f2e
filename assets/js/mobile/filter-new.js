@@ -71,10 +71,10 @@ function filter(BrandMgr, addListener) {
                 $('#series-list .content').append(html);
             }
 
-
+            var wrapGrayBg= $('.wrapGrayBg');
 
             function showPopup_b() {
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var $win = $(window);
                 //var winW = $win.width(),
                 var scrollTop = $win.scrollTop();
@@ -86,7 +86,7 @@ function filter(BrandMgr, addListener) {
             }
 
             function showPopup_s() {
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var $win = $(window);
                 //var winW = $win.width(),
                 var scrollTop = $win.scrollTop();
@@ -227,7 +227,7 @@ function filter(BrandMgr, addListener) {
                 }
             });
 
-            $('.wrapGrayBg').click(function() {
+            wrapGrayBg.click(function() {
                 _hidePopup();
             });
 
@@ -242,7 +242,7 @@ function filter(BrandMgr, addListener) {
             })
 
             function _hidePopup() {
-                $('.wrapGrayBg').addClass('hidden');
+                wrapGrayBg.addClass('hidden');
                 $('#brand-wrapper').addClass('hidden');
                 $('#series-wrapper').addClass('hidden');
                 $('.mobile-popup').addClass('hidden');
@@ -404,7 +404,7 @@ function filter(BrandMgr, addListener) {
 
             function showSorry() {
                 var $popup = $('.mobile-popup').removeClass('hidden');
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var scrollTop = $(window).scrollTop();
                 $popup.removeClass('hidden').css({
                     top: scrollTop + 50,
@@ -414,8 +414,6 @@ function filter(BrandMgr, addListener) {
                 if (phoneNum) {
                     $popup.find('#phone-for-notify').val(phoneNum);
                 }
-
-                //TODO brand
                 $('#notify-form').submit(function(e) {
                     e.preventDefault();
                     var minP = $('#select-price-1').val();

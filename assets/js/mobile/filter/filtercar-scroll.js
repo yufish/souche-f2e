@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function(){
     var win = $(window);
     var winH = win.height();
@@ -18,5 +18,4 @@ $(document).ready(function(){
     popupBtnPositioned();
     //window.popupBtnPositioned = popupBtnPositioned;
 });
-
-
+*/
