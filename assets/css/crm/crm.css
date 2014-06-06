@@ -57,8 +57,21 @@
   width: 1170px;
   height: 1495px;
 }
+#crm #content .cont .active {
+  position: relative;
+}
 #crm #content .cont .active a {
   background-color: #FAFAFA;
+}
+#crm #content .cont .active i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url(../../images/crm/close.png) no-repeat;
+  position: absolute;
+  top: 17px;
+  right: 7px;
+  opacity: 1;
 }
 #crm #content .notice {
   width: 100%;
@@ -390,4 +403,127 @@
 }
 #crm #content .carchange .change .change-table table .relevance {
   width: 105px;
+}
+.content-box {
+  margin-top: 20px;
+}
+.content-box .kehu-info {
+  width: 280px;
+  float: left;
+}
+.content-box .kehu-info .kehu-num {
+  height: 45px;
+  width: 100%;
+}
+.content-box .kehu-info .kehu-num .id-num {
+  float: left;
+  margin-top: 10px;
+  color: #404040;
+}
+.content-box .kehu-info .kehu-num .change-but {
+  float: right;
+  width: 50px;
+  height: 30px;
+  border: 1px solid #D6D6D6;
+  border-radius: 2px;
+  line-height: 27px;
+  text-align: center;
+  cursor: pointer;
+  background: #F9F9F9;
+  color: #888;
+}
+.content-box .info-box {
+  border: 1px solid #D6D6D6;
+  background: #fff;
+  padding: 10px;
+  width: 100%;
+}
+.content-box .info-box .kehu-name .name {
+  float: left;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+.content-box .info-box .kehu-name .name span {
+  color: #FC7000;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.content-box .info-box .kehu-name .address {
+  float: right;
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+}
+.content-box .info-box .sex .ago {
+  float: left;
+}
+.content-box .info-box .sex .from {
+  float: right;
+}
+.content-box .info-box .remarks {
+  height: 30px;
+  padding: 5px;
+  color: #FC7000;
+  border: 1px solid #FDE7CC;
+  background: #FFF6E3;
+  line-height: 17px;
+  margin: 10px 0;
+}
+.content-box .info-box .phone-level .phone {
+  float: left;
+}
+.content-box .info-box .phone-level .phone .main-phone {
+  font-weight: bold;
+  position: relative;
+}
+.content-box .info-box .phone-level .phone .main-phone em {
+  color: #999;
+  margin-left: 5px;
+}
+.content-box .info-box .phone-level .phone .main-phone i {
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 14px;
+  background: url(../../images/crm/phone.png) no-repeat;
+  top: 1px;
+  right: -20px;
+  cursor: pointer;
+}
+.content-box .info-box .phone-level .phone .phone-aother {
+  font-weight: normal;
+  margin-top: 6px;
+}
+.content-box .info-box .phone-level .level {
+  float: right;
+}
+.content-box .info-box .phone-level .level .buy {
+  color: #F49D35;
+  font-size: 15px;
+}
+.content-box .info-box .phone-level .level .sell {
+  color: #70BF41;
+  font-size: 15px;
+}
+.content-box .info-box .phone-level .level span {
+  font-size: 13px;
+  color: #666;
+  margin-left: 10px;
+}
+.content-box .info-box .detail {
+  margin-top: 10px;
+}
+.content-box .info-box .detail .detail-info {
+  border-top: 1px dotted #D6D6D6;
+}
+.content-box .info-box .detail .detail-hidden {
+  height: 12px;
+  background: url(../../images/crm/hide.png) no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.content-box .content-right {
+  width: 835px;
+  float: right;
 }

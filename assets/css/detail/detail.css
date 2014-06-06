@@ -2125,6 +2125,29 @@ body {
 #detail_main .detail-feed-hd .qq-zixun:hover {
   background: url(../../images/detail/zixun-hover.png) no-repeat !important;
 }
+#detail_main .detail-feed-hd .addcarduibi {
+  width: 75px;
+  height: 23px;
+  background: #F2F2F2;
+  border-radius: 2px;
+  cursor: pointer;
+  float: right;
+  margin-left: 10px;
+  color: #666;
+  padding-left: 5px;
+  padding-top: 7px;
+}
+#detail_main .detail-feed-hd .addcarduibi input {
+  margin-top: 3px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  border: none;
+}
+#detail_main .detail-feed-hd .addcarduibi:hover {
+  background: #60B25E;
+  color: #fff;
+}
 #detail_main .detail-feed-bd {
   padding-top: 11px;
 }
