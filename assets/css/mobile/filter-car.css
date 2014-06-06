@@ -1,3 +1,6 @@
+html,body{
+    width: 100%;
+}
 #filter-car .group {
     margin: 10px;
     border: 1px solid #ccc;
@@ -102,8 +105,10 @@
 #filter-car .popup-wrapper {
     position: absolute;
     z-index: 10000;
-    left: 10px;
+    padding:0 10px;
     margin-bottom: 55px;
+    width:100%;
+    box-sizing: border-box;
 }
 #filter-car .filter-popup {
     background-color: #fff;
@@ -231,9 +236,12 @@
     width:25px;
 }
 #filter-car .popup-btns-wrapper{
-    position: absolute;
+    position: fixed;
+    bottom:0;
     z-index:10001;
-    margin:0 10px
+    padding:0 10px;
+    width:100%;
+    box-sizing: border-box;
 }
 #filter-car .popup-btns{
     border-top:1px solid #ff4400;

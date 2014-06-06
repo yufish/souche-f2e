@@ -76,10 +76,10 @@ function filter(BrandMgr, addListener) {
             function showPopup_b() {
                 $('.wrapGrayBg').removeClass('hidden');
                 var $win = $(window);
-                var winW = $win.width(),
-                    scrollTop = $win.scrollTop();
+                //var winW = $win.width(),
+                var scrollTop = $win.scrollTop();
                 $('#brand-wrapper').css({
-                    width: winW - 20,
+                    //width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
@@ -88,10 +88,10 @@ function filter(BrandMgr, addListener) {
             function showPopup_s() {
                 $('.wrapGrayBg').removeClass('hidden');
                 var $win = $(window);
-                var winW = $win.width(),
-                    scrollTop = $win.scrollTop();
+                //var winW = $win.width(),
+                var scrollTop = $win.scrollTop();
                 $('#series-wrapper').css({
-                    width: winW - 20,
+                    //width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
@@ -216,8 +216,6 @@ function filter(BrandMgr, addListener) {
 
             })
 
-
-
             $('#option-advance').click(function() {
                 var $self = $(this);
                 if ($self.hasClass('reverse')) {
@@ -251,7 +249,6 @@ function filter(BrandMgr, addListener) {
                 $('.popup-btns-wrapper').addClass('hidden')
                 document.body.scrollTop = 0;
             }
-
 
             $('#select-price-1').change(function() {
                 var lowP = $(this).val();
@@ -324,7 +321,6 @@ function filter(BrandMgr, addListener) {
                 })
             }
 
-            //TODO brand series
             function buildBsQueryString() {
                 var brands = BrandMgr.brands;
                 var bStr = brands.map(function(b) {
@@ -443,8 +439,9 @@ function filter(BrandMgr, addListener) {
                     });
                 })
             }
+
+
         }
     }
-
 
 }
