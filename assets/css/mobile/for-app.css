@@ -5,9 +5,9 @@
 #detail #quality-test .cube .h .l{
     height: 65px;
     line-height: 65px;
-    background: url(../../images/mob/for-app/check_tag.png) no-repeat;
-    background-size: 65px 98px;
-    background: #FF4400;
+    background: #ff4400 url(../../images/mob/for-app/check_tag.png) no-repeat;
+    background-size: 98px 65px;
+
 }
 #detail #quality-test .cube .h .r{
     line-height: 65px;
