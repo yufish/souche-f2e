@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bb8195-6912-45c0-b8cc-aa12c918bc4e" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\souche\souche-f2e\assets\images\mob\for-app\check_tag.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mobile/filter/filtercar-scroll.js" afterPath="$PROJECT_DIR$/assets/js/mobile/filter/filtercar-scroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mobile/for-app.css" afterPath="$PROJECT_DIR$/assets/css/mobile/for-app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="E:\souche\souche-f2e\assets\images\mob\for-app\cqi.png" afterPath="" />
     </list>
     <ignored path="souche-f2e.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,11 +105,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mobile.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mobile.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="17740" max-vertical-offset="102901">
-              <caret line="1063" column="36" selection-start-line="1063" selection-start-column="0" selection-end-line="1063" selection-end-column="36" />
+            <state vertical-scroll-proportion="-8.48" vertical-offset="16516" max-vertical-offset="102901">
+              <caret line="984" column="15" selection-start-line="984" selection-start-column="15" selection-end-line="984" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="for-app.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/mobile/for-app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40078586" vertical-offset="0" max-vertical-offset="1360">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -515,7 +522,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1176" extended-state="1" />
+    <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -913,18 +920,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mobile/for-app.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19637462" vertical-offset="213" max-vertical-offset="1360">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state vertical-scroll-proportion="-8.48" vertical-offset="16516" max-vertical-offset="102901">
+          <caret line="984" column="15" selection-start-line="984" selection-start-column="15" selection-end-line="984" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mobile/mobile.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/mobile/for-app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="17740" max-vertical-offset="102901">
-          <caret line="1063" column="36" selection-start-line="1063" selection-start-column="0" selection-end-line="1063" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.40078586" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
