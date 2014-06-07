@@ -21,6 +21,7 @@
 #detail #quality-test .cube #stand_level_name{
     font-size: 30px;
     font-family: '华文黑体', '黑体';
+    margin-left: 5px;
 }
 #detail #quality-test .cube .h .l .w{
     padding-left: 30px;
