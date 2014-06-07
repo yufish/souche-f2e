@@ -38,6 +38,7 @@
     padding:0;
     border:none;
     position: static;
+    background: #1C2E47;
 }
 #detail #quality-test .cube .s span{
     text-align: center;
@@ -49,16 +50,16 @@
     color:#fff;
     margin:0;
 }
-#detail .diban{
+#detail .diban4app{
     background: #101924;
 }
-#detail .fadongji{
+#detail .fadongji4app{
     background: #13253B;
 }
-#detail .qimian{
+#detail .qimian4app{
     background: #1C2E47;
 }
-#detail .waiguanchengse{
+#detail .waiguanchengse4app{
     background: #25364E;
 }
 
