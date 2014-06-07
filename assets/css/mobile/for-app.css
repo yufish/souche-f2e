@@ -5,12 +5,15 @@
 #detail #quality-test .cube .h .l{
     height: 65px;
     line-height: 65px;
+    background: url(../../images/mob/for-app/check_tag.png) no-repeat;
+    background-size: 65px 98px;
     background: #FF4400;
 }
 #detail #quality-test .cube .h .r{
     line-height: 65px;
     height: 65px;
     background: #FF4400;
+    font-size: 16px;
 }
 #detail #quality-test .cube .h .r i{
     display: none !important;
@@ -21,19 +24,14 @@
 }
 #detail #quality-test .cube .h .l .w{
     padding-left: 30px;
+    font-size: 16px;
 }
 #detail .check-detail-ctn{
     float:left;
     width:50%;
  }
 #detail #quality-test .cube .s .icon{
-    position: absolute;
-    height: 65px;
-    width: 98px;
-    background: url(../../images/mob/for-app/check_tag.png) no-repeat;
-    background-size: 100% 100%;
-    left:0;
-    bottom: 0;
+    display:none !important;
 }
 
 #detail #quality-test .cube .s{
