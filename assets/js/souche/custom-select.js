@@ -296,10 +296,13 @@ Souche.UI.CustomSelect = function() {
 
                 $(".sc-select-content", this.ele).html("<span class='placeholder'>" + this.config.placeholder + "</span>")
             }
-            $(self).trigger("change", {
-                key: this.selected[0].key,
-                value: this.selected[0].value
-            })
+            if (this.selected && this.selected.length) {
+                $(self).trigger("change", {
+                    key: this.selected[0].key,
+                    value: this.selected[0].value
+                })
+            }
+
             this.hideOptions();
         },
         _autoDrop: function(list) {
