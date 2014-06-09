@@ -1,7 +1,7 @@
 var parser = require('cron-parser');
 var path = require("path");
-require("./../rabbit/BaseInit.js");
-var createTask = function(cron,file){
+
+var createTask = function(cron, file) {
     parser.parseExpression(cron, {}, function(err, interval) {
         if (err) {
             console.log('Error: ' + err.message);
@@ -11,7 +11,7 @@ var createTask = function(cron,file){
         while (true) {
             try {
                 if (new Date().getTime() == next.getTime()) {
-                    console.log("begin run task :"+next);
+                    console.log("begin run task :" + next);
                     require(file).run();
                     next = interval.next();
                 }
@@ -21,10 +21,10 @@ var createTask = function(cron,file){
         }
     });
 }
-setTimeout(function(){
+setTimeout(function() {
     var tasks = require("./../tasks/task.json");
-    for(var cron in tasks){
-        var file =path.join("../tasks",tasks[cron]) ;
-        createTask(cron,file);
+    for (var cron in tasks) {
+        var file = path.join("../tasks", tasks[cron]);
+        createTask(cron, file);
     }
-},10000)
+}, 2000)
