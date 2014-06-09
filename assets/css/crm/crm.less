@@ -60,8 +60,21 @@
     height: 1495px;
     .cont{
       .active{
+        position: relative;
+
         a{
           background-color: #FAFAFA;
+
+        }
+        i{
+          display: block;
+          width: 8px;
+          height: 8px;
+          background: url(../../images/crm/close.png) no-repeat;
+          position: absolute;
+          top: 17px;
+          right: 7px;
+          opacity: 1;
         }
       }
     }
@@ -406,5 +419,182 @@
         }
       }
     }
+  }
+}
+.content-box{
+  margin-top: 20px;
+  .kehu-info{
+    width: 280px;
+    float: left;
+    .kehu-num{
+      height: 45px;
+      width: 100%;
+      .id-num{
+        float: left;
+        margin-top: 10px;
+        color: #404040;
+      }
+      .change-but{
+        float: right;
+        width: 50px;
+        height: 30px;
+        border: 1px solid #D6D6D6;
+        border-radius: 2px;
+        line-height: 27px;
+        text-align: center;
+        cursor: pointer;
+        background: #F9F9F9;
+        color: #888;
+      }
+    }
+  }
+  .info-box{
+    border: 1px solid #D6D6D6;
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    .kehu-name{
+      .name{
+        float: left;
+        color: #333;
+        font-weight: bold;
+        font-size: 15px;
+        span{
+          color: #FC7000;
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+      .address{
+        float: right;
+        font-size: 15px;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+    .sex{
+      .ago{
+        float: left;
+      }
+      .from{
+        float: right;
+      }
+    }
+    .remarks{
+      height: 30px;
+      padding: 5px;
+      color: #FC7000;
+      border: 1px solid #FDE7CC;
+      background: #FFF6E3;
+      line-height: 17px;
+      margin: 10px 0;
+    }
+    .phone-level{
+      .phone{
+        float: left;
+        .main-phone{
+          font-weight: bold;
+          position: relative;
+          em{
+            color: #999;
+            margin-left: 5px;
+          }
+          i{
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 14px;
+            background: url(../../images/crm/phone.png) no-repeat;
+            top: 1px;
+            right: -20px;
+            cursor: pointer;
+          }
+        }
+        .phone-aother{
+          font-weight: normal;
+          margin-top: 6px;
+        }
+      }
+      .level{
+        float: right;
+        .buy{
+          color: #F49D35;
+          font-size: 15px;
+        }
+        .sell{
+          color: #70BF41;
+          font-size: 15px;
+        }
+        span{
+          font-size: 13px;
+          color: #666;
+          margin-left: 10px;
+        }
+      }
+    }
+    .detail{
+      margin-top: 10px;
+      .detail-info{
+        border-top: 1px dotted #D6D6D6;
+      }
+      .detail-hidden{
+        height: 12px;
+        background: url(../../images/crm/hide.png) no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+      .detail-show{
+        height: 12px;
+        background: url(../../images/crm/show.png) no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+    }
+    .detail-other{
+      border-bottom: 1px solid #D6D6D6;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      .item-tit{
+        font-weight: bold;
+        line-height: 25px;
+        span{
+          font-weight: normal;
+        }
+        em{
+          font-weight: normal;
+          color: #888;
+        }
+      }
+      .item-tit-s{
+        color: #EE706B;
+      }
+    }
+    .situation{
+      border-bottom: 1px solid #D6D6D6;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      .situa-box{
+        margin-bottom: 10px;
+        .title{
+          font-weight: bold;margin-bottom: 2px;
+
+        }
+        .cont{
+          color: #888;
+          line-height: 25px;
+        }
+      }
+    }
+    .card{
+      margin: 15px 0;
+      padding-left: 20px;
+      .idcar{
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .content-right{
+    width: 835px;
+    float: right;
   }
 }

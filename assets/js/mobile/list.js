@@ -8,11 +8,8 @@ var List = function () {
     var loadMore = function () {
         SM.LoadingTip.show("正在加载中")
         $.ajax({
-            url: config.moreURL + window.location.search,
+            url: config.moreURL + "&index=" + (++config.page),
             dataType: "json",
-            data:{
-                index:++config.page
-            },
             success: function (data) {
                 //console.log(data)
                 var items = data.page.items;
@@ -149,6 +146,10 @@ var List = function () {
                 window.location.href = $(this).attr('href');
             })
 
+            $('.wrapPhoneBg').click(function(){
+                $(this).addClass('hidden');
+                $('#phone-popup').addClass('hidden')
+            })
             //do fav
             ! function () {
                 var api = {
@@ -233,6 +234,7 @@ var List = function () {
                 })
                 $('.cars').on('click', '.fav', function (e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     $curFav = $(this);
 
                     if (isLogin) {

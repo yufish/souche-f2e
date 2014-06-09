@@ -10,7 +10,7 @@ define(function() {
             $(".souche-price-min").html(min)
             $(".souche-price-max").html(max)
             $(".souche-price-down").html((middle - min).toFixed(1));
-            $(".souche-price-lv").html((middle - min / middle).toFixed(0) + "%")
+            $(".souche-price-lv").html((min * 100 / middle).toFixed(0) + "%")
 
             function createInterpolation(minV, maxV, minD, maxD) {
                 var vGap = maxV - minV,

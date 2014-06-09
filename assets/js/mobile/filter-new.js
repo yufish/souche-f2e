@@ -7,7 +7,7 @@
         this[name] = func();
     }
 
-}('BrandMgr', filter, ['common/BrandManager', 'filter/addListener']);
+}('BrandMgr', filter, ['mobile/common/BrandManager', 'mobile/filter/addListener']);
 
 function filter(BrandMgr, addListener) {
     //BrandMgr
@@ -71,27 +71,27 @@ function filter(BrandMgr, addListener) {
                 $('#series-list .content').append(html);
             }
 
-
+            var wrapGrayBg= $('.wrapGrayBg');
 
             function showPopup_b() {
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var $win = $(window);
-                var winW = $win.width(),
-                    scrollTop = $win.scrollTop();
+                //var winW = $win.width(),
+                var scrollTop = $win.scrollTop();
                 $('#brand-wrapper').css({
-                    width: winW - 20,
+                    //width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
             }
 
             function showPopup_s() {
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var $win = $(window);
-                var winW = $win.width(),
-                    scrollTop = $win.scrollTop();
+                //var winW = $win.width(),
+                var scrollTop = $win.scrollTop();
                 $('#series-wrapper').css({
-                    width: winW - 20,
+                    //width: winW - 20,
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
@@ -121,18 +121,24 @@ function filter(BrandMgr, addListener) {
                 }
             })
 
+            var $remainNum = $('#remain-brand-num');
             $('#brand-list').on('click', '.item', function() {
                 var self = $(this);
                 var code = self.attr('data-code'),
                     name = self.find('.brand-name').text();
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
+                    $remainNum.text(BrandMgr.brands.length);
                 } else {
-                    if (BrandMgr.brands.length >= 5) {
-                        console.log('brands len should be less or equal 5');
+                    if ( BrandMgr.brands.length>= 5) {
+                        $('#tips4brandLimit5').show();
+                        setTimeout(function(){
+                            $('#tips4brandLimit5').hide();
+                        },1000)
                         return;
                     }
                     BrandMgr.addBrand(code, name);
+                    $remainNum.text(BrandMgr.brands.length);
                 }
             });
 
@@ -210,8 +216,6 @@ function filter(BrandMgr, addListener) {
 
             })
 
-
-
             $('#option-advance').click(function() {
                 var $self = $(this);
                 if ($self.hasClass('reverse')) {
@@ -223,7 +227,7 @@ function filter(BrandMgr, addListener) {
                 }
             });
 
-            $('.wrapGrayBg').click(function() {
+            wrapGrayBg.click(function() {
                 _hidePopup();
             });
 
@@ -238,14 +242,13 @@ function filter(BrandMgr, addListener) {
             })
 
             function _hidePopup() {
-                $('.wrapGrayBg').addClass('hidden');
+                wrapGrayBg.addClass('hidden');
                 $('#brand-wrapper').addClass('hidden');
                 $('#series-wrapper').addClass('hidden');
                 $('.mobile-popup').addClass('hidden');
                 $('.popup-btns-wrapper').addClass('hidden')
                 document.body.scrollTop = 0;
             }
-
 
             $('#select-price-1').change(function() {
                 var lowP = $(this).val();
@@ -304,7 +307,7 @@ function filter(BrandMgr, addListener) {
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data);
+
                         if (data.i == 0) {
                             showSorry();
                         } else {
@@ -318,7 +321,6 @@ function filter(BrandMgr, addListener) {
                 })
             }
 
-            //TODO brand series
             function buildBsQueryString() {
                 var brands = BrandMgr.brands;
                 var bStr = brands.map(function(b) {
@@ -326,9 +328,13 @@ function filter(BrandMgr, addListener) {
                 }).join(';')
 
                 var sStr = brands.map(function(b) {
-                    return b['series'].map(function(s) {
-                        return s['code'];
-                    }).join(',');
+                        if(b['series'].length==0){
+                            return 'null'
+                        }else{
+                            return b['series'].map(function(s) {
+                                return s['code'];
+                            }).join(',');
+                        }
                 }).join(';');
                 return {
                     brandStr: bStr,
@@ -398,7 +404,7 @@ function filter(BrandMgr, addListener) {
 
             function showSorry() {
                 var $popup = $('.mobile-popup').removeClass('hidden');
-                $('.wrapGrayBg').removeClass('hidden');
+                wrapGrayBg.removeClass('hidden');
                 var scrollTop = $(window).scrollTop();
                 $popup.removeClass('hidden').css({
                     top: scrollTop + 50,
@@ -408,8 +414,6 @@ function filter(BrandMgr, addListener) {
                 if (phoneNum) {
                     $popup.find('#phone-for-notify').val(phoneNum);
                 }
-
-                //TODO brand
                 $('#notify-form').submit(function(e) {
                     e.preventDefault();
                     var minP = $('#select-price-1').val();
@@ -433,8 +437,9 @@ function filter(BrandMgr, addListener) {
                     });
                 })
             }
+
+
         }
     }
-
 
 }

@@ -735,6 +735,34 @@ Souche.DetailCommon = function() {
             //     $('.cutprice').append(start + nowStr.charAt(i) + end);
             // }
             Souche.Detail.PriceDown.init(config);
+            if ($(".brand-nav").length) {
+                $(window).scroll(function() {
+                    var brandNavPos = $(".brand-nav").offset().top;
+                    var brandHeight = $(".brand-wrapper").height();
+                    var brandNavHeight = $(".brand-nav").height();
+                    if ($(window).scrollTop() > brandNavPos + 40) {
+
+                        if ($(window).scrollTop() > brandNavPos + brandHeight - brandNavHeight - 150) {
+                            $(".brand-list").css({
+                                position: "absolute",
+                                top: brandHeight - brandNavHeight - 100
+                            })
+                        } else {
+                            $(".brand-list").css({
+                                position: "fixed",
+                                top: 40
+                            })
+                        }
+                    } else {
+                        $(".brand-list").css({
+                            position: "relative",
+                            top: 0
+                        })
+                    }
+
+                })
+            }
+
         }
     }
 }();

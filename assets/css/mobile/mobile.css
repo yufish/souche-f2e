@@ -1511,7 +1511,8 @@ body {
     height: 40px;
 }
 #detail .standard table .report-no {
-    background: url("../../images/mob/test_right.png") no-repeat;
+    background: url("../../images/mob/test_right.png") no-repeat center;
+    background-size: 16px 16px;
 }
 #detail .standard table .currentStand {
     background-color: #e4f9b2;
@@ -4022,9 +4023,6 @@ body {
     border-bottom: 1px solid #d0d0d0;
     position: relative;
 }
-#sell-h5-2 .content .options .option-item:first-child {
-    border-top: 1px solid #d0d0d0;
-}
 #sell-h5-2 .content .options .option-item .text {
     padding-left: 5px;
     line-height: 60px;
@@ -5181,6 +5179,9 @@ body {
     color: #666;
     overflow: hidden;
     height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 #to-main-screen {
     border-radius: 8px;

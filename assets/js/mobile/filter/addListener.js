@@ -38,8 +38,8 @@
                 var item = e.item;
                 var code = item.code,
                     name = item.name;
-                this._makeSeriesUI(code);
-                this._makeTab(code,name);
+                this._makeSeriesUI(code,name);
+                //this._makeTab(code,name);
             }
             if(eType=='removeBrand'){
                 var code = e.item.code;
@@ -58,7 +58,7 @@
             var html = '<div class="selected-brand-item pane-selected-item" data-code="'+bCode+'"><span class="selected-brand-name">'+bName+'</span>(<span class="selected-num">0</span>)</div>'
             this.tab_container.append(html);
         },
-        _makeSeriesUI:function(bCode){
+        _makeSeriesUI:function(bCode,bName){
             var self =this;
             $.ajax({
                 url: contextPath + "/pages/dicAction/loadExistSeries.json",
@@ -68,6 +68,7 @@
                     code: bCode
                 },
                 success: function (data) {
+                    self._makeTab(bCode,bName);
                     var codes = data['codes'];
                     var start='<div class="content" data-code="'+bCode+'">';
                     var end ='</div>';
@@ -113,6 +114,7 @@
             }
         },
         _addSelectedBrand:function(code,name){
+            name=name.trim();
             var html =''
                     +'<div class="selected-item" data-code="'+code+'">'
                         +'<span class="selected-text">'+name+'</span>'
@@ -219,6 +221,8 @@
             }
         }
     }
+
+
 
     function addLtns(BrandMgr){
         BrandMgr.addLtn(brandPaneLtn);

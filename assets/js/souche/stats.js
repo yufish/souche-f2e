@@ -64,9 +64,8 @@ $(document).ready(function() {
                         fontSize: 12,
                         opacity: 0.6,
                         zIndex: 1000000000
-                    }).html(click_types[i])
+                    }).html(click_types[i]).attr("click_type", i)
                 }
-                console.log(click_types)
             }
 
         });
@@ -93,8 +92,16 @@ $(document).ready(function() {
             success: function(data) {}
         });
     });
+    var eventKey = "mousedown";
+    try {
+        if ("ontouchstart" in window) {
+            eventKey = "click";
+        }
+    } catch (e) {
 
-    $(document).on("click", function(e) {
+    }
+
+    $(document).on(eventKey, function(e) {
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
         if (!clickType) {
@@ -132,12 +139,20 @@ var setTrafficId = function(_id) {
 }
 $(window).load(function() {
     f2e_all_load_time = new Date().getTime();
+
     var data = {
         url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com"),
         referrer: document.referrer,
         load_first_time: f2e_first_load_time - f2e_begin_load_time,
-        load_all_time: f2e_all_load_time - f2e_begin_load_time,
-        cookie: document.cookie
+        load_all_time: f2e_all_load_time - f2e_begin_load_time
+    }
+    var phone_match = document.cookie.match(/noregisteruser=([0-9]*?);/);
+    if (phone_match) {
+        data.phone = phone_match[1];
+    }
+    var tag_match = document.cookie.match(/usertag=([0-9a-zA-Z_]*?);/);
+    if (tag_match) {
+        data.userTag = tag_match[1];
     }
     var param = ""
     for (var d in data) {

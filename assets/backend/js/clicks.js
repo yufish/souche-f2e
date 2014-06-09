@@ -27,24 +27,24 @@ $.ajax({
     },
     success: function(data) {
         globalData = data;
-        $('.jcrop-container').Jcrop({
-            bgColor: 'black',
-            onSelect: function(_d) {
-                var count = 0;
+        // $('.jcrop-container').Jcrop({
+        //     bgColor: 'black',
+        //     onSelect: function(_d) {
+        //         var count = 0;
 
-                globalData.forEach(function(d) {
-                    if (inIn(_d, d)) {
-                        count++;
-                    }
-                })
-                $("<div class='area-p'></div>").appendTo($(".con")).css({
-                    left: _d.x,
-                    top: _d.y,
-                    width: _d.w,
-                    height: _d.h
-                }).html(count + "<br/>" + (count * 100 / globalData.length).toFixed(2) + "%")
-            }
-        });
+        //         globalData.forEach(function(d) {
+        //             if (inIn(_d, d)) {
+        //                 count++;
+        //             }
+        //         })
+        //         $("<div class='area-p'></div>").appendTo($(".con")).css({
+        //             left: _d.x,
+        //             top: _d.y,
+        //             width: _d.w,
+        //             height: _d.h
+        //         }).html(count + "<br/>" + (count * 100 / globalData.length).toFixed(2) + "%")
+        //     }
+        // });
         $(".loading").css("display", "none");
         var hdata = []
         data.forEach(function(d) {
@@ -71,5 +71,14 @@ $.ajax({
 
         heatmap.store.setDataSet(data);
         loadingTip.hide()
+    }
+})
+
+
+$("#show-map").click(function() {
+    if (!this.checked) {
+        $(".map").addClass("hidden")
+    } else {
+        $(".map").removeClass("hidden")
     }
 })

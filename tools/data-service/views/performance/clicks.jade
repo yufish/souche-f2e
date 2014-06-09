@@ -16,10 +16,12 @@ html
         style.
             .con{position:relative;font-size:14px;width:1190px;margin:0 auto;}
             .refer-page,.map,.jcrop-holder,.jcrop-container{position:absolute;left:0;top:0;width:1190px;height:4000px;}
-            .refer-page{opacity:0.5}
+            .refer-page{}
             .map{
             z-index:5;
+            background:rgba(255,255,255,0.6);
             }
+            canvas{opacity:0.8;}
             .date-picker-wrapper{z-index:1000;}
             .jcrop-holder{background:rgba(1,1,1,0) !important;z-index:10;}
             .area-p{position:absolute;background:#fff;opacity:0.6;text-align:center;font-size:14px;z-index:18;pointer-events:none;}
@@ -47,13 +49,16 @@ html
                         | 选择时间段
                         input#time.form-control(type="text",style="width:300px;",value="#{locals.time}")
                     button.btn.btn-default(type="submit") 提交
+
+                    label.control-label
+                        input#show-map(type="checkbox",checked="true")
+                        | 显示热力图
         .summery.hidden
             .alert.alert-warning 总浏览量：<em id="total_count"></em>
         .con
             - 
             iframe.refer-page(src="#{locals.iframeurl}")
             .map#map
-            .jcrop-container
         script(src="http://f2e.souche.com/assets/js/souche/ui/loadingTip.js")
         script.
             var url = "#{locals.url?locals.url:"http://www.souche.com"}"
