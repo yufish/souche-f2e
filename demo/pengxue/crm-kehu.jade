@@ -123,3 +123,148 @@ html
                 .download 合同：
                   a(href="#") 点击下载
           .content-right
+            .topic
+              .title 话题列表
+              .topic-head
+                span 话题来源
+                input#all(type="checkbox")
+                label 全部
+                input#record(type="checkbox")
+                label 沟通记录
+                input#yuyue(type="checkbox")
+                label 预约情况
+                input#store(type="checkbox")
+                label 客户门店行为
+              table.topic-list
+                tr.table-tit
+                  th(width="90px") 创建时间
+                  th(width="180px") 话题来源
+                  th(width="560px") 话题信息
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 
+                    p 以下任务在2014-05-13前确认以下任务在
+                    p 2014-05-13前确认以下任务在2014-05-13前确认
+                    p 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+                tr.table-cont
+                  td 2014-05-13
+                  td 任务待确定
+                  td 以下任务在2014-05-13前确认
+              .paging.clearfix
+                span 1
+                a.page(href="#") 2
+                a.page(href="#") 3
+                em ...
+                a.next(href="#") 下一页
+                em 共100页，到第
+                input
+                em 页
+                a.submit(href="#") 确定
+            .multimeter
+              ul.nav.nav-tabs
+                li.active
+                  a(href="#") 车辆需求万用表
+              .screen
+                from
+                  span(style="margin-left:0px;") 预算：
+                  input#pricelow(type="text")
+                  em -
+                  input#pricehigh(type="text")
+                  em 万元
+                  span 车体形式：
+                  select#models
+                    option(value="微小型车") 微小型车
+                    option(value="中型车") 中型车
+                    option(value="SUV") SUV
+                    option(value="MPV") MPV
+                    option(value="跑车") 跑车
+                  span 国别：
+                  select#country
+                    option(value="德国") 德国
+                    option(value="美国") 美国
+                    option(value="日本") 日本
+                    option(value="法国") 法国
+                    option(value="国产") 国产
+                  span 上牌时间：
+                  select#age-old
+                    option(value="2009") 2009
+                    option(value="2010") 2010
+                    option(value="2011") 2011
+                    option(value="2012") 2012
+                    option(value="2013") 2013
+                  em -
+                  select#age-new
+                    option(value="2014") 2014
+                    option(value="2009") 2009
+                    option(value="2010") 2010
+                    option(value="2011") 2011
+                    option(value="2012") 2012
+                    option(value="2013") 2013
+                  span 里程：
+                  select#miles
+                    option(value="一万公里以内") 一万公里以内
+                    option(value="五万公里以内") 五万公里以内
+                    option(value="八万公里以内") 八万公里以内
+                    option(value="不限") 不限
+              .intent.clearfix
+                .title 意向车型：
+                .model-but
+                  .btn-group.btn-group-justified 
+                    a.btn.btn-default(role="button") 精准推荐15
+                    a.btn.btn-default(role="button") 同类推荐46
+                    a.btn.btn-default(role="button") 已删除7
+                    a.btn.btn-default(role="button") 系统推荐12
+                .add-carinfo + 添加意向车辆信息
+              table.car-model
+                tr.table-head
+                  th
+                    i 
+                    span 大众POLP，白色，1.6L
+                  th.time 2014-03-02
+                  th.carnum 共12辆/已确认3辆
+                  th.action 
+                    span#modify 修改
+                    span#delete 删除
+                tr.cardetail
+                  td.sold 
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+    #foot
