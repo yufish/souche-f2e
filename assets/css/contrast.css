@@ -227,7 +227,23 @@
   background: #000;
   border-radius: 10px;
 }
+#contrast #content .wrapper .config td .matching {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
 #contrast #content .wrapper .config tr {
   border-bottom: 1px solid #D9D9D9;
   height: 45px;
+}
+.matching {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #000;
 }
