@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding: 0;
+}
+img{
+    vertical-align: middle;
+    width:100%;
+}
+body{
+    font-family: '华文黑体', '黑体';
+}
+.absolute{
+    position: absolute;
+}
+#head{
+    position: relative;
+}
+.btns{
+    text-align: center;
+    width: 115px;
+    left:50%;
+    margin-left:-58px;
+    bottom: 20px;
+}
+#involve{
+    background: #f8504c;
+    border:none;
+    border-radius: 5px;
+    width:115px;
+    height: 32px;
+}
+#football{
+    width: 55px;
+    height: 48px;
+    background: url(../../../images/mob/huodong/worldcup/football.png) no-repeat center;
+    background-size: 100%;
+    top: -8px;
+    right: -40px;
+}
+#flower{
+    width:12px;
+    height: 11px;
+    background: url(../../../images/mob/huodong/worldcup/flower-over-btn.png) no-repeat center;
+    background-size: 100%;
+    top: 6px;
+    left: -2px;
+}
+#cup-small{
+    width:30px;
+    height: 51px;
+    background: url(../../../images/mob/huodong/worldcup/cup-small.png) no-repeat center;
+    background-size: 100%;
+    bottom: -35px;
+    left: -30px;
+}
+#ball-shadow{
+    width:20px;
+    height: 10px;
+    background: url(../../../images/mob/huodong/worldcup/ball-shadow.png) no-repeat center;
+    background-size: 100%;
+    left: 12px;
+    bottom: -35px;
+}
+#content{
+    background: url(../../../images/mob/huodong/worldcup/grass-bg.png) repeat-y center;
+    background-size: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.select-title{
+    margin:35px 0 20px;
+    text-align: center;
+    color:#fff;
+}
+#support-wrap-no{
+    background: url(../../../images/mob/huodong/worldcup/cup.png) repeat-y center;
+    background-size: 100%;
+    width:267px;
+    height: 211px;
+    margin:0 auto;
+}
