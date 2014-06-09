@@ -37,7 +37,8 @@ html
           .kehu-info
             .kehu-num
               .id-num 客户ID : 1234545
-              .change-but 修改
+              .change-but.
+                <button type="button" class="btn btn-default btn-sm">修改</button>
             .info-box
               .kehu-name.clearfix
                 .name 张海峰
@@ -60,7 +61,7 @@ html
                   .sell A级
                     span 卖
               .detail
-                .detail-info
+                .detail-info.hidden
                   p 微信：小海峰
                   p 微博：小峰峰
                   p QQ: 20935135
@@ -68,7 +69,7 @@ html
                   p 所在地：北京市文一西路12312号楼2302室
                   p 身份证：312415235132212151
                   p 生日：1988-01-01
-                .detail-hidden
+                .detail-show
               .detail-other
                 .item-tit 指标：
                   span 有
@@ -247,19 +248,20 @@ html
                     a.btn.btn-default(role="button") 同类推荐46
                     a.btn.btn-default(role="button") 已删除7
                     a.btn.btn-default(role="button") 系统推荐12
-                .add-carinfo + 添加意向车辆信息
+                .add-carinfo.
+                  <button type="button" class="btn btn-default btn-sm">+ 添加意向车辆信息</button>
               table.car-model
                 tr.table-head
-                  th
+                  th(width="400px")
                     i 
                     span 大众POLP，白色，1.6L
-                  th.time 2014-03-02
-                  th.carnum 共12辆/已确认3辆
-                  th.action 
-                    span#modify 修改
-                    span#delete 删除
-                tr.cardetail
-                  td.sold 
+                  th.time(width="110px") 2014-03-02
+                  th.carnum(width="190px") 共12辆/已确认3辆
+                  th.action(width="130px") 
+                    a#modify(href="#") 修改
+                    a#delete(href="#") 删除
+                tr.cardetail.sold 
+                  td
                     input(type="checkbox")
                     span 大众2009款crossPOLO-1.6L手自一体(已售)
                   td 13.99万
@@ -267,4 +269,114 @@ html
                     span 关注度200 
                     span 坐席推荐
                   td.cancel 取消推荐
+                tr.cardetail
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(在售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+                tr.cardetail.sold 
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+              table.car-model
+                tr.table-head
+                  th(width="400px")
+                    i 
+                    span 大众POLP，白色，1.6L
+                  th.time(width="110px") 2014-03-02
+                  th.carnum(width="190px") 共12辆/已确认3辆
+                  th.action(width="130px") 
+                    a#modify(href="#") 修改
+                    a#delete(href="#") 删除
+                tr.cardetail.sold 
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+                tr.cardetail
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(在售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+                tr.cardetail.sold 
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+              table.car-model
+                tr.table-head
+                  th(width="400px")
+                    i 
+                    span 大众POLP，白色，1.6L
+                  th.time(width="110px") 2014-03-02
+                  th.carnum(width="190px") 共12辆/已确认3辆
+                  th.action(width="130px") 
+                    a#modify(href="#") 修改
+                    a#delete(href="#") 删除
+                tr.cardetail.sold 
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+                tr.cardetail
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(在售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+                tr.cardetail.sold 
+                  td
+                    input(type="checkbox")
+                    span 大众2009款crossPOLO-1.6L手自一体(已售)
+                  td 13.99万
+                  td 
+                    span 关注度200 
+                    span 坐席推荐
+                  td.cancel 取消推荐
+            .sendto-phone. 
+              <button type="button" class="btn btn-default">发送车辆到手机</button>
+            .task-text
+              em 任务状态：
+              span 该客户有任务未处理/有任务 2014-05-10前待确定。
+            .addrecord.clearfix.
+              <button type="button" class="btn btn-primary">添加沟通/处理记录</button>
+
     #foot
+  script.
+    $(".table-head").click(function(){
+      $(this).closest(".car-model").find(".cardetail").toggleClass("hidden");
+      });
+  script.  
+    $(".detail-show").click(function(){
+      $(".detail-info").toggleClass("hidden");
+      $(this).toggleClass("detail-hidden");
+    });
+    

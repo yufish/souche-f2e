@@ -424,13 +424,6 @@
   float: right;
   width: 50px;
   height: 30px;
-  border: 1px solid #D6D6D6;
-  border-radius: 2px;
-  line-height: 27px;
-  text-align: center;
-  cursor: pointer;
-  background: #F9F9F9;
-  color: #888;
 }
 .content-box .info-box {
   border: 1px solid #D6D6D6;
@@ -517,7 +510,7 @@
 .content-box .info-box .detail .detail-info {
   border-top: 1px dotted #D6D6D6;
 }
-.content-box .info-box .detail .detail-hidden {
+.content-box .info-box .detail .detail-show.detail-hidden {
   height: 12px;
   background: url(../../images/crm/hide.png) no-repeat;
   background-position: center;
@@ -706,6 +699,7 @@
 .content-box .content-right .intent {
   margin-top: 15px;
   position: relative;
+  margin-bottom: 15px;
 }
 .content-box .content-right .intent .title {
   float: left;
@@ -734,14 +728,80 @@
   position: absolute;
   width: 130px;
   height: 34px;
-  text-align: center;
-  line-height: 34px;
   color: #666;
-  border: 1px solid #D6D6D6;
   top: 1px;
   right: 25px;
-  background: #F4F4F4;
-  border-radius: 3px;
-  font-size: 12px;
+}
+.content-box .content-right .car-model {
+  font-size: 13px;
+  border-top: 1px solid #D6D6D6;
+}
+.content-box .content-right .car-model tr {
+  border-bottom: 1px solid #D6D6D6;
+  height: 30px;
+}
+.content-box .content-right .car-model th {
+  padding-left: 10px;
+}
+.content-box .content-right .car-model td {
+  padding-left: 10px;
+}
+.content-box .content-right .car-model .cardetail {
+  background: #fff;
+  color: #444;
+}
+.content-box .content-right .car-model .cardetail span {
+  margin-right: 15px;
+}
+.content-box .content-right .car-model .cardetail .cancel {
+  color: #127BD2;
   cursor: pointer;
+}
+.content-box .content-right .car-model .sold {
+  color: #999;
+}
+.content-box .content-right .car-model .table-head {
+  background: #F5F5F5;
+  cursor: pointer;
+}
+.content-box .content-right .car-model .table-head th {
+  font-weight: bold;
+}
+.content-box .content-right .car-model .table-head .time {
+  color: #888;
+}
+.content-box .content-right .car-model .table-head .action {
+  color: #127BD2;
+}
+.content-box .content-right .car-model .table-head .action a {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.content-box .content-right .car-model .table-head i {
+  display: block;
+  width: 15px;
+  height: 14px;
+  background: url(../../images/crm/car-model.png) no-repeat;
+  float: left;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.content-box .content-right .sendto-phone {
+  margin-top: 15px;
+  border-bottom: 1px solid #D6D6D6;
+  padding-bottom: 10px;
+}
+.content-box .content-right .task-text {
+  margin-top: 15px;
+  color: #fc7000;
+}
+.content-box .content-right .task-text em {
+  font-weight: bold;
+}
+.content-box .content-right .addrecord {
+  margin-top: 20px;
+}
+.content-box .content-right .addrecord button {
+  margin: 0 auto;
+  display: block;
 }
