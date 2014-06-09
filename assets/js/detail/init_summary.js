@@ -88,10 +88,10 @@ define(function() {
                 $(window).trigger("tab_change", id);
                 e.preventDefault();
             });
-            if (SVGsupported) {
-                self.load_price();
-                self.load_baoyang();
-            }
+            // if (SVGsupported) {
+            //     self.load_price();
+            //     self.load_baoyang();
+            // }
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {
             //         if (id == "onsale_price") {
