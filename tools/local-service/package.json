@@ -35,7 +35,6 @@
         "optimist": "~0.6.1",
         "sequelize": "~2.0.0-dev11",
         "uglify-js": "~2.4.13",
-        "underscore": "*",
-        "walkdo": "~0.9.3"
+        "underscore": "*"
     }
 }
