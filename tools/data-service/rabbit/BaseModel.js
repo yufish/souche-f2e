@@ -45,10 +45,10 @@ BaseModel.prototype = {
                     callback(e);
                 });
             } else {
+
                 self.Model.find().where(self.params.where).skip(self.params.offset)
                     .limit(self.params.limit)
                     .select((self.params.fields ? self.params.fields.join(' ') : null))
-                    .sort(self.params.order)
                     .exec(function(error, datas) {
                         callback(error, datas);
                     })

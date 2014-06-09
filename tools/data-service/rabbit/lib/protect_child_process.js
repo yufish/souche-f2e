@@ -11,6 +11,7 @@ P.prototype = {
         cp.on('exit', function() {
             self.start();
         })
+
     }
 }
 module.exports = function(filePath) {

@@ -50,8 +50,10 @@ global.loadModel = function(modelName) {
  */
 if (config.mongo_config) {
     mongoose = require('mongoose');
+    mongoose.set('debug', true);
     var Schema = mongoose.Schema;
     mongoose.connect('mongodb://' + config.mongo_config.user + ':' + config.mongo_config.pass + '@' + config.mongo_config.host + ':' + config.mongo_config.port + '/' + config.mongo_config.database, config.mongo_config);
+
     console.log('mongodb尝试链接')
 } else {
     console.log('mongodb没有配置，不能使用mongodb的功能');

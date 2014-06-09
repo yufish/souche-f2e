@@ -2403,7 +2403,6 @@ body {
 }
 #detail_para {
   margin-bottom: 20px;
-  border-top: 1px solid #d9d9d9;
 }
 #detail_para h2 {
   margin-bottom: 10px;
@@ -3449,7 +3448,6 @@ body {
 }
 .onsale_wrap .onsale_content {
   position: relative;
-  border: 1px solid #d9d9d9;
   border-top: none;
   padding: 37px 30px 40px;
 }
@@ -3592,7 +3590,6 @@ body {
 }
 #onsale_sum {
   background: url(../../images/fed/check_tag.png) no-repeat 981px 18px #ffffff;
-  border-top: 1px solid #d9d9d9;
 }
 #onsale_sum h1 {
   text-indent: -9999em;
@@ -4903,25 +4900,37 @@ less .icon-fei {
   background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;
 }
 .onsale-summary {
-  padding: 30px;
   background: #fff;
   border: 1px solid #ddd;
   margin-bottom: 20px;
+  border: 1px solid #eee;
 }
 .onsale-summary .onsale-tab {
+  background: #f9f9f9;
   border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
+  height: 38px;
+  font-size: 0px;
 }
 .onsale-summary .onsale-tab .onsale-tab-item {
-  font-size: 18px;
-  padding: 10px;
-  margin-right: 30px;
+  font-size: 16px;
+  padding: 0 30px;
   color: #666;
-  line-height: 30px;
+  line-height: 35px;
   cursor: pointer;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: inline-block;
+  border-top: 3px solid #f9f9f9;
 }
 .onsale-summary .onsale-tab .onsale-tab-item.active {
   color: #e70;
+  background: #fff;
+  border-top: 3px solid #ef5c1e;
+  border-bottom: none;
+  line-height: 36px;
+}
+.onsale-summary .onsale-content .onsale-content-item {
+  padding: 20px;
 }
 .onsale-summary #onsale_report {
   padding-top: 30px;
