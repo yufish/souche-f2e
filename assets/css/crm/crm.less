@@ -438,13 +438,6 @@
         float: right;
         width: 50px;
         height: 30px;
-        border: 1px solid #D6D6D6;
-        border-radius: 2px;
-        line-height: 27px;
-        text-align: center;
-        cursor: pointer;
-        background: #F9F9F9;
-        color: #888;
       }
     }
   }
@@ -537,7 +530,7 @@
       .detail-info{
         border-top: 1px dotted #D6D6D6;
       }
-      .detail-hidden{
+      .detail-show.detail-hidden{
         height: 12px;
         background: url(../../images/crm/hide.png) no-repeat;
         background-position: center;
@@ -735,6 +728,7 @@
     .intent{
       margin-top: 15px;
       position: relative;
+      margin-bottom: 15px;
       .title{
         float: left;
         font-weight: bold;
@@ -762,17 +756,81 @@
         position: absolute;
         width: 130px;
         height: 34px;
-        text-align: center;
-        line-height: 34px;
         color: #666;
-        border: 1px solid #D6D6D6;
         top: 1px;
         right: 25px;
-        background: #F4F4F4;
-        border-radius: 3px;
-        font-size: 12px;
-        cursor: pointer;
       }
+    }
+    .car-model{
+      font-size: 13px;
+      border-top: 1px solid #D6D6D6;
+      tr{
+        border-bottom: 1px solid #D6D6D6;
+        height: 30px;
+      }
+      th{padding-left: 10px;}
+      td{padding-left: 10px;}
+      .cardetail{
+        background: #fff;
+        color: #444;
+        span{
+            margin-right: 15px;
+          }
+        .cancel{
+          color: #127BD2;
+          cursor: pointer;
+        }
+      }
+      .sold {
+            color: #999;
+          }
+      .table-head{
+        background: #F5F5F5;
+        cursor: pointer;
+        th{
+          font-weight: bold;
+        }
+       
+        .time{
+          color: #888;
+        }
+        .action{
+          color: #127BD2;
+          a{
+            margin-right: 20px;
+            cursor: pointer;
+          }
+        }
+        i{
+          display:block;
+          width: 15px;
+          height: 14px;
+          background: url(../../images/crm/car-model.png) no-repeat;
+          float: left;
+          margin-top: 2px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .sendto-phone{
+      margin-top: 15px;
+      border-bottom: 1px solid #D6D6D6;
+      padding-bottom: 10px;
+    }
+    .task-text{
+      margin-top: 15px;
+      color: #fc7000;
+      em{
+        font-weight: bold;
+      }
+    }
+    .addrecord{
+      margin-top: 20px;
+      button{
+        margin: 0 auto;
+        display: block;
+      }
+      
     }
   }
 }
