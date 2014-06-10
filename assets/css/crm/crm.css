@@ -805,3 +805,204 @@
   margin: 0 auto;
   display: block;
 }
+.addcar {
+  width: 510px;
+  height: 490px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  padding: 15px;
+}
+.addcar .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../../images/crm/close2.png) no-repeat;
+  opacity: 1;
+}
+.addcar .title {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.addcar #content span {
+  font-weight: bold;
+}
+.addcar #content form .price-yuji {
+  margin-bottom: 10px;
+}
+.addcar #content form .price-yuji input {
+  width: 50px;
+  height: 25px;
+  margin: 0 5px;
+  padding-left: 5px;
+}
+.addcar #content form .addbynum {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+}
+.addcar #content form .addbynum input {
+  width: 105px;
+  height: 30px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.addcar #content form .addbymodel {
+  margin-bottom: 15px;
+}
+.addcar #content form .addbymodel .bumodel-box {
+  width: 365px;
+  float: right;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box {
+  float: left;
+  width: 180px;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box select {
+  width: 70px;
+  margin: 5px;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box label {
+  font-weight: normal;
+}
+.addcar #content form .addbymodel .bumodel-box .color span {
+  font-weight: bold;
+  margin-left: 7px;
+}
+.addcar #content form .addbymodel .bumodel-box .color .color-box {
+  padding: 5px;
+}
+.addcar #content form .addbymodel .bumodel-box .color .color-box label {
+  font-weight: normal;
+  margin-right: 10px;
+}
+.addcar #content form .addbymodel .bumodel-box .add {
+  margin-left: 7px;
+}
+.addcar #content form .addbymodel .bumodel-box .add .tit {
+  font-weight: bold;
+}
+.addcar #content form .addbymodel .bumodel-box .add textarea {
+  padding: 5px;
+}
+.addcar #content form .submit-add {
+  margin: 0 auto;
+  width: 85px;
+}
+.addrecords {
+  width: 710px;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+}
+.addrecords select {
+  width: 130px;
+}
+.addrecords .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../../images/crm/close2.png) no-repeat;
+  opacity: 1;
+}
+.addrecords .communicate .com-detail {
+  width: 430px;
+  float: left;
+  border-right: 1px dashed #e2e2e2;
+}
+.addrecords .communicate .com-detail .time {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.addrecords .communicate .com-detail .reuslt {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .next-time {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .remark {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .notes {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .notes textarea {
+  padding: 5px;
+}
+.addrecords .communicate .com-detail span {
+  font-weight: bold;
+  margin-right: 24px;
+}
+.addrecords .communicate .change {
+  width: 230px;
+  float: right;
+}
+.addrecords .communicate .change .tit {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 10px 0;
+}
+.addrecords .communicate .change span {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.addrecords .communicate .change .buylevel {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .change .soldlevel {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .change .mark {
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .tit {
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .yuyue-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .yuyue-box em {
+  color: #FF1D1D;
+}
+.addrecords .yuyue .yuyue-box span {
+  font-weight: bold;
+}
+.addrecords .message .tit {
+  margin-bottom: 10px;
+}
+.addrecords .message .mess-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .message .mess-box textarea {
+  padding: 5px;
+}
+.addrecords .daodian {
+  margin-bottom: 20px;
+}
+.addrecords .daodian .tit {
+  margin-bottom: 10px;
+}
+.addrecords .daodian .daodian-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .daodian .daodian-box em {
+  color: #FF1D1D;
+}
+.addrecords .daodian .daodian-box span {
+  font-weight: bold;
+}
+.addrecords .save-but {
+  width: 184px;
+  margin: 0 auto;
+}
+.addrecords .save-but button {
+  width: 180px;
+}

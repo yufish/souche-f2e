@@ -247,3 +247,13 @@
   border-radius: 10px;
   border: 1px solid #000;
 }
+.best {
+  color: #fc7000 !important;
+}
+.best-2 {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: #fc7000 !important;
+  border-radius: 10px;
+}
