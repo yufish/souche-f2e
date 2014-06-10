@@ -222,7 +222,22 @@
         }
     }
 
-
+    var brandRemainingNumLtn={
+        numDom:$('#remain-brand-num'),
+        process:function(e){
+            var numDom = this.numDom;
+            var eType = e.eventType;
+            if(eType=='addBrand'){
+                numDom.text(e.bLen);
+            }
+            if(eType=='removeBrand'){
+                numDom.text(e.bLen);
+            }
+            if(eType=='noLimitBrand'){
+                numDom.text(0);
+            }
+        }
+    }
 
     function addLtns(BrandMgr){
         BrandMgr.addLtn(brandPaneLtn);
@@ -231,6 +246,7 @@
         BrandMgr.addLtn(seriesPaneLtn);
         BrandMgr.addLtn(selectedSeriesLtn);
         BrandMgr.addLtn(seriesNumLtn);
+        BrandMgr.addLtn(brandRemainingNumLtn);
     }
     return addLtns;
 })

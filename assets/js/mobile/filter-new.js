@@ -71,6 +71,11 @@ function filter(BrandMgr, addListener) {
                 $('#series-list .content').append(html);
             }
 
+
+            function bugHack(){
+                document.body.scrollTop=1;
+            }
+
             var wrapGrayBg= $('.wrapGrayBg');
 
             function showPopup_b() {
@@ -83,6 +88,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
             function showPopup_s() {
@@ -95,6 +101,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
 
@@ -121,14 +128,14 @@ function filter(BrandMgr, addListener) {
                 }
             })
 
-            var $remainNum = $('#remain-brand-num');
+            //var $remainNum = $('#remain-brand-num');
             $('#brand-list').on('click', '.item', function() {
                 var self = $(this);
                 var code = self.attr('data-code'),
                     name = self.find('.brand-name').text();
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
-                    $remainNum.text(BrandMgr.brands.length);
+                    //$remainNum.text(BrandMgr.brands.length);
                 } else {
                     if ( BrandMgr.brands.length>= 5) {
                         $('#tips4brandLimit5').show();
@@ -138,7 +145,7 @@ function filter(BrandMgr, addListener) {
                         return;
                     }
                     BrandMgr.addBrand(code, name);
-                    $remainNum.text(BrandMgr.brands.length);
+                    //$remainNum.text(BrandMgr.brands.length);
                 }
             });
 
@@ -194,6 +201,7 @@ function filter(BrandMgr, addListener) {
                 seriesPopupTitle.text(bName).attr('data-code', bCode);
             }
             $('#brand-buxian').click(function() {
+                _hidePopup();
                 BrandMgr.noLimitBrand();
             })
 
