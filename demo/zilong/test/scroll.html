@@ -28,14 +28,14 @@
         #content{
             overflow: auto;
             height: 100%;
+            -webkit-overflow-scrolling: touch
         }
 
     </style>
 </head>
 <body>
 
-    <div>
-        <header>Title</header>
+    <div style="height: 100%;">
         <div id="content">
             <div class="red"></div>
             <div class="green"></div>
@@ -44,10 +44,10 @@
             <div class="red"></div>
             <div class="green"></div>  <div class="red"></div>
             <div class="green"></div>  <div class="red"></div>
-            <div class="green"></div>
-
-
-
+            <div class="green" style="position: absolute;
+bottom: 0;
+width: 100%;
+background: yellow;z-index: 10"> hahahahahahahafasdfasfds</div>
         </div>
     </div>
 </body>
