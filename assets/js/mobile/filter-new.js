@@ -71,6 +71,11 @@ function filter(BrandMgr, addListener) {
                 $('#series-list .content').append(html);
             }
 
+
+            function bugHack(){
+                document.body.scrollTop=1;
+            }
+
             var wrapGrayBg= $('.wrapGrayBg');
 
             function showPopup_b() {
@@ -83,6 +88,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
             function showPopup_s() {
@@ -95,6 +101,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
 
