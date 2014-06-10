@@ -26,7 +26,7 @@
         mainTop: $("#detail_main").offset().top - 50,
         // sumTop: $("#onsale_sum").offset().top - 50,
         paraTop: $("#detail_para").offset().top - 50,
-        recordTop: $("#onsale_record").offset().top - 50,
+        // recordTop: $("#onsale_record").offset().top - 50,
         navVisible: false,
         cNav: function(current) {
             paras.$lastNav.removeClass("activeNav");
