@@ -222,7 +222,6 @@ html,body{
     margin-left: 5px;
 }
 #filter-car .selected-item{
-    border:1px solid #dfdfdf;
     line-height: 30px;
     padding:0 8px 0 10px;
     float: left;
