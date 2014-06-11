@@ -70,11 +70,13 @@
                 success: function (data) {
                     self._makeTab(bCode,bName);
                     var codes = data['codes'];
-                    var start=  '<div class="clearfix" style="background: #524A4A">'
-                                    + '<div class="title">'+bName+'</div>'
-                                    + '<div class="buxian series-buxian" data-code="'+bCode+'">不限车系</div>'
+
+                    var start=  '<div class="content" data-code="'+bCode+'">'
+                                +'<div class="clearfix" style="background: #524A4A">'
+                                +   '<div class="title">'+bName+'</div>'
+                                +   '<div class="buxian series-buxian" data-code="'+bCode+'">不限车系</div>'
                                 +'</div>'
-                                +'<div class="content" data-code="'+bCode+'">';
+
                     var end ='</div>';
                     var html = '';
                     for (var i in codes) {
