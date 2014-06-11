@@ -234,6 +234,23 @@ body{
     left:50%;
     top:30px;
 }
+#match-info .time-board{
+    background: url(../../../images/mob/huodong/worldcup/time-board.png) no-repeat center;
+    background-size: 100%;
+    width: 78px;
+    margin:5px auto;
+    text-align: center;
+    font-size: 17px;
+    line-height: 33px;
+    color:#fff;
+}
+
+#match-info  .date{
+    text-align: center;
+    font-size: 13px;
+    color:#067f8a;
+    margin-top:8px;
+}
 #match-info .score{
     font-size: 32px;
     line-height: 56px;
