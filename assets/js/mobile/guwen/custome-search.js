@@ -1,60 +1,12 @@
+/**
+ * Created by zilong on 2014/6/12.
+ */
 define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], function (Mustache, PriceRangeSlider, cookieUtil) {
-    var GuWen = (function () {
-        function createBrandsManager(_container) {
-            var container = _container;
 
-            var brandsManager = {
-                brands: {}, //{bCode:{sCode:$}}
-                //sCode='' for 不限
-                toggleSeries: function (bCode, sCode, jqObjArr) {
-                    var brands = this.brands;
-                    var bObj = brands[bCode] // = brands[bCode] || {};
+    var GuWen =(function(){
 
-                    if (bObj && bObj[sCode]) {
-                        this.removeSeries(bCode, sCode);
-                        if ($.isEmptyObject(brands)) {
-                            container.hide();
-                        }
-                    } else {
-                        if ($.isEmptyObject(brands)) {
-                            container.show();
-                        }
-                        bObj = brands[bCode] = (brands[bCode] || {});
-                        if (sCode == '') {
-                            for (var i in bObj) {
-                                this.removeSeries(bCode, i);
-                            }
-                        } else {
-                            this.removeSeries(bCode, '');
-                        }
-                        this.addSeries(bCode, sCode, jqObjArr);
 
-                    }
-                },
-                removeSeries: function (bCode, sCode) {
-                    var bObj = this.brands[bCode];
-                    if (!(sCode in bObj))
-                        return;
-                    var sObj = bObj[sCode];
-                    sObj[0].remove();
-                    sObj[1].removeClass('selected')
-                    delete bObj[sCode];
-                    if ($.isEmptyObject(bObj)) {
-                        delete this.brands[bCode];
-                    }
-                },
-                addSeries: function (bCode, sCode, jqObjArr) {
-                    var brands = this.brands;
-                    var bObj = brands[bCode] = (brands[bCode] || {})
-                    bObj[sCode] = jqObjArr;
-                    container.append(jqObjArr[0]);
-                    jqObjArr[1].addClass('selected');
-                }
-            }
-            return brandsManager;
-        }
-
-        //lft>rht ,return 1;
+    //lft>rht ,return 1;
         function comparePrice(lft, rht) {
             lft = (lft == '无限' ? '10000' : lft);
             rht = (rht == '无限' ? '10000' : rht);
@@ -87,37 +39,36 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
             };
         }
 
-        function test_AB() {
-            cookieUtil.update();
-            var tag = cookieUtil.getCookie('usertag');
-            var lastCode = tag.charCodeAt(tag.length - 1);
-            return lastCode % 2;
-        }
+//        function test_AB() {
+//            cookieUtil.update();
+//            var tag = cookieUtil.getCookie('usertag');
+//            var lastCode = tag.charCodeAt(tag.length - 1);
+//            return lastCode % 2;
+//        }
         //'0' means: has yearCode
         //'1' no
-        var tagNum = test_AB();
-        var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
+        //var tagNum = test_AB();
+        //var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
 
         function userTrack(userData) {
             var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
-            userData['taskId'] = taskStr,
-                //userData['ua'] = navigator.userAgent,
-                $.ajax({
-                    url: url,
-                    data: userData
-                })
+            //userData['taskId'] = taskStr,
+            //userData['ua'] = navigator.userAgent,
+            $.ajax({
+                url: url,
+                data: userData
+            })
         }
 
-        function mapYearCode(originYear){
-            var year = originYear.substring(0,4);
-            return year+'-2014'
-        }
+//        function mapYearCode(originYear){
+//            var year = originYear.substring(0,4);
+//            return year+'-2014'
+//        }
 
         return {
 
-            init: function () {
+            init: function (dataObj) {
                 //change demand,ugly fixed
-                var tag = test_AB();
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
@@ -134,33 +85,25 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     maxP = dataObj.maxPrice + '万';
                     if (dataObj.maxPrice == '10000') maxP = '无限'
                 }
-                var yearCode = '';
-                if (dataObj.year) {
-                    yearCode = mapYearCode(dataObj.year);
 
-                }
-                $('.year-item[data-code=' + yearCode + '] .text').addClass('selected');
 
 
                 var priceArray = ["0万", "5万", "8万", "10万", "12万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
                 var priceVal = changePrice(minP, maxP, priceArray);
-                var range = new PriceRangeSlider({
-                    ele: ".sc-rangeslider",
-                    steps: ["0万", "5万", "8万", "10万", "12万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"],
-                    min: priceVal.min,
-                    max: priceVal.max,
-                    tpl: "%"
-                });
-                //brand init
-                var initBrands = {};
-                if (dataObj.brands) {
-                    var bArr = dataObj.brands.split(',');
-                    for (var item in bArr) {
-                        initBrands[bArr[item]] = '';
-                    }
-                }
 
-                var brandsManager = createBrandsManager($('.selected-brand'));
+                //brand init
+                var initBrands = function(){
+                    var initBrs = {};
+                    if (dataObj.brands) {
+                        var bArr = dataObj.brands.split(',');
+                        for (var item in bArr) {
+                            initBrs[bArr[item]] = '';
+                        }
+                    }
+                    return initBrs;
+                }()
+
+
 
                 var curPageIndex = 1;
                 var pageStack = [];
@@ -168,9 +111,9 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 
 
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
-                if (tagNum == 1) {
-                    pages = [$('#page-1'), $('#page-2'), $('#page-4')];
-                }
+//                if (tagNum == 1) {
+//                    pages = [$('#page-1'), $('#page-2'), $('#page-4')];
+//                }
 
                 function beforePage(pageIndex) {
                     var pageStep = pageIndex - 1;
@@ -197,17 +140,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                                 car_brands: bStr
                             }
                         } else if (pageStep == 3) {
-                            if (tagNum == 1)
-                                return;
-                            var min_year, max_year;
-                            if (yearCode.trim() == '') {
-                                min_year = '';
-                                max_year = '';
-                            } else {
-                                var yArr = yearCode.split('-');
-                                min_year = yArr[0];
-                                max_year = yArr[1];
-                            }
+
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
                                 car_year_min: min_year,
@@ -218,14 +151,12 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         stepRecords.push(pageStep);
                         //console.log(trackData);
                     }
-                    window.location.hash = 'page' + pageIndex;
 
-                    if (pageIndex == pages.length - 1) {
-                        $('.submit-btn').text('下一步').show();
-                    } else if (pageIndex == pages.length) {
+
+                    if (pageIndex == pages.length) {
                         $('.submit-btn').hide();
                     } else {
-                        $('.submit-btn').text('下一步').show();
+                        $('.submit-btn').show();
                     }
 
                 }
@@ -355,6 +286,12 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     brandsManager.toggleSeries(bCode, sCode);
                 });
 
+                var qsItems = $('#price-quick-select .qs-item');
+                qsItems.click(function(){
+                    qsItems.removeClass('selected');
+                    $(this).addClass('selected');
+                })
+
                 var $curBrandArray;
                 var $curFold;
                 var curBrandCode;
@@ -385,10 +322,6 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     var brands = brandsManager.brands;
                     var minPrice = price.min.value.replace('万', ''),
                         maxPrice = price.max.value.replace('万', '');
-                    if (tagNum == 0) {
-                        var minPrice = $('.min-input').val().replace('万', '');
-                        var maxPrice = $('.max-input').val().replace('万', '');
-                    }
 
                     if (maxPrice == '无限')
                         maxPrice = 10000;
@@ -408,10 +341,10 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         data: {
                             brands: bStr,
                             //series: '',
-                            year: (tagNum == 0 ? yearCode : ''),
+
                             minPrice: minPrice,
-                            maxPrice: maxPrice,
-                            taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2')
+                            maxPrice: maxPrice
+                            //taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2')
                         },
                         success: function () {
                             setTimeout(function () {
@@ -518,7 +451,6 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 
             }
         }
-
     })();
     //window.GuWen = GuWen;
     return GuWen;
