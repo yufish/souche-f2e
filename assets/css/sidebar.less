@@ -276,6 +276,11 @@
     .scan-box{
       .scan-img{background: url(../images/index/scan.png?1) no-repeat 0px 0px;}
     }
+     .contrast-box{
+      .contrast-img{
+        background: url(../images/index/contrast.png) no-repeat 0px 0px;
+      }
+    }
 
   }
   .side-box.flash{
@@ -306,6 +311,11 @@
     }
     .scan-box{
       .scan-img{}
+    }
+     .contrast-box{
+      .contrast-img{
+        background: url(../images/index/contrast-hover.png) no-repeat 0px 0px;
+      }
     }
   }
 }
@@ -414,6 +424,15 @@
       background: #f2f2f2;
       a{
         .icon{background: url(../images/index/scan-active.png?1);}
+        i{color: #666;}
+      }
+    }
+    .conside{a{.icon{background: url(../images/index/contrast-hover.png);}}}
+    .conside:hover,.conside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/contrast-active.png);}
         i{color: #666;}
       }
     }

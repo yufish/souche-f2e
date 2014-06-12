@@ -783,6 +783,7 @@ Souche.DetailCommon = function() {
             // for (var i = 0; i < nowStr.length; i++) {
             //     $('.cutprice').append(start + nowStr.charAt(i) + end);
             // }
+
             Souche.Detail.PriceDown.init(config);
         }
     }
