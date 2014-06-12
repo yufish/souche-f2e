@@ -71,6 +71,11 @@ function filter(BrandMgr, addListener) {
                 $('#series-list .content').append(html);
             }
 
+
+            function bugHack(){
+                document.body.scrollTop=1;
+            }
+
             var wrapGrayBg= $('.wrapGrayBg');
 
             function showPopup_b() {
@@ -83,6 +88,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
             function showPopup_s() {
@@ -95,6 +101,7 @@ function filter(BrandMgr, addListener) {
                     top: scrollTop + 50
                 }).removeClass('hidden');
                 $('.popup-btns-wrapper').removeClass('hidden');
+                bugHack()
             }
 
 
@@ -121,14 +128,14 @@ function filter(BrandMgr, addListener) {
                 }
             })
 
-            var $remainNum = $('#remain-brand-num');
+            //var $remainNum = $('#remain-brand-num');
             $('#brand-list').on('click', '.item', function() {
                 var self = $(this);
                 var code = self.attr('data-code'),
                     name = self.find('.brand-name').text();
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
-                    $remainNum.text(BrandMgr.brands.length);
+                    //$remainNum.text(BrandMgr.brands.length);
                 } else {
                     if ( BrandMgr.brands.length>= 5) {
                         $('#tips4brandLimit5').show();
@@ -138,7 +145,7 @@ function filter(BrandMgr, addListener) {
                         return;
                     }
                     BrandMgr.addBrand(code, name);
-                    $remainNum.text(BrandMgr.brands.length);
+                    //$remainNum.text(BrandMgr.brands.length);
                 }
             });
 
@@ -171,34 +178,35 @@ function filter(BrandMgr, addListener) {
                 $('.tab-items .pane-selected-item').each(function(idx, item) {
                     $(this).attr('data-index', idx);
                 })
-                if ($('.tab-items .pane-selected-item.selected').length == 0) {
-                    selectBrandTab(0)
-                }
+//                if ($('.tab-items .pane-selected-item.selected').length == 0) {
+//                    selectBrandTab(0)
+//                }
                 showPopup_s();
             })
-            $('.tab-items').on('click', '.selected-brand-item', function() {
-                var i = $(this).attr('data-index');
-                selectBrandTab(i);
-            })
+//            $('.tab-items').on('click', '.selected-brand-item', function() {
+//                var i = $(this).attr('data-index');
+//                selectBrandTab(i);
+//            })
 
             //车系弹出层的title
-            var seriesPopupTitle = $('#series-list .title');
+            //var seriesPopupTitle = $('#series-list .title');
 
-            function selectBrandTab(index) {
-                $('.content-tabs .content').removeClass('selected').eq(index).addClass('selected');
-
-                var pSelectItem = $('.tab-items .pane-selected-item').removeClass('selected').eq(index);
-                pSelectItem.addClass('selected');
-                var bName = pSelectItem.find('.selected-brand-name').text(),
-                    bCode = pSelectItem.attr('data-code');
-                seriesPopupTitle.text(bName).attr('data-code', bCode);
-            }
+//            function selectBrandTab(index) {
+//                $('.content-tabs .content').removeClass('selected').eq(index).addClass('selected');
+//
+//                var pSelectItem = $('.tab-items .pane-selected-item').removeClass('selected').eq(index);
+//                pSelectItem.addClass('selected');
+//                var bName = pSelectItem.find('.selected-brand-name').text(),
+//                    bCode = pSelectItem.attr('data-code');
+//                seriesPopupTitle.text(bName).attr('data-code', bCode);
+//            }
             $('#brand-buxian').click(function() {
+                _hidePopup();
                 BrandMgr.noLimitBrand();
             })
 
-            $('#series-buxian').click(function() {
-                var bCode = seriesPopupTitle.attr('data-code');
+            $('#series-wrapper .content-tabs').on('click','.series-buxian',function() {
+                var bCode = $(this).attr('data-code');
                 BrandMgr.noLimitSeries(bCode);
             })
 

@@ -4716,6 +4716,7 @@ body .apply_popup .popup-title {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10000;
 }
 #wx-popup img {
   margin: 4px;

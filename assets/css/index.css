@@ -1816,7 +1816,11 @@ div {
   height: 90px;
   position: fixed;
   right: 0px;
+<<<<<<< HEAD
   bottom: 250px;
+=======
+  bottom: 315px;
+>>>>>>> 05a677c537dc17407c26a7b5047d08e1d7942c53
   z-index: 10000;
 }
 #my-advisor img {
@@ -1900,7 +1904,7 @@ div {
 }
 .sidebar {
   width: 58px;
-  height: 160px;
+  height: 215px;
   background: #f7f7f7;
   position: fixed;
   right: 0px;
@@ -1970,6 +1974,15 @@ div {
 .sidebar .side-box.flash .collect-box .collect-img {
   background: url(../images/index/collect-hover.png?1) no-repeat 0px 0px;
 }
+.sidebar .side-box.flash {
+  background: #FC7000;
+}
+.sidebar .side-box.flash a i {
+  color: #fff8dd;
+}
+.sidebar .side-box.flash .collect-box .collect-img {
+  background: url(../images/index/collect-hover.png?1) no-repeat 0px 0px;
+}
 .sidebar .side-box:hover {
   background: #FC7000;
 }
@@ -1984,6 +1997,12 @@ div {
 }
 .sidebar .side-box:hover .sell-box .sell-img {
   background-position: -200px 0;
+<<<<<<< HEAD
+=======
+}
+.sidebar .side-box:hover .contrast-box .contrast-img {
+  background: url(../images/index/contrast-hover.png) no-repeat 0px 0px;
+>>>>>>> 05a677c537dc17407c26a7b5047d08e1d7942c53
 }
 .sidebar.active {
   width: 80px !important;

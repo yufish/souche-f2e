@@ -4223,48 +4223,7 @@ body {
     width: 10px;
     height: 30px;
 }
-#guwen-h5-2 {
-    position: relative;
-    background-color: #fff;
-}
-#guwen-h5-2 #page-1,
-#guwen-h5-2 #page-2,
-#guwen-h5-2 #page-3,
-#guwen-h5-2 #page-4 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-}
-#guwen-h5-2 #page-2 {
-    height: 1150px;
-}
-#guwen-h5-2 #page-2,
-#guwen-h5-2 #page-3,
-#guwen-h5-2 #page-4 {
-    left: 100%;
-    display: none;
-}
-#guwen-h5-2 .wrapper {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-}
-#guwen-h5-2 .btns {
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-#guwen-h5-2 .btns button {
-    background-color: #fc7000;
-    width: 300px;
-    height: 40px;
-    color: #fff;
-    border-radius: 8px;
-    border: none;
-    font-size: 18px;
-}
+
 .brand-zimu {
     background: #e4e4e4;
 }
@@ -4600,18 +4559,6 @@ body {
     border: 2px solid #fc7000;
     background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
     background-size: 14px;
-}
-.content #carYearContainer {
-    margin: 25px 0 100px 0px;
-    padding: 0 20px;
-}
-.content #carYearContainer .year-group {
-    overflow: hidden;
-}
-.content #carYearContainer .year-item {
-    text-align: center;
-    float: left;
-    width: 33.3%;
 }
 .content #carYearContainer .year-item .text {
     border: 2px solid #dfdfdf;
@@ -5148,17 +5095,7 @@ body {
 .no-item a {
     color: #007cca;
 }
-.brand-wrapper {
-    width: 60px;
-    border: 2px solid #fff;
-    margin: 0 auto
-}
-.brand-wrapper.selected {
-    border-color: #fc7000;
-    background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
-    background-size: 14px;
-    border-radius: 8px;
-}
+
 #filtercar-new .group {
     margin: 10px;
     border: 1px solid #ccc;

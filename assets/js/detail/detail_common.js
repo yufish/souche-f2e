@@ -24,9 +24,9 @@
         $body: $("body, html"),
         $winTop: "",
         mainTop: $("#detail_main").offset().top - 50,
-        sumTop: $("#onsale_sum").offset().top - 50,
+        // sumTop: $("#onsale_sum").offset().top - 50,
         paraTop: $("#detail_para").offset().top - 50,
-        recordTop: $("#onsale_record").offset().top - 50,
+        // recordTop: $("#onsale_record").offset().top - 50,
         navVisible: false,
         cNav: function(current) {
             paras.$lastNav.removeClass("activeNav");
@@ -809,6 +809,7 @@ Souche.DetailCommon = function() {
             // for (var i = 0; i < nowStr.length; i++) {
             //     $('.cutprice').append(start + nowStr.charAt(i) + end);
             // }
+
             Souche.Detail.PriceDown.init(config);
 
             $(".addcarduibi input")[0].checked?$(".addcarduibi input").attr("disabled","disabled"):""

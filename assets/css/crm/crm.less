@@ -438,13 +438,6 @@
         float: right;
         width: 50px;
         height: 30px;
-        border: 1px solid #D6D6D6;
-        border-radius: 2px;
-        line-height: 27px;
-        text-align: center;
-        cursor: pointer;
-        background: #F9F9F9;
-        color: #888;
       }
     }
   }
@@ -537,7 +530,7 @@
       .detail-info{
         border-top: 1px dotted #D6D6D6;
       }
-      .detail-hidden{
+      .detail-show.detail-hidden{
         height: 12px;
         background: url(../../images/crm/hide.png) no-repeat;
         background-position: center;
@@ -596,5 +589,469 @@
   .content-right{
     width: 835px;
     float: right;
+    .topic{
+      .title{
+        font-size: 14px;
+        color: #333;
+        font-weight: bold;
+        border-bottom: 1px solid #D6D6D6;
+        line-height: 45px;
+      }
+      .topic-head{
+        line-height: 40px;
+        span{
+          margin-right: 10px;
+        }
+        label{
+          margin-right: 20px;
+          font-weight: normal;
+        }
+      }
+      .topic-list{
+        font-size: 12px;
+        border-top: 1px solid #D6D6D6;
+        border-bottom: 1px solid #D6D6D6;
+        tr{
+          height: 30px;
+          border-bottom: 1px solid #D6D6D6;
+          background: #fff;
+
+        }
+        th{
+          padding-left: 10px;
+        }
+        td{
+          padding-left: 10px;
+        }
+        .table-tit{
+          background: #F5F5F5;
+        }
+      }
+      .paging{
+        float: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        line-height: 28px;
+        span{
+          color: #1271BF;
+          margin-right: 10px;
+          display: block;
+          float: left;
+          line-height: 28px;
+          font-weight: bold;
+        }
+        em{
+          display: block;
+          float: left;
+        }
+        input{
+          display: block;
+          float: left;
+          width: 40px;
+          height: 28px;
+          border: 1px solid #D6D6D6;
+          margin: 0 10px;
+          font-size: 12px;
+          padding: 4px;
+          line-height: 20px;
+          text-align: center;
+        }
+        a{
+          display: block;
+          float: left;
+        }
+        .page{
+          height: 28px;
+          width: 28px;
+          border: 1px solid #D6D6D6;
+          background: #fff;
+          line-height: 28px;
+          color: #666;
+          margin-right: 10px;
+          text-align: center;
+        }
+        .next{
+          width: 60px;
+          height: 28px;
+          border: 1px solid #D6D6D6;
+          background: #fff;
+          line-height: 28px;
+          margin-right: 10px;
+          text-align: center;
+          margin-left: 10px;
+          color: #666;
+        }
+        .submit{
+          width: 45px;
+          height: 28px;
+          border: 1px solid #D6D6D6;
+          background: #F6F6F6;
+          color: #444;
+          text-align: center;
+          margin-left: 10px;
+        }
+      }
+    }
+    .multimeter{
+      margin-top: 40px;
+      ul{
+        li{
+          a{
+            background: #FAFAFA;
+          }
+        }
+      }
+      .screen{
+        margin-top: 10px;
+        font-size: 13px;
+        
+        line-height: 28px;
+        span{
+          font-weight: bold;
+          margin-left: 15px;
+        }
+        input{
+          width: 35px;
+          height: 28px;
+          border: 1px solid #D6D6D6;
+          background: #fff;
+          color: #666;
+          line-height: 20px;
+          margin-right: 5px;
+          padding-left: 5px;
+        }
+        select{
+          height: 28px;
+        }
+      }
+    }
+    .intent{
+      margin-top: 15px;
+      position: relative;
+      margin-bottom: 15px;
+      .title{
+        float: left;
+        font-weight: bold;
+        margin-right: 10px;
+        line-height: 35px;
+      }
+      .model-but{
+        float: left;
+        width: 380px;
+        a{
+          color: #127BD2;
+          border-color: #127BD2;
+          background: #EBEBEC;
+        }
+        a:hover{
+          color: #EBEBEC;
+          background-color: #127BD2;
+        }
+        .a-active{
+          color: #EBEBEC;
+          background-color: #127BD2;
+        }
+      }
+      .add-carinfo{
+        position: absolute;
+        width: 130px;
+        height: 34px;
+        color: #666;
+        top: 1px;
+        right: 25px;
+      }
+    }
+    .car-model{
+      font-size: 13px;
+      border-top: 1px solid #D6D6D6;
+      tr{
+        border-bottom: 1px solid #D6D6D6;
+        height: 30px;
+      }
+      th{padding-left: 10px;}
+      td{padding-left: 10px;}
+      .cardetail{
+        background: #fff;
+        color: #444;
+        span{
+            margin-right: 15px;
+          }
+        .cancel{
+          color: #127BD2;
+          cursor: pointer;
+        }
+      }
+      .sold {
+            color: #999;
+          }
+      .table-head{
+        background: #F5F5F5;
+        cursor: pointer;
+        th{
+          font-weight: bold;
+        }
+       
+        .time{
+          color: #888;
+        }
+        .action{
+          color: #127BD2;
+          a{
+            margin-right: 20px;
+            cursor: pointer;
+          }
+        }
+        i{
+          display:block;
+          width: 15px;
+          height: 14px;
+          background: url(../../images/crm/car-model.png) no-repeat;
+          float: left;
+          margin-top: 2px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .sendto-phone{
+      margin-top: 15px;
+      border-bottom: 1px solid #D6D6D6;
+      padding-bottom: 10px;
+    }
+    .task-text{
+      margin-top: 15px;
+      color: #fc7000;
+      em{
+        font-weight: bold;
+      }
+    }
+    .addrecord{
+      margin-top: 20px;
+      button{
+        margin: 0 auto;
+        display: block;
+      }
+      
+    }
+  }
+}
+.addcar{
+  width: 510px;
+  height: 490px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  padding: 15px;
+  .close{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(../../images/crm/close2.png) no-repeat;
+    opacity: 1;
+  }
+  .title{
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  #content{
+    span{
+      font-weight: bold;
+    }
+    form{
+      .price-yuji{
+        margin-bottom: 10px;
+        input{
+          width: 50px;
+          height: 25px;
+          margin:0 5px; 
+          padding-left: 5px;
+        }
+      }
+      .addbynum{
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e1e1e1;
+        padding-bottom: 10px;
+        input{
+          width: 105px;
+          height: 30px;
+          margin-right: 10px;
+          padding-left: 5px;
+        }
+
+      }
+      .addbymodel{
+        margin-bottom: 15px;
+        .bumodel-box{
+          width: 365px;
+          float: right;
+          .select{
+          .select-box{
+            float: left;
+            width: 180px;
+            select{
+              width: 70px;
+              margin: 5px;
+            }
+            label{
+              font-weight: normal;
+            }
+          }
+          }
+          .color{
+            span{
+              font-weight: bold;
+              margin-left: 7px;
+            }
+            .color-box{
+              padding: 5px;
+              label{
+                font-weight: normal;
+                margin-right: 10px;
+              }
+              input{
+
+              }
+            }
+          }
+          .add{
+            margin-left: 7px;
+            .tit{
+              font-weight: bold;
+            } 
+            textarea{
+              padding: 5px;
+            }
+          }
+        }
+      }
+      .submit-add{
+        margin: 0 auto;
+        width: 85px;
+      }
+    }
+  }
+}
+.addrecords{
+  width: 710px;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  select{
+      width: 130px;
+    }
+  .close{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(../../images/crm/close2.png) no-repeat;
+    opacity: 1;
+  }
+  .communicate{
+
+    .com-detail{
+      width: 430px;
+      float: left;
+      border-right:1px dashed #e2e2e2;
+      .time{
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .reuslt{
+        margin-bottom: 10px;
+      }
+      .next-time{
+        margin-bottom: 10px;
+      }
+      .remark{
+        margin-bottom: 10px;
+      }
+      .notes{
+        margin-bottom: 10px;
+        textarea{
+          padding: 5px;
+        }
+      }
+      span{
+        font-weight: bold;
+        margin-right: 24px;
+      }
+    }
+    .change{
+      width: 230px;
+      float: right;
+      .tit{
+        font-weight: bold;
+        font-size: 15px;
+        margin:10px 0;
+      }
+      span{
+        margin-right: 5px;
+        font-weight: bold;
+      }
+      .buylevel{
+        margin-bottom: 10px;
+      }
+      .soldlevel{
+        margin-bottom: 10px;
+      }
+      .mark{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .yuyue{
+    .tit{
+      margin-bottom: 10px;
+    }
+    .yuyue-box{
+      margin-left: 20px;
+      margin-bottom: 10px;
+      em{
+        color: #FF1D1D;
+      }
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+  .message{
+    .tit{
+      margin-bottom: 10px;
+    }
+    .mess-box{
+      margin-left: 20px;
+      margin-bottom: 10px;
+      textarea{
+        padding: 5px;
+      }
+
+    }
+  }
+  .daodian{
+    margin-bottom: 20px;
+    .tit{
+      margin-bottom: 10px;
+    }
+    .daodian-box{
+       margin-left: 20px;
+      margin-bottom: 10px;
+      em{
+        color: #FF1D1D;
+      }
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+  .save-but{
+    width: 184px;
+    margin: 0 auto;
+    button{
+      width: 180px;
+    }
   }
 }

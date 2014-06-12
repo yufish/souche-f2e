@@ -1,0 +1,193 @@
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/crm/crm.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/bootstrap/bootstrap3.css" rel="stylesheet" type="text/css" />
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
+  body
+    .addcar
+      .close 
+      .title 添加意向车辆-两种方式
+      #content
+        form
+          .price-yuji
+            span 预计车辆总价：
+            input(type="text" style="margin-left:13px;")
+            em —
+            input(type="text")
+            em 万元
+          .addbynum
+            span 通过搜车号添加：
+            input(type="text" value="搜车号")
+            <button type="button" class="btn btn-default btn-sm">获取车型</button>
+          .addbymodel.clearfix
+            span 或通过车型添加：
+            .bumodel-box
+              .select.clearfix
+                .brand.select-box 
+                  label(style="margin-left:0px;") *品牌：
+                  select
+                    option 大众
+                    option 奥迪
+                    option 宝马
+                    option 沃尔沃
+                    option 丰田
+                .car.select-box 
+                  label(style="margin-left:0px;") 车系：
+                  select(style="margin-left:18px;") 
+                    option POLO
+                    option X6
+                    option X5
+                .output.select-box 
+                  label(style="margin-left:7px;") 排量：
+                  select
+                    option 1.5L以下
+                    option 1.6-2.0L
+                    option 2.0-2.5L
+                .gearbox.select-box 
+                  label 变速箱：
+                  select
+                    option 手动
+                    option 自动
+                    option 不限
+              .color
+                span 颜色：
+                .color-box
+                  input(type="checkbox")
+                  label 银灰
+                  input(type="checkbox")
+                  label 深灰
+                  input(type="checkbox")
+                  label 黑色
+                  input(type="checkbox")
+                  label 白色
+                  input(type="checkbox")
+                  label 红色
+                  input(type="checkbox")
+                  label 蓝色
+                  input(type="checkbox")
+                  label 咖啡
+                  input(type="checkbox")
+                  label 香槟
+                  input(type="checkbox")
+                  label 黄色
+                  input(type="checkbox")
+                  label 紫色
+                  input(type="checkbox")
+                  label 绿色
+                  input(type="checkbox")
+                  label 橙色
+                  input(type="checkbox")
+                  label 其他
+              .add
+                .tit 其他补充：
+                textarea(rows="3" cols="45")
+          .submit-add.clearfix
+            <button type="button" class="btn btn-primary btn-sm">保存这辆车</button>
+    .addrecords
+      .close
+      .communicate.clearfix
+        .com-detail
+          .time 
+            span 沟通时间：
+            em 2014-05-10
+          .reuslt
+            span 处理结果：
+            select
+              option 已处理
+              option 未处理
+          .next-time
+            span(style="margin-right:5px;") 下次处理时间:
+            input.day
+            input
+          .remark
+            span 客户备注：
+            input
+          .notes
+            span 沟通记录：
+            textarea(rows="3" cols="40")
+        .change
+          .tit 快捷修改客户状态
+          .buylevel
+            span 买家级别：
+            select
+              option H级
+              option A级
+          .soldlevel
+            span 卖家级别：
+            select
+              option H级
+              option A级
+          .mark
+            span 客户标记：
+            select
+              option 非常重要
+              option 很重要
+      .yuyue
+        .tit 
+          input(type="checkbox")
+          label 预约到店
+        .mengdian.yuyue-box
+          em *
+          span 预约门店：
+          select
+            option 北京
+            option 杭州
+        .sales.yuyue-box
+          em *
+          span 分配销售：
+          select
+            option 陈国旗
+            option 王小二
+        .yuyue-day.yuyue-box
+          em *
+          span 预约日期：
+          input
+        .period.yuyue-box
+          span(style="margin-left:7px;") 具体时间：
+          select
+            option 上午(10:00-12:00)
+            option 下午(12:00-18:00)
+            option 晚上(18:00-22:00)
+      .message
+        .tit
+          input(type="checkbox")
+          label 发送短信
+        .message-cont
+          .message-type.mess-box
+            select(style="margin-left:80px;margin-top:-35px;")
+              option 预约短信
+              option 推荐短信
+              option 收藏短信
+          .message-text.mess-box
+            textarea(rows="4" cols="40" style="margin-left:80px;")
+      .daodian
+        .tit
+          input(type="checkbox")
+          label 客户已到店
+        .mengdian.daodian-box
+          em *
+          span 到店门店：
+          select
+            option 北京
+            option 杭州
+            option 上海
+        .sales.daodian-box
+          span(style="margin-left:7px;") 接待销售：
+          select
+            option 陈国旗
+            option 王小伟
+            option 张晓晨
+        .date.daodian-box
+          em *
+          span 到店日期：
+          input
+      .save-but.clearfix.
+        <button type="button" class="btn btn-primary">保存</button>
+
+

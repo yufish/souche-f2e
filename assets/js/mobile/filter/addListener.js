@@ -70,11 +70,17 @@
                 success: function (data) {
                     self._makeTab(bCode,bName);
                     var codes = data['codes'];
-                    var start='<div class="content" data-code="'+bCode+'">';
+
+                    var start=  '<div class="content" data-code="'+bCode+'">'
+                                +'<div class="clearfix" style="background: #524A4A">'
+                                +   '<div class="title">'+bName+'</div>'
+                                +   '<div class="buxian series-buxian" data-code="'+bCode+'">不限车系</div>'
+                                +'</div>'
+
                     var end ='</div>';
                     var html = '';
                     for (var i in codes) {
-                        html += '<div class="clearfix">';
+                        html += '<div class="clearfix" >';
                         html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
                         var s = codes[i];
                         for (var j in s) {
@@ -222,7 +228,22 @@
         }
     }
 
-
+//    var brandRemainingNumLtn={
+//        numDom:$('#remain-brand-num'),
+//        process:function(e){
+//            var numDom = this.numDom;
+//            var eType = e.eventType;
+//            if(eType=='addBrand'){
+//                numDom.text(e.bLen);
+//            }
+//            if(eType=='removeBrand'){
+//                numDom.text(e.bLen);
+//            }
+//            if(eType=='noLimitBrand'){
+//                numDom.text(0);
+//            }
+//        }
+//    }
 
     function addLtns(BrandMgr){
         BrandMgr.addLtn(brandPaneLtn);
@@ -231,6 +252,7 @@
         BrandMgr.addLtn(seriesPaneLtn);
         BrandMgr.addLtn(selectedSeriesLtn);
         BrandMgr.addLtn(seriesNumLtn);
+        //BrandMgr.addLtn(brandRemainingNumLtn);
     }
     return addLtns;
 })

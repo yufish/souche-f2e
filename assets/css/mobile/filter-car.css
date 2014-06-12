@@ -121,6 +121,10 @@ html,body{
     height: 35px;
     font-weight: bold;
     float: left;
+    color:#fff;
+}
+#filter-car .filter-popup .title.brand-title {
+    color:#000;
 }
 #filter-car .filter-popup .buxian {
     float: right;
@@ -164,11 +168,13 @@ html,body{
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #fff;
-
+    font-size: 13px;
 }
 #filter-car .series-item.selected .series-name {
     color: #ff4400;
     border: 1px solid #ff4400;
+    background: url('../../images/mob/gou.png') no-repeat 101% bottom;
+    background-size: 12px 12px;
 }
 #filter-car #series-list .series-item{
     text-align: center;
@@ -216,7 +222,6 @@ html,body{
     margin-left: 5px;
 }
 #filter-car .selected-item{
-    border:1px solid #dfdfdf;
     line-height: 30px;
     padding:0 8px 0 10px;
     float: left;
@@ -280,9 +285,7 @@ html,body{
 #filter-car .pane-selected-item.selected{
     border-bottom: 1px solid #fff;
 }
-#filter-car .content-tabs .content{
-    display: none;
-}
+
 #filter-car .content-tabs .content.selected{
     display: block;
 }

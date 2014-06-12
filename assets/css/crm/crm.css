@@ -424,13 +424,6 @@
   float: right;
   width: 50px;
   height: 30px;
-  border: 1px solid #D6D6D6;
-  border-radius: 2px;
-  line-height: 27px;
-  text-align: center;
-  cursor: pointer;
-  background: #F9F9F9;
-  color: #888;
 }
 .content-box .info-box {
   border: 1px solid #D6D6D6;
@@ -517,7 +510,7 @@
 .content-box .info-box .detail .detail-info {
   border-top: 1px dotted #D6D6D6;
 }
-.content-box .info-box .detail .detail-hidden {
+.content-box .info-box .detail .detail-show.detail-hidden {
   height: 12px;
   background: url(../../images/crm/hide.png) no-repeat;
   background-position: center;
@@ -574,4 +567,442 @@
 .content-box .content-right {
   width: 835px;
   float: right;
+}
+.content-box .content-right .topic .title {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #D6D6D6;
+  line-height: 45px;
+}
+.content-box .content-right .topic .topic-head {
+  line-height: 40px;
+}
+.content-box .content-right .topic .topic-head span {
+  margin-right: 10px;
+}
+.content-box .content-right .topic .topic-head label {
+  margin-right: 20px;
+  font-weight: normal;
+}
+.content-box .content-right .topic .topic-list {
+  font-size: 12px;
+  border-top: 1px solid #D6D6D6;
+  border-bottom: 1px solid #D6D6D6;
+}
+.content-box .content-right .topic .topic-list tr {
+  height: 30px;
+  border-bottom: 1px solid #D6D6D6;
+  background: #fff;
+}
+.content-box .content-right .topic .topic-list th {
+  padding-left: 10px;
+}
+.content-box .content-right .topic .topic-list td {
+  padding-left: 10px;
+}
+.content-box .content-right .topic .topic-list .table-tit {
+  background: #F5F5F5;
+}
+.content-box .content-right .topic .paging {
+  float: right;
+  padding-right: 10px;
+  margin-top: 10px;
+  line-height: 28px;
+}
+.content-box .content-right .topic .paging span {
+  color: #1271BF;
+  margin-right: 10px;
+  display: block;
+  float: left;
+  line-height: 28px;
+  font-weight: bold;
+}
+.content-box .content-right .topic .paging em {
+  display: block;
+  float: left;
+}
+.content-box .content-right .topic .paging input {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 28px;
+  border: 1px solid #D6D6D6;
+  margin: 0 10px;
+  font-size: 12px;
+  padding: 4px;
+  line-height: 20px;
+  text-align: center;
+}
+.content-box .content-right .topic .paging a {
+  display: block;
+  float: left;
+}
+.content-box .content-right .topic .paging .page {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+  line-height: 28px;
+  color: #666;
+  margin-right: 10px;
+  text-align: center;
+}
+.content-box .content-right .topic .paging .next {
+  width: 60px;
+  height: 28px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+  line-height: 28px;
+  margin-right: 10px;
+  text-align: center;
+  margin-left: 10px;
+  color: #666;
+}
+.content-box .content-right .topic .paging .submit {
+  width: 45px;
+  height: 28px;
+  border: 1px solid #D6D6D6;
+  background: #F6F6F6;
+  color: #444;
+  text-align: center;
+  margin-left: 10px;
+}
+.content-box .content-right .multimeter {
+  margin-top: 40px;
+}
+.content-box .content-right .multimeter ul li a {
+  background: #FAFAFA;
+}
+.content-box .content-right .multimeter .screen {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 28px;
+}
+.content-box .content-right .multimeter .screen span {
+  font-weight: bold;
+  margin-left: 15px;
+}
+.content-box .content-right .multimeter .screen input {
+  width: 35px;
+  height: 28px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+  color: #666;
+  line-height: 20px;
+  margin-right: 5px;
+  padding-left: 5px;
+}
+.content-box .content-right .multimeter .screen select {
+  height: 28px;
+}
+.content-box .content-right .intent {
+  margin-top: 15px;
+  position: relative;
+  margin-bottom: 15px;
+}
+.content-box .content-right .intent .title {
+  float: left;
+  font-weight: bold;
+  margin-right: 10px;
+  line-height: 35px;
+}
+.content-box .content-right .intent .model-but {
+  float: left;
+  width: 380px;
+}
+.content-box .content-right .intent .model-but a {
+  color: #127BD2;
+  border-color: #127BD2;
+  background: #EBEBEC;
+}
+.content-box .content-right .intent .model-but a:hover {
+  color: #EBEBEC;
+  background-color: #127BD2;
+}
+.content-box .content-right .intent .model-but .a-active {
+  color: #EBEBEC;
+  background-color: #127BD2;
+}
+.content-box .content-right .intent .add-carinfo {
+  position: absolute;
+  width: 130px;
+  height: 34px;
+  color: #666;
+  top: 1px;
+  right: 25px;
+}
+.content-box .content-right .car-model {
+  font-size: 13px;
+  border-top: 1px solid #D6D6D6;
+}
+.content-box .content-right .car-model tr {
+  border-bottom: 1px solid #D6D6D6;
+  height: 30px;
+}
+.content-box .content-right .car-model th {
+  padding-left: 10px;
+}
+.content-box .content-right .car-model td {
+  padding-left: 10px;
+}
+.content-box .content-right .car-model .cardetail {
+  background: #fff;
+  color: #444;
+}
+.content-box .content-right .car-model .cardetail span {
+  margin-right: 15px;
+}
+.content-box .content-right .car-model .cardetail .cancel {
+  color: #127BD2;
+  cursor: pointer;
+}
+.content-box .content-right .car-model .sold {
+  color: #999;
+}
+.content-box .content-right .car-model .table-head {
+  background: #F5F5F5;
+  cursor: pointer;
+}
+.content-box .content-right .car-model .table-head th {
+  font-weight: bold;
+}
+.content-box .content-right .car-model .table-head .time {
+  color: #888;
+}
+.content-box .content-right .car-model .table-head .action {
+  color: #127BD2;
+}
+.content-box .content-right .car-model .table-head .action a {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.content-box .content-right .car-model .table-head i {
+  display: block;
+  width: 15px;
+  height: 14px;
+  background: url(../../images/crm/car-model.png) no-repeat;
+  float: left;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.content-box .content-right .sendto-phone {
+  margin-top: 15px;
+  border-bottom: 1px solid #D6D6D6;
+  padding-bottom: 10px;
+}
+.content-box .content-right .task-text {
+  margin-top: 15px;
+  color: #fc7000;
+}
+.content-box .content-right .task-text em {
+  font-weight: bold;
+}
+.content-box .content-right .addrecord {
+  margin-top: 20px;
+}
+.content-box .content-right .addrecord button {
+  margin: 0 auto;
+  display: block;
+}
+.addcar {
+  width: 510px;
+  height: 490px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  padding: 15px;
+}
+.addcar .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../../images/crm/close2.png) no-repeat;
+  opacity: 1;
+}
+.addcar .title {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.addcar #content span {
+  font-weight: bold;
+}
+.addcar #content form .price-yuji {
+  margin-bottom: 10px;
+}
+.addcar #content form .price-yuji input {
+  width: 50px;
+  height: 25px;
+  margin: 0 5px;
+  padding-left: 5px;
+}
+.addcar #content form .addbynum {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+}
+.addcar #content form .addbynum input {
+  width: 105px;
+  height: 30px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.addcar #content form .addbymodel {
+  margin-bottom: 15px;
+}
+.addcar #content form .addbymodel .bumodel-box {
+  width: 365px;
+  float: right;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box {
+  float: left;
+  width: 180px;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box select {
+  width: 70px;
+  margin: 5px;
+}
+.addcar #content form .addbymodel .bumodel-box .select .select-box label {
+  font-weight: normal;
+}
+.addcar #content form .addbymodel .bumodel-box .color span {
+  font-weight: bold;
+  margin-left: 7px;
+}
+.addcar #content form .addbymodel .bumodel-box .color .color-box {
+  padding: 5px;
+}
+.addcar #content form .addbymodel .bumodel-box .color .color-box label {
+  font-weight: normal;
+  margin-right: 10px;
+}
+.addcar #content form .addbymodel .bumodel-box .add {
+  margin-left: 7px;
+}
+.addcar #content form .addbymodel .bumodel-box .add .tit {
+  font-weight: bold;
+}
+.addcar #content form .addbymodel .bumodel-box .add textarea {
+  padding: 5px;
+}
+.addcar #content form .submit-add {
+  margin: 0 auto;
+  width: 85px;
+}
+.addrecords {
+  width: 710px;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+}
+.addrecords select {
+  width: 130px;
+}
+.addrecords .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../../images/crm/close2.png) no-repeat;
+  opacity: 1;
+}
+.addrecords .communicate .com-detail {
+  width: 430px;
+  float: left;
+  border-right: 1px dashed #e2e2e2;
+}
+.addrecords .communicate .com-detail .time {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.addrecords .communicate .com-detail .reuslt {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .next-time {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .remark {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .notes {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .com-detail .notes textarea {
+  padding: 5px;
+}
+.addrecords .communicate .com-detail span {
+  font-weight: bold;
+  margin-right: 24px;
+}
+.addrecords .communicate .change {
+  width: 230px;
+  float: right;
+}
+.addrecords .communicate .change .tit {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 10px 0;
+}
+.addrecords .communicate .change span {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.addrecords .communicate .change .buylevel {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .change .soldlevel {
+  margin-bottom: 10px;
+}
+.addrecords .communicate .change .mark {
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .tit {
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .yuyue-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .yuyue .yuyue-box em {
+  color: #FF1D1D;
+}
+.addrecords .yuyue .yuyue-box span {
+  font-weight: bold;
+}
+.addrecords .message .tit {
+  margin-bottom: 10px;
+}
+.addrecords .message .mess-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .message .mess-box textarea {
+  padding: 5px;
+}
+.addrecords .daodian {
+  margin-bottom: 20px;
+}
+.addrecords .daodian .tit {
+  margin-bottom: 10px;
+}
+.addrecords .daodian .daodian-box {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addrecords .daodian .daodian-box em {
+  color: #FF1D1D;
+}
+.addrecords .daodian .daodian-box span {
+  font-weight: bold;
+}
+.addrecords .save-but {
+  width: 184px;
+  margin: 0 auto;
+}
+.addrecords .save-but button {
+  width: 180px;
 }
