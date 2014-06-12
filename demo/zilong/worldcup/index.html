@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
     <link href="../../../assets/css/mobile/acts/worldcup.css" type="text/css"  rel="stylesheet">
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
-
-
 </head>
 <body>
     <section id="head">
@@ -62,7 +60,6 @@
                             <span class="score">8</span>
                         </div>
                     </div>
-
 
                     <div class="one-match">
                         <div class="one-title">
@@ -134,55 +131,65 @@
             </div>
         </footer>
 
+
+
+        </div>
+        <div style="width:111px;height: 39px;margin:20px auto;">
+
+            <img src='../../../assets/images/mob/huodong/worldcup/wc-logo.png'>
+        </div>
+    </section>
+    <div id="popup">
+        <div class="wrapGrayBg"></div>
         <div id="popup-submit">
             <form id="submit-form">
-            <p class="text-center">请选择您支持的球队<p>
-            <select id="team" name="team" class="input-box">
-                <optgroup label="欧洲区">
-                    <option value ="1">西班牙</option>
-                    <option value ="2">德国</option>
-                    <option value ="3">意大利</option>
-                    <option value ="4">英格兰</option>
-                    <option value ="5">葡萄牙</option>
-                    <option value ="6">法国</option>
-                    <option value ="7">荷兰</option>
-                    <option value ="8">比利时</option>
-                    <option value ="9">俄罗斯</option>
-                    <option value ="10">瑞士</option>
-                    <option value ="11">波黑</option>
-                    <option value ="12">希腊</option>
-                    <option value ="13">克罗地亚</option>
-                </optgroup>
-                <optgroup label="南美区">
-                    <option value ="14">巴西</option>
-                    <option value ="15">阿根廷</option>
-                    <option value ="16">哥伦比亚</option>
-                    <option value ="17">智利</option>
-                    <option value ="18">厄瓜多尔</option>
-                    <option value ="19">乌拉圭</option>
-                </optgroup>
-                <optgroup label="非洲区">
-                    <option value ="20">科特迪瓦</option>
-                    <option value ="21">喀麦隆</option>
-                    <option value ="22">尼日利亚</option>
-                    <option value ="23">加纳</option>
-                    <option value ="24">阿尔及利亚</option>
-                </optgroup>
-                <optgroup label="亚洲区">
-                    <option value ="25">日本</option>
-                    <option value ="26">韩国</option>
-                    <option value ="27">澳大利亚</option>
-                    <option value ="28">伊朗</option>
-                </optgroup>
-                <optgroup label="中北美区">
-                    <option value ="29">美国</option>
-                    <option value ="30">哥斯达黎加</option>
-                    <option value ="31">墨西哥</option>
-                    <option value ="32">洪都拉斯</option>
-                </optgroup>
-            </select>
-            <p class="text-center">请输入您的手机<p>
-            <input class="input-box" type="tel" id="phone" name="phone">
+                <p class="text-center">请选择您支持的球队<p>
+                <select id="team" name="team" class="input-box">
+                    <optgroup label="欧洲区">
+                        <option value ="1">西班牙</option>
+                        <option value ="2">德国</option>
+                        <option value ="3">意大利</option>
+                        <option value ="4">英格兰</option>
+                        <option value ="5">葡萄牙</option>
+                        <option value ="6">法国</option>
+                        <option value ="7">荷兰</option>
+                        <option value ="8">比利时</option>
+                        <option value ="9">俄罗斯</option>
+                        <option value ="10">瑞士</option>
+                        <option value ="11">波黑</option>
+                        <option value ="12">希腊</option>
+                        <option value ="13">克罗地亚</option>
+                    </optgroup>
+                    <optgroup label="南美区">
+                        <option value ="14">巴西</option>
+                        <option value ="15">阿根廷</option>
+                        <option value ="16">哥伦比亚</option>
+                        <option value ="17">智利</option>
+                        <option value ="18">厄瓜多尔</option>
+                        <option value ="19">乌拉圭</option>
+                    </optgroup>
+                    <optgroup label="非洲区">
+                        <option value ="20">科特迪瓦</option>
+                        <option value ="21">喀麦隆</option>
+                        <option value ="22">尼日利亚</option>
+                        <option value ="23">加纳</option>
+                        <option value ="24">阿尔及利亚</option>
+                    </optgroup>
+                    <optgroup label="亚洲区">
+                        <option value ="25">日本</option>
+                        <option value ="26">韩国</option>
+                        <option value ="27">澳大利亚</option>
+                        <option value ="28">伊朗</option>
+                    </optgroup>
+                    <optgroup label="中北美区">
+                        <option value ="29">美国</option>
+                        <option value ="30">哥斯达黎加</option>
+                        <option value ="31">墨西哥</option>
+                        <option value ="32">洪都拉斯</option>
+                    </optgroup>
+                </select>
+                <p class="text-center">请输入您的手机<p>
+                <input class="input-box" type="tel" id="phone" name="phone">
 
             </form>
             <div id="submit-tips">
@@ -191,15 +198,8 @@
             <div style="text-align: center">
                 <button id="btn-submit">提交</button>
             </div>
-
+    </div>
         </div>
-        <div style="width:111px;height: 39px;margin:20px auto;">
-
-            <img src='../../../assets/images/mob/huodong/worldcup/wc-logo.png'>
-        </div>
-    </section>
-
-
     <script>
         var phoneReg = /^1[3458][0-9]{9}$/;
         $('#btn-submit').click(function(){
@@ -211,5 +211,20 @@
                 //
             }
         })
+
+        $('#involve').click(function(){
+            showPopup();
+        })
+        $('.wrapGrayBg').click(function(){
+            $('#popup').hide();
+        })
+        function showPopup(){
+            var scrollTop  = $(window).scrollTop();
+            var top = scrollTop+50;
+            $('#popup-submit').css({
+                top:top
+            })
+            $('#popup').show();
+        }
     </script>
 </body>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link href="../../../assets/css/mobile/acts/worldcup.css" type="text/css"  rel="stylesheet">
+    <link href="../../../assets/css/ui/jquery.datetimepicker.css" type="text/css"  rel="stylesheet">
+    <style>
+        .today-item,.future-item{
+            margin: 20px;
+        }
+        #submit,#check{
+            padding: 5px 20px;
+            background: #ff4400;
+            margin-left: 100px;
+        }
+    </style>
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="../../../assets/js/lib/jquery.datetimepicker.js"></script>
+
+</head>
+<body>
+    <div id="today">
+        <div id="today-title">今日赛程</div>
+        <div class="today-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            比分：<input type="number" class="s1">:<input type="number" class="s2">
+        </div>
+
+        <div class="today-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            比分：<input type="number" class="s1">:<input type="number" class="s2">
+        </div>
+
+        <div class="today-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            比分：<input type="number" class="s1">:<input type="number" class="s2">
+        </div>
+
+        <div class="today-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            比分：<input type="number" class="s1">:<input type="number" class="s2">
+        </div>
+    </div>
+    <div id="future">
+        <div id="future-title">赛事预告</div>
+        <div class="future-item">
+                <select class="team-1" name="team" class="team-name">
+                    <option value="0">请选择球队</option>
+                    <optgroup label="欧洲区">
+                        <option value ="1">西班牙</option>
+                        <option value ="2">德国</option>
+                        <option value ="3">意大利</option>
+                        <option value ="4">英格兰</option>
+                        <option value ="5">葡萄牙</option>
+                        <option value ="6">法国</option>
+                        <option value ="7">荷兰</option>
+                        <option value ="8">比利时</option>
+                        <option value ="9">俄罗斯</option>
+                        <option value ="10">瑞士</option>
+                        <option value ="11">波黑</option>
+                        <option value ="12">希腊</option>
+                        <option value ="13">克罗地亚</option>
+                    </optgroup>
+                    <optgroup label="南美区">
+                        <option value ="14">巴西</option>
+                        <option value ="15">阿根廷</option>
+                        <option value ="16">哥伦比亚</option>
+                        <option value ="17">智利</option>
+                        <option value ="18">厄瓜多尔</option>
+                        <option value ="19">乌拉圭</option>
+                    </optgroup>
+                    <optgroup label="非洲区">
+                        <option value ="20">科特迪瓦</option>
+                        <option value ="21">喀麦隆</option>
+                        <option value ="22">尼日利亚</option>
+                        <option value ="23">加纳</option>
+                        <option value ="24">阿尔及利亚</option>
+                    </optgroup>
+                    <optgroup label="亚洲区">
+                        <option value ="25">日本</option>
+                        <option value ="26">韩国</option>
+                        <option value ="27">澳大利亚</option>
+                        <option value ="28">伊朗</option>
+                    </optgroup>
+                    <optgroup label="中北美区">
+                        <option value ="29">美国</option>
+                        <option value ="30">哥斯达黎加</option>
+                        <option value ="31">墨西哥</option>
+                        <option value ="32">洪都拉斯</option>
+                    </optgroup>
+                </select>
+                vs
+                <select class="team-2" name="team" class="team-name">
+                    <option value="0">请选择球队</option>
+                    <optgroup label="欧洲区">
+                        <option value ="1">西班牙</option>
+                        <option value ="2">德国</option>
+                        <option value ="3">意大利</option>
+                        <option value ="4">英格兰</option>
+                        <option value ="5">葡萄牙</option>
+                        <option value ="6">法国</option>
+                        <option value ="7">荷兰</option>
+                        <option value ="8">比利时</option>
+                        <option value ="9">俄罗斯</option>
+                        <option value ="10">瑞士</option>
+                        <option value ="11">波黑</option>
+                        <option value ="12">希腊</option>
+                        <option value ="13">克罗地亚</option>
+                    </optgroup>
+                    <optgroup label="南美区">
+                        <option value ="14">巴西</option>
+                        <option value ="15">阿根廷</option>
+                        <option value ="16">哥伦比亚</option>
+                        <option value ="17">智利</option>
+                        <option value ="18">厄瓜多尔</option>
+                        <option value ="19">乌拉圭</option>
+                    </optgroup>
+                    <optgroup label="非洲区">
+                        <option value ="20">科特迪瓦</option>
+                        <option value ="21">喀麦隆</option>
+                        <option value ="22">尼日利亚</option>
+                        <option value ="23">加纳</option>
+                        <option value ="24">阿尔及利亚</option>
+                    </optgroup>
+                    <optgroup label="亚洲区">
+                        <option value ="25">日本</option>
+                        <option value ="26">韩国</option>
+                        <option value ="27">澳大利亚</option>
+                        <option value ="28">伊朗</option>
+                    </optgroup>
+                    <optgroup label="中北美区">
+                        <option value ="29">美国</option>
+                        <option value ="30">哥斯达黎加</option>
+                        <option value ="31">墨西哥</option>
+                        <option value ="32">洪都拉斯</option>
+                    </optgroup>
+                </select>
+                日期：<input class="date-time-picker" type="text" >
+        </div>
+        <div class="future-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            日期：<input class="date-time-picker" type="text" >
+        </div>
+        <div class="future-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            日期：<input class="date-time-picker" type="text" >
+        </div>
+        <div class="future-item">
+            <select class="team-1" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            vs
+            <select class="team-2" name="team" class="team-name">
+                <option value="0">请选择球队</option>
+                <optgroup label="欧洲区">
+                    <option value ="1">西班牙</option>
+                    <option value ="2">德国</option>
+                    <option value ="3">意大利</option>
+                    <option value ="4">英格兰</option>
+                    <option value ="5">葡萄牙</option>
+                    <option value ="6">法国</option>
+                    <option value ="7">荷兰</option>
+                    <option value ="8">比利时</option>
+                    <option value ="9">俄罗斯</option>
+                    <option value ="10">瑞士</option>
+                    <option value ="11">波黑</option>
+                    <option value ="12">希腊</option>
+                    <option value ="13">克罗地亚</option>
+                </optgroup>
+                <optgroup label="南美区">
+                    <option value ="14">巴西</option>
+                    <option value ="15">阿根廷</option>
+                    <option value ="16">哥伦比亚</option>
+                    <option value ="17">智利</option>
+                    <option value ="18">厄瓜多尔</option>
+                    <option value ="19">乌拉圭</option>
+                </optgroup>
+                <optgroup label="非洲区">
+                    <option value ="20">科特迪瓦</option>
+                    <option value ="21">喀麦隆</option>
+                    <option value ="22">尼日利亚</option>
+                    <option value ="23">加纳</option>
+                    <option value ="24">阿尔及利亚</option>
+                </optgroup>
+                <optgroup label="亚洲区">
+                    <option value ="25">日本</option>
+                    <option value ="26">韩国</option>
+                    <option value ="27">澳大利亚</option>
+                    <option value ="28">伊朗</option>
+                </optgroup>
+                <optgroup label="中北美区">
+                    <option value ="29">美国</option>
+                    <option value ="30">哥斯达黎加</option>
+                    <option value ="31">墨西哥</option>
+                    <option value ="32">洪都拉斯</option>
+                </optgroup>
+            </select>
+            日期：<input class="date-time-picker" type="text" >
+        </div>
+        <button id="check">检查</button>
+        <button id="submit">提交</button>
+    </div>
+    <script>
+        $('.date-time-picker').datetimepicker();
+        var today_game=[],
+                future_game=[];
+        function buildJson(){
+            today_game = [];
+            future_game=[];
+            $('.today-item').each(function(index,item){
+                $(this).css({'background':'#fff'})
+                var t1 = $(this).find('.team-1').val(),
+                        t2 = $(this).find('.team-2').val();
+                if(t1==0 || t2==0||t1==t2){
+                    $(this).css({'background':'#ff4400'})
+                    return;
+                }
+                var s1 = $(this).find('.s1').val();
+                var s2 = $(this).find('.s2').val();
+                if(isNaN(parseInt(s1)) || isNaN(parseInt(s2))){
+                    $(this).css({'background':'#ff4400'})
+                    return
+                }
+                today_game.push({teamCode:t1+'-'+t2,
+                    score:s1+'-'+s2});
+            })
+            $('.future-item').each(function(index,item){
+                $(this).css({'background':'#fff'})
+                var t1 = $(this).find('.team-1').val(),
+                        t2 = $(this).find('.team-2').val();
+                if(t1==0 || t2==0){
+                    $(this).css({'background':'#ff4400'})
+                    return;
+                }
+                var dStr = $(this).find('.date-time-picker').val();
+                if(!dStr||dStr==''){
+                    $(this).css({'background':'#ff4400'})
+                    return
+                }
+                var date = new Date(dStr);
+                var dateStr = (date.getMonth()+1)+'月'
+                        +date.getDate()+'日';
+                var timeStr = date.getHours()+':'+'00';
+                future_game.push({
+                    teamCode:t1+'-'+t2,
+                    time:timeStr,
+                    date:dateStr
+                })
+            })
+        }
+
+        $('#check').click(function(){
+            buildJson();
+
+        })
+        $('#submit').click(function(){
+            buildJson();
+            var data = {
+                today_game:today_game,
+                future_game:future_game
+            }
+            console.log(JSON.stringify(data));
+        })
+
+    </script>
+</body>
