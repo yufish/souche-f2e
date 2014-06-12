@@ -1,11 +1,13 @@
     Souche.OnsaleDetail = function() {
         var phoneReg = /^1[3458][0-9]{9}$/;
+        //注释#detail-nav元素  添加.onsale-tab元素 by boykiller 2014.6.9
         var paras = {
             oldClass: "",
             $lastNav: $(".activeNav"),
-            $nav: $("#detail-nav"),
             $win: $(window),
             $body: $("body, html"),
+            $navSaleTab:$("#onsale-tab"),
+            $navSaleTabFixed:$("#onsale-tab_fix"),
             $winTop: "",
             mainTop: $("#detail_main").offset().top - 50,
             sumTop: $("#onsale_sum").offset().top - 50,
@@ -19,11 +21,18 @@
             }
         };
 
-        paras.$nav.css("opacity", "0.95");
+        //paras.$nav.css("opacity", "0.95");
+        paras.$navSaleTab.css("opacity", "0.95");
+        var cacheHeight = 0;
+        if (paras.$navSaleTab.length != 0) {
+            var navSaleTabTop = paras.$navSaleTab.offset().top;
+            var navSaleTabHeight = paras.$navSaleTab.height();
+        }
 
         paras.$win.scroll(function() {
             paras.$winTop = paras.$win.scrollTop();
-            setTimeout(function() {
+           /* 去掉 detail-nav功能 by boykiller 2014.6.9
+           setTimeout(function() {
                 if (paras.$winTop >= paras.mainTop - 40) {
                     paras.$nav.slideDown(500);
                 } else {
@@ -39,6 +48,32 @@
                 paras.cNav($("#detail-nav a[href='#onsale_record']"));
             } else if (paras.$winTop >= paras.paraTop && paras.$winTop < paras.paraTop + 110) {
                 paras.cNav($("#detail-nav a[href='#detail_para']"));
+            }*/
+
+            //添加onsale-summary元素的 to fix 功能
+            if (paras.$navSaleTab.length != 0) {
+                var navSaleSumHeight = $("#onsale-summary").height();
+                if ((navSaleTabTop+cacheHeight) <= paras.$winTop && (navSaleTabTop + navSaleSumHeight) >= paras.$winTop) {
+                    if (!paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
+                            paras.$navSaleTabFixed.stop(true);
+                            paras.$navSaleTabFixed.addClass("saleTab_fixed").removeClass("hidden");
+                            paras.$navSaleTabFixed.animate({
+                                top: 0
+                            }, 300,function()
+                            {});
+                    }
+                }
+                else {
+                    if (paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
+
+                            paras.$navSaleTabFixed.stop(true);
+                            paras.$navSaleTabFixed.animate({
+                                top: -45
+                            }, 300, function () {
+                                paras.$navSaleTabFixed.addClass("hidden").removeClass("saleTab_fixed");
+                            });
+                    }
+                }
             }
         });
         var submitYuyue = function() {
