@@ -775,13 +775,15 @@ Souche.DetailCommon = function() {
 
    var  _bind=function() {
 
-       var addCarDuibi = function() {
+       var addCarDuibi = function(e) {
            var carID = config.carID;
-
+           var self = this;
+           self.e =e;
            $.ajax({
                type: "GET",
                url: "../../../soucheweb/carContrastAction/addContrastCar.json?carId=" + carID,
-               dataType:"json"
+               dataType:"json",
+               context:self
            }).done(function(data)
            {
                if (data.result == 1) {
@@ -789,9 +791,26 @@ Souche.DetailCommon = function() {
                    $(".addcarduibi").one("click",addCarDuibi);
                }
                if (data.result == 2) {
-                   alert("加入对比成功");
                    $(".addcarduibi input").attr("checked", 'true');
                    $(".addcarduibi input").attr("disabled", "disabled");
+
+                   var cloneElement = $(".addcarduibi").clone();
+                   cloneElement.css({
+                       opacity: 0.8,
+                       position: 'absolute',
+                       top: this.e.pageY + 'px',
+                       left: this.e.pageX + 'px',
+                       backgroundColor:"#BCEE68"
+                   });
+
+                   var endX = $(".side-box .contrast-img").offset().left;
+                   var endY = $(".side-box .contrast-img").offset().top;
+
+                   document.body.appendChild(cloneElement[0]);
+                   cloneElement.animate({
+                       top: endY,
+                       left: endX
+                   }, 500);
                }
            });
        }
@@ -799,7 +818,7 @@ Souche.DetailCommon = function() {
    }
 
     return {
-        init: function(_config) {
+        init: function (_config) {
             $.extend(config, _config)
             // var carPrice = parseInt($('.price-now.now').text());
             // var nowPrice = carPrice;
@@ -812,7 +831,7 @@ Souche.DetailCommon = function() {
 
             Souche.Detail.PriceDown.init(config);
 
-            $(".addcarduibi input")[0].checked?$(".addcarduibi input").attr("disabled","disabled"):""
+            $(".addcarduibi input")[0].checked ? $(".addcarduibi input").attr("disabled", "disabled") : ""
 
             _bind();
         }
