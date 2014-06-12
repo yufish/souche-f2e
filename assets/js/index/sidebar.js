@@ -74,7 +74,7 @@ Souche.Sidebar = (function() {
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
                 width: 58,
-                height: 160
+                height: 215
             }, 500, function() {
 
             })

@@ -34,26 +34,26 @@
   z-index: 10000;
   height: 45px;
   .scroll-top{
-   width: 26px;
-   height: 52px;
-   cursor: pointer;
-   color: #fff;
-   float: left;
-   margin-right: 4px;
-   opacity: 0.7;
-   display: none;
-   i{
-    display: block;
     width: 26px;
-    height: 26px;
-    background: url(../images/index/scrolltop-hover.png?123) no-repeat;
-    background-position: center;
-    background-color: #BFBFBF;
-   }
-   span{
-    display: block;
-    font-size: 0px;
-  }
+    height: 52px;
+    cursor: pointer;
+    color: #fff;
+    float: left;
+    margin-right: 4px;
+    opacity: 0.7;
+    display: none;
+    i{
+      display: block;
+      width: 26px;
+      height: 26px;
+      background: url(../images/index/scrolltop-hover.png?123) no-repeat;
+      background-position: center;
+      background-color: #BFBFBF;
+    }
+    span{
+      display: block;
+      font-size: 0px;
+    }
   }
   .scroll-top:hover{
     color: #BFBFBF;
@@ -61,31 +61,31 @@
     i{
       background: url(../images/index/scrolltop-hover.png) no-repeat;
       background-position: center;
-      background-color:#BFBFBF; 
+      background-color:#BFBFBF;
     }
     span{
       font-size: 12px;
     }
   }
   .suggest-tag{
-   width: 26px;
-   height: 52px;
-   cursor: pointer;
-   float: right;
-   color: #fff;
-   opacity: 0.7;
-   i{
-    display: block;
     width: 26px;
-    height: 26px;
-    background: url(../images/index/feedback-hover.png?123) no-repeat;
-    background-position: center;
-    background-color: #BFBFBF;
-  }
-   span{
-    display: block;
-    font-size: 0px;
-   }
+    height: 52px;
+    cursor: pointer;
+    float: right;
+    color: #fff;
+    opacity: 0.7;
+    i{
+      display: block;
+      width: 26px;
+      height: 26px;
+      background: url(../images/index/feedback-hover.png?123) no-repeat;
+      background-position: center;
+      background-color: #BFBFBF;
+    }
+    span{
+      display: block;
+      font-size: 0px;
+    }
   }
   .suggest-tag:hover{
     color: #BFBFBF;
@@ -93,7 +93,7 @@
     i{
       background: url(../images/index/feedback-hover.png) no-repeat;
       background-position: center;
-      background-color:#BFBFBF; 
+      background-color:#BFBFBF;
     }
     span{
       font-size: 12px;
@@ -148,7 +148,7 @@
   height:90px;
   position: fixed;
   right: 0px;
-  bottom: 250px;
+  bottom: 315px;
   z-index: 10000;
   img{
     display:block;
@@ -163,23 +163,23 @@
   .my-advisor-box{
     background: #fc7000;
     width: 60px;
-  height:85px;
-  display: block;
-  color:#fff;
-  padding-top: 5px;
-  position: relative;
-  z-index: 2;
-  span{
-    margin-left: 18px;
-  }
-  p{
-    margin-left: 5px;
-  }
-  .point-num{
+    height:85px;
+    display: block;
+    color:#fff;
+    padding-top: 5px;
+    position: relative;
+    z-index: 2;
+    span{
+      margin-left: 18px;
+    }
+    p{
+      margin-left: 5px;
+    }
+    .point-num{
       border-radius: 15px;
       border: 2px solid #fff;
       background: #FC7000;
-     position: absolute;
+      position: absolute;
       top: -5px;
       left: -5px;
       font-size: 12px;color: #fff;font-style: normal;text-align: center;
@@ -222,11 +222,11 @@
   .my-advisor-box{
     width: 80px !important;
     img{
-        margin-left: 9px;
-        margin-right: 29px;
-      }
+      margin-left: 9px;
+      margin-right: 29px;
+    }
     span{
-      
+
     }
     p{
 
@@ -235,13 +235,13 @@
 }
 .sidebar{
   width: 58px;
-  height: 160px;
+  height: 215px;
   background: #f7f7f7;
   position: fixed;
   right: 0px;
   bottom: 80px;
   border: 1px solid #dedede;
-  
+
   z-index: 10001;
   background-color: #f5f5f5;
   overflow: hidden;
@@ -276,11 +276,16 @@
     .scan-box{
       .scan-img{background: url(../images/index/scan.png?1) no-repeat 0px 0px;}
     }
+    .contrast-box{
+      .contrast-img{
+        background: url(../images/index/contrast.png) no-repeat 0px 0px;
+      }
+    }
 
   }
   .side-box.flash{
     background: #FC7000;
-    
+
     a{
       i{color: #fff8dd;}
     }
@@ -290,7 +295,7 @@
   }
   .side-box:hover{
     background: #FC7000;
-    
+
 
     a{
       i{color: #fff8dd;}
@@ -307,14 +312,19 @@
     .scan-box{
       .scan-img{}
     }
+    .contrast-box{
+      .contrast-img{
+        background: url(../images/index/contrast-hover.png) no-repeat 0px 0px;
+      }
+    }
   }
 }
 .sidebar.active{
   width:80px !important;
   -moz-transition: width 0.2s ease-in;
-    -webkit-transition: width 0.2s ease-in;
-    -o-transition: width 0.2s ease-in;
-    transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;
+  -o-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
   .side-box{
     width: 80px !important;
     a{
@@ -333,22 +343,22 @@
     width: 58px;
     height: 500px;
     float: left;
-    
+
     .sidebar-list{
       height: 224px;
-      
+
     }
   }
-  
-  
+
+
 }
 .sidebar-active{
   width:58px;
   border-left: none;
-  
+
   .sidebar-nav{
     background-color: #FC7000;
-    
+
     .side-box{
       box-shadow: none;
       border-bottom: 1px solid #d15001;
@@ -417,6 +427,15 @@
         i{color: #666;}
       }
     }
+    .conside{a{.icon{background: url(../images/index/contrast-hover.png);}}}
+    .conside:hover,.conside.active{
+      border-bottom: 1px solid #dedede;border-right: none;
+      background: #f2f2f2;
+      a{
+        .icon{background: url(../images/index/contrast-active.png);}
+        i{color: #666;}
+      }
+    }
   }
   .toolbar-content{
     width: 845px;
@@ -424,7 +443,7 @@
     border-left: none;
     float: left;
     overflow: hidden;
-      background-color: #F2F2F2;
+    background-color: #F2F2F2;
     i{cursor:pointer;float: right;width: 11px;height: 11px;background: url(../images/index/toolbar_sprite.png?1234) no-repeat; background-position: -240px 0;display: block;margin-top: 9px;margin-right: 9px;}
     .iframe-loading{
       width: 845px;
@@ -447,7 +466,7 @@
       }
     }
   }
-  
+
 }
 .advisor-unfold{
   width: 0px;
@@ -459,16 +478,16 @@
   background-color: #fff;
   border: 1px solid #dedede;
   border-right: none;
-  
+
 
   .wrapper-bg{
-  background: url("../images/common/advisor-bg.png") no-repeat;
-  background-position: right bottom;
-  z-index: 10000;
-  padding-left: 80px;
-  padding-top: 40px;
+    background: url("../images/common/advisor-bg.png") no-repeat;
+    background-position: right bottom;
+    z-index: 10000;
+    padding-left: 80px;
+    padding-top: 40px;
   }
-  
+
   .advisor-close{
     position: absolute;
     display: block;
@@ -478,7 +497,7 @@
     right: 20px;
     top: 20px;
     cursor: pointer;
-      }
+  }
   .unfold-title{
     span{
       font-size: 16px;
@@ -503,34 +522,34 @@
     width: 250px;
     form{
       position: relative;
-     p{
-      font-size: 14px;
-      color: #333;
-      line-height: 30px;
-     }
-     #unfold-phone{
-      width: 240px;
-      height: 35px;
-      border: 1px solid #d1d1d1;
-      padding-left: 10px;
-      margin-top: 10px;
-      background: url("../images/common/unfold-phone.png") no-repeat;
-      background-position: right center;
-      width: 245px;
-      height: 21px;
-      padding: 7px 0;
-      padding-left: 5px;
-      line-height: 20px;
-     }
-     #unfold-submit{
-      width: 165px;
-      height: 35px;
-      background: url("../images/common/unfold-submit.png") no-repeat;
-      margin-top: 20px;
-      cursor: pointer;
-      border: none;
-      font-size: 0px;
-     }
+      p{
+        font-size: 14px;
+        color: #333;
+        line-height: 30px;
+      }
+      #unfold-phone{
+        width: 240px;
+        height: 35px;
+        border: 1px solid #d1d1d1;
+        padding-left: 10px;
+        margin-top: 10px;
+        background: url("../images/common/unfold-phone.png") no-repeat;
+        background-position: right center;
+        width: 245px;
+        height: 21px;
+        padding: 7px 0;
+        padding-left: 5px;
+        line-height: 20px;
+      }
+      #unfold-submit{
+        width: 165px;
+        height: 35px;
+        background: url("../images/common/unfold-submit.png") no-repeat;
+        margin-top: 20px;
+        cursor: pointer;
+        border: none;
+        font-size: 0px;
+      }
     }
   }
 }
