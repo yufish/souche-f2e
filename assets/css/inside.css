@@ -332,7 +332,7 @@ visibility: hidden;
 .price_list_more{color: #666;font-size: 12px;font-weight: normal;float: right;cursor: pointer;}
 .price-sc{height: 25px;width: 100%;margin-top: 15px;}
 .price-sc .price-range{float: left;width: 25px;height: 25px;margin-right: 3px;}
-.price-sc .price-range i{width: 25px;background-color: #d9d9d9;height: 8px;display: block;cursor: pointer;}
+.price-sc .price-range i{width: 25px;background-color: #d9d9d9;height: 8px;display: block;cursor: pointer;} 
 .price-sc .price-range i:hover{background-color: #fc7000;}
 .price-sc .price-range .price-active{background-color: #fc7000;}
 .price-sc .price-range span{font-size: 12px; color: #8c8c8c;display: block;margin-left: -5px;}
@@ -388,54 +388,77 @@ visibility: hidden;
 #list_wrap .list_main .yushou-carInfo .list_content_carInfo h1 a:hover{color:#00b0b4}
 #list_wrap .list_main .yushou-carInfo .car_tag_yushou{left:-1px;right:auto;top:-5px}
 #list_wrap .list_main .list_content .fav{
-  position: absolute;
-  right:0;
-  top:0;
-  border:1px solid #d9d9d9;
-  height:23px;
-background: #fafafa; /* ��������������������������������������������������������� */
-background: -moz-linear-gradient(top, #fff, #fafafa);
-background: -webkit-gradient(linear, 0 0, 0 8%, from(#fff), to(#fafafa));
+height:23px;
 line-height: 23px;
-color:#ee7700;
-border-right:none;
-border-top: none;
-background:#fff url(./../../assets/images/fed/list-fav.png) no-repeat 5px center;
+color:#333;
+background:#F2F2F2 url(./../../assets/images/fed/fav-normal.png) no-repeat 10px center;
 padding-left: 25px;
 cursor: pointer;
-border-bottom-left-radius: 3px;
 }
 #list_wrap .list_main .list_content .fav span{
-  padding-right: 5px;
-  display: none;
+  padding-left: 5px;
+  line-height: 30px;
+  font-size: 14px;
 }
 #list_wrap .list_main .list_content .fav:hover span{
   display: inline;
 }
 #list_wrap .list_main .list_content .faved{
-  background: url(./../../assets/images/fed/list-faved.png) no-repeat 5px center;
-  color:#aaa;
+  background:#F2F2F2 url(./../../assets/images/fed/fav-active.png) no-repeat 10px center;
   display: block;
 }
 
 #list_wrap .list_main .list_content:hover .fav{
   display: block;
 }
-#list_wrap .list_main .list_content_carInfo h1{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:1.5em;height:50px;overflow:hidden;font-size:16px;margin-bottom:10px}
+#list_wrap .list_main .list_content_carInfo h1{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:1.5em;height:25px;overflow:hidden;font-size:16px;margin-bottom:10px}
 #list_wrap .list_main .list_content_carInfo h1 a{color:#333}
 #list_wrap .list_main .list_content_carInfo h1 a:hover{color:#e70}
 #list_wrap .list_main .list_content_carInfo h1 a:visited{color: #800080;}
 #list_wrap .list_main .list_content_carInfo .list_content_price{margin-bottom:10px}
-#list_wrap .list_main .list_content_carInfo .list_content_price div{color:#666;font-size:16px;width:172px;height:34px;line-height:34px;text-align:center;background-color:#d9d9d9;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;float:left}
+#list_wrap .list_main .list_content_carInfo .list_content_price div{color:#888;font-size:16px;width:172px;height:34px;line-height:34px;text-align:center;background-color:#F2F2F2;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;float:left}
 #list_wrap .list_main .list_content_carInfo .list_content_price .list_content_price_new{background-color:#e70;color:#fff;font-size:24px}
-#list_wrap .list_main .list_content_carInfo .list_content_other{margin-bottom:5px;border:1px solid #d9d9d9;border-left:none}
-#list_wrap .list_main .list_content_carInfo .list_content_other div{color:#999;width:113px;height:38px;line-height:38px;text-align:center;float:left;border-left:1px solid #d9d9d9}
-#list_wrap .list_main .list_content_carInfo .list_content_other div ins{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:20px;color:#ff4301}
-#list_wrap .list_main .list_content_carInfo .list_content_other div span{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;color:#ff4301}
-#list_wrap .list_main .list_content_carInfo .list_content_service div{color:#157a2d;width:113px;height:38px;line-height:38px;float:left}
-#list_wrap .list_main .list_content_carInfo .list_content_service div span{float:left;width:20px;height:20px;background:url("../../assets/images/fed/inside_sprite3.png") no-repeat 0 -20px;margin-top:8px;margin-left:10px;margin-right:3px}
+#list_wrap .list_main .list_content_carInfo .list_content_other{margin-bottom:5px;color: #333;}
+#list_wrap .list_main .list_content_carInfo .list_content_other div{height:25px;line-height:25px;text-align:center;float:left;border-left:1px solid #d9d9d9;margin-right: 20px;padding-left: 15px;font-size: 14px;}
+#list_wrap .list_main .list_content_carInfo .list_content_other div ins{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:14px;}
+#list_wrap .list_main .list_content_carInfo .list_content_other div span{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size: 14px;}
+#list_wrap .list_main .list_content_carInfo .list_content_service div{color:#666;height:25px;line-height:25px;float:left;margin-right: 15px;}
+#list_wrap .list_main .list_content_carInfo .list_content_service div span{float:left;width:12px;height:12px;background:url("../../assets/images/fed/service-icon.png") no-repeat;margin-top:7px;margin-right:3px}
 #list_wrap .list_main .list-noResult{
 
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action{
+  height: 30px;
+  margin: 10px 0;
+  color: #666;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect{
+  width: 70px;
+  height: 30px;
+  
+  border-radius: 2px;
+  margin-right: 10px;
+  float: left;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast{
+  width: 90px;
+  height: 30px;
+  background: #F2F2F2;
+  border-radius: 2px;
+  float: left;
+  display: block;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast input{
+  margin-top: 9px;
+  margin-left: 10px;
+  display: block;
+  float: left;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast span{
+  line-height: 30px;
+  display: block;
+  float: left;
+  margin-left: 5px;
 }
 #list_wrap .list_main .list-noResult{
   width:618px;height:400px;
@@ -454,7 +477,7 @@ border-bottom-left-radius: 3px;
 #list_wrap .list_main .list-noResult .list-noResult-bg .list-noResult-title{
   font-size: 18px;
   color: #333;
-
+  
 }
 #list_wrap .list_main .list-noResult .list-noResult-bg .list-noResult-title span{
   color: #fc7000;

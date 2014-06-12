@@ -19,6 +19,16 @@
 a{
     text-decoration: none;
 }
+.wrapGrayBg{
+    height: 1500px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7f7f7f;
+    z-index: 10;
+    opacity: 0.6;
+}
 
 img{
     vertical-align: middle;
@@ -39,6 +49,7 @@ body{
     left:50%;
     margin-left:-58px;
     bottom: 20px;
+    height: 32px;
 }
 #involve{
     background: #f8504c;
@@ -260,9 +271,15 @@ body{
     margin-left: 10px;
 }
 #match-info .score:last-child{
-    margin-left: 20px;
+    margin-left: 27px;
 }
 
+#popup{
+    position: absolute;
+    width: 100%;
+    top:0;
+    display: none;
+}
 #popup-submit{
     overflow: hidden;
     font-size: 12px;
@@ -274,6 +291,8 @@ body{
     left:50%;
     margin-left:-116px;
     position: absolute;
+    z-index:100;
+
 }
 #popup-submit p{
     margin-bottom: 5px;

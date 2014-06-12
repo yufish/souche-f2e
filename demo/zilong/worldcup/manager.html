@@ -797,13 +797,13 @@
                 $(this).css({'background':'#fff'})
                 var t1 = $(this).find('.team-1').val(),
                         t2 = $(this).find('.team-2').val();
-                if(t1==0 || t2==0){
+                if(t1==0 || t2==0||t1==t2){
                     $(this).css({'background':'#ff4400'})
                     return;
                 }
                 var s1 = $(this).find('.s1').val();
                 var s2 = $(this).find('.s2').val();
-                if(parseInt(s1)==NaN || parseInt(s1)==NaN){
+                if(isNaN(parseInt(s1)) || isNaN(parseInt(s2))){
                     $(this).css({'background':'#ff4400'})
                     return
                 }
@@ -845,7 +845,7 @@
                 today_game:today_game,
                 future_game:future_game
             }
-            console.log(JSON.stringify(data));
+            //console.log(JSON.stringify(data));
         })
 
     </script>
