@@ -87,20 +87,20 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
             };
         }
 
-        function test_AB() {
-            cookieUtil.update();
-            var tag = cookieUtil.getCookie('usertag');
-            var lastCode = tag.charCodeAt(tag.length - 1);
-            return lastCode % 2;
-        }
+//        function test_AB() {
+//            cookieUtil.update();
+//            var tag = cookieUtil.getCookie('usertag');
+//            var lastCode = tag.charCodeAt(tag.length - 1);
+//            return lastCode % 2;
+//        }
         //'0' means: has yearCode
         //'1' no
-        var tagNum = test_AB();
-        var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
+        //var tagNum = test_AB();
+        //var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
 
         function userTrack(userData) {
             var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
-            userData['taskId'] = taskStr,
+            //userData['taskId'] = taskStr,
             //userData['ua'] = navigator.userAgent,
             $.ajax({
                 url: url,
@@ -108,16 +108,15 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
             })
         }
 
-        function mapYearCode(originYear){
-            var year = originYear.substring(0,4);
-            return year+'-2014'
-        }
+//        function mapYearCode(originYear){
+//            var year = originYear.substring(0,4);
+//            return year+'-2014'
+//        }
 
         return {
 
             init: function () {
                 //change demand,ugly fixed
-                var tag = test_AB();
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
@@ -168,9 +167,9 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 
 
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
-                if (tagNum == 1) {
-                    pages = [$('#page-1'), $('#page-2'), $('#page-4')];
-                }
+//                if (tagNum == 1) {
+//                    pages = [$('#page-1'), $('#page-2'), $('#page-4')];
+//                }
 
                 function beforePage(pageIndex) {
                     var pageStep = pageIndex - 1;
@@ -197,17 +196,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                                 car_brands: bStr
                             }
                         } else if (pageStep == 3) {
-                            if (tagNum == 1)
-                                return;
-                            var min_year, max_year;
-                            if (yearCode.trim() == '') {
-                                min_year = '';
-                                max_year = '';
-                            } else {
-                                var yArr = yearCode.split('-');
-                                min_year = yArr[0];
-                                max_year = yArr[1];
-                            }
+
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
                                 car_year_min: min_year,
@@ -218,14 +207,12 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         stepRecords.push(pageStep);
                         //console.log(trackData);
                     }
-                    window.location.hash = 'page' + pageIndex;
 
-                    if (pageIndex == pages.length - 1) {
-                        $('.submit-btn').text('下一步').show();
-                    } else if (pageIndex == pages.length) {
+
+                    if (pageIndex == pages.length) {
                         $('.submit-btn').hide();
                     } else {
-                        $('.submit-btn').text('下一步').show();
+                        $('.submit-btn').show();
                     }
 
                 }
@@ -355,6 +342,12 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     brandsManager.toggleSeries(bCode, sCode);
                 });
 
+                var qsItems = $('#price-quick-select .qs-item');
+                qsItems.click(function(){
+                    qsItems.removeClass('selected');
+                    $(this).addClass('selected');
+                })
+
                 var $curBrandArray;
                 var $curFold;
                 var curBrandCode;
@@ -385,10 +378,6 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                     var brands = brandsManager.brands;
                     var minPrice = price.min.value.replace('万', ''),
                         maxPrice = price.max.value.replace('万', '');
-                    if (tagNum == 0) {
-                        var minPrice = $('.min-input').val().replace('万', '');
-                        var maxPrice = $('.max-input').val().replace('万', '');
-                    }
 
                     if (maxPrice == '无限')
                         maxPrice = 10000;
@@ -408,10 +397,10 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         data: {
                             brands: bStr,
                             //series: '',
-                            year: (tagNum == 0 ? yearCode : ''),
+
                             minPrice: minPrice,
-                            maxPrice: maxPrice,
-                            taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2')
+                            maxPrice: maxPrice
+                            //taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2')
                         },
                         success: function () {
                             setTimeout(function () {
@@ -446,13 +435,6 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                         return;
                     }
                     sumbitGuWenInfo();
-//                    SM.checkPhoneExist(function (is_login) {
-//                        if (is_login) {
-//                            sumbitGuWenInfo();
-//                        } else {
-//                            showPopup();
-//                        }
-//                    })
                 })
 
                 var phoneReg = /^1[3458][0-9]{9}$/;

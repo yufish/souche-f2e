@@ -33,3 +33,7 @@ body {
     z-index: 1000;
     opacity: 0.6;
 }
+.wrapper-320 {
+    width: 320px;
+    margin: 0 auto;
+}

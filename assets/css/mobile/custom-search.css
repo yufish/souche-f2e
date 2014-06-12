@@ -1,0 +1,292 @@
+#guwen-h5-2 {
+    position: relative;
+    background-color: #fff;
+}
+#guwen-h5-2 #page-1,
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+#guwen-h5-2 #page-2 {
+    height: 1150px;
+}
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
+    left: 100%;
+    display: none;
+}
+#guwen-h5-2 .wrapper {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+#guwen-h5-2 .btns {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#guwen-h5-2 .btns button {
+    background-color: #fc7000;
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+.brand-wrapper {
+    width: 60px;
+    border: 2px solid #fff;
+    margin: 0 auto
+}
+.brand-wrapper.selected {
+    border-color: #fc7000;
+    background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
+    background-size: 14px;
+    border-radius: 8px;
+}
+.content{
+    font-size: 14px;
+}
+ .gouche-info {
+    margin: 10px 10px;
+}
+ .gouche-info .photo {
+    float: left;
+}
+ .gouche-info .photo .head-photo {
+    width: 45px;
+    height: 45px;
+    background: url(../../images/mob/h5-2/head-photo.png) no-repeat center center;
+    background-size: 45px;
+}
+ .gouche-info .text {
+    position: relative;
+    padding: 8px 10px;
+    width: 220px;
+    margin: 0 10px 0 55px;
+    background-color: #fff7d4;
+    border-radius: 8px;
+    border: 1px solid #f2e4a5;
+}
+ .gouche-info .text p {
+    line-height: 20px;
+}
+ .gouche-info .text .hi-img {
+    background: url(../../images/mob/h5-2/hi-array.png) no-repeat;
+    background-size: 8px;
+    width: 8px;
+    height: 11px;
+    position: absolute;
+    top: 15px;
+    left: -8px;
+}
+ .gouche-info .step {
+    width: 215px;
+    position: relative;
+    margin: 10px 0;
+    border: 1px solid #d5cda9;
+    border-top: none;
+}
+ .gouche-info  .step .circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #d5cda9;
+    position: absolute;
+    top: -3px;
+}
+ .gouche-info .step .circle.active {
+    width: 11px;
+    height: 11px;
+    background-color: #fc7000;
+    top: -5px;
+}
+ .gouche-info .step #step-circle-1 {
+    left: -6px;
+}
+ .gouche-info .step #step-circle-2 {
+    left: 102px;
+}
+ .gouche-info .step #step-circle-3 {
+    left: 210px;
+}
+
+ #brand .selected-brand {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px dashed #e9e9e9;
+    border-radius: 8px;
+    padding: 9px 3px 3px 0;
+    overflow: hidden;
+    display: none;
+}
+ #brand .selected-brand .sb-item {
+    margin: 0 0 6px 6px;
+    float: left;
+    border-radius: 8px;
+    padding: 9px;
+}
+ #brand .selected-brand .sb-item .close-icon {
+    display: inline-block;
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    vertical-align: -3px;
+    margin-left: 3px;
+}
+ #brand-icons-container {
+    margin: 10px 0 0 0;
+}
+ #brand-icons-container .icon-group {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 15px;
+}
+ #brand-icons-container .icon-group #more-brand {
+    width: 40px;
+    height: 40px;
+    border-radius: 80%;
+    background-color: #dfdfdf;
+    margin: 0 auto;
+}
+ #brand-icons-container .icon-group #more-brand .more-circle {
+    width: 24px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+ #brand-icons-container .icon-group #more-brand .more-inner-circle {
+    width: 4px;
+    height: 4px;
+    float: left;
+    border-radius: 80%;
+    margin: 10px 2px 6px 2px;
+    background-color: #666666;
+}
+ #brand-icons-container .icon-group .icon-item {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+ #brand-icons-container .icon-group .icon-item-more {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+ #brand-icons-container .icon-group .icon-item .brand-img {
+    position: relative;
+    width: 28px;
+    margin: 0 auto;
+}
+ #brand-icons-container .icon-group .icon-item .brand-img .brand-array {
+    position: absolute;
+    background: url(../../images/mob/h5-2/brand-array.png) no-repeat center center;
+    background-size: 13px;
+    left: 7px;
+    bottom: -29px;
+    width: 13px;
+    height: 7px;
+    display: none;
+}
+ #brand-icons-container .icon-group .icon-item img {
+    width: 28px;
+    height: 28px;
+}
+ #brand-icons-container .icon-group .icon-item .brand-name {
+    margin-top: 5px;
+}
+ #brand-icons-container .icon-group .fold-series {
+    width: 100%;
+    clear: both;
+    padding: 8px 0;
+    display: none;
+}
+ #brand-icons-container .icon-group .fold-series .wrapper {
+    padding: 20px;
+    overflow: hidden;
+    background-color: #dfdfdf;
+}
+ #brand-icons-container .icon-group .fold-series .series-item {
+    width: 50%;
+    float: left;
+    margin: 8px 0;
+}
+ #brand-icons-container .icon-group .fold-series .series-item .text {
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    background-color: #fff;
+    margin: 0 8px;
+    border-radius: 8px;
+    color: #474747;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 2px solid #fff;
+}
+ #brand-icons-container .icon-group .fold-series .series-item .text.selected {
+    border: 2px solid #fc7000;
+    background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
+    background-size: 14px;
+}
+#price-container{
+    margin-top: 65px;
+}
+#price-container .qs-item{
+    float: left;
+    position: relative;
+}
+#price-container .price-tag{
+    position: absolute;
+    display: none;
+    font-size: 12px;
+    top: -30px;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    text-align: center;
+
+}
+#price-container .card{
+    height: 23px;
+    width: 33px;
+    background: #D2D2D2;
+    margin-left: 5px;
+}
+#price-container .qs-item.selected .card{
+    background: #ff4400;
+}
+#price-container .qs-item.selected .price-tag{
+    display: block;
+}
+#price-container .price-tag .value{
+    border:1px solid #ff4400;
+    padding:3px 5px;
+    border-radius: 5px;
+}
+#price-container .price-tag i{
+    display: block;
+    width: 7px;
+    height: 8px;
+    background:url(../../images/mob/h5-2/price-arrow-d.png) no-repeat center;
+    background-size: 7px 8px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 16px;
+}
+#limit-symbol{
+    margin: 23px 0 0 -8px;
+}
+
