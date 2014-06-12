@@ -807,7 +807,6 @@
                     $(this).css({'background':'#ff4400'})
                     return
                 }
-
                 today_game.push({teamCode:t1+'-'+t2,
                     score:s1+'-'+s2});
             })
@@ -842,6 +841,11 @@
         })
         $('#submit').click(function(){
             buildJson();
+            var data = {
+                today_game:today_game,
+                future_game:future_game
+            }
+            console.log(JSON.stringify(data));
         })
 
     </script>
