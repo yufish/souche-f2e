@@ -609,6 +609,8 @@
   padding-right: 10px;
   margin-top: 10px;
   line-height: 28px;
+  height: 30px;
+  width: 400px;
 }
 .content-box .content-right .topic .paging span {
   color: #1271BF;
