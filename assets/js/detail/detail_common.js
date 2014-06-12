@@ -768,6 +768,7 @@ Souche.Detail.PriceDown = function() {
         }
     }
 }();
+
 Souche.DetailCommon = function() {
     var config = {
 
@@ -781,7 +782,7 @@ Souche.DetailCommon = function() {
            self.e =e;
            $.ajax({
                type: "GET",
-               url: "../../../soucheweb/carContrastAction/addContrastCar.json?carId=" + carID,
+               url: config.api_addContrast,
                dataType:"json",
                context:self
            }).done(function(data)

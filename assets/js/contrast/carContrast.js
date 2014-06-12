@@ -33,7 +33,7 @@ define(function() {
 
             $.ajax({
                 type: "GET",
-                url: "../../../soucheweb/carContrastAction/deleteContrastCar.json?carId="+"",
+                url: config.api_deleteContrast + "?" + $(this).attr("cid"),
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
@@ -138,12 +138,41 @@ define(function() {
                     document.body.onselectstart = document.body.ondrag = null;
                     //alert(movePosition);
                     //alert(defaultPosition);
+                    var carList = $(".carname");
+                    var carListLength = carList.length;
+                    var sortString="";
 
-                    var moveItemList = getContentList(defaultPosition);
-                    // moveItemList = moveItemList.remove();
-                    addNewContent(moveItemList, movePosition, false);
+                    for(var index=0;index<carListLength;index++) {
+                        sortString+=$(".carname")[index].find(".close-contrast").attr("cid")+","
+                    }
 
-                    changeCarContrastSort();
+                    sortString=sortString.substr(0,sortString.length-1);
+
+                    var self = this;
+                    self.getContentList = getCellContent;
+                    self.addNewContent = addNewContent;
+                    self.defaultPosition = defaultPosition;
+                    self.movePosition = movePosition;
+
+                    $.ajax({
+                        type: "GET",
+                        url: config.api_updateContrastSeq+"?"+sortString,
+                        dataType: "json",
+                        context: self
+                    }).done(function (data) {
+                        if (data.result == 2) {
+                            var moveItemList = this.getContentList(defaultPosition);
+                            addNewContent(moveItemList, movePosition, false);
+                        }
+                        else {
+                            delete self.getContentList;
+                            delete self.addNewContent;
+                            delete self.defaultPosition;
+                            delete self.movePosition;
+                            alert("移动失败");
+                        }
+                    });
+
                 }
             }
         });
