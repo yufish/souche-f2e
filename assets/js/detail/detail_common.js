@@ -772,6 +772,32 @@ Souche.DetailCommon = function() {
     var config = {
 
     }
+
+   var  _bind=function() {
+
+       var addCarDuibi = function() {
+           var carID = config.carID;
+
+           $.ajax({
+               type: "GET",
+               url: "../../../soucheweb/carContrastAction/addContrastCar.json?carId=" + carID,
+               dataType:"json"
+           }).done(function(data)
+           {
+               if (data.result == 1) {
+                   alert("加入对比失败");
+                   $(".addcarduibi").one("click",addCarDuibi);
+               }
+               if (data.result == 2) {
+                   alert("加入对比成功");
+                   $(".addcarduibi input").attr("checked", 'true');
+                   $(".addcarduibi input").attr("disabled", "disabled");
+               }
+           });
+       }
+       $(".addcarduibi").one("click",addCarDuibi);
+   }
+
     return {
         init: function(_config) {
             $.extend(config, _config)
@@ -784,6 +810,10 @@ Souche.DetailCommon = function() {
             //     $('.cutprice').append(start + nowStr.charAt(i) + end);
             // }
             Souche.Detail.PriceDown.init(config);
+
+            $(".addcarduibi input")[0].checked?$(".addcarduibi input").attr("disabled","disabled"):""
+
+            _bind();
         }
     }
 }();

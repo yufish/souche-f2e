@@ -999,7 +999,7 @@ top: 139px !important;}
 #onsale_fadongji .fadongji_views .fadongji_view .fadongji_viewImg{float:left;position:relative}#onsale_fadongji .fadongji_views .fadongji_view .fadongji_viewImg div{width:90px;height:65px;overflow:hidden;cursor:pointer}
 #onsale_fadongji .fadongji_views .fadongji_view .fadongji_viewImg p{line-height:25px;width:90px;background-color:rgba(82,142,20,0.6);*background-color:#5a941e;color:#fff;text-align:center;position:absolute;bottom:0}
 #onsale_qimian .qimian_img{width:100%;height:430px;border:1px solid #ddd;background-color:#FFFFFF;margin-top:25px}#onsale_qimian .qimian_img img{display:block;margin:0 auto;margin-top:15px}
-#onsale_perform .perform_img{width:522px;margin-top:85px;margin-left:52px;float:left;position:relative;z-index:100;}#onsale_perform .perform_img img{display:block;margin:0 auto}
+#onsale_perform .perform_img{width:522px;margin-top:85px;margin-left:52px;float:left;position:relative;z-index:90;}#onsale_perform .perform_img img{display:block;margin:0 auto}
 #onsale_perform .perform_img .perform-contain{height:229px;position:relative;width:390px;margin:0 auto;}#onsale_perform .perform_img .perform-contain .perform-point{position:absolute;width:26px;height:26px;cursor:pointer;background-color:#fff;opacity:0;filter:alpha(opacity=0);}
 #onsale_perform .perform_img .perform-contain .perform-intro{position:absolute;left:0;z-index:100;padding:10px;background-color:#fff;border:1px solid #d9d9d9;display:none;*width:360px;}
 #onsale_perform .perform_img .perform-contain .perform-intro .perform-close{float:right;width:30px;height:30px;background:url("../../images/fed/onsale_sprite3.png") no-repeat -340px -114px;cursor:pointer;margin-bottom:10px;display:none;}
@@ -1628,5 +1628,51 @@ background-color: #000;
 z-index: 10000;
 }less
 .icon-fei{position:absolute;left:0;right:0;background:#fc7000;height:15px;width:15px;background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
+#onsale-summary .saleTab_fixed{
+  position:fixed;
+  top:auto;
+  left:0px;
+  right:0px;
+  z-index:100;
+  margin:0 auto;
+  width: 100%;
+  height: 45px;
+  box-shadow:0px 0px 6px #666666 !important;
+  -moz-box-shadow: 0px 0px 6px #666666 !important;
+  *border-bottom: 1px solid #222222;
+  border-bottom: 1px solid #222222\9;
+  div {
+    width:1188px;
+    margin: 0px auto;
+    height: 45px;
+    a {
+      width: 80px;
+      height: 45px;
+      text-align: center;
+      line-height: 45px;
+      border-bottom: none;
+    }
+    .tab_yuyue {
+      position: relative;
+      width: 350px;
+      float: right;
+      *margin-top:-45px;
+      div
+      {
+        width: 200px;
+        height: 45px;
+        float: right;
+        background: url("../../images/fed/detail_sprite_common.png?4") no-repeat -74px -505px;
+      }
+      a {
+        width: 131px;
+        height: 45px;
+        float: right;
+        background: url("../../images/fed/detail_sprite_common.png?4") no-repeat 0 -319px;
+      }
+    }
+  }
+}
+
 
 @import "less/summary.less";

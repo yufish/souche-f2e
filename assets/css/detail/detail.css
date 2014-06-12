@@ -3851,7 +3851,7 @@ body {
   margin-left: 52px;
   float: left;
   position: relative;
-  z-index: 100;
+  z-index: 90;
 }
 #onsale_perform .perform_img img {
   display: block;
@@ -4921,6 +4921,50 @@ less .icon-fei {
   height: 15px;
   width: 15px;
   background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;
+}
+#onsale-summary .saleTab_fixed {
+  position: fixed;
+  top: auto;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  box-shadow: 0px 0px 6px #666666 !important;
+  -moz-box-shadow: 0px 0px 6px #666666 !important;
+  *border-bottom: 1px solid #222222;
+  border-bottom: 1px solid #222222\9;
+}
+#onsale-summary .saleTab_fixed div {
+  width: 1188px;
+  margin: 0px auto;
+  height: 45px;
+}
+#onsale-summary .saleTab_fixed div a {
+  width: 80px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-bottom: none;
+}
+#onsale-summary .saleTab_fixed div .tab_yuyue {
+  position: relative;
+  width: 350px;
+  float: right;
+  *margin-top: -45px;
+}
+#onsale-summary .saleTab_fixed div .tab_yuyue div {
+  width: 200px;
+  height: 45px;
+  float: right;
+  background: url("../../images/fed/detail_sprite_common.png?4") no-repeat -74px -505px;
+}
+#onsale-summary .saleTab_fixed div .tab_yuyue a {
+  width: 131px;
+  height: 45px;
+  float: right;
+  background: url("../../images/fed/detail_sprite_common.png?4") no-repeat 0 -319px;
 }
 .onsale-summary {
   background: #fff;
