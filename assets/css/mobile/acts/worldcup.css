@@ -49,6 +49,7 @@ body{
     left:50%;
     margin-left:-58px;
     bottom: 20px;
+    height: 32px;
 }
 #involve{
     background: #f8504c;
@@ -270,7 +271,7 @@ body{
     margin-left: 10px;
 }
 #match-info .score:last-child{
-    margin-left: 20px;
+    margin-left: 27px;
 }
 
 #popup{
