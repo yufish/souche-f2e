@@ -70,13 +70,16 @@ define(function() {
         init: function(_config) {
             config = _config;
             var self = this;
+            var saleTabTop = $(".onsale-tab-item").offset().top;
+
             $(".onsale-tab-item").on("click", function(e) {
                 var id = $(this).attr("data-id");
                 $(".onsale-content-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
                 $(".onsale-tab-item").removeClass("active");
-                $(this).addClass("active")
+                $(".onsale-tab-item[data-id='"+$(this).attr("data-id")+"']").addClass("active")
                 $(window).trigger("tab_change", id);
+                $('html,body').animate({scrollTop:saleTabTop+"px"},500);
             });
 
             $(".float-nav-item").on("click", function(e) {
