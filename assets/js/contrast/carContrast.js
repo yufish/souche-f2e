@@ -33,7 +33,7 @@ define(function() {
 
             $.ajax({
                 type: "GET",
-                url: config.api_deleteContrast + "?" + $(this).attr("cid"),
+                url: config.api_deleteContrast + "?contrastId=" + $(this).attr("cid"),
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
@@ -143,13 +143,13 @@ define(function() {
                     var sortString="";
 
                     for(var index=0;index<carListLength;index++) {
-                        sortString+=$(".carname")[index].find(".close-contrast").attr("cid")+","
+                        sortString+=$(".carname").eq(index).find(".close-contrast").attr("cid")+","
                     }
 
                     sortString=sortString.substr(0,sortString.length-1);
 
                     var self = this;
-                    self.getContentList = getCellContent;
+                    self.getContentList = getContentList;
                     self.addNewContent = addNewContent;
                     self.defaultPosition = defaultPosition;
                     self.movePosition = movePosition;
@@ -171,6 +171,7 @@ define(function() {
                             delete self.movePosition;
                             alert("移动失败");
                         }
+
                     });
 
                 }
@@ -331,7 +332,6 @@ define(function() {
                 addNewContent($(contentTemplate));
             }
         }
-
         carCount--;
     }
 
