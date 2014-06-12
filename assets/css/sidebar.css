@@ -157,7 +157,7 @@
   height: 90px;
   position: fixed;
   right: 0px;
-  bottom: 250px;
+  bottom: 315px;
   z-index: 10000;
 }
 #my-advisor img {
@@ -241,7 +241,7 @@
 }
 .sidebar {
   width: 58px;
-  height: 160px;
+  height: 215px;
   background: #f7f7f7;
   position: fixed;
   right: 0px;
