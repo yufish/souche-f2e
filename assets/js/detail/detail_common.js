@@ -810,7 +810,10 @@ Souche.DetailCommon = function() {
                    cloneElement.animate({
                        top: endY,
                        left: endX
-                   }, 500);
+                   }, 500,function()
+                   {
+                       cloneElement.remove();
+                   });
                }
            });
        }
