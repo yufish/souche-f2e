@@ -726,6 +726,11 @@ Souche.DetailCommon = function () {
 
     var addCarDuibi = function(e) {
         var carID = config.carId;
+        if(carID==undefined) {
+            alert("数据不合法");
+            return;
+        }
+
         var self = this;
         self.e =e;
         $.ajax({
