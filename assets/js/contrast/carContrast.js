@@ -171,10 +171,7 @@ define(function() {
             var repeat = $(".contrast-title input")[0].checked.toString();
             var optimal = $(".contrast-title input")[1].checked.toString();
 
-            $.ajax({
-                url:config.api_contrastUrl+"?repeat="+repeat+"&optimal="+optimal,
-                type:"GET"
-            });
+            window.location = config.api_contrastUrl+"?repeat="+repeat+"&optimal="+optimal;
         });
 
         // 鼠标滑轮事件
