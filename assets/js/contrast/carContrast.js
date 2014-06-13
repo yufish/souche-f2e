@@ -166,12 +166,6 @@ define(function() {
                         dataType: "json",
                         context: self
                     }).done(function (data) {
-                        if (data.result == 2) {
-
-                        }
-                        else {
-                            //alert("移动失败");
-                        }
                         var moveItemList = this.getContentList(defaultPosition);
 
                         delete self.getContentList;
