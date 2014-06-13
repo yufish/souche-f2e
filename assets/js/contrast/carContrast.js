@@ -147,6 +147,8 @@ define(function() {
                     var carListLength = carList.length;
                     var sortString="";
 
+                    addNewContent(moveItemList, movePosition, false);
+
                     for(var index=0;index<carListLength;index++) {
                         sortString+=$(".carname").eq(index).find(".close-contrast").attr("cid")+","
                     }
@@ -172,7 +174,7 @@ define(function() {
                             //alert("移动失败");
                         }
                         var moveItemList = this.getContentList(defaultPosition);
-                        addNewContent(moveItemList, movePosition, false);
+
                         delete self.getContentList;
                         delete self.addNewContent;
                         delete self.defaultPosition;
