@@ -1,7 +1,7 @@
 /**
  * Created by zilong on 2014/6/12.
  */
-define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], function (Mustache, PriceRangeSlider, cookieUtil) {
+define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
 
     var GuWen =(function(){
 
@@ -65,6 +65,10 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 //            return year+'-2014'
 //        }
 
+        function recoverData(){
+
+        }
+
         return {
 
             init: function (dataObj) {
@@ -76,22 +80,28 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
                 var stepRecords = [];
                 stepRecords.push(1);
                 //init search option
-                var minP = '8万',
-                    maxP = '20万';
+                var minP = '8',
+                    maxP = '20';
                 if (dataObj.minPrice) {
-                    minP = dataObj.minPrice + '万';
+                    minP = dataObj.minPrice;
                 }
                 if (dataObj.maxPrice) {
-                    maxP = dataObj.maxPrice + '万';
-                    if (dataObj.maxPrice == '10000') maxP = '无限'
+                    maxP = dataObj.maxPrice;
+                    if (dataObj.maxPrice == '10000') maxP = '不限'
                 }
 
 
 
-                var priceArray = ["0万", "5万", "8万", "10万", "12万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
-                var priceVal = changePrice(minP, maxP, priceArray);
+                //var priceArray = ["0万", "5万", "8万", "10万", "12万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
+                //var priceVal = changePrice(minP, maxP, priceArray);
 
                 //brand init
+                var queryObject={
+                    price:{
+                        min:minP,
+                        max:maxP
+                    }
+                }
                 var initBrands = function(){
                     var initBrs = {};
                     if (dataObj.brands) {
@@ -311,11 +321,7 @@ define(['lib/mustache', 'souche/range-slide', 'mobile/common/cookieUtil'], funct
 
                 var brandIndex = 0;
 
-                $('.year-item').click(function () {
-                    $('.year-item .text').removeClass('selected');
-                    $(this).find('.text').addClass('selected')
-                    yearCode = $(this).attr('data-code');
-                })
+
 
                 function sumbitGuWenInfo() {
                     var price = range.getData();
