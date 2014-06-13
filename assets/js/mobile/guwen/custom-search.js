@@ -1,78 +1,20 @@
 /**
  * Created by zilong on 2014/6/12.
  */
-define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
+define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandManager) {
 
     var GuWen =(function(){
-
-
-    //lft>rht ,return 1;
-        function comparePrice(lft, rht) {
-            lft = (lft == '无限' ? '10000' : lft);
-            rht = (rht == '无限' ? '10000' : rht);
-            var l = parseInt(lft.replace('万', '')),
-                r = parseInt(rht.replace('万', ''));
-            if (l > r) return 1;
-            if (l < r) return -1;
-            return 0;
-        }
-
-        function changePrice(min, max, priceArr) {
-            var len = priceArr.length;
-            var realMin = priceArr[0],
-                realMax = priceArr[len - 1];
-            for (var i = 0; i < len; i++) {
-                if (comparePrice(min, priceArr[i]) != -1) {
-                    realMin = priceArr[i];
-                    //break;
-                }
-            }
-            for (var i = len - 1; i >= 0; i--) {
-                if (comparePrice(max, priceArr[i]) != 1) {
-                    realMax = priceArr[i];
-                    //break
-                }
-            }
-            return {
-                min: realMin,
-                max: realMax
-            };
-        }
-
-//        function test_AB() {
-//            cookieUtil.update();
-//            var tag = cookieUtil.getCookie('usertag');
-//            var lastCode = tag.charCodeAt(tag.length - 1);
-//            return lastCode % 2;
-//        }
-        //'0' means: has yearCode
-        //'1' no
-        //var tagNum = test_AB();
-        //var taskStr = (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2');
-
         function userTrack(userData) {
             var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
-            //userData['taskId'] = taskStr,
-            //userData['ua'] = navigator.userAgent,
             $.ajax({
                 url: url,
                 data: userData
             })
         }
 
-//        function mapYearCode(originYear){
-//            var year = originYear.substring(0,4);
-//            return year+'-2014'
-//        }
-
-        function recoverData(){
-
-        }
-
         return {
 
             init: function (dataObj) {
-                //change demand,ugly fixed
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
@@ -90,17 +32,9 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                     if (dataObj.maxPrice == '10000') maxP = '不限'
                 }
 
-
-
-                //var priceArray = ["0万", "5万", "8万", "10万", "12万", "15万", "18万", "20万", "25万", "30万", "35万", "40万", "50万", "60万", "80万", "无限"];
-                //var priceVal = changePrice(minP, maxP, priceArray);
-
-                //brand init
                 var queryObject={
-                    price:{
-                        min:minP,
-                        max:maxP
-                    }
+                     minPrice:minP,
+                     maxPrice:maxP
                 }
                 var initBrands = function(){
                     var initBrs = {};
@@ -130,11 +64,14 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                     var trackData = {};
                     if (!stepRecords[pageStep]) {
                         if (pageStep == 1) {
-                            var price = range.getData();
+                            //TODO
+                            var min=$('#low-price').val(),
+                                max = $('#high-price').val();
+
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
-                                car_price_min: price.min.value.replace('万', ''),
-                                car_price_max: price.max.value.replace('万', '')
+                                car_price_min:min,
+                                car_price_max: max
                             }
                             //userTrack(trackData);
 
@@ -161,12 +98,10 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                         stepRecords.push(pageStep);
                         //console.log(trackData);
                     }
-
-
                     if (pageIndex == pages.length) {
-                        $('.submit-btn').hide();
+                        $('#submit-btn').hide();
                     } else {
-                        $('.submit-btn').show();
+                        $('#submit-btn').show();
                     }
 
                 }
@@ -197,11 +132,6 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                     document.body.scrollTop = 0
                     var pageIndex = pageStack.pop();
                     if (pageIndex == 0 || pageIndex == undefined) {
-                        //特殊需求，动画只看一次
-                        if (document.referrer.indexOf("animation") != -1) {
-                            window.location.href = 'index.html';
-                            return;
-                        }
 
                         if (document.referrer.indexOf("souche") != -1) {
                             history.back();
@@ -242,45 +172,69 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                     }
                 }
 
-
-                function makeBrandPair(brand) {
-                    if (brand.brand in initBrands) {
-                        initBrands[brand.brand] = brand['brandName'];
+                !function priceBuild(){
+                    //10000 means no limit
+                    var priceRange=[0,5,8,10,15,20,30,50,10000];
+                    var low,high;
+                    var begin = '<div class="qs-item">'
+                                +   '<div class="card"></div>'
+                                +   '<div class="price-value">'
+                    var mid = '</div><div class="price-tag"><span class="value">';
+                    var end = '</span><i></i></div></div>';
+                    var html = '';
+                    for(var i=0;i<priceRange.length-1;i++){
+                        low = priceRange[i],high= priceRange[i+1];
+                        if(high==10000)high='∞'
+                        html+=begin+low+mid+low+'~'+high+end;
                     }
-                }
+                    var quick_select = $('#price-quick-select');
+                    html+='<div class="qs-item"><div id="limit-symbol">∞</div></div>'
+                    quick_select.html(html);
 
-                function loadAllBrands() {
-                    loadingLayer.removeClass('hidden');
-                    BrandAjaxUtil.getRecomBrands(function (data) {
-                        var brands = data.brands;
-                        var container = $('#brand-icons-container');
-                        var start = '<div class="icon-group">',
-                            end = '</div>',
-                            html = '',
-                            bound;
-                        var totalNum = brands.length;
-                        var groupNum = Math.ceil(totalNum / 4);
-                        var tmpBrand;
-                        for (var i = 0; i < groupNum; i++) {
-                            bound = Math.min(totalNum - 4 * i, 4);
-                            for (var j = 0; j < bound; j++) {
-                                tmpBrand = brands[4 * i + j];
-
-                                makeBrandPair(tmpBrand);
-
-                                html += Mustache.render(tplBrand, {
-                                    'brand': tmpBrand
-                                });
-                            }
-                            $('#brand-icons-container').append(start + html + end);
-
-                            html = '';
-
-                        }
-                        initializeBrands();
-                        loadingLayer.addClass('hidden');
+                    var qsItems = quick_select.find('.qs-item');
+                    var lowInput = $('#low-price'),
+                        highInput = $('#high-price');
+                    qsItems.each(function(index,item){
+                        var low = priceRange[index],
+                            high = priceRange[index+1]==10000?'不限':priceRange[index+1];
+                        $(this).click(function(){
+                            qsItems.removeClass('selected');
+                            $(this).addClass('selected');
+                            lowInput.val(low);
+                            highInput.val(high);
+                        })
                     })
-                }
+
+                }();
+
+                var loadingLayer = $('.loading-cover-layer');
+                !function brandBuild(){
+                    function loadAllBrands() {
+                        //loadingLayer.removeClass('hidden');
+                        BrandAjaxUtil.getRecomBrands(function (data) {
+                            var brands = data.brands;
+                            var container = $('#brand-icons-container');
+                            var start = '<div class="icon-group">',
+                                end = '</div>',
+                                html = '',
+                                totalNum = brands.length;
+
+                            for(var i= 0;i<totalNum;i++){
+                                var b = brands[i];
+                                html += Mustache.render(tplBrand, {'brand': b});
+                            }
+                            $('#brand-icons-container').html(html);
+
+                            loadingLayer.addClass('hidden');
+                            brandLoaded=true;
+                        })
+                    }
+                    loadAllBrands();
+                }();
+
+
+
+
 
                 var tplBrand = $('#tpl_brand').text(),
                     tplSeries = $('#tpl_series').text();
@@ -296,26 +250,20 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                     brandsManager.toggleSeries(bCode, sCode);
                 });
 
-                var qsItems = $('#price-quick-select .qs-item');
-                qsItems.click(function(){
-                    qsItems.removeClass('selected');
-                    $(this).addClass('selected');
-                })
+
 
                 var $curBrandArray;
                 var $curFold;
                 var curBrandCode;
-                var loadingLayer = $('.loading-cover-layer');
+
 
                 $('#brand-icons-container').on('click', '.icon-item', function () {
                     var $self = $(this);
-                    var brandCode = $self.attr('data-code');
-                    var text = $self.find('.brand-name').text();
-                    var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
+                    var code = $self.attr('data-code');
+                    var name = $self.find('.brand-name').text();
+                   // var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
                     //$(this).find('.text').toggleClass('selected');
-                    brandsManager.toggleSeries(brandCode, '', [
-                        $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
-                    ]);
+                    brandManager.addBrand(code,name);
 
                 })
 
@@ -373,11 +321,11 @@ define(['lib/mustache', 'mobile/common/cookieUtil'], function (Mustache) {
                 }
 
 
-                $('.submit-btn').click(function () {
+                $('#submit-btn').click(function () {
                     if (curPageIndex != pages.length - 1) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
-                            loadAllBrands();
+                            loadingLayer.removeClass('hidden');
                             brandLoaded = true;
                         } else {
                             gotoPage()
