@@ -105,11 +105,11 @@ define(function() {
             if (hasTouch) {
                 y = event.pageY;
                 x = event.pageX;
-                console.log(x);
-                console.log(moveRangeEndX);
-                console.log(moveRangeStartX);
+                //console.log(x);
+                //console.log(moveRangeEndX);
+                //console.log(moveRangeStartX);
                 if ((x) < moveRangeEndX && (x) > moveRangeStartX && y > moveRangeStartY && y < moveRangeEndY) {
-                    console.log("yidong");
+                  //  console.log("yidong");
                     cloneElement.css({
                         top: y - 20 + 'px',
                         left: x - 100 + 'px'
