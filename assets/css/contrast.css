@@ -100,6 +100,11 @@
   border-right: 1px solid #D9D9D9;
   position: relative;
 }
+#contrast #content .wrapper .contrast-table .basic-info .car-title .title .carNameHover {
+  font-size: 15px;
+  font-weight: bolder;
+  cursor: pointer;
+}
 #contrast #content .wrapper .contrast-table .basic-info .car-title .title .close-contrast {
   display: block;
   position: absolute;

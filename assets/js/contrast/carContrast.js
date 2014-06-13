@@ -173,42 +173,13 @@ define(function() {
             window.location = config.api_contrastUrl+"?repeat="+repeat+"&optimal="+optimal;
         });
 
-        // 鼠标滑轮事件
-      /*  window.onload = function () {
-            var tableWidth = $(".basic-info").width();
-            var $wheelElement = $(".contrast-table");
-            var wheelElement = $(".contrast-table")[0];
-            var scrollMaxWidth =  250 ;
-
-            "onmousewheel" in wheelElement ? wheelElement.onmousewheel = wheel : wheelElement.addEventListener("DOMMouseScroll", wheel);
-            var count = 0;
-
-            function wheel(e) {
-                var e = e || event
-                var v = e.wheelDelta || -e.detail;
-
-                if ($(".contrast-table").scrollLeft() <= scrollMaxWidth && $(".contrast-table").scrollLeft() >= 0) {
-                    if (v > 0) {
-                        $wheelElement.stop(true).animate({
-                            scrollLeft: $(".contrast-table").scrollLeft() - 241
-                        }, 300,function() {
-
-                        });
-                    }
-                    else {
-                        $wheelElement.stop(true).animate({
-                            scrollLeft: $(".contrast-table").scrollLeft() + 241
-                        }, 300, function () {
-                        });
-                    }
-
-
-                }
-
-                e.preventDefault && e.preventDefault();
-                return false;
-            }
-        }*/
+        $(".carname a").live("mouseenter",function()
+        {
+            $(this).addClass("carNameHover");
+        }).live("mouseout",function()
+        {
+            $(this).removeClass("carNameHover");
+        });
     }
 
     var getContentList =function(index)
