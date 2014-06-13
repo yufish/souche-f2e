@@ -147,6 +147,11 @@ define(function() {
                     var carListLength = carList.length;
                     var sortString="";
 
+                    var self = this;
+                    self.getContentList = getContentList;
+                    self.addNewContent = addNewContent;
+                    self.defaultPosition = defaultPosition;
+                    self.movePosition = movePosition;
                     addNewContent(moveItemList, movePosition, false);
 
                     for(var index=0;index<carListLength;index++) {
@@ -154,12 +159,6 @@ define(function() {
                     }
 
                     sortString=sortString.substr(0,sortString.length-1);
-
-                    var self = this;
-                    self.getContentList = getContentList;
-                    self.addNewContent = addNewContent;
-                    self.defaultPosition = defaultPosition;
-                    self.movePosition = movePosition;
 
                     $.ajax({
                         type: "GET",
