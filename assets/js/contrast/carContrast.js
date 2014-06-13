@@ -10,7 +10,7 @@ define(function() {
     };
 
     var carCount =4;
-
+    var sortString=[];
     var showScroll_x =false;
     var contentTemplate="<th width='200px' class='title carname'><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/th>" +
                           "<td class='pic'><\/td><td class='price-s'><\/td><td class='price-n'><\/td>" +
@@ -59,6 +59,10 @@ define(function() {
         var contentPixList , movePosition, defaultPosition;
 
         $(".more-detail").live("mousedown", function (event) {
+            for(var index=0;index<$(".close-contrast").length;index++) {
+                sortString.push($(".close-contrast").eq(index).attr("cid"));
+            }
+
             startX = event.pageX;
             startY = event.pageY;
             hasTouch = true;
@@ -131,31 +135,25 @@ define(function() {
                     //alert(defaultPosition);
                     var carList = $(".carname");
                     var carListLength = carList.length;
-                    var sortString="";
 
                     var moveItemList = getContentList(defaultPosition);
 
-                    var temp = $(".close-contrast").eq(defaultPosition).attr("cid");
-                    $(".close-contrast").eq(defaultPosition).attr("cid",$(".close-contrast").eq(movePosition).attr("cid"));
-                    $(".close-contrast").eq(movePosition).attr("cid",temp);
 
                     addNewContent(moveItemList, movePosition, false);
+                    var temp = sortString[defaultPosition-1];
+                    sortString[defaultPosition-1]=sortString[movePosition];
+                    sortString[movePosition]=temp;
 
-                    for(var index=0;index<carListLength;index++) {
-                        sortString+=$(".carname").eq(index).find(".close-contrast").attr("cid")+","
-                    }
-
-                    sortString=sortString.substr(0,sortString.length-1);
+                    sortString = sortString.toString();
 
                     $.ajax({
                         type: "GET",
-                        url: config.api_updateContrastSeq+"?ids="+sortString,
+                        url: config.api_updateContrastSeq + "?ids=" + sortString,
                         dataType: "json",
                         context: self
                     }).done(function (data) {
 
                     });
-
                 }
             }
         });
