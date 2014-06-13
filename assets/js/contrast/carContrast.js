@@ -37,13 +37,8 @@ define(function() {
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
-                if (data.result == 2) {
-                    this.deleteContent(this.index());
-                }
-                else {
-                    delete headTh.deleteContent;
-                    alert("删除失败");
-                }
+                this.deleteContent(this.index());
+                delete headTh.deleteContent;
             });
 
             event.stopPropagation();
@@ -92,24 +87,23 @@ define(function() {
                 contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
             }
 
-            for (var index = 0; index < contentPixList.length; index++) {
+            /*for (var index = 0; index < contentPixList.length; index++) {
                 if ((event.pageX) < contentPixList[index] + cellWidth && (event.pageX) > contentPixList[index]) {
                     if (movePosition !== index) {
                         movePosition = defaultPosition = index;
                     }
                 }
-            }
+            }*/
+            movePosition = defaultPosition=$(this).parent().index();
+
         });
 
         $(document).mousemove(function (event) {
             if (hasTouch) {
                 y = event.pageY;
                 x = event.pageX;
-                console.log(x);
-                console.log(moveRangeEndX);
-                console.log(moveRangeStartX);
                 if ((x) < moveRangeEndX && (x) > moveRangeStartX && y > moveRangeStartY && y < moveRangeEndY) {
-                    console.log("yidong");
+
                     cloneElement.css({
                         top: y - 20 + 'px',
                         left: x - 100 + 'px'
@@ -120,9 +114,6 @@ define(function() {
 
                             if (movePosition != index && (index != defaultPosition - 1) && index <= carCount) {
                                 movePosition = index;
-                                //console.log("当年呈现:"+movePosition);
-                               // console.log("移到:"+index);
-                                //console.log("原来位置:"+defaultPosition);
                                 $(".tempalte").remove();
                                 if (movePosition !== defaultPosition) {
                                     addNewContent($(contentTemplate), movePosition, true);
@@ -147,17 +138,19 @@ define(function() {
                     var carListLength = carList.length;
                     var sortString="";
 
+                    var moveItemList = getContentList(defaultPosition);
+
+                    var temp = $(".close-contrast").eq(defaultPosition).attr("cid");
+                    $(".close-contrast").eq(defaultPosition).attr("cid",$(".close-contrast").eq(movePosition).attr("cid"));
+                    $(".close-contrast").eq(movePosition).attr("cid",temp);
+
+                    addNewContent(moveItemList, movePosition, false);
+
                     for(var index=0;index<carListLength;index++) {
                         sortString+=$(".carname").eq(index).find(".close-contrast").attr("cid")+","
                     }
 
                     sortString=sortString.substr(0,sortString.length-1);
-
-                    var self = this;
-                    self.getContentList = getContentList;
-                    self.addNewContent = addNewContent;
-                    self.defaultPosition = defaultPosition;
-                    self.movePosition = movePosition;
 
                     $.ajax({
                         type: "GET",
@@ -165,27 +158,25 @@ define(function() {
                         dataType: "json",
                         context: self
                     }).done(function (data) {
-                        if (data.result == 2) {
-                            var moveItemList = this.getContentList(defaultPosition);
-                            addNewContent(moveItemList, movePosition, false);
-                        }
-                        else {
-                            alert("移动失败");
-                        }
-                        delete self.getContentList;
-                        delete self.addNewContent;
-                        delete self.defaultPosition;
-                        delete self.movePosition;
+
                     });
 
                 }
             }
         });
 
-        var changeCarContrastSort = function()
+        $(".contrast-title input").change(function()
         {
-           // var carSortInfo
-        }
+            var optimal,repeat;
+            var repeat = $(".contrast-title input")[0].checked.toString();
+            var optimal = $(".contrast-title input")[1].checked.toString();
+
+            $.ajax({
+                url:config.api_contrastUrl+"?repeat="+repeat+"&optimal="+optimal,
+                type:"GET"
+            });
+        });
+
         // 鼠标滑轮事件
       /*  window.onload = function () {
             var tableWidth = $(".basic-info").width();

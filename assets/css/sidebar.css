@@ -407,7 +407,7 @@
 .sidebar-active .sidebar-nav .collectside:hover a .icon,
 .sidebar-active .sidebar-nav .collectside.active a .icon {
   background: url(../images/index/toolbar_sprite.png?1234);
-  background-position: 0 -29.99999999px;
+  background-position: 0 -30px;
 }
 .sidebar-active .sidebar-nav .collectside:hover a i,
 .sidebar-active .sidebar-nav .collectside.active a i {
