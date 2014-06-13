@@ -719,30 +719,72 @@ Souche.DetailCommon = function() {
     var config = {
 
     }
-
-    var _bind = function() {
-
-        var addCarDuibi = function() {
-            var carID = config.carID;
-
-            $.ajax({
-                type: "GET",
-                url: "../../../soucheweb/carContrastAction/addContrastCar.json?carId=" + carID,
-                dataType: "json"
-            }).done(function(data) {
-                if (data.result == 1) {
-                    alert("加入对比失败");
-                    $(".addcarduibi").one("click", addCarDuibi);
-                }
-                if (data.result == 2) {
-                    alert("加入对比成功");
-                    $(".addcarduibi input").attr("checked", 'true');
-                    $(".addcarduibi input").attr("disabled", "disabled");
-                }
-            });
-
+    var addCarDuibi = function(e) {
+        var carID = config.carId;
+        if(carID==undefined) {
+            alert("数据不合法");
+            return;
         }
-        $(".addcarduibi").one("click", addCarDuibi);
+
+        var self = this;
+        self.e =e;
+        $.ajax({
+            type: "POST",
+            url: config.api_addContrast,
+            dataType:"json",
+            context:self
+        }).done(function(data)
+        {
+            if (data.result == 2) {
+                $(".addcarduibi input").attr("checked", 'true');
+
+                var cloneElement = $(".addcarduibi").clone();
+                cloneElement.css({
+                    opacity: 0.8,
+                    position: 'absolute',
+                    top: this.e.pageY + 'px',
+                    left: this.e.pageX + 'px',
+                    backgroundColor:"#BCEE68"
+                });
+
+                var endX = $(".side-box .contrast-img").offset().left;
+                var endY = $(".side-box .contrast-img").offset().top;
+
+                document.body.appendChild(cloneElement[0]);
+                cloneElement.animate({
+                    top: endY,
+                    left: endX
+                }, 500,function()
+                {
+                    cloneElement.remove();
+                });
+                return;
+            }
+            if(data.result == -1)
+            {
+                $(".addcarduibi input").attr("checked", 'true');
+                alert("已经加入对比");
+                return ;
+            }
+            if(data.result == 1)
+            {
+                alet("对比项已满");
+                $(".addcarduibi").one("click",addCarDuibi);
+                return ;
+            }
+            else{
+                alert("加入对比失败");
+                $(".addcarduibi").one("click",addCarDuibi);
+            }
+        });
+    }
+
+    var _bind=function()
+    {
+        if(!$(".addcarduibi input")[0].checked) {
+            $(".addcarduibi").one("click", addCarDuibi);
+        }
+
     }
 
     return {
@@ -787,6 +829,7 @@ Souche.DetailCommon = function() {
 
                 })
             }
+
 
             $(".addcarduibi input")[0].checked ? $(".addcarduibi input").attr("disabled", "disabled") : ""
 

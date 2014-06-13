@@ -4842,7 +4842,7 @@ body {
     font-size: 18px;
     text-align: center;
 }
-.cover-layer {
+.loading-cover-layer {
     width: 99999px;
     height: 99999px;
     z-index: 100;
