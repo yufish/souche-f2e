@@ -1,18 +1,18 @@
-(function () {
+(function() {
 
-    $(".apply_close, .popup-sure").live("click", function () {
+    $(".apply_close, .popup-sure").live("click", function() {
         $(".apply_popup").addClass("hidden");
         $('.wrapGrayBg').hide();
     });
 
-    $("#link-to-fenqi").click(function () {
+    $("#link-to-fenqi").click(function() {
         $("#fenqi-popup").removeClass("hidden");
         $(".wrapGrayBg").show();
         return false;
     });
 
 
-    $("#detailDoor .tab-item").mouseenter(function () {
+    $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();
         var target = null;
@@ -36,7 +36,7 @@
         }
     });
 
-    $("#detailDoor .tab-item").mouseenter(function () {
+    $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();
         var target = null;
@@ -70,7 +70,7 @@
         $fenqiTimeWrap = $("#fenqi-wrap");
     $fenqiMort = $("#fenqi-mort")
 
-    var changeArrow = function (time) {
+    var changeArrow = function(time) {
         var timeArrow, mortArrow,
             str = "fenqi-arrow arrow";
         if ($interest == "1") {
@@ -113,14 +113,14 @@
         $mortgage.attr("class", str + mortArrow);
     };
 
-    $("#fenqi_select").click(function (event) {
+    $("#fenqi_select").click(function(event) {
         $fenqiList.show();
         event.stopPropagation();
     });
-    $("body, html").click(function () {
+    $("body, html").click(function() {
         $fenqiList.hide();
     });
-    $fenqiTime.click(function () {
+    $fenqiTime.click(function() {
         var $this = $(this),
             time = $this.attr("time"),
             mortgage = $this.attr("mortpay"),
@@ -144,7 +144,7 @@
         textVal = $("#dialog-textVal");
 
     //取得用户填写的信息
-    var showMes = function () {
+    var showMes = function() {
         showPrice.text(priceVal.val());
         showText.text(textVal.val());
         afterSubmit.removeClass("hidden");
@@ -152,7 +152,7 @@
 
     //是否超过字数
     var mesNum = $("#dialog-mes-num");
-    $("#dialog-textVal").keyup(function () {
+    $("#dialog-textVal").keyup(function() {
 
         var length = $(this).val().length;
         mesNum.text(length);
@@ -160,7 +160,7 @@
             //$(this).attr("disabled",true);
         }
     })
-    $(".detail-share .wx").click(function (e) {
+    $(".detail-share .wx").click(function(e) {
         e.stopPropagation()
         $("#wx-popup").removeClass("hidden").css({
             left: $(".detail-share .wx").offset().left - 98,
@@ -168,17 +168,17 @@
         })
         $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
     });
-    $(document.body).click(function () {
+    $(document.body).click(function() {
         $("#wx-popup").addClass("hidden")
     });
-    var submitToPhone = function () {
+    var submitToPhone = function() {
         $.ajax({
             url: $("#ph-form")[0].action,
             data: {
                 carId: SaleDetailConfig.carId
             },
             type: "post",
-            success: function (data) {
+            success: function(data) {
                 $('body').append(data);
                 $(".wrapGrayBg").show();
                 $("#ph-popup").addClass("hidden")
@@ -186,13 +186,13 @@
             }
         })
     }
-    $(".detail-share .ph").click(function () {
+    $(".detail-share .ph").click(function() {
         $("#ph-popup .popup-title").html("保存到手机")
         $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendCarClose)
         $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
         $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
         $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
-        Souche.checkPhoneExist(function (is_login) {
+        Souche.checkPhoneExist(function(is_login) {
             if (is_login) {
                 submitToPhone();
             } else {
@@ -201,18 +201,18 @@
             }
         })
     })
-    $("#ph-form").on("submit", function (e) {
+    $("#ph-form").on("submit", function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#ph-phone").val())) {
             $(".warning", this).removeClass("hidden");
         } else {
-            Souche.PhoneRegister($("#ph-phone").val(), function () {
+            Souche.PhoneRegister($("#ph-phone").val(), function() {
                 submitToPhone();
             })
 
         }
     })
-    $("#ph-phone").blur(function (e) {
+    $("#ph-phone").blur(function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#ph-phone").val())) {
             $(".warning", $("#ph-form")).removeClass("hidden");
@@ -237,42 +237,40 @@
     //     })
     // })
     //门店地址
-    $(".detail-share .address").mousemove(function () {
+    $(".detail-share .address").mousemove(function() {
         $(".adress-open").removeClass("hidden");
     })
-    $(document.body).on("click", function (e) {
+    $(document.body).on("click", function(e) {
         if (!$(e.target).closest(".adress-open").length) {
             $(".adress-open").addClass("hidden");
         }
     })
-    var submitAddress = function () {
+    var submitAddress = function() {
         $.ajax({
-            url: config.api_AddressToPhone,
+            url: SaleDetailConfig.api_AddressToPhone,
             data: {
                 phone: $("#address-phone").val()
             },
             type: "post",
-            success: function () {
+            success: function() {
 
                 $(".adress-open").addClass("hidden");
             }
         })
     }
-    $("#adress-from").on("submit", function (e) {
+    $("#adress-from").on("submit", function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#address-phone").val())) {
             alert("请输入正确手机号码");
         } else {
-            Souche.PhoneRegister($("#address-phone").val(), function () {
-                submitAddress();
-            })
+            submitAddress();
         }
     })
-    var submitJiangjia = function () {
+    var submitJiangjia = function() {
         $.ajax({
             url: $("#jiangjia-form").attr('action'),
             data: $("#jiangjia-form").serialize(),
-            success: function (data) {
+            success: function(data) {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
@@ -284,19 +282,19 @@
         })
     }
     //降价通知提交
-    $("#jiangjia-form").submit(function (e) {
+    $("#jiangjia-form").submit(function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#jiangjia-phone").val())) {
             $(".warning", this).removeClass("hidden");
             return;
         }
-        Souche.PhoneRegister($("#jiangjia-phone").val(), function () {
+        Souche.PhoneRegister($("#jiangjia-phone").val(), function() {
 
             submitJiangjia();
         })
     })
-    $("#J_jiangjia").click(function () {
-        Souche.checkPhoneExist(function (is_login) {
+    $("#J_jiangjia").click(function() {
+        Souche.checkPhoneExist(function(is_login) {
             //          if(is_login){
             //              submitJiangjia();
             //          }else{
@@ -305,7 +303,7 @@
             //          }
         })
     });
-    Bimu.form.selfValidate("J_dialogForm", "dialog-sendMes", function () {
+    Bimu.form.selfValidate("J_dialogForm", "dialog-sendMes", function() {
         if (!(/^\+?[1-9][0-9]*$/.test(priceVal.val()))) {
             $("#price-valid").show();
             return false;
@@ -329,11 +327,11 @@
             type: "post",
             dataType: "json",
             async: false,
-            success: function (data) {
+            success: function(data) {
                 if (data.result == "true") {
 
                     ///
-                    Bimu.ajax.formPost("J_dialogForm", function () {
+                    Bimu.ajax.formPost("J_dialogForm", function() {
                         showMes();
                         afterSubmit.removeClass("hidden");
                         dialogGetMes.removeClass("dialog-error").addClass("hidden");
@@ -347,7 +345,7 @@
                     return false;
                 }
             },
-            error: function () {
+            error: function() {
                 dialogGetMes.addClass("dialog-error");
                 $(".zixun-main").scrollTop($(".zixun-main").height())
                 return false;
@@ -355,7 +353,7 @@
         });
     })
     var doubleClickFlag = false;
-    var submitFav = function () {
+    var submitFav = function() {
         $.ajax({
             url: SaleDetailConfig.api_saveFavorite,
             data: {
@@ -365,7 +363,7 @@
             },
             dataType: "json",
             type: "post",
-            success: function (data) {
+            success: function(data) {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
@@ -380,9 +378,9 @@
                             left: $(".sidebar").offset().left + 10,
                             top: $(".sidebar").offset().top + 10,
                             opacity: 0
-                        }, 700, function () {
+                        }, 700, function() {
                             $(".collectside").addClass("flash")
-                            setTimeout(function () {
+                            setTimeout(function() {
                                 $(".collectside").removeClass("flash")
                             }, 500)
                         })
@@ -397,14 +395,14 @@
             }
         })
     }
-    $("#J_shoucang").live('click', function (e) {
+    $("#J_shoucang").live('click', function(e) {
 
         e.preventDefault();
 
         if ($(this).hasClass("faved")) {
             return;
         }
-        Souche.checkPhoneExist(function (is_login) {
+        Souche.checkPhoneExist(function(is_login) {
             if (is_login) {
 
                 submitFav();
@@ -415,24 +413,24 @@
         })
 
     });
-    $("#fav-form").on("submit", function (e) {
+    $("#fav-form").on("submit", function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#fav-phone").val())) {
             $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
         } else {
 
-            Souche.PhoneRegister($("#fav-phone").val(), function () {
+            Souche.PhoneRegister($("#fav-phone").val(), function() {
                 submitFav();
             })
         }
     })
-    $('#shoucang-popup .apply_close').click(function () {
+    $('#shoucang-popup .apply_close').click(function() {
 
         $(this).parent().addClass('hidden');
         $(".wrapGrayBg").hide();
     });
 
-    Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function () {
+    Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function() {
 
         //登录验证
         if (!$('#user-phone').val()) {
@@ -446,9 +444,9 @@
         $("#dialog-loginBtn").val("登陆中...");
 
         return true;
-    }, function (data) {
+    }, function(data) {
         if (data.errorMessage == "") {
-            Bimu.ajax.formPost("J_dialogForm", function () {
+            Bimu.ajax.formPost("J_dialogForm", function() {
                 showMes();
                 afterSubmit.removeClass("hidden");
                 dialogGetMes.removeClass("dialog-error").addClass("hidden");
@@ -458,7 +456,7 @@
         }
         $(".zixun-main").scrollTop($(".zixun-main").height())
     });
-    $("#user-phone").blur(function () {
+    $("#user-phone").blur(function() {
         var phoneT = $(this).val();
         if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
             dialogLoginRemind.html("请正确填写手机号码！");
@@ -471,7 +469,7 @@
     var uuid = guid();
     $("#uuid").val(uuid);
 
-    Bimu.form.validate("dialog-reg", "dialog-regBtn", function (data) {
+    Bimu.form.validate("dialog-reg", "dialog-regBtn", function(data) {
 
         if (data.id) {
             if (data.msg) {
@@ -483,10 +481,10 @@
             dialogRegRemind.html("");
             $("#user-phone").val($("#user-regPhone").val());
             $("#user-psd").val($("#user-regPsd").val());
-            Bimu.ajax.loginForm("dialog-login", function (data) {
+            Bimu.ajax.loginForm("dialog-login", function(data) {
                 if (data.errorMessage == "") {
                     //登陆       
-                    Bimu.ajax.formPost("J_dialogForm", function () {
+                    Bimu.ajax.formPost("J_dialogForm", function() {
                         showMes();
                         afterSubmit.removeClass("hidden");
                         dialogGetMes.removeClass("dialog-error dialog-register").addClass("hidden");
@@ -495,12 +493,11 @@
             }, null);
         }
 
-    }, function () {
-    }, {
+    }, function() {}, {
         noclear: true
     });
 
-    $("#user-regPhone").blur(function () {
+    $("#user-regPhone").blur(function() {
         var phoneT = $(this).val();
         if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
             dialogRegRemind.html("请正确填写手机号码");
@@ -525,7 +522,7 @@
 
         obj.attr("disabled", true);
 
-        setTimeout(function () {
+        setTimeout(function() {
             obj.attr("disabled", false);
             if (interVal != null) {
                 clearInterval(interVal);
@@ -533,7 +530,7 @@
             obj.val("获取验证码");
         }, 60000);
 
-        interVal = setInterval(function () {
+        interVal = setInterval(function() {
 
             if (it < 60) {
                 obj.val((60 - it) + "秒后可重发");
@@ -548,7 +545,7 @@
             phoneNumber: phone,
             type: "register",
             uuid: uuid
-        }, function (data) {
+        }, function(data) {
             if (data.id) {
                 dialogRegRemind.html("该手机号码已经注册");
                 if (interVal != null) {
@@ -560,8 +557,7 @@
             } else {
                 dialogRegRemind.html("");
             }
-        }, function () {
-        });
+        }, function() {});
     }
 
     function s4() {
@@ -575,11 +571,11 @@
             s4() + '-' + s4() + s4() + s4();
     }
 
-    $(".dialog-get-yz").click(function () {
+    $(".dialog-get-yz").click(function() {
         setButtonValue($(this));
     })
 
-    $("#J_zixunPrice").click(function () {
+    $("#J_zixunPrice").click(function() {
         $("#dialog-apply1,#dialog-getMes").removeClass("hidden").slideDown(200);
         afterSubmit.addClass('hidden');
         $('#dialog-priceVal').val('');
@@ -589,26 +585,26 @@
     //  $(".J_linkShangqiao").click(function(){
     //      $("#bridgehead").trigger("click");
     //  });
-    $(".J_linkShangqiao").mouseenter(function () {
+    $(".J_linkShangqiao").mouseenter(function() {
         $(".shangqiao-remind", this.parentNode).show();
-    }).mouseleave(function () {
+    }).mouseleave(function() {
         $(".shangqiao-remind", this.parentNode).hide();
     });
-    $("#link-reg").click(function () {
+    $("#link-reg").click(function() {
         $("#dialog-getMes").addClass("dialog-register");
         return false;
     });
-    $("#link-login").click(function () {
+    $("#link-login").click(function() {
         $("#dialog-getMes").removeClass("dialog-register");
         return false;
     });
 })();
 //买车顾问弹出
-$(".advisor-close").click(function () {
+$(".advisor-close").click(function() {
     $(".advisor-unfold").addClass("hidden");
 
 });
-$(".advisor-unfold").click(function () {
+$(".advisor-unfold").click(function() {
     $(".advisor-unfold").animate({
         width: "820px",
         height: "400px",
@@ -616,22 +612,22 @@ $(".advisor-unfold").click(function () {
     }, 800)
 });
 var phoneReg = /^1[3458][0-9]{9}$/;
-$(".unfold").on("submit", function (e) {
+$(".unfold").on("submit", function(e) {
     e.preventDefault();
     if (!phoneReg.test($("#unfold-phone").val())) {
         $(".input-error-tip").removeClass("hidden")
         return;
     }
-    Souche.PhoneRegister($("#unfold-phone").val(), function () {
+    Souche.PhoneRegister($("#unfold-phone").val(), function() {
         window.location.href = contextPath + "/pages/onsale/match_car_list.html"
     })
 });
 //查看大图
-(function () {
+(function() {
     var bigImages = null;
     var iframe = null;
     var index = 0;
-    var appendIframe = function (index) {
+    var appendIframe = function(index) {
         if (bigImages) {
             iframe.Slider.setCurrent(index);
             bigImages.css("display", "block");
@@ -650,7 +646,7 @@ $(".unfold").on("submit", function (e) {
             })
             $(document.body).append(bigImages);
             iframe = window.frames['bigImages'];
-            $(iframe).load(function () {
+            $(iframe).load(function() {
                 iframe.Slider.init({
                     viewHeight: $(window).height()
                 });
@@ -659,22 +655,22 @@ $(".unfold").on("submit", function (e) {
             })
         }
     }
-    $("#onsale_detail .photosWrap").click(function (event) {
+    $("#onsale_detail .photosWrap").click(function(event) {
         var target = event.target;
         if (target.nodeName == "IMG") {
             index = $(target).parent().index();
             appendIframe(index);
         }
     });
-    $("#onsale_detail .showBig").click(function () {
+    $("#onsale_detail .showBig").click(function() {
         appendIframe(0);
     });
 })()
 Souche.Detail = Souche.Detail || {}
-Souche.Detail.PriceDown = function () {
+Souche.Detail.PriceDown = function() {
     var carPrice, nowPrice, nowStr, start, end
     return {
-        init: function (config) {
+        init: function(config) {
             carPrice = parseInt($('.price-now.now').text());
             nowPrice = carPrice - 1000;
             nowStr = nowPrice.toString();
@@ -688,7 +684,7 @@ Souche.Detail.PriceDown = function () {
             $("#jiangyidian").click(this.downPriceStep)
             // this.downPriceStep();
         },
-        downPriceStep: function () {
+        downPriceStep: function() {
             if (100 * (carPrice - nowPrice) / carPrice > 5) {
                 $("#jiangyidian").css({
                     "background-position": "0 0",
@@ -703,7 +699,7 @@ Souche.Detail.PriceDown = function () {
             var now_s = nowPrice.toString(),
                 low_s = lowPrice.toString();
             var $cutPrice = $('.cutprice');
-            $cutPrice.find('.price-num em').fadeOut(function () {
+            $cutPrice.find('.price-num em').fadeOut(function() {
                 curIndex++;
                 if (curIndex == length)
                     $cutPrice.find('.price-num.hidden').removeClass('hidden')
@@ -719,25 +715,40 @@ Souche.Detail.PriceDown = function () {
         }
     }
 }();
-Souche.DetailCommon = function () {
+Souche.DetailCommon = function() {
     var config = {
 
     }
 
-    var _bind=function()
-    {
-        $("#addcarduibi").click(function()
-        {
-            $(".addcarduibi input").attr("checked",'true');
-            $(".addcarduibi input").attr("disabled","disabled");
-        });
+    var _bind = function() {
 
+        var addCarDuibi = function() {
+            var carID = config.carID;
+
+            $.ajax({
+                type: "GET",
+                url: "../../../soucheweb/carContrastAction/addContrastCar.json?carId=" + carID,
+                dataType: "json"
+            }).done(function(data) {
+                if (data.result == 1) {
+                    alert("加入对比失败");
+                    $(".addcarduibi").one("click", addCarDuibi);
+                }
+                if (data.result == 2) {
+                    alert("加入对比成功");
+                    $(".addcarduibi input").attr("checked", 'true');
+                    $(".addcarduibi input").attr("disabled", "disabled");
+                }
+            });
+
+        }
+        $(".addcarduibi").one("click", addCarDuibi);
     }
 
     return {
-        init: function (_config) {
+        init: function(_config) {
             $.extend(config, _config)
-            require(['detail/init_summary'], function (InitSummary) {
+            require(['detail/init_summary'], function(InitSummary) {
                 InitSummary.init(config);
             })
             // var carPrice = parseInt($('.price-now.now').text());
@@ -750,7 +761,7 @@ Souche.DetailCommon = function () {
             // }
             Souche.Detail.PriceDown.init(config);
             if ($(".brand-nav").length) {
-                $(window).scroll(function () {
+                $(window).scroll(function() {
                     var brandNavPos = $(".brand-nav").offset().top;
                     var brandHeight = $(".brand-wrapper").height();
                     var brandNavHeight = $(".brand-nav").height();
@@ -777,9 +788,61 @@ Souche.DetailCommon = function () {
                 })
             }
 
-            $(".addcarduibi input")[0].checked?$(".addcarduibi input").attr("disabled","disabled"):""
+            $(".addcarduibi input")[0].checked ? $(".addcarduibi input").attr("disabled", "disabled") : ""
 
             _bind();
+
+
+            var navSaleTabTop = $("#onsale_tab").offset().top;
+            var navSaleTabHeight = $("#onsale_tab").height();
+
+            $(window).scroll(function() {
+                var winTop = $(window).scrollTop();
+
+                if (winTop > navSaleTabTop) {
+                    $("#onsale_tab").css({
+                        position: "fixed",
+                        top: 0,
+                        width: "100%",
+                        zIndex: 1000
+                    })
+                } else {
+                    $("#onsale_tab").css({
+                        position: "relative"
+                    })
+                }
+                var onSaleHeight = $(".onsale-summary").height();
+                if (winTop > navSaleTabTop + onSaleHeight - 40) {
+                    $("#onsale_tab").css({
+                        position: "relative"
+                    })
+                }
+                // paras.$winTop = paras.$win.scrollTop();
+
+                // //添加onsale-summary元素的 to fix 功能
+                // if (paras.$navSaleTab.length != 0) {
+                //     var navSaleSumHeight = $("#onsale-summary").height();
+                //     if ((navSaleTabTop + cacheHeight) <= paras.$winTop && (navSaleTabTop + navSaleSumHeight) >= paras.$winTop) {
+                //         if (!paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
+                //             paras.$navSaleTabFixed.stop(true);
+                //             paras.$navSaleTabFixed.addClass("saleTab_fixed").removeClass("hidden");
+                //             paras.$navSaleTabFixed.animate({
+                //                 top: 0
+                //             }, 300, function() {});
+                //         }
+                //     } else {
+                //         if (paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
+
+                //             paras.$navSaleTabFixed.stop(true);
+                //             paras.$navSaleTabFixed.animate({
+                //                 top: -45
+                //             }, 300, function() {
+                //                 paras.$navSaleTabFixed.addClass("hidden").removeClass("saleTab_fixed");
+                //             });
+                //         }
+                //     }
+                // }
+            });
 
         }
     }
