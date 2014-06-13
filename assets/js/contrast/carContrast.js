@@ -87,24 +87,23 @@ define(function() {
                 contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
             }
 
-            for (var index = 0; index < contentPixList.length; index++) {
+            /*for (var index = 0; index < contentPixList.length; index++) {
                 if ((event.pageX) < contentPixList[index] + cellWidth && (event.pageX) > contentPixList[index]) {
                     if (movePosition !== index) {
                         movePosition = defaultPosition = index;
                     }
                 }
-            }
+            }*/
+            movePosition = defaultPosition=$(this).parent().index();
+
         });
 
         $(document).mousemove(function (event) {
             if (hasTouch) {
                 y = event.pageY;
                 x = event.pageX;
-                //console.log(x);
-                //console.log(moveRangeEndX);
-                //console.log(moveRangeStartX);
                 if ((x) < moveRangeEndX && (x) > moveRangeStartX && y > moveRangeStartY && y < moveRangeEndY) {
-                  //  console.log("yidong");
+
                     cloneElement.css({
                         top: y - 20 + 'px',
                         left: x - 100 + 'px'
@@ -115,9 +114,6 @@ define(function() {
 
                             if (movePosition != index && (index != defaultPosition - 1) && index <= carCount) {
                                 movePosition = index;
-                                //console.log("当年呈现:"+movePosition);
-                               // console.log("移到:"+index);
-                                //console.log("原来位置:"+defaultPosition);
                                 $(".tempalte").remove();
                                 if (movePosition !== defaultPosition) {
                                     addNewContent($(contentTemplate), movePosition, true);
