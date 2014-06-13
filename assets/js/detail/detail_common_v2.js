@@ -746,7 +746,7 @@ Souche.DetailCommon = function() {
                     left: this.e.pageX + 'px',
                     backgroundColor:"#BCEE68"
                 });
-             
+
                 var endX = $(".side-box .contrast-img").offset().left;
                 var endY = $(".side-box .contrast-img").offset().top;
 
@@ -763,7 +763,11 @@ Souche.DetailCommon = function() {
             if(data.result == -1)
             {
                 $(".addcarduibi input").attr("checked", 'true');
-                alet("已经加入对比1234");
+                alet("已经加入对比");
+            }
+            if(data.result == 1)
+            {
+                alet("对比项已满");
             }
             else{
                 alert("加入对比失败");

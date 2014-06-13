@@ -158,7 +158,7 @@ define(function() {
                     delete self.addNewContent;
                     delete self.defaultPosition;
                     delete self.movePosition;
-                    
+
                     addNewContent(moveItemList, movePosition, false);
 
                     for(var index=0;index<carListLength;index++) {
