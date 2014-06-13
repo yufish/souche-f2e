@@ -725,7 +725,7 @@ Souche.DetailCommon = function () {
     }
 
     var addCarDuibi = function(e) {
-        var carID = config.carID;
+        var carID = config.carId;
         var self = this;
         self.e =e;
         $.ajax({
