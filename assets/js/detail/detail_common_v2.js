@@ -758,6 +758,7 @@ Souche.DetailCommon = function() {
                 {
                     cloneElement.remove();
                 });
+                return;
             }
             if(data.result == -1)
             {
