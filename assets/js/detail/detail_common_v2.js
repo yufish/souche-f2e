@@ -769,6 +769,7 @@ Souche.DetailCommon = function() {
             if(data.result == 1)
             {
                 alet("对比项已满");
+                $(".addcarduibi").one("click",addCarDuibi);
                 return ;
             }
             else{
