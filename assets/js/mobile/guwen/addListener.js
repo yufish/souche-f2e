@@ -14,7 +14,9 @@
         process:function(e){
             var eType = e['eventType'];
             if(eType=='addBrand'){
-
+                var code = e.item.code,
+                    name = e.item.name;
+                this.container.find('')
             }
             if(eType=='removeBrand'){
 
@@ -25,7 +27,9 @@
         }
     }
 
-    var brandIconLtn ={
+
+
+    var brandSelectedLtn={
         container:$('#brand .selected-brand'),
         process:function(e){
             var eType = e['eventType'];
@@ -40,13 +44,6 @@
 
             }
         }
-    }
-
-
-
-
-    var brandSelectedLtn={
-
     }
 
     var seriesItemLtn={

@@ -1,3 +1,23 @@
+.cover-layer {
+    width: 99999px;
+    height: 99999px;
+    z-index: 100;
+    background-color: #7f7f7f;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.loading-cover-layer {
+    width: 99999px;
+    height: 99999px;
+    z-index: 100;
+    background-color: #7f7f7f;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 #guwen-h5-2 {
     position: relative;
     background-color: #fff;
@@ -147,49 +167,25 @@
  #brand-icons-container {
     margin: 10px 0 0 0;
 }
- #brand-icons-container .icon-group {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
-    margin-top: 15px;
-}
- #brand-icons-container .icon-group #more-brand {
-    width: 40px;
-    height: 40px;
-    border-radius: 80%;
-    background-color: #dfdfdf;
-    margin: 0 auto;
-}
- #brand-icons-container .icon-group #more-brand .more-circle {
-    width: 24px;
-    margin: 0 auto;
-    overflow: hidden;
-}
- #brand-icons-container .icon-group #more-brand .more-inner-circle {
-    width: 4px;
-    height: 4px;
+
+
+ #brand-icons-container  .icon-item {
+    width: 25%;
     float: left;
-    border-radius: 80%;
-    margin: 10px 2px 6px 2px;
-    background-color: #666666;
+    position: relative;
+    margin-bottom: 10px;
 }
- #brand-icons-container .icon-group .icon-item {
+ #brand-icons-container .icon-item-more {
     width: 25%;
     float: left;
     position: relative;
 }
- #brand-icons-container .icon-group .icon-item-more {
-    width: 25%;
-    float: left;
-    position: relative;
-}
- #brand-icons-container .icon-group .icon-item .brand-img {
+ #brand-icons-container .icon-item .brand-img {
     position: relative;
     width: 28px;
     margin: 0 auto;
 }
- #brand-icons-container .icon-group .icon-item .brand-img .brand-array {
+ #brand-icons-container  .icon-item .brand-img .brand-array {
     position: absolute;
     background: url(../../images/mob/h5-2/brand-array.png) no-repeat center center;
     background-size: 13px;
@@ -199,46 +195,13 @@
     height: 7px;
     display: none;
 }
- #brand-icons-container .icon-group .icon-item img {
+ #brand-icons-container .icon-item img {
     width: 28px;
     height: 28px;
 }
- #brand-icons-container .icon-group .icon-item .brand-name {
+ #brand-icons-container .icon-item .brand-name {
     margin-top: 5px;
-}
- #brand-icons-container .icon-group .fold-series {
-    width: 100%;
-    clear: both;
-    padding: 8px 0;
-    display: none;
-}
- #brand-icons-container .icon-group .fold-series .wrapper {
-    padding: 20px;
-    overflow: hidden;
-    background-color: #dfdfdf;
-}
- #brand-icons-container .icon-group .fold-series .series-item {
-    width: 50%;
-    float: left;
-    margin: 8px 0;
-}
- #brand-icons-container .icon-group .fold-series .series-item .text {
-    text-align: center;
-    height: 35px;
-    line-height: 35px;
-    background-color: #fff;
-    margin: 0 8px;
-    border-radius: 8px;
-    color: #474747;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 2px solid #fff;
-}
- #brand-icons-container .icon-group .fold-series .series-item .text.selected {
-    border: 2px solid #fc7000;
-    background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
-    background-size: 14px;
+     text-align: center;
 }
 #price-container{
     margin-top: 65px;
@@ -322,5 +285,8 @@
     width:48px;
     height: 28px;
     border:1px solid #C2C2C2;
+    border-radius:5px;
+    padding-left: 3px;
 }
+
 
