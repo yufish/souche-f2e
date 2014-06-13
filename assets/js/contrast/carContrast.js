@@ -37,13 +37,8 @@ define(function() {
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
-                if (data.result == 2) {
-                    this.deleteContent(this.index());
-                }
-                else {
-                    delete headTh.deleteContent;
-                    alert("删除失败");
-                }
+                this.deleteContent(this.index());
+                delete headTh.deleteContent;
             });
 
             event.stopPropagation();
@@ -152,7 +147,7 @@ define(function() {
                     self.addNewContent = addNewContent;
                     self.defaultPosition = defaultPosition;
                     self.movePosition = movePosition;
-                    var moveItemList = this.getContentList(defaultPosition);
+                    var moveItemList = this.getContentList(self.defaultPosition);
 
                     delete self.getContentList;
                     delete self.addNewContent;
