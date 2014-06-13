@@ -166,12 +166,13 @@ define(function() {
                         context: self
                     }).done(function (data) {
                         if (data.result == 2) {
-                            var moveItemList = this.getContentList(defaultPosition);
-                            addNewContent(moveItemList, movePosition, false);
+
                         }
                         else {
-                            alert("移动失败");
+                            //alert("移动失败");
                         }
+                        var moveItemList = this.getContentList(defaultPosition);
+                        addNewContent(moveItemList, movePosition, false);
                         delete self.getContentList;
                         delete self.addNewContent;
                         delete self.defaultPosition;
@@ -182,10 +183,18 @@ define(function() {
             }
         });
 
-        var changeCarContrastSort = function()
+        $(".contrast-title input").change(function()
         {
-           // var carSortInfo
-        }
+            var optimal,repeat;
+            var repeat = $(".contrast-title input")[0].checked.toString();
+            var optimal = $(".contrast-title input")[1].checked.toString();
+
+            $.ajax({
+                url:config.api_contrastUrl+"?repeat="+repeat+"&optimal="+optimal,
+                type:"GET"
+            });
+        });
+
         // 鼠标滑轮事件
       /*  window.onload = function () {
             var tableWidth = $(".basic-info").width();

@@ -746,7 +746,7 @@ Souche.DetailCommon = function() {
                     left: this.e.pageX + 'px',
                     backgroundColor:"#BCEE68"
                 });
-
+             
                 var endX = $(".side-box .contrast-img").offset().left;
                 var endY = $(".side-box .contrast-img").offset().top;
 
