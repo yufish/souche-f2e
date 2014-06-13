@@ -32,8 +32,11 @@ define(function() {
             headTh.deleteContent = deleteContent;
 
             $.ajax({
-                type: "GET",
-                url: config.api_deleteContrast + "?cid=" + $(this).attr("cid"),
+                type: "POST",
+                url: config.api_deleteContrast,
+                data:{
+                    cid:$(this).attr("cid")
+                },
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
@@ -147,8 +150,11 @@ define(function() {
                     sortString = sortString.toString();
 
                     $.ajax({
-                        type: "GET",
-                        url: config.api_updateContrastSeq + "?ids=" + sortString,
+                        type: "POST",
+                        url: config.api_updateContrastSeq,
+                        data:{
+                            ids:sortString
+                        },
                         dataType: "json",
                         context: self
                     }).done(function (data) {
