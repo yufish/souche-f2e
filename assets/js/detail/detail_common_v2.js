@@ -764,10 +764,12 @@ Souche.DetailCommon = function() {
             {
                 $(".addcarduibi input").attr("checked", 'true');
                 alet("已经加入对比");
+                return ;
             }
             if(data.result == 1)
             {
                 alet("对比项已满");
+                return ;
             }
             else{
                 alert("加入对比失败");
