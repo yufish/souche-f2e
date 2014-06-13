@@ -58,11 +58,6 @@ define(function() {
         var moveRangeEndY = $(".carname").offset().top + $(".carname").height();
         var contentPixList , movePosition, defaultPosition;
 
-        $(document).live("mousedown",function(event)
-        {
-            event.preventDefault();
-        });
-
         $(".more-detail").live("mousedown", function (event) {
             startX = event.pageX;
             startY = event.pageY;
