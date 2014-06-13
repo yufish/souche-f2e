@@ -767,7 +767,7 @@ Souche.DetailCommon = function () {
             if(data.result == -1)
             {
                 $(".addcarduibi input").attr("checked", 'true');
-                alet("已经加入对比");
+                alet("已经加入对比123");
             }
             else{
                 alert("加入对比失败");
