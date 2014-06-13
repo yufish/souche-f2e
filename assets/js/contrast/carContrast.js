@@ -142,17 +142,11 @@ define(function() {
                     var carListLength = carList.length;
                     var sortString="";
 
-                    var self = this;
-                    self.getContentList = getContentList;
-                    self.addNewContent = addNewContent;
-                    self.defaultPosition = defaultPosition;
-                    self.movePosition = movePosition;
-                    var moveItemList = this.getContentList(self.defaultPosition);
+                    var moveItemList = getContentList(defaultPosition);
 
-                    delete self.getContentList;
-                    delete self.addNewContent;
-                    delete self.defaultPosition;
-                    delete self.movePosition;
+                    var temp = $(".close-contrast").eq(defaultPosition).attr("cid");
+                    $(".close-contrast").eq(defaultPosition).attr("cid",$(".close-contrast").eq(movePosition).attr("cid"));
+                    $(".close-contrast").eq(movePosition).attr("cid",temp);
 
                     addNewContent(moveItemList, movePosition, false);
 

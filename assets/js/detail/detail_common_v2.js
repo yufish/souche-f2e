@@ -763,7 +763,7 @@ Souche.DetailCommon = function() {
             if(data.result == -1)
             {
                 $(".addcarduibi input").attr("checked", 'true');
-                alet("已经加入对比");
+                alert("已经加入对比");
                 return ;
             }
             if(data.result == 1)
