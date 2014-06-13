@@ -152,6 +152,13 @@ define(function() {
                     self.addNewContent = addNewContent;
                     self.defaultPosition = defaultPosition;
                     self.movePosition = movePosition;
+                    var moveItemList = this.getContentList(defaultPosition);
+
+                    delete self.getContentList;
+                    delete self.addNewContent;
+                    delete self.defaultPosition;
+                    delete self.movePosition;
+                    
                     addNewContent(moveItemList, movePosition, false);
 
                     for(var index=0;index<carListLength;index++) {
@@ -166,12 +173,7 @@ define(function() {
                         dataType: "json",
                         context: self
                     }).done(function (data) {
-                        var moveItemList = this.getContentList(defaultPosition);
 
-                        delete self.getContentList;
-                        delete self.addNewContent;
-                        delete self.defaultPosition;
-                        delete self.movePosition;
                     });
 
                 }
