@@ -759,6 +759,11 @@ Souche.DetailCommon = function () {
                     cloneElement.remove();
                 });
             }
+            if(data.result == -1)
+            {
+                $(".addcarduibi input").attr("checked", 'true');
+                alet("已经加入对比");
+            }
             else{
                 alert("加入对比失败");
                 $(".addcarduibi").one("click",addCarDuibi);

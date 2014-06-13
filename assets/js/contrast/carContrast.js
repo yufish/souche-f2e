@@ -33,7 +33,7 @@ define(function() {
 
             $.ajax({
                 type: "GET",
-                url: config.api_deleteContrast + "?contrastId=" + $(this).attr("cid"),
+                url: config.api_deleteContrast + "?cid=" + $(this).attr("cid"),
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
@@ -62,6 +62,11 @@ define(function() {
         var moveRangeStartY = $(".carname").offset().top;
         var moveRangeEndY = $(".carname").offset().top + $(".carname").height();
         var contentPixList , movePosition, defaultPosition;
+
+        $(document).live("mousedown",function(event)
+        {
+            event.preventDefault();
+        });
 
         $(".more-detail").live("mousedown", function (event) {
             startX = event.pageX;
@@ -156,7 +161,7 @@ define(function() {
 
                     $.ajax({
                         type: "GET",
-                        url: config.api_updateContrastSeq+"?"+sortString,
+                        url: config.api_updateContrastSeq+"?ids="+sortString,
                         dataType: "json",
                         context: self
                     }).done(function (data) {
@@ -165,13 +170,12 @@ define(function() {
                             addNewContent(moveItemList, movePosition, false);
                         }
                         else {
-                            delete self.getContentList;
-                            delete self.addNewContent;
-                            delete self.defaultPosition;
-                            delete self.movePosition;
                             alert("移动失败");
                         }
-
+                        delete self.getContentList;
+                        delete self.addNewContent;
+                        delete self.defaultPosition;
+                        delete self.movePosition;
                     });
 
                 }
