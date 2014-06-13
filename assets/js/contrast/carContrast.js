@@ -59,10 +59,11 @@ define(function() {
         var contentPixList , movePosition, defaultPosition;
 
         $(".more-detail").live("mousedown", function (event) {
+            sortString=[];
             for(var index=0;index<$(".close-contrast").length;index++) {
                 sortString.push($(".close-contrast").eq(index).attr("cid"));
             }
-
+            console.log(sortString.toString());
             startX = event.pageX;
             startY = event.pageY;
             hasTouch = true;
@@ -86,15 +87,14 @@ define(function() {
                 contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
             }
 
-            /*for (var index = 0; index < contentPixList.length; index++) {
+            defaultPosition=$(this).parent().index();
+            for (var index = 0; index < contentPixList.length; index++) {
                 if ((event.pageX) < contentPixList[index] + cellWidth && (event.pageX) > contentPixList[index]) {
                     if (movePosition !== index) {
                         movePosition = defaultPosition = index;
                     }
                 }
-            }*/
-            movePosition = defaultPosition=$(this).parent().index();
-
+            }
         });
 
         $(document).mousemove(function (event) {
@@ -325,10 +325,12 @@ define(function() {
         carCount = config.carNum;
 
         $(".table-name").width($(".basic-info").width()-22);
-        
+
         _bind();
     }
 
     carContrast.init = init;
     return carContrast;
 });
+
+
