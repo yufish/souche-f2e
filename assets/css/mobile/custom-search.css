@@ -317,4 +317,10 @@
 #series-container {
     margin: 10px 0 0 0;
 }
+.price-box{
+    box-sizing: border-box;
+    width:48px;
+    height: 28px;
+    border:1px solid #C2C2C2;
+}
 
