@@ -30,8 +30,9 @@ Souche.Sidebar = (function() {
             });
             e.stopPropagation();
         })
-
+        var siderbarShow = false;
         var showSidebar = function(self) {
+
             $(".sidebar .side-box").removeClass("active")
             $(self.parentNode).addClass("active")
             if (!$("#toolbar").hasClass("sidebar-active")) {
@@ -39,7 +40,7 @@ Souche.Sidebar = (function() {
                     width: 905,
                     height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
                 }, 500, function() {
-
+                    siderbarShow = true;
                 })
                 $(".sidebar  iframe").css({
                     height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
@@ -54,6 +55,9 @@ Souche.Sidebar = (function() {
                 $(".toolbar-content .iframe-loading").addClass("hidden");
             })
         }
+        $(".sidebar").click(function(e) {
+            e.stopPropagation();
+        })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
@@ -88,6 +92,20 @@ Souche.Sidebar = (function() {
 
             })
             $("#toolbar").removeClass("sidebar-active")
+            siderbarShow = false;
+        });
+        $(document.body).click(function() {
+            if (siderbarShow) {
+                $("#toolbar").animate({
+                    width: 58,
+                    height: 215
+                }, 500, function() {
+
+                })
+                $("#toolbar").removeClass("sidebar-active")
+                siderbarShow = false;
+            }
+
         });
         var Q_Buy_active = false;
         $(window).scroll(function() {

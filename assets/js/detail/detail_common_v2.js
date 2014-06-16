@@ -729,7 +729,7 @@ Souche.DetailCommon = function() {
         var self = this;
         self.e =e;
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: config.api_addContrast,
             dataType:"json",
             context:self

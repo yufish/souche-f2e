@@ -62,8 +62,6 @@
         margin-top: 20px;
         width: 100%;
         .basic-info{
-          table-layout: fixed;
-          width: 1190px;
           border: 1px solid #D9D9D9;
           th{
             padding-left: 10px;
@@ -73,7 +71,7 @@
             border-right: 1px solid #D9D9D9;
             color: #666;
             font-size: 14px;
-            padding-left: 25px;
+            padding-left: 10px;
           }
           .tab-tit{
             border-right: 1px solid #D9D9D9;
@@ -101,6 +99,9 @@
               font-weight: bold;
               border-right: 1px solid #D9D9D9;
               position: relative;
+              .carNameHover{
+                cursor: pointer;
+              }
               .close-contrast{
                 display: block;
                 position: absolute;
@@ -126,6 +127,10 @@
             height: 180px;
             border-bottom: 1px solid #D9D9D9;
             text-align: center;
+            .pic{
+              padding-left: 10px;
+              padding-right: 30px;
+            }
           }
           .tr-item{
             height: 45px;
@@ -160,7 +165,7 @@
         border: 1px solid #D9D9D9;
         .table-head{
           border-right: 1px solid #D9D9D9;
-          padding-left: 20px;
+          padding-left: 10px;
           background: #FBFBFB;
           color: #666;
           font-size: 14px; 
@@ -200,16 +205,15 @@
       .parameter{
         border: 1px solid #D9D9D9;
         table-layout: fixed;
-        width: 1190px;
         .table-head{
           border-right: 1px solid #D9D9D9;
-          padding-left: 20px;
+          padding-left: 10px;
           background: #FBFBFB;
           color: #666;
           font-size: 14px; 
         }
         td{
-          padding: 0 10px;
+          padding: 0 30px 0px 10px;
           color: #666;
           font-size: 13px;
         }
@@ -221,24 +225,25 @@
       .config{
         border: 1px solid #D9D9D9;
         table-layout: fixed;
-        width: 1190px;
         .table-head{
           border-right: 1px solid #D9D9D9;
-          padding-left: 20px;
+          padding-left: 10px;
           background: #FBFBFB;
           color: #666;
           font-size: 14px; 
         }
         td{
-          padding: 0 10px;
+          padding: 0 30px 0px 10px;
           color: #666;
           font-size: 13px;
+
           span{
             width: 10px;
             height: 10px;
             display: block;
             background: #000;
             border-radius: 10px;
+            margin-left: 9px;
           }
           .matching{
             width: 10px;
@@ -275,3 +280,9 @@
   background:  #fc7000 !important;
   border-radius: 10px;
 }
+
+.tempalte
+{
+  width: 50px !important;
+}
+
