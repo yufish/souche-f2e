@@ -30,32 +30,45 @@ Souche.Sidebar = (function() {
             });
             e.stopPropagation();
         })
+        var siderbarShow = false;
+        var showSidebar = function(self) {
+
+            $(".sidebar .side-box").removeClass("active")
+            $(self.parentNode).addClass("active")
+            if (!$("#toolbar").hasClass("sidebar-active")) {
+                $("#toolbar").animate({
+                    width: 905,
+                    height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
+                }, 500, function() {
+                    siderbarShow = true;
+                })
+                $(".sidebar  iframe").css({
+                    height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
+                })
+                $("#toolbar").addClass("sidebar-active")
+                $(".sidebar").removeClass("active")
+            }
+            $(".toolbar-content iframe").attr("src", $(self).attr("href"));
+            $(".toolbar-content .iframe-loading").removeClass("hidden");
+            $(".toolbar-content iframe").load(function() {
+                $(this).removeClass("hidden");
+                $(".toolbar-content .iframe-loading").addClass("hidden");
+            })
+        }
+        $(".sidebar").click(function(e) {
+            e.stopPropagation();
+        })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            Souche.NoRegLogin.checkLogin(function(isLogin) {
-                $(".sidebar .side-box").removeClass("active")
-                $(self.parentNode).addClass("active")
-                if (!$("#toolbar").hasClass("sidebar-active")) {
-                    $("#toolbar").animate({
-                        width: 905,
-                        height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
-                    }, 500, function() {
-
-                    })
-                    $(".sidebar  iframe").css({
-                        height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
-                    })
-                    $("#toolbar").addClass("sidebar-active")
-                    $(".sidebar").removeClass("active")
-                }
-                $(".toolbar-content iframe").attr("src", $(self).attr("href"));
-                $(".toolbar-content .iframe-loading").removeClass("hidden");
-                $(".toolbar-content iframe").load(function() {
-                    $(this).removeClass("hidden");
-                    $(".toolbar-content .iframe-loading").addClass("hidden");
+            if ($(this).hasClass("contrast-box")) {
+                showSidebar(self);
+            } else {
+                Souche.NoRegLogin.checkLogin(function(isLogin) {
+                    showSidebar(self);
                 })
-            })
+            }
+
 
         });
         $("#my-advisor").on("mouseenter", function() {
@@ -79,6 +92,20 @@ Souche.Sidebar = (function() {
 
             })
             $("#toolbar").removeClass("sidebar-active")
+            siderbarShow = false;
+        });
+        $(document.body).click(function() {
+            if (siderbarShow) {
+                $("#toolbar").animate({
+                    width: 58,
+                    height: 215
+                }, 500, function() {
+
+                })
+                $("#toolbar").removeClass("sidebar-active")
+                siderbarShow = false;
+            }
+
         });
         var Q_Buy_active = false;
         $(window).scroll(function() {

@@ -10,19 +10,19 @@ define(function() {
     };
 
     var carCount =4;
-
+    var sortString=[];
     var showScroll_x =false;
-    var contentTemplate="<th width='200px' class='title carname'><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/th>" +
-                          "<td class='pic'><\/td><td class='price-s'><\/td><td class='price-n'><\/td>" +
-                          "<td class='price-v'><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>" +
-        "<td width='220px'><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>";
+    var contentTemplate="<th width='' class='title carname'><div style=\"width:245px\"><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/div><\/th>" +
+                          "<td class='pic'><div style=\"width:245px\"><\/div><\/td><td class='price-s'><div style=\"width:245px\"><\/div><\/td><td class='price-n'><div style=\"width:245px\"><\/div><\/td>" +
+                          "<td class='price-v'><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>";
 
     var _bind = function () {
         $(".close-contrast").live("click", function (event) {
@@ -32,28 +32,24 @@ define(function() {
             headTh.deleteContent = deleteContent;
 
             $.ajax({
-                type: "GET",
-                url: "../../../soucheweb/carContrastAction/deleteContrastCar.json?carId="+"",
+                type: "POST",
+                url: config.api_deleteContrast,
+                data: {
+                    cid: $(this).attr("cid")
+                },
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
-                if (data.result == 2) {
-                    this.deleteContent(this.index());
-                }
-                else {
-                    delete headTh.deleteContent;
-                    alert("删除失败");
-                }
+                this.deleteContent(this.index()+1);
+                delete headTh.deleteContent;
             });
 
             event.stopPropagation();
             return false;
         });
 
-        var hasTouch = false;
-        var startX;
-        var startY;
-        var cloneElement;
+        var hasTouch = false, startX, startY, cloneElement;
+        var headNavTop =$(".contrast-table").offset().top;
         var cellWidth = $(".carname").width();
         var cellHeight = $(".carname").height();
         var moveRangeStartX = $(".carname").offset().left;
@@ -64,6 +60,11 @@ define(function() {
         var contentPixList , movePosition, defaultPosition;
 
         $(".more-detail").live("mousedown", function (event) {
+            sortString = [];
+            for (var index = 0; index < $(".close-contrast").length; index++) {
+                sortString.push($(".close-contrast").eq(index).attr("cid"));
+            }
+            console.log(sortString.toString());
             startX = event.pageX;
             startY = event.pageY;
             hasTouch = true;
@@ -82,11 +83,12 @@ define(function() {
                 return false;
             }
 
-            contentPixList=[];
+            contentPixList = [];
             for (var index = 0; index <= carCount; index++) {
                 contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
             }
 
+            defaultPosition = $(this).parent().index();
             for (var index = 0; index < contentPixList.length; index++) {
                 if ((event.pageX) < contentPixList[index] + cellWidth && (event.pageX) > contentPixList[index]) {
                     if (movePosition !== index) {
@@ -100,11 +102,8 @@ define(function() {
             if (hasTouch) {
                 y = event.pageY;
                 x = event.pageX;
-                console.log(x);
-                console.log(moveRangeEndX);
-                console.log(moveRangeStartX);
-                if ((x) < moveRangeEndX && (x) > moveRangeStartX && y > moveRangeStartY && y < moveRangeEndY) {
-                    console.log("yidong");
+                if ((x) < moveRangeEndX && (x) > moveRangeStartX) {
+
                     cloneElement.css({
                         top: y - 20 + 'px',
                         left: x - 100 + 'px'
@@ -115,9 +114,6 @@ define(function() {
 
                             if (movePosition != index && (index != defaultPosition - 1) && index <= carCount) {
                                 movePosition = index;
-                                //console.log("当年呈现:"+movePosition);
-                               // console.log("移到:"+index);
-                                //console.log("原来位置:"+defaultPosition);
                                 $(".tempalte").remove();
                                 if (movePosition !== defaultPosition) {
                                     addNewContent($(contentTemplate), movePosition, true);
@@ -138,56 +134,67 @@ define(function() {
                     document.body.onselectstart = document.body.ondrag = null;
                     //alert(movePosition);
                     //alert(defaultPosition);
+                    var carList = $(".carname");
+                    var carListLength = carList.length;
 
                     var moveItemList = getContentList(defaultPosition);
-                    // moveItemList = moveItemList.remove();
-                    addNewContent(moveItemList, movePosition, false);
 
-                    changeCarContrastSort();
+
+                    addNewContent(moveItemList, movePosition, false);
+                    var temp = sortString[defaultPosition - 1];
+                    sortString[defaultPosition - 1] = sortString[movePosition];
+                    sortString[movePosition] = temp;
+
+                    sortString = sortString.toString();
+
+                    $.ajax({
+                        type: "POST",
+                        url: config.api_updateContrastSeq,
+                        data: {
+                            ids: sortString
+                        },
+                        dataType: "json",
+                        context: self
+                    }).done(function (data) {
+
+                    });
                 }
             }
         });
 
-        var changeCarContrastSort = function()
-        {
-           // var carSortInfo
-        }
-        // 鼠标滑轮事件
-      /*  window.onload = function () {
-            var tableWidth = $(".basic-info").width();
-            var $wheelElement = $(".contrast-table");
-            var wheelElement = $(".contrast-table")[0];
-            var scrollMaxWidth =  250 ;
+        $(".contrast-title input").change(function () {
+            var optimal, repeat;
+            var repeat = $(".contrast-title input")[0].checked.toString();
+            var optimal = $(".contrast-title input")[1].checked.toString();
 
-            "onmousewheel" in wheelElement ? wheelElement.onmousewheel = wheel : wheelElement.addEventListener("DOMMouseScroll", wheel);
-            var count = 0;
+            window.location = config.api_contrastUrl + "?repeat=" + repeat + "&optimal=" + optimal;
+        });
 
-            function wheel(e) {
-                var e = e || event
-                var v = e.wheelDelta || -e.detail;
+        $(".carname a").live("mouseenter", function () {
+            $(this).addClass("carNameHover");
+        }).live("mouseout", function () {
+            $(this).removeClass("carNameHover");
+        });
 
-                if ($(".contrast-table").scrollLeft() <= scrollMaxWidth && $(".contrast-table").scrollLeft() >= 0) {
-                    if (v > 0) {
-                        $wheelElement.stop(true).animate({
-                            scrollLeft: $(".contrast-table").scrollLeft() - 241
-                        }, 300,function() {
-
-                        });
-                    }
-                    else {
-                        $wheelElement.stop(true).animate({
-                            scrollLeft: $(".contrast-table").scrollLeft() + 241
-                        }, 300, function () {
-                        });
-                    }
-
-
+        $(window).scroll(function (event) {
+                var current=$(document).scrollTop();
+                if(current>(headNavTop+$(".car-title").height())) {
+                    $(".contrast-table .basic-info:eq(0)").css({
+                        position: "fixed",
+                        top: "0px",
+                        backgroundColor: "white"
+                    });
                 }
-
-                e.preventDefault && e.preventDefault();
-                return false;
+                else
+                {
+                    $(".contrast-table .basic-info:eq(0)").css({
+                        position: "",
+                        top: "",
+                        backgroundColor: "white"
+                    });
+                }
             }
-        }*/
+        );
     }
 
     var getContentList =function(index)
@@ -195,8 +202,10 @@ define(function() {
         var list = $();
         var index = index;
         $("table tr").each(function(idx,item) {
-            var deleteElement = $(item).children()[index];
-            list.push(deleteElement);
+            if($(item).find("td,th").length!=0) {
+                var deleteElement = $(item).children()[index];
+                list.push(deleteElement);
+            }
         });
         return list;
     }
@@ -266,24 +275,31 @@ define(function() {
     }
 
     var addNewContent=function(list,index,param) {
-        console.log("insert:" + index);
+        //console.log("insert:" + index);
         var position = index;
+        var i=0;
         if (index != undefined) {
             $("table tr").each(function (idx, item) {
-                if (param) {
-                    $(item).find(".tempalte").remove();
-                    $(list[idx]).addClass("tempalte");
-                    $(item.children[position]).after($(list[idx]));
-                }
-                else
-                {
-                    $(item.children[position]).after($(list[idx]));
+                if($(item).find("td,th").length!=0) {
+                    if (param) {
+                        $(item).find(".tempalte").remove();
+                        $(list[i]).addClass("tempalte");
+                        $(item.children[position]).after($(list[i]));
+                    }
+                    else {
+                        $(item.children[position]).after($(list[i]));
+                    }
+                    i++;
                 }
             });
         }
         else {
             $("table tr").each(function (idx, item) {
-                $(item).append($(list[idx]));
+                if($(item).find("td,th").length!=0) {
+                    if ($(item).find("td,th").length != 0) {
+                        $(item).append($(list[i++]));
+                    }
+                }
             });
         }
     }
@@ -302,7 +318,6 @@ define(function() {
                 addNewContent($(contentTemplate));
             }
         }
-
         carCount--;
     }
 
@@ -310,9 +325,17 @@ define(function() {
         $.extend(config, _config);
         carCount = config.carNum;
 
+        var num = carCount;
+        for(;num<4;num++)
+        {
+            addNewContent($(contentTemplate));
+        }
+        $(".table-name").width($(".basic-info").width()-19);
         _bind();
     }
 
     carContrast.init = init;
     return carContrast;
 });
+
+

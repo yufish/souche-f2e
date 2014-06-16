@@ -77,9 +77,14 @@ define(function() {
                 $(".onsale-content-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
                 $(".onsale-tab-item").removeClass("active");
-                $(".onsale-tab-item[data-id='"+$(this).attr("data-id")+"']").addClass("active")
+                $(this).addClass("active")
                 $(window).trigger("tab_change", id);
-                $('html,body').animate({scrollTop:saleTabTop+"px"},500);
+
+                if ($(this).attr("data-scrollto")) {
+                    $('html,body').animate({
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
+                    }, 500);
+                }
             });
 
             $(".float-nav-item").on("click", function(e) {
