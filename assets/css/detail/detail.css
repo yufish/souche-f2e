@@ -1948,6 +1948,9 @@ body {
   background: #ffffff url(../../images/detail/faved-btn.png) no-repeat 12px center;
   cursor: default;
 }
+#detail_main .detail-button .faved * {
+  cursor: default;
+}
 #detail_main .detail-button .jiangjia_tongzhi_wo {
   background: #ffffff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
 }
@@ -2023,6 +2026,17 @@ body {
   height: 40px;
   padding-top: 10px;
   position: relative;
+}
+#detail_main .detail-share a {
+  vertical-align: middle;
+  color: #666666;
+  opacity: 0.75;
+  display: inline-block;
+  overflow: hidden;
+  width: 50px;
+  height: 18px;
+  text-indent: 25px;
+  cursor: pointer;
 }
 #detail_main .detail-share a {
   vertical-align: middle;
