@@ -2069,6 +2069,7 @@ body {
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding: 15px;
+  z-index: 100000;
 }
 #detail_main .detail-share .adress-open .adress-title {
   color: #666;
