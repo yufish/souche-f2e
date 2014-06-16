@@ -235,6 +235,7 @@
   display: block;
   background: #000;
   border-radius: 10px;
+  margin-left: 9px;
 }
 #contrast #content .wrapper .config td .matching {
   width: 10px;
