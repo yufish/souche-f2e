@@ -115,6 +115,7 @@ html {
   float: left;
   margin-right: 6px;
   position: relative;
+  overflow: hidden;
 }
 #toolbar #toolbar-content .car-wrap .car-box .car-image {
   width: 180px;
