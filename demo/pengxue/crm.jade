@@ -7,8 +7,8 @@ html
     <link href="http://f2e.souche.com/assets/css/crm/crm.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/bootstrap/bootstrap3.css" rel="stylesheet" type="text/css" />
-    <script src="http://f2e.souche.com/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://f2e.souche.com/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
   body#crm
     .wrapper
@@ -36,24 +36,32 @@ html
             .title 通知
             ul.notice-list
               li
-                a.title#tongzhi(href="#") 我是通知我是通知我是通知
+                a.title.tongzhi(href="#") 我是通知我是通知我是通知
+                  .tongzhi-popup.hidden
+                    .title
+                      span 通知
+                      .close-tongzhi
+                    .content
+                      .biaoti 标题标题标题标题
+                      p 正文正文正文正文正文正文正文
+                      img(src="http://res.souche.com/files/carpicture/E4F267ACD6E278F3930A40359BBACE8A_690x460.jpg_325x10000.jpg")
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
-                .tongzhi-popup
+                
               li
-                a.title#tongzhi(href="#") 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                a.title#tongzhi(href="#") 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                a.title#tongzhi(href="#") 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                a.title#tongzhi(href="#") 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
           .cont-wrap.clearfix
@@ -347,9 +355,14 @@ html
                     td.relevance 关联客户
         .cont
 
-  script.
-    $("#tongzhi").click(function{
-
-      })
+script.
+    $(".tongzhi").click(function(){
+      $(".tongzhi-popup",this).removeClass("hidden");
+      });
+    
+    $(".close-tongzhi").click(function(){
+      $(".tongzhi-popup").addClass("hidden");
+      return false;
+      });
 
 

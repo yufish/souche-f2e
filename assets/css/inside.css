@@ -398,7 +398,7 @@ cursor: pointer;
 #list_wrap .list_main .list_content .fav span{
   padding-left: 5px;
   line-height: 30px;
-  font-size: 14px;
+  font-size: 12px;
 }
 #list_wrap .list_main .list_content .fav:hover span{
   display: inline;
@@ -435,10 +435,34 @@ cursor: pointer;
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcollect{
   width: 70px;
   height: 30px;
-  
   border-radius: 2px;
   margin-right: 10px;
   float: left;
+}
+<<<<<<< HEAD
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover{
+    background-color: #60B25E;
+    color: #000000;
+}
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover span{
+    color: white;
+}
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast {
+    width: 90px;
+    height: 30px;
+    background: #F2F2F2;
+    border-radius: 2px;
+    float: left;
+    display: block;
+    color: #000000;
+=======
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover{
+  
+  background:#60B25E url(./../../assets/images/fed/fav-normal.png) no-repeat 10px center;
+  color: #fff;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast{
   width: 90px;
@@ -447,19 +471,50 @@ cursor: pointer;
   border-radius: 2px;
   float: left;
   display: block;
+  position: relative;
 }
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast .contrast-waring{
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover{
+  background: #60B25E;
+  color: #fff;
+>>>>>>> e7da5cdf7d5cea36f70a151abbb0bcf6d1681ee2
+}
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover {
+    background: #60B25E;
+}
+
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast input{
   margin-top: 9px;
   margin-left: 10px;
   display: block;
   float: left;
 }
-#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast span{
-  line-height: 30px;
-  display: block;
-  float: left;
-  margin-left: 5px;
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast span {
+    line-height: 30px;
+    display: block;
+    float: left;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #000000;
 }
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover span {
+    background: #60B25E;
+    color: white;
+}
+
 #list_wrap .list_main .list-noResult{
   width:618px;height:400px;
   background-color:#fff;

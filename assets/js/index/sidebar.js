@@ -107,6 +107,9 @@ Souche.Sidebar = (function() {
             }
 
         });
+        $("#noreg-popup").on("click", function(e) {
+            e.stopPropagation();
+        })
         var Q_Buy_active = false;
         $(window).scroll(function() {
             if ($(window).scrollTop() > 0) {
