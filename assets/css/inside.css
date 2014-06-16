@@ -435,31 +435,54 @@ cursor: pointer;
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcollect{
   width: 70px;
   height: 30px;
-  
   border-radius: 2px;
   margin-right: 10px;
   float: left;
 }
-#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast{
-  width: 90px;
-  height: 30px;
-  background: #F2F2F2;
-  border-radius: 2px;
-  float: left;
-  display: block;
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover{
+    background-color: #60B25E;
+    color: #000000;
 }
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover span{
+    color: white;
+}
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast {
+    width: 90px;
+    height: 30px;
+    background: #F2F2F2;
+    border-radius: 2px;
+    float: left;
+    display: block;
+    color: #000000;
+}
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover {
+    background: #60B25E;
+}
+
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast input{
   margin-top: 9px;
   margin-left: 10px;
   display: block;
   float: left;
 }
-#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast span{
-  line-height: 30px;
-  display: block;
-  float: left;
-  margin-left: 5px;
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast span {
+    line-height: 30px;
+    display: block;
+    float: left;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #000000;
 }
+
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover span {
+    background: #60B25E;
+    color: white;
+}
+
 #list_wrap .list_main .list-noResult{
   width:618px;height:400px;
   background-color:#fff;

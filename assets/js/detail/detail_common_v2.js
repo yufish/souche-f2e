@@ -717,74 +717,92 @@ Souche.Detail.PriceDown = function() {
 }();
 Souche.DetailCommon = function() {
     var config = {
-
     }
-    var addCarDuibi = function(e) {
+
+    var operationCarDuibi = function(e) {
         var carID = config.carId;
-        if(carID==undefined) {
+        if (carID == undefined) {
             alert("数据不合法");
             return;
         }
 
-        var self = this;
-        self.e =e;
-        $.ajax({
-            type: "POST",
-            url: config.api_addContrast,
-            dataType:"json",
-            context:self
-        }).done(function(data)
-        {
-            if (data.result == 2) {
-                $(".addcarduibi input").attr("checked", 'true');
+        var carconstrastID = $(".addcarduibi input").attr("contrastId");
 
-                var cloneElement = $(".addcarduibi").clone();
-                cloneElement.css({
-                    opacity: 0.8,
-                    position: 'absolute',
-                    top: this.e.pageY + 'px',
-                    left: this.e.pageX + 'px',
-                    backgroundColor:"#BCEE68"
-                });
+        if (!$(".addcarduibi input")[0].checked) {
 
-                var endX = $(".side-box .contrast-img").offset().left;
-                var endY = $(".side-box .contrast-img").offset().top;
+            var self = this;
+            self.e = e;
+            $.ajax({
+                type: "POST",
+                url: config.api_addContrast,
+                dataType: "json",
+                context: self
+            }).done(function (data) {
+                if (data.result == 2) {
+                    $(".addcarduibi input").attr("checked", 'true');
 
-                document.body.appendChild(cloneElement[0]);
-                cloneElement.animate({
-                    top: endY,
-                    left: endX
-                }, 500,function()
-                {
-                    cloneElement.remove();
-                });
+                    var cloneElement = $(".addcarduibi").clone();
+                    cloneElement.css({
+                        opacity: 0.8,
+                        position: 'absolute',
+                        top: this.e.pageY + 'px',
+                        left: this.e.pageX + 'px',
+                        backgroundColor: "#BCEE68"
+                    });
+
+                    var endX = $(".side-box .contrast-img").offset().left;
+                    var endY = $(".side-box .contrast-img").offset().top;
+
+                    document.body.appendChild(cloneElement[0]);
+                    cloneElement.animate({
+                        top: endY,
+                        left: endX
+                    }, 500, function () {
+                        cloneElement.remove();
+                    });
+
+                    $(".addcarduibi input").attr("contrastId", data.result.content);
+
+                    return;
+                }
+                if (data.result == -1) {
+                    $(".addcarduibi input").attr("checked", 'true');
+                    alert("已经加入对比");
+                    return;
+                }
+                if (data.result == 1) {
+                    alet("对比项已满");
+                    return;
+                }
+                alert("加入对比失败");
+            });
+        }
+        else {
+            if (!carconstrastID) {
+                alert("数据不合法");
                 return;
             }
-            if(data.result == -1)
-            {
-                $(".addcarduibi input").attr("checked", 'true');
-                alert("已经加入对比");
-                return ;
-            }
-            if(data.result == 1)
-            {
-                alet("对比项已满");
-                $(".addcarduibi").one("click",addCarDuibi);
-                return ;
-            }
-            else{
-                alert("加入对比失败");
-                $(".addcarduibi").one("click",addCarDuibi);
-            }
-        });
+
+            $.ajax({
+                type: "POST",
+                url: config.api_deleteContrast,
+                data: {
+                    contrastId: $(".addcarduibi input").attr("contrastId")
+                }
+            }).done(function (data) {
+                if (data.result == 2) {
+                    $(".addcarduibi input").attr("checked", 'false');
+                    $(".addcarduibi input").attr("contrastId", '');
+                }
+                else {
+                    alert("删除失败");
+                }
+            });
+        }
     }
 
-    var _bind=function()
-    {
-        if(!$(".addcarduibi input")[0].checked) {
-            $(".addcarduibi").one("click", addCarDuibi);
-        }
-
+    var _bind=function() {
+        $(".addcarduibi").on("click", operationCarDuibi);
     }
 
     return {

@@ -40,8 +40,13 @@ define(function() {
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
-                this.deleteContent(this.index()+1);
-                delete headTh.deleteContent;
+                if(data.result == 2) {
+                    this.deleteContent(this.index() + 1);
+                    delete headTh.deleteContent;
+                }
+                else {
+                    alert("删除对比失败");
+                }
             });
 
             event.stopPropagation();
