@@ -398,7 +398,7 @@ cursor: pointer;
 #list_wrap .list_main .list_content .fav span{
   padding-left: 5px;
   line-height: 30px;
-  font-size: 14px;
+  font-size: 12px;
 }
 #list_wrap .list_main .list_content .fav:hover span{
   display: inline;
@@ -440,7 +440,8 @@ cursor: pointer;
   float: left;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover{
-  background: #60B25E;
+  
+  background:#60B25E url(./../../assets/images/fed/fav-normal.png) no-repeat 10px center;
   color: #fff;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast{
@@ -450,6 +451,19 @@ cursor: pointer;
   border-radius: 2px;
   float: left;
   display: block;
+  position: relative;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast .contrast-waring{
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover{
   background: #60B25E;
