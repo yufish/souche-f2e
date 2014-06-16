@@ -17,13 +17,14 @@ Souche.Util = function() {
          * 元素第一次出现的时候执行某方法，之后不再执行
          * @distance 可省略，元素距离窗口下沿多远的时候触发。
          */
-        appear: function(id, bindFunc, distance) {
+        appear: function(id, bindFunc, distance, multi) {
             appearKV[id] = appearKV[id] || [];
             appearKV[id].push(bindFunc);
             if (!distance) {
                 distance = 0;
             }
             appearKV[id].distance = distance;
+            appearKV[id].multi = multi;
         },
         init: function() {
             var viewportWidth = $(window).width();
@@ -32,12 +33,15 @@ Souche.Util = function() {
                 var windowScrollTop = $(window).scrollTop();
                 for (var i in appearKV) {
                     var offset = $(i).offset();
-
+                    var height = $(i).height();
                     if (offset.top - windowScrollTop > 0 && offset.top - windowScrollTop < (viewportHeight - appearKV[i].distance)) {
                         for (var b = 0; b < appearKV[i].length; b++) {
                             appearKV[i][b]();
                         }
-                        appearKV[i] = [];
+                        if (!appearKV[i].multi) {
+                            appearKV[i] = [];
+                        }
+
                     }
                 }
             };

@@ -87,6 +87,17 @@ define(function() {
                 }
             });
 
+
+
+            $(".onsale-tab-item").each(function(i, tab) {
+                if ($("#" + $(tab).attr("data-scrollto")).length) {
+                    Souche.Util.appear("#" + $(tab).attr("data-scrollto"), function() {
+                        $(".onsale-tab-item").removeClass("active")
+                        $(tab).addClass("active")
+                    }, $(window).height() - 100, true)
+                }
+
+            })
             $(".float-nav-item").on("click", function(e) {
                 var id = $(this).attr("data-id");
                 $(".onsale-content-item").addClass("hidden")
@@ -95,6 +106,16 @@ define(function() {
                 $(this).addClass("activeNav")
                 $(window).trigger("tab_change", id);
                 e.preventDefault();
+            });
+            var picsLoaded = false;
+            $(window).on("tab_change", function(e, id) {
+                if (id == "onsale_pics") {
+                    if (!picsLoaded) {
+                        $("#onsale_pics img").lazyload();
+                        picsLoaded = true;
+                    }
+
+                }
             });
             // if (SVGsupported) {
             //     self.load_price();
