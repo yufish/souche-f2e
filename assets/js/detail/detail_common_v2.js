@@ -726,7 +726,7 @@ Souche.DetailCommon = function() {
             return;
         }
 
-        var carconstrastID = $(".addcarduibi input").attr("contrastId");
+        var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
         if (!$(".addcarduibi input")[0].checked) {
 
@@ -761,7 +761,7 @@ Souche.DetailCommon = function() {
                         cloneElement.remove();
                     });
 
-                    $(".addcarduibi input").attr("contrastId", data.contrastId);
+                    $(".addcarduibi input").attr("contrastid", data.contrastId);
 
                     return;
                 }
@@ -786,13 +786,14 @@ Souche.DetailCommon = function() {
                 type: "POST",
                 url: config.api_deleteContrast,
                 data: {
-                    cid: $(".addcarduibi input").attr("contrastId")
+                    cid: $(".addcarduibi input").attr("contrastid")
                 }
             }).done(function (data) {
-                $(".addcarduibi input").attr("checked", 'false');
-                $(".addcarduibi input").attr("contrastId", '');
+                $(".addcarduibi input").removeAttr("checked");
+                $(".addcarduibi input").removeAttr("contrastid");
             });
         }
+        return false;
     }
 
     var _bind=function() {
