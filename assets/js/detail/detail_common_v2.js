@@ -722,7 +722,7 @@ Souche.DetailCommon = function() {
     var operationCarDuibi = function(e) {
         var carID = config.carId;
         if (carID == undefined) {
-            alert("数据不合法");
+
             return;
         }
 
@@ -761,25 +761,24 @@ Souche.DetailCommon = function() {
                         cloneElement.remove();
                     });
 
-                    $(".addcarduibi input").attr("contrastId", data.result.content);
+                    $(".addcarduibi input").attr("contrastId", data.contrastId);
 
                     return;
                 }
                 if (data.result == -1) {
                     $(".addcarduibi input").attr("checked", 'true');
-                    alert("已经加入对比");
+                    $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
                     return;
                 }
                 if (data.result == 1) {
-                    alet("对比项已满");
+                    $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
                     return;
                 }
-                alert("加入对比失败");
+                $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
             });
         }
         else {
             if (!carconstrastID) {
-                alert("数据不合法");
                 return;
             }
 
@@ -790,13 +789,8 @@ Souche.DetailCommon = function() {
                     cid: $(".addcarduibi input").attr("contrastId")
                 }
             }).done(function (data) {
-                if (data.result == 2) {
-                    $(".addcarduibi input").attr("checked", 'false');
-                    $(".addcarduibi input").attr("contrastId", '');
-                }
-                else {
-                    alert("删除失败");
-                }
+                $(".addcarduibi input").attr("checked", 'false');
+                $(".addcarduibi input").attr("contrastId", '');
             });
         }
     }
