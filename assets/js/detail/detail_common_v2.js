@@ -787,7 +787,7 @@ Souche.DetailCommon = function() {
                 type: "POST",
                 url: config.api_deleteContrast,
                 data: {
-                    contrastId: $(".addcarduibi input").attr("contrastId")
+                    cid: $(".addcarduibi input").attr("contrastId")
                 }
             }).done(function (data) {
                 if (data.result == 2) {
