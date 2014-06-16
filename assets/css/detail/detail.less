@@ -432,6 +432,9 @@ border:1px solid #ddd;
         color:#666;
         background: #fff url(../../images/detail/faved-btn.png) no-repeat 12px center;
         cursor: default;
+      *{
+        cursor: default;
+      }
     }
     .jiangjia_tongzhi_wo{
         background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
@@ -450,6 +453,7 @@ border:1px solid #ddd;
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
 #detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;position: relative;}
+#detail_main .detail-share a{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;overflow:hidden;width:50px;height:18px;text-indent: 25px;cursor: pointer;}
 #detail_main .detail-share a{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;overflow:hidden;width:50px;height:18px;text-indent: 25px;cursor: pointer;}
 #detail_main .detail-share a:hover{opacity: 1;}
 #detail_main .detail-share .ph{
@@ -484,6 +488,7 @@ width: 80px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding:15px;
+  z-index: 100000;
   .adress-title{
     color: #666;
     font-size: 12px;
