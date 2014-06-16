@@ -12,17 +12,17 @@ define(function() {
     var carCount =4;
     var sortString=[];
     var showScroll_x =false;
-    var contentTemplate="<th width='' class='title carname'><div style=\"width:224px\"><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/div><\/th>" +
-                          "<td class='pic'><div style=\"width:225px\"><\/div><\/td><td class='price-s'><div style=\"width:225px\"><\/div><\/td><td class='price-n'><div style=\"width:225px\"><\/div><\/td>" +
-                          "<td class='price-v'><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>";
+    var contentTemplate="<th width='' class='title carname'><div style=\"width:239px\"><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/div><\/th>" +
+                          "<td class='pic'><div style=\"width:240px\"><\/div><\/td><td class='price-s'><div style=\"width:240px\"><\/div><\/td><td class='price-n'><div style=\"width:240px\"><\/div><\/td>" +
+                          "<td class='price-v'><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td><td><div style=\"width:240px\"><\/div><\/td>";
 
     var _bind = function () {
         $(".close-contrast").live("click", function (event) {
@@ -65,7 +65,15 @@ define(function() {
         var moveRangeEndY = $(".carname").offset().top + $(".carname").height();
         var contentPixList , movePosition, defaultPosition;
 
+        contentPixList = [];
+        for (var index = 0; index <= carCount; index++) {
+            contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
+        }
+
         $(".more-detail").live("mousedown", function (event) {
+            event.stopPropagation();
+            event.preventDefault();
+
             sortString = [];
             for (var index = 0; index < $(".close-contrast").length; index++) {
                 sortString.push($(".close-contrast").eq(index).attr("cid"));
@@ -75,7 +83,7 @@ define(function() {
             startY = event.pageY;
             hasTouch = true;
 
-            cloneElement = $(this).parent().clone();
+            cloneElement = $(this).parent().parent().clone();
             cloneElement.css({
                 opacity: 0.8,
                 position: 'absolute',
@@ -94,15 +102,47 @@ define(function() {
                 contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
             }
 
-            defaultPosition = $(this).parent().index();
+            defaultPosition = $(this).parent().parent().index();
+            if(defaultPosition==0)
+            {
+                return;
+            }
+
             for (var index = 0; index < contentPixList.length; index++) {
                 if ((event.pageX) < contentPixList[index] + cellWidth && (event.pageX) > contentPixList[index]) {
                     if (movePosition !== index) {
-                        movePosition = defaultPosition = index;
+                        movePosition  = index;
                     }
                 }
             }
+            return false;
         });
+
+        $(window).scroll(function (event) {
+                var current = $(document).scrollTop();
+                if (current > (headNavTop + $(".car-title").height())) {
+                    $(".contrast-table .basic-info:eq(0)").css({
+                        position: "fixed",
+                        top: "0px",
+                        backgroundColor: "white"
+                    });
+                }
+
+                else {
+                    $(".contrast-table .basic-info:eq(0)").css({
+                        position: "",
+                        top: "",
+                        left: "",
+                        backgroundColor: "white"
+                    });
+                }
+
+                $(".contrast-table .basic-info:eq(0)").css("left", headNavLeft - $(document).scrollLeft());
+                for(var index=0;index<contentPixList.length;index++) {
+                    contentPixList[index]=contentPixList[index]- $(document).scrollLeft();
+                }
+            }
+        );
 
         $(document).mousemove(function (event) {
             if (hasTouch) {
@@ -116,7 +156,7 @@ define(function() {
                     });
 
                     for (var index = 0; index < contentPixList.length; index++) {
-                        if ((x) < contentPixList[index] + cellWidth && (x) > contentPixList[index]) {
+                        if ((x-$(document).scrollLeft()) < contentPixList[index] + cellWidth && (x-$(document).scrollLeft()) > contentPixList[index]) {
 
                             if (movePosition != index && (index != defaultPosition - 1) && index <= carCount) {
                                 movePosition = index;
@@ -143,8 +183,11 @@ define(function() {
                     var carList = $(".carname");
                     var carListLength = carList.length;
 
+                    if(defaultPosition===0)
+                    {
+                        return;
+                    }
                     var moveItemList = getContentList(defaultPosition);
-
 
                     addNewContent(moveItemList, movePosition, false);
                     var temp = sortString[defaultPosition - 1];
@@ -181,29 +224,6 @@ define(function() {
         }).live("mouseout", function () {
             $(this).removeClass("carNameHover");
         });
-
-        $(window).scroll(function (event) {
-                var current = $(document).scrollTop();
-                if (current > (headNavTop + $(".car-title").height())) {
-                    $(".contrast-table .basic-info:eq(0)").css({
-                        position: "fixed",
-                        top: "0px",
-                        backgroundColor: "white"
-                    });
-                }
-                else {
-                    $(".contrast-table .basic-info:eq(0)").css({
-                        position: "",
-                        top: "",
-                        left: "",
-                        backgroundColor: "white"
-                    });
-                }
-
-                $(".contrast-table .basic-info:eq(0)").css("left", headNavLeft - $(document).scrollLeft())
-
-            }
-        );
     }
 
     var getContentList =function(index)
@@ -259,7 +279,7 @@ define(function() {
                 }
                 else
                 {
-                    cell.html("<img src='"+content.content.attr("src")+"' width='215px' height='140px'>");
+                    cell.html("<img src='"+content.content.attr("src")+"' width='215px' height='1240px'>");
                 }
             }
             else if (content.type === "a" || content.type === "span") {
