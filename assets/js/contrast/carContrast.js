@@ -12,17 +12,17 @@ define(function() {
     var carCount =4;
     var sortString=[];
     var showScroll_x =false;
-    var contentTemplate="<th width='' class='title carname'><div style=\"width:245px\"><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/div><\/th>" +
-                          "<td class='pic'><div style=\"width:245px\"><\/div><\/td><td class='price-s'><div style=\"width:245px\"><\/div><\/td><td class='price-n'><div style=\"width:245px\"><\/div><\/td>" +
-                          "<td class='price-v'><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>" +
-        "<td width=''><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td><td><div style=\"width:245px\"><\/div><\/td>";
+    var contentTemplate="<th width='' class='title carname'><div style=\"width:224px\"><a><\/a><i class='close-contrast hidden'><\/i><span class='more-detail'><\/span><\/div><\/th>" +
+                          "<td class='pic'><div style=\"width:225px\"><\/div><\/td><td class='price-s'><div style=\"width:225px\"><\/div><\/td><td class='price-n'><div style=\"width:225px\"><\/div><\/td>" +
+                          "<td class='price-v'><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>" +
+        "<td width=''><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td><td><div style=\"width:225px\"><\/div><\/td>";
 
     var _bind = function () {
         $(".close-contrast").live("click", function (event) {
@@ -40,8 +40,13 @@ define(function() {
                 dataType: "json",
                 context: headTh
             }).done(function (data) {
-                this.deleteContent(this.index()+1);
-                delete headTh.deleteContent;
+                if(data.result == 2) {
+                    this.deleteContent(this.index() + 1);
+                    delete headTh.deleteContent;
+                }
+                else {
+                    alert("删除对比失败");
+                }
             });
 
             event.stopPropagation();
@@ -50,6 +55,7 @@ define(function() {
 
         var hasTouch = false, startX, startY, cloneElement;
         var headNavTop =$(".contrast-table").offset().top;
+        var headNavLeft =$(".contrast-table").offset().left;
         var cellWidth = $(".carname").width();
         var cellHeight = $(".carname").height();
         var moveRangeStartX = $(".carname").offset().left;
@@ -177,22 +183,25 @@ define(function() {
         });
 
         $(window).scroll(function (event) {
-                var current=$(document).scrollTop();
-                if(current>(headNavTop+$(".car-title").height())) {
+                var current = $(document).scrollTop();
+                if (current > (headNavTop + $(".car-title").height())) {
                     $(".contrast-table .basic-info:eq(0)").css({
                         position: "fixed",
                         top: "0px",
                         backgroundColor: "white"
                     });
                 }
-                else
-                {
+                else {
                     $(".contrast-table .basic-info:eq(0)").css({
                         position: "",
                         top: "",
+                        left: "",
                         backgroundColor: "white"
                     });
                 }
+
+                $(".contrast-table .basic-info:eq(0)").css("left", headNavLeft - $(document).scrollLeft())
+
             }
         );
     }
@@ -325,11 +334,6 @@ define(function() {
         $.extend(config, _config);
         carCount = config.carNum;
 
-        var num = carCount;
-        for(;num<4;num++)
-        {
-            addNewContent($(contentTemplate));
-        }
         $(".table-name").width($(".basic-info").width()-19);
         _bind();
     }

@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>车牛，二手车收购批发神器</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            vertical-align: middle;
+            width: 100%;
+        }
+        body{
+            background: #DF4034;
+        }
+        #up-back{
+            padding: 8px 0;
+            height: 20px;
+            background: #DF4034 url(../../../../assets/images/mob/cheniu/acts/america/up.png) no-repeat center;
+            background-size: 19px 15px;
+            display: block;
+        }
+        #person-info{
+            color:#fff;
+        }
+        #person-info .info-item{
+            margin: 5px;
+            text-align: center;
+            font-size: 13px;
+        }
+        #person-info .form-input{
+            height: 20px;;
+            width: 180px;
+            border: none;
+        }
+        #person-info label{
+            width: 75px;
+            display: inline-block;
+            line-height: 20px;
+        }
+        #btn-submit{
+            width: 190px;
+            height: 30px;
+            background: #114688;
+            color: #fff;
+            line-height: 30px;
+            border:none;
+            border-radius: 3px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #award-list{
+            margin:35px 0 30px 25px;
+            color:#9E1005;
+        }
+        #award-list p{
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        #award-wait{
+            margin: 90px 0 160px 0;
+            text-align: center;
+            color:#9E1005;
+        }
+        #award-no{
+            margin: 90px 0 160px 0;
+            text-align: center;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <a id="up-back" href="task.html"></a>
+    <div id="award-condition">
+        <img src="../../../../assets/images/mob/cheniu/acts/america/award-cond.png">
+        <!--<img src="../../../../assets/images/mob/cheniu/acts/america/first-award.png">
+        <img src="../../../../assets/images/mob/cheniu/acts/america/second-award.png">
+        <img src="../../../../assets/images/mob/cheniu/acts/america/big-award.png"> -->
+    </div>
+    <div id="award-wait">
+        奖项还未开出，请耐心等待...
+    </div>
+    <div id="award-no">
+        <p style="font-size: 16px">很遗憾，您当前未能中奖</p>
+        <p style="font-size: 13px;margin-top: 15px;">请关注明日10：00发布的新一轮任务</p>
+    </div>
+    <div id="person-info" style="display: none">
+        <form id="person-info-form">
+            <div class="info-item">
+                <label></label>
+                <span style="font-size: 12px">请详细填写您的资料以便收取奖品</span>
+            </div>
+            <div class="info-item">
+                <label for="select-award">选择奖品:</label>
+                <select class='form-input' type="text" id="select-award">
+                    <option value=""></option>
+                    <option value="">奖品一</option>
+                </select>
+            </div>
+            <div class="info-item">
+                <label for="address">收货地址:</label>
+                <input class='form-input' type="text" id="address">
+            </div>
+            <div class="info-item">
+                <label for="name">收件人:</label>
+                <input class='form-input' type="text" id="name">
+            </div>
+            <div class="info-item">
+                <label for="phone">联系电话:</label>
+                <input class='form-input' type="tel" id="phone">
+            </div>
+            <div class="info-item">
+               <button type="submit" id="btn-submit">提交并分享</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="award-list">
+        <p>今日获奖名单公布</p>
+        <p>美国游大奖:张三</p>
+        <p>一等奖5名:张一，张二，张四</p>
+        <p>二等奖10名:</p>
+    </div>
+
+</body>
+</html>
