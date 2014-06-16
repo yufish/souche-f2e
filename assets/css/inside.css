@@ -435,10 +435,13 @@ cursor: pointer;
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcollect{
   width: 70px;
   height: 30px;
-  
   border-radius: 2px;
   margin-right: 10px;
   float: left;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcollect:hover{
+  background: #60B25E;
+  color: #fff;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast{
   width: 90px;
@@ -447,6 +450,10 @@ cursor: pointer;
   border-radius: 2px;
   float: left;
   display: block;
+}
+#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover{
+  background: #60B25E;
+  color: #fff;
 }
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast input{
   margin-top: 9px;
