@@ -768,13 +768,28 @@ Souche.DetailCommon = function() {
                 if (data.result == -1) {
                     $(".addcarduibi input").attr("checked", 'true');
                     $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
+                    var context= $(this);
+                    window.setTimeout(function()
+                    {
+                        context.find(".contrast-waring").addClass("hidden");
+                    },2000);
                     return;
                 }
                 if (data.result == 1) {
                     $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
+                    var context= $(this);
+                    window.setTimeout(function()
+                    {
+                        context.find(".contrast-waring").addClass("hidden");
+                    },2000);
                     return;
                 }
                 $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
+                var context= $(this);
+                window.setTimeout(function()
+                {
+                    context.find(".contrast-waring").addClass("hidden");
+                },2000);
             });
         }
         else {
