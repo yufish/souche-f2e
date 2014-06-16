@@ -76,15 +76,20 @@ define(function() {
                 var id = $(this).attr("data-id");
                 $(".onsale-content-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
-                $(".onsale-tab-item").removeClass("active");
-                $(this).addClass("active")
+                // $(".onsale-tab-item").removeClass("active");
+                // $(this).addClass("active")
                 $(window).trigger("tab_change", id);
 
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
                         scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
-                    }, 500);
+                    }, 500, function() {
+                          $(".onsale-tab-item").removeClass("active");
+                        $(self).addClass("active")
+                    });
                 }
+                var self = this;
+
             });
 
 
