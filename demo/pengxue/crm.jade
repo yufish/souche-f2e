@@ -7,8 +7,8 @@ html
     <link href="http://f2e.souche.com/assets/css/crm/crm.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/bootstrap/bootstrap3.css" rel="stylesheet" type="text/css" />
-    <script src="http://f2e.souche.com/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script src="http://f2e.souche.com/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery.cookie.js?t=1"></script>
   body#crm
     .wrapper
@@ -36,23 +36,32 @@ html
             .title 通知
             ul.notice-list
               li
-                span.title 我是通知我是通知我是通知
+                a.title.tongzhi(href="#") 我是通知我是通知我是通知
+                  .tongzhi-popup.hidden
+                    .title
+                      span 通知
+                      .close-tongzhi
+                    .content
+                      .biaoti 标题标题标题标题
+                      p 正文正文正文正文正文正文正文
+                      img(src="http://res.souche.com/files/carpicture/E4F267ACD6E278F3930A40359BBACE8A_690x460.jpg_325x10000.jpg")
+                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+                span.time 2014-05-25  12:00
+                
+              li
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                span.title 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                span.title 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
               li
-                span.title 我是通知我是通知我是通知
-                em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
-                span.time 2014-05-25  12:00
-              li
-                span.title 我是通知我是通知我是通知
+                a.title.tongzhi 我是通知我是通知我是通知
                 em 通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
                 span.time 2014-05-25  12:00
           .cont-wrap.clearfix
@@ -111,6 +120,7 @@ html
                   th 客户数量
                   th 重要客户
                   th 待处理任务
+                    a.wenhao(title="包括未处理和待确认任务")
                 tr 
                   td.grade H (有指标，预计7天内购买)
                   td.num 923
@@ -165,25 +175,31 @@ html
               .tit 我的考核：本月
               .assess
                 .sum
-                  .num 总客户数：897
+                  .num 
+                    span 总客户数：897
+                    a.wenhao(title="从本月初始统计我的未成交客户数，后面如有新增客户就往上增加，只加不减" style=" position: absolute;top:6px;left:120px;")
                   .rate(style="left: 130px;")
                     img(src="../../assets/images/crm/down.png")
                     span 预约到店率：20%
+                    a.wenhao(title="预约在本月到店/总客户数" )
                 .yuyue
                   .num 预约在本月到店：109人
                   .rate(style="left: 70px;")
                     img(src="../../assets/images/crm/down.png")
                     span 实际到店率：80%
+                    a.wenhao(title="实际到店/预约在本月到店" )
                 .shiji
                   .num 实际到店：20人
-                  .rate(style="left: 65px;")
+                  .rate(style="left: 62px;")
                     img(src="../../assets/images/crm/down.png")
                     span 到店试驾率：20%
+                    a.wenhao(title="试驾/实际到店" )
                 .kanche
                   .num 试驾看车：20人
-                  .rate(style="left: 60px;")
+                  .rate(style="left: 54px;")
                     img(src="../../assets/images/crm/down.png")
                     span 到店成交率：30%
+                    a.wenhao(title="成交/实际到店" )
                 .success
                   .num 成交车辆：8人
           ul.nav.nav-tabs(style="margin-top:30px;")
@@ -196,6 +212,7 @@ html
               .btn-group.btn-group-justified 
                 a.btn.btn-default(role="button") 昨天6
                 a.btn.btn-default(role="button") 今天8
+                  span.wenhao(title="未预约直接在昨天、今天到店的")
                 a.btn.btn-default(role="button") 明天8  
             .daodian-detail
               table 
@@ -270,7 +287,8 @@ html
                   td 薛松
                   td 13456749800
           .carchange
-            .tit 车辆变更
+            .tit(style="width:80px;") 车辆变更
+              a.wenhao(title="昨天、今天变更的车辆")
             .change.clearfix
               .changesum
                 .shangjia 最新上架23台
@@ -336,5 +354,15 @@ html
                     td.condition 薛松
                     td.relevance 关联客户
         .cont
+
+script.
+    $(".tongzhi").click(function(){
+      $(".tongzhi-popup",this).removeClass("hidden");
+      });
+    
+    $(".close-tongzhi").click(function(){
+      $(".tongzhi-popup").addClass("hidden");
+      return false;
+      });
 
 

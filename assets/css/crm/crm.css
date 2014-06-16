@@ -96,6 +96,7 @@
   color: #fc7000;
   margin-right: 20px;
   font-size: 12px;
+  cursor: pointer;
 }
 #crm #content .notice .notice-list li em {
   color: #666;
@@ -225,7 +226,7 @@
 }
 #crm #content .myclient .client th {
   text-align: right;
-  padding-left: 55px;
+  padding-left: 50px;
   font-size: 13px;
   font-weight: bold;
   padding-right: 10px;
@@ -1007,4 +1008,65 @@
 }
 .addrecords .save-but button {
   width: 180px;
+}
+.wenhao {
+  width: 12px;
+  height: 12px;
+  background: url(../../images/crm/wenhao.png) no-repeat;
+  display: block;
+  float: right;
+  margin-top: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.tongzhi-popup {
+  position: fixed;
+  width: 605px;
+  height: 560px;
+  border: 1px solid #E0E0E0;
+  left: 50%;
+  margin-left: -300px;
+  background: #fff;
+  z-index: 100000;
+}
+.tongzhi-popup .title {
+  height: 35px;
+  border-bottom: 1px solid #E0E0E0;
+  background: #F0F0F0;
+  width: 100%;
+  position: relative;
+}
+.tongzhi-popup .title span {
+  font-size: 14px;
+  color: #333;
+  line-height: 35px;
+  margin-left: 10px;
+}
+.tongzhi-popup .title .close-tongzhi {
+  display: block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: url(../../images/index/toolbar-close.png) no-repeat;
+  top: 10px;
+  right: 10px;
+  opacity: 1;
+}
+.tongzhi-popup .content {
+  padding: 15px;
+}
+.tongzhi-popup .content .biaoti {
+  font-size: 14px;
+  color: #444;
+  line-height: 25px;
+  font-weight: bold;
+}
+.tongzhi-popup .content p {
+  font-size: 12px;
+  color: #666;
+  line-height: 20px;
+  font-weight: normal;
+}
+.tongzhi-popup .content img {
+  width: 550px;
 }

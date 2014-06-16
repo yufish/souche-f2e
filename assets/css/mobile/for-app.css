@@ -9,6 +9,13 @@
     background-size: 98px 65px;
 
 }
+#detail .header .back-icon{
+    display: none !important;
+}
+#detail .header .text{
+    width: auto;
+    float: none;
+}
 #detail #quality-test .cube .h .r{
     line-height: 65px;
     height: 65px;
