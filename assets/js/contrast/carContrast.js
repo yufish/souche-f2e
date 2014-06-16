@@ -323,9 +323,6 @@ define(function() {
         else
         {
             list.remove();
-            if(carCount<=4) {
-                addNewContent($(contentTemplate));
-            }
         }
         carCount--;
     }
