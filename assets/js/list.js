@@ -142,7 +142,7 @@ Souche.Inside = (function() {
                             alert(data.errorMessage)
                         } else {
                             $(".fav[data-carid=" + fav_carId + "]").removeClass("faved")
-                            $("span", $(".fav[data-carid=" + fav_carId + "]")).html("收藏")
+                            $("span", $(".fav[data-carid=" + fav_carId + "]")).html("加入收藏")
                         }
                     }
                 })
@@ -168,17 +168,27 @@ Souche.Inside = (function() {
             });
             $(".fav").click(function(e) {
                 e.preventDefault();
-                if ($(this).hasClass("faved")) return;
-                e.preventDefault();
                 fav_carId = $(this).attr("data-carid")
-                Souche.checkPhoneExist(function(is_login) {
-                    if (is_login) {
-                        favSubmit()
-                    } else {
-                        $("#fav-popup").removeClass("hidden");
-                        $(".fav-wrapGrayBg").show();
-                    }
-                })
+                if ($(this).hasClass("faved")){
+                    Souche.checkPhoneExist(function(is_login) {
+                        if (is_login) {
+                            cancelFavSubmit()
+                        } else {
+                            $("#fav-popup").removeClass("hidden");
+                            $(".fav-wrapGrayBg").show();
+                        }
+                    })
+                }else{
+                    Souche.checkPhoneExist(function(is_login) {
+                        if (is_login) {
+                            favSubmit()
+                        } else {
+                            $("#fav-popup").removeClass("hidden");
+                            $(".fav-wrapGrayBg").show();
+                        }
+                    })
+                }
+
 
             })
 

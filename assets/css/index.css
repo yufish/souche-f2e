@@ -1336,10 +1336,10 @@ a:hover {
   line-height: 0;
 }
 #index .main-slider {
-  margin-left: 10px;
+  margin-left: 8px;
   float: left;
   overflow: hidden;
-  width: 678px;
+  width: 680px;
   position: relative;
   z-index: 9;
   border: 1px solid #e6e6e6;
@@ -2046,6 +2046,7 @@ div {
 .sidebar-active .sidebar-nav .side-box:hover,
 .sidebar-active .sidebar-nav .side-box.active {
   border: 1px solid #d15001;
+  border-left: 1px solid #f2f2f2;
   border-right: 0;
 }
 .sidebar-active .sidebar-nav .collectside {
