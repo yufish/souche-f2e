@@ -67,6 +67,18 @@ define(function() {
                 }
             })
         },
+        init_brandHistory: function() {
+            $("#onsale_brand img").lazyload();
+            $(".age-image img").click(function() {
+                $(this).closest(".age-image").children("img").each(function() {
+                    $(this).toggleClass("one-image");
+                })
+                // $(this).addClass("one-image");
+                // $(this).removeClass("more-image");
+            })
+
+
+        },
         init: function(_config) {
             config = _config;
             var self = this;
@@ -84,7 +96,7 @@ define(function() {
                     $('html,body').animate({
                         scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
                     }, 500, function() {
-                          $(".onsale-tab-item").removeClass("active");
+                        $(".onsale-tab-item").removeClass("active");
                         $(self).addClass("active")
                     });
                 }
@@ -113,13 +125,25 @@ define(function() {
                 e.preventDefault();
             });
             var picsLoaded = false;
+            var brandHistoryLoaded = false;
             $(window).on("tab_change", function(e, id) {
                 if (id == "onsale_pics") {
                     if (!picsLoaded) {
                         $("#onsale_pics img").lazyload();
+
+
+
                         picsLoaded = true;
                     }
 
+                } else if (id == "onsale_brand") {
+                    if (!brandHistoryLoaded) {
+
+                        self.init_brandHistory();
+
+
+                        brandHistoryLoaded = true;
+                    }
                 }
             });
             // if (SVGsupported) {
