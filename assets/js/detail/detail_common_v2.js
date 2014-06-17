@@ -395,22 +395,86 @@
             }
         })
     }
+
+    var submitFav = function() {
+        $.ajax({
+            url: SaleDetailConfig.api_saveFavorite,
+            data: {
+                phone: $("#fav-phone").val(),
+                carType: SaleDetailConfig.carType,
+                carId: SaleDetailConfig.carId
+            },
+            dataType: "json",
+            type: "post",
+            success: function(data) {
+                if (data.errorMessage) {
+                    alert(data.errorMessage)
+                } else {
+                    //$('#shoucang-popup').removeClass('hidden');
+                    var favPos = $("#J_shoucang").offset();
+                    $("<div class='icon-fei'></div>").css({
+                        left: favPos.left + 7,
+                        top: favPos.top + 7
+                    })
+                        .appendTo(document.body)
+                        .animate({
+                            left: $(".sidebar").offset().left + 10,
+                            top: $(".sidebar").offset().top + 10,
+                            opacity: 0
+                        }, 700, function() {
+                            $(".collectside").addClass("flash")
+                            setTimeout(function() {
+                                $(".collectside").removeClass("flash")
+                            }, 500)
+                        })
+                    $("#fav-popup").addClass("hidden")
+                    $(".wrapGrayBg").hide();
+                    $("#J_shoucang label").html('已收藏')
+                    $("#J_shoucang").attr('value', '1').addClass("faved");
+                    var num = $('#J_car_favorite').html();
+                    $('#J_car_favorite').html(parseInt(num) + 1);
+                    doubleClickFlag = false;
+                }
+            }
+        })
+    }
+
+    var cancelFavSubmit = function() {
+        $.ajax({
+            url: SaleDetailConfig.api_delFavorite,
+            data: {
+                carId: SaleDetailConfig.carId //$(self).attr("data-carid")
+            },
+            dataType: "json",
+            type: "post",
+            success: function(data) {
+                if (data.errorMessage) {
+                    alert(data.errorMessage)
+                } else {
+                    $("#J_shoucang label").html('收藏')
+                    $("#J_shoucang").removeClass("faved");
+                }
+            }
+        })
+    }
     $("#J_shoucang").live('click', function(e) {
 
         e.preventDefault();
 
         if ($(this).hasClass("faved")) {
             return;
-        }
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
+        }else{
+            Souche.checkPhoneExist(function(is_login) {
+                if (is_login) {
 
-                submitFav();
-            } else {
-                $("#fav-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
-            }
-        })
+                    submitFav();
+                } else {
+                    $("#fav-popup").removeClass("hidden")
+                    $(".wrapGrayBg").show();
+                }
+            })
+        }
+
 
     });
     $("#fav-form").on("submit", function(e) {
@@ -726,7 +790,7 @@ Souche.DetailCommon = function() {
             return;
         }
 
-        var carconstrastID = $(".addcarduibi input").attr("contrastId");
+        var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
         if (!$(".addcarduibi input")[0].checked) {
 
@@ -761,20 +825,35 @@ Souche.DetailCommon = function() {
                         cloneElement.remove();
                     });
 
-                    $(".addcarduibi input").attr("contrastId", data.contrastId);
+                    $(".addcarduibi input").attr("contrastid", data.contrastId);
 
                     return;
                 }
                 if (data.result == -1) {
                     $(".addcarduibi input").attr("checked", 'true');
                     $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
+                    var context= $(this);
+                    window.setTimeout(function()
+                    {
+                        context.find(".contrast-waring").addClass("hidden");
+                    },2000);
                     return;
                 }
                 if (data.result == 1) {
                     $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
+                    var context= $(this);
+                    window.setTimeout(function()
+                    {
+                        context.find(".contrast-waring").addClass("hidden");
+                    },2000);
                     return;
                 }
                 $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
+                var context= $(this);
+                window.setTimeout(function()
+                {
+                    context.find(".contrast-waring").addClass("hidden");
+                },2000);
             });
         }
         else {
@@ -786,13 +865,14 @@ Souche.DetailCommon = function() {
                 type: "POST",
                 url: config.api_deleteContrast,
                 data: {
-                    cid: $(".addcarduibi input").attr("contrastId")
+                    cid: $(".addcarduibi input").attr("contrastid")
                 }
             }).done(function (data) {
-                $(".addcarduibi input").attr("checked", 'false');
-                $(".addcarduibi input").attr("contrastId", '');
+                $(".addcarduibi input").removeAttr("checked");
+                $(".addcarduibi input").removeAttr("contrastid");
             });
         }
+        return false;
     }
 
     var _bind=function() {
