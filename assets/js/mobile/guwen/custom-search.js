@@ -77,18 +77,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             //userTrack(trackData);
 
                         } else if (pageStep == 2) {
-                            var brands = brandsManager.brands;
-                            var bStr = '';
-                            for (var brand in brands) {
-                                bStr += ',' + brand;
-                            }
-                            bStr = bStr.substring(1);
-                            trackData = {
-                                typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
-                                car_brands: bStr
-                            }
-                        } else if (pageStep == 3) {
 
+                        } else if (pageStep == 3) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
                                 car_year_min: min_year,
@@ -212,7 +202,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 var loadingLayer = $('.loading-cover-layer');
                 !function brandBuild(){
                     var tplBrand = $('#tpl_brand').text();
-                    function loadAllBrands() {
+                    !function loadAllBrands() {
                         //loadingLayer.removeClass('hidden');
                         BrandAjaxUtil.getRecomBrands(function (data) {
                             var brands = data.brands;
@@ -227,12 +217,10 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                                 html += Mustache.render(tplBrand, {'brand': b});
                             }
                             $('#brand-icons-container').html(html);
-
                             loadingLayer.addClass('hidden');
                             brandLoaded=true;
                         })
-                    }
-                    loadAllBrands();
+                    }();
                 }();
 
 
@@ -244,38 +232,22 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 $('#selected-brand').on('click', '.sb-item', function () {
                     var $self = $(this)
                     //brand-code should be data-code
-                    var bCode = $self.attr('brand-code'),
-                        sCode = $self.attr('series-code');
-                    brandsManager.toggleSeries(bCode, sCode);
+                    var code = $self.attr('data-code'),
+                        name=$self.find('.text').text();
+                    brandManager.removeBrand(code,name);
                 });
-
-
-
-                var $curBrandArray;
-                var $curFold;
-                var curBrandCode;
-
 
                 $('#brand-icons-container').on('click', '.icon-item', function () {
                     var $self = $(this);
                     var code = $self.attr('data-code');
                     var name = $self.find('.brand-name').text();
-                    //brand-code should be data-code
-                   // var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
-                    //$(this).find('.text').toggleClass('selected');
                     if($self.hasClass('selected')) {
                         brandManager.removeBrand(code, name);
                     }else{
                         brandManager.addBrand(code, name);
                     }
 
-
-
                 })
-
-                var brandIndex = 0;
-
-
 
                 function sumbitGuWenInfo() {
                     var price = range.getData();

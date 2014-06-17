@@ -15,3 +15,6 @@
 #detail #detail-main .top-info .title{
     color:#fff;
 }
+#detail #actions{
+    display: none !important;
+}

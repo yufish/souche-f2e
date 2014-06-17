@@ -167,8 +167,6 @@
  #brand-icons-container {
     margin: 10px 0 0 0;
 }
-
-
  #brand-icons-container  .icon-item {
     width: 25%;
     float: left;
@@ -279,6 +277,53 @@
 }
 #series-container {
     margin: 10px 0 0 0;
+}
+#series-container .title {
+    margin-left: 10px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: bold;
+    float: left;
+    color:#fff;
+}
+#series-container .buxian {
+    float: right;
+    margin: 8px 10px 0 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    line-height: 20px;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: normal;
+    color:#b1b1b1;
+}
+#series-container .series-title {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
+}
+#series-container .series-name-wrapper {
+    padding-left: 10px;
+}
+#series-container .series-item .series-name {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    font-size: 13px;
+}
+#series-container .series-item.selected .series-name {
+    color: #ff4400;
+    border: 1px solid #ff4400;
+    background: url('../../images/mob/gou.png') no-repeat 101% bottom;
+    background-size: 12px 12px;
+}
+#series-container .series-item{
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
 }
 .price-box{
     box-sizing: border-box;
