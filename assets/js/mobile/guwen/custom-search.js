@@ -1,7 +1,7 @@
 /**
  * Created by zilong on 2014/6/12.
  */
-define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandManager) {
+define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener'], function (Mustache,brandManager,addListener) {
 
     var GuWen =(function(){
         function userTrack(userData) {
@@ -12,6 +12,7 @@ define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandM
             })
         }
 
+        addListener(brandManager);
         return {
 
             init: function (dataObj) {
@@ -76,18 +77,8 @@ define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandM
                             //userTrack(trackData);
 
                         } else if (pageStep == 2) {
-                            var brands = brandsManager.brands;
-                            var bStr = '';
-                            for (var brand in brands) {
-                                bStr += ',' + brand;
-                            }
-                            bStr = bStr.substring(1);
-                            trackData = {
-                                typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
-                                car_brands: bStr
-                            }
-                        } else if (pageStep == 3) {
 
+                        } else if (pageStep == 3) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
                                 car_year_min: min_year,
@@ -161,6 +152,7 @@ define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandM
 
                 var brandLoaded = false;
 
+                //brand-code should be data-code
                 function initializeBrands() {
                     for (var key in initBrands) {
                         var brandCode = key,
@@ -209,7 +201,8 @@ define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandM
 
                 var loadingLayer = $('.loading-cover-layer');
                 !function brandBuild(){
-                    function loadAllBrands() {
+                    var tplBrand = $('#tpl_brand').text();
+                    !function loadAllBrands() {
                         //loadingLayer.removeClass('hidden');
                         BrandAjaxUtil.getRecomBrands(function (data) {
                             var brands = data.brands;
@@ -224,52 +217,37 @@ define(['lib/mustache', 'mobile/common/BrandManager'], function (Mustache,brandM
                                 html += Mustache.render(tplBrand, {'brand': b});
                             }
                             $('#brand-icons-container').html(html);
-
                             loadingLayer.addClass('hidden');
                             brandLoaded=true;
                         })
-                    }
-                    loadAllBrands();
+                    }();
                 }();
 
 
-
-
-
-                var tplBrand = $('#tpl_brand').text(),
-                    tplSeries = $('#tpl_series').text();
-
+                var tplSeries = $('#tpl_series').text();
 
                 $('.back-icon').click(function () {
                     backPage();
                 })
-                $('.selected-brand').on('click', '.sb-item', function () {
+                $('#selected-brand').on('click', '.sb-item', function () {
                     var $self = $(this)
-                    var bCode = $self.attr('brand-code'),
-                        sCode = $self.attr('series-code');
-                    brandsManager.toggleSeries(bCode, sCode);
+                    //brand-code should be data-code
+                    var code = $self.attr('data-code'),
+                        name=$self.find('.text').text();
+                    brandManager.removeBrand(code,name);
                 });
-
-
-
-                var $curBrandArray;
-                var $curFold;
-                var curBrandCode;
-
 
                 $('#brand-icons-container').on('click', '.icon-item', function () {
                     var $self = $(this);
                     var code = $self.attr('data-code');
                     var name = $self.find('.brand-name').text();
-                   // var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + text + '</span>' + '<i class="close-icon"></i>' + '</div>';
-                    //$(this).find('.text').toggleClass('selected');
-                    brandManager.addBrand(code,name);
+                    if($self.hasClass('selected')) {
+                        brandManager.removeBrand(code, name);
+                    }else{
+                        brandManager.addBrand(code, name);
+                    }
 
                 })
-
-                var brandIndex = 0;
-
-
 
                 function sumbitGuWenInfo() {
                     var price = range.getData();
