@@ -1,7 +1,6 @@
 /**
  * Created by zilong on 2014/6/12.
  */
-define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener'], function (Mustache,brandManager,addListener) {
 
     var GuWen =(function(){
         function userTrack(userData) {
@@ -310,7 +309,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 }
 
 
-                $('#submit-btn').click(function () {
+                $('.submit-btn').click(function () {
                     if (curPageIndex != pages.length - 1) {
                         if (!brandLoaded && curPageIndex == 1) {
                             gotoPage();
@@ -395,6 +394,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
             }
         }
     })();
-    //window.GuWen = GuWen;
-    return GuWen;
-});
+    window.GuWen = GuWen;
+    //return GuWen;
+

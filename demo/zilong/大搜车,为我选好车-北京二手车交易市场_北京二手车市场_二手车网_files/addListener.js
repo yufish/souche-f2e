@@ -7,7 +7,7 @@
         this[name] = func();
     }
 
-}('listeners',function(){
+}('addListener',function(){
 
     var brandIconLtn ={
         container:$('#brand-icons-container'),
