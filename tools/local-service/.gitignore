@@ -1,2 +1,6 @@
 node_modules
-config.js
+.idea
+.project
+npm-debug.log
+.idea/
+nbproject/private/

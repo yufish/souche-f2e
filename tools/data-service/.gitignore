@@ -1,1 +1,6 @@
 node_modules
+.idea
+.project
+npm-debug.log
+.idea/
+nbproject/private/
