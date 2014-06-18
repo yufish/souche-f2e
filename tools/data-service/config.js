@@ -3,7 +3,7 @@ path = require("path");
 var config;
 
 config = {
-    run_port: 3232,
+    run_port: 3456,
 
 
     base_path: __dirname, //应用根路径，程序中常用
