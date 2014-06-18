@@ -20,7 +20,6 @@
 }
 #guwen-h5-2 {
     position: relative;
-    overflow: hidden;
 }
 #guwen-h5-2 #page-1,
 #guwen-h5-2 #page-2,
@@ -29,35 +28,18 @@
     width: 100%;
     position: absolute;
     top: 0;
-    -webkit-transition: -webkit-transform 0.8s;
-    transition: transform 0.8s;
-    height: 100%;
-
 }
 #guwen-h5-2 #page-2 {
-    /*height: 1150px;*/
+    height: 1150px;
 }
 #guwen-h5-2 #page-2,
 #guwen-h5-2 #page-3,
 #guwen-h5-2 #page-4 {
-    /*left: 100%;*/
-    -webkit-transform:translate(100%,0);
-    transform:translate(100%,0);
-    /*display: none;*/
+    left: 100%;
+    display: none;
 }
-#guwen-h5-2 .wrapper {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-}
-#guwen-h5-2 .btns {
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-#guwen-h5-2 .btns button {
+
+#guwen-h5-2  #submit-btn {
     background-color: #fc7000;
     width: 300px;
     height: 40px;
@@ -65,7 +47,10 @@
     border-radius: 8px;
     border: none;
     font-size: 18px;
-    margin: 0 8px;
+    position: fixed;
+    left:50%;
+    margin-left: -150px;
+    bottom: 20px;
 }
 
 .icon-item .brand-wrapper {
@@ -253,7 +238,7 @@
     height: 23px;
     width: 33px;
     background: #D2D2D2;
-    margin-left: 5px;
+    margin-left: 3px;
 }
 #price-container .qs-item.selected .card{
     background: #ff4400;
