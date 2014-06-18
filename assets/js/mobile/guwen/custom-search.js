@@ -33,10 +33,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     if (dataObj.maxPrice == '10000') maxP = '不限'
                 }
 
-                var queryObject={
-                     minPrice:minP,
-                     maxPrice:maxP
-                }
+                $('#low-price').val(minP)
+                $('#high-price').val(maxP)
                 var initBrands = function(){
                     var initBrs = {};
                     if (dataObj.brands) {
@@ -105,16 +103,11 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     beforePage(pageIndex);
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
+                    $curPage.css({
+                        transform:'translate(-100%,0)'
+                    })
                     $page.css({
-                        left: '100%'
-                    }).show();
-                    $curPage.animate({
-                        left: '-100%'
-                    }, function () {
-                        $curPage.hide();
-                    });
-                    $page.animate({
-                        left: '0'
+                        transform:'translate(0,0)'
                     });
                     curPageIndex = pageIndex;
                 }
@@ -134,16 +127,11 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     beforePage(pageIndex);
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
+                    $curPage.css({
+                        transform:'translate(100%,0)'
+                    })
                     $page.css({
-                        left: '-100%'
-                    }).show();
-                    $curPage.animate({
-                        left: '100%'
-                    }, function () {
-                        $curPage.hide();
-                    });
-                    $page.animate({
-                        left: '0'
+                        transform:'translate(0,0)'
                     });
                     curPageIndex = pageIndex;
                 }
@@ -246,11 +234,34 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }else{
                         brandManager.addBrand(code, name);
                     }
+                })
+
+                $('#series-container').on('click', '.series-item', function() {
+                    var self = $(this);
+                    var bCode = self.closest('.content').attr('data-code');
+                    var code = self.attr('data-code');
+                    var name = self.text();
+                    if (self.hasClass('selected')) {
+                        brandManager.removeSeries(code, bCode)
+                    } else {
+                        brandManager.addSeries(code, name, bCode);
+                    }
 
                 })
 
-                function sumbitGuWenInfo() {
-                    var price = range.getData();
+                $('#series-container').on('click','.series-buxian',function() {
+                    var bCode = $(this).attr('data-code');
+                    brandManager.noLimitSeries(bCode);
+                })
+
+                $('#selected-series').on('click','.ss-item',function(){
+                    var self = $(this);
+                    var code = self.attr('data-code'),
+                        bCode = self.attr('data-brand-code');
+                    brandManager.removeSeries(code, bCode);
+                })
+                function submitGuWenInfo() {
+                    //var price =
                     var brands = brandsManager.brands;
                     var minPrice = price.min.value.replace('万', ''),
                         maxPrice = price.max.value.replace('万', '');
@@ -310,7 +321,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         }
                         return;
                     }
-                    sumbitGuWenInfo();
+                    submitGuWenInfo();
                 })
 
                 var phoneReg = /^1[3458][0-9]{9}$/;
@@ -323,7 +334,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         SM.PhoneRegister(phoneNum, function () {
                             $('#phone-popup').hide();
                             $('.cover-layer').addClass('hidden');
-                            sumbitGuWenInfo();
+                            submitGuWenInfo();
                         })
                     }
                 })
