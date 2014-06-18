@@ -5,6 +5,92 @@
 .full-screen-banner{
   overflow: hidden;
 }
+.car-models{
+    margin-top: 10px;
+    .car-all{
+        margin-left: 0px !important;
+        .models-image{
+            margin-top: 30px !important;
+            margin-left: 70px !important;
+            img{
+                width: 90px !important;
+                height: 51px;
+            }
+        }
+        .models-tit{
+            margin-top: 15px !important;
+        }
+    }
+    .models-box{
+        width: 226px;
+        height: 130px;
+        background: #fff;
+        margin-left: 10px;
+        float: left;
+        cursor: pointer;
+        border: 2px solid #fff;
+        position: relative;
+        .models-image{
+            margin-left: 45px;
+            img{
+                display: block;
+                width: 70%;
+            }
+        }
+        .models-tit{
+            font-size: 13px;
+            color: #5b5b5b;
+            width: 100%;
+            text-align: center;
+            height: 20px;
+            margin-top: 5px;
+        }
+        .model-show{
+            width: 26px;
+            height: 16px;
+            background: url(../images/acts/template/model-show.png) no-repeat;
+            position: absolute;
+            top: 129px;
+            right: 100px;
+        }
+    }
+    
+    .models-box-active{
+        border: 2px solid #0b3b41 !important;
+    }
+}
+.model-detail{
+   margin-top: 20px;
+    height: 60px;
+    background: #fff;
+    padding: 0px 40px;
+    .model-tag{
+        float: left;
+        .tag-cont{
+            float: left;
+            padding: 10px 15px; 
+            font-size: 13px;
+            color: #fff;
+            background: #0b3b41;
+            margin-right: 5px;
+        }
+    }
+    .reason{
+        float: right;
+        margin-top: 10px;
+        .reason-tit{
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0b3b41;
+        }
+        .reason-cont{
+            float: left;
+            width: 570px;
+            font-size: 13px;
+        }
+    }
+}
 .car-box {
     background-color: #FFFFFF;
     border: 1px solid #E4E3E3;
@@ -157,6 +243,31 @@
     margin-top: 2px;
     height: 20px;
 }
+.car-box .car-case{
+    width: 355px;
+    height: 30px;
+    background: #f3f3f3;
+    padding: 10px 15px;
+    span{
+        font-size: 14px;
+        color: #FC7000;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    em{
+        font-size: 14px;
+        color: #999999;
+        line-height: 30px;
+    }
+    .car-km{
+        float: left;
+        margin-right: 65px;
+    }
+    .car-time{
+        float: left;
+
+    }
+}
 #car-list {
     margin-top: 15px;
 }
@@ -223,13 +334,11 @@
         line-height: 40px;
         background: #fff;
         margin-top: 10px;
-        border-radius: 8px;
         #how-many {
             color: #fff;
             float: left;
             padding: 0 20px;
             background: #403f3d;
-            border-radius: 8px 0 0 8px;
             span {
                 margin: 0 2px;
             }
