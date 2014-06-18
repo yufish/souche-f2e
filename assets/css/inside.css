@@ -287,8 +287,139 @@ padding-left: 50px;
 #choose.choose_fixed  .choose_condition .choose_item span{background:url("../../assets/images/fed/close-choose.png") no-repeat;margin-top:5px;*margin-top:-16px;}
 #listContain .list-banner{display:block;width:100%;height:100px;background-repeat:no-repeat;margin-top:20px;}
 #list_wrap{margin-top:20px;margin-bottom:20px;position:relative}
+#list_wrap .navContainer{
+    width:263px;
+    position:relative;
+    float: left;
+}
+
+#list_wrap .navContainer .historyRecord
+{
+    clear: both;
+    float: left;
+    position: relative;
+    width: 231px;
+    background:url(../../assets/images/fed/list_bg.png) repeat-y;
+    padding:18px 16px 25px 16px;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content
+{
+    margin-top: 10px;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content ul li
+{
+    font-size: 12px;
+    padding: 3px 0px;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content ul li:hover .content{
+    color: #FC7000;
+    cursor: pointer;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content ul li a
+{
+    color: #666;
+    display: inline-block;
+    width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content ul li  .close
+{
+    display: none;
+    width: 10px !important;
+    margin-left: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_content ul li:hover  .close
+{
+    display: inline-block;
+}
+
+#list_wrap .navContainer .historyRecord .historyRecord_title
+{
+    color: #333;
+    width: 230px;
+    font-size: 14px
+}
+
+#list_wrap .loan  {
+    margin-top: 20px;
+    clear: both;
+    float: left;
+    position: relative;
+    width: 231px;
+    background:url(../../assets/images/fed/list_bg.png) repeat-y;
+    padding:24px 16px;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+#list_wrap .loan .loan_title
+{
+    display: block;
+    font-size: 14px;
+}
+#list_wrap .loan  .select {color: #BEBEBE;margin-top: 15px;}
+#list_wrap .loan  .select .input { margin-top: 20px;}
+#list_wrap .loan  .select .input>span {color: #000000;}
+#list_wrap .loan  .select .inputContainer
+{
+    border: 1px solid #ddd;
+    display: inline-block;
+    *display: inline;
+    _display: inline;
+    vertical-align: middle;
+    width: 70px;
+    *width: 80px;
+    _width: 80px;
+    padding: 5px 0px 5px 10px;
+    font-size: 12px
+}
+#list_wrap .loan  .select input {
+    width: 40px;
+    color: #666;
+    border: 1px solid #ddd;
+    line-height:20px;
+    height: 20px;
+    border: none;
+    font-size: 12px
+}
+
+#list_wrap .loan .loan-select .sc-select-hd .sc-select-content ,#list_wrap .loan .loan-select .sc-select-hd .sc-select-action
+{
+    color: #aaa
+}
+#list_wrap .loan .loan-select .sc-select-list a
+{
+    display: block;
+    float: none;
+    padding-left: 15px;
+    font-size: 12px;
+    line-height: 25px;
+    color: #666;
+}
+#list_wrap .loan  .span_tilte{ float: left; display:inline;}
+#list_wrap .loan  .span_submit{ float: right; display:inline; background-color: #e70;padding:5px 7px;  color: white; cursor: pointer;margin-top: 0px;margin-top: -6px;*margin-top:-25px;}
+#list_wrap .loan  .loan-select{
+    width: 80px;
+    display: inline-block;
+    *display: inline;
+    _display: inline;
+    vertical-align: middle;
+    color:#666 ;
+}
+#list_wrap .loan  input{ position: relative;}
 #list_wrap .list_nav .sc-option{width:228px;}
-#list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
+#list_wrap .list_nav{width:263px;margin-top:20px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
 #list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;margin-right: 15px;}
 .nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;margin-top: 20px;position: relative;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}

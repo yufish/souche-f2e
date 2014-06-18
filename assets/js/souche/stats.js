@@ -41,16 +41,16 @@ $(document).ready(function() {
         $.ajax({
             url: url,
             dataType: "jsonp",
-            success: function(data) {
-                data.forEach(function(click) {
-                    if (click.element_id) {
-                        if (click_types[click.element_id]) {
-                            click_types[click.element_id] += 1;
-                        } else {
-                            click_types[click.element_id] = 1;
-                        }
-                    }
-                })
+            success: function(click_types) {
+                // data.forEach(function(click) {
+                //     if (click.element_id) {
+                //         if (click_types[click.element_id]) {
+                //             click_types[click.element_id] += 1;
+                //         } else {
+                //             click_types[click.element_id] = 1;
+                //         }
+                //     }
+                // })
                 for (var i in click_types) {
                     var ele = $("*[click_type='" + i + "']");
                     var offset = ele.offset();
