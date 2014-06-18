@@ -178,28 +178,10 @@ function filter(BrandMgr, addListener) {
                 $('.tab-items .pane-selected-item').each(function(idx, item) {
                     $(this).attr('data-index', idx);
                 })
-//                if ($('.tab-items .pane-selected-item.selected').length == 0) {
-//                    selectBrandTab(0)
-//                }
+
                 showPopup_s();
             })
-//            $('.tab-items').on('click', '.selected-brand-item', function() {
-//                var i = $(this).attr('data-index');
-//                selectBrandTab(i);
-//            })
 
-            //车系弹出层的title
-            //var seriesPopupTitle = $('#series-list .title');
-
-//            function selectBrandTab(index) {
-//                $('.content-tabs .content').removeClass('selected').eq(index).addClass('selected');
-//
-//                var pSelectItem = $('.tab-items .pane-selected-item').removeClass('selected').eq(index);
-//                pSelectItem.addClass('selected');
-//                var bName = pSelectItem.find('.selected-brand-name').text(),
-//                    bCode = pSelectItem.attr('data-code');
-//                seriesPopupTitle.text(bName).attr('data-code', bCode);
-//            }
             $('#brand-buxian').click(function() {
                 _hidePopup();
                 BrandMgr.noLimitBrand();

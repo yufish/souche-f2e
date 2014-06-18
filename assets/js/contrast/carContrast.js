@@ -41,7 +41,7 @@ define(function() {
                 context: headTh
             }).done(function (data) {
                 if(data.result == 2) {
-                    this.deleteContent(this.index() + 1);
+                    this.deleteContent(this.parent().index());
                     delete headTh.deleteContent;
                 }
                 else {
@@ -66,19 +66,11 @@ define(function() {
         var contentPixList , movePosition, defaultPosition;
 
         contentPixList = [];
-        for (var index = 0; index <= carCount; index++) {
-            contentPixList.push(moveRangeStartX + index * cellWidth - $(document).scrollLeft());
-        }
 
         $(".more-detail").live("mousedown", function (event) {
             event.stopPropagation();
             event.preventDefault();
 
-            sortString = [];
-            for (var index = 0; index < $(".close-contrast").length; index++) {
-                sortString.push($(".close-contrast").eq(index).attr("cid"));
-            }
-            console.log(sortString.toString());
             startX = event.pageX;
             startY = event.pageY;
             hasTouch = true;
@@ -138,9 +130,6 @@ define(function() {
                 }
 
                 $(".contrast-table .basic-info:eq(0)").css("left", headNavLeft - $(document).scrollLeft());
-                for(var index=0;index<contentPixList.length;index++) {
-                    contentPixList[index]=contentPixList[index]- $(document).scrollLeft();
-                }
             }
         );
 
@@ -190,9 +179,10 @@ define(function() {
                     var moveItemList = getContentList(defaultPosition);
 
                     addNewContent(moveItemList, movePosition, false);
-                    var temp = sortString[defaultPosition - 1];
-                    sortString[defaultPosition - 1] = sortString[movePosition];
-                    sortString[movePosition] = temp;
+                    sortString = [];
+                    for (var index = 0; index < $(".close-contrast").length; index++) {
+                        sortString.push($(".close-contrast").eq(index).attr("cid"));
+                    }
 
                     sortString = sortString.toString();
 
@@ -333,18 +323,11 @@ define(function() {
         }
     }
 
-    var deleteContent =function(index)
-    {
+    var deleteContent =function(index) {
         var list = getContentList(index);
-
-        if(showScroll_x) {
-            list.remove();
-        }
-        else
-        {
-            list.remove();
-        }
+        list.remove();
         carCount--;
+        $(".table-name").width($(".basic-info").width() - 19);
     }
 
     var init = function (_config) {
