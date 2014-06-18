@@ -49,7 +49,7 @@ global.loadModel = function(modelName) {
  * 初始化mongodb，基于mongoose
  */
 if (config.mongo_config) {
-    mongoose = require('mongoose');
+    global.mongoose = require('mongoose');
     mongoose.set('debug', true);
     var Schema = mongoose.Schema;
     mongoose.connect('mongodb://' + config.mongo_config.user + ':' + config.mongo_config.pass + '@' + config.mongo_config.host + ':' + config.mongo_config.port + '/' + config.mongo_config.database, config.mongo_config);
