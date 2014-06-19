@@ -89,15 +89,14 @@
                     brandCode:bCode
                 })
             },
-            removeBrand:function(code,$dom){
+            removeBrand:function(code){
                 for(var i = 0;i<this.brands.length;i++){
                     if(code==this.brands[i].code){
                         var dItem = this.brands.splice(i,1)[0];
                         this.notify({
                             eventType:'removeBrand',
                             item:dItem,
-                            bLen:this.brands.length,
-                            $dom:$dom
+                            bLen:this.brands.length
                         })
                         return;
                     }
