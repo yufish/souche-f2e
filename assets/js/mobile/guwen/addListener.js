@@ -71,6 +71,8 @@
                     code: bCode
                 },
                 success: function (data) {
+                    var selectSeriesCodeNameMap ={};
+
                     var codes = data['codes'];
                     var start=  '<div class="content" data-code="'+bCode+'">'
                         +'<div class="clearfix" style="background: #524A4A">'
@@ -86,10 +88,17 @@
                         for (var j in s) {
                             var b = s[j];
                             html += '<div class="series-item" data-code="' + b.code + '"><span class="series-name">' + b.name + '</span></div>';
+                            if(b.code in window.seriesBrandMap){
+                                selectSeriesCodeNameMap[b.code] = b.name;
+                            }
                         }
                         html += '</div></div>';
                     }
                     self.container.append(start+html+end);
+
+                    for(var i in selectSeriesCodeNameMap){
+                        brandManager.addSeries(i,selectSeriesCodeNameMap[i],bCode);
+                    }
                 }
             })
         }
@@ -106,6 +115,14 @@
             if(eType=='removeSeries'){
                 var code = e.item.code;
                 this.container.find('.series-item[data-code='+code+']').removeClass('selected');
+            }
+            if(eType=='noLimitSeries'){
+                var bCode = e.brandCode;
+                this.container.find('.content[data-code='+bCode+']').find('.series-item').removeClass('selected');
+            }
+            if(eType =='removeBrand'){
+                //TODO
+
             }
         }
     }
@@ -126,9 +143,26 @@
                     this.container.hide();
                 }
             }
+            if(eType=='noLimitSeries'){
+                var bCode = e.brandCode;
+                this.container.find('.ss-item[data-brand-code='+bCode+']').remove();
+                if(this.container.find('.ss-item').length==0){
+                    this.container.hide();
+                }
+            }
+            if(eType=='removeBrand'){
+                var bCode = e.item.code;
+                this.container.find('.ss-item[data-brand-code='+bCode+']').remove();
+                if(this.container.find('.ss-item').length==0){
+                    this.container.hide();
+                }
+            }
         }
     }
+
+    var brandManager=null;
     function addLtns(BrandMgr){
+        brandManager = BrandMgr
         BrandMgr.addLtn(brandIconLtn);
         BrandMgr.addLtn(brandSelectedLtn);
         BrandMgr.addLtn(getSeriesByBrandCodeLtn);

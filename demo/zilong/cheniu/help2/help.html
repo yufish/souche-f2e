@@ -27,16 +27,25 @@
           width:90%;
       }
       a{
-      display: block;
-      margin:  0 auto;
-      width:100%;
-      margin-top:20px;
+          display: block;
+          margin:  0 auto;
+          width:100%;
+          margin-top:20px;
+          position: relative;
       }
       .text{
           font-size:13px;
           margin-top:8px;
       }
-      
+      #new-feature{
+          width: 70px;
+          height: 38px;
+          background: url(http://res.souche.com/assets/images/cheniu/help2/new-feature.png) no-repeat center;
+          background-size: 100% 100%;
+          position: absolute;
+          top:-35px;
+          right: 5px;
+      }
   </style>
   
 </head>
@@ -55,10 +64,23 @@
         <a href="help6.html" class="feature-item right">
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-4.png">
         </a>
+        <a href="help10.html" class="feature-item right">
+            <img src="http://res.souche.com/assets/images/cheniu/help2/main-7.png">
+            <div id="new-feature"></div>
+        </a>
         <a href="help8.html" class="feature-item right">
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-5.png">
         </a>
+
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-6.png" style="margin-top:20px;">
       </div>
   </div>
+    <script>
+        window.onload = function(){
+            var f = document.getElementById('new-feature');
+            setTimeout(function(){
+                f.style.display='none';
+            },2000)
+        }
+    </script>
 </body>
