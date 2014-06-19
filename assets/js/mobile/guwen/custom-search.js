@@ -197,13 +197,14 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             self.addClass('selected');
                             lowInput.val(low);
                             highInput.val(high);
-                            setTimeout(function(){
-                                self.removeClass('selected');
-                            },2000)
                         })
                     })
-
+                    $('.price-box').on('focus',function(){
+                        qsItems.removeClass('selected');
+                    })
                 }();
+
+
 
                 //var loadingLayer = $('.loading-cover-layer');
                 var brandLoaded = false;
