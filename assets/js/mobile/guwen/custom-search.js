@@ -58,7 +58,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             minP  = maxP;
                             maxP = tmp;
                         }
-                    if (!stepRecords[pageStep]) {
+                        if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
                                 car_price_min:minP,
@@ -66,26 +66,32 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             }
                             userTrack(trackData);
 
-                        } else if (pageStep == 2) {
+                        }
+                        userTrack(trackData);
+                        stepRecords.push(pageStep);
+                        //console.log(trackData);
+                    } else if (pageStep == 2) {
+                        if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
-                                car_brands:brandManager.brands.map(function(b) {return b['code'];}).join(',')
+                                car_brands: brandManager.brands.map(function (b) {
+                                    return b['code'];
+                                }).join(',')
                             }
                             userTrack(trackData);
-                        } else if (pageStep == 3) {
-                            var sStr  = brandManager.brands.map(function(b) {
-                                return b['series'].map(function(s) {
+                        }
+                    } else if (pageStep == 3) {
+                        if (!stepRecords[pageStep]) {
+                            var sStr = brandManager.brands.map(function (b) {
+                                return b['series'].map(function (s) {
                                     return s['code'];
                                 }).join(',');
                             }).join(',');
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
-                                car_series:sStr
+                                car_series: sStr
                             }
                         }
-                        userTrack(trackData);
-                        stepRecords.push(pageStep);
-                        //console.log(trackData);
                     }
                     if (pageIndex == pages.length) {
                         $('#submit-btn').hide();
