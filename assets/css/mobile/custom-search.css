@@ -55,7 +55,7 @@
 
 .icon-item .brand-wrapper {
     width: 60px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     margin: 0 auto
 }
 .icon-item.selected .brand-wrapper {
