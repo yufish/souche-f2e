@@ -1,0 +1,48 @@
+#adviser {
+  background: #f3f0ee;
+}
+#adviser #content {
+  background: #f3f0ee;
+}
+#adviser #content .banner {
+  height: 356px;
+  background: url(../images/adviser/banner.png) no-repeat center;
+}
+#adviser #content .content-nav {
+  height: 135px;
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#adviser #content .content-nav .nav-box {
+  float: left;
+  width: 162px;
+  height: 135px;
+  background: #fff;
+  margin-left: 9px;
+  color: #262626;
+  cursor: pointer;
+}
+#adviser #content .content-nav .nav-box .nav-cont {
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+#adviser #content .content-nav .nav-box .nav-tit {
+  font-size: 26px;
+  text-align: center;
+  margin-top: 30px;
+}
+#adviser #content .content-nav .nav-box:hover {
+  background: #ff4400;
+  color: #fff;
+}
+#adviser #content .aiche {
+  background: #ff4400 url(../images/adviser/aiche.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
