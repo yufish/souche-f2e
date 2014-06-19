@@ -1,5 +1,8 @@
   module.exports = {
-
+      "_class": {
+          "type": String,
+          "default": "com.souche.datacenter.model.ClickModel"
+      }, //,
       page_x: Number,
       page_y: Number,
       element_id: String,
