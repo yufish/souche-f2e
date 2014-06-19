@@ -186,10 +186,14 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         var low = priceRange[index],
                             high = priceRange[index+1]==10000?'不限':priceRange[index+1];
                         $(this).click(function(){
+                            var self =$(this);
                             qsItems.removeClass('selected');
-                            $(this).addClass('selected');
+                            self.addClass('selected');
                             lowInput.val(low);
                             highInput.val(high);
+                            setTimeout(function(){
+                                self.removeClass('selected');
+                            },2000)
                         })
                     })
 
