@@ -167,8 +167,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     var begin = '<div class="qs-item">'
                                 +   '<div class="card"></div>'
                                 +   '<div class="price-value">'
-                    var mid = '</div><div class="price-tag"><span class="value">';
-                    var end = '</span><i></i></div></div>';
+                    var mid = '</div><div class="price-tag"><div class="value">';
+                    var end = '万</div></div></div>';
                     var html = '';
                     for(var i=0;i<priceRange.length-1;i++){
                         low = priceRange[i],high= priceRange[i+1];

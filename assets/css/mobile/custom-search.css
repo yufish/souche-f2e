@@ -247,21 +247,15 @@
     display: block;
 }
 #price-container .price-tag .value{
-    border:1px solid #ff4400;
-    padding:3px 5px;
     border-radius: 5px;
+    width: 47px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../../images/mob/h5-2/price-tag-box.png) no-repeat center;
+    background-size: 100%;
+    padding-top:3px;
 }
-#price-container .price-tag i{
-    display: block;
-    width: 7px;
-    height: 8px;
-    background:url(../../images/mob/h5-2/price-arrow-d.png) no-repeat center;
-    background-size: 7px 8px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 16px;
-}
+
 #limit-symbol{
     margin: 23px 0 0 -8px;
 }
