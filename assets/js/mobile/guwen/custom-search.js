@@ -321,7 +321,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     var bs = buildBsQueryString();
                     var bStr = bs.brandStr,
                         sStr = bs.seriesStr;
-                    gotoPage();
+                    //gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
                         dataType: 'json',
@@ -353,11 +353,19 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
 
 
                 $('#submit-btn').click(function () {
-                    if (curPageIndex != pages.length - 1) {
-                        gotoPage();
+                    if (curPageIndex == pages.length - 1) {
+                        gotoPage()
+                        submitGuWenInfo();
                         return;
                     }
-                    submitGuWenInfo();
+                    if(curPageIndex==2&& brandManager.brands.length==0){
+                        gotoPage(4)
+                        submitGuWenInfo();
+                        return;
+                    }
+                    gotoPage();
+                    //TODO
+
                 })
 
                 var phoneReg = /^1[3458][0-9]{9}$/;
