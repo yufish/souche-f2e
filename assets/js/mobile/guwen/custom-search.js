@@ -47,6 +47,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     if (pageStep == 1) {
                         var min=$('#low-price').val(),
                             max = $('#high-price').val();
+                        max = ((max=='无限')?10000:max);
                         var minP = +min,
                             maxP = +max;
                         if(isNaN(minP)|| isNaN(maxP)){
