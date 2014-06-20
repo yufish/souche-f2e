@@ -38,7 +38,24 @@
   color: #fff;
 }
 #adviser #content .aiche {
+  height: 1780px;
+}
+#adviser #content .aiche .aiche-tit {
   background: #ff4400 url(../images/adviser/aiche.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content .test {
+  height: 895px;
+}
+#adviser #content .test .test-tit {
+  background: #ff4400 url(../images/adviser/test-car.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content .bargain {
+  height: 2030px;
+}
+#adviser #content .bargain .bargain-tit {
+  background: #ff4400 url(../images/adviser/bargain.png) no-repeat center;
   height: 165px;
 }
 #adviser #content .wrapper {
