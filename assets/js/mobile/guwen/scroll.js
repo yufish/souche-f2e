@@ -7,12 +7,21 @@ var $bCtn = $('#brand-icons-container')
 var $sb = $('#selected-brand');
 var $ss =$('#selected-series');
 $win.scroll(function(){
-    var offset = $bCtn.offset();
+    var bOffset = $bCtn.offset();
     var winTop = $win.scrollTop();
-    if(offset.top<winTop){
+    if(bOffset.top<winTop){
         var sbHeight = $sb.height();
         $sb.css({height:sbHeight});
     }else{
         $sb.css({height:'auto'})
+    }
+
+    var sOffset = $sCtn.offset();
+    var winTop = $win.scrollTop();
+    if(sOffset.top<winTop){
+        var sbHeight = $ss.height();
+        $ss.css({height:sbHeight});
+    }else{
+        $ss.css({height:'auto'})
     }
 })
