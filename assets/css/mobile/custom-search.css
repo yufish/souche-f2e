@@ -55,7 +55,7 @@
 
 .icon-item .brand-wrapper {
     width: 60px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     margin: 0 auto
 }
 .icon-item.selected .brand-wrapper {
@@ -139,6 +139,7 @@
     padding: 9px 3px 3px 0;
     overflow: hidden;
     display: none;
+    overflow: hidden;
 }
  #brand #selected-brand .sb-item {
     margin: 0 0 6px 6px;
@@ -217,7 +218,7 @@
      text-align: center;
 }
 #price-container{
-    margin-top: 65px;
+    margin-top: 50px;
 }
 #price-container .qs-item{
     float: left;
@@ -318,7 +319,7 @@
 }
 #series-container .series-item .series-name {
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #fff;
     font-size: 13px;
 }

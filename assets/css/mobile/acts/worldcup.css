@@ -311,7 +311,6 @@ body{
     margin-top:10px;
 }
 
-
 #list .car {
     padding-top:10px;
     position: relative;
@@ -321,16 +320,7 @@ body{
     display: block;
     background: #e6e6e6;
 }
-#list .car .i-yushou {
-    position: absolute;
-    top: 12px;
-    left: 2px;
-    display: block;
-    width: 25px;
-    height: 25px;
-    background: url(../../images/mob/i-yushou.png) no-repeat;
-    background-size: 100%;
-}
+
 #list .car .lft {
     position: relative;
     display: inline-block;
@@ -447,4 +437,15 @@ body{
 #list .car .rht .shangou-price em {
     color: #df5d16;
     font-size: 12px;
+}
+.car .sold-out {
+    width: 54px;
+    height: 27px;
+    background: url(../../../images/mob/h5-2/sold-out.png) no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }

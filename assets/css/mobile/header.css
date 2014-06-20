@@ -4,9 +4,7 @@
     height: 45px;
 }
 .header .text {
-    float: left;
     color: #fff;
-    width: 65%;
     text-align: center;
     padding-top: 12px;
     font-size: 18px;
@@ -90,15 +88,14 @@
     font-size: 14px;
 }
 .header .back-icon {
-    padding: 0;
-    padding-left: 12px;
-    margin-left: 10px;
-    background: url(../../images/mob/h5-2/back.png) no-repeat left center;
+    position: absolute;
+    top:0;
+    left:0;
+    background: url(../../images/mob/h5-2/back.png) no-repeat center;
     background-size: 10px;
-    width: 10%;
+    width: 60px;
     height: 45px;
     line-height: 45px;
-    float: left;
     color: #fff;
 }
 .header .back-icon .back-text {
