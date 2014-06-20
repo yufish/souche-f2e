@@ -139,6 +139,7 @@
     padding: 9px 3px 3px 0;
     overflow: hidden;
     display: none;
+    overflow: hidden;
 }
  #brand #selected-brand .sb-item {
     margin: 0 0 6px 6px;
