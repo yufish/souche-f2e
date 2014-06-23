@@ -236,49 +236,7 @@ body {
     overflow-x: hidden;
     width: 100%;
 }
-#index .header .back-icon {
-    padding: 0;
-    padding-left: 12px;
-    margin-left: 10px;
-    background: url(../../images/mob/h5-2/back.png) no-repeat left center;
-    background-size: 10px;
-    width: 10%;
-    height: 45px;
-    line-height: 45px;
-    float: left;
-    color: #fff;
-}
-#index .header .back-text {
-    color: #fff;
-}
-#index .flex-direction-nav {
-    display: none;
-}
-#index .flex-control-nav {
-    text-align: center;
-    height: 30px;
-    padding: 0;
-    margin: 0;
-    margin-top: -15px;
-}
-#index .flex-control-nav li {
-    display: inline-block;
-    padding: 5px;
-    height: 5px;
-    margin: 0;
-}
-#index .flex-control-nav li a {
-    width: 5px;
-    height: 5px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    font-size: 0px;
-    line-height: 0;
-    display: block;
-}
-#index .flex-control-nav li .flex-active {
-    background: #aaa;
-}
+
 #index-h5-2 .header img {
     width: 100%;
 }
@@ -290,11 +248,6 @@ body {
     top: 10px;
     right: 10px;
     cursor: pointer;
-}
-#index #header {
-    position: relative;
-    background-color: #fc7000;
-    height: 40px;
 }
 #index-h5-2 .header .logo {
     padding: 5px 10px;
@@ -4166,48 +4119,6 @@ body {
     background-size: 8px;
     width: 10px;
     height: 30px;
-}
-#guwen-h5-2 {
-    position: relative;
-    background-color: #fff;
-}
-#guwen-h5-2 #page-1,
-#guwen-h5-2 #page-2,
-#guwen-h5-2 #page-3,
-#guwen-h5-2 #page-4 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-}
-#guwen-h5-2 #page-2 {
-    height: 1150px;
-}
-#guwen-h5-2 #page-2,
-#guwen-h5-2 #page-3,
-#guwen-h5-2 #page-4 {
-    left: 100%;
-    display: none;
-}
-#guwen-h5-2 .wrapper {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-}
-#guwen-h5-2 .btns {
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-#guwen-h5-2 .btns button {
-    background-color: #fc7000;
-    width: 300px;
-    height: 40px;
-    color: #fff;
-    border-radius: 8px;
-    border: none;
-    font-size: 18px;
 }
 .brand-zimu {
     background: #e4e4e4;

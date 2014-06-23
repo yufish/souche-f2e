@@ -1,6 +1,6 @@
 .header {
     position: relative;
-    background-color: #fc7000;
+    background-color: #ff4400;
     height: 45px;
 }
 .header .text {
@@ -18,7 +18,7 @@
 }
 .header .header-feature .search-icon {
     float: left;
-    background: url(../../images/mob/h5-2/search-big.png) no-repeat center center;
+    background: url(../../images/mob/h5-2/search-big-new.png) no-repeat center center;
     background-size: 20px;
     width: 20px;
     height: 20px;
@@ -27,7 +27,7 @@
 .header .header-feature .search-icon-2 {
     display: none;
     float: left;
-    background: url(../../images/mob/h5-2/search-2-big.png) no-repeat center center;
+    background: url(../../images/mob/h5-2/search-2-big-new.png) no-repeat center center;
     background-size: 20px;
     width: 20px;
     height: 20px;
@@ -35,7 +35,7 @@
 }
 .header .header-feature .tel-icon {
     float: left;
-    background: url(../../images/mob/h5-2/tel-big.png) no-repeat center center;
+    background: url(../../images/mob/h5-2/tel-big-new.png) no-repeat center center;
     background-size: 20px;
     width: 20px;
     height: 20px;
@@ -91,7 +91,7 @@
     position: absolute;
     top:0;
     left:0;
-    background: url(../../images/mob/h5-2/back.png) no-repeat center;
+    background: url(../../images/mob/h5-2/back-new.png) no-repeat center;
     background-size: 10px;
     width: 60px;
     height: 45px;

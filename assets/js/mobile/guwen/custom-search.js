@@ -354,16 +354,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     });
                 }
 
-                function showPopup() {
-                    $('.cover-layer').removeClass('hidden');
-                    var width = $(window).width();
-                    var left = (width - 300) / 2;
-                    $('#phone-popup').css({
-                        'left': left
-                    }).removeClass('hidden');
-                }
-
-
                 $('#submit-btn').click(function () {
                     if (curPageIndex == pages.length - 1) {
                         gotoPage()
@@ -377,22 +367,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }
                     gotoPage();
                     //TODO
-
-                })
-
-                var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function (e) {
-                    var phoneNum = $("#phone-num").val();
-                    e.preventDefault();
-                    if (!phoneReg.test(phoneNum)) {
-                        alert('请输入正确的手机号码');
-                    } else {
-                        SM.PhoneRegister(phoneNum, function () {
-                            $('#phone-popup').hide();
-                            $('.cover-layer').addClass('hidden');
-                            submitGuWenInfo();
-                        })
-                    }
                 })
 
                 $('.search-icon').click(function () {
