@@ -20,7 +20,6 @@
 }
 #guwen-h5-2 {
     position: relative;
-    overflow: hidden;
 }
 #guwen-h5-2 #page-1,
 #guwen-h5-2 #page-2,
@@ -29,48 +28,33 @@
     width: 100%;
     position: absolute;
     top: 0;
-    -webkit-transition: -webkit-transform 0.8s;
-    transition: transform 0.8s;
-    height: 100%;
-
 }
 #guwen-h5-2 #page-2 {
-    /*height: 1150px;*/
+    height: 1150px;
 }
 #guwen-h5-2 #page-2,
 #guwen-h5-2 #page-3,
 #guwen-h5-2 #page-4 {
-    /*left: 100%;*/
-    -webkit-transform:translate(100%,0);
-    transform:translate(100%,0);
-    /*display: none;*/
+    left: 100%;
+    display: none;
 }
-#guwen-h5-2 .wrapper {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-}
-#guwen-h5-2 .btns {
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-#guwen-h5-2 .btns button {
-    background-color: #fc7000;
+#guwen-h5-2 #submit-btn {
+    background-color: #ff4400;
     width: 300px;
     height: 40px;
     color: #fff;
     border-radius: 8px;
     border: none;
     font-size: 18px;
-    margin: 0 8px;
+    position: fixed;
+    left:50%;
+    margin-left: -150px;
+    bottom: 20px;
 }
 
 .icon-item .brand-wrapper {
     width: 60px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     margin: 0 auto
 }
 .icon-item.selected .brand-wrapper {
@@ -154,6 +138,7 @@
     padding: 9px 3px 3px 0;
     overflow: hidden;
     display: none;
+    overflow: hidden;
 }
  #brand #selected-brand .sb-item {
     margin: 0 0 6px 6px;
@@ -232,7 +217,7 @@
      text-align: center;
 }
 #price-container{
-    margin-top: 65px;
+    margin-top: 50px;
 }
 #price-container .qs-item{
     float: left;
@@ -253,7 +238,7 @@
     height: 23px;
     width: 33px;
     background: #D2D2D2;
-    margin-left: 5px;
+    margin-left: 3px;
 }
 #price-container .qs-item.selected .card{
     background: #ff4400;
@@ -262,21 +247,15 @@
     display: block;
 }
 #price-container .price-tag .value{
-    border:1px solid #ff4400;
-    padding:3px 5px;
     border-radius: 5px;
+    width: 47px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../../images/mob/h5-2/price-tag-box.png) no-repeat center;
+    background-size: 100%;
+    padding-top:3px;
 }
-#price-container .price-tag i{
-    display: block;
-    width: 7px;
-    height: 8px;
-    background:url(../../images/mob/h5-2/price-arrow-d.png) no-repeat center;
-    background-size: 7px 8px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 16px;
-}
+
 #limit-symbol{
     margin: 23px 0 0 -8px;
 }
@@ -339,7 +318,7 @@
 }
 #series-container .series-item .series-name {
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #fff;
     font-size: 13px;
 }

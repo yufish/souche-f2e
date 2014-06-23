@@ -20,8 +20,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
 
-                var stepRecords = [];
-                stepRecords.push(1);
+
                 //init search option
                 var minP = '8',
                     maxP = '20';
@@ -35,64 +34,72 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
 
                 $('#low-price').val(minP)
                 $('#high-price').val(maxP)
-                var initBrands = function(){
-                    var initBrs = {};
-                    if (dataObj.brands) {
-                        var bArr = dataObj.brands.split(',');
-                        for (var item in bArr) {
-                            initBrs[bArr[item]] = '';
-                        }
-                    }
-                    return initBrs;
-                }()
-
-
 
                 var curPageIndex = 1;
                 var pageStack = [];
                 pageStack.push(0);
-
-
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
-//                if (tagNum == 1) {
-//                    pages = [$('#page-1'), $('#page-2'), $('#page-4')];
-//                }
-
+                var stepRecords = [];
+                stepRecords.push(1);//stepRecords[0] = 1;
                 function beforePage(pageIndex) {
                     var pageStep = pageIndex - 1;
                     var trackData = {};
-                    if (!stepRecords[pageStep]) {
-                        if (pageStep == 1) {
-                            //TODO
-                            var min=$('#low-price').val(),
-                                max = $('#high-price').val();
-
+                    if (pageStep == 1) {
+                        var min=$('#low-price').val(),
+                            max = $('#high-price').val();
+                        max = ((max=='无限')?10000:max);
+                        var minP = +min,
+                            maxP = +max;
+                        if(isNaN(minP)|| isNaN(maxP)){
+                            alert('请输入合法的价格');
+                            return false;
+                        }
+                        if(minP>maxP){
+                            var tmp = minP;
+                            minP  = maxP;
+                            maxP = tmp;
+                        }
+                        if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
-                                car_price_min:min,
-                                car_price_max: max
+                                car_price_min:minP,
+                                car_price_max: maxP
                             }
-                            //userTrack(trackData);
+                            userTrack(trackData);
 
-                        } else if (pageStep == 2) {
-
-                        } else if (pageStep == 3) {
-                            trackData = {
-                                typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
-                                car_year_min: min_year,
-                                car_year_max: max_year
-                            }
                         }
                         userTrack(trackData);
                         stepRecords.push(pageStep);
                         //console.log(trackData);
+                    } else if (pageStep == 2) {
+                        if (!stepRecords[pageStep]) {
+                            trackData = {
+                                typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
+                                car_brands: brandManager.brands.map(function (b) {
+                                    return b['code'];
+                                }).join(',')
+                            }
+                            userTrack(trackData);
+                        }
+                    } else if (pageStep == 3) {
+                        if (!stepRecords[pageStep]) {
+                            var sStr = brandManager.brands.map(function (b) {
+                                return b['series'].map(function (s) {
+                                    return s['code'];
+                                }).join(',');
+                            }).join(',');
+                            trackData = {
+                                typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
+                                car_series: sStr
+                            }
+                        }
                     }
                     if (pageIndex == pages.length) {
                         $('#submit-btn').hide();
                     } else {
                         $('#submit-btn').show();
                     }
-
+                    return true;
                 }
 
                 function gotoPage(pageIndex) {
@@ -100,14 +107,21 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     pageIndex = pageIndex || (curPageIndex + 1);
                     document.body.scrollTop = 0;
 
-                    beforePage(pageIndex);
+                    if(!beforePage(pageIndex)){
+                        return;
+                    }
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
-                    $curPage.css({
-                        transform:'translate(-100%,0)'
-                    })
                     $page.css({
-                        transform:'translate(0,0)'
+                        left: '100%'
+                    }).show();
+                    $curPage.animate({
+                        left: '-100%'
+                    }, function () {
+                        $curPage.hide();
+                    });
+                    $page.animate({
+                        left: '0'
                     });
                     curPageIndex = pageIndex;
                 }
@@ -116,7 +130,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     document.body.scrollTop = 0
                     var pageIndex = pageStack.pop();
                     if (pageIndex == 0 || pageIndex == undefined) {
-
                         if (document.referrer.indexOf("souche") != -1) {
                             history.back();
                         } else {
@@ -127,30 +140,32 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     beforePage(pageIndex);
                     var $curPage = pages[curPageIndex - 1];
                     var $page = pages[pageIndex - 1];
-                    $curPage.css({
-                        transform:'translate(100%,0)'
-                    })
                     $page.css({
-                        transform:'translate(0,0)'
+                        left: '-100%'
+                    }).show();
+                    $curPage.animate({
+                        left: '100%'
+                    }, function () {
+                        $curPage.hide();
+                    });
+                    $page.animate({
+                        left: '0'
                     });
                     curPageIndex = pageIndex;
                 }
 
-                //var allBrands = [];
-
-                var brandLoaded = false;
-
-                //brand-code should be data-code
-                function initializeBrands() {
-                    for (var key in initBrands) {
-                        var brandCode = key,
-                            brandName = initBrands[key];
-                        var html = '<div class="sb-item" brand-code=' + brandCode + ' series-code=' + "" + '>' + '<span class="text">' + brandName + '</span>' + '<i class="close-icon"></i>' + '</div>';
-                        brandsManager.toggleSeries(brandCode, '', [
-                            $(html), $('#brand-icons-container .icon-item[data-code=' + brandCode + ']').find('.brand-wrapper')
-                        ]);
+                var sSeriesArr = dataObj.series?dataObj.series.split(','):[];
+                var sBrandArr = dataObj.brands?dataObj.brands.split(','):[];
+                window.seriesBrandMap = {}
+                !function makeSeriesBrand(){
+                    var key = '',
+                        value='';
+                    for(var i = 0;i<sSeriesArr.length;i++){
+                        key = sSeriesArr[i];
+                        seriesBrandMap[key] = '';
                     }
-                }
+                }();
+
 
                 !function priceBuild(){
                     //10000 means no limit
@@ -159,8 +174,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     var begin = '<div class="qs-item">'
                                 +   '<div class="card"></div>'
                                 +   '<div class="price-value">'
-                    var mid = '</div><div class="price-tag"><span class="value">';
-                    var end = '</span><i></i></div></div>';
+                    var mid = '</div><div class="price-tag"><div class="value">';
+                    var end = '万</div></div></div>';
                     var html = '';
                     for(var i=0;i<priceRange.length-1;i++){
                         low = priceRange[i],high= priceRange[i+1];
@@ -178,47 +193,76 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         var low = priceRange[index],
                             high = priceRange[index+1]==10000?'不限':priceRange[index+1];
                         $(this).click(function(){
+                            var self =$(this);
                             qsItems.removeClass('selected');
-                            $(this).addClass('selected');
+                            self.addClass('selected');
                             lowInput.val(low);
                             highInput.val(high);
                         })
                     })
-
+                    $('.price-box').on('focus',function(){
+                        qsItems.removeClass('selected');
+                    })
                 }();
 
-                var loadingLayer = $('.loading-cover-layer');
+
+
+                //var loadingLayer = $('.loading-cover-layer');
+                var brandLoaded = false;
                 !function brandBuild(){
                     var tplBrand = $('#tpl_brand').text();
+                    var initBrands = function(){
+                        var initBrs = {};
+                        if (dataObj.brands) {
+                            //var bArr = dataObj.brands.split(',');
+                            sBrandArr.forEach(function(item){
+                                initBrs[item] = '';
+                            })
+                        }
+                        return initBrs;
+                    }()
+                    var sbMgr = {
+                        selectedBrands:[],
+                        setBrand:function(code,name){
+                            if(code in initBrands) {
+                                this.selectedBrands.push({code: code, name: name});
+                            }
+                        },
+                        build:function(){
+                            var sBrands = this.selectedBrands;
+                            var b = null;
+                            for(var i in sBrands){
+                                b = sBrands[i];
+                                brandManager.addBrand(b.code, b.name);
+                            }
+                        }
+                    }
                     !function loadAllBrands() {
                         //loadingLayer.removeClass('hidden');
                         BrandAjaxUtil.getRecomBrands(function (data) {
                             var brands = data.brands;
                             var container = $('#brand-icons-container');
-                            var start = '<div class="icon-group">',
-                                end = '</div>',
-                                html = '',
+                            var html = '',
                                 totalNum = brands.length;
 
                             for(var i= 0;i<totalNum;i++){
                                 var b = brands[i];
                                 html += Mustache.render(tplBrand, {'brand': b});
+                                sbMgr.setBrand(b['brand'], b['brandName']);
                             }
-                            $('#brand-icons-container').html(html);
-                            loadingLayer.addClass('hidden');
-                            brandLoaded=true;
+                            container.html(html);
+                            sbMgr.build();
+                            //loadingLayer.addClass('hidden');
                         })
                     }();
+
                 }();
-
-
-                var tplSeries = $('#tpl_series').text();
 
                 $('.back-icon').click(function () {
                     backPage();
                 })
                 $('#selected-brand').on('click', '.sb-item', function () {
-                    var $self = $(this)
+                    var $self = $(this);
                     //brand-code should be data-code
                     var code = $self.attr('data-code'),
                         name=$self.find('.text').text();
@@ -246,7 +290,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     } else {
                         brandManager.addSeries(code, name, bCode);
                     }
-
                 })
 
                 $('#series-container').on('click','.series-buxian',function() {
@@ -260,39 +303,50 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         bCode = self.attr('data-brand-code');
                     brandManager.removeSeries(code, bCode);
                 })
+
+                function buildBsQueryString() {
+                    var brands = brandManager.brands;
+                    var bStr = brands.map(function(b) {
+                        return b['code'];
+                    }).join(',')
+
+                    var sStr = brands.map(function(b) {
+                            return b['series'].map(function(s) {
+                                return s['code'];
+                            }).join(',');
+                    }).join(',');
+                    return {
+                        brandStr: bStr,
+                        seriesStr: sStr
+                    }
+                }
+
                 function submitGuWenInfo() {
-                    //var price =
-                    var brands = brandsManager.brands;
-                    var minPrice = price.min.value.replace('万', ''),
-                        maxPrice = price.max.value.replace('万', '');
+                    var minPrice = $('#low-price').val(),
+                        maxPrice = $('#high-price').val();
 
                     if (maxPrice == '无限')
                         maxPrice = 10000;
                     var bStr = '',
                         sStr = '';
 
-                    for (var brand in brands) {
-                        bStr += ',' + brand;
-                    }
-                    bStr = bStr.substring(1);
-                    //sStr = sStr.substring(1);
-                    sStr = dataObj.series;
-                    gotoPage();
+                    var bs = buildBsQueryString();
+                    var bStr = bs.brandStr,
+                        sStr = bs.seriesStr;
+                    //gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
                         dataType: 'json',
                         data: {
                             brands: bStr,
-                            //series: '',
-
+                            series: sStr,
                             minPrice: minPrice,
                             maxPrice: maxPrice
-                            //taskId: (tagNum == 0 ? 'TASK_H5_CONSULT_1' : 'TASK_H5_CONSULT_2')
                         },
                         success: function () {
                             setTimeout(function () {
                                 window.location.href = contextPath + '/mobile/carcustom.html' + location.search;
-                            }, 500)
+                            }, 50)
                         },
                         error: function () {
                             alert('error');
@@ -300,43 +354,19 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     });
                 }
 
-                function showPopup() {
-                    $('.cover-layer').removeClass('hidden');
-                    var width = $(window).width();
-                    var left = (width - 300) / 2;
-                    $('#phone-popup').css({
-                        'left': left
-                    }).removeClass('hidden');
-                }
-
-
                 $('#submit-btn').click(function () {
-                    if (curPageIndex != pages.length - 1) {
-                        if (!brandLoaded && curPageIndex == 1) {
-                            gotoPage();
-                            loadingLayer.removeClass('hidden');
-                            brandLoaded = true;
-                        } else {
-                            gotoPage()
-                        }
+                    if (curPageIndex == pages.length - 1) {
+                        gotoPage()
+                        submitGuWenInfo();
                         return;
                     }
-                    submitGuWenInfo();
-                })
-
-                var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function (e) {
-                    var phoneNum = $("#phone-num").val();
-                    e.preventDefault();
-                    if (!phoneReg.test(phoneNum)) {
-                        alert('请输入正确的手机号码');
-                    } else {
-                        SM.PhoneRegister(phoneNum, function () {
-                            $('#phone-popup').hide();
-                            $('.cover-layer').addClass('hidden');
-                            submitGuWenInfo();
-                        })
+                    if(curPageIndex==2&& brandManager.brands.length==0){
+                        gotoPage(4)
+                        submitGuWenInfo();
+                        return;
                     }
+                    gotoPage();
+                    //TODO
                 })
 
                 $('.search-icon').click(function () {
@@ -377,7 +407,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 });
 
                 var curNumOfEllipsis = 1;
-                $ellipsis = $('#page-3 .ellipsis');
+                $ellipsis = $('.ellipsis');
                 setInterval(function () {
                     var txt = '';
                     for (var i = 0; i < curNumOfEllipsis; i++) {
@@ -389,7 +419,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     } else {
                         curNumOfEllipsis++;
                     }
-
                 }, 500)
 
             }
