@@ -268,10 +268,8 @@ padding-left: 50px;
 #choose .choose_condition .choose_item span{float:right;width:12px;height:12px;background:url("../../assets/images/fed/inside_sprite3.png?aa.png") no-repeat;margin:4px 0 0 10px;*margin-top:-16px}
 #choose .choose_condition .choose_clear{color:#666;padding: 2px 5px; border: 1px solid #d9d9d9;border-radius: 2px;
     background-color: #f9f9f9}
-#choose .choose_condition .choose_save{color:#666;border-radius: 2px;
-    background-color: #f9f9f9;padding: 2px 5px; border: 1px solid #d9d9d9;}
-#choose .choose_condition .choose_clear:hover{background-color: #FC7000;border: 1px solid #FC7000;color: white;}
-#choose .choose_condition .choose_save:hover{background-color: #FC7000;border: 1px solid #FC7000;color: white;}
+#choose .choose_condition .choose_save{color:white;border-radius: 2px;
+    background-color: #FC7000;padding: 2px 5px; border: 1px solid #d9d9d9;}
 
 #choose .orderBy{float:right;height:38px;line-height:38px;border:1px solid #ddd;border-right:none;background-color:#fff}
 #choose .orderBy .order_item{float:left;display:block;border-right:1px solid #ddd;color:#666;padding:0 15px;*width:34px}
@@ -289,12 +287,10 @@ padding-left: 50px;
 #choose.choose_fixed .orderBy .order_item {height:30px;line-height:30px;}
 #choose.choose_fixed .orderBy .order_item span {margin-top:10px;*margin-top:-20px;}
 #choose.choose_fixed  .choose_condition .choose_item {margin-top:14px;color:#FC7000;}
-#choose.choose_fixed  .choose_condition .choose_clear:hover{background-color: #FC7000;border: 1px solid #FC7000;color: white;}
-#choose.choose_fixed  .choose_condition .choose_save:hover{background-color: #FC7000;border: 1px solid #FC7000;color: white;}
 #choose.choose_fixed  .choose_condition .choose_clear{color:#666;padding: 2px 5px; border: 1px solid #d9d9d9;border-radius: 2px;
     background-color: #f9f9f9}
-#choose.choose_fixed .choose_condition .choose_save{color:#666;border-radius: 2px;
-    background-color: #f9f9f9;padding: 2px 5px; border: 1px solid #d9d9d9;}
+#choose.choose_fixed .choose_condition .choose_save{color:white;border-radius: 2px;
+    background-color: #FC7000;padding: 2px 5px; border: 1px solid #d9d9d9;}
 #footer{position:relative;zoom:1;}
 #choose.choose_fixed  .choose_condition .choose_item span{background:url("../../assets/images/fed/close-choose.png") no-repeat;margin-top:5px;*margin-top:-16px;}
 #listContain .list-banner{display:block;width:100%;height:100px;background-repeat:no-repeat;margin-top:20px;}
