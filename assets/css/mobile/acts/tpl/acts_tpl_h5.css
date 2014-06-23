@@ -1,3 +1,6 @@
+img{
+    vertical-align: middle;
+}
 .flexslider{
     position: relative;
 }
@@ -20,6 +23,7 @@
     line-height: 30px;
     background: #000;
     opacity: 0.6;
+    font-size: 13px;
 }
 #share{
     float: left;
@@ -35,9 +39,145 @@
 }
 .dot{
     display: inline-block;
-    width: ;
+    vertical-align: 3px;
+    width: 4px;
+    height: 4px;
+    background: #ff4400;
+    border-radius: 80%;
 }
 #more-acts{
     float: right;
     margin-right: 15px;
 }
+#act-info{
+    height: 45px;
+    line-height: 45px;
+}
+#act-title{
+    float: left;
+    margin-left: 10px;
+}
+#act-rule{
+    float: right;
+    margin-right: 10px;
+}
+#btn-rule{
+    border: none;
+    background: #ff4400;
+    border-radius: 8px;
+    color:#fff;
+    padding: 5px 15px;
+    font-size: 15px;
+}
+#cars{
+    border-top:1px solid #e3e3e3;
+    padding: 10px;
+    background: #ebedf7;
+}
+#cars .car img{
+    width: 212px;
+    height: 139px;
+}
+#cars .car .lft{
+    float:left;
+    position: relative;
+}
+#cars .car .car-price{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding:8px 5px 8px 8px;
+    background: #ff4400;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-left-radius: 10px;
+}
+.wan{
+    font-size: 13px;
+}
+#cars .car .rht{
+    color:#fff;
+    margin-left: 212px;
+    text-align: center;
+    background:#1b0e0e;
+    height: 139px;
+    font-size: 12px;
+    padding-top: 23px;
+    box-sizing: border-box;
+}
+#cars .feature-1{
+    font-size: 14px;
+    margin-bottom: 16px;
+    color:#ff4400;
+}
+#cars .feature-2{
+    margin-bottom: 10px;
+    color:#ffd060;
+ }
+#cars .feature-3{
+    margin-bottom: 10px;
+}
+#cars .car-introduction{
+    background: #fff;
+    color: #5d5d5d;
+    padding: 11px 14px;
+}
+#pagination{
+    max-width:300px;
+    margin:0 auto;
+    margin-top:23px;
+}
+#pagination .page-num{
+    border:1px solid #c9c9c9;
+    background: #f2f2f2;
+    float: left;
+    margin-left: 15px;
+    box-sizing: border-box;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+#pagination .page-num:first-child{
+    margin: 0;
+}
+#pagination .page-num.selected{
+    border:1px solid #ff4400;
+    background: #fff;
+}
+#prev-page .vertical-line{
+    background: #777;
+    width: 2px;
+    height: 12px;
+    float: left;
+}
+#prev-page.disabled .vertical-line{
+    background: #c9c9c9;
+}
+.triangle-left{
+    width: 0;
+    height: 0;
+    border:6px solid;
+    border-color: transparent #777 transparent transparent;
+}
+.triangle-right{
+    width: 0;
+    height: 0;
+    border:6px solid;
+    border-color: transparent transparent transparent #777;
+}
+#prev-page{
+    padding:8px 0 0 8px;
+}
+.page-dot{
+    width: 2px;
+    height: 2px;
+    border-radius: 80%;
+    display: inline-block;
+    background: #000;
+    vertical-align: 5px;
+}
+
+
+
