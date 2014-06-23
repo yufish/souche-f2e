@@ -784,6 +784,12 @@ Souche.DetailCommon = function() {
     }
 
     var operationCarDuibi = function(e) {
+
+        var elem = e.srcElement| e.target;
+        if(elem)
+        {
+
+        }
         var carID = config.carId;
         if (carID == undefined) {
 
@@ -876,7 +882,7 @@ Souche.DetailCommon = function() {
     }
 
     var _bind=function() {
-        $(".addcarduibi").on("click", operationCarDuibi);
+        $(".addcarduibi,.addcarduibi input").on("click", operationCarDuibi);
     }
 
     return {
@@ -921,9 +927,6 @@ Souche.DetailCommon = function() {
 
                 })
             }
-
-
-            $(".addcarduibi input")[0].checked ? $(".addcarduibi input").attr("disabled", "disabled") : ""
 
             _bind();
 
