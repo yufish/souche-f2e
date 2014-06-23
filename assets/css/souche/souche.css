@@ -771,7 +771,7 @@ body .input-error-tip .error-icon {
   position: fixed;
   top: 230px;
   left: 50%;
-  margin-left: -170px;
+  margin-left: -169.99999999px;
   z-index: 11000;
 }
 .popup_close {
