@@ -622,7 +622,7 @@ cursor: pointer;
   cursor: pointer;
 }
 
-#list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast .contrast-waring{
+.contrast-waring{
   position: absolute;
   top: -66px;
   right: -112px;
@@ -634,6 +634,19 @@ cursor: pointer;
   padding: 10px;
   font-size: 13px;
 }
+.list_waring
+{
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    border: 1px solid #ee7700;
+    background: #ffeed6;
+    color: #333;
+    padding: 10px;
+    font-size: 13px;
+    z-index: 9999;
+}
+
 #list_wrap .list_main .list_content_carInfo .list_content_action .addcontrast:hover{
   background: #60B25E;
   color: #fff;
