@@ -85,6 +85,17 @@ define(function(){
                     var index = getIndexSafe(curIndex+1);
                     var url =  banners.eq(index).attr('href')
                     window.open(url);
+                });
+                var stop=false;
+                setInterval(function(){
+                    if(stop)return;
+                    $('.right-arrow').trigger('click');
+                },5000);
+
+                $('.full-screen-banner').mouseenter(function(){
+                    stop = true;
+                }).mouseleave(function(){
+                    stop= false;
                 })
             }
         }
