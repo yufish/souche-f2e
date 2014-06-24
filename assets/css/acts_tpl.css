@@ -452,6 +452,8 @@
 }
 #acts_tpl #more-acts .acts-img a {
   margin-right: 4px;
+  display: block;
+  float: left;
 }
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;
