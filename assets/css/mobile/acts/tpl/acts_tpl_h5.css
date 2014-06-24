@@ -1,8 +1,11 @@
 img{
     vertical-align: middle;
 }
-body{
-    font-family: 'Heiti SC','华文黑体', '黑体';
+body {
+    font-family: 'Heiti SC', '华文黑体', '黑体';
+}
+a{
+    text-decoration: none;
 }
 .flexslider{
     position: relative;
@@ -248,6 +251,9 @@ body{
     border-radius: 5px;
     background: #ff4400;
     color: #fff;
+}
+#go-act-all,#share-text{
+    color:#fff;
 }
 /*style of act_all*/
 .wrapper-320{
