@@ -270,6 +270,8 @@ padding-left: 50px;
     background-color: #f9f9f9}
 #choose .choose_condition .choose_save{color:white;border-radius: 2px;
     background-color: #FC7000;padding: 2px 5px; border: 1px solid #d9d9d9;}
+#choose .choose_condition .choose_saved{color:#FFA042;border-radius: 2px;
+    background-color: #FFF4C1;padding: 2px 5px; border: 1px solid #FFC78E;}
 
 #choose .orderBy{float:right;height:38px;line-height:38px;border:1px solid #ddd;border-right:none;background-color:#fff}
 #choose .orderBy .order_item{float:left;display:block;border-right:1px solid #ddd;color:#666;padding:0 15px;*width:34px}
