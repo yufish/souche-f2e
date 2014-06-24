@@ -55,6 +55,7 @@
   height: 16px;
   background: url(../images/acts/template/model-show.png) no-repeat;
   position: absolute;
+  background-size: 100%;
   top: 129px;
   right: 100px;
 }
