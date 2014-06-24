@@ -1,6 +1,12 @@
 img{
     vertical-align: middle;
 }
+body {
+    font-family: 'Heiti SC', '华文黑体', '黑体';
+}
+a{
+    text-decoration: none;
+}
 .flexslider{
     position: relative;
 }
@@ -16,7 +22,7 @@ img{
 }
 #banner-cover{
     position: absolute;
-    bottom: 3px;
+    bottom: 0;
     width: 100%;
     height: 30px;
     color:#fff;
@@ -121,23 +127,25 @@ img{
     background: #fff;
     color: #5d5d5d;
     padding: 11px 14px;
+    font-size: 12px;
 }
 #pagination{
-    max-width:300px;
     margin:0 auto;
     margin-top:23px;
+    text-align: center;
 }
 #pagination .page-num{
     border:1px solid #c9c9c9;
     background: #f2f2f2;
-    float: left;
-    margin-left: 15px;
+    margin-left: 12px;
     box-sizing: border-box;
     width: 30px;
     text-align: center;
     line-height: 30px;
     height: 30px;
     border-radius: 3px;
+    display: inline-block;
+    vertical-align: bottom;
 }
 #pagination .page-num:first-child{
     margin: 0;
@@ -146,14 +154,19 @@ img{
     border:1px solid #ff4400;
     background: #fff;
 }
+.vertical-line{
+     background: #777;
+     width: 2px;
+     height: 12px;
+ }
+.disabled .vertical-line{
+    background: #c9c9c9;
+}
 #prev-page .vertical-line{
-    background: #777;
-    width: 2px;
-    height: 12px;
     float: left;
 }
-#prev-page.disabled .vertical-line{
-    background: #c9c9c9;
+#next-page .vertical-line{
+    float: right;
 }
 .triangle-left{
     width: 0;
@@ -161,14 +174,20 @@ img{
     border:6px solid;
     border-color: transparent #777 transparent transparent;
 }
+.disabled .triangle-left{
+    border-color: transparent #c9c9c9 transparent transparent;
+}
 .triangle-right{
     width: 0;
     height: 0;
     border:6px solid;
     border-color: transparent transparent transparent #777;
 }
-#prev-page{
-    padding:8px 0 0 8px;
+.disabled .triangle-right{
+    border-color: transparent  transparent transparent #c9c9c9;
+}
+#prev-page,#next-page{
+    padding:8px 8px 0;
 }
 .page-dot{
     width: 2px;
@@ -177,7 +196,147 @@ img{
     display: inline-block;
     background: #000;
     vertical-align: 5px;
+    margin-left: -3px;
 }
+.page-num .page-dot:first-child{
+    margin-left: 0;
+}
+#rule-popup{
+    box-sizing: border-box;
+    margin:0 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+#rule-popup #popup-title{
+    background: #ff4400;
+    height: 33px;
+    line-height: 33px;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+#rule-popup #popup-content{
+    padding:0 8px 30px;
+}
+#popup-content .p{
+    margin: 18px 0;
+}
+#popup-content .p-title{
+    font-size: 13px;
+    font-weight: bold;
+}
+#popup-content .p-content{
+    font-size: 12px;
+    line-height: 16px;
+}
+#rule-popup .close{
+    width: 24px;
+    height: 24px;
+    background: url(../../../../images/mob/huodong/tpl/popup-close.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    right: 5px;
+    top:5px;
+}
+#no-car-detail #rule-popup{
+    margin: 0;
+    border-radius: 0;
+}
+#btn-join{
+    width: 160px;
+    height: 35px;
+    border:none;
+    border-radius: 5px;
+    background: #ff4400;
+    color: #fff;
+}
+#go-act-all,#share-text{
+    color:#fff;
+}
+/*style of act_all*/
+.wrapper-320{
+    width:320px;
+    margin:0 auto;
+    padding:0 12px;
+}
+#act-all #act-container{
+    width:68px;
+    border-right:3px solid #BCC4C7;
+    padding:15px 0;
+}
+#act-all .act-item{
+    position: relative;
+    margin-left:88px;
+    display: block;
+}
+.act-item .act-time{
+    position: absolute;
+    top:6px;
+    left:-88px;
+    width: 44px;
+}
+.act-item .circle{
+    position: absolute;
+    width:15px;
+    height: 15px;
+    border:3px solid #BCC4C7;
+    border-radius: 80%;
+    top:5px;
+    left:-29px;
+    background: #fff;
+}
+.act-item .act-detail{
+    position: relative;
+    margin:5px 0 20px;
+}
+.act-item .content{
+    width:222px;
+    position: relative;
+    background: #F0F0F0;
+    border-radius: 5px;
+    padding:8px 10px;
+    line-height: 18px;
+    font-size: 14px;
+}
+.act-detail .triangle{
+    height: 0;
+    width:0;
+    border: 6px solid;
+    border-color: transparent #F0F0F0 transparent transparent;
+    position: absolute;
+    left: -12px;
+    top: 10px;
+}
+.act-item .month{
+    font-size:12px;
+}
+.act-item .year{
+    font-size: 12px;
+    display: block;
+    float: right;
+}
+.act-item .day{
+    font-size: 18px;
+}
+
+.act-item.selected .day,
+.act-item.selected .year,
+.act-item.selected .month{
+    color:#ff4400;
+}
+.act-item.selected .content{
+    background: #ff4400;
+    color:#fff;
+}
+.act-item.selected .circle{
+    border-color: #ff4400;
+}
+.act-item.selected .triangle{
+    border-right-color: #ff4400;
+}
+
 
 
 
