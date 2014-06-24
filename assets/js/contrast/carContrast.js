@@ -45,7 +45,6 @@ define(function() {
                     delete headTh.deleteContent;
                 }
                 else {
-                    alert("删除对比失败");
                 }
             });
 
