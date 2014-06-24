@@ -53,9 +53,9 @@
 .car-models .models-box .model-show {
   width: 26px;
   height: 16px;
-  background: url(../images/acts/template/model-show.png) no-repeat;
+  display: block;
   position: absolute;
-  background-size: 100%;
+  background-size: 26px 16px;
   top: 129px;
   right: 100px;
 }
@@ -87,7 +87,6 @@
   float: left;
   font-size: 14px;
   font-weight: bold;
-  color: #0b3b41;
 }
 .model-detail .reason .reason-cont {
   float: left;
