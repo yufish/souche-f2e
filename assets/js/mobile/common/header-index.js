@@ -1,5 +1,4 @@
 var Index = (function(){
-    var _config={};
     function searchActive(){
         $('.search-box').css({display:'block'});
         $('.search-icon').css({display:'none'});
@@ -12,11 +11,7 @@ var Index = (function(){
         $('.search-icon-2').css({display:'none'});
     }
     return {
-        init:function(config){
-            for(var i in config){
-                _config[i] = config[i];
-            }
-
+        init:function(){
             $('.search-icon').click(function(e){
                 searchActive();
             })
@@ -52,3 +47,4 @@ var Index = (function(){
         }
     }
 })();
+Index.init();
