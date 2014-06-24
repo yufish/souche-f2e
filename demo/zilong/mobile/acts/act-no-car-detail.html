@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title></title>
+
+    <link href="../../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css">
+    <link href="../../../../assets/css/mobile/acts/tpl/acts_tpl_h5.css" rel="stylesheet" type="text/css">
+    <script src="http://res.souche.com/assets/js/lib/jquery-1.9.1.min.js?t=11"></script>
+    <script src="http://res.souche.com/assets/js/lib/jquery.flexslider-min.js?t=13"></script>
+
+</head>
+<body id="no-car-detail">
+<!--include header-->
+<div id="banners">
+    <div class='clearfix flexslider'>
+        <ul class='slides'>
+            <li click_type='index_banner1'>
+                <img src='http://res.souche.com/assets/images/mob/h5-2/index-flex-1.png'/>
+            </li>
+            <li click_type='index_banner2'>
+                <img src='http://res.souche.com/assets/images/mob/h5-2/index-flex-2.png'/>
+            </li>
+            <li click_type='index_banner3'>
+                <img src='http://res.souche.com/assets/images/mob/h5-2/index-flex-3.png'/>
+            </li>
+        </ul>
+    </div>
+    <div id="banner-cover">
+        <div id="share">
+            <i id="share-icon"></i>
+            <span id="share-text">分享活动</span>
+        </div>
+        <div id="more-acts">
+            <div id="dots">
+                <i class="dot"></i>
+                <i class="dot"></i>
+                <i class="dot"></i>
+                <a >更多活动</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var flexslider = $('.flexslider').flexslider({
+        animation: "slide",
+        useCSS :true,
+        slideshowSpeed:2000
+    });
+</script>
+
+<div id="act-info">
+    <div id="act-title">大搜车返现月，最高返现30万</div>
+</div>
+
+<div id="rule-popup" style="border-top: 1px solid #e3e3e3">
+    <div id="popup-content">
+        <div class="p">
+            <div class="p-title">奖金规则</div>
+            <div class="p-content">当日剩余奖金，次日不累加当日剩余奖金，
+                次日不累加当日剩余奖金，次日不累加当日剩余奖金，次日不累加当日剩余奖金，次日不累加当日剩余奖金，次日不累加</div>
+        </div>
+        <div class="p">
+            <div class="p-title">奖金规则</div>
+            <div class="p-content">当日剩余奖金，次日不累加</div>
+        </div>
+        <div class="p">
+            <div class="p-title">奖金规则</div>
+            <div class="p-content">当日剩余奖金，次日不累加</div>
+        </div>
+        <div class="p">
+            <div class="p-title">奖金规则</div>
+            <div class="p-content">当日剩余奖金，次日不累加</div>
+        </div>
+    </div>
+</div>
+<div style="text-align: center;margin-bottom: 30px">
+    <button id="btn-join">立即参加</button>
+</div>
+</body>
+</html>
