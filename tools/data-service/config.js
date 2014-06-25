@@ -42,7 +42,8 @@ config = {
         pass: 'souche2014',
         host: "121.199.46.167",
         port: "27017",
-        database: "souche"
+        database: "souche",
+        debug: true
         // user: 'root',
         // pass: '',
         // host: "127.0.0.1",

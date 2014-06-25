@@ -9,12 +9,46 @@ var ClickModel = new BaseModel("ClickModel", "mongo");
 var TrafficOfflineModel = new BaseModel("TrafficOfflineModel", "mongo");
 var ClickOfflineModel = new BaseModel("ClickOfflineModel", "mongo");
 var moment = require("moment");
+var allTraffics = [];
+var getTrafficModel = function(condition, offset, callback) {
+    TrafficModel.findAll().where(condition).limit(9999).offset(offset).fields(['_id', 'url', 'userTag']).done(function(error, traffics) {
+        if (error) {
+            console.log(error);
+            callback(error);
+            return;
+        }
+        if (traffics.length != 0) {
+            allTraffics = allTraffics.concat(traffics);
+            getTrafficModel(condition, offset + 9999, callback);
+        } else {
+
+            callback(null, allTraffics);
+        }
+    });
+}
+var allClicks = [];
+var getClickModel = function(condition, offset, callback) {
+    ClickModel.findAll().where(condition).limit(9999).offset(offset).fields(['_id', 'page_url', 'element_id']).done(function(error, clicks) {
+        if (error) {
+            console.log(error);
+            callback(error);
+            return;
+        }
+        if (clicks.length != 0) {
+            allClicks = allClicks.concat(clicks);
+            getClickModel(condition, offset + 9999, callback);
+        } else {
+
+            callback(null, allClicks);
+        }
+    });
+}
 var task = {
     run: function() {
         console.log("离线处理开始")
         var condition = {};
         condition.time = {
-            $gt: moment("2014-6-17 00:00:00").format("YYYY-MM-DD") + " 00:00:00",
+            $gt: moment().format("YYYY-MM-DD") + " 00:00:00",
             $lt: moment().format("YYYY-MM-DD") + " 23:59:59"
         };
         var self = this;
@@ -27,11 +61,23 @@ var task = {
         //     console.log(clicks)
         //      self.analyzeClicks(clicks);
         // });
-        TrafficModel.findAll().where(condition).fields(['_id', 'url']).done(function(error, traffics) {
-            if (error) console.log(error);
-            self.analyzeTraffics(traffics);
-        });
+        allTraffics = [];
+        getTrafficModel(condition, 0, function(error, data) {
+            if (error) console.log(error)
+            console.log(data.length)
+            self.analyzeTraffics(data);
+
+        })
+        allClicks = [];
+        getClickModel(condition, 0, function(error, data) {
+            if (error) console.log(error)
+            console.log(data.length)
+            self.analyzeClicks(data);
+
+        })
+
     },
+
     analyzeClicks: function(clicks) {
         var pages = {}
         clicks.forEach(function(click) {
@@ -65,19 +111,44 @@ var task = {
         var pages = {};
         var today = new Date(moment().format("YYYY-MM-DD") + " 00:00:00");
         var pv = traffics.length;
-        var userTags = {};
+        var pages = {};
         traffics.forEach(function(t) {
-            if (!t.userTag) return;
-            userTags[t.userTag] = 1;
+            var url = t.url;
+
+            if (!t.userTag) t.userTag = "undefined";
+
+            if (pages[url]) {
+                pages[url].userTags[t.userTag] = 1;
+                pages[url].pv += 1;
+            } else {
+                pages[url] = {
+                    userTags: {},
+                    pv: 1
+                }
+                pages[url].userTags[t.userTag] = 1;
+            }
+
         })
-        var uv = 0;
-        for (var i in userTags) {
-            uv += 1;
+        for (var i in pages) {
+            var uv = 0;
+            for (var n in pages[i].userTags) {
+                uv += 1;
+            }
+            pages[i].uv = uv;
+            pages[i].userTags = null;
+
+            TrafficOfflineModel.add({
+                data: JSON.stringify(pages[i]),
+                url: i,
+                date: today
+            }).done(function(error) {
+                if (error) {
+                    console.log(error)
+                }
+            })
         }
-        console.log({
-            uv: uv,
-            pv: pv
-        })
+
+
     }
 }
 task.run();
