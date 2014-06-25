@@ -1,0 +1,204 @@
+#info-library {
+  background: #F2F2F2;
+}
+#info-library #content .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+}
+#info-library #content .info {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #E4E3E3;
+  padding: 20px 30px;
+}
+#info-library #content .info .info-position {
+  border-bottom: 1px solid #E4E3E3;
+  color: #797979;
+  font-size: 13px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+}
+#info-library #content .info .info-position a {
+  color: #797979;
+}
+#info-library #content .info .info-position a:hover {
+  color: #fc7000;
+}
+#info-library #content .info .info-position em {
+  margin: 0 5px;
+}
+#info-library #content .info .info-content {
+  border-bottom: 1px solid #E4E3E3;
+}
+#info-library #content .info .info-content .wrapper {
+  width: 705px;
+  margin: 0 auto;
+}
+#info-library #content .info .info-content .art-tit {
+  border-bottom: 1px solid #E4E3E3;
+  padding-bottom: 15px;
+}
+#info-library #content .info .info-content .art-tit h1 {
+  font-size: 30px;
+  color: #333333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#info-library #content .info .info-content .art-tit span {
+  color: #7D7D7D;
+  margin-right: 20px;
+}
+#info-library #content .info .info-content .art-cont p {
+  font-size: 16px;
+  color: #666666;
+  margin-top: 15px;
+  text-indent: 30px;
+  line-height: 30px;
+}
+#info-library #content .info .info-content .art-cont img {
+  width: 705px;
+  margin: 20px 0;
+}
+#info-library #content .info .info-content .art-cont .act-share {
+  margin: 30px 0;
+}
+#info-library #content .info .info-content .art-cont .act-share span {
+  display: block;
+  float: left;
+  line-height: 25px;
+  margin-right: 5px;
+  color: #666666;
+}
+#info-library #content .info .info-content .art-cont .act-share a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-right: 8px;
+}
+#info-library #content .info .info-content .art-cont .act-share .weibo {
+  background: url(../../images/library/weibo.png) no-repeat;
+}
+#info-library #content .info .info-content .art-cont .act-share .weixing {
+  background: url(../../images/library/weixin.png) no-repeat;
+}
+#info-library #content .info .relevant {
+  width: 940px;
+  margin: 0 auto;
+}
+#info-library #content .info .relevant .relevant-act .title {
+  color: #333;
+  font-size: 16px;
+  margin: 25px 0;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box {
+  width: 220px;
+  height: 320px;
+  border: 1px solid #E4E3E3;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box .tit {
+  color: #333;
+  font-size: 14px;
+  display: block;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box .tit:hover {
+  color: #fc7000;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box .cont {
+  height: 250px;
+  padding: 15px;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box .act-info {
+  height: 20px;
+  border-top: 1px solid #E4E3E3;
+  padding: 10px;
+  color: #999;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box .act-info span {
+  margin-right: 20px;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box p {
+  color: #999;
+  margin: 15px 0;
+  font-size: 13px;
+}
+#info-library #content .info .relevant .relevant-act .art-wrapper .act-box img {
+  width: 95px;
+  display: block;
+  float: left;
+}
+#info-library #content .info .relevant .relevant-car .title {
+  color: #333;
+  font-size: 16px;
+  margin: 25px 0;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box {
+  width: 220px;
+  height: 280px;
+  border: 1px solid #E4E3E3;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-image {
+  display: block;
+  width: 220px;
+  height: 145px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-image img {
+  width: 220px;
+  height: 145px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail {
+  height: 75px;
+  border-bottom: 1px solid #F3F3F3;
+  padding: 10px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .tit {
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 3px;
+  display: block;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .tit:hover {
+  color: #fc7000;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .price {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .price span {
+  color: #fc7000;
+  margin-right: 10px;
+  font-weight: bold;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .price em {
+  color: #888;
+  text-decoration: line-through;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .time {
+  color: #666;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .time span {
+  padding-right: 10px;
+  border-right: 1px solid #666;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-detail .time em {
+  margin-left: 10px;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-fav {
+  padding: 10px;
+  color: #999;
+}
+#info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-fav i {
+  display: block;
+  width: 15px;
+  height: 13px;
+  background: url(../../images/library/fav.png) no-repeat;
+  float: left;
+  margin-top: 1px;
+  margin-right: 5px;
+}

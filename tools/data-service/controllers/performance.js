@@ -54,6 +54,50 @@
                 }
             }
         },
+        "/traffic-data": {
+            get: function() {
+                return function(req, res) {
+                    var condition, maxTime, minTime, time, times, url;
+                    url = decodeURIComponent(req.query.url);
+                    time = req.query.time;
+                    if (time) {
+                        times = time.split(' to ');
+                        minTime = times[0] + " 00:00:00";
+                        maxTime = times[1] + " 23:59:59";
+                    }
+                    console.log(url);
+                    condition = {
+                        url: url
+                    };
+                    if (time) {
+                        condition.date = {
+                            $gt: minTime,
+                            $lt: maxTime
+                        };
+                    }
+                    TrafficOfflineModel.findAll().where(condition).done(function(error, traffics) {
+                        trafficdata = {}
+                        traffics.forEach(function(t) {
+                            var data = JSON.parse(t.data);
+                            for (var i in data) {
+                                if (data[i]) {
+                                    if (trafficdata[i]) {
+                                        trafficdata[i] += data[i] * 1;
+                                    } else {
+                                        trafficdata[i] = data[i] * 1;
+                                    }
+                                }
+                            }
+                            if (req.query.callback) {
+                                res.send(req.query.callback + "(" + JSON.stringify(trafficdata) + ")");
+                            } else {
+                                res.send(trafficdata);
+                            }
+                        })
+                    });
+                }
+            }
+        },
         "/click-data": {
             get: function() {
                 return function(req, res) {
