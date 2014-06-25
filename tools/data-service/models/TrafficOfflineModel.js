@@ -6,8 +6,8 @@ module.exports = {
         "type": String,
         "default": "com.souche.datacenter.model.TrafficOfflineModel"
     }, //,
-    url:String, //url地址
-    date:Number, //日期的时间戳
-    data:String //计算出来的数据
+    url: String, //url地址
+    date: Date, //日期的时间戳
+    data: String //计算出来的数据
 
 }

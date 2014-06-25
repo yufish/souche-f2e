@@ -33,7 +33,7 @@ html
                     label.control-label
                         | 选择页面
                         select#select.form-control
-                            |<option value="http://www.souche.com/" #{locals.url=='http://www.souche.com/'?'selected':''}>首页</option>
+                            |<option value="http://www.souche.com" #{locals.url=='http://www.souche.com'?'selected':''}>首页</option>
                             |<option value="http://www.souche.com/pages/onsale/sale_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/sale_car_list.html'?'selected':''}>我要买车</option>
                             |<option value="http://www.souche.com/pages/caruser/sellCarNew.html" #{locals.url=='http://www.souche.com/pages/caruser/sellCarNew.html'?'selected':''}>我要卖车</option>
                             |<option value="http://www.souche.com/pages/onsale/match_car_list.html" #{locals.url=='http://www.souche.com/pages/onsale/match_car_list.html'?'selected':'false'}>买车顾问</option>
@@ -53,8 +53,8 @@ html
                     label.control-label
                         input#show-map(type="checkbox",checked="true")
                         | 显示热力图
-        .summery.hidden
-            .alert.alert-warning 总浏览量：<em id="total_count"></em>
+        .summery(style="width:1200px;margin:0 auto;")
+            .alert.alert-warning PV：<em id="pv_count"></em> UV：<em id="uv_count"></em>
         .con
             - 
             iframe.refer-page(src="#{locals.iframeurl}")
