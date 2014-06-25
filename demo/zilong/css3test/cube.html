@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://res.souche.com/assets/js/lib/jquery-1.9.1.min.js?t=11"></script>
+    <style>
+        #experiment {
+            -webkit-perspective: 800;
+            -webkit-perspective-origin: 50% 200px;
+        }
+        #cube {
+            position: relative;
+            margin: 0 auto;
+            height: 400px;
+            width: 400px;
+            -webkit-transition: -webkit-transform 2s linear;
+            -webkit-transform-style: preserve-3d;
+        }
+        .face {
+            position: absolute;
+            height: 360px;
+            width: 360px;
+            padding: 20px;
+            background-color: rgba(50, 50, 50, 0.7);
+        }
+        #cube .one  {
+            -webkit-transform: rotateX(90deg) translateZ(200px);
+        }
+
+        #cube .two {
+            -webkit-transform: translateZ(200px);
+        }
+
+        #cube .three {
+            -webkit-transform: rotateY(90deg) translateZ(200px);
+        }
+
+        #cube .four {
+            -webkit-transform: rotateY(180deg) translateZ(200px);
+        }
+
+        #cube .five {
+            -webkit-transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        #cube .six {
+            -webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
+        }
+    </style>
+</head>
+<body style="padding-top: 200px">
+    <div class="info">
+        按上下左右键
+    </div>
+    <div id="experiment">
+        <div id="cube">
+            <div class="face one">
+                One face
+            </div>
+            <div class="face two">
+                Up, down, left, right
+            </div>
+            <div class="face three">
+                Lorem ipsum.
+            </div>
+            <div class="face four">
+                New forms of navigation are fun.
+            </div>
+            <div class="face five">
+                Rotating 3D cube
+            </div>
+            <div class="face six">
+                More content
+            </div>
+        </div>
+    </div>
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+        var xAngle = 0, yAngle = 0;
+        document.addEventListener('keydown', function(e) {
+            switch(e.keyCode) {
+
+                case 37: // left
+                    yAngle -= 90;
+                    break;
+
+                case 38: // up
+                    xAngle += 90;
+                    break;
+
+                case 39: // right
+                    yAngle += 90;
+                    break;
+
+                case 40: // down
+                    xAngle -= 90;
+                    break;
+            };
+
+            $('cube').style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+        }, false);
+    </script>
+</body>
+</html>
