@@ -7,6 +7,7 @@
 }
 .car-models {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .car-models .car-all {
   margin-left: 0px !important;
@@ -31,16 +32,18 @@
   cursor: pointer;
   border: 2px solid #fff;
   position: relative;
+  display: block;
 }
 .car-models .models-box .models-image {
   margin-left: 45px;
+  margin-top: 10px;
 }
 .car-models .models-box .models-image img {
   display: block;
-  width: 70%;
+  width: 65%;
 }
 .car-models .models-box .models-tit {
-  font-size: 13px;
+  font-size: 12px;
   color: #5b5b5b;
   width: 100%;
   text-align: center;
@@ -50,17 +53,18 @@
 .car-models .models-box .model-show {
   width: 26px;
   height: 16px;
-  background: url(../images/acts/template/model-show.png) no-repeat;
+  display: block;
   position: absolute;
+  background-size: 26px 16px;
   top: 129px;
   right: 100px;
 }
 .car-models .models-box-active {
-  border: 2px solid #0b3b41 !important;
+  border: 2px solid #5B5B5B !important;
 }
 .model-detail {
-  margin-top: 20px;
-  height: 60px;
+  margin-top: 10px;
+  height: 63px;
   background: #fff;
   padding: 0px 40px;
 }
@@ -69,26 +73,27 @@
 }
 .model-detail .model-tag .tag-cont {
   float: left;
-  padding: 10px 15px;
-  font-size: 13px;
+  padding: 11px 20px;
+  font-size: 14px;
   color: #fff;
-  background: #0b3b41;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 .model-detail .reason {
-  float: right;
-  margin-top: 10px;
+  float: left;
+  margin-top: 17px;
+  margin-left: 70px;
 }
 .model-detail .reason .reason-tit {
   float: left;
   font-size: 14px;
   font-weight: bold;
-  color: #0b3b41;
 }
 .model-detail .reason .reason-cont {
   float: left;
-  width: 570px;
-  font-size: 13px;
+  width: 460px;
+  font-size: 12px;
+  line-height: 18px;
+  word-wrap: break-word;
 }
 .car-box {
   background-color: #FFFFFF;
@@ -98,6 +103,35 @@
   margin-right: 14px;
   width: 385px;
   position: relative;
+}
+.car-box .fav-box {
+  position: absolute;
+  width: 69px;
+  height: 22px;
+  top: 10px;
+  right: 10px;
+}
+.car-box .faver {
+  width: 47px;
+  height: 20px;
+  border: 1px solid #fff;
+  line-height: 21px;
+  color: #FC7000;
+  background: #ffffff url(../images/acts/template/faver.png) no-repeat left center;
+  padding-left: 20px;
+}
+.car-box .faver:hover {
+  background: #ffffff url(../images/acts/template/faver-hover.png) no-repeat left center;
+  border: 1px solid #FC7000;
+}
+.car-box .hadfav {
+  width: 67px;
+  height: 20px;
+  border: 1px solid #FC7000;
+  background: #fff;
+  line-height: 21px;
+  color: #FC7000;
+  text-align: center;
 }
 .car-box.row-last {
   margin-right: 0px;
@@ -266,9 +300,6 @@
 .car-box .car-case .car-time {
   float: left;
 }
-#car-list {
-  margin-top: 15px;
-}
 #acts_tpl {
   background: #dfdfdf;
 }
@@ -421,6 +452,8 @@
 }
 #acts_tpl #more-acts .acts-img a {
   margin-right: 4px;
+  display: block;
+  float: left;
 }
 #acts_tpl #more-acts .acts-img a.row-last {
   margin-right: 0px;

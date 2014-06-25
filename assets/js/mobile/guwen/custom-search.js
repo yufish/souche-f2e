@@ -47,6 +47,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     if (pageStep == 1) {
                         var min=$('#low-price').val(),
                             max = $('#high-price').val();
+                        max = ((max=='无限')?10000:max);
                         var minP = +min,
                             maxP = +max;
                         if(isNaN(minP)|| isNaN(maxP)){
@@ -58,7 +59,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             minP  = maxP;
                             maxP = tmp;
                         }
-                    if (!stepRecords[pageStep]) {
+                        if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
                                 car_price_min:minP,
@@ -66,26 +67,32 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             }
                             userTrack(trackData);
 
-                        } else if (pageStep == 2) {
+                        }
+                        userTrack(trackData);
+                        stepRecords.push(pageStep);
+                        //console.log(trackData);
+                    } else if (pageStep == 2) {
+                        if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
-                                car_brands:brandManager.brands.map(function(b) {return b['code'];}).join(',')
+                                car_brands: brandManager.brands.map(function (b) {
+                                    return b['code'];
+                                }).join(',')
                             }
                             userTrack(trackData);
-                        } else if (pageStep == 3) {
-                            var sStr  = brandManager.brands.map(function(b) {
-                                return b['series'].map(function(s) {
+                        }
+                    } else if (pageStep == 3) {
+                        if (!stepRecords[pageStep]) {
+                            var sStr = brandManager.brands.map(function (b) {
+                                return b['series'].map(function (s) {
                                     return s['code'];
                                 }).join(',');
                             }).join(',');
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP3',
-                                car_series:sStr
+                                car_series: sStr
                             }
                         }
-                        userTrack(trackData);
-                        stepRecords.push(pageStep);
-                        //console.log(trackData);
                     }
                     if (pageIndex == pages.length) {
                         $('#submit-btn').hide();
@@ -167,8 +174,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     var begin = '<div class="qs-item">'
                                 +   '<div class="card"></div>'
                                 +   '<div class="price-value">'
-                    var mid = '</div><div class="price-tag"><span class="value">';
-                    var end = '</span><i></i></div></div>';
+                    var mid = '</div><div class="price-tag"><div class="value">';
+                    var end = '万</div></div></div>';
                     var html = '';
                     for(var i=0;i<priceRange.length-1;i++){
                         low = priceRange[i],high= priceRange[i+1];
@@ -186,14 +193,19 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         var low = priceRange[index],
                             high = priceRange[index+1]==10000?'不限':priceRange[index+1];
                         $(this).click(function(){
+                            var self =$(this);
                             qsItems.removeClass('selected');
-                            $(this).addClass('selected');
+                            self.addClass('selected');
                             lowInput.val(low);
                             highInput.val(high);
                         })
                     })
-
+                    $('.price-box').on('focus',function(){
+                        qsItems.removeClass('selected');
+                    })
                 }();
+
+
 
                 //var loadingLayer = $('.loading-cover-layer');
                 var brandLoaded = false;
@@ -321,7 +333,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     var bs = buildBsQueryString();
                     var bStr = bs.brandStr,
                         sStr = bs.seriesStr;
-                    gotoPage();
+                    //gotoPage();
                     $.ajax({
                         url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
                         dataType: 'json',
@@ -342,37 +354,19 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     });
                 }
 
-                function showPopup() {
-                    $('.cover-layer').removeClass('hidden');
-                    var width = $(window).width();
-                    var left = (width - 300) / 2;
-                    $('#phone-popup').css({
-                        'left': left
-                    }).removeClass('hidden');
-                }
-
-
                 $('#submit-btn').click(function () {
-                    if (curPageIndex != pages.length - 1) {
-                        gotoPage();
+                    if (curPageIndex == pages.length - 1) {
+                        gotoPage()
+                        submitGuWenInfo();
                         return;
                     }
-                    submitGuWenInfo();
-                })
-
-                var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function (e) {
-                    var phoneNum = $("#phone-num").val();
-                    e.preventDefault();
-                    if (!phoneReg.test(phoneNum)) {
-                        alert('请输入正确的手机号码');
-                    } else {
-                        SM.PhoneRegister(phoneNum, function () {
-                            $('#phone-popup').hide();
-                            $('.cover-layer').addClass('hidden');
-                            submitGuWenInfo();
-                        })
+                    if(curPageIndex==2&& brandManager.brands.length==0){
+                        gotoPage(4)
+                        submitGuWenInfo();
+                        return;
                     }
+                    gotoPage();
+                    //TODO
                 })
 
                 $('.search-icon').click(function () {

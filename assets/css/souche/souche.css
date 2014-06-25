@@ -1090,14 +1090,34 @@ body {
 #nav .other-navs {
   float: right;
   *margin-top: -50px;
+  margin-top: 18px;
 }
 #nav .other-navs a {
   font-size: 12px;
-  padding: 0 8px;
+  padding: 0 10px;
   border-right: 1px solid #666;
+  line-height: 20px;
+  display: block;
+  float: left;
 }
 #nav .other-navs a.last {
   border: none;
+}
+#nav .other-navs .weibo-login {
+  border-right: none;
+  padding-left: 20px;
+  height: 20px;
+  background: url(../../images/index/weibo-login.png) no-repeat left center;
+  line-height: 20px;
+  margin: 0 10px;
+}
+#nav .other-navs .qq-login {
+  border-right: none;
+  padding-left: 20px;
+  height: 20px;
+  background: url(../../images/index/qq-login.png) no-repeat left center;
+  line-height: 20px;
+  margin: 0 5px;
 }
 #footer {
   margin-top: 30px;

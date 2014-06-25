@@ -120,6 +120,10 @@
                 var bCode = e.brandCode;
                 this.container.find('.content[data-code='+bCode+']').find('.series-item').removeClass('selected');
             }
+            if(eType =='removeBrand'){
+                //TODO
+
+            }
         }
     }
 
@@ -141,6 +145,13 @@
             }
             if(eType=='noLimitSeries'){
                 var bCode = e.brandCode;
+                this.container.find('.ss-item[data-brand-code='+bCode+']').remove();
+                if(this.container.find('.ss-item').length==0){
+                    this.container.hide();
+                }
+            }
+            if(eType=='removeBrand'){
+                var bCode = e.item.code;
                 this.container.find('.ss-item[data-brand-code='+bCode+']').remove();
                 if(this.container.find('.ss-item').length==0){
                     this.container.hide();
