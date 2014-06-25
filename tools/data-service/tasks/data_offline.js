@@ -69,12 +69,12 @@ var task = {
         //     console.log(clicks)
         //      self.analyzeClicks(clicks);
         // });
-        // allTraffics = [];
-        // getTrafficModel(condition, 0, function(error, data) {
-        //     if (error) console.log(error)
-        //     console.log(data.length)
-        //     self.analyzeTraffics(data, day);
-        // })
+        allTraffics = [];
+        getTrafficModel(condition, 0, function(error, data) {
+            if (error) console.log(error)
+            console.log(data.length)
+            self.analyzeTraffics(data, day);
+        })
         allClicks = [];
         getClickModel(condition, 0, function(error, data) {
             if (error) console.log(error)
