@@ -45,3 +45,14 @@
   color: #7D7D7D;
   margin-right: 20px;
 }
+#info-library #content .info .info-content .art-cont p {
+  font-size: 16px;
+  color: #666666;
+  margin-top: 15px;
+  text-indent: 30px;
+  line-height: 30px;
+}
+#info-library #content .info .info-content .art-cont img {
+  width: 705px;
+  margin: 20px 0;
+}
