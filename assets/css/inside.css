@@ -270,8 +270,6 @@ padding-left: 50px;
     background-color: #f9f9f9}
 #choose .choose_condition .choose_save{color:white;border-radius: 2px;
     background-color: #FC7000;padding: 2px 5px; border: 1px solid #d9d9d9;}
-#choose .choose_condition .choose_saved{color:#FFA042;border-radius: 2px;
-    background-color: #FFF4C1;padding: 2px 5px; border: 1px solid #FFC78E;}
 
 #choose .orderBy{float:right;height:38px;line-height:38px;border:1px solid #ddd;border-right:none;background-color:#fff}
 #choose .orderBy .order_item{float:left;display:block;border-right:1px solid #ddd;color:#666;padding:0 15px;*width:34px}
@@ -436,7 +434,7 @@ padding-left: 50px;
 }
 #list_wrap .list_nav .sc-option{width:228px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}
-#list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;margin-right: 15px;}
+#list_wrap .list_nav .list_nav_wrap{margin-left:15px;font-size:14px;margin-right: 15px;margin-bottom: 10px;}
 .nav_price{padding-bottom: 20px;border-bottom: 1px solid #e4e4e4;position: relative;}
 #list_wrap .list_nav .list_nav_wrap a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_contain{height:auto;padding-bottom:50px;;background:#fff;width:259px;margin-left:2px;}
@@ -460,7 +458,7 @@ padding-left: 50px;
 .sc-color .color-hover{display: block;position: absolute;width: 19px;height: 2px;background-color: #666666;top: 17px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #333;font-style: normal;font-weight: normal;}
 .custom-price{position: absolute;width: 160px;height: 45px;border: 1px solid #e4e3e3;background-color: #fff;left: 115px;
-top: -9px;padding: 5px;z-index:10000;}
+top: -9px;padding: 5px;z-index:20;}
 .custom-price .custom-title{color: #666;font-size: 12px;font-weight: normal;cursor: pointer;}
 .custom-price .custom{position: relative;line-height: 18px;}
 .custom-price input{width: 25px;height: 16px;border: 1px solid #e4e3e3;font-weight:normal;color:#999;margin-top: 5px;margin-right: 3px;margin-left: 3px;padding-left: 4px;font-size: 12px;line-height: 18px;}
