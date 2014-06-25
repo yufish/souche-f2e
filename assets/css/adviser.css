@@ -22,6 +22,7 @@
   margin-left: 9px;
   color: #262626;
   cursor: pointer;
+  display: block;
 }
 #adviser #content .content-nav .nav-box .nav-cont {
   margin-top: 30px;
@@ -37,25 +38,53 @@
   background: #ff4400;
   color: #fff;
 }
-#adviser #content .aiche {
+#adviser #content #aiche {
   height: 1780px;
 }
-#adviser #content .aiche .aiche-tit {
+#adviser #content #aiche .aiche-tit {
   background: #ff4400 url(../images/adviser/aiche.png) no-repeat center;
   height: 165px;
 }
-#adviser #content .test {
+#adviser #content #test {
   height: 895px;
 }
-#adviser #content .test .test-tit {
+#adviser #content #test .test-tit {
   background: #ff4400 url(../images/adviser/test-car.png) no-repeat center;
   height: 165px;
 }
-#adviser #content .bargain {
+#adviser #content #bargain {
   height: 2030px;
 }
-#adviser #content .bargain .bargain-tit {
+#adviser #content #bargain .bargain-tit {
   background: #ff4400 url(../images/adviser/bargain.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content #staging {
+  height: 920px;
+}
+#adviser #content #staging .staging-tit {
+  background: #ff4400 url(../images/adviser/staging-car.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content #back {
+  height: 2090px;
+}
+#adviser #content #back .back-tit {
+  background: #ff4400 url(../images/adviser/back-car.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content #qa {
+  height: 1920px;
+}
+#adviser #content #qa .qa-tit {
+  background: #ff4400 url(../images/adviser/qa-car.png) no-repeat center;
+  height: 165px;
+}
+#adviser #content #shop {
+  height: 2725px;
+}
+#adviser #content #shop .shop-tit {
+  background: #ff4400 url(../images/adviser/shop-car.png) no-repeat center;
   height: 165px;
 }
 #adviser #content .wrapper {
