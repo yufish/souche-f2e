@@ -71,8 +71,8 @@
                     };
                     if (time) {
                         condition.date = {
-                            $gt: minTime,
-                            $lt: maxTime
+                            $gte: minTime,
+                            $lte: maxTime
                         };
                     }
                     TrafficOfflineModel.findAll().where(condition).done(function(error, traffics) {
@@ -118,8 +118,8 @@
                     };
                     if (time) {
                         condition.date = {
-                            $gt: minTime,
-                            $lt: maxTime
+                            $gte: minTime,
+                            $lte: maxTime
                         };
                     }
                     ClickOfflineModel.findAll().where(condition).fields(['data', 'date', 'url']).done(function(error, clicks) {
