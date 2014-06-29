@@ -1,16 +1,16 @@
-var List = function () {
+var List = function() {
     var config = {
         page: 1,
         moreURL: ""
     }
     var tpl_cars;
     var carList = [];
-    var loadMore = function () {
+    var loadMore = function() {
         SM.LoadingTip.show("正在加载中")
         $.ajax({
             url: config.moreURL + "&index=" + (++config.page),
             dataType: "json",
-            success: function (data) {
+            success: function(data) {
                 //console.log(data)
                 var items = data.page.items;
                 var tpl_data, item, html;
@@ -47,7 +47,7 @@ var List = function () {
                 }
                 SM.LoadingTip.hide();
             },
-            error: function () {
+            error: function() {
                 SM.LoadingTip.hide();
             }
         })
@@ -55,14 +55,15 @@ var List = function () {
 
 
 
-    var storeStorage = function () {
+    var storeStorage = function() {
         var db = window.sessionStorage;
         db.setItem('timestamp', Date.now());
         db.setItem('url', window.location.href);
         db.setItem('carlist', JSON.stringify(carList));
+        db.setItem('page', config.page);
     }
 
-    var backRecover = function () {
+    var backRecover = function() {
         var db = window.sessionStorage;
         var time = parseInt(db.getItem('timestamp'));
         var url = db.getItem('url');
@@ -72,14 +73,16 @@ var List = function () {
             url: url
         })) {
             db.setItem('carlist', '');
+            db.setItem('page', '');
             return;
         }
 
         carList = JSON.parse(db.getItem('carlist'));
+        config.page = db.getItem('page') ? db.getItem('page') : 1
         makeDom(carList);
     }
 
-    var makeDom = function (carList) {
+    var makeDom = function(carList) {
         var $cars = $('.cars');
         var html;
         for (var i = 0; i < carList.length; i++) {
@@ -89,7 +92,7 @@ var List = function () {
             $cars.append(html);
         }
     }
-    var checkCond = function (obj) {
+    var checkCond = function(obj) {
         var time = obj.time,
             url = obj.url;
 
@@ -107,7 +110,7 @@ var List = function () {
 
     return {
 
-        init: function (_config) {
+        init: function(_config) {
             for (var i in _config) {
                 config[i] = _config[i]
             }
@@ -115,9 +118,9 @@ var List = function () {
             backRecover();
             this.bind()
         },
-        bind: function () {
-            $("#list .filter .t").on("click", function (e) {
-                setTimeout(function () {
+        bind: function() {
+            $("#list .filter .t").on("click", function(e) {
+                setTimeout(function() {
                     $("#content").css("height", 0)
                 }, 400)
                 $("#filter").animate({
@@ -134,24 +137,24 @@ var List = function () {
 
             })
 
-            $("#load_more").on("click", function (e) {
+            $("#load_more").on("click", function(e) {
                 e.preventDefault();
                 loadMore();
             })
 
 
-            $('#cars').on('click', 'a.car', function (e) {
+            $('#cars').on('click', 'a.car', function(e) {
                 e.preventDefault();
                 storeStorage();
                 window.location.href = $(this).attr('href');
             })
 
-            $('.wrapPhoneBg').click(function(){
+            $('.wrapPhoneBg').click(function() {
                 $(this).addClass('hidden');
                 $('#phone-popup').addClass('hidden')
             })
             //do fav
-            ! function () {
+            ! function() {
                 var api = {
                     fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
                     unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
@@ -179,7 +182,7 @@ var List = function () {
                             carId: $node.attr("data-id")
                         },
                         dataType: "json",
-                        success: function () {
+                        success: function() {
                             $node.addClass("star");
                             var $numSpan = $node.find('span');
                             var i = parseInt($numSpan.text());
@@ -195,7 +198,7 @@ var List = function () {
                             'carId': $node.attr("data-id")
                         },
                         dataType: "json",
-                        success: function () {
+                        success: function() {
                             $node.removeClass("star");
                             var $numSpan = $node.find('span');
                             var i = parseInt($numSpan.text());
@@ -215,13 +218,13 @@ var List = function () {
                 var isLogin = false;
                 var $curFav;
                 var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function (e) {
+                $('#phone-form').submit(function(e) {
                     var phoneNum = $("#phone-num").val();
                     e.preventDefault();
                     if (!phoneReg.test(phoneNum)) {
                         alert('请输入正确的手机号码');
                     } else {
-                        SM.PhoneRegister(phoneNum, function () {
+                        SM.PhoneRegister(phoneNum, function() {
                             hidePopup();
                             isLogin = true;
                             doFav($curFav);
@@ -229,10 +232,10 @@ var List = function () {
                     }
                 })
 
-                $('#back-btn').click(function () {
+                $('#back-btn').click(function() {
                     hidePopup();
                 })
-                $('.cars').on('click', '.fav', function (e) {
+                $('.cars').on('click', '.fav', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     $curFav = $(this);
@@ -243,7 +246,7 @@ var List = function () {
                         return;
                     }
 
-                    SM.checkPhoneExist(function (is_login) {
+                    SM.checkPhoneExist(function(is_login) {
                         if (is_login) {
                             doFav($curFav);
                         } else {

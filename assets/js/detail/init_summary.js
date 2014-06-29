@@ -11,7 +11,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://115.29.10.121:10001/demo/carprice/price?modelcode=" + config.modelCode,
+                url: "http://115.29.10.121:8282/soucheproduct/car/price/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(data) {
                     if (data.priceInterval_nudeCar) {
@@ -146,10 +146,10 @@ define(function() {
                     }
                 }
             });
-            // if (SVGsupported) {
-            //     self.load_price();
-            //     self.load_baoyang();
-            // }
+            if (SVGsupported) {
+                self.load_price();
+                self.load_baoyang();
+            }
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {
             //         if (id == "onsale_price") {
