@@ -3970,7 +3970,7 @@ body {
     box-sizing: border-box;
 }
 #sell-h5-2 .img-ad .intro{
-    padding-left: 45px;
+    padding:0 20px;
 }
 #sell-h5-2 .img-ad .title{
     font-size: 14px;
@@ -4039,7 +4039,7 @@ body {
 }
 #sell-h5-2 .content #faq {
     background-color: #f3f3f3;
-    padding: 58px 0 30px 45px;
+    padding: 58px 20 30px 20px;
 }
 #sell-h5-2 .content #faq .title {
     margin-top: 100px;
