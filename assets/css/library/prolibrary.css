@@ -67,7 +67,6 @@
   font-size: 15px;
   color: #9D9D9D;
   line-height: 20px;
-  height: 120px;
   overflow: hidden;
 }
 #content .wrapper #productInfo > div #productConfigure {
@@ -97,18 +96,223 @@
 #content .wrapper #productDetailInfo .nav {
   list-style: none;
   width: 100%;
-  height: 35px;
+  height: 43px;
+  background: white;
 }
 #content .wrapper #productDetailInfo .nav li {
   float: left;
-  border-top: 3px solid #f9f9f9;
+  border-top: 3px solid white;
   font-size: 16px;
   padding: 0 50px;
   cursor: pointer;
-  border-right: 1px solid #eee;
   line-height: 36px;
+  height: 40px;
+  background: white;
 }
 #content .wrapper #productDetailInfo .nav li.active {
   background: #fff;
   border-top: 3px solid #ef5c1e;
+  height: 40px;
+  background: #f9f9f9;
+}
+#content .wrapper .clearBoth {
+  clear: both;
+}
+#content .wrapper #allProduct {
+  position: relative;
+  padding: 50px 0px;
+}
+#content .wrapper #allProduct table {
+  width: 100%;
+}
+#content .wrapper #allProduct table caption {
+  font-weight: bolder;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+#content .wrapper #allProduct table .firstCol {
+  padding-left: 0px;
+}
+#content .wrapper #allProduct table .firstCol a {
+  color: #FF5809 !important;
+}
+#content .wrapper #allProduct table thead {
+  border-top: 1px solid #000000;
+}
+#content .wrapper #allProduct table thead th {
+  height: 53px;
+  font-weight: bolder;
+  font-size: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #allProduct table thead .more {
+  font-weight: bold;
+  font-size: 13px;
+  background: url(../../images/index/left-arrow.png) no-repeat center center;
+  padding: 10px;
+  cursor: pointer;
+}
+#content .wrapper #allProduct table tbody td {
+  height: 53px;
+  font-size: 13px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-left: 15px;
+}
+#content .wrapper #allProduct #advantage {
+  width: 960px;
+  position: absolute;
+  right: 0px;
+  border-left: 1px solid #e6e6e6 ;
+  box-shadow: 2px 2px 1px #888888;
+  top: 95px;
+  background: white;
+}
+#content .wrapper #allProduct #advantage > table th,
+#content .wrapper #allProduct #advantage > table td {
+  text-align: center;
+  padding: 0px 10px;
+  height: 55px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #allProduct #advantage > table .advantageConfig {
+  background-color: #FCFCFC ;
+}
+#content .wrapper #newProduct {
+  float: left;
+  width: 960px;
+  overflow: auto;
+}
+#content .wrapper #newProduct > h1 {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+#content .wrapper #newProduct .item {
+  width: 215px;
+  height: 300px;
+  float: left;
+  border: 1px solid #e6e6e6;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#content .wrapper #newProduct .item .itemContent {
+  border-bottom: 1px solid #e6e6e6;
+  height: 270px;
+}
+#content .wrapper #newProduct .item .itemContent h1 {
+  margin: 2px 15px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+#content .wrapper #newProduct .item .itemContent .currentPrice {
+  margin: 2px 15px;
+  color: #ef5c1e;
+  font-size: 13px;
+}
+#content .wrapper #newProduct .item .itemContent .oldPrice {
+  text-decoration: line-through;
+}
+#content .wrapper #newProduct .item .itemContent .other {
+  margin: 14px 14px 14px 10px;
+}
+#content .wrapper #newProduct .item .itemContent .other span {
+  padding: 2px;
+  margin: 0px 3px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  background-color: #e6e6e6;
+}
+#content .wrapper #newProduct .item .itemContent .detail {
+  margin: 2px 15px;
+}
+#content .wrapper #newProduct .item .itemContent .detail .shangpai {
+  padding: 0px 10px 0px 0px;
+}
+#content .wrapper #newProduct .item .itemContent .detail .gongli {
+  padding: 0px 0px 0px 10px;
+}
+#content .wrapper #newProduct .item .itemTail {
+  padding-top: 3px;
+  background-color: #f9f9f9 ;
+  height: 26px;
+}
+#content .wrapper #newProduct .item .itemTail * {
+  vertical-align: middle;
+}
+#content .wrapper #newProduct .item .itemTail .carCollect {
+  margin: 0px 10px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background: url(../../images/index/normal.png) no-repeat;
+  background-position: 0px 3px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+#content .wrapper #newProduct .item .itemTail .carCollect.hover {
+  background: url(../../images/index/hover.png) no-repeat;
+  background-position: 0px 3px;
+}
+#content .wrapper #newProduct .item .itemTail .carCollect.active {
+  background: url(../../images/index/active.png) no-repeat;
+  background-position: 0px 3px;
+}
+#content .wrapper #newProduct .item .itemTail .carConstrast {
+  margin: 0px 15px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+#content .wrapper #newProduct .item .itemTail .carConstrast span {
+  padding-left: 4px;
+}
+#content .wrapper #productSilder {
+  float: left;
+  width: 222px;
+  height: 500px;
+  padding-top: 45px;
+}
+#content .wrapper #productSilder #latestInfo > ul > a {
+  font-weight: bolder;
+  font-size: 18px;
+  display: block;
+  margin: 20px 0px 0px 0px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #B0B0B0;
+}
+#content .wrapper #productSilder #latestInfo > ul li {
+  margin: 14px 0px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#content .wrapper #productSilder #relationInfo > ul > a {
+  font-weight: bolder;
+  font-size: 18px;
+  display: block;
+  margin: 20px 0px 0px 0px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #B0B0B0;
+}
+#content .wrapper #productSilder #relationInfo li {
+  margin: 14px 0px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#content .wrapper #productSilder #relationInfo li .relationImg {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+#content .wrapper #productSilder #relationInfo li .relationContent {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  padding: 5px 0px 0px 5px;
+}
+#content .wrapper #productSilder #relationInfo li .relationContent a.relationPrice {
+  color: #ef5c1e;
+  padding-right: 7px;
+  font-weight: bolder;
 }

@@ -1,4 +1,4 @@
-Souche.UI.CustomMultiSelect = function(){
+Souche.UI. = function(){
 	var select = function(id){
 		this.id = id;
 		this.ele = typeof(id)==='string'?$('#'+this.id):$(id);

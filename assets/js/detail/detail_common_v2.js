@@ -463,7 +463,7 @@
 
         if ($(this).hasClass("faved")) {
             return;
-        }else{
+        } else {
             Souche.checkPhoneExist(function(is_login) {
                 if (is_login) {
 
@@ -780,14 +780,12 @@ Souche.Detail.PriceDown = function() {
     }
 }();
 Souche.DetailCommon = function() {
-    var config = {
-    }
+    var config = {}
 
     var operationCarDuibi = function(e) {
 
-        var elem = e.srcElement| e.target;
-        if(elem)
-        {
+        var elem = e.srcElement | e.target;
+        if (elem) {
 
         }
         var carID = config.carId;
@@ -807,7 +805,7 @@ Souche.DetailCommon = function() {
                 url: config.api_addContrast,
                 dataType: "json",
                 context: self
-            }).done(function (data) {
+            }).done(function(data) {
                 if (data.result == 2) {
                     $(".addcarduibi input").attr("checked", 'true');
 
@@ -827,7 +825,7 @@ Souche.DetailCommon = function() {
                     cloneElement.animate({
                         top: endY,
                         left: endX
-                    }, 500, function () {
+                    }, 500, function() {
                         cloneElement.remove();
                     });
 
@@ -838,31 +836,27 @@ Souche.DetailCommon = function() {
                 if (data.result == -1) {
                     $(".addcarduibi input").attr("checked", 'true');
                     $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
-                    var context= $(this);
-                    window.setTimeout(function()
-                    {
+                    var context = $(this);
+                    window.setTimeout(function() {
                         context.find(".contrast-waring").addClass("hidden");
-                    },2000);
+                    }, 2000);
                     return;
                 }
                 if (data.result == 1) {
                     $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
-                    var context= $(this);
-                    window.setTimeout(function()
-                    {
+                    var context = $(this);
+                    window.setTimeout(function() {
                         context.find(".contrast-waring").addClass("hidden");
-                    },2000);
+                    }, 2000);
                     return;
                 }
                 $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
-                var context= $(this);
-                window.setTimeout(function()
-                {
+                var context = $(this);
+                window.setTimeout(function() {
                     context.find(".contrast-waring").addClass("hidden");
-                },2000);
+                }, 2000);
             });
-        }
-        else {
+        } else {
             if (!carconstrastID) {
                 return;
             }
@@ -873,7 +867,7 @@ Souche.DetailCommon = function() {
                 data: {
                     cid: $(".addcarduibi input").attr("contrastid")
                 }
-            }).done(function (data) {
+            }).done(function(data) {
                 $(".addcarduibi input").removeAttr("checked");
                 $(".addcarduibi input").removeAttr("contrastid");
             });
@@ -881,7 +875,7 @@ Souche.DetailCommon = function() {
         return false;
     }
 
-    var _bind=function() {
+    var _bind = function() {
         $(".addcarduibi,.addcarduibi input").on("click", operationCarDuibi);
     }
 
@@ -941,7 +935,7 @@ Souche.DetailCommon = function() {
                     $("#onsale_tab").css({
                         position: "fixed",
                         top: 0,
-                        width: "100%",
+
                         zIndex: 1000
                     })
                 } else {
