@@ -115,8 +115,8 @@
                 </a>
             </div>
         </footer>
+        <div class="wrapGrayBg" style="display: none"></div>
         <div id="popup">
-            <div class="wrapGrayBg"></div>
             <div id="popup-submit">
                 <form id="submit-form">
                     <p class="text-center">请输入您的手机<p>
@@ -132,11 +132,30 @@
             </div>
         </div>
 
+
+        <div class="wrapTransBg" style="display: none"></div>
+        <div id="alert-yes">
+            <div class="alert-close">×</div>
+            <div class="alert-tip">你确定吗</div>
+            <button id="yes-button">YES</button>
+        </div>
+
+
         </div>
         <div style="width:111px;height: 39px;margin:20px auto 0">
             <img src='../../../assets/images/mob/huodong/worldcup/new/logo.png'>
         </div>
+
+
     </section>
+    <div id="mask-popup">
+        <div id="mask-top" style="background: rgba(0,0,0,.8)"></div>
+        <div id="mask-main">
+            <img id="mask-tip-png" src='../../../assets/images/mob/huodong/worldcup/new/mask-tip.png' >
+            <img id="mask-png" src='../../../assets/images/mob/huodong/worldcup/new/mask.png'>
+        </div>
+        <div id="mask-bottom" style="height: 500px;background: rgba(0,0,0,.8)"></div>
+    </div>
     <script>
         var phoneReg = /^1[3458][0-9]{9}$/;
         $('#btn-submit').click(function(){
@@ -173,5 +192,10 @@
             })
             $('#popup').show();
         }
+        $(document).ready(function(){
+            var width =$(window).width();
+            var height = width*(346+90)/640+40;
+            $('#mask-top').css({height:height});
+        })
     </script>
 </body>
