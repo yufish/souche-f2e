@@ -1,27 +1,4 @@
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-button,
-textarea,
-p,
-blockquote {
+*{
     margin: 0;
     padding: 0;
 }
@@ -135,4 +112,10 @@ q:after {
 }
 a {
     text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+body{
+    font-family: 'Heiti SC','华文黑体', '黑体';
 }

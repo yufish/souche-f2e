@@ -34,7 +34,7 @@ $(document).ready(function() {
     //加载点击数据
     if (getQueryString("load_data")) {
         var click_types = {};
-        var url = "http://f2e-monitor.souche.com/performance/click-data?url=" + window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com")
+        var url = "http://f2e-monitor.souche.com/performance/click-data?url=" + window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, "")
         if (getQueryString("time")) {
             url += "&time=" + getQueryString("time")
         }

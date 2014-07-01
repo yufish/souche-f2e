@@ -71,12 +71,13 @@
                     };
                     if (time) {
                         condition.date = {
-                            $gt: minTime,
-                            $lt: maxTime
+                            $gte: minTime,
+                            $lte: maxTime
                         };
                     }
                     TrafficOfflineModel.findAll().where(condition).done(function(error, traffics) {
                         trafficdata = {}
+                        console.log(traffics)
                         traffics.forEach(function(t) {
                             var data = JSON.parse(t.data);
                             for (var i in data) {
@@ -88,12 +89,13 @@
                                     }
                                 }
                             }
-                            if (req.query.callback) {
-                                res.send(req.query.callback + "(" + JSON.stringify(trafficdata) + ")");
-                            } else {
-                                res.send(trafficdata);
-                            }
+
                         })
+                        if (req.query.callback) {
+                            res.send(req.query.callback + "(" + JSON.stringify(trafficdata) + ")");
+                        } else {
+                            res.send(trafficdata);
+                        }
                     });
                 }
             }
@@ -116,8 +118,8 @@
                     };
                     if (time) {
                         condition.date = {
-                            $gt: minTime,
-                            $lt: maxTime
+                            $gte: minTime,
+                            $lte: maxTime
                         };
                     }
                     ClickOfflineModel.findAll().where(condition).fields(['data', 'date', 'url']).done(function(error, clicks) {

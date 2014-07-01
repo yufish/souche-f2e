@@ -449,3 +449,245 @@ body{
     right: 20px;
     top: 20px;
 }
+
+#guess{
+    font-size: 12px;
+}
+#guess #your-support{
+    padding-top: 20px;
+    position: relative;
+}
+#guess #g-content{
+    background: #60951f;
+    padding-bottom: 20px;
+}
+#guess #team-name{
+    text-align: center;
+    color:#fffc00;
+}
+#guess #team-flag{
+    background: url(../../../images/mob/huodong/worldcup/new/cup.png) no-repeat center;
+    background-size: 100%;
+    width:69px;
+    height: 113px;
+    position: absolute;
+    top: -45px;
+    left: 10px;
+}
+#guess #country-flag{
+    width:39px;
+    height: 27px;
+    position: absolute;
+    top:-12px;
+    left:50%;
+    margin-left:-19px;
+}
+#guess #your-award{
+    border:1px dashed #54db14;
+    background: #476f17;
+    width:218px;
+    height: 74px;
+    margin-left:80px;
+    color:#fff;
+    padding:20px 12px;
+    box-sizing: border-box;
+    position: relative;
+}
+#guess .yellow{
+    color:#f7f601;
+}
+#guess #your-award .money{
+    font-size:14px;
+    font-weight: bold;
+}
+#guess #your-award .down-arrow{
+    width:14px;
+    height: 11px;
+    background: url(../../../images/mob/huodong/worldcup/new/down-arrow.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    bottom: -11px;
+    left:39px;
+}
+#guess #grass{
+    width:287px;
+    height: 247px;
+    margin:3px auto 0;
+    background: url(../../../images/mob/huodong/worldcup/new/grass-ground.png) no-repeat center;
+    background-size: 100%;
+}
+#guess .down-arrow .border{
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    background: url(../../../images/mob/huodong/worldcup/new/border.png) no-repeat center;
+    background-size:12px 1px ;
+    top:0;
+}
+#guess #old-match{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#guess #old-match-title{
+    float:left;
+    width: 26px;
+    color: #fff;
+    background: #e7131c;
+    padding:20px 6px;
+}
+#guess #old-match-content{
+    margin-left: 26px;
+    background: #fff;
+    padding-left: 3px;
+    height: 96px;
+}
+#guess .old-match-item{
+    margin-top: 6px;
+    width: 106px;
+    height: 48px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    background: #f5a1a4;
+}
+#guess .board{
+    background: url(../../../images/mob/huodong/worldcup/match-board.png) no-repeat center;
+    background-size: 100%;
+    height: 56px;
+    width: 80px;
+    display: inline-block;
+    position: absolute;
+    left:50%;
+    margin-left: -40px;
+    top:27px;
+}
+#guess .om-title{
+    color: #7e0505;
+    margin-top: 12px;
+    display: inline-block;
+}
+#guess .board .score{
+    position: absolute;
+    font-size: 32px;
+    line-height: 56px;
+    color: #fff;
+    left:10px;
+}
+#guess .board .score:last-child{
+    left:52px;
+}
+
+#guess #first-match{
+    width: 145px;
+    margin:0 auto;
+    padding-top: 20px;
+    position: relative;
+}
+#guess .team-info{
+    position: absolute;
+    left:0;
+    width: 54px;
+    color: #fff;
+    top: 20px;
+}
+#guess .team-info:last-child{
+    left:auto;
+    right: 0;
+}
+#guess .flag-border{
+    width:100%;
+    height: 2px;
+    background: #fff;
+}
+#guess .vs{
+    text-align: center;
+    color: #fff;
+    margin-top: 22px;
+}
+#guess #first-match img{
+    display: block;
+    width: 50px;
+    margin:0 auto;
+}
+#guess .flag-name{
+    text-align: center;
+    padding: 3px 0;
+}
+#guess #second-match{
+    width: 170px;
+    margin:0 auto;
+    padding-top: 82px;
+    position: relative;
+}
+#guess #second-match .team-info{
+    top:82px;
+}
+#guess .time-board{
+    background: url(../../../images/mob/huodong/worldcup/new/time-board.png) no-repeat center;
+    position: absolute;
+    color:#fff;
+}
+#guess #first-time-board{
+    width: 72px;
+    height: 52px;
+    bottom: -52px;
+    left: -70px;
+    background-size: 72px 52px;
+}
+#guess #second-time-board{
+    width: 73px;
+    height: 54px;
+    bottom: -54px;
+    left: -72px;
+    background-size: 73px 54px;
+}
+#guess .time-board .hour{
+    position: absolute;
+    top:6px;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    left: 8px;
+}
+#guess .time-board .minute{
+    position: absolute;
+    top:6px;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    left: 44px;
+}
+#guess .yyyy-mm-dd{
+    margin-top: 30px;
+    text-align: center;
+    color:#efe602;
+}
+#guess #cars{
+    background: url(../../../images/mob/huodong/worldcup/new/yello-card.png) no-repeat center;
+    background-size: 100%;
+}
+#guess #rule{
+    background: url(../../../images/mob/huodong/worldcup/new/red-card.png) no-repeat center;
+    background-size: 100%;
+    margin-left: 35px;
+}
+#guess .selected-cup{
+    background: url(../../../images/mob/huodong/worldcup/new/cup.png) no-repeat center;
+    background-size: 100%;
+    width:14px;
+    height: 23px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: -7px;
+}
+#guess .wrapGrayBg{
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+}
