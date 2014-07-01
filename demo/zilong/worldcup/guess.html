@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="../../../assets/css/mobile/acts/worldcup.css" type="text/css"  rel="stylesheet">
+    <script src="http://souche.cdn.aliyuncs.com/js/mob/jquery-1.9.1.min.js?t=1"></script>
+    <script>
+    var contextPath = "<%=request.getContextPath() %>";
+    </script>
+</head>
+<body id='guess'>
+    <section id="head">
+        <div id="banner">
+            <img src="../../../assets/images/mob/huodong/worldcup/share.png">
+            <img src="../../../assets/images/mob/huodong/worldcup/new/title-pic.png" id="go-to-team">
+        </div>
+        </div>
+    </section>
+    <section id="g-content" >
+        <div id="your-support">
+            <div id="team-flag">
+                <img id='country-flag' src="../../../assets/images/mob/huodong/worldcup/flag/1.png">
+            </div>
+        </div>
+        <div id="your-award">
+            您目前已累计获得
+            <span class="yellow">
+                <span class="money">67000元</span>
+                <span class="quan">优惠券啦！</span>
+            </span>
+            继续加油吧！
+            <div class="down-arrow">
+                <div class="border"></div>
+            </div>
+        </div>
+        <div id="grass">
+            <div id="first-match" class="clearfix">
+                <div id="first-time-board" class="time-board">
+                    <div class="hour">24</div>
+                    <div class="minute">00</div>
+                    <div class="yyyy-mm-dd">2014.06.29</div>
+                </div>
+                <div class="team-info">
+                    <div class="flag-border"></div>
+                    <img src="../../../assets/images/mob/huodong/worldcup/flag/1.png">
+                    <div class="flag-name">巴西</div>
+                    <div class="selected-cup"></div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team-info">
+                    <div class="flag-border"></div>
+                    <img src="../../../assets/images/mob/huodong/worldcup/flag/2.png">
+                    <div class="flag-name">荷兰</div>
+                </div>
+            </div>
+            <div id="second-match" class="clearfix">
+                <div id="second-time-board" class="time-board">
+                    <div class="hour">24</div>
+                    <div class="minute">00</div>
+                    <div class="yyyy-mm-dd">2014.06.29</div>
+                </div>
+                <div class="team-info">
+                    <div class="flag-border"></div>
+                    <img src="../../../assets/images/mob/huodong/worldcup/flag/1.png">
+                    <div class="flag-name">巴西</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team-info">
+                    <div class="flag-border"></div>
+                    <img src="../../../assets/images/mob/huodong/worldcup/flag/2.png">
+                    <div class="flag-name">荷兰</div>
+                </div>
+            </div>
+        </div>
+        <div id="old-match" class="clearfix">
+            <div id="old-match-title">前日赛果</div>
+            <div id="old-match-content">
+                <span class="old-match-item">
+                    <span class='om-title'>
+                        巴西 vs 克罗地亚
+                    </span>
+                    <span class="board">
+                        <span class="score">9</span>
+                        <span class="score">8</span>
+                    </span>
+                </span>
+                <span class="old-match-item">
+                     <span class='om-title'>
+                        巴西 vs 克罗地亚
+                    </span>
+                    <span class="board">
+                        <span class="score">9</span>
+                        <span class="score">8</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div id="intro">
+            <div class="text">
+                从1/4决赛开始,正式启动猜比分活动！每猜中一场便可获得世界杯活动
+                <span class="yellow" style="font-weight: bold">500元购车券一张！最多可赢4000元哦！</span>
+            </div>
+            <div class="ps">
+                小提示：不要太贪心呦！活动车辆售完为止，您中意的车辆随时可能被抢走的！
+            </div>
+        </div>
+        <footer>
+            <div id="link-wrapper">
+                <a href='list.html' id="cars" class="card">
+                </a>
+                <a href='rule.html' id="rule" class="card">
+                </a>
+            </div>
+        </footer>
+        <div id="popup">
+            <div class="wrapGrayBg"></div>
+            <div id="popup-submit">
+                <form id="submit-form">
+                    <p class="text-center">请输入您的手机<p>
+                    <input class="input-box" type="tel" id="phone" name="phone">
+
+                </form>
+                <div id="submit-tips">
+                    注：请正确填写电话号码，以作为后期兑奖凭证(错误号码奖视之为无效)。
+                </div>
+                <div style="text-align: center">
+                    <button id="btn-submit">提交</button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div style="width:111px;height: 39px;margin:20px auto 0">
+            <img src='../../../assets/images/mob/huodong/worldcup/new/logo.png'>
+        </div>
+    </section>
+    <script>
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        $('#btn-submit').click(function(){
+            // TODO　var postUrl = '';
+            var phoneNum = $('#phone').val();
+            if (!phoneReg.test(phoneNum)) {
+                alert('请输入正确的手机号码');
+            }
+            else{
+                $.ajax({
+                    url:contextPath+"/pages/worldCupAction/joinActivity.json",
+                    type:'post',
+                    data:{
+                        phone:phoneNum
+                    },
+                    success:function(){
+                        window.location.reload();
+                    }
+                })
+            }
+        })
+
+        $('#grass .team-info').click(function(){
+            showPopup();
+        })
+        $('.wrapGrayBg').click(function(){
+            $('#popup').hide();
+        })
+        function showPopup(){
+            var scrollTop  = $(window).scrollTop();
+            var top = scrollTop+50;
+            $('#popup-submit').css({
+                top:top
+            })
+            $('#popup').show();
+        }
+    </script>
+</body>
