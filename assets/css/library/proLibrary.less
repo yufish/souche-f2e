@@ -1,3 +1,8 @@
+body
+{
+  background-color: #ffffff !important;
+}
+
 #content {
   .wrapper{
     width: 1190px;
@@ -377,6 +382,7 @@
             margin: 2px 15px;
             color:#ef5c1e;
             font-size: 13px;
+            font-weight: bolder;
           }
           .oldPrice {
             text-decoration: line-through;
@@ -404,6 +410,7 @@
           }
         }
         .itemTail {
+          position: relative;
           padding-top: 3px;
           background-color:#f9f9f9 ;
           height: 26px;
@@ -437,6 +444,10 @@
             span{
               padding-left: 4px;
             }
+          }
+          .contrast-waring
+          {
+            right: -30px !important;
           }
         }
       }
@@ -477,6 +488,14 @@
             a{
               font-size: 15px;
               font-weight: bolder;
+            }
+          }
+          .opteration
+          {
+            position: relative;
+            .contrast-waring
+            {
+              right: -20px !important;
             }
           }
           .detail
@@ -525,6 +544,11 @@
             input{
               vertical-align: middle;
             }
+            .contrast-waring
+            {
+              right: -30px !important;
+            }
+
           }
         }
         .itemPrice
@@ -647,5 +671,62 @@
         }
       }
     }
+  }
+}
+body {
+
+  #fav-popup .tip {
+    line-height: 40px;
+    font-size: 20px;
+    color: #111;
+  }
+  #fav-popup {
+    width: 600px;
+    height: 270px;
+  }
+  #fav-popup .phone {
+    margin-left: 150px;
+    text-align: left;
+    width: 400px;
+  }
+  #fav-popup .yuyue-con {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 640px;
+  }
+  #fav-popup label {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+  #fav-popup input {
+    line-height: 27px;
+    width: 184px;
+    height: 27px;
+  }
+  #fav-popup .result_p {
+    width: auto;
+    margin: 0 20px;
+    padding: 30px 0;
+  }
+  #fav-popup .result_p .warning {
+    text-decoration: none;
+    color: #ff0000;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  #fav-popup .fav-submit {
+    width: 120px;
+    display: block;
+    height: 40px;
+    border: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #ff8914;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 3px;
   }
 }
