@@ -541,6 +541,7 @@ body{
     background: #fff;
     padding-left: 3px;
     height: 96px;
+    text-align: center;
 }
 #guess .old-match-item{
     margin-top: 6px;
@@ -691,3 +692,64 @@ body{
     height: auto;
     width: auto;
 }
+.wrapTransBg{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom: 0;
+    right: 0;
+}
+.align-center{
+    text-align: center;
+}
+#alert-yes{
+    position: absolute;
+    width: 206px;
+    left:50%;
+    margin-left:-103px;
+    top:800px;
+    background: rgba(0, 0, 0, .7);;
+    height: 104px;
+    overflow: hidden;
+    z-index:100;
+    border-radius:3px;
+}
+#alert-yes .alert-tip{
+    text-align: center;
+    margin-top: 30px;
+    color:#fff;
+    font-size: 13px;
+}
+#alert-yes .alert-close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border:1px solid #fff;
+    border-radius: 80%;
+    color:#fff;
+    text-align: center;
+    line-height: 18px;
+    right: 10px;
+    top:8px;
+}
+#alert-yes #yes-button{
+    border:none;
+    border-radius: 3px;
+    background: #f8504c;
+    width: 72px;
+    height: 23px;
+    color: #fff;
+    display: block;
+    margin:0 auto;
+    margin-top:15px;
+}
+#mask-popup{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+
+
+
