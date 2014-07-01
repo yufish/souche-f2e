@@ -84,6 +84,21 @@
   background: #ff4400 url(../images/adviser/test-car.png) no-repeat center;
   height: 165px;
 }
+#adviser #content #test .test-cont {
+  padding-top: 185px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  height: 480px;
+}
+#adviser #content #test .test-cont .pic-2-1 {
+  position: absolute;
+  background: url(../images/adviser/2-1.png) no-repeat;
+  width: 106px;
+  height: 105px;
+  right: 350px;
+  z-index: 1;
+}
 #adviser #content #bargain {
   height: 2030px;
 }
