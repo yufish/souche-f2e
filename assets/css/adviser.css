@@ -39,11 +39,43 @@
   color: #fff;
 }
 #adviser #content #aiche {
-  height: 1780px;
+  height: 1777px;
 }
 #adviser #content #aiche .aiche-tit {
   background: #ff4400 url(../images/adviser/aiche.png) no-repeat center;
   height: 165px;
+}
+#adviser #content #aiche .aiche-cont {
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+#adviser #content #aiche .aiche-cont .pic-1-1 {
+  width: 100%;
+  height: 1612px;
+  background: url(../images/adviser/1-1.png) no-repeat;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  right: 1px;
+}
+#adviser #content #aiche .aiche-cont .pic-1-2 {
+  width: 100%;
+  height: 0px;
+  background: url(../images/adviser/1-2.png) no-repeat;
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+#adviser #content #aiche .aiche-cont .pic-1-3 {
+  width: 455px;
+  height: 251px;
+  background: url(../images/adviser/1-3.png) no-repeat;
+  z-index: 3;
+  position: absolute;
+  top: 510px;
+  right: -130px;
 }
 #adviser #content #test {
   height: 895px;
