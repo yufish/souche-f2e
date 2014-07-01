@@ -161,7 +161,7 @@ body{
   line-height: 52px;
   color: #333;
 }
-.return{
+.success-jump{
   text-align: center;
   margin-top: 40px;
   font-size: 14px;
@@ -176,4 +176,32 @@ body{
   color: #333;
   text-decoration: underline;
 }
-      
+.login-fail{
+  padding-top:90px;
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+.fail-tit{
+  height:55px;
+  width: 365px;
+  margin: 0 auto;
+}
+.fail-tit .fa-icon{
+  width:50px;
+  height:52px;
+  background: url("../images/common/result-failed.png") no-repeat ;
+  float:left;
+  margin-right: 35px;
+}
+.fail-tit .title{
+  font-size: 24px;
+  line-height: 52px;
+  color: #333;
+}
+.fail-jump{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #333;
+}
