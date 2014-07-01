@@ -453,11 +453,128 @@ Souche.NoRegLogin = function() {
         }
     };
 }();
+//必须是手机登录的地方
+Souche.MustPhoneLogin = Souche.MustPhoneLogin || {};
+Souche.MustPhoneLogin = function() {
+    var minilogin = null;
+    var minilayer = null;
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    var callback = function() {
 
+    };
+    return {
+        callback: function() {
+            this.close();
+            callback();
+        },
+        close: function() {
+            if (minilogin) {
+                minilogin.css({
+                    display: "none"
+                });
+            }
+            if (minilayer) {
+                minilayer && minilayer.css({
+                    display: "none"
+                });
+            }
+
+        },
+        _show: function() {
+            var self = this;
+            if (minilogin) {
+                minilogin.css({
+                    display: "block"
+                }).removeClass("hidden");
+                minilayer.css({
+                    display: "block"
+                });
+            } else {
+                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="warning hidden clearfix">       <div class="input-error-tip">     <span class="error-icon"></span>    请输入正确的手机号</div>     </div>  <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>    <i class="phone-true hidden"></i>      </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin.css({
+                    display: "block",
+                    zIndex: 100000001
+                }).removeClass("hidden");
+
+                minilayer = $("<div id='minilayer'></div>");
+                minilayer.css({
+                    display: "block",
+                    width: $(document.body).width(),
+                    left: 0,
+                    top: 0,
+                    height: $(document.body).height(),
+                    position: "absolute",
+                    background: "#111",
+                    zIndex: 100000000
+                }).css("opacity", 0.7);
+                $(document.body).append(minilayer);
+                $(document.body).append(minilogin);
+                //              $(window).scroll(function(){
+                //                  minilogin.css({
+                //                      top:$(window).scrollTop()+100,
+                //                      left:$(window).width()/2-300
+                //                  })
+                //              })
+                $("#noreg-phone-form").on("submit", function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", this).removeClass("hidden");
+                    } else {
+                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
+                            self.callback && self.callback();
+                        })
+                    }
+                })
+                $("#noreg-phone").blur(function(e) {
+                    e.preventDefault();
+                    if (!phoneReg.test($("#noreg-phone").val())) {
+                        $(".warning", $("#noreg-phone-form")).removeClass("hidden");
+                    } else {
+                        $(".warning", $("#noreg-phone-form")).addClass("hidden");
+                        $(".phone-true").removeClass("hidden");
+                    }
+                })
+                $("#noreg-popup .apply_close").on("click", function(e) {
+                    self.close();
+                })
+            }
+        },
+        checkLogin: function(_callback) {
+            callback = _callback;
+            var self = this;
+            Souche.checkMustPhoneExist(function(isLogin) {
+                if (isLogin) {
+                    self.callback && self.callback();
+                } else {
+                    self._show();
+                }
+            })
+
+        }
+    };
+}();
 //检查是否填过手机号
 Souche.checkPhoneExist = function(callback) {
     $.ajax({
         url: contextPath + "/pages/evaluateAction/isNoRegisterLogin.json",
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if (data.result == "true") {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        },
+        error: function() {
+            callback(false)
+        }
+    })
+};
+//检查是否填过手机号或者第三方登录
+Souche.checkMustPhoneExist = function(callback) {
+    $.ajax({
+        url: contextPath + "/pages/evaluateAction/isPhoneLogin.json",
         type: "post",
         dataType: "json",
         success: function(data) {
