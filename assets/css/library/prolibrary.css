@@ -44,7 +44,7 @@
   width: 330px;
   border-left: 1px solid #e6e6e6;
   height: 100%;
-  vertical-align: middle;
+  vertical-align: top;
 }
 #content .wrapper #productInfo > div #contentInfo > div {
   padding: 0px 30px;
@@ -69,7 +69,7 @@
   line-height: 20px;
   overflow: hidden;
 }
-#content .wrapper #productInfo > div #productConfigure {
+#content .wrapper #productInfo > div #productChexiConfigure {
   display: inline-block;
   _zoom: 1;
   *zoom: 1;
@@ -77,27 +77,113 @@
   width: 300px;
   border-left: 1px solid #e6e6e6;
   height: 100%;
-  vertical-align: middle;
+  vertical-align: top;
 }
-#content .wrapper #productInfo > div #productConfigure > ul {
+#content .wrapper #productInfo > div #productChexiConfigure > ul {
   padding: 0px 30px;
-  vertical-align: middle;
+  vertical-align: top;
   margin: 8% auto;
 }
-#content .wrapper #productInfo > div #productConfigure > ul li {
+#content .wrapper #productInfo > div #productChexiConfigure > ul li {
   font-size: 15px;
   padding: 3px;
   color: #7B7B7B;
 }
+#content .wrapper #productInfo > div #productChexingConfigure {
+  display: inline-block;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  width: 500px;
+  border-left: 1px solid #e6e6e6;
+  height: 100%;
+  vertical-align: top;
+}
+#content .wrapper #productInfo > div #productChexingConfigure > ul {
+  padding: 0px 0px;
+  vertical-align: middle;
+  margin: 4% auto;
+  overflow: auto;
+}
+#content .wrapper #productInfo > div #productChexingConfigure > ul li {
+  font-size: 15px;
+  padding: 3px;
+  color: #7B7B7B;
+  float: left;
+  margin-left: 30px;
+  width: 185px;
+}
 #content .wrapper #productDetailInfo {
-  background-color: #f9f9f9;
-  height: 300px;
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+}
+#content .wrapper #productDetailInfo .productImg > div {
+  float: left;
+}
+#content .wrapper #productDetailInfo img {
+  cursor: pointer;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap {
+  width: 530px;
+  padding-top: 45px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .year {
+  height: 30px;
+  padding-left: 10px;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .year a,
+#content .wrapper #productDetailInfo .photosSmallWrap .year span {
+  padding: 0px 10px 0px 0px;
+  color: black;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .year span {
+  cursor: pointer;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .photosSmall li {
+  margin-left: 5px;
+  padding: 0px;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .photosSmall img:hover {
+  border: 2px solid #fc7000;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .photosSmall img {
+  width: 95px;
+  border: 2px solid #ffffff;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .color {
+  height: 50px;
+  padding-left: 10px;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .color a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  top: 6px;
+  margin-left: 10px;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap .color a i {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #666666;
+  top: 25px;
+}
+#content .wrapper #productDetailInfo .photosSmallWrap ul li {
+  float: left;
 }
 #content .wrapper #productDetailInfo .nav {
   list-style: none;
   width: 100%;
   height: 43px;
   background: white;
+  border-bottom: 1px solid #e6e6e6;
 }
 #content .wrapper #productDetailInfo .nav li {
   float: left;
@@ -108,19 +194,70 @@
   line-height: 36px;
   height: 40px;
   background: white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
 }
 #content .wrapper #productDetailInfo .nav li.active {
-  background: #fff;
   border-top: 3px solid #ef5c1e;
   height: 40px;
-  background: #f9f9f9;
+  border-bottom: 1px solid white;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+#content .wrapper #productDetailInfo .photosWrap {
+  margin-top: 40px;
+}
+#content .wrapper #productDetailInfo .photosWrap .introduce_div {
+  position: relative;
+  height: 50px;
+  width: 620px;
+  background: #000000;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  top: -53px;
+}
+#content .wrapper #productDetailInfo .photosWrap .introduce_content {
+  position: relative;
+  top: -103px;
+  width: 600px;
+  color: #ffffff;
+  padding: 15px 0px 0px 25px;
+}
+#content .wrapper #productDetailInfo .photosWrap .introduce_content a {
+  color: #ffffff;
+  vertical-align: middle;
+}
+#content .wrapper #productDetailInfo .photoTab {
+  position: absolute;
+  z-index: 4;
+  top: 220px;
+  cursor: pointer;
+}
+#content .wrapper #productDetailInfo .photoTab span {
+  float: left;
+  width: 20px;
+  height: 67px;
+  background: url(../../images/fed/photoTab.png) no-repeat -78px 0 #888888;
+  opacity: .5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
+}
+#content .wrapper #productDetailInfo .photoTab span:hover {
+  background-position: -56px 0;
+}
+#content .wrapper #productDetailInfo .photoTab span.photoNext {
+  margin-left: 580px;
+  background-position: -2px 0;
+}
+#content .wrapper #productDetailInfo .photoTab span.photoNext:hover {
+  background-position: -26px 0;
 }
 #content .wrapper .clearBoth {
   clear: both;
 }
 #content .wrapper #allProduct {
   position: relative;
-  padding: 50px 0px;
+  padding: 20px 0px;
 }
 #content .wrapper #allProduct table {
   width: 100%;
@@ -132,6 +269,7 @@
 }
 #content .wrapper #allProduct table .firstCol {
   padding-left: 0px;
+  cursor: pointer;
 }
 #content .wrapper #allProduct table .firstCol a {
   color: #FF5809 !important;
@@ -198,6 +336,7 @@
 #content .wrapper #newProduct .item .itemContent {
   border-bottom: 1px solid #e6e6e6;
   height: 270px;
+  cursor: pointer;
 }
 #content .wrapper #newProduct .item .itemContent h1 {
   margin: 2px 15px;
@@ -266,10 +405,148 @@
 #content .wrapper #newProduct .item .itemTail .carConstrast span {
   padding-left: 4px;
 }
+#content .wrapper #newProductList {
+  float: left;
+  width: 940px;
+  overflow: auto;
+  padding-right: 20px;
+  padding-bottom: 50px  ;
+}
+#content .wrapper #newProductList > h1 {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #B0B0B0;
+}
+#content .wrapper #newProductList li {
+  padding: 25px 0px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #newProductList li > img {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+#content .wrapper #newProductList li .itemInfo {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  margin-left: 10px;
+  width: 255px;
+}
+#content .wrapper #newProductList li .itemInfo .car {
+  padding: 2px;
+}
+#content .wrapper #newProductList li .itemInfo .car a {
+  font-size: 15px;
+  font-weight: bolder;
+}
+#content .wrapper #newProductList li .itemInfo .detail {
+  color: #8E8E8E;
+  padding: 2px;
+  margin-left: -10px;
+}
+#content .wrapper #newProductList li .itemInfo .detail a {
+  color: #8E8E8E;
+  padding: 0px 10px;
+}
+#content .wrapper #newProductList li .itemInfo .carCollect,
+#content .wrapper #newProductList li .itemInfo .carConstrast {
+  padding: 2px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  color: #8E8E8E;
+}
+#content .wrapper #newProductList li .itemInfo .carCollect {
+  background: url(../../images/index/car-nocollect.png) no-repeat;
+  background-position: -1px 1px;
+  padding-left: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#content .wrapper #newProductList li .itemInfo .carCollect.hover {
+  background: url(../../images/index/hover.png) no-repeat;
+  background-position: 0px 3px;
+}
+#content .wrapper #newProductList li .itemInfo .carCollect.active {
+  background: url(../../images/index/car-collect.png) no-repeat;
+  background-position: -1px 1px;
+}
+#content .wrapper #newProductList li .itemInfo .carConstrast {
+  margin: 0px 5px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+}
+#content .wrapper #newProductList li .itemInfo .carConstrast span {
+  padding-left: 4px;
+}
+#content .wrapper #newProductList li .itemInfo .carConstrast input {
+  vertical-align: middle;
+}
+#content .wrapper #newProductList li .itemPrice {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 250px;
+  padding: 0px 50px;
+}
+#content .wrapper #newProductList li .itemPrice .currentPrice {
+  font-size: 16px;
+  color: #ef5c1e;
+  font-weight: bolder;
+}
+#content .wrapper #newProductList li .itemPrice .currentPrice a {
+  color: #ef5c1e;
+  font-weight: bolder;
+}
+#content .wrapper #newProductList li .itemPrice .oldPrice {
+  color: #8E8E8E;
+}
+#content .wrapper #newProductList li .itemPrice .discountContainer {
+  margin-top: 20px;
+  color: #ef5c1e;
+  vertical-align: middle;
+}
+#content .wrapper #newProductList li .itemPrice .discountContainer a {
+  color: #fc7000;
+}
+#content .wrapper #newProductList li .itemPrice .discountContainer .discount {
+  vertical-align: middle;
+}
+#content .wrapper #newProductList li .itemPrice .discountContainer .discount img {
+  padding-right: 5px;
+}
+#content .wrapper #newProductList li .itemServer {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+#content .wrapper #newProductList li .itemServer .tuihuo span,
+#content .wrapper #newProductList li .itemServer .bao span,
+#content .wrapper #newProductList li .itemServer .fenqi span {
+  padding: 6px 10px;
+  background: url("../../images/fed/service-icon.png") no-repeat;
+  background-position: 0px 7px;
+}
+#content .wrapper #newProductList li .itemServer .tuihuo,
+#content .wrapper #newProductList li .itemServer .bao,
+#content .wrapper #newProductList li .itemServer .fenqi {
+  margin-bottom: 10px;
+}
 #content .wrapper #productSilder {
   float: left;
   width: 222px;
   height: 500px;
+}
+#content .wrapper #productSilder > .relationImg {
   padding-top: 45px;
 }
 #content .wrapper #productSilder #latestInfo > ul > a {
@@ -289,7 +566,6 @@
   font-weight: bolder;
   font-size: 18px;
   display: block;
-  margin: 20px 0px 0px 0px;
   padding-bottom: 12px;
   border-bottom: 3px solid #B0B0B0;
 }
@@ -302,7 +578,6 @@
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  vertical-align: top;
 }
 #content .wrapper #productSilder #relationInfo li .relationContent {
   display: inline-block;
