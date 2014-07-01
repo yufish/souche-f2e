@@ -64,7 +64,7 @@ Souche.Sidebar = (function() {
             if ($(this).hasClass("contrast-box")) {
                 showSidebar(self);
             } else {
-                Souche.NoRegLogin.checkLogin(function(isLogin) {
+                Souche.MustPhoneLogin.checkLogin(function(isLogin) {
                     showSidebar(self);
                 })
             }

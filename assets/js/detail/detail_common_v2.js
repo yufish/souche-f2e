@@ -192,7 +192,7 @@
         $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
         $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
         $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
-        Souche.checkPhoneExist(function(is_login) {
+        Souche.checkMustPhoneExist(function(is_login) {
             if (is_login) {
                 submitToPhone();
             } else {
@@ -294,7 +294,7 @@
         })
     })
     $("#J_jiangjia").click(function() {
-        Souche.checkPhoneExist(function(is_login) {
+        Souche.checkMustPhoneExist(function(is_login) {
             //          if(is_login){
             //              submitJiangjia();
             //          }else{

@@ -1,10 +1,10 @@
 /**
  * Created by Administrator on 2014/6/19.
  */
-define( function () {
+define(function() {
     var carPrice, nowPrice, nowStr, start, end
     return {
-        init: function (config) {
+        init: function(config) {
             carPrice = parseInt($('.price-now.now').text());
             nowPrice = carPrice - 1000;
             nowStr = nowPrice.toString();
@@ -52,7 +52,7 @@ define( function () {
                 })
             })
             $("#J_jiangjia").click(function() {
-                Souche.checkPhoneExist(function(is_login) {
+                Souche.checkMustPhoneExist(function(is_login) {
                     //          if(is_login){
                     //              submitJiangjia();
                     //          }else{
@@ -67,7 +67,7 @@ define( function () {
             $("#jiangyidian").click(this.downPriceStep)
             // this.downPriceStep();
         },
-        downPriceStep: function () {
+        downPriceStep: function() {
             if (100 * (carPrice - nowPrice) / carPrice > 5) {
                 $("#jiangyidian").css({
                     "background-position": "0 0",
@@ -82,7 +82,7 @@ define( function () {
             var now_s = nowPrice.toString(),
                 low_s = lowPrice.toString();
             var $cutPrice = $('.cutprice');
-            $cutPrice.find('.price-num em').fadeOut(function () {
+            $cutPrice.find('.price-num em').fadeOut(function() {
                 curIndex++;
                 if (curIndex == length)
                     $cutPrice.find('.price-num.hidden').removeClass('hidden')

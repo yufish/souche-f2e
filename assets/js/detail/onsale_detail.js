@@ -6,8 +6,8 @@
             $lastNav: $(".activeNav"),
             $win: $(window),
             $body: $("body, html"),
-            $navSaleTab:$("#onsale-tab"),
-            $navSaleTabFixed:$("#onsale-tab_fix"),
+            $navSaleTab: $("#onsale-tab"),
+            $navSaleTabFixed: $("#onsale-tab_fix"),
             $winTop: "",
             mainTop: $("#detail_main").offset().top - 50,
             sumTop: $("#onsale_sum").offset().top - 50,
@@ -31,7 +31,7 @@
 
         paras.$win.scroll(function() {
             paras.$winTop = paras.$win.scrollTop();
-           /* 去掉 detail-nav功能 by boykiller 2014.6.9
+            /* 去掉 detail-nav功能 by boykiller 2014.6.9
            setTimeout(function() {
                 if (paras.$winTop >= paras.mainTop - 40) {
                     paras.$nav.slideDown(500);
@@ -53,25 +53,23 @@
             //添加onsale-summary元素的 to fix 功能
             if (paras.$navSaleTab.length != 0) {
                 var navSaleSumHeight = $("#onsale-summary").height();
-                if ((navSaleTabTop+cacheHeight) <= paras.$winTop && (navSaleTabTop + navSaleSumHeight) >= paras.$winTop) {
+                if ((navSaleTabTop + cacheHeight) <= paras.$winTop && (navSaleTabTop + navSaleSumHeight) >= paras.$winTop) {
                     if (!paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
-                            paras.$navSaleTabFixed.stop(true);
-                            paras.$navSaleTabFixed.addClass("saleTab_fixed").removeClass("hidden");
-                            paras.$navSaleTabFixed.animate({
-                                top: 0
-                            }, 300,function()
-                            {});
+                        paras.$navSaleTabFixed.stop(true);
+                        paras.$navSaleTabFixed.addClass("saleTab_fixed").removeClass("hidden");
+                        paras.$navSaleTabFixed.animate({
+                            top: 0
+                        }, 300, function() {});
                     }
-                }
-                else {
+                } else {
                     if (paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
 
-                            paras.$navSaleTabFixed.stop(true);
-                            paras.$navSaleTabFixed.animate({
-                                top: -45
-                            }, 300, function () {
-                                paras.$navSaleTabFixed.addClass("hidden").removeClass("saleTab_fixed");
-                            });
+                        paras.$navSaleTabFixed.stop(true);
+                        paras.$navSaleTabFixed.animate({
+                            top: -45
+                        }, 300, function() {
+                            paras.$navSaleTabFixed.addClass("hidden").removeClass("saleTab_fixed");
+                        });
                     }
                 }
             }
@@ -125,7 +123,7 @@
             setTimeout(function() {
                 flagD = false;
             }, 1000)
-            Souche.checkPhoneExist(function(is_login) {
+            Souche.checkMustPhoneExist(function(is_login) {
                 if (is_login) {
                     submitYuyue();
                 } else {

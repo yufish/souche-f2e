@@ -11,7 +11,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://115.29.10.121:8282/soucheproduct/car/price/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: "http://115.29.10.121:8282/soucheproduct/car/price/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode,
                 dataType: "jsonp",
                 success: function(data) {
                     if (data.priceInterval_nudeCar) {
@@ -64,6 +64,66 @@ define(function() {
                         })
 
                     }
+                }
+            })
+        },
+        load_koubei: function() {
+            $.ajax({
+                url: "http://115.29.10.121:8282/soucheproduct/car/sentiment/b/b1/s/s1", //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                dataType: "jsonp",
+                success: function(data) {
+                    var koubeiData = [];
+                    if (data.data) {
+                        var koubeiData = [{
+                            name: "细节",
+                            rate: 0.7,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.9,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.5,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.5,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.2,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.3,
+                            labels: ["价格高", "储物空间大"]
+                        }, {
+                            name: "细节",
+                            rate: 0.8,
+                            labels: ["价格高", "储物空间大"]
+                        }]
+                    }
+                    require(['detail/draw-koubei'],
+                        function(DrawKoubei) {
+
+                            DrawKoubei.draw({
+                                items: koubeiData,
+                                allScore: 34.4,
+
+                            })
+                            $(".onsale-tab-item-koubei").removeClass("hidden");
+                            $(".float-nav-item-koubei").removeClass("hidden")
+                        }
+                    )
                 }
             })
         },
@@ -149,6 +209,7 @@ define(function() {
             if (SVGsupported) {
                 self.load_price();
                 self.load_baoyang();
+                self.load_koubei();
             }
             // $(window).on("tab_change", function(e, id) {
             //     if (!hasInitTab[id]) {

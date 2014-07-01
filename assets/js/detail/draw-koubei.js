@@ -36,12 +36,13 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
     var DrawKoubei = {
         draw: function(_data) {
             data = _data;
-            for (var i = 0; i < data.length; i++) {
-                rateData.push(data[i].rate);
+            for (var i = 0; i < data.items.length; i++) {
+                rateData.push(data.items[i].rate);
             }
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
+            $(".all-score em").html(data.allScore)
         },
         drawRadar: function() {
             draw = SVG("koubei_svg").size(500, 500);
@@ -92,9 +93,9 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
 
         },
         drawLabel: function() {
-            for (var i = 0; i < data.length; i++) {
-                data[i].width = data[i].rate * 100;
-                var label = $(Mustache.render(item_tpl, data[i]));
+            for (var i = 0; i < data.items.length; i++) {
+                data.items[i].width = data.items[i].rate * 100;
+                var label = $(Mustache.render(item_tpl, data.items[i]));
                 $(".koubei-content").append(label);
 
                 if (i < 5) {

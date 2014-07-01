@@ -127,7 +127,7 @@
 			            if (this.id == "J_yuyue") $(this).addClass('yuyue-loading').html("预约中...");
 			            $(this).removeClass('detail-yuyue');
 
-			            Souche.checkPhoneExist(function(is_login) {
+			            Souche.checkMustPhoneExist(function(is_login) {
 			                if (is_login) {
 			                    submitYuyue();
 			                } else {
