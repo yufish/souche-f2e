@@ -361,7 +361,7 @@ padding-left: 50px;
     font-size: 14px
 }
 
-#list_wrap .loan  {
+#list_wrap .loan ,#list_wrap .loan_custom  {
     margin-top: 20px;
     clear: both;
     float: left;
@@ -372,15 +372,15 @@ padding-left: 50px;
     border-bottom: 1px solid #e4e4e4;
     border-top: 1px solid #e4e4e4;
 }
-#list_wrap .loan .loan_title
+#list_wrap .loan .loan_title,#list_wrap .loan_custom .load_title
 {
     display: block;
     font-size: 14px;
 }
-#list_wrap .loan  .select {color: #BEBEBE;margin-top: 15px;}
-#list_wrap .loan  .select .input { margin-top: 20px;}
-#list_wrap .loan  .select .input>span {color: #000000;}
-#list_wrap .loan  .select .inputContainer
+#list_wrap .loan  .select,#list_wrap .loan_custom  .select {color: #BEBEBE;margin-top: 15px;}
+#list_wrap .loan  .select .input,#list_wrap .loan_custom  .select .input { margin-top: 20px;}
+#list_wrap .loan  .select .input>span,#list_wrap .loan_custom  .select .input>span {color: #000000;}
+#list_wrap .loan  .select .inputContainer,#list_wrap .loan_custom  .select .inputContainer
 {
     border: 1px solid #ddd;
     display: inline-block;
@@ -393,7 +393,13 @@ padding-left: 50px;
     padding: 5px 0px 5px 10px;
     font-size: 12px
 }
-#list_wrap .loan  .select input {
+
+#list_wrap  #repaymentvalue_select
+{
+    width: 174px;
+}
+
+#list_wrap .loan  .select input ,#list_wrap .loan_custom  .select input {
     width: 40px;
     color: #666;
     border: 1px solid #ddd;
@@ -402,12 +408,17 @@ padding-left: 50px;
     border: none;
     font-size: 12px
 }
+#list_wrap .loan .disableSubmit
+{
+    background-color: #ddd !important;
+}
 
 #list_wrap .loan .loan-select .sc-select-hd .sc-select-content ,#list_wrap .loan .loan-select .sc-select-hd .sc-select-action
+,#list_wrap .loan_custom .loan-select .sc-select-hd .sc-select-content ,#list_wrap .loan_custom .loan-select .sc-select-hd .sc-select-action
 {
     color: #aaa
 }
-#list_wrap .loan .loan-select .sc-select-list a
+#list_wrap .loan .loan-select .sc-select-list a,#list_wrap .loan_custom .loan-select .sc-select-list a
 {
     display: block;
     float: none;
@@ -416,9 +427,9 @@ padding-left: 50px;
     line-height: 25px;
     color: #666;
 }
-#list_wrap .loan  .span_tilte{ float: left; display:inline;}
-#list_wrap .loan  .span_submit{ float: right; display:inline; background-color: #e70;padding:5px 7px;  color: white; cursor: pointer;margin-top: 0px;margin-top: -6px;*margin-top:-25px;}
-#list_wrap .loan  .loan-select{
+#list_wrap .loan  .span_tilte,#list_wrap .loan_custom  .span_tilte{ float: left; display:inline;}
+#list_wrap .loan  .span_submit,#list_wrap .loan_custom  .span_submit{ float: right; display:inline; background-color: #e70;padding:5px 7px;  color: white; cursor: pointer;margin-top: 0px;margin-top: -6px;*margin-top:-25px;}
+#list_wrap .loan  .loan-select,#list_wrap .loan_custom  .loan-select{
     width: 80px;
     display: inline-block;
     *display: inline;
@@ -426,11 +437,12 @@ padding-left: 50px;
     vertical-align: middle;
     color:#666 ;
 }
-#list_wrap .loan  input{ position: relative;}
-#list_wrap .loan .loan_waring
+#list_wrap .loan  input,#list_wrap .loan_custom  input{ position: relative;}
+#list_wrap .loan .loan_waring,#list_wrap .loan_custom .loan_waring
 {
     margin: 10px 0px 0px 0px;
     color: red;
+    height: 17px;
 }
 #list_wrap .list_nav .sc-option{width:228px;}
 #list_wrap .list_nav{width:263px;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;background:url(../../assets/images/fed/list_bg.png) repeat-y;float:left;display:inline;position:relative;z-index:10}

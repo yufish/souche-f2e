@@ -118,11 +118,84 @@ body {
 }
 #content .wrapper #productDetailInfo {
   position: relative;
-  height: 550px;
   overflow: hidden;
 }
+#content .wrapper #productDetailInfo .configure .config_nav {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul li {
+  font-size: 14px;
+  color: #7B7B7B;
+  height: 32px;
+  background: url(../../images/index/gun.png) repeat-y 6px;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul li span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  font-size: 20px;
+  color: #CDC9C9;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul li span.active {
+  color: #fc7000;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul li a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul .first_nav {
+  background: url(../../images/index/gun.png) no-repeat 6px 15px;
+}
+#content .wrapper #productDetailInfo .configure .config_nav ul .end_nav {
+  background: url(../../images/index/gun.png) no-repeat 6px -5px;
+}
+#content .wrapper #productDetailInfo .configure .config_content {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 200px;
+  vertical-align: top;
+  padding-top: 50px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table thead td {
+  font-size: 16px;
+  font-weight: bolder;
+}
+#content .wrapper #productDetailInfo .configure .config_content table thead td > div {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+#content .wrapper #productDetailInfo .configure .config_content table thead td .border {
+  height: 1px;
+  border-bottom: 1px solid #000000;
+  width: 640px;
+  margin-left: 30px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table tbody div {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px 0px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table tbody div a {
+  font-size: 14px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table tbody .firstCol {
+  margin-left: 20px;
+}
 #content .wrapper #productDetailInfo .productImg > div {
-  float: left;
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
 }
 #content .wrapper #productDetailInfo img {
   cursor: pointer;
@@ -260,7 +333,7 @@ body {
 }
 #content .wrapper #allProduct {
   position: relative;
-  padding: 20px 0px;
+  padding: 0px 0px 60px 0px;
 }
 #content .wrapper #allProduct table {
   width: 100%;
