@@ -551,6 +551,7 @@ body{
     position: relative;
     display: inline-block;
     background: #f5a1a4;
+    vertical-align: middle;
 }
 #guess .board{
     background: url(../../../images/mob/huodong/worldcup/match-board.png) no-repeat center;
@@ -584,6 +585,11 @@ body{
     margin:0 auto;
     padding-top: 20px;
     position: relative;
+    height: 56px;
+}
+#guess #match-text{
+    height: 56px;
+    padding-top:30px;
 }
 #guess .team-info{
     position: absolute;
@@ -750,6 +756,19 @@ body{
     bottom: 0;
     right: 0;
 }
+#final-png{
+    width: 126px;
+    height: 39px;
+    display: block;
+    margin:0 auto;
+}
+#half-final-png{
+    width: 126px;
+    height: 39px;
+    display: block;
+    margin:0 auto;
+}
+
 
 
 
