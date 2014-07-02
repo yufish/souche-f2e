@@ -55,11 +55,11 @@ define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyloa
                     })
                 })
                 //生活车初始化
-                Souche.Util.appear(".carlife", function() {
-                    require(['index/carlife'], function(CarLife) {
-                        CarLife.init(config);
-                    })
-                })
+                // Souche.Util.appear(".carlife", function() {
+                //     require(['index/carlife'], function(CarLife) {
+                //         CarLife.init(config);
+                //     })
+                // })
 
                 //brand 出来，隐藏效果
 

@@ -207,7 +207,7 @@ define(function() {
             // });
             if (SVGsupported) {
                 // self.load_price();
-                // self.load_baoyang();
+                self.load_baoyang();
                 self.load_koubei();
             }
             // $(window).on("tab_change", function(e, id) {
