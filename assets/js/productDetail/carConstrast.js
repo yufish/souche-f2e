@@ -14,7 +14,7 @@ define(function() {
             }
 
             Souche.NoRegLogin.checkLogin(function(isLogin) {
-                var element = e.target;
+                var element = e.target|| e.srcElement;
                 if (element.nodeName == "INPUT") {
                     if (this.checked) {
                         var carID ;
@@ -78,16 +78,25 @@ define(function() {
         }).done(function (data) {
             if (data.result == 2) { //正常
                 this.checked = true;
+
             }
             else if (data.result == -1) {  // 已经添加
                 this.checked = true;
+                var waring= $(this).parent().parent().find(".contrast-waring");
+                waring.html("已经加入对比").removeClass("hidden");
+                window.setTimeout(function()
+                {
+                    waring.addClass("hidden");
+                },3000);
             }
             else if(data.result == 1) //已满
             {
-
-            }
-            else{
-
+                var waring= $(this).parent().parent().find(".contrast-waring");
+                waring.html("对比项已满").removeClass("hidden");
+                window.setTimeout(function()
+                {
+                    waring.addClass("hidden");
+                },3000);
             }
 
             constrasting=false;

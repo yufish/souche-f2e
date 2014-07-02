@@ -37,7 +37,7 @@ function filter(BrandMgr, addListener) {
                 "brand-155": "雪铁龙"
             };
 
-            var prices = [5, 8, 12, 16, 20, 25, 50, 70, 100];
+            var prices = [5, 8, 12, 16, 20, 25, 30, 50, 70, 100];
 
             function makeBrands(brands) {
                 var b, otherBrandsStr = '';

@@ -28,6 +28,15 @@ define(function() {
 
     var init = function (_config) {
         $.extend(config,_config);
+
+        $(".item .itemTail .carCollect , .itemInfo .carCollect").hover(function()
+        {
+            $(this).addClass("hover");
+        },function()
+        {
+            $(this).removeClass("hover");
+        });
+
         _bind();
     };
 

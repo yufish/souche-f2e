@@ -1,8 +1,10 @@
 img{
     width:100%;
+    vertical-align: middle;
 }
 *{
     box-sizing: border-box;
+    font-size: 12px;
 }
 #banners{
     position: relative
@@ -12,8 +14,7 @@ img{
     height: 34px;
     line-height: 34px;
     bottom: 0px;
-    background: #b3b3b3;
-    opacity: 0.8;
+    background: rgba(255,255,255,.3);
     width: 100%;
 }
 #banner-cover #title-1{
@@ -45,4 +46,59 @@ img{
 #cars .car{
     display: block;
     width: 50%;
+    float: left;
+    background: #fff;
+}
+#cars .top{
+    position: relative;
+}
+#cars .bottom{
+    color:#000;
+    font-size: 12px;
+    padding: 8px;
+}
+#cars .price{
+    font-size: 14px;
+    color:#ff4400;
+    font-weight: bold;
+    margin-left: 8px;
+}
+#cars .money-save{
+    color:#fff;
+}
+#cars .car-cover{
+    background: rgba(0,0,0,.6);
+    position: absolute;
+    height: 26px;
+    line-height: 26px;
+    bottom: 0px;
+    width: 100%;
+}
+#cars .fav{
+    position: absolute;
+    top:4px;
+    right:4px;
+}
+#cars .car{
+    border:2px solid #dfdfdf;
+}
+#cars .car:nth-child(2n+1){
+    border-right: 1px solid #dfdfdf;
+}
+#cars .car:nth-child(2n){
+    border-left: 1px solid #dfdfdf;
+}
+#more-png{
+    background: url(../../../images/mob/list-more.png);
+    width:18px;
+    height: 23px;
+    background-size: 100%;
+    margin:0  auto;
+}
+#load-more{
+    margin-top:10px;
+    color:#6c6c6c;
+}
+#theme-detail{
+    background: #dfdfdf;
 }
