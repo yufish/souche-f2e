@@ -53,25 +53,6 @@ function filter(BrandMgr, addListener) {
                 $otherCtn.append(otherBrandsStr);
             }
 
-            function makeSeries(codes) {
-                var start = '<div class="clearfix">',
-                    end = '</div></div>';
-                var html = '';
-
-                for (var i in codes) {
-                    html += start;
-                    html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
-                    var s = codes[i];
-                    for (var j in s) {
-                        var b = s[j];
-                        html += '<div data-code="' + b.code + '"class="series-name">' + b.name + '</div>';
-                    }
-                    html += end;
-                }
-                $('#series-list .content').append(html);
-            }
-
-
             function bugHack(){
                 document.body.scrollTop=1;
             }
@@ -427,8 +408,6 @@ function filter(BrandMgr, addListener) {
                     });
                 })
             }
-
-
         }
     }
 

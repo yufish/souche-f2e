@@ -74,11 +74,6 @@ img{
     bottom: 0px;
     width: 100%;
 }
-#cars .fav{
-    position: absolute;
-    top:4px;
-    right:4px;
-}
 #cars .car{
     border:2px solid #dfdfdf;
 }
@@ -101,4 +96,29 @@ img{
 }
 #theme-detail{
     background: #dfdfdf;
+}
+#cars .fav{
+    position: absolute;
+    top:4px;
+    right:4px;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+#cars .fav-star{
+    background: url(../../../images/mob/theme-fav.png);
+    background-size: 100%;
+    width: 17px;
+    height: 16px;
+    display: inline-block;
+}
+#cars .fav.no .fav-star{
+    background: url(../../../images/mob/theme-no-fav.png);
+    background-size: 100%;
+}
+#cars .fav-num{
+    position: relative;
+    left:-4px;
+    bottom: -2px;
 }

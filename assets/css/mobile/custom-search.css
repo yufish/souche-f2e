@@ -28,9 +28,10 @@
     width: 100%;
     position: absolute;
     top: 0;
+    padding-bottom:60px ;
 }
 #guwen-h5-2 #page-2 {
-    height: 1150px;
+    min-height: 1150px;
 }
 #guwen-h5-2 #page-2,
 #guwen-h5-2 #page-3,
@@ -51,7 +52,6 @@
     margin-left: -150px;
     bottom: 20px;
 }
-
 .icon-item .brand-wrapper {
     width: 60px;
     border: 1px solid #fff;
