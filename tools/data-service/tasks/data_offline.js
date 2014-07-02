@@ -60,15 +60,6 @@ var task = {
             };
         }
         var self = this;
-        // TrafficModel.Model.find(condition, function(error, data) {
-        //     console.log(error)
-        //     console.log(data)
-        // })
-        // ClickModel.findAll().where(condition).limit(100000).offset(0).done(function(error, clicks) {
-        //     if (error) console.log(error);
-        //     console.log(clicks)
-        //      self.analyzeClicks(clicks);
-        // });
         allTraffics = [];
         getTrafficModel(condition, 0, function(error, data) {
             if (error) console.log(error)
@@ -167,4 +158,4 @@ var task = {
     }
 }
 
-task.run("2014-6-27");
+task.run("2014-6-30");

@@ -22,7 +22,7 @@
      <link href="../../assets/css/index.css?t=1" rel="stylesheet" type="text/css" />
      <link href="../../assets/css/library/prolibrary.css" rel="stylesheet" type="text/css" />
     <link href="../../assets/css/inside.css?t=1" rel="stylesheet" type="text/css" />
- <!--   <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
      <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js?t=1"></script>
      <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
      <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/sidebar.js?t=1"></script>
@@ -32,7 +32,7 @@
              baseUrl: "http://f2e.souche.com/assets/js",
              urlArgs:"bust=v4"
          });
-     </script>-->
+     </script>
 </head>
 <body>
     <div id="header">
@@ -106,6 +106,158 @@
                      <li>图片</li>
                      <li>养车费用</li>
                  </ul>
+                 <div class="contents">
+                    <div class="onsale-content-item" id="onsale_koubei">
+              <div class="net-koubei">
+                <div class="koubei-title">网络口碑</div>
+                <div class="koubei-desc">
+                  <div class="koubei-l">奔驰ML级ML350给人的印象：</div>
+                  <div class="koubei-labels">
+                    <label>外观时尚运动</label>
+                    <label>配置不错</label>
+                    <label>空间灵活宽敞</label>
+                  </div>
+                </div>
+                <div class="koubei-content">
+                  <div id="koubei_svg"></div>
+                  <div class="all-score">综合评分<em>8.3</em></div>
+                  <script id="koubei_item_template" type="text/template">
+                    <div class="koubei-item">
+                      <div class="koubei-item-title"><label>{{name}}</label><span class="rate"><span class="rate-real" style="width:{{width}}%;"></span></span></div>
+                      <div class="koubei-item-labels">
+                        {{#labels}}
+                        <div class="koubei-label">{{.}}</div>
+                        {{/labels}}
+                      </div>
+                    </div>
+                  </script>
+                </div>
+                <div class="koubei-series clearfix">
+                  <div class="series-wrapper">
+                    <label class="series-t">对比车型</label>
+                    <div class="series-tab">
+                      <div class="series-tab-item item-active">奥迪A4</div>
+                      <div class="series-tab-item">MBW3</div>
+                      <div class="series-tab-item">A4</div>
+                      <div class="series-tab-item">斑马纹</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="koubei-advantage clearfix">
+                  <div class="advantage-left">
+                    <div class="advantage-title"><i></i>优点</div>
+                    <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+                  </div>
+                  <div class="advantage-right">
+                    <div class="advantage-title"><i></i>缺点</div>
+                    <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="onsale-content-item" id="onsale_baoyang">
+              <div class="baoyang">
+                <div class="baoyang-title">保养费用</div>
+                <div class="baoyang-filter">
+                  每年行驶 <div class="sc-select sc-custom-select distance-select"id="distance_select">
+                            <div class="sc-select-hd">
+                              <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                              <div class="sc-select-action"><i></i></div>
+                            </div>
+                            <div class="sc-select-list hidden" style="top: 30px;">
+                             <a target="_blank" href="#" data-value="10000" class="option"><input type="checkbox" class="hidden"><span class="value">10000公里</span></a>
+                             <a target="_blank" href="#" data-value="20000" class="option"><input type="checkbox" class="hidden"><span class="value">20000公里</span></a>
+                             <a target="_blank" href="#" data-value="30000" class="option"><input type="checkbox" class="hidden"><span class="value">30000公里</span></a>
+                             <a target="_blank" href="#" data-value="40000" class="option"><input type="checkbox" class="hidden"><span class="value">40000公里</span></a>
+                             <a target="_blank" href="#" data-value="50000" class="option"><input type="checkbox" class="hidden"><span class="value">50000公里</span></a>
+                             <a target="_blank" href="#" data-value="60000" class="option"><input type="checkbox" class="hidden"><span class="value">60000公里</span></a>
+                             <a target="_blank" href="#" data-value="70000" class="option"><input type="checkbox" class="hidden"><span class="value">70000公里</span></a>
+                            </div>
+                            
+                            <input type="hidden" name="minYear" class="selected_values" value="30000公里" id="age_select_input">
+                          </div> 年保养费用约为 <em>￥<span id="baoyang_price">6325</span>元</em>
+                </div>
+                <div class="baoyang-main">
+                  <div class="baoyang-projects clearfix">
+                    <div class="t">本次保养项目</div>
+                    <div class="baoyang-project"><i class="icon-2"></i>机油滤清器</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>变速箱油</div>
+                    <div class="baoyang-project baoyang-project-disabled"><i class="icon-2"></i>空调滤清器</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>差速器油</div>
+                    <div class="baoyang-project"><i   class="icon-2"></i>空气滤清器</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>发动机机油</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>分动器油</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>发动机冷却液</div>
+                    <div class="baoyang-project"><i  class="icon-1"></i>转向助力液</div>
+                    <div class="baoyang-project"><i class="icon-2"></i>前制动器</div>
+                    <div class="baoyang-project"><i class="icon-2"></i>后制动器</div>
+                    <div class="baoyang-project"><i class="icon-1"></i>整车制动液</div>
+                    <div class="baoyang-project"><i class="icon-3"></i>全部火花塞</div>
+                  </div>
+                  <div class="baoyang-chart" id="baoyang_chart">
+
+                  </div>
+                  <div  class="price-point">
+                        <div class="price-tag new-tag">
+                            <div class="price-title new-title">本次保养费用</div>
+                            <div class="price-value">
+                                ￥2000
+                            </div>
+                        </div>
+                        <div class="tri new-tri"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="onsale-content-item" id="onsale_koubei">
+              <div class="net-koubei">
+                <div class="koubei-title">网络口碑</div>
+                <div class="koubei-desc">
+                  <div class="koubei-l">奔驰ML级ML350给人的印象：</div>
+                  <div class="koubei-labels">
+                    <label>外观时尚运动</label>
+                    <label>配置不错</label>
+                    <label>空间灵活宽敞</label>
+                  </div>
+                </div>
+                <div class="koubei-content">
+                  <div id="koubei_svg"></div>
+                  <div class="all-score">综合评分<em>8.3</em></div>
+                  <script id="koubei_item_template" type="text/template">
+                    <div class="koubei-item">
+                      <div class="koubei-item-title"><label>{{name}}</label><span class="rate"><span class="rate-real" style="width:{{width}}%;"></span></span></div>
+                      <div class="koubei-item-labels">
+                        {{#labels}}
+                        <div class="koubei-label">{{.}}</div>
+                        {{/labels}}
+                      </div>
+                    </div>
+                  </script>
+                </div>
+                <div class="koubei-series clearfix">
+                  <div class="series-wrapper">
+                    <label class="series-t">对比车型</label>
+                    <div class="series-tab">
+                      <div class="series-tab-item item-active">奥迪A4</div>
+                      <div class="series-tab-item">MBW3</div>
+                      <div class="series-tab-item">A4</div>
+                      <div class="series-tab-item">斑马纹</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="koubei-advantage clearfix">
+                  <div class="advantage-left">
+                    <div class="advantage-title"><i></i>优点</div>
+                    <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+                  </div>
+                  <div class="advantage-right">
+                    <div class="advantage-title"><i></i>缺点</div>
+                    <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                </div>
                 <div class="productImg">
                     <div>
                         <ul click_type="onsaledetail-bigPhoto" class="photosWrap">
@@ -245,5 +397,19 @@
             <button type="submit" class="submit">确认</button>
         </form>
     </div>
+    <script>
+    require(['productDetail/initChart'],function(Charts){
+        Charts.init({
+            carId:'MHwiJPb',
+            carType:'zaishou',
+            brandCode:"brand-15",
+            seriesCode:"series-1676",
+            modelCode:"56056",
+            price:33.06,
+            nowDistance:2.78
+
+        })
+    })
+    </script>
 </body>
 </html>
