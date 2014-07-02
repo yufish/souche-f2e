@@ -25,7 +25,10 @@
     <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
      <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js?t=1"></script>
      <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
-     <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/sidebar.js?t=1"></script>
+     <script type="text/javascript" src="http://f2e.souche.com/assets/js/index/sidebar.js?t=1"></script>-->
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/common/lazyload.js"></script>
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
      <script>
          var contextPath = "";
          require.config({
@@ -102,8 +105,8 @@
             </div>
             <div id="productDetailInfo">
                  <ul class="nav">
-                     <li class="active">配置参数</li>
-                     <li>图片</li>
+                     <li class="active" data-id="configure">配置参数</li>
+                     <li data-id="photo">图片</li>
                      <li>养车费用</li>
                  </ul>
                  <div class="contents">
@@ -258,7 +261,50 @@
               </div>
             </div>
                 </div>
-                <div class="productImg">
+                <div class="configure" data-id="configure">
+                    <div class="config_nav">
+                        <ul>
+                            <li class="first_nav"><span class="active">●</span><a>基本参数</a></li>
+                            <li><span>●</span><a>车身</a></li>
+                            <li><span>●</span><a>车身</a></li>
+                            <li><span>●</span><a>车身</a></li>
+                            <li><span>●</span><a>车身</a></li>
+                            <li class="end_nav"><span>●</span><a>发动机</a></li>
+                        </ul>
+                    </div>
+                    <div class="config_content">
+                        <table>
+                            <colgroup>
+                                <col width="220"/>
+                                <col width="520"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><div><a>基本参数</a></div><div class="border"></div></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="firstCol"><a>厂商</a></div></td>
+                                    <td><div class="secordCol"><a>奥迪进口</a></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="firstCol"><a>级别</a></div></td>
+                                    <td><div class="secordCol"><a>豪华车</a></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="firstCol"><a>发动机</a></div></td>
+                                    <td><div class="secordCol"><a>2.5L 204马力v6</a></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="firstCol"><a>变速箱</a></div></td>
+                                    <td><div class="secordCol"><a>长*宽*高</a></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="productImg" data-id="photo" >
                     <div>
                         <ul click_type="onsaledetail-bigPhoto" class="photosWrap">
                             <li class=""  dindex="1">
@@ -300,6 +346,7 @@
                     <div class="photoSmallTab photoSmallNext"></div>
                 </div>
                 </div>
+
             </div>
             <div id="newProductList">
                 <h1>最新进场</h1>
@@ -397,7 +444,9 @@
             <button type="submit" class="submit">确认</button>
         </form>
     </div>
-    <script>
+    
+    <script type="text/javascript" src="../../assets/js/lib/require.js"></script>
+    <script type="text/javascript">
     require(['productDetail/initChart'],function(Charts){
         Charts.init({
             carId:'MHwiJPb',
@@ -409,6 +458,11 @@
             nowDistance:2.78
 
         })
+            require(["productDetail/productChexingDetail"],function(detail)
+            {
+                    detail.init();
+            });
+
     })
     </script>
 </body>

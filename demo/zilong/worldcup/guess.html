@@ -37,6 +37,10 @@
             </div>
         </div>
         <div id="grass">
+            <div id="match-text">
+                <img id="final-png" src="../../../assets/images/mob/huodong/worldcup/new/final.png">
+                <img id="half-final-png" src="../../../assets/images/mob/huodong/worldcup/new/half-final.png">
+            </div>
             <div id="first-match" class="clearfix">
                 <div id="first-time-board" class="time-board">
                     <div class="hour">24</div>
@@ -115,22 +119,7 @@
                 </a>
             </div>
         </footer>
-        <div class="wrapGrayBg" style="display: none"></div>
-        <div id="popup">
-            <div id="popup-submit">
-                <form id="submit-form">
-                    <p class="text-center">请输入您的手机<p>
-                    <input class="input-box" type="tel" id="phone" name="phone">
 
-                </form>
-                <div id="submit-tips">
-                    注：请正确填写电话号码，以作为后期兑奖凭证(错误号码奖视之为无效)。
-                </div>
-                <div style="text-align: center">
-                    <button id="btn-submit">提交</button>
-                </div>
-            </div>
-        </div>
 
 
         <div class="wrapTransBg" style="display: none"></div>
@@ -146,8 +135,23 @@
             <img src='../../../assets/images/mob/huodong/worldcup/new/logo.png'>
         </div>
 
-
     </section>
+    <div class="wrapGrayBg" style="display: none"></div>
+    <div id="popup">
+        <div id="popup-submit">
+            <form id="submit-form">
+                <p class="text-center">请输入您的手机<p>
+                <input class="input-box" type="tel" id="phone" name="phone">
+
+            </form>
+            <div id="submit-tips">
+                注：请正确填写电话号码，以作为后期兑奖凭证(错误号码奖视之为无效)。
+            </div>
+            <div style="text-align: center">
+                <button id="btn-submit">提交</button>
+            </div>
+        </div>
+    </div>
     <div id="mask-popup">
         <div id="mask-top" style="background: rgba(0,0,0,.8)"></div>
         <div id="mask-main">
@@ -156,6 +160,7 @@
         </div>
         <div id="mask-bottom" style="height: 500px;background: rgba(0,0,0,.8)"></div>
     </div>
+    <script src="http://res.souche.com/assets/js/mobile/cookieUtil.js"></script>
     <script>
         var phoneReg = /^1[3458][0-9]{9}$/;
         $('#btn-submit').click(function(){
@@ -192,7 +197,7 @@
             })
             $('#popup').show();
         }
-        $(document).ready(function(){
+                $(document).ready(function(){
             var width =$(window).width();
             var height = width*(346+90)/640+40;
             $('#mask-top').css({height:height});
