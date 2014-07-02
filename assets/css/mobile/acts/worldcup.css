@@ -51,12 +51,16 @@ body{
     bottom: 20px;
     height: 32px;
 }
-#involve{
+#involve,#go-quiz{
     background: #f8504c;
     border:none;
     border-radius: 5px;
     width:115px;
     height: 32px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 32px;
+    color:#000;
 }
 #football{
     width: 55px;
@@ -271,7 +275,7 @@ body{
     margin-left: 10px;
 }
 #match-info .score:last-child{
-    margin-left: 20px;
+    margin-left: 26px;
 }
 
 #popup{

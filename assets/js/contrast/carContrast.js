@@ -333,7 +333,7 @@ define(function() {
         $.extend(config, _config);
         carCount = config.carNum;
 
-        $(".table-name").width($(".basic-info").width()-17);
+        $(".table-name").width(($(".basic-info").width()-17));
         _bind();
     }
 

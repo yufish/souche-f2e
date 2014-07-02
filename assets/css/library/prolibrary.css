@@ -465,6 +465,7 @@ body {
   background-position: 0px 3px;
   padding-left: 20px;
   vertical-align: middle;
+  cursor: pointer;
 }
 #content .wrapper #newProduct .item .itemTail .carCollect.hover {
   background: url(../../images/index/hover.png) no-repeat;
@@ -479,6 +480,7 @@ body {
   display: inline-block;
   *display: inline;
   *zoom: 1;
+  cursor: pointer;
 }
 #content .wrapper #newProduct .item .itemTail .carConstrast span {
   padding-left: 4px;
@@ -557,7 +559,7 @@ body {
 }
 #content .wrapper #newProductList li .itemInfo .carCollect.hover {
   background: url(../../images/index/hover.png) no-repeat;
-  background-position: 0px 3px;
+  background-position: 2px 4px;
 }
 #content .wrapper #newProductList li .itemInfo .carCollect.active {
   background: url(../../images/index/car-collect.png) no-repeat;
@@ -638,6 +640,7 @@ body {
 }
 #content .wrapper #productSilder > .relationImg {
   padding-top: 45px;
+  cursor: pointer;
 }
 #content .wrapper #productSilder #latestInfo > ul > a {
   font-weight: bolder;
@@ -651,6 +654,9 @@ body {
   margin: 14px 0px;
   font-size: 14px;
   cursor: pointer;
+}
+#content .wrapper #productSilder #relationInfo > ul {
+  padding-bottom: 50px;
 }
 #content .wrapper #productSilder #relationInfo > ul > a {
   font-weight: bolder;

@@ -79,7 +79,7 @@ html {
   width: 22px;
   height: 136px;
   position: absolute;
-  right: -22.99999999px;
+  right: -23px;
   background: url(../images/index/shadow.png?123) no-repeat 0 0;
   z-index: 200;
 }

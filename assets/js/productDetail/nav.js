@@ -25,24 +25,19 @@ define(function()
 
         $(window).scroll(function () {
             var winTop = $(window).scrollTop();
+            var height = $("#productDetailInfo").height();
 
-            if (winTop > navTabTop) {
+            if (winTop > navTabTop && winTop < (navTabTop + height)) {
                 $("#productDetailInfo .nav").css({
                     position: "fixed",
                     top: 0,
                     width: "100%",
                     zIndex: 1000
-                })
+                });
             } else {
                 $("#productDetailInfo .nav").css({
                     position: "relative"
-                })
-            }
-            var height = $("#productDetailInfo").height();
-            if (winTop > navTabTop + height - 40) {
-                $("#productDetailInfo .nav").css({
-                    position: "relative"
-                })
+                });
             }
         });
     }
