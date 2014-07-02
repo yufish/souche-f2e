@@ -277,7 +277,7 @@ Souche.MiniLogin = function() {
             callback();
         },
         close: function() {
-            $(".result_p .warning ").hide();
+            $(".result_p .warning ").addClass("hidden");
             if (minilogin) {
                 minilogin.css({
                     display: "none"
@@ -369,7 +369,7 @@ Souche.NoRegLogin = function() {
             callback();
         },
         close: function() {
-            $(".result_p .warning ").hide();
+            $(".result_p .warning ").addClass("hidden");
             if (minilogin) {
                 minilogin.css({
                     display: "none"
