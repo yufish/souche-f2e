@@ -4261,6 +4261,13 @@ body .apply_popup .result_p i {
   font-style: normal;
   font-weight: bold;
 }
+body .apply_popup .result_p span {
+  float: left;
+  width: 84px;
+  height: 80px;
+  margin-right: 30px;
+  background: url(../../images/fed/detail_sprite_common.png?4) no-repeat;
+}
 body .apply_popup .result_p span.buy_success {
   background-position: -225px -680px;
 }

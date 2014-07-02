@@ -7,7 +7,8 @@ define(function()
     var config={};
     var baseControlerConfig={
         "carConstrast":"productDetail/carConstrast",
-        "collect":"productDetail/collect"
+        "collect":"productDetail/collect",
+        "nav":"productDetail/nav"
     };
 
     var loadImg = function()
@@ -25,7 +26,7 @@ define(function()
     {
         $.extend(config,_config);
 
-        loadImg();
+       // loadImg();
         initBaseControler();
     };
 

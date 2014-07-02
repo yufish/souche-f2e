@@ -124,11 +124,103 @@ body
     #productDetailInfo
     {
       position: relative;
-      height: 550px;
+      //height: 550px;
       overflow: hidden;
+
+      .configure {
+        .config_nav{
+          display: inline-block;
+          *display: inline;
+          *zoom: 1;
+          padding-left: 50px;
+          padding-top: 50px;
+          ul{
+            li{
+              font-size: 14px;
+              color: #7B7B7B;
+              height: 32px;
+              background:url(../../images/index/gun.png) repeat-y 6px;
+              span{
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                vertical-align: middle;
+                font-size: 20px;
+                color: #CDC9C9;
+              }
+              span.active{
+                color: #fc7000;
+              }
+              a{
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                vertical-align: middle;
+              }
+
+            }
+            .first_nav{
+              background:url(../../images/index/gun.png) no-repeat 6px 15px;
+            }
+            .end_nav{
+              background:url(../../images/index/gun.png) no-repeat 6px -5px;
+            }
+          }
+        }
+        .config_content {
+          display: inline-block;
+          *display: inline;
+          *zoom: 1;
+          margin-left: 200px;
+          vertical-align: top;
+          padding-top: 50px;
+          table
+          {
+            thead
+            {
+              td{
+                font-size: 16px;
+                font-weight: bolder;
+                >div{
+                  display: inline-block;
+                  *display: inline;
+                  *zoom: 1;
+                  vertical-align: middle;
+                }
+                .border {
+                  height: 1px;
+                  border-bottom: 1px solid #000000;
+                  width: 640px;
+                  margin-left: 30px;
+                }
+              }
+            }
+            tbody {
+                div
+                {
+                  border-bottom: 1px solid #e6e6e6;
+                  padding: 15px 0px;
+                  a
+                  {
+                    font-size: 14px;
+                  }
+                }
+              .firstCol
+              {
+                 margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
       .productImg>div
       {
-        float: left;
+        position: relative;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: top;
+
       }
       img
       {
@@ -287,7 +379,7 @@ body
 
     #allProduct {
       position: relative;
-      padding: 20px 0px;
+      padding: 0px 0px 60px 0px;
       table {
         width: 100%;
         caption{
@@ -427,6 +519,7 @@ body
             background-position: 0px 3px;
             padding-left: 20px;
             vertical-align: middle;
+            cursor: pointer;
           }
           .carCollect.hover{
             background: url(../../images/index/hover.png) no-repeat;
@@ -444,6 +537,7 @@ body
             span{
               padding-left: 4px;
             }
+            cursor: pointer;
           }
           .contrast-waring
           {
@@ -526,7 +620,7 @@ body
           }
           .carCollect.hover{
             background: url(../../images/index/hover.png) no-repeat;
-            background-position: 0px 3px;
+            background-position: 2px 4px;
           }
           .carCollect.active{
             background: url(../../images/index/car-collect.png) no-repeat;
@@ -614,6 +708,7 @@ body
       >.relationImg
       {
         padding-top: 45px;
+        cursor: pointer;
       }
       #latestInfo
       {
@@ -642,6 +737,7 @@ body
             padding-bottom: 12px;
             border-bottom: 3px solid #B0B0B0;
           }
+          padding-bottom: 50px;
         }
         li {
           margin: 14px 0px;

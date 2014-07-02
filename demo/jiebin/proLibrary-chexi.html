@@ -34,6 +34,16 @@
              urlArgs:"bust=v4"
          });
      </script>-->
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/common/lazyload.js"></script>
+    <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
+    <script>
+        var contextPath = "";
+        require.config({
+            baseUrl: "http://f2e.souche.com/assets/js",
+            urlArgs:"bust=v4"
+        });
+    </script>
 </head>
 <body>
     <div id="header">
@@ -101,10 +111,10 @@
             <div id="productDetailInfo">
                  <ul class="nav">
                      <li class="active">口碑</li>
-                     <li>图片</li>
+                     <li data-id="photo">图片</li>
                      <li>养车费用</li>
                  </ul>
-                <div class="productImg">
+                <div class="productImg hidden" data-id="photo">
                     <div>
                         <ul click_type="onsaledetail-bigPhoto" class="photosWrap">
                             <li class=""  dindex="1">
@@ -313,7 +323,7 @@
                         <div class="other"><span>质检A+</span><span>4S质保点</span><span>与A4L想滚</span></div>
                     </div>
                     <div class="itemTail">
-                        <div class="carCollect hover"><span>收藏</span></div>
+                        <div class="carCollect"><span>收藏</span></div>
                         <div class="carConstrast"><input type="checkbox"  /><span>加入对比</span></div>
                         <div class="contrast-waring hidden">
                             对比栏已满！你可以删除不需要的车辆，再继续添加。
@@ -329,7 +339,7 @@
                         <div class="other"><span>质检A+</span><span>4S质保点</span><span>与A4L想滚</span></div>
                     </div>
                     <div class="itemTail">
-                        <div class="carCollect active"><span>收藏</span></div>
+                        <div class="carCollect"><span>收藏</span></div>
                         <div class="carConstrast"><input type="checkbox"  /><span>加入对比</span></div>
                         <div class="contrast-waring hidden">
                             对比栏已满！你可以删除不需要的车辆，再继续添加。
@@ -408,5 +418,12 @@
             <button type="submit" class="submit">确认</button>
         </form>
     </div>
+    <script type="text/javascript" src="../../assets/js/lib/require.js"></script>
+    <script type="text/javascript">
+        require(["productDetail/productChexingDetail"],function(detail)
+        {
+            detail.init();
+        });
+    </script>
 </body>
 </html>
