@@ -289,11 +289,15 @@ Souche.UI.CustomSelect = function() {
             for (var i = 0; i < self.selected.length; i++) {
                 s.push(self.selected[i].key)
             }
+
             $(".selected_values", self.ele).val(s.join(","))
             if (this.selected.length) {
+                if(this.config.format)
+                {
+                    this.selected[0].value = this.config.format(this.selected[0].value);
+                }
                 $(".sc-select-content", this.ele).html(this.selected[0].value);
             } else {
-
                 $(".sc-select-content", this.ele).html("<span class='placeholder'>" + this.config.placeholder + "</span>")
             }
             if (this.selected && this.selected.length) {
