@@ -1,18 +1,61 @@
-#carsNav
-{
+body *{
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+
+#carsNav {
   width: 1020px;
   position: relative;
   height: 40px;
   background: #e6e6e6;
-  ul
-  {
+  ul {
     height: auto;
     list-style: none;
-    li
-    {
+    padding: 1px;
+    li {
       height: auto;
       float: left;
-      padding: 5px 10px;
+      padding: 10px 15px;
+      font-size: 15px;
+      color:#666666 ;
     }
+    li.active {
+      color: #fc7000;
+      background: #ffffff;
+      font-weight: bold;
+    }
+  }
+}
+
+.clearBoth
+{
+  clear: both;
+}
+
+#carsContent
+{
+  width: 1042px;
+  position: relative;
+  overflow: auto;
+  .carsItem
+  {
+    width: 238px;
+    height: 345px;
+    border: 1px solid #e6e6e6;
+    margin: 20px 20px 0px 0px;
+    float: left;
+  }
+  .operationItem
+  {
+      padding: 15px 10px 10px 15px;
+      background: #e6e6e6;
+      .opItemTitle
+      {
+        font-weight: normal;
+        font-size: 20px;
+      }
+      .important
+      {
+        color:#fc7000;
+      }
   }
 }

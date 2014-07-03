@@ -1,3 +1,6 @@
+body * {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
 #carsNav {
   width: 1020px;
   position: relative;
@@ -7,9 +10,43 @@
 #carsNav ul {
   height: auto;
   list-style: none;
+  padding: 1px;
 }
 #carsNav ul li {
   height: auto;
   float: left;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: #666666 ;
+}
+#carsNav ul li.active {
+  color: #fc7000;
+  background: #ffffff;
+  font-weight: bold;
+}
+.clearBoth {
+  clear: both;
+}
+#carsContent {
+  width: 1042px;
+  position: relative;
+  overflow: auto;
+}
+#carsContent .carsItem {
+  width: 238px;
+  height: 345px;
+  border: 1px solid #e6e6e6;
+  margin: 20px 20px 0px 0px;
+  float: left;
+}
+#carsContent .operationItem {
+  padding: 15px 10px 10px 15px;
+  background: #e6e6e6;
+}
+#carsContent .operationItem .opItemTitle {
+  font-weight: normal;
+  font-size: 20px;
+}
+#carsContent .operationItem .important {
+  color: #fc7000;
 }
