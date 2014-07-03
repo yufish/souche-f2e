@@ -188,6 +188,11 @@
                     this.parent.hide();
                 }
             }
+            if(eType=='noLimitBrand'){
+                this.container.empty();
+                this.parent.hide();
+            }
+
         },
         _addSelectSeries:function(code,name,bCode){
             var html =''

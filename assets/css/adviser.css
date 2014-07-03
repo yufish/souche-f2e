@@ -1,8 +1,8 @@
 #adviser {
-  background: #f3f0ee;
+  background: #F5F5F5;
 }
 #adviser #content {
-  background: #f3f0ee;
+  background: #F5F5F5;
 }
 #adviser #content .banner {
   height: 356px;
@@ -84,12 +84,166 @@
   background: #ff4400 url(../images/adviser/test-car.png) no-repeat center;
   height: 165px;
 }
+#adviser #content #test .test-cont {
+  padding-top: 185px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  height: 480px;
+}
+#adviser #content #test .test-cont .pic-2-1 {
+  position: absolute;
+  background: url(../images/adviser/2-1.png) no-repeat;
+  width: 106px;
+  height: 105px;
+  right: 350px;
+  z-index: 1;
+  top: 185px;
+}
+#adviser #content #test .test-cont .pic-2-2 {
+  position: absolute;
+  background: url(../images/adviser/2-2.png) no-repeat;
+  width: 91px;
+  height: 91px;
+  right: 357px;
+  top: 192px;
+  z-index: 2;
+  opacity: 0;
+}
+#adviser #content #test .test-cont .pic-2-3 {
+  position: absolute;
+  background: url(../images/adviser/2-3.png) no-repeat;
+  width: 80px;
+  height: 80px;
+  right: 360px;
+  top: 198px;
+  z-index: 3;
+  opacity: 0;
+}
+#adviser #content #test .test-cont .testcar {
+  width: 800px;
+  margin: 0 auto;
+  height: 115px;
+  padding-top: 150px;
+  position: relative;
+}
+#adviser #content #test .test-cont .testcar .car {
+  width: 118px;
+  height: 107px;
+  background: url(../images/adviser/2-4.png) no-repeat;
+  position: absolute;
+}
+#adviser #content #test .test-cont .testcar .car-1 {
+  left: 0;
+}
+#adviser #content #test .test-cont .testcar .car-2 {
+  left: 170px;
+}
+#adviser #content #test .test-cont .testcar .car-3 {
+  left: 340px;
+}
+#adviser #content #test .test-cont .testcar .car-4 {
+  left: 510px;
+}
+#adviser #content #test .test-cont .testcar .car-5 {
+  left: 680px;
+}
+#adviser #content #test .test-cont .test-text {
+  width: 755px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 30px;
+}
+#adviser #content #test .test-cont .test-text .text-1 {
+  width: 100%;
+  height: 57px;
+  background: url(../images/adviser/2-5.png) no-repeat;
+  position: absolute;
+  z-index: 1;
+}
+#adviser #content #test .test-cont .test-text .text-2 {
+  width: 100%;
+  height: 55px;
+  background: url(../images/adviser/2-6.png) no-repeat;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+#adviser #content #test .test-cont .test-text .text-3 {
+  width: 100%;
+  height: 62px;
+  background: url(../images/adviser/2-7.png) no-repeat;
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+}
 #adviser #content #bargain {
   height: 2030px;
 }
 #adviser #content #bargain .bargain-tit {
   background: #ff4400 url(../images/adviser/bargain.png) no-repeat center;
   height: 165px;
+}
+#adviser #content #bargain .bargain-cont {
+  width: 1183px;
+  margin: 0 auto;
+  position: relative;
+}
+#adviser #content #bargain .bargain-cont .pic-3-1 {
+  background: url(../images/adviser/3-1.png) no-repeat;
+  width: 167px;
+  height: 97px;
+  position: absolute;
+  top: 100px;
+  right: 500px;
+  z-index: 3;
+}
+#adviser #content #bargain .bargain-cont .pic-3-2 {
+  background: url(../images/adviser/3-2.png) no-repeat;
+  width: 1182px;
+  height: 0px;
+  position: absolute;
+  z-index: 2;
+}
+#adviser #content #bargain .bargain-cont .pic-3-3 {
+  background: url(../images/adviser/3-3.png) no-repeat;
+  width: 1182px;
+  height: 1864px;
+  position: absolute;
+  z-index: 1;
+}
+#adviser #content #bargain .bargain-cont .imac {
+  background: url(../images/adviser/3-6.png) no-repeat;
+  width: 377px;
+  height: 312px;
+  position: absolute;
+  top: 470px;
+  right: 0px;
+}
+#adviser #content #bargain .bargain-cont .imac .car {
+  background: url(../images/adviser/3-7.png) no-repeat;
+  width: 314px;
+  height: 23px;
+  margin-top: 100px;
+  margin-left: 31px;
+}
+#adviser #content #bargain .bargain-cont .pic-3-4 {
+  position: absolute;
+  background: url(../images/adviser/3-4.png) no-repeat;
+  width: 426px;
+  height: 290px;
+  top: 900px;
+  left: 0px;
+  z-index: 5;
+}
+#adviser #content #bargain .bargain-cont .pic-3-5 {
+  position: absolute;
+  background: url(../images/adviser/3-5.png) no-repeat;
+  width: 361px;
+  height: 321px;
+  top: 1270px;
+  right: 0px;
+  z-index: 5;
 }
 #adviser #content #staging {
   height: 920px;
@@ -98,12 +252,87 @@
   background: #ff4400 url(../images/adviser/staging-car.png) no-repeat center;
   height: 165px;
 }
+#adviser #content #staging .staging-cont {
+  width: 1188px;
+  margin: 0 auto;
+  position: relative;
+  height: 756px;
+}
+#adviser #content #staging .staging-cont .pic-4-1 {
+  position: absolute;
+  width: 291px;
+  height: 31px;
+  background: url(../images/adviser/4-1.png) no-repeat;
+  top: 100px;
+  left: 450px;
+  z-index: 1;
+}
+#adviser #content #staging .staging-cont .pic-4-2 {
+  position: absolute;
+  width: 0px;
+  height: 31px;
+  background: url(../images/adviser/4-2.png) no-repeat;
+  top: 100px;
+  left: 450px;
+  z-index: 2;
+}
+#adviser #content #staging .staging-cont .pic-4-3 {
+  position: absolute;
+  width: 1188px;
+  height: 349px;
+  background: url(../images/adviser/4-3.png) no-repeat;
+  top: 218px;
+}
 #adviser #content #back {
   height: 2090px;
 }
 #adviser #content #back .back-tit {
   background: #ff4400 url(../images/adviser/back-car.png) no-repeat center;
   height: 165px;
+}
+#adviser #content #back .back-cont {
+  width: 1190px;
+  margin: 0 auto;
+}
+#adviser #content #back .back-cont .pic-5-1 {
+  width: 1190px;
+  background: url(../images/adviser/5-1.jpg) no-repeat;
+  height: 1302px;
+}
+#adviser #content #back .back-cont .back-detail {
+  width: 600px;
+  float: right;
+  margin-top: 20px;
+}
+#adviser #content #back .back-cont .back-detail .tit {
+  color: #373838;
+  font-size: 30px;
+  border-bottom: 1px solid #a0a0a0;
+  padding-bottom: 10px;
+}
+#adviser #content #back .back-cont .back-detail .qu-box {
+  padding: 10px 0;
+  border-bottom: 1px solid #a0a0a0;
+  position: relative;
+}
+#adviser #content #back .back-cont .back-detail .qu-box .down {
+  width: 18px;
+  height: 18px;
+  background: url(../images/adviser/down.png) no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#adviser #content #back .back-cont .back-detail .qu-box .qu {
+  color: #383838;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#adviser #content #back .back-cont .back-detail .qu-box .an {
+  font-size: 14px;
+  line-height: 20px;
+  color: #383838;
 }
 #adviser #content #qa {
   height: 1920px;

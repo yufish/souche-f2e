@@ -931,3 +931,447 @@ body #fav-popup .fav-submit {
   line-height: 40px;
   letter-spacing: 3px;
 }
+.baoyang .baoyang-title {
+  font-size: 20px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.baoyang .baoyang-filter {
+  font-size: 18px;
+  text-align: center;
+  color: #444;
+}
+.baoyang .baoyang-filter em {
+  color: #fc5a34;
+  font-weight: bold;
+}
+.baoyang .baoyang-filter .sc-select {
+  vertical-align: top;
+}
+.baoyang .distance-select {
+  width: 120px;
+}
+.baoyang .distance-select .sc-select-content {
+  font-size: 16px;
+}
+.baoyang .distance-select .sc-select-list a {
+  display: block;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 20px;
+}
+.baoyang .baoyang-main {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 30px 70px;
+  position: relative;
+}
+.baoyang .baoyang-main .baoyang-projects {
+  width: 930px;
+  margin: 20px auto;
+}
+.baoyang .baoyang-main .baoyang-projects .t {
+  line-height: 30px;
+  font-size: 14px;
+  color: #444;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project {
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  color: #444;
+  margin-right: 15px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i {
+  width: 46px;
+  height: 44px;
+  margin: 0 auto;
+  background: url(../../images/detail/baoyang-icons.png) no-repeat;
+  display: block;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
+  background-position-x: 0;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
+  background-position-x: -53px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
+  background-position-x: -106px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
+  background-position-x: -161px;
+}
+.baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
+  background-position-y: -52px;
+}
+.baoyang .baoyang-main .baoyang-chart {
+  margin-top: 80px;
+}
+.baoyang .baoyang-main .price-point {
+  width: 90px;
+  position: absolute;
+  top: 240px;
+  left: 270px;
+}
+.baoyang .baoyang-main .price-tag {
+  font-size: 12px;
+  text-align: center;
+}
+.baoyang .baoyang-main .sr-tag {
+  border: 1px solid #FC7000;
+  color: #FC7000;
+}
+.baoyang .baoyang-main .new-tag {
+  border: 1px solid #60B25E;
+  color: #60B25E;
+}
+.baoyang .baoyang-main .guide-tag {
+  border: 1px solid #5AB6A2;
+  color: #5AB6A2;
+}
+.baoyang .baoyang-main .price-value {
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 13px;
+  background: #63b162;
+  color: #fff;
+}
+.baoyang .baoyang-main .tri {
+  position: relative;
+  width: 8px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+.baoyang .baoyang-main .tri.new-tri {
+  background: url(../../images/detail/baoyang-cursor.png);
+}
+.baoyang .baoyang-main .tri.guide-tri {
+  background: url(../../images/detail/guide-price-tri.png);
+}
+.baoyang .baoyang-main .tip {
+  background: url(../../images/detail/price-tip.png) no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
+}
+#koubei_svg {
+  margin: 0px auto;
+  width: 500px;
+  height: 500px;
+}
+.net-koubei {
+  position: relative;
+}
+.net-koubei .koubei-title {
+  font-size: 20px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.net-koubei .koubei-desc {
+  margin: 20px 80px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+.net-koubei .koubei-desc .koubei-l {
+  font-size: 16px;
+  line-height: 40px;
+}
+.net-koubei .koubei-desc .koubei-labels label {
+  background: #70b86f;
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0 10px;
+  display: inline-block;
+}
+.net-koubei .all-score {
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  color: #51944f;
+  position: absolute;
+  top: 320px;
+  left: 528px;
+}
+.net-koubei .all-score em {
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+}
+.net-koubei .koubei-content {
+  position: relative;
+  padding: 68px 0;
+}
+.net-koubei .koubei-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.net-koubei .koubei-item .koubei-item-title {
+  font-size: 14px;
+  color: #444;
+}
+.net-koubei .koubei-item .koubei-item-title .rate {
+  height: 20px;
+  background: url(../../images/detail/rate-star.png) repeat-x;
+  width: 70px;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: top;
+  margin-top: 2px;
+}
+.net-koubei .koubei-item .koubei-item-title .rate .rate-real {
+  display: block;
+  height: 20px;
+  background: url(../../images/detail/rate-star-light.png) repeat-x;
+  overflow: hidden;
+}
+.net-koubei .koubei-item .koubei-item-labels {
+  display: block;
+}
+.net-koubei .koubei-item .koubei-item-labels .koubei-label {
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  line-height: 20px;
+  color: #999;
+  padding: 0 5px;
+  display: inline-block;
+}
+.net-koubei .float-left-item .koubei-item-title {
+  text-align: right;
+}
+.net-koubei .float-left-item .koubei-item-title label {
+  float: right;
+}
+.net-koubei .float-left-item .koubei-item-title .rate {
+  float: right;
+}
+.net-koubei .koubei-series {
+  text-align: center;
+  padding: 40px 0;
+}
+.net-koubei .koubei-series .series-wrapper {
+  display: inline-block;
+}
+.net-koubei .koubei-series .series-t {
+  padding-right: 10px;
+  float: left;
+  line-height: 25px;
+}
+.net-koubei .koubei-series .series-tab {
+  float: left;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+}
+.net-koubei .koubei-series .series-tab .series-tab-item {
+  padding: 0 15px;
+  line-height: 25px;
+  font-size: 12px;
+  color: #999;
+  border-right: 1px solid #dcdcdc;
+  float: left;
+  cursor: pointer;
+}
+.net-koubei .koubei-series .series-tab .item-active,
+.net-koubei .koubei-series .series-tab .series-tab-item:hover {
+  background: #f2f2f2;
+}
+.net-koubei .koubei-advantage {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  margin: 0 80px;
+  padding: 20px;
+}
+.net-koubei .koubei-advantage .advantage-title {
+  font-size: 18px;
+  line-height: 40px;
+}
+.net-koubei .koubei-advantage .advantage-left {
+  float: left;
+  width: 45%;
+  border-right: 1px solid #eee;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}
+.net-koubei .koubei-advantage .advantage-left .advantage-title {
+  color: #fa7022;
+}
+.net-koubei .koubei-advantage .advantage-left .advantage-title i {
+  background: url(../../images/detail/koubei_good.png) no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.net-koubei .koubei-advantage .advantage-right {
+  float: left;
+  width: 45%;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px;
+  color: #666;
+}
+.net-koubei .koubei-advantage .advantage-right .advantage-title {
+  color: #8c5476;
+}
+.net-koubei .koubei-advantage .advantage-right .advantage-title i {
+  background: url(../../images/detail/koubei_bad.png) no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+#price-distribution {
+  position: relative;
+}
+#price-distribution .price-point {
+  position: absolute;
+  top: 176px;
+}
+#price-distribution .price-circle {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+#price-distribution .sc-circle {
+  background: url(../../images/detail/sc-price.png) no-repeat;
+}
+#price-distribution .new-circle {
+  background: url(../../images/detail/new-price.png) no-repeat;
+}
+#price-distribution .guide-circle {
+  background: url(../../images/detail/guide-price.png) no-repeat;
+}
+#price-distribution .price-title {
+  padding: 5px;
+  color: #fff;
+}
+#price-distribution .sc-title {
+  background: #FC7000;
+}
+#price-distribution .new-title {
+  background: #60B25E;
+}
+#price-distribution .guide-title {
+  background: #5AB6A2;
+}
+#price-distribution .price-tag {
+  font-size: 12px;
+  text-align: center;
+}
+#price-distribution .sr-tag {
+  border: 1px solid #FC7000;
+  color: #FC7000;
+}
+#price-distribution .new-tag {
+  border: 1px solid #60B25E;
+  color: #60B25E;
+}
+#price-distribution .guide-tag {
+  border: 1px solid #5AB6A2;
+  color: #5AB6A2;
+}
+#price-distribution .price-value {
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 13px;
+}
+#price-distribution .tri {
+  position: relative;
+  width: 8px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+#price-distribution .tri.sc-tri {
+  background: url(../../images/detail/sc_price_tri.png);
+}
+#price-distribution .tri.new-tri {
+  background: url(../../images/detail/new-price-tri.png);
+}
+#price-distribution .tri.guide-tri {
+  background: url(../../images/detail/guide-price-tri.png);
+}
+#price-distribution .tip {
+  background: url(../../images/detail/price-tip.png) no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
+}
+#price-distribution #price-rate {
+  position: absolute;
+  width: 100px;
+  bottom: -30px;
+  font-size: 13px;
+  left: -15px;
+}
+#price-distribution #price-chart-area {
+  height: 300px;
+  float: left;
+  width: 642px;
+  background: url(../../images/detail/price-distribution-bg.png) no-repeat;
+}
+#price-distribution #price-comment-area {
+  float: left;
+  border-left: 1px solid #e4e3e3;
+  margin-left: 60px;
+  padding: 40px 0 0 35px;
+  font-size: 13px;
+}
+#price-distribution #price-comment-area .souche-price-text {
+  color: #ff4400;
+  font-weight: 900;
+  font-size: 19px;
+}
+#price-distribution #price-comment-area .souche-price {
+  margin-bottom: 15px;
+}
+#price-distribution .comment-tip1 {
+  margin-top: 75px;
+  color: #999;
+}
+#price-distribution .comment-tip2 {
+  color: #999;
+  margin-top: 20px;
+}
+#price-distribution .formula-3,
+#price-distribution .formula-1 {
+  float: left;
+  line-height: 40px;
+}
+#price-distribution .formula-2 {
+  float: left;
+  margin-left: 10px;
+  text-align: center;
+}
+#price-distribution .fenzi {
+  border-bottom: 1px solid #999;
+  padding-bottom: 5px;
+}
+#price-distribution .fenmu {
+  padding: 5px;
+}
+#price-distribution .formula-3 {
+  float: left;
+  margin-left: 10px;
+  text-align: center;
+}
+#price-distribution .comment-tip2 .tip {
+  float: left;
+}
+#price-distribution .comment-tip2 .text {
+  float: left;
+  width: 275px;
+}

@@ -275,7 +275,7 @@ body{
     margin-left: 10px;
 }
 #match-info .score:last-child{
-    margin-left: 20px;
+    margin-left: 26px;
 }
 
 #popup{
@@ -296,7 +296,6 @@ body{
     margin-left:-116px;
     position: absolute;
     z-index:100;
-
 }
 #popup-submit p{
     margin-bottom: 5px;
@@ -477,7 +476,16 @@ body{
     position: absolute;
     top: -45px;
     left: 10px;
+    -webkit-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+    -webkit-transform: rotateZ(-20deg);
+    transform: rotateZ(-20deg);
 }
+#guess #team-flag.other-state{
+    -webkit-transform: rotateZ(20deg);
+    transform: rotateZ(20deg);
+}
+
 #guess #country-flag{
     width:39px;
     height: 27px;
