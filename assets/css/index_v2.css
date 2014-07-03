@@ -1,0 +1,15 @@
+#carsNav {
+  width: 1020px;
+  position: relative;
+  height: 40px;
+  background: #e6e6e6;
+}
+#carsNav ul {
+  height: auto;
+  list-style: none;
+}
+#carsNav ul li {
+  height: auto;
+  float: left;
+  padding: 5px 10px;
+}
