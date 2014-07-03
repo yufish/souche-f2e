@@ -1,0 +1,89 @@
+<<<<<<< HEAD
+a {
+  color: #444;
+}
+a:hover {
+  color: #fc7000;
+}
+* {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+#top-info .filter-nav {
+  float: left;
+  width: 470px;
+  height: 305px;
+  border: 1px solid #E6E6E6;
+  background: #F5F5F5;
+  padding: 15px;
+}
+#top-info .filter-nav .car-brand {
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+}
+#top-info .filter-nav .car-brand .title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#top-info .filter-nav .car-brand #brand-open {
+  width: 9px;
+  height: 7px;
+  background: url(../images/index/open.png) no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+=======
+body * {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+#carsNav {
+  width: 1020px;
+  position: relative;
+  height: 40px;
+  background: #e6e6e6;
+}
+#carsNav ul {
+  height: auto;
+  list-style: none;
+  padding: 1px;
+}
+#carsNav ul li {
+  height: auto;
+  float: left;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: #666666 ;
+}
+#carsNav ul li.active {
+  color: #fc7000;
+  background: #ffffff;
+  font-weight: bold;
+}
+.clearBoth {
+  clear: both;
+}
+#carsContent {
+  width: 1042px;
+  position: relative;
+  overflow: auto;
+}
+#carsContent .carsItem {
+  width: 238px;
+  height: 345px;
+  border: 1px solid #e6e6e6;
+  margin: 20px 20px 0px 0px;
+  float: left;
+}
+#carsContent .operationItem {
+  padding: 15px 10px 10px 15px;
+  background: #e6e6e6;
+}
+#carsContent .operationItem .opItemTitle {
+  font-weight: normal;
+  font-size: 20px;
+}
+#carsContent .operationItem .important {
+  color: #fc7000;
+>>>>>>> 59a063d252d974898d88ec925488116910566855
+}

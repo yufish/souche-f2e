@@ -1579,7 +1579,7 @@ body {
 }
 #detail_main .detail_photosGallary .photoTab span.photoNext {
   left: 590px;
-  background-position: -2px -65px;
+  background-position: -2px -63px;
 }
 #detail_main .detail_photosGallary .photoTab span.photoNext:hover {
   opacity: 1;

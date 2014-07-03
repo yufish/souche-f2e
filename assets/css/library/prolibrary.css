@@ -6,10 +6,200 @@ body {
   margin: 0 auto;
 }
 #content .wrapper #map {
-  padding: 10px 0px;
+  position: relative;
+  top: -2px;
 }
 #content .wrapper #map span {
   font-size: 15px;
+  cursor: pointer;
+  line-height: 45px;
+  color: #7B7B7B;
+  padding: 0px 10px;
+}
+#content .wrapper #map .space {
+  cursor: default;
+}
+#content .wrapper #map .brandContainer {
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  border-top: 2px solid #FF4040;
+  background-color: #ffffff;
+}
+#content .wrapper #map .chexingContainer {
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  border-top: 2px solid #FF4040;
+  border-bottom: 2px solid #ffffff;
+  background-color: #ffffff;
+}
+#content .wrapper #map .brand_chexiList {
+  border-right: 2px solid #FF4040;
+  border-left: 2px solid #FF4040;
+  border-bottom: 2px solid #FF4040;
+  border-top: 2px solid #FF4040;
+  width: 915px;
+  top: 45px;
+  left: 65px;
+  position: absolute;
+  z-index: 999;
+  background: #ffffff;
+}
+#content .wrapper #map .brand_chexiList .hotChexi {
+  border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #map .brand_chexiList .hotChexi span {
+  font-weight: bolder;
+  padding: 0px 30px;
+}
+#content .wrapper #map .brand_chexiList .hotChexi a {
+  padding: 0px 10px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent {
+  max-height: 400px;
+  padding: 20px 20px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .bandNav {
+  min-height: 400px;
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  border-right: 1px solid #e6e6e6;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  width: 410px;
+  vertical-align: top;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .bandNav ul li span {
+  color: #FC7000;
+  font-weight: bold;
+  padding-right: 10px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .bandNav ul li a {
+  padding: 0px 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav {
+  min-height: 400px;
+  width: 400px;
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  height: 100%;
+  padding-left: 20px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav ul {
+  height: auto;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav ul li {
+  height: auto;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav ul li > div {
+  padding: 5px 0px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav ul li .chexiTitle {
+  width: 200px;
+  color: #FC7000;
+  font-weight: bolder;
+  padding-right: 10px;
+  font-size: 16px;
+}
+#content .wrapper #map .brand_chexiList .chexiNavContent .chexiNav ul li a {
+  padding-right: 20px;
+  float: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+#content .wrapper #map .chexingList {
+  width: 450px;
+  border-right: 2px solid #FF4040;
+  border-left: 2px solid #FF4040;
+  border-bottom: 2px solid #FF4040;
+  border-top: 2px solid #FF4040;
+  top: 45px;
+  left: 285px;
+  position: absolute;
+  z-index: 999;
+  background: #ffffff;
+}
+#content .wrapper #map .chexingList .rightBorder {
+  height: 100%;
+  width: 120px;
+  border-right: 1px solid #D9D9D9;
+}
+#content .wrapper #map .chexingList .allChexing {
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: bolder;
+  color: #fc7000;
+  font-size: 15px;
+  padding: 20px 0px 10px 20px;
+}
+#content .wrapper #map .chexingList .hotChexing {
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  width: 120px;
+}
+#content .wrapper #map .chexingList .hotChexing ul {
+  padding: 20px 0px 20px 20px;
+  font-size: 14px;
+  color: #7B7B7B;
+}
+#content .wrapper #map .chexingList .hotChexing ul li {
+  padding: 5px 0px;
+}
+#content .wrapper #map .chexingList .hotChexing ul li a {
+  font-size: 14px;
+  color: #7B7B7B;
+}
+#content .wrapper #map .chexingList .hotChexing ul li .arrowRight {
+  display: none;
+  float: right;
+}
+#content .wrapper #map .chexingList .hotChexing ul li:hover {
+  cursor: pointer;
+}
+#content .wrapper #map .chexingList .hotChexing ul li:hover a {
+  color: #fc7000;
+}
+#content .wrapper #map .chexingList .hotChexing ul li:hover .arrowRight {
+  display: inline;
+  float: right;
+  padding-right: 10px;
+}
+#content .wrapper #map .chexingList .hotChexingList {
+  display: inline-block;
+  position: relative;
+  z-index: 99999;
+  _zoom: 1;
+  *zoom: 1;
+  *display: inline;
+  width: 300px;
+  vertical-align: top;
+}
+#content .wrapper #map .chexingList .hotChexingList ul {
+  padding: 10px 0px;
+}
+#content .wrapper #map .chexingList .hotChexingList ul li {
+  border-bottom: 1px solid #D9D9D9;
+  padding: 10px 0px 10px 20px;
+  margin-left: 20px;
 }
 #content .wrapper #productInfo {
   height: 180px;
