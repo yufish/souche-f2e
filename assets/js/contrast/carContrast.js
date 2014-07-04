@@ -326,7 +326,7 @@ define(function() {
         var list = getContentList(index);
         list.remove();
         carCount--;
-        $(".table-name").width($(".basic-info").width() - 17);
+        $(".table-name").width($(".basic-info").width()-17);
     }
 
     var init = function (_config) {
