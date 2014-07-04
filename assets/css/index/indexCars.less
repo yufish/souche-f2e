@@ -6,7 +6,7 @@ body *{
   width: 1020px;
   position: relative;
   height: 40px;
-  background: #e6e6e6;
+  background: #F5F5F5;
   ul {
     height: auto;
     list-style: none;
@@ -40,14 +40,14 @@ body *{
   {
     width: 238px;
     height: 345px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #F5F5F5;
     margin: 20px 20px 0px 0px;
     float: left;
   }
   .operationItem
   {
       padding: 15px 10px 10px 15px;
-      background: #e6e6e6;
+      background: #F5F5F5;
       .opItemTitle
       {
         font-weight: normal;
@@ -57,5 +57,76 @@ body *{
       {
         color:#fc7000;
       }
+    .dataContainer
+    {
+      margin-top: 90px;
+      >span{
+        font-size: 15px;
+        display: block;
+        clear: both;
+      }
+
+      .inputContainer
+      {
+        margin-top: 10px;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        width: 107px;
+        vertical-align: middle;
+        border: 1px solid #CCCCCC;
+        height: 35px;
+        background: #ffffff;
+        color: #B6B6B6;
+        a
+        {
+          color: #B6B6B6;
+        }
+        input
+        {
+          width: 60px;
+          height: 25px;
+          border: none;
+          padding: 5px;
+        }
+      }
+      .submit
+      {
+        margin-top: 10px;
+        width: 235px;
+        background: #FF5719;
+        text-align: center;
+        padding: 10px 0px;
+        color:#ffffff;
+        font-size: 15px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+      }
+    }
+  }
+  .carItem
+  {
+    h1{
+      font-size: 15px;
+      margin: 10px 15px 0px 15px;
+      height: 40px;
+    }
+    .info{
+      margin: 10px 10px 0px 10px;
+      padding:0px 5px;
+      border-bottom: 1px solid #F5F5F5;
+        .price{
+          color:#FF571A;
+          font-weight: bold;
+          font-size: 14px;
+          margin-right: 25px;
+        }
+        .shangpai
+        {
+          font-size: 13px;
+          color:#8C8C8C;
+        }
+    }
   }
 }

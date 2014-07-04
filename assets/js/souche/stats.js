@@ -150,9 +150,25 @@ $(window).load(function() {
     if (phone_match) {
         data.phone = phone_match[1];
     }
-    var tag_match = document.cookie.match(/usertag=([0-9a-zA-Z_]*?);/);
+    var tag_match = document.cookie.match(/usertag=([0-9a-zA-Z_]*?)(;|$)/);
     if (tag_match) {
         data.userTag = tag_match[1];
+    } else {
+        // //获取不到userTag，把环境信息存到后台
+        // $.ajax({
+        //     url: "/pages/evaluateAction/noUserTagTrace.json",
+        //     data: {
+        //         cookie: document.cookie,
+        //         url: window.location.href,
+        //         referrer: document.referrer,
+        //         user_agent: navigator.userAgent,
+        //         user_screenwidth: screen.width,
+        //         user_screenheight: screen.height,
+        //         user_viewwidth: $(window).width(),
+        //         user_viewheight: $(window).height()
+        //     },
+        //     type: "post"
+        // })
     }
     var param = ""
     for (var d in data) {
