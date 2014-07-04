@@ -29,7 +29,7 @@ var List = function() {
                         month: item.carVo.monthShow,
                         newPrice: item.carVo.newPriceToString,
                         levelName: item.carVo.levelName,
-                        pictureBig: item.carPicturesVO.pictureBig,
+                        pictureBig: ( !! item.carPicturesVO)?item.carPicturesVO.pictureBig:'',
                         carOtherAllNameShow: item.carVo.carOtherAllNameShow,
                         price: item.price,
                         zaishou: (item.carVo.status == 'zaishou')
@@ -105,7 +105,6 @@ var List = function() {
         }
         return true;
     }
-
 
 
     return {
