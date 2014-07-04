@@ -465,7 +465,7 @@ padding-left: 50px;
 #list_wrap .list_nav .list_nav_wrap .cars-sc .cars-sc-lists li a{font-size: 12px;padding-left: 0px;}
 .cars-sc .panel{color: #333;font-size: 14px;padding-left: 0px;}
 .sc-color{width: 228px; height:15px;}
-.sc-color a{display: block;float: left;width: 19px;height: 15px;position: relative;}
+.sc-color a{display: block;float: left;width: 17px;height: 15px;position: relative;}
 .sc-color .color-active{display: block;position: absolute;width: 19px;height: 2px;background-color: #666666;top: 17px;}
 .sc-color .color-hover{display: block;position: absolute;width: 19px;height: 2px;background-color: #666666;top: 17px;}
 #list_wrap .list_nav .list_nav_wrap .list_nav_title em{font-size: 12px;color: #333;font-style: normal;font-weight: normal;}
