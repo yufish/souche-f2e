@@ -81,7 +81,7 @@ a{
     background: #ebedf7;
 }
 #cars .car img{
-    width: 212px;
+    width: 210px;
     height: 139px;
 }
 #cars .car .lft{
@@ -113,7 +113,7 @@ a{
 }
 #cars .car .rht{
     color:#fff;
-    margin-left: 212px;
+    margin-left: 210px;
     text-align: center;
     background:#1b0e0e;
     height: 139px;
