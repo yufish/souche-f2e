@@ -11,7 +11,6 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 data: userData
             })
         }
-
         addListener(brandManager);
         return {
 
@@ -239,23 +238,46 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }
                     !function loadAllBrands() {
                         //loadingLayer.removeClass('hidden');
-                        BrandAjaxUtil.getRecomBrands(function (data) {
-                            var brands = data.brands;
-                            var container = $('#brand-icons-container');
-                            var html = '',
-                                totalNum = brands.length;
+                        $.ajax({
+                            url:contextPath+ '/pages/dicAction/loadRootLevel.json',
+                            dataType:"json",
+                            data:{
+                                type:'car-subdivision'
+                            },
+                            success:function (data) {
+                                var brands = data.items;
+                                var container = $('#brand-icons-container');
+                                var html = '',
+                                    totalNum = brands.length;
 
-                            for(var i= 0;i<totalNum;i++){
-                                var b = brands[i];
-                                html += Mustache.render(tplBrand, {'brand': b});
-                                sbMgr.setBrand(b['brand'], b['brandName']);
+                                for(var i= 0;i<totalNum;i++){
+                                    var b = brands[i];
+                                    var brandData={
+                                        brand: b.code,
+                                        brandName: b.enName,
+                                        picture: parsePic(b.extString)
+
+                                    }
+                                    html += Mustache.render(tplBrand, {'brand': brandData});
+                                    sbMgr.setBrand(brandData['brand'], brandData['brandName']);
+                                }
+                                container.html(html);
+                                sbMgr.build();
+                                //loadingLayer.addClass('hidden');
                             }
-                            container.html(html);
-                            sbMgr.build();
-                            //loadingLayer.addClass('hidden');
-                        })
-                    }();
 
+                        })
+
+                    }();
+                    function parsePic(str){
+                        var props = str.substr(1,str.length-2).split(',');
+                        for(var i = 0;i<props.length;i++){
+                            ps = props[i].split('=');
+                            if(ps[0]=='picture'){
+                                return ps[1];
+                            }
+                        }
+                    }
                 }();
 
                 $('.back-icon').click(function () {
