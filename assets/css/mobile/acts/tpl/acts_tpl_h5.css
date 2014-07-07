@@ -81,12 +81,22 @@ a{
     background: #ebedf7;
 }
 #cars .car img{
-    width: 212px;
+    width: 210px;
     height: 139px;
 }
 #cars .car .lft{
     float:left;
     position: relative;
+}
+#cars .car-img-cover{
+    position: absolute;
+    background: rgba(0,0,0,.7);
+    color:#fff;
+    text-align: center;
+    width: 100%;
+    line-height: 24px;
+    font-size: 14px;
+    bottom: 0;
 }
 #cars .car .car-price{
     position: absolute;
@@ -103,7 +113,7 @@ a{
 }
 #cars .car .rht{
     color:#fff;
-    margin-left: 212px;
+    margin-left: 210px;
     text-align: center;
     background:#1b0e0e;
     height: 139px;
@@ -203,9 +213,15 @@ a{
 }
 #rule-popup{
     box-sizing: border-box;
-    margin:0 10px;
+    width: 300px;
     border-radius: 5px;
     background: #fff;
+    position: absolute;
+    left:50%;
+    margin-left: -150px;
+    top:60px;
+    z-index: 100;
+    display: none;
 }
 #rule-popup #popup-title{
     background: #ff4400;
@@ -335,6 +351,17 @@ a{
 }
 .act-item.selected .triangle{
     border-right-color: #ff4400;
+}
+
+.backBg{
+    position: fixed;
+    z-index: 10;
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    display: none;
 }
 
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 a {
   color: #444;
 }
@@ -24,7 +23,7 @@ a:hover {
   color: #333;
   font-size: 15px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 #top-info .filter-nav .car-brand #brand-open {
   width: 9px;
@@ -33,7 +32,181 @@ a:hover {
   position: absolute;
   top: 10px;
   right: 15px;
-=======
+}
+#top-info .filter-nav .car-brand .brand-list {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-brand .brand-list .brand-line {
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 17px;
+}
+#top-info .filter-nav .car-brand .brand-list .brand-line .brand-item {
+  margin-right: 15px;
+}
+#top-info .filter-nav .car-brand .brand-inner {
+  position: absolute;
+  width: 598px;
+  display: none;
+  border: 1px solid #fc7000;
+  top: -16px;
+  left: -16px;
+  background: #fff;
+  z-index: 1000;
+  padding: 15px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-conf {
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-conf .title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-conf .brand-line {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 17px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-conf .brand-line .brand-item {
+  margin-right: 15px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .left-list {
+  float: left;
+  margin-right: 50px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .right-list {
+  float: left;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .brand-item-l {
+  margin-bottom: 10px;
+  width: 270px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .brand-item-l .letter {
+  color: #fc7000;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 30px;
+  float: left;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .brand-item-l .brand-letter {
+  float: left;
+  width: 225px;
+}
+#top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .brand-item-l .brand-letter .brand-item {
+  margin-right: 13px;
+  margin-bottom: 5px;
+  display: block;
+  float: left;
+}
+#top-info .filter-nav .car-models {
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+  margin-top: 15px;
+}
+#top-info .filter-nav .car-models .title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-models #models-open {
+  width: 9px;
+  height: 7px;
+  background: url(../images/index/open.png) no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+#top-info .filter-nav .car-models .models-list {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-models .models-list .models-line {
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 17px;
+}
+#top-info .filter-nav .car-models .models-list .models-line .models-item-m {
+  color: #333;
+  width: 48px;
+  border-right: 1px solid #E6E6E6;
+  margin-right: 10px;
+  font-weight: bold;
+  display: block;
+  float: left;
+}
+#top-info .filter-nav .car-models .models-list .models-line .models-item {
+  margin-right: 15px;
+}
+#top-info .filter-nav .car-models .models-inner {
+  width: 600px;
+  background: #fff;
+  border: 1px solid #fc7000;
+  position: absolute;
+  z-index: 1000;
+  top: -16px;
+  left: -16px;
+  padding: 15px;
+  display: none;
+}
+#top-info .filter-nav .car-models .models-inner .models-all .models-line {
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 17px;
+}
+#top-info .filter-nav .car-models .models-inner .models-all .models-line .models-item-m {
+  color: #333;
+  width: 48px;
+  border-right: 1px solid #E6E6E6;
+  margin-right: 10px;
+  font-weight: bold;
+  display: block;
+  float: left;
+}
+#top-info .filter-nav .car-models .models-inner .models-all .models-line .models-item {
+  margin-right: 15px;
+}
+#top-info .filter-nav .car-price {
+  position: relative;
+  margin-top: 15px;
+}
+#top-info .filter-nav .car-price .title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#top-info .filter-nav .car-price .price-list {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  height: 17px;
+}
+#top-info .filter-nav .car-price .price-list .price-item {
+  margin-right: 15px;
+}
+#top-info .main-slider {
+  float: left;
+  width: 500px;
+  height: 335px;
+  margin-left: 18px;
+  background: #999;
+}
+#top-info .main-slider .flexslider {
+  overflow: hidden;
+  width: 100%;
+  height: 335px;
+  position: relative;
+  z-index: 10;
+}
 body * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
@@ -85,7 +258,6 @@ body * {
 }
 #carsContent .operationItem .important {
   color: #fc7000;
->>>>>>> 59a063d252d974898d88ec925488116910566855
 }
 #carsContent .operationItem .dataContainer {
   margin-top: 90px;
@@ -147,4 +319,149 @@ body * {
 #carsContent .carItem .info .shangpai {
   font-size: 13px;
   color: #8C8C8C;
+}
+#service {
+  width: 240px;
+  height: 420px;
+  background: #fc7000;
+}
+#service .sevice-slide .flexslider {
+  overflow: hidden;
+  width: 100%;
+  height: 335px;
+  position: relative;
+  z-index: 10;
+}
+#hotsell {
+  width: 208px;
+  height: 340px;
+  padding: 15px;
+  border: 1px solid #EDEDED;
+  background: #fff;
+}
+#hotsell .title {
+  margin: 10px 0;
+  font-size: 16px;
+}
+#hotsell .title span {
+  color: #fc7000;
+  font-weight: bold;
+  margin-right: 10px;
+}
+#hotsell .title em {
+  color: #333;
+  font-weight: bold;
+}
+#hotsell .hotlist {
+  margin-top: 20px;
+  font-size: 13px;
+  margin-right: 10px;
+}
+#hotsell .hotlist li {
+  margin-bottom: 10px;
+}
+#hotsell .hotlist li span {
+  margin-right: 15px;
+}
+#hotsell .hotlist li i {
+  display: block;
+  float: right;
+  width: 6px;
+  height: 1px;
+  background: #BFBFBF;
+  margin-top: 5px;
+  margin-right: 2px;
+}
+#hotsell .hotlist li .hot-rise {
+  width: 0px;
+  height: 0px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #fc7000;
+  background: #fff;
+  margin-right: 0px;
+}
+#hotsell .hotlist li .hot-down {
+  width: 0px;
+  height: 0px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #BFBFBF;
+  background: #fff;
+  margin-right: 0px;
+}
+#hotsell .hotlist .hot-item {
+  color: #fc7000;
+}
+#hotsell .hotlist .hot-item a {
+  color: #fc7000;
+}
+#qcode {
+  width: 238px;
+  border: 1px solid #EDEDED;
+  border-top: none;
+}
+#qcode .weixin-code {
+  border-bottom: 1px solid #EDEDED;
+  height: 150px;
+  padding: 15px;
+}
+#qcode .weixin-code .title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#qcode .weixin-code .title i {
+  display: block;
+  width: 22px;
+  height: 18px;
+  background: url(../images/index/q-code.png) no-repeat;
+  float: left;
+  margin-right: 5px;
+}
+#qcode .weixin-code .title span {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+#qcode .weixin-code .code-cont img {
+  display: block;
+  float: left;
+  width: 74px;
+  height: 74px;
+}
+#qcode .weixin-code .code-cont p {
+  float: left;
+  width: 105px;
+  margin-left: 20px;
+  font-size: 13px;
+  color: #555;
+  line-height: 19px;
+}
+#qcode .app-code {
+  height: 150px;
+  padding: 15px;
+}
+#qcode .app-code .title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #222;
+  font-weight: bold;
+}
+#qcode .app-code .code-cont img {
+  display: block;
+  float: left;
+  width: 74px;
+  height: 74px;
+}
+#qcode .app-code .code-cont p {
+  float: left;
+  width: 105px;
+  margin-left: 20px;
+  font-size: 13px;
+  color: #222;
+  line-height: 19px;
+}
+#qcode .app-code .code-cont a {
+  color: #fc7000;
 }
