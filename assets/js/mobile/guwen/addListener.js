@@ -64,7 +64,7 @@
         _makeSeriesUI:function(bCode,bName){
             var self =this;
             $.ajax({
-                url: contextPath + "/pages/dicAction/loadExistSeries.json",
+                url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
                 dataType: "json",
                 data: {
                     type: "car-subdivision",

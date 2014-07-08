@@ -3,7 +3,7 @@ body * {
 }
 #carsNav,
 #carsMore {
-  width: 96.3%;
+  width: 96.8%;
   position: relative;
   height: 40px;
   background: #F5F5F5;
@@ -16,6 +16,7 @@ body * {
 }
 #carsNav ul li,
 #carsMore ul li {
+  cursor: pointer;
   height: auto;
   float: left;
   padding: 10px 15px;
@@ -33,7 +34,7 @@ body * {
   border-bottom: 1px solid #ffffff;
   height: 20px;
 }
-@media screen and (max-width: 882px) {
+@media screen and (max-width: 1366px) {
   #carsContent .carsItem {
     width: 30.3% ;
     height: 355px;
@@ -49,10 +50,10 @@ body * {
     width: 97%;
   }
 }
-@media screen and (min-width: 882px) and (max-width: 1040px) {
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
   #carsNav,
   #carsMore {
-    width: 98%;
+    width: 97.8%;
     position: relative;
     height: 40px;
     background: #F5F5F5;
@@ -66,14 +67,14 @@ body * {
     width: 98%;
   }
   #carsContent .carsItem {
-    width: 22.7%;
+    width: 22.9%;
     height: 355px;
-    margin: 2% 2% 0px 0px;
+    margin: 2% 1.8% 0px 0px;
     float: left;
     border: 1px solid #CCCCCC;
   }
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1440px) {
   #carsNav,
   #carsMore {
     width: 98%;
@@ -90,9 +91,9 @@ body * {
     width: 98%;
   }
   #carsContent .carsItem {
-    width: 22.6%;
+    width: 22.9%;
     height: 355px;
-    margin: 2% 2.1% 0px 0px;
+    margin: 2% 1.9% 0px 0px;
     float: left;
     border: 1px solid #CCCCCC;
   }
