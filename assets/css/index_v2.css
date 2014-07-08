@@ -55,7 +55,7 @@ a:hover {
     float: right;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1280px) {
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
   #content {
     width: 1024px;
     margin: 0 auto;
@@ -73,30 +73,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
-  }
-  #content .wrapper .index-right {
-    width: 240px;
-    float: right;
-  }
-}
-@media screen and (min-width: 1280px) and (max-width: 1366px) {
-  #content {
-    width: 1220px;
-    margin: 0 auto;
-  }
-  #content .wrapper {
-    margin: 0 auto;
-  }
-  #content .wrapper .index-left {
-    width: 980px;
-    float: left;
-  }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
-    display: inline;
-  }
-  #content .wrapper .index-left #top-info .filter-nav {
-    width: 410px;
   }
   #content .wrapper .index-right {
     width: 240px;
