@@ -5602,7 +5602,7 @@ less .icon-fei {
 }
 .net-brand .brand-wrapper {
   width: 100%;
-  margin-top: 30px;
+  padding-top: 30px;
 }
 .net-brand .brand-nav {
   width: 16%;
@@ -5634,7 +5634,7 @@ less .icon-fei {
 .net-brand .brand-nav .brand-list li .first-nav-active {
   background: #FC7000;
 }
-.net-brand .brand-nav .brand-list li a {
+.net-brand .brand-nav .brand-list li span {
   color: #666;
   font-size: 12px;
   line-height: 40px;
@@ -5652,7 +5652,7 @@ less .icon-fei {
 .net-brand .brand-cont .brand-item {
   width: 100%;
   border-bottom: 1px solid #E6E6E6;
-  margin-top: 30px;
+  padding-top: 50px;
 }
 .net-brand .brand-cont .brand-item .content-title {
   font-weight: bold;
@@ -5816,7 +5816,7 @@ less .icon-fei {
 }
 .net-brand .brand-cont .brand-end {
   width: 100%;
-  margin-top: 100px;
+  padding-top: 130px;
   margin-bottom: 100px;
   border-bottom: none;
 }
