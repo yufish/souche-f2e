@@ -18,6 +18,8 @@
   padding: 15px;
   border: 1px solid #EDEDED;
   background: #fff;
+  border-bottom: none;
+  border-top: none;
   .title{
     margin: 10px 0;
     font-size: 16px;
@@ -83,8 +85,9 @@
   
   .weixin-code{
     border-bottom:1px solid #EDEDED;
-    height: 150px;
+    height: 135px;
     padding: 15px;
+    border-bottom: none;
     .title{
       margin-top: 10px;
       margin-bottom: 20px;
@@ -147,6 +150,91 @@
       a{
        color: #fc7000;
       }
+    }
+  }
+}
+#qa{
+  padding: 15px;
+  border: 1px solid #EDEDED;
+  border-bottom: none;
+  height: 300px;
+  .title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #222;
+    font-weight: bold;
+  }
+  .cheshen-nav{
+    width: 210px;
+    height: 30px;
+    .nav-but{
+      position: relative;
+      width: 68px;
+      border: 1px solid #E4E3E3;
+      background: #F0F0F0;
+      float: left;
+      height: 28px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      .chenshen-cont{
+        position: absolute;
+        width: 210px;
+        height: 200px;
+        top:45px;
+        left: 0px;
+        text-align: left;
+        .head{
+          height: 60px;
+          img{
+            width: 60px;
+            height: 60px;
+            display: block;
+            float: left;
+            margin-right:10px;
+          }
+          .head-tit{
+            float: left;
+            
+            h1{
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 20px;
+              margin-bottom: 5px;
+            }
+            p{
+              color: #B2B2B2;
+              font-size: 12px;
+              line-height: 17px;
+            }
+          }
+        }
+        .cheshen-detail{
+          color: #797979;
+          line-height: 18px;
+          margin-top: 15px;
+          .status{
+            margin-bottom: 10px;
+          }
+          .ask{
+            display: block;
+            width: 70px;
+            height: 30px;
+            padding-left: 30px;
+            border-radius: 3px;
+            background: #5C9BEF url(../images/index/ask.png) no-repeat left center;
+            color: #fff;
+            line-height: 30px;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    .nav-active{
+      border-bottom: none;
+      background: #fff;
+      color: #333;
     }
   }
 }
