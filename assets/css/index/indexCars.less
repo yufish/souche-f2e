@@ -41,6 +41,16 @@ body *{
       border: 1px solid #CCCCCC;
     }
   }
+
+  .dialogContent
+  {
+    width: 97%;
+    height: 355px;
+  }
+  .addInstrestCar
+  {
+    width: 97%;
+  }
 }
 
 @media screen and (min-width: 882px) and (max-width: 1040px) {
@@ -53,12 +63,12 @@ body *{
   }
   .dialogContent
   {
-    width: 98% !important;
-    height: 355px !important;
+    width: 98%;
+    height: 355px;
   }
   .addInstrestCar
   {
-    width: 98% !important;
+    width: 98%;
   }
   #carsContent {
     .carsItem {
@@ -82,20 +92,20 @@ body *{
 
   .dialogContent
   {
-    width: 98% !important;
-    height: 355px !important;
+    width: 98% ;
+    height: 355px;
   }
 
   .addInstrestCar
   {
-    width: 98% !important;
+    width: 98%;
   }
 
   #carsContent {
     .carsItem {
-      width: 22.8%;
+      width: 22.6%;
       height: 355px;
-      margin: 2% 2% 0px 0px;
+      margin: 2% 2.1% 0px 0px;
       float: left;
       border: 1px solid #CCCCCC;
     }
@@ -187,12 +197,17 @@ body *{
         color: #B6B6B6;
         a {
           color: #B6B6B6;
+          vertical-align: middle;
+          float: right;
+          padding-top: 10px;
+          padding-right: 5%;
         }
         input {
           width:40%;
           height: 25px;
           border: none;
           padding: 5px;
+          float: left;
         }
       }
       .leftContainer
@@ -437,6 +452,7 @@ body *{
       {
         position: absolute;
         right: 0px;
+        color:#ffffff;
         padding: 7px 15px;
         border: 1px solid #CCCCCC;
         border-radius: 3px ;
@@ -457,6 +473,7 @@ body *{
     .submit
     {
       padding: 7px 20px;
+      color: #ffffff;
       border: 1px solid #CCCCCC;
       border-radius: 3px ;
       -webkit-border-radius: 3px ;
@@ -572,6 +589,28 @@ body *{
           color: #B6B6B6;
         }
       }
+      .addCarinstrestItem
+      {
+        float: left;
+        margin-top: 10px;
+        background: #ffffff;
+        padding: 6px 10px;
+        border: 1px solid #CCCCCC;
+        margin-right: 5px;
+        margin-left: 5px;
+        a{
+          margin-right: 10px;
+          font-size: 14px;
+          color: #FF5719;
+        }
+        span
+        {
+          cursor: pointer;
+          color: #FF5719;
+          font-weight: bolder;
+          font-size: 18px;
+        }
+      }
     }
     .caryear
     {
@@ -633,6 +672,7 @@ body *{
       {
         margin-top: 15px;
         position: absolute;
+        color: #ffffff;
         right: 2%;
         padding: 10px 25px;
         background-color: #FF5719;
@@ -645,10 +685,11 @@ body *{
     }
   }
   .addInstrestCar {
-    width: 97%;
+
     position: absolute;
-    margin-top: 2%;
+    margin-top: 1.9%;
     left: 0px;
+    top:0px;
     background: #F5F5F5;
     border: 1px solid #CCCCCC;
     vertical-align: top;
@@ -661,7 +702,7 @@ body *{
       width: 80%;
       max-height: 85px;
       overflow: hidden;
-      span
+      >span
       {
         float: left;
         font-size:15px ;
@@ -685,7 +726,6 @@ body *{
         {
           cursor: pointer;
           color: #B6B6B6;
-          float: right;
         }
       }
     }
@@ -710,7 +750,7 @@ body *{
     .addInstrestCarContent {
       border-top: 1px solid #cccccc;
       clear: both;
-      height: 256px;
+      height: 305px;
       .brand {
         float: left;
         height: 266px;
@@ -738,6 +778,11 @@ body *{
             line-height: 22px;
             font-size: 13px;
             color:#939393;
+            cursor: pointer;
+          }
+          a.active {
+            background:#F44B0B;
+            color:#ffffff;
           }
         }
         .brandList {

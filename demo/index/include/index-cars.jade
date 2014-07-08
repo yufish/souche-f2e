@@ -131,7 +131,7 @@ div#carsContent
             span.ps!=' <a>登陆</a>即可保存心愿卡'
             span.submit 修改
 
-    div.dialogContent
+    div.dialogContent.hidden
         div.carBudget
             h1 购车预算
             div.dataContainer
@@ -159,6 +159,9 @@ div#carsContent
             div.carinstrestItem
                 a 奥迪A4
                 span X
+            div.addCarinstrestItem
+                a 添加
+                span +
         div.caryear
             h1 年份
             div.dataContainer
@@ -169,7 +172,7 @@ div#carsContent
                     input
         div.submit
             span 确定
-    div.addInstrestCar
+    div.addInstrestCar.hidden
         div.addInstrestCarTilte
             span.instrestCarItem.title 添加感兴趣的车：
             span.instrestCarItem
