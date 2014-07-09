@@ -19,9 +19,6 @@ a:hover {
     width: 784px;
     float: left;
   }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
-  }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
   }
@@ -41,9 +38,6 @@ a:hover {
   #content .wrapper .index-left {
     width: 784px;
     float: left;
-  }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
@@ -65,9 +59,6 @@ a:hover {
     width: 784px;
     float: left;
   }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
-  }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
   }
@@ -88,9 +79,6 @@ a:hover {
     width: 980px;
     float: left;
   }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
-  }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 410px;
   }
@@ -110,9 +98,6 @@ a:hover {
   #content .wrapper .index-left {
     width: 1040px;
     float: left;
-  }
-  #content .wrapper .index-left #top-info {
-    overflow: hidden;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 470px;
@@ -608,8 +593,10 @@ body * {
 @media screen and (max-width: 1366px) {
   #carsContent .carsItem {
     width: 30.3% ;
+    *width: 30.03% ;
     height: 355px;
     margin: 2.7% 2.7% 0px 0px;
+    *margin: 2.5% 2.41% 0px 0px;
     float: left;
     border: 1px solid #CCCCCC;
   }
@@ -641,6 +628,7 @@ body * {
   }
   #carsContent .carsItem {
     width: 22.9%;
+    *width: 22%;
     height: 355px;
     margin: 2% 1.8% 0px 0px;
     float: left;
@@ -668,6 +656,8 @@ body * {
     width: 22.9%;
     height: 355px;
     margin: 2% 1.9% 0px 0px;
+    *margin: 2% 1.519% 0px 0px;
+    *width: 22.92%;
     float: left;
     border: 1px solid #CCCCCC;
   }
@@ -791,6 +781,7 @@ body * {
   overflow: hidden;
 }
 #carsContent .carItem .carImg {
+  position: relative;
   width: 100%;
   overflow: hidden;
   height: 182px;
@@ -861,6 +852,7 @@ body * {
   cursor: pointer;
   font-size: 12px;
   top: 2px;
+  float: left;
 }
 #carsContent .carItem .carTail .collect a {
   color: #999;
@@ -878,7 +870,7 @@ body * {
 #carsContent .carItem .carTail .recommendedToday {
   font-size: 15px;
   position: absolute;
-  right: 0px;
+  right: -2px;
   color: #999;
 }
 #carsContent .infoItem a {
