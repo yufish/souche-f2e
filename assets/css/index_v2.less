@@ -260,6 +260,71 @@ a{
     }
   }
 }
+#nav{
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+  .wrapper{
+    margin: 0 auto;
+    height: 40px;
+    .main-navs{
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      .nav-item{
+        padding: 0 20px;
+        color: #333;
+        margin-right: 20px;
+        font-weight: bold;
+        height: 37px;
+        display: block;
+        float: left;
+      }
+      .nav-item:hover{
+        color: #FF571A;
+      }
+      .active{
+        color: #FF571A;
+        border-bottom: 3px solid #FF571A;
+      }
+    }
+    .other-navs{
+      float: right;
+      height: 40px;
+      
+      a{
+        margin-top: 15px;
+        display: block;
+        padding: 0 12px;
+        border-right:1px solid #EEEEEE;
+        float: left; 
+        height: 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1366px){
+  #nav{
+    .wrapper{
+       width: 1024px;
+    }
+  }
+}
+@media screen and (min-width: 1366px) and (max-width:1440px){
+   #nav{
+    .wrapper{
+       width: 1220px;
+    }
+  }
+}
+@media screen and (min-width: 1440px){
+   #nav{
+    .wrapper{
+       width: 1280px;
+    }
+  }
+}
   // @media screen and (min-width: 1024px) and (max-width:1280px){
   //   .wrapper{
   //     width: 80%;
