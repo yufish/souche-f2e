@@ -254,6 +254,134 @@ a{
     }
   }
 }
+#nav{
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+  .wrapper{
+    margin: 0 auto;
+    height: 40px;
+    .main-navs{
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      .nav-item{
+        padding: 0 20px;
+        color: #333;
+        margin-right: 20px;
+        font-weight: bold;
+        height: 37px;
+        display: block;
+        float: left;
+      }
+      .nav-item:hover{
+        color: #FF571A;
+      }
+      .active{
+        color: #FF571A;
+        border-bottom: 3px solid #FF571A;
+      }
+    }
+    .other-navs{
+      float: right;
+      height: 40px;
+      
+      a{
+        margin-top: 15px;
+        display: block;
+        padding: 0 12px;
+        border-right:1px solid #EEEEEE;
+        float: left; 
+        height: 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1366px){
+  #nav{
+    .wrapper{
+       width: 1024px;
+    }
+  }
+}
+@media screen and (min-width: 1366px) and (max-width:1440px){
+   #nav{
+    .wrapper{
+       width: 1220px;
+    }
+  }
+}
+@media screen and (min-width: 1440px){
+   #nav{
+    .wrapper{
+       width: 1280px;
+    }
+  }
+}
+#footer{
+  width: 100%;
+  background: #333333;
+  margin-top: 25px;
+  .wrapper{
+    margin: 0 auto;
+    padding: 30px 0;
+    .foot-detail{
+      .detail-item{
+        float: left;
+        width: 210px;
+        margin-bottom: 30px;
+        .title {
+          color: #fff;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .art-link{
+          display: block;
+          color: #717171;
+          line-height: 25px;
+
+        }
+      }
+    }
+    .friendlinks{
+      border-bottom: 1px solid #717171;
+      border-top: 1px solid #717171;
+      padding: 10px 0;
+      .links{
+        color: #717171;
+        margin-right: 25px;
+      }
+    }
+    p{
+      color: #717171;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 1366px){
+  #footer{
+    .wrapper{
+      width: 1024px;
+    }
+  }
+}
+@media screen and (min-width: 1366px) and (max-width:1440px){
+   #footer{
+    .wrapper{
+       width: 1220px;
+    }
+  }
+}
+@media screen and (min-width: 1440px){
+   #footer{
+    .wrapper{
+       width: 1280px;
+    }
+  }
+}
   // @media screen and (min-width: 1024px) and (max-width:1280px){
   //   .wrapper{
   //     width: 80%;

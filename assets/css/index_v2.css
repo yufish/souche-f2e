@@ -223,6 +223,118 @@ a:hover {
     width: 690px;
   }
 }
+#nav {
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+}
+#nav .wrapper {
+  margin: 0 auto;
+  height: 40px;
+}
+#nav .wrapper .main-navs {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+#nav .wrapper .main-navs .nav-item {
+  padding: 0 20px;
+  color: #333;
+  margin-right: 20px;
+  font-weight: bold;
+  height: 37px;
+  display: block;
+  float: left;
+}
+#nav .wrapper .main-navs .nav-item:hover {
+  color: #FF571A;
+}
+#nav .wrapper .main-navs .active {
+  color: #FF571A;
+  border-bottom: 3px solid #FF571A;
+}
+#nav .wrapper .other-navs {
+  float: right;
+  height: 40px;
+}
+#nav .wrapper .other-navs a {
+  margin-top: 15px;
+  display: block;
+  padding: 0 12px;
+  border-right: 1px solid #EEEEEE;
+  float: left;
+  height: 15px;
+}
+@media screen and (max-width: 1366px) {
+  #nav .wrapper {
+    width: 1024px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #nav .wrapper {
+    width: 1220px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #nav .wrapper {
+    width: 1280px;
+  }
+}
+#footer {
+  width: 100%;
+  background: #333333;
+  margin-top: 25px;
+}
+#footer .wrapper {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+#footer .wrapper .foot-detail .detail-item {
+  float: left;
+  width: 210px;
+  margin-bottom: 30px;
+}
+#footer .wrapper .foot-detail .detail-item .title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#footer .wrapper .foot-detail .detail-item .art-link {
+  display: block;
+  color: #717171;
+  line-height: 25px;
+}
+#footer .wrapper .friendlinks {
+  border-bottom: 1px solid #717171;
+  border-top: 1px solid #717171;
+  padding: 10px 0;
+}
+#footer .wrapper .friendlinks .links {
+  color: #717171;
+  margin-right: 25px;
+}
+#footer .wrapper p {
+  color: #717171;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1366px) {
+  #footer .wrapper {
+    width: 1024px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #footer .wrapper {
+    width: 1220px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #footer .wrapper {
+    width: 1280px;
+  }
+}
 #top-info {
   width: 100%;
   margin-bottom: 20px;
@@ -275,7 +387,7 @@ a:hover {
   top: -16px;
   left: -16px;
   background: #fff;
-  z-index: 1000;
+  z-index: 100000;
   padding: 15px;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf {
@@ -371,7 +483,7 @@ a:hover {
   background: #fff;
   border: 1px solid #fc7000;
   position: absolute;
-  z-index: 1000;
+  z-index: 100000;
   top: -16px;
   left: -16px;
   padding: 15px;
