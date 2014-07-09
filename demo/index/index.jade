@@ -33,7 +33,15 @@ html
                     include include/index-qcode
         #footer
 
+        <script type="text/javascript" src="../../assets/js/respond.js"></script>
+        <script type="text/javascript" src="http://res.souche.com/js/common/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/require.js?t=13"></script>
         script.
+            var contextPath = "";
+            require.config({
+            baseUrl: "http://f2e.souche.com/assets/js",
+            urlArgs:"bust=v1"
+            });
             require(["index_v2"],function(Index){
                 Index.init({})
             })
