@@ -329,7 +329,11 @@ body * {
   cursor: pointer;
 }
 #carsContent .infoItem a span {
-  color: #6CACE7;
+  background: #6CACE7;
+  padding: 0px 4px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
 }
 #carsContent .infoItem a:hover {
   color: #F44B0B;
