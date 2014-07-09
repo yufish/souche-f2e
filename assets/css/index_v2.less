@@ -19,7 +19,7 @@ a{
         float: left;
         #top-info{
           overflow: hidden;
-          display: inline;
+          
           .filter-nav{
             width: 210px;
           }
@@ -43,7 +43,7 @@ a{
         float: left;
         #top-info{
           overflow: hidden;
-          display: inline;
+          
           .filter-nav{
             width: 210px;
           }
@@ -67,7 +67,7 @@ a{
         float: left;
         #top-info{
           overflow: hidden;
-          display: inline;
+          
           .filter-nav{
             width:210px;
           }
@@ -91,7 +91,7 @@ a{
         float: left;
         #top-info{
           overflow: hidden;
-          display: inline;
+         
           .filter-nav{
             width:410px;
           }
@@ -115,7 +115,7 @@ a{
         float: left;
         #top-info{
           overflow: hidden;
-          display: inline;
+          
           .filter-nav{
             width:470px;
           }
@@ -124,6 +124,138 @@ a{
       .index-right{
         width: 240px;
         float: right;
+      }
+    }
+  }
+}
+#header{
+  .wrapper{
+    height: 75px;
+    margin: 0 auto;
+    margin-top: 25px;
+    .logo{
+      display: block;
+      width: 120px;
+      height: 52px;
+      float: left;
+      margin-right: 30px;
+    }
+    .city{
+      font-size: 15px;
+      color: #333;
+      margin-right: 60px;
+      float: left;
+      span{
+        display: block;
+        float: left;
+      }
+      i{
+        display: block;
+        float: left;
+        width: 10px;
+        height: 6px;
+        background: url(../images/index/city-chose.png) no-repeat;
+        margin-top: 8px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+    .search{
+      float: left;
+      height: 40px;
+      .index-search{
+        height: 40px;
+        position: relative;
+        .search-text{
+          height: 20px;
+          padding: 10px;
+          line-height: 20px;
+          border: 1px solid #E6E6E6;
+          display: block;
+          float: left;
+         
+        }
+        .search-submit{
+          border: 1px solid #D94A16;
+          width: 42px;
+          height: 42px;
+          background: #FF5A00 url(../images/index/search.png) no-repeat center;
+          display: block;
+          float: left;
+          cursor: pointer;
+        }
+        .recom{
+          width: 295px;
+          height: 20px;
+          position: absolute;
+          top: 10px;
+          right: 42px;
+          a{
+            color: #666;
+            background: #F8F8F7;
+            padding: 4px 7px;
+            margin-right: 9px;
+          }
+          a:hover{
+            color: #fc7000;
+          }
+        }
+      }
+    }
+    .phone-number{
+      width: 126px;
+      height: 34px;
+      float: right;
+      img{
+        display: block;
+        width: 126px;
+        height: 34px;
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 1366px){
+  #header{
+    .wrapper{
+      width: 1024px;
+      .search{
+        .index-search{
+          width: 515px;
+        }
+        .search-text{
+          width: 450px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1366px) and (max-width:1440px){
+  #header{
+    .wrapper{
+      width: 1220px;
+      .search{
+        .index-search{
+          width: 760px;
+        }
+        .search-text{
+          width: 690px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1440px){
+    #header{
+    .wrapper{
+      width: 1280px;
+      .search{
+        .index-search{
+          width: 760px;
+        }
+        .search-text{
+          width: 690px;
+        }
       }
     }
   }

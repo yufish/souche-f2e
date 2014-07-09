@@ -21,7 +21,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info {
     overflow: hidden;
-    display: inline;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
@@ -45,7 +44,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info {
     overflow: hidden;
-    display: inline;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
@@ -69,7 +67,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info {
     overflow: hidden;
-    display: inline;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
@@ -93,7 +90,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info {
     overflow: hidden;
-    display: inline;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 410px;
@@ -117,7 +113,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info {
     overflow: hidden;
-    display: inline;
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 470px;
@@ -127,8 +122,126 @@ a:hover {
     float: right;
   }
 }
+#header .wrapper {
+  height: 75px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+#header .wrapper .logo {
+  display: block;
+  width: 120px;
+  height: 52px;
+  float: left;
+  margin-right: 30px;
+}
+#header .wrapper .city {
+  font-size: 15px;
+  color: #333;
+  margin-right: 60px;
+  float: left;
+}
+#header .wrapper .city span {
+  display: block;
+  float: left;
+}
+#header .wrapper .city i {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 6px;
+  background: url(../images/index/city-chose.png) no-repeat;
+  margin-top: 8px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+#header .wrapper .search {
+  float: left;
+  height: 40px;
+}
+#header .wrapper .search .index-search {
+  height: 40px;
+  position: relative;
+}
+#header .wrapper .search .index-search .search-text {
+  height: 20px;
+  padding: 10px;
+  line-height: 20px;
+  border: 1px solid #E6E6E6;
+  display: block;
+  float: left;
+}
+#header .wrapper .search .index-search .search-submit {
+  border: 1px solid #D94A16;
+  width: 42px;
+  height: 42px;
+  background: #ff5a00 url(../images/index/search.png) no-repeat center;
+  display: block;
+  float: left;
+  cursor: pointer;
+}
+#header .wrapper .search .index-search .recom {
+  width: 295px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 42px;
+}
+#header .wrapper .search .index-search .recom a {
+  color: #666;
+  background: #F8F8F7;
+  padding: 4px 7px;
+  margin-right: 9px;
+}
+#header .wrapper .search .index-search .recom a:hover {
+  color: #fc7000;
+}
+#header .wrapper .phone-number {
+  width: 126px;
+  height: 34px;
+  float: right;
+}
+#header .wrapper .phone-number img {
+  display: block;
+  width: 126px;
+  height: 34px;
+}
+@media screen and (max-width: 1366px) {
+  #header .wrapper {
+    width: 1024px;
+  }
+  #header .wrapper .search .index-search {
+    width: 515px;
+  }
+  #header .wrapper .search .search-text {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #header .wrapper {
+    width: 1220px;
+  }
+  #header .wrapper .search .index-search {
+    width: 760px;
+  }
+  #header .wrapper .search .search-text {
+    width: 690px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #header .wrapper {
+    width: 1280px;
+  }
+  #header .wrapper .search .index-search {
+    width: 760px;
+  }
+  #header .wrapper .search .search-text {
+    width: 690px;
+  }
+}
 #top-info {
   width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 #top-info .filter-nav {
   float: left;
@@ -1199,7 +1312,7 @@ body * {
 }
 #service {
   width: 240px;
-  height: 335px;
+  height: 420px;
   background: #fc7000;
 }
 #service .sevice-slide .flexslider {
@@ -1423,6 +1536,11 @@ body * {
   color: #fff;
   line-height: 30px;
   margin-top: 15px;
+}
+#qa .cheshen-nav .nav-but:hover {
+  border-bottom: none;
+  background: #fff;
+  color: #333;
 }
 #qa .cheshen-nav .nav-active {
   border-bottom: none;
