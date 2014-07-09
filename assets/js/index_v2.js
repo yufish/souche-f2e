@@ -1,20 +1,45 @@
 define(function() {
     var config = {};
-    var lockAnimate = true;
 
     var _bind = function () {
-        $(".car-brand,.car-models").mouseover(function (event) {
-            event.stopPropagation();
-            if ($(event.target).hasClass("car-models") || $(event.target).hasClass("car-brand")) {
-                lockAnimate = false;
-                $(".models-inner,.brand-inner").hide();
-                $(this).find(".models-inner,.brand-inner").show(100);
+        $(".car-brand,.car-models").mouseenter(function (event) {
 
+            event.stopPropagation();
+            var self = this;
+
+            $(".models-inner,.brand-inner").hide();
+            if(eval("''+/*@cc_on"+" @_jscript_version@*/-0")*1==5.7) {
+                if($(self).hasClass("car-models"))
+                {
+                    $(".car-price").css("visibility", "hidden");
+                }
+                else {
+                    $(".car-models,.car-price").css("visibility", "hidden");
+                }
+                $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(0);
+            }
+            else {
+                $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(50);
             }
             return false;
         });
-        $("body").mouseover(function () {
-            $(this).find(".models-inner,.brand-inner").hide(100);
+        $(".car-brand,.car-models").mouseleave(function () {
+
+            var self = this;
+
+            if(eval("''+/*@cc_on"+" @_jscript_version@*/-0")*1==5.7) {
+                if($(self).hasClass("car-models"))
+                {
+                    $(".car-price").css("visibility", "");
+                }
+                else {
+                    $(".car-models,.car-price").css("visibility", "");
+                }
+                $(self).find(".models-inner,.brand-inner").css("zIndex", -999).hide(0);
+            }
+            else {
+                $(self).find(".models-inner,.brand-inner").css("zIndex", -999).hide(100);
+            }
         });
     }
 

@@ -105,14 +105,14 @@ define(function()
             event.stopPropagation();
             var self = $(this);
 
-            var width = self.find(".carImg").width();
-            console.log("enter");
+            var width = self.find(".carImg img").width();
+
             self.find(".carImg img").stop(true).animate({
-                width: width + 15 + "px",
+                width: width + 12 + "px",
                 height: 194 + "px",
                 top: "-3px",
                 left: "-3px"
-            }, "normal", function () {
+            }, 250, function () {
             });
         });
 
@@ -120,14 +120,13 @@ define(function()
             event.stopPropagation();
             var self = $(this);
 
-            console.log("leave");
             var width = self.find(".carImg").width();
             self.find(".carImg img").animate({
-                width: "100%",
+                width: width+1+"px",
                 height: 182 + "px",
                 top: "0px",
                 left: "0px"
-            }, "normal", function () {
+            }, 250, function () {
             });
         });
 

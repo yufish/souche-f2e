@@ -36,14 +36,16 @@ body *{
   #carsContent {
     .carsItem {
       width: 30.3% ;
+      *width: 30.03% ;
       height: 355px;
       margin: 2.7% 2.7% 0px 0px;
+      *margin: 2.5% 2.41% 0px 0px;
       float: left;
       border: 1px solid #CCCCCC;
     }
   }
 
-   .dialogContentContainer,.dialogContent
+  .dialogContentContainer,.dialogContent
   {
     width: 97%;
     height: 355px;
@@ -62,7 +64,7 @@ body *{
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
-   .dialogContentContainer,.dialogContent
+  .dialogContentContainer,.dialogContent
   {
     width: 98%;
     height: 355px;
@@ -74,6 +76,7 @@ body *{
   #carsContent {
     .carsItem {
       width: 22.9%;
+      *width:22%;
       height: 355px;
       margin: 2% 1.8% 0px 0px;
       float: left;
@@ -91,7 +94,7 @@ body *{
     border: 1px solid #E6E6E6;
   }
 
-   .dialogContentContainer,.dialogContent
+  .dialogContentContainer,.dialogContent
   {
     width: 98% ;
     height: 355px;
@@ -107,6 +110,8 @@ body *{
       width: 22.9%;
       height: 355px;
       margin: 2% 1.9% 0px 0px;
+      *margin: 2% 1.519% 0px 0px;
+      *width: 22.92%;
       float: left;
       border: 1px solid #CCCCCC;
     }
@@ -242,6 +247,7 @@ body *{
     overflow: hidden;
     .carImg
     {
+      position: relative;
       width: 100%;
       overflow: hidden;
       height: 182px;
@@ -313,6 +319,7 @@ body *{
         a {
           color: #999;
         }
+        float: left;
       }
       .collect:hover {
         background: url(../../images/index/hover.png) no-repeat;
@@ -327,7 +334,7 @@ body *{
       .recommendedToday {
         font-size: 15px;
         position: absolute;
-        right: 0px;
+        right: -2px;
         color: #999;
       }
     }
@@ -508,7 +515,7 @@ body *{
     border: none !important;
   }
 
- .dialogContentContainer,.dialogContent {
+  .dialogContentContainer,.dialogContent {
     width: 97%;
     height: 367px;
     position: absolute;
@@ -847,50 +854,50 @@ body *{
 
       }
       .chexi {
-         float: left;
-         height: 100%;
-         width: 45%;
-         .chexiContent
-         {
-           margin: 20px 10px;
-           margin-right: 20px;
-           .chexiTitle
-           {
-              font-size: 15px;
-              color:#939393;
-           }
-           ul
-           {
-             margin-top: 20px;
-             li
-             {
-               margin-top: 10px;
-               height: 65px;
-               overflow: hidden;
-               list-style: none;
-                h1{
-                  font-size: 15px;
-                  color:#FF5719;
-                  font-weight: bolder;
-                  padding-bottom: 5px;
-                }
-                span
-                {
-                  float: left;
-                  padding: 1px 2px;
-                  margin-right:10px;
-                  margin-top:2px;
-                  cursor: pointer;
-                  color:#939393;
-                }
-               span.active
-               {
-                 background:#F44B0B;
-                 color:#ffffff;
-               }
-             }
-           }
-         }
+        float: left;
+        height: 100%;
+        width: 45%;
+        .chexiContent
+        {
+          margin: 20px 10px;
+          margin-right: 20px;
+          .chexiTitle
+          {
+            font-size: 15px;
+            color:#939393;
+          }
+          ul
+          {
+            margin-top: 20px;
+            li
+            {
+              margin-top: 10px;
+              height: 65px;
+              overflow: hidden;
+              list-style: none;
+              h1{
+                font-size: 15px;
+                color:#FF5719;
+                font-weight: bolder;
+                padding-bottom: 5px;
+              }
+              span
+              {
+                float: left;
+                padding: 1px 2px;
+                margin-right:10px;
+                margin-top:2px;
+                cursor: pointer;
+                color:#939393;
+              }
+              span.active
+              {
+                background:#F44B0B;
+                color:#ffffff;
+              }
+            }
+          }
+        }
       }
     }
   }
