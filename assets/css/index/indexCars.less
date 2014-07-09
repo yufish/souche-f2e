@@ -43,7 +43,7 @@ body *{
     }
   }
 
-  .dialogContent
+   .dialogContentContainer,.dialogContent
   {
     width: 97%;
     height: 355px;
@@ -62,7 +62,7 @@ body *{
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
-  .dialogContent
+   .dialogContentContainer,.dialogContent
   {
     width: 98%;
     height: 355px;
@@ -91,7 +91,7 @@ body *{
     border: 1px solid #E6E6E6;
   }
 
-  .dialogContent
+   .dialogContentContainer,.dialogContent
   {
     width: 98% ;
     height: 355px;
@@ -239,6 +239,22 @@ body *{
     }
   }
   .carItem {
+    overflow: hidden;
+    .carImg
+    {
+      width: 100%;
+      overflow: hidden;
+      height: 182px;
+      img
+      {
+        position: relative;
+        width: 100%;
+        height: 182px;
+        top: 0px;
+        left: 0px;
+      }
+
+    }
     h1 {
       font-size: 15px;
       margin: 7px 20px 0px 20px;
@@ -483,7 +499,16 @@ body *{
       margin-left:130px !important;
     }
   }
-  .dialogContent {
+
+  .dialogContentContainer
+  {
+    background: none !important;
+    z-index: -100;
+    margin-top: 0px !important;
+    border: none !important;
+  }
+
+ .dialogContentContainer,.dialogContent {
     width: 97%;
     height: 367px;
     position: absolute;
@@ -595,7 +620,7 @@ body *{
         float: left;
         margin-top: 10px;
         background: #ffffff;
-        padding: 6px 10px;
+        padding: 3px 10px 7px 10px;
         border: 1px solid #CCCCCC;
         margin-right: 5px;
         margin-left: 5px;
@@ -662,7 +687,7 @@ body *{
 
       }
     }
-    .submit
+    >.submit
     {
       border-top: 1px solid  #CCCCCC;
       clear: both;

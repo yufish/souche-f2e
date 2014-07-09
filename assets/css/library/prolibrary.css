@@ -4,6 +4,7 @@ body {
 #content .wrapper {
   width: 1190px;
   margin: 0 auto;
+  overflow: auto;
 }
 #content .wrapper #map {
   position: relative;

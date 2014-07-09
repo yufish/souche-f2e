@@ -33,7 +33,8 @@ div#carsContent
                 | 开始选车
 
     div.carsItem.carItem
-        img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
+        div.carImg
+          img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
         h1 2013款 奥迪A4L个性运动版3款 奥迪A4L个性运动版
         div.info
             span.price ￥12.33万
@@ -50,7 +51,8 @@ div#carsContent
             span.recommendedToday 今日推荐
 
     div.carsItem.carItem
-        img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
+        div.carImg
+            img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
         h1 2013款 奥迪A4L个性运动版3款 奥迪A4L个性运动版
         div.info
             span.price ￥12.33万
@@ -66,7 +68,8 @@ div#carsContent
             span.collect.ative 收藏 10
             span.recommendedToday 今日推荐
     div.carsItem.carItem
-        img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
+        div.carImg
+            img(src="http://res.souche.com/files/carpicture/99FEA070DA7AEDAA1C7D9D46D49B21BE_690x460.jpg_325x10000.jpg",height=182)
         h1 2013款 奥迪A4L个性运动版3款 奥迪A4L个性运动版
         div.info
             span.price ￥12.33万
@@ -131,214 +134,215 @@ div#carsContent
             span.ps!=' <a>登陆</a>即可保存心愿卡'
             span.submit 修改
 
-    div.dialogContent.hidden
-        div.carBudget
-            h1 购车预算
-            div.dataContainer
-                div.inputContainer.leftContainer
-                    input
-                    a 万元
-                a —
-                div.inputContainer.rightContainer
-                    input
-                    a 万元
-        div.carinstrest
-            h1 感兴趣的车
-            div.carinstrestItem
-               a 奥迪A4
-               span X
-            div.carinstrestItem
-                a 奥迪A4
-                span X
-            div.carinstrestItem
-                a 奥迪A4
-                span X
-            div.carinstrestItem
-                a 奥迪A4
-                span X
-            div.carinstrestItem
-                a 奥迪A4
-                span X
-            div.addCarinstrestItem
-                a 添加
-                span +
-        div.caryear
-            h1 年份
-            div.dataContainer
-                div.selectContainer.leftContainer
-                    input
-                a —
-                div.selectContainer.rightContainer
-                    input
-        div.submit
-            span 确定
-    div.addInstrestCar.hidden
-        div.addInstrestCarTilte
-            span.instrestCarItem.title 添加感兴趣的车：
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
-            span.instrestCarItem
-                a 奥迪A4
-                span X
+    div.dialogContentContainer
+        div.dialogContent.hidden
+            div.carBudget
+                h1 购车预算
+                div.dataContainer
+                    div.inputContainer.leftContainer
+                        input
+                        a 万元
+                    a —
+                    div.inputContainer.rightContainer
+                        input
+                        a 万元
+            div.carinstrest
+                h1 感兴趣的车
+                div.carinstrestItem
+                   a 奥迪A4
+                   span X
+                div.carinstrestItem
+                    a 奥迪A4
+                    span X
+                div.carinstrestItem
+                    a 奥迪A4
+                    span X
+                div.carinstrestItem
+                    a 奥迪A4
+                    span X
+                div.carinstrestItem
+                    a 奥迪A4
+                    span X
+                div.addCarinstrestItem
+                    a 添加
+                    span +
+            div.caryear
+                h1 年份
+                div.dataContainer
+                    div.selectContainer.leftContainer
+                        input
+                    a —
+                    div.selectContainer.rightContainer
+                        input
+            div.submit
+                span 确定
+        div.addInstrestCar.hidden
+            div.addInstrestCarTilte
+                span.instrestCarItem.title 添加感兴趣的车：
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
+                span.instrestCarItem
+                    a 奥迪A4
+                    span X
 
-        div.addInstrestCarSubmit
-            span.submit
-                |确定
-        div.addInstrestCarContent
-            div.brand
-                div.hot
-                  span 热门
-                  div
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                      a 哈弗H6
-                div.brandList
-                  ul
-                    li
-                       span A
-                       a 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                       span A
-                       a 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                       span A
-                       a 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                       span A
-                       a 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                       span A
-                       a 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                       span A
-                       a.active 哈弗H6
-                       a 哈弗H6
-                       a 哈弗H6
-                    li
-                        span A
-                        a 哈弗H6
-                        a 哈弗H6
-                        a 哈弗H6
-                    li
-                        span A
-                        a 哈弗H6
-                        a 哈弗H6
-                        a 哈弗H6
-                    li
-                        span A
-                        a 哈弗H6
-                        a 哈弗H6
-                        a 哈弗H6
-                    li
-                        span A
-                        a 哈弗H6
-                        a 哈弗H6
-                        a 哈弗H6
-            div.chexi
-                div.chexiContent
-                   div.chexiTitle  福特全部车系
-                   ul
-                     li
-                        h1 长安福特
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                     li
-                        h1 长安福特
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span.active A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
-                        span A1
+            div.addInstrestCarSubmit
+                span.submit
+                    |确定
+            div.addInstrestCarContent
+                div.brand
+                    div.hot
+                      span 热门
+                      div
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                          a 哈弗H6
+                    div.brandList
+                      ul
+                        li
+                           span A
+                           a 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                           span A
+                           a 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                           span A
+                           a 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                           span A
+                           a 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                           span A
+                           a 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                           span A
+                           a.active 哈弗H6
+                           a 哈弗H6
+                           a 哈弗H6
+                        li
+                            span A
+                            a 哈弗H6
+                            a 哈弗H6
+                            a 哈弗H6
+                        li
+                            span A
+                            a 哈弗H6
+                            a 哈弗H6
+                            a 哈弗H6
+                        li
+                            span A
+                            a 哈弗H6
+                            a 哈弗H6
+                            a 哈弗H6
+                        li
+                            span A
+                            a 哈弗H6
+                            a 哈弗H6
+                            a 哈弗H6
+                div.chexi
+                    div.chexiContent
+                       div.chexiTitle  福特全部车系
+                       ul
+                         li
+                            h1 长安福特
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                         li
+                            h1 长安福特
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span.active A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
+                            span A1
 div#carsMore
     span 查看更多
