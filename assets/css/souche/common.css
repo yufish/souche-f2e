@@ -291,6 +291,7 @@ body {
   display: block;
   float: left;
   color: #000000;
+  cursor: default !important;
 }
 #nav .other-navs .logonOut:hover {
   color: #FC7000;
