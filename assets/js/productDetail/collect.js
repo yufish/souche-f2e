@@ -14,12 +14,11 @@ define(function() {
             Souche.NoRegLogin.checkLogin(function() {
                     if ($(context).parent().hasClass("active")) {
                         var carID = $(context).parent().parent().attr("carid");
-                        $(context).parent().removeClass("active");
+
                         deleteCollect.call(context, carID);
                     }
                     else {
                         var carID = $(context).parent().parent().attr("carid");
-                        $(context).parent().addClass("active");
                         addCollect.call(context, carID);
                     }
                 });
@@ -72,7 +71,7 @@ define(function() {
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
                     $(this).html('已收藏');
-                    $(this).addClass("active");
+                    $(this).parent().addClass("active");
                 }
                 collecting=false;
             });
@@ -93,6 +92,7 @@ define(function() {
                     alert(data.errorMessage)
                 } else {
                     $(this).html('收藏');
+                    $(this).parent().removeClass("active");
                 }
 
                 collecting=false;
