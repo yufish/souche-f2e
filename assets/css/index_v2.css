@@ -300,11 +300,18 @@ a:hover {
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: block;
+}
+#footer .wrapper .foot-detail .detail-item .title:hover {
+  text-decoration: underline;
 }
 #footer .wrapper .foot-detail .detail-item .art-link {
   display: block;
   color: #717171;
   line-height: 25px;
+}
+#footer .wrapper .foot-detail .detail-item .art-link:hover {
+  text-decoration: underline;
 }
 #footer .wrapper .friendlinks {
   border-bottom: 1px solid #717171;
@@ -314,6 +321,9 @@ a:hover {
 #footer .wrapper .friendlinks .links {
   color: #717171;
   margin-right: 25px;
+}
+#footer .wrapper .friendlinks .links:hover {
+  text-decoration: underline;
 }
 #footer .wrapper p {
   color: #717171;
@@ -567,6 +577,10 @@ body * {
   height: 20px;
   border-bottom: 1px solid #E6E6E6;
 }
+#carsNav ul li:hover,
+#carsMore ul li:hover {
+  color: #333;
+}
 #carsNav ul li.active,
 #carsMore ul li.active {
   color: #fc7000;
@@ -701,7 +715,8 @@ body * {
   width: 100%;
   padding-top: 10px;
   background: #FF5719;
-  height: 30px;
+  border: 1px solid #D94A16;
+  height: 28px;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
@@ -709,6 +724,9 @@ body * {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+}
+#carsContent .operationItem .dataContainer .submit:hover {
+  background: #FF4D09;
 }
 #carsContent .operationItem .dataContainer .inputContainer {
   margin-top: 10px;
@@ -728,7 +746,7 @@ body * {
   vertical-align: middle;
   float: right;
   padding-top: 10px;
-  padding-right: 5%;
+  padding-right: 8%;
 }
 #carsContent .operationItem .dataContainer .inputContainer input {
   width: 40%;
@@ -767,6 +785,7 @@ body * {
   width: 100%;
   overflow: hidden;
   height: 182px;
+  display: block;
 }
 #carsContent .carItem .carImg img {
   position: relative;
@@ -775,11 +794,15 @@ body * {
   top: 0px;
   left: 0px;
 }
-#carsContent .carItem h1 {
+#carsContent .carItem .car-link {
   font-size: 15px;
   margin: 7px 20px 0px 20px;
   height: 40px;
   overflow: hidden;
+  display: block;
+}
+#carsContent .carItem .car-link:hover {
+  color: #F44B0B;
 }
 #carsContent .carItem .info {
   margin: 7px 20px 0px 20px;
@@ -813,6 +836,7 @@ body * {
   line-height: 20px;
   overflow: hidden;
   height: 40px;
+  cursor: default;
 }
 #carsContent .carItem .carTail {
   margin: 7px 20px 0px 13px;
@@ -849,13 +873,18 @@ body * {
   right: -2px;
   color: #999;
 }
-#carsContent .infoItem h1 {
+#carsContent .infoItem a {
   margin: 25px 20px 0px 20px;
   font-size: 16px;
   font-weight: bold;
+  display: block;
+  cursor: pointer;
 }
-#carsContent .infoItem h1 span {
+#carsContent .infoItem a span {
   color: #6CACE7;
+}
+#carsContent .infoItem a:hover {
+  color: #F44B0B;
 }
 #carsContent .infoItem .infoContent {
   margin: 15px 20px 0px 20px;
@@ -1458,6 +1487,14 @@ body * {
 }
 #hotsell .hotlist li span {
   margin-right: 15px;
+  font-weight: bold;
+  color: #8C8C8C;
+}
+#hotsell .hotlist li a {
+  color: #8C8C8C;
+}
+#hotsell .hotlist li a:hover {
+  color: #fc7000;
 }
 #hotsell .hotlist li i {
   display: block;
@@ -1486,10 +1523,14 @@ body * {
   background: #fff;
   margin-right: 0px;
 }
-#hotsell .hotlist .hot-item {
+#hotsell .hotlist .hot-item span {
   color: #fc7000;
+  font-weight: bold;
 }
 #hotsell .hotlist .hot-item a {
+  color: #8C8C8C;
+}
+#hotsell .hotlist .hot-item a:hover {
   color: #fc7000;
 }
 #qcode {
@@ -1561,6 +1602,9 @@ body * {
 }
 #qcode .app-code .code-cont a {
   color: #fc7000;
+}
+#qcode .app-code .code-cont a:hover {
+  text-decoration: underline;
 }
 #qa {
   padding: 15px;
@@ -1638,8 +1682,11 @@ body * {
   border-radius: 3px;
   background: #5c9bef url(../images/index/ask.png) no-repeat left center;
   color: #fff;
-  line-height: 30px;
+  line-height: 31px;
   margin-top: 15px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask:hover {
+  background: #3784ec url(../images/index/ask-hover.png) no-repeat left center;
 }
 #qa .cheshen-nav .nav-but:hover {
   border-bottom: none;

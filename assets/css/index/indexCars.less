@@ -21,6 +21,9 @@ body *{
       height: 20px;
       border-bottom: 1px solid #E6E6E6;
     }
+    li:hover{
+      color: #333;
+    }
     li.active{
       color: #fc7000;
       background: #ffffff;
@@ -179,7 +182,8 @@ body *{
         width: 100%;
         padding-top: 10px;
         background: #FF5719;
-        height: 30px;
+        border: 1px solid #D94A16;
+        height: 28px;
         color: #ffffff;
         text-align: center;
         cursor: pointer;
@@ -188,7 +192,9 @@ body *{
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
       }
-
+      .submit:hover{
+        background: #FF4D09;
+      }
       .inputContainer {
         margin-top: 10px;
         position:   absolute;
@@ -206,7 +212,7 @@ body *{
           vertical-align: middle;
           float: right;
           padding-top: 10px;
-          padding-right: 5%;
+          padding-right: 8%;
         }
         input {
           width:40%;
@@ -251,6 +257,7 @@ body *{
       width: 100%;
       overflow: hidden;
       height: 182px;
+      display: block;
       img
       {
         position: relative;
@@ -261,11 +268,15 @@ body *{
       }
 
     }
-    h1 {
+   .car-link {
       font-size: 15px;
       margin: 7px 20px 0px 20px;
       height: 40px;
       overflow: hidden;
+      display: block;
+    }
+    .car-link:hover{
+      color: #F44B0B;
     }
     .info {
       margin: 7px 20px 0px 20px;
@@ -301,6 +312,7 @@ body *{
         line-height: 20px;
         overflow: hidden;
         height: 40px;
+        cursor: default;
       }
     }
     .carTail {
@@ -340,15 +352,19 @@ body *{
     }
   }
   .infoItem {
-    h1 {
+    a {
       margin:25px 20px 0px 20px;
       font-size: 16px;
       font-weight: bold;
+      display: block;
+      cursor: pointer;
       span {
         color: #6CACE7;
       }
     }
-
+    a:hover{
+      color: #F44B0B;
+    }
     .infoContent {
       margin:15px 20px 0px 20px;
       font-size: 14px;
