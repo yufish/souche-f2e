@@ -299,6 +299,7 @@ a:hover {
 #footer {
   width: 100%;
   background: #333333;
+  margin-top: 25px;
 }
 #footer .wrapper {
   margin: 0 auto;
