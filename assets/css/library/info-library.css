@@ -192,6 +192,8 @@
 #info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-fav {
   padding: 10px;
   color: #999;
+  width: 200px;
+  cursor: pointer;
 }
 #info-library #content .info .relevant .relevant-car .car-wrapper .car-box .car-fav i {
   display: block;

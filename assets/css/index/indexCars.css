@@ -25,6 +25,10 @@ body * {
   height: 20px;
   border-bottom: 1px solid #E6E6E6;
 }
+#carsNav ul li:hover,
+#carsMore ul li:hover {
+  color: #333;
+}
 #carsNav ul li.active,
 #carsMore ul li.active {
   color: #fc7000;
@@ -154,7 +158,8 @@ body * {
   width: 100%;
   padding-top: 10px;
   background: #FF5719;
-  height: 30px;
+  border: 1px solid #D94A16;
+  height: 28px;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
@@ -162,6 +167,9 @@ body * {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+}
+#carsContent .operationItem .dataContainer .submit:hover {
+  background: #FF4D09;
 }
 #carsContent .operationItem .dataContainer .inputContainer {
   margin-top: 10px;
@@ -181,7 +189,7 @@ body * {
   vertical-align: middle;
   float: right;
   padding-top: 10px;
-  padding-right: 5%;
+  padding-right: 8%;
 }
 #carsContent .operationItem .dataContainer .inputContainer input {
   width: 40%;
@@ -219,6 +227,7 @@ body * {
   width: 100%;
   overflow: hidden;
   height: 182px;
+  display: block;
 }
 #carsContent .carItem .carImg img {
   position: relative;
@@ -227,11 +236,15 @@ body * {
   top: 0px;
   left: 0px;
 }
-#carsContent .carItem h1 {
+#carsContent .carItem .car-link {
   font-size: 15px;
   margin: 7px 20px 0px 20px;
   height: 40px;
   overflow: hidden;
+  display: block;
+}
+#carsContent .carItem .car-link:hover {
+  color: #F44B0B;
 }
 #carsContent .carItem .info {
   margin: 7px 20px 0px 20px;
@@ -265,6 +278,7 @@ body * {
   line-height: 20px;
   overflow: hidden;
   height: 40px;
+  cursor: default;
 }
 #carsContent .carItem .carTail {
   margin: 7px 20px 0px 13px;
@@ -300,13 +314,18 @@ body * {
   right: 0px;
   color: #999;
 }
-#carsContent .infoItem h1 {
+#carsContent .infoItem a {
   margin: 25px 20px 0px 20px;
   font-size: 16px;
   font-weight: bold;
+  display: block;
+  cursor: pointer;
 }
-#carsContent .infoItem h1 span {
+#carsContent .infoItem a span {
   color: #6CACE7;
+}
+#carsContent .infoItem a:hover {
+  color: #F44B0B;
 }
 #carsContent .infoItem .infoContent {
   margin: 15px 20px 0px 20px;
