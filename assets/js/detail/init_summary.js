@@ -176,7 +176,7 @@ define(function() {
 
 
 
-            $(".onsale-tab-item").each(function(i, tab) {
+            $(".onsale-tab-item:not(hidden)").each(function(i, tab) {
                 if ($("#" + $(tab).attr("data-scrollto")).length) {
                     Souche.Util.appear("#" + $(tab).attr("data-scrollto"), function() {
                         $(".onsale-tab-item").removeClass("active")
