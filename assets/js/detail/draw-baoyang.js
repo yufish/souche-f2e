@@ -1,4 +1,4 @@
-define(['lib/mustache', 'lib/svg.min', 'souche/custom-select'], function(Mustache, SVG, CustomSelect) {
+define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
     var svg;
     var chartHeight = 300;
     var min = 0;

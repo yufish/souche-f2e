@@ -179,137 +179,27 @@ define(function() {
                 }
             });
         },
-        init: function(_config) {
+        initForChexi: function(_config) {
             config = _config;
             var self = this;
-            // var saleTabTop = $(".onsale-tab-item").offset().top;
 
-            // $(".onsale-tab-item").on("click", function(e) {
-            //     var id = $(this).attr("data-id");
-            //     $(".onsale-content-item").addClass("hidden")
-            //     $("#" + id).removeClass("hidden");
-            //     // $(".onsale-tab-item").removeClass("active");
-            //     // $(this).addClass("active")
-            //     $(window).trigger("tab_change", id);
-
-            //     if ($(this).attr("data-scrollto")) {
-            //         $('html,body').animate({
-            //             scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
-            //         }, 500, function() {
-            //             $(".onsale-tab-item").removeClass("active");
-            //             $(self).addClass("active")
-            //         });
-            //     }
-            //     var self = this;
-
-            // });
-
-
-
-            // $(".onsale-tab-item").each(function(i, tab) {
-            //     if ($("#" + $(tab).attr("data-scrollto")).length) {
-            //         Souche.Util.appear("#" + $(tab).attr("data-scrollto"), function() {
-            //             $(".onsale-tab-item").removeClass("active")
-            //             $(tab).addClass("active")
-            //         }, $(window).height() - 100, true)
-            //     }
-
-            // })
-            // $(".float-nav-item").on("click", function(e) {
-            //     var id = $(this).attr("data-id");
-            //     $(".onsale-content-item").addClass("hidden")
-            //     $("#" + id).removeClass("hidden");
-            //     $(".float-nav-item").removeClass("activeNav");
-            //     $(this).addClass("activeNav")
-            //     $(window).trigger("tab_change", id);
-            //     e.preventDefault();
-            // });
-            // var picsLoaded = false;
-            // var brandHistoryLoaded = false;
-            // $(window).on("tab_change", function(e, id) {
-            //     if (id == "onsale_pics") {
-            //         if (!picsLoaded) {
-            //             $("#onsale_pics img").lazyload();
-
-
-
-            //             picsLoaded = true;
-            //         }
-
-            //     } else if (id == "onsale_brand") {
-            //         if (!brandHistoryLoaded) {
-
-            //             self.init_brandHistory();
-
-
-            //             brandHistoryLoaded = true;
-            //         }
-            //     }
-            // });
             if (SVGsupported) {
-                self.load_price();
+                // self.load_price();
                 self.load_baoyang();
                 self.load_koubei();
-                self.load_config();
+                // self.load_config();
             }
-            // $(window).on("tab_change", function(e, id) {
-            //     if (!hasInitTab[id]) {
-            //         if (id == "onsale_price") {
-            //             self.load_price();
-            //         } else if (id == "onsale_baoyang") {
-            //             require(['detail/draw-baoyang'], function(Baoyang) {
-            //                 Baoyang.draw({
-            //                     feiyongs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8],
-            //                     nowDistance: 3.4
-            //                 })
-            //             })
-            //         } else if (id == "onsale_koubei") {
-            //             require(['detail/draw-koubei'],
-            //                 function(DrawKoubei) {
-            //                     var koubeiData = [{
-            //                         name: "细节",
-            //                         rate: 0.7,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.8,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.9,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.5,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.8,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.5,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.2,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.3,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }, {
-            //                         name: "细节",
-            //                         rate: 0.8,
-            //                         labels: ["价格高", "储物空间大"]
-            //                     }]
-            //                     DrawKoubei.draw(koubeiData)
-            //                 }
-            //             )
-            //         }
-            //         hasInitTab[id] = 1;
-            //     }
-            // })
+        },
+        initForChexing: function(_config) {
+            config = _config;
+            var self = this;
+
+            if (SVGsupported) {
+                self.load_price();
+                // self.load_baoyang();
+                // self.load_koubei();
+                // self.load_config();
+            }
         }
     }
 });
