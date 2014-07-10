@@ -8,7 +8,8 @@ define(function()
     var baseControlerConfig={
         "carConstrast":"productDetail/carConstrast",
         "collect":"productDetail/collect",
-        "nav":"productDetail/nav"
+        "nav":"productDetail/nav",
+        "anchor":"productDetail/anchorAnimate"
     };
 
     var loadImg = function()
@@ -29,6 +30,7 @@ define(function()
        // loadImg();
         initBaseControler();
     };
+
 
     var initBaseControler = function(conf)
     {

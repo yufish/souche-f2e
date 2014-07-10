@@ -76,6 +76,9 @@
     font-family: 'Microsoft YaHei', Tahoma, Verdana;
   }
 
+  a{
+    cursor: default;
+  }
   #header {
     height: 115px;
     background: #fff;
@@ -152,6 +155,7 @@
     margin-right: 50px;
     font-weight: bold;
     position: relative;
+    cursor: pointer;
   }
   #nav .main-navs a:hover {
     color: #fc7000;
@@ -181,8 +185,18 @@
     display: block;
     float: left;
     color:#000000;
-    cursor: default !important;
+    cursor: pointer;
   }
+#nav .other-navs .logonOut
+{
+  cursor: pointer;
+}
+
+#nav .other-navs .phoneInfo
+{
+  cursor: default;
+}
+
 #nav .other-navs .logonOut:hover {
     color: #FC7000;
 }
