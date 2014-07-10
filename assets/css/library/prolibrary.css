@@ -685,7 +685,7 @@ body {
   *display: inline;
   *zoom: 1;
   background: url(../../images/index/normal.png) no-repeat;
-  background-position: 0px 3px;
+  background-position: 0px 4px;
   padding-left: 20px;
   vertical-align: middle;
   cursor: pointer;
@@ -695,11 +695,11 @@ body {
 }
 #content .wrapper #newProduct .item .itemTail .carCollect.hover {
   background: url(../../images/index/hover.png) no-repeat;
-  background-position: 0px 3px;
+  background-position: 0px 4px;
 }
 #content .wrapper #newProduct .item .itemTail .carCollect.active {
   background: url(../../images/index/active.png) no-repeat;
-  background-position: 0px 3px;
+  background-position: 0px 4px;
 }
 #content .wrapper #newProduct .item .itemTail .carConstrast {
   margin: 0px 15px;
@@ -785,8 +785,8 @@ body {
   color: #8E8E8E;
 }
 #content .wrapper #newProductList li .itemInfo .carCollect {
-  background: url(../../images/index/car-nocollect.png) no-repeat;
-  background-position: -1px 1px;
+  background: url(../../images/index/normal.png) no-repeat;
+  background-position: 2px 4px;
   padding-left: 20px;
   vertical-align: middle;
   cursor: pointer;
@@ -796,8 +796,8 @@ body {
   background-position: 2px 4px;
 }
 #content .wrapper #newProductList li .itemInfo .carCollect.active {
-  background: url(../../images/index/car-collect.png) no-repeat;
-  background-position: -1px 1px;
+  background: url(../../images/index/active.png) no-repeat;
+  background-position: 2px 4px;
 }
 #content .wrapper #newProductList li .itemInfo .carConstrast {
   margin: 0px 5px;
