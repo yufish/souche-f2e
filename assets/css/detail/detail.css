@@ -4026,12 +4026,15 @@ body {
 #onsale_ride .ride_step5 {
   background-position: -761px 0;
 }
+.record-num {
+  margin-top: 10px;
+}
 #onsale_record {
   border-top: 1px solid #d9d9d9;
 }
 #onsale_record table {
   width: 100%;
-  margin-top: 33px;
+  margin-top: 20px;
   border: 1px solid #d9d9d9;
 }
 #onsale_record table th,
@@ -4052,7 +4055,7 @@ body {
 }
 #onsale_record .record-none {
   width: 100%;
-  margin-top: 33px;
+  margin-top: 20px;
   border: 1px solid #d9d9d9;
 }
 #onsale_record .record-none th {
