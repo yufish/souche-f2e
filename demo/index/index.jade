@@ -5,7 +5,7 @@ html
         <link href="http://f2e.souche.com/assets/css/index_v2.css" rel="stylesheet" type="text/css" />
         <link href="http://f2e.souche.com/assets/css/souche/reset.css?t=150" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
-        <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js?t=1"></script>
+       
         <link href="../../assets/css/index/indexCars.css " rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../assets/js/respond.js"></script>
 
@@ -78,7 +78,28 @@ html
         <script type="text/javascript" src="../../assets/js/respond.js"></script>
         <script type="text/javascript" src="http://res.souche.com/js/common/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="http://res.souche.com/assets/js/lib/require.js?t=13"></script>
+        <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js?t=1"></script>
         script.
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                slideshowSpeed: 5000,
+                directionNav: false,
+                controlNav: true,
+                pauseOnHover: true
+                });
+             $(".right-slide").flexslider({
+                slideshow: false,
+                animation: "slide",
+                slideshowSpeed: 5000,
+                controlNav: true,
+                animationLoop: false,
+                randomize: true
+                });
+            });
+            $(".cheshen-nav .nav-but").click(function(){
+
+                });
             var contextPath = "";
             require.config({
             baseUrl: "http://f2e.souche.com/assets/js",
@@ -87,3 +108,4 @@ html
             require(["index_v2"],function(Index){
                 Index.init({})
             })
+

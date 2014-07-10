@@ -4039,14 +4039,30 @@ body {
   line-height: 30px;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
 }
 #onsale_record table th {
   background-color: #f2f2f2;
   color: #333;
   font-weight: bold;
+  width: 360px;
 }
 #onsale_record table td {
   color: #666666;
+}
+#onsale_record .record-none {
+  width: 100%;
+  margin-top: 33px;
+  border: 1px solid #d9d9d9;
+}
+#onsale_record .record-none th {
+  background-color: #f2f2f2;
+  color: #bcbebd;
+  font-weight: bold;
+  width: 360px;
+}
+#onsale_record .no-record {
+  color: #333;
 }
 #onsale_record .record-no {
   width: 240px;
@@ -5332,7 +5348,7 @@ less .icon-fei {
   color: #51944f;
   position: absolute;
   top: 320px;
-  left: 528px;
+  left: 544px;
 }
 .net-koubei .all-score em {
   font-size: 30px;

@@ -15,7 +15,7 @@ body
         font-size: 15px;
         cursor: pointer;
         line-height: 45px;
-        color: #7B7B7B;
+        color: #8C8C8C;
         padding: 0px 10px;
       }
       .space {
@@ -255,32 +255,34 @@ body
           *zoom:1;
           *display:inline;
           _display:inline;
-          width: 330px;
+          width: 450px;
           border-left: 1px solid #e6e6e6;
           height: 100%;
           vertical-align: top;
           > div {
             padding: 0px 30px;
             vertical-align: middle;
-            margin: 8% auto;
+            margin: 4% auto;
             .proName {
-              font-size: 30px;
+              font-size: 22px;
               vertical-align: middle;
-              font-weight: 500;
-
+              padding: 5px 0px;
+              color: #333333;
             }
             .proPrice {
               color: #fc7000;
               font-weight: bold;
-              font-size: 35px;
+              padding-bottom: 5px;
+              font-size: 25px;
               vertical-align: middle;
-              margin-left: -9px;
+              margin-left: 0px;
             }
             .proNewPrice {
               font-size: 15px;
               color: #9D9D9D;
               line-height: 20px;
               overflow: hidden;
+              padding: 5px 0px;
             }
           }
         }
@@ -289,7 +291,7 @@ body
           _zoom:1;
           *zoom:1;
           *display: inline;
-          width: 300px;
+          width: 250px;
           border-left: 1px solid #e6e6e6;
           height: 100%;
           vertical-align: top;
@@ -309,7 +311,7 @@ body
           _zoom:1;
           *zoom:1;
           *display: inline;
-          width: 500px;
+          width: 450px;
           border-left: 1px solid #e6e6e6;
           height: 100%;
           vertical-align: top;
@@ -349,13 +351,14 @@ body
               color: #7B7B7B;
               height: 32px;
               background:url(../../images/index/gun.png) repeat-y 6px;
+              cursor: pointer;
               span{
                 display: inline-block;
                 *display: inline;
                 *zoom: 1;
                 vertical-align: middle;
                 font-size: 20px;
-                color: #CDC9C9;
+                color: #CCCCCC;
               }
               span.active{
                 color: #fc7000;
@@ -365,6 +368,8 @@ body
                 *display: inline;
                 *zoom: 1;
                 vertical-align: middle;
+                cursor: pointer;
+                color: #6F6F6F;
               }
 
             }
@@ -382,9 +387,13 @@ body
           *zoom: 1;
           margin-left: 200px;
           vertical-align: top;
-          padding-top: 50px;
           table
           {
+            margin-top: 50px;
+            a
+            {
+              color: #000000;
+            }
             thead
             {
               td{
@@ -395,6 +404,9 @@ body
                   *display: inline;
                   *zoom: 1;
                   vertical-align: middle;
+                  a{
+                    color:#4C4C4C;
+                  }
                 }
                 .border {
                   height: 1px;
@@ -412,6 +424,7 @@ body
                   a
                   {
                     font-size: 14px;
+                    color: #666666;
                   }
                 }
               .firstCol
@@ -518,6 +531,7 @@ body
           background: white;
           border-left: 1px solid white;
           border-right: 1px solid white;
+          color: #666666;
         }
         li.active {
           border-top: 3px solid #ef5c1e;
@@ -595,16 +609,21 @@ body
           font-weight: bolder;
           font-size: 20px;
           padding-bottom: 20px;
+          color: #333333;
         }
         .firstCol {
           padding-left: 0px;
-          cursor: pointer;
           a {
             color: #FF5809 !important;
+            cursor: pointer;
           }
         }
+        a
+        {
+          color: #656565;
+        }
         thead {
-          border-top: 1px solid #000000;
+          border-top: 1px solid #A7A7A7;
           th {
             height: 53px;
             font-weight: bolder;
@@ -662,6 +681,7 @@ body
         font-weight: bold;
         font-size: 20px;
         padding-bottom: 20px;
+        color: #5A5A5A;
       }
       .item {
         width: 215px;
@@ -673,20 +693,33 @@ body
         .itemContent {
           border-bottom: 1px solid #e6e6e6;
           height: 270px;
-          cursor: pointer;
+          .relationImg
+          {
+            a{
+              cursor: pointer;
+            }
+          }
           h1{
             margin: 2px 15px;
             font-size: 14px;
             font-weight: bolder;
+            cursor: pointer;
+
+            a{
+              cursor: pointer;
+              color: #6E6E6E;
+            }
           }
           .currentPrice {
             margin: 2px 15px;
             color:#ef5c1e;
             font-size: 13px;
             font-weight: bolder;
+
           }
           .oldPrice {
             text-decoration: line-through;
+            color: #C0C0C0;
           }
           .other
           {
@@ -697,23 +730,26 @@ body
               margin: 0px 3px;
               border:  1px solid #e6e6e6;
               border-radius: 2px;
-              background-color: #e6e6e6;
+              background-color: #F9F9F9;
+              color: #C3C3C3;
             }
           }
           .detail{
             margin: 2px 15px;
             .shangpai{
               padding: 0px 10px 0px 0px;
+              color: #AAAAAA;
             }
             .gongli{
               padding: 0px 0px 0px 10px;
+              color: #AAAAAA;
             }
           }
         }
         .itemTail {
           position: relative;
           padding-top: 3px;
-          background-color:#f9f9f9 ;
+          background-color:#FFFFFF ;
           height: 26px;
           *
           {
@@ -729,6 +765,9 @@ body
             padding-left: 20px;
             vertical-align: middle;
             cursor: pointer;
+            span {
+              color: #939393;
+            }
           }
           .carCollect.hover{
             background: url(../../images/index/hover.png) no-repeat;
@@ -745,6 +784,7 @@ body
             *zoom: 1;
             span{
               padding-left: 4px;
+              color: #939393;
             }
             cursor: pointer;
           }
@@ -767,10 +807,15 @@ body
         font-size: 20px;
         padding-bottom: 10px;
         border-bottom: 3px solid #B0B0B0;
+        color: #343434;
       }
       li{
         padding: 25px 0px;
         border-bottom: 1px solid #e6e6e6;
+        >a{
+          cursor: pointer;
+        }
+
         >img
         {
           display: inline-block;
@@ -787,10 +832,14 @@ body
           margin-left: 10px;
           width: 255px;
           .car{
-            padding: 2px;
+            padding-bottom: 2px;
+            height: 38px;
+
             a{
               font-size: 15px;
               font-weight: bolder;
+              cursor: pointer;
+              color: #525252;
             }
           }
           .opteration
@@ -901,9 +950,11 @@ body
             padding: 6px 10px;
             background: url("../../images/fed/service-icon.png") no-repeat;
             background-position: 0px 7px;
+
           }
           .tuihuo, .bao, .fenqi {
              margin-bottom: 10px;
+            color: #666666;
           }
         }
       }
@@ -918,21 +969,24 @@ body
         padding-top: 45px;
         cursor: pointer;
       }
-      #latestInfo
-      {
-        >ul{
-          >a{
+      #latestInfo {
+        > ul {
+          > a {
             font-weight: bolder;
             font-size: 18px;
             display: block;
             margin: 20px 0px 0px 0px;
             padding-bottom: 12px;
-            border-bottom: 3px solid #B0B0B0;
+            border-bottom: 3px solid #A7A7A7;
+            color: #575757;
           }
-          li{
+          li {
             margin: 14px 0px;
             font-size: 14px;
-            cursor: pointer;
+            a {
+              cursor: pointer;
+              color: #7A7A7A;
+            }
           }
         }
       }
@@ -944,13 +998,13 @@ body
             display: block;
             padding-bottom: 12px;
             border-bottom: 3px solid #B0B0B0;
+            color: #575757;
           }
           padding-bottom: 50px;
         }
         li {
           margin: 14px 0px;
           font-size: 14px;
-          cursor: pointer;
           .relationImg {
             display: inline-block;
             *display: inline;
@@ -962,9 +1016,15 @@ body
             *zoom: 1;
             vertical-align: top;
             padding:5px 0px 0px 5px;
-            a{
-
+            color:#595959 ;
+            .relationCar
+            {
+              a{
+                cursor: pointer;
+                color:#595959;
+              }
             }
+
             a.relationPrice
             {
               color: #ef5c1e;

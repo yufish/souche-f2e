@@ -62,48 +62,50 @@ define(function() {
     function addConstrast(carID) {
         var url = config.api_addContrast;
         var self = this;
-        $.ajax({
-            type: "POST",
-            url: config.api_addContrast,
-            data:{
-                carId:carID
-            },
-            dataType: "json",
-            context:self
-        }).done(function (data) {
-            if (data.result == 2) { //正常
-                this.checked = true;
-                $(this).parent().find("input")[0].checked = true;
+        var  constrasting=true;
 
-                var contrastId=data.contrastId;
-                $(this).parent().attr("contrastId",contrastId);
-            }
-            else if (data.result == -1) {  // 已经添加
-                this.checked = true;
-                var waring= $(this).parent().parent().find(".contrast-waring");
-                waring.html("已经加入对比").removeClass("hidden");
-                $(this).parent().find("input")[0].checked = true;
-                window.setTimeout(function()
+        if(constrasting) {
+            $.ajax({
+                type: "POST",
+                url: config.api_addContrast,
+                data: {
+                    carId: carID
+                },
+                dataType: "json",
+                context: self
+            }).done(function (data) {
+                if (data.result == 2) { //正常
+                    this.checked = true;
+                    $(this).parent().find("input")[0].checked = true;
+
+                    var contrastId = data.contrastId;
+                    $(this).parent().attr("contrastId", contrastId);
+                }
+                else if (data.result == -1) {  // 已经添加
+                    this.checked = true;
+                    var waring = $(this).parent().parent().find(".contrast-waring");
+                    waring.html("已经加入对比").removeClass("hidden");
+                    $(this).parent().find("input")[0].checked = true;
+                    window.setTimeout(function () {
+                        waring.addClass("hidden");
+                    }, 3000);
+
+                    var contrastId = data.contrastId;
+                    $(this).parent().attr("contrastId", contrastId);
+                }
+                else if (data.result == 1) //已满
                 {
-                    waring.addClass("hidden");
-                },3000);
+                    var waring = $(this).parent().parent().find(".contrast-waring");
+                    waring.html("对比项已满").removeClass("hidden");
+                    $(this).parent().find("input")[0].checked = false;
+                    window.setTimeout(function () {
+                        waring.addClass("hidden");
+                    }, 3000);
+                }
 
-                var contrastId=data.contrastId;
-                $(this).parent().attr("contrastId",contrastId);
-            }
-            else if(data.result == 1) //已满
-            {
-                var waring= $(this).parent().parent().find(".contrast-waring");
-                waring.html("对比项已满").removeClass("hidden");
-                $(this).parent().find("input")[0].checked = false;
-                window.setTimeout(function()
-                {
-                    waring.addClass("hidden");
-                },3000);
-            }
-
-            constrasting=false;
-        });
+                constrasting = false;
+            });
+        }
     }
     //function end
 

@@ -14,7 +14,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   line-height: 45px;
-  color: #7B7B7B;
+  color: #8C8C8C;
   padding: 0px 10px;
 }
 #content .wrapper #map .space {
@@ -235,7 +235,7 @@ body {
   *zoom: 1;
   *display: inline;
   _display: inline;
-  width: 330px;
+  width: 450px;
   border-left: 1px solid #e6e6e6;
   height: 100%;
   vertical-align: top;
@@ -243,32 +243,35 @@ body {
 #content .wrapper #productInfo > div #contentInfo > div {
   padding: 0px 30px;
   vertical-align: middle;
-  margin: 8% auto;
+  margin: 4% auto;
 }
 #content .wrapper #productInfo > div #contentInfo > div .proName {
-  font-size: 30px;
+  font-size: 22px;
   vertical-align: middle;
-  font-weight: 500;
+  padding: 5px 0px;
+  color: #333333;
 }
 #content .wrapper #productInfo > div #contentInfo > div .proPrice {
   color: #fc7000;
   font-weight: bold;
-  font-size: 35px;
+  padding-bottom: 5px;
+  font-size: 25px;
   vertical-align: middle;
-  margin-left: -9px;
+  margin-left: 0px;
 }
 #content .wrapper #productInfo > div #contentInfo > div .proNewPrice {
   font-size: 15px;
   color: #9D9D9D;
   line-height: 20px;
   overflow: hidden;
+  padding: 5px 0px;
 }
 #content .wrapper #productInfo > div #productChexiConfigure {
   display: inline-block;
   _zoom: 1;
   *zoom: 1;
   *display: inline;
-  width: 300px;
+  width: 250px;
   border-left: 1px solid #e6e6e6;
   height: 100%;
   vertical-align: top;
@@ -288,7 +291,7 @@ body {
   _zoom: 1;
   *zoom: 1;
   *display: inline;
-  width: 500px;
+  width: 450px;
   border-left: 1px solid #e6e6e6;
   height: 100%;
   vertical-align: top;
@@ -323,6 +326,7 @@ body {
   color: #7B7B7B;
   height: 32px;
   background: url(../../images/index/gun.png) repeat-y 6px;
+  cursor: pointer;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul li span {
   display: inline-block;
@@ -330,7 +334,7 @@ body {
   *zoom: 1;
   vertical-align: middle;
   font-size: 20px;
-  color: #CDC9C9;
+  color: #CCCCCC;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul li span.active {
   color: #fc7000;
@@ -340,6 +344,8 @@ body {
   *display: inline;
   *zoom: 1;
   vertical-align: middle;
+  cursor: pointer;
+  color: #6F6F6F;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul .first_nav {
   background: url(../../images/index/gun.png) no-repeat 6px 15px;
@@ -353,7 +359,12 @@ body {
   *zoom: 1;
   margin-left: 200px;
   vertical-align: top;
-  padding-top: 50px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table {
+  margin-top: 50px;
+}
+#content .wrapper #productDetailInfo .configure .config_content table a {
+  color: #000000;
 }
 #content .wrapper #productDetailInfo .configure .config_content table thead td {
   font-size: 16px;
@@ -364,6 +375,9 @@ body {
   *display: inline;
   *zoom: 1;
   vertical-align: middle;
+}
+#content .wrapper #productDetailInfo .configure .config_content table thead td > div a {
+  color: #4C4C4C;
 }
 #content .wrapper #productDetailInfo .configure .config_content table thead td .border {
   height: 1px;
@@ -377,6 +391,7 @@ body {
 }
 #content .wrapper #productDetailInfo .configure .config_content table tbody div a {
   font-size: 14px;
+  color: #666666;
 }
 #content .wrapper #productDetailInfo .configure .config_content table tbody .firstCol {
   margin-left: 20px;
@@ -463,6 +478,7 @@ body {
   background: white;
   border-left: 1px solid white;
   border-right: 1px solid white;
+  color: #666666;
 }
 #content .wrapper #productDetailInfo .nav li.active {
   border-top: 3px solid #ef5c1e;
@@ -533,16 +549,20 @@ body {
   font-weight: bolder;
   font-size: 20px;
   padding-bottom: 20px;
+  color: #333333;
 }
 #content .wrapper #allProduct table .firstCol {
   padding-left: 0px;
-  cursor: pointer;
 }
 #content .wrapper #allProduct table .firstCol a {
   color: #FF5809 !important;
+  cursor: pointer;
+}
+#content .wrapper #allProduct table a {
+  color: #656565;
 }
 #content .wrapper #allProduct table thead {
-  border-top: 1px solid #000000;
+  border-top: 1px solid #A7A7A7;
 }
 #content .wrapper #allProduct table thead th {
   height: 53px;
@@ -591,6 +611,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 20px;
+  color: #5A5A5A;
 }
 #content .wrapper #newProduct .item {
   width: 215px;
@@ -603,12 +624,19 @@ body {
 #content .wrapper #newProduct .item .itemContent {
   border-bottom: 1px solid #e6e6e6;
   height: 270px;
+}
+#content .wrapper #newProduct .item .itemContent .relationImg a {
   cursor: pointer;
 }
 #content .wrapper #newProduct .item .itemContent h1 {
   margin: 2px 15px;
   font-size: 14px;
   font-weight: bolder;
+  cursor: pointer;
+}
+#content .wrapper #newProduct .item .itemContent h1 a {
+  cursor: pointer;
+  color: #6E6E6E;
 }
 #content .wrapper #newProduct .item .itemContent .currentPrice {
   margin: 2px 15px;
@@ -618,6 +646,7 @@ body {
 }
 #content .wrapper #newProduct .item .itemContent .oldPrice {
   text-decoration: line-through;
+  color: #C0C0C0;
 }
 #content .wrapper #newProduct .item .itemContent .other {
   margin: 14px 14px 14px 10px;
@@ -627,21 +656,24 @@ body {
   margin: 0px 3px;
   border: 1px solid #e6e6e6;
   border-radius: 2px;
-  background-color: #e6e6e6;
+  background-color: #F9F9F9;
+  color: #C3C3C3;
 }
 #content .wrapper #newProduct .item .itemContent .detail {
   margin: 2px 15px;
 }
 #content .wrapper #newProduct .item .itemContent .detail .shangpai {
   padding: 0px 10px 0px 0px;
+  color: #AAAAAA;
 }
 #content .wrapper #newProduct .item .itemContent .detail .gongli {
   padding: 0px 0px 0px 10px;
+  color: #AAAAAA;
 }
 #content .wrapper #newProduct .item .itemTail {
   position: relative;
   padding-top: 3px;
-  background-color: #f9f9f9 ;
+  background-color: #FFFFFF ;
   height: 26px;
 }
 #content .wrapper #newProduct .item .itemTail * {
@@ -657,6 +689,9 @@ body {
   padding-left: 20px;
   vertical-align: middle;
   cursor: pointer;
+}
+#content .wrapper #newProduct .item .itemTail .carCollect span {
+  color: #939393;
 }
 #content .wrapper #newProduct .item .itemTail .carCollect.hover {
   background: url(../../images/index/hover.png) no-repeat;
@@ -675,6 +710,7 @@ body {
 }
 #content .wrapper #newProduct .item .itemTail .carConstrast span {
   padding-left: 4px;
+  color: #939393;
 }
 #content .wrapper #newProduct .item .itemTail .contrast-waring {
   right: -30px !important;
@@ -691,10 +727,14 @@ body {
   font-size: 20px;
   padding-bottom: 10px;
   border-bottom: 3px solid #B0B0B0;
+  color: #343434;
 }
 #content .wrapper #newProductList li {
   padding: 25px 0px;
   border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #newProductList li > a {
+  cursor: pointer;
 }
 #content .wrapper #newProductList li > img {
   display: inline-block;
@@ -711,11 +751,14 @@ body {
   width: 255px;
 }
 #content .wrapper #newProductList li .itemInfo .car {
-  padding: 2px;
+  padding-bottom: 2px;
+  height: 38px;
 }
 #content .wrapper #newProductList li .itemInfo .car a {
   font-size: 15px;
   font-weight: bolder;
+  cursor: pointer;
+  color: #525252;
 }
 #content .wrapper #newProductList li .itemInfo .opteration {
   position: relative;
@@ -823,6 +866,7 @@ body {
 #content .wrapper #newProductList li .itemServer .bao,
 #content .wrapper #newProductList li .itemServer .fenqi {
   margin-bottom: 10px;
+  color: #666666;
 }
 #content .wrapper #productSilder {
   float: left;
@@ -838,12 +882,16 @@ body {
   display: block;
   margin: 20px 0px 0px 0px;
   padding-bottom: 12px;
-  border-bottom: 3px solid #B0B0B0;
+  border-bottom: 3px solid #A7A7A7;
+  color: #575757;
 }
 #content .wrapper #productSilder #latestInfo > ul li {
   margin: 14px 0px;
   font-size: 14px;
+}
+#content .wrapper #productSilder #latestInfo > ul li a {
   cursor: pointer;
+  color: #7A7A7A;
 }
 #content .wrapper #productSilder #relationInfo > ul {
   padding-bottom: 50px;
@@ -854,11 +902,11 @@ body {
   display: block;
   padding-bottom: 12px;
   border-bottom: 3px solid #B0B0B0;
+  color: #575757;
 }
 #content .wrapper #productSilder #relationInfo li {
   margin: 14px 0px;
   font-size: 14px;
-  cursor: pointer;
 }
 #content .wrapper #productSilder #relationInfo li .relationImg {
   display: inline-block;
@@ -871,6 +919,11 @@ body {
   *zoom: 1;
   vertical-align: top;
   padding: 5px 0px 0px 5px;
+  color: #595959 ;
+}
+#content .wrapper #productSilder #relationInfo li .relationContent .relationCar a {
+  cursor: pointer;
+  color: #595959;
 }
 #content .wrapper #productSilder #relationInfo li .relationContent a.relationPrice {
   color: #ef5c1e;
@@ -1097,7 +1150,7 @@ body #fav-popup .fav-submit {
   color: #51944f;
   position: absolute;
   top: 320px;
-  left: 528px;
+  left: 544px;
 }
 .net-koubei .all-score em {
   font-size: 30px;
@@ -1233,6 +1286,12 @@ body #fav-popup .fav-submit {
 }
 #price-distribution {
   position: relative;
+}
+#onsale_price {
+  margin: 50px auto;
+}
+#onsale_price .report-item-title hr {
+  display: none;
 }
 #price-distribution .price-point {
   position: absolute;

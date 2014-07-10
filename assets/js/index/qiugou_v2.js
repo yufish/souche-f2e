@@ -181,7 +181,7 @@ define(function()
             }, 500);
         }
         else if (option.vertical) {
-            offsetMove($element, option, -(widthEnd+50), 500);
+            offsetMove($element, option, -444, 500);
         }
     }
 
@@ -189,12 +189,19 @@ define(function()
         if (direction.horizontal) {
             $element.stop(true).animate({
                 width: offset + "px"
-            }, time, callback);
+            }, time,
+                function() {
+                    if(callback)
+                    callback();
+                });
         }
         else {
             $element.stop(true).animate({
                 top: offset + "px"
-            }, time, callback);
+            }, time, function() {
+                if(callback)
+                    callback();
+            });
         }
     }
 
