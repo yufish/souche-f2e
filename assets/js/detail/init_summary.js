@@ -164,7 +164,7 @@ define(function() {
 
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
                     }, 500, function() {
                         $(".onsale-tab-item").removeClass("active");
                         $(self).addClass("active")

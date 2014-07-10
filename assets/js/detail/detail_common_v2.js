@@ -937,17 +937,20 @@ Souche.DetailCommon = function() {
                         top: 0,
 
                         zIndex: 1000
-                    })
+                    });
+                    $("#onsale_tab_space").removeClass("hidden")
                 } else {
                     $("#onsale_tab").css({
                         position: "relative"
                     })
+                    $("#onsale_tab_space").addClass("hidden")
                 }
                 var onSaleHeight = $(".onsale-summary").height();
                 if (winTop > navSaleTabTop + onSaleHeight - 40) {
                     $("#onsale_tab").css({
                         position: "relative"
                     })
+                    $("#onsale_tab_space").addClass("hidden")
                 }
                 // paras.$winTop = paras.$win.scrollTop();
 
