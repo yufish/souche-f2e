@@ -14,7 +14,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   line-height: 45px;
-  color: #7B7B7B;
+  color: #8C8C8C;
   padding: 0px 10px;
 }
 #content .wrapper #map .space {
@@ -249,6 +249,7 @@ body {
   font-size: 22px;
   vertical-align: middle;
   padding: 5px 0px;
+  color: #333333;
 }
 #content .wrapper #productInfo > div #contentInfo > div .proPrice {
   color: #fc7000;
@@ -333,7 +334,7 @@ body {
   *zoom: 1;
   vertical-align: middle;
   font-size: 20px;
-  color: #CDC9C9;
+  color: #CCCCCC;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul li span.active {
   color: #fc7000;
@@ -344,6 +345,7 @@ body {
   *zoom: 1;
   vertical-align: middle;
   cursor: pointer;
+  color: #6F6F6F;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul .first_nav {
   background: url(../../images/index/gun.png) no-repeat 6px 15px;
@@ -374,6 +376,9 @@ body {
   *zoom: 1;
   vertical-align: middle;
 }
+#content .wrapper #productDetailInfo .configure .config_content table thead td > div a {
+  color: #4C4C4C;
+}
 #content .wrapper #productDetailInfo .configure .config_content table thead td .border {
   height: 1px;
   border-bottom: 1px solid #000000;
@@ -386,6 +391,7 @@ body {
 }
 #content .wrapper #productDetailInfo .configure .config_content table tbody div a {
   font-size: 14px;
+  color: #666666;
 }
 #content .wrapper #productDetailInfo .configure .config_content table tbody .firstCol {
   margin-left: 20px;
@@ -752,6 +758,7 @@ body {
   font-size: 15px;
   font-weight: bolder;
   cursor: pointer;
+  color: #525252;
 }
 #content .wrapper #newProductList li .itemInfo .opteration {
   position: relative;
@@ -859,6 +866,7 @@ body {
 #content .wrapper #newProductList li .itemServer .bao,
 #content .wrapper #newProductList li .itemServer .fenqi {
   margin-bottom: 10px;
+  color: #666666;
 }
 #content .wrapper #productSilder {
   float: left;
@@ -1142,7 +1150,7 @@ body #fav-popup .fav-submit {
   color: #51944f;
   position: absolute;
   top: 320px;
-  left: 528px;
+  left: 544px;
 }
 .net-koubei .all-score em {
   font-size: 30px;
@@ -1278,6 +1286,12 @@ body #fav-popup .fav-submit {
 }
 #price-distribution {
   position: relative;
+}
+#onsale_price {
+  margin: 50px auto;
+}
+#onsale_price .report-item-title hr {
+  display: none;
 }
 #price-distribution .price-point {
   position: absolute;

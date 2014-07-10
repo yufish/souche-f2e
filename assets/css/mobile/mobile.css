@@ -5041,43 +5041,7 @@ body {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-#to-main-screen {
-    border-radius: 8px;
-    display: none;
-    position: fixed;
-    bottom: 15px;
-    width: 216px;
-    height: 75px;
-    margin: 0 auto;
-    background-color: #494949;
-    color: #fff;
-    box-shadow: 0px 0px 5px 2px #aaa;
-}
-#to-main-screen .arrow-down {
-    position: absolute;
-    bottom: -10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #494949;
-}
-#to-main-screen img {
-    width: 57px;
-    margin: 9px;
-    float: left;
-}
-#to-main-screen .text {
-    margin-top: 20px;
-    font-size: 13px;
-}
-#to-main-screen .close {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    font-weight: bold;
-    font-size: 16px
-}
+
 #list #cars .time-limit-price {
     background-color: #fc7000;
     float: left;
@@ -5210,10 +5174,10 @@ body {
     margin-top: 70px;
 }
 #index-h5-2 {
-    overflow: hidden;
     width: 100%;
     position: relative;
     z-index: 9;
+    padding-bottom: 45px;
 }
 #index-h5-2 .flexslider {
     overflow: hidden;

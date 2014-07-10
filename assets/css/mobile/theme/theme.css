@@ -6,6 +6,9 @@ img{
     box-sizing: border-box;
     font-size: 12px;
 }
+a{
+    color:#000;
+}
 #banners{
     position: relative
 }
@@ -32,6 +35,7 @@ img{
     height: 34px;
     overflow: hidden;
     line-height: 34px;
+    background: #fff;
 }
 #theme-info #total-num{
     background: #000;
@@ -56,9 +60,10 @@ img{
     color:#000;
     font-size: 12px;
     padding: 8px;
+    height: 60px;
 }
 #cars .price{
-    font-size: 14px;
+    font-size: 15px;
     color:#ff4400;
     font-weight: bold;
     margin-left: 8px;
@@ -106,19 +111,93 @@ img{
     height: 50px;
     text-align: center;
 }
-#cars .fav-star{
+#cars .fav.star .fav-star{
     background: url(../../../images/mob/theme-fav.png);
+    background-size: 100%;
+}
+#cars .fav .fav-star{
+    background: url(../../../images/mob/theme-no-fav.png);
     background-size: 100%;
     width: 17px;
     height: 16px;
     display: inline-block;
 }
-#cars .fav.no .fav-star{
-    background: url(../../../images/mob/theme-no-fav.png);
-    background-size: 100%;
-}
 #cars .fav-num{
     position: relative;
     left:-4px;
     bottom: -2px;
+}
+.car img{
+    height: 125px;
+}
+
+#load-tip{
+    background: rgba(255,255,255,.7);
+    color:#000;
+    border:1px solid #d3d3d3;
+    border-radius: 4px;
+    position: fixed;
+    top:70%;
+    left:50%;
+    margin-left: -60px;
+    width: 120px;
+    line-height: 24px;
+    text-align: center;
+}
+#phone-popup {
+    z-index: 100000;
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    padding-top: 30px;
+    border-radius: 8px;
+}
+#phone-popup .wrapper-300 {
+    width: 300px;
+}
+#phone-popup .wrapper-244 {
+    margin: 0 auto;
+    width: 244px;
+}
+#phone-popup .wrapper-234 {
+    margin: 0 auto;
+    width: 234px;
+}
+#phone-popup #phone-form {
+    margin-top: 20px;
+}
+#phone-popup #phone-form input {
+    height: 35px;
+    width: 230px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #b1b1b1;
+}
+#phone-popup #phone-form .btn .wrapper-btn {
+    text-align: center;
+    padding: 30px 0;
+}
+#phone-popup #phone-form .btn #phone-btn {
+    background-color: #fc7000;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+#phone-popup #phone-form .btn #back-btn {
+    background-color: #9caed2;
+    width: 88px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    margin-right: 22px;
+}
+#phone-popup .text {
+    font-size: 18px;
+    text-align: center;
 }
