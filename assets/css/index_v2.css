@@ -550,6 +550,36 @@ a:hover {
   position: relative;
   z-index: 10;
 }
+.main-slider .flex-control-nav {
+  position: absolute;
+  bottom: 10px;
+  width: 90px;
+  text-align: center;
+  margin-left: -30px;
+  left: 50%;
+  z-index: 100;
+}
+.main-slider .flex-control-nav li {
+  display: inline-block;
+}
+.main-slider .flex-control-nav a {
+  overflow: hidden;
+  text-indent: 1000px;
+  float: left;
+  display: inline;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #000000;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.main-slider .flex-control-nav .flex-active {
+  background-color: #e70;
+}
 body * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
@@ -1450,14 +1480,48 @@ body * {
 #service {
   width: 240px;
   height: 420px;
-  background: #fc7000;
+  background: #888;
 }
-#service .sevice-slide .flexslider {
+#service .sevice-slide .right-slide {
   overflow: hidden;
   width: 100%;
-  height: 335px;
+  height: 420px;
   position: relative;
   z-index: 10;
+}
+#service .sevice-slide .right-slide img {
+  width: 240px;
+  height: 420px;
+}
+.flex-control-nav {
+  position: absolute;
+  bottom: 10px;
+  width: 90px;
+  text-align: center;
+  margin-left: -40px;
+  left: 50%;
+  z-index: 100;
+}
+.flex-control-nav li {
+  display: inline-block;
+}
+.flex-control-nav a {
+  overflow: hidden;
+  text-indent: 1000px;
+  float: left;
+  display: inline;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #FFAB8C;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.flex-control-nav .flex-active {
+  background-color: #fff;
 }
 #hotsell {
   width: 208px;
