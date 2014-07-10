@@ -201,3 +201,99 @@ a{
     font-size: 18px;
     text-align: center;
 }
+
+.wrapper-320{
+    width:320px;
+    margin:0 auto;
+    padding:0 12px;
+}
+#act-all #act-container{
+    width:68px;
+    border-right:3px solid #BCC4C7;
+    padding:15px 0;
+}
+#act-all .act-item{
+    position: relative;
+    margin-left:88px;
+    display: block;
+}
+.act-item .act-time{
+    position: absolute;
+    top:6px;
+    left:-88px;
+    width: 44px;
+}
+.act-item .circle{
+    position: absolute;
+    width:15px;
+    height: 15px;
+    border:3px solid #BCC4C7;
+    border-radius: 80%;
+    top:5px;
+    left:-29px;
+    background: #fff;
+}
+.act-item .act-detail{
+    position: relative;
+    margin:5px 0 20px;
+}
+.act-item .content{
+    width:222px;
+    position: relative;
+    background: #F0F0F0;
+    border-radius: 5px;
+    padding:8px 10px;
+    line-height: 18px;
+    font-size: 14px;
+    color:#000;
+}
+.act-detail .triangle{
+    height: 0;
+    width:0;
+    border: 6px solid;
+    border-color: transparent #F0F0F0 transparent transparent;
+    position: absolute;
+    left: -12px;
+    top: 10px;
+}
+.act-item{
+    color:#000;
+}
+.act-item .month{
+    font-size:12px;
+}
+.act-item .year{
+    font-size: 12px;
+    display: block;
+    float: right;
+}
+.act-item .day{
+    font-size: 18px;
+}
+
+.act-item:first-child .day,
+.act-item:first-child .year,
+.act-item:first-child .month{
+    color:#ff4400;
+}
+.act-item:first-child .content{
+    background: #ff4400;
+    color:#fff;
+}
+.act-item:first-child .circle{
+    border-color: #ff4400;
+}
+.act-item:first-child .triangle{
+    border-right-color: #ff4400;
+}
+
+.backBg{
+    position: fixed;
+    z-index: 10;
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    display: none;
+}
