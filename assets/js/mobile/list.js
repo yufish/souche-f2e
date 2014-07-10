@@ -114,7 +114,10 @@ var List = function() {
                 config[i] = _config[i]
             }
             tpl_cars = $("#tpl_cars").html();
-            backRecover();
+            try {
+                //无痕模式可能报错
+                backRecover();
+            }catch(e){}
             this.bind()
         },
         bind: function() {
@@ -144,7 +147,9 @@ var List = function() {
 
             $('#cars').on('click', 'a.car', function(e) {
                 e.preventDefault();
-                storeStorage();
+                try{
+                    storeStorage();
+                }catch(e){}
                 window.location.href = $(this).attr('href');
             })
 

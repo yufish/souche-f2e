@@ -255,7 +255,6 @@ body * {
 #carsContent .carItem .info {
   margin: 7px 20px 0px 20px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #F5F5F5;
   position: relative;
 }
 #carsContent .carItem .info .price {
@@ -273,6 +272,8 @@ body * {
 #carsContent .carItem .other {
   margin: 7px 20px 0px 20px;
   font-size: 13px;
+  border-bottom: 1px solid #F5F5F5;
+  padding-bottom: 10px;
 }
 #carsContent .carItem .other .discount {
   color: #FF571A;
@@ -316,10 +317,11 @@ body * {
   cursor: pointer;
 }
 #carsContent .carItem .carTail .recommendedToday {
-  font-size: 15px;
+  font-size: 12px;
   position: absolute;
   right: -2px;
   color: #999;
+  top: 3px;
 }
 #carsContent .infoItem a {
   margin: 25px 20px 0px 20px;
@@ -379,10 +381,11 @@ body * {
   color: #999;
 }
 #carsContent .infoItem .infoTail .recommendedToday {
-  font-size: 15px;
+  font-size: 12px;
   position: absolute;
   right: 10px;
   color: #999;
+  top: 3px;
 }
 #carsContent .bindLoginInfo,
 #carsContent .bindunLoginInfo {
