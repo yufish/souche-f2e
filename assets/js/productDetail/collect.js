@@ -52,29 +52,33 @@ define(function() {
     function addCollect(carID) {
         var self = this;
         var url = config.api_saveFavorite;
+        var collecting = true;
 
-        $.ajax(
-            {
-                url: url,
-                type: "POST",
-                data: {
-                    phone: $("#fav-phone").val()||$.cookie("noregisteruser"),
-                    carType: config.carType,
-                    carId: carID
-                },
-                context: self
-            }
-        ).done(function (data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#fav-popup").addClass("hidden");
-                    $(".wrapGrayBg").hide();
-                    $(this).html('已收藏');
-                    $(this).parent().addClass("active");
+        if(collecting) {
+            collecting = false;
+            $.ajax(
+                {
+                    url: url,
+                    type: "POST",
+                    data: {
+                        phone: $("#fav-phone").val() || $.cookie("noregisteruser"),
+                        carType: config.carType,
+                        carId: carID
+                    },
+                    context: self
                 }
-                collecting=false;
-            });
+            ).done(function (data) {
+                    if (data.errorMessage) {
+                        alert(data.errorMessage)
+                    } else {
+                        $("#fav-popup").addClass("hidden");
+                        $(".wrapGrayBg").hide();
+                        $(this).html('已收藏');
+                        $(this).parent().addClass("active");
+                    }
+                    collecting = false;
+                });
+        }
     }
 
     function deleteCollect(carID) {

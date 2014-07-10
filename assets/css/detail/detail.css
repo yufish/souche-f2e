@@ -4061,6 +4061,9 @@ body {
   font-weight: bold;
   width: 360px;
 }
+#onsale_record .no-record {
+  color: #333;
+}
 #onsale_record .record-no {
   width: 240px;
   height: 50px;
@@ -5345,7 +5348,7 @@ less .icon-fei {
   color: #51944f;
   position: absolute;
   top: 320px;
-  left: 528px;
+  left: 544px;
 }
 .net-koubei .all-score em {
   font-size: 30px;
