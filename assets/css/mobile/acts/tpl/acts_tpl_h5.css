@@ -326,6 +326,9 @@ a{
     left: -12px;
     top: 10px;
 }
+.act-item{
+    color:#000;
+}
 .act-item .month{
     font-size:12px;
 }
@@ -338,19 +341,19 @@ a{
     font-size: 18px;
 }
 
-.act-item.selected .day,
-.act-item.selected .year,
-.act-item.selected .month{
+.act-item:first-child .day,
+.act-item:first-child .year,
+.act-item:first-child .month{
     color:#ff4400;
 }
-.act-item.selected .content{
+.act-item:first-child .content{
     background: #ff4400;
     color:#fff;
 }
-.act-item.selected .circle{
+.act-item:first-child .circle{
     border-color: #ff4400;
 }
-.act-item.selected .triangle{
+.act-item:first-child .triangle{
     border-right-color: #ff4400;
 }
 
