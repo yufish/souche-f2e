@@ -1234,6 +1234,12 @@ body #fav-popup .fav-submit {
 #price-distribution {
   position: relative;
 }
+#onsale_price {
+  margin: 50px auto;
+}
+#onsale_price .report-item-title hr {
+  display: none;
+}
 #price-distribution .price-point {
   position: absolute;
   top: 176px;

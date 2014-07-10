@@ -4061,6 +4061,9 @@ body {
   font-weight: bold;
   width: 360px;
 }
+#onsale_record .no-record {
+  color: #333;
+}
 #onsale_record .record-no {
   width: 240px;
   height: 50px;
