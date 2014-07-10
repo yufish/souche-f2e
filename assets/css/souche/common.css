@@ -278,15 +278,6 @@ body {
 #nav .main-navs a.active {
   color: #fc7000;
 }
-#nav .main-navs a .new-icon {
-  display: block;
-  width: 19px;
-  height: 11px;
-  background: url(../../images/index/new-icon.png) no-repeat;
-  position: absolute;
-  top: -1px;
-  right: -23px;
-}
 #nav .other-navs {
   float: right;
   *margin-top: -50px;
@@ -299,6 +290,11 @@ body {
   line-height: 20px;
   display: block;
   float: left;
+  color: #000000;
+  cursor: default !important;
+}
+#nav .other-navs .logonOut:hover {
+  color: #FC7000;
 }
 #nav .other-navs a.last {
   border: none;

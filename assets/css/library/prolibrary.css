@@ -4,6 +4,7 @@ body {
 #content .wrapper {
   width: 1190px;
   margin: 0 auto;
+  overflow: hidden;
 }
 #content .wrapper #map {
   position: relative;
@@ -826,7 +827,6 @@ body {
 #content .wrapper #productSilder {
   float: left;
   width: 222px;
-  height: 500px;
 }
 #content .wrapper #productSilder > .relationImg {
   padding-top: 45px;

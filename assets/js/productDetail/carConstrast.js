@@ -4,44 +4,38 @@
 define(function() {
     var constrastControl = {};
     var constrasting = false;
+    var config={};
     var phoneReg = /^1[3458][0-9]{9}$/;
 
     var _bind = function() {
         $(".carConstrast span,.carConstrast input").live("click", function (e) {
-            if(constrasting)
-            {
-                return false;
-            }
 
-            Souche.NoRegLogin.checkLogin(function(isLogin) {
-                var element = e.target|| e.srcElement;
-                if (element.nodeName == "INPUT") {
-                    if (this.checked) {
-                        var carID ;
-                        addConstrast.apply(this,carID);
-                    }
-                    else
-                    {
-                        var constrastID ;
-                        deleteConstrast(constrastID);
-                    }
+            var element = e.target || e.srcElement;
+            if (element.nodeName == "INPUT") {
+                if (this.checked) {
+                    var carID =$(this).parent().parent().attr("carid");
+                    addConstrast.call(this, carID);
                 }
-                else if (element.nodeName == "SPAN") {
-                    if ($(this).parent().find("input")[0].checked) {
-                        var constrastID ;
-                        deleteConstrast(constrastID);
-                        $(this).parent().find("input")[0].checked = false;
-                    }
-                    else {
-                        var carID;
-                        var input = $(this).parent().find("input")[0];
-                        addConstrast.apply(input, carID);
-                        input.checked = true;
-                    }
+                else {
+                    var constrastID = $(this).parent().attr("contrastid");
+                    deleteConstrast(constrastID);
                 }
-                e.stopPropagation();
-                e.preventDefault();
-            });
+            }
+            else if (element.nodeName == "SPAN") {
+                if ($(this).parent().find("input")[0].checked) {
+                    var constrastID = $(this).parent().attr("contrastid");
+                    deleteConstrast.call(this,constrastID);
+
+                }
+                else {
+                    var carID =$(this).parent().parent().attr("carid");
+                    var input = $(this).parent().find("input")[0];
+                    addConstrast.call(input, carID);
+                    input.checked = true;
+                }
+            }
+            e.stopPropagation();
+            e.preventDefault();
         });
     }
 
@@ -49,18 +43,19 @@ define(function() {
 
     function deleteConstrast(constrastID)
     {
-        var url = config.url;
+        var url = config.api_deleteContrast;
+        var self =this;
 
-        var url = config.url
         $.ajax({
             url:url,
             data:{
-                carID:carID
+                cid:constrastID
             },
-            type:"json"
+            dataType:"json",
+            context:self
         }).done(function(result)
         {
-            constrasting=false;
+            $(this).parent().find("input")[0].checked = false;
         });
     }
 
@@ -69,30 +64,38 @@ define(function() {
         var self = this;
         $.ajax({
             type: "POST",
-            url: url,
-            data: {
-                carID: carID
+            url: config.api_addContrast,
+            data:{
+                carId:carID
             },
-            type: "json",
+            dataType: "json",
             context:self
         }).done(function (data) {
             if (data.result == 2) { //正常
                 this.checked = true;
+                $(this).parent().find("input")[0].checked = true;
 
+                var contrastId=data.contrastId;
+                $(this).parent().attr("contrastId",contrastId);
             }
             else if (data.result == -1) {  // 已经添加
                 this.checked = true;
                 var waring= $(this).parent().parent().find(".contrast-waring");
                 waring.html("已经加入对比").removeClass("hidden");
+                $(this).parent().find("input")[0].checked = true;
                 window.setTimeout(function()
                 {
                     waring.addClass("hidden");
                 },3000);
+
+                var contrastId=data.contrastId;
+                $(this).parent().attr("contrastId",contrastId);
             }
             else if(data.result == 1) //已满
             {
                 var waring= $(this).parent().parent().find(".contrast-waring");
                 waring.html("对比项已满").removeClass("hidden");
+                $(this).parent().find("input")[0].checked = false;
                 window.setTimeout(function()
                 {
                     waring.addClass("hidden");
@@ -104,7 +107,8 @@ define(function() {
     }
     //function end
 
-    var init = function () {
+    var init = function (_config) {
+        $.extend(config,_config);
         _bind();
     }
 

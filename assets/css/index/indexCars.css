@@ -3,7 +3,7 @@ body * {
 }
 #carsNav,
 #carsMore {
-  width: 96.3%;
+  width: 96.8%;
   position: relative;
   height: 40px;
   background: #F5F5F5;
@@ -16,6 +16,7 @@ body * {
 }
 #carsNav ul li,
 #carsMore ul li {
+  cursor: pointer;
   height: auto;
   float: left;
   padding: 10px 15px;
@@ -23,6 +24,10 @@ body * {
   color: #666666 ;
   height: 20px;
   border-bottom: 1px solid #E6E6E6;
+}
+#carsNav ul li:hover,
+#carsMore ul li:hover {
+  color: #333;
 }
 #carsNav ul li.active,
 #carsMore ul li.active {
@@ -33,16 +38,52 @@ body * {
   border-bottom: 1px solid #ffffff;
   height: 20px;
 }
-@media screen and (max-width: 882px) {
+@media screen and (max-width: 1366px) {
   #carsContent .carsItem {
     width: 30.3% ;
+    *width: 30.03% ;
     height: 355px;
     margin: 2.7% 2.7% 0px 0px;
+    *margin: 2.5% 2.41% 0px 0px;
+    float: left;
+    border: 1px solid #CCCCCC;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 97%;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 97%;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #carsNav,
+  #carsMore {
+    width: 97.8%;
+    position: relative;
+    height: 40px;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 98%;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 98%;
+  }
+  #carsContent .carsItem {
+    width: 22.9%;
+    *width: 22%;
+    height: 355px;
+    margin: 2% 1.8% 0px 0px;
     float: left;
     border: 1px solid #CCCCCC;
   }
 }
-@media screen and (min-width: 882px) and (max-width: 1040px) {
+@media screen and (min-width: 1440px) {
   #carsNav,
   #carsMore {
     width: 98%;
@@ -51,41 +92,20 @@ body * {
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
+  .dialogContentContainer,
   .dialogContent {
-    width: 98% !important;
-    height: 355px !important;
+    width: 98% ;
+    height: 355px;
   }
   .addInstrestCar {
-    width: 98% !important;
-  }
-  #carsContent .carsItem {
-    width: 22.7%;
-    height: 355px;
-    margin: 2% 2% 0px 0px;
-    float: left;
-    border: 1px solid #CCCCCC;
-  }
-}
-@media screen and (min-width: 1040px) {
-  #carsNav,
-  #carsMore {
     width: 98%;
-    position: relative;
-    height: 40px;
-    background: #F5F5F5;
-    border: 1px solid #E6E6E6;
-  }
-  .dialogContent {
-    width: 98% !important;
-    height: 355px !important;
-  }
-  .addInstrestCar {
-    width: 98% !important;
   }
   #carsContent .carsItem {
-    width: 22.8%;
+    width: 22.9%;
     height: 355px;
-    margin: 2% 2% 0px 0px;
+    margin: 2% 1.9% 0px 0px;
+    *margin: 2% 1.519% 0px 0px;
+    *width: 22.92%;
     float: left;
     border: 1px solid #CCCCCC;
   }
@@ -143,7 +163,8 @@ body * {
   width: 100%;
   padding-top: 10px;
   background: #FF5719;
-  height: 30px;
+  border: 1px solid #D94A16;
+  height: 28px;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
@@ -151,6 +172,9 @@ body * {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+}
+#carsContent .operationItem .dataContainer .submit:hover {
+  background: #FF4D09;
 }
 #carsContent .operationItem .dataContainer .inputContainer {
   margin-top: 10px;
@@ -167,12 +191,17 @@ body * {
 }
 #carsContent .operationItem .dataContainer .inputContainer a {
   color: #B6B6B6;
+  vertical-align: middle;
+  float: right;
+  padding-top: 10px;
+  padding-right: 8%;
 }
 #carsContent .operationItem .dataContainer .inputContainer input {
   width: 40%;
   height: 25px;
   border: none;
   padding: 5px;
+  float: left;
 }
 #carsContent .operationItem .dataContainer .leftContainer {
   position: absolute;
@@ -196,11 +225,32 @@ body * {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-#carsContent .carItem h1 {
+#carsContent .carItem {
+  overflow: hidden;
+}
+#carsContent .carItem .carImg {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 182px;
+  display: block;
+}
+#carsContent .carItem .carImg img {
+  position: relative;
+  width: 100%;
+  height: 182px;
+  top: 0px;
+  left: 0px;
+}
+#carsContent .carItem .car-link {
   font-size: 15px;
   margin: 7px 20px 0px 20px;
   height: 40px;
   overflow: hidden;
+  display: block;
+}
+#carsContent .carItem .car-link:hover {
+  color: #F44B0B;
 }
 #carsContent .carItem .info {
   margin: 7px 20px 0px 20px;
@@ -234,6 +284,7 @@ body * {
   line-height: 20px;
   overflow: hidden;
   height: 40px;
+  cursor: default;
 }
 #carsContent .carItem .carTail {
   margin: 7px 20px 0px 13px;
@@ -249,6 +300,7 @@ body * {
   cursor: pointer;
   font-size: 12px;
   top: 2px;
+  float: left;
 }
 #carsContent .carItem .carTail .collect a {
   color: #999;
@@ -266,16 +318,25 @@ body * {
 #carsContent .carItem .carTail .recommendedToday {
   font-size: 15px;
   position: absolute;
-  right: 0px;
+  right: -2px;
   color: #999;
 }
-#carsContent .infoItem h1 {
+#carsContent .infoItem a {
   margin: 25px 20px 0px 20px;
   font-size: 16px;
   font-weight: bold;
+  display: block;
+  cursor: pointer;
 }
-#carsContent .infoItem h1 span {
-  color: #6CACE7;
+#carsContent .infoItem a span {
+  background: #6CACE7;
+  padding: 0px 4px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+}
+#carsContent .infoItem a:hover {
+  color: #F44B0B;
 }
 #carsContent .infoItem .infoContent {
   margin: 15px 20px 0px 20px;
@@ -407,6 +468,7 @@ body * {
 #carsContent .bindunLoginInfo .modify .submit {
   position: absolute;
   right: 0px;
+  color: #ffffff;
   padding: 7px 15px;
   border: 1px solid #CCCCCC;
   border-radius: 3px ;
@@ -424,6 +486,7 @@ body * {
 }
 #carsContent .bindLoginInfo .submit {
   padding: 7px 20px;
+  color: #ffffff;
   border: 1px solid #CCCCCC;
   border-radius: 3px ;
   -webkit-border-radius: 3px ;
@@ -431,6 +494,13 @@ body * {
   cursor: pointer;
   margin-left: 130px !important;
 }
+#carsContent .dialogContentContainer {
+  background: none !important;
+  z-index: -100;
+  margin-top: 0px !important;
+  border: none !important;
+}
+#carsContent .dialogContentContainer,
 #carsContent .dialogContent {
   width: 97%;
   height: 367px;
@@ -441,6 +511,7 @@ body * {
   border: 1px solid #CCCCCC;
   vertical-align: top;
 }
+#carsContent .dialogContentContainer .carBudget,
 #carsContent .dialogContent .carBudget {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -451,14 +522,17 @@ body * {
   vertical-align: top;
   border-right: 1px solid  #CCCCCC;
 }
+#carsContent .dialogContentContainer .carBudget h1,
 #carsContent .dialogContent .carBudget h1 {
   font-size: 14px;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer,
 #carsContent .dialogContent .carBudget .dataContainer {
   position: relative;
   vertical-align: middle;
   overflow: auto;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer,
 #carsContent .dialogContent .carBudget .dataContainer .inputContainer {
   margin-top: 10px;
   margin-left: 0px;
@@ -470,6 +544,7 @@ body * {
   color: #B6B6B6;
   overflow: hidden;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer a,
 #carsContent .dialogContent .carBudget .dataContainer .inputContainer a {
   color: #B6B6B6;
   float: right;
@@ -478,6 +553,7 @@ body * {
   margin-top: 10px;
   text-align: center;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer input,
 #carsContent .dialogContent .carBudget .dataContainer .inputContainer input {
   float: left;
   width: 50%;
@@ -487,12 +563,15 @@ body * {
   padding-left: 5%;
   letter-spacing: 0.5px;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer .leftContainer,
 #carsContent .dialogContent .carBudget .dataContainer .leftContainer {
   float: left;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer .rightContainer,
 #carsContent .dialogContent .carBudget .dataContainer .rightContainer {
   float: left;
 }
+#carsContent .dialogContentContainer .carBudget .dataContainer > a,
 #carsContent .dialogContent .carBudget .dataContainer > a {
   float: left;
   width: 10%;
@@ -504,6 +583,7 @@ body * {
   font-size: 13px;
   text-align: center;
 }
+#carsContent .dialogContentContainer .carinstrest,
 #carsContent .dialogContent .carinstrest {
   float: left;
   margin-top: 30px;
@@ -512,10 +592,12 @@ body * {
   height: 240px;
   border-right: 1px solid  #CCCCCC;
 }
+#carsContent .dialogContentContainer .carinstrest h1,
 #carsContent .dialogContent .carinstrest h1 {
   margin-left: 10px;
   font-size: 14px;
 }
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem,
 #carsContent .dialogContent .carinstrest .carinstrestItem {
   float: left;
   margin-top: 10px;
@@ -525,14 +607,40 @@ body * {
   margin-right: 5px;
   margin-left: 5px;
 }
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem a,
 #carsContent .dialogContent .carinstrest .carinstrestItem a {
   margin-right: 10px;
   font-size: 14px;
 }
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem span,
 #carsContent .dialogContent .carinstrest .carinstrestItem span {
   cursor: pointer;
   color: #B6B6B6;
 }
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem {
+  float: left;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 3px 10px 7px 10px;
+  border: 1px solid #CCCCCC;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem a,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem a {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #FF5719;
+}
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem span,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem span {
+  cursor: pointer;
+  color: #FF5719;
+  font-weight: bolder;
+  font-size: 18px;
+}
+#carsContent .dialogContentContainer .caryear,
 #carsContent .dialogContent .caryear {
   margin-top: 30px;
   padding: 0px 1% 0px 1%;
@@ -540,15 +648,18 @@ body * {
   height: 230px;
   float: left;
 }
+#carsContent .dialogContentContainer .caryear h1,
 #carsContent .dialogContent .caryear h1 {
   margin-left: 10px;
   font-size: 14px;
 }
+#carsContent .dialogContentContainer .caryear .dataContainer,
 #carsContent .dialogContent .caryear .dataContainer {
   position: relative;
   vertical-align: middle;
   overflow: auto;
 }
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer,
 #carsContent .dialogContent .caryear .dataContainer .selectContainer {
   margin-top: 10px;
   margin-left: 0px;
@@ -561,11 +672,13 @@ body * {
   color: #B6B6B6;
   overflow: hidden;
 }
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer input,
 #carsContent .dialogContent .caryear .dataContainer .selectContainer input {
   border: none;
   height: 35px;
   padding-left: 5% ;
 }
+#carsContent .dialogContentContainer .caryear .dataContainer > a,
 #carsContent .dialogContent .caryear .dataContainer > a {
   float: left;
   width: 10%;
@@ -577,16 +690,19 @@ body * {
   font-size: 13px;
   text-align: center;
 }
-#carsContent .dialogContent .submit {
+#carsContent .dialogContentContainer > .submit,
+#carsContent .dialogContent > .submit {
   border-top: 1px solid  #CCCCCC;
   clear: both;
   height: 60px;
   margin-top: 30px;
   position: relative;
 }
-#carsContent .dialogContent .submit span {
+#carsContent .dialogContentContainer > .submit span,
+#carsContent .dialogContent > .submit span {
   margin-top: 15px;
   position: absolute;
+  color: #ffffff;
   right: 2%;
   padding: 10px 25px;
   background-color: #FF5719;
@@ -597,10 +713,10 @@ body * {
   cursor: pointer;
 }
 #carsContent .addInstrestCar {
-  width: 97%;
   position: absolute;
-  margin-top: 2%;
+  margin-top: 1.9%;
   left: 0px;
+  top: 0px;
   background: #F5F5F5;
   border: 1px solid #CCCCCC;
   vertical-align: top;
@@ -614,7 +730,7 @@ body * {
   max-height: 85px;
   overflow: hidden;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte span {
+#carsContent .addInstrestCar .addInstrestCarTilte > span {
   float: left;
   font-size: 15px ;
 }
@@ -637,7 +753,6 @@ body * {
 #carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem span {
   cursor: pointer;
   color: #B6B6B6;
-  float: right;
 }
 #carsContent .addInstrestCar .addInstrestCarSubmit {
   float: right;
@@ -659,7 +774,7 @@ body * {
 #carsContent .addInstrestCar .addInstrestCarContent {
   border-top: 1px solid #cccccc;
   clear: both;
-  height: 256px;
+  height: 305px;
 }
 #carsContent .addInstrestCar .addInstrestCarContent .brand {
   float: left;
@@ -690,6 +805,11 @@ body * {
   line-height: 22px;
   font-size: 13px;
   color: #939393;
+  cursor: pointer;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .hot a.active {
+  background: #F44B0B;
+  color: #ffffff;
 }
 #carsContent .addInstrestCar .addInstrestCarContent .brand .brandList {
   clear: both;

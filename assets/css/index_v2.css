@@ -7,9 +7,352 @@ a:hover {
 * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
+@media screen and (max-width: 1024px) {
+  #content {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  #content .wrapper {
+    margin: 0 auto;
+  }
+  #content .wrapper .index-left {
+    width: 784px;
+    float: left;
+  }
+  #content .wrapper .index-left #top-info .filter-nav {
+    width: 210px;
+  }
+  #content .wrapper .index-right {
+    width: 240px;
+    float: right;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  #content {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  #content .wrapper {
+    margin: 0 auto;
+  }
+  #content .wrapper .index-left {
+    width: 784px;
+    float: left;
+  }
+  #content .wrapper .index-left #top-info .filter-nav {
+    width: 210px;
+  }
+  #content .wrapper .index-right {
+    width: 240px;
+    float: right;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+  #content {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  #content .wrapper {
+    margin: 0 auto;
+  }
+  #content .wrapper .index-left {
+    width: 784px;
+    float: left;
+  }
+  #content .wrapper .index-left #top-info .filter-nav {
+    width: 210px;
+  }
+  #content .wrapper .index-right {
+    width: 240px;
+    float: right;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #content {
+    width: 1220px;
+    margin: 0 auto;
+  }
+  #content .wrapper {
+    margin: 0 auto;
+  }
+  #content .wrapper .index-left {
+    width: 980px;
+    float: left;
+  }
+  #content .wrapper .index-left #top-info .filter-nav {
+    width: 410px;
+  }
+  #content .wrapper .index-right {
+    width: 240px;
+    float: right;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #content {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  #content .wrapper {
+    margin: 0 auto;
+  }
+  #content .wrapper .index-left {
+    width: 1040px;
+    float: left;
+  }
+  #content .wrapper .index-left #top-info .filter-nav {
+    width: 470px;
+  }
+  #content .wrapper .index-right {
+    width: 240px;
+    float: right;
+  }
+}
+#header .wrapper {
+  height: 75px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+#header .wrapper .logo {
+  display: block;
+  width: 120px;
+  height: 52px;
+  float: left;
+  margin-right: 30px;
+}
+#header .wrapper .city {
+  font-size: 15px;
+  color: #333;
+  margin-right: 60px;
+  float: left;
+}
+#header .wrapper .city span {
+  display: block;
+  float: left;
+}
+#header .wrapper .city i {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 6px;
+  background: url(../images/index/city-chose.png) no-repeat;
+  margin-top: 8px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+#header .wrapper .search {
+  float: left;
+  height: 40px;
+}
+#header .wrapper .search .index-search {
+  height: 40px;
+  position: relative;
+}
+#header .wrapper .search .index-search .search-text {
+  height: 20px;
+  padding: 10px;
+  line-height: 20px;
+  border: 1px solid #E6E6E6;
+  display: block;
+  float: left;
+}
+#header .wrapper .search .index-search .search-submit {
+  border: 1px solid #D94A16;
+  width: 42px;
+  height: 42px;
+  background: #ff5a00 url(../images/index/search.png) no-repeat center;
+  display: block;
+  float: left;
+  cursor: pointer;
+}
+#header .wrapper .search .index-search .recom {
+  width: 295px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 42px;
+}
+#header .wrapper .search .index-search .recom a {
+  color: #666;
+  background: #F8F8F7;
+  padding: 4px 7px;
+  margin-right: 9px;
+}
+#header .wrapper .search .index-search .recom a:hover {
+  color: #fc7000;
+}
+#header .wrapper .phone-number {
+  width: 126px;
+  height: 34px;
+  float: right;
+}
+#header .wrapper .phone-number img {
+  display: block;
+  width: 126px;
+  height: 34px;
+}
+@media screen and (max-width: 1366px) {
+  #header .wrapper {
+    width: 1024px;
+  }
+  #header .wrapper .search .index-search {
+    width: 515px;
+  }
+  #header .wrapper .search .search-text {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #header .wrapper {
+    width: 1220px;
+  }
+  #header .wrapper .search .index-search {
+    width: 760px;
+  }
+  #header .wrapper .search .search-text {
+    width: 690px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #header .wrapper {
+    width: 1280px;
+  }
+  #header .wrapper .search .index-search {
+    width: 760px;
+  }
+  #header .wrapper .search .search-text {
+    width: 690px;
+  }
+}
+#nav {
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+}
+#nav .wrapper {
+  margin: 0 auto;
+  height: 40px;
+}
+#nav .wrapper .main-navs {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+#nav .wrapper .main-navs .nav-item {
+  padding: 0 20px;
+  color: #333;
+  margin-right: 20px;
+  font-weight: bold;
+  height: 37px;
+  display: block;
+  float: left;
+}
+#nav .wrapper .main-navs .nav-item:hover {
+  color: #FF571A;
+}
+#nav .wrapper .main-navs .active {
+  color: #FF571A;
+  border-bottom: 3px solid #FF571A;
+}
+#nav .wrapper .other-navs {
+  float: right;
+  height: 40px;
+}
+#nav .wrapper .other-navs a {
+  margin-top: 15px;
+  display: block;
+  padding: 0 12px;
+  border-right: 1px solid #EEEEEE;
+  float: left;
+  height: 15px;
+}
+@media screen and (max-width: 1366px) {
+  #nav .wrapper {
+    width: 1024px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #nav .wrapper {
+    width: 1220px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #nav .wrapper {
+    width: 1280px;
+  }
+}
+#footer {
+  width: 100%;
+  background: #333333;
+  margin-top: 25px;
+}
+#footer .wrapper {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+#footer .wrapper .foot-detail .detail-item {
+  float: left;
+  width: 210px;
+  margin-bottom: 30px;
+}
+#footer .wrapper .foot-detail .detail-item .title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+#footer .wrapper .foot-detail .detail-item .title:hover {
+  text-decoration: underline;
+}
+#footer .wrapper .foot-detail .detail-item .art-link {
+  display: block;
+  color: #717171;
+  line-height: 25px;
+}
+#footer .wrapper .foot-detail .detail-item .art-link:hover {
+  text-decoration: underline;
+}
+#footer .wrapper .friendlinks {
+  border-bottom: 1px solid #717171;
+  border-top: 1px solid #717171;
+  padding: 10px 0;
+}
+#footer .wrapper .friendlinks .links {
+  color: #717171;
+  margin-right: 25px;
+}
+#footer .wrapper .friendlinks .links:hover {
+  text-decoration: underline;
+}
+#footer .wrapper p {
+  color: #717171;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1366px) {
+  #footer .wrapper {
+    width: 1024px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #footer .wrapper {
+    width: 1220px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #footer .wrapper {
+    width: 1280px;
+  }
+}
+#top-info {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 #top-info .filter-nav {
   float: left;
-  width: 470px;
+  display: inline-block;
   height: 305px;
   border: 1px solid #E6E6E6;
   background: #F5F5F5;
@@ -54,7 +397,7 @@ a:hover {
   top: -16px;
   left: -16px;
   background: #fff;
-  z-index: 1000;
+  z-index: 100000;
   padding: 15px;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf {
@@ -150,7 +493,7 @@ a:hover {
   background: #fff;
   border: 1px solid #fc7000;
   position: absolute;
-  z-index: 1000;
+  z-index: 100000;
   top: -16px;
   left: -16px;
   padding: 15px;
@@ -210,69 +553,188 @@ a:hover {
 body * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
-#carsNav {
-  width: 1020px;
+#carsNav,
+#carsMore {
+  width: 96.8%;
   position: relative;
   height: 40px;
   background: #F5F5F5;
+  border: 1px solid #E6E6E6;
 }
-#carsNav ul {
+#carsNav ul,
+#carsMore ul {
   height: auto;
   list-style: none;
-  padding: 1px;
 }
-#carsNav ul li {
+#carsNav ul li,
+#carsMore ul li {
+  cursor: pointer;
   height: auto;
   float: left;
   padding: 10px 15px;
   font-size: 15px;
   color: #666666 ;
+  height: 20px;
+  border-bottom: 1px solid #E6E6E6;
 }
-#carsNav ul li.active {
+#carsNav ul li:hover,
+#carsMore ul li:hover {
+  color: #333;
+}
+#carsNav ul li.active,
+#carsMore ul li.active {
   color: #fc7000;
   background: #ffffff;
   font-weight: bold;
+  border-right: 1px solid #E6E6E6;
+  border-bottom: 1px solid #ffffff;
+  height: 20px;
+}
+@media screen and (max-width: 1366px) {
+  #carsContent .carsItem {
+    width: 30.3% ;
+    *width: 30.03% ;
+    height: 355px;
+    margin: 2.7% 2.7% 0px 0px;
+    *margin: 2.5% 2.41% 0px 0px;
+    float: left;
+    border: 1px solid #CCCCCC;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 97%;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 97%;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #carsNav,
+  #carsMore {
+    width: 97.8%;
+    position: relative;
+    height: 40px;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 98%;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 98%;
+  }
+  #carsContent .carsItem {
+    width: 22.9%;
+    *width: 22%;
+    height: 355px;
+    margin: 2% 1.8% 0px 0px;
+    float: left;
+    border: 1px solid #CCCCCC;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #carsNav,
+  #carsMore {
+    width: 98%;
+    position: relative;
+    height: 40px;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 98% ;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 98%;
+  }
+  #carsContent .carsItem {
+    width: 22.9%;
+    height: 355px;
+    margin: 2% 1.9% 0px 0px;
+    *margin: 2% 1.519% 0px 0px;
+    *width: 22.92%;
+    float: left;
+    border: 1px solid #CCCCCC;
+  }
 }
 .clearBoth {
   clear: both;
 }
 #carsContent {
-  width: 1042px;
+  width: 100%;
   position: relative;
   overflow: auto;
 }
-#carsContent .carsItem {
-  width: 238px;
-  height: 345px;
-  border: 1px solid #F5F5F5;
-  margin: 20px 20px 0px 0px;
-  float: left;
+#carsContent .carsItem > img {
+  width: 100%;
 }
 #carsContent .operationItem {
-  padding: 15px 10px 10px 15px;
   background: #F5F5F5;
 }
 #carsContent .operationItem .opItemTitle {
+  margin: 0px 0px 0px 20px;
   font-weight: normal;
   font-size: 20px;
+}
+#carsContent .operationItem .opItemTitleTop {
+  margin: 20px 0px 0px 20px;
 }
 #carsContent .operationItem .important {
   color: #fc7000;
 }
 #carsContent .operationItem .dataContainer {
+  position: relative;
   margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#carsContent .operationItem .dataContainer > div {
+  position: relative;
+  height: 50px;
 }
 #carsContent .operationItem .dataContainer > span {
   font-size: 15px;
   display: block;
   clear: both;
 }
+#carsContent .operationItem .dataContainer > div > a {
+  vertical-align: middle;
+  display: block;
+  width: 12px;
+  margin: 0 auto;
+  position: relative;
+  top: 17px;
+}
+#carsContent .operationItem .dataContainer .submit {
+  margin-top: 20px;
+  width: 100%;
+  padding-top: 10px;
+  background: #FF5719;
+  border: 1px solid #D94A16;
+  height: 28px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+#carsContent .operationItem .dataContainer .submit:hover {
+  background: #FF4D09;
+}
 #carsContent .operationItem .dataContainer .inputContainer {
   margin-top: 10px;
+  position: absolute;
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  width: 107px;
+  width: 45%;
   vertical-align: middle;
   border: 1px solid #CCCCCC;
   height: 35px;
@@ -281,16 +743,31 @@ body * {
 }
 #carsContent .operationItem .dataContainer .inputContainer a {
   color: #B6B6B6;
+  vertical-align: middle;
+  float: right;
+  padding-top: 10px;
+  padding-right: 8%;
 }
 #carsContent .operationItem .dataContainer .inputContainer input {
-  width: 60px;
+  width: 40%;
   height: 25px;
   border: none;
   padding: 5px;
+  float: left;
 }
-#carsContent .operationItem .dataContainer .submit {
+#carsContent .operationItem .dataContainer .leftContainer {
+  position: absolute;
+  left: 0px;
+}
+#carsContent .operationItem .dataContainer .rightContainer {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+#carsContent .operationItem .dataContainer .carinstrest {
+  height: 20px !important;
   margin-top: 10px;
-  width: 235px;
+  width: 100%;
   background: #FF5719;
   text-align: center;
   padding: 10px 0px;
@@ -300,15 +777,38 @@ body * {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-#carsContent .carItem h1 {
+#carsContent .carItem {
+  overflow: hidden;
+}
+#carsContent .carItem .carImg {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 182px;
+  display: block;
+}
+#carsContent .carItem .carImg img {
+  position: relative;
+  width: 100%;
+  height: 182px;
+  top: 0px;
+  left: 0px;
+}
+#carsContent .carItem .car-link {
   font-size: 15px;
-  margin: 10px 15px 0px 15px;
+  margin: 7px 20px 0px 20px;
   height: 40px;
+  overflow: hidden;
+  display: block;
+}
+#carsContent .carItem .car-link:hover {
+  color: #F44B0B;
 }
 #carsContent .carItem .info {
-  margin: 10px 10px 0px 10px;
-  padding: 0px 5px;
+  margin: 7px 20px 0px 20px;
+  padding-bottom: 5px;
   border-bottom: 1px solid #F5F5F5;
+  position: relative;
 }
 #carsContent .carItem .info .price {
   color: #FF571A;
@@ -318,7 +818,634 @@ body * {
 }
 #carsContent .carItem .info .shangpai {
   font-size: 13px;
+  position: absolute;
+  right: 0px;
   color: #8C8C8C;
+}
+#carsContent .carItem .other {
+  margin: 7px 20px 0px 20px;
+  font-size: 13px;
+}
+#carsContent .carItem .other .discount {
+  color: #FF571A;
+}
+#carsContent .carItem .other .recommended {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+  overflow: hidden;
+  height: 40px;
+  cursor: default;
+}
+#carsContent .carItem .carTail {
+  margin: 7px 20px 0px 13px;
+  padding: 0px 5px 5px 5px;
+  position: relative;
+}
+#carsContent .carItem .carTail .collect {
+  padding-left: 15px;
+  position: relative;
+  color: #999;
+  background: url(../../images/index/car-nocollect.png) no-repeat;
+  background-position: -4px -2px;
+  cursor: pointer;
+  font-size: 12px;
+  top: 2px;
+  float: left;
+}
+#carsContent .carItem .carTail .collect a {
+  color: #999;
+}
+#carsContent .carItem .carTail .collect:hover {
+  background: url(../../images/index/hover.png) no-repeat;
+  background-position: -1px 1px;
+  cursor: pointer;
+}
+#carsContent .carItem .carTail .collect.ative {
+  background: url(../../images/index/active.png) no-repeat;
+  background-position: -1px 1px;
+  cursor: pointer;
+}
+#carsContent .carItem .carTail .recommendedToday {
+  font-size: 15px;
+  position: absolute;
+  right: -2px;
+  color: #999;
+}
+#carsContent .infoItem a {
+  margin: 25px 20px 0px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+}
+#carsContent .infoItem a span {
+  background: #6CACE7;
+  padding: 0px 4px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+}
+#carsContent .infoItem a:hover {
+  color: #F44B0B;
+}
+#carsContent .infoItem .infoContent {
+  margin: 15px 20px 0px 20px;
+  font-size: 14px;
+  color: #999;
+  line-height: 25px;
+  overflow: hidden;
+  height: 125px;
+  position: relative;
+}
+#carsContent .infoItem .infoImg {
+  margin: 20px 20px 0px 20px;
+  position: relative;
+  height: 65px;
+}
+#carsContent .infoItem .infoImg .leftImg {
+  width: 45%;
+  position: absolute;
+  left: 0px;
+}
+#carsContent .infoItem .infoImg .rightImg {
+  width: 45%;
+  position: absolute;
+  right: 0px;
+}
+#carsContent .infoItem .infoImg img {
+  margin-right: 16px;
+}
+#carsContent .infoItem .infoTail {
+  margin: 20px 20px 0px 20px;
+  position: relative;
+}
+#carsContent .infoItem .infoTail .readed {
+  padding-left: 0px;
+  position: relative;
+  color: #999;
+  font-size: 12px;
+}
+#carsContent .infoItem .infoTail .readed a {
+  color: #999;
+}
+#carsContent .infoItem .infoTail .recommendedToday {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  color: #999;
+}
+#carsContent .bindLoginInfo,
+#carsContent .bindunLoginInfo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #F5F5F5;
+}
+#carsContent .bindLoginInfo h1,
+#carsContent .bindunLoginInfo h1 {
+  margin: 25px 20px 0px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#carsContent .bindLoginInfo .yusuan,
+#carsContent .bindunLoginInfo .yusuan {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-height: 60px;
+  overflow: hidden;
+}
+#carsContent .bindLoginInfo .yusuan > div,
+#carsContent .bindunLoginInfo .yusuan > div {
+  color: #999;
+}
+#carsContent .bindLoginInfo .yusuan span,
+#carsContent .bindunLoginInfo .yusuan span {
+  float: left;
+  padding-right: 8px;
+  line-height: 20px;
+  font-size: 14px;
+}
+#carsContent .bindLoginInfo .interestCar,
+#carsContent .bindunLoginInfo .interestCar {
+  margin-top: 15px;
+  margin-left: 20px;
+  clear: both;
+  color: #999;
+  height: 80px;
+  overflow: hidden;
+}
+#carsContent .bindLoginInfo .interestCar span,
+#carsContent .bindunLoginInfo .interestCar span {
+  float: left;
+  padding-right: 8px;
+  font-size: 14px;
+  color: #000000;
+  line-height: 20px;
+}
+#carsContent .bindLoginInfo .year,
+#carsContent .bindunLoginInfo .year {
+  margin-top: 10px;
+  margin-left: 20px;
+  clear: both;
+  color: #999;
+  height: 60px;
+  overflow: hidden;
+}
+#carsContent .bindLoginInfo .year span,
+#carsContent .bindunLoginInfo .year span {
+  color: #000000;
+  font-size: 14px;
+  padding-top: 2px;
+}
+#carsContent .bindLoginInfo .modify,
+#carsContent .bindunLoginInfo .modify {
+  clear: both;
+  position: relative;
+  top: 20px;
+  margin-right: 20px;
+}
+#carsContent .bindLoginInfo .modify .ps,
+#carsContent .bindunLoginInfo .modify .ps {
+  position: absolute;
+  left: 16px;
+}
+#carsContent .bindLoginInfo .modify .ps a,
+#carsContent .bindunLoginInfo .modify .ps a {
+  cursor: pointer;
+  color: #FF571A;
+}
+#carsContent .bindLoginInfo .modify .submit,
+#carsContent .bindunLoginInfo .modify .submit {
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  padding: 7px 15px;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  -moz-border-radius: 3px ;
+  cursor: pointer;
+  top: -6px;
+  width: 13%;
+  text-align: center;
+}
+#carsContent .bindLoginInfo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#carsContent .bindLoginInfo .submit {
+  padding: 7px 20px;
+  color: #ffffff;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  -moz-border-radius: 3px ;
+  cursor: pointer;
+  margin-left: 130px !important;
+}
+#carsContent .dialogContentContainer {
+  background: none !important;
+  z-index: -100;
+  margin-top: 0px !important;
+  border: none !important;
+}
+#carsContent .dialogContentContainer,
+#carsContent .dialogContent {
+  width: 97%;
+  height: 367px;
+  position: absolute;
+  margin-top: 2%;
+  left: 0px;
+  background: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  vertical-align: top;
+}
+#carsContent .dialogContentContainer .carBudget,
+#carsContent .dialogContent .carBudget {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0px 1% 0px 1%;
+  float: left;
+  width: 24%;
+  height: 240px;
+  vertical-align: top;
+  border-right: 1px solid  #CCCCCC;
+}
+#carsContent .dialogContentContainer .carBudget h1,
+#carsContent .dialogContent .carBudget h1 {
+  font-size: 14px;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer,
+#carsContent .dialogContent .carBudget .dataContainer {
+  position: relative;
+  vertical-align: middle;
+  overflow: auto;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer,
+#carsContent .dialogContent .carBudget .dataContainer .inputContainer {
+  margin-top: 10px;
+  margin-left: 0px;
+  width: 41%;
+  vertical-align: middle;
+  border: 1px solid #CCCCCC;
+  height: 35px;
+  background: #ffffff;
+  color: #B6B6B6;
+  overflow: hidden;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer a,
+#carsContent .dialogContent .carBudget .dataContainer .inputContainer a {
+  color: #B6B6B6;
+  float: right;
+  width: 45%;
+  font-size: 0.8em;
+  margin-top: 10px;
+  text-align: center;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer input,
+#carsContent .dialogContent .carBudget .dataContainer .inputContainer input {
+  float: left;
+  width: 50%;
+  height: 25px;
+  border: none;
+  margin-top: 5px;
+  padding-left: 5%;
+  letter-spacing: 0.5px;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer .leftContainer,
+#carsContent .dialogContent .carBudget .dataContainer .leftContainer {
+  float: left;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer .rightContainer,
+#carsContent .dialogContent .carBudget .dataContainer .rightContainer {
+  float: left;
+}
+#carsContent .dialogContentContainer .carBudget .dataContainer > a,
+#carsContent .dialogContent .carBudget .dataContainer > a {
+  float: left;
+  width: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+  overflow: hidden;
+  top: 15px;
+  position: relative;
+  font-size: 13px;
+  text-align: center;
+}
+#carsContent .dialogContentContainer .carinstrest,
+#carsContent .dialogContent .carinstrest {
+  float: left;
+  margin-top: 30px;
+  padding: 0px 1% 0px 1%;
+  width: 43%;
+  height: 240px;
+  border-right: 1px solid  #CCCCCC;
+}
+#carsContent .dialogContentContainer .carinstrest h1,
+#carsContent .dialogContent .carinstrest h1 {
+  margin-left: 10px;
+  font-size: 14px;
+}
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem,
+#carsContent .dialogContent .carinstrest .carinstrestItem {
+  float: left;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 8px 10px;
+  border: 1px solid #CCCCCC;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem a,
+#carsContent .dialogContent .carinstrest .carinstrestItem a {
+  margin-right: 10px;
+  font-size: 14px;
+}
+#carsContent .dialogContentContainer .carinstrest .carinstrestItem span,
+#carsContent .dialogContent .carinstrest .carinstrestItem span {
+  cursor: pointer;
+  color: #B6B6B6;
+}
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem {
+  float: left;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 3px 10px 7px 10px;
+  border: 1px solid #CCCCCC;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem a,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem a {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #FF5719;
+}
+#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem span,
+#carsContent .dialogContent .carinstrest .addCarinstrestItem span {
+  cursor: pointer;
+  color: #FF5719;
+  font-weight: bolder;
+  font-size: 18px;
+}
+#carsContent .dialogContentContainer .caryear,
+#carsContent .dialogContent .caryear {
+  margin-top: 30px;
+  padding: 0px 1% 0px 1%;
+  width: 24%;
+  height: 230px;
+  float: left;
+}
+#carsContent .dialogContentContainer .caryear h1,
+#carsContent .dialogContent .caryear h1 {
+  margin-left: 10px;
+  font-size: 14px;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer,
+#carsContent .dialogContent .caryear .dataContainer {
+  position: relative;
+  vertical-align: middle;
+  overflow: auto;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer {
+  margin-top: 10px;
+  margin-left: 0px;
+  width: 41%;
+  float: left;
+  vertical-align: middle;
+  border: 1px solid #CCCCCC;
+  height: 35px;
+  background: #ffffff;
+  color: #B6B6B6;
+  overflow: hidden;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer input,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer input {
+  border: none;
+  height: 35px;
+  padding-left: 5% ;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer > a,
+#carsContent .dialogContent .caryear .dataContainer > a {
+  float: left;
+  width: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+  overflow: hidden;
+  top: 15px;
+  position: relative;
+  font-size: 13px;
+  text-align: center;
+}
+#carsContent .dialogContentContainer > .submit,
+#carsContent .dialogContent > .submit {
+  border-top: 1px solid  #CCCCCC;
+  clear: both;
+  height: 60px;
+  margin-top: 30px;
+  position: relative;
+}
+#carsContent .dialogContentContainer > .submit span,
+#carsContent .dialogContent > .submit span {
+  margin-top: 15px;
+  position: absolute;
+  color: #ffffff;
+  right: 2%;
+  padding: 10px 25px;
+  background-color: #FF5719;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border: 1px solid #D94A16;
+  cursor: pointer;
+}
+#carsContent .addInstrestCar {
+  position: absolute;
+  margin-top: 1.9%;
+  left: 0px;
+  top: 0px;
+  background: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  vertical-align: top;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte {
+  margin-top: 5px;
+  margin-left: 2%;
+  margin-bottom: 10px;
+  float: left;
+  width: 80%;
+  max-height: 85px;
+  overflow: hidden;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte > span {
+  float: left;
+  font-size: 15px ;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte .title {
+  background: none !important;
+  border: none !important;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem {
+  float: left;
+  background: #ffffff;
+  height: 26px;
+  border: 1px solid #CCCCCC;
+  padding: 5px 10px 0px 10px;
+  margin: 5px;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem a {
+  margin-right: 10px;
+  font-size: 14px;
+}
+#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem span {
+  cursor: pointer;
+  color: #B6B6B6;
+}
+#carsContent .addInstrestCar .addInstrestCarSubmit {
+  float: right;
+  width: 10%;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+#carsContent .addInstrestCar .addInstrestCarSubmit .submit {
+  float: right;
+  padding: 7px 20px;
+  background-color: #FF5719;
+  cursor: pointer;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  color: #ffffff;
+}
+#carsContent .addInstrestCar .addInstrestCarContent {
+  border-top: 1px solid #cccccc;
+  clear: both;
+  height: 305px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand {
+  float: left;
+  height: 266px;
+  overflow: auto;
+  width: 45%;
+  margin: 20px;
+  bottom: 0px;
+  border-right: 1px solid #CCCCCC;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .hot {
+  height: 45px;
+  overflow: hidden;
+  margin-right: 30px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .hot span {
+  color: #FF5719;
+  float: left;
+  font-weight: bolder;
+  margin-right: 10px;
+  line-height: 50px;
+  margin-top: -13px;
+  font-size: 13px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .hot a {
+  float: left;
+  padding: 0px 5px;
+  line-height: 22px;
+  font-size: 13px;
+  color: #939393;
+  cursor: pointer;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .hot a.active {
+  background: #F44B0B;
+  color: #ffffff;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList {
+  clear: both;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li {
+  clear: both;
+  margin: 5px 0px ;
+  overflow: auto;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li span {
+  color: #FF5719;
+  line-height: 22px;
+  float: left;
+  margin-right: 15px;
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a {
+  float: left;
+  margin: 0px 3px;
+  padding: 0px 2px;
+  line-height: 22px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #939393;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a.active {
+  background: #F44B0B;
+  color: #ffffff;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi {
+  float: left;
+  height: 100%;
+  width: 45%;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent {
+  margin: 20px 10px;
+  margin-right: 20px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent .chexiTitle {
+  font-size: 15px;
+  color: #939393;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul {
+  margin-top: 20px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li {
+  margin-top: 10px;
+  height: 65px;
+  overflow: hidden;
+  list-style: none;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li h1 {
+  font-size: 15px;
+  color: #FF5719;
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span {
+  float: left;
+  padding: 1px 2px;
+  margin-right: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  color: #939393;
+}
+#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span.active {
+  background: #F44B0B;
+  color: #ffffff;
+}
+#carsMore {
+  margin-top: 20px;
+  padding: 10px 0px;
+  text-align: center;
+  width: 97%;
+  position: relative;
+  height: 20px;
+  background: #F5F5F5;
+  border: 1px solid #E6E6E6;
+  font-size: 15px;
+  cursor: pointer;
 }
 #service {
   width: 240px;
@@ -338,6 +1465,8 @@ body * {
   padding: 15px;
   border: 1px solid #EDEDED;
   background: #fff;
+  border-bottom: none;
+  border-top: none;
 }
 #hotsell .title {
   margin: 10px 0;
@@ -362,6 +1491,14 @@ body * {
 }
 #hotsell .hotlist li span {
   margin-right: 15px;
+  font-weight: bold;
+  color: #8C8C8C;
+}
+#hotsell .hotlist li a {
+  color: #8C8C8C;
+}
+#hotsell .hotlist li a:hover {
+  color: #fc7000;
 }
 #hotsell .hotlist li i {
   display: block;
@@ -390,10 +1527,14 @@ body * {
   background: #fff;
   margin-right: 0px;
 }
-#hotsell .hotlist .hot-item {
+#hotsell .hotlist .hot-item span {
   color: #fc7000;
+  font-weight: bold;
 }
 #hotsell .hotlist .hot-item a {
+  color: #8C8C8C;
+}
+#hotsell .hotlist .hot-item a:hover {
   color: #fc7000;
 }
 #qcode {
@@ -403,8 +1544,9 @@ body * {
 }
 #qcode .weixin-code {
   border-bottom: 1px solid #EDEDED;
-  height: 150px;
+  height: 135px;
   padding: 15px;
+  border-bottom: none;
 }
 #qcode .weixin-code .title {
   margin-top: 10px;
@@ -464,4 +1606,99 @@ body * {
 }
 #qcode .app-code .code-cont a {
   color: #fc7000;
+}
+#qcode .app-code .code-cont a:hover {
+  text-decoration: underline;
+}
+#qa {
+  padding: 15px;
+  border: 1px solid #EDEDED;
+  border-bottom: none;
+  height: 300px;
+}
+#qa .title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #222;
+  font-weight: bold;
+}
+#qa .cheshen-nav {
+  width: 210px;
+  height: 30px;
+}
+#qa .cheshen-nav .nav-but {
+  position: relative;
+  width: 68px;
+  border: 1px solid #E4E3E3;
+  background: #F0F0F0;
+  float: left;
+  height: 28px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont {
+  position: absolute;
+  width: 210px;
+  height: 200px;
+  top: 45px;
+  left: 0px;
+  text-align: left;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .head {
+  height: 60px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .head img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit {
+  float: left;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit h1 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit p {
+  color: #B2B2B2;
+  font-size: 12px;
+  line-height: 17px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail {
+  color: #797979;
+  line-height: 18px;
+  margin-top: 15px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .status {
+  margin-bottom: 10px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask {
+  display: block;
+  width: 70px;
+  height: 30px;
+  padding-left: 30px;
+  border-radius: 3px;
+  background: #5c9bef url(../images/index/ask.png) no-repeat left center;
+  color: #fff;
+  line-height: 31px;
+  margin-top: 15px;
+}
+#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask:hover {
+  background: #3784ec url(../images/index/ask-hover.png) no-repeat left center;
+}
+#qa .cheshen-nav .nav-but:hover {
+  border-bottom: none;
+  background: #fff;
+  color: #333;
+}
+#qa .cheshen-nav .nav-active {
+  border-bottom: none;
+  background: #fff;
+  color: #333;
 }

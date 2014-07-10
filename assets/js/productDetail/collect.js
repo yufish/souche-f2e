@@ -9,21 +9,28 @@ define(function() {
 
     var _bind = function () {
         $(".carCollect span").live("click", function () {
-            if(collecting){
-                return false;
-            }
-            collecting=true;
-            Souche.NoRegLogin.checkLogin(function(isLogin) {
-                if ($(this).haveClass("active")) {
-                    var carID;
-                    delteCollect.apply(this, carID);
-                }
-                else {
-                    var carID;
-                    addCollect.apply(this, carID);
-                }
-            })
+             var context = this;
+
+            Souche.NoRegLogin.checkLogin(function() {
+                    if ($(context).parent().hasClass("active")) {
+                        var carID = $(context).parent().parent().attr("carid");
+
+                        deleteCollect.call(context, carID);
+                    }
+                    else {
+                        var carID = $(context).parent().parent().attr("carid");
+                        addCollect.call(context, carID);
+                    }
+                });
+            return false;
         });
+
+        $("#noreg-phone-form .submit").click(function()
+        {
+            $("#noreg-phone-form").submit();
+            return false;
+        });
+
     };
 
     var init = function (_config) {
@@ -44,16 +51,16 @@ define(function() {
     //function begin
     function addCollect(carID) {
         var self = this;
-        var url = config.url;
+        var url = config.api_saveFavorite;
 
         $.ajax(
             {
                 url: url,
                 type: "POST",
                 data: {
-                    phone: $("#fav-phone").val(),
+                    phone: $("#fav-phone").val()||$.cookie("noregisteruser"),
                     carType: config.carType,
-                    carId: config.carId
+                    carId: carID
                 },
                 context: self
             }
@@ -64,7 +71,7 @@ define(function() {
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
                     $(this).html('已收藏');
-                    $(this).addClass("active");
+                    $(this).parent().addClass("active");
                 }
                 collecting=false;
             });
@@ -85,6 +92,7 @@ define(function() {
                     alert(data.errorMessage)
                 } else {
                     $(this).html('收藏');
+                    $(this).parent().removeClass("active");
                 }
 
                 collecting=false;

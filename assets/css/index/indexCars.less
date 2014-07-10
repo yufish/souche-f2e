@@ -3,7 +3,7 @@ body *{
 }
 
 #carsNav,#carsMore {
-  width: 96.3%;
+  width: 96.8%;
   position: relative;
   height: 40px;
   background: #F5F5F5;
@@ -12,6 +12,7 @@ body *{
     height: auto;
     list-style: none;
     li {
+      cursor: pointer;
       height: auto;
       float: left;
       padding: 10px 15px;
@@ -19,6 +20,9 @@ body *{
       color:#666666 ;
       height: 20px;
       border-bottom: 1px solid #E6E6E6;
+    }
+    li:hover{
+      color: #333;
     }
     li.active{
       color: #fc7000;
@@ -31,19 +35,60 @@ body *{
   }
 }
 
-@media screen  and (max-width: 882px) {
+@media screen  and (max-width: 1366px) {
   #carsContent {
     .carsItem {
       width: 30.3% ;
+      *width: 30.03% ;
       height: 355px;
       margin: 2.7% 2.7% 0px 0px;
+      *margin: 2.5% 2.41% 0px 0px;
+      float: left;
+      border: 1px solid #CCCCCC;
+    }
+  }
+
+  .dialogContentContainer,.dialogContent
+  {
+    width: 97%;
+    height: 355px;
+  }
+  .addInstrestCar
+  {
+    width: 97%;
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  #carsNav, #carsMore {
+    width: 97.8%;
+    position: relative;
+    height: 40px;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+  .dialogContentContainer,.dialogContent
+  {
+    width: 98%;
+    height: 355px;
+  }
+  .addInstrestCar
+  {
+    width: 98%;
+  }
+  #carsContent {
+    .carsItem {
+      width: 22.9%;
+      *width:22%;
+      height: 355px;
+      margin: 2% 1.8% 0px 0px;
       float: left;
       border: 1px solid #CCCCCC;
     }
   }
 }
 
-@media screen and (min-width: 882px) and (max-width: 1040px) {
+@media screen and (min-width: 1440px) {
   #carsNav, #carsMore {
     width: 98%;
     position: relative;
@@ -51,51 +96,25 @@ body *{
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
-  .dialogContent
+
+  .dialogContentContainer,.dialogContent
   {
-    width: 98% !important;
-    height: 355px !important;
+    width: 98% ;
+    height: 355px;
   }
+
   .addInstrestCar
   {
-    width: 98% !important;
-  }
-  #carsContent {
-    .carsItem {
-      width: 22.7%;
-      height: 355px;
-      margin: 2% 2% 0px 0px;
-      float: left;
-      border: 1px solid #CCCCCC;
-    }
-  }
-}
-
-@media screen and (min-width: 1040px) {
-  #carsNav, #carsMore {
     width: 98%;
-    position: relative;
-    height: 40px;
-    background: #F5F5F5;
-    border: 1px solid #E6E6E6;
-  }
-
-  .dialogContent
-  {
-    width: 98% !important;
-    height: 355px !important;
-  }
-
-  .addInstrestCar
-  {
-    width: 98% !important;
   }
 
   #carsContent {
     .carsItem {
-      width: 22.8%;
+      width: 22.9%;
       height: 355px;
-      margin: 2% 2% 0px 0px;
+      margin: 2% 1.9% 0px 0px;
+      *margin: 2% 1.519% 0px 0px;
+      *width: 22.92%;
       float: left;
       border: 1px solid #CCCCCC;
     }
@@ -163,7 +182,8 @@ body *{
         width: 100%;
         padding-top: 10px;
         background: #FF5719;
-        height: 30px;
+        border: 1px solid #D94A16;
+        height: 28px;
         color: #ffffff;
         text-align: center;
         cursor: pointer;
@@ -172,7 +192,9 @@ body *{
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
       }
-
+      .submit:hover{
+        background: #FF4D09;
+      }
       .inputContainer {
         margin-top: 10px;
         position:   absolute;
@@ -187,12 +209,17 @@ body *{
         color: #B6B6B6;
         a {
           color: #B6B6B6;
+          vertical-align: middle;
+          float: right;
+          padding-top: 10px;
+          padding-right: 8%;
         }
         input {
           width:40%;
           height: 25px;
           border: none;
           padding: 5px;
+          float: left;
         }
       }
       .leftContainer
@@ -223,11 +250,33 @@ body *{
     }
   }
   .carItem {
-    h1 {
+    overflow: hidden;
+    .carImg
+    {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 182px;
+      display: block;
+      img
+      {
+        position: relative;
+        width: 100%;
+        height: 182px;
+        top: 0px;
+        left: 0px;
+      }
+
+    }
+   .car-link {
       font-size: 15px;
       margin: 7px 20px 0px 20px;
       height: 40px;
       overflow: hidden;
+      display: block;
+    }
+    .car-link:hover{
+      color: #F44B0B;
     }
     .info {
       margin: 7px 20px 0px 20px;
@@ -263,6 +312,7 @@ body *{
         line-height: 20px;
         overflow: hidden;
         height: 40px;
+        cursor: default;
       }
     }
     .carTail {
@@ -281,6 +331,7 @@ body *{
         a {
           color: #999;
         }
+        float: left;
       }
       .collect:hover {
         background: url(../../images/index/hover.png) no-repeat;
@@ -295,21 +346,30 @@ body *{
       .recommendedToday {
         font-size: 15px;
         position: absolute;
-        right: 0px;
+        right: -2px;
         color: #999;
       }
     }
   }
   .infoItem {
-    h1 {
+    a {
       margin:25px 20px 0px 20px;
       font-size: 16px;
       font-weight: bold;
+      display: block;
+      cursor: pointer;
       span {
-        color: #6CACE7;
+        background: #6CACE7;
+        padding:0px 4px;
+        color: #fff;
+        font-weight: normal;
+        font-size: 12px;
+        
       }
     }
-
+    a:hover{
+      color: #F44B0B;
+    }
     .infoContent {
       margin:15px 20px 0px 20px;
       font-size: 14px;
@@ -437,6 +497,7 @@ body *{
       {
         position: absolute;
         right: 0px;
+        color:#ffffff;
         padding: 7px 15px;
         border: 1px solid #CCCCCC;
         border-radius: 3px ;
@@ -457,6 +518,7 @@ body *{
     .submit
     {
       padding: 7px 20px;
+      color: #ffffff;
       border: 1px solid #CCCCCC;
       border-radius: 3px ;
       -webkit-border-radius: 3px ;
@@ -465,7 +527,16 @@ body *{
       margin-left:130px !important;
     }
   }
-  .dialogContent {
+
+  .dialogContentContainer
+  {
+    background: none !important;
+    z-index: -100;
+    margin-top: 0px !important;
+    border: none !important;
+  }
+
+  .dialogContentContainer,.dialogContent {
     width: 97%;
     height: 367px;
     position: absolute;
@@ -572,6 +643,28 @@ body *{
           color: #B6B6B6;
         }
       }
+      .addCarinstrestItem
+      {
+        float: left;
+        margin-top: 10px;
+        background: #ffffff;
+        padding: 3px 10px 7px 10px;
+        border: 1px solid #CCCCCC;
+        margin-right: 5px;
+        margin-left: 5px;
+        a{
+          margin-right: 10px;
+          font-size: 14px;
+          color: #FF5719;
+        }
+        span
+        {
+          cursor: pointer;
+          color: #FF5719;
+          font-weight: bolder;
+          font-size: 18px;
+        }
+      }
     }
     .caryear
     {
@@ -622,7 +715,7 @@ body *{
 
       }
     }
-    .submit
+    >.submit
     {
       border-top: 1px solid  #CCCCCC;
       clear: both;
@@ -633,6 +726,7 @@ body *{
       {
         margin-top: 15px;
         position: absolute;
+        color: #ffffff;
         right: 2%;
         padding: 10px 25px;
         background-color: #FF5719;
@@ -645,10 +739,11 @@ body *{
     }
   }
   .addInstrestCar {
-    width: 97%;
+
     position: absolute;
-    margin-top: 2%;
+    margin-top: 1.9%;
     left: 0px;
+    top:0px;
     background: #F5F5F5;
     border: 1px solid #CCCCCC;
     vertical-align: top;
@@ -661,7 +756,7 @@ body *{
       width: 80%;
       max-height: 85px;
       overflow: hidden;
-      span
+      >span
       {
         float: left;
         font-size:15px ;
@@ -685,7 +780,6 @@ body *{
         {
           cursor: pointer;
           color: #B6B6B6;
-          float: right;
         }
       }
     }
@@ -710,7 +804,7 @@ body *{
     .addInstrestCarContent {
       border-top: 1px solid #cccccc;
       clear: both;
-      height: 256px;
+      height: 305px;
       .brand {
         float: left;
         height: 266px;
@@ -738,6 +832,11 @@ body *{
             line-height: 22px;
             font-size: 13px;
             color:#939393;
+            cursor: pointer;
+          }
+          a.active {
+            background:#F44B0B;
+            color:#ffffff;
           }
         }
         .brandList {
@@ -776,50 +875,50 @@ body *{
 
       }
       .chexi {
-         float: left;
-         height: 100%;
-         width: 45%;
-         .chexiContent
-         {
-           margin: 20px 10px;
-           margin-right: 20px;
-           .chexiTitle
-           {
-              font-size: 15px;
-              color:#939393;
-           }
-           ul
-           {
-             margin-top: 20px;
-             li
-             {
-               margin-top: 10px;
-               height: 65px;
-               overflow: hidden;
-               list-style: none;
-                h1{
-                  font-size: 15px;
-                  color:#FF5719;
-                  font-weight: bolder;
-                  padding-bottom: 5px;
-                }
-                span
-                {
-                  float: left;
-                  padding: 1px 2px;
-                  margin-right:10px;
-                  margin-top:2px;
-                  cursor: pointer;
-                  color:#939393;
-                }
-               span.active
-               {
-                 background:#F44B0B;
-                 color:#ffffff;
-               }
-             }
-           }
-         }
+        float: left;
+        height: 100%;
+        width: 45%;
+        .chexiContent
+        {
+          margin: 20px 10px;
+          margin-right: 20px;
+          .chexiTitle
+          {
+            font-size: 15px;
+            color:#939393;
+          }
+          ul
+          {
+            margin-top: 20px;
+            li
+            {
+              margin-top: 10px;
+              height: 65px;
+              overflow: hidden;
+              list-style: none;
+              h1{
+                font-size: 15px;
+                color:#FF5719;
+                font-weight: bolder;
+                padding-bottom: 5px;
+              }
+              span
+              {
+                float: left;
+                padding: 1px 2px;
+                margin-right:10px;
+                margin-top:2px;
+                cursor: pointer;
+                color:#939393;
+              }
+              span.active
+              {
+                background:#F44B0B;
+                color:#ffffff;
+              }
+            }
+          }
+        }
       }
     }
   }
