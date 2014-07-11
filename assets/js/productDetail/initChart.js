@@ -11,7 +11,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode,
+                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -31,13 +31,13 @@ define(function() {
                     }
                 }
             })
-            require(['detail/draw-price-down'], function(DrawPriceDown) {
-                DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-            })
+            // require(['detail/draw-price-down'], function(DrawPriceDown) {
+            //     DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+            // })
         },
         load_baoyang: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode,
+                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -81,7 +81,7 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode, //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
                     var koubeiData = [];
