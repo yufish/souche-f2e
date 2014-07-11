@@ -9,19 +9,19 @@ define(function() {
 
     var _bind = function () {
         $(".carCollect").live("click", function () {
-             var context = this;
+            var context = this;
 
             Souche.NoRegLogin.checkLogin(function() {
-                    if ($(context).hasClass("active")) {
-                        var carID = $(context).parent().attr("carid");
+                if ($(context).parent().hasClass("active")) {
+                    var carID = $(context).parent().attr("carid");
 
-                        deleteCollect.call(context, carID);
-                    }
-                    else {
-                        var carID = $(context).parent().attr("carid");
-                        addCollect.call(context, carID);
-                    }
-                });
+                    deleteCollect.call(context, carID);
+                }
+                else {
+                    var carID = $(context).parent().attr("carid");
+                    addCollect.call(context, carID);
+                }
+            });
             return false;
         });
 
@@ -95,8 +95,8 @@ define(function() {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
-                    $(this).find("span").html('收藏');
-                    $(this).removeClass("active");
+                    $(this).html('收藏');
+                    $(this).parent().removeClass("active");
                 }
 
                 collecting=false;
