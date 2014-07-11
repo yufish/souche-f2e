@@ -6,6 +6,7 @@
     var ClickModel = new BaseModel("ClickModel", "mongo");
     var TrafficOfflineModel = new BaseModel("TrafficOfflineModel", "mongo");
     var ClickOfflineModel = new BaseModel("ClickOfflineModel", "mongo");
+    var F2EErrorModel = new BaseModel("F2EErrorModel", "mongo");
     module.exports = {
         "/click": {
             get: function() {
@@ -27,6 +28,15 @@
                     req.query.time = new Date();
                     ClickModel.add(req.query).done(function(err) {
                         res.send('ok');
+                    })
+                }
+            }
+        },
+        "/f2e-error": {
+            get: function() {
+                return function(req, res) {
+                    F2EErrorModel.add(req.query).done(function() {
+                        res.send("ok");
                     })
                 }
             }

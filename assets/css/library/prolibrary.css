@@ -205,6 +205,7 @@ body {
 #content .wrapper #productInfo {
   height: 180px;
   padding: 20px 0px 10px 0px;
+  border-bottom: 1px solid #e6e6e6;
 }
 #content .wrapper #productInfo > div {
   height: 160px;
@@ -1307,7 +1308,8 @@ body #fav-popup .fav-submit {
   margin: 0 auto;
 }
 #price-distribution .sc-circle {
-  background: url(../../images/detail/sc-price.png) no-repeat;
+  width: 120px;
+  background: url(../../images/library/point.png) no-repeat;
 }
 #price-distribution .new-circle {
   background: url(../../images/detail/new-price.png) no-repeat;
@@ -1383,7 +1385,9 @@ body #fav-popup .fav-submit {
 #price-distribution #price-chart-area {
   height: 300px;
   float: left;
-  width: 742px;
+  margin-left: 70px;
+  position: relative;
+  width: 672px;
   background: url(../../images/detail/price-distribution-bg.png) no-repeat;
 }
 #price-distribution #price-comment-area {

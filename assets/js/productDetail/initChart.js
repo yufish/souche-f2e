@@ -200,7 +200,7 @@ define(function() {
 
             if (SVGsupported) {
                 self.load_price();
-                // self.load_baoyang();
+                self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
             } else {
