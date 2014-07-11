@@ -192,6 +192,7 @@ define(function() {
                 // self.load_config();
             } else {
                 $("#productDetailInfo").addClass("hidden")
+                $(".nosvghidden").addClass("hidden")
             }
         },
         initForChexing: function(_config) {
@@ -204,7 +205,7 @@ define(function() {
                 // self.load_koubei();
                 // self.load_config();
             } else {
-
+                $(".nosvghidden").addClass("hidden")
             }
         }
     }
