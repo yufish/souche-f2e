@@ -159,33 +159,39 @@
     </div>
 
     <script>
+        $(function() {
+                    var defaultDist = $(window).height() * 0.7;
+                    var elems = ['#content-3', '#content-4', '#content-5'];
 
-        var defaultDist = 400//$(window).height() * 0.6;
-        var elems = ['#content-3','#content-4','#content-5'];
-        function c1(){
-            $('#tag-1').velocity({top:'+=20',opacity:1},400)
-            $('#tag-2').velocity({top:'+=20',opacity:1},{delay:200,duration:400})
-            $('#tag-3').velocity({top:'+=20',opacity:1},{delay:200,duration:400})
-        }
-        function c2(){
-            var h1 = $('#heart-1').css({top:150,opacity:0}),
-                h2 = $('#heart-2').css({top:190,opacity:0}),
-                h3 = $('#heart-3').css({top:230,opacity:0});
-            h1.velocity({top:135,opacity:1},400)
-            h2.velocity({top:175,opacity:1},{delay:200,duration:600})
-            h3.velocity({top:215,opacity:1},{delay:400,duration:600,complete:c2})
-        }
-        function c3(){
-            $('#zhang').velocity({top: 50,left: 265},{duration:800,easing: 'easeOutBounce',
-                                                        complete:function(){
-                                                            $('#zhang-shadow').show();
-                                                        }})
-        }
-        var funcs = [c1,c2,c3]
+                    function c1() {
+                        $('#tag-1').velocity({top: '+=20', opacity: 1}, 400)
+                        $('#tag-2').velocity({top: '+=20', opacity: 1}, {delay: 200, duration: 400})
+                        $('#tag-3').velocity({top: '+=20', opacity: 1}, {delay: 200, duration: 400})
+                    }
 
-        for(var i =0;i<elems.length;i++){
-            Souche.Util.appear(elems[i],funcs[i],defaultDist);
-        }
+                    function c2() {
+                        var h1 = $('#heart-1').css({top: 150, opacity: 0}),
+                                h2 = $('#heart-2').css({top: 190, opacity: 0}),
+                                h3 = $('#heart-3').css({top: 230, opacity: 0});
+                        h1.velocity({top: 135, opacity: 1}, 400)
+                        h2.velocity({top: 175, opacity: 1}, {delay: 200, duration: 600})
+                        h3.velocity({top: 215, opacity: 1}, {delay: 400, duration: 600, complete: c2})
+                    }
+
+                    function c3() {
+                        $('#zhang').velocity({top: 50, left: 265}, {duration: 800, easing: 'easeOutBounce',
+                            complete: function () {
+                                $('#zhang-shadow').show();
+                            }})
+                    }
+
+                    var funcs = [c1, c2, c3]
+
+                    for (var i = 0; i < elems.length; i++) {
+                        Souche.Util.appear(elems[i], funcs[i], defaultDist);
+                    }
+                }
+        )
 
     </script>
 
