@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+<head>
+    <title>大搜车买家app</title>
+    <link href="http://res.souche.com/assets/css/souche/souche.css?t=3" rel="stylesheet" type="text/css" />
+    <link href="../../assets/css/app/buy.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+    <script type="text/javascript" src="http://res.souche.com/assets/js/souche/stats.js?t=2"></script>
+    <script type="text/javascript" src="http://res.souche.com/assets/js/mobile/lib/jquery.velocity.min.js"></script>
+    <script type="text/javascript" src="http://res.souche.com/assets/js/souche.js?t=16"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="wrapper"><a href="http://www.souche.com" class="logo"><img src="http://res.souche.com/assets/images/index/logo.png?t=12"></a>
+            <div class="search" >
+                <form action="/pages/onsale/sale_car_list.html">
+                    <input click_type="index-keywordsearch" type="text" name="keyword" placeholder="请输入关键字，如奥迪" value="" class="search-text" >
+                    <input type="hidden" name="pfrom" value="search">
+                    <button click_type="index-keywordsearch-submit" type="submit" class="search-submit">搜 索</button>
+                </form>
+                <div class="hot-keywords" click_type="index-searchhotwords">
+                    <a target="_blank" click_type="index-searchhotwords-1" href="/pages/onsale/sale_car_list.html?keyword=SUV">SUV</a>
+                    <a target="_blank" click_type="index-searchhotwords-2" href="/pages/onsale/sale_car_list.html?keyword=%e9%80%9f%e8%85%be">速腾</a>
+                    <a target="_blank"  click_type="index-searchhotwords-3" href="/pages/onsale/sale_car_list.html?keyword=%E9%AB%98%E5%B0%94%E5%A4%AB">高尔夫</a>
+                    <a target="_blank"  click_type="index-searchhotwords-4" href="/pages/onsale/sale_car_list.html?keyword=%e7%a7%91%e9%b2%81%e5%85%b9">科鲁兹</a>
+                    <a target="_blank" click_type="index-searchhotwords-5" href="/pages/onsale/sale_car_list.html?keyword=%e6%b1%89%e5%85%b0%e8%be%be">汉兰达</a>
+                    <a target="_blank"  click_type="index-searchhotwords-6" href="/pages/onsale/sale_car_list.html?keyword=%E8%BF%88%E8%85%BE">迈腾</a>
+                    <a target="_blank" click_type="index-searchhotwords-7" href="/pages/onsale/sale_car_list.html?keyword=%E5%B8%95%E8%90%A8%E7%89%B9">帕萨特</a>
+                    <a target="_blank"  click_type="index-searchhotwords-8" href="/pages/onsale/sale_car_list.html?keyword=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>
+                    <a target="_blank"  click_type="index-searchhotwords-9" href="/pages/onsale/sale_car_list.html?keyword=%E6%8D%B7%E8%BE%BE">捷达</a>
+                    <a target="_blank" click_type="index-searchhotwords-10"  href="/pages/onsale/sale_car_list.html?keyword=%e9%94%90%e5%bf%97">锐志</a>
+                    <a target="_blank" click_type="index-searchhotwords-11" href="/pages/onsale/sale_car_list.html?keyword=%e5%90%9b%e5%a8%81">君威</a>
+                    <a target="_blank" click_type="index-searchhotwords-12" href="/pages/onsale/sale_car_list.html?keyword=%E7%94%B2%E5%A3%B3%E8%99%AB">甲壳虫</a>
+                </div>
+            </div>
+            <div class="head-tel"><img src="http://res.souche.com/assets/images/index/head-tel.png?t=11" ></div>
+        </div>
+    </div>
+    <script>$(".search-text").focus();</script>
+    <div id="nav">
+        <div class="wrapper">
+            <span class="main-navs">
+              <a click_type="index-navindex"  href="http://www.souche.com"  class="active" >首页</a>
+              <a click_type="index-navsalecarlist"  href="/pages/onsale/sale_car_list.html"  >我要买车</a>
+              <a click_type="index-navsellCar" href="/pages/caruser/sellCarNew.html" >我要卖车</a>
+              <a click_type="index-atcsAll" href="/pages/acts/theme-activity-all.html" >主题精选</a>
+            </span>
+        </div>
+    </div>
+    <script>
+        $(".head-login").on("click", function(e) {
+            e.preventDefault();
+            Souche.MiniLogin.checkLogin(function() {
+                $(".qiugou .go-login").addClass("hidden")
+                window.location.reload() ;
+            })
+        })
+    </script>
+
+    <div id="content-1">
+        <div class="wrapper-1440">
+            <img src="../../assets/images/app/buy/w-1.png">
+            <img id='erwei' src="../../assets/images/app/buy/erwei-code.png">
+            <img id='android' src="../../assets/images/app/buy/android-download.png">
+            <img id='ios' src="../../assets/images/app/buy/iso-download.png">
+        </div>
+        <div class="hr-12"></div>
+    </div>
+
+    <div id="content-2">
+        <div class="wrapper-1440">
+            <img src="../../assets/images/app/buy/w-2.png">
+            <img id="shushu" src="../../assets/images/app/buy/shushu.png">
+        </div>
+    </div>
+
+    <div id="content-3">
+        <div class="wrapper-1440">
+            <img src="../../assets/images/app/buy/w-3.png">
+            <div class="location-tag" id="tag-1"></div>
+            <div class="location-tag" id="tag-2"></div>
+            <div class="location-tag" id="tag-3"></div>
+        </div>
+    </div>
+
+    <div id="content-4">
+        <div class="wrapper-1440">
+            <img src="../../assets/images/app/buy/w-4.png">
+            <div class="heart" id="heart-1"></div>
+            <div class="heart" id="heart-2"></div>
+            <div class="heart" id="heart-3"></div>
+        </div>
+    </div>
+
+    <div id="content-5">
+        <div class="wrapper-1440">
+            <img src="../../assets/images/app/buy/w-5.png">
+            <div id="zhang"></div>
+            <div id="zhang-shadow"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer-content">
+            <div class="wrapper">
+                <div class="performance clearfix">
+                    <div class="per-1 per"><a target="_blank" href="/pages/advantage.html#checkCar"><i></i>
+                        <div class="t">绝无火烧车，水淹车</div>
+                        <div class="st">356项质检，保证车辆品质</div></a>
+                    </div>
+                    <div class="per-2 per"><a target="_blank" href="/pages/advantage.html#quality_promise"><i></i>
+                        <div class="t">1年2万公里质保</div>
+                        <div class="st">二手车享受新车质保服务</div></a>
+                    </div>
+                    <div class="per-3 per"><a target="_blank" href="/pages/advantage.html#pay_show"><i></i>
+                        <div class="t">分期付款</div>
+                        <div class="st">提供最长3年分期付款服务</div></a>
+                    </div>
+                </div>
+                <div class="company_info">
+                    <div class="wrap clearfix">
+                        <a target="_blank" rel="nofollow" href="/pages/details/soucheidea.html">大搜车理念</a>|
+                        <a target="_blank" rel="nofollow" href="/pages/details/soucheabout.html">关于大搜车</a>|
+                        <a target="_blank" rel="nofollow" href="/pages/details/purchase.html">购车指南</a>|
+                        <a target="_blank" rel="nofollow" href="/pages/details/consignment.html">二手车交易服务指南</a>|
+                        <a target="_blank" rel="nofollow" href="/pages/details/contact.html">联系大搜车</a>|
+                        <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>|
+                        <a target="_blank" rel="nofollow" href="http://d.souche.com/">车牛</a>
+                    </div>
+
+                    <div class="friendlinks">
+                        <div class="wrapper">
+                            <a href="http://www.liebiao.com/ershouche/" target="_blank">二手车网</a>
+                            <a href="http://bj.16888.com/" target="_blank">北京汽车网</a>
+                            <a href="http://www.cheyipai.com/" target="_blank">车易拍</a>
+                            <a href="http://tj.cn2che.com/" target="_blank">天津二手车网</a>
+                            <a href="http://qiche.mipang.com/" target="_blank">米胖汽车</a>
+                            <a href="http://www.taoche.com" target="_blank">二手车</a>
+                            <a href="http://price.qi-che.com/" target="_blank">2014汽车报价</a>
+                            <a href="http://hainan.273.cn/" target="_blank">海南二手车</a>
+                            <a href="http://news.souche.com" target="_blank">二手车资讯</a>
+                            <a href="http://www.180mi.com/" target="_blank">180迈汽车保养</a>
+                            <a href="http://zhongshan.ganji.com/ershouche/" target="_blank">中山二手车</a>
+                            <a href="http://www.vin114.net/" target="_blank" rel="nofollow">力洋VIN码识别</a>
+                            <a href="http://hz.ganji.com/ershouche/" target="_blank">杭州二手车</a>
+                            <a href="http://www.chexianinfo.com/" target="_blank" class="last">车险信息网</a>
+                            <a href="http://guide.xgo.com.cn/" target="_blank" class="last">汽车点评网</a>
+                        </div>
+                    </div>
+
+                    <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var defaultDist = $(window).height() * 0.6;
+        var elems = ['#content-3','#content-4','#content-5'];
+        function c1(){
+            $('#tag-1').velocity({top:'+=20',opacity:1},400)
+            $('#tag-2').velocity({top:'+=20',opacity:1},{delay:200,duration:400})
+            $('#tag-3').velocity({top:'+=20',opacity:1},{delay:200,duration:400})
+        }
+        function c2(){
+            var h1 = $('#heart-1').css({top:150,opacity:0}),
+                h2 = $('#heart-2').css({top:190,opacity:0}),
+                h3 = $('#heart-3').css({top:230,opacity:0});
+            h1.velocity({top:135,opacity:1},400)
+            h2.velocity({top:175,opacity:1},{delay:200,duration:600})
+            h3.velocity({top:215,opacity:1},{delay:400,duration:600,complete:c2})
+        }
+        function c3(){
+            $('#zhang').velocity({top: 50,left: 265},{duration:800,easing: 'easeOutBounce',
+                                                        complete:function(){
+                                                            $('#zhang-shadow').show();
+                                                        }})
+        }
+        var funcs = [c1,c2,c3]
+
+        for(var i =0;i<elems.length;i++){
+            Souche.Util.appear(elems[i],funcs[i],defaultDist);
+        }
+
+    </script>
+
+</body>
+</html>
