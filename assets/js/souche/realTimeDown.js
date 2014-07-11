@@ -14,14 +14,32 @@ define(function() {
     }
 
     var callback = function (result) {
-        var list = result.content || ["111","4444","555"];
-        var downList = "<ul>";
-        for (var index = 0, len = list.length; index < len; index++) {
-            downList += "<li><span>" + list[index] + "<\/span><\/li>";
+        var list=[]
+        for(var index=0;index<3;index++) {
+            list.push(Math.random().toString());
         }
-        downList+="<\/ul>";
-        console.log(1);
-        $("body").append(downList);
+
+        var downList = "<div class='realTimeDown'>";
+        for (var index = 0, len = list.length; index < len; index++) {
+            if(index%2) {
+                downList += "<span>" + list[index] + "<\/span>";
+            }
+            else
+            {
+                downList += "<span>" + list[index]+"<a>进入车系»</a>" + "<\/span>";
+            }
+        }
+        downList+="<\/div>";
+        $(".realTimeDown").remove();
+        var element = $(downList).css(
+            {
+                top:top+2,
+                left:left,
+                width:downWidth
+            }
+        );
+
+        $("body").append(element);
     }
 
     var init = function ($element, option,downHeight) {
@@ -39,7 +57,7 @@ define(function() {
         afterShow = option.success;
 
         $element.find("input").keyup(function () {
-            Souche.DelayAjax.addAjax(ajaxOption, callback, 500, true, true);
+            Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
         });
     }
     down.init = init;

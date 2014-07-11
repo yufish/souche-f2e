@@ -3,15 +3,56 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *
+        {
+            font-family: 'Microsoft YaHei', Tahoma, Verdana !important;
+        }
+        .realTimeDown {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 1px solid #d9d9d9;
+            position: absolute;
+            overflow: auto;
+            z-index: 10000;
+            overflow-x: hidden;
+            background: #fff;
+        }
+        .realTimeDown span {
+            display: block;
+            float: none;
+            padding: 3px 0px;
+            padding-left: 15px;
+            font-size: 12px;
+            line-height: 25px;
+            color: #B4B4B4;
+            cursor: pointer;
+            font-size: 13px;
+
+        }
+
+        .realTimeDown span a {
+            float: right;
+            margin-right: 20px;
+            font-size: 12px;
+            color: #FF5719;
+            font-weight: bolder;
+        }
+        .realTimeDown span:hover {
+            background: #F8F8F6;
+        }
+    </style>
 </head>
 <body>
-<div style="border: 1px solid #aaa;display: inline-block;height: 30px">
-    <input type="text" style="border: none; height: 25px" />
+<div style="border: 1px solid #aaa;display: inline-block;height: 30px;width: 900px">
+    <input type="text" style="border: none; height: 25px;width: 700px" />
 </div>
 </body>
 <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/jquery-1.7.1.min.js?t=1"></script>
 <script type="text/javascript" src="http://souche.cdn.aliyuncs.com/assets/js/lib/require.js?t=1"></script>
 <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+
 <script type="text/javascript">
 
     var contextPath = "";
@@ -25,7 +66,7 @@
         down.init($("div"),{url:"http://f2e.souche.com/demo/jiebin/controlTest/package.json",type:"GET",success:function()
         {
             alert(1);
-        }},400);
+        }},900);
 
     });
 </script>
