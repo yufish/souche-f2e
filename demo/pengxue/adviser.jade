@@ -10,16 +10,17 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/adviser.css?t=129" rel="stylesheet" type="text/css" />
     <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
-
+    
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
-    <script>
-      var contextPath = "http://www.souche.com/";
+    <script type="text/javascript" src="http://res.souche.com/assets/js/lib/require.js?t=12"></script>
+     <script>
       require.config({
-        baseUrl: "http://f2e.souche.com/assets/js"
-      });
+        baseUrl: "http://res.souche.com/assets/js",
+        urlArgs:"bust=v6"
+      }); 
     </script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/adviser.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
     
   body#adviser
@@ -76,7 +77,9 @@ html
         .aiche-tit
         .aiche-cont.clearfix
           .pic-1-1
-          .pic-1-2
+          .pic-1-4
+          .pic-1-5
+          .pic-1-6
           .pic-1-3
       #test
         .test-tit
@@ -98,10 +101,15 @@ html
         .bargain-tit
         .bargain-cont.clearfix
           .pic-3-1
-          .pic-3-2
+          .pic-3-2-1
+          .pic-3-2-2
+          .pic-3-2-3
+          .pic-3-2-4
+          .pic-3-2-5  
           .pic-3-3
           .imac
             .car
+            .souche
           .pic-3-4
           .pic-3-5
       #staging
@@ -147,7 +155,36 @@ html
       #qa
         .qa-tit
         .qa-cont
-
+          .pic-6-1
+          .qa-detail.clearfix
+            .tit 那么，都有哪些部件被保了？
+            .qu-box
+              .down
+              .qu 汽油发动机气缸体和内部润滑部件
+              .an.hidden
+                p 包括：曲轴、连杆和轴瓦、凸轮轴、凸轮轴承、凸轮控制器、膨胀（冷冻）塞、连杆、活塞、活塞环、挺杆、汽缸盖（不含破裂或除积碳）、气门和导管（不包括气门烧蚀）、气门弹簧、摇臂（凸轮随动件）、推杆、正时导轨、正时链条和链轮齿、同步皮带轮、进气管和排气支管、飞轮及齿轮、平衡轴及平衡轴承、平衡器和螺栓、曲轴皮带轮、气门盖、油泵和减压阀、发动机油冷却管、发动机油传感器、水泵、燃油泵、真空泵，以及上述部件的紧固零件。
+            .qu-box
+              .down
+              .qu 自动与手动变速器及变速箱体内的润滑部件
+              .an.hidden
+                p 包括：各种轴承、齿轮、变速叉、油泵、缓冲垫及轴承、液力变矩器、变速器连接杆、真空模块、电子控制装置、控制阀体、扭矩转换器、调速器、传速带、齿轮组、密封圈拉线、电磁阀、电子变速控制装置、变速器支架、冷却器、油尺和油尺导管、以及上述部件的紧固零件。
+            .qu-box
+              .down
+              .qu 四轮驱动传动箱
+              .an.hidden
+                p 箱体和所有内部润滑部件、包括：主轴、齿轮组、链条和齿轮、轴承、轴衬、支架、上述部件的固定装置，以及电子和真空装置部件。
+            .qu-box
+              .down
+              .qu 前驱总成
+              .an.hidden
+                p 主减速器和所有内部润滑部件。包括：壳体、齿轮组、链条和齿轮、轴承、轴衬、轮轴、万向节、前轮毂轴承、锁止式轮毂总成（四轮驱动）、驱动轴支架，以及上述部件的紧固零件（不含衬套）。
+            .qu-box
+              .down
+              .qu 后桥总成
+              .an.hidden
+                p 桥壳和所有内部润滑部件。包括：主壳、齿轮组、轴承、轴衬、防滑差速器离合器、轮轴、后轮毂轴承、传动轴、万向节，驱动轴支架，以及上述部件的紧固部件（不含衬套）。
+          .pic-6-2
+          .pic-6-3
       #shop
         .shop-tit
         .shop-cont
@@ -189,3 +226,8 @@ html
               <a target="_blank" rel="nofollow" href="/pages/zhaopin/zhaopin_list.html">人才招聘</a>        
             </div>
             <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有 &nbsp;&nbsp; &nbsp;&nbsp;京 ICP备 13012136号 京公网安备 11010802013095号</p>
+    script.
+      $(".down").click(function(){
+        $(this).closest(".qu-box").find(".an").toggleClass("hidden");
+        $(this).closest(".qu-box").find(".qu").toggleClass("active");
+        });

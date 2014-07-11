@@ -59,14 +59,32 @@
   top: 0px;
   right: 1px;
 }
-#adviser #content #aiche .aiche-cont .pic-1-2 {
+#adviser #content #aiche .aiche-cont .pic-1-4 {
   width: 100%;
   height: 0px;
-  background: url(../images/adviser/1-2.png) no-repeat;
+  background: url(../images/adviser/1-4.png) no-repeat;
   z-index: 2;
   position: absolute;
   top: 0px;
   right: 0px;
+}
+#adviser #content #aiche .aiche-cont .pic-1-5 {
+  width: 100%;
+  height: 0px;
+  background: url(../images/adviser/1-5.png) no-repeat;
+  z-index: 2;
+  position: absolute;
+  top: 406px;
+  right: 0px;
+}
+#adviser #content #aiche .aiche-cont .pic-1-6 {
+  width: 100%;
+  height: 0px;
+  background: url(../images/adviser/1-6.png) no-repeat;
+  z-index: 2;
+  position: absolute;
+  top: 985px;
+  right: -4px;
 }
 #adviser #content #aiche .aiche-cont .pic-1-3 {
   width: 455px;
@@ -97,7 +115,7 @@
   width: 106px;
   height: 105px;
   right: 350px;
-  z-index: 1;
+  z-index: 3;
   top: 185px;
 }
 #adviser #content #test .test-cont .pic-2-2 {
@@ -108,7 +126,7 @@
   right: 357px;
   top: 192px;
   z-index: 2;
-  opacity: 0;
+  opacity: 1;
 }
 #adviser #content #test .test-cont .pic-2-3 {
   position: absolute;
@@ -117,8 +135,8 @@
   height: 80px;
   right: 360px;
   top: 198px;
-  z-index: 3;
-  opacity: 0;
+  z-index: 1;
+  opacity: 1;
 }
 #adviser #content #test .test-cont .testcar {
   width: 800px;
@@ -149,33 +167,32 @@
   left: 680px;
 }
 #adviser #content #test .test-cont .test-text {
-  width: 755px;
+  width: 760px;
   margin: 0 auto;
   position: relative;
   padding-top: 30px;
+  height: 70px;
 }
 #adviser #content #test .test-cont .test-text .text-1 {
   width: 100%;
-  height: 57px;
+  height: 70px;
   background: url(../images/adviser/2-5.png) no-repeat;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
 }
 #adviser #content #test .test-cont .test-text .text-2 {
   width: 100%;
-  height: 55px;
+  height: 70px;
   background: url(../images/adviser/2-6.png) no-repeat;
   position: absolute;
   z-index: 2;
-  opacity: 0;
 }
 #adviser #content #test .test-cont .test-text .text-3 {
   width: 100%;
-  height: 62px;
+  height: 70px;
   background: url(../images/adviser/2-7.png) no-repeat;
   position: absolute;
-  z-index: 3;
-  opacity: 0;
+  z-index: 1;
 }
 #adviser #content #bargain {
   height: 2030px;
@@ -190,27 +207,59 @@
   position: relative;
 }
 #adviser #content #bargain .bargain-cont .pic-3-1 {
-  background: url(../images/adviser/3-1.png) no-repeat;
-  width: 167px;
-  height: 97px;
+  background: url(../images/adviser/angle.gif) no-repeat;
+  width: 567px;
+  height: 227px;
   position: absolute;
-  top: 100px;
-  right: 500px;
-  z-index: 3;
+  top: 40px;
+  left: 300px;
+  z-index: 1;
 }
-#adviser #content #bargain .bargain-cont .pic-3-2 {
-  background: url(../images/adviser/3-2.png) no-repeat;
+#adviser #content #bargain .bargain-cont .pic-3-2-1 {
+  background: url(../images/adviser/3-2-1.png) no-repeat;
   width: 1182px;
   height: 0px;
   position: absolute;
-  z-index: 2;
+  z-index: 5;
+}
+#adviser #content #bargain .bargain-cont .pic-3-2-2 {
+  background: url(../images/adviser/3-2-2.png) no-repeat;
+  width: 1182px;
+  height: 0px;
+  position: absolute;
+  top: 353px;
+  z-index: 5;
+}
+#adviser #content #bargain .bargain-cont .pic-3-2-3 {
+  background: url(../images/adviser/3-2-3.png) no-repeat;
+  width: 1182px;
+  height: 0px;
+  position: absolute;
+  top: 728px;
+  z-index: 5;
+}
+#adviser #content #bargain .bargain-cont .pic-3-2-4 {
+  background: url(../images/adviser/3-2-4.png) no-repeat;
+  width: 1182px;
+  height: 0px;
+  position: absolute;
+  top: 1097px;
+  z-index: 5;
+}
+#adviser #content #bargain .bargain-cont .pic-3-2-5 {
+  background: url(../images/adviser/3-2-5.png) no-repeat;
+  width: 1182px;
+  height: 0px;
+  position: absolute;
+  top: 1452px;
+  z-index: 5;
 }
 #adviser #content #bargain .bargain-cont .pic-3-3 {
   background: url(../images/adviser/3-3.png) no-repeat;
   width: 1182px;
   height: 1864px;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
 }
 #adviser #content #bargain .bargain-cont .imac {
   background: url(../images/adviser/3-6.png) no-repeat;
@@ -221,11 +270,20 @@
   right: 0px;
 }
 #adviser #content #bargain .bargain-cont .imac .car {
-  background: url(../images/adviser/3-7.png) no-repeat;
-  width: 314px;
-  height: 23px;
-  margin-top: 100px;
-  margin-left: 31px;
+  background: url(../images/adviser/car.gif) no-repeat;
+  width: 567px;
+  height: 185px;
+  margin-top: 17px;
+  margin-left: 19px;
+}
+#adviser #content #bargain .bargain-cont .imac .souche {
+  background: url(../images/adviser/souche.png) no-repeat;
+  width: 88px;
+  height: 19px;
+  z-index: 10;
+  position: absolute;
+  bottom: 130px;
+  left: 140px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-4 {
   position: absolute;
@@ -283,9 +341,6 @@
   background: url(../images/adviser/4-3.png) no-repeat;
   top: 218px;
 }
-#adviser #content #back {
-  height: 2120px;
-}
 #adviser #content #back .back-tit {
   background: #ff4400 url(../images/adviser/back-car.png) no-repeat center;
   height: 165px;
@@ -303,6 +358,7 @@
   width: 600px;
   float: right;
   margin-top: 20px;
+  margin-bottom: 60px;
 }
 #adviser #content #back .back-cont .back-detail .tit {
   color: #373838;
@@ -332,7 +388,10 @@
 }
 #adviser #content #back .back-cont .back-detail .qu-box .qu {
   color: #383838;
-  font-size: 20px;
+  font-size: 18px;
+}
+#adviser #content #back .back-cont .back-detail .qu-box .active {
+  color: #fc7000 !important;
 }
 #adviser #content #back .back-cont .back-detail .qu-box .an {
   font-size: 14px;
@@ -340,12 +399,78 @@
   color: #383838;
   margin-top: 10px;
 }
-#adviser #content #qa {
-  height: 1920px;
-}
 #adviser #content #qa .qa-tit {
   background: #ff4400 url(../images/adviser/qa-car.png) no-repeat center;
   height: 165px;
+}
+#adviser #content #qa .qa-cont {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+#adviser #content #qa .qa-cont .pic-6-1 {
+  width: 1224px;
+  background: url(../images/adviser/6-1.png) no-repeat;
+  height: 460px;
+  margin: 0 auto;
+}
+#adviser #content #qa .qa-cont .pic-6-2 {
+  background: url(../images/adviser/6-2.png) no-repeat;
+  width: 658px;
+  height: 398px;
+  position: absolute;
+  top: 465px;
+  right: -150px;
+}
+#adviser #content #qa .qa-cont .qa-detail {
+  width: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#adviser #content #qa .qa-cont .qa-detail .tit {
+  color: #373838;
+  font-size: 30px;
+  border-bottom: 1px solid #a0a0a0;
+  padding-bottom: 10px;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box {
+  padding: 10px 5px;
+  border-bottom: 1px solid #a0a0a0;
+  position: relative;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .down {
+  width: 18px;
+  height: 18px;
+  background: url(../images/adviser/down.png) no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .down-active {
+  background: url(../images/adviser/up.png) no-repeat !important;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .down:hover {
+  background: url(../images/adviser/up.png) no-repeat;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .qu {
+  color: #383838;
+  font-size: 18px;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .active {
+  color: #fc7000 !important;
+}
+#adviser #content #qa .qa-cont .qa-detail .qu-box .an {
+  font-size: 14px;
+  line-height: 20px;
+  color: #383838;
+  margin-top: 10px;
+}
+#adviser #content #qa .qa-cont .pic-6-3 {
+  width: 991px;
+  height: 623px;
+  background: url(../images/adviser/6-3.png) no-repeat;
+  margin: 0 auto;
 }
 #adviser #content #shop {
   height: 2725px;
