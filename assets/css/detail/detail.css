@@ -5049,6 +5049,9 @@ less .icon-fei {
   margin-bottom: 20px;
   border: 1px solid #eee;
 }
+.onsale-summary .onsale-tab-space {
+  height: 38px;
+}
 .onsale-summary .onsale-tab {
   background: #f9f9f9;
   border-bottom: 1px solid #eee;

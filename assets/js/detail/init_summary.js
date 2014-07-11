@@ -164,7 +164,7 @@ define(function() {
 
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
                     }, 500, function() {
                         $(".onsale-tab-item").removeClass("active");
                         $(self).addClass("active")
@@ -176,7 +176,7 @@ define(function() {
 
 
 
-            $(".onsale-tab-item").each(function(i, tab) {
+            $(".onsale-tab-item:not(hidden)").each(function(i, tab) {
                 if ($("#" + $(tab).attr("data-scrollto")).length) {
                     Souche.Util.appear("#" + $(tab).attr("data-scrollto"), function() {
                         $(".onsale-tab-item").removeClass("active")

@@ -303,7 +303,108 @@
                 </div>
               </div>
             </div>
-            
+            <div class="onsale-content-item" id="onsale_price">
+            <div class="price-report">
+              <div class="report-title">2012款 宝马X1-sDrive20i-2.0T-手自一体领先型后驱 价格报告</div>
+              <div class="report-item">
+                <div class="report-item-title">价格分布<hr/></div>
+                <div class="report-item-content">
+                  <div id="price-distribution" class="clearfix">
+                    <div id="price-chart-area">
+                        <div id="sc-price" class="price-point">
+                            <div class="price-circle sc-circle">
+                            </div>
+                            <div class="tri sc-tri"></div>
+                            <div class="price-tag sr-tag">
+                                <div class="price-title sc-title">大搜车价</div>
+                                <div class="price-value sc-value">
+                                    ￥<span class="souche-price-min">42.4</span>万
+                                </div>
+                            </div>
+                            <div id="price-rate">
+                                <i class="tip"></i>折价率 <span class="souche-price-lv">63%</span>
+                            </div>
+                        </div>
+                        <div id="new-price" class="price-point">
+                            <div class="price-circle new-circle">
+
+                            </div>
+                            <div class="tri new-tri"></div>
+                            <div class="price-tag new-tag">
+                                <div class="price-title new-title">新车平均成交价</div>
+                                <div class="price-value">
+                                    <i class="tip"></i>￥<span class="souche-price-middle">42.4</span>万
+                                </div>
+                            </div>
+                        </div>
+                        <div id="guide-price" class="price-point">
+                            <div class="price-circle guide-circle">
+
+                            </div>
+                            <div class="tri guide-tri"></div>
+                            <div class="price-tag guide-tag">
+
+                                <div class="price-title guide-title">新车厂商指导价</div>
+                                <div class="price-value">
+                                    ￥<span class="souche-price-max">42.4</span>万
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="price-comment-area">
+                        <div class="souche-price">
+                            大搜车价：<span class="souche-price-text">￥35.6万</span>
+                        </div>
+                        <p>比新车平均成交价(<span class="souche-price-middle">42.4</span>万)省<span class="souche-price-down">6.8</span>万</p>
+                        <p>折价率<span class="souche-price-lv">63%</span></p>
+
+                        <div class="comment-tip1 clearfix">
+                            <div>
+                                <div class="formula-1"><i class="tip"></i>折价率 =</div>
+                                <div class="formula-2">
+                                    <div class="fenshu">
+                                        <div class="fenzi">
+                                            大搜车价
+                                        </div>
+                                        <div class="fenmu">
+                                            新车平均成交价
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formula-3">
+                                    × 100%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-tip2 clearfix">
+                            <i class="tip"></i>
+                            <p class="text">新车平均成交价数据来自于车主最终成交价格，数据真实可靠</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>  
+              <!--
+              <div class="report-item report-zhejiu">
+                <div class="report-item-title">预期折旧曲线<hr/></div>
+                <div class="report-item-content clearfix">
+                  <div id="price_zhejiu" ></div>
+                  <div id="price-comment-area">
+                      <div class="souche-price">
+                          五年内平均折价率：<span class="souche-price-text">￥35.6万</span>
+                      </div>
+                      <p>平均每年折旧：<em>1.3万元</em></p>
+                      <div class="comment-tip1 clearfix">
+                          <i class="tip"></i>
+                          <p class="text">折旧价格为粗略估值，仅供参考</p>
+                      </div>
+                  </div>
+                </div>
+              </div>  
+            -->
+            </div>
+          </div>
+          
                 </div>
                 <div class="configure" data-id="configure">
                     <div class="config_nav">
@@ -489,7 +590,7 @@
         </form>
     </div>
     
-    <script type="text/javascript" src="../../assets/js/lib/require.js"></script>
+    <script type="text/javascript" src="../../assets/js/souche.js"></script>
     <script type="text/javascript">
     require(['productDetail/initChart'],function(Charts){
         Charts.init({
@@ -497,11 +598,11 @@
             carType:'zaishou',
             brandCode:"brand-15",
             seriesCode:"series-1676",
-            modelCode:"56056",
+            modelCode:"133104",
             price:33.06,
             nowDistance:2.78
 
-        })
+        });
             require(["productDetail/productChexingDetail"],function(detail)
             {
                     detail.init();
