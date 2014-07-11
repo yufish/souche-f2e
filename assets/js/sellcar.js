@@ -1,4 +1,4 @@
-require(['souche/util/action-list'], function (ActionList) {
+require(['souche/util/action-list'], function(ActionList) {
     var defaultDist = $(window).height() * 0.7;
     Souche.Util.appear("#findbuyer", function () {
         var data1 = [
@@ -187,4 +187,5 @@ require(['souche/util/action-list'], function (ActionList) {
     $(function () {
         $(".slide").myScroll({});
     });
+    
 });

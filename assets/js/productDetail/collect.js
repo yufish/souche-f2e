@@ -8,20 +8,20 @@ define(function() {
     var phoneReg = /^1[3458][0-9]{9}$/;
 
     var _bind = function () {
-        $(".carCollect span").live("click", function () {
-             var context = this;
+        $(".carCollect").live("click", function () {
+            var context = this;
 
             Souche.NoRegLogin.checkLogin(function() {
-                    if ($(context).parent().hasClass("active")) {
-                        var carID = $(context).parent().parent().attr("carid");
+                if ($(context).parent().hasClass("active")) {
+                    var carID = $(context).parent().attr("carid");
 
-                        deleteCollect.call(context, carID);
-                    }
-                    else {
-                        var carID = $(context).parent().parent().attr("carid");
-                        addCollect.call(context, carID);
-                    }
-                });
+                    deleteCollect.call(context, carID);
+                }
+                else {
+                    var carID = $(context).parent().attr("carid");
+                    addCollect.call(context, carID);
+                }
+            });
             return false;
         });
 
@@ -73,8 +73,8 @@ define(function() {
                     } else {
                         $("#fav-popup").addClass("hidden");
                         $(".wrapGrayBg").hide();
-                        $(this).html('已收藏');
-                        $(this).parent().addClass("active");
+                        $(this).find("span").html('已收藏');
+                        $(this).addClass("active");
                     }
                     collecting = false;
                 });

@@ -12,13 +12,32 @@ define(function()
 
             var pointerElement = $(".config_content #"+pointerTo);
             var top = pointerElement.offset().top;
+            $(".config_nav li span").removeClass("active");
+            $(this).find("span").addClass("active");
 
             $('html,body').animate(
                 {
-                    scrollTop: top+50 + "px"
+                    scrollTop: top -100 + "px"
                 }
                 , 1000);
         });
+
+        var originTop = $(".config_nav").offset().top;
+        $(window).scroll(function()
+        {
+            var currentTop  = $(window).scrollTop();
+            var height = $(".config_content").height();
+
+            if(currentTop>originTop&&currentTop<(height+originTop-$(".config_nav ul").height()-200))
+            {
+                $(".config_nav ul").css("position","fixed").css("top","100px");
+            }
+            else
+            {
+                $(".config_nav ul").css("position","relative").css("top","0px");
+            }
+
+        })
     }
 
     var init = function()
