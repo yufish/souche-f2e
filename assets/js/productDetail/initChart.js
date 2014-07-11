@@ -101,7 +101,7 @@ define(function() {
                             if (data[i]) {
                                 koubeiData.push({
                                     name: kv[i],
-                                    rate: data[i].score / 100,
+                                    rate: (data[i].score * 1).toFixed(2),
                                     labels: data[i].comments
                                 })
                             } else {
@@ -188,6 +188,8 @@ define(function() {
                 self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
+            } else {
+                $("#productDetailInfo").addClass("hidden")
             }
         },
         initForChexing: function(_config) {
@@ -199,6 +201,8 @@ define(function() {
                 // self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
+            } else {
+
             }
         }
     }
