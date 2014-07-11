@@ -1290,6 +1290,10 @@ body #fav-popup .fav-submit {
 #onsale_price {
   margin: 50px auto;
 }
+#onsale_price .report-item-title {
+  font-size: 18px;
+  color: #666;
+}
 #onsale_price .report-item-title hr {
   display: none;
 }
@@ -1379,7 +1383,7 @@ body #fav-popup .fav-submit {
 #price-distribution #price-chart-area {
   height: 300px;
   float: left;
-  width: 642px;
+  width: 742px;
   background: url(../../images/detail/price-distribution-bg.png) no-repeat;
 }
 #price-distribution #price-comment-area {

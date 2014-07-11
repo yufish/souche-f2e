@@ -22,9 +22,11 @@ define(function() {
                         $(".float-nav-item-price").removeClass("hidden")
                         var maxPrice = (priceData.price_guide).toFixed(1)
                         var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
-                        var minPrice = config.price;
+                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2);
+                        var rangePrice = config.minPrice + "-" + config.maxPrice;
+
                         require(['detail/draw-sanprice'], function(SanPrice) {
-                            SanPrice.draw(minPrice, maxPrice, middlePrice);
+                            SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
                     }
                 }

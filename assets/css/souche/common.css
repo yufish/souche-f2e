@@ -196,9 +196,6 @@
 body {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
-a {
-  cursor: default;
-}
 #header {
   height: 115px;
   background: #fff;

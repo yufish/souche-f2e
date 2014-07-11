@@ -1,13 +1,13 @@
 define(function() {
     return {
-        draw: function(min, max, middle) {
+        draw: function(min, max, middle, rangePrice) {
             var minPrice = min;
             var maxPrice = max;
             var minLength = 45;
             var maxLength = 520;
-            $(".souche-price-text").html("￥" + min + "万")
+            $(".souche-price-text").html("￥" + rangePrice + "万")
             $(".souche-price-middle").html(middle)
-            $(".souche-price-min").html(min)
+            $(".souche-price-min").html(rangePrice)
             $(".souche-price-max").html(max)
             $(".souche-price-down").html((middle - min).toFixed(1));
             $(".souche-price-lv").html((min * 100 / middle).toFixed(0) + "%")
