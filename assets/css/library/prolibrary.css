@@ -205,7 +205,6 @@ body {
 #content .wrapper #productInfo {
   height: 180px;
   padding: 20px 0px 10px 0px;
-  border-bottom: 1px solid #e6e6e6;
 }
 #content .wrapper #productInfo > div {
   height: 160px;
@@ -1289,7 +1288,8 @@ body #fav-popup .fav-submit {
   position: relative;
 }
 #onsale_price {
-  margin: 50px auto;
+  border-top: 1px solid #e6e6e6;
+  padding: 50px 0px;
 }
 #onsale_price .report-item-title {
   font-size: 18px;
