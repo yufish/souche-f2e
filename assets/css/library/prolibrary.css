@@ -1288,7 +1288,12 @@ body #fav-popup .fav-submit {
   position: relative;
 }
 #onsale_price {
-  margin: 50px auto;
+  border-top: 1px solid #e6e6e6;
+  padding: 50px 0px;
+}
+#onsale_price .report-item-title {
+  font-size: 18px;
+  color: #666;
 }
 #onsale_price .report-item-title hr {
   display: none;
@@ -1303,7 +1308,8 @@ body #fav-popup .fav-submit {
   margin: 0 auto;
 }
 #price-distribution .sc-circle {
-  background: url(../../images/detail/sc-price.png) no-repeat;
+  width: 120px;
+  background: url(../../images/library/point.png) no-repeat;
 }
 #price-distribution .new-circle {
   background: url(../../images/detail/new-price.png) no-repeat;
@@ -1379,7 +1385,9 @@ body #fav-popup .fav-submit {
 #price-distribution #price-chart-area {
   height: 300px;
   float: left;
-  width: 642px;
+  margin-left: 70px;
+  position: relative;
+  width: 672px;
   background: url(../../images/detail/price-distribution-bg.png) no-repeat;
 }
 #price-distribution #price-comment-area {

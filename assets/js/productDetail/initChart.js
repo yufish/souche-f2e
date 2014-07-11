@@ -11,7 +11,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode,
+                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -22,20 +22,22 @@ define(function() {
                         $(".float-nav-item-price").removeClass("hidden")
                         var maxPrice = (priceData.price_guide).toFixed(1)
                         var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
-                        var minPrice = config.price;
+                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2);
+                        var rangePrice = config.minPrice + "-" + config.maxPrice;
+
                         require(['detail/draw-sanprice'], function(SanPrice) {
-                            SanPrice.draw(minPrice, maxPrice, middlePrice);
+                            SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
                     }
                 }
             })
-            require(['detail/draw-price-down'], function(DrawPriceDown) {
-                DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
-            })
+            // require(['detail/draw-price-down'], function(DrawPriceDown) {
+            //     DrawPriceDown.draw([250, 230, 200, 150, 100, 60])
+            // })
         },
         load_baoyang: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode,
+                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -79,7 +81,7 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + "/m/" + config.modelCode, //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
                     var koubeiData = [];
@@ -101,7 +103,7 @@ define(function() {
                             if (data[i]) {
                                 koubeiData.push({
                                     name: kv[i],
-                                    rate: data[i].score / 100,
+                                    rate: (data[i].score * 1).toFixed(2),
                                     labels: data[i].comments
                                 })
                             } else {
@@ -188,6 +190,9 @@ define(function() {
                 self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
+            } else {
+                $("#productDetailInfo").addClass("hidden")
+                $(".nosvghidden").addClass("hidden")
             }
         },
         initForChexing: function(_config) {
@@ -196,9 +201,11 @@ define(function() {
 
             if (SVGsupported) {
                 self.load_price();
-                // self.load_baoyang();
+                self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
+            } else {
+                $(".nosvghidden").addClass("hidden")
             }
         }
     }
