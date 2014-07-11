@@ -1768,6 +1768,12 @@ body * {
 #qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask:hover {
   background: #3784ec url(../images/index/ask-hover.png) no-repeat left center;
 }
+#qa .cheshen-nav .chenshen-cont-2 {
+  left: -69px !important;
+}
+#qa .cheshen-nav .chenshen-cont-3 {
+  left: -138px !important;
+}
 #qa .cheshen-nav .nav-but:hover {
   border-bottom: none;
   background: #fff;
