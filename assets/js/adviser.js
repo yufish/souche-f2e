@@ -111,7 +111,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 function() {
                     $(".pic-4-2").animate({
                         width: 291
-                    }, 1000)
+                    }, 2000)
                 }
             ]
         ]
