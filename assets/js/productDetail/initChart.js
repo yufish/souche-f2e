@@ -15,7 +15,7 @@ define(function() {
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
-                    if (data && data.items.length) {
+                    if (data && data.items && data.items.length) {
                         var priceData = data.items[0];
 
                         $(".onsale-tab-item-price").removeClass("hidden")
@@ -43,7 +43,7 @@ define(function() {
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
-                    if (data && data.items.length) {
+                    if (data && data.items && data.items.length) {
                         var baoyangData = data.items[1];
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
