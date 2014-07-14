@@ -195,9 +195,10 @@ html
                   .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-1
-                      .img-2
-                      .img-3
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
                     .img-next
                   p 第一眼，大搜车独树一帜的品牌形象，你感受下:                                                                                                                      
               .but-2.but
@@ -205,9 +206,10 @@ html
                   .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-4
-                      .img-5
-                      .img-6
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
                     .img-next
                   p 在大搜车门面的引导下，转入车辆区，近千台车，各大品牌各种价位俱全！
               .but-3.but
@@ -215,9 +217,10 @@ html
                   .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-7
-                      .img-8
-                      .img-9
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
                     .img-next
                   p 如果您是汽车狂热粉，或许，可以找咱专业的检测师，和德国进口的检测设备聊一聊人生。
               .but-4.but
@@ -225,9 +228,9 @@ html
                   .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-10
-                      .img-11
-                      
+                      .img-scroll
+                        .img-1
+                        .img-2
                     .img-next
                   p 如果您带了宝贝儿来逛店，儿童游乐区，您应该会喜欢！
               .but-5.but
@@ -235,9 +238,9 @@ html
                   .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-12
-                      .img-13
-                      
+                      .img-scroll
+                        .img-1
+                        .img-2
                     .img-next
                   p 如果只是附近shopping路过，没关系，这里有一杯 免费的咖啡
           #img7
@@ -299,4 +302,19 @@ html
           $(this).closest(".img-but").find(".but").find(".but-detail").addClass("hidden");
           $(this).find(".but-detail").toggleClass("hidden");
         });
+        
+      
+      var imgs = [$('.img-1'),$('.img-2'),$('.img-3')];
+
+
+      $(".img-box .img-next").click(function(){
+          $(this).closest(".img-box").find(".img-list").find(".img-scroll").animate({
+            'margin-left': '-=563'
+          },1000)
+        })
+      $(".img-box .img-last").click(function(){
+          $(this).closest(".img-box").find(".img-list").find(".img-scroll").animate({
+            'margin-left': '+=563'
+          },1000)
+        })
     
