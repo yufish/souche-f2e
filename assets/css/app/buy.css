@@ -118,3 +118,33 @@ img{
     position: absolute;
     display: none;
 }
+.cloud{
+    background: url('../../images/app/buy/cloud.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+.cloud-1{
+    width:59px;
+    height: 46px;
+    top: 270px;
+    left: 430px;
+}
+.cloud-2{
+    width:52px;
+    height: 40px;
+    top: 285px;
+    left: 610px;
+}
+.cloud-3{
+    width:32px;
+    height: 24px;
+    top: 350px;
+    left: 320px;
+}
+.cloud-4{
+    width:32px;
+    height: 46px;
+    opacity: 0.8;
+    top: 380px;
+    left: 750px;
+}
