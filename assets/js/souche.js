@@ -46,7 +46,9 @@ Souche.Util = function() {
                 }
             };
             $(document).ready(function() {
-                check();
+                setTimeout(function() {
+                    check();
+                }, 200);
             })
             $(window).scroll(check);
         },
@@ -497,17 +499,16 @@ Souche.PhoneRegister = function(phone, callback) {
     })
 };
 
-Souche.DelayAjax = (function(){
+Souche.DelayAjax = (function() {
     var manager = {};
 
-    var urlList ={};
-    var success = function()
-    {
+    var urlList = {};
+    var success = function() {
         var def = arguments[2];
         urlList[this.url].deferred.isCallback = true;
     }
 
-    var add = function(option,callback,delay,trailing,aborted) {
+    var add = function(option, callback, delay, trailing, aborted) {
         if (!option.url) {
             throw new Error("url underfind");
         }
@@ -515,15 +516,14 @@ Souche.DelayAjax = (function(){
         if (urlList[option.url]) {
             var lastTime = urlList[option.url].lastTime;
             var currentTime = +new Date();
-            if((currentTime - lastTime)>delay) {
+            if ((currentTime - lastTime) > delay) {
                 window.clearTimeout(urlList.handle);
                 urlList[option.url].lastTime = +new Date();
                 urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
                 //callback();
-            }
-            else if(trailing) {
+            } else if (trailing) {
                 window.clearTimeout(urlList.handle);
-                urlList.handle = window.setTimeout(function () {
+                urlList.handle = window.setTimeout(function() {
                     urlList[option.url].lastTime = +new Date();
                     if (!urlList[option.url].deferred.isCallback && aborted) {
                         urlList[option.url].deferred.abort();
@@ -532,8 +532,7 @@ Souche.DelayAjax = (function(){
                     //callback();
                 }, delay);
             }
-        }
-        else {
+        } else {
             urlList.handle = undefined;
             urlList[option.url] = urlList[option.url] || {};
             urlList[option.url].lastTime = +new Date();

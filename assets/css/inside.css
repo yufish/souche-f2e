@@ -1164,3 +1164,98 @@ width: 400px;
 .fav-wrapGrayBg{height:100%;width:100%;position:fixed;top:0;left:0;background-color:#000;z-index:10000;opacity:0.7;}
 
 .icon-fei{position:absolute;left:0;right:0;background:#fc7000;height:15px;width:15px;background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
+
+.productLibInfo{width:996px;height:130px;vertical-align: middle;border:1px solid #ddd;background-color:#fff;margin-top:20px;overflow:hidden;margin-bottom: 20px;}
+.productLibInfo .productLibImg{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 210px;
+    height: 80px;
+    margin-top:25px;
+    vertical-align: middle;
+}
+.productLibInfo .productLibImg img
+{
+    margin-left: 30px;
+    width:  150px;
+    border: none;
+    cursor: pointer;
+}
+
+.productLibInfo .productLibInfoContent{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 580px;
+    height: 80px;
+    vertical-align: middle;
+    margin-top:25px;
+    border-right: 2px solid #D5D5D5;
+    margin-left: 10px;
+}
+.productLibInfo .productLibInfoContent .productLibTitle
+{
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.productLibInfo .productLibInfoContent .productLibPrice
+{
+    font-size: 15px;
+    color: #F25A00;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.productLibInfo .productLibInfoContent .productLibLink
+{
+    padding: 10px 0px 0px 0px;
+}
+
+.productLibInfo .productLibInfoContent .productLibLink a
+{
+    padding: 0px 15px 0px 15px;
+    font-size: 13px;
+    border-right: 2px solid #EBEBEB;
+    color: #9B9B9B;
+    cursor: pointer;
+}
+
+.productLibInfo .productLibInfoContent .productLibLink .first
+{
+    padding: 0px 15px 0px 0px;
+    font-size: 13px;
+    border-right: 2px solid #EBEBEB;
+}
+
+.productLibInfo .productLibInfoContent .productLibLink .end
+{
+    padding: 0px 0px 0px 15px;
+    font-size: 14px;
+    border: none;
+}
+
+.productLibInfo .productLibKoubei{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 80px;
+    vertical-align: middle;
+    margin-top:25px;
+    width: 180px;
+    text-align: center;
+    color: #9B9B9B;
+    font-size: 14px;
+}
+
+
+.productLibInfo .productLibKoubei .title {
+    font-size: 16px;
+    color:  #9B9B9B;
+}
+
+.productLibInfo .productLibKoubei .pingfen {
+    font-size: 20px;
+    color: #62B360;
+    font-weight: bolder;
+}
