@@ -64,6 +64,10 @@
     <div id="content-1">
         <div class="wrapper-1440">
             <img src="../../assets/images/app/buy/w-1.png">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
             <img id='erwei' src="../../assets/images/app/buy/erwei-code.png">
             <img id='android' src="../../assets/images/app/buy/android-download.png">
             <img id='ios' src="../../assets/images/app/buy/iso-download.png">
@@ -74,7 +78,7 @@
     <div id="content-2">
         <div class="wrapper-1440">
             <img src="../../assets/images/app/buy/w-2.png">
-            <img id="shushu" src="../../assets/images/app/buy/shushu.png">
+            <img id="shushu" src="../../assets/images/app/buy/shushu.gif">
         </div>
     </div>
 
@@ -160,7 +164,7 @@
 
     <script>
         $(function() {
-                    var defaultDist = $(window).height() * 0.7;
+                    var defaultDist = Math.min($(window).height() * 0.6,400);
                     var elems = ['#content-3', '#content-4', '#content-5'];
 
                     function c1() {
@@ -190,8 +194,28 @@
                     for (var i = 0; i < elems.length; i++) {
                         Souche.Util.appear(elems[i], funcs[i], defaultDist);
                     }
+
+
+
                 }
         )
+        var clouds = $('.cloud');
+        var rand = Math.random;
+        !function cloudFloat(){
+            var index = 0;
+            function next(){
+                index++;
+                if(index ==4){
+                    cloudFloat();
+                }
+            }
+            clouds.each(function(){
+                        $(this).velocity(
+                                {left:'+='+(rand()*60-30)},
+                                {delay: 2000, duration: 2500,complete:next}
+                        )}
+            )
+        }()
 
     </script>
 
