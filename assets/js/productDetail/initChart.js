@@ -1,4 +1,5 @@
 define(function() {
+    var config={};
     var hasInitTab = {
 
     }
@@ -11,7 +12,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_price+ config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -45,7 +46,7 @@ define(function() {
         },
         load_baoyang: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_sentiment  + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -91,7 +92,7 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: config.api_maintenance + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
                     if (_data && _data.data && _data.data.items) {
