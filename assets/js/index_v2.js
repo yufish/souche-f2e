@@ -2,27 +2,36 @@ define(function() {
     var config = {};
 
     var _bind = function() {
+        var timeout =null;
+
         $(".car-brand,.car-models").mouseenter(function(event) {
 
             event.stopPropagation();
             var self = this;
+            window.clearTimeout(timeout);
 
             $(".models-inner,.brand-inner").hide();
-            if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-                if ($(self).hasClass("car-models")) {
-                    $(".car-price").css("visibility", "hidden");
+            timeout = window.setTimeout(function()
+            {
+                if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
+                    if ($(self).hasClass("car-models")) {
+                        $(".car-price").css("visibility", "hidden");
+                    } else {
+                        $(".car-models,.car-price").css("visibility", "hidden");
+                    }
+                    $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(0);
                 } else {
-                    $(".car-models,.car-price").css("visibility", "hidden");
+                    $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(50);
                 }
-                $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(0);
-            } else {
-                $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(50);
-            }
+            },200);
+
             return false;
         });
+
         $(".car-brand,.car-models").mouseleave(function() {
 
             var self = this;
+            window.clearTimeout(timeout);
 
             if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
                 if ($(self).hasClass("car-models")) {

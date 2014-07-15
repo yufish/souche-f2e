@@ -80,6 +80,26 @@ define(function() {
 
                     var contrastId = data.contrastId;
                     $(this).parent().attr("contrastId", contrastId);
+
+                    var cloneElement =$(this).parent().clone();
+                    cloneElement.css({
+                        opacity: 0.8,
+                        position: 'absolute',
+                        top: this.e.pageY + 'px',
+                        left: this.e.pageX + 'px',
+                        backgroundColor: "#BCEE68"
+                    });
+
+                    var endX = $(".side-box .contrast-img").offset().left;
+                    var endY = $(".side-box .contrast-img").offset().top;
+
+                    document.body.appendChild(cloneElement[0]);
+                    cloneElement.animate({
+                        top: endY,
+                        left: endX
+                    }, 500, function() {
+                        cloneElement.remove();
+                    });
                 }
                 else if (data.result == -1) {  // 已经添加
                     this.checked = true;

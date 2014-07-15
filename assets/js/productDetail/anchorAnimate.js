@@ -22,22 +22,34 @@ define(function()
                 , 1000);
         });
 
+        var topList1 = [];
+
+        for(var index=0 , len=$(".config_content table").length; index<len;index++) {
+            topList1.push($(".config_content table").eq(index).offset().top);
+        }
+
         var originTop = $(".config_nav").offset().top;
-        $(window).scroll(function()
-        {
-            var currentTop  = $(window).scrollTop();
-            var height = $(".config_content").height();
+        var scrollFunction = function () {
+            var winTop = $(window).scrollTop();
+            var height = $("#productDetailInfo").height();
 
-            if(currentTop>originTop&&currentTop<(height+originTop-$(".config_nav ul").height()-200))
-            {
-                $(".config_nav ul").css("position","fixed").css("top","100px");
-            }
-            else
-            {
-                $(".config_nav ul").css("position","relative").css("top","0px");
-            }
+            if (winTop > navTabTop && winTop < (navTabTop + height)) {
+                $("#productDetailInfo .nav").css({
+                    position: "fixed",
+                    top: 0,
+                    width: "100%",
+                    zIndex: 1000
+                });
 
-        })
+                $("")
+            } else {
+                $("#productDetailInfo .nav").css({
+                    position: "relative"
+                });
+            }
+        };
+
+        $(window).scroll(scrollFunction);
     }
 
     var init = function()

@@ -34,6 +34,8 @@ define(function()
                     width: "100%",
                     zIndex: 1000
                 });
+
+                $("")
             } else {
                 $("#productDetailInfo .nav").css({
                     position: "relative"
