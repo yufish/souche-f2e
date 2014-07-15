@@ -335,13 +335,13 @@ body * {
   font-weight: bold;
   display: block;
   cursor: pointer;
+  color: #333333;
 }
 #carsContent .infoItem a span {
-  background: #6CACE7;
   padding: 0px 4px;
-  color: #fff;
-  font-weight: normal;
-  font-size: 12px;
+  color: #6CACE7;
+  font-weight: bolder;
+  font-size: 16px;
 }
 #carsContent .infoItem a:hover {
   color: #F44B0B;
@@ -549,7 +549,6 @@ body * {
   color: #B6B6B6;
   float: right;
   width: 45%;
-  font-size: 0.8em;
   margin-top: 10px;
   text-align: center;
 }

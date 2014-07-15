@@ -379,15 +379,13 @@ a:hover {
 #top-info .filter-nav .car-brand .brand-list {
   color: #666;
   font-size: 12px;
-  margin-bottom: 15px;
-}
-#top-info .filter-nav .car-brand .brand-list .brand-line {
-  margin-bottom: 10px;
-  overflow: hidden;
-  height: 17px;
+  margin-bottom: 5px;
 }
 #top-info .filter-nav .car-brand .brand-list .brand-line .brand-item {
   margin-right: 15px;
+  margin-bottom: 10px;
+  float: left;
+  display: block;
 }
 #top-info .filter-nav .car-brand .brand-inner {
   position: absolute;
@@ -413,11 +411,14 @@ a:hover {
   color: #666;
   font-size: 12px;
   margin-bottom: 10px;
-  overflow: hidden;
   height: 17px;
+  width: 80%;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf .brand-line .brand-item {
   margin-right: 15px;
+  margin-bottom: 10px;
+  float: left;
+  display: block;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-all .brand-list .left-list {
   float: left;
@@ -478,12 +479,15 @@ a:hover {
 }
 #top-info .filter-nav .car-models .models-list .models-line .models-item-m {
   color: #333;
-  width: 48px;
+  width: 55px;
   border-right: 1px solid #E6E6E6;
   margin-right: 10px;
   font-weight: bold;
   display: block;
   float: left;
+}
+#top-info .filter-nav .car-models .models-list .models-line .models-item-m:hover {
+  color: #fc7000;
 }
 #top-info .filter-nav .car-models .models-list .models-line .models-item {
   margin-right: 15px;
@@ -506,12 +510,15 @@ a:hover {
 }
 #top-info .filter-nav .car-models .models-inner .models-all .models-line .models-item-m {
   color: #333;
-  width: 48px;
+  width: 55px;
   border-right: 1px solid #E6E6E6;
   margin-right: 10px;
   font-weight: bold;
   display: block;
   float: left;
+}
+#top-info .filter-nav .car-models .models-inner .models-all .models-line .models-item-m:hover {
+  color: #fc7000;
 }
 #top-info .filter-nav .car-models .models-inner .models-all .models-line .models-item {
   margin-right: 15px;
@@ -917,13 +924,13 @@ body * {
   font-weight: bold;
   display: block;
   cursor: pointer;
+  color: #333333;
 }
 #carsContent .infoItem a span {
-  background: #6CACE7;
   padding: 0px 4px;
-  color: #fff;
-  font-weight: normal;
-  font-size: 12px;
+  color: #6CACE7;
+  font-weight: bolder;
+  font-size: 16px;
 }
 #carsContent .infoItem a:hover {
   color: #F44B0B;
@@ -1131,7 +1138,6 @@ body * {
   color: #B6B6B6;
   float: right;
   width: 45%;
-  font-size: 0.8em;
   margin-top: 10px;
   text-align: center;
 }
