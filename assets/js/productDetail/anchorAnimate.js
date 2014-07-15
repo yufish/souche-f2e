@@ -40,7 +40,7 @@ define(function()
                 for (var index = 0; index < topList1.length-1; index++) {
                     if (currentTop>topList1[index]&&currentTop<topList1[index+1]) {
                         $(".config_nav li span").removeClass("active");
-                        $(".config_nav li").eq(index).find("span").addClass("active");
+                        $(".config_nav li").eq(index+1).find("span").addClass("active");
                     }
                 }
             }
