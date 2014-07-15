@@ -44,7 +44,7 @@ define(function() {
                 success: function(_data) {
                     var data = _data.data;
                     if (data && data.items && data.items.length) {
-                        var baoyangData = data.items[1];
+                        var baoyangData = data.items[0];
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
                         var prices = {};
