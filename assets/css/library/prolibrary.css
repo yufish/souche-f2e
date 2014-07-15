@@ -1,6 +1,9 @@
 body {
   background-color: #ffffff !important;
 }
+#content .nosvghidden {
+  display: hidden;
+}
 #content .wrapper {
   width: 1190px;
   margin: 0 auto;
@@ -313,6 +316,7 @@ body {
 #content .wrapper #productDetailInfo {
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 #content .wrapper #productDetailInfo .configure .config_nav {
   display: inline-block;
