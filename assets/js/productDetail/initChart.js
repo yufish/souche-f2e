@@ -28,6 +28,7 @@ define(function() {
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
+                        $("#onsale_price").removeClass("hidden");
                     } else {
                         $("#onsale_price").addClass("hidden")
                     }
@@ -76,7 +77,7 @@ define(function() {
                             })
 
                         })
-
+                        $("*[data-id=onsale_baoyang]").removeClass("hidden")
                     } else {
                         $("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
@@ -135,6 +136,7 @@ define(function() {
                                 $(".float-nav-item-koubei").removeClass("hidden")
                             }
                         )
+                        $("*[data-id=onsale_koubei]").removeClass("hidden")
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")
                     }
@@ -151,6 +153,12 @@ define(function() {
                 self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
+                $(".nosvghidden").css({
+                    display: "block"
+                })
+                $("#productDetailInfo").css({
+                    display: "block"
+                })
             } else {
                 $("#productDetailInfo").addClass("hidden")
                 $(".nosvghidden").addClass("hidden")
@@ -165,6 +173,9 @@ define(function() {
                 self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
+                $(".nosvghidden").css({
+                    display: "block"
+                })
             } else {
                 $(".nosvghidden").addClass("hidden")
             }
