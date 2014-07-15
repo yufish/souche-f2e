@@ -190,20 +190,68 @@ html
         .shop-cont
           .images
             .img-but
-              .but-1
+              .but-1.but
                 .but-detail
-                  .img-box
+                  .img-box.clearfix
                     .img-last
                     .img-list
-                      .img-1
-                      .img-2
-                      .img-3
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
                     .img-next
                   p 第一眼，大搜车独树一帜的品牌形象，你感受下:                                                                                                                      
-              .but-2
-              .but-3
-              .but-4
-              .but-5
+              .but-2.but
+                .but-detail.hidden
+                  .img-box.clearfix
+                    .img-last
+                    .img-list
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
+                    .img-next
+                  p 在大搜车门面的引导下，转入车辆区，近千台车，各大品牌各种价位俱全！
+              .but-3.but
+                .but-detail.hidden
+                  .img-box.clearfix
+                    .img-last
+                    .img-list
+                      .img-scroll
+                        .img-1
+                        .img-2
+                        .img-3
+                    .img-next
+                  p 如果您是汽车狂热粉，或许，可以找咱专业的检测师，和德国进口的检测设备聊一聊人生。
+              .but-4.but
+                .but-detail.hidden
+                  .img-box.clearfix
+                    .img-last
+                    .img-list
+                      .img-scroll
+                        .img-1
+                        .img-2
+                    .img-next
+                  p 如果您带了宝贝儿来逛店，儿童游乐区，您应该会喜欢！
+              .but-5.but
+                .but-detail.hidden
+                  .img-box.clearfix
+                    .img-last
+                    .img-list
+                      .img-scroll
+                        .img-1
+                        .img-2
+                    .img-next
+                  p 如果只是附近shopping路过，没关系，这里有一杯 免费的咖啡
+          #img7
+            .img-7-1
+            .img-7-2
+          #address
+            .img-7-3
+            .img-7-4
+            .img-7-5
+            .img-7-6
+            .img-7-7
       .wrapper.clearfix
     #footer.clearfix
       .friendlinks
@@ -247,3 +295,48 @@ html
         $(this).closest(".qu-box").find(".an").toggleClass("hidden");
         $(this).closest(".qu-box").find(".qu").toggleClass("active");
         });
+
+      $(".img-but .but").click(function(){
+          $(this).closest(".img-but").find(".but").removeClass("but-active");
+          $(this).toggleClass("but-active");
+          $(this).closest(".img-but").find(".but").find(".but-detail").addClass("hidden");
+          $(this).find(".but-detail").toggleClass("hidden");
+        });
+        
+      
+      //var imgs = [$('.img-1'),$('.img-2'),$('.img-3')];
+     
+      $(".img-box .img-next").click(function(){
+
+          var imgBox= $(this).closest(".img-box")
+          var imgScroll = imgBox.find(".img-scroll").animate({
+            'margin-left': '-=563'
+          },1000)
+          var count = imgScroll.find('div').length;
+          var index = imgScroll.data('data-index')||1;
+          imgScroll.data('data-index',index+1);
+          if(index+1 ==count){
+            imgBox.find('.img-next').hide();
+          }
+          imgBox.find('.img-last').show();
+          //- 
+          //- if(imgScroll.css('margin-left')==(count-1)*563){
+          //-   $('.img-next').hide();
+          //- }
+        })
+      $(".img-box .img-last").click(function(){
+
+         var imgBox =$(this).closest(".img-box")
+          var imgScroll = imgBox.find(".img-scroll").animate({
+            'margin-left': '+=563'
+          },1000)
+          var count = imgScroll.find('div').length;
+          var index = imgScroll.data('data-index')||1;
+          imgScroll.data('data-index',index-1);
+          if(index-1 ==1){
+            imgBox.find('.img-last').hide();
+          }
+          imgBox.find('.img-next').show();
+         
+        })
+    

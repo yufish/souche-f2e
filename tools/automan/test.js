@@ -14,14 +14,12 @@ page.open('http://www.souche.com', function(status) {
     } else {
         page.evaluate(function() {
             $('.collect-box').click();
-
         });
         setTimeout(function() {
             var p = page.evaluate(function() {
-
                 return $("#noreg-popup").css("display")
             });
-            console.log(p);
+            console.z(p);
             phantom.exit();
         }, 1000)
 

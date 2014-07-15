@@ -17,7 +17,7 @@ require(['souche/util/action-list'], function(ActionList) {
                     }, 2500)
                 }
             ],
-            [4000,
+            [3000,
                 function() {
                     $(".pic-1-6").animate({
                         height: 627
@@ -72,6 +72,7 @@ require(['souche/util/action-list'], function(ActionList) {
                     $(".pic-3-2-1").animate({
                         height: 353
                     }, 1000)
+
                 }
             ],
             [1200,
@@ -111,6 +112,46 @@ require(['souche/util/action-list'], function(ActionList) {
                 function() {
                     $(".pic-4-2").animate({
                         width: 291
+                    }, 2000)
+                }
+            ]
+        ]
+        ActionList(data, function() {})
+    }, defaultDist);
+    Souche.Util.appear("#img7", function() {
+        var data = [
+            [0,
+                function() {
+                    $(".img-7-2").animate({
+                        height: 872
+                    }, 3000)
+                }
+            ]
+        ]
+        ActionList(data, function() {})
+    }, defaultDist);
+    Souche.Util.appear("#address", function() {
+        var data = [
+            [0,
+                function() {
+                    $(".img-7-4").animate({
+                        opacity: 1,
+                        bottom: 254
+                    }, 2000)
+                }
+            ],
+            [0,
+                function() {
+                    $(".img-7-6").animate({
+                        opacity: 1,
+                        top: 85
+                    }, 2000)
+                }
+            ],
+            [0,
+                function() {
+                    $(".img-7-7").animate({
+                        opacity: 1,
                     }, 2000)
                 }
             ]
