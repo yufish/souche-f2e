@@ -17,7 +17,7 @@ require(['souche/util/action-list'], function(ActionList) {
                     }, 2500)
                 }
             ],
-            [4000,
+            [3000,
                 function() {
                     $(".pic-1-6").animate({
                         height: 627
@@ -72,6 +72,7 @@ require(['souche/util/action-list'], function(ActionList) {
                     $(".pic-3-2-1").animate({
                         height: 353
                     }, 1000)
+
                 }
             ],
             [1200,

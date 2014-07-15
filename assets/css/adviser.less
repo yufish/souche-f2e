@@ -6,11 +6,30 @@
       height: 356px;
       background: url(../images/adviser/banner.png) no-repeat center;
      }
+     .fixedSubNav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+     }
+     .empty-placeholder {
+      height: 135px;
+     }
     .content-nav{
         height: 135px;
-        width: 1190px;
-        margin: 0 auto;
-        position: relative;
+        width: 100%;
+        background: #f5f5f5;
+        .wrap{
+          width: 1190px;
+          margin: 0 auto;
+          height: 135px;
+        }
+        .adv_active{
+          .active{
+            background: #ff4400;
+            color: #fff;
+          } 
+        }
         .nav-box{
           float: left;
           width: 162px;
@@ -35,6 +54,7 @@
           background: #ff4400;
           color: #fff;
         }
+        
       }
     #aiche{
       height: 1777px;
@@ -71,7 +91,7 @@
           z-index: 2;
           position: absolute;
           top: 406px;
-          right: 0px;
+          right: 1px;
         }
         .pic-1-6{
           width: 100%;
@@ -206,13 +226,13 @@
         margin: 0 auto;
         position: relative;
         .pic-3-1{
-          background: url(../images/adviser/angle.gif) no-repeat; 
+          background: url(../images/adviser/angle.gif) no-repeat;
           width: 567px;
-          height: 227px;
+          height: 160px;
           position: absolute;
-          top: 40px;
+          top: 75px;
           left: 300px;
-          z-index: 1;
+          z-index: 10;
         }
         .pic-3-2-1{
           background: url(../images/adviser/3-2-1.png) no-repeat; 
@@ -267,6 +287,7 @@
           position: absolute;
           top: 470px;
           right: 0px;
+          z-index: 10;
         .car{
            background: url(../images/adviser/car.gif) no-repeat; 
            width: 340px;
@@ -353,7 +374,7 @@
         margin: 0 auto;
         .pic-5-1{
           width: 1190px;
-          background:url(../images/adviser/5-1.jpg) no-repeat;
+          background:url(../images/adviser/5-1.png) no-repeat;
           height:1302px;   
         }
         .back-detail{
@@ -451,11 +472,12 @@
               cursor: pointer;
             }
             .down-active{
-              background:  url(../images/adviser/up.png) no-repeat !important;
+              background:  url(../images/adviser/an-up.png) no-repeat !important;
             }
             .down:hover{
               background:  url(../images/adviser/up.png) no-repeat;
             }
+
             .qu{
               color: #383838;
               font-size: 18px;
@@ -523,6 +545,7 @@
                   cursor: pointer;
                   top: 200px;
                   left: 0;
+                  display: none;
                 }
                 .img-next{
                   position: absolute;
@@ -534,7 +557,7 @@
                   right: 0;
                 }
                 .img-list{
-                  width: 565px;
+                  width: 564px;
                   height: 492px;
                   margin: 0 auto;
                   overflow: hidden;

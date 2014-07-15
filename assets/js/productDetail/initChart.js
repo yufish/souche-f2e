@@ -1,4 +1,5 @@
 define(function() {
+    var config={};
     var hasInitTab = {
 
     }
@@ -11,7 +12,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_price+ config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -20,14 +21,20 @@ define(function() {
 
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        var maxPrice = (priceData.price_guide).toFixed(1)
-                        var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
-                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2);
+                        var maxPrice = (priceData.price_guide).toFixed(1) * 1;
+                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
+                        if (priceData.priceNude) {
+                            var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
+
+                        } else {
+                            var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
+                        }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
+                        $("#onsale_price").removeClass("hidden");
                     } else {
                         $("#onsale_price").addClass("hidden")
                     }
@@ -39,12 +46,12 @@ define(function() {
         },
         load_baoyang: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_sentiment  + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
                     if (data && data.items && data.items.length) {
-                        var baoyangData = data.items[1];
+                        var baoyangData = data.items[0];
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
                         var prices = {};
@@ -76,7 +83,7 @@ define(function() {
                             })
 
                         })
-
+                        $("*[data-id=onsale_baoyang]").removeClass("hidden")
                     } else {
                         $("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
@@ -85,7 +92,7 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: config.api_maintenance + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
                     if (_data && _data.data && _data.data.items) {
@@ -135,6 +142,7 @@ define(function() {
                                 $(".float-nav-item-koubei").removeClass("hidden")
                             }
                         )
+                        $("*[data-id=onsale_koubei]").removeClass("hidden")
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")
                     }
@@ -151,6 +159,12 @@ define(function() {
                 self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
+                // $(".nosvghidden").css({
+                //     display: "block"
+                // })
+                // $("#productDetailInfo").css({
+                //     display: "block"
+                // })
             } else {
                 $("#productDetailInfo").addClass("hidden")
                 $(".nosvghidden").addClass("hidden")
@@ -165,6 +179,9 @@ define(function() {
                 self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
+                // $(".nosvghidden").css({
+                //     display: "block"
+                // })
             } else {
                 $(".nosvghidden").addClass("hidden")
             }

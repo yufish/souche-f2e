@@ -100,7 +100,7 @@ body *{
   .dialogContentContainer,.dialogContent
   {
     width: 98% ;
-    height: 355px;
+    height: 360px;
   }
 
   .addInstrestCar
@@ -134,6 +134,12 @@ body *{
   width: 100%;
   position: relative;
   overflow: auto;
+  .myAdviser ,.hotNewCars {
+    position: relative;
+    overflow: auto;
+    min-height: 382px;
+  }
+
   .carsItem {
     >img
     {
@@ -281,7 +287,7 @@ body *{
     .info {
       margin: 7px 20px 0px 20px;
       padding-bottom: 5px;
-     
+
       position: relative;
       .price {
         color: #FF571A;
@@ -361,13 +367,12 @@ body *{
       font-weight: bold;
       display: block;
       cursor: pointer;
+      color: #333333;
       span {
-        background: #6CACE7;
         padding:0px 4px;
-        color: #fff;
-        font-weight: normal;
-        font-size: 12px;
-        
+        color: #6CACE7;
+        font-weight: bolder;
+        font-size: 16px;
       }
     }
     a:hover{
@@ -427,9 +432,6 @@ body *{
   }
   .bindLoginInfo,.bindunLoginInfo
   {
-    position: absolute;
-    top: 0px;
-    left: 0px;
     background: #F5F5F5;
     h1{
       margin:25px 20px 0px 20px;
@@ -501,7 +503,6 @@ body *{
       {
         position: absolute;
         right: 0px;
-        color:#ffffff;
         padding: 7px 15px;
         border: 1px solid #CCCCCC;
         border-radius: 3px ;
@@ -516,9 +517,6 @@ body *{
   }
   .bindLoginInfo
   {
-    position: absolute;
-    top: 0px;
-    left: 0px;
     .submit
     {
       padding: 7px 20px;
@@ -542,7 +540,7 @@ body *{
 
   .dialogContentContainer,.dialogContent {
     width: 97%;
-    height: 367px;
+    height: 356px;
     position: absolute;
     margin-top: 2%;
     left: 0px;
@@ -551,7 +549,7 @@ body *{
     vertical-align: top;
     .carBudget
     {
-      margin-top: 30px;
+      margin-top: 30px;margin-top: 30px;
       margin-bottom: 30px;
       padding: 0px 1% 0px 1%;
       float: left;
@@ -581,7 +579,6 @@ body *{
             color: #B6B6B6;
             float: right;
             width: 45%;
-            font-size: 0.8em;
             margin-top:10px;
             text-align: center;
           }
@@ -729,11 +726,11 @@ body *{
       border-top: 1px solid  #CCCCCC;
       clear: both;
       height: 60px;
-      margin-top:30px;
+      margin-top:10px;
       position: relative;
       span
       {
-        margin-top: 15px;
+        margin-top: 7px;
         position: absolute;
         color: #ffffff;
         right: 2%;
@@ -792,6 +789,8 @@ body *{
           padding: 0px 6px 0px 6px;
           background-position: center;
           background: url("../../images/index/close.jpg") no-repeat;
+          background-position: 0px 3px;
+
           vertical-align: middle;
         }
       }
@@ -817,10 +816,10 @@ body *{
     .addInstrestCarContent {
       border-top: 1px solid #cccccc;
       clear: both;
-      height: 305px;
+      height: 252px;
       .brand {
         float: left;
-        height: 266px;
+        height: 216px;
         overflow: auto;
         width: 45%;
         margin: 20px;
@@ -942,7 +941,6 @@ body *{
   margin-top: 20px;
   padding: 10px 0px;
   text-align: center;
-  width: 97%;
   position: relative;
   height: 20px;
   background: #F5F5F5;
