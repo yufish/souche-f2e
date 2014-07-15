@@ -17,7 +17,7 @@ require(['souche/util/action-list'], function(ActionList) {
                     }, 2500)
                 }
             ],
-            [4000,
+            [3000,
                 function() {
                     $(".pic-1-6").animate({
                         height: 627
