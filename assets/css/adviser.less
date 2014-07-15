@@ -6,11 +6,30 @@
       height: 356px;
       background: url(../images/adviser/banner.png) no-repeat center;
      }
+     .fixedSubNav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+     }
+     .empty-placeholder {
+      height: 135px;
+     }
     .content-nav{
         height: 135px;
-        width: 1190px;
-        margin: 0 auto;
+        width: 100%;
         background: #f5f5f5;
+        .wrap{
+          width: 1190px;
+          margin: 0 auto;
+          height: 135px;
+        }
+        .adv_active{
+          .active{
+            background: #ff4400;
+            color: #fff;
+          } 
+        }
         .nav-box{
           float: left;
           width: 162px;
@@ -35,10 +54,7 @@
           background: #ff4400;
           color: #fff;
         }
-        .adv_active{
-          background: #ff4400;
-          color: #fff;
-        }
+        
       }
     #aiche{
       height: 1777px;
