@@ -20,10 +20,15 @@ define(function() {
 
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        var maxPrice = (priceData.price_guide).toFixed(1)
-                        var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
-                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2);
+                        var maxPrice = (priceData.price_guide).toFixed(1) * 1;
+                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
+                        if (priceData.priceNude) {
+                            var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
+
+                        } else {
+                            var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
+                        }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
@@ -153,12 +158,12 @@ define(function() {
                 self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
-                $(".nosvghidden").css({
-                    display: "block"
-                })
-                $("#productDetailInfo").css({
-                    display: "block"
-                })
+                // $(".nosvghidden").css({
+                //     display: "block"
+                // })
+                // $("#productDetailInfo").css({
+                //     display: "block"
+                // })
             } else {
                 $("#productDetailInfo").addClass("hidden")
                 $(".nosvghidden").addClass("hidden")
@@ -173,9 +178,9 @@ define(function() {
                 self.load_baoyang();
                 // self.load_koubei();
                 // self.load_config();
-                $(".nosvghidden").css({
-                    display: "block"
-                })
+                // $(".nosvghidden").css({
+                //     display: "block"
+                // })
             } else {
                 $(".nosvghidden").addClass("hidden")
             }
