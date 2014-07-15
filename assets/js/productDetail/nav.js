@@ -7,12 +7,13 @@ define(function()
     var navTabTop = $("#productDetailInfo .nav").offset().top;
 
     var init = function() {
-        $("#productDetailInfo .nav li").click(function () {
+        $("#productDetailInfo .nav li").live("click",function() {
+
             var dataID = $(this).attr("data-id");
             $("#productDetailInfo>div").addClass("hidden");
             $("#productDetailInfo>div[data-id='" + dataID + "']").removeClass("hidden");
 
-            $(this).addClass("active").siblings().removeClass("active");
+            $("#productDetailInfo .nav [data-id='"+dataID+"']").addClass("active").siblings().removeClass("active");
 
             if ($("#productDetailInfo .nav").css("position") === "fixed") {
                 $('html,body').animate(
@@ -21,25 +22,36 @@ define(function()
                     }
                     , 1000);
             }
+
         });
+
+        var cloneElement ;
 
         $(window).scroll(function () {
             var winTop = $(window).scrollTop();
             var height = $("#productDetailInfo").height();
 
             if (winTop > navTabTop && winTop < (navTabTop + height)) {
-                $("#productDetailInfo .nav").css({
-                    position: "fixed",
-                    top: 0,
-                    width: "100%",
-                    zIndex: 1000
-                });
+                if(!cloneElement) {
+                    cloneElement = $("#productDetailInfo .nav").clone();
+                    cloneElement.css({
+                        position: "fixed",
+                        top: 0,
+                        width: "100%",
+                        zIndex: 1000
+                    });
 
-                $("")
+                    $("#productDetailInfo").append(cloneElement);
+                }
             } else {
-                $("#productDetailInfo .nav").css({
-                    position: "relative"
-                });
+                /*$("#productDetailInfo .nav").css({
+                    position: "relative",
+                    top:0
+                });*/
+                if(cloneElement) {
+                    cloneElement.remove();
+                    cloneElement = undefined;
+                }
             }
         });
     }

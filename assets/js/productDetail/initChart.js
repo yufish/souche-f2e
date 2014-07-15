@@ -83,9 +83,9 @@ define(function() {
                             })
 
                         })
-                        $("*[data-id=onsale_baoyang]").removeClass("hidden")
+                       // $("*[data-id=onsale_baoyang]").removeClass("hidden")
                     } else {
-                        $("*[data-id=onsale_baoyang]").addClass("hidden")
+                        //$("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
                 }
             })
