@@ -3,9 +3,12 @@
  */
 define(function()
 {
+    var config={};
     var qiugou = {};
     var lock=true;
     var _bind = function() {
+        var tabID = config.tabID||"hotNewCars";
+
         ///添加兴趣车 事件绑定 begin
         $(".hot div a,.brandList a,.chexiContent span").click(function () {
             $(this).addClass("active");
@@ -18,38 +21,25 @@ define(function()
         $(".addInstrestCarSubmit span").click(function () {
             var widthEnd = $(".carsItem").eq(0).width();
             var heightTilte = $(".addInstrestCarTilte").height();
-            var heightEnd = $(".addInstrestCar").eq(0).height();
+            var heightEnd = $("."+tabID).find(".addInstrestCar").eq(0).height();
 
-            $(".addInstrestCar>div").animate({
-                "-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)",
-                "opacity": "0",
-                "filter": "alpha(opacity=0)",
-                "-moz-opacity": "0"
-            }, 500, function () {
-                $(".addInstrestCar").animate({
-                    width: widthEnd + "px"
-                }, 1000, function () {
-                    $(".addInstrestCar").addClass("hidden");
-                    $(".addInstrestCarTilte").css("max-height", "85px");
-                    $(".addInstrestCar>div").css("opacity", "1");
-                    $(".addInstrestCar").css("overflow", "").css("height", "");
-                });
-            });
+            var option = {
+                vertical: true,
+                fade: false
+            };
 
-            $(".addInstrestCar").css("overflow", "hidden").css("height", heightEnd);
-            $(".addInstrestCarTilte").css("max-height", heightTilte + "px");
-            $(".addInstrestCar>div").css("visibility", "hidden");
+            hideInstrestContent($("."+tabID).find(".addInstrestCar"), option);
         });
         ///
 
         ///开始选车 begin
-        $(".operationItem .dataContainer .submit").click(function () {
+        $(".operationItem .dataContainer .submit,.bindunLoginInfo .modify .submit").click(function () {
             var option = {
                 horizontal: true,
                 fade: true
             };
-            $(".dialogContentContainer").css("zIndex", 999).css("background");
-            showDialogContent($(".dialogContent"), option);
+            $("."+tabID).find(".dialogContentContainer").css("zIndex", 999).css("background");
+            showDialogContent($("."+tabID).find(".dialogContent"), option);
         });
         ///
 
@@ -59,9 +49,9 @@ define(function()
                 horizontal: true,
                 fade: true
             };
-            hideDialogContent($(".dialogContent"), option);
+            hideDialogContent($("."+tabID).find(".dialogContent"), option);
             window.setTimeout(function () {
-                $(".dialogContentContainer").css("zIndex", -99);
+                $("."+tabID).find(".dialogContentContainer").css("zIndex", -99);
             }, 1000);
         });
         ///
@@ -73,10 +63,10 @@ define(function()
                 fade: false
             };
 
-            hideDialogContent($(".dialogContent"), option);
-            $(".addInstrestCar").css("top", -455 + "px").removeClass("hidden");
+            hideDialogContent($("."+tabID).find(".dialogContent"), option);
+            $("."+tabID).find(".addInstrestCar").css("top", -455 + "px").removeClass("hidden");
             window.setTimeout(function () {
-                showInstrestContent($(".addInstrestCar"), option);
+                showInstrestContent($("."+tabID).find(".addInstrestCar"), option);
             }, 500);
 
         });
@@ -86,6 +76,11 @@ define(function()
         $("#carsNav li").click(function () {
             $("#carsNav li").removeClass("active");
             $(this).addClass("active");
+            var id = $(this).attr("id");
+            tabID = id;
+
+            $("#carsContent>div").addClass("hidden");
+            $("#carsContent").find("."+id).removeClass("hidden");
         });
         ///
 
@@ -95,9 +90,9 @@ define(function()
                 fade: false
             };
 
-            hideInstrestContent($(".addInstrestCar"), option);
+            hideInstrestContent($("."+tabID).find(".addInstrestCar"), option);
             window.setTimeout(function () {
-                showDialogContent($(".dialogContent"), option);
+                showDialogContent($("."+tabID).find(".dialogContent"), option);
             }, 500);
         });
 
@@ -121,7 +116,7 @@ define(function()
             var self = $(this);
 
             var width = self.find(".carImg").width();
-            self.find(".carImg img").animate({
+            self.find(".carImg img").stop(true).animate({
                 width: width+1+"px",
                 height: 182 + "px",
                 top: "0px",
@@ -150,6 +145,7 @@ define(function()
         }
         else
         {
+            $element.css("width", widthEnd);
             offsetMove($element, option, 0, 500);
         }
 
@@ -157,6 +153,7 @@ define(function()
 
     var showInstrestContent = function($element,option)
     {
+        $element.css("width", $("#carsNav").width());
         offsetMove($element,option,0,500);
     }
 
@@ -181,6 +178,7 @@ define(function()
             }, 500);
         }
         else if (option.vertical) {
+            $element.css("width", widthEnd);
             offsetMove($element, option, -444, 500);
         }
     }
@@ -193,6 +191,7 @@ define(function()
                 function() {
                     if(callback)
                     callback();
+                    $element.css("width", $("#carsNav").width());
                 });
         }
         else {
@@ -201,6 +200,7 @@ define(function()
             }, time, function() {
                 if(callback)
                     callback();
+                $element.css("width", $("#carsNav").width());
             });
         }
     }
