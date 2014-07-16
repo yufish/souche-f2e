@@ -1,0 +1,480 @@
+html {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+}
+#toolbar {
+  width: 100%;
+  height: 100%;
+  background-color: #F2F2F2;
+}
+#toolbar .tool-box {
+  padding-left: 20px;
+  width: 830px;
+  background-color: #F2F2F2;
+  overflow: hidden;
+}
+#toolbar .tool-box #toolbar-nav {
+  width: 811px;
+  height: 40px;
+}
+#toolbar .tool-box #toolbar-nav .title {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  float: left;
+}
+#toolbar .tool-box #toolbar-nav .number {
+  font-size: 16px;
+  font-weight: normal;
+  float: left;
+  font-style: normal;
+  line-height: 35px;
+}
+#toolbar .tool-box #toolbar-nav .path {
+  float: right;
+  width: 88px;
+  height: 40px;
+}
+#toolbar .tool-box #toolbar-nav .path a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b3b3b3;
+  margin-left: 5px;
+  background-color: #f2f2f2;
+  float: left;
+}
+#toolbar .tool-box #toolbar-nav .path a span {
+  width: 13px;
+  height: 18px;
+  display: block;
+  margin: 9px 10px;
+}
+#toolbar .tool-box #toolbar-nav .path .going span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -160px -30px;
+}
+#toolbar .tool-box #toolbar-nav .path .back span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -120px -30px;
+}
+#toolbar .tool-box #toolbar-nav .path a:hover {
+  background-color: #FC7000;
+}
+#toolbar .tool-box #toolbar-nav .path .going:hover span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -160px -60px;
+}
+#toolbar .tool-box #toolbar-nav .path .back:hover span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -120px -60px;
+}
+#toolbar .tool-box #toolbar-nav .path a.disabled {
+  border: 1px solid #ddd;
+}
+#toolbar .tool-box #toolbar-nav .path a.disabled:hover {
+  background-color: #f2f2f2;
+  cursor: default;
+}
+#toolbar .tool-box #toolbar-nav .path .going.disabled:hover span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -160px -30px;
+}
+#toolbar .tool-box #toolbar-nav .path .back.disabled:hover span {
+  background: url(../images/index/toolbar_sprite.png?125);
+  background-position: -120px -30px;
+}
+#toolbar .tool-box #toolbar-nav .pages {
+  font-size: 14px;
+  color: #333;
+  margin-right: 20px;
+  line-height: 39px;
+  float: right;
+}
+#toolbar .tool-box #toolbar-nav .pages div {
+  float: left;
+}
+#toolbar #toolbar-content {
+  width: 825px;
+  height: 430px;
+  overflow: hidden;
+}
+#toolbar #toolbar-content .car-wrap {
+  width: 825px;
+  height: 430px;
+  margin-top: 5px;
+}
+#toolbar #toolbar-content .car-wrap .car-box {
+  width: 180px;
+  height: 189px;
+  margin-top: 6px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 8px;
+  padding-bottom: 0;
+  float: left;
+  margin-right: 6px;
+  position: relative;
+  overflow: hidden;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image {
+  width: 180px;
+  height: 120px;
+  position: relative;
+  display: block;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  position: absolute;
+  left: 3px;
+  bottom: 5px;
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -200px -30px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image .collect-icon.active {
+  background: url(../images/index/toolbar_sprite.png?123);
+  background-position: -240px -30px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-image img {
+  width: 180px;
+  height: 120px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-title {
+  font-size: 12px;
+  color: #333;
+  height: 35px;
+  line-height: 18px;
+  display: block;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-title:hover {
+  color: #FC7000;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-price {
+  height: 18px;
+  padding: 6px 0;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-price .price {
+  color: #db2400;
+  font-size: 14px;
+  font-weight: normal;
+  float: left;
+  line-height: 15px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .car-price .time {
+  color: #999;
+  font-size: 12px;
+  float: right;
+}
+#toolbar #toolbar-content .car-wrap .car-box .action {
+  height: 20px;
+  border-top: 1px solid #e4e4e4;
+}
+#toolbar #toolbar-content .car-wrap .car-box .cancel {
+  display: block;
+  height: 20px;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 80px;
+  text-align: center;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join {
+  display: block;
+  height: 20px;
+  width: 90px;
+  background-color: #FC7000;
+  margin: 0 auto;
+  border: 1px solid #f04f12;
+  border-radius: 4px;
+  margin-top: 4px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join i {
+  vertical-align: 2px;
+  font-size: 12px;
+  font-style: normal;
+  float: left;
+  display: inline;
+  color: #fff;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join-collect i {
+  background: url(../images/index/join-collect.png) no-repeat;
+  margin: 2px 5px;
+  height: 18px;
+  width: 15px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join-sell i {
+  background: url(../images/index/join-sell.png) no-repeat;
+  height: 18px;
+  width: 11px;
+  margin: 1px 8px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join.cancel {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 80px;
+  text-align: center;
+}
+#toolbar #toolbar-content .car-wrap .car-box .join.cancel i {
+  display: none;
+}
+#toolbar #toolbar-content .car-wrap .car-box .zhijiang {
+  position: relative;
+  width: 65px;
+  height: 19px;
+  background-color: #FC7000;
+  border-radius: 3px;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  text-align: center;
+  line-height: 19px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .zhijiang .triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #FC7000;
+  position: relative;
+  left: 8px;
+  top: 0;
+}
+#toolbar #toolbar-content .car-wrap .car-box .price-down {
+  background: url(../images/index/zhijiang.png);
+  height: 75px;
+  width: 40px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+#toolbar #toolbar-content .car-wrap .car-box .price-down i {
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 40px;
+}
+#toolbar #reserve #content .car-wrap .car-box .car-price {
+  border: none;
+}
+#toolbar #contrast #toolbar-nav .contrast-car {
+  float: right;
+  line-height: 40px;
+  overflow: hidden;
+}
+#toolbar #contrast #toolbar-nav .contrast-car .allclear {
+  float: left;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#toolbar #contrast #toolbar-nav .contrast-car .begin-contrast {
+  float: left;
+  width: 95px;
+  height: 30px;
+  background: #FC7000;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 3px;
+  margin-right: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#toolbar #contrast #toolbar-content .car-wrap .car-box .car-price .delete {
+  float: right;
+  cursor: pointer;
+}
+#toolbar #contrast #toolbar-content .car-wrap .car-box .car-price .delete:hover {
+  color: #FC7000;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box {
+  width: 180px;
+  margin-top: 6px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 8px;
+  padding-bottom: 0;
+  float: left;
+  margin-right: 6px;
+  position: relative;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .car-num {
+  width: 178px;
+  height: 88px;
+  position: relative;
+  display: block;
+  background: #EAEAEA;
+  border: 1px solid #DEDEDE;
+  padding-top: 30px;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .car-num .num {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  color: #EAEAEA;
+  border-radius: 60px;
+  margin: 0 auto;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+#toolbar #contrast #toolbar-content .car-wrap .contrast-box .addcar {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 26px;
+  margin-bottom: 27px;
+}
+#toolbar #scan #content {
+  overflow-y: auto;
+  width: 780px;
+  height: 900px;
+  scrollbar-face-color: #d7d7d7;
+  scrollbar-highlight-color: #fff;
+}
+#toolbar #scan #content .day-list {
+  width: 100%;
+  overflow: hidden;
+  margin: 15px 0;
+}
+#toolbar #scan #content .day-list .list-title {
+  height: 30px;
+  overflow: hidden;
+}
+#toolbar #scan #content .day-list .list-title span {
+  display: block;
+  height: 12px;
+  background: #FC7000;
+  border-radius: 12px;
+  float: left;
+  width: 12px;
+  margin: 8px 6px;
+}
+#toolbar #scan #content .day-list .list-title .day {
+  font-size: 14px;
+  color: #000;
+  float: left;
+  font-weight: bold;
+  line-height: 25px;
+}
+#toolbar #scan #content .day-list .list-title .carnum {
+  font-size: 12px;
+  color: #666;
+  float: left;
+  line-height: 26px;
+  margin-left: 6px;
+}
+#toolbar #scan #content .day-list .list-title .carnum i {
+  font-style: normal;
+}
+#toolbar #scan #content .day-list .car-list {
+  width: 100%;
+}
+#toolbar #scan #content .day-list .car-list .carbox {
+  width: 230px;
+  height: 50px;
+  border: 1px solid #dedede;
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 10px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-image {
+  width: 75px;
+  height: 50px;
+  float: left;
+  display: block;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-image img {
+  width: 75px;
+  height: 50px;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail {
+  margin-left: 10px;
+  float: left;
+  width: 145px;
+  height: 48px;
+  font-size: 12px;
+  color: #333;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail a {
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  height: 32px;
+}
+#toolbar #scan #content .day-list .car-list .carbox .car-detail i {
+  font-style: normal;
+  color: #db2400;
+  font-size: 14px;
+}
+#toolbar #no-collect {
+  padding-left: 40px;
+}
+#toolbar #no-collect .nocllect-img {
+  width: 768px;
+  height: 404px;
+  background: url(../images/index/no-collect.png);
+  margin-top: 5px;
+}
+#toolbar #no-sell {
+  padding-left: 40px;
+}
+#toolbar #no-sell .nosell-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-sell.png);
+  margin-top: 5px;
+}
+#toolbar #no-reserve {
+  padding-left: 40px;
+}
+#toolbar #no-reserve .noreserve-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-reserve.png);
+  margin-top: 5px;
+}
+#toolbar #no-scan {
+  padding-left: 40px;
+}
+#toolbar #no-scan .noscan-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-scan.png);
+  margin-top: 5px;
+}
+#toolbar #no-contrast {
+  padding-left: 40px;
+}
+#toolbar #no-contrast .nocontrast-img {
+  width: 768px;
+  height: 403px;
+  background: url(../images/index/no-constrat.png);
+  margin-top: 5px;
+}

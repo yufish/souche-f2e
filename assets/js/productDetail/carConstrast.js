@@ -85,8 +85,8 @@ define(function() {
                     cloneElement.css({
                         opacity: 0.8,
                         position: 'absolute',
-                        top: this.e.pageY + 'px',
-                        left: this.e.pageX + 'px',
+                        top: $(this).parent().offset().top + 'px',
+                        left: $(this).parent().offset().left + 'px',
                         backgroundColor: "#BCEE68"
                     });
 
