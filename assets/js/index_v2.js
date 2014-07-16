@@ -2,33 +2,32 @@ define(function() {
     var config = {};
 
     var _bind = function() {
-        var timeout =null;
+        var timeout = null;
 
-        $(".car-brand,.car-models").mouseenter(function(event) {
+        $(".car-brand,.car-models,.car-price").mouseenter(function(event) {
 
             event.stopPropagation();
             var self = this;
             window.clearTimeout(timeout);
 
-            $(".models-inner,.brand-inner").hide();
-            timeout = window.setTimeout(function()
-            {
+            $(".models-inner,.brand-inner,.price-inner").hide();
+            timeout = window.setTimeout(function() {
                 if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
                     if ($(self).hasClass("car-models")) {
                         $(".car-price").css("visibility", "hidden");
                     } else {
                         $(".car-models,.car-price").css("visibility", "hidden");
                     }
-                    $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(0);
+                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
                 } else {
-                    $(self).find(".models-inner,.brand-inner").css("zIndex", 9999).show(50);
+                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(50);
                 }
-            },200);
+            }, 200);
 
             return false;
         });
 
-        $(".car-brand,.car-models").mouseleave(function() {
+        $(".car-brand,.car-models,.car-price").mouseleave(function() {
 
             var self = this;
             window.clearTimeout(timeout);
@@ -39,9 +38,9 @@ define(function() {
                 } else {
                     $(".car-models,.car-price").css("visibility", "");
                 }
-                $(self).find(".models-inner,.brand-inner").css("zIndex", -999).hide(0);
+                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
             } else {
-                $(self).find(".models-inner,.brand-inner").css("zIndex", -999).hide(100);
+                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
             }
         });
     }
