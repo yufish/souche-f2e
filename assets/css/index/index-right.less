@@ -209,8 +209,8 @@ background-color: #fff;
   padding: 15px;
   border: 1px solid #EDEDED;
   border-bottom: none;
-  height: 300px;
   border-right: none;
+  height: 400px;
   .title{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -302,6 +302,72 @@ background-color: #fff;
       border-bottom: none;
       background: #fff;
       color: #333;
+    }
+  }
+  .cheshen-box{
+    padding-top: 10px;
+    border-top: 1px solid #EDEDED;
+    .cheshen-normal{
+      position: relative;
+      .head{
+        float: left;
+        margin-right: 12px;
+      }
+      .cheshen-name{
+        float: left;
+        padding-top: 10px;
+        h1{
+          font-size: 14px;
+          color: #666;
+          margin-bottom: 5px;
+        }
+        p{
+          color: #999;
+          font-size: 12px;
+        }
+      }
+      .show{
+        width: 8px;
+        height: 5px;
+        position: absolute;
+        background: url(../images/index/cheshen-open.png) no-repeat;
+        right: 10px;
+        top: 15px;
+       }
+      .close{
+        background: url(../images/index/cheshen-close.png) no-repeat !important;
+      }
+    }
+    .cheshen-detail{
+      margin-top: 10px;
+      h1{
+        font-size: 12px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      p{
+        font-size: 12px;
+        color: #666;
+      }
+      .ask{
+        width: 66px;
+        height: 30px;
+        background: #5C9BEF url(../images/index/ask.png) no-repeat left center;
+        display: block;
+        color: #fff;
+        line-height: 30px;
+        border-radius: 3px;
+        padding-left: 34px;
+        margin-top: 10px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+      .ask:hover{
+        background: #3784EC url(../images/index/ask-hover.png) no-repeat left center;
+      }
+    }
+    .detail-hidden{
+      display: none;
     }
   }
 }
