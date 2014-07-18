@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+<!-- target-densitydpi=device-dpi,  -->
+<meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微店 - 导航</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
+</head>
+
+<body>
+<header>
+	<div class="border-top"></div>
+</header>
+
+<div class="addr">
+	苏州市上塘路345号
+</div>
+
+<section class="map">
+<div id="l-map"></div>
+</section>
+
+<div class="doubs zhaoche-sub clearfix">
+	<a href="#" class="fl">一键导航</a><a href="#" class="fr">发送地址到手机</a>
+</div>
+
+<script src="../../../assets/js/weidian/zep.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=TvDVQ4VwFHkXCgXvtv6Wlcil&v=1.0"></script>
+<script type="text/javascript">  
+var map = new BMap.Map("l-map");  
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);  
+</script>
+</body>
+</html>
