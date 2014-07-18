@@ -36,7 +36,7 @@ header a.kaidian i {
 	background:url(../../images/weidian/che.png) no-repeat;
 }
 
-.wimg img {vertical-align:middle; /*width:100%;min-width:320px;/* max-width: */}
+.wimg img {vertical-align:middle; width:100%;/*min-width:320px;/* max-width: */}
 
 section {background:#fff;}
 
