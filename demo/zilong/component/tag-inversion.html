@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
+    <script src="http://res.souche.com/js/mob/jquery-1.9.1.min.js?t=11"></script>
+    <style>
+        #tag-inversion li{
+            background: #00d999;
+            -webkit-transform-style:preserve-3d;
+            -webkit-transform:rotateX(-90deg);
+            color:#fff;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+            -webkit-transition: -webkit-transform 0.15s linear;
+            -webkit-transform-origin: top;
+        }
+        #tag-inversion li.hh{
+            -webkit-transform:rotateX(0deg);
+        }
+        #tag-inversion{
+            -webkit-perspective: 400;
+            perspective: 400;
+            width: 80%;
+            margin:0 auto;
+        }
+        body,html{
+            height: 100%;
+        }
+    </style>
+</head>
+<body >
+    <div>
+        <ul id="tag-inversion">
+            <li>adfasdfasdf</li>
+            <li>adfasdfasdf</li>
+            <li>adfasdfasdf</li>
+            <li>adfasdfasdf</li>
+        </ul>
+    </div>
+    <div class="fuck">
+        adsfasdfa;jlkjlkj
+        akdjfaslkdhfkj
+    </div>
+    <script>
+        var menuClosed = true;
+        $('body').click(function(e){
+            if(menuClosed){
+                showMenu()
+            }else{
+                closeMenu();
+            }
+            menuClosed = !menuClosed
+        })
+
+
+        var lis =$('#tag-inversion li');
+        var len = lis.length;
+        function showMenu(){
+            var index =0;
+            $('#tag-inversion').css({visibility:'visible'})
+            lis.eq(index).toggleClass('hh')
+            !function addEndListener(){
+                lis.eq(index).one('webkitTransitionEnd',function(){
+                    index++;
+                    if(index ==len) return;
+                    lis.eq(index).toggleClass('hh');
+                    addEndListener();
+                })
+            }()
+        }
+
+        function closeMenu(){
+
+            var index =len-1;
+            lis.eq(index).toggleClass('hh')
+            !function addEndListener(){
+                lis.eq(index).one('webkitTransitionEnd',function(){
+                    index--;
+                    if(index == -1) {
+                        $('#tag-inversion').css({visibility:'hidden'})
+                        return;
+                    }
+                    lis.eq(index).toggleClass('hh');
+                    addEndListener();
+                })
+            }()
+        }
+        console.log(menuClosed)
+    </script>
+</body>
+
+</html>
