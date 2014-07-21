@@ -46,8 +46,6 @@ define(function() {
         });
     }
 
-
-
     ////
     return {
         init: function(_config) {
@@ -55,9 +53,36 @@ define(function() {
 
             _bind();
 
-            require(["index/qiugou_v2"], function(qiugou) {
-                qiugou.init();
+            require(["index/qiugou_v2","index/qiugouModel",'souche/custom-select',"index/modelSeries"],
+                function(qiugou,qiugouModel,customSelect,modelSeries) {
+
+                qiugou.init(config);
+                //modelSeriesModel.init(config);
+                modelSeries.init(config);
+
+                var ageSelect = new customSelect("age_select", {
+                    placeholder: "请选择",
+                    multi: false
+                });
+
+                var ageSelect = new customSelect("age_select_high", {
+                    placeholder: "请选择",
+                    multi: false
+                });
+                var ageSelect = new customSelect("age_select1", {
+                    placeholder: "请选择",
+                    multi: false
+                });
+
+                var ageSelect = new customSelect("age_select_high1", {
+                    placeholder: "请选择",
+                    multi: false
+                });
+
+
             });
+
+
         }
     }
 });
