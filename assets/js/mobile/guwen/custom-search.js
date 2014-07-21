@@ -272,7 +272,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     function parsePic(str){
                         var props = str.substr(1,str.length-2).split(',');
                         for(var i = 0;i<props.length;i++){
-                            ps = props[i].split('=');
+                            var ps = props[i].split('=');
                             if(ps[0]=='picture'){
                                 return ps[1];
                             }
