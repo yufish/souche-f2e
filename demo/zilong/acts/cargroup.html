@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
     <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
     <link href="http://res.souche.com/assets/css/souche/common_v2.css" rel="stylesheet" type="text/css" />
+    <link href="http://res.souche.com/assets/css/souche/souche.css?t=3" rel="stylesheet" type="text/css" />
     <style>
         img{ vertical-align: middle;width: 100%;}
         strong{font-weight: bold}
@@ -53,9 +54,16 @@
         <a id="rule" style="display:block;width: 736px;margin-top: 150px;"><img src="http://res.souche.com/assets/images/acts/cargroup/rule.png"></a>
 
     </div>
+    <div id="noreg-popup" class="apply_popup" style="display: none; z-index: 100000001;">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="warning hidden clearfix">       <div class="input-error-tip">     <span class="error-icon"></span>    请输入正确的手机号</div>     </div>  <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" style="padding-left: 10px;" id="noreg-phone" placeholder="输入你的手机号">    <i class="phone-true hidden"></i>      </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>
+    <div id="minilayer" style="display: none; width: 1903px; left: 0px; top: 0px; height: 2892px; position: absolute; z-index: 100000000; opacity: 0.7; background: rgb(17, 17, 17);"></div>
     <script>
         $('#baoming').click(function(){
-            //跳出输手机好的弹窗
+            $('#noreg-popup').show()
+            $('#minilayer').show()
+        })
+        $('.apply_close,#minilayer').click(function(){
+            $('#noreg-popup').hide()
+            $('#minilayer').hide()
         })
     </script>
 </body>
