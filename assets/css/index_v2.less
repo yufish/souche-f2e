@@ -8,23 +8,32 @@ a{
 *{
   font-family: 'Microsoft YaHei',Tahoma,Verdana;
 }
+
 @media screen and (max-width: 1024px){
   #content{
-  width: 1024px;
+  width: 972px;
   margin: 0 auto;
     .wrapper{
       margin: 0 auto;
       .index-left{
-        width: 784px;
+        width: 742px;
         float: left;
         #top-info{
           .filter-nav{
-            width: 210px;
+            width: 196px;
+            height: 287px;
+          }
+          .main-slider{
+            width: 474px;
+            height: 317px;
+            .flexslider{
+              height: 317px;
+            }
           }
         }
       }
       .index-right{
-        width: 240px;
+        width: 230px;
         float: right;
       }
     }
@@ -112,6 +121,12 @@ a{
           
           .filter-nav{
             width:470px;
+            .price-open{
+              display: none;
+            }
+            .price-inner{
+              display: none !important;
+            }
           }
         }
       }
@@ -123,10 +138,11 @@ a{
   }
 }
 #header{
+  background: #fff;
   .wrapper{
     height: 75px;
     margin: 0 auto;
-    margin-top: 25px;
+    padding-top: 25px;
     .logo{
       display: block;
       width: 120px;
@@ -209,7 +225,22 @@ a{
     }
   }
 }
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1024px){
+ #header{
+    .wrapper{
+      width: 972px;
+      .search{
+        .index-search{
+          width: 515px;
+        }
+        .search-text{
+          width: 450px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width:1024px) and (max-width: 1366px){
   #header{
     .wrapper{
       width: 1024px;
@@ -258,6 +289,7 @@ a{
   width: 100%;
   border-bottom: 1px solid #EEEEEE;
   height: 40px;
+  background: #fff;
   .wrapper{
     margin: 0 auto;
     height: 40px;
@@ -266,7 +298,7 @@ a{
       height: 40px;
       line-height: 40px;
       font-size: 16px;
-      .nav-item{
+      a{
         padding: 0 20px;
         color: #333;
         margin-right: 20px;
@@ -298,7 +330,14 @@ a{
     }
   }
 }
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1024px){
+    #nav{
+    .wrapper{
+       width: 972px;
+    }
+  }
+}
+@media screen and (min-width:1024px) and (max-width: 1366px){
   #nav{
     .wrapper{
        width: 1024px;
@@ -370,7 +409,14 @@ a{
     }
   }
 }
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1024px){
+    #footer{
+    .wrapper{
+      width: 972px;
+    }
+  }
+}
+@media screen and (min-width:1024px) and (max-width: 1366px){
   #footer{
     .wrapper{
       width: 1024px;

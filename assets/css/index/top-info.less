@@ -31,6 +31,7 @@
         color: #666;
         font-size: 12px;
         margin-bottom: 5px;
+        
         .brand-line{
           .brand-item{
             margin-right: 15px;
@@ -147,6 +148,8 @@
           }
           .models-item{
             margin-right: 15px;
+            display: block;
+            float: left;
           }
         }
       }
@@ -179,6 +182,8 @@
           }
           .models-item{
             margin-right: 15px;
+            display: block;
+            float: left;
           }
         }
         }
@@ -193,6 +198,14 @@
         font-weight: bold;
         margin-bottom: 15px;
       }
+      .price-open{
+        position: absolute;
+        width: 6px;
+        height: 10px;
+        background: url(../images/index/open-down.png) no-repeat;
+        top: 10px;
+        right: 15px;
+      }
       .price-list{
         color: #666;
         font-size: 12px;
@@ -200,8 +213,23 @@
         overflow: hidden;
         height: 17px;
         .price-item{
-          margin-right: 15px;
+          margin-right: 12px;
+          display: block;
+          float: left;
+
         }
+      }
+      .price-inner{
+        width: 470px;
+        height: 68px;
+        border: 1px solid #fc7000;
+        background: #fff;
+        position: absolute;
+        top: -16px;
+        left: -16px;
+        padding: 15px;
+        z-index: 100;
+        display: none;
       }
     }
   }

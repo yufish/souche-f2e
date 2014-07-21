@@ -1,4 +1,4 @@
-define(['souche/custom-select', 'lib/lazyload'], function(CustomSelect) {
+define(['souche/custom-select'], function(CustomSelect) {
     var brandSelect, seriesSelect, priceLowSelect, priceHighSelect, ageSelect, modelSelect;
     var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'

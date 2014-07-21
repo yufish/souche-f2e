@@ -74,8 +74,9 @@
                 var width = outPanel.width();
                 var tabContent = innerPanel.find('.tab-content').css({float:'left',width:width});
                 innerPanel.css({width:tabContent.length*width,
-//                    'webkitTransform':'translateX(0)',
-//                    'transform':'translateX(0)'
+                    //bug hack,first animation not work properly sometime,force to animate(no effect)
+                    'webkitTransform':'translateX(0)',
+                    'transform':'translateX(0)'
                 })
                 tabTitles.each(function(index){
                     var distance = width*index
