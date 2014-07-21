@@ -20,7 +20,7 @@ define(function() {
                     }
                     $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
                 } else {
-                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(50);
+                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
                 }
             }, 200);
 
