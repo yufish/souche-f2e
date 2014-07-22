@@ -39,8 +39,8 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 color: fillColor
             }).on("mousemove", function(e) {
                 $(".baoyang .price-point").css({
-                    left: i * 45 + 5,
-                    top: 154 + chartHeight - chartHeight * (price / (max - min))
+                    left: i * 45 + 75,
+                    top: -20
                 })
                 $(".baoyang .price-point .price-value").html(price)
                 var items = data.distanceData[i].items;
@@ -82,8 +82,8 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 }).fill(textColor);
             }
             $(".baoyang .price-point").css({
-                left: nowIndex * 45 + 5,
-                top: 154 + chartHeight - chartHeight * (feiyongs[nowIndex] / (max - min))
+                left: nowIndex * 45 + 75,
+                top: -20
             })
             $(".baoyang .price-point .price-value").html(feiyongs[nowIndex])
             var items = data.distanceData[nowIndex].items;

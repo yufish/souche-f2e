@@ -118,7 +118,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             };
 
             hideDialogContent($("." + tabID).find(".dialogContent"), option);
-            $("." + tabID).find(".addInstrestCar").css("top", -455 + "px").removeClass("hidden");
+            $("." + tabID).find(".addInstrestCar").css("top", -555 + "px").removeClass("hidden");
             window.setTimeout(function() {
                 showInstrestContent($("." + tabID).find(".addInstrestCar"), option);
             }, 500);
@@ -333,7 +333,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
     }
 
     var hideInstrestContent = function($element, option) {
-        offsetMove($element, option, -444, 500);
+        offsetMove($element, option, -532, 500);
     }
 
     var hideDialogContent = function($element, option) {
@@ -352,7 +352,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             }, 500);
         } else if (option.vertical) {
             $element.css("width", widthEnd);
-            offsetMove($element, option, -444, 500);
+            offsetMove($element, option, -532, 500);
         }
     }
 
