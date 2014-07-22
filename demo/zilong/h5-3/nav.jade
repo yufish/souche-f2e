@@ -94,15 +94,16 @@ html
                 if('ontouchstart' in window){
                     touch_start = 'touchstart';
                 }
-                var transition_end = 'webkitTransitionEnd',
-                    transition='webkitTransition',
+                var transition='webkitTransition',
                     transform='webkitTransform';
+                    //transition_end = 'webkitTransitionEnd',
                 if(typeof document.body.style.transform==='string'){
                     transition = 'transition';
                     transform = 'transform';
-                    transition_end='transitionend'
+                    //transition_end='transitionend'
                 }
 
+                //variable cache and some init;
                 var  tabCover = $('#tab-cover'),
                      tabCtn = $('#tab-container');
                 var tabPanels = tabCtn.find('.tab-panel'),
@@ -111,35 +112,48 @@ html
                 var widthOfPanel = tabCover.width();
                 var numOfPanels = tabPanels.length;
                 tabCover.css('overflow','hidden');
-                //tabCtn.css(transition,transform +' 0.4s linear')
                 tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
                 tabPanels.css({width:widthOfPanel,float:'left'});
+
                 navItems.on(touch_start,function(){
                     //var self = $(this);
                     var index = +$(this).attr('data-nav-index');
                     tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
-                    underline.css({left:(index-1)*100/numOfPanels+'%'})
-                    underline.attr('data-active-index',index);
+                    underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
                 })
 
                 function createTouchHandler(){
-                    var startPosX,distanceX;
+                    var touch={}
                     return function(e){
                         var touches = e.touches;
                         var type = e.type;
+                        e.preventDefault();
                         if(type == 'touchstart') {
-                            startPosX = touches[0].pageX;
-                            return;
+                            touch.x1 = touches[0].pageX;
+                        }else if(type=='touchmove'){
+                            touch.x2 =touches[0].pageX;
+                        }else{
+                            var distance = touch.x1-touch.x2;
+                            if(distance>80){
+                                var index = +underline.attr('data-active-index');
+                                if(index==numOfPanels) return;
+                                //var toIndex = index-2;
+                                tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
+                                underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
+                            }else if(distance<-80){
+                                var index = +underline.attr('data-active-index');
+                                if(index==1) return;
+                                var toIndex = index-2;
+                                tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
+                                underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
+                            }
                         }
-                        if(type='touchmove'){
-                            distanceX = touches[0].pageX - startPosX;
-                            var self = $(this);
-                            self.css(transform,'translate3d('+distanceX+'px,0,0)');
-                            e.preventDefault();
-                        }
+
                     }
                 }
                 var touchHandler = createTouchHandler();
-                tabCtn.on('touchmove',touchHandler).
-                    on('touchstart',touchHandler);
+                tabCtn.on('touchmove',touchHandler)
+                    .on('touchstart',touchHandler)
+                    .on('touchend',touchHandler)
+                    .on('touchcancel',touchHandler);
             }()
