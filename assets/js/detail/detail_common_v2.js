@@ -267,21 +267,21 @@
         }
     })
     var submitJiangjia = function() {
-        $.ajax({
-            url: $("#jiangjia-form").attr('action'),
-            data: $("#jiangjia-form").serialize(),
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#jiangjia-popup").addClass("hidden");
-                    $("#jiangjia-success-popup").removeClass("hidden");
-                    $(".wrapGrayBg").show();
+            $.ajax({
+                url: $("#jiangjia-form").attr('action'),
+                data: $("#jiangjia-form").serialize(),
+                success: function(data) {
+                    if (data.errorMessage) {
+                        alert(data.errorMessage)
+                    } else {
+                        $("#jiangjia-popup").addClass("hidden");
+                        $("#jiangjia-success-popup").removeClass("hidden");
+                        $(".wrapGrayBg").show();
+                    }
                 }
-            }
-        })
-    }
-    //降价通知提交
+            })
+        }
+        //降价通知提交
     $("#jiangjia-form").submit(function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#jiangjia-phone").val())) {
@@ -909,7 +909,7 @@ Souche.DetailCommon = function() {
                         } else {
                             $(".brand-list").css({
                                 position: "fixed",
-                                top: 40
+                                top: 80
                             })
                         }
                     } else {
