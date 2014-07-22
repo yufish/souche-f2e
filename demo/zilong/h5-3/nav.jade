@@ -26,7 +26,7 @@ html
             .nav-item(data-nav-index=1) 热门车型
             .nav-item(data-nav-index=2) 随便逛逛
             .nav-item(data-nav-index=3) 我要找车
-            #nav-bar-underline
+            #nav-bar-underline(data-active-index=1)
 
         section#tab-cover
             #tab-container.clearfix
@@ -108,9 +108,27 @@ html
                     var index = +$(this).attr('data-nav-index');
                     tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                     underline.css({left:(index-1)*100/numOfPanels+'%'})
+                    underline.attr('data-active-index',index);
                 })
 
-                tabCtn.on(transition_end,function(){
-
-                })
+                function createTouchHandler(){
+                    var startPosX,distanceX;
+                    return function(e){
+                        var touches = e.touches;
+                        var type = e.type;
+                        if(type == 'touchstart') {
+                            startPosX = touches[0].pageX;
+                            return;
+                        }
+                        if(type='touchmove'){
+                            distanceX = touches[0].pageX - startPosX;
+                            var self = $(this);
+                            self.css(transform,'translate3d('+distanceX+'px,0,0)');
+                            e.preventDefault();
+                        }
+                    }
+                }
+                var touchHandler = createTouchHandler();
+                tabCtn.on('touchmove',touchHandler).
+                    on('touchstart',touchHandler);
             }()
