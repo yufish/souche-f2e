@@ -14,7 +14,7 @@ define(function() {
         if (showNavs.length) {
             for (var i = 0; i < showNavs.length; i++) {
                 var nav = showNavs.get(i);
-                $("#" + $(nav).attr("data-id")).addClass("hidden")
+                $("#productDetailInfo >div[data-id=" + $(nav).attr("data-id") + "]").addClass("hidden")
             }
             showNavs.removeClass("active")
             $(showNavs.get(0)).addClass("active");
