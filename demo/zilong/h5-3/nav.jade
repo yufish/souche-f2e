@@ -142,6 +142,7 @@ html
                         var touches = e.touches;
                         var type = e.type;
                         if(type == 'touchstart') {
+                            e.preventDefault();
                             touch.x1 = touches[0].pageX;
                         }else if(type=='touchmove'){
                             touch.x2 =touches[0].pageX;
