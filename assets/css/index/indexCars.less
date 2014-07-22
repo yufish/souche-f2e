@@ -537,7 +537,9 @@ body *{
     margin-top: 0px !important;
     border: none !important;
   }
-
+  .dialogContent-wrapper{
+    width:1019px;
+  }
   .dialogContentContainer,.dialogContent {
     width: 97%;
     height: 356px;
@@ -551,9 +553,9 @@ body *{
     {
       margin-top: 30px;margin-top: 30px;
       margin-bottom: 30px;
-      padding: 0px 1% 0px 1%;
+      padding: 0px 10px 0px 10px;
       float: left;
-      width: 24%;
+      width: 246px;
       height: 240px;
       vertical-align: top;
       border-right: 1px solid  #CCCCCC;
@@ -617,8 +619,8 @@ body *{
     {
       float: left;
       margin-top: 30px;
-      padding: 0px 1% 0px 1%;
-      width: 43%;
+      padding: 0px 10px 0px 10px;
+      width: 440px;
       height: 240px;
       border-right: 1px solid  #CCCCCC;
       h1{
@@ -675,8 +677,8 @@ body *{
     .caryear
     {
       margin-top: 30px;
-      padding: 0px 1% 0px 1%;
-      width: 24%;
+      padding: 0px 10px 0px 10px;
+      width: 245px;
       height: 230px;
       float: left;
       h1{
@@ -721,7 +723,7 @@ body *{
 
       }
     }
-    >.submit
+    .submit
     {
       border-top: 1px solid  #CCCCCC;
       clear: both;
@@ -803,6 +805,7 @@ body *{
       margin-right: 30px;
       .submit {
         float:right;
+        height:30px;
         padding: 7px 20px;
         background-color: #FF5719;
         cursor: pointer;
@@ -819,11 +822,11 @@ body *{
       height: 252px;
       .brand {
         float: left;
-        height: 216px;
+        height: 410px;
         overflow: auto;
-        width: 45%;
-        margin: 20px;
+        width:158px;
         bottom: 0px;
+        position: relative;
         border-right: 1px solid #CCCCCC;
         .hot {
           height: 45px;
@@ -851,31 +854,53 @@ body *{
             color:#ffffff;
           }
         }
+        .brandNav{
+          position: absolute;
+          left:20px;
+          top:20px;
+          width:30px;
+          height:410px;
+          a{
+            display: block;
+            line-height: 14px;
+            font-size: 12px;
+            color:#FF5719;
+            cursor: pointer;
+          }
+          a.active{
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
         .brandList {
           clear: both;
-          margin-top: 10px;
-          margin-right: 30px;
+          margin-left:50px;
+          height:410px;
+          overflow: auto;
+          padding-top:10px;
+          margin-right: 10px;
           li {
             clear: both;
             margin: 5px 0px ;
             overflow: auto;
             span {
-              color: #FF5719;
+              color: #000;
+              font-weight: bold;
               line-height: 22px;
-              float: left;
               margin-right: 15px;
-              margin-left: 10px;
               font-size: 13px;
-              font-weight: bolder;
+              font-weight: bold;
+              display: block;
+              line-height: 30px;
             }
             a {
-              float: left;
-              margin: 0px 3px;
               padding: 0px 2px;
               line-height: 22px;
               cursor: pointer;
-              font-size: 13px;
-              color:#939393;
+              font-size: 12px;
+              color:#666;
+               display: block;
+               line-height: 25px;
             }
             a.active
             {
@@ -889,10 +914,10 @@ body *{
       .chexi {
         float: left;
         height: 100%;
-        width: 45%;
+        width: 830px;
         .chexiContent
         {
-          margin: 20px 10px;
+          margin: 20px 20px;
           margin-right: 20px;
           .chexiTitle
           {

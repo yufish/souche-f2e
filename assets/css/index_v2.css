@@ -1283,16 +1283,16 @@ body * {
   font-size: 13px;
   text-align: center;
 }
-#carsContent .dialogContentContainer > .submit,
-#carsContent .dialogContent > .submit {
+#carsContent .dialogContentContainer  .submit,
+#carsContent .dialogContent  .submit {
   border-top: 1px solid  #CCCCCC;
   clear: both;
   height: 60px;
   margin-top: 10px;
   position: relative;
 }
-#carsContent .dialogContentContainer > .submit span,
-#carsContent .dialogContent > .submit span {
+#carsContent .dialogContentContainer  .submit span,
+#carsContent .dialogContent  .submit span {
   margin-top: 7px;
   position: absolute;
   color: #ffffff;
