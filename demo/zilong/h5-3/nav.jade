@@ -145,9 +145,9 @@ html
                             
                             touch.x1 = touches[0].pageX;
                         }else if(type=='touchmove'){
-                            e.preventDefault();
                             touch.x2 =touches[0].pageX;
                         }else{
+                            touch.x2 =touches[0].pageX;
                             var distance = touch.x1-touch.x2;
                             if(distance>60){
                                 var index = +underline.attr('data-active-index');
