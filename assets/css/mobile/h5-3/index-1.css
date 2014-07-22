@@ -1,3 +1,59 @@
+*{
+    box-sizing: border-box;
+}
 header{
+    height: 45px;
+    line-height: 45px;
+    color:#fff;
+    background: #BCC4C7;
+}
+#hd-other-feature{
+    display: inline-block;
+    width: 18px;
+}
+.heng{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin:4px 0;
+}
+#hd-right{
+    float:right;
+}
+#tab-nav-bar{
+    position: relative;
+}
+.nav-item{
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.underline{
+    position: absolute;
+    height: 2px;
+    width:33.3%;
+    background: red;
+    bottom: 0;
+}
+.car-card{
+    float: left;
+    margin:0 10px;
+}
+.tab-container{
+    -webkit-transition:-webkit-transform 0.5s linear;
+    transition:-transform 0.5s linear;
+}
+#pan-2-content .lft{
+    width: 150px;
+    float:left;
+}
+#pan-2-content img{
+    width: 100%;
+}
 
+#pan-2-content .rht{
+    margin-left: 150px;
 }

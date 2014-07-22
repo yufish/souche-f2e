@@ -40,7 +40,7 @@
 	}*/
 	
 	function TabLayout($tabNavBar,$tabCover,options){
-		this.tabNavBar = $tabNavBar;
+		//this.tabNavBar = $tabNavBar;
 		this.navItems = $tabNavBar.children('.nav-item');
 		this.tabCover = $tabCover;
 		this.tabCtn = $tabCover.children('.tabContainer');
@@ -48,10 +48,14 @@
 		this.numOfPanels = this.tabPanels.length;
 		//this.options = {};
 		//$.extend(this.options,defaultOptions,options);
+        this._init();
 	}
 	TabLayout.prototype = {
 		_init:function(){
-			this.tabCtn.css(transition,transform +' 0.6s linear');
+            this.tabCover.css('overflow','hidden')
+			this.tabCtn.css(transition,transform +' 0.6s linear')
+                .css({width:this.numOfPanels*100+'%'});
+            this.tabPanels.css({width:100/this.numOfPanels+'%',float:'left'})
 			this.navItems.on(touch_start,function(){
 				var self = $(this);
 				var index = +self.attr('data-nav-index');
