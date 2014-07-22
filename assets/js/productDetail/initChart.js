@@ -18,7 +18,7 @@ define(function() {
             }
             showNavs.removeClass("active")
             $(showNavs.get(0)).addClass("active");
-            $("#" + $(showNavs.get(0)).attr("data-id")).removeClass("hidden")
+            $("#productDetailInfo >div[data-id=" + $(showNavs.get(0)).attr("data-id") + "]").removeClass("hidden")
         }
     }
     return {
@@ -42,12 +42,13 @@ define(function() {
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
                         }
+
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
-                        $("#onsale_price").removeClass("hidden");
+                        $("*[data-id=onsale_price]").removeClass("hidden");
                     } else {
-                        $("#onsale_price").addClass("hidden")
+                        $("*[data-id=onsale_price]").addClass("hidden")
                     }
                     checkActive();
                 }
