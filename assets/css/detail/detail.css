@@ -5046,6 +5046,12 @@ less .icon-fei {
   left: 35px;
   top: 12px;
 }
+#onsale_pics {
+  padding: 20px;
+}
+#onsale_pics img {
+  margin-bottom: 10px;
+}
 .onsale-summary {
   background: #fff;
   border: 1px solid #ddd;
@@ -5666,7 +5672,7 @@ less .icon-fei {
 .net-brand .brand-nav .brand-list li .first-nav-active {
   background: #FC7000;
 }
-.net-brand .brand-nav .brand-list li span {
+.net-brand .brand-nav .brand-list li a {
   color: #666;
   font-size: 12px;
   line-height: 40px;
@@ -5874,6 +5880,7 @@ less .icon-fei {
 }
 .net-brand {
   margin-bottom: 100px;
+  padding: 20px;
 }
 .pic-video {
   margin-top: 30px;
