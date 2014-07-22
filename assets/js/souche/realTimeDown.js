@@ -50,13 +50,14 @@ define(function() {
 
 
         ajaxOption.url = option.url;
-        ajaxOption.data = option.data||{};
+        ajaxOption.data = option.data || {};
         ajaxOption.dataType = option.dataType;
         ajaxOption.type = option.type;
 
         afterShow = option.success;
 
         $element.find("input").keyup(function () {
+            ajaxOption.url += "?words=" + $(this).val();
             Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
         });
     }
