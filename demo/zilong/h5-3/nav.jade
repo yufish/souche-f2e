@@ -5,7 +5,7 @@ html
         <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
         <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
 
@@ -26,10 +26,10 @@ html
             .nav-item(data-nav-index=1) 热门车型
             .nav-item(data-nav-index=2) 随便逛逛
             .nav-item(data-nav-index=3) 我要找车
-            .underline
+            #nav-bar-underline(data-active-index=1)
 
         section#tab-cover
-            .tab-container.clearfix
+            #tab-container.clearfix
                 .tab-panel(data-panel-index=1)
                     #pan-1-title 定制购车需求，我们每天为你
                         span(style='color:red') 推荐好车
@@ -78,45 +78,57 @@ html
                                 .other-info 2.00万公里 2012年上牌
 
         script.
-            var touch_start = 'click';
-            if('touchstart' in window){
-                touch_start = 'touchstart';
-            }
-            var transition = 'transition',
-                transform='transform';
-            if(typeof document.body.style.webkitTransition==='string'){
-                transition = 'webkitTransition';
-                transform = 'webkitTransform';
-            }
-            /*else if(typeof document.body.style.MozTransition==='string'){
-                transition = 'MozTransition';
-            transform = 'MozTransform'
-            }*/
-
-            function TabLayout($tabNavBar,$tabCover,options){
-                //this.tabNavBar = $tabNavBar;
-                this.navItems = $tabNavBar.children('.nav-item');
-                this.tabCover = $tabCover;
-                this.tabCtn = $tabCover.children('.tab-container');
-                this.tabPanels = this.tabCtn.children('.tab-panel');
-                this.numOfPanels = this.tabPanels.length;
-                //this.options = {};
-                //$.extend(this.options,defaultOptions,options);
-                this._init();
-            }
-            TabLayout.prototype = {
-                _init:function(){
-                    this.tabCover.css('overflow','hidden');
-                    var widthOfPanel = this.tabCover.width();
-                    //this.tabCtn.css(transition,transform +' 0.6s linear');
-                    this.tabCtn.css({width:this.numOfPanels*widthOfPanel+'px'});
-                    this.tabPanels.css({width:widthOfPanel,float:'left'});
-                    var that = this;
-                    this.navItems.on(touch_start,function(){
-                        var self = $(this);
-                        var index = +self.attr('data-nav-index');
-                        that.tabCtn.css(transform,'translateX(-'+(index-1)*widthOfPanel+'px)');
-                    })
+            !function(){
+                var touch_start = 'click';
+                if('ontouchstart' in window){
+                    touch_start = 'touchstart';
                 }
-            }
-            var layout = new TabLayout($('#tab-nav-bar'),$('#tab-cover'));
+                var transition_end = 'webkitTransitionEnd',
+                    transition='webkitTransition',
+                    transform='webkitTransform';
+                if(typeof document.body.style.transform==='string'){
+                    transition = 'transition';
+                    transform = 'transform';
+                    transition_end='transitionend'
+                }
+
+                var  tabCover = $('#tab-cover'),
+                     tabCtn = $('#tab-container');
+                var tabPanels = tabCtn.find('.tab-panel'),
+                    navItems = $('#tab-nav-bar .nav-item');
+                var underline = $('#nav-bar-underline')
+                var widthOfPanel = tabCover.width();
+                var numOfPanels = tabPanels.length;
+                tabCover.css('overflow','hidden');
+                //tabCtn.css(transition,transform +' 0.4s linear')
+                tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
+                tabPanels.css({width:widthOfPanel,float:'left'});
+                navItems.on(touch_start,function(){
+                    //var self = $(this);
+                    var index = +$(this).attr('data-nav-index');
+                    tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
+                    underline.css({left:(index-1)*100/numOfPanels+'%'})
+                    underline.attr('data-active-index',index);
+                })
+
+                function createTouchHandler(){
+                    var startPosX,distanceX;
+                    return function(e){
+                        var touches = e.touches;
+                        var type = e.type;
+                        if(type == 'touchstart') {
+                            startPosX = touches[0].pageX;
+                            return;
+                        }
+                        if(type='touchmove'){
+                            distanceX = touches[0].pageX - startPosX;
+                            var self = $(this);
+                            self.css(transform,'translate3d('+distanceX+'px,0,0)');
+                            e.preventDefault();
+                        }
+                    }
+                }
+                var touchHandler = createTouchHandler();
+                tabCtn.on('touchmove',touchHandler).
+                    on('touchstart',touchHandler);
+            }()
