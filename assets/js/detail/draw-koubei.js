@@ -58,13 +58,13 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                 })
             }
             data.topPosReview.forEach(function(review, i) {
-                if (/�/.test(review)) {
-                    data.topPosReview.splice(i, 1)
+                if (review.indexOf("�") != -1) {
+                    data.topPosReview = data.topPosReview.splice(i, 1)
                 }
             })
             data.topNegReview.forEach(function(review, i) {
-                if (/�/.test(review)) {
-                    data.topPosReview.splice(i, 1)
+                if (review.indexOf("�") != -1) {
+                    data.topNegReview = data.topNegReview.splice(i, 1)
                 }
             })
             $(".advantage-left .advantage-content").html(data.topPosReview.join("；"))
