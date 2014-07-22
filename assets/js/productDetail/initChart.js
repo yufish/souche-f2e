@@ -9,6 +9,18 @@ define(function() {
         return !!document.createElementNS && !! document.createElementNS(ns, "svg").createSVGRect
     }()
     var config;
+    var checkActive = function() {
+        var showNavs = $("#productDetailInfo .nav li:not(.hidden)");
+        if (showNavs.length) {
+            for (var i = 0; i < showNavs.length; i++) {
+                var nav = showNavs.get(i);
+                $("#" + $(nav).attr("data-id")).addClass("hidden")
+            }
+            showNavs.removeClass("active")
+            $(showNavs.get(0)).addClass("active");
+            $("#" + $(showNavs.get(0)).attr("data-id")).removeClass("hidden")
+        }
+    }
     return {
         load_price: function() {
             $.ajax({
@@ -39,6 +51,7 @@ define(function() {
                     } else {
                         $("#onsale_price").addClass("hidden")
                     }
+                    checkActive();
                 }
             })
             // require(['detail/draw-price-down'], function(DrawPriceDown) {
@@ -88,6 +101,7 @@ define(function() {
                     } else {
                         $("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
+                    checkActive();
                 }
             })
         },
@@ -148,6 +162,7 @@ define(function() {
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")
                     }
+                    checkActive();
 
                 }
             })
