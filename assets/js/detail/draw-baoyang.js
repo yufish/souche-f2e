@@ -42,7 +42,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                     left: i * 45 + 75,
                     top: -20
                 })
-                $(".baoyang .price-point .price-value").html(price)
+                $(".baoyang .price-point .price-value").html(price + "元")
                 var items = data.distanceData[i].items;
                 $(".baoyang-project").addClass("baoyang-project-disabled");
                 items.forEach(function(item) {
@@ -85,7 +85,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 left: nowIndex * 45 + 75,
                 top: -20
             })
-            $(".baoyang .price-point .price-value").html(feiyongs[nowIndex])
+            $(".baoyang .price-point .price-value").html(feiyongs[nowIndex] + "元")
             var items = data.distanceData[nowIndex].items;
             $(".baoyang-project").addClass("baoyang-project-disabled");
             items.forEach(function(item) {
