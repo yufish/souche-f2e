@@ -66,7 +66,7 @@ body {
   font-size: 12px;
   margin-left: 15px;
   line-height: 2.6em;
-  width: 100px;
+  width: 110px;
 }
 .carBox .car-info dd {
   line-height: 1.8em;
@@ -4295,7 +4295,10 @@ body .apply_popup .result_p span {
   margin-right: 30px;
 }
 body .apply_popup .result_p span.buy_success {
-  background-position: -225px -680px;
+  background: url(../../images/common/success-popup.png) no-repeat;
+  width: 50px;
+  height: 52px;
+  margin-top: 10px;
 }
 body .apply_popup .result_p span.buy_failed {
   background: url(../../images/fed/buy_faild.png) no-repeat;
