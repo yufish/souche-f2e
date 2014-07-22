@@ -18,7 +18,7 @@ define(function() {
                 }
                 else {
                     var constrastID = $(this).parent().attr("contrastid");
-                    deleteConstrast(constrastID);
+                    deleteConstrast.call(this,constrastID);
                 }
             }
             else if (element.nodeName == "SPAN") {
@@ -44,7 +44,7 @@ define(function() {
     function deleteConstrast(constrastID)
     {
         var url = config.api_deleteContrast;
-        var self =this;
+        var self1 =this;
 
         $.ajax({
             url:url,
@@ -52,7 +52,7 @@ define(function() {
                 cid:constrastID
             },
             dataType:"json",
-            context:self
+            context:self1
         }).done(function(result)
         {
             $(this).parent().find("input")[0].checked = false;

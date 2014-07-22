@@ -45,7 +45,7 @@ body *{
       margin: 2.7% 2.7% 0px 0px;
       *margin: 2.5% 2.41% 0px 0px;
       float: left;
-      border: 1px solid #CCCCCC;
+      border: 1px solid #EDEDED;
     }
   }
 
@@ -84,7 +84,7 @@ body *{
       height: 355px;
       margin: 2% 1.8% 0px 0px;
       float: left;
-      border: 1px solid #CCCCCC;
+      border: 1px solid #EDEDED;
     }
   }
 }
@@ -117,7 +117,7 @@ body *{
       *margin: 2% 1.519% 0px 0px;
       *width: 22.92%;
       float: left;
-      border: 1px solid #CCCCCC;
+      border: 1px solid #EDEDED;
     }
   }
 }
@@ -254,6 +254,7 @@ body *{
   }
   .carItem {
     overflow: hidden;
+    position: relative;
     .carImg
     {
       position: relative;
@@ -302,7 +303,7 @@ body *{
     .other {
       margin: 7px 20px 0px 20px;
       font-size: 13px;
-      border-bottom: 1px solid #F5F5F5;
+      
       padding-bottom: 10px;
       .discount {
         color: #FF571A;
@@ -321,39 +322,41 @@ body *{
       }
     }
     .carTail {
-      margin: 7px 20px 0px 13px;
-      padding: 0px 5px 5px 5px;
-      position: relative;
+      bottom: 10px;
+      left: 15px;
+      width: 85%;
+      position: absolute;
+      border-top: 1px solid #EEEEEE;
+      padding-top: 10px;
       .collect {
         padding-left: 15px;
         position: relative;
         color: #999;
-        background: url(../../images/index/car-nocollect.png) no-repeat;
+        background: url(../images/index/car-nocollect.png) no-repeat;
         background-position: -4px -2px;
         cursor: pointer;
         font-size: 12px;
-        top: 2px;
         a {
           color: #999;
         }
         float: left;
       }
       .collect:hover {
-        background: url(../../images/index/hover.png) no-repeat;
-        background-position: -1px 1px;
+        background: url(../images/index/hover.png) no-repeat;
+        background-position: 0px 2px;
         cursor: pointer;
       }
       .collect.ative {
-        background: url(../../images/index/active.png) no-repeat;
-        background-position: -1px 1px;
+        background: url(../images/index/active.png) no-repeat;
+        background-position: 0px 2px;
         cursor: pointer;
       }
       .recommendedToday {
         font-size: 12px;
-        position: absolute;
-        right: -2px;
+        display: block;
+        float: right;
         color: #999;
-        top: 3px;
+        
       }
     }
   }
@@ -369,9 +372,11 @@ body *{
       color: #333333;
       span {
         padding:0px 4px;
-        color: #6CACE7;
-        font-weight: bolder;
-        font-size: 16px;
+        color: #fff;
+        background: #6CACE7;
+        font-size: 12px;
+        font-weight: normal;
+        margin-right: 5px;
       }
     }
     a:hover{
@@ -648,7 +653,7 @@ body *{
           color: #B6B6B6;
           padding: 0px 6px 0px 6px;
           background-position: center;
-          background: url("../../images/index/close.jpg") no-repeat;
+          background: url("../images/index/close.jpg") no-repeat;
           vertical-align: middle;
         }
       }
@@ -740,7 +745,7 @@ body *{
                 height: 30px;
                 font-size: 0px;
                 line-height: 0px;
-                background: url(../../images/common/select-action-trigger.png) no-repeat center center;
+                background: url(../images/common/select-action-trigger.png) no-repeat center center;
                 background-position: 6px 12px;
               }
             }
@@ -849,7 +854,7 @@ body *{
           color: #B6B6B6;
           padding: 0px 6px 0px 6px;
           background-position: center;
-          background: url("../../images/index/close.jpg") no-repeat;
+          background: url("../images/index/close.jpg") no-repeat;
           background-position: 0px 3px;
 
           vertical-align: middle;
