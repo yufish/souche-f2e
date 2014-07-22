@@ -142,9 +142,10 @@ html
                         var touches = e.touches;
                         var type = e.type;
                         if(type == 'touchstart') {
-                            e.preventDefault();
+                            
                             touch.x1 = touches[0].pageX;
                         }else if(type=='touchmove'){
+                            e.preventDefault();
                             touch.x2 =touches[0].pageX;
                         }else{
                             var distance = touch.x1-touch.x2;
