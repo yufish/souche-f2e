@@ -127,7 +127,6 @@ html
                     return function(e){
                         var touches = e.touches;
                         var type = e.type;
-                        e.preventDefault();
                         if(type == 'touchstart') {
                             touch.x1 = touches[0].pageX;
                         }else if(type=='touchmove'){
