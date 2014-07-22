@@ -28,6 +28,23 @@ define(function()
 
         //loadImg();
         initBaseControler();
+
+        $("#allProduct table tr").eq(5).nextAll().addClass("hidden");
+        $(this).removeClass("hasShow")
+
+        $("#showMore").click(function()
+        {
+            if($(this).hasClass("hasShow"))
+            {
+                $("#allProduct table tr").eq(5).nextAll().addClass("hidden");
+                $(this).removeClass("hasShow")
+            }
+            else
+            {
+                $("#allProduct table tr").eq(5).nextAll().removeClass("hidden");
+                $(this).addClass("hasShow")
+            }
+        });
     };
 
     var initBaseControler = function(conf)

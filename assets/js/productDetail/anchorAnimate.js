@@ -24,19 +24,18 @@ define(function()
 
         var topList1 = [];
 
-        for(var index=0 , len=$(".config_content table").length; index<len;index++) {
-            topList1.push($(".config_content table").eq(index).offset().top-200);
-        }
-
-        var originTop = $(".config_nav").offset().top;
         var scrollFunction = function()
         {
             var currentTop  = $(window).scrollTop();
             var height = $(".config_content").height();
+            var originTop = $(".config_nav").offset().top;
 
-            if(currentTop>originTop&&currentTop<(height+originTop-$(".config_nav ul").height()-200)) {
+            if(currentTop>(originTop)&&currentTop<(height+originTop-$(".config_nav ul").height()-200)) {
                 $(".config_nav ul").css("position", "fixed").css("top", "100px");
-
+                topList1=[];
+                for(var index=0 , len=$(".config_content table").length; index<len;index++) {
+                    topList1.push($(".config_content table").eq(index).offset().top-200);
+                }
                 for (var index = 0; index < topList1.length-1; index++) {
                     if (currentTop>topList1[index]&&currentTop<topList1[index+1]) {
                         $(".config_nav li span").removeClass("active");

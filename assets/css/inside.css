@@ -1165,7 +1165,7 @@ width: 400px;
 
 .icon-fei{position:absolute;left:0;right:0;background:#fc7000;height:15px;width:15px;background: url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 
-.productLibInfo{width:996px;height:130px;vertical-align: middle;border:1px solid #ddd;background-color:#fff;margin-top:20px;overflow:hidden;margin-bottom: 20px;}
+.productLibInfo{width:996px;height:200px;vertical-align: middle; border:1px solid #ddd;background-color:#fff;margin-top:20px;overflow:hidden;margin-bottom: 20px;}
 .productLibInfo .productLibImg{
     display: inline-block;
     *display: inline;
@@ -1174,6 +1174,8 @@ width: 400px;
     height: 80px;
     margin-top:25px;
     vertical-align: middle;
+    text-align:center;
+    font-size: 15px;
 }
 .productLibInfo .productLibImg img
 {
@@ -1193,11 +1195,24 @@ width: 400px;
     margin-top:25px;
     margin-left: 10px;
 }
+
+.productLibInfo .productLibInfoContent .productLibConfig
+{
+    margin-top: 15px;
+}
+
+.productLibInfo .productLibInfoContent .productLibConfig .contentItemInfo{
+    width: 200px;
+    padding: 5px 0px;
+    color: #808080;
+}
+
 .productLibInfo .productLibInfoContent .productLibTitle
 {
     font-size: 16px;
     font-weight: bolder;
     cursor: pointer;
+    text-align: center;
 }
 .productLibInfo .productLibInfoContent .productLibPrice
 {
@@ -1205,6 +1220,11 @@ width: 400px;
     color: #F25A00;
     font-weight: bold;
     padding-top: 10px;
+}
+
+.productLibInfo .productLibInfoContent .productLibPrice span{
+    color: #808080;
+    font-weight: normal;
 }
 
 .productLibInfo .productLibInfoContent .productLibLink
@@ -1217,7 +1237,7 @@ width: 400px;
     padding: 0px 15px 0px 15px;
     font-size: 13px;
     border-right: 2px solid #EBEBEB;
-    color: #9B9B9B;
+    color: #2E2E2E;
     cursor: pointer;
 }
 
