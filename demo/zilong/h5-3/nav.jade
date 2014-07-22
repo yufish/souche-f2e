@@ -95,12 +95,12 @@ html
                     touch_start = 'touchstart';
                 }
                 var transition='webkitTransition',
-                    transform='webkitTransform';
-                    //transition_end = 'webkitTransitionEnd',
+                    transform='webkitTransform',
+                    transition_end = 'webkitTransitionEnd';
                 if(typeof document.body.style.transform==='string'){
                     transition = 'transition';
                     transform = 'transform';
-                    //transition_end='transitionend'
+                    transition_end='transitionend'
                 }
 
                 //variable cache and some init;
@@ -115,10 +115,16 @@ html
                 tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
                 tabPanels.css({width:widthOfPanel});
 
+                var isMoving = false
                 function move(moveIndex,activeIndex){
+                    if(isMoving){
+                        return;
+                    }
+                    isMoving = true;
                     tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
                     underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
                 }
+
 
                 navItems.on(touch_start,function(){
                     //var self = $(this);
@@ -157,6 +163,9 @@ html
 
                     }
                 }
+                tabCtn.on(transition_end,function(){
+                    isMoving = false
+                })
                 var touchHandler = createTouchHandler();
                 tabCtn.on('touchmove',touchHandler)
                     .on('touchstart',touchHandler)
