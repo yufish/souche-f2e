@@ -31,7 +31,7 @@ header{
     height: 30px;
     line-height: 30px;
 }
-.underline{
+#nav-bar-underline{
     position: absolute;
     height: 2px;
     width:33.3%;
@@ -41,10 +41,6 @@ header{
 .car-card{
     float: left;
     margin:0 10px;
-}
-.tab-container{
-    -webkit-transition:-webkit-transform 0.5s linear;
-    transition:-transform 0.5s linear;
 }
 #pan-2-content .lft{
     width: 150px;
