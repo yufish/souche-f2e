@@ -115,16 +115,12 @@ html
                 tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
                 tabPanels.css({width:widthOfPanel});
 
-                var isMoving = false
                 function move(moveIndex,activeIndex){
-                    if(isMoving){
-                        return;
-                    }
-                    isMoving = true;
                     tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
                     underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
                 }
 
+                move(0,1);
 
                 navItems.on(touch_start,function(){
                     //var self = $(this);
@@ -165,9 +161,6 @@ html
 
                     }
                 }
-                tabCtn.on(transition_end,function(){
-                    isMoving = false
-                })
                 var touchHandler = createTouchHandler();
                 tabCtn.on('touchmove',touchHandler)
                     .on('touchstart',touchHandler)
