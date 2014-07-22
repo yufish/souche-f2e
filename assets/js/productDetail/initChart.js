@@ -81,11 +81,10 @@ define(function() {
                                 distanceData: distanceData,
                                 nowDistance: config.nowDistance
                             })
-
                         })
-                       // $("*[data-id=onsale_baoyang]").removeClass("hidden")
+                        $("*[data-id=onsale_baoyang]").removeClass("hidden")
                     } else {
-                        //$("*[data-id=onsale_baoyang]").addClass("hidden")
+                        $("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
                 }
             })
