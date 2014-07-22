@@ -21,8 +21,13 @@ header{
 #hd-right{
     float:right;
 }
+
 #tab-nav-bar{
     position: relative;
+}
+#tab-container{
+    -webkit-transition:-webkit-transform 0.4s linear;
+    transition:transform 0.4s linear;
 }
 .nav-item{
     float: left;

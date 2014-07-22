@@ -100,11 +100,12 @@ html
                 var widthOfPanel = tabCover.width();
                 var numOfPanels = tabPanels.length;
                 tabCover.css('overflow','hidden');
-                tabCtn.css(transition,transform +' 0.4s linear').css({width:numOfPanels*widthOfPanel+'px'});
+                //tabCtn.css(transition,transform +' 0.4s linear')
+                tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
                 tabPanels.css({width:widthOfPanel,float:'left'});
                 navItems.on(touch_start,function(){
-                    var self = $(this);
-                    var index = +self.attr('data-nav-index');
+                    //var self = $(this);
+                    var index = +$(this).attr('data-nav-index');
                     tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                     underline.css({left:(index-1)*100/numOfPanels+'%'})
                 })
