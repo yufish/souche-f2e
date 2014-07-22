@@ -1,5 +1,5 @@
 define(function() {
-    var config={};
+    var config = {};
     var hasInitTab = {
 
     }
@@ -12,7 +12,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: config.api_price+ config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
@@ -46,9 +46,10 @@ define(function() {
         },
         load_baoyang: function() {
             $.ajax({
-                url: config.api_sentiment  + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_maintenance + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
+
                     var data = _data.data;
                     if (data && data.items && data.items.length) {
                         var baoyangData = data.items[0];
@@ -91,10 +92,10 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: config.api_maintenance + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: config.api_sentiment + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
-                    if (_data && _data.data && _data.data.items) {
+                    if (_data && _data.data) {
                         var koubeiData = [];
                         var kv = {
                             upholstery: "内饰",
@@ -107,7 +108,7 @@ define(function() {
                             comfortable: "舒适",
                             noise: "噪音"
                         }
-                        var data = _data.data.items[0]
+                        var data = _data.data
                         if (_data.data) {
                             var koubeiData = [];
                             for (var i in kv) {
@@ -115,7 +116,7 @@ define(function() {
                                     koubeiData.push({
                                         name: kv[i],
                                         rate: (data[i].score * 1).toFixed(2),
-                                        labels: data[i].comments
+                                        labels: data[i].comments.slice(0, 3)
                                     })
                                 } else {
                                     koubeiData.push({
@@ -141,6 +142,7 @@ define(function() {
                                 $(".float-nav-item-koubei").removeClass("hidden")
                             }
                         )
+
                         $("*[data-id=onsale_koubei]").removeClass("hidden")
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")

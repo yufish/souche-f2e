@@ -281,55 +281,55 @@ define(['souche/util/load-info'], function(LoadInfo) {
             html += "<a>" + zimu[i] + "</a>"
         }
         $(".brandNav").html(html)
-        $(".brandNav a").click(function() {
-            var word = $(this).html();
-            if ($(".brandList li[data-word='" + word + "']").length) {
-                $(".brandList").animate({
-                    scrollTop: $(".brandList li[data-word='" + word + "']").attr("data-height")
-                })
-            }
-            $(".brandNav a").removeClass("active")
-            $(this).addClass("active")
+        // $(".brandNav a").click(function() {
+        //     var word = $(this).html();
+        //     if ($(".brandList li[data-word='" + word + "']").length) {
+        //         $(".brandList").animate({
+        //             scrollTop: $(".brandList li[data-word='" + word + "']").attr("data-height")
+        //         })
+        //     }
+        //     $(".brandNav a").removeClass("active")
+        //     $(this).addClass("active")
 
-        })
-        LoadInfo.loadBrands(function(data) {
-            var html = "";
-            var nowHeight = 0;
-            data = brandSort(data.items);
-            for (var i in data) {
-                var b = data[i];
-                var name = i;
-                html += "<li data-word='" + name + "'><span>" + name + "</span>"
-                for (var n = 0; n < b.length; n++) {
-                    var brand = b[n]
-                    html += ('<a class="brand-item">' + brand.name + '</a>');
-                }
-                html += "</li>"
-                html = $(html);
-                html.attr("data-height", nowHeight)
+        // })
+        // LoadInfo.loadBrands(function(data) {
+        //     var html = "";
+        //     var nowHeight = 0;
+        //     data = brandSort(data.items);
+        //     for (var i in data) {
+        //         var b = data[i];
+        //         var name = i;
+        //         html += "<li data-word='" + name + "'><span>" + name + "</span>"
+        //         for (var n = 0; n < b.length; n++) {
+        //             var brand = b[n]
+        //             html += ('<a class="brand-item">' + brand.name + '</a>');
+        //         }
+        //         html += "</li>"
+        //         html = $(html);
+        //         html.attr("data-height", nowHeight)
 
 
-                $(".brandList ul").append(html)
-                nowHeight += html.height() + 10;
-            }
+        //         $(".brandList ul").append(html)
+        //         nowHeight += html.height() + 10;
+        //     }
 
-        })
-        LoadInfo.loadSeries(brandCode, function(data) {
-            var html = "";
+        // })
+        // LoadInfo.loadSeries(brandCode, function(data) {
+        //     var html = "";
 
-            for (var i in data.codes) {
-                var b = data.codes[i];
-                var name = i;
-                html += "<div data-name='" + name + "' data-brandid='" + brandCode + "' class='clearfix word-container'><div class='brand-title'>" + name + "</div>"
-                for (var n = 0; n < b.length; n++) {
-                    var series = b[n]
-                    html += ('<a href="#" data-value="' + series.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + series.name + '</span></a>');
-                }
-                html += "</div>"
+        //     for (var i in data.codes) {
+        //         var b = data.codes[i];
+        //         var name = i;
+        //         html += "<div data-name='" + name + "' data-brandid='" + brandCode + "' class='clearfix word-container'><div class='brand-title'>" + name + "</div>"
+        //         for (var n = 0; n < b.length; n++) {
+        //             var series = b[n]
+        //             html += ('<a href="#" data-value="' + series.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + series.name + '</span></a>');
+        //         }
+        //         html += "</div>"
 
-            }
-            seriesSelect.addOptions(html)
-        })
+        //     }
+        //     seriesSelect.addOptions(html)
+        // })
     }
 
     var hideInstrestContent = function($element, option) {
