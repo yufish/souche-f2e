@@ -128,17 +128,13 @@ body *{
   clear: both;
 }
 
-
-
-
 #carsContent {
   width: 100%;
   position: relative;
   overflow: auto;
+  min-height: 402px;
   .myAdviser ,.hotNewCars {
     position: relative;
-    overflow: auto;
-    min-height: 382px;
   }
 
   .carsItem {
@@ -211,7 +207,7 @@ body *{
         width: 45%;
         vertical-align: middle;
         border: 1px solid #CCCCCC;
-        height: 35px;
+        height: 30px;
         background: #ffffff;
         color: #B6B6B6;
         a {
@@ -258,6 +254,7 @@ body *{
   }
   .carItem {
     overflow: hidden;
+    position: relative;
     .carImg
     {
       position: relative;
@@ -306,7 +303,7 @@ body *{
     .other {
       margin: 7px 20px 0px 20px;
       font-size: 13px;
-      border-bottom: 1px solid #F5F5F5;
+      
       padding-bottom: 10px;
       .discount {
         color: #FF571A;
@@ -325,9 +322,12 @@ body *{
       }
     }
     .carTail {
-      margin: 7px 20px 0px 13px;
-      padding: 0px 5px 5px 5px;
-      position: relative;
+      bottom: 10px;
+      left: 15px;
+      width: 85%;
+      position: absolute;
+      border-top: 1px solid #F5F5F5;
+      padding-top: 10px;
       .collect {
         padding-left: 15px;
         position: relative;
@@ -336,7 +336,6 @@ body *{
         background-position: -4px -2px;
         cursor: pointer;
         font-size: 12px;
-        top: 2px;
         a {
           color: #999;
         }
@@ -344,24 +343,26 @@ body *{
       }
       .collect:hover {
         background: url(../../images/index/hover.png) no-repeat;
-        background-position: -1px 1px;
+        background-position: 0px 2px;
         cursor: pointer;
       }
       .collect.ative {
         background: url(../../images/index/active.png) no-repeat;
-        background-position: -1px 1px;
+        background-position: 0px 2px;
         cursor: pointer;
       }
       .recommendedToday {
         font-size: 12px;
-        position: absolute;
-        right: -2px;
+        display: block;
+        float: right;
         color: #999;
-        top: 3px;
+        
       }
     }
   }
   .infoItem {
+    position: relative;
+
     a {
       margin:25px 20px 0px 20px;
       font-size: 16px;
@@ -371,9 +372,11 @@ body *{
       color: #333333;
       span {
         padding:0px 4px;
-        color: #6CACE7;
-        font-weight: bolder;
-        font-size: 16px;
+        color: #fff;
+        background: #6CACE7;
+        font-size: 12px;
+        font-weight: normal;
+        margin-right: 5px;
       }
     }
     a:hover{
@@ -410,13 +413,17 @@ body *{
       }
     }
     .infoTail {
-      margin:20px 20px 0px 20px;
-      position: relative;
+      position: absolute;
+      bottom: 10px;
+      width: 85%;
+      left: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #f5f5f5;
       .readed {
-        padding-left: 0px;
-        position: relative;
         color: #999;
         font-size: 12px;
+        display: block;
+        float: left;
         a {
           color: #999;
         }
@@ -424,10 +431,10 @@ body *{
       }
       .recommendedToday {
         font-size: 12px;
-        position: absolute;
-        right: 10px;
+        display: block;
+        float: right;
         color: #999;
-        top:3px;
+        
       }
     }
   }
@@ -538,7 +545,9 @@ body *{
     margin-top: 0px !important;
     border: none !important;
   }
-
+  .dialogContent-wrapper{
+    width:1019px;
+  }
   .dialogContentContainer,.dialogContent {
     width: 97%;
     height: 356px;
@@ -552,9 +561,9 @@ body *{
     {
       margin-top: 30px;margin-top: 30px;
       margin-bottom: 30px;
-      padding: 0px 1% 0px 1%;
+      padding: 0px 10px 0px 10px;
       float: left;
-      width: 24%;
+      width: 246px;
       height: 240px;
       vertical-align: top;
       border-right: 1px solid  #CCCCCC;
@@ -565,14 +574,13 @@ body *{
       {
         position: relative;
         vertical-align: middle;
-        overflow: auto;
         .inputContainer {
           margin-top: 10px;
           margin-left: 0px;
           width: 41%;
           vertical-align: middle;
           border: 1px solid #CCCCCC;
-          height: 35px;
+          height: 30px;
           background: #ffffff;
           color: #B6B6B6;
           overflow: hidden;
@@ -618,8 +626,8 @@ body *{
     {
       float: left;
       margin-top: 30px;
-      padding: 0px 1% 0px 1%;
-      width: 43%;
+      padding: 0px 10px 0px 10px;
+      width: 440px;
       height: 240px;
       border-right: 1px solid  #CCCCCC;
       h1{
@@ -676,8 +684,8 @@ body *{
     .caryear
     {
       margin-top: 30px;
-      padding: 0px 1% 0px 1%;
-      width: 24%;
+      padding: 0px 10px 0px 10px;
+      width: 245px;
       height: 230px;
       float: left;
       h1{
@@ -688,29 +696,86 @@ body *{
       {
         position: relative;
         vertical-align: middle;
-        overflow: auto;
         .selectContainer
         {
-          margin-top: 10px;
-          margin-left: 0px;
-          width: 41%;
+          border: 1px solid #d9d9d9;
+          height: 30px;
+          background: #fff;
+          line-height: 25px;
+          width: 39%;
+          position: relative;
           float: left;
+          margin-top: 10px;
+          padding-left:5% ;
           vertical-align: middle;
-          border: 1px solid #CCCCCC;
-          height: 35px;
-          background: #ffffff;
-          color: #B6B6B6;
-          overflow: hidden;
-          input
+          .sc-select-hd
           {
-            border: none;
-            height: 35px;
-            padding-left:5% ;
+            text-align: left;
+            position: relative;
+            font-size: 12px;
+            color: #aaa;
+            font-weight: normal;
+            height: auto;
+            cursor: default;
+            .sc-select-content
+            {
+              padding-left: 10px;
+              padding-top: 8px;
+              line-height: 20px;
+              color: #333;
+            }
+            .sc-select-action
+            {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              right: 0;
+              top: 0;
+              background: #fff;
+              cursor: pointer;
+              font-size: 0px;
+              line-height: 0px;
+              _right: -1px;
+
+              i{
+                margin-left: 0px;
+                margin-top: 0px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                font-size: 0px;
+                line-height: 0px;
+                background: url(../../images/common/select-action-trigger.png) no-repeat center center;
+                background-position: 6px 12px;
+              }
+            }
+          }
+          .sc-select-list
+          {
+            width: 100%;
+            border: 1px solid #d9d9d9;
+            left: -1px;
+            position: absolute;
+            overflow: auto;
+            z-index: 10000;
+            overflow-x: hidden;
+            background: #fff;
+            top:30px !important;
+            .option{
+              display: block;
+              float: none;
+              padding-left: 15px;
+              font-size: 12px;
+              line-height: 24px;
+              color: #333;
+            }
+
           }
         }
+
         >a{
           float: left;
-          width: 10%;
+          width: 5%;
           margin-left:2%;
           margin-right:2%;
           overflow: hidden;
@@ -722,7 +787,7 @@ body *{
 
       }
     }
-    >.submit
+    .submit
     {
       border-top: 1px solid  #CCCCCC;
       clear: both;
@@ -804,6 +869,7 @@ body *{
       margin-right: 30px;
       .submit {
         float:right;
+        height:30px;
         padding: 7px 20px;
         background-color: #FF5719;
         cursor: pointer;
@@ -820,11 +886,11 @@ body *{
       height: 252px;
       .brand {
         float: left;
-        height: 216px;
+        height: 410px;
         overflow: auto;
-        width: 45%;
-        margin: 20px;
+        width:158px;
         bottom: 0px;
+        position: relative;
         border-right: 1px solid #CCCCCC;
         .hot {
           height: 45px;
@@ -852,31 +918,53 @@ body *{
             color:#ffffff;
           }
         }
+        .brandNav{
+          position: absolute;
+          left:20px;
+          top:20px;
+          width:30px;
+          height:410px;
+          a{
+            display: block;
+            line-height: 14px;
+            font-size: 12px;
+            color:#FF5719;
+            cursor: pointer;
+          }
+          a.active{
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
         .brandList {
           clear: both;
-          margin-top: 10px;
-          margin-right: 30px;
+          margin-left:50px;
+          height:410px;
+          overflow: auto;
+          padding-top:10px;
+          margin-right: 10px;
           li {
             clear: both;
             margin: 5px 0px ;
             overflow: auto;
             span {
-              color: #FF5719;
+              color: #000;
+              font-weight: bold;
               line-height: 22px;
-              float: left;
               margin-right: 15px;
-              margin-left: 10px;
               font-size: 13px;
-              font-weight: bolder;
+              font-weight: bold;
+              display: block;
+              line-height: 30px;
             }
             a {
-              float: left;
-              margin: 0px 3px;
               padding: 0px 2px;
               line-height: 22px;
               cursor: pointer;
-              font-size: 13px;
-              color:#939393;
+              font-size: 12px;
+              color:#666;
+               display: block;
+               line-height: 25px;
             }
             a.active
             {
@@ -890,10 +978,10 @@ body *{
       .chexi {
         float: left;
         height: 100%;
-        width: 45%;
+        width: 830px;
         .chexiContent
         {
-          margin: 20px 10px;
+          margin: 20px 20px;
           margin-right: 20px;
           .chexiTitle
           {

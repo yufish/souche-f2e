@@ -12,8 +12,8 @@ define(function()
 
             var pointerElement = $(".config_content #"+pointerTo);
             var top = pointerElement.offset().top;
-            $(".config_nav li span").removeClass("active");
-            $(this).find("span").addClass("active");
+            //$(".config_nav li span").removeClass("active");
+            //$(this).find("span").addClass("active");
 
             $('html,body').animate(
                 {

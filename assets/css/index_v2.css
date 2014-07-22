@@ -706,12 +706,11 @@ body * {
   width: 100%;
   position: relative;
   overflow: auto;
+  min-height: 402px;
 }
 #carsContent .myAdviser,
 #carsContent .hotNewCars {
   position: relative;
-  overflow: auto;
-  min-height: 382px;
 }
 #carsContent .carsItem > img {
   width: 100%;
@@ -780,7 +779,7 @@ body * {
   width: 45%;
   vertical-align: middle;
   border: 1px solid #CCCCCC;
-  height: 35px;
+  height: 30px;
   background: #ffffff;
   color: #B6B6B6;
 }
@@ -1119,7 +1118,6 @@ body * {
 #carsContent .dialogContent .carBudget .dataContainer {
   position: relative;
   vertical-align: middle;
-  overflow: auto;
 }
 #carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer,
 #carsContent .dialogContent .carBudget .dataContainer .inputContainer {
@@ -1128,7 +1126,7 @@ body * {
   width: 41%;
   vertical-align: middle;
   border: 1px solid #CCCCCC;
-  height: 35px;
+  height: 30px;
   background: #ffffff;
   color: #B6B6B6;
   overflow: hidden;
@@ -1250,31 +1248,87 @@ body * {
 #carsContent .dialogContent .caryear .dataContainer {
   position: relative;
   vertical-align: middle;
-  overflow: auto;
 }
 #carsContent .dialogContentContainer .caryear .dataContainer .selectContainer,
 #carsContent .dialogContent .caryear .dataContainer .selectContainer {
-  margin-top: 10px;
-  margin-left: 0px;
-  width: 41%;
+  border: 1px solid #d9d9d9;
+  height: 30px;
+  background: #fff;
+  line-height: 25px;
+  width: 39%;
+  position: relative;
   float: left;
-  vertical-align: middle;
-  border: 1px solid #CCCCCC;
-  height: 35px;
-  background: #ffffff;
-  color: #B6B6B6;
-  overflow: hidden;
-}
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer input,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer input {
-  border: none;
-  height: 35px;
+  margin-top: 10px;
   padding-left: 5% ;
+  vertical-align: middle;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd {
+  text-align: left;
+  position: relative;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: normal;
+  height: auto;
+  cursor: default;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content {
+  padding-left: 10px;
+  padding-top: 8px;
+  line-height: 20px;
+  color: #333;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0px;
+  line-height: 0px;
+  _right: -1px;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i {
+  margin-left: 0px;
+  margin-top: 0px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  font-size: 0px;
+  line-height: 0px;
+  background: url(../../images/common/select-action-trigger.png) no-repeat center center;
+  background-position: 6px 12px;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  left: -1px;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+  top: 30px !important;
+}
+#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list .option,
+#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list .option {
+  display: block;
+  float: none;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #333;
 }
 #carsContent .dialogContentContainer .caryear .dataContainer > a,
 #carsContent .dialogContent .caryear .dataContainer > a {
   float: left;
-  width: 10%;
+  width: 5%;
   margin-left: 2%;
   margin-right: 2%;
   overflow: hidden;
@@ -1283,16 +1337,16 @@ body * {
   font-size: 13px;
   text-align: center;
 }
-#carsContent .dialogContentContainer > .submit,
-#carsContent .dialogContent > .submit {
+#carsContent .dialogContentContainer  .submit,
+#carsContent .dialogContent  .submit {
   border-top: 1px solid  #CCCCCC;
   clear: both;
   height: 60px;
   margin-top: 10px;
   position: relative;
 }
-#carsContent .dialogContentContainer > .submit span,
-#carsContent .dialogContent > .submit span {
+#carsContent .dialogContentContainer  .submit span,
+#carsContent .dialogContent  .submit span {
   margin-top: 7px;
   position: absolute;
   color: #ffffff;
