@@ -129,6 +129,8 @@ html
                 navItems.on(touch_start,function(){
                     //var self = $(this);
                     var index = +$(this).attr('data-nav-index');
+                    var curIndex = underline.attr('data-active-index');
+                    if(curIndex == index)return;
                     move(index-1,index);
                     //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                     //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
