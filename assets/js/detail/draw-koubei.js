@@ -126,8 +126,8 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     })
                 } else {
                     label.css({
-                        left: outlinePoints[i].x + 140,
-                        top: outlinePoints[i].y + 30
+                        left: outlinePoints[i].x + 40,
+                        top: outlinePoints[i].y + 40
                     }).addClass("float-left-item")
                 }
                 if (i == 0) {
@@ -147,12 +147,12 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     })
                 } else if (i == 5) {
                     label.css({
-                        left: outlinePoints[i].x + 180,
+                        left: outlinePoints[i].x + 40,
                         top: outlinePoints[i].y + 0
                     })
                 } else if (i == 8) {
                     label.css({
-                        left: outlinePoints[i].x + 140,
+                        left: outlinePoints[i].x + 40,
                         top: outlinePoints[i].y + 60
                     })
                 }

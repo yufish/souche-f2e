@@ -18,7 +18,8 @@ define(function() {
                     var data = _data.data;
                     if (data && data.items && data.items.length) {
                         var priceData = data.items[0];
-
+                        config.maxPrice = config.maxPrice * 1;
+                        config.minPrice = config.minPrice * 1;
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
                         var maxPrice = (priceData.price_guide).toFixed(1) * 1;
