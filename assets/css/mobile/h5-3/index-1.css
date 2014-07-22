@@ -23,11 +23,20 @@ header{
 }
 
 #tab-nav-bar{
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+#tab-cover{
+    margin-top: 30px;
 }
 #tab-container{
     -webkit-transition:-webkit-transform 0.4s linear;
     transition:transform 0.4s linear;
+}
+
+.tab-panel{
+    float: left;
 }
 .nav-item{
     float: left;
