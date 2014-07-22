@@ -745,6 +745,16 @@ body {
 }
 #content .wrapper #newProduct .item .itemTail .contrast-waring {
   right: -30px !important;
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
 }
 #content .wrapper #newProductList {
   float: left;
@@ -796,6 +806,16 @@ body {
 }
 #content .wrapper #newProductList li .itemInfo .opteration .contrast-waring {
   right: -20px !important;
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
 }
 #content .wrapper #newProductList li .itemInfo .detail {
   color: #8E8E8E;
@@ -845,6 +865,16 @@ body {
 }
 #content .wrapper #newProductList li .itemInfo .carConstrast .contrast-waring {
   right: -30px !important;
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
 }
 #content .wrapper #newProductList li .itemPrice {
   display: inline-block;
@@ -931,6 +961,7 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   height: 39px;
+  cursor: pointer;
 }
 #content .wrapper #newProductList .noCarsList li .price {
   font-size: 14px;
