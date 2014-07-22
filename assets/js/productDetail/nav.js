@@ -27,33 +27,33 @@ define(function()
 
         var cloneElement ;
 
-        $(window).scroll(function () {
-            var winTop = $(window).scrollTop();
-            var height = $("#productDetailInfo").height();
+        // $(window).scroll(function () {
+        //     var winTop = $(window).scrollTop();
+        //     var height = $("#productDetailInfo").height();
 
-            if (winTop > navTabTop && winTop < (navTabTop + height)) {
-                if(!cloneElement) {
-                    cloneElement = $("#productDetailInfo .nav").clone();
-                    cloneElement.css({
-                        position: "fixed",
-                        top: 0,
-                        width: "100%",
-                        zIndex: 1000
-                    });
+        //     if (winTop > navTabTop && winTop < (navTabTop + height)) {
+        //         if(!cloneElement) {
+        //             cloneElement = $("#productDetailInfo .nav").clone();
+        //             cloneElement.css({
+        //                 position: "fixed",
+        //                 top: 0,
+        //                 width: "100%",
+        //                 zIndex: 1000
+        //             });
 
-                    $("#productDetailInfo").append(cloneElement);
-                }
-            } else {
-                /*$("#productDetailInfo .nav").css({
-                    position: "relative",
-                    top:0
-                });*/
-                if(cloneElement) {
-                    cloneElement.remove();
-                    cloneElement = undefined;
-                }
-            }
-        });
+        //             $("#productDetailInfo").append(cloneElement);
+        //         }
+        //     } else {
+        //         /*$("#productDetailInfo .nav").css({
+        //             position: "relative",
+        //             top:0
+        //         });*/
+        //         if(cloneElement) {
+        //             cloneElement.remove();
+        //             cloneElement = undefined;
+        //         }
+        //     }
+        // });
     }
 
     navControl.init = init;

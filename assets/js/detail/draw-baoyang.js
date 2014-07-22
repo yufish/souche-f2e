@@ -1,6 +1,6 @@
 define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
     var svg;
-    var chartHeight = 300;
+    var chartHeight = 350;
     var min = 0;
     var max = 0;
     var data;
@@ -40,9 +40,9 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             }).on("mousemove", function(e) {
                 $(".baoyang .price-point").css({
                     left: i * 45 + 75,
-                    top: -20
+                    top: -80
                 })
-                $(".baoyang .price-point .price-value").html(price)
+                $(".baoyang .price-point .price-value").html(price + "元")
                 var items = data.distanceData[i].items;
                 $(".baoyang-project").addClass("baoyang-project-disabled");
                 items.forEach(function(item) {
@@ -51,7 +51,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             });
         },
         drawChart: function() {
-            svg = SVG("baoyang_chart").size(1028, 350);
+            svg = SVG("baoyang_chart").size(1228, 380);
             var maxL = feiyongs.length;
             if (maxL >= 21) {
                 maxL = 21;
@@ -74,24 +74,41 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                     textColor = "#999";
                 }
                 this.drawColumn(i, feiyongs[i])
+
                 svg.plain((i + 1) * 0.5 + "万").attr({
                     x: i * 45 + 6 + 30,
-                    y: 320
+                    y: 370
                 }).font({
                     size: 12
                 }).fill(textColor);
             }
+            svg.plain("里程:公里").attr({
+                x: 998,
+                y: 371
+            }).font({
+                size: 12
+            }).fill("#999999");
+            svg.plain("价格:元").attr({
+                x: 10,
+                y: 10
+            }).font({
+                size: 12
+            }).fill("#999999");
             $(".baoyang .price-point").css({
                 left: nowIndex * 45 + 75,
                 top: -20
             })
-            $(".baoyang .price-point .price-value").html(feiyongs[nowIndex])
+            $(".baoyang .price-point .price-value").html(feiyongs[nowIndex] + "元")
             var items = data.distanceData[nowIndex].items;
             $(".baoyang-project").addClass("baoyang-project-disabled");
             items.forEach(function(item) {
                 $($(".baoyang-project").get(kv[item])).removeClass("baoyang-project-disabled");
             })
-            svg.polyline('0,301 988,301').stroke({
+            svg.polyline('0,351 988,351').stroke({
+                color: "#63b162",
+                width: 3
+            })
+            svg.polyline('1.5,0 1.5,351').stroke({
                 color: "#63b162",
                 width: 3
             })
