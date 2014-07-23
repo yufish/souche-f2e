@@ -138,16 +138,13 @@ html
                 function createTouchHandler(){
                     var touch={}
                     return function(e){
-
                         var touches = e.touches;
+                        if(!touches||touches.length!=1)return;
                         var type = e.type;
                         if(type == 'touchstart') {
-                            
                             touch.x1 = touches[0].pageX;
                         }else if(type=='touchmove'){
                             touch.x2 =touches[0].pageX;
-                        }else{
-                            
                             var distance = touch.x1-touch.x2;
                             if(distance>60){
                                 var index = +underline.attr('data-active-index');
@@ -160,8 +157,8 @@ html
                                 if(index==1) return;
                                 var moveIndex = index-2;
                                 move(moveIndex,index-1);
-                                //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
-                                //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
+                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
+                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
                             }
                         }
 
@@ -170,6 +167,6 @@ html
                 var touchHandler = createTouchHandler();
                 tabCtn.on('touchmove',touchHandler)
                     .on('touchstart',touchHandler)
-                    .on('touchend',touchHandler)
-                    .on('touchcancel',touchHandler);
+                    //.on('touchend',touchHandler)
+                    //.on('touchcancel',touchHandler);
             }()
