@@ -1,5 +1,5 @@
 var scripts = [
-    "test.js"
+    "./test.js"
 ];
 
 
