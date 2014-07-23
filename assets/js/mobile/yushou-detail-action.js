@@ -115,6 +115,9 @@ var Action = (function () {
                 $.ajax({
                     url: $('#fav_submit').attr("href"),
                     dataType: "json",
+                    data: {
+                        platform : 'PLATFORM_H5'
+                    },
                     success: function (data) {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
