@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "phantom": "^0.6.5"
+    "phantom": "^0.6.5",
+    "queuedo": "^0.9.8"
   }
 }

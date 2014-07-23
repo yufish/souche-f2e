@@ -5,12 +5,10 @@ html
         <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
         <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
-
-
-
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.touchevent.js"></script>
     body
         header
             span#hd-company 大搜车
@@ -89,92 +87,62 @@ html
                                 .other-info 2.00万公里 2012年上牌
 
         script.
-            window.onerror  =function(e){
-                alert(e)
+            var touch_start = 'click';
+            if('ontouchstart' in window){
+                touch_start = 'touchstart';
             }
-            !function(){
-                var touch_start = 'click';
-                if('ontouchstart' in window){
-                    touch_start = 'touchstart';
-                }
-                var transition='webkitTransition',
-                    transform='webkitTransform',
-                    transition_end = 'webkitTransitionEnd';
-                if(typeof document.body.style.transform==='string'){
-                    transition = 'transition';
-                    transform = 'transform';
-                    transition_end='transitionend'
-                }
+            var transition='webkitTransition',
+                transform='webkitTransform',
+                transition_end = 'webkitTransitionEnd';
+            if(typeof document.body.style.transform==='string'){
+                transition = 'transition';
+                transform = 'transform';
+                transition_end='transitionend'
+            }
+            //variable cache and some init;
+            var tabCover = $('#tab-cover'),
+                tabCtn = $('#tab-container');
+            var tabPanels = tabCtn.find('.tab-panel'),
+                navItems = $('#tab-nav-bar .nav-item');
+            var underline = $('#nav-bar-underline')
+            var widthOfPanel = tabCover.width();
+            var numOfPanels = tabPanels.length;
+            tabCover.css('overflow','hidden');
+            tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
+            tabPanels.css({width:widthOfPanel});
+            function move(moveIndex){
+                var activeIndex = moveIndex+1;
+                isMoving = true;
+                tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+            }
 
-                //variable cache and some init;
-                var  tabCover = $('#tab-cover'),
-                     tabCtn = $('#tab-container');
-                var tabPanels = tabCtn.find('.tab-panel'),
-                    navItems = $('#tab-nav-bar .nav-item');
-                var underline = $('#nav-bar-underline')
-                var widthOfPanel = tabCover.width();
-                var numOfPanels = tabPanels.length;
-                tabCover.css('overflow','hidden');
-                tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
-                tabPanels.css({width:widthOfPanel});
+            //bughack:一些浏览器中，第一个transition:transfrom 时，会留下残影，主动触发一次（但是没有动画效果）
+            move(0);
+            var isMoving = false;
+            navItems.on(touch_start,function(){
+                //var self = $(this);
+                if(isMoving)return;
+                var index = +$(this).attr('data-nav-index');
+                var curIndex = underline.attr('data-active-index');
+                if(curIndex == index)return;
+                move(index-1,index);
+                //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
+                //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
+            })
 
-                function move(moveIndex,activeIndex){
-                    tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
-                    underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
-                }
-
-                move(0,1);
-
-                navItems.on(touch_start,function(){
-                    //var self = $(this);
-                    var index = +$(this).attr('data-nav-index');
-                    var curIndex = underline.attr('data-active-index');
-                    if(curIndex == index)return;
-                    move(index-1,index);
-                    //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
-                    //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
-                })
-
-                function createTouchHandler(){
-                    var touch={},
-                        isMoving =false;
-                    return function(e){
-                        var touches = e.touches;
-                        if(!touches||touches.length!=1)return;
-                        //var type = e.type;
-                        touch.x1 = touches[0].pageX;
-                        isMoving = true;
-                        this.addEventListener("touchmove",onTouchmove,false);
-                        e.stopPropagation();
-                    }
-                    function onTouchmove(e){
-                        if(isMoving){
-                            touch.x2 = e.touches[0].pageX;
-                            var distance = touch.x1-touch.x2;
-                            if(distance>60){
-                                var index = +underline.attr('data-active-index');
-                                if(index==numOfPanels) return;
-                                move(index,index+1);
-                                isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
-                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
-                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
-                            }else if(distance<-60){
-                                var index = +underline.attr('data-active-index');
-                                if(index==1) return;
-                                var moveIndex = index-2;
-                                move(moveIndex,index-1);
-                                isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
-                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
-                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
-                            }
-                        }
-                        e.stopPropagation();
-                    }
-                }
-                var touchHandler = createTouchHandler();
-                tabCtn.on('touchstart',touchHandler)
-                    //.on('touchend',touchHandler)
-                    //.on('touchcancel',touchHandler);
-            }()
+            $('#tab-container').on('swipeLeft',function(){
+                if(isMoving) return;
+                var index = +underline.attr('data-active-index');
+                if(index==numOfPanels) return;
+                move(index);
+            }).on('swipeRight',function(){
+                if(isMoving) return;
+                var index = +underline.attr('data-active-index');
+                if(index==1) return;
+                var moveIndex = index-2;
+                move(moveIndex);
+            });
+            document.getElementById('tab-container').addEventListener(transition_end,function(){
+                isMoving =false;
+            },false);
