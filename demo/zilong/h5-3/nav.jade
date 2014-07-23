@@ -5,12 +5,10 @@ html
         <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
         <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
-
-
-
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
         header
             span#hd-company 大搜车
@@ -26,10 +24,10 @@ html
             .nav-item(data-nav-index=1) 热门车型
             .nav-item(data-nav-index=2) 随便逛逛
             .nav-item(data-nav-index=3) 我要找车
-            .underline
+            #nav-bar-underline(data-active-index=1)
 
         section#tab-cover
-            .tab-container.clearfix
+            #tab-container.clearfix
                 .tab-panel(data-panel-index=1)
                     #pan-1-title 定制购车需求，我们每天为你
                         span(style='color:red') 推荐好车
@@ -41,6 +39,17 @@ html
                                 .car-price  5.76万
                                 .other-info 2.00万公里 2012年上牌
 
+                            .car-card
+                                img(src='http://res1.souche.com/files/carpicture/4ED9DEF6503A0D5B4C92DC495AE19980_690x460.jpg_240x10000.jpg')
+                                .car-intro 丰田 雅力士 2010款 E-1.6-AT...
+                                .car-price  5.76万
+                                .other-info 2.00万公里 2012年上牌
+                        .card-row.clearfix
+                            .car-card
+                                img(src='http://res1.souche.com/files/carpicture/4ED9DEF6503A0D5B4C92DC495AE19980_690x460.jpg_240x10000.jpg')
+                                .car-intro 丰田 雅力士 2010款 E-1.6-AT...
+                                .car-price  5.76万
+                                .other-info 2.00万公里 2012年上牌
                             .car-card
                                 img(src='http://res1.souche.com/files/carpicture/4ED9DEF6503A0D5B4C92DC495AE19980_690x460.jpg_240x10000.jpg')
                                 .car-intro 丰田 雅力士 2010款 E-1.6-AT...
@@ -60,7 +69,7 @@ html
                             .rht
                                 推荐理由
 
-                .tab-panel(data-panel-index=1)
+                .tab-panel(data-panel-index=3)
                     #pan-1-title 定制购车需求，我们每天为你
                         span(style='color:red') 推荐好车
                     #pan-1-content
@@ -79,44 +88,53 @@ html
 
         script.
             var touch_start = 'click';
-            if('touchstart' in window){
+            if('ontouchstart' in window){
                 touch_start = 'touchstart';
             }
-            var transition = 'transition',
-                transform='transform';
-            if(typeof document.body.style.webkitTransition==='string'){
-                transition = 'webkitTransition';
-                transform = 'webkitTransform';
+            var transition='webkitTransition',
+                transform='webkitTransform',
+                transition_end = 'webkitTransitionEnd';
+            if(typeof document.body.style.transform==='string'){
+                transition = 'transition';
+                transform = 'transform';
+                transition_end='transitionend'
             }
-            /*else if(typeof document.body.style.MozTransition==='string'){
-                transition = 'MozTransition';
-            transform = 'MozTransform'
-            }*/
+                      //variable cache and some init;
+            var tabCover = $('#tab-cover'),
+                tabCtn = $('#tab-container');
+            var tabPanels = tabCtn.find('.tab-panel'),
+                navItems = $('#tab-nav-bar .nav-item');
+            var underline = $('#nav-bar-underline')
+            var widthOfPanel = tabCover.width();
+            var numOfPanels = tabPanels.length;
+            tabCover.css('overflow','hidden');
+            tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
+            tabPanels.css({width:widthOfPanel});
+            function move(moveIndex){
+                var activeIndex = moveIndex+1;
+                tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+            }
 
-            function TabLayout($tabNavBar,$tabCover,options){
-                //this.tabNavBar = $tabNavBar;
-                this.navItems = $tabNavBar.children('.nav-item');
-                this.tabCover = $tabCover;
-                this.tabCtn = $tabCover.children('.tab-container');
-                this.tabPanels = this.tabCtn.children('.tab-panel');
-                this.numOfPanels = this.tabPanels.length;
-                //this.options = {};
-                //$.extend(this.options,defaultOptions,options);
-                this._init();
-            }
-            TabLayout.prototype = {
-                _init:function(){
-                    this.tabCover.css('overflow','hidden');
-                    var widthOfPanel = this.tabCover.width();
-                    //this.tabCtn.css(transition,transform +' 0.6s linear');
-                    this.tabCtn.css({width:this.numOfPanels*widthOfPanel+'px'});
-                    this.tabPanels.css({width:widthOfPanel,float:'left'});
-                    var that = this;
-                    this.navItems.on(touch_start,function(){
-                        var self = $(this);
-                        var index = +self.attr('data-nav-index');
-                        that.tabCtn.css(transform,'translateX(-'+(index-1)*widthOfPanel+'px)');
-                    })
-                }
-            }
-            var layout = new TabLayout($('#tab-nav-bar'),$('#tab-cover'));
+            //bughack:一些浏览器中，第一个transition:transfrom 时，会留下残影，主动触发一次（但是没有动画效果）
+            move(0);
+
+            navItems.on(touch_start,function(){
+                //var self = $(this);
+                var index = +$(this).attr('data-nav-index');
+                var curIndex = underline.attr('data-active-index');
+                if(curIndex == index)return;
+                move(index-1,index);
+                //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
+                //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
+            })
+            $('#tab-container').on('swipeLeft',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==numOfPanels) return;
+                move(index);
+            }).on('swipeRight',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==1) return;
+                var moveIndex = index-2;
+                move(moveIndex);
+            })
