@@ -10,7 +10,7 @@ module.exports = {
         // 如果成功就callback();
 
         //可能需要更新carId
-        var url='http://www.souche.com/pages/choosecarpage/choose-car-detail.html?carId=L0qeo87';
+        var url = 'http://www.souche.com/pages/choosecarpage/choose-car-detail.html?carId=L0qeo87';
         phantom.create(function(ph) {
             ph.createPage(function(page) {
                 page.open(url, function(status) {
@@ -26,6 +26,7 @@ module.exports = {
                             var p = page.evaluate(function() {
                                 return $("#yuyue-popup").hasClass("hidden");
                             });
+                            console.log(p)
                             if (!p) {
                                 callback()
                             } else {
