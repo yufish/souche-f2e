@@ -112,6 +112,7 @@ html
             tabPanels.css({width:widthOfPanel});
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
+                isMoving = true;
                 tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
@@ -128,13 +129,18 @@ html
                 //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                 //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
             })
+            var isMoving = false;
             $('#tab-container').on('swipeLeft',function(){
+                if(isMoving) return;
                 var index = +underline.attr('data-active-index');
                 if(index==numOfPanels) return;
                 move(index);
             }).on('swipeRight',function(){
+                if(isMoving) return;
                 var index = +underline.attr('data-active-index');
                 if(index==1) return;
                 var moveIndex = index-2;
                 move(moveIndex);
+            }).on(transition_end,function(){
+                isMoving =false;
             })
