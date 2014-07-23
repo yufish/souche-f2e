@@ -397,7 +397,8 @@ function filter(BrandMgr, addListener) {
                         data: {
                             brands: brand,
                             minPrice: minP,
-                            maxPrice: maxP
+                            maxPrice: maxP,
+                            pfrom:'FILTER'
                         },
                         success: function() {
                             goToCustom();
