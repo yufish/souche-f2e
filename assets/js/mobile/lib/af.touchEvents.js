@@ -98,8 +98,8 @@
                 }, 250);
             }
         }).bind("touchcancel", function() {
-            if(touch.el && $.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-                touch.el.removeClass("pressed");
+            //if(touch.el && $.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
+                //touch.el.removeClass("pressed");
             touch = {};
             clearTimeout(longTapTimer);
         });

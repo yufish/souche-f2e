@@ -30,8 +30,8 @@ header{
     margin-top: 30px;
 }
 #tab-container{
-    -webkit-transition:-webkit-transform 0.4s linear;
-    transition:transform 0.4s linear;
+    -webkit-transition:-webkit-transform 0.3s linear;
+    transition:transform 0.3s linear;
 }
 
 .tab-panel{

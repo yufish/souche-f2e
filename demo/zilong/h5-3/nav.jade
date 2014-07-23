@@ -110,10 +110,14 @@ html
             tabCover.css('overflow','hidden');
             tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
             tabPanels.css({width:widthOfPanel});
-            function move(moveIndex,activeIndex){
-               tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
-               underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+            function move(moveIndex){
+                var activeIndex = moveIndex+1;
+                tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
+
+            //bughack:一些浏览器中，第一个transition:transfrom 时，会留下残影，主动触发一次（但是没有动画效果）
+            move(0);
 
             navItems.on(touch_start,function(){
                 //var self = $(this);
@@ -127,10 +131,10 @@ html
             $('#tab-container').on('swipeLeft',function(){
                 var index = +underline.attr('data-active-index');
                 if(index==numOfPanels) return;
-                move(index,index+1);
+                move(index);
             }).on('swipeRight',function(){
                 var index = +underline.attr('data-active-index');
                 if(index==1) return;
                 var moveIndex = index-2;
-                move(moveIndex,index-1);
+                move(moveIndex);
             })
