@@ -46,6 +46,17 @@ html
                                 .car-intro 丰田 雅力士 2010款 E-1.6-AT...
                                 .car-price  5.76万
                                 .other-info 2.00万公里 2012年上牌
+                        .card-row.clearfix
+                            .car-card
+                                img(src='http://res1.souche.com/files/carpicture/4ED9DEF6503A0D5B4C92DC495AE19980_690x460.jpg_240x10000.jpg')
+                                .car-intro 丰田 雅力士 2010款 E-1.6-AT...
+                                .car-price  5.76万
+                                .other-info 2.00万公里 2012年上牌
+                            .car-card
+                                img(src='http://res1.souche.com/files/carpicture/4ED9DEF6503A0D5B4C92DC495AE19980_690x460.jpg_240x10000.jpg')
+                                .car-intro 丰田 雅力士 2010款 E-1.6-AT...
+                                .car-price  5.76万
+                                .other-info 2.00万公里 2012年上牌
 
                 .tab-panel(data-panel-index=2)
                     #pan-2-content
@@ -60,7 +71,7 @@ html
                             .rht
                                 推荐理由
 
-                .tab-panel(data-panel-index=1)
+                .tab-panel(data-panel-index=3)
                     #pan-1-title 定制购车需求，我们每天为你
                         span(style='color:red') 推荐好车
                     #pan-1-content
@@ -78,20 +89,24 @@ html
                                 .other-info 2.00万公里 2012年上牌
 
         script.
+            window.onerror  =function(e){
+                alert(e)
+            }
             !function(){
                 var touch_start = 'click';
                 if('ontouchstart' in window){
                     touch_start = 'touchstart';
                 }
-                var transition_end = 'webkitTransitionEnd',
-                    transition='webkitTransition',
-                    transform='webkitTransform';
+                var transition='webkitTransition',
+                    transform='webkitTransform',
+                    transition_end = 'webkitTransitionEnd';
                 if(typeof document.body.style.transform==='string'){
                     transition = 'transition';
                     transform = 'transform';
                     transition_end='transitionend'
                 }
 
+                //variable cache and some init;
                 var  tabCover = $('#tab-cover'),
                      tabCtn = $('#tab-container');
                 var tabPanels = tabCtn.find('.tab-panel'),
@@ -100,35 +115,66 @@ html
                 var widthOfPanel = tabCover.width();
                 var numOfPanels = tabPanels.length;
                 tabCover.css('overflow','hidden');
-                //tabCtn.css(transition,transform +' 0.4s linear')
                 tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
-                tabPanels.css({width:widthOfPanel,float:'left'});
+                tabPanels.css({width:widthOfPanel});
+
+                function move(moveIndex,activeIndex){
+                    tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                    underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+                }
+
+                move(0,1);
+
                 navItems.on(touch_start,function(){
                     //var self = $(this);
                     var index = +$(this).attr('data-nav-index');
-                    tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
-                    underline.css({left:(index-1)*100/numOfPanels+'%'})
-                    underline.attr('data-active-index',index);
+                    var curIndex = underline.attr('data-active-index');
+                    if(curIndex == index)return;
+                    move(index-1,index);
+                    //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
+                    //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
                 })
 
                 function createTouchHandler(){
-                    var startPosX,distanceX;
+                    var touch={},
+                        isMoving =false;
                     return function(e){
                         var touches = e.touches;
-                        var type = e.type;
-                        if(type == 'touchstart') {
-                            startPosX = touches[0].pageX;
-                            return;
+                        if(!touches||touches.length!=1)return;
+                        //var type = e.type;
+                        touch.x1 = touches[0].pageX;
+                        isMoving = true;
+                        this.addEventListener("touchmove",onTouchmove,false);
+                        e.stopPropagation();
+                    }
+                    function onTouchmove(e){
+                        if(isMoving){
+                            touch.x2 = e.touches[0].pageX;
+                            var distance = touch.x1-touch.x2;
+                            if(distance>60){
+                                var index = +underline.attr('data-active-index');
+                                if(index==numOfPanels) return;
+                                move(index,index+1);
+                                isMoving=false;
+                                this.removeEventListener('touchmove',onTouchmove);
+                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
+                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
+                            }else if(distance<-60){
+                                var index = +underline.attr('data-active-index');
+                                if(index==1) return;
+                                var moveIndex = index-2;
+                                move(moveIndex,index-1);
+                                isMoving=false;
+                                this.removeEventListener('touchmove',onTouchmove);
+                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
+                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
+                            }
                         }
-                        if(type='touchmove'){
-                            distanceX = touches[0].pageX - startPosX;
-                            var self = $(this);
-                            self.css(transform,'translate3d('+distanceX+'px,0,0)');
-                            e.preventDefault();
-                        }
+                        e.stopPropagation();
                     }
                 }
                 var touchHandler = createTouchHandler();
-                tabCtn.on('touchmove',touchHandler).
-                    on('touchstart',touchHandler);
+                tabCtn.on('touchstart',touchHandler)
+                    //.on('touchend',touchHandler)
+                    //.on('touchcancel',touchHandler);
             }()
