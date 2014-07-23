@@ -45,9 +45,12 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 items.forEach(function(item) {
                     $($(".baoyang-project").get(kv[item])).removeClass("hidden");
                 })
+                var top = chartHeight - chartHeight * (price / (max - min)) - $(".baoyang-main .price-tag").height() - 24 + 200;
+                if (top < 20)
+                    top = 20;
                 $(".baoyang .price-point").css({
                     left: i * 45 + 75 - 50,
-                    top: chartHeight - chartHeight * (price / (max - min)) - $(".baoyang-main .price-tag").height() - 22
+                    top: top
                 })
 
             });
@@ -96,16 +99,25 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             }).font({
                 size: 12
             }).fill("#999999");
-            $(".baoyang .price-point").css({
-                left: nowIndex * 45 + 75,
-                top: -20
+            $(window).on("nav_change", function(e, d) {
+                if (d == "onsale_baoyang") {
+                    $(".baoyang .price-point .price-value").html(feiyongs[nowIndex] + "元")
+                    var items = data.distanceData[nowIndex].items;
+                    $(".baoyang-project").addClass("hidden");
+                    items.forEach(function(item) {
+                        $($(".baoyang-project").get(kv[item])).removeClass("hidden");
+                    })
+                    var top = chartHeight - chartHeight * (feiyongs[0] / (max - min)) - $(".baoyang-main .price-tag").height() - 24 + 200;
+                    if (top < 20)
+                        top = 20;
+                    $(".baoyang .price-point").css({
+                        left: 15,
+                        top: top
+                    })
+                }
             })
-            $(".baoyang .price-point .price-value").html(feiyongs[nowIndex] + "元")
-            var items = data.distanceData[nowIndex].items;
-            $(".baoyang-project").addClass("hidden");
-            items.forEach(function(item) {
-                $($(".baoyang-project").get(kv[item])).removeClass("hidden");
-            })
+
+
             svg.polyline('0,351 988,351').stroke({
                 color: "#63b162",
                 width: 3

@@ -57,16 +57,18 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     self.redraw(item.seriesCode);
                 })
             }
-            data.topPosReview.forEach(function(review, i) {
-                if (review.indexOf("�") != -1) {
-                    data.topPosReview = data.topPosReview.splice(i, 1)
+            for (var i = 0; i < data.topPosReview.length; i++) {
+                if (data.topPosReview[i].indexOf("�") != -1) {
+                    data.topPosReview.splice(i, 1)
+                    i--
                 }
-            })
-            data.topNegReview.forEach(function(review, i) {
-                if (review.indexOf("�") != -1) {
-                    data.topNegReview = data.topNegReview.splice(i, 1)
+            }
+            for (var i = 0; i < data.topNegReview.length; i++) {
+                if (data.topNegReview[i].indexOf("�") != -1) {
+                    data.topNegReview.splice(i, 1)
+                    i--
                 }
-            })
+            }
             $(".advantage-left .advantage-content").html(data.topPosReview.join("；"))
             $(".advantage-right .advantage-content").html(data.topNegReview.join("；"))
 
