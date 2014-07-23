@@ -143,6 +143,7 @@ html
                         var touches = e.touches;
                         if(!touches||touches.length!=1)return;
                         //var type = e.type;
+                        e.preventDefault();
                         if(e.type=='touchstart'){
                             touch.x1 = touches[0].pageX;
                             touch.y1 = touches[0].pageY;
