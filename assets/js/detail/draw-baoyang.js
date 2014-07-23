@@ -38,16 +38,18 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             ).fill({
                 color: fillColor
             }).on("mousemove", function(e) {
-                $(".baoyang .price-point").css({
-                    left: i * 45 + 75,
-                    top: -80
-                })
+
                 $(".baoyang .price-point .price-value").html(price + "元")
                 var items = data.distanceData[i].items;
-                $(".baoyang-project").addClass("baoyang-project-disabled");
+                $(".baoyang-project").addClass("hidden");
                 items.forEach(function(item) {
-                    $($(".baoyang-project").get(kv[item])).removeClass("baoyang-project-disabled");
+                    $($(".baoyang-project").get(kv[item])).removeClass("hidden");
                 })
+                $(".baoyang .price-point").css({
+                    left: i * 45 + 75 - 50,
+                    top: chartHeight - chartHeight * (price / (max - min)) - $(".baoyang-main .price-tag").height() - 22
+                })
+
             });
         },
         drawChart: function() {
@@ -100,9 +102,9 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             })
             $(".baoyang .price-point .price-value").html(feiyongs[nowIndex] + "元")
             var items = data.distanceData[nowIndex].items;
-            $(".baoyang-project").addClass("baoyang-project-disabled");
+            $(".baoyang-project").addClass("hidden");
             items.forEach(function(item) {
-                $($(".baoyang-project").get(kv[item])).removeClass("baoyang-project-disabled");
+                $($(".baoyang-project").get(kv[item])).removeClass("hidden");
             })
             svg.polyline('0,351 988,351').stroke({
                 color: "#63b162",
