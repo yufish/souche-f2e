@@ -66,6 +66,8 @@
                 e = e.originalEvent;
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
+            if(touch.x2 && Math.abs(touch.x1 - touch.x2) > 10)
+                e.preventDefault()
             clearTimeout(longTapTimer);
         }).bind("touchend", function(e) {
             if(e.originalEvent)
