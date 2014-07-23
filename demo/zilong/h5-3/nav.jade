@@ -135,10 +135,10 @@ html
                     //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
                 })
 
-                function createTouchHandler(){
+                //function createTouchHandler(){
                     var touch={}
                         //isMoving =false;
-                    return function(e){
+                    function touchHandler(e){
                         e.stopPropagation();
                         var touches = e.touches;
                         if(!touches||touches.length!=1)return;
@@ -209,8 +209,8 @@ html
                         //}
                         e.stopPropagation();
                     }
-                }
-                var touchHandler = createTouchHandler();
+                //}
+                //var touchHandler = createTouchHandler();
                 tabCtn.on('touchstart',touchHandler)
                       //.on('touchmove',touchHandler)
                     //.on('touchend',touchHandler)
