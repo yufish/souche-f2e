@@ -136,51 +136,82 @@ html
                 })
 
                 function createTouchHandler(){
-                    var touch={},
-                        isMoving =false;
+                    var touch={}
+                        //isMoving =false;
                     return function(e){
+                        e.stopPropagation();
                         var touches = e.touches;
                         if(!touches||touches.length!=1)return;
                         //var type = e.type;
-                        touch.x1 = touches[0].pageX;
-                        touch.y1 = touches[0].pageY;
-                        isMoving = true;
-                        this.addEventListener("touchmove",onTouchmove,false);
-                        e.stopPropagation();
-                    }
-                    function onTouchmove(e){
-                        if(isMoving){
+                        if(e.type=='touchstart'){
+                            touch.x1 = touches[0].pageX;
+                            touch.y1 = touches[0].pageY;
+                            //isMoving = true;
+                            this.addEventListener("touchmove",onTouchmove,false);
+                        }else if(e.type=='touchmove'){
                             touch.x2 = e.touches[0].pageX;
                             touch.y2 = e.touches[0].pageY;
                             var distance = touch.x1-touch.x2;
-                            var dy = touch.y1-touch.y2;
-                            if(Math.abs(distance)<10&& Math.abs(dy)<10){
-                                return;
-                            }
-                            if(distance>60){
+                            var abs_dy = Math.abs(touch.y1-touch.y2);
+                            var abs_dx = Math.abs(distance);
+                            if(abs_dy<10&& abs_dx<10)return;
+                            if(abs_dx<abs_dy*3)return;
+                            e.preventDefault();
+                            if(distance>40){
                                 var index = +underline.attr('data-active-index');
                                 if(index==numOfPanels) return;
                                 move(index,index+1);
-                                isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
+                                //isMoving=false;
+                                //this.removeEventListener('touchmove',onTouchmove);
                                 //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
                                 //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
-                            }else if(distance<-60){
+                            }else if(distance<-40){
                                 var index = +underline.attr('data-active-index');
                                 if(index==1) return;
                                 var moveIndex = index-2;
                                 move(moveIndex,index-1);
-                                isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
+                                //isMoving=false;
+                                //this.removeEventListener('touchmove',onTouchmove);
                                //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
                                //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
                             }
                         }
+                    }
+                    function onTouchmove(e){
+                        //if(isMoving){
+                            touch.x2 = e.touches[0].pageX;
+                            touch.y2 = e.touches[0].pageY;
+                            var distance = touch.x1-touch.x2;
+                            var abs_dy = Math.abs(touch.y1-touch.y2);
+                            var abs_dx = Math.abs(distance);
+                            if(abs_dy<10&& abs_dx<10)return;
+                            if(abs_dx<abs_dy*3)return;
+                            e.preventDefault();
+                            if(distance>40){
+                                var index = +underline.attr('data-active-index');
+                                if(index==numOfPanels) return;
+                                move(index,index+1);
+                                //isMoving=false;
+                                this.removeEventListener('touchmove',onTouchmove);
+                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
+                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
+                            }else if(distance<-40){
+                                var index = +underline.attr('data-active-index');
+                                if(index==1) return;
+                                var moveIndex = index-2;
+                                move(moveIndex,index-1);
+                                //isMoving=false;
+                                this.removeEventListener('touchmove',onTouchmove);
+                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
+                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
+                            }
+                        //}
                         e.stopPropagation();
                     }
                 }
                 var touchHandler = createTouchHandler();
                 tabCtn.on('touchstart',touchHandler)
+                      //.on('touchmove',touchHandler)
                     //.on('touchend',touchHandler)
                     //.on('touchcancel',touchHandler);
             }()
