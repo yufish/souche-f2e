@@ -8,8 +8,7 @@ html
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
-
-
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
         header
             span#hd-company 大搜车
@@ -88,131 +87,50 @@ html
                                 .other-info 2.00万公里 2012年上牌
 
         script.
-
-            window.onerror  =function(e){
-                alert(e)
+            var touch_start = 'click';
+            if('ontouchstart' in window){
+                touch_start = 'touchstart';
             }
-            !function(){
-                var touch_start = 'click';
-                if('ontouchstart' in window){
-                    touch_start = 'touchstart';
-                }
-                var transition='webkitTransition',
-                    transform='webkitTransform',
-                    transition_end = 'webkitTransitionEnd';
-                if(typeof document.body.style.transform==='string'){
-                    transition = 'transition';
-                    transform = 'transform';
-                    transition_end='transitionend'
-                }
+            var transition='webkitTransition',
+                transform='webkitTransform',
+                transition_end = 'webkitTransitionEnd';
+            if(typeof document.body.style.transform==='string'){
+                transition = 'transition';
+                transform = 'transform';
+                transition_end='transitionend'
+            }
+                      //variable cache and some init;
+            var tabCover = $('#tab-cover'),
+                tabCtn = $('#tab-container');
+            var tabPanels = tabCtn.find('.tab-panel'),
+                navItems = $('#tab-nav-bar .nav-item');
+            var underline = $('#nav-bar-underline')
+            var widthOfPanel = tabCover.width();
+            var numOfPanels = tabPanels.length;
+            tabCover.css('overflow','hidden');
+            tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
+            tabPanels.css({width:widthOfPanel});
+            function move(moveIndex,activeIndex){
+               tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+               underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+            }
 
-                //variable cache and some init;
-                var  tabCover = $('#tab-cover'),
-                     tabCtn = $('#tab-container');
-                var tabPanels = tabCtn.find('.tab-panel'),
-                    navItems = $('#tab-nav-bar .nav-item');
-                var underline = $('#nav-bar-underline')
-                var widthOfPanel = tabCover.width();
-                var numOfPanels = tabPanels.length;
-                tabCover.css('overflow','hidden');
-                tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
-                tabPanels.css({width:widthOfPanel});
-
-                function move(moveIndex,activeIndex){
-                    tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
-                    underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
-                }
-
-                move(0,1);
-
-                navItems.on(touch_start,function(){
-                    //var self = $(this);
-                    var index = +$(this).attr('data-nav-index');
-                    var curIndex = underline.attr('data-active-index');
-                    if(curIndex == index)return;
-                    move(index-1,index);
-                    //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
-                    //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
-                })
-
-                //function createTouchHandler(){
-                    var touch={}
-                        //isMoving =false;
-                    function touchHandler(e){
-                        e.stopPropagation();
-                        var touches = e.touches;
-                        if(!touches||touches.length!=1)return;
-                        //var type = e.type;
-                        e.preventDefault();
-                        if(e.type=='touchstart'){
-                            touch.x1 = touches[0].pageX;
-                            touch.y1 = touches[0].pageY;
-                            //isMoving = true;
-                            this.addEventListener("touchmove",onTouchmove,false);
-                        }else if(e.type=='touchmove'){
-                            touch.x2 = e.touches[0].pageX;
-                            touch.y2 = e.touches[0].pageY;
-                            var distance = touch.x1-touch.x2;
-                            var abs_dy = Math.abs(touch.y1-touch.y2);
-                            var abs_dx = Math.abs(distance);
-                            if(abs_dy<10&& abs_dx<10)return;
-                            if(abs_dx<abs_dy*3)return;
-                            e.preventDefault();
-                            if(distance>40){
-                                var index = +underline.attr('data-active-index');
-                                if(index==numOfPanels) return;
-                                move(index,index+1);
-                                //isMoving=false;
-                                //this.removeEventListener('touchmove',onTouchmove);
-                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
-                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
-                            }else if(distance<-40){
-                                var index = +underline.attr('data-active-index');
-                                if(index==1) return;
-                                var moveIndex = index-2;
-                                move(moveIndex,index-1);
-                                //isMoving=false;
-                                //this.removeEventListener('touchmove',onTouchmove);
-                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
-                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
-                            }
-                        }
-                    }
-                    function onTouchmove(e){
-                        //if(isMoving){
-                            touch.x2 = e.touches[0].pageX;
-                            touch.y2 = e.touches[0].pageY;
-                            var distance = touch.x1-touch.x2;
-                            var abs_dy = Math.abs(touch.y1-touch.y2);
-                            var abs_dx = Math.abs(distance);
-                            if(abs_dy<10&& abs_dx<10)return;
-                            if(abs_dx<abs_dy*3)return;
-                            e.preventDefault();
-                            if(distance>40){
-                                var index = +underline.attr('data-active-index');
-                                if(index==numOfPanels) return;
-                                move(index,index+1);
-                                //isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
-                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
-                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
-                            }else if(distance<-40){
-                                var index = +underline.attr('data-active-index');
-                                if(index==1) return;
-                                var moveIndex = index-2;
-                                move(moveIndex,index-1);
-                                //isMoving=false;
-                                this.removeEventListener('touchmove',onTouchmove);
-                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
-                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
-                            }
-                        //}
-                        e.stopPropagation();
-                    }
-                //}
-                //var touchHandler = createTouchHandler();
-                tabCtn.on('touchstart',touchHandler)
-                      //.on('touchmove',touchHandler)
-                    //.on('touchend',touchHandler)
-                    //.on('touchcancel',touchHandler);
-            }()
+            navItems.on(touch_start,function(){
+                //var self = $(this);
+                var index = +$(this).attr('data-nav-index');
+                var curIndex = underline.attr('data-active-index');
+                if(curIndex == index)return;
+                move(index-1,index);
+                //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
+                //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
+            })
+            $('#tab-container').on('swipeLeft',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==numOfPanels) return;
+                move(index,index+1);
+            }).on('swipeRight',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==1) return;
+                var moveIndex = index-2;
+                move(moveIndex,index-1);
+            })
