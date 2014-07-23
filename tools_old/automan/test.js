@@ -22,7 +22,16 @@ page.open('http://www.souche.com', function(status) {
             console.z(p);
             phantom.exit();
         }, 1000)
-
     }
-
 });
+
+module.exports = function() {
+    return {
+        run: function(callback) {
+            // 如果失败就callback(new Error("具体错误信息"))
+            // 如果成功就callback();
+
+
+        }
+    }
+}
