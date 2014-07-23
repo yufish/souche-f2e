@@ -499,7 +499,7 @@ Souche.PhoneRegister = function(phone, callback) {
     })
 };
 
-Souche.DelayAjax = (function() {
+Souche.AjaxManager = (function() {
     var manager = {};
 
     var urlList = {};
@@ -508,10 +508,11 @@ Souche.DelayAjax = (function() {
         urlList[this.url].deferred.isCallback = true;
     }
 
-    var add = function(option, callback, delay, trailing, aborted) {
+    var add = function(option, callback, pattern,predicate) {
         if (!option.url) {
             throw new Error("url underfind");
         }
+        //var in
 
         if (urlList[option.url]) {
             var lastTime = urlList[option.url].lastTime;
@@ -523,7 +524,7 @@ Souche.DelayAjax = (function() {
                 //callback();
             } else if (trailing) {
                 window.clearTimeout(urlList.handle);
-                urlList.handle = window.setTimeout(function() {
+                urlList.handle = window.setTimeout(function () {
                     urlList[option.url].lastTime = +new Date();
                     if (!urlList[option.url].deferred.isCallback && aborted) {
                         urlList[option.url].deferred.abort();
@@ -541,7 +542,16 @@ Souche.DelayAjax = (function() {
         }
     }
 
-    manager.addAjax = add;
+    //manager.addAjax = add;
+
+    manager.init = function() {
+        var fn = function () {
+        };
+        fn.propertype = add;
+        var result = new fn;
+        return result;
+    }
+
     return manager;
 }());
 

@@ -73,7 +73,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
             hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
         });
         ///
-
         ///开始选车 begin
         $(".operationItem .dataContainer .submit,.bindunLoginInfo .modify .submit").click(function() {
             var option = {
@@ -84,7 +83,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
             showDialogContent($("." + tabID).find(".dialogContent"), option);
         });
         ///
-
         /// 关闭选车 begin
         $(".dialogContent .submit span").click(function() {
             var option = {
@@ -109,7 +107,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
             });
         });
         ///
-
         ///打开添加兴趣车dialog
         $(".addCarinstrestItem").click(function() {
             var option = {
@@ -125,19 +122,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
         });
         ///
-
-        ///change tab
-        $("#carsNav li").click(function() {
-            $("#carsNav li").removeClass("active");
-            $(this).addClass("active");
-            var id = $(this).attr("id");
-            tabID = id;
-
-            $("#carsContent>div").addClass("hidden");
-            $("#carsContent").find("." + id).removeClass("hidden");
-        });
-        ///
-
         $(".addInstrestCar .addInstrestCarSubmit .submit ").click(function() {
             var option = {
                 vertical: true,
@@ -148,20 +132,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
             window.setTimeout(function() {
                 showDialogContent($("." + tabID).find(".dialogContent"), option);
             }, 500);
-        });
-
-        $(".carItem").mouseenter(function(event) {
-            event.stopPropagation();
-            var self = $(this);
-
-            var width = self.find(".carImg img").width();
-
-            self.find(".carImg img").stop(true).animate({
-                width: width + 12 + "px",
-                height: 194 + "px",
-                top: "-3px",
-                left: "-3px"
-            }, 250, function() {});
         });
 
         $(".carinstrestItem span").live("click", function() {
@@ -175,21 +145,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             });
         });
 
-        $(".carItem").mouseleave(function(event) {
-            event.stopPropagation();
-            var self = $(this);
-
-            var width = self.find(".carImg").width();
-            self.find(".carImg img").stop(true).animate({
-                width: width + 1 + "px",
-                height: 182 + "px",
-                top: "0px",
-                left: "0px"
-            }, 250, function() {});
-        });
-
         /////订阅
-
         require(["index/qiugouModel"], function(qiugouModel) {
             //alert(qiugouModel);
             qiugouModel.AddSubscribe("year", function() {
@@ -245,7 +201,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
             });
 
-
             qiugouModel.init(config);
         });
 
@@ -258,11 +213,12 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
         if (option.horizontal) {
             $element.css("overflow", "hidden").css("width", widthBegin);
-            fadeOut($element.find("div,a"), 0);
 
+            $element.fadeTo($element.find("div,a"),0);
             $element.removeClass("hidden");
             offsetMove($element, option, widthEnd, 500, function() {
                 // fadeIn($element.find("div,a"),300);
+                $element.fadeTo($element.find("div,a"),1);
                 $element.css("overflow", "");
             });
         } else {
@@ -281,55 +237,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             html += "<a>" + zimu[i] + "</a>"
         }
         $(".brandNav").html(html)
-        // $(".brandNav a").click(function() {
-        //     var word = $(this).html();
-        //     if ($(".brandList li[data-word='" + word + "']").length) {
-        //         $(".brandList").animate({
-        //             scrollTop: $(".brandList li[data-word='" + word + "']").attr("data-height")
-        //         })
-        //     }
-        //     $(".brandNav a").removeClass("active")
-        //     $(this).addClass("active")
 
-        // })
-        // LoadInfo.loadBrands(function(data) {
-        //     var html = "";
-        //     var nowHeight = 0;
-        //     data = brandSort(data.items);
-        //     for (var i in data) {
-        //         var b = data[i];
-        //         var name = i;
-        //         html += "<li data-word='" + name + "'><span>" + name + "</span>"
-        //         for (var n = 0; n < b.length; n++) {
-        //             var brand = b[n]
-        //             html += ('<a class="brand-item">' + brand.name + '</a>');
-        //         }
-        //         html += "</li>"
-        //         html = $(html);
-        //         html.attr("data-height", nowHeight)
-
-
-        //         $(".brandList ul").append(html)
-        //         nowHeight += html.height() + 10;
-        //     }
-
-        // })
-        // LoadInfo.loadSeries(brandCode, function(data) {
-        //     var html = "";
-
-        //     for (var i in data.codes) {
-        //         var b = data.codes[i];
-        //         var name = i;
-        //         html += "<div data-name='" + name + "' data-brandid='" + brandCode + "' class='clearfix word-container'><div class='brand-title'>" + name + "</div>"
-        //         for (var n = 0; n < b.length; n++) {
-        //             var series = b[n]
-        //             html += ('<a href="#" data-value="' + series.code + '" class="option"><input type="checkbox" class="hidden"/><span class="value">' + series.name + '</span></a>');
-        //         }
-        //         html += "</div>"
-
-        //     }
-        //     seriesSelect.addOptions(html)
-        // })
     }
 
     var hideInstrestContent = function($element, option) {
@@ -342,12 +250,13 @@ define(['souche/util/load-info'], function(LoadInfo) {
         var heightEnd = $element.height();
 
         if (option.horizontal) {
-            fadeOut($element.find("div,a"), 300);
-
+            //fadeOut($element.find("div,a"), 300);
+            $element.fadeTo($element.find("div,a"),0);
             window.setTimeout(function() {
                 offsetMove($element, option, widthBegin, 500, function() {
                     $element.addClass("hidden").css("width", widthEnd);
-                    fadeIn($element.find("div,a"), 300);
+                    //fadeIn($element.find("div,a"), 300);
+                    $element.fadeTo($element.find("div,a"),1);
                 });
             }, 500);
         } else if (option.vertical) {
@@ -377,33 +286,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
         }
     }
 
-    var fadeOut = function($element, time, callback) {
-
-        // $element.animate({
-        //         "-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)",
-        //         "opacity": "0",
-        //         "filter": "alpha(opacity=0)",
-        //         "-moz-opacity": "0"
-        //     }, time,
-        //     function() {
-        //         if (callback)
-        //             callback();
-        //     });
-    }
-
-    var fadeIn = function($element, time, callback) {
-        $element.animate({
-                "-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)",
-                "opacity": "1",
-                "filter": "alpha(opacity=100)",
-                "-moz-opacity": "1"
-            }, time,
-            function() {
-                if (callback)
-                    callback();
-            });
-    }
-    var brandSort = function(data) {
+    /*var brandSort = function(data) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         var obj = {}
         for (var i in data) {
@@ -417,7 +300,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
         }
 
         return obj;
-    }
+    }*/
+
     var init = function(_config) {
         config = _config;
         _bind();
