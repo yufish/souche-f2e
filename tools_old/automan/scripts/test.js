@@ -4,7 +4,8 @@ var stf = new STF("收藏的测试");
 
 module.exports = {
     run: function(callback) {
-        stf.open("http://www.souche.com")
+        stf
+            .open("http://www.souche.com")
             .run(function() {
                 $('.collect-box').click();
             })
