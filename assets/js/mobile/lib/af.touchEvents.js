@@ -15,6 +15,10 @@
 /* global af*/
 (function($) {
     "use strict";
+    var isAndroid = false;
+    if (navigator.userAgent.match(/Android/i)){
+        isAndroid =true;
+    }
     var touch = {}, touchTimeout;
 
     function parentIfText(node) {
@@ -66,8 +70,8 @@
                 e = e.originalEvent;
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
-            //if(touch.x2 && Math.abs(touch.x1 - touch.x2) > 10)
-                //e.preventDefault()
+            if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
+                e.preventDefault()
             clearTimeout(longTapTimer);
         }).bind("touchend", function(e) {
             if(e.originalEvent)
