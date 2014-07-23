@@ -18,6 +18,7 @@ module.exports = function() {
                 var result;
                 if (status !== 'success') {
                     console.log('Network error.');
+                    callback(new Error("点击收藏Network error."))
                 } else {
                     page.evaluate(function() {
                         $('.collect-box').click();
