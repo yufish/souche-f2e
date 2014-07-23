@@ -224,6 +224,8 @@ body {
   vertical-align: middle;
   height: 100%;
   text-align: left;
+  margin-left: 20px;
+  margin-top: -10px;
 }
 #content .wrapper #productInfo > div #imgInfo > img {
   display: inline-block;
@@ -231,7 +233,6 @@ body {
   *zoom: 1;
   *display: inline;
   _display: inline;
-  margin: 5% auto;
   vertical-align: middle;
 }
 #content .wrapper #productInfo > div #contentInfo {
@@ -245,9 +246,9 @@ body {
   margin-top: 10px;
 }
 #content .wrapper #productInfo > div #contentInfo .proName {
-  font-size: 22px;
+  font-size: 24px;
   vertical-align: middle;
-  padding: 5px 0px;
+  padding: 10px 0px 0px 0px;
   color: #333333;
 }
 #content .wrapper #productInfo > div #contentInfo .proPrice {
@@ -275,7 +276,7 @@ body {
 #content .wrapper #productInfo > div #contentInfo table td .contentItemInfo,
 #content .wrapper #productInfo > div #contentInfo table td .modelContentItemInfo {
   margin-right: 80px;
-  padding-top: 10px;
+  padding-top: 5px;
   color: #8C8C8C;
   font-size: 13px;
 }
@@ -291,7 +292,7 @@ body {
   color: #F25A00;
 }
 #content .wrapper #productInfo > div #contentInfo table td .modelContentItemInfo {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 #content .wrapper #productInfo > div #productChexiConfigure {
   display: inline-block;
@@ -612,7 +613,6 @@ body {
   height: 53px;
   font-size: 13px;
   border-bottom: 1px solid #e6e6e6;
-  padding-left: 15px;
 }
 #content .wrapper #allProduct #showMore {
   border: 1px solid #F3F3F3;
@@ -621,6 +621,7 @@ body {
   padding: 5px 8px;
   margin: 0px auto;
   cursor: pointer;
+  text-align: center;
 }
 #content .wrapper #allProduct #showMore:hover {
   background: #F3F3F3;
@@ -779,7 +780,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 10px;
-  border-bottom: 3px solid #B0B0B0;
+  border-bottom: 1px solid #e6e6e6;
   color: #333333;
 }
 #content .wrapper #newProductList li {
@@ -943,7 +944,7 @@ body {
 }
 #content .wrapper #newProductList .noCarsList {
   width: 680px;
-  height: 310px;
+  overflow: auto;
   background: #F5F5F5;
   padding: 70px 130px;
 }
@@ -1015,7 +1016,7 @@ body {
   font-size: 18px;
   display: block;
   padding-bottom: 12px;
-  border-bottom: 3px solid #B0B0B0;
+  border-bottom: 1px solid #e6e6e6;
   color: #575757;
 }
 #content .wrapper #productSilder #relationInfo li {
@@ -1032,7 +1033,7 @@ body {
   *display: inline;
   *zoom: 1;
   vertical-align: top;
-  padding: 5px 0px 0px 5px;
+  padding: 30px 0px 0px 5px;
   color: #595959 ;
 }
 #content .wrapper #productSilder #relationInfo li .relationContent .relationCar a {
@@ -1139,11 +1140,12 @@ body #fav-popup .fav-submit {
   background: #f9f9f9;
   border: 1px solid #ddd;
   margin: 30px 70px;
+  margin-bottom: 120px;
   position: relative;
 }
 .baoyang .baoyang-main .baoyang-projects {
-  width: 930px;
-  margin: 20px auto;
+  margin: 10px auto;
+  width: 120px;
 }
 .baoyang .baoyang-main .baoyang-projects .t {
   line-height: 30px;
@@ -1151,42 +1153,48 @@ body #fav-popup .fav-submit {
   color: #444;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project {
-  float: left;
   text-align: center;
   line-height: 30px;
   color: #444;
   margin-right: 15px;
+  display: block;
+  float: none;
+  width: 120px;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i {
-  width: 46px;
-  height: 44px;
+  width: 32px;
+  height: 35px;
   margin: 0 auto;
   background: url(../../images/detail/baoyang-icons.png) no-repeat;
   display: block;
+  float: left;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
   background-position-x: 0;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
-  background-position-x: -53px;
+  background-position-x: -37px;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
-  background-position-x: -106px;
+  background-position-x: -76px;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
-  background-position-x: -161px;
+  background-position-x: -102px;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
-  background-position-y: -52px;
+  background-position-y: -35px;
 }
 .baoyang .baoyang-main .baoyang-chart {
   margin-top: 80px;
 }
 .baoyang .baoyang-main .price-point {
-  width: 90px;
+  width: 180px;
   position: absolute;
   top: 240px;
-  left: 270px;
+  left: -1270px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 5px #999;
 }
 .baoyang .baoyang-main .price-tag {
   font-size: 12px;
@@ -1197,19 +1205,24 @@ body #fav-popup .fav-submit {
   color: #FC7000;
 }
 .baoyang .baoyang-main .new-tag {
-  border: 1px solid #60B25E;
+  border: none;
   color: #60B25E;
 }
 .baoyang .baoyang-main .guide-tag {
   border: 1px solid #5AB6A2;
   color: #5AB6A2;
 }
+.baoyang .baoyang-main .price-title {
+  font-size: 14px;
+  color: #666;
+  line-height: 40px;
+}
 .baoyang .baoyang-main .price-value {
   font-weight: bold;
   padding: 2px 5px;
-  font-size: 13px;
-  background: #63b162;
-  color: #fff;
+  font-size: 16px;
+  color: #f35b00;
+  background: none;
 }
 .baoyang .baoyang-main .tri {
   position: relative;

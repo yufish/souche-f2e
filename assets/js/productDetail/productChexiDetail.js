@@ -37,12 +37,14 @@ define(function()
             if($(this).hasClass("hasShow"))
             {
                 $("#allProduct table tr").eq(5).nextAll().addClass("hidden");
-                $(this).removeClass("hasShow")
+                $(this).removeClass("hasShow");
+                $(this).html("全部展开");
             }
             else
             {
                 $("#allProduct table tr").eq(5).nextAll().removeClass("hidden");
-                $(this).addClass("hasShow")
+                $(this).addClass("hasShow");
+                $(this).html("收起");
             }
         });
     };
