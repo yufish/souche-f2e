@@ -136,14 +136,16 @@ html
                 })
 
                 function createTouchHandler(){
-                    var touch={}
+                    var touch={},
+                        isMoving =false;
                     return function(e){
                         var touches = e.touches;
                         if(!touches||touches.length!=1)return;
-                        var type = e.type;
-                        if(type == 'touchstart') {
-                            touch.x1 = touches[0].pageX;
-                        }else if(type=='touchmove'){
+                        //var type = e.type;
+                        touch.x1 = touches[0].pageX;
+                        isMoving = true;
+                        this.addEventListener("touchmove",onTouchmove,false);
+                        if(type=='touchmove'){
                             touch.x2 =touches[0].pageX;
                             var distance = touch.x1-touch.x2;
                             if(distance>60){
@@ -163,10 +165,33 @@ html
                         }
 
                     }
+                    function onTouchmove(){
+                        if(isMoving){
+                            touch.x2 = e.touches[0].pageX;
+                            var distance = touch.x1-touch.x2;
+                            if(distance>60){
+                                var index = +underline.attr('data-active-index');
+                                if(index==numOfPanels) return;
+                                move(index,index+1);
+                                isMoving=false;
+		    	                this.removeEventListener('touchmove',onTouchmove);
+                                //tabCtn.css(transform,'translate3d(-'+(index)*widthOfPanel+'px,0,0)');
+                                //underline.css({left:(index)*100/numOfPanels+'%'}).attr('data-active-index',index+1);
+                            }else if(distance<-60){
+                                var index = +underline.attr('data-active-index');
+                                if(index==1) return;
+                                var moveIndex = index-2;
+                                move(moveIndex,index-1);
+                                isMoving=false;
+		    	                this.removeEventListener('touchmove',onTouchmove);
+                               //tabCtn.css(transform,'translate3d(-'+(toIndex)*widthOfPanel+'px,0,0)');
+                               //underline.css({left:(toIndex)*100/numOfPanels+'%'}).attr('data-active-index',index-1);
+                            }
+                        }
+                    }
                 }
                 var touchHandler = createTouchHandler();
-                tabCtn.on('touchmove',touchHandler)
-                    .on('touchstart',touchHandler)
+                tabCtn.on('touchstart',touchHandler)
                     //.on('touchend',touchHandler)
                     //.on('touchcancel',touchHandler);
             }()
