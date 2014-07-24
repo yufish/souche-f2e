@@ -127,6 +127,7 @@ html
                 var curIndex = underline.attr('data-active-index');
                 if(curIndex == index)return;
                 move(index-1,index);
+                setTimeout(function(){isMoving=false;},400)
                 //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                 //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
             })
@@ -142,7 +143,10 @@ html
                 if(index==1) return;
                 var moveIndex = index-2;
                 move(moveIndex);
-            });
-            document.getElementById('tab-container').addEventListener(transition_end,function(){
-                isMoving =false;
-            },false);
+            })
+//            .on(transition_end,function(){
+//                isMoving =false;
+//            });
+//            document.getElementById('tab-container').addEventListener(transition_end,function(){
+//                isMoving =false;
+//            },false);
