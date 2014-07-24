@@ -1,0 +1,16 @@
+header{
+    height: 44px;
+    line-height: 44px;
+    color:#fff;
+    background: #ff571a;
+}
+.logo{
+    width:81px;
+    height: 20px;
+    background: url(../../../images/mob/h5-3/logo.png) no-repeat center;
+    background-size: 100%;
+}
+.hd-logo{
+    float: left;
+    margin: 12px 17px 0 10px;
+}
