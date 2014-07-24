@@ -27,13 +27,12 @@ header{
     width: 100%;
 }
 #tab-cover{
-    margin-top: 30px;
+    overflow: hidden;
 }
 #tab-container{
     -webkit-transition:-webkit-transform 0.4s linear;
     transition:transform 0.4s linear;
 }
-
 .tab-panel{
     float: left;
 }
