@@ -1,31 +1,29 @@
 /**
  * Created by Administrator on 2014/7/1.
  */
-define(function()
-{
+define(function() {
     var navControl = {};
     var navTabTop = $("#productDetailInfo .nav").offset().top;
 
     var init = function() {
-        $("#productDetailInfo .nav li").live("click",function() {
+        $("#productDetailInfo .nav li").live("click", function() {
 
             var dataID = $(this).attr("data-id");
-            $("#productDetailInfo>div").addClass("hidden");
-            $("#productDetailInfo>div[data-id='" + dataID + "']").removeClass("hidden");
 
-            $("#productDetailInfo .nav [data-id='"+dataID+"']").addClass("active").siblings().removeClass("active");
+            $("#productDetailInfo .contents>div").addClass("hidden");
+            $("#productDetailInfo .contents>div[data-id='" + dataID + "']").removeClass("hidden");
+
+            $("#productDetailInfo .nav [data-id='" + dataID + "']").addClass("active").siblings().removeClass("active");
 
             if ($("#productDetailInfo .nav").css("position") === "fixed") {
-                $('html,body').animate(
-                    {
-                        scrollTop: navTabTop + "px"
-                    }
-                    , 1000);
+                $('html,body').animate({
+                    scrollTop: navTabTop + "px"
+                }, 1000);
             }
-
+            $(window).trigger("nav_change", dataID)
         });
 
-        var cloneElement ;
+        var cloneElement;
 
         // $(window).scroll(function () {
         //     var winTop = $(window).scrollTop();

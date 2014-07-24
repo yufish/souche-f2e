@@ -75,6 +75,7 @@ html推荐使用jade来编译，css推荐使用less来编译组织。打包和�
 
  * id名独一无二，禁止重复，多单词使用驼峰法命名（首单词首字母小写，其余单词首字母大写），如shopName
  * class名 多单词也使用驼峰法命名（首单词首字母小写，其余单词首字母大写），如shopName
+ * class多层连接用 横杠 - ，例如 header-search-input ;JS多层次连接用下划线
  * js引用的id钩子统一使用“J_”开头，后面每个单词首字母大写，如J_ShopName
  * js使用的class钩子，统一使用“j_”开头，后面每个单词首字母大写，如j_ShopName
 

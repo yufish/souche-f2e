@@ -13,8 +13,10 @@
  * swipeDown
  */
 /* global af*/
+//在原开源文件中，加了2处,用于解决android上的bug
 (function($) {
     "use strict";
+    //(1)
     var isAndroid = false;
     if (navigator.userAgent.match(/Android/i)){
         isAndroid =true;
@@ -59,27 +61,22 @@
                 touch.isDoubleTap = true;
             touch.last = now;
             longTapTimer = setTimeout(longTap, longTapDelay);
-
-//            if ($.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-//                touch.el.addClass("pressed");
-//            if (prevEl && $.ui.useAutoPressed && !prevEl.data("ignore-pressed") && prevEl[0] !== touch.el[0])
-//                prevEl.removeClass("pressed");
             prevEl = touch.el;
         }).bind("touchmove", function(e) {
             if(e.originalEvent)
                 e = e.originalEvent;
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
+            //(2)
             if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
                 e.preventDefault()
+
             clearTimeout(longTapTimer);
         }).bind("touchend", function(e) {
             if(e.originalEvent)
                 e=e.originalEvent;
             if (!touch.el)
                 return;
-//            if ($.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-//                touch.el.removeClass("pressed");
             if (touch.isDoubleTap) {
                 touch.el.trigger("doubleTap");
                 touch = {};
@@ -98,8 +95,6 @@
                 }, 250);
             }
         }).bind("touchcancel", function() {
-            //if(touch.el && $.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-                //touch.el.removeClass("pressed");
             touch = {};
             clearTimeout(longTapTimer);
         });
@@ -110,4 +105,4 @@
             return this.bind(m, callback);
         };
     });
-})(af);
+})($);

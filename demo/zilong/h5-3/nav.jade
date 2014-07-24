@@ -99,7 +99,7 @@ html
                 transform = 'transform';
                 transition_end='transitionend'
             }
-                      //variable cache and some init;
+            //variable cache and some init;
             var tabCover = $('#tab-cover'),
                 tabCtn = $('#tab-container');
             var tabPanels = tabCtn.find('.tab-panel'),
@@ -112,29 +112,42 @@ html
             tabPanels.css({width:widthOfPanel});
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
+                isMoving = true;
                 tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+                setTimeout(function(){isMoving=false;},400)
             }
 
-            //bughack:一些浏览器中，第一个transition:transfrom 时，会留下残影，主动触发一次（但是没有动画效果）
+            //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
             move(0);
-
+            var isMoving = false;
             navItems.on(touch_start,function(){
                 //var self = $(this);
+                if(isMoving)return;
                 var index = +$(this).attr('data-nav-index');
                 var curIndex = underline.attr('data-active-index');
                 if(curIndex == index)return;
                 move(index-1,index);
+
                 //tabCtn.css(transform,'translate3d(-'+(index-1)*widthOfPanel+'px,0,0)');
                 //underline.css({left:(index-1)*100/numOfPanels+'%'}).attr('data-active-index',index);
             })
+
             $('#tab-container').on('swipeLeft',function(){
+                if(isMoving) return;
                 var index = +underline.attr('data-active-index');
                 if(index==numOfPanels) return;
                 move(index);
             }).on('swipeRight',function(){
+                if(isMoving) return;
                 var index = +underline.attr('data-active-index');
                 if(index==1) return;
                 var moveIndex = index-2;
                 move(moveIndex);
             })
+//            .on(transition_end,function(){
+//                isMoving =false;
+//            });
+//            document.getElementById('tab-container').addEventListener(transition_end,function(){
+//                isMoving =false;
+//            },false);

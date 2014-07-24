@@ -13,6 +13,7 @@
         font-size: 18px;
         text-align: center;
         color:#444;
+        margin-top:50px;
         em{
             color:#fc5a34;
             font-weight: bold;
@@ -41,6 +42,8 @@
         border:none;
         margin: 30px 70px;
         margin-bottom:120px;
+        margin-top:0;
+        padding-top:120px;
         position: relative;
         .baoyang-projects{
             margin:10px auto;
@@ -52,31 +55,35 @@
             }
             .baoyang-project{
                 text-align: center;
-                line-height: 30px;
+                line-height: 25px;
+                margin-bottom:2px;
                 color:#444;
                 margin-right: 15px;
                 display: block;
                 float:none;
                 width:120px;
+                 text-align: left;
                 i{
-                    width:32px;
-                    height:35px;
+                    width:25px;
+                    height:25px;
                     margin:0 auto;
                     background: url(../../images/detail/baoyang-icons.png) no-repeat;
                     display: block;
                     float:left;
+                    margin-right:10px;
+
                 }
                 i.icon-1{
-                    background-position-x: 0;
+                    background: url(../../images/detail/baoyang_icon_1.png) no-repeat;
                 }
                 i.icon-2{
-                    background-position-x: -37px;
+                    background: url(../../images/detail/baoyang_icon_2.png) no-repeat;
                 }
-                .icon-3{
-                    background-position-x: -76px;
+                i.icon-3{
+                   background: url(../../images/detail/baoyang_icon_3.png) no-repeat;
                 }
                 i.icon-4{
-                    background-position-x: -102px;
+                    background: url(../../images/detail/baoyang_icon_4.png) no-repeat;
                 }
             }
             .baoyang-project-disabled{
@@ -95,7 +102,15 @@
             left:-1270px;
             background: #fff;
             border:1px solid #ddd;
-            box-shadow: 1px 1px 5px #999;
+            box-shadow: 1px 1px 10px #999;
+            .price-arrow{
+                position: absolute;
+                bottom:-16px;
+                left:5px;
+                width:33px;
+                height:16px;
+                background: url(../../images/detail/baoyang-pointer.png) no-repeat;
+            }
         }
          .price-tag{
                 font-size: 12px;

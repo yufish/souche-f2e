@@ -183,7 +183,8 @@ var List = function() {
                     $.ajax({
                         url: api.fav,
                         data: {
-                            carId: $node.attr("data-id")
+                            carId: $node.attr("data-id"),
+                            platform : 'PLATFORM_H5'
                         },
                         dataType: "json",
                         success: function() {
@@ -199,7 +200,8 @@ var List = function() {
                     $.ajax({
                         url: api.unfav,
                         data: {
-                            'carId': $node.attr("data-id")
+                            'carId': $node.attr("data-id"),
+                            platform : 'PLATFORM_H5'
                         },
                         dataType: "json",
                         success: function() {
