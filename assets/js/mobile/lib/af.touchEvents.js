@@ -101,4 +101,4 @@
             return this.bind(m, callback);
         };
     });
-})(af);
+})($);
