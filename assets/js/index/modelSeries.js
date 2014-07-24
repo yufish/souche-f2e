@@ -23,7 +23,7 @@ define(function() {
     }
 
     modelSeries.init = function() {
-        var brandUrl = contextPath + "/pages/dicAction/loadRootLevel.json?type=car-subdivision";
+        var brandUrl = config.brand_api;
 
         $.ajax({
             url: brandUrl,
@@ -51,7 +51,7 @@ define(function() {
     }
 
     modelSeries.GetSeries = function(brandCode, name) {
-        var seriesUrl = contextPath + "/pages/dicAction/loadRootLevelForCar.json?type=car-subdivision&code=" + brandCode;
+        var seriesUrl = config.series_api + brandCode;
         if (series[brandCode]) {
             this.SetSeries(brandCode, name, series[brandCode]);
         } else {

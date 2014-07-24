@@ -5,7 +5,6 @@ define(function() {
             var maxPrice = max;
             var minLength = 45;
             var maxLength = 520;
-            alert(rangePrice)
             $(".souche-price-text").html("￥" + rangePrice + "万")
             $(".souche-price-middle").html(middle)
             $(".souche-price-min").html(rangePrice)

@@ -14,11 +14,11 @@ define(function() {
         if (showNavs.length) {
             for (var i = 0; i < showNavs.length; i++) {
                 var nav = showNavs.get(i);
-                $("#productDetailInfo >div[data-id=" + $(nav).attr("data-id") + "]").addClass("hidden")
+                $("#productDetailInfo .contents>div[data-id=" + $(nav).attr("data-id") + "]").addClass("hidden")
             }
             showNavs.removeClass("active")
             $(showNavs.get(0)).addClass("active");
-            $("#productDetailInfo >div[data-id=" + $(showNavs.get(0)).attr("data-id") + "]").removeClass("hidden")
+            $("#productDetailInfo .contents>div[data-id=" + $(showNavs.get(0)).attr("data-id") + "]").removeClass("hidden")
         }
     }
     return {
@@ -64,8 +64,8 @@ define(function() {
                 success: function(_data) {
 
                     var data = _data.data;
-                    if (data && data.items && data.items.length) {
-                        var baoyangData = data.items[0];
+                    if (data) {
+                        var baoyangData = data;
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
                         var prices = {};

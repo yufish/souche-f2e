@@ -14,13 +14,24 @@ body
       top: -2px;
       span {
         font-size: 15px;
-        cursor: pointer;
+        cursor: text;
         line-height: 45px;
         color: #8C8C8C;
         padding: 0px 10px;
       }
+      a{
+        font-size: 15px;
+        cursor: cursor;
+        line-height: 45px;
+        color: #8C8C8C;
+        padding: 0px 10px;
+        span{
+          padding:0;
+        }
+      }
       .space {
         cursor: default;
+        padding:0;
       }
       .brandContainer {
         display: inline-block;
@@ -241,6 +252,8 @@ body
           vertical-align: middle;
           height: 100%;
           text-align: left;
+          margin-left: 20px;
+          margin-top: -10px;
           >img
           {
             display: inline-block;
@@ -248,11 +261,11 @@ body
             *zoom:1;
             *display:inline;
             _display:inline;
-            margin: 5% auto;
             vertical-align: middle;
           }
         }
         #contentInfo {
+          width: 800px;
           display: inline-block;
           _zoom: 1;
           *zoom: 1;
@@ -262,9 +275,9 @@ body
           vertical-align: top;
           margin-top: 10px;
           .proName {
-            font-size: 22px;
+            font-size: 24px;
             vertical-align: middle;
-            padding: 5px 0px;
+            padding: 10px 0px 0px 0px;
             color: #333333;
           }
           .proPrice {
@@ -292,8 +305,8 @@ body
             td{
               .contentItemInfo,.modelContentItemInfo
               {
-                margin-right: 80px;
-                padding-top: 10px;
+                margin-right: 35px;
+                padding-top: 5px;
                 color: #8C8C8C;
                 font-size: 13px;
                 span{
@@ -308,7 +321,7 @@ body
               }
               .modelContentItemInfo
               {
-                margin-right: 30px;
+                margin-right: 40px;
               }
             }
           }
@@ -363,7 +376,9 @@ body
       //height: 550px;
       overflow: hidden;
       margin-bottom: 20px;
-
+      .contents{
+        margin-bottom: 20px;
+      }
       .configure {
         border-left: 1px solid #e6e6e6;
         border-right: 1px solid #e6e6e6;
@@ -672,7 +687,6 @@ body
             height: 53px;
             font-size: 13px;
             border-bottom: 1px solid #e6e6e6;
-            padding-left: 15px;
           }
         }
       }
@@ -684,6 +698,7 @@ body
         padding: 5px 8px;
         margin: 0px auto;
         cursor: pointer;
+        text-align: center;
       }
       #showMore:hover
       {
@@ -859,7 +874,7 @@ body
         font-weight: bold;
         font-size: 20px;
         padding-bottom: 10px;
-        border-bottom: 3px solid #B0B0B0;
+        border-bottom: 1px solid #e6e6e6;
         color: #333333;
       }
       li{
@@ -1034,7 +1049,7 @@ body
       .noCarsList
       {
         width: 680px;
-        height: 310px;
+        overflow: auto;
         background: #F5F5F5;
         padding: 70px 130px;
         .noCarList_title{
@@ -1114,7 +1129,7 @@ body
             font-size: 18px;
             display: block;
             padding-bottom: 12px;
-            border-bottom: 3px solid #B0B0B0;
+            border-bottom: 1px solid #e6e6e6;
             color: #575757;
           }
           padding-bottom: 50px;
@@ -1132,14 +1147,13 @@ body
             *display: inline;
             *zoom: 1;
             vertical-align: top;
-            padding:5px 0px 0px 5px;
+            padding:30px 0px 0px 5px;
             color:#595959 ;
             .relationCar
             {
               a{
                 cursor: pointer;
                 color:#595959;
-                line-height: 60px;
               }
             }
 

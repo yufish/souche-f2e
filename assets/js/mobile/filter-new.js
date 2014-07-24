@@ -274,7 +274,7 @@ function filter(BrandMgr, addListener) {
 
             function hasResult(dataObj) {
                 $.ajax({
-                    url: contextPath + '/pages/mobile/listAction/queryCars.json?index=99999',
+                    url: contextPath + '/pages/mobile/listAction/queryCars.json?index=999999&tracktype=0',
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
@@ -397,7 +397,8 @@ function filter(BrandMgr, addListener) {
                         data: {
                             brands: brand,
                             minPrice: minP,
-                            maxPrice: maxP
+                            maxPrice: maxP,
+                            pfrom:'FILTER'
                         },
                         success: function() {
                             goToCustom();

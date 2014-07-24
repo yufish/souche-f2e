@@ -499,49 +499,71 @@ Souche.PhoneRegister = function(phone, callback) {
     })
 };
 
-Souche.DelayAjax = (function() {
+Souche.AjaxManager = (function() {
     var manager = {};
+    var instance={};
 
-    var urlList = {};
     var success = function() {
         var def = arguments[2];
         urlList[this.url].deferred.isCallback = true;
     }
 
-    var add = function(option, callback, delay, trailing, aborted) {
+    var final = function()
+    {
+
+    }
+
+    instance.add = function(option, callback) {
         if (!option.url) {
             throw new Error("url underfind");
         }
+        //var in
+        var identify = this.predicate.call(option);
 
-        if (urlList[option.url]) {
-            var lastTime = urlList[option.url].lastTime;
+        if (this.ajaxList[identify]) {
+            var lastTime = this.ajaxList[identify].lastTime;
             var currentTime = +new Date();
             if ((currentTime - lastTime) > delay) {
-                window.clearTimeout(urlList.handle);
-                urlList[option.url].lastTime = +new Date();
-                urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+                window.clearTimeout(urlList[identify].handle);
+                this.ajaxList[option.url].lastTime = +new Date();
+                this.ajaxList[option.url].deferred = $.ajax(option).done(success).then(callback);
                 //callback();
             } else if (trailing) {
-                window.clearTimeout(urlList.handle);
-                urlList.handle = window.setTimeout(function() {
-                    urlList[option.url].lastTime = +new Date();
-                    if (!urlList[option.url].deferred.isCallback && aborted) {
-                        urlList[option.url].deferred.abort();
+                window.clearTimeout(this.ajaxList.handle);
+                this.ajaxList.handle = window.setTimeout(function () {
+                    this.ajaxList[option.url].lastTime = +new Date();
+                    if (!this.ajaxList[option.url].deferred.isCallback && aborted) {
+                        this.ajaxList[option.url].deferred.abort();
                     }
-                    urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+                    this.ajaxList[option.url].deferred = $.ajax(option).done(success).then(callback);
                     //callback();
                 }, delay);
             }
         } else {
-            urlList.handle = undefined;
-            urlList[option.url] = urlList[option.url] || {};
-            urlList[option.url].lastTime = +new Date();
-            urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+            this.ajaxList.handle = undefined;
+            this.ajaxList[option.url] = urlList[option.url] || {};
+            this.ajaxList[option.url].lastTime = +new Date();
+            this.ajaxList[option.url].deferred = $.ajax(option).done(success).then(callback);
             //callback();
         }
     }
 
-    manager.addAjax = add;
+    var initManager = function(option) {
+        this.delay = option.delay;
+        this.aborted = option.aborted;
+        this.predicate = option.predicate || function () {
+            return this.url;
+        };
+        this.ajaxList = {};
+    }
+    //manager.addAjax = add;
+
+    manager.init = function() {
+        initManager.propertype.addAjax = add;
+        var result = new initManager;
+        return result;
+    }
+
     return manager;
 }());
 

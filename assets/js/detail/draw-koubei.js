@@ -57,18 +57,20 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     self.redraw(item.seriesCode);
                 })
             }
-            data.topPosReview.forEach(function(review, i) {
-                if (review.indexOf("�") != -1) {
-                    data.topPosReview = data.topPosReview.splice(i, 1)
+            for (var i = 0; i < data.topPosReview.length; i++) {
+                if (data.topPosReview[i].indexOf("�") != -1) {
+                    data.topPosReview.splice(i, 1)
+                    i--
                 }
-            })
-            data.topNegReview.forEach(function(review, i) {
-                if (review.indexOf("�") != -1) {
-                    data.topNegReview = data.topNegReview.splice(i, 1)
+            }
+            for (var i = 0; i < data.topNegReview.length; i++) {
+                if (data.topNegReview[i].indexOf("�") != -1) {
+                    data.topNegReview.splice(i, 1)
+                    i--
                 }
-            })
-            $(".advantage-left .advantage-content").html(data.topPosReview.join("；"))
-            $(".advantage-right .advantage-content").html(data.topNegReview.join("；"))
+            }
+            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
+            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
 
         },
         redraw: function() {
@@ -142,7 +144,7 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                 if (i == 0) {
                     label.css({
                         left: outlinePoints[i].x + 260,
-                        top: outlinePoints[i].y + 70
+                        top: outlinePoints[i].y + 80
                     })
                 } else if (i == 1) {
                     label.css({
@@ -151,18 +153,18 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     })
                 } else if (i == 4) {
                     label.css({
-                        left: outlinePoints[i].x + 350,
-                        top: outlinePoints[i].y + 0
+                        left: outlinePoints[i].x + 370,
+                        top: outlinePoints[i].y - 10
                     })
                 } else if (i == 5) {
                     label.css({
                         left: outlinePoints[i].x + 40,
-                        top: outlinePoints[i].y + 0
+                        top: outlinePoints[i].y - 10
                     })
                 } else if (i == 8) {
                     label.css({
                         left: outlinePoints[i].x + 40,
-                        top: outlinePoints[i].y + 60
+                        top: outlinePoints[i].y + 70
                     })
                 }
             }
