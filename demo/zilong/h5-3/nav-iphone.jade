@@ -9,7 +9,7 @@ html
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
         header
@@ -107,8 +107,8 @@ html
             tabPanels.css({width:widthOfPanel});
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
-                isMoving = true;
-                tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                //tabCtn.css(transform,'translate3d(-'+moveIndex*widthOfPanel+'px,0,0)');
+                tabCtn.animate({'margin-left':-moveIndex*widthOfPanel})
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
             //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
