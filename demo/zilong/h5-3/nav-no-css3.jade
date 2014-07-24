@@ -7,7 +7,7 @@ html
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
         header
@@ -107,19 +107,21 @@ html
             var underline = $('#nav-bar-underline')
             var widthOfPanel = tabCover.width();
             var numOfPanels = tabPanels.length;
+            tabCover.css('overflow','hidden');
             tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
             tabPanels.css({width:widthOfPanel});
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
-                // activate 3d hardware acceleration is possible
-                tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'px) translateZ(0)');
+                tabCtn.animate({'margin-left':-moveIndex*widthOfPanel})
+                //tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+')');
+                //tabCtn.css(transform,'translateZ(0)');// activate 3d hardware acceleration is possible
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
 
             //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
             move(0);
 
-            navItems.on('tap',function(){
+            navItems.on(touch_start,function(){
                 var index = +$(this).attr('data-nav-index');
                 var curIndex = underline.attr('data-active-index');
                 if(curIndex == index)return;

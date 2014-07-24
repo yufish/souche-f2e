@@ -39,6 +39,7 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
             }
+
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
@@ -69,8 +70,23 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     i--
                 }
             }
-            $(".advantage-left .advantage-content").html(data.topPosReview.join("；"))
-            $(".advantage-right .advantage-content").html(data.topNegReview.join("；"))
+            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
+            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
+            data.items.sort(function(i1, i2) {
+                return i1.rate < i2.rate
+            });
+            var t = 3;
+            var bestLabels = [];
+            $(".koubei-labels").html("")
+            for (var i = 0; i < t; i++) {
+                if (data.items[i].labels.length) {
+                    bestLabels.push(data.items[i].labels[0])
+                    $(".koubei-labels").append("<label>" + data.items[i].labels[0] + "</label>")
+                } else {
+                    t++;
+                    if (t > 8) t = 8;
+                }
+            }
 
         },
         redraw: function() {
