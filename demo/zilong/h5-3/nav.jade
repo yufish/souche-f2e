@@ -8,7 +8,7 @@ html
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/h5-3/index-1.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.touchevent.js"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
         header
             span#hd-company 大搜车
@@ -117,7 +117,7 @@ html
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
 
-            //bughack:一些浏览器中，第一个transition:transfrom 时，会留下残影，主动触发一次（但是没有动画效果）
+            //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
             move(0);
             var isMoving = false;
             navItems.on(touch_start,function(){
