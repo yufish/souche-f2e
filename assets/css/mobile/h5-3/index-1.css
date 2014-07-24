@@ -5,7 +5,16 @@ header{
     height: 45px;
     line-height: 45px;
     color:#fff;
-    background: #BCC4C7;
+    background: #ff571a;
+}
+#hd-city{
+    font-size: 0;
+}
+#hd-city select{
+    font-size: 12px;
+}
+header svg{
+    vertical-align: 3px;
 }
 #hd-other-feature{
     display: inline-block;

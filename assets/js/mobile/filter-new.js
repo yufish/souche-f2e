@@ -240,9 +240,9 @@ function filter(BrandMgr, addListener) {
                     }
                 }
                 if (findSelected) {
-                    html = '<option value="100000000">不限</option>' + html;
+                    html = '<option value="10000">不限</option>' + html;
                 } else {
-                    html = '<option selected="selected" value="100000000">不限</option>' + html;
+                    html = '<option selected="selected" value="10000">不限</option>' + html;
                 }
                 $highP.append(html)
             });

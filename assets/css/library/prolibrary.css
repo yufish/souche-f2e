@@ -15,13 +15,25 @@ body {
 }
 #content .wrapper #map span {
   font-size: 15px;
+  cursor: text;
+  line-height: 45px;
+  color: #8C8C8C;
+  padding: 0px 10px;
+}
+#content .wrapper #map a {
+  font-size: 15px;
   cursor: pointer;
   line-height: 45px;
   color: #8C8C8C;
   padding: 0px 10px;
 }
+#content .wrapper #map a span {
+  padding: 0;
+  cursor: pointer;
+}
 #content .wrapper #map .space {
   cursor: default;
+  padding: 0;
 }
 #content .wrapper #map .brandContainer {
   display: inline-block;
@@ -206,10 +218,9 @@ body {
   margin-left: 20px;
 }
 #content .wrapper #productInfo {
-  height: 180px;
+  height: 190px;
   margin: 0px 0px 25px 0px;
   border: 1px solid #e6e6e6;
-  padding: 20px 0px 5px 0px;
 }
 #content .wrapper #productInfo > div {
   height: 160px;
@@ -220,12 +231,11 @@ body {
   *zoom: 1;
   *display: inline;
   _display: inline;
-  width: 280px;
+  width: 270px;
   vertical-align: middle;
   height: 100%;
   text-align: left;
-  margin-left: 20px;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 #content .wrapper #productInfo > div #imgInfo > img {
   display: inline-block;
@@ -234,9 +244,10 @@ body {
   *display: inline;
   _display: inline;
   vertical-align: middle;
+  margin-left: 20px;
 }
 #content .wrapper #productInfo > div #contentInfo {
-  width: 800px;
+  width: 875px;
   display: inline-block;
   _zoom: 1;
   *zoom: 1;
@@ -244,7 +255,7 @@ body {
   _display: inline;
   height: 100%;
   vertical-align: top;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 #content .wrapper #productInfo > div #contentInfo .proName {
   font-size: 24px;
@@ -276,7 +287,6 @@ body {
 }
 #content .wrapper #productInfo > div #contentInfo table td .contentItemInfo,
 #content .wrapper #productInfo > div #contentInfo table td .modelContentItemInfo {
-  margin-right: 35px;
   padding-top: 5px;
   color: #8C8C8C;
   font-size: 13px;
@@ -291,9 +301,6 @@ body {
   font-size: 16px;
   font-weight: bold;
   color: #F25A00;
-}
-#content .wrapper #productInfo > div #contentInfo table td .modelContentItemInfo {
-  margin-right: 40px;
 }
 #content .wrapper #productInfo > div #productChexiConfigure {
   display: inline-block;
@@ -342,17 +349,21 @@ body {
   overflow: hidden;
   margin-bottom: 20px;
 }
+#content .wrapper #productDetailInfo .contents {
+  margin-bottom: 20px;
+}
 #content .wrapper #productDetailInfo .configure {
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+  padding: 10px 0px;
 }
 #content .wrapper #productDetailInfo .configure .config_nav {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   padding-left: 50px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 #content .wrapper #productDetailInfo .configure .config_nav ul li {
   font-size: 14px;
@@ -394,7 +405,7 @@ body {
   vertical-align: top;
 }
 #content .wrapper #productDetailInfo .configure .config_content table {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 #content .wrapper #productDetailInfo .configure .config_content table a {
   color: #000000;
@@ -418,8 +429,10 @@ body {
   width: 640px;
   margin-left: 30px;
 }
-#content .wrapper #productDetailInfo .configure .config_content table tbody div {
+#content .wrapper #productDetailInfo .configure .config_content table tbody tr {
   border-bottom: 1px solid #e6e6e6;
+}
+#content .wrapper #productDetailInfo .configure .config_content table tbody div {
   padding: 15px 0px;
 }
 #content .wrapper #productDetailInfo .configure .config_content table tbody div a {
@@ -573,7 +586,7 @@ body {
 }
 #content .wrapper #allProduct {
   position: relative;
-  padding: 0px 0px 60px 0px;
+  padding: 0px 0px 30px 0px;
 }
 #content .wrapper #allProduct table {
   width: 100%;
@@ -623,6 +636,7 @@ body {
   margin: 0px auto;
   cursor: pointer;
   text-align: center;
+  border-top: none;
 }
 #content .wrapper #allProduct #showMore:hover {
   background: #F3F3F3;
@@ -650,17 +664,18 @@ body {
 #content .wrapper #newProduct {
   float: left;
   width: 960px;
+  padding-top: 20px;
   overflow: auto;
 }
 #content .wrapper #newProduct > h1 {
   font-weight: bold;
   font-size: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #5A5A5A;
 }
 #content .wrapper #newProduct .item {
   width: 215px;
-  height: 300px;
+  height: 290px;
   float: left;
   border: 1px solid #e6e6e6;
   margin-right: 20px;
@@ -668,7 +683,10 @@ body {
 }
 #content .wrapper #newProduct .item .itemContent {
   border-bottom: 1px solid #e6e6e6;
-  height: 270px;
+  height: 240px;
+}
+#content .wrapper #newProduct .item .itemContent .itemPrice {
+  margin-top: 10px;
 }
 #content .wrapper #newProduct .item .itemContent .relationImg a {
   cursor: pointer;
@@ -719,7 +737,7 @@ body {
   position: relative;
   padding-top: 3px;
   background-color: #FFFFFF ;
-  height: 26px;
+  height: 40px;
 }
 #content .wrapper #newProduct .item .itemTail * {
   vertical-align: middle;
@@ -734,6 +752,7 @@ body {
   padding-left: 20px;
   vertical-align: middle;
   cursor: pointer;
+  margin-top: 10px;
 }
 #content .wrapper #newProduct .item .itemTail .carCollect span {
   color: #939393;
@@ -751,6 +770,7 @@ body {
   display: inline-block;
   *display: inline;
   *zoom: 1;
+  margin-top: 10px;
   cursor: pointer;
 }
 #content .wrapper #newProduct .item .itemTail .carConstrast span {
@@ -774,6 +794,7 @@ body {
   float: left;
   width: 940px;
   overflow: auto;
+  padding-top: 20px;
   padding-right: 20px;
   padding-bottom: 50px  ;
 }
@@ -987,6 +1008,7 @@ body {
 #content .wrapper #productSilder {
   float: left;
   width: 222px;
+  padding-top: 20px;
 }
 #content .wrapper #productSilder > .relationImg {
   padding-top: 45px;
@@ -1040,7 +1062,6 @@ body {
 #content .wrapper #productSilder #relationInfo li .relationContent .relationCar a {
   cursor: pointer;
   color: #595959;
-  line-height: 60px;
 }
 #content .wrapper #productSilder #relationInfo li .relationContent a.relationPrice {
   color: #ef5c1e;
@@ -1117,6 +1138,7 @@ body #fav-popup .fav-submit {
   font-size: 18px;
   text-align: center;
   color: #444;
+  margin-top: 50px;
 }
 .baoyang .baoyang-filter em {
   color: #fc5a34;
@@ -1143,6 +1165,8 @@ body #fav-popup .fav-submit {
   border: none;
   margin: 30px 70px;
   margin-bottom: 120px;
+  margin-top: 0;
+  padding-top: 120px;
   position: relative;
 }
 .baoyang .baoyang-main .baoyang-projects {
@@ -1156,32 +1180,35 @@ body #fav-popup .fav-submit {
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project {
   text-align: center;
-  line-height: 30px;
+  line-height: 25px;
+  margin-bottom: 2px;
   color: #444;
   margin-right: 15px;
   display: block;
   float: none;
   width: 120px;
+  text-align: left;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i {
-  width: 32px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   margin: 0 auto;
   background: url(../../images/detail/baoyang-icons.png) no-repeat;
   display: block;
   float: left;
+  margin-right: 10px;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
-  background-position-x: 0;
+  background: url(../../images/detail/baoyang_icon_1.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
-  background-position-x: -37px;
+  background: url(../../images/detail/baoyang_icon_2.png) no-repeat;
 }
-.baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
-  background-position-x: -76px;
+.baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-3 {
+  background: url(../../images/detail/baoyang_icon_3.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
-  background-position-x: -102px;
+  background: url(../../images/detail/baoyang_icon_4.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
   background-position-y: -35px;
@@ -1196,7 +1223,15 @@ body #fav-popup .fav-submit {
   left: -1270px;
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 1px 1px 5px #999;
+  box-shadow: 1px 1px 10px #999;
+}
+.baoyang .baoyang-main .price-point .price-arrow {
+  position: absolute;
+  bottom: -16px;
+  left: 5px;
+  width: 33px;
+  height: 16px;
+  background: url(../../images/detail/baoyang-pointer.png) no-repeat;
 }
 .baoyang .baoyang-main .price-tag {
   font-size: 12px;
@@ -1282,6 +1317,7 @@ body #fav-popup .fav-submit {
   line-height: 30px;
   padding: 0 10px;
   display: inline-block;
+  margin-right: 10px;
 }
 .net-koubei .all-score {
   width: 100px;
@@ -1383,8 +1419,11 @@ body #fav-popup .fav-submit {
 .net-koubei .koubei-advantage {
   background: #f9f9f9;
   border: 1px solid #eee;
-  margin: 0 80px;
+  margin: 20px 80px;
   padding: 20px;
+}
+.net-koubei .koubei-advantage li {
+  margin-top: 10px;
 }
 .net-koubei .koubei-advantage .advantage-title {
   font-size: 18px;

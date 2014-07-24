@@ -1175,11 +1175,12 @@ width: 400px;
     vertical-align: middle;
     text-align:center;
     font-size: 15px;
+    margin-left: 20px;
 }
 
 .productLibInfo .productLibImg img
 {
-    margin-left: 30px;
+
     width:  150px;
     border: none;
     cursor: pointer;
@@ -1190,11 +1191,11 @@ width: 400px;
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    width: 580px;
+    width: 530px;
     height: 80px;
     vertical-align: middle;
     margin-top:25px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .productLibInfo .productLibInfoContent .productLibConfig
