@@ -43,7 +43,7 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
-            $(".all-score em").html(data.allScore.toFixed(2))
+            $(".all-score em").html((data.allScore * 10).toFixed(2))
             $(".series-tab").html("")
             var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
             $(".series-tab").append(tab)

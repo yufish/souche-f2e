@@ -37,8 +37,10 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 chartHeight - chartHeight * (price / (max - min))
             ).fill({
                 color: fillColor
-            }).on("mousemove", function(e) {
-
+            }).on("mouseover", function(e) {
+                this.fill({
+                    color: "#63b162"
+                })
                 $(".baoyang .price-point .price-value").html(price + "元")
                 var items = data.distanceData[i].items;
                 $(".baoyang-project").addClass("hidden");
@@ -52,8 +54,11 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                     left: i * 45 + 75 - 50,
                     top: top
                 })
-
-            });
+            }).on("mouseleave", function(e) {
+                this.fill({
+                    color: fillColor
+                })
+            })
         },
         drawChart: function() {
             svg = SVG("baoyang_chart").size(1228, 380);
