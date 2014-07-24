@@ -13,8 +13,10 @@
  * swipeDown
  */
 /* global af*/
+//在原开源文件中，加了2处,用于解决android上的bug
 (function($) {
     "use strict";
+    //(1)
     var isAndroid = false;
     if (navigator.userAgent.match(/Android/i)){
         isAndroid =true;
@@ -65,8 +67,10 @@
                 e = e.originalEvent;
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
+            //(2)
             if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
                 e.preventDefault()
+
             clearTimeout(longTapTimer);
         }).bind("touchend", function(e) {
             if(e.originalEvent)
