@@ -6,7 +6,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
     var qiugou = {};
     var lock = true;
     var _bind = function() {
-        var tabID = config.tabID || "hotNewCars";
+        var tabID = config.tabID || $("#carsNav li[class='active']").attr("id")
 
         ///添加兴趣车 事件绑定 begin
         $(".hot div a,.brandList a,.chexiContent span").click(function() {
@@ -115,7 +115,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             };
 
             hideDialogContent($("." + tabID).find(".dialogContent"), option);
-            $("." + tabID).find(".addInstrestCar").css("top", -555 + "px").removeClass("hidden");
+           $("." + tabID).find(".addInstrestCar").css("top", -800 + "px").removeClass("hidden");
             window.setTimeout(function() {
                 showInstrestContent($("." + tabID).find(".addInstrestCar"), option);
             }, 500);
@@ -173,15 +173,15 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
                 if (this.minBudget || this.maxBudget) {
                     if (!this.minBudget) {
-                        $(".carsItem .yusuan div").html(parseInt(this.maxBudget) / 10000 + "以下");
+                        $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "以下");
                     }
                     if (!this.maxBudget) {
-                        $(".carsItem .yusuan div").html(parseInt(this.minBudget) / 10000 + "以上");
+                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "以上");
                     } else {
-                        $(".carsItem .yusuan div").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
+                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
                     }
                 } else {
-                    $(".carsItem .yusuan div").html("不限");
+                    $(".carsItem .yusuan span").html("不限");
                 }
 
             });
@@ -214,11 +214,11 @@ define(['souche/util/load-info'], function(LoadInfo) {
         if (option.horizontal) {
             $element.css("overflow", "hidden").css("width", widthBegin);
 
-            $element.fadeTo($element.find("div,a"),0);
+            $element.find("div,a").fadeTo(0,0);
             $element.removeClass("hidden");
             offsetMove($element, option, widthEnd, 500, function() {
                 // fadeIn($element.find("div,a"),300);
-                $element.fadeTo($element.find("div,a"),1);
+                $element.find("div,a").fadeTo("fast",1);
                 $element.css("overflow", "");
             });
         } else {
@@ -251,12 +251,12 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
         if (option.horizontal) {
             //fadeOut($element.find("div,a"), 300);
-            $element.fadeTo($element.find("div,a"),0);
+            $element.find("div,a").fadeTo("fast",0);
             window.setTimeout(function() {
                 offsetMove($element, option, widthBegin, 500, function() {
                     $element.addClass("hidden").css("width", widthEnd);
                     //fadeIn($element.find("div,a"), 300);
-                    $element.fadeTo($element.find("div,a"),1);
+                    $element.find("div,a").fadeTo("fast","1");
                 });
             }, 500);
         } else if (option.vertical) {
@@ -286,21 +286,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
         }
     }
 
-    /*var brandSort = function(data) {
-        var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        var obj = {}
-        for (var i in data) {
-            var brand = data[i]
-            var firstword = brand.name.charAt(0).toUpperCase();
-            if (!obj[firstword]) {
-                obj[firstword] = []
-            }
-            brand.name = brand.name.substr(2, brand.name.length)
-            obj[firstword].push(brand);
-        }
-
-        return obj;
-    }*/
 
     var init = function(_config) {
         config = _config;
