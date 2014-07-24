@@ -236,6 +236,7 @@ body {
   vertical-align: middle;
 }
 #content .wrapper #productInfo > div #contentInfo {
+  width: 800px;
   display: inline-block;
   _zoom: 1;
   *zoom: 1;
@@ -275,7 +276,7 @@ body {
 }
 #content .wrapper #productInfo > div #contentInfo table td .contentItemInfo,
 #content .wrapper #productInfo > div #contentInfo table td .modelContentItemInfo {
-  margin-right: 80px;
+  margin-right: 35px;
   padding-top: 5px;
   color: #8C8C8C;
   font-size: 13px;
@@ -1039,6 +1040,7 @@ body {
 #content .wrapper #productSilder #relationInfo li .relationContent .relationCar a {
   cursor: pointer;
   color: #595959;
+  line-height: 60px;
 }
 #content .wrapper #productSilder #relationInfo li .relationContent a.relationPrice {
   color: #ef5c1e;
@@ -1137,8 +1139,8 @@ body #fav-popup .fav-submit {
   padding-left: 20px;
 }
 .baoyang .baoyang-main {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: none;
+  border: none;
   margin: 30px 70px;
   margin-bottom: 120px;
   position: relative;
