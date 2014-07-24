@@ -225,10 +225,9 @@ body
     }
     #productInfo
     {
-      height: 180px;
+      height: 190px;
       margin: 0px 0px 25px 0px;
       border:1px solid #e6e6e6;
-      padding: 20px 0px 5px 0px;
       >div {
         height: 160px;
         #imgInfo {
@@ -237,12 +236,11 @@ body
           *zoom:1;
           *display:inline;
           _display:inline;
-          width: 280px;
+          width: 270px;
           vertical-align: middle;
           height: 100%;
           text-align: left;
-          margin-left: 20px;
-          margin-top: -10px;
+          margin-top: 10px;
           >img
           {
             display: inline-block;
@@ -251,10 +249,11 @@ body
             *display:inline;
             _display:inline;
             vertical-align: middle;
+            margin-left: 20px;
           }
         }
         #contentInfo {
-          width: 800px;
+          width: 875px;
           display: inline-block;
           _zoom: 1;
           *zoom: 1;
@@ -262,7 +261,7 @@ body
           _display: inline;
           height: 100%;
           vertical-align: top;
-          margin-top: 10px;
+          margin-top: 30px;
           .proName {
             font-size: 24px;
             vertical-align: middle;
@@ -294,7 +293,6 @@ body
             td{
               .contentItemInfo,.modelContentItemInfo
               {
-                margin-right: 35px;
                 padding-top: 5px;
                 color: #8C8C8C;
                 font-size: 13px;
@@ -310,7 +308,6 @@ body
               }
               .modelContentItemInfo
               {
-                margin-right: 40px;
               }
             }
           }
@@ -372,12 +369,13 @@ body
         border-left: 1px solid #e6e6e6;
         border-right: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6;
+        padding: 10px 0px;
         .config_nav{
           display: inline-block;
           *display: inline;
           *zoom: 1;
           padding-left: 50px;
-          padding-top: 50px;
+          padding-top: 40px;
           ul{
             li{
               font-size: 14px;
@@ -422,7 +420,7 @@ body
           vertical-align: top;
           table
           {
-            margin-top: 50px;
+            margin-top: 40px;
             a
             {
               color: #000000;
@@ -432,6 +430,7 @@ body
               td{
                 font-size: 16px;
                 font-weight: bolder;
+
                 >div{
                   display: inline-block;
                   *display: inline;
@@ -450,9 +449,11 @@ body
               }
             }
             tbody {
+                tr{
+                  border-bottom: 1px solid #e6e6e6;
+                }
                 div
                 {
-                  border-bottom: 1px solid #e6e6e6;
                   padding: 15px 0px;
                   a
                   {
@@ -635,7 +636,7 @@ body
 
     #allProduct {
       position: relative;
-      padding: 0px 0px 60px 0px;
+      padding: 0px 0px 30px 0px;
       table {
         width: 100%;
         caption{
@@ -688,6 +689,7 @@ body
         margin: 0px auto;
         cursor: pointer;
         text-align: center;
+        border-top: none;
       }
       #showMore:hover
       {
@@ -723,23 +725,28 @@ body
     #newProduct {
       float: left;
       width: 960px;
+      padding-top: 20px;
       overflow: auto;
       >h1{
         font-weight: bold;
         font-size: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         color: #5A5A5A;
       }
       .item {
         width: 215px;
-        height: 300px;
+        height: 290px;
         float: left;
         border: 1px solid #e6e6e6;
         margin-right: 20px;
         margin-bottom: 20px;
         .itemContent {
+          .itemPrice
+          {
+            margin-top: 10px;
+          }
           border-bottom: 1px solid #e6e6e6;
-          height: 270px;
+          height: 240px;
           .relationImg
           {
             a{
@@ -762,7 +769,6 @@ body
             color:#ef5c1e;
             font-size: 13px;
             font-weight: bolder;
-
           }
           .oldPrice {
             text-decoration: line-through;
@@ -797,7 +803,7 @@ body
           position: relative;
           padding-top: 3px;
           background-color:#FFFFFF ;
-          height: 26px;
+          height: 40px;
           *
           {
             vertical-align: middle;
@@ -812,6 +818,7 @@ body
             padding-left: 20px;
             vertical-align: middle;
             cursor: pointer;
+            margin-top: 10px;
             span {
               color: #939393;
             }
@@ -829,6 +836,7 @@ body
             display: inline-block;
             *display: inline;
             *zoom: 1;
+            margin-top: 10px;
             span{
               padding-left: 4px;
               color: #939393;
@@ -857,6 +865,7 @@ body
       float: left;
       width: 940px;
       overflow: auto;
+      padding-top: 20px;
       padding-right: 20px;
       padding-bottom: 50px  ;
       > h1 {
@@ -1085,6 +1094,7 @@ body
     {
       float: left;
       width: 222px;
+      padding-top: 20px;
       >.relationImg
       {
         padding-top: 45px;

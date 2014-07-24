@@ -5561,20 +5561,20 @@ less .icon-fei {
   width: 46px;
   height: 44px;
   margin: 0 auto;
-  background: url(../../images/detail/baoyang-icons.png) no-repeat;
+  background: url(../../images/detail/baoyang_icon_1.png) no-repeat;
   display: block;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-1 {
-  background-position-x: 0;
+  background: url(../../images/detail/baoyang_icon_1.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-2 {
-  background-position-x: -53px;
+  background: url(../../images/detail/baoyang_icon_2.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project .icon-3 {
-  background-position-x: -106px;
+  background: url(../../images/detail/baoyang_icon_3.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project i.icon-4 {
-  background-position-x: -161px;
+  background: url(../../images/detail/baoyang_icon_4.png) no-repeat;
 }
 .baoyang .baoyang-main .baoyang-projects .baoyang-project-disabled i {
   background-position-y: -52px;
@@ -5724,7 +5724,7 @@ less .icon-fei {
 }
 .net-brand .brand-cont .brand-next .next-box {
   float: left;
-  width: 398px;
+  width: 390px;
   padding: 20px;
 }
 .net-brand .brand-cont .brand-next .next-box .next-image {
