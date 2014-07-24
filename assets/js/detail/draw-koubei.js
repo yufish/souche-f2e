@@ -69,8 +69,8 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                     i--
                 }
             }
-            $(".advantage-left .advantage-content").html(data.topPosReview.join("；"))
-            $(".advantage-right .advantage-content").html(data.topNegReview.join("；"))
+            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
+            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
 
         },
         redraw: function() {
