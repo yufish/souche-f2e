@@ -20,8 +20,20 @@ body {
   color: #8C8C8C;
   padding: 0px 10px;
 }
+#content .wrapper #map a {
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 45px;
+  color: #8C8C8C;
+  padding: 0px 10px;
+}
+#content .wrapper #map a span {
+  padding: 0;
+  cursor: pointer;
+}
 #content .wrapper #map .space {
   cursor: default;
+  padding: 0;
 }
 #content .wrapper #map .brandContainer {
   display: inline-block;
@@ -1305,6 +1317,7 @@ body #fav-popup .fav-submit {
   line-height: 30px;
   padding: 0 10px;
   display: inline-block;
+  margin-right: 10px;
 }
 .net-koubei .all-score {
   width: 100px;
@@ -1406,8 +1419,11 @@ body #fav-popup .fav-submit {
 .net-koubei .koubei-advantage {
   background: #f9f9f9;
   border: 1px solid #eee;
-  margin: 0 80px;
+  margin: 20px 80px;
   padding: 20px;
+}
+.net-koubei .koubei-advantage li {
+  margin-top: 10px;
 }
 .net-koubei .koubei-advantage .advantage-title {
   font-size: 18px;

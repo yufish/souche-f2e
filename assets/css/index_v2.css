@@ -185,14 +185,16 @@ a:hover {
   width: 295px;
   height: 20px;
   position: absolute;
-  top: 10px;
-  right: 42px;
+  top: 13px;
+  right: 60px;
 }
 #header .wrapper .search .index-search .recom a {
   color: #666;
   background: #F8F8F7;
   padding: 4px 7px;
   margin-right: 9px;
+  display: block;
+  float: right;
 }
 #header .wrapper .search .index-search .recom a:hover {
   color: #fc7000;
