@@ -107,20 +107,19 @@ html
             var underline = $('#nav-bar-underline')
             var widthOfPanel = tabCover.width();
             var numOfPanels = tabPanels.length;
-            tabCover.css('overflow','hidden');
             tabCtn.css({width:numOfPanels*widthOfPanel+'px'});
             tabPanels.css({width:widthOfPanel});
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
-                tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+')');
-                tabCtn.css(transform,'translateZ(0)');// activate 3d hardware acceleration is possible
+                // activate 3d hardware acceleration is possible
+                tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'px) translateZ(0)');
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
             }
 
             //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
             move(0);
 
-            navItems.on(touch_start,function(){
+            navItems.on('tap',function(){
                 var index = +$(this).attr('data-nav-index');
                 var curIndex = underline.attr('data-active-index');
                 if(curIndex == index)return;
