@@ -24,14 +24,17 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : "") + "/p/北京",
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
-                    if (data && data.items && data.items.length) {
-                        var priceData = data.items[0];
+                    if (data) {
+                        var priceData = data;
                         config.maxPrice = config.maxPrice * 1;
                         config.minPrice = config.minPrice * 1;
+                        if (config.minPrice == 0) {
+                            config.minPrice = config.maxPrice;
+                        }
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
                         var maxPrice = (priceData.price_guide).toFixed(1) * 1;
