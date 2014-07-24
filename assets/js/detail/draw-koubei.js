@@ -154,12 +154,12 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                 } else if (i == 4) {
                     label.css({
                         left: outlinePoints[i].x + 350,
-                        top: outlinePoints[i].y + 0
+                        top: outlinePoints[i].y - 30
                     })
                 } else if (i == 5) {
                     label.css({
                         left: outlinePoints[i].x + 40,
-                        top: outlinePoints[i].y + 0
+                        top: outlinePoints[i].y - 30
                     })
                 } else if (i == 8) {
                     label.css({
