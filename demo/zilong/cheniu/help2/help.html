@@ -16,6 +16,9 @@
           margin:0;
           padding:0;
       }
+      body{
+          padding: 0 35px;
+      }
       a{
           color:#000;
           text-decoration : none;
@@ -24,7 +27,7 @@
       img{
           display: block;
           margin: 0 auto;
-          width:90%;
+          width:100%;
       }
       a{
           display: block;
@@ -44,7 +47,16 @@
           background-size: 100% 100%;
           position: absolute;
           top:-35px;
+          right: -20px;
+      }
+      #red-circle{
+          width: 10px;
+          height: 10px;
+          background: #df4135;
+          border-radius: 80%;
+          position: absolute;
           right: 5px;
+          top:5px;
       }
   </style>
   
@@ -65,22 +77,25 @@
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-4.png">
         </a>
         <a href="help10.html" class="feature-item right">
-            <img src="http://res.souche.com/assets/images/cheniu/help2/main-7.png">
-            <div id="new-feature"></div>
+            <img src="http://res.souche.com/assets/images/cheniu/help2/main-7.png?t=1">
         </a>
         <a href="help8.html" class="feature-item right">
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-5.png">
         </a>
-
+        <a href="h3-1.html" class="feature-item right">
+            <img src="http://res.souche.com/assets/images/cheniu/help2/main-8.png">
+            <div id="new-feature"></div>
+            <div id="red-circle"></div>
+        </a>
           <img src="http://res.souche.com/assets/images/cheniu/help2/main-6.png" style="margin-top:20px;">
       </div>
   </div>
     <script>
         window.onload = function(){
             var f = document.getElementById('new-feature');
-            setTimeout(function(){
-                f.style.display='none';
-            },2000)
+//            setTimeout(function(){
+//                f.style.display='none';
+//            },2000)
         }
     </script>
 </body>
