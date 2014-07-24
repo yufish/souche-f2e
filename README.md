@@ -30,15 +30,18 @@ souche-f2e
 
 ####人员
 ```
-project  : souche-f2e
- repo age : 4 weeks
- active   : 18 days
- commits  : 361
- files    : 527
+project  : souche-f2e-new
+ repo age : 5 months
+ active   : 127 days
+ commits  : 2886
+ files    : 3957
  authors  : 
-   200  xinyu198736             55.4%
-    77  jzlxiaohei              21.3%
-    77  px_Jagten               21.3%
-     6  pe_Jagten               1.7%
-     1  芋头                  0.3% 
+   801  xinyu198736             27.8%
+   615  yutou                   21.3%
+   550  zilong                  19.1%
+   500  pe_Jagten               17.3%
+   152  jzlxiaohei              5.3%
+   135  Dpangzi                 4.7%
+    77  px_Jagten               2.7%
+    56  芋头                  1.9%
 ```
