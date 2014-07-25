@@ -32,6 +32,9 @@ define(function() {
                         var priceData = data;
                         config.maxPrice = config.maxPrice * 1;
                         config.minPrice = config.minPrice * 1;
+                        if (config.maxPrice == 0) {
+                            $("*[data-id=onsale_price]").addClass("hidden")
+                        }
                         if (config.minPrice == 0) {
                             config.minPrice = config.maxPrice;
                         }
