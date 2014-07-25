@@ -236,7 +236,7 @@ define(function() {
                     }
                 }
             });
-            if (SVGsupported) {
+            if (SVGsupported && config.showChart) {
                 self.load_price();
                 self.load_baoyang();
                 self.load_koubei();
