@@ -24,7 +24,16 @@ define(function() {
 
     modelSeries.init = function(config) {
         var brandUrl = config.brand_api;
-        var selectedSeries=con;
+        var adviser = config.userRequementJson;
+        for (var index = 0; index < adviser.brand.length; index++) {
+            var temp = adviser.brand[index].split(",");
+            selectedSeries[temp[1]]=true;
+        }
+        for (var index = 0; index < adviser.series.length; index++) {
+            var temp = adviser.series[index].split(",");
+            selectedSeries[temp[0]]=true;
+        }
+
 
         $.ajax({
             url: brandUrl,
@@ -40,6 +49,7 @@ define(function() {
                     templateHTML += "<li><span>" + key + "<\/span>"; //<a>哈弗H6<\/a><a>哈弗H6<\/a><a>哈弗H6<\/a>
                     for (var key1 in brand[key]) {
                         if (brand[key].hasOwnProperty(key1)) {
+
                             templateHTML += "<a code='" + brand[key][key1].code + "'>" + brand[key][key1].enName + "<\/a>";
                         }
                     }
@@ -76,8 +86,12 @@ define(function() {
             series[code].name = name;
         }
 
-        $(".chexi .chexiTitle").html(name + "全部车系");
-        $(".chexi .chexiTitle").attr("code", code);
+        $(".chexi .chexiTitle span").html(name + "全部车系");
+        $(".chexi .chexiTitle span").attr("code", code);
+        if(selectedSeries[code])
+        {
+            $(".chexi .chexiTitle span").addClass("active");
+        }
         var templateHTML = "";
         for (var key in series[code]) {
             if (series[code].hasOwnProperty(key) && key != "name") {
@@ -85,7 +99,12 @@ define(function() {
                 templateHTML += "<h1>" + key + "<\/h1>";
                 for (var key1 in series[code][key]) {
                     if (series[code][key].hasOwnProperty(key1)) {
+                        if(!selectedSeries[series[code][key][key1].code])
                         templateHTML += "<span code='" + series[code][key][key1].code + "'>" + series[code][key][key1].name + "<\/span>";
+                        else
+                        {
+                            templateHTML += "<span code='" + series[code][key][key1].code + "' class='active'>" + series[code][key][key1].name + "<\/span>";
+                        }
                     }
                 }
             }

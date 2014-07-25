@@ -9,11 +9,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
         var tabID = config.tabID || $("#carsNav li[class='active']").attr("id")
 
         ///添加兴趣车 事件绑定 begin
-        $(".hot div a,.brandList a,.chexiContent span").click(function() {
-            $(this).addClass("active");
-        });
 
-        $(".brandList a,.chexiContent span,.chexiTitle").live("click", function(event) {
+        $(".brandList a,.chexiContent span,.chexiTitle span").live("click", function(event) {
 
             if (event.target.tagName == "A") {
                 $(".brandList a").removeClass("active");
@@ -28,7 +25,11 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     $(this).addClass("active");
 
                     var seriesCode = $(this).attr("code");
+
                     var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
+                    if($(this).parent().hasClass("chexiTitle")) {
+                        name = name.substr(0, name.length - 4);
+                    }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
                     require(["index/qiugouModel"], function(qiugouModel) {
@@ -53,6 +54,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     });
                 }
             }
+
+            return false;
         });
 
         $(".instrestCarItem span").live("click", function() {

@@ -15,27 +15,33 @@ define(function() {
 
     var callback = function (result) {
         var list=[]
-        for(var index=0;index<3;index++) {
-            list.push(Math.random().toString());
+        var len = result.items.length>=10?10:result.items.length;
+
+        for(var index=0;index<len;index++) {
+            list.push(result.items[index]);
         }
 
         var downList = "<div class='realTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
             if(index%2) {
-                downList += "<span>" + list[index] + "<\/span>";
+                downList += "<span><a href='"+list[index].url+"'>" + list[index].name + "</a><\/span>";
             }
             else
             {
-                downList += "<span>" + list[index]+"<a>进入车系»</a>" + "<\/span>";
+                downList += "<span><a href='"+list[index].url+"'>" + list[index].name+"<span class='enterChexi'>进入车系»</span>" + "</a><\/span>";
             }
         }
         downList+="<\/div>";
+        var top=$(".search").offset().top+$(".search").height();
+        var width = $(".search").offset().left;
+
         $(".realTimeDown").remove();
         var element = $(downList).css(
             {
                 top:top+2,
                 left:left,
-                width:downWidth
+                width:$(".search .search-text").width()+20,
+                position:"absolute"
             }
         );
 
@@ -48,7 +54,6 @@ define(function() {
         top = $element.offset().top + $element.height();
         left = $element.offset().left;
 
-
         ajaxOption.url = option.url;
         ajaxOption.data = option.data || {};
         ajaxOption.dataType = option.dataType;
@@ -57,8 +62,14 @@ define(function() {
         afterShow = option.success;
 
         $element.find("input").keyup(function () {
-            ajaxOption.url += "?words=" + $(this).val();
-            Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
+            var hasParam =!!(ajaxOption.url.indexOf("?")+1);
+            if($(this).val()) {
+                ajaxOption.url = ajaxOption.url.substr(0, hasParam ? (ajaxOption.url.indexOf("?")) : ajaxOption.url.length) + "?words=" + $(this).val();
+                Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
+            }
+            else {
+                $(".realTimeDown").remove();
+            }
         });
     }
     down.init = init;

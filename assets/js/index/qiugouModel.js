@@ -125,8 +125,8 @@ define(function()
             for (var index = 0; index < adviser.series.length; index++) {
                 var temp = adviser.series[index].split(",");
                 var instrest = {
-                    name: temp[0],
-                    seriesCode: temp[1],
+                    name: temp[1],
+                    seriesCode: temp[0],
                     type: "serie"
                 };
                 this.AddAdviserInstrest(instrest);

@@ -499,7 +499,7 @@ Souche.PhoneRegister = function(phone, callback) {
     })
 };
 
-Souche.AjaxManager = (function() {
+/*Souche.AjaxManager = (function() {
     var manager = {};
     var instance={};
 
@@ -565,8 +565,53 @@ Souche.AjaxManager = (function() {
     }
 
     return manager;
-}());
+}());*/
 
+Souche.DelayAjax = (function() {
+    var manager = {};
+
+    var urlList = {};
+    var success = function() {
+        var def = arguments[2];
+        urlList[this.url].deferred.isCallback = true;
+    }
+
+    var add = function(option, callback, delay, trailing, aborted) {
+        if (!option.url) {
+            throw new Error("url underfind");
+        }
+
+        if (urlList[option.url]) {
+            var lastTime = urlList[option.url].lastTime;
+            var currentTime = +new Date();
+            if ((currentTime - lastTime) > delay) {
+                window.clearTimeout(urlList.handle);
+                urlList[option.url].lastTime = +new Date();
+                urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+                //callback();
+            } else if (trailing) {
+                window.clearTimeout(urlList.handle);
+                urlList.handle = window.setTimeout(function() {
+                    urlList[option.url].lastTime = +new Date();
+                    if (!urlList[option.url].deferred.isCallback && aborted) {
+                        urlList[option.url].deferred.abort();
+                    }
+                    urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+                    //callback();
+                }, delay);
+            }
+        } else {
+            urlList.handle = undefined;
+            urlList[option.url] = urlList[option.url] || {};
+            urlList[option.url].lastTime = +new Date();
+            urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
+            //callback();
+        }
+    }
+
+    manager.addAjax = add;
+    return manager;
+}());
 
 /*!
  * jQuery Cookie Plugin v1.4.0
