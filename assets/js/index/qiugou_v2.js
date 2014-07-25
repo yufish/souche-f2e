@@ -107,7 +107,37 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     max: $(".caryear .dataContainer #age_select_high_input").val()
                 });
 
-                //qiugouModel.
+                var instrest = qiugouModel.GetAdviserInstrest();
+                var series =[];
+                var brand=[];
+
+                for(var idx= 0,len=instrest.length;idx<len;idx++) {
+                    var type = instrest[idx].type;
+                    if(type=="brand")
+                    {
+                        brand.push(instrest[idx].seriesCode);
+                    }
+                    else
+                    {
+                        series.push(instrest[idx].seriesCode);
+                    }
+                }
+
+                var url = config.submit_api;
+                url += "?minPrice=" + $(".carBudget .dataContainer .leftContainer input").val();
+                url += "&maxPrice=" + $(".carBudget .dataContainer .rightContainer input").val();
+                url += "&minYear=" + ($(".caryear .dataContainer #age_select_input").val()||"");
+                url += "&maxYear=" + ($(".caryear .dataContainer #age_select_high_input").val()||"");
+                url+="&brands="+brand.join();
+                url+="&series="+series.join();
+
+                $.ajax({
+                    url:url,
+                    dataType:"json"
+                }).done(function()
+                {
+                    window.location.reload();
+                });
             });
         });
         ///

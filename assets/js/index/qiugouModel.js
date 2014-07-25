@@ -58,6 +58,11 @@ define(function()
         }
     }
 
+    result.GetAdviserYear = function()
+    {
+        return adviserYear;
+    }
+
     result.ModifyAdviserBudget = function(budget) {
         if (adviserBudget.minBudget == budget.min && adviserBudget.maxBudget == budget.max) {
             return true;
@@ -68,6 +73,11 @@ define(function()
             render("budget",adviserBudget);
             return true;
         }
+    }
+
+    result.GetAdviserBudget = function()
+    {
+        return adviserBudget;
     }
 
     result.AddAdviserInstrest = function(instrest) {
@@ -92,6 +102,11 @@ define(function()
             }
         }
         return false;
+    }
+
+    result.GetAdviserInstrest = function()
+    {
+        return adviserInstrest;
     }
 
     result.UpdateAdviserModel = function(callback) {
