@@ -25,6 +25,9 @@ define(function() {
     modelSeries.init = function(config) {
         var brandUrl = config.brand_api;
         var adviser = config.userRequementJson;
+        adviser.brand=adviser.brand||[];
+        adviser.series=adviser.series||[];
+        
         for (var index = 0; index < adviser.brand.length; index++) {
             var temp = adviser.brand[index].split(",");
             selectedSeries[temp[1]]=true;

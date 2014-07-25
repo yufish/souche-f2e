@@ -106,6 +106,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     min: $(".caryear .dataContainer #age_select_input").val(),
                     max: $(".caryear .dataContainer #age_select_high_input").val()
                 });
+
+                //qiugouModel.
             });
         });
         ///

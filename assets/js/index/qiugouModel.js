@@ -95,9 +95,7 @@ define(function()
     }
 
     result.UpdateAdviserModel = function(callback) {
-        if (adviserModel.adviserYear.modify || adviserModel.adviserBudget.modify || adviserModel.adviserInstrest.modify) {
 
-        }
     }
 
     result.AddSubscribe = function(name,callback) {
