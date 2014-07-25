@@ -27,11 +27,13 @@ define(function() {
                         var maxPrice = (priceData.price_guide).toFixed(1) * 1;
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
+                        if (config.minPrice == config.maxPrice) {
+                            rangePrice = config.minPrice;
+                        }
                         if (priceData.priceNude) {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
-                            alert(maxPrice)
                         }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
@@ -92,10 +94,10 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: config.api_sentiment + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: config.api_sentiment + config.brandCode + "/s/" + config.seriesCode, //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
-                    if (_data && _data.data && _data.data.items) {
+                    if (_data && _data.data) {
                         var koubeiData = [];
                         var kv = {
                             upholstery: "内饰",
@@ -108,7 +110,7 @@ define(function() {
                             comfortable: "舒适",
                             noise: "噪音"
                         }
-                        var data = _data.data.items[0]
+                        var data = _data.data
                         if (_data.data) {
                             var koubeiData = [];
                             for (var i in kv) {
@@ -180,7 +182,7 @@ define(function() {
                 $("#" + id).removeClass("hidden");
                 // $(".onsale-tab-item").removeClass("active");
                 // $(this).addClass("active")
-                $(window).trigger("tab_change", id);
+                $(window).trigger("nav_change", id);
 
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
@@ -236,7 +238,7 @@ define(function() {
                     }
                 }
             });
-            if (SVGsupported) {
+            if (SVGsupported && config.showChart) {
                 self.load_price();
                 self.load_baoyang();
                 self.load_koubei();

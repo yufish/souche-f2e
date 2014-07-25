@@ -13,7 +13,23 @@ html
     body
         header
             .logo.hd-logo
-            .hd_city
-                span 杭州
-                svg(width=9,height=5)
-                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:1')
+            .hd-city#J_choose_city
+                span(style="font-size:13px") 杭州
+                svg.svg-down-arrow(width=9,height=5)
+                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+            .other-topic
+                .icon-bar
+                .icon-bar
+                .icon-bar
+            .hd-search
+        nav#J_tabNavbar.clearfix
+            .nav-item(data-nav-index=1)
+                i.hot-icon
+                热门车型
+            .nav-item(data-nav-index=2)
+                i.car-icon
+                我要找车
+            .nav-item(data-nav-index=3)
+                i.rocket-icon
+                随便逛逛
+            #J_navbar_underline(data-active-index=1)
