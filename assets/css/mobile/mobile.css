@@ -364,6 +364,7 @@ body {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     font-size: 12px;
+    height: 48px;
 }
 #allbrands .brands .brand img {
     width: 30px;
