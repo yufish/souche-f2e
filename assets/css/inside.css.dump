@@ -221,7 +221,7 @@ padding-left: 50px;
 #service_show .show_title h1{margin-left:496px;padding-top:66px}
 #service_show .show_title p{margin-left:500px;line-height:1.8em}
 .service_tag{margin-left:429px}
-.service_tag ins{float:left;display:inline;color:#fff;font-size:14px;font-weight:bold;font-family:"������";text-align:center;margin-left:30px;margin-top:49px;width:100px}
+.service_tag ins{float:left;display:inline;color:#fff;font-size:14px;font-weight:bold;font-family:"锟斤拷锟斤拷锟斤拷";text-align:center;margin-left:30px;margin-top:49px;width:100px}
 .service_tag ins span{float:left;width:50px;height:40px;margin-bottom:10px;margin-left:30px;margin-right:30px;background:url(../../assets/images/fed/souche_png.png) no-repeat 5px -52px}
 #pay_show{height:324px;background:url(../../assets/images/fed/payment.jpg) right top no-repeat #4398ca;margin-bottom:20px}
 #pay_show .show_title h1{margin-left:56px;padding-top:61px;margin-bottom:30px}
@@ -516,7 +516,7 @@ visibility: hidden;
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .list_allBrand_wrap{width:717px}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain{width:358px;float:left;display:inline}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl{margin-bottom:15px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dt{float:left;color:#00b0b4;font-size:18px;line-height:18px;width:16px;margin-right:10px}
-#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd{float:left;width:332px;display:inline}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a{float:left;color:#666;font-family:"������",Tahoma,Verdana;font-size:12px;margin-right:18px;line-height:18px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a:hover{color:#e70}
+#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd{float:left;width:332px;display:inline}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a{float:left;color:#666;font-family:"锟斤拷锟斤拷锟斤拷",Tahoma,Verdana;font-size:12px;margin-right:18px;line-height:18px}#list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a:hover{color:#e70}
 #list_wrap .list_nav .list_nav_wrap .list_allBrand .allBrand_contain dl dd a.allBrandOn{color:#ff4301}
 #list_wrap .list_nav .nav_brand{position:relative;border:1px solid #fff;border-right:none;padding-bottom:10px;height:190px;border-bottom:1px solid #e0e0e0;margin-left: 10px;padding-left: 2px;}
 #list_wrap .list_nav .nav_brand_active{border-color:#e70;width:260px;padding-left:6px;margin-left:-1px}
