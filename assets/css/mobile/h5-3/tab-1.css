@@ -1,9 +1,11 @@
+*{
+    box-sizing: border-box;
+}
 header{
     height: 44px;
     line-height: 44px;
     color:#fff;
     background: #ff571a;
-
 }
 .logo{
     width:81px;
@@ -17,6 +19,7 @@ header{
 }
 .hd-city{
     float: left;
+    font-size: 13px;
 }
 .hd-city .svg-down-arrow{
     vertical-align: 3px;
@@ -39,6 +42,11 @@ header{
     width: 18px;
     height: 1px;
     margin-top: 4px;
+}
+#J_tabNavbar{
+    height: 44px;
+    line-height: 44px;
+    color:#666;
 }
 nav .nav-item{
     width: 33.3%;
