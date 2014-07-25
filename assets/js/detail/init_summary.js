@@ -34,7 +34,6 @@ define(function() {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
-                            alert(maxPrice)
                         }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
@@ -183,7 +182,7 @@ define(function() {
                 $("#" + id).removeClass("hidden");
                 // $(".onsale-tab-item").removeClass("active");
                 // $(this).addClass("active")
-                $(window).trigger("tab_change", id);
+                $(window).trigger("nav_change", id);
 
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({

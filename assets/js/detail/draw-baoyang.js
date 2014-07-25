@@ -116,7 +116,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                     if (top < 20)
                         top = 20;
                     $(".baoyang .price-point").css({
-                        left: 15,
+                        left: nowIndex * 45 + 75 - 50,
                         top: top
                     })
                 }
