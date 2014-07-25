@@ -18,7 +18,7 @@ blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 .clearfix{display:inline-block}
 * html .clearfix{height:1%}
 .clearfix{display:block}
-body{font-size:12px;font-family:"锟斤拷锟斤拷锟斤拷",Tahoma,Verdana;color:#000;background-color:#fff}
+body{font-size:12px;font-family:"Microsoft YaHei",Tahoma,Verdana;color:#000;background-color:#fff}
 a{color:#000}
 a:hover{text-decoration:none;color:#e70}
 .wrap{width:1190px;margin:0 auto;zoom:1;}
@@ -28,7 +28,6 @@ a:hover{text-decoration:none;color:#e70}
 .hidden{display:none !important}
 optgroup{color:#008000;background-color:#f5f5f5;font-weight:bold}
 option{color:#333;line-height:1.8em;font-style:normal;font-weight:normal;background-color:#fff}
-#header{background-color:#e7e7e7}
 .index_login{width:1200px;margin:0 auto;text-align:right;color:#666;padding:5px 0}
 .index_login a{color:#666}
 .index_login a:hover{color:#e70}
@@ -48,26 +47,12 @@ option{color:#333;line-height:1.8em;font-style:normal;font-weight:normal;backgro
 .header_service .servive_promise{background-position:-88px -63px}
 .topAd{width:100%;background-color:#fff;overflow:hidden;}
 .topAd a{display:block;height:50px;margin:0 auto;background-position:center top;}
-#nav{height:40px;background-color:#111;position:relative}
-#nav ul{float:left}
-#nav li{float:left;margin-right:1px}
-#nav ul a{display:inline-block;width:135px;height:40px;line-height:40px;color:#fff;font-size:16px;text-align:center;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1"}
-#nav ul a:hover{text-decoration:none;background-color:#e70}
-#nav .nav_active{background-color:#e70}
-#nav .qiangche{background:url(../../images/fed/new1.gif) no-repeat 101px 6px;}
-#nav .nav_phone{-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;float:right;margin-top:3px;width:150px;height:30px;background:url(../../images/fed/index/index_sprite4.png) no-repeat 0 0;text-indent:-9999em}
-#nav .nav_phone span{display:inline-block}
-#nav .nav_phone:hover{-webkit-transform:scale(1.2, 1.2);transform:scale(1.2, 1.2)}
-#nav .index_login{float:right;line-height:28px;margin-right:15px;margin-top:6px;color:#999}
-#nav .index_login a{color:#999}
-#nav .index_login a:hover{color:#e70}
-#nav h1{float:left;width:113px;height:40px;text-indent:-9999em;background:url(../../images/fed/souche_sprite2.jpg) 0 -273px}
 .car_list li{float:left;display:inline;cursor:pointer;height:297px;background-color:#fff;margin-bottom:20px;border:1px solid #eaeaea;margin-right:-1px;position:relative;padding:15px;margin-right:20px;overflow:hidden}
 .car_list .car_info dt{color:#333;font-size:14px;line-height:1.3em;margin-bottom:2px;margin-top:10px;height:40px;overflow:hidden;width:290px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
 .car_list .car_info dt a{color:#333}
 .car_list .car_info dt a:hover{color:#e70}
 .car_list .car_info .car_price{color:#ff4301;font-size:24px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";*font-family:"\5FAE\8F6F\96C5\9ED1";line-height:1em;margin-bottom:2px}
-.car_list .car_price ins{color:#999;font-size:12px;font-family:"锟斤拷锟斤拷锟斤拷";padding-left:10px}
+.car_list .car_price ins{color:#999;font-size:12px;font-family:"Microsoft YaHei";padding-left:10px}
 .car_list .car_info dd{line-height:1.8em}
 .car_list .car_other{color:#999;float:left;height:20px;overflow:hidden}
 .car_list .car_other ins{color:#333}
@@ -108,21 +93,6 @@ option{color:#333;line-height:1.8em;font-style:normal;font-weight:normal;backgro
 .controller_float{width:100px;float:left;display:inline;margin-right:10px}
 .controller_float select{width:100px}
 .select_remind{text-align:center;color:#666;margin-top:-28px;line-height:26px;margin-bottom:2px}
-#footer{height:270px;background-color:#111}
-#footer .footer_service{background-color:#111;font-size:15px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1"}
-#footer .footer_service ul{width:800px;margin:0 auto;background:url(../../images/fed/footer_cut.png) no-repeat bottom center;line-height:105px}
-#footer .footer_service li{float:left;width:200px}
-#footer .footer_service li a{color:#999;font-size:15px}
-#footer .footer_service ins{float:left;width:50px;height:50px;margin:28px 5px 0 40px;background:url(../../images/fed/footer_service.png) no-repeat}
-#footer .service_footer_check ins{background-position:0 0}
-#footer .service_footer_return ins{background-position:-61px 0}
-#footer .service_footer_promise ins{background-position:-129px 0}
-#footer .service_footer_car ins{background-position:-195px 0}
-#footer .service_footer_pay ins{background-position:-262px 0}
-#footer .company_info{text-align:center;margin-top:35px;color:#999}
-#footer .company_info a{color:#999;padding:0 6px}
-#footer .company_info a:hover{color:#e70}
-#footer .company_info p{color:#666;margin-top:10px;font-family:"Arial","锟斤拷锟斤拷锟斤拷"}
 #loginInner{width:460px;padding-bottom:30px;border:1px solid #f2f2f2;background-color:#fff;position:fixed;top:100px;left:50%;margin-left:-230px;z-index:100000}
 .login_title{height:34px;line-height:34px;background-color:#fcfcfc;border-bottom:1px solid #f2f2f2;color:#000;font-size:14px;font-weight:bold;padding-left:15px}
 .login_title i{float:right;margin:7px 14px 0 0;*margin-top:-26px;width:20px;height:18px;background:url(../../images/fed/souche_sprite2.jpg) no-repeat 5px -243px;cursor:pointer}
@@ -149,7 +119,6 @@ option{color:#333;line-height:1.8em;font-style:normal;font-weight:normal;backgro
 #online_service:hover{text-decoration:none}
 #online_service span{display:block;width:50px;height:50px;background:url(../../images/fed/online_service.jpg) no-repeat 0 0;margin:0 auto}
 #floatLayer{position:fixed;bottom:60px;right:0;z-index:10000;}
-
 #BizQQWPA{background: url(../../images/fed/float-layer3.png) no-repeat -34px -451px !important;width: 60px;
 height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
 #erweima{position: relative;}

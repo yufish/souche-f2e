@@ -11,30 +11,37 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/price/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : "") + "/p/北京",
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
-                    if (data && data.items && data.items.length) {
-                        var priceData = data.items[0];
-
+                    if (data) {
+                        var priceData = data;
+                        config.maxPrice = config.maxPrice * 1;
+                        config.minPrice = config.minPrice * 1;
+                        if (config.minPrice == 0) {
+                            config.minPrice = config.maxPrice;
+                        }
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        var maxPrice = (priceData.price_guide).toFixed(1) * 1
-                        var rangePrice = config.price;
-                        var minPrice = config.price * 1;
+                        var maxPrice = (priceData.price_guide).toFixed(1) * 1;
+                        var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
+                        var rangePrice = config.minPrice + "-" + config.maxPrice;
+                        if (config.minPrice == config.maxPrice) {
+                            rangePrice = config.minPrice;
+                        }
                         if (priceData.priceNude) {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
-
                         } else {
-                            var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2)
+                            var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
+                            alert(maxPrice)
                         }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
                     } else {
-                        $("#onsale_price").addClass("hidden")
+                        $("*[data-id=onsale_price]").addClass("hidden")
                     }
                 }
             })
@@ -44,12 +51,12 @@ define(function() {
         },
         load_baoyang: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/maintenance/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
+                url: config.api_maintenance + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""),
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;
-                    if (data && data.items && data.items.length) {
-                        var baoyangData = data.items[0];
+                    if (data) {
+                        var baoyangData = data;
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
                         var prices = {};
@@ -79,9 +86,7 @@ define(function() {
                                 distanceData: distanceData,
                                 nowDistance: config.nowDistance
                             })
-
                         })
-
                     } else {
                         $("*[data-id=onsale_baoyang]").addClass("hidden")
                     }
@@ -90,10 +95,10 @@ define(function() {
         },
         load_koubei: function() {
             $.ajax({
-                url: "http://112.124.123.209:8080/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : ""), //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
+                url: config.api_sentiment + config.brandCode + "/s/" + config.seriesCode, //"http://115.29.10.121:8282/soucheproduct/car/sentiment/b/" + config.brandCode + "/s/" + config.seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
-                    if (_data && _data.data && _data.data.items) {
+                    if (_data && _data.data) {
                         var koubeiData = [];
                         var kv = {
                             upholstery: "内饰",
@@ -106,15 +111,22 @@ define(function() {
                             comfortable: "舒适",
                             noise: "噪音"
                         }
-                        var data = _data.data.items[0]
+                        var data = _data.data
                         if (_data.data) {
                             var koubeiData = [];
                             for (var i in kv) {
                                 if (data[i]) {
+                                    for (var c = 0; c < data[i].comments.length; c++) {
+                                        var label = data[i].comments[c];
+                                        label = label.replace(/\((.*?)\)/, function(v, v2) {
+                                            return "(" + ((v2 * 1)).toFixed(0) + ")"
+                                        })
+                                        data[i].comments[c] = label
+                                    }
                                     koubeiData.push({
                                         name: kv[i],
                                         rate: (data[i].score * 1).toFixed(2),
-                                        labels: data[i].comments
+                                        labels: data[i].comments.slice(0, 3)
                                     })
                                 } else {
                                     koubeiData.push({
@@ -140,6 +152,7 @@ define(function() {
                                 $(".float-nav-item-koubei").removeClass("hidden")
                             }
                         )
+
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")
                     }
@@ -226,7 +239,7 @@ define(function() {
                     }
                 }
             });
-            if (SVGsupported) {
+            if (SVGsupported && config.showChart) {
                 self.load_price();
                 self.load_baoyang();
                 self.load_koubei();

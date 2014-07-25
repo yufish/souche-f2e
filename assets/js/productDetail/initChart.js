@@ -44,6 +44,7 @@ define(function() {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
+                            alert(maxPrice)
                         }
 
                         require(['detail/draw-sanprice'], function(SanPrice) {
@@ -130,6 +131,13 @@ define(function() {
                             var koubeiData = [];
                             for (var i in kv) {
                                 if (data[i]) {
+                                    for (var c = 0; c < data[i].comments.length; c++) {
+                                        var label = data[i].comments[c];
+                                        label = label.replace(/\((.*?)\)/, function(v, v2) {
+                                            return "(" + ((v2 * 1)).toFixed(0) + ")"
+                                        })
+                                        data[i].comments[c] = label
+                                    }
                                     koubeiData.push({
                                         name: kv[i],
                                         rate: (data[i].score * 1).toFixed(2),
@@ -175,7 +183,6 @@ define(function() {
 
             if (SVGsupported) {
                 // self.load_price();
-                self.load_baoyang();
                 self.load_koubei();
                 // self.load_config();
                 // $(".nosvghidden").css({

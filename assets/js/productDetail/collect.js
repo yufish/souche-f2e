@@ -12,7 +12,7 @@ define(function() {
             var context = this;
 
             Souche.NoRegLogin.checkLogin(function() {
-                if ($(context).parent().hasClass("active")) {
+                if ($(context).hasClass("active")) {
                     var carID = $(context).parent().attr("carid");
 
                     deleteCollect.call(context, carID);
@@ -71,10 +71,12 @@ define(function() {
                     if (data.errorMessage) {
                         alert(data.errorMessage)
                     } else {
+
                         $("#fav-popup").addClass("hidden");
                         $(".wrapGrayBg").hide();
                         $(this).find("span").html('已收藏');
                         $(this).addClass("active");
+
                     }
                     collecting = false;
                 });
@@ -95,8 +97,8 @@ define(function() {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
-                    $(this).html('收藏');
-                    $(this).parent().removeClass("active");
+                    $(this).find("span").html('收藏');
+                    $(this).removeClass("active");
                 }
 
                 collecting=false;
