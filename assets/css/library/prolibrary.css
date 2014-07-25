@@ -247,7 +247,7 @@ body {
   margin-left: 20px;
 }
 #content .wrapper #productInfo > div #contentInfo {
-  width: 875px;
+  width: 910px;
   display: inline-block;
   _zoom: 1;
   *zoom: 1;
@@ -708,8 +708,7 @@ body {
   font-weight: bolder;
 }
 #content .wrapper #newProduct .item .itemContent .oldPrice {
-  text-decoration: line-through;
-  color: #C0C0C0;
+  color: #666666;
 }
 #content .wrapper #newProduct .item .itemContent .other {
   margin: 14px 14px 14px 10px;
@@ -986,6 +985,7 @@ body {
   background: #ffffff;
   padding: 0px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 #content .wrapper #newProductList .noCarsList li img {
   margin-top: 10px;
@@ -1138,7 +1138,7 @@ body #fav-popup .fav-submit {
   font-size: 18px;
   text-align: center;
   color: #444;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 .baoyang .baoyang-filter em {
   color: #fc5a34;
@@ -1293,6 +1293,7 @@ body #fav-popup .fav-submit {
   border-bottom: 1px solid #e6e6e6;
   position: relative;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 .net-koubei .koubei-title {
   font-size: 20px;
@@ -1300,7 +1301,7 @@ body #fav-popup .fav-submit {
   margin-top: 20px;
 }
 .net-koubei .koubei-desc {
-  margin: 20px 80px;
+  margin: 0px 80px;
   background: #f9f9f9;
   border: 1px solid #eee;
   padding: 20px;

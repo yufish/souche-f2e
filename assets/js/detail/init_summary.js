@@ -116,7 +116,7 @@ define(function() {
                                     for (var c = 0; c < data[i].comments.length; c++) {
                                         var label = data[i].comments[c];
                                         label = label.replace(/\((.*?)\)/, function(v, v2) {
-                                            return "(" + ((v2 * 1) / 10000).toFixed(0) + ")"
+                                            return "(" + ((v2 * 1)).toFixed(0) + ")"
                                         })
                                         data[i].comments[c] = label
                                     }
