@@ -32,7 +32,7 @@ define(function() {
                         var priceData = data;
                         config.maxPrice = config.maxPrice * 1;
                         config.minPrice = config.minPrice * 1;
-                        if (config.maxPrice == 0) {
+                        if (!config.maxPrice) {
                             $("*[data-id=onsale_price]").addClass("hidden")
                         }
                         if (config.minPrice == 0) {
@@ -48,7 +48,9 @@ define(function() {
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
                         }
-
+                        if (config.minPrice == config.maxPrice) {
+                            rangePrice = config.minPrice;
+                        }
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
