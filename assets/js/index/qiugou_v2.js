@@ -25,7 +25,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 });
             } else {
                 if (!$(this).hasClass("active")) {
-                    $(".chexiContent span").removeClass("active");
                     $(this).addClass("active");
 
                     var seriesCode = $(this).attr("code");
@@ -146,7 +145,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
         });
 
         /////订阅
-        require(["index/qiugouModel"], function(qiugouModel) {
+        require(["index/qiugouModel","index/modelSeries"], function(qiugouModel,modelSeries) {
             //alert(qiugouModel);
             qiugouModel.AddSubscribe("year", function() {
                 if (this.minYear || this.maxYear) {
@@ -183,7 +182,6 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 } else {
                     $(".carsItem .yusuan span").html("不限");
                 }
-
             });
 
             qiugouModel.AddSubscribe("addInstrest", function() {
@@ -202,6 +200,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             });
 
             qiugouModel.init(config);
+            modelSeries.init(config);
         });
 
     }
@@ -236,8 +235,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
         for (var i = 0; i < zimu.length; i++) {
             html += "<a>" + zimu[i] + "</a>"
         }
-        $(".brandNav").html(html)
-
+        $(".brandNav").html(html);
     }
 
     var hideInstrestContent = function($element, option) {

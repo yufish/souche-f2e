@@ -96,7 +96,7 @@ define(function() {
 
                 qiugou.init(config);
                 //modelSeriesModel.init(config);
-                modelSeries.init(config);
+                //modelSeries.init(config);
 
                 var ageSelect = new customSelect("age_select", {
                     placeholder: "请选择",

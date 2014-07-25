@@ -5,6 +5,7 @@ define(function() {
     var brand = {};
     var series = {};
 
+    var selectedSeries={};
     var modelSeries = {};
 
     var groupBy = function(array, predicate, context) {
@@ -17,13 +18,13 @@ define(function() {
             } else {
                 result[key] = [array[index]];
             }
-
         }
         return result;
     }
 
-    modelSeries.init = function() {
+    modelSeries.init = function(config) {
         var brandUrl = config.brand_api;
+        var selectedSeries=con;
 
         $.ajax({
             url: brandUrl,
