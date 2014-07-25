@@ -796,6 +796,11 @@ Souche.DetailCommon = function() {
 
         var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
+        if(e.target.tagName=="INPUT")
+        {
+            $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
+        }
+        
         if (!$(".addcarduibi input")[0].checked) {
 
             var self = this;
