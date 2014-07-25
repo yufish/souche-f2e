@@ -27,6 +27,9 @@ define(function() {
                         var maxPrice = (priceData.price_guide).toFixed(1) * 1;
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
+                        if (config.minPrice == config.maxPrice) {
+                            rangePrice = config.minPrice;
+                        }
                         if (priceData.priceNude) {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
