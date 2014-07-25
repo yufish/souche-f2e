@@ -800,7 +800,7 @@ Souche.DetailCommon = function() {
         {
             $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
         }
-        
+
         if (!$(".addcarduibi input")[0].checked) {
 
             var self = this;
