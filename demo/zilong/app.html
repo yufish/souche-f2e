@@ -24,5 +24,35 @@
     <img src="http://res.souche.com/assets/images/app/buy/4.png">
     <img src="http://res.souche.com/assets/images/app/buy/5.png">
 
+    <script>
+        try{
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                WeixinJSBridge.on('menu:share:timeline', function(argv){
+                    WeixinJSBridge.invoke('shareTimeline',{
+                        "img_url":"http://res.souche.com/assets/images/mob/main-screen/icon-114.png",
+                        "img_width":"114",
+                        "img_height":"114",
+                        "link":window.location.href,
+                        "desc":"大搜车app,为我选好车",
+                        "title":"大搜车app,为我选好车"
+                    }, function(res){});
+                });
+                WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                    WeixinJSBridge.invoke('sendAppMessage',{
+                        "img_url":"http://res.souche.com/assets/images/mob/main-screen/icon-114.png",
+                        "img_width":"114",
+                        "img_height":"114",
+                        "link":window.location.href,
+                        "desc":"大搜车app,为我选好车",
+                        "title":"大搜车app,为我选好车"
+                    }, function(res){});
+                });
+            });
+
+
+        }catch(e){
+
+        }
+    </script>
 </body>
 </html>
