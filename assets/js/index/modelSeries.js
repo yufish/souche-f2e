@@ -48,7 +48,7 @@ define(function() {
 
             for (var key in brand) {
                 if (brand.hasOwnProperty(key)) {
-                    templateHTML += "<li><span>" + key + "<\/span>"; //<a>哈弗H6<\/a><a>哈弗H6<\/a><a>哈弗H6<\/a>
+                    templateHTML += "<li><span data-id='"+key+"'>" + key + "<\/span>"; //<a>哈弗H6<\/a><a>哈弗H6<\/a><a>哈弗H6<\/a>
                     for (var key1 in brand[key]) {
                         if (brand[key].hasOwnProperty(key1)) {
 
@@ -94,6 +94,11 @@ define(function() {
         {
             $(".chexi .chexiTitle span").addClass("active");
         }
+        else
+        {
+            $(".chexi .chexiTitle span").removeClass("active");
+        }
+
         var templateHTML = "";
         for (var key in series[code]) {
             if (series[code].hasOwnProperty(key) && key != "name") {
@@ -114,6 +119,19 @@ define(function() {
         $(".chexi .chexiContent ul").html(templateHTML);
     }
 
+    modelSeries.addSelectedSeries = function(code)
+    {
+        selectedSeries[code] = true;
+    }
+
+    modelSeries.deleteSelectedSeries = function(code) {
+        delete selectedSeries[code];
+        var tabID=$("#carsNav ul li.active").attr("id");
+        var brandCode =$("."+tabID+" .brandList ul li a.active").attr("code");
+        var name = $("."+tabID+" .brandList ul li a.active").html();
+
+        this.GetSeries(brandCode,name);
+    }
 
     return modelSeries;
 });

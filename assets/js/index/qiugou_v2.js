@@ -58,8 +58,23 @@ define(['souche/util/load-info'], function(LoadInfo) {
             return false;
         });
 
-        $(".instrestCarItem span").live("click", function() {
+        $(".instrestCarItem span").live("click", function(event) {
+            //alert(1);
+
+            var seriesCode =$(this).parent().attr("seriescode");
+            var name = $(this).prev().html();
+            var type = $(this).parent().attr("type");
+
+            require(["index/qiugouModel"], function(qiugouModel) {
+                qiugouModel.DeleteAdviserInstrest({
+                    seriesCode: seriesCode,
+                    name: name,
+                    type: type
+                });
+            });
             $(this).parent().remove();
+
+            return false;
         });
 
         $(".addInstrestCarSubmit span").click(function() {
@@ -98,13 +113,13 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
             require(["index/qiugouModel"], function(qiugouModel) {
                 qiugouModel.ModifyAdviserBudget({
-                    min: $(".carBudget .dataContainer .leftContainer input").val() * 10000,
-                    max: $(".carBudget .dataContainer .rightContainer input").val() * 10000
+                    min: $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 10000,
+                    max: $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 10000
                 });
 
                 qiugouModel.ModifyAdviserYear({
-                    min: $(".caryear .dataContainer #age_select_input").val(),
-                    max: $(".caryear .dataContainer #age_select_high_input").val()
+                    min: $("." + tabID + " .caryear .dataContainer input#age_select").val(),
+                    max:  $("." + tabID + " .caryear .dataContainer input#age_select_high").val()
                 });
 
                 var instrest = qiugouModel.GetAdviserInstrest();
@@ -124,10 +139,10 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 }
 
                 var url = config.submit_api;
-                url += "?minPrice=" + $(".carBudget .dataContainer .leftContainer input").val();
-                url += "&maxPrice=" + $(".carBudget .dataContainer .rightContainer input").val();
-                url += "&minYear=" + ($(".caryear .dataContainer #age_select_input").val()||"");
-                url += "&maxYear=" + ($(".caryear .dataContainer #age_select_high_input").val()||"");
+                url += "?minPrice=" + $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
+                url += "&maxPrice=" + $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
+                url += "&minYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select").val()||"");
+                url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select_high").val()||"");
                 url+="&brands="+brand.join();
                 url+="&series="+series.join();
 
@@ -155,6 +170,18 @@ define(['souche/util/load-info'], function(LoadInfo) {
             }, 500);
 
         });
+
+        /// brandlist nav
+            $(".brandNav a").live("click",function() {
+                var id = $(this).attr("data-id");
+                var tabID=$("#carsNav ul li.active").attr("id");
+                if(!$("."+tabID+" .brandList span[data-id='" + id + "']").offset())
+                    return false;
+                var top = $("."+tabID+" .brandList span[data-id='" + id + "']").offset().top - $("."+tabID+" .brandList span").eq(0).offset().top;
+
+                $("."+tabID+" .brandList").scrollTop(top);
+            });
+        ///
         ///
         $(".addInstrestCar .addInstrestCarSubmit .submit ").click(function() {
             var option = {
@@ -207,10 +234,10 @@ define(['souche/util/load-info'], function(LoadInfo) {
 
                 if (this.minBudget || this.maxBudget) {
                     if (!this.minBudget) {
-                        $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "以下");
+                        $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "万以内");
                     }
-                    if (!this.maxBudget) {
-                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "以上");
+                    else if (!this.maxBudget) {
+                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "万以上");
                     } else {
                         $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
                     }
@@ -268,7 +295,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         var html = "";
         for (var i = 0; i < zimu.length; i++) {
-            html += "<a>" + zimu[i] + "</a>"
+            html += "<a data-id='" + zimu[i] + "'>" + zimu[i] + "</a>";
         }
         $(".brandNav").html(html);
     }

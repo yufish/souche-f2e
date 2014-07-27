@@ -87,6 +87,11 @@ define(function()
             }
         }
 
+        require(["index/modelSeries"],function(modelSeries)
+        {
+                modelSeries.addSelectedSeries(instrest.seriesCode);
+        });
+
         adviserInstrest.push(instrest);
         render("addInstrest", instrest);
         return true;
@@ -96,6 +101,11 @@ define(function()
         for (var idx = 0, len = adviserInstrest.length; idx < len; idx++) {
             if ( adviserInstrest[idx].seriesCode == instrest.seriesCode) {
                 adviserInstrest.splice(idx, 1);
+
+                require(["index/modelSeries"],function(modelSeries)
+                {
+                    modelSeries.deleteSelectedSeries(instrest.seriesCode);
+                });
 
                 render("deleteInstrest",instrest);
                 return true;

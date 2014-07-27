@@ -17,6 +17,12 @@ define(function() {
         var list=[]
         var len = result.items.length>=10?10:result.items.length;
 
+        if(len==0)
+        {
+            $(".realTimeDown").remove();
+            return ;
+        }
+
         for(var index=0;index<len;index++) {
             list.push(result.items[index]);
         }
@@ -24,11 +30,11 @@ define(function() {
         var downList = "<div class='realTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
             if(index%2) {
-                downList += "<span><a href='"+list[index].url+"'>" + list[index].name + "</a><\/span>";
+                downList += "<span class='list'><a href='"+list[index].url+"'>" + list[index].name + "</a><\/span>";
             }
             else
             {
-                downList += "<span><a href='"+list[index].url+"'>" + list[index].name+"<span class='enterChexi'>进入车系»</span>" + "</a><\/span>";
+                downList += "<span class='list'><a href='"+list[index].url+"'>" + list[index].name+"<span class='enterChexi'>进入车系»</span>" + "</a><\/span>";
             }
         }
         downList+="<\/div>";
@@ -61,16 +67,77 @@ define(function() {
 
         afterShow = option.success;
 
-        $element.find("input").keyup(function () {
+        var manager = Souche.AjaxManager.init({
+            aborted:true,
+            delayTime:500,
+            predicate:function()
+            {
+                return  this.url.substr(0, this.url.indexOf("?"));
+            }
+        });
+
+        $element.find("input").keyup(function (e) {
+            if(e.keyCode == 40) {
+                var num = $(".realTimeDown .hover").index();
+                var index = (num+1)%$(".realTimeDown .list").length;
+
+                $(".realTimeDown .hover").removeClass("hover");
+                $(".realTimeDown .list").eq(index).addClass("hover");
+                return ;
+            }
+            if(e.keyCode == 38) {
+                var num = $(".realTimeDown .hover").index();
+                var index = (num-1)%$(".realTimeDown .list").length;
+
+                $(".realTimeDown .hover").removeClass("hover");
+                $(".realTimeDown .list").eq(index).addClass("hover");
+                return ;
+            }
+
             var hasParam =!!(ajaxOption.url.indexOf("?")+1);
             if($(this).val()) {
                 ajaxOption.url = ajaxOption.url.substr(0, hasParam ? (ajaxOption.url.indexOf("?")) : ajaxOption.url.length) + "?words=" + $(this).val();
-                Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
+                //Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
+                manager.addAjax(
+                    ajaxOption,callback
+                );
             }
             else {
                 $(".realTimeDown").remove();
             }
         });
+
+        $element.find("input").focus(function () {
+            var hasParam =!!(ajaxOption.url.indexOf("?")+1);
+            if($(this).val()) {
+                ajaxOption.url = ajaxOption.url.substr(0, hasParam ? (ajaxOption.url.indexOf("?")) : ajaxOption.url.length) + "?words=" + $(this).val();
+                //Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
+                manager.addAjax(
+                    ajaxOption,callback
+                );
+            }
+            else {
+                $(".realTimeDown").remove();
+            }
+        });
+
+        $(".realTimeDown .list").live("mouseenter",function()
+        {
+            $(".realTimeDown .hover").removeClass("hover");
+            $(this).addClass("hover");
+        });
+
+        $(".realTimeDown .list").live("mouseleave",function()
+        {
+           // console.log(2);
+            $(this).removeClass("hover");
+        });
+
+       $("body").click(function()
+       {
+           $(".realTimeDown").remove();
+       });
+
     }
     down.init = init;
     return  down;
