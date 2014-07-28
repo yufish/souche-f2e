@@ -56,6 +56,9 @@ nav .nav-item{
     text-align: center;
     font-size: 13px;
 }
+nav .nav-item.active{
+    color:#FF571A;
+}
 #J_navbar_underline{
     height: 4px;
     background: #ff571a;
@@ -75,14 +78,15 @@ nav .nav-item{
     float: left;
 }
 .car-area{
-    padding: 10px 5px;
-    width: 320px;
-    margin:0 auto;
+    padding: 0 5px;
+}
+.car-wrapper{
+    width: 50%;
+    float: left;
 }
 .car-card{
     width: 145px;
-    float: left;
-    margin: 0 5px;
+    margin: 10px auto 0;
 }
 .car-card img{
     width: 145px;
@@ -91,6 +95,9 @@ nav .nav-item{
 .car-card .car-info{
     padding: 10px 8px;
     font-size:12px;
+    border:1px solid #e6e6e6;
+    border-top:none;
+    overflow: hidden;
 }
 .car-card .car-introduction{
     line-height: 16px;
@@ -117,5 +124,75 @@ nav .nav-item{
     padding:4px;
     background: #FF571A;
     color: #fff;
-
+}
+.car-area .look-more{
+    height: 36px;
+    line-height: 36px;
+    color:#666;
+    border:1px solid #E6E6E6;
+    background:#f5f5f5 ;
+    margin: 10px 5px 0;
+    text-align: center;
+    font-size: 12px;
+}
+.hot-brands .brand {
+    display: block;
+    margin: 10px 0;
+    color:#000;
+    font-size: 12px;
+}
+.quick-search-area{
+    margin: 0 16px;
+}
+.quick-search-area .title{
+    padding: 25px 0 15px;
+    font-size: 14px;
+    color:#333;
+    line-height: 14px;
+}
+.quick-search-area .title .more{
+    color:#666;
+    font-size: 12px;
+    float: right;
+}
+.quick-search-area .bd{
+    border-top:1px solid #E6E6E6;
+    border-bottom:1px solid #E6E6E6;
+}
+.hot-brands .brand img {
+    width: 30px;
+}
+.hot-brands .brand .brand-name {
+    line-height: 14px;
+}
+.hot-brands .brand .brand-wrapper{
+    text-align: center;
+}
+.quick-search-area .tag-item{
+    text-align: center;
+    color:#333;
+    font-size: 12px;
+    line-height: 45px;
+}
+.footer{
+    background: #333;
+    color: #9a9a9a;
+    height: 68px;
+    padding: 16px 30px;
+    font-size: 12px;
+    margin-top: 25px;
+}
+.footer a{
+    color: #9a9a9a;
+}
+.footer .promise{
+    padding-right:15px ;
+    border-right:1px solid #9a9a9a;
+}
+.footer .service{
+    float: right;
+}
+.footer .copyright{
+    text-align: center;
+    margin-top: 12px;
 }
