@@ -58,6 +58,11 @@ define(function()
         }
     }
 
+    result.GetAdviserYear = function()
+    {
+        return adviserYear;
+    }
+
     result.ModifyAdviserBudget = function(budget) {
         if (adviserBudget.minBudget == budget.min && adviserBudget.maxBudget == budget.max) {
             return true;
@@ -70,12 +75,22 @@ define(function()
         }
     }
 
+    result.GetAdviserBudget = function()
+    {
+        return adviserBudget;
+    }
+
     result.AddAdviserInstrest = function(instrest) {
         for (var idx = 0, len = adviserInstrest.length; idx < len; idx++) {
             if (adviserInstrest[idx].seriesCode == instrest.seriesCode) {
                 return true;
             }
         }
+
+        require(["index/modelSeries"],function(modelSeries)
+        {
+                modelSeries.addSelectedSeries(instrest.seriesCode);
+        });
 
         adviserInstrest.push(instrest);
         render("addInstrest", instrest);
@@ -87,6 +102,11 @@ define(function()
             if ( adviserInstrest[idx].seriesCode == instrest.seriesCode) {
                 adviserInstrest.splice(idx, 1);
 
+                require(["index/modelSeries"],function(modelSeries)
+                {
+                    modelSeries.deleteSelectedSeries(instrest.seriesCode);
+                });
+
                 render("deleteInstrest",instrest);
                 return true;
             }
@@ -94,10 +114,13 @@ define(function()
         return false;
     }
 
-    result.UpdateAdviserModel = function(callback) {
-        if (adviserModel.adviserYear.modify || adviserModel.adviserBudget.modify || adviserModel.adviserInstrest.modify) {
+    result.GetAdviserInstrest = function()
+    {
+        return adviserInstrest;
+    }
 
-        }
+    result.UpdateAdviserModel = function(callback) {
+
     }
 
     result.AddSubscribe = function(name,callback) {
@@ -125,8 +148,8 @@ define(function()
             for (var index = 0; index < adviser.series.length; index++) {
                 var temp = adviser.series[index].split(",");
                 var instrest = {
-                    name: temp[0],
-                    seriesCode: temp[1],
+                    name: temp[1],
+                    seriesCode: temp[0],
                     type: "serie"
                 };
                 this.AddAdviserInstrest(instrest);

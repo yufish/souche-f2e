@@ -1,9 +1,9 @@
 /**
  * Created by zilong on 2014/6/12.
  */
-define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener'], function (Mustache,brandManager,addListener) {
+define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'], function(Mustache, brandManager, addListener) {
 
-    var GuWen =(function(){
+    var GuWen = (function() {
         function userTrack(userData) {
             var url = contextPath + '/pages/common/trackAction/set.json?platform=PLATFORM_H5';
             $.ajax({
@@ -14,7 +14,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
         addListener(brandManager);
         return {
 
-            init: function (dataObj) {
+            init: function(dataObj) {
                 userTrack({
                     typeid: 'TYPE_H5_PAGE_CONSULT_SETP0'
                 });
@@ -39,29 +39,29 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                 pageStack.push(0);
                 var pages = [$('#page-1'), $('#page-2'), $('#page-3'), $('#page-4')];
                 var stepRecords = [];
-                stepRecords.push(1);//stepRecords[0] = 1;
+                stepRecords.push(1); //stepRecords[0] = 1;
                 function beforePage(pageIndex) {
                     var pageStep = pageIndex - 1;
                     var trackData = {};
                     if (pageStep == 1) {
-                        var min=$('#low-price').val(),
+                        var min = $('#low-price').val(),
                             max = $('#high-price').val();
-                        max = ((max=='不限')?10000:max);
+                        max = ((max == '不限') ? 10000 : max);
                         var minP = +min,
                             maxP = +max;
-                        if(isNaN(minP)|| isNaN(maxP)){
+                        if (isNaN(minP) || isNaN(maxP)) {
                             alert('请输入合法的价格');
                             return false;
                         }
-                        if(minP>maxP){
+                        if (minP > maxP) {
                             var tmp = minP;
-                            minP  = maxP;
+                            minP = maxP;
                             maxP = tmp;
                         }
                         if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP1',
-                                car_price_min:minP,
+                                car_price_min: minP,
                                 car_price_max: maxP
                             }
                             userTrack(trackData);
@@ -74,7 +74,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         if (!stepRecords[pageStep]) {
                             trackData = {
                                 typeid: 'TYPE_H5_PAGE_CONSULT_SETP2',
-                                car_brands: brandManager.brands.map(function (b) {
+                                car_brands: brandManager.brands.map(function(b) {
                                     return b['code'];
                                 }).join(',')
                             }
@@ -82,8 +82,8 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                         }
                     } else if (pageStep == 3) {
                         if (!stepRecords[pageStep]) {
-                            var sStr = brandManager.brands.map(function (b) {
-                                return b['series'].map(function (s) {
+                            var sStr = brandManager.brands.map(function(b) {
+                                return b['series'].map(function(s) {
                                     return s['code'];
                                 }).join(',');
                             }).join(',');
@@ -106,7 +106,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     pageIndex = pageIndex || (curPageIndex + 1);
                     document.body.scrollTop = 0;
 
-                    if(!beforePage(pageIndex)){
+                    if (!beforePage(pageIndex)) {
                         return;
                     }
                     var $curPage = pages[curPageIndex - 1];
@@ -116,7 +116,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }).show();
                     $curPage.animate({
                         left: '-100%'
-                    }, function () {
+                    }, function() {
                         $curPage.hide();
                     });
                     $page.animate({
@@ -144,7 +144,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }).show();
                     $curPage.animate({
                         left: '100%'
-                    }, function () {
+                    }, function() {
                         $curPage.hide();
                     });
                     $page.animate({
@@ -153,53 +153,50 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     curPageIndex = pageIndex;
                 }
 
-                var sSeriesArr = dataObj.series?dataObj.series.split(','):[];
-                var sBrandArr = dataObj.brands?dataObj.brands.split(','):[];
-                window.seriesBrandMap = {}
-                !function makeSeriesBrand(){
+                var sSeriesArr = dataObj.series ? dataObj.series.split(',') : [];
+                var sBrandArr = dataObj.brands ? dataObj.brands.split(',') : [];
+                window.seriesBrandMap = {}! function makeSeriesBrand() {
                     var key = '',
-                        value='';
-                    for(var i = 0;i<sSeriesArr.length;i++){
+                        value = '';
+                    for (var i = 0; i < sSeriesArr.length; i++) {
                         key = sSeriesArr[i];
                         seriesBrandMap[key] = '';
                     }
                 }();
 
 
-                !function priceBuild(){
+                ! function priceBuild() {
                     //10000 means no limit
-                    var priceRange=[0,5,8,10,15,20,30,50,10000];
-                    var low,high;
-                    var begin = '<div class="qs-item">'
-                                +   '<div class="card"></div>'
-                                +   '<div class="price-value">'
+                    var priceRange = [0, 5, 8, 10, 15, 20, 30, 50, 10000];
+                    var low, high;
+                    var begin = '<div class="qs-item">' + '<div class="card"></div>' + '<div class="price-value">'
                     var mid = '</div><div class="price-tag"><div class="value">';
                     var end = '万</div></div></div>';
                     var html = '';
-                    for(var i=0;i<priceRange.length-1;i++){
-                        low = priceRange[i],high= priceRange[i+1];
-                        if(high==10000)high='∞'
-                        html+=begin+low+mid+low+'~'+high+end;
+                    for (var i = 0; i < priceRange.length - 1; i++) {
+                        low = priceRange[i], high = priceRange[i + 1];
+                        if (high == 10000) high = '∞'
+                        html += begin + low + mid + low + '~' + high + end;
                     }
                     var quick_select = $('#price-quick-select');
-                    html+='<div class="qs-item"><div id="limit-symbol">∞</div></div>'
+                    html += '<div class="qs-item"><div id="limit-symbol">∞</div></div>'
                     quick_select.html(html);
 
                     var qsItems = quick_select.find('.qs-item');
                     var lowInput = $('#low-price'),
                         highInput = $('#high-price');
-                    qsItems.each(function(index,item){
+                    qsItems.each(function(index, item) {
                         var low = priceRange[index],
-                            high = priceRange[index+1]==10000?'不限':priceRange[index+1];
-                        $(this).click(function(){
-                            var self =$(this);
+                            high = priceRange[index + 1] == 10000 ? '不限' : priceRange[index + 1];
+                        $(this).click(function() {
+                            var self = $(this);
                             qsItems.removeClass('selected');
                             self.addClass('selected');
                             lowInput.val(low);
                             highInput.val(high);
                         })
                     })
-                    $('.price-box').on('focus',function(){
+                    $('.price-box').on('focus', function() {
                         qsItems.removeClass('selected');
                     })
                 }();
@@ -208,96 +205,101 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
 
                 //var loadingLayer = $('.loading-cover-layer');
                 var brandLoaded = false;
-                !function brandBuild(){
+                ! function brandBuild() {
                     var tplBrand = $('#tpl_brand').text();
-                    var initBrands = function(){
+                    var initBrands = function() {
                         var initBrs = {};
                         if (dataObj.brands) {
                             //var bArr = dataObj.brands.split(',');
-                            sBrandArr.forEach(function(item){
+                            sBrandArr.forEach(function(item) {
                                 initBrs[item] = '';
                             })
                         }
                         return initBrs;
                     }()
                     var sbMgr = {
-                        selectedBrands:[],
-                        setBrand:function(code,name){
-                            if(code in initBrands) {
-                                this.selectedBrands.push({code: code, name: name});
+                        selectedBrands: [],
+                        setBrand: function(code, name) {
+                            if (code in initBrands) {
+                                this.selectedBrands.push({
+                                    code: code,
+                                    name: name
+                                });
                             }
                         },
-                        build:function(){
+                        build: function() {
                             var sBrands = this.selectedBrands;
                             var b = null;
-                            for(var i in sBrands){
+                            for (var i in sBrands) {
                                 b = sBrands[i];
                                 brandManager.addBrand(b.code, b.name);
                             }
                         }
-                    }
-                    !function loadAllBrands() {
-                        //loadingLayer.removeClass('hidden');
-                        $.ajax({
-                            url:contextPath+ '/pages/dicAction/loadRootLevel.json',
-                            dataType:"json",
-                            data:{
-                                type:'car-subdivision'
-                            },
-                            success:function (data) {
-                                var brands = data.items;
-                                var container = $('#brand-icons-container');
-                                var html = '',
-                                    totalNum = brands.length;
+                    }! function loadAllBrands() {
+                            //loadingLayer.removeClass('hidden');
+                            $.ajax({
+                                url: contextPath + '/pages/dicAction/loadRootLevel.json',
+                                dataType: "json",
+                                data: {
+                                    type: 'car-subdivision'
+                                },
+                                success: function(data) {
+                                    var brands = data.items;
+                                    var container = $('#brand-icons-container');
+                                    var html = '',
+                                        totalNum = brands.length;
 
-                                for(var i= 0;i<totalNum;i++){
-                                    var b = brands[i];
-                                    var brandData={
-                                        brand: b.code,
-                                        brandName: b.enName,
-                                        picture: parsePic(b.extString)
+                                    for (var i = 0; i < totalNum; i++) {
+                                        var b = brands[i];
+                                        var brandData = {
+                                            brand: b.code,
+                                            brandName: b.enName,
+                                            picture: parsePic(b.extString)
 
+                                        }
+                                        html += Mustache.render(tplBrand, {
+                                            'brand': brandData
+                                        });
+                                        sbMgr.setBrand(brandData['brand'], brandData['brandName']);
                                     }
-                                    html += Mustache.render(tplBrand, {'brand': brandData});
-                                    sbMgr.setBrand(brandData['brand'], brandData['brandName']);
+                                    container.html(html);
+                                    sbMgr.build();
+                                    //loadingLayer.addClass('hidden');
                                 }
-                                container.html(html);
-                                sbMgr.build();
-                                //loadingLayer.addClass('hidden');
-                            }
 
-                        })
+                            })
 
-                    }();
-                    function parsePic(str){
-                        var props = str.substr(1,str.length-2).split(',');
-                        for(var i = 0;i<props.length;i++){
+                        }();
+
+                    function parsePic(str) {
+                        var props = str.substr(1, str.length - 2).split(',');
+                        for (var i = 0; i < props.length; i++) {
                             var ps = props[i].split('=');
-                            if(ps[0]=='picture'){
+                            if (ps[0] == 'picture') {
                                 return ps[1];
                             }
                         }
                     }
                 }();
 
-                $('.back-icon').click(function () {
+                $('.back-icon').click(function() {
                     backPage();
                 })
-                $('#selected-brand').on('click', '.sb-item', function () {
+                $('#selected-brand').on('click', '.sb-item', function() {
                     var $self = $(this);
                     //brand-code should be data-code
                     var code = $self.attr('data-code'),
-                        name=$self.find('.text').text();
-                    brandManager.removeBrand(code,name);
+                        name = $self.find('.text').text();
+                    brandManager.removeBrand(code, name);
                 });
 
-                $('#brand-icons-container').on('click', '.icon-item', function () {
+                $('#brand-icons-container').on('click', '.icon-item', function() {
                     var $self = $(this);
                     var code = $self.attr('data-code');
                     var name = $self.find('.brand-name').text();
-                    if($self.hasClass('selected')) {
+                    if ($self.hasClass('selected')) {
                         brandManager.removeBrand(code, name);
-                    }else{
+                    } else {
                         brandManager.addBrand(code, name);
                     }
                 })
@@ -314,12 +316,12 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }
                 })
 
-                $('#series-container').on('click','.series-buxian',function() {
+                $('#series-container').on('click', '.series-buxian', function() {
                     var bCode = $(this).attr('data-code');
                     brandManager.noLimitSeries(bCode);
                 })
 
-                $('#selected-series').on('click','.ss-item',function(){
+                $('#selected-series').on('click', '.ss-item', function() {
                     var self = $(this);
                     var code = self.attr('data-code'),
                         bCode = self.attr('data-brand-code');
@@ -333,9 +335,9 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }).join(',')
 
                     var sStr = brands.map(function(b) {
-                            return b['series'].map(function(s) {
-                                return s['code'];
-                            }).join(',');
+                        return b['series'].map(function(s) {
+                            return s['code'];
+                        }).join(',');
                     }).join(',');
                     return {
                         brandStr: bStr,
@@ -365,24 +367,24 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                             minPrice: minPrice,
                             maxPrice: maxPrice
                         },
-                        success: function () {
-                            setTimeout(function () {
+                        success: function() {
+                            setTimeout(function() {
                                 window.location.href = contextPath + '/mobile/carcustom.html' + location.search;
                             }, 50)
                         },
-                        error: function () {
+                        error: function() {
                             alert('error');
                         }
                     });
                 }
 
-                $('#submit-btn').click(function () {
+                $('#submit-btn').click(function() {
                     if (curPageIndex == pages.length - 1) {
                         gotoPage()
                         submitGuWenInfo();
                         return;
                     }
-                    if(curPageIndex==2&& brandManager.brands.length==0){
+                    if (curPageIndex == 2 && brandManager.brands.length == 0) {
                         gotoPage(4)
                         submitGuWenInfo();
                         return;
@@ -391,27 +393,27 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     //TODO
                 })
 
-                $('.search-icon').click(function () {
+                $('.search-icon').click(function() {
                     var $icon2 = $(this).siblings('.search-icon-2');
                     $(this).parent().siblings('.search-box').show();
                     $(this).hide();
                     $icon2.show();
                 })
 
-                $('.search-icon-2').click(function () {
+                $('.search-icon-2').click(function() {
                     var $icon = $(this).siblings('.search-icon');
                     $(this).parent().siblings('.search-box').hide();
                     $(this).hide();
                     $icon.show();
                 })
 
-                $('.cancel-icon').click(function (e) {
+                $('.cancel-icon').click(function(e) {
                     var $input = $(this).siblings('input[name=keyword]');
                     $input.val('');
                     $input.focus();
                 })
 
-                $('.search-form').submit(function (e) {
+                $('.search-form').submit(function(e) {
                     var $input = $(this).find('input[name=keyword]');
                     if ($input.val().trim() == '') {
                         $input.val('');
@@ -419,7 +421,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
                     }
                 })
 
-                $('.search-btn').click(function (e) {
+                $('.search-btn').click(function(e) {
                     var $input = $(this).siblings('.input').find('input[name=keyword]');
                     if ($input.val().trim() == '') {
                         $input.val('');
@@ -430,7 +432,7 @@ define(['lib/mustache', 'mobile/common/BrandManager','mobile/guwen/addListener']
 
                 var curNumOfEllipsis = 1;
                 $ellipsis = $('.ellipsis');
-                setInterval(function () {
+                setInterval(function() {
                     var txt = '';
                     for (var i = 0; i < curNumOfEllipsis; i++) {
                         txt += '.'

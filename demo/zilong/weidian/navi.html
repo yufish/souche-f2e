@@ -2,37 +2,165 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+
 <!-- target-densitydpi=device-dpi,  -->
-<meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="format-detection" content="telephone=no" />
 <title>微店 - 导航</title>
-<link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dialog.css" /><!--弹框插件css-->
+<link rel="stylesheet" type="text/css" href="css/dialog.default.css" /> <!--弹框插件css皮肤-->
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<link rel="stylesheet" type="text/css" href="css/button.default.css" />
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/zepto.extend.js"></script>
+<script type="text/javascript" src="js/zepto.ui.js"></script>
+<script type="text/javascript" src="js/zepto.highlight.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript" src="js/button.js"></script>
+<script src="js/zepto.ect.fn.js"></script>
+
+<style>	
+	input[type=text], input[type=password] {border-color: #bbb;height: 3.0rem;font-size:2.1rem;border-radius: 0.5rem;outline: 0;    border: #ccc 1px solid;padding: 1rem 0rem;width: 97%;-webkit-transition: box-shadow .5s;margin:15px;-webkit-transform:translateX(-6px);padding-left: 10px;}
+	input[type=text]:hover,  input[type=text]:focus, input[type=password]:hover,  input[type=password]:focus {border: 1px solid #56b4ef;box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);-webkit-transition: box-shadow .5s;}
+    input::-webkit-input-placeholder {color: #999;-webkit-transition: color .5s;}
+    input:focus::-webkit-input-placeholder,  input:hover::-webkit-input-placeholder {color: #c2c2c2;-webkit-transition: color .5s;}
+    .phonerror{ color:#df4136; text-align:center; font-size: 1.5rem;  opacity: 0; -webkit-transition: opacity .5s ease;}
+    .ui-dialog{ background: #FFF;}
+    .ui-dialog-title h3{ line-height:4rem;}
+    .ui-dialog-btns{position: absolute;bottom: 0px;height: 5rem;}
+    .ui-dialog-btns .ui-btn{line-height:4.5rem;font-size: 1.9rem;}
+    /*修改局部弹框CSS*/
+    /*按钮部分*/
+    .ui-dialog-btns .ui-btn{display: inline-block;width:45.5%;margin-left: 3%;border: 1px solid #ddd;height: 4.5rem;margin-bottom: 1rem; border-radius:8px; background: #f4f4f4;}     
+    .ui-dialog-btns .ui-btn:first-child,.ui-dialog-btns .ui-btn:last-child{border: 1px solid #ddd; border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;}
+</style>
+
 </head>
 
 <body>
-<header>
-	<div class="border-top"></div>
-</header>
-
-<div class="addr">
-	苏州市上塘路345号
-</div>
-
-<section class="map">
-<div id="l-map"></div>
-</section>
-
-<div class="doubs zhaoche-sub clearfix">
-	<a href="#" class="fl">一键导航</a><a href="#" class="fr">发送地址到手机</a>
-</div>
-
-<script src="../../../assets/js/weidian/zep.js"></script>
+    <header>
+    	<div class="border-top"></div>
+    </header>
+    <div class="addr">
+    	杭州火车东站
+    </div>
+    <section class="map">
+    <div id="l-map"></div>
+    </section>
+    <div class="doubs zhaoche-sub clearfix ">
+    	<a href="javascript:;" >一键导航</a><a href="javascript:;" id="btn1" >发送地址到手机</a>
+    </div>
+    <div id="dialog1" title="发送地址到手机">
+          <input class="phone" type="text" placeholder="您的手机号码" name="phone" />	
+          <div class="phonerror">
+           		请正确输入手机号码
+           </div>
+    </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=TvDVQ4VwFHkXCgXvtv6Wlcil&v=1.0"></script>
-<script type="text/javascript">  
-var map = new BMap.Map("l-map");  
-map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);  
+<script type="text/javascript">
+    function map(obj){        
+        // 百度地图API功能
+        var map = new BMap.Map("l-map");
+        var myGeo = new BMap.Geocoder();   
+        var infoWindow = new BMap.InfoWindow(obj);  // 创建信息窗口对象 
+        myGeo.getPoint(obj,function(obj){           
+             map.centerAndZoom(obj, 95);
+             map.addOverlay(new BMap.Marker(obj));
+             //map.openInfoWindow(infoWindow,obj); //开启信息窗口            
+         })
+    }
+    map($(".addr").html());//把位置标注出来
+
+   
+    function subTub(){
+        var txt=$(".phone").val();              
+        var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;       
+        if(reg.test(txt)){
+            $.ajax({
+                type:"POST",
+                url:"aa.php",
+                dataType: 'json',
+                data: {'phone': txt},
+                success:function(data){
+                           
+                           //这里是返回信息，判断有没有发送成功 
+                            
+                },
+                error:function(){
+                    //错误信息
+                   
+                }
+        })                    
+        }else{
+           phoneerror(".phonerror")
+        }
+    }
+    function phoneerror(obj){
+        $(obj).css("opacity",1)
+    }
+    function prevent(obj,target){  //提交号码失败 
+       obj.close();
+       phoneen(target) 
+       $(target).val("");
+    }
+    function phoneen(obj){
+        $(obj).next().css("opacity",0)
+    }
+    function zhaocheBtn(obj){
+        var el = obj.root();
+        switch(el.index()){
+            case 0:
+                mapopen()
+                //这里是第一个按钮的事件执行区域
+                break;
+            case 1: 
+                phoneen(".phone") //点击之前隐藏提示               
+                $('#dialog1').dialog('open');  //执行
+                break;            
+        }
+    }
+    function mapopen(){
+        localStorage.setItem("add",$(".addr").html());//把地址缓存在本地      
+        var t=window.location.toString();
+        window.location=t.substring(0,t.lastIndexOf("/"))+"/inc/map.html";
+    }
+    $('.zhaoche-sub a').button({click: function(){ 
+        zhaocheBtn(this) //循环按钮，执行
+    }});
+    $(".phone").on("focus",function(){
+        phoneen(this)
+    }) //输入框得到焦点，提示隐藏
+    $('#dialog1').dialog({  //发送手机号码
+        autoOpen: false,
+        closeBtn: false,
+        width:"90%",
+        height:363,//测试用363，完成用40%
+        buttons: {
+            '取消': function(){
+                prevent(this,".phone");//取消
+            },
+            '确定': function(){               
+                subTub()   //提交
+                
+            }
+        }
+    }).dialog('data', '_wrap').addClass('login-dialog');
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

@@ -2,7 +2,7 @@ body *{
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
 
-#carsNav,#carsMore {
+#carsNav,.carsMore {
   width: 96.8%;
   position: relative;
   height: 40px;
@@ -37,7 +37,7 @@ body *{
 }
 
 @media screen  and (max-width: 1366px) {
-  #carsContent {
+  .carsContent {
     .carsItem {
       width: 30.3% ;
       *width: 30.03% ;
@@ -61,7 +61,7 @@ body *{
 }
 
 @media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #carsNav, #carsMore {
+  #carsNav, .carsMore {
     width: 97.8%;
     position: relative;
     height: 40px;
@@ -77,7 +77,7 @@ body *{
   {
     width: 98%;
   }
-  #carsContent {
+  .carsContent {
     .carsItem {
       width: 22.9%;
       *width:22%;
@@ -90,7 +90,7 @@ body *{
 }
 
 @media screen and (min-width: 1440px) {
-  #carsNav, #carsMore {
+  #carsNav, .carsMore {
     width: 98%;
     position: relative;
     height: 40px;
@@ -109,7 +109,7 @@ body *{
     width: 98%;
   }
 
-  #carsContent {
+  .carsContent {
     .carsItem {
       width: 22.9%;
       height: 355px;
@@ -128,13 +128,14 @@ body *{
   clear: both;
 }
 
-#carsContent {
+.carsContent {
   width: 100%;
   position: relative;
-  min-height: 550px;
+  min-height: 390px;
   overflow: hidden;
   .myAdviser ,.hotNewCars {
     position: relative;
+    overflow: hidden;
   }
 
   .carsItem {
@@ -215,12 +216,12 @@ body *{
           color: #B6B6B6;
           vertical-align: middle;
           float: right;
-          padding-top: 10px;
+          padding-top: 7px;
           padding-right: 8%;
         }
         input {
           width:40%;
-          height: 25px;
+          height: 20px;
           border: none;
           padding: 5px;
           float: left;
@@ -589,7 +590,7 @@ body *{
             color: #B6B6B6;
             float: right;
             width: 45%;
-            margin-top:10px;
+            margin-top:7px;
             text-align: center;
           }
           input {
@@ -640,22 +641,25 @@ body *{
         float: left;
         margin-top: 10px;
         background: #ffffff;
-        padding: 6px 10px;
+        padding: 5px 10px 4px 10px;
         border: 1px solid #CCCCCC;
         margin-right: 5px;
         margin-left: 5px;
         a{
           margin-right: 10px;
           font-size: 14px;
+          float: left;
         }
         span
         {
           cursor: pointer;
           color: #B6B6B6;
-          padding: 0px 6px 0px 6px;
+          padding: 6px 6px 6px 6px;
           background-position: center;
           background: url("../images/index/close.jpg") no-repeat;
           vertical-align: middle;
+          float: left;
+          margin-top: 5px;
         }
       }
       .addCarinstrestItem
@@ -663,7 +667,7 @@ body *{
         float: left;
         margin-top: 10px;
         background: #ffffff;
-        padding: 2px 10px 7px 10px;
+        padding: 1px 8px 3px 8px;
         border: 1px solid #FF5719;
         margin-right: 5px;
         margin-left: 5px;
@@ -766,7 +770,7 @@ body *{
             .option{
               display: block;
               float: none;
-              padding-left: 15px;
+              padding-left: 22px;
               font-size: 12px;
               line-height: 24px;
               color: #333;
@@ -849,6 +853,7 @@ body *{
         a{
           margin-right: 10px;
           font-size: 13px;
+          float: left;
         }
         span
         {
@@ -989,6 +994,11 @@ body *{
             color:#939393;
             cursor: pointer;
           }
+          .chexiTitle .active {
+            background: #F44B0B;
+            cursor: pointer;
+            color: white;
+          }
           ul
           {
             margin-top: 20px;
@@ -1026,7 +1036,7 @@ body *{
   }
 }
 
-#carsMore
+.carsMore
 {
   margin-top: 20px;
   padding: 10px 0px;
@@ -1037,4 +1047,15 @@ body *{
   border: 1px solid #E6E6E6;
   font-size: 15px;
   cursor: pointer;
+}
+
+.down-counter
+{
+ color: #666666;
+  font-size: 13px;
+  ins
+  {
+    color: #FF571A;
+    font-size: 13px;
+  }
 }

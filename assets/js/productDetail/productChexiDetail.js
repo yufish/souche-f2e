@@ -1,18 +1,16 @@
 /**
  * Created by Administrator on 2014/7/1.
  */
-define(function()
-{
+define(function() {
     var chexiControl = {};
-    var config={};
-    var baseControlerConfig={
-        "carConstrast":"productDetail/carConstrast",
-        "collect":"productDetail/collect",
-        "nav":"productDetail/nav"
+    var config = {};
+    var baseControlerConfig = {
+        "carConstrast": "productDetail/carConstrast",
+        "collect": "productDetail/collect",
+        "nav": "productDetail/nav"
     };
 
-    var loadImg = function()
-    {
+    var loadImg = function() {
         $(".photosWrap img").lazyload({
             effect: "fadeIn"
         });
@@ -22,9 +20,8 @@ define(function()
         });
     }
 
-    var init = function(_config)
-    {
-        $.extend(config,_config);
+    var init = function(_config) {
+        $.extend(config, _config);
 
         //loadImg();
         initBaseControler();
@@ -32,16 +29,13 @@ define(function()
         $("#allProduct table tr").eq(5).nextAll().addClass("hidden");
         $(this).removeClass("hasShow")
 
-        $("#showMore").click(function()
-        {
-            if($(this).hasClass("hasShow"))
-            {
+        $("#showMore").click(function() {
+            if ($(this).hasClass("hasShow")) {
                 $("#allProduct table tr").eq(5).nextAll().addClass("hidden");
                 $(this).removeClass("hasShow");
                 $(this).html("全部展开");
-            }
-            else
-            {
+                $("html,body").scrollTop($("#allProduct").offset().top)
+            } else {
                 $("#allProduct table tr").eq(5).nextAll().removeClass("hidden");
                 $(this).addClass("hasShow");
                 $(this).html("收起");
@@ -49,22 +43,19 @@ define(function()
         });
     };
 
-    var initBaseControler = function(conf)
-    {
+    var initBaseControler = function(conf) {
         var requireList = [];
 
-        for(key in baseControlerConfig)
-        {
-            if(baseControlerConfig.hasOwnProperty(key)) {
+        for (key in baseControlerConfig) {
+            if (baseControlerConfig.hasOwnProperty(key)) {
                 var path = baseControlerConfig[key];
                 requireList.push(path);
             }
         }
 
-        require(requireList,function()
-        {
-            var length  = arguments.length;
-            for(var index=0;index<length;index++) {
+        require(requireList, function() {
+            var length = arguments.length;
+            for (var index = 0; index < length; index++) {
                 arguments[index].init(config);
             }
         });

@@ -656,11 +656,47 @@ a:hover {
 .main-slider .flex-control-nav .flex-active {
   background-color: #e70;
 }
+.realTimeDown {
+  top: 0px;
+  left: 0px;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+}
+.realTimeDown span {
+  display: block;
+  float: none;
+  padding: 3px 0px;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #B4B4B4;
+  cursor: pointer;
+  font-size: 13px;
+}
+.realTimeDown span a {
+  display: block;
+  color: #B4B4B4;
+}
+.realTimeDown span .enterChexi {
+  float: right;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #FF5719;
+  font-weight: bolder;
+  margin-top: -5px;
+}
+.realTimeDown .hover {
+  background: #F8F8F6;
+}
 body * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
 #carsNav,
-#carsMore {
+.carsMore {
   width: 96.8%;
   position: relative;
   height: 40px;
@@ -668,12 +704,12 @@ body * {
   border: 1px solid #E6E6E6;
 }
 #carsNav ul,
-#carsMore ul {
+.carsMore ul {
   height: auto;
   list-style: none;
 }
 #carsNav ul li,
-#carsMore ul li {
+.carsMore ul li {
   cursor: pointer;
   height: auto;
   float: left;
@@ -684,11 +720,11 @@ body * {
   border-bottom: 1px solid #E6E6E6;
 }
 #carsNav ul li:hover,
-#carsMore ul li:hover {
+.carsMore ul li:hover {
   color: #333;
 }
 #carsNav ul li.active,
-#carsMore ul li.active {
+.carsMore ul li.active {
   color: #fc7000;
   background: #ffffff;
   font-weight: bold;
@@ -697,7 +733,7 @@ body * {
   height: 20px;
 }
 @media screen and (max-width: 1366px) {
-  #carsContent .carsItem {
+  .carsContent .carsItem {
     width: 30.3% ;
     *width: 30.03% ;
     height: 355px;
@@ -717,7 +753,7 @@ body * {
 }
 @media screen and (min-width: 1366px) and (max-width: 1440px) {
   #carsNav,
-  #carsMore {
+  .carsMore {
     width: 97.8%;
     position: relative;
     height: 40px;
@@ -732,7 +768,7 @@ body * {
   .addInstrestCar {
     width: 98%;
   }
-  #carsContent .carsItem {
+  .carsContent .carsItem {
     width: 22.9%;
     *width: 22%;
     height: 355px;
@@ -743,7 +779,7 @@ body * {
 }
 @media screen and (min-width: 1440px) {
   #carsNav,
-  #carsMore {
+  .carsMore {
     width: 98%;
     position: relative;
     height: 40px;
@@ -758,7 +794,7 @@ body * {
   .addInstrestCar {
     width: 98%;
   }
-  #carsContent .carsItem {
+  .carsContent .carsItem {
     width: 22.9%;
     height: 355px;
     margin: 2% 1.9% 0px 0px;
@@ -771,49 +807,50 @@ body * {
 .clearBoth {
   clear: both;
 }
-#carsContent {
+.carsContent {
   width: 100%;
   position: relative;
-  min-height: 550px;
+  min-height: 390px;
   overflow: hidden;
 }
-#carsContent .myAdviser,
-#carsContent .hotNewCars {
+.carsContent .myAdviser,
+.carsContent .hotNewCars {
   position: relative;
+  overflow: hidden;
 }
-#carsContent .carsItem > img {
+.carsContent .carsItem > img {
   width: 100%;
 }
-#carsContent .operationItem {
+.carsContent .operationItem {
   background: #F5F5F5;
 }
-#carsContent .operationItem .opItemTitle {
+.carsContent .operationItem .opItemTitle {
   margin: 0px 0px 0px 20px;
   font-weight: normal;
   font-size: 20px;
 }
-#carsContent .operationItem .opItemTitleTop {
+.carsContent .operationItem .opItemTitleTop {
   margin: 20px 0px 0px 20px;
 }
-#carsContent .operationItem .important {
+.carsContent .operationItem .important {
   color: #fc7000;
 }
-#carsContent .operationItem .dataContainer {
+.carsContent .operationItem .dataContainer {
   position: relative;
   margin-top: 90px;
   margin-left: 20px;
   margin-right: 20px;
 }
-#carsContent .operationItem .dataContainer > div {
+.carsContent .operationItem .dataContainer > div {
   position: relative;
   height: 50px;
 }
-#carsContent .operationItem .dataContainer > span {
+.carsContent .operationItem .dataContainer > span {
   font-size: 15px;
   display: block;
   clear: both;
 }
-#carsContent .operationItem .dataContainer > div > a {
+.carsContent .operationItem .dataContainer > div > a {
   vertical-align: middle;
   display: block;
   width: 12px;
@@ -821,7 +858,7 @@ body * {
   position: relative;
   top: 17px;
 }
-#carsContent .operationItem .dataContainer .submit {
+.carsContent .operationItem .dataContainer .submit {
   margin-top: 20px;
   width: 100%;
   padding-top: 10px;
@@ -836,10 +873,10 @@ body * {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-#carsContent .operationItem .dataContainer .submit:hover {
+.carsContent .operationItem .dataContainer .submit:hover {
   background: #FF4D09;
 }
-#carsContent .operationItem .dataContainer .inputContainer {
+.carsContent .operationItem .dataContainer .inputContainer {
   margin-top: 10px;
   position: absolute;
   display: inline-block;
@@ -852,30 +889,30 @@ body * {
   background: #ffffff;
   color: #B6B6B6;
 }
-#carsContent .operationItem .dataContainer .inputContainer a {
+.carsContent .operationItem .dataContainer .inputContainer a {
   color: #B6B6B6;
   vertical-align: middle;
   float: right;
-  padding-top: 10px;
+  padding-top: 7px;
   padding-right: 8%;
 }
-#carsContent .operationItem .dataContainer .inputContainer input {
+.carsContent .operationItem .dataContainer .inputContainer input {
   width: 40%;
-  height: 25px;
+  height: 20px;
   border: none;
   padding: 5px;
   float: left;
 }
-#carsContent .operationItem .dataContainer .leftContainer {
+.carsContent .operationItem .dataContainer .leftContainer {
   position: absolute;
   left: 0px;
 }
-#carsContent .operationItem .dataContainer .rightContainer {
+.carsContent .operationItem .dataContainer .rightContainer {
   position: absolute;
   right: 0px;
   top: 0px;
 }
-#carsContent .operationItem .dataContainer .carinstrest {
+.carsContent .operationItem .dataContainer .carinstrest {
   height: 20px !important;
   margin-top: 10px;
   width: 100%;
@@ -888,60 +925,60 @@ body * {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-#carsContent .carItem {
+.carsContent .carItem {
   overflow: hidden;
   position: relative;
 }
-#carsContent .carItem .carImg {
+.carsContent .carItem .carImg {
   position: relative;
   width: 100%;
   overflow: hidden;
   height: 182px;
   display: block;
 }
-#carsContent .carItem .carImg img {
+.carsContent .carItem .carImg img {
   position: relative;
   width: 100%;
   height: 182px;
   top: 0px;
   left: 0px;
 }
-#carsContent .carItem .car-link {
+.carsContent .carItem .car-link {
   font-size: 15px;
   margin: 7px 20px 0px 20px;
   height: 40px;
   overflow: hidden;
   display: block;
 }
-#carsContent .carItem .car-link:hover {
+.carsContent .carItem .car-link:hover {
   color: #F44B0B;
 }
-#carsContent .carItem .info {
+.carsContent .carItem .info {
   margin: 7px 20px 0px 20px;
   padding-bottom: 5px;
   position: relative;
 }
-#carsContent .carItem .info .price {
+.carsContent .carItem .info .price {
   color: #FF571A;
   font-weight: bold;
   font-size: 14px;
   margin-right: 25px;
 }
-#carsContent .carItem .info .shangpai {
+.carsContent .carItem .info .shangpai {
   font-size: 13px;
   position: absolute;
   right: 0px;
   color: #8C8C8C;
 }
-#carsContent .carItem .other {
+.carsContent .carItem .other {
   margin: 7px 20px 0px 20px;
   font-size: 13px;
   padding-bottom: 10px;
 }
-#carsContent .carItem .other .discount {
+.carsContent .carItem .other .discount {
   color: #FF571A;
 }
-#carsContent .carItem .other .recommended {
+.carsContent .carItem .other .recommended {
   margin-top: 5px;
   font-size: 14px;
   color: #999;
@@ -950,7 +987,7 @@ body * {
   height: 40px;
   cursor: default;
 }
-#carsContent .carItem .carTail {
+.carsContent .carItem .carTail {
   bottom: 10px;
   left: 15px;
   width: 85%;
@@ -958,7 +995,7 @@ body * {
   border-top: 1px solid #EEEEEE;
   padding-top: 10px;
 }
-#carsContent .carItem .carTail .collect {
+.carsContent .carItem .carTail .collect {
   padding-left: 15px;
   position: relative;
   color: #999;
@@ -968,29 +1005,29 @@ body * {
   font-size: 12px;
   float: left;
 }
-#carsContent .carItem .carTail .collect a {
+.carsContent .carItem .carTail .collect a {
   color: #999;
 }
-#carsContent .carItem .carTail .collect:hover {
+.carsContent .carItem .carTail .collect:hover {
   background: url(../images/index/hover.png) no-repeat;
   background-position: 0px 2px;
   cursor: pointer;
 }
-#carsContent .carItem .carTail .collect.ative {
+.carsContent .carItem .carTail .collect.ative {
   background: url(../images/index/active.png) no-repeat;
   background-position: 0px 2px;
   cursor: pointer;
 }
-#carsContent .carItem .carTail .recommendedToday {
+.carsContent .carItem .carTail .recommendedToday {
   font-size: 12px;
   display: block;
   float: right;
   color: #999;
 }
-#carsContent .infoItem {
+.carsContent .infoItem {
   position: relative;
 }
-#carsContent .infoItem a {
+.carsContent .infoItem a {
   margin: 25px 20px 0px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -998,7 +1035,7 @@ body * {
   cursor: pointer;
   color: #333333;
 }
-#carsContent .infoItem a span {
+.carsContent .infoItem a span {
   padding: 0px 4px;
   color: #fff;
   background: #6CACE7;
@@ -1006,10 +1043,10 @@ body * {
   font-weight: normal;
   margin-right: 5px;
 }
-#carsContent .infoItem a:hover {
+.carsContent .infoItem a:hover {
   color: #F44B0B;
 }
-#carsContent .infoItem .infoContent {
+.carsContent .infoItem .infoContent {
   margin: 15px 20px 0px 20px;
   font-size: 14px;
   color: #999;
@@ -1018,25 +1055,25 @@ body * {
   height: 125px;
   position: relative;
 }
-#carsContent .infoItem .infoImg {
+.carsContent .infoItem .infoImg {
   margin: 20px 20px 0px 20px;
   position: relative;
   height: 65px;
 }
-#carsContent .infoItem .infoImg .leftImg {
+.carsContent .infoItem .infoImg .leftImg {
   width: 45%;
   position: absolute;
   left: 0px;
 }
-#carsContent .infoItem .infoImg .rightImg {
+.carsContent .infoItem .infoImg .rightImg {
   width: 45%;
   position: absolute;
   right: 0px;
 }
-#carsContent .infoItem .infoImg img {
+.carsContent .infoItem .infoImg img {
   margin-right: 16px;
 }
-#carsContent .infoItem .infoTail {
+.carsContent .infoItem .infoTail {
   position: absolute;
   bottom: 10px;
   width: 85%;
@@ -1044,51 +1081,51 @@ body * {
   padding-top: 10px;
   border-top: 1px solid #f5f5f5;
 }
-#carsContent .infoItem .infoTail .readed {
+.carsContent .infoItem .infoTail .readed {
   color: #999;
   font-size: 12px;
   display: block;
   float: left;
 }
-#carsContent .infoItem .infoTail .readed a {
+.carsContent .infoItem .infoTail .readed a {
   color: #999;
 }
-#carsContent .infoItem .infoTail .recommendedToday {
+.carsContent .infoItem .infoTail .recommendedToday {
   font-size: 12px;
   display: block;
   float: right;
   color: #999;
 }
-#carsContent .bindLoginInfo,
-#carsContent .bindunLoginInfo {
+.carsContent .bindLoginInfo,
+.carsContent .bindunLoginInfo {
   background: #F5F5F5;
 }
-#carsContent .bindLoginInfo h1,
-#carsContent .bindunLoginInfo h1 {
+.carsContent .bindLoginInfo h1,
+.carsContent .bindunLoginInfo h1 {
   margin: 25px 20px 0px 20px;
   font-size: 16px;
   font-weight: bold;
 }
-#carsContent .bindLoginInfo .yusuan,
-#carsContent .bindunLoginInfo .yusuan {
+.carsContent .bindLoginInfo .yusuan,
+.carsContent .bindunLoginInfo .yusuan {
   margin-top: 20px;
   margin-left: 20px;
   max-height: 60px;
   overflow: hidden;
 }
-#carsContent .bindLoginInfo .yusuan > div,
-#carsContent .bindunLoginInfo .yusuan > div {
+.carsContent .bindLoginInfo .yusuan > div,
+.carsContent .bindunLoginInfo .yusuan > div {
   color: #999;
 }
-#carsContent .bindLoginInfo .yusuan span,
-#carsContent .bindunLoginInfo .yusuan span {
+.carsContent .bindLoginInfo .yusuan span,
+.carsContent .bindunLoginInfo .yusuan span {
   float: left;
   padding-right: 8px;
   line-height: 20px;
   font-size: 14px;
 }
-#carsContent .bindLoginInfo .interestCar,
-#carsContent .bindunLoginInfo .interestCar {
+.carsContent .bindLoginInfo .interestCar,
+.carsContent .bindunLoginInfo .interestCar {
   margin-top: 15px;
   margin-left: 20px;
   clear: both;
@@ -1096,16 +1133,16 @@ body * {
   height: 80px;
   overflow: hidden;
 }
-#carsContent .bindLoginInfo .interestCar span,
-#carsContent .bindunLoginInfo .interestCar span {
+.carsContent .bindLoginInfo .interestCar span,
+.carsContent .bindunLoginInfo .interestCar span {
   float: left;
   padding-right: 8px;
   font-size: 14px;
   color: #000000;
   line-height: 20px;
 }
-#carsContent .bindLoginInfo .year,
-#carsContent .bindunLoginInfo .year {
+.carsContent .bindLoginInfo .year,
+.carsContent .bindunLoginInfo .year {
   margin-top: 10px;
   margin-left: 20px;
   clear: both;
@@ -1113,31 +1150,31 @@ body * {
   height: 60px;
   overflow: hidden;
 }
-#carsContent .bindLoginInfo .year span,
-#carsContent .bindunLoginInfo .year span {
+.carsContent .bindLoginInfo .year span,
+.carsContent .bindunLoginInfo .year span {
   color: #000000;
   font-size: 14px;
   padding-top: 2px;
 }
-#carsContent .bindLoginInfo .modify,
-#carsContent .bindunLoginInfo .modify {
+.carsContent .bindLoginInfo .modify,
+.carsContent .bindunLoginInfo .modify {
   clear: both;
   position: relative;
   top: 20px;
   margin-right: 20px;
 }
-#carsContent .bindLoginInfo .modify .ps,
-#carsContent .bindunLoginInfo .modify .ps {
+.carsContent .bindLoginInfo .modify .ps,
+.carsContent .bindunLoginInfo .modify .ps {
   position: absolute;
   left: 16px;
 }
-#carsContent .bindLoginInfo .modify .ps a,
-#carsContent .bindunLoginInfo .modify .ps a {
+.carsContent .bindLoginInfo .modify .ps a,
+.carsContent .bindunLoginInfo .modify .ps a {
   cursor: pointer;
   color: #FF571A;
 }
-#carsContent .bindLoginInfo .modify .submit,
-#carsContent .bindunLoginInfo .modify .submit {
+.carsContent .bindLoginInfo .modify .submit,
+.carsContent .bindunLoginInfo .modify .submit {
   position: absolute;
   right: 0px;
   padding: 7px 15px;
@@ -1150,7 +1187,7 @@ body * {
   width: 13%;
   text-align: center;
 }
-#carsContent .bindLoginInfo .submit {
+.carsContent .bindLoginInfo .submit {
   padding: 7px 20px;
   color: #ffffff;
   border: 1px solid #CCCCCC;
@@ -1160,17 +1197,17 @@ body * {
   cursor: pointer;
   margin-left: 130px !important;
 }
-#carsContent .dialogContentContainer {
+.carsContent .dialogContentContainer {
   background: none !important;
   z-index: -100;
   margin-top: 0px !important;
   border: none !important;
 }
-#carsContent .dialogContent-wrapper {
+.carsContent .dialogContent-wrapper {
   width: 1019px;
 }
-#carsContent .dialogContentContainer,
-#carsContent .dialogContent {
+.carsContent .dialogContentContainer,
+.carsContent .dialogContent {
   width: 97%;
   height: 356px;
   position: absolute;
@@ -1180,8 +1217,8 @@ body * {
   border: 1px solid #CCCCCC;
   vertical-align: top;
 }
-#carsContent .dialogContentContainer .carBudget,
-#carsContent .dialogContent .carBudget {
+.carsContent .dialogContentContainer .carBudget,
+.carsContent .dialogContent .carBudget {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 0px 10px 0px 10px;
@@ -1191,17 +1228,17 @@ body * {
   vertical-align: top;
   border-right: 1px solid  #CCCCCC;
 }
-#carsContent .dialogContentContainer .carBudget h1,
-#carsContent .dialogContent .carBudget h1 {
+.carsContent .dialogContentContainer .carBudget h1,
+.carsContent .dialogContent .carBudget h1 {
   font-size: 14px;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer,
-#carsContent .dialogContent .carBudget .dataContainer {
+.carsContent .dialogContentContainer .carBudget .dataContainer,
+.carsContent .dialogContent .carBudget .dataContainer {
   position: relative;
   vertical-align: middle;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer,
-#carsContent .dialogContent .carBudget .dataContainer .inputContainer {
+.carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer,
+.carsContent .dialogContent .carBudget .dataContainer .inputContainer {
   margin-top: 10px;
   margin-left: 0px;
   width: 41%;
@@ -1212,16 +1249,16 @@ body * {
   color: #B6B6B6;
   overflow: hidden;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer a,
-#carsContent .dialogContent .carBudget .dataContainer .inputContainer a {
+.carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer a,
+.carsContent .dialogContent .carBudget .dataContainer .inputContainer a {
   color: #B6B6B6;
   float: right;
   width: 45%;
-  margin-top: 10px;
+  margin-top: 7px;
   text-align: center;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer input,
-#carsContent .dialogContent .carBudget .dataContainer .inputContainer input {
+.carsContent .dialogContentContainer .carBudget .dataContainer .inputContainer input,
+.carsContent .dialogContent .carBudget .dataContainer .inputContainer input {
   float: left;
   width: 50%;
   height: 25px;
@@ -1230,16 +1267,16 @@ body * {
   padding-left: 5%;
   letter-spacing: 0.5px;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer .leftContainer,
-#carsContent .dialogContent .carBudget .dataContainer .leftContainer {
+.carsContent .dialogContentContainer .carBudget .dataContainer .leftContainer,
+.carsContent .dialogContent .carBudget .dataContainer .leftContainer {
   float: left;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer .rightContainer,
-#carsContent .dialogContent .carBudget .dataContainer .rightContainer {
+.carsContent .dialogContentContainer .carBudget .dataContainer .rightContainer,
+.carsContent .dialogContent .carBudget .dataContainer .rightContainer {
   float: left;
 }
-#carsContent .dialogContentContainer .carBudget .dataContainer > a,
-#carsContent .dialogContent .carBudget .dataContainer > a {
+.carsContent .dialogContentContainer .carBudget .dataContainer > a,
+.carsContent .dialogContent .carBudget .dataContainer > a {
   float: left;
   width: 10%;
   margin-left: 2%;
@@ -1250,8 +1287,8 @@ body * {
   font-size: 13px;
   text-align: center;
 }
-#carsContent .dialogContentContainer .carinstrest,
-#carsContent .dialogContent .carinstrest {
+.carsContent .dialogContentContainer .carinstrest,
+.carsContent .dialogContent .carinstrest {
   float: left;
   margin-top: 30px;
   padding: 0px 10px 0px 10px;
@@ -1259,79 +1296,82 @@ body * {
   height: 240px;
   border-right: 1px solid  #CCCCCC;
 }
-#carsContent .dialogContentContainer .carinstrest h1,
-#carsContent .dialogContent .carinstrest h1 {
+.carsContent .dialogContentContainer .carinstrest h1,
+.carsContent .dialogContent .carinstrest h1 {
   margin-left: 10px;
   font-size: 14px;
 }
-#carsContent .dialogContentContainer .carinstrest .carinstrestItem,
-#carsContent .dialogContent .carinstrest .carinstrestItem {
+.carsContent .dialogContentContainer .carinstrest .carinstrestItem,
+.carsContent .dialogContent .carinstrest .carinstrestItem {
   float: left;
   margin-top: 10px;
   background: #ffffff;
-  padding: 6px 10px;
+  padding: 5px 10px 4px 10px;
   border: 1px solid #CCCCCC;
   margin-right: 5px;
   margin-left: 5px;
 }
-#carsContent .dialogContentContainer .carinstrest .carinstrestItem a,
-#carsContent .dialogContent .carinstrest .carinstrestItem a {
+.carsContent .dialogContentContainer .carinstrest .carinstrestItem a,
+.carsContent .dialogContent .carinstrest .carinstrestItem a {
   margin-right: 10px;
   font-size: 14px;
+  float: left;
 }
-#carsContent .dialogContentContainer .carinstrest .carinstrestItem span,
-#carsContent .dialogContent .carinstrest .carinstrestItem span {
+.carsContent .dialogContentContainer .carinstrest .carinstrestItem span,
+.carsContent .dialogContent .carinstrest .carinstrestItem span {
   cursor: pointer;
   color: #B6B6B6;
-  padding: 0px 6px 0px 6px;
+  padding: 6px 6px 6px 6px;
   background-position: center;
   background: url("../images/index/close.jpg") no-repeat;
   vertical-align: middle;
+  float: left;
+  margin-top: 5px;
 }
-#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem,
-#carsContent .dialogContent .carinstrest .addCarinstrestItem {
+.carsContent .dialogContentContainer .carinstrest .addCarinstrestItem,
+.carsContent .dialogContent .carinstrest .addCarinstrestItem {
   float: left;
   margin-top: 10px;
   background: #ffffff;
-  padding: 2px 10px 7px 10px;
+  padding: 1px 8px 3px 8px;
   border: 1px solid #FF5719;
   margin-right: 5px;
   margin-left: 5px;
   cursor: pointer;
 }
-#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem a,
-#carsContent .dialogContent .carinstrest .addCarinstrestItem a {
+.carsContent .dialogContentContainer .carinstrest .addCarinstrestItem a,
+.carsContent .dialogContent .carinstrest .addCarinstrestItem a {
   margin-right: 10px;
   font-size: 14px;
   color: #FF5719;
 }
-#carsContent .dialogContentContainer .carinstrest .addCarinstrestItem span,
-#carsContent .dialogContent .carinstrest .addCarinstrestItem span {
+.carsContent .dialogContentContainer .carinstrest .addCarinstrestItem span,
+.carsContent .dialogContent .carinstrest .addCarinstrestItem span {
   cursor: pointer;
   color: #FF5719;
   font-weight: bold;
   font-size: 18px;
 }
-#carsContent .dialogContentContainer .caryear,
-#carsContent .dialogContent .caryear {
+.carsContent .dialogContentContainer .caryear,
+.carsContent .dialogContent .caryear {
   margin-top: 30px;
   padding: 0px 10px 0px 20px;
   width: 245px;
   height: 230px;
   float: left;
 }
-#carsContent .dialogContentContainer .caryear h1,
-#carsContent .dialogContent .caryear h1 {
+.carsContent .dialogContentContainer .caryear h1,
+.carsContent .dialogContent .caryear h1 {
   margin-left: 0px;
   font-size: 14px;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer,
-#carsContent .dialogContent .caryear .dataContainer {
+.carsContent .dialogContentContainer .caryear .dataContainer,
+.carsContent .dialogContent .caryear .dataContainer {
   position: relative;
   vertical-align: middle;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer {
   border: 1px solid #d9d9d9;
   height: 30px;
   background: #fff;
@@ -1343,8 +1383,8 @@ body * {
   padding-left: 5% ;
   vertical-align: middle;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd {
   text-align: left;
   position: relative;
   font-size: 12px;
@@ -1353,15 +1393,15 @@ body * {
   height: auto;
   cursor: default;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content {
   padding-left: 10px;
   padding-top: 8px;
   line-height: 20px;
   color: #333;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -1373,8 +1413,8 @@ body * {
   line-height: 0px;
   _right: -1px;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action i {
   margin-left: 0px;
   margin-top: 0px;
   display: block;
@@ -1385,8 +1425,8 @@ body * {
   background: url(../images/common/select-action-trigger.png) no-repeat center center;
   background-position: 6px 12px;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list {
   width: 100%;
   border: 1px solid #d9d9d9;
   left: -1px;
@@ -1397,17 +1437,17 @@ body * {
   background: #fff;
   top: 30px !important;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list .option,
-#carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list .option {
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-list .option,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-list .option {
   display: block;
   float: none;
-  padding-left: 15px;
+  padding-left: 22px;
   font-size: 12px;
   line-height: 24px;
   color: #333;
 }
-#carsContent .dialogContentContainer .caryear .dataContainer > a,
-#carsContent .dialogContent .caryear .dataContainer > a {
+.carsContent .dialogContentContainer .caryear .dataContainer > a,
+.carsContent .dialogContent .caryear .dataContainer > a {
   float: left;
   width: 5%;
   margin-left: 2%;
@@ -1418,16 +1458,16 @@ body * {
   font-size: 13px;
   text-align: center;
 }
-#carsContent .dialogContentContainer .submit,
-#carsContent .dialogContent .submit {
+.carsContent .dialogContentContainer .submit,
+.carsContent .dialogContent .submit {
   border-top: 1px solid  #CCCCCC;
   clear: both;
   height: 60px;
   margin-top: 10px;
   position: relative;
 }
-#carsContent .dialogContentContainer .submit span,
-#carsContent .dialogContent .submit span {
+.carsContent .dialogContentContainer .submit span,
+.carsContent .dialogContent .submit span {
   margin-top: 7px;
   position: absolute;
   color: #ffffff;
@@ -1440,7 +1480,7 @@ body * {
   border: 1px solid #D94A16;
   cursor: pointer;
 }
-#carsContent .addInstrestCar {
+.carsContent .addInstrestCar {
   position: absolute;
   margin-top: 1.9%;
   left: 0px;
@@ -1449,7 +1489,7 @@ body * {
   border: 1px solid #CCCCCC;
   vertical-align: top;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte {
+.carsContent .addInstrestCar .addInstrestCarTilte {
   margin-top: 5px;
   margin-left: 2%;
   margin-bottom: 10px;
@@ -1458,15 +1498,15 @@ body * {
   max-height: 85px;
   overflow: hidden;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte > span {
+.carsContent .addInstrestCar .addInstrestCarTilte > span {
   float: left;
   font-size: 15px ;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte .title {
+.carsContent .addInstrestCar .addInstrestCarTilte .title {
   background: none !important;
   border: none !important;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem {
+.carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem {
   float: left;
   background: #ffffff;
   height: 26px;
@@ -1474,11 +1514,12 @@ body * {
   padding: 5px 10px 0px 10px;
   margin: 5px;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem a {
+.carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem a {
   margin-right: 10px;
   font-size: 13px;
+  float: left;
 }
-#carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem span {
+.carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem span {
   cursor: pointer;
   color: #B6B6B6;
   padding: 0px 6px 0px 6px;
@@ -1487,13 +1528,13 @@ body * {
   background-position: 0px 3px;
   vertical-align: middle;
 }
-#carsContent .addInstrestCar .addInstrestCarSubmit {
+.carsContent .addInstrestCar .addInstrestCarSubmit {
   float: right;
   width: 10%;
   margin-top: 15px;
   margin-right: 30px;
 }
-#carsContent .addInstrestCar .addInstrestCarSubmit .submit {
+.carsContent .addInstrestCar .addInstrestCarSubmit .submit {
   height: 30px;
   padding: 7px 20px;
   background-color: #FF5719;
@@ -1504,12 +1545,12 @@ body * {
   -moz-border-radius: 3px;
   color: #ffffff;
 }
-#carsContent .addInstrestCar .addInstrestCarContent {
+.carsContent .addInstrestCar .addInstrestCarContent {
   border-top: 1px solid #cccccc;
   clear: both;
   height: 252px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand {
+.carsContent .addInstrestCar .addInstrestCarContent .brand {
   float: left;
   height: 400px;
   width: 158px;
@@ -1517,12 +1558,12 @@ body * {
   position: relative;
   border-right: 1px solid #CCCCCC;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .hot {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .hot {
   height: 45px;
   overflow: hidden;
   margin-right: 30px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .hot span {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .hot span {
   color: #FF5719;
   float: left;
   font-weight: bolder;
@@ -1531,7 +1572,7 @@ body * {
   margin-top: -13px;
   font-size: 13px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .hot a {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .hot a {
   float: left;
   padding: 0px 5px;
   line-height: 22px;
@@ -1539,41 +1580,41 @@ body * {
   color: #939393;
   cursor: pointer;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .hot a.active {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .hot a.active {
   background: #F44B0B;
   color: #ffffff;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav {
   position: absolute;
   left: 20px;
   top: 20px;
   width: 30px;
   height: 410px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav a {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav a {
   display: block;
   line-height: 14px;
   font-size: 12px;
   color: #FF5719;
   cursor: pointer;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav a.active {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandNav a.active {
   font-weight: bold;
   font-size: 14px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandList {
   clear: both;
   margin-left: 50px;
   height: 390px;
   overflow: auto;
   padding-top: 10px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li {
   clear: both;
   margin: 5px 0px ;
   overflow: auto;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li span {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li span {
   color: #000;
   line-height: 22px;
   margin-right: 15px;
@@ -1582,7 +1623,7 @@ body * {
   display: block;
   line-height: 30px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a {
   padding: 0px 2px;
   line-height: 22px;
   cursor: pointer;
@@ -1591,40 +1632,45 @@ body * {
   display: block;
   line-height: 25px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a.active {
+.carsContent .addInstrestCar .addInstrestCarContent .brand .brandList li a.active {
   background: #F44B0B;
   color: #ffffff;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi {
   float: left;
   height: 100%;
   width: 830px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent {
   margin: 20px 20px;
   margin-right: 20px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent .chexiTitle {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent .chexiTitle {
   font-size: 13px;
   color: #939393;
   cursor: pointer;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent .chexiTitle .active {
+  background: #F44B0B;
+  cursor: pointer;
+  color: white;
+}
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul {
   margin-top: 20px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li {
   margin-top: 10px;
   height: 65px;
   overflow: hidden;
   list-style: none;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li h1 {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li h1 {
   font-size: 15px;
   color: #FF5719;
   font-weight: bolder;
   padding-bottom: 5px;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span {
   float: left;
   padding: 1px 2px;
   margin-right: 10px;
@@ -1632,11 +1678,11 @@ body * {
   cursor: pointer;
   color: #939393;
 }
-#carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span.active {
+.carsContent .addInstrestCar .addInstrestCarContent .chexi .chexiContent ul li span.active {
   background: #F44B0B;
   color: #ffffff;
 }
-#carsMore {
+.carsMore {
   margin-top: 20px;
   padding: 10px 0px;
   text-align: center;
@@ -1646,6 +1692,14 @@ body * {
   border: 1px solid #E6E6E6;
   font-size: 15px;
   cursor: pointer;
+}
+.down-counter {
+  color: #666666;
+  font-size: 13px;
+}
+.down-counter ins {
+  color: #FF571A;
+  font-size: 13px;
 }
 #service {
   width: 240px;

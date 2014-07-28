@@ -500,7 +500,7 @@ body .apply_popup .apply_close:hover {
   cursor: pointer;
 }
 body .apply_popup .phone {
-  margin-left: 150px;
+  margin-left: 128px;
   text-align: left;
   width: 400px;
 }
