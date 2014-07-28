@@ -1,0 +1,97 @@
+doctype html
+html
+    head.
+        <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+        <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+        <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
+        <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
+        <link href="../../../assets/css/mobile/h5-3/index-header.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
+    body
+        header
+            .logo.hd-logo
+            .hd-city#J_choose_city
+                span(style="font-size:13px") 杭州
+                svg.svg-down-arrow(width=9,height=5)
+                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+            .other-topic
+                .icon-bar
+                .icon-bar
+                .icon-bar
+            .hd-search
+        nav#J_tabNavbar.clearfix
+            .nav-item(data-nav-index=1)
+                i.hot-icon
+                热门车型
+            .nav-item(data-nav-index=2)
+                i.car-icon
+                我要找车
+            .nav-item(data-nav-index=3)
+                i.rocket-icon
+                随便逛逛
+            #J_navbar_underline(data-active-index=1)
+        section#J_tabCover
+            #J_tabContainer.clearfix
+                include ./index-tab-1
+                include ./index-tab-2
+                include ./index-tab-3
+        footer.footer
+            span.promise 服务承诺
+            a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
+            .copyright © 2012-2014 Souche.com 版权所有
+        script.
+            var touch_start = 'click';
+            if('ontouchstart' in window){
+                touch_start = 'touchstart';
+            }
+            var transition='webkitTransition',
+                transform='webkitTransform',
+                transition_end = 'webkitTransitionEnd';
+            if(typeof document.body.style.transform==='string'){
+               transition = 'transition';
+               transform = 'transform';
+               transition_end='transitionend'
+            }
+            //variable cache and some init;
+            var tabCover = $('#J_tabCover'),
+                tabCtn = $('#J_tabContainer');
+            var tabPanels = tabCtn.find('.tab-panel'),
+                navItems = $('#J_tabNavbar .nav-item');
+            var underline = $('#J_navbar_underline')
+            var numOfPanels = tabPanels.length;
+            var widthOfPanel = 100/numOfPanels;
+            $(function(){
+                tabCtn.css({width:numOfPanels*100+'%'});
+                tabPanels.css({width:widthOfPanel+'%'});
+                function move(moveIndex){
+                    var activeIndex = moveIndex+1;
+                    // use translateZ(0) activate 3d hardware acceleration is possible
+                    tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
+                    underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
+                    navItems.removeClass('active')
+                    navItems.eq(moveIndex).addClass('active')
+                }
+                //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
+                move(0);
+                navItems.on('tap',function(){
+                    var index = +$(this).attr('data-nav-index');
+                    var curIndex = underline.attr('data-active-index');
+                    if(curIndex == index)return;
+                    move(index-1);
+                })
+                tabCtn.on('swipeLeft',function(){
+                    var index = +underline.attr('data-active-index');
+                    if(index==numOfPanels) return;
+                    move(index);
+                }).on('swipeRight',function(){
+                    var index = +underline.attr('data-active-index');
+                    if(index==1) return;
+                    var moveIndex = index-2;
+                    move(moveIndex);
+                })
+            })
+
+

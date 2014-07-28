@@ -7,25 +7,54 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="format-detection" content="telephone=no" />
 <title>微店-详情页1</title>
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
-<style type="text/css">
+<link rel="stylesheet" type="text/css" href="css/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/slider.css" charset="utf-8" />
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/zepto.extend.js"></script>
+<script type="text/javascript" src="js/zepto.ui.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
 
+<script src="js/zepto.ect.fn.js"></script>
+
+<style type="text/css">
+ body{ background: rgba(255,255,255,1)}
 </style>
 </head>
 
-<body style="background:#fff;">
+<body>
 <!--# include file='inc/header.html' -->
 
 <div class="twins clearfix">
-	<a href="#" class="fl">&nbsp;12365313657</a><a href="#" class="fr">&nbsp;门店导航</a>
+	<a href="tel:12365313657" class="fl beforeicon">&nbsp;12365313657</a><a href="#" class="fr beforeicon">&nbsp;门店导航</a>
 </div>
 
-<section class="pic-loop wimg">
-	<div class="pics">
-		<a><img src="../../../assets/images/weidian/che-1.jpg" /></a>
-	</div>
-	<ul><li class="on"></li><li></li><li></li><li></li><li></li><li></li></ul>
-</section>
+
+
+
+
+
+<div id="slider">
+    <div>
+        <a href="javascript:;"><img lazyload="../../../assets/weidian/img/chelist-1.jpg"></a>
+        <p>标题一</p>
+    </div>
+    <div>
+        <a href="javascript:;"><img lazyload="../../../assets/weidian/img/chelist-2.jpg"></a>
+        <p>标题一</p>
+    </div>
+    <div>
+        <a href="javascript:;"><img lazyload="../../../assets/weidian/img/chelist-3.jpg"></a>
+        <p>标题一</p>
+    </div>
+ 
+</div>
+
+
+
+
+
+
+
 
 <section class="summary">
 <h4>&nbsp;公司简介</h4>
@@ -38,7 +67,10 @@
 </section>
 
 
-<script src="../../../assets/js/weidian/zep.js"></script>
+
 </body>
 </html>
-<!-- 已耗时 1h -->
+<script>
+    //创建slider组件
+    $('#slider').slider({loop:true,showArr:false});
+</script>
