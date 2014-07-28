@@ -1,14 +1,36 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
-<!-- target-densitydpi=device-dpi,  -->
-<meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
 <title>微店 - 帮我找车</title>
-<link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+<link rel="stylesheet" type="text/css" href="css/dialog.default.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<link rel="stylesheet" type="text/css" href="css/button.default.css" />
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/zepto.extend.js"></script>
+<script type="text/javascript" src="js/zepto.ui.js"></script>
+<script type="text/javascript" src="js/zepto.highlight.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript" src="js/button.js"></script>
+<script src="js/zepto.ect.fn.js"></script>
+<style>	
+	 .ui-dialog-btns{position: absolute;bottom: 0px;height: 5rem;}
+     .ui-dialog-btns .ui-btn{line-height: 5rem;font-size: 1.9rem;}
+     .doubs a{line-height: 3.9rem;}
+     .zhaoche-form input{margin-top: 11px;height: 4rem;text-indent: 5px;}
+    .sex i{ position: relative; top: -3px;}
+    .zhaoche-form .th{text-indent:0;width: 27%;}
+    
+    .drow{display: block; width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(255,255,255,0.7);}
+    
+</style>
+
+
 </head>
 
 <body>
@@ -21,25 +43,132 @@
 </section>
 
 <section class="zhaoche-form">
-	<ul>
-		<li><div class="th">姓名</div>
-			<div class="td sex"><input value="李三三" class="name" />
-				<label><input type="radio" name="sex" id="male" value="male" /><i class="radio"></i> 先生</label>&nbsp;
-				<label><input type="radio" name="sex" id="female" value="female" /><i class="radio"></i> 女士</label>
-			</div>
-		</li>
-		<li><div class="th">手机</div><div class="td"><input class="phone" value="12365484597" /></div></li>
-		<li><div class="th">购车预算</div><div class="td"><input class="budget" value="50" /> 万元</div></li>
-		<li><div class="th">意向车型</div><div class="td">
-			<textarea rows="8" maxlength="140">意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型意向车型</textarea>
-		</div></li>
-	</ul>
+	<form action="" name="form" class="form" >
+		<ul>
+			<li><div class="th">姓名</div>
+				<div class="td sex"><input value="" class="name" name="names" placeholder="您的姓名" pattern="^[\u4e00-\u9fa5]{0,10}$"  />
+					<label><input type="radio" name="sex" id="male" value="male" checked="checked" /><i class="radio"></i> 先生</label>&nbsp;
+					<label><input type="radio" name="sex" id="female" value="female" /><i class="radio"></i> 女士</label>
+				</div>
+			</li>
+			<li><div class="th">手机</div><div class="td"><input class="phone" name="phone" value="" placeholder="您的手机号码" required="required" pattern="^0?1[3|4|5|8][0-9]\d{8}$"  /></div></li>
+			<li><div class="th">购车预算</div><div class="td"><input class="budget" name="price" value="" placeholder="预算" /> 万元</div></li>
+			<li><div class="th">意向车型</div><div class="td">
+				<textarea name="text" pattern="^[\u4e00-\u9fa5]{1,141}$" maxlength="140" placeholder="您的意向车型"></textarea>
+			</div></li>
+		</ul>
+	</form>
 </section>
 
 <div class="doubs zhaoche-sub clearfix">
-	<a href="#" class="fl">立即提交</a><a href="#" class="fr">电话联系店家</a>
+	<a href="javascript:;" >立即提交</a><a href="tel:123563243">电话联系店家</a>
 </div>
 
-<script src="../../../assets/js/weidian/zep.js"></script>
+
+<div class="loading" ></div><!--loading -->
+
+
+
 </body>
 </html>
+<script>
+
+	function formsub(){
+			var load=$(".loading")
+			var arr=$("form").serializeArray();
+			var names=/^[\u4e00-\u9fa5]{1,11}$/g;  //匹配姓名
+			var phones=/^0?1[3|4|5|8][0-9]\d{8}$/g;//匹配手机
+			var price=/^(0\.)?\d+/g;//匹配价格
+			var texts=/^[\u4e00-\u9fa5]{0,140}$/g //文本
+			var t=1;			
+			$.each(arr,function(index,ele){				
+				var vals=$(ele)[0];
+				var zenval=vals.value;				
+				var zenname=vals.name;
+				switch(zenname){
+					case "names":						
+						if(!names.test(zenval)){
+							alert("请正确输入姓名")
+							t=0;
+							return false;
+						}
+					break;
+					case "phone":						
+						if(!phones.test(zenval)){
+							alert("请正确输入手机号码")
+							t=0;
+							return false;
+						}						
+					break;
+					case "price":						
+						if(!price.test(zenval)){
+							alert("请正确输入价格")
+							t=0;
+							return false;
+						}						
+					break;
+					case "text":						
+						if(!texts.test(zenval)){
+							alert("请正确输入购车意向")
+							t=0;
+							return false;
+						}						
+					break;					
+									
+				}
+					
+			})
+			
+			if(t){
+				
+				load.addClass("drow")
+				$.ajax({
+				   type: "POST",
+				   url: "aa.php",
+				   data:arr,
+	               dataType: 'json',
+				   success: function(msg){
+				   	
+				   	
+				   	
+					  load.removeClass("drow")  
+				   },
+				   error:function(){
+					  load.addClass("drow") 
+				   }
+				});
+			}
+			
+			
+	}
+
+
+
+	$(function(){
+
+
+
+
+		$(".doubs a").on("click",function(){
+
+			
+			switch($(this).index()){
+            case 0:
+               	formsub()
+                break;
+                
+        }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		})
+		
+	})
+	
+</script>

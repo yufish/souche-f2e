@@ -1,3 +1,4 @@
+//see ../cookieUtil.js
 define(function () {
     var CookieUtil = function () {
         var cookieMap = {};

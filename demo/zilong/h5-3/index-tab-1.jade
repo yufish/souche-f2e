@@ -1,35 +1,106 @@
-doctype html
-html
-    head.
-        <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
-        <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
-        <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-        <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
-        <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
-        <link href="../../../assets/css/mobile/h5-3/tab-1.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
-    body
-        header
-            .logo.hd-logo
-            .hd-city#J_choose_city
-                span(style="font-size:13px") 杭州
-                svg.svg-down-arrow(width=9,height=5)
-                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
-            .other-topic
-                .icon-bar
-                .icon-bar
-                .icon-bar
-            .hd-search
-        nav#J_tabNavbar.clearfix
-            .nav-item(data-nav-index=1)
-                i.hot-icon
-                热门车型
-            .nav-item(data-nav-index=2)
-                i.car-icon
-                我要找车
-            .nav-item(data-nav-index=3)
-                i.rocket-icon
-                随便逛逛
-            #J_navbar_underline(data-active-index=1)
+.tab-panel(data-panel-index=1)
+    .car-area
+        .car-row.clearfix
+             .car-wrapper
+                .car-card
+                    img(src="http://res.souche.com/files/carpicture/3E3BC10307B56592131FADDC8C96D054_690x460.jpg_240x10000.jpg")
+                    .car-info
+                        .car-introduction 2013款 奥迪A4L-2.0T无 级变速35FSI舒适型
+                        .car-price
+                            span.price-num 21.56
+                            | 万
+                        .car-time 2012/03上牌
+                        .other-info
+             .car-wrapper
+                .car-card
+                    img(src="http://res.souche.com/files/carpicture/3E3BC10307B56592131FADDC8C96D054_690x460.jpg_240x10000.jpg")
+                    .car-info
+                        .car-introduction 2013款 奥迪A4L-2.0T无 级变速35FSI舒适型
+                        .car-price
+                            span.price-num 21.56
+                            | 万
+                        .car-price-down 直降3000元
+                        .other-info
+
+        .car-row.clearfix
+            .car-wrapper
+                .car-card
+                    img(src="http://res.souche.com/files/carpicture/3E3BC10307B56592131FADDC8C96D054_690x460.jpg_240x10000.jpg")
+                    .car-info
+                        .car-introduction 2013款 奥迪A4L-2.0T无 级变速35FSI舒适型
+                        .car-price
+                            span.price-num 21.56
+                            | 万
+                        .car-time 2012/03上牌
+                        .other-info
+            .car-wrapper
+                .car-card
+                    img(src="http://res.souche.com/files/carpicture/3E3BC10307B56592131FADDC8C96D054_690x460.jpg_240x10000.jpg")
+                    .car-info
+                        .car-introduction 2013款 奥迪A4L-2.0T无 级变速35FSI舒适型
+                        .car-price
+                            span.price-num 21.56
+                            | 万
+                        .car-price-down 直降3000元
+                        .other-info
+
+        .look-more 查看更多
+
+    .hot-brands.quick-search-area
+        .title 热门品牌
+            a.more(href='#') 更多 >
+        .bd.clearfix
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+            a(class="brand col-1-4" href="list.html?carBrand=brand-20" click_type='walk_hot_宝马')
+                .brand-wrapper
+                    img(src="http://res.souche.com/files/brand/brand-20.jpg_100x10000.jpg")
+                    .brand-name 宝马
+
+    .price-tag.quick-search-area
+        .title 价格
+        .bd.clearfix.
+            <a href="list.html?carPrice=0-5" class="col-1-4 tag-item" click_type='walk_price_0_5'>5万以下</a>
+            <a href="list.html?carPrice=5-8" class="col-1-4 tag-item" click_type='walk_price_5_8'>5-8万</a>
+            <a href="list.html?carPrice=8-12" class="col-1-4 tag-item" click_type='walk_price_0_12'>8-12万</a>
+            <a href="list.html?carPrice=12-16" class="col-1-4 tag-item" click_type='walk_price_12_16'>12-16万</a>
+            <a href="list.html?carPrice=16-20" class="col-1-4 tag-item" click_type='walk_price_16_20'>16-20万</a>
+            <a href="list.html?carPrice=20-25" class="col-1-4 tag-item" click_type='walk_price_20_25'>20-25万</a>
+            <a href="list.html?carPrice=25-30" class="col-1-4 tag-item" click_type='walk_price_25_30'>25-30万</a>
+            <a href="list.html?carPrice=30-50" class="col-1-4 tag-item" click_type='walk_price_30_50'>30-50万</a>
+            <a href="list.html?carPrice=50-70" class="col-1-4 tag-item" click_type='walk_price_50_70'>50-70万</a>
+            <a href="list.html?carPrice=70-100" class="col-1-4 tag-item" click_type='walk_price_70_100'>70-100万</a>
+            <a href="list.html?carPrice=100-10000" class="col-1-4 tag-item" click_type='walk_price_100_10000'>100万以上</a>
+
+    .price-tag.quick-search-area
+        .title 价格
+        .bd.clearfix.
+            <a href='list.html?carModel=tinyCar' class="col-1-4 tag-item" click_type='walk_model_tinyCar'>微小型车</a>
+            <a href='list.html?carModel=compactCar' class="col-1-4 tag-item" click_type='walk_model_compactCar'>紧凑型车</a>
+            <a href='list.html?carModel=midSize' class="col-1-4 tag-item" click_type='walk_model_midSize'>中型车</a>
+            <a href='list.html?carModel=PremiumMidsize' class="col-1-4 tag-item" click_type='walk_model_PremiumMidsize'>中大型车</a>
+            <a href='list.html?carModel=SUV' class="col-1-4 tag-item" click_type='walk_model_suv'>SUV</a>
+            <a href='list.html?carModel=MPV' class="col-1-4 tag-item" click_type='walk_model_mpv'>MPV</a>
+            <a href='list.html?carModel=SportsCar' class="col-1-4 tag-item" click_type='walk_model_sportsCar'>跑车</a>
+
+
+
+
