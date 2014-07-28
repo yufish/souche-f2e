@@ -1,4 +1,4 @@
-define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
+define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, queuedo) {
     var rateData = [];
     var concat = function(str, arr) {
         var count = 0;
@@ -16,7 +16,7 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
         return str;
     }
     var drawPoint = function(x, y) {
-        draw.circle(10).move(x - 5, y - 5).fill({
+        return draw.circle(10).move(x - 5, y - 5).fill({
             color: "#63b162"
         }).stroke({
             color: "#ffffff",
@@ -127,18 +127,34 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                 width: 1
             })
             //画真实路径
-            var realPathStr = "M";
+            var realPathStr = "";
+            var realPathPoints = [];
+            var tempPathPoints = [];
+            var svgPoints = [];
             for (var i = 0; i < realPoints.length; i++) {
-                realPathStr += realPoints[i].x + " " + realPoints[i].y + " ";
-                drawPoint(realPoints[i].x, realPoints[i].y);
+                realPathStr += centerPoint.x + "," + centerPoint.y + " ";
+                svgPoints.push(drawPoint(centerPoint.x, centerPoint.y));
+                tempPathPoints.push([realPoints[i].x, realPoints[i].y])
+                realPathPoints.push([centerPoint.x, centerPoint.y])
             }
-            draw.animate().path(realPathStr + " z").fill({
+            var polygon = draw.polygon(realPathStr + "").fill({
                 color: "#95c194",
                 opacity: 0.6
             }).stroke({
                 color: "#63b162",
                 width: 3
             })
+            queuedo([0, 1, 2, 3, 4, 5, 6, 7, 8], function(index, next, context) {
+                realPathPoints[index] = tempPathPoints[index];
+
+                polygon.animate(200, "<>").plot(realPathPoints);
+                svgPoints[index].animate(400, "<>").move(realPoints[index].x - 5, realPoints[index].y - 5)
+                setTimeout(function() {
+                    next.call(context);
+                }, 150)
+            })
+
+
 
 
         },
