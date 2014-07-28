@@ -213,12 +213,12 @@ define(function() {
                 $("#" + id).removeClass("hidden");
                 $(".float-nav-item").removeClass("activeNav");
                 $(this).addClass("activeNav")
-                $(window).trigger("tab_change", id);
+                $(window).trigger("nav_change", id);
                 e.preventDefault();
             });
             var picsLoaded = false;
             var brandHistoryLoaded = false;
-            $(window).on("tab_change", function(e, id) {
+            $(window).on("nav_change", function(e, id) {
                 if (id == "onsale_pics") {
                     if (!picsLoaded) {
                         $("#onsale_pics img").lazyload();

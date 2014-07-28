@@ -36,14 +36,16 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
     var DrawKoubei = {
         draw: function(_data) {
             data = _data;
+            var totalScore = 0;
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
+                totalScore += data.items[i].rate * 10;
             }
 
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
-            $(".all-score em").html((data.allScore * 10).toFixed(2))
+            $(".all-score em").html((totalScore / 9).toFixed(2))
             $(".series-tab").html("")
             var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
             $(".series-tab").append(tab)
@@ -130,7 +132,7 @@ define(['lib/mustache', 'lib/svg.min'], function(Mustache, SVG) {
                 realPathStr += realPoints[i].x + " " + realPoints[i].y + " ";
                 drawPoint(realPoints[i].x, realPoints[i].y);
             }
-            draw.path(realPathStr + " z").fill({
+            draw.animate().path(realPathStr + " z").fill({
                 color: "#95c194",
                 opacity: 0.6
             }).stroke({
