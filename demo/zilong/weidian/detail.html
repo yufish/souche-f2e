@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no" />
-<meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
 <title>微店-详情页</title>
-<link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../../assets/weidian/css/wd.css" charset="utf-8" />
+
+<script src="../../../assets/weidian/js/zepto.js"></script>
+<script src="../../../assets/weidian/js/zepto.ect.fn.js"></script>
+<script src="../../../assets/weidian/js/zepto.extend.js"></script>
+<script src="../../../assets/weidian/js/zepto.imglazyload.js"></script>
+<script src="../../../assets/weidian/js/zepto.ui.js"></script>
 <style type="text/css">
 
 </style>
@@ -18,7 +23,11 @@
 
 <section>
 	<div class="pd20 car-detail">
-		<div class="wimg"><img src="../../../assets/images/weidian/che-1.jpg" /></div>
+		<div class="wimg" >
+			<img class="imglazyload" data-url='../../../assets/weidian/img/che-1.jpg' src="img/load.gif" alt="">
+
+		</div>
+		
 		<ul>
 			<li>
 				<div class="car-title">2011款 奥迪A4L-2.0T-无级变速-FSI…</div>
@@ -44,19 +53,29 @@
 
 <section class="option"><div class="pd20h"><a href="#"><i class="fr"></i>查看配置参数</a></div></section>
 
-<div class="car-pic"><img src="../../../assets/images/weidian/chelist-1.jpg" /></div>
-<div class="car-pic"><img src="../../../assets/images/weidian/chelist-2.jpg" /></div>
-<div class="car-pic"><img src="../../../assets/images/weidian/chelist-3.jpg" /></div>
+<div class="car-pic">
+	<img class="imglazyload" data-url='../../../assets/weidian/img/chelist-1.jpg' src="../../../assets/weidian/img/load.gif" alt="">
+</div>
+<div class="car-pic">
+	<img class="imglazyload" data-url='../../../assets/weidian/img/chelist-2.jpg' src="../../../assets/weidian/img/load.gif" alt="">
+</div>
+<div class="car-pic">
+	<img class="imglazyload" data-url='../../../assets/weidian/img/chelist-3.jpg' src="../../../assets/weidian/img/load.gif" alt="">
+</div>
 
 <footer>
 <ul class="pd20h clearfix">
-<li class="w25"><a href="#">去店铺</a></li>
-<li class="w25"><a href="#">帮我找车</a></li>
-<li class="w25"><a href="#">门店导航</a></li>
-<li class="w25 call"><a href="#">&nbsp;打电话</a></li>
+	<li class="w25"><a href="#">去店铺</a></li>
+	<li class="w25"><a href="#">帮我找车</a></li>
+	<li class="w25"><a href="#">门店导航</a></li>
+	<li class="w25 call"><a href="tel:642356809" class="beforeicon">&nbsp;打电话</a></li>
 </ul>
 </footer>
 
-<script src="../../../assets/js/weidian/zep.js"></script>
+
 </body>
 </html>
+<script>
+
+    $('.imglazyload').imglazyload({ diff: 300 });  //初始化插件
+</script>

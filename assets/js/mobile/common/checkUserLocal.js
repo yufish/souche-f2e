@@ -1,3 +1,4 @@
+//see ../cookieUtil.js
 define(['mobile/common/cookieUtil'], function (CookieUtil) {
     var checkUserLocal = function () {
         CookieUtil.update();

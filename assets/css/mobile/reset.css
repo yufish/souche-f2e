@@ -118,4 +118,5 @@ img{
 }
 body{
     font-family: 'Heiti SC','华文黑体', '黑体';
+    -webkit-user-select: none;
 }

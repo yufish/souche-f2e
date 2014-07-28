@@ -1,68 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
-<!-- target-densitydpi=device-dpi,  -->
-<meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="format-detection" content="telephone=no" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
 <title>微店－首页</title>
-<link rel="stylesheet" type="text/css" href="../../../assets/css/weidian/wd.css" charset="utf-8" />
-<style type="text/css">
-</style>
-<script>
-/*if(screen.width == 320 && screen.height == 480) {
-  document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=0.5; maximum-scale=0.5; user-scalable=0;");
-}
-//OR
-if(screen.width != 640) {
-  newScale = (screen.width/640);
-  document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=" + newScale + "; maximum-scale=" + newScale + "; user-scalable=0;");
-}*/
+<link rel="stylesheet" type="text/css" href="css/wd.css" charset="utf-8" />
+<script src="js/zepto.min.js"></script>
+<script src="js/zepto.ect.fn.js"></script>
+<script type="text/javascript">		
+	$(function(){
+		$(".loading").hide(); //当页面加载完成，loading隐藏
+		$("#manbody").show();
+	})
 </script>
+
+
+
+
 </head>
 
 <body>
-<!--# include file='inc/header.html' -->
-<header>
-    <div class="border-top"></div>
-    <div class="shop-tit">
-        <a class="kaidian" href="#"><i></i></a>
-        <div class="fl left"><span class="shop-logo"><img src="img/san.jpg" alt="三三" /></span></div>
-        <div class="fl shop-name">
-            <h2>苏州嘉诚二手车苏州嘉诚二手车子</h2>
-            <h3>你身边的二手车专家</h3>
-        </div>
-        <div class="xiala"></div>
-    </div>
-</header>
-<section class="a-car">
-	<div class="count">1000 人浏览过</div>
-	<div class="wimg"><img src="../../../assets/images/weidian/che-1.jpg" /></div>
-	<ul>
-	<li>
-		<div class="car-title">2011款 奥迪A4L-2.0T-无级变速-FSI…</div>
-		<div class="car-subtitle"><span class="car-pr">26.36万</span> 2.00万公里 / 2012年上牌</div>
-	</li>
-	<li>
-		<p>超豪华配置，夜视系统，全景摄像机，整体主动转向（你都想象不到这么大的车转向那么灵活）。车辆经过4S店面严格测。</p>
-<!-- Mobile Safari (like Chrome for Android, Mobile Firefox and IE Mobile) increases the font size of wide blocks (at all times),  -->
-	</li>
-	</ul>
-</section>
+<div class="loading"></div><!--loading -->
 
-<div class="me2"><a href="#">我也要开微车店</a></div>
+<div id="manbody" style="display:none">
+	<header>
+		<div class="border-top"></div>
+		<div class="shop-tit">
+			<div class="left"><span class="shop-logo"><img src="img/san.jpg" alt="三三" /></span></div>
+			<div class="shop-name">
+				<h2>苏州嘉诚二手车苏州嘉诚二手车子苏州嘉诚二手车苏州嘉诚二手车子</h2>
+				<h3>你身边的二手车专家</h3>
+			</div>
+			<a class="kaidian" href="http://www.baidu.com"><i class="cheico"></i><span>微车店</span></a>
+			<div class="xiala cheico"></div>
+		</div>
+	</header>
+	<!--# include file='inc/header.html' -->
+	
+	<div id="mycarshop">
+		<section class="a-car">
+			<div class="count">1000 人浏览过</div>
+			<div class="wimg"><img src="img/che-1.jpg" width="100%" /></div>
+			<ul>
+			<li>
+				<div class="car-title">2011款 奥迪A4L-2.0T-无级变速-FSI2011款 奥迪A4L-2.0T-无级变速-FSI2011款 奥迪A4L-2.0T-无级变速-FSI…</div>
+				<div class="car-subtitle"><span class="car-pr">2636万</span> 2.00万公里 / 2012年上牌</div>
+			</li>
+			<li class="morezen">
+				<p>超豪华配置，夜视系统，全景摄像机，整体主动转向（你都想象不到这么大的车转向那么灵活）。车辆经过4S店面严格测
+					超豪华配置，夜视系统，全景摄像机，整体主动转向（你都想象不到这么大的车转向那么灵活）。车辆经过4S店面严格测。</p>
+		<!-- Mobile Safari (like Chrome for Android, Mobile Firefox and IE Mobile) increases the font size of wide blocks (at all times),  -->
+			</li>
+			</ul>
+		</section>
+		<section class="a-car">
+			<div class="count">1000 人浏览过</div>
+			<div class="wimg"><img src="img/che-1.jpg" width="100%" /></div>
+			<ul>
+			<li>
+				<div class="car-title">2011款 奥迪A4L-2.0T-无级变速-FSI2011款 奥迪A4L-2.0T-无级变速-FSI2011款 奥迪A4L-2.0T-无级变速-FSI…</div>
+				<div class="car-subtitle"><span class="car-pr">2636万</span> 2.00万公里 / 2012年上牌</div>
+			</li>
+			<li class="morezen">
+				<p>超豪华配置，夜视系统，全景摄像机，整体主动转向（你都想象不到这么大的车转向那么灵活）。车辆经过4S店面严格测。</p>
+		<!-- Mobile Safari (like Chrome for Android, Mobile Firefox and IE Mobile) increases the font size of wide blocks (at all times),  -->
+			</li>
+			</ul>
+		</section>		
+	</div>
 
-<footer>
-<ul class="pd20h clearfix">
-<li class="w25"><a href="#">去店铺</a></li>
-<li class="w25"><a href="#">帮我找车</a></li>
-<li class="w25"><a href="#">门店导航</a></li>
-<li class="w25 call"><a href="#">&nbsp;打电话</a></li>
-</ul>
-</footer>
 
-<script src="../../../assets/js/weidian/zep.js"></script>
+
+
+
+
+
+	
+
+
+</div>
+<div class="list_li"></div>  <!--下拉loading-->
+<div class="me2" id="runto"><a href="http://www.baidu.com">我也要开微车店</a></div>
+
+	<footer>
+		<ul class="pd20h clearfix">
+			<li class="w25"><a href="#">去店铺</a></li>
+			<li class="w25"><a href="#">帮我找车</a></li>
+			<li class="w25"><a href="#">门店导航</a></li>
+			<li class="w25 call"><a class="beforeicon" href="tel:642356809">&nbsp;打电话</a></li>
+		</ul>
+	</footer>
+
+
+
+
+
 </body>
 </html>
+
+<script type="text/javascript">		
+	function shopwn(){}
+	shopwn.prototype={
+		constructior:shopwn,				
+		headerToleft:function(obj,omen,fn){
+			t=setTimeout(function(){
+			obj.addClass(omen)
+			fn
+			},1000)
+		},
+		headerToright:function(obj,omen){
+			var t=null;
+			t=setTimeout(function(){
+				obj.removeClass(omen);
+					clearInterval(t)
+				},5000)
+			this.touchobj(obj,omen)
+			},
+		touchobj:function(obj,omen){
+			obj.on("touchstart",function(ev){				
+				$(this).addClass(omen);
+				ev.cancelBubble=true;
+			})
+			$(document).on("touchstart",function(ev){
+				obj.removeClass(omen);
+				ev.cancelBubble=true;
+			})
+		},
+		pricetoFixed:function(obj){  //car-pr
+			var cont=obj.html();
+			var cxt=cont.match(/\d+(\.)?/g).join("");			
+			if(cxt.indexOf(".")==-1){
+				obj.html(cont.replace(cxt,parseInt(cxt).toFixed(2)))
+			}
+		}
+		
+	}
+	$(function(){
+		var kaidian=$(".kaidian");		
+		var carshop= new shopwn();
+		carshop.headerToleft(kaidian,"leftown",carshop.headerToright(kaidian,"leftown"));//微车店图标出来
+		carshop.pricetoFixed($(".car-pr"));//如果价格是整数，加小数
+		//alert($(".morezen p").height())
+		var page=0;//当前个数
+	    var pages=1;//总个数
+	    var ajax=!1;//是否加载中
+	     $(window).scroll(function(){
+	            if(($(window).scrollTop() + $(window).height() > $(document).height()-40) && !ajax && pages > page){
+	                //滚动条拉到离底40像素内，而且没ajax中，而且没超过总页数
+	                //json_ajax(cla,++page);
+	                page++;//当前页增加1
+	                ajax=!0;//注明开始ajax加载中
+	                $(".list_li").append('<div class="loading-inline"></div> ');//出现加载图片
+	                $.ajax({
+	                    type: 'GET',
+	                    url: './json.php?page='+page+'&'+Math.random(),
+	                    dataType: 'json',
+	                    success: function(json){
+	                        pages=json.pages;//更新总页数
+	                        page=json.page;//更新当前页（js不太可靠）
+	                        for(var i= 0,l = list.length;i<l;i++){
+
+	                            //处理数据并插入  放到mycarshop
+
+	                        }
+	                        $(".list_li").remove();//删除加载图片
+	                        ajax=!1;//注明已经完成ajax加载
+	                    },
+	                    error: function(xhr, type){
+	                        //$(".loading-inline").css("background","none").html("暂无内容！");
+	                    }
+	                });
+	            }
+	        });
+	})
+</script>
