@@ -74,20 +74,6 @@ define(function() {
             });
         });
 
-        ///change tab
-        $("#carsNav li").click(function () {
-            $("#carsNav li").removeClass("active");
-            $(this).addClass("active");
-            var id = $(this).attr("id");
-            tabID = id;
-
-            $("#carsContent>div").addClass("hidden");
-            $("#carsContent").find("." + id).removeClass("hidden");
-            $(".carsMore").addClass("hidden");
-            $(".carsMore." + $("#carsNav li[class='active']").attr("id")).removeClass("hidden");
-        });
-        ///
-
         //查看更多
         $(".carsMore").click(function () {
             $("#carsMore span").html("正在获取");
@@ -121,6 +107,7 @@ define(function() {
 
                             }
                             $("#carsContent .myAdviser").append(template);
+                            $("#carsMore span").html("查看更多");
                         }
                     });
             }
@@ -175,34 +162,38 @@ define(function() {
 
             _bind();
 
-            require(["index/qiugou_v2","index/qiugouModel",'souche/custom-select',"index/modelSeries"],
-                function(qiugou,qiugouModel,customSelect,modelSeries) {
+            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "souche/down-counter"],
+                function (qiugou, qiugouModel, customSelect, modelSeries, downCounter) {
 
-                qiugou.init(config);
-                //modelSeriesModel.init(config);
-                //modelSeries.init(config);
+                    qiugou.init(config);
+                    //modelSeriesModel.init(config);
+                    //modelSeries.init(config);
 
-                var ageSelect = new customSelect("age_select", {
-                    placeholder: "请选择",
-                    multi: false
+                    var ageSelect = new customSelect("age_select", {
+                        placeholder: "请选择",
+                        multi: false
+                    });
+
+                    var ageSelect = new customSelect("age_select_high", {
+                        placeholder: "请选择",
+                        multi: false
+                    });
+                    var ageSelect = new customSelect("age_select1", {
+                        placeholder: "请选择",
+                        multi: false
+                    });
+
+                    var ageSelect = new customSelect("age_select_high1", {
+                        placeholder: "请选择",
+                        multi: false
+                    });
+
+                    $(".down-counter").each(function () {
+                        var $this = $(this);
+                        downCounter($this);
+                    });
+
                 });
-
-                var ageSelect = new customSelect("age_select_high", {
-                    placeholder: "请选择",
-                    multi: false
-                });
-                var ageSelect = new customSelect("age_select1", {
-                    placeholder: "请选择",
-                    multi: false
-                });
-
-                var ageSelect = new customSelect("age_select_high1", {
-                    placeholder: "请选择",
-                    multi: false
-                });
-
-
-            });
 
 
         }
