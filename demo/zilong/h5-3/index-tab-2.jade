@@ -2,24 +2,73 @@
     .filter-area
         .filter-item
             .filter-title 价格
-            .filter-content
-                select.select-price
-                    option(value=0) 50万
+            .filter-content(style="font-size:0")
+                select.select-price.select-cond#J_minPrice
                 i.to
+                select.select-price.select-cond#J_maxPrice
         .filter-item
             .filter-title 品牌
             .filter-content
+                button.btn-select.select-cond#J_btnBrand 选择品牌
         .filter-item
             .filter-title 车系
+            .filter-content
+                button.btn-select.select-cond#J_btnSeries 选择车系
         .filter-item
-            button 高级筛选
+            button#J_btnAdvance 高级筛选
         .filter-item
             .filter-title 里程
+            .filter-content
+                select.select-cond#J_btnMile.
+                    <option value="">不限</option>
+                    <option value="0-10000">1万以内</option>
+                    <option value="0-20000">2万以内</option>
+                    <option value="0-30000">3万以内</option>
+                    <option value="0-40000">4万以内</option>
+                    <option value="0-50000">5万以内</option>
+                    <option value="0-60000">6万以内</option>
+                    <option value="0-70000">7万以内</option>
+                    <option value="0-80000">8万以内</option>
         .filter-item
             .filter-title 上牌
+            .filter-content
+                select.select-cond#J_btnYear.
+                    <option value="">不限</option>
+                    <option value="2014" >2014年</option>
+                    <option value="2013">2013年后</option>
+                    <option value="2012">2012年后</option>
+                    <option value="2011">2011年后</option>
+                    <option value="2010">2010年后</option>
+                    <option value="2009">2009年后</option>
+                    <option value="2008">2008年后</option>
+                    <option value="2007">2007年后</option>
         .filter-item
             .filter-title 车型
+            .filter-content
+                select.select-cond#J_btnModel.
+                    <option value="">不限</option>
+                    <option value="tinyCar">微小型车</option>
+                    <option value="compactCar">紧凑型车</option>
+                    <option value="midSize">中型车</option>
+                    <option value="PremiumMidsize">中大型车</option>
+                    <option value="SUV">SUV</option>
+                    <option value="MPV">MPV</option>
+                    <option value="SportsCar">跑车</option>
         .filter-item
             .filter-title 变速箱
+            .filter-content
+                select.select-cond#J_btnTransmission.
+                    <option value="">不限</option>
+                    <option value="1.1-1.6">1.1-1.6L</option>
+                    <option value="1.6-2.0">1.6-2.0L</option>
+                    <option value="2.0-2.5">2.0-2.5L</option>
+                    <option value="2.5-3.0">2.5-3.0L</option>
+                    <option value="3.0-4.0">3.0-4.0L</option>
+                    <option value="4.0-1000">4.0L以上</option>
+
+        .btn-wrapper(style="text-align:center")
+            button#J_btnFilter_reset 重置
+            button#J_btnFilter_submit 为您找到100辆车
+
 
 

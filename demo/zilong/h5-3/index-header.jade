@@ -17,11 +17,19 @@ html
                 span(style="font-size:13px") 杭州
                 svg.svg-down-arrow(width=9,height=5)
                     polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
-            .other-topic
+            .for-other-topic
                 .icon-bar
                 .icon-bar
                 .icon-bar
             .hd-search
+        .other-topic
+            .topic-item 首页
+            .topic-item 卖车
+            .topic-item 我的大搜车
+            .topic-item 拨打客服电话
+            .topic-item 关于我们
+        .wrapTransBg
+
         nav#J_tabNavbar.clearfix
             .nav-item(data-nav-index=1)
                 i.nav-icon.hot-icon
@@ -43,9 +51,11 @@ html
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
             .copyright © 2012-2014 Souche.com 版权所有
         script.
-            var touch_start = 'click';
+            var touch_start = 'click',
+                tap_event='click';
             if('ontouchstart' in window){
                 touch_start = 'touchstart';
+                tap_event='tap';
             }
             var transition='webkitTransition',
                 transform='webkitTransform',
@@ -76,7 +86,7 @@ html
                 }
                 //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
                 move(1);
-                navItems.on('tap',function(){
+                navItems.on(tap_event,function(){
                     var index = +$(this).attr('data-nav-index');
                     var curIndex = underline.attr('data-active-index');
                     if(curIndex == index)return;
@@ -93,5 +103,46 @@ html
                     move(moveIndex);
                 })
             })
+            //var topicItems = $('.other-topic .topic-item');
+            var otherTopic = $('.other-topic');
+            var topicItems = $('.topic-item',otherTopic);
+            var wrapBg = $('.wrapTransBg');
+            wrapBg.on(tap_event,function(){
+                var time =0,timeSpan =150;
+                var height = 191,hGap = 31;
+                var index =0;
+                for(var i = topicItems.length-1;i>-1;i--){
+                    !function(index){
+                        setTimeout(function(){
+                            topicItems.eq(index).removeClass('show')
+                            height-=hGap;
+                            otherTopic.css({height:height});
+                            if(index==0){
+                                setTimeout(function(){
+                                    otherTopic.css({height:0});
+                                },timeSpan)
+                            }
+                        },time)
+                    }(i)
+                    time+=timeSpan;
+                }
+                wrapBg.hide();
+            })
+
+            $('.for-other-topic').on(tap_event,function(){
+                wrapBg.show();
+                var time =0,timeSpan =150;
+                var height = 36,hGap = 31;
+                var index =0;
+                topicItems.each(function(index,item){
+                    setTimeout(function(){
+                        otherTopic.css({height:height});
+                        height+=hGap;
+                        $(item).addClass("show");
+                    },time)
+                    time+=timeSpan
+                })
+            })
+
 
 
