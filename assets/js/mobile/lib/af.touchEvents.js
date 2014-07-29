@@ -14,6 +14,7 @@
  */
 /* global af*/
 //在原开源文件中，加了2处,用于解决android上的bug
+//修改了swipe的阈值，由30px变成60px
 (function($) {
     "use strict";
     //(1)
@@ -81,7 +82,7 @@
                 touch.el.trigger("doubleTap");
                 touch = {};
             } else if (touch.x2 > 0 || touch.y2 > 0) {
-                (Math.abs(touch.x1 - touch.x2) > 30 || Math.abs(touch.y1 - touch.y2) > 30) &&
+                (Math.abs(touch.x1 - touch.x2) > 60 || Math.abs(touch.y1 - touch.y2) > 60) &&
                 touch.el.trigger("swipe") &&
                 touch.el.trigger("swipe" + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)), touch);
                 touch.x1 = touch.x2 = touch.y1 = touch.y2 = touch.last = 0;
