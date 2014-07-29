@@ -656,7 +656,7 @@ a:hover {
 .main-slider .flex-control-nav .flex-active {
   background-color: #e70;
 }
-.realTimeDown {
+.realIndexTimeDown {
   top: 0px;
   left: 0px;
   border: 1px solid #d9d9d9;
@@ -666,7 +666,7 @@ a:hover {
   overflow-x: hidden;
   background: #fff;
 }
-.realTimeDown span {
+.realIndexTimeDown span {
   display: block;
   float: none;
   padding: 3px 0px;
@@ -677,11 +677,11 @@ a:hover {
   cursor: pointer;
   font-size: 13px;
 }
-.realTimeDown span a {
+.realIndexTimeDown span a {
   display: block;
   color: #B4B4B4;
 }
-.realTimeDown span .enterChexi {
+.realIndexTimeDown span .enterChexi {
   float: right;
   margin-right: 20px;
   font-size: 12px;
@@ -689,7 +689,7 @@ a:hover {
   font-weight: bolder;
   margin-top: -5px;
 }
-.realTimeDown .hover {
+.realIndexTimeDown .hover {
   background: #F8F8F6;
 }
 body * {
@@ -937,11 +937,13 @@ body * {
   display: block;
 }
 .carsContent .carItem .carImg img {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 182px;
   top: 0px;
   left: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 .carsContent .carItem .car-link {
   font-size: 15px;
@@ -1013,7 +1015,7 @@ body * {
   background-position: 0px 2px;
   cursor: pointer;
 }
-.carsContent .carItem .carTail .collect.ative {
+.carsContent .carItem .carTail .collect.active {
   background: url(../images/index/active.png) no-repeat;
   background-position: 0px 2px;
   cursor: pointer;
@@ -1023,6 +1025,42 @@ body * {
   display: block;
   float: right;
   color: #999;
+}
+.carsContent .carItem .carTail .carConstrast {
+  padding: 2px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  color: #8E8E8E;
+}
+.carsContent .carItem .carTail .carConstrast {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  margin-top: -5px;
+  margin-left: 30px;
+}
+.carsContent .carItem .carTail .carConstrast span {
+  padding-left: 4px;
+  vertical-align: middle;
+}
+.carsContent .carItem .carTail .carConstrast input {
+  vertical-align: middle;
+}
+.carsContent .carItem .carTail .carConstrast .contrast-waring {
+  right: -30px !important;
+  position: absolute;
+  top: -66px;
+  right: -112px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
+  font-size: 13px;
 }
 .carsContent .infoItem {
   position: relative;
@@ -1310,12 +1348,14 @@ body * {
   border: 1px solid #CCCCCC;
   margin-right: 5px;
   margin-left: 5px;
+  cursor: pointer;
 }
 .carsContent .dialogContentContainer .carinstrest .carinstrestItem a,
 .carsContent .dialogContent .carinstrest .carinstrestItem a {
   margin-right: 10px;
   font-size: 14px;
   float: left;
+  color: #656565;
 }
 .carsContent .dialogContentContainer .carinstrest .carinstrestItem span,
 .carsContent .dialogContent .carinstrest .carinstrestItem span {
@@ -1398,6 +1438,10 @@ body * {
   padding-left: 10px;
   padding-top: 8px;
   line-height: 20px;
+  color: #333;
+}
+.carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content .placeholder,
+.carsContent .dialogContent .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-content .placeholder {
   color: #333;
 }
 .carsContent .dialogContentContainer .caryear .dataContainer .selectContainer .sc-select-hd .sc-select-action,
@@ -1513,11 +1557,13 @@ body * {
   border: 1px solid #CCCCCC;
   padding: 5px 10px 0px 10px;
   margin: 5px;
+  cursor: pointer;
 }
 .carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem a {
   margin-right: 10px;
   font-size: 13px;
   float: left;
+  color: #656565;
 }
 .carsContent .addInstrestCar .addInstrestCarTilte .instrestCarItem span {
   cursor: pointer;

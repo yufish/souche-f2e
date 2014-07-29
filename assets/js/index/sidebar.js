@@ -86,8 +86,8 @@ Souche.Sidebar = (function() {
         });
         $(".toolbar-close").click(function() {
             $("#toolbar").animate({
-                width: 58,
-                height: 215
+                width: 52,
+                height: 309
             }, 500, function() {
 
             })
@@ -97,8 +97,8 @@ Souche.Sidebar = (function() {
         $(document.body).click(function() {
             if (siderbarShow) {
                 $("#toolbar").animate({
-                    width: 58,
-                    height: 215
+                    width: 52,
+                    height: 309
                 }, 500, function() {
 
                 })
