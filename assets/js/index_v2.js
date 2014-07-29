@@ -77,7 +77,7 @@ define(function() {
 
 
         var getMore = function () {
-            $(".carsMore span").html("正在获取");
+            $("."+$("#carsNav li.active").attr("id")+" .carsMore span").html("正在获取");
 
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
@@ -89,12 +89,12 @@ define(function() {
                         dataType: "json"
                     }).done(function (result) {
                         if (result.code == 204) {
-                            $(".carsMore.myAdviser").remove();
+                            $("."+$("#carsNav li.active").attr("id")+" .carsMore.myAdviser").remove();
                         }
                         else {
                             var list = result.recommendCars;
                             if (!result.hasNext) {
-                                $(".carsMore.myAdviser").remove();
+                                $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                             }
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
@@ -107,8 +107,8 @@ define(function() {
                                     "<\/div>";
 
                             }
-                            $(".myAdviserContent .myAdviser").append(template);
-                            $(".myAdviserContent  .carsMore span").html("查看更多");
+                            $(".myAdviserContent .myAdviser").eq(0).append(template);
+                            $(".myAdviserContent .myAdviser").eq(1).remove();
                         }
                     });
             }
@@ -122,7 +122,7 @@ define(function() {
                         dataType: "json"
                     }).done(function (result) {
                         if (result.code == 204) {
-                            $(".carsMore.hotNewCars").remove();
+                            $("."+$("#carsNav li.active").attr("id")+" .carsMore.hotNewCars").remove();
                         }
                         else {
                             var list = result.newCars.items;
@@ -137,9 +137,9 @@ define(function() {
                                     "<\/div>" +
                                     "<div class='carTail'><span class='collect ative'>收藏 " + list[idx].carFavoriteNum + "<\/span><span class='recommendedToday'>今日推荐<\/span><\/div>" +
                                     "<\/div>";
-
                             }
-                            $(".hotNewCarsContent .hotNewCars").append(template);
+                            $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
+                            $(".hotNewCarsContent .hotNewCars").eq(1).remove();
                         }
                     });
             }
@@ -148,11 +148,12 @@ define(function() {
         $(".carsMore").click(function()
         {
             getMore.call(this);
-            $("body,html").scroll(function()
+            $(window).scroll(function()
             {
-                if(($("#footer").offset().top-50)==(window.scrollY+window.screen.availHeight))
-                {
-                    getMore.call(this);
+                if($("."+$("#carsNav li.active").attr("id")+".carsMore").length ==0) {
+                    if (($("#footer").offset().top - 50) <= (window.scrollY + window.screen.availHeight)) {
+                        getMore.call(this);
+                    }
                 }
             });
         });
