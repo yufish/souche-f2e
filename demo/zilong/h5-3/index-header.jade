@@ -110,7 +110,6 @@ html
             wrapBg.on(tap_event,function(){
                 var time =0,timeSpan =150;
                 var height = 191,hGap = 31;
-                var index =0;
                 for(var i = topicItems.length-1;i>-1;i--){
                     !function(index){
                         setTimeout(function(){
@@ -120,13 +119,14 @@ html
                             if(index==0){
                                 setTimeout(function(){
                                     otherTopic.css({height:0});
+                                    wrapBg.hide();
                                 },timeSpan)
                             }
                         },time)
                     }(i)
                     time+=timeSpan;
                 }
-                wrapBg.hide();
+
             })
 
             $('.for-other-topic').on(tap_event,function(){
