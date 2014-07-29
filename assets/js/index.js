@@ -1,4 +1,4 @@
-define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyload) {
+define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyload, carGod) {
     Souche.Index = (function() {
         var config = {
             has_qiugou: false

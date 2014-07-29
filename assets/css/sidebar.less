@@ -235,18 +235,29 @@
 }
 .sidebar{
   width: 52px;
-  height: 275px;
-  background: #f7f7f7;
+  height: 309px;
   position: fixed;
   right: 0px;
   bottom: 80px;
-  border: 1px solid #dedede;
   z-index: 10001;
   background-color: #f5f5f5;
   overflow: hidden;
+  .sidebar-tit{
+    height: 32px;
+    border: 1px solid #E0440B;
+    background: #FF571A;
+    color: #fff;
+    font-size: 14px;
+    i{
+      overflow: hidden;
+      line-height: 32px;
+      margin-left: 13px;
+      font-style: normal;
+    }
+  }
   .side-box{
-    height: 53px;
-    border-bottom: 1px solid #dedede;
+    height: 54px;
+    border-bottom: 1px solid #E6E6E6;
     position: relative;
     .point-num{
       border-radius: 15px;
@@ -260,24 +271,57 @@
     }
     a{
       padding: 6px 5px;display: block;
-      .icon{width: 27px;height: 25px;margin-left:10px;background: url(../images/index/toolbar_sprite.png?1234);}
+      .icon{background: url(../images/index/index_sprite_v2.png);margin-bottom: 5px;}
       i{margin-left:11px;display: block;color: #666;width:30px;font-size: 12px;text-align: left;font-style: normal;height:18px;overflow: hidden;}
     }
     .collect-box{
-      .collect-img{background-position: 0 0;}
+      .collect-img{
+        background-position: 0 0;
+        width: 16px;
+        height: 16px;
+        margin-left: 14px;
+        margin-top: 5px;
+      }
     }
     .reserve-box{
-      .reserve-img{background-position: -40px 0;}
+      .reserve-img{
+        width: 16px;
+        height: 16px;
+        margin-left: 14px;
+        margin-top: 5px;
+        background-position: -20px 0;
+      }
     }
     .sell-box{
-      .sell-img{background-position: -80px 0;}
+      .sell-img{
+        width: 18px;
+        height: 16px;
+        margin-left: 13px;
+        margin-top: 5px;
+        background-position: -40px 0;
+      }
     }
     .scan-box{
-      .scan-img{background: url(../images/index/scan.png?1) no-repeat 0px 0px;}
+      .scan-img{
+        background: url(../images/index/scan.png?1) no-repeat 0px 0px;
+      }
     }
     .contrast-box{
       .contrast-img{
-        background: url(../images/index/contrast.png) no-repeat 0px 0px;
+        background-position: -60px 0;
+        width: 18px;
+        height: 12px;
+        margin-left: 13px;
+        margin-top: 7px;
+      }
+    }
+    .suggest-box{
+      .suggest-img{
+        background-position: -80px 0;
+        width: 15px;
+        height: 16px;
+        margin-left: 14px;
+        margin-top: 5px;
       }
     }
 
@@ -293,27 +337,32 @@
     }
   }
   .side-box:hover{
-    background: #FC7000;
+    background: #fff;
 
 
     a{
-      i{color: #fff8dd;}
+      i{color: #666666;}
     }
     .collect-box{
-      .collect-img{background-position: -120px 0;}
+      .collect-img{background-position: 0 -20px;}
     }
     .reserve-box{
-      .reserve-img{background-position: -160px 0;}
+      .reserve-img{background-position: -20px -20px;}
     }
     .sell-box{
-      .sell-img{background-position: -200px 0;}
+      .sell-img{background-position: -40px -20px;}
     }
     .scan-box{
       .scan-img{}
     }
     .contrast-box{
       .contrast-img{
-        background: url(../images/index/contrast-hover.png) no-repeat 0px 0px;
+        background-position: -60px -20px;
+      }
+    }
+    .suggest-box{
+      .suggest-img{
+        background-position: -80px -20px;
       }
     }
   }
@@ -338,10 +387,11 @@
 .sidebar{
   // width: 910px;height:652px;
   .sidebar-nav{
-
+    border-left: 1px solid #E6E6E6;
     width: 52px;
     height: 500px;
     float: left;
+
 
     .sidebar-list{
       height: 224px;
@@ -352,17 +402,15 @@
 
 }
 .sidebar-active{
-  width:58px;
+  width:52px;
   border-left: none;
-
   .sidebar-nav{
-    background-color: #FC7000;
-
+    background-color: #f5f5f5;
     .side-box{
       box-shadow: none;
-      border-bottom: 1px solid #d15001;
-      height: 55px;
-      border:1px solid #FC7000;
+      border-bottom: 1px solid #e6e6e6;
+      height: 54px;
+      border:1px solid #e6e6e6;
       border-right: none;
       a{
         display: block;
@@ -457,9 +505,9 @@
 }
 
 .sidebar-active:hover{
-  width:57px;
+  width:52px;
   .side-box{
-    width: 57px;
+    width: 52px;
     a{
       i{
         width:30px;
