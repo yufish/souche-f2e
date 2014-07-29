@@ -81,8 +81,8 @@ html
             function move(moveIndex){
                 var activeIndex = moveIndex+1;
                 // use translateZ(0) activate 3d hardware acceleration is possible
-                //tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
-                tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
+                tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
+                //tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
                 var oldIndex = underline.attr('data-active-index')
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
                 navItems.removeClass('active')
