@@ -38,7 +38,7 @@ header{
     position: absolute;
     z-index: 11;
     width: 100%;
-    padding: 10px;
+    padding: 0 10px;
     -webkit-perspective: 800;
     perspective: 800;
     height: 0;
