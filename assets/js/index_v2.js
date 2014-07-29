@@ -1,4 +1,4 @@
-define(['index/car-god'], function(carGod) {
+define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
@@ -6,45 +6,45 @@ define(['index/car-god'], function(carGod) {
     var _bind = function() {
         var timeout = null;
 
-        $(".car-brand,.car-models,.car-price").mouseenter(function(event) {
+        // $(".car-brand,.car-models,.car-price").mouseenter(function(event) {
 
-            event.stopPropagation();
-            var self = this;
-            window.clearTimeout(timeout);
+        //     event.stopPropagation();
+        //     var self = this;
+        //     window.clearTimeout(timeout);
 
-            $(".models-inner,.brand-inner,.price-inner").hide();
-            timeout = window.setTimeout(function() {
-                if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-                    if ($(self).hasClass("car-models")) {
-                        $(".car-price").css("visibility", "hidden");
-                    } else {
-                        $(".car-models,.car-price").css("visibility", "hidden");
-                    }
-                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-                } else {
-                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-                }
-            }, 200);
+        //     $(".models-inner,.brand-inner,.price-inner").hide();
+        //     timeout = window.setTimeout(function() {
+        //         if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
+        //             if ($(self).hasClass("car-models")) {
+        //                 $(".car-price").css("visibility", "hidden");
+        //             } else {
+        //                 $(".car-models,.car-price").css("visibility", "hidden");
+        //             }
+        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
+        //         } else {
+        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
+        //         }
+        //     }, 200);
 
-            return false;
-        });
+        //     return false;
+        // });
 
-        $(".car-brand,.car-models,.car-price").mouseleave(function() {
+        // $(".car-brand,.car-models,.car-price").mouseleave(function() {
 
-            var self = this;
-            window.clearTimeout(timeout);
+        //     var self = this;
+        //     window.clearTimeout(timeout);
 
-            if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-                if ($(self).hasClass("car-models")) {
-                    $(".car-price").css("visibility", "");
-                } else {
-                    $(".car-models,.car-price").css("visibility", "");
-                }
-                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
-            } else {
-                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
-            }
-        });
+        //     if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
+        //         if ($(self).hasClass("car-models")) {
+        //             $(".car-price").css("visibility", "");
+        //         } else {
+        //             $(".car-models,.car-price").css("visibility", "");
+        //         }
+        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
+        //     } else {
+        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
+        //     }
+        // });
 
         $(".carItem").live("mouseenter", function(event) {
             event.stopPropagation();
@@ -170,6 +170,7 @@ define(['index/car-god'], function(carGod) {
 
             _bind();
             carGod.init();
+            topNav.init();
             require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "souche/down-counter", "index/collect", "lib/lazyload"],
                 function(qiugou, qiugouModel, customSelect, modelSeries, downCounter, collect, lazyload) {
 
