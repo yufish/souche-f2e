@@ -45,38 +45,39 @@ define(function() {
             }
         });
 
-        $(".carItem").mouseenter(function (event) {
+        $(".carItem").live("mouseenter",function (event) {
             event.stopPropagation();
             var self = $(this);
+            //console.log(event.target.nodeName);
+            if(event.target.nodeName=="SPAN"||event.target.nodeName=="INS")
+            {
+                return ;
+            }
 
             var width = self.find(".carImg img").width();
 
             self.find(".carImg img").stop(true).animate({
-                width: width + 12 + "px",
-                height: 194 + "px",
-                top: "-3px",
-                left: "-3px"
-            }, 250, function () {
+                width: width + 40 + "px",
+                height: 210 + "px"
+            }, 1500, function () {
             });
         });
 
-        $(".carItem").mouseleave(function (event) {
+        $(".carItem").live("mouseleave",function (event) {
             event.stopPropagation();
             var self = $(this);
 
             var width = self.find(".carImg").width();
             self.find(".carImg img").stop(true).animate({
                 width: width + 1 + "px",
-                height: 182 + "px",
-                top: "0px",
-                left: "0px"
-            }, 250, function () {
+                height: 182 + "px"
+            }, 1500, function () {
             });
         });
 
-        //查看更多
-        $(".carsMore").click(function () {
-            $("#carsMore span").html("正在获取");
+
+        var getMore = function () {
+            $(".carsMore span").html("正在获取");
 
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
@@ -106,8 +107,8 @@ define(function() {
                                     "<\/div>";
 
                             }
-                            $("#carsContent .myAdviser").append(template);
-                            $("#carsMore span").html("查看更多");
+                            $(".myAdviserContent .myAdviser").append(template);
+                            $(".myAdviserContent  .carsMore span").html("查看更多");
                         }
                     });
             }
@@ -138,10 +139,22 @@ define(function() {
                                     "<\/div>";
 
                             }
-                            $("#carsContent .hotNewCars").append(template);
+                            $(".hotNewCarsContent .hotNewCars").append(template);
                         }
                     });
             }
+        };
+        //查看更多
+        $(".carsMore").click(function()
+        {
+            getMore.call(this);
+            $("body,html").scroll(function()
+            {
+                if(($("#footer").offset().top-50)==(window.scrollY+window.screen.availHeight))
+                {
+                    getMore.call(this);
+                }
+            });
         });
         //
 
@@ -162,8 +175,8 @@ define(function() {
 
             _bind();
 
-            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "souche/down-counter"],
-                function (qiugou, qiugouModel, customSelect, modelSeries, downCounter) {
+            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "souche/down-counter","index/collect","lib/lazyload"],
+                function (qiugou, qiugouModel, customSelect, modelSeries, downCounter,collect,lazyload) {
 
                     qiugou.init(config);
                     //modelSeriesModel.init(config);
@@ -192,6 +205,13 @@ define(function() {
                         var $this = $(this);
                         downCounter($this);
                     });
+
+                    collect.init(config);
+
+                    $(".carsContent img").lazyload({
+                        effect: "fadeIn"
+                    });
+
 
                 });
 

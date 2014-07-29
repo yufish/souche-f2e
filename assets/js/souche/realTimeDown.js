@@ -19,7 +19,7 @@ define(function() {
 
         if(len==0)
         {
-            $(".realTimeDown").remove();
+            $(".realIndexTimeDown").remove();
             return ;
         }
 
@@ -27,21 +27,16 @@ define(function() {
             list.push(result.items[index]);
         }
 
-        var downList = "<div class='realTimeDown'>";
+        var downList = "<div class='realIndexTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
-            if(index%2) {
-                downList += "<span class='list'><a href='"+list[index].url+"'>" + list[index].name + "</a><\/span>";
-            }
-            else
-            {
-                downList += "<span class='list'><a href='"+list[index].url+"'>" + list[index].name+"<span class='enterChexi'>进入车系»</span>" + "</a><\/span>";
-            }
+            downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
+
         }
         downList+="<\/div>";
         var top=$(".search").offset().top+$(".search").height();
         var width = $(".search").offset().left;
 
-        $(".realTimeDown").remove();
+        $(".realIndexTimeDown").remove();
         var element = $(downList).css(
             {
                 top:top+2,
@@ -78,19 +73,19 @@ define(function() {
 
         $element.find("input").keyup(function (e) {
             if(e.keyCode == 40) {
-                var num = $(".realTimeDown .hover").index();
-                var index = (num+1)%$(".realTimeDown .list").length;
+                var num = $(".realIndexTimeDown .hover").index();
+                var index = (num+1)%$(".realIndexTimeDown .list").length;
 
-                $(".realTimeDown .hover").removeClass("hover");
-                $(".realTimeDown .list").eq(index).addClass("hover");
+                $(".realIndexTimeDown .hover").removeClass("hover");
+                $(".realIndexTimeDown .list").eq(index).addClass("hover");
                 return ;
             }
             if(e.keyCode == 38) {
-                var num = $(".realTimeDown .hover").index();
-                var index = (num-1)%$(".realTimeDown .list").length;
+                var num = $(".realIndexTimeDown .hover").index();
+                var index = (num-1)%$(".realIndexTimeDown .list").length;
 
-                $(".realTimeDown .hover").removeClass("hover");
-                $(".realTimeDown .list").eq(index).addClass("hover");
+                $(".realIndexTimeDown .hover").removeClass("hover");
+                $(".realIndexTimeDown .list").eq(index).addClass("hover");
                 return ;
             }
 
@@ -103,7 +98,7 @@ define(function() {
                 );
             }
             else {
-                $(".realTimeDown").remove();
+                $(".realIndexTimeDown").remove();
             }
         });
 
@@ -117,17 +112,17 @@ define(function() {
                 );
             }
             else {
-                $(".realTimeDown").remove();
+                $(".realIndexTimeDown").remove();
             }
         });
 
-        $(".realTimeDown .list").live("mouseenter",function()
+        $(".realIndexTimeDown .list").live("mouseenter",function()
         {
-            $(".realTimeDown .hover").removeClass("hover");
+            $(".realIndexTimeDown .hover").removeClass("hover");
             $(this).addClass("hover");
         });
 
-        $(".realTimeDown .list").live("mouseleave",function()
+        $(".realIndexTimeDown .list").live("mouseleave",function()
         {
            // console.log(2);
             $(this).removeClass("hover");
@@ -135,7 +130,7 @@ define(function() {
 
        $("body").click(function()
        {
-           $(".realTimeDown").remove();
+           $(".realIndexTimeDown").remove();
        });
 
     }
