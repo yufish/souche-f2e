@@ -5,7 +5,7 @@ define(function() {
 
     var SVGsupported = function() {
         ns = "http://www.w3.org/2000/svg"
-        return !!document.createElementNS && !! document.createElementNS(ns, "svg").createSVGRect
+        return !!document.createElementNS && !!document.createElementNS(ns, "svg").createSVGRect
     }()
     var config;
     return {
@@ -213,12 +213,12 @@ define(function() {
                 $("#" + id).removeClass("hidden");
                 $(".float-nav-item").removeClass("activeNav");
                 $(this).addClass("activeNav")
-                $(window).trigger("tab_change", id);
+                $(window).trigger("nav_change", id);
                 e.preventDefault();
             });
             var picsLoaded = false;
             var brandHistoryLoaded = false;
-            $(window).on("tab_change", function(e, id) {
+            $(window).on("nav_change", function(e, id) {
                 if (id == "onsale_pics") {
                     if (!picsLoaded) {
                         $("#onsale_pics img").lazyload();
