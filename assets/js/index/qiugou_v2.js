@@ -58,12 +58,12 @@ define(['souche/util/load-info'], function(LoadInfo) {
             return false;
         });
 
-        $(".instrestCarItem span").live("click", function (event) {
+        $(".instrestCarItem").live("click", function (event) {
             //alert(1);
 
-            var seriesCode = $(this).parent().attr("seriescode");
-            var name = $(this).prev().html();
-            var type = $(this).parent().attr("type");
+            var seriesCode = $(this).attr("seriescode");
+            var name = $(this).find("a").html();
+            var type = $(this).attr("type");
 
             require(["index/qiugouModel"], function (qiugouModel) {
                 qiugouModel.DeleteAdviserInstrest({
@@ -72,7 +72,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     type: type
                 });
             });
-            $(this).parent().remove();
+            $(this).remove();
 
             return false;
         });
@@ -205,8 +205,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
             }, 500);
         });
 
-        $(".carinstrestItem span").live("click", function () {
-            var ele = $(this).parent();
+        $(".carinstrestItem").live("click", function () {
+            var ele = $(this);
             require(["index/qiugouModel"], function (qiugouModel) {
                 qiugouModel.DeleteAdviserInstrest({
                     seriesCode: $(ele).attr("seriescode"),
@@ -260,7 +260,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
                 $(".addInstrestCarTilte").append(template);
                 $("<span class=\"carinstrestItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>").insertBefore($(".addCarinstrestItem"));
-                if ($(".interestCar span [seriesCode='" + this.seriesCode + "']").length == 0) {
+                if ($(".interestCar span[seriesCode='" + this.seriesCode + "']").length == 0) {
                     if ($(".interestCar span").eq(0).html() === "不限") {
                         $(".interestCar span").eq(0).remove();
                     }
