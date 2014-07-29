@@ -71,21 +71,16 @@ header{
     height: 1px;
     margin-top: 4px;
 }
-.placeholder-for-fixed{
-    height: 88px;
-}
-.fixed-elements{
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    top:0;
+.placeholder-for-tabNavBar{
+    height: 44px;
 }
 #J_tabNavbar{
     height: 44px;
     line-height: 44px;
     color:#666;
+    position: absolute;
     border-bottom: 1px solid #e7e7e7;
-
+    z-index: 2;
     width: 100%;
     background: #fff;
     top:44px;

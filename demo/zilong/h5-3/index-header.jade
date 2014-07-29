@@ -11,38 +11,37 @@ html
         <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.touchevent.js"></script>
     body
-        .placeholder-for-fixed
-        .fixed-elements
-            header
-                .hd-logo
-                .hd-city#J_choose_city
-                    span(style="font-size:13px") 杭州
-                    svg.svg-down-arrow(width=9,height=5)
-                        polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
-                .for-other-topic
-                    .icon-bar
-                    .icon-bar
-                    .icon-bar
-                .hd-search
-            .other-topic
-                .topic-item 首页
-                .topic-item 卖车
-                .topic-item 我的大搜车
-                .topic-item 拨打客服电话
-                .topic-item 关于我们
-            .wrapTransBg
+        header
+            .hd-logo
+            .hd-city#J_choose_city
+                span(style="font-size:13px") 杭州
+                svg.svg-down-arrow(width=9,height=5)
+                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+            .for-other-topic
+                .icon-bar
+                .icon-bar
+                .icon-bar
+            .hd-search
+        .other-topic
+            .topic-item 首页
+            .topic-item 卖车
+            .topic-item 我的大搜车
+            .topic-item 拨打客服电话
+            .topic-item 关于我们
+        .wrapTransBg
 
-            nav#J_tabNavbar.clearfix
-                .nav-item(data-nav-index=1)
-                    i.nav-icon.hot-icon
-                    热门车型
-                .nav-item(data-nav-index=2)
-                    i.nav-icon.car-icon
-                    我要找车
-                .nav-item(data-nav-index=3)
-                    i.nav-icon.rocket-icon
-                    随便逛逛
-                #J_navbar_underline(data-active-index=1)
+        .placeholder-for-tabNavBar
+        nav#J_tabNavbar.clearfix
+            .nav-item(data-nav-index=1)
+                i.nav-icon.hot-icon
+                热门车型
+            .nav-item(data-nav-index=2)
+                i.nav-icon.car-icon
+                我要找车
+            .nav-item(data-nav-index=3)
+                i.nav-icon.rocket-icon
+                随便逛逛
+            #J_navbar_underline(data-active-index=1)
         section#J_tabCover
             #J_tabContainer.clearfix
                 include ./index-tab-1
@@ -68,7 +67,6 @@ html
                transition_end='transitionend'
             }
             //variable cache and some init;
-            var fixedElements = $('.fixed-elements')
             var tabCover = $('#J_tabCover'),
                 tabCtn = $('#J_tabContainer'),
                 tabNavBar = $('#J_tabNavbar');
@@ -153,7 +151,8 @@ html
 
             $(window).scroll(function(){
                 var top = $(window).scrollTop();
-                fixedElements.css({top:top})
+                top=Math.max(top,44);
+                tabNavBar.css({top:top})
             })
 
 
