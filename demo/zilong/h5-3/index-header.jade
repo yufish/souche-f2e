@@ -88,7 +88,7 @@ html
                 navItems.eq(moveIndex).addClass('active')
                 topCache[oldIndex-1]=$(window).scrollTop();
                 //document.body.scrollTop = topCache[activeIndex-1];
-
+                alert('move')
             }
             //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
             move(1);
