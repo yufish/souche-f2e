@@ -69,7 +69,9 @@
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
             //(2)
-            if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
+            var absX = Math.abs(touch.x1 - touch.x2),
+                absY = Math.abs(touch.y1 - touch.y2)
+            if(isAndroid && absX>10 && absX>absY )
                 e.preventDefault()
 
             clearTimeout(longTapTimer);
