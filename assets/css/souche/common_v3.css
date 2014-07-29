@@ -520,6 +520,8 @@ body {
   color: #333;
   margin-right: 60px;
   float: left;
+  width: 45px;
+  height: 20px;
 }
 #header .wrapper .city span {
   display: block;

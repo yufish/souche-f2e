@@ -73,8 +73,7 @@ define(function() {
 
                         $("#fav-popup").addClass("hidden");
                         $(".wrapGrayBg").hide();
-                        var num =parseInt($(this).find("span").html());
-                        $(this).find("span").html(num+1);
+                        $(this).find("span").html(parseInt($(this).attr("data-num"))+1);
                         $(this).addClass("active");
 
                     }
@@ -97,8 +96,8 @@ define(function() {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
-                    var num =parseInt($(this).find("span").html());
-                    $(this).find("span").html(num-1);
+                    //var num =parseInt($(this).find("span").html());
+                    $(this).find("span").html(parseInt($(this).attr("data-num")));
                     $(this).removeClass("active");
                 }
 
