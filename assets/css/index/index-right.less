@@ -50,11 +50,7 @@ background-color: #fff;
   width: 208px;
   height: 340px;
   padding: 15px;
-  border: 1px solid #EDEDED;
   background: #fff;
-  border-bottom: none;
-  border-top: none;
-  border-right: none;
   .title{
     margin: 10px 0;
     font-size: 16px;
@@ -75,9 +71,11 @@ background-color: #fff;
     li{
       margin-bottom: 10px;
       span{
-        margin-right: 15px;
+        width: 25px;
         font-weight: bold;
         color: #8C8C8C;
+        display: block;
+        float: left;
       }
       a{
         color: #8C8C8C;
@@ -129,7 +127,6 @@ background-color: #fff;
 }
 #qcode{
   width: 238px;
-  border-left: 1px solid #EDEDED;
   border-top: none;
   
   .weixin-code{
@@ -207,7 +204,6 @@ background-color: #fff;
 }
 #qa{
   padding: 15px;
-  border-left: 1px solid #EDEDED;
   height: 400px;
   .title{
     margin-top: 10px;
@@ -219,72 +215,7 @@ background-color: #fff;
   .cheshen-nav{
     width: 210px;
     height: 30px;
-    .nav-but{
-      position: relative;
-      width: 68px;
-      border: 1px solid #E4E3E3;
-      background: #F0F0F0;
-      float: left;
-      height: 28px;
-      line-height: 30px;
-      text-align: center;
-      cursor: pointer;
-      .chenshen-cont{
-        position: absolute;
-        width: 210px;
-        height: 200px;
-        top:45px;
-        left: 0px;
-        text-align: left;
-        .head{
-          height: 60px;
-          img{
-            width: 60px;
-            height: 60px;
-            display: block;
-            float: left;
-            margin-right:10px;
-          }
-          .head-tit{
-            float: left;
-            
-            h1{
-              font-size: 16px;
-              font-weight: bold;
-              line-height: 20px;
-              margin-bottom: 5px;
-            }
-            p{
-              color: #B2B2B2;
-              font-size: 12px;
-              line-height: 17px;
-            }
-          }
-        }
-        .cheshen-detail{
-          color: #797979;
-          line-height: 18px;
-          margin-top: 15px;
-          .status{
-            margin-bottom: 10px;
-          }
-          .ask{
-            display: block;
-            width: 70px;
-            height: 30px;
-            padding-left: 30px;
-            border-radius: 3px;
-            background: #5C9BEF url(../images/index/ask.png) no-repeat left center;
-            color: #fff;
-            line-height: 31px;
-            margin-top: 15px;
-          }
-          .ask:hover{
-            background: #3784EC url(../images/index/ask-hover.png) no-repeat left center;
-          }
-        }
-      }
-    }
+    
     .chenshen-cont-2{
       left: -69px !important;
     }
@@ -339,6 +270,8 @@ background-color: #fff;
     .cheshen-detail{
       margin-top: 10px;
       margin-bottom: 10px;
+      overflow: hidden;
+      height:125px;
       h1{
         font-size: 12px;
         color: #333;
@@ -366,7 +299,7 @@ background-color: #fff;
       }
     }
     .detail-hidden{
-      display: none;
+      height:0;
     }
   }
 }

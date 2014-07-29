@@ -133,6 +133,7 @@ body *{
   position: relative;
   min-height: 390px;
   overflow: hidden;
+  border-right: 1px solid #EDEDED;
   .myAdviser ,.hotNewCars {
     position: relative;
     overflow: hidden;
@@ -266,11 +267,13 @@ body *{
       display: block;
       img
       {
-        position: relative;
+        position:absolute;
         width: 100%;
         height: 182px;
         top: 0px;
         left: 0px;
+        margin-top: 0px;
+        margin-left: 0px;
       }
 
     }
@@ -348,7 +351,7 @@ body *{
         background-position: 0px 2px;
         cursor: pointer;
       }
-      .collect.ative {
+      .collect.active {
         background: url(../images/index/active.png) no-repeat;
         background-position: 0px 2px;
         cursor: pointer;
@@ -359,6 +362,45 @@ body *{
         float: right;
         color: #999;
         
+      }
+      .carConstrast {
+        padding: 2px;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: middle;
+        color: #8E8E8E;
+
+      }
+      .carConstrast {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        cursor: pointer;
+        margin-top: -5px;
+        margin-left:30px;
+        span{
+          padding-left: 4px;
+          vertical-align: middle;
+        }
+        input{
+          vertical-align: middle;
+        }
+        .contrast-waring
+        {
+          right: -30px !important;
+          position: absolute;
+          top: -66px;
+          right: -112px;
+          width: 180px;
+          height: 40px;
+          border: 1px solid #ee7700;
+          background: #ffeed6;
+          color: #333;
+          padding: 10px;
+          font-size: 13px;
+        }
+
       }
     }
   }
@@ -645,10 +687,12 @@ body *{
         border: 1px solid #CCCCCC;
         margin-right: 5px;
         margin-left: 5px;
+        cursor: pointer;
         a{
           margin-right: 10px;
           font-size: 14px;
           float: left;
+          color: #656565;
         }
         span
         {
@@ -729,6 +773,11 @@ body *{
               padding-top: 8px;
               line-height: 20px;
               color: #333;
+              .placeholder
+              {
+                color: #333;
+              }
+
             }
             .sc-select-action
             {
@@ -850,10 +899,12 @@ body *{
         border: 1px solid #CCCCCC;
         padding:5px 10px 0px 10px;
         margin: 5px;
-        a{
+        cursor: pointer;
+        a {
           margin-right: 10px;
           font-size: 13px;
           float: left;
+          color: #656565;
         }
         span
         {

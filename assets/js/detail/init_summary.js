@@ -5,7 +5,7 @@ define(function() {
 
     var SVGsupported = function() {
         ns = "http://www.w3.org/2000/svg"
-        return !!document.createElementNS && !! document.createElementNS(ns, "svg").createSVGRect
+        return !!document.createElementNS && !!document.createElementNS(ns, "svg").createSVGRect
     }()
     var config;
     return {
