@@ -166,3 +166,6 @@ body{
     width: 320px;
     margin: 0 auto;
 }
+.hidden{
+    display: none !important;
+}

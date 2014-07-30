@@ -39,8 +39,8 @@ header{
     z-index: 11;
     width: 100%;
     padding: 0 10px;
-    -webkit-perspective: 800;
-    perspective: 800;
+    -webkit-perspective: 400;
+    perspective: 400;
     height: 0;
     overflow: hidden;
 }
@@ -350,12 +350,16 @@ nav .nav-item.active{
     color:#333;
     width: 288px;
 }
-.btn-wrapper{
+.btn-wrapper-for-filter{
     font-size: 0;
     height: 68px;
     line-height: 68px;
+    position: fixed;
+    bottom: 16px;
+    width: 100%;
+    z-index: 2;
 }
-.btn-wrapper button{
+.btn-wrapper-for-filter button{
     font-size: 14px;
     border: none;
     height: 40px;

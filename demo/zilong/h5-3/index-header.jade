@@ -49,7 +49,9 @@ html
                 include ./index-tab-3
 
         .wrapTransBg
-
+        .btn-wrapper-for-filter.hidden(style="text-align:center")
+            button#J_btnFilter_reset 重置
+            button#J_btnFilter_submit 为您找到100辆车
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
@@ -82,25 +84,39 @@ html
             tabPanels.css({width:widthOfPanel+'%'});
             //记录每一个tabPanel的scrollTop，便于恢复到相应位置
             var topCache=[0,0,0];
-            function move(moveIndex){
-                var activeIndex = moveIndex+1;
+            function beforeMove(){
+
+            }
+            function afterMove(oldIndex,curIndex){
+                navItems.removeClass('active')
+                navItems.eq(curIndex-1).addClass('active')
+                topCache[oldIndex-1]=$(window).scrollTop();
+                document.body.scrollTop = topCache[curIndex-1];
+                if(curIndex==2){
+                    $('.btn-wrapper-for-filter').removeClass('hidden')
+                }else{
+                    $('.btn-wrapper-for-filter').addClass('hidden')
+                }
+            }
+
+            function move(curIndex){
+                //var activeIndex = moveIndex+1;
+                var moveIndex =curIndex-1;
                 // use translateZ(0) activate 3d hardware acceleration is possible
                 tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
                 //tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
                 var oldIndex = underline.attr('data-active-index')
-                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
-                navItems.removeClass('active')
-                navItems.eq(moveIndex).addClass('active')
-                topCache[oldIndex-1]=$(window).scrollTop();
-                document.body.scrollTop = topCache[activeIndex-1];
+                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
+                afterMove(oldIndex,curIndex)
+
             }
             //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
-            move(1);
+            move(2);
             navItems.on(tap_event,function(){
                 var index = +$(this).attr('data-nav-index');
                 var curIndex = underline.attr('data-active-index');
                 if(curIndex == index)return;
-                move(index-1);
+                move(index);
             })
             tabCtn.on('swipeLeft',function(){
                 var index = +underline.attr('data-active-index');
@@ -109,7 +125,7 @@ html
             }).on('swipeRight',function(){
                 var index = +underline.attr('data-active-index');
                 if(index==1) return;
-                var moveIndex = index-2;
+                var moveIndex = index-1;
                 move(moveIndex);
             })
 
