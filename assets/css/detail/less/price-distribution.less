@@ -2,6 +2,9 @@
 
     position: relative;
 }
+#new-price{
+    z-index: 100;
+}
 #price-distribution .price-point{
     position:absolute;
     top:176px;
@@ -46,6 +49,10 @@
     border:1px solid #60B25E;
     color:#60B25E;
     background: #fff;
+    position: absolute;
+    top:-60px;
+    width: 100px;
+    left:-30px;
 }
 #price-distribution .guide-tag{
     border:1px solid #5AB6A2;
@@ -68,6 +75,7 @@
 }
 #price-distribution .tri.new-tri{
     background: url(../../images/detail/new-price-tri.png);
+    margin-top: -43px;
 }
 #price-distribution .tri.guide-tri{
     background: url(../../images/detail/guide-price-tri.png);
@@ -82,7 +90,7 @@
 }
 #price-distribution #price-rate{
     position: absolute;
-    width:100px;
+    width:120px;
     bottom: -30px;
     font-size: 13px;
     left:-15px

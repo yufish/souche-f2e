@@ -45,6 +45,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
+
             $(".all-score em").html((totalScore / 9).toFixed(2))
             $(".series-tab").html("")
             var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
@@ -152,6 +153,8 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 setTimeout(function() {
                     next.call(context);
                 }, 150)
+            }, function() {
+
             })
 
 
