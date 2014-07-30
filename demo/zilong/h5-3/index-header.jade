@@ -11,41 +11,45 @@ html
         <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
-        header
-            .hd-logo
-            .hd-city#J_choose_city
-                span(style="font-size:13px") 杭州
-                svg.svg-down-arrow(width=9,height=5)
-                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
-            .for-other-topic
-                .icon-bar
-                .icon-bar
-                .icon-bar
-            .hd-search
-        .other-topic
-            .topic-item 首页
-            .topic-item 卖车
-            .topic-item 我的大搜车
-            .topic-item 拨打客服电话
-            .topic-item 关于我们
-        .wrapTransBg
         .placeholder-for-tabNavBar
-        nav#J_tabNavbar.clearfix
-            .nav-item(data-nav-index=1)
-                i.nav-icon.hot-icon
-                热门车型
-            .nav-item(data-nav-index=2)
-                i.nav-icon.car-icon
-                我要找车
-            .nav-item(data-nav-index=3)
-                i.nav-icon.rocket-icon
-                随便逛逛
-            #J_navbar_underline(data-active-index=1)
+        .fixed-wrapper
+            header
+                .hd-logo
+                .hd-city#J_choose_city
+                    span(style="font-size:13px") 杭州
+                    svg.svg-down-arrow(width=9,height=5)
+                        polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+                .for-other-topic
+                    .icon-bar
+                    .icon-bar
+                    .icon-bar
+                .hd-search
+            .other-topic
+                .topic-item 首页
+                .topic-item 卖车
+                .topic-item 我的大搜车
+                .topic-item 拨打客服电话
+                .topic-item 关于我们
+
+            nav#J_tabNavbar.clearfix
+                .nav-item(data-nav-index=1)
+                    i.nav-icon.hot-icon
+                    热门车型
+                .nav-item(data-nav-index=2)
+                    i.nav-icon.car-icon
+                    我要找车
+                .nav-item(data-nav-index=3)
+                    i.nav-icon.rocket-icon
+                    随便逛逛
+                #J_navbar_underline(data-active-index=1)
         section#J_tabCover
             #J_tabContainer.clearfix
                 include ./index-tab-1
                 include ./index-tab-2
                 include ./index-tab-3
+
+        .wrapTransBg
+
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
