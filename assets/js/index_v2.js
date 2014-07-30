@@ -45,7 +45,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
         //     }
         // });
-
+        //
         $(".carItem").live("mouseenter", function(event) {
             event.stopPropagation();
             var self = $(this);

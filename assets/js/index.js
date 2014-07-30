@@ -14,7 +14,6 @@ define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyloa
                     initDelay: 0,
                     slideshowSpeed: 5000,
                     useCSS: true,
-
                     after: function(slider) {
                         var slides = slider.slides,
                             _index = slider.animatingTo,

@@ -40,7 +40,7 @@ define(function() {
                         width: 598,
                         height: innerHeight,
                         opacity: 1
-                    }, 300)
+                    }, 400)
                 }, 200)
 
             }).mouseleave(function() {
