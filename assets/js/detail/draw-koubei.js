@@ -36,7 +36,6 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
     var DrawKoubei = {
         draw: function(_data) {
             data = _data;
-            var self = this;
             var totalScore = 0;
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
@@ -44,14 +43,9 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             }
 
             item_tpl = $("#koubei_item_template").html();
+            this.drawRadar();
+            this.drawLabel();
 
-
-            $(window).on("nav_change", function(e, id) {
-                if (id == "onsale_koubei") {
-                    self.drawRadar();
-                    self.drawLabel();
-                }
-            })
             $(".all-score em").html((totalScore / 9).toFixed(2))
             $(".series-tab").html("")
             var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
