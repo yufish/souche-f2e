@@ -26,10 +26,10 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
     var draw;
     var data;
     var centerPoint = {
-        x: 250,
-        y: 250
+        x: 200,
+        y: 200
     }
-    var radius = 225;
+    var radius = 200;
     var item_tpl;
     var realPoints = [];
     var outlinePoints = [];
@@ -40,6 +40,16 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
                 totalScore += data.items[i].rate * 10;
+                var labels = data.items[i].labels;
+                if (labels) {
+                    for (var n = 0; n < labels.length; n++) {
+                        var label = labels[n];
+
+                        labels[n] = label.replace(/\([0-9]*?\)/, function(r) {
+                            return "<span>" + r + "</span>"
+                        })
+                    }
+                }
             }
 
             item_tpl = $("#koubei_item_template").html();
@@ -73,6 +83,8 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     i--
                 }
             }
+            data.topPosReview = data.topPosReview.splice(0, 10)
+            data.topNegReview = data.topNegReview.splice(0, 10);
             $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
             $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
             data.items.sort(function(i1, i2) {
@@ -121,7 +133,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 draw.line(centerPoint.x, centerPoint.y, outlinePoints[i].x, outlinePoints[i].y).stroke({
                     color: "#dddddd",
                     width: 1
-                })
+                }).attr("style", "stroke-dasharray:3")
             }
             draw.path(outlinePathStr + " z").fill("none").stroke({
                 color: "#dddddd",
@@ -166,45 +178,53 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 data.items[i].width = data.items[i].rate * 100;
                 var label = $(Mustache.render(item_tpl, data.items[i]));
                 $(".koubei-content").append(label);
+                label.on("mouseenter", function() {
+                    $(".koubei-item-labels").addClass("hidden")
+                    $(".koubei-item-labels", $(this)).removeClass("hidden");
+
+                })
+
 
                 if (i < 5) {
                     label.css({
-                        left: outlinePoints[i].x + 370,
+                        left: outlinePoints[i].x + 420,
                         top: outlinePoints[i].y + 40
                     })
                 } else {
                     label.css({
-                        left: outlinePoints[i].x + 40,
+                        left: outlinePoints[i].x + 90,
                         top: outlinePoints[i].y + 40
                     }).addClass("float-left-item")
                 }
                 if (i == 0) {
                     label.css({
-                        left: outlinePoints[i].x + 260,
-                        top: outlinePoints[i].y + 80
+                        left: outlinePoints[i].x + 340,
+                        top: outlinePoints[i].y + 90
                     })
                 } else if (i == 1) {
                     label.css({
-                        left: outlinePoints[i].x + 330,
+                        left: outlinePoints[i].x + 410,
                         top: outlinePoints[i].y + 80
                     })
                 } else if (i == 4) {
                     label.css({
-                        left: outlinePoints[i].x + 370,
-                        top: outlinePoints[i].y - 10
+                        left: outlinePoints[i].x + 420,
+                        top: outlinePoints[i].y + 30
                     })
                 } else if (i == 5) {
                     label.css({
-                        left: outlinePoints[i].x + 40,
-                        top: outlinePoints[i].y - 10
+                        left: outlinePoints[i].x + 90,
+                        top: outlinePoints[i].y + 30
                     })
                 } else if (i == 8) {
                     label.css({
-                        left: outlinePoints[i].x + 40,
+                        left: outlinePoints[i].x + 90,
                         top: outlinePoints[i].y + 70
                     })
                 }
             }
+            $(".koubei-item-labels").addClass("hidden")
+            $(".koubei-item-labels:eq(5)").removeClass("hidden")
         }
     }
     return DrawKoubei;
