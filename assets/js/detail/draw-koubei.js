@@ -45,8 +45,8 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     for (var n = 0; n < labels.length; n++) {
                         var label = labels[n];
 
-                        labels[n] = label.replace(/\([0-9]*?\)/, function(r) {
-                            return "<span>" + r + "</span>"
+                        labels[n] = label.replace(/\(([0-9]*?)\)/, function(r, r1) {
+                            return "<span>(" + r1 + "人)</span>"
                         })
                     }
                 }
@@ -211,13 +211,13 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     })
                 } else if (i == 4) {
                     label.css({
-                        left: outlinePoints[i].x + 420,
-                        top: outlinePoints[i].y + 30
+                        left: outlinePoints[i].x + 410,
+                        top: outlinePoints[i].y + 10
                     })
                 } else if (i == 5) {
                     label.css({
-                        left: outlinePoints[i].x + 90,
-                        top: outlinePoints[i].y + 30
+                        left: outlinePoints[i].x + 100,
+                        top: outlinePoints[i].y + 10
                     })
                 } else if (i == 8) {
                     label.css({
