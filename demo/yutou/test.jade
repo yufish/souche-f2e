@@ -1,47 +1,17 @@
-doctype html
-html
-    head
-        |<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        |<script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js?t=12"></script>
-        script.
-          var contextPath = "/soucheweb";
-          
-
-        style.
-            .content{width: 100%;float: left;}
-            .right {
-                width: 280px;
-                margin-left: -280px;
-                float: left;
-                overflow: hidden;
-                background:#ddd;
-                height:30px;
-            }
-            .left {
-                width: auto;
-                margin-right: 290px;
-                overflow: hidden;
-                background:#ff6700;
-                height:30px;
-            }
-    body
-        table(style="width:100%;",border="0",cellspacing="0",cellpadding="0")
-            tr
-                td aaa
-                td(style="width:100px;background:#ddd;") ddd
-        div
-            div.content(style="")
-                div.left(style="")
-            div.right(style="")
-
-        div(style="height:300px;overflow:auto;width:100%;")
-            div(style="height:800px;background:#ddd;") 
-                |aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>
-        script.
-            require.config({
-                baseUrl: "http://f2e.souche.com/assets/js"
-            });
-            require(['framework/jquery/core'],function(Core){
-                console.log(Core);
-                
-            });
+script.
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    var txt = 'http://security.tencent.com/';
+    ctx.textBaseline = "top";
+    ctx.font = "14px 'Arial'";
+    ctx.textBaseline = "tencent";
+    ctx.fillStyle = "#f60";
+    ctx.fillRect(125,1,62,20);
+    ctx.fillStyle = "#069";
+    ctx.fillText(txt, 2, 15);
+    ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+    ctx.fillText(txt, 4, 17);
+    var b64 = canvas.toDataURL().replace("data:image/png;base64,","");
+    var bin = atob(b64);
+    var crc = bin2hex(bin.slice(-16,-12));
+    alert(crc);

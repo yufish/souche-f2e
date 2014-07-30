@@ -150,7 +150,7 @@ $(window).load(function() {
     if (phone_match) {
         data.phone = phone_match[1];
     }
-    var tag_match = document.cookie.match(/usertag=([0-9a-zA-Z_]*?)(;|$)/);
+    var tag_match = document.cookie.match(/usertag=([0-9a-zA-Z_-]*?)(;|$)/);
     if (tag_match) {
         data.userTag = tag_match[1];
     } else {
