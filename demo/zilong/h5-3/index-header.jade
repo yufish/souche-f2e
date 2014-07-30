@@ -100,11 +100,9 @@ html
             }
 
             function move(curIndex){
-                //var activeIndex = moveIndex+1;
                 var moveIndex =curIndex-1;
                 // use translateZ(0) activate 3d hardware acceleration is possible
                 tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
-                //tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
                 var oldIndex = underline.attr('data-active-index')
                 underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
                 afterMove(oldIndex,curIndex)
@@ -121,12 +119,11 @@ html
             tabCtn.on('swipeLeft',function(){
                 var index = +underline.attr('data-active-index');
                 if(index==numOfPanels) return;
-                move(index);
+                move(index+1);
             }).on('swipeRight',function(){
                 var index = +underline.attr('data-active-index');
                 if(index==1) return;
-                var moveIndex = index-1;
-                move(moveIndex);
+                move(index-1);
             })
 
 
