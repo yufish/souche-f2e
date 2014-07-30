@@ -243,11 +243,24 @@
     background: #FF571A;
     color: #fff;
     font-size: 14px;
+    position: relative;
     i{
       overflow: hidden;
       line-height: 32px;
       margin-left: 13px;
       font-style: normal;
+    }
+    .toolbar-close{
+      cursor:pointer;
+      width: 12px;
+      height: 12px;
+      background: url(../images/index/index_sprite_v2.png) no-repeat;
+      background-position: -100px 0;
+      float: right;
+      right: 10px;
+      top: 10px;
+      position: absolute;
+      display: none;
     }
   }
   .side-box{
@@ -368,6 +381,7 @@
   -webkit-transition: width 0.2s ease-in;
   -o-transition: width 0.2s ease-in;
   transition: width 0.2s ease-in;
+
   .side-box{
     width: 80px !important;
     a{
@@ -398,6 +412,11 @@
   width:52px;
   border-left: none;
   border-bottom: 1px solid #e6e6e6;
+    .sidebar-tit{
+    .toolbar-close{
+      display: block;
+    }
+  }
   .sidebar-nav{
     background-color: #f5f5f5;
     border-right: 1px solid #e6e6e6;
@@ -421,40 +440,31 @@
       }
     }
     .side-box:hover,.side-box.active{
-     
-      
-    }
-    .collectside{
-      
-      a{.icon{
-        }}
+      border-right: 1px solid #fff;
+      background: #fff;
+      a{
+        .icon{
+          i{
+            color: #666;
+          }
+        }
+      }
     }
     .collectside:hover,.collectside.active{
-      border-right: none;
-      background: #fff;
       a{
         .icon{
           background-position: 0 -20px;
         }
-        i{color: #666;}
-      }
+       }
     }
-    .reserveside{a{.icon{}}}
     .reserveside:hover,.reserveside.active{
-      background: #fff;
-      border-right: none;
       a{
         .icon{background-position: -20px -20px;}
-        i{color: #666;}
-      }
+       }
     }
-    .sellside{a{.icon{}}}
-    .sellside:hover,.sellside.active{
-      border-right: none;
-      background: #fff;
+   .sellside:hover,.sellside.active{
       a{
         .icon{background-position: -40px -20px;}
-        i{color: #666;}
       }
     }
     .scanside{a{.icon{background: url(../images/index/scan-hover.png?1);}}}
@@ -466,13 +476,9 @@
         i{color: #666;}
       }
     }
-    .conside{a{.icon{}}}
     .conside:hover,.conside.active{
-      border-right: none;
-      background: #fff;
       a{
         .icon{background-position: -60px -20px;}
-        i{color: #666;}
       }
     }
   }
@@ -482,8 +488,18 @@
     border-left: none;
     float: left;
     overflow: hidden;
-    background-color: #fff;
-    i{cursor:pointer;float: right;width: 11px;height: 11px;background: url(../images/index/toolbar_sprite.png?1234) no-repeat; background-position: -240px 0;display: block;margin-top: 9px;margin-right: 9px;}
+    
+    i{cursor:pointer;
+      width: 11px;
+      height: 11px;
+      background: url(../images/index/toolbar_sprite.png?1234) no-repeat;
+       background-position: -240px 0;
+       display: block;
+       top: 10px;
+       right: 10px;
+       position: absolute;
+       z-index: 10002;
+     }
     .iframe-loading{
       width: 845px;
       height: 520px;

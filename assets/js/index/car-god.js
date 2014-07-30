@@ -1,7 +1,7 @@
 define(function() {
     var carGod = {
         init: function() {
-            var ITEM_DETAIL_HEIGHT = 125;
+            var ITEM_DETAIL_HEIGHT = 130;
             var lastExpanItem = $("#qa .cheshen-box .cheshen-detail:eq(0)");
             var lastExpanIndex = 0;
             //为每个item编号
