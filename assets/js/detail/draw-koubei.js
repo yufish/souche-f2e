@@ -146,7 +146,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             var svgPoints = [];
             for (var i = 0; i < realPoints.length; i++) {
                 realPathStr += centerPoint.x + "," + centerPoint.y + " ";
-                svgPoints.push(drawPoint(centerPoint.x, centerPoint.y));
+
                 tempPathPoints.push([realPoints[i].x, realPoints[i].y])
                 realPathPoints.push([centerPoint.x, centerPoint.y])
             }
@@ -157,6 +157,9 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 color: "#63b162",
                 width: 3
             })
+            for (var i = 0; i < realPoints.length; i++) {
+                svgPoints.push(drawPoint(centerPoint.x, centerPoint.y));
+            }
             queuedo([0, 1, 2, 3, 4, 5, 6, 7, 8], function(index, next, context) {
                 realPathPoints[index] = tempPathPoints[index];
 
