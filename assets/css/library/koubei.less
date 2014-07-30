@@ -1,29 +1,23 @@
 #koubei_svg{
     margin: 0px auto;
-    width:500px;
+    width:400px;
     height:500px;
 }
 .net-koubei{
-  border-left: 1px solid #e6e6e6;
-  border-right: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
     position: relative;
   padding-bottom: 10px;
-  padding-top: 20px;
     .koubei-title{
         font-size: 20px;
         line-height: 50px;
         margin-top:20px;
     }
     .koubei-desc{
-        margin:0px 80px;
-        background: #f9f9f9;
-        border:1px solid #eee;
+        margin:20px 80px;
         padding:20px;
         text-align: center;
         .koubei-l{
-            font-size: 16px;
-            line-height:40px;
+            font-size: 23px;
+            line-height:50px;
         }
         .koubei-labels{
             label{
@@ -34,7 +28,7 @@
                 padding:0 10px;
                 display: inline-block;
                 margin-right: 10px;
-                margin-bottom: 5px;
+                margin-bottom:5px;
             }
         }
     }
@@ -59,7 +53,10 @@
     .koubei-item{
         position: absolute;
         top:0;
+        width:280px;
+        height:100px;
         left:0;
+        cursor: pointer;
         .koubei-item-title{
             font-size: 14px;
             color:#444;
@@ -82,16 +79,31 @@
         }
         .koubei-item-labels{
             display: block;
-            width:280px;
-
+            width:260px;
+            background: #f9f9f9;
+            position: absolute;
+            top:25px;
+            border:1px solid #ddd;
+            padding:6px;
+            z-index: 10;
             .koubei-label{
-                background: #f8f8f8;
-                border:1px solid #eee;
                 line-height: 20px;
-                color:#999;
+                color:#666;
                 padding:0 5px;
-                display: inline-block;
-                margin-bottom: 5px;
+                display: block;
+                text-align: left;
+                span{
+                    color:#aaa;
+                    margin-left: 5px;
+                }
+            }
+            .koubei-tri{
+                background: url(../../images/detail/baoyang-label-trigger.png) no-repeat;
+                width:19px;
+                height:10px;
+                position: absolute;
+                top:-10px;
+                left:20px;
             }
         }
     }
@@ -107,6 +119,15 @@
         }
         .koubei-item-labels{
 text-align: right;
+.koubei-tri{
+                background: url(../../images/detail/baoyang-label-trigger.png) no-repeat;
+                width:19px;
+                height:10px;
+                position: absolute;
+                top:-10px;
+                right:20px;
+                left:auto;
+            }
         }
     }
     .koubei-series{
