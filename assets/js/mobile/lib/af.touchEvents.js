@@ -14,7 +14,6 @@
  */
 /* global af*/
 //在原开源文件中，加了2处,用于解决android上的bug
-//修改了swipe的阈值，由30px变成60px
 (function($) {
     "use strict";
     //(1)
@@ -71,9 +70,9 @@
             //(2)
             var absX = Math.abs(touch.x1 - touch.x2),
                 absY = Math.abs(touch.y1 - touch.y2)
-            if(isAndroid && absX>10 && absX>absY )
+            if(isAndroid && absX>10 && absX>absY ){
                 e.preventDefault()
-
+            }
             clearTimeout(longTapTimer);
         }).bind("touchend", function(e) {
             if(e.originalEvent)
