@@ -19,7 +19,6 @@ var inIn = function(data, d) {
 }
 var globalData = [];
 
-
 $.ajax({
     url: "/performance/traffic-data",
     dataType: "json",
@@ -31,15 +30,16 @@ $.ajax({
         $("#pv_count").html(data.pv);
         $("#uv_count").html(data.uv);
     }
-})
+});
 // $.ajax({
-//     url: "/performance/click-data",
+//     url: "/performance/draw_data",
 //     dataType: "json",
 //     data: {
 //         url: encodeURIComponent(url),
 //         time: time
 //     },
 //     success: function(data) {
+//         alert(data)
 //         globalData = data;
 //         // $('.jcrop-container').Jcrop({
 //         //     bgColor: 'black',
@@ -86,7 +86,7 @@ $.ajax({
 //         heatmap.store.setDataSet(data);
 //         loadingTip.hide()
 //     }
-// })
+// });
 
 
 $("#show-map").click(function() {
