@@ -230,17 +230,20 @@ body {
   border-top: 1px solid #717171;
   padding: 10px 0;
 }
-#footer .wrapper .friendlinks .links {
+#footer .wrapper .friendlinks a {
   color: #717171;
   margin-right: 25px;
 }
-#footer .wrapper .friendlinks .links:hover {
+#footer .wrapper .friendlinks a:hover {
   text-decoration: underline;
 }
 #footer .wrapper p {
   color: #717171;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+#footer .wrapper {
+  width: 1220px;
 }
 @media screen and (max-width: 1024px) {
   #footer .wrapper {
@@ -250,11 +253,6 @@ body {
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   #footer .wrapper {
     width: 1024px;
-  }
-}
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #footer .wrapper {
-    width: 1220px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -602,6 +600,15 @@ body {
   width: 126px;
   height: 34px;
 }
+#header .wrapper {
+  width: 1220px;
+}
+#header .wrapper .search .index-search {
+  width: 760px;
+}
+#header .wrapper .search .search-text {
+  width: 690px;
+}
 @media screen and (max-width: 1024px) {
   #header .wrapper {
     width: 972px;
@@ -622,17 +629,6 @@ body {
   }
   #header .wrapper .search .search-text {
     width: 450px;
-  }
-}
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #header .wrapper {
-    width: 1220px;
-  }
-  #header .wrapper .search .index-search {
-    width: 760px;
-  }
-  #header .wrapper .search .search-text {
-    width: 690px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -683,13 +679,23 @@ body {
   float: right;
   height: 40px;
 }
+#nav .wrapper .other-navs span {
+  display: block;
+  margin-top: 15px;
+  color: #555;
+  float: left;
+  height: 15px;
+}
 #nav .wrapper .other-navs a {
   margin-top: 15px;
   display: block;
-  padding: 0 12px;
+  padding: 0 5px;
   border-right: 1px solid #EEEEEE;
   float: left;
   height: 15px;
+}
+#nav .wrapper {
+  width: 1220px;
 }
 @media screen and (max-width: 1024px) {
   #nav .wrapper {
@@ -701,13 +707,12 @@ body {
     width: 1024px;
   }
 }
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #nav .wrapper {
-    width: 1220px;
-  }
-}
 @media screen and (min-width: 1440px) {
   #nav .wrapper {
     width: 1280px;
   }
+}
+.sort {
+  margin: 30px auto;
+  text-align: center;
 }

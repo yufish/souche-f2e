@@ -7,6 +7,24 @@ a:hover {
 * {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
+#content {
+  width: 1220px;
+  margin: 0 auto;
+}
+#content .wrapper {
+  margin: 0 auto;
+}
+#content .wrapper .index-left {
+  width: 980px;
+  float: left;
+}
+#content .wrapper .index-left #top-info .filter-nav {
+  width: 410px;
+}
+#content .wrapper .index-right {
+  width: 240px;
+  float: right;
+}
 @media screen and (max-width: 1024px) {
   #content {
     width: 972px;
@@ -49,26 +67,6 @@ a:hover {
   }
   #content .wrapper .index-left #top-info .filter-nav {
     width: 210px;
-  }
-  #content .wrapper .index-right {
-    width: 240px;
-    float: right;
-  }
-}
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #content {
-    width: 1220px;
-    margin: 0 auto;
-  }
-  #content .wrapper {
-    margin: 0 auto;
-  }
-  #content .wrapper .index-left {
-    width: 980px;
-    float: left;
-  }
-  #content .wrapper .index-left #top-info .filter-nav {
-    width: 410px;
   }
   #content .wrapper .index-right {
     width: 240px;
@@ -191,6 +189,15 @@ a:hover {
   width: 126px;
   height: 34px;
 }
+#header .wrapper {
+  width: 1220px;
+}
+#header .wrapper .search .index-search {
+  width: 760px;
+}
+#header .wrapper .search .search-text {
+  width: 690px;
+}
 @media screen and (max-width: 1024px) {
   #header .wrapper {
     width: 972px;
@@ -212,19 +219,111 @@ a:hover {
   #header .wrapper .search .search-text {
     width: 450px;
   }
-}
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #header .wrapper {
+  #nav {
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+    height: 40px;
+    background: #fff;
+  }
+  #nav .wrapper {
+    margin: 0 auto;
+    height: 40px;
+  }
+  #nav .wrapper .main-navs {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+  #nav .wrapper .main-navs a {
+    padding: 0 20px;
+    color: #333;
+    margin-right: 20px;
+    font-weight: bold;
+    height: 37px;
+    display: block;
+    float: left;
+  }
+  #nav .wrapper .main-navs .nav-item:hover {
+    color: #FF571A;
+  }
+  #nav .wrapper .main-navs .active {
+    color: #FF571A;
+    border-bottom: 3px solid #FF571A;
+  }
+  #nav .wrapper .other-navs {
+    float: right;
+    height: 40px;
+  }
+  #nav .wrapper .other-navs span {
+    display: block;
+    margin-top: 15px;
+    color: #555;
+    float: left;
+    height: 15px;
+  }
+  #nav .wrapper .other-navs a {
+    margin-top: 15px;
+    display: block;
+    padding: 0 5px;
+    border-right: 1px solid #EEEEEE;
+    float: left;
+    height: 15px;
+  }
+  #nav .wrapper {
     width: 1220px;
   }
-  #header .wrapper .search .index-search {
-    width: 760px;
+  #footer {
+    width: 100%;
+    background: #333333;
+    margin-top: 25px;
   }
-  #header .wrapper .search .search-text {
-    width: 690px;
+  #footer .wrapper {
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  #footer .wrapper .foot-detail .detail-item {
+    float: left;
+    width: 190px;
+    margin-bottom: 30px;
+  }
+  #footer .wrapper .foot-detail .detail-item .title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  #footer .wrapper .foot-detail .detail-item .art-link {
+    display: block;
+    color: #717171;
+    line-height: 25px;
+  }
+  #footer .wrapper .foot-detail .detail-item .art-link:hover {
+    text-decoration: underline;
+  }
+  #footer .wrapper .friendlinks {
+    border-bottom: 1px solid #717171;
+    border-top: 1px solid #717171;
+    padding: 10px 0;
+  }
+  #footer .wrapper .friendlinks a {
+    color: #717171;
+    margin-right: 25px;
+  }
+  #footer .wrapper .friendlinks aspan:hover {
+    text-decoration: underline;
+  }
+  #footer .wrapper p {
+    color: #717171;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  #footer .wrapper {
+    width: 1220px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
   #header .wrapper {
     width: 1280px;
   }
@@ -235,132 +334,32 @@ a:hover {
     width: 690px;
   }
 }
-#nav {
-  width: 100%;
-  border-bottom: 1px solid #EEEEEE;
-  height: 40px;
-  background: #fff;
-}
-#nav .wrapper {
-  margin: 0 auto;
-  height: 40px;
-}
-#nav .wrapper .main-navs {
-  float: left;
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
-}
-#nav .wrapper .main-navs a {
-  padding: 0 20px;
-  color: #333;
-  margin-right: 20px;
-  font-weight: bold;
-  height: 37px;
-  display: block;
-  float: left;
-}
-#nav .wrapper .main-navs .nav-item:hover {
-  color: #FF571A;
-}
-#nav .wrapper .main-navs .active {
-  color: #FF571A;
-  border-bottom: 3px solid #FF571A;
-}
-#nav .wrapper .other-navs {
-  float: right;
-  height: 40px;
-}
-#nav .wrapper .other-navs a {
-  margin-top: 15px;
-  display: block;
-  padding: 0 12px;
-  border-right: 1px solid #EEEEEE;
-  float: left;
-  height: 15px;
-}
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (max-width: 1024px) {
   #nav .wrapper {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1024px) and (max-width: 1366px) {
   #nav .wrapper {
     width: 1024px;
   }
 }
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #nav .wrapper {
-    width: 1220px;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
   #nav .wrapper {
     width: 1280px;
   }
 }
-#footer {
-  width: 100%;
-  background: #333333;
-  margin-top: 25px;
-}
-#footer .wrapper {
-  margin: 0 auto;
-  padding: 30px 0;
-}
-#footer .wrapper .foot-detail .detail-item {
-  float: left;
-  width: 190px;
-  margin-bottom: 30px;
-}
-#footer .wrapper .foot-detail .detail-item .title {
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: block;
-}
-#footer .wrapper .foot-detail .detail-item .art-link {
-  display: block;
-  color: #717171;
-  line-height: 25px;
-}
-#footer .wrapper .foot-detail .detail-item .art-link:hover {
-  text-decoration: underline;
-}
-#footer .wrapper .friendlinks {
-  border-bottom: 1px solid #717171;
-  border-top: 1px solid #717171;
-  padding: 10px 0;
-}
-#footer .wrapper .friendlinks .links {
-  color: #717171;
-  margin-right: 25px;
-}
-#footer .wrapper .friendlinks .links:hover {
-  text-decoration: underline;
-}
-#footer .wrapper p {
-  color: #717171;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (max-width: 1024px) {
   #footer .wrapper {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1024px) and (max-width: 1366px) {
   #footer .wrapper {
     width: 1024px;
   }
 }
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #footer .wrapper {
-    width: 1220px;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
   #footer .wrapper {
     width: 1280px;
   }
@@ -432,7 +431,6 @@ a:hover {
   font-size: 12px;
   margin-bottom: 10px;
   height: 17px;
-  width: 80%;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf .brand-line .brand-item {
   margin-right: 15px;
@@ -707,134 +705,70 @@ body * {
   border-bottom: 1px solid #ffffff;
   height: 20px;
 }
-@media screen and (max-width: 1366px) {
-  .carsContent .carsItem {
-    width: 30.3% ;
-    *width: 30.03% ;
-    height: 355px;
-    margin: 2.7% 2.7% 0px 0px;
-    *margin: 2.5% 2.41% 0px 0px;
-    float: left;
-    border: 1px solid #EDEDED;
-  }
-  .carsContent .adviserInitAnimate {
-    margin-top: 2.7%;
-    *margin-top: 2.5%;
-    margin-left: -2.69%;
-    *margin-left: -2.4%;
-    width: 66.5%;
-    *width: 69.9%;
-  }
-  .carsContent .adviserInitAnimate img {
-    left: -800px;
-  }
-  .carsContent .adviserInitAnimate .road {
-    position: absolute;
-    width: 100%;
-    height: 61px;
-    top: 294px;
-  }
-  .carsContent .adviserInitAnimate .boy,
-  .carsContent .adviserInitAnimate .girl {
-    position: absolute;
-    top: 25%;
-    left: -800px;
-    height: 75%;
-    width: 25%;
-  }
-  .carsContent .adviserInitAnimate .boy {
-    margin-left: 6%;
-  }
-  .carsContent .adviserInitAnimate .girl {
-    margin-left: 70%;
-  }
-  .carsContent .adviserInitAnimate .boytalk {
-    position: absolute;
-    top: 22%;
-    margin-left: 24%;
-    width: 22%;
-  }
-  .carsContent .adviserInitAnimate .girltalk {
-    position: absolute;
-    top: 57%;
-    margin-left: 50%;
-    width: 22%;
-  }
-  .dialogContentContainer,
-  .dialogContent {
-    width: 97%;
-    height: 355px;
-  }
-  .addInstrestCar {
-    width: 97%;
-  }
+#carsNav,
+.carsMore {
+  width: 97.8%;
+  position: relative;
+  height: 40px;
+  background: #F5F5F5;
+  border: 1px solid #E6E6E6;
 }
-@media screen and (min-width: 1366px) and (max-width: 1440px) {
-  #carsNav,
-  .carsMore {
-    width: 97.8%;
-    position: relative;
-    height: 40px;
-    background: #F5F5F5;
-    border: 1px solid #E6E6E6;
-  }
-  .dialogContentContainer,
-  .dialogContent {
-    width: 98%;
-    height: 355px;
-  }
-  .addInstrestCar {
-    width: 98%;
-  }
-  .carsContent .carsItem {
-    width: 22.9%;
-    *width: 22%;
-    height: 355px;
-    margin: 2% 1.8% 0px 0px;
-    float: left;
-    border: 1px solid #EDEDED;
-  }
-  .carsContent .adviserInitAnimate {
-    margin-left: -1.8%;
-    margin-top: 2%;
-    width: 75%;
-    *width: 87.8%;
-  }
-  .carsContent .adviserInitAnimate img {
-    left: -800px;
-  }
-  .carsContent .adviserInitAnimate .road {
-    position: absolute;
-    width: 100%;
-    height: 61px;
-    top: 294px;
-  }
-  .carsContent .adviserInitAnimate .boy,
-  .carsContent .adviserInitAnimate .girl {
-    position: absolute;
-    top: 25%;
-    left: -800px;
-    height: 75%;
-    width: 22%;
-  }
-  .carsContent .adviserInitAnimate .boy {
-    margin-left: 6%;
-  }
-  .carsContent .adviserInitAnimate .girl {
-    margin-left: 70%;
-  }
-  .carsContent .adviserInitAnimate .boytalk {
-    position: absolute;
-    top: 20%;
-    margin-left: 24%;
-    width: 20%;
-  }
-  .carsContent .adviserInitAnimate .girltalk {
-    position: absolute;
-    top: 50%;
-    margin-left: 50%;
-    width: 20%;
-  }
+.dialogContentContainer,
+.dialogContent {
+  width: 98%;
+  height: 355px;
+}
+.addInstrestCar {
+  width: 98%;
+}
+.carsContent .carsItem {
+  width: 22.9%;
+  *width: 22%;
+  height: 355px;
+  margin: 2% 1.8% 0px 0px;
+  float: left;
+  border: 1px solid #EDEDED;
+}
+.carsContent .adviserInitAnimate {
+  margin-left: -1.8%;
+  margin-top: 2%;
+  width: 75%;
+  *width: 87.8%;
+}
+.carsContent .adviserInitAnimate img {
+  left: -800px;
+}
+.carsContent .adviserInitAnimate .road {
+  position: absolute;
+  width: 100%;
+  height: 61px;
+  top: 294px;
+}
+.carsContent .adviserInitAnimate .boy,
+.carsContent .adviserInitAnimate .girl {
+  position: absolute;
+  top: 25%;
+  left: -800px;
+  height: 75%;
+  width: 22%;
+}
+.carsContent .adviserInitAnimate .boy {
+  margin-left: 6%;
+}
+.carsContent .adviserInitAnimate .girl {
+  margin-left: 70%;
+}
+.carsContent .adviserInitAnimate .boytalk {
+  position: absolute;
+  top: 20%;
+  margin-left: 24%;
+  width: 20%;
+}
+.carsContent .adviserInitAnimate .girltalk {
+  position: absolute;
+  top: 50%;
+  margin-left: 50%;
+  width: 20%;
 }
 @media screen and (min-width: 1440px) {
   #carsNav,
@@ -1063,7 +997,7 @@ body * {
   width: 90px;
   position: absolute;
   top: 0px;
-  left: 150px;
+  right: 0px;
 }
 .carsContent .carItem .car-link {
   font-size: 15px;
@@ -1918,6 +1852,80 @@ body * {
 }
 .down-counter ins {
   color: #FF571A;
+  font-size: 13px;
+}
+@media screen and (max-width: 1366px) {
+  .carsContent .carsItem {
+    width: 30.3% ;
+    *width: 30.03% ;
+    height: 355px;
+    margin: 2.7% 2.7% 0px 0px;
+    *margin: 2.5% 2.41% 0px 0px;
+    float: left;
+    border: 1px solid #EDEDED;
+  }
+  .carsContent .adviserInitAnimate {
+    margin-top: 2.7%;
+    *margin-top: 2.5%;
+    margin-left: -2.69%;
+    *margin-left: -2.4%;
+    width: 66.5%;
+    *width: 69.9%;
+  }
+  .carsContent .adviserInitAnimate img {
+    left: -800px;
+  }
+  .carsContent .adviserInitAnimate .road {
+    position: absolute;
+    width: 100%;
+    height: 61px;
+    top: 294px;
+  }
+  .carsContent .adviserInitAnimate .boy,
+  .carsContent .adviserInitAnimate .girl {
+    position: absolute;
+    top: 25%;
+    left: -800px;
+    height: 75%;
+    width: 25%;
+  }
+  .carsContent .adviserInitAnimate .boy {
+    margin-left: 6%;
+  }
+  .carsContent .adviserInitAnimate .girl {
+    margin-left: 70%;
+  }
+  .carsContent .adviserInitAnimate .boytalk {
+    position: absolute;
+    top: 22%;
+    margin-left: 24%;
+    width: 22%;
+  }
+  .carsContent .adviserInitAnimate .girltalk {
+    position: absolute;
+    top: 57%;
+    margin-left: 50%;
+    width: 22%;
+  }
+  .dialogContentContainer,
+  .dialogContent {
+    width: 97%;
+    height: 355px;
+  }
+  .addInstrestCar {
+    width: 97%;
+  }
+}
+.contrast-waring {
+  position: absolute;
+  top: -66px;
+  right: -12px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ee7700;
+  background: #ffeed6;
+  color: #333;
+  padding: 10px;
   font-size: 13px;
 }
 #service {
