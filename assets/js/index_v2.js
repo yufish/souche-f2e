@@ -115,7 +115,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             $(window).scroll(function () {
 
                 if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
-                    if (($("#footer").offset().top - 50) <= (window.scrollY + window.screen.availHeight)) {
+                    if (($("#footer").offset().top - 200) <= (window.scrollY + window.screen.availHeight)) {
                         if (isScrolling) {
                             isScrolling = false;
                             getMore.call(this);
