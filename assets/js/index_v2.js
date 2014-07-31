@@ -49,17 +49,16 @@ define(function() {
             event.stopPropagation();
             var self = $(this);
             //console.log(event.target.nodeName);
-            if(event.target.nodeName=="SPAN"||event.target.nodeName=="INS")
-            {
-                return ;
+            if (event.target.nodeName == "SPAN" || event.target.nodeName == "INS") {
+                return;
             }
 
             var width = self.find(".carImg img").width();
 
             self.find(".carImg img").stop(true).animate({
-                width: width + 40 + "px",
-                height: 210 + "px"
-            }, 1500, function () {
+                width: width + 9 + "px",
+                height: (182 +6.8) + "px"
+            }, 900, function () {
             });
         });
 
@@ -75,10 +74,9 @@ define(function() {
             });
         });
 
-
         var getMore = function () {
 
-            $("."+$("#carsNav li.active").attr("id")+" .carsMore span").html("正在获取");
+            $("."+$("#carsNav li.active").attr("id")+".carsMore span").html("正在获取");
 
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
@@ -93,7 +91,7 @@ define(function() {
                             $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                         }
                         else {
-                            var list = result.recommendCars;
+                            var list = result.recommendCars.items;
                             if (!result.hasNext) {
                                 $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                             }
@@ -104,7 +102,9 @@ define(function() {
                                     "<div class='other'>" +
                                     "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
                                     "<\/div>" +
-                                    "<div class='carTail clearfix'><span class='collect' " + (list[idx].like ? "ative" : "") + ">收藏" + list[idx].collectNum + "<\/span><span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
+                                    "<div class='carTail clearfix'>" +
+                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                    "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
                                     "<\/div>";
                             }
                             $(".myAdviserContent .myAdviser").eq(0).append(template);
@@ -135,8 +135,10 @@ define(function() {
                                     "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
                                     "<div class='downCounter " + (list[idx].flashPurchase ? "" : "hidden") + "'><span>剩余时间<\/span><\/div>" +
                                     "<\/div>" +
-                                    "<div class='carTail'><span class='collect ative'>收藏 " + list[idx].carFavoriteNum + "<\/span><span class='recommendedToday'>今日推荐<\/span><\/div>" +
-                                    "<\/div>";
+                                    "<div class='carTail clearfix'>" +
+                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId+ "' carid='" + list[idx].id + "'><input type='checkbox'  "+(list[idx].contrastId?"checked":"") +"><span>加入对比<\/span><\/div>" +
+                                    "<\/div><\/div>";
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
                             $(".hotNewCarsContent .hotNewCars").eq(1).remove();
@@ -260,12 +262,13 @@ define(function() {
 
             _bind();
 
-            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries","index/collect","lib/lazyload"],
-                function (qiugou, qiugouModel, customSelect, modelSeries,collect,lazyload) {
+            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries","index/collect","lib/lazyload","index/carConstrast"],
+                function (qiugou, qiugouModel, customSelect, modelSeries,collect,lazyload,carConstrast) {
 
                     qiugou.init(config);
                     //modelSeriesModel.init(config);
                     //modelSeries.init(config);
+                    carConstrast.init(config);
 
                     var ageSelect = new customSelect("age_select", {
                         placeholder: "请选择",
