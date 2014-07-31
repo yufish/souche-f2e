@@ -53,22 +53,22 @@ html
             button#J_btnFilter_submit 为您找到100辆车
 
         .wrapGrayBg.hidden
-        .filter-popup-wrapper.hidden#brand-list.
-            <div class='clearfix'>
-                <div class='title brand-title'>热门品牌</div>
-                <div class='buxian' id='J_brandBuxian'>不限品牌</div>
-            </div>
+
+        #brand-list.filter-popup-wrapper.hidden.
+            <div class='title brand-title'>热门品牌</div>
             <div class='brand-content'>
                 <div id='hot-brands'class='clearfix'></div>
-                <div id='other-brands' class='clearfix'></div>
+                <div id='other-brands' class='clearfix'>
+                    <div class='title brand-title'>其他品牌</div>
+                </div>
             </div>
-        .filter-popup-wrapper#series-list.
-            <div class='clearfix'>
-                <div class='title series-title'></div>
-                <div class='buxian' id='J_brandBuxian'>不限车系</div>
+        .filter-popup-wrapper.hidden#series-list.
+            <div class='clearfix series-title-bar' >
+                <div class='selected-brand-name'>请先选择品牌</div>
             </div>
             <div class='series-content'>
             </div>
+
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
