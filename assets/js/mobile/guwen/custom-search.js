@@ -21,15 +21,15 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
 
 
                 //init search option
-                var minP = '8',
-                    maxP = '20';
-                if (dataObj.minPrice) {
-                    minP = dataObj.minPrice;
-                }
-                if (dataObj.maxPrice) {
+                var minP = dataObj.minPrice,
                     maxP = dataObj.maxPrice;
-                    if (dataObj.maxPrice == '10000') maxP = '不限'
-                }
+//                if (dataObj.minPrice) {
+//                    minP = dataObj.minPrice;
+//                }
+//                if (dataObj.maxPrice) {
+//                    maxP = dataObj.maxPrice;
+//                    if (dataObj.maxPrice == '10000') maxP = '不限'
+//                }
 
                 $('#low-price').val(minP)
                 $('#high-price').val(maxP)
@@ -155,7 +155,8 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
 
                 var sSeriesArr = dataObj.series ? dataObj.series.split(',') : [];
                 var sBrandArr = dataObj.brands ? dataObj.brands.split(',') : [];
-                window.seriesBrandMap = {}! function makeSeriesBrand() {
+                window.seriesBrandMap = {}
+                !function makeSeriesBrand() {
                     var key = '',
                         value = '';
                     for (var i = 0; i < sSeriesArr.length; i++) {
@@ -187,7 +188,7 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                         highInput = $('#high-price');
                     qsItems.each(function(index, item) {
                         var low = priceRange[index],
-                            high = priceRange[index + 1] == 10000 ? '不限' : priceRange[index + 1];
+                            high = priceRange[index + 1] ;//== 10000 ? '不限' : priceRange[index + 1];
                         $(this).click(function() {
                             var self = $(this);
                             qsItems.removeClass('selected');
@@ -235,7 +236,7 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                                 brandManager.addBrand(b.code, b.name);
                             }
                         }
-                    }! function loadAllBrands() {
+                    };!function loadAllBrands() {
                             //loadingLayer.removeClass('hidden');
                             $.ajax({
                                 url: contextPath + '/pages/dicAction/loadRootLevel.json',
@@ -346,8 +347,8 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                 }
 
                 function submitGuWenInfo() {
-                    var minPrice = $('#low-price').val(),
-                        maxPrice = $('#high-price').val();
+                    var minPrice = $('#low-price').val().trim(),
+                        maxPrice = $('#high-price').val().trim();
 
                     if (maxPrice == '不限')
                         maxPrice = 10000;
