@@ -53,27 +53,7 @@ a:hover {
     float: right;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #content {
-    width: 1024px;
-    margin: 0 auto;
-  }
-  #content .wrapper {
-    margin: 0 auto;
-  }
-  #content .wrapper .index-left {
-    width: 784px;
-    float: left;
-  }
-  #content .wrapper .index-left #top-info .filter-nav {
-    width: 210px;
-  }
-  #content .wrapper .index-right {
-    width: 240px;
-    float: right;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #content {
     width: 1280px;
     margin: 0 auto;
@@ -209,121 +189,7 @@ a:hover {
     width: 450px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #header .wrapper {
-    width: 1024px;
-  }
-  #header .wrapper .search .index-search {
-    width: 515px;
-  }
-  #header .wrapper .search .search-text {
-    width: 450px;
-  }
-  #nav {
-    width: 100%;
-    border-bottom: 1px solid #EEEEEE;
-    height: 40px;
-    background: #fff;
-  }
-  #nav .wrapper {
-    margin: 0 auto;
-    height: 40px;
-  }
-  #nav .wrapper .main-navs {
-    float: left;
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-  }
-  #nav .wrapper .main-navs a {
-    padding: 0 20px;
-    color: #333;
-    margin-right: 20px;
-    font-weight: bold;
-    height: 37px;
-    display: block;
-    float: left;
-  }
-  #nav .wrapper .main-navs .nav-item:hover {
-    color: #FF571A;
-  }
-  #nav .wrapper .main-navs .active {
-    color: #FF571A;
-    border-bottom: 3px solid #FF571A;
-  }
-  #nav .wrapper .other-navs {
-    float: right;
-    height: 40px;
-  }
-  #nav .wrapper .other-navs span {
-    display: block;
-    margin-top: 15px;
-    color: #555;
-    float: left;
-    height: 15px;
-  }
-  #nav .wrapper .other-navs a {
-    margin-top: 15px;
-    display: block;
-    padding: 0 5px;
-    border-right: 1px solid #EEEEEE;
-    float: left;
-    height: 15px;
-  }
-  #nav .wrapper {
-    width: 1220px;
-  }
-  #footer {
-    width: 100%;
-    background: #333333;
-    margin-top: 25px;
-  }
-  #footer .wrapper {
-    margin: 0 auto;
-    padding: 30px 0;
-  }
-  #footer .wrapper .foot-detail .detail-item {
-    float: left;
-    width: 190px;
-    margin-bottom: 30px;
-  }
-  #footer .wrapper .foot-detail .detail-item .title {
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-  }
-  #footer .wrapper .foot-detail .detail-item .art-link {
-    display: block;
-    color: #717171;
-    line-height: 25px;
-  }
-  #footer .wrapper .foot-detail .detail-item .art-link:hover {
-    text-decoration: underline;
-  }
-  #footer .wrapper .friendlinks {
-    border-bottom: 1px solid #717171;
-    border-top: 1px solid #717171;
-    padding: 10px 0;
-  }
-  #footer .wrapper .friendlinks a {
-    color: #717171;
-    margin-right: 25px;
-  }
-  #footer .wrapper .friendlinks aspan:hover {
-    text-decoration: underline;
-  }
-  #footer .wrapper p {
-    color: #717171;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  #footer .wrapper {
-    width: 1220px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #header .wrapper {
     width: 1280px;
   }
@@ -334,32 +200,127 @@ a:hover {
     width: 690px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (max-width: 1024px) {
+#nav {
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+  background: #fff;
+}
+#nav .wrapper {
+  margin: 0 auto;
+  height: 40px;
+}
+#nav .wrapper .main-navs {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+#nav .wrapper .main-navs a {
+  padding: 0 20px;
+  color: #333;
+  margin-right: 20px;
+  font-weight: bold;
+  height: 37px;
+  display: block;
+  float: left;
+}
+#nav .wrapper .main-navs .nav-item:hover {
+  color: #FF571A;
+}
+#nav .wrapper .main-navs .active {
+  color: #FF571A;
+  border-bottom: 3px solid #FF571A;
+}
+#nav .wrapper .other-navs {
+  float: right;
+  height: 40px;
+}
+#nav .wrapper .other-navs span {
+  display: block;
+  margin-top: 15px;
+  color: #555;
+  float: left;
+  height: 15px;
+}
+#nav .wrapper .other-navs a {
+  margin-top: 15px;
+  display: block;
+  padding: 0 5px;
+  border-right: 1px solid #EEEEEE;
+  float: left;
+  height: 15px;
+}
+#nav .wrapper {
+  width: 1220px;
+}
+@media screen and (max-width: 1024px) {
   #nav .wrapper {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1024px) and (max-width: 1366px) {
-  #nav .wrapper {
-    width: 1024px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #nav .wrapper {
     width: 1280px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (max-width: 1024px) {
+#footer {
+  width: 100%;
+  background: #333333;
+  margin-top: 25px;
+}
+#footer .wrapper {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+#footer .wrapper .foot-detail .detail-item {
+  float: left;
+  width: 190px;
+  margin-bottom: 30px;
+}
+#footer .wrapper .foot-detail .detail-item .title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+#footer .wrapper .foot-detail .detail-item .art-link {
+  display: block;
+  color: #717171;
+  line-height: 25px;
+}
+#footer .wrapper .foot-detail .detail-item .art-link:hover {
+  text-decoration: underline;
+}
+#footer .wrapper .friendlinks {
+  border-bottom: 1px solid #717171;
+  border-top: 1px solid #717171;
+  padding: 10px 0;
+}
+#footer .wrapper .friendlinks a {
+  color: #717171;
+  margin-right: 25px;
+  display: block;
+  float: left;
+}
+#footer .wrapper .friendlinks aspan:hover {
+  text-decoration: underline;
+}
+#footer .wrapper p {
+  color: #717171;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#footer .wrapper {
+  width: 1220px;
+}
+@media screen and (max-width: 1024px) {
   #footer .wrapper {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1024px) and (max-width: 1366px) {
-  #footer .wrapper {
-    width: 1024px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1366px) and screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #footer .wrapper {
     width: 1280px;
   }

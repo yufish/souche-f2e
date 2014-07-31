@@ -233,6 +233,8 @@ body {
 #footer .wrapper .friendlinks a {
   color: #717171;
   margin-right: 25px;
+  display: block;
+  float: left;
 }
 #footer .wrapper .friendlinks a:hover {
   text-decoration: underline;
@@ -250,12 +252,7 @@ body {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #footer .wrapper {
-    width: 1024px;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #footer .wrapper {
     width: 1280px;
   }
@@ -620,18 +617,7 @@ body {
     width: 450px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #header .wrapper {
-    width: 1024px;
-  }
-  #header .wrapper .search .index-search {
-    width: 515px;
-  }
-  #header .wrapper .search .search-text {
-    width: 450px;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #header .wrapper {
     width: 1280px;
   }
@@ -702,12 +688,7 @@ body {
     width: 972px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #nav .wrapper {
-    width: 1024px;
-  }
-}
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) {
   #nav .wrapper {
     width: 1280px;
   }

@@ -29,7 +29,7 @@ define(function() {
 
         var downList = "<div class='realIndexTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
-            list[index].url = config.api_matchUrl;
+            list[index].url = config.api_matchUrl+"?carSeries="+list[index].code+"&pfrom=boxsearch";
             downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
         }
 
