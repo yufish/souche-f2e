@@ -3,50 +3,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
 
-    var _bind = function() {
+    var _bind = function () {
         var timeout = null;
 
-        // $(".car-brand,.car-models,.car-price").mouseenter(function(event) {
-
-        //     event.stopPropagation();
-        //     var self = this;
-        //     window.clearTimeout(timeout);
-
-        //     $(".models-inner,.brand-inner,.price-inner").hide();
-        //     timeout = window.setTimeout(function() {
-        //         if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-        //             if ($(self).hasClass("car-models")) {
-        //                 $(".car-price").css("visibility", "hidden");
-        //             } else {
-        //                 $(".car-models,.car-price").css("visibility", "hidden");
-        //             }
-        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-        //         } else {
-        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-        //         }
-        //     }, 200);
-
-        //     return false;
-        // });
-
-        // $(".car-brand,.car-models,.car-price").mouseleave(function() {
-
-        //     var self = this;
-        //     window.clearTimeout(timeout);
-
-        //     if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-        //         if ($(self).hasClass("car-models")) {
-        //             $(".car-price").css("visibility", "");
-        //         } else {
-        //             $(".car-models,.car-price").css("visibility", "");
-        //         }
-        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
-        //     } else {
-        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
-        //     }
-        // });
-        //
-        $(".carItem").live("mouseenter", function(event) {
+        $(".carItem").live("mouseenter", function (event) {
             event.stopPropagation();
             var self = $(this);
             //console.log(event.target.nodeName);
@@ -57,12 +17,14 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             var width = self.find(".carImg img").width();
 
             self.find(".carImg img").stop(true).animate({
-                width: width + 40 + "px",
-                height: 210 + "px"
-            }, 1500, function() {});
+
+                width: width + 9 + "px",
+                height: (182 + 6.8) + "px"
+            }, 900, function () {
+            });
         });
 
-        $(".carItem").live("mouseleave", function(event) {
+        $(".carItem").live("mouseleave", function (event) {
             event.stopPropagation();
             var self = $(this);
 
@@ -70,13 +32,14 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             self.find(".carImg img").stop(true).animate({
                 width: width + 1 + "px",
                 height: 182 + "px"
-            }, 1500, function() {});
+            }, 1500, function () {
+            });
         });
 
+        var getMore = function () {
 
-        var getMore = function() {
+            $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
 
-            $("." + $("#carsNav li.active").attr("id") + " .carsMore span").html("正在获取");
 
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
@@ -85,7 +48,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     url: url,
                     type: "GET",
                     dataType: "json"
-                }).done(function(result) {
+                }).done(function (result) {
                     if (result.code == 204) {
                         $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                     } else {
@@ -93,54 +56,69 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                         if (!result.hasNext) {
                             $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                         }
-                        var template = "";
-                        for (var idx = 0, len = list.length; idx < len; idx++) {
-                            template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                "<div class='other'>" +
-                                "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                "<\/div>" +
-                                "<div class='carTail clearfix'><span class='collect' " + (list[idx].like ? "ative" : "") + ">收藏" + list[idx].collectNum + "<\/span><span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
-                                "<\/div>";
+                        else {
+                            var list = result.recommendCars.items;
+                            if (!result.hasNext) {
+                                $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
+                            }
+                            var template = "";
+                            for (var idx = 0, len = list.length; idx < len; idx++) {
+                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                    "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
+                                    "<div class='other'>" +
+                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
+                                    "<\/div>" +
+                                    "<div class='carTail clearfix'>" +
+                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                    "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
+                                    "<\/div>";
+
+                            }
+                            $(".myAdviserContent .myAdviser").eq(0).append(template);
+                            $(".myAdviserContent .myAdviser").eq(1).remove();
                         }
-                        $(".myAdviserContent .myAdviser").eq(0).append(template);
-                        $(".myAdviserContent .myAdviser").eq(1).remove();
                     }
                 });
             } else {
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 hotNewCarsPageIndex++;
-                $.ajax({
-                    url: url,
-                    type: "GET",
-                    dataType: "json"
-                }).done(function(result) {
-                    if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars").remove();
-                    } else {
-                        var list = result.newCars.items;
-
-                        var template = "";
-                        for (var idx = 0, len = list.length; idx < len; idx++) {
-                            template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                "<div class='other'>" +
-                                "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
-                                "<div class='downCounter " + (list[idx].flashPurchase ? "" : "hidden") + "'><span>剩余时间<\/span><\/div>" +
-                                "<\/div>" +
-                                "<div class='carTail'><span class='collect ative'>收藏 " + list[idx].carFavoriteNum + "<\/span><span class='recommendedToday'>今日推荐<\/span><\/div>" +
-                                "<\/div>";
+                $.ajax(
+                    {
+                        url: url,
+                        type: "GET",
+                        dataType: "json"
+                    }).done(function (result) {
+                        if (result.code == 204) {
+                            $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars").remove();
                         }
-                        $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                        $(".hotNewCarsContent .hotNewCars").eq(1).remove();
-                    }
-                });
+                        else {
+                            var list = result.newCars.items;
+
+                            var template = "";
+                            for (var idx = 0, len = list.length; idx < len; idx++) {
+                                template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                    "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
+                                    "<div class='other'>" +
+                                    "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
+                                    "<div class='downCounter " + (list[idx].flashPurchase ? "" : "hidden") + "'><span>剩余时间<\/span><\/div>" +
+                                    "<\/div>" +
+                                    "<div class='carTail clearfix'>" +
+                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
+                                    "<\/div><\/div>";
+                            }
+                            $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
+                            $(".hotNewCarsContent .hotNewCars").eq(1).remove();
+                        }
+                    });
+
             }
-        };
+        }
+
         //查看更多
-        $(".carsMore").click(function() {
+        $(".carsMore").click(function () {
             getMore.call(this);
-            $(window).scroll(function() {
+            $(window).scroll(function () {
                 if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
                     if (($("#footer").offset().top - 50) <= (window.scrollY + window.screen.availHeight)) {
                         getMore.call(this);
@@ -151,21 +129,21 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         //
 
         //head 搜索框
-        require(["souche/realTimeDown"], function(down) {
+        require(["souche/realTimeDown"], function (down) {
             down.init($(".search"), {
                 url: config.search_api,
                 type: "GET",
                 dataType: "json",
-                success: function() {
+                success: function () {
                     alert(1);
                 }
             }, 900);
 
         });
         //
-    }
 
-    var downCounter = function(target, fakeTime) {
+    }
+    var downCounter = function (target, fakeTime) {
         var container = target;
         var counter = {
             endYear: container.attr("endYear"),
@@ -183,7 +161,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             offSec: 0,
             offMSec: 0
         };
-        var showDom = function() {
+        var showDom = function () {
             var zeroH = "",
                 zeroM = "",
                 zeroS = "";
@@ -200,7 +178,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
             container.html("<span>剩余时间：<ins>" + zeroH + counter.offHour + "</ins>&nbsp时&nbsp<ins>" + zeroM + counter.offMin + "</ins>&nbsp分&nbsp<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>&nbsp秒</span>");
         };
-        var setInitTime = function() {
+        var setInitTime = function () {
             var endDate = new Date(counter.endYear, counter.endMonth, counter.endDay, counter.endHour, 0, 0);
             var serverDate = new Date(counter.serverYear, counter.serverMonth, counter.serverDay, counter.serverHour, counter.serverMin, counter.serverSec);
             if (fakeTime) {
@@ -225,7 +203,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             showDom();
         };
         setInitTime(); //初始化
-        var timer = setInterval(function() {
+        var timer = setInterval(function () {
             --counter.offMSec;
             if (counter.offMSec < 0) {
                 counter.offMSec = 9;
@@ -251,19 +229,20 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
     ////
     return {
-        init: function(_config) {
+        init: function (_config) {
             $.extend(config, _config);
 
             _bind();
             carGod.init();
             topNav.init();
 
-            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "index/collect", "lib/lazyload"],
-                function(qiugou, qiugouModel, customSelect, modelSeries, collect, lazyload) {
+            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "index/collect", "lib/lazyload", "index/carConstrast"],
+                function (qiugou, qiugouModel, customSelect, modelSeries, collect, lazyload, carConstrast) {
 
                     qiugou.init(config);
                     //modelSeriesModel.init(config);
                     //modelSeries.init(config);
+                    carConstrast.init(config);
 
                     var ageSelect = new customSelect("age_select", {
                         placeholder: "请选择",
@@ -284,13 +263,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                         multi: false
                     });
 
-                    $(".down-counter").each(function() {
+                    $(".down-counter").each(function () {
                         var $this = $(this);
                         downCounter($this);
                     });
-
-
-
 
 
                     collect.init(config);
@@ -303,4 +279,5 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
         }
     }
+
 });

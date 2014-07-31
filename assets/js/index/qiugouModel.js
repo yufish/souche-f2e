@@ -10,6 +10,8 @@ define(function()
     var adviserBudget={};
     var adviserInstrest=[];
 
+    var initAdviserData={};
+
     adviserModel.adviserYear=adviserYear;
     adviserModel.adviserBudget=adviserBudget;
     adviserModel.adviserInstrest=adviserInstrest;
@@ -128,9 +130,21 @@ define(function()
         subscribeCallback[name].push(callback);
     }
 
+    result.Rollback = function() {
+        config.userRequementJson = initAdviserData;
+
+        while(adviserInstrest[0])
+        {
+            this.DeleteAdviserInstrest(adviserInstrest[0]);
+        }
+
+        this.init(config);
+    }
+
     result.init = function(_config) {
         config = _config;
         var adviser = config.userRequementJson;
+        initAdviserData  = adviser;
 
         for (var key in adviser) {
             this.ModifyAdviserBudget({min: adviser.startBudget, max: adviser.endBudget});
@@ -144,6 +158,7 @@ define(function()
                     type: "brand"
                 };
                 this.AddAdviserInstrest(instrest);
+                //initAdviserInstrest.push(instrest);
             }
             for (var index = 0; index < adviser.series.length; index++) {
                 var temp = adviser.series[index].split(",");
@@ -153,6 +168,7 @@ define(function()
                     type: "serie"
                 };
                 this.AddAdviserInstrest(instrest);
+                //initAdviserInstrest.push(instrest);
             }
             break;
         }
