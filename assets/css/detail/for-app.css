@@ -2,3 +2,5 @@
 ,#my-advisor,#toolbar,.sidebar-top,#guwen_slider_global,#guwen_show_global{
     display:none !important;
 }
+
+#detail_main{overflow:hidden;}
