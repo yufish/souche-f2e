@@ -14,10 +14,9 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 return;
             }
 
-            var width = self.find(".carImg img").width();
+            var width = self.find(".carImg .img").width();
 
-            self.find(".carImg img").stop(true).animate({
-
+            self.find(".carImg .img").stop(true).animate({
                 width: width + 9 + "px",
                 height: (182 + 6.8) + "px"
             }, 900, function () {
@@ -29,7 +28,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             var self = $(this);
 
             var width = self.find(".carImg").width();
-            self.find(".carImg img").stop(true).animate({
+            self.find(".carImg .img").stop(true).animate({
                 width: width + 1 + "px",
                 height: 182 + "px"
             }, 1500, function () {
