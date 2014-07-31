@@ -67,7 +67,7 @@ if(typeof document.body.style.transform==='string'){
         if(curIndex == index)return;
         move(index);
     })
-    tabCtn.on('swipeLeft',function(){
+    /*tabCtn.on('swipeLeft',function(){
         var index = +underline.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
@@ -75,7 +75,41 @@ if(typeof document.body.style.transform==='string'){
         var index = +underline.attr('data-active-index');
         if(index==1) return;
         move(index-1);
-    })
+    })*/
+    var isAndroid = false;
+	if (navigator.userAgent.match(/Android/i)){
+		isAndroid =true;
+	}
+	var touch={};
+	tabCtn[0].addEventListener('touchstart',function(e){
+		if(!e.touches|| e.touches.length===0)return;
+		touch.x1 = e.touches[0].pageX;
+		touch.y1 = e.touches[0].pageY;
+	})
+	tabCtn[0].addEventListener('touchmove',function(e){
+		touch.x2 = e.touches[0].pageX;
+		touch.y2 = e.touches[0].pageY;
+		var absX = Math.abs(touch.x1-touch.x2),
+			absY = Math.abs(touch.y1-touch.y2);
+		if(isAndroid && absX>10 && absX>absY){
+			e.preventDefault();
+		}
+	})
+	tabCtn[0].addEventListener('touchend',function(e){
+		var deltaX = touch.x1-touch.x2,
+			deltaY = touch.y1-touch.y2;
+		if(Math.abs(deltaX)<Math.abs(deltaY)) return;
+		if(deltaX>30){
+			var index = +underline.attr('data-active-index');
+			if(index==numOfPanels) return;
+			move(index+1);
+		}
+		if(deltaX<-30){
+			var index = +underline.attr('data-active-index');
+			if(index==1) return;
+			move(index-1);
+		}
+	})
 }()
 
 //点击右上角，相应的抽屉动画
