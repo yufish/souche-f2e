@@ -104,16 +104,14 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             return false;
         });
         ///
-        /// 关闭选车 begin
-        $(".dialogContent .submit span").click(function () {
+        /// 关闭选车 确定 begin
+        $(".dialogContent .submit").click(function () {
             var option = {
                 horizontal: true,
                 fade: true
             };
 
             $(".dialogContent .submit span").html("提交中");
-
-            $("body").unbind("click",rollbackOpertion);
 
             require(["index/qiugouModel"], function (qiugouModel) {
 
@@ -125,6 +123,11 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 {
                     if(minBudget>maxBudget)
                     {
+                        $("." + tabID + " .warning").html("预算输入有错误").removeClass("hidden");
+                        window.setTimeout(function()
+                        {
+                            $("." + tabID + " .warning").addClass("hidden");
+                        },2000);
                         return false;
                     }
                 }else {
@@ -136,11 +139,15 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                     max: maxBudget * 10000
                 });
 
-
                 var minYear = $("." + tabID + " .caryear .dataContainer input#age_select").val();
                 var maxYear = $("." + tabID + " .caryear .dataContainer input#age_select_high").val();
                 if(minYear> maxYear)
                 {
+                    $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
+                    window.setTimeout(function()
+                    {
+                        $("." + tabID + " .warning").addClass("hidden");
+                    },2000);
                     return ;
                 }
 
@@ -184,51 +191,40 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             });
             return false;
         });
+
+        $(".dialogContent .cancel").click(function(event)
+        {
+            rollbackOpertion(event);
+        });
         ///
 
         /// body click 去掉dialog 显示
         var rollbackOpertion = function(event) {
             var dialogContentElement = "." + tabID + " .dialogContent";
             var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
-            if (event.target.nodeName=="BODY") {
-                if (!$(dialogContentElement).hasClass("hidden")) {
-                    var option = {
-                        horizontal: true,
-                        fade: true
-                    };
-                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                    window.setTimeout(function () {
-                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                    }, 1000);
-                }
-                else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
-                    var option = {
-                        vertical: true,
-                        fade: false
-                    };
+            if (!$(dialogContentElement).hasClass("hidden")) {
+                var option = {
+                    horizontal: true,
+                    fade: true
+                };
+                hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                window.setTimeout(function () {
+                    $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                }, 1000);
+            }
+            else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
+                var option = {
+                    vertical: true,
+                    fade: false
+                };
 
-                    hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
-                    window.setTimeout(function () {
-                        showDialogContent($("." + tabID).find(".dialogContent"), option);
-                        window.setTimeout(function()
-                        {
-                            var option = {
-                                horizontal: true,
-                                fade: true
-                            };
-                            hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                            window.setTimeout(function () {
-                                $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                            }, 1000);
-                        },500);
-                    }, 500);
-                }
-
+                hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
+                window.setTimeout(function () {
+                    showDialogContent($("." + tabID).find(".dialogContent"), option);
+                }, 500);
                 qiugouModel.Rollback();
             }
         }
-        $("body").click(rollbackOpertion);
-        ///
         ///打开添加兴趣车dialog
         $(".addCarinstrestItem").live("click",function (event) {
             event.preventDefault();
@@ -331,6 +327,11 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             }, 500);
             return false;
         });
+   ///取消
+        $(".addInstrestCar .addInstrestCarSubmit .cancel ").click(function (event) {
+            rollbackOpertion(event)
+            return false;
+        });
 
         $(".carinstrestItem").live("click", function () {
             var ele = $(this);
@@ -343,9 +344,6 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             });
             return false;
         });
-
-        ///初始化动画顾问
-        //
 
         /////订阅
         require(["index/qiugouModel", "index/modelSeries"], function (qiugouModel, modelSeries) {
@@ -406,7 +404,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 $(".carinstrest span[seriesCode='" + this.seriesCode + "']").remove();
                 $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
                 if ($(".interestCar span").length === 0) {
-                    $(".interestCar").append("<span>不限<\/span>");
+                    $(".interestCar .interestCarContainer").append("<span>不限<\/span>");
                 }
             });
 
