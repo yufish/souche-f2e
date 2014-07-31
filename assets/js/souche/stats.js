@@ -29,6 +29,10 @@ function getQueryString(name) {
     return null;
 }
 $(document).ready(function() {
+    if (window.location.host.indexOf("souche.com") == -1) {
+        return;
+    }
+
     f2e_first_load_time = new Date().getTime();
     viewPageStat(document.location.href);
     //加载点击数据
