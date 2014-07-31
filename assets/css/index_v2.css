@@ -35,7 +35,7 @@ a:hover {
     float: right;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1280px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
   #content {
     width: 1024px;
     margin: 0 auto;
@@ -55,7 +55,7 @@ a:hover {
     float: right;
   }
 }
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
   #content {
     width: 1220px;
     margin: 0 auto;
@@ -310,7 +310,7 @@ a:hover {
 }
 #footer .wrapper .foot-detail .detail-item {
   float: left;
-  width: 210px;
+  width: 190px;
   margin-bottom: 30px;
 }
 #footer .wrapper .foot-detail .detail-item .title {
@@ -319,9 +319,6 @@ a:hover {
   font-weight: bold;
   margin-bottom: 10px;
   display: block;
-}
-#footer .wrapper .foot-detail .detail-item .title:hover {
-  text-decoration: underline;
 }
 #footer .wrapper .foot-detail .detail-item .art-link {
   display: block;
@@ -376,7 +373,7 @@ a:hover {
 #top-info .filter-nav {
   float: left;
   display: inline-block;
-  height: 303px;
+  height: 304px;
   border: 1px solid #E6E6E6;
   background: #F5F5F5;
   padding: 15px;
@@ -413,7 +410,6 @@ a:hover {
 #top-info .filter-nav .car-brand .brand-inner {
   position: absolute;
   width: 598px;
-  display: none;
   border: 1px solid #fc7000;
   top: -16px;
   left: -16px;
@@ -423,6 +419,7 @@ a:hover {
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf {
   margin-bottom: 15px;
+  width: 598px;
 }
 #top-info .filter-nav .car-brand .brand-inner .brand-conf .title {
   color: #333;
@@ -526,7 +523,6 @@ a:hover {
   top: -16px;
   left: -16px;
   padding: 15px;
-  display: none;
 }
 #top-info .filter-nav .car-models .models-inner .models-all .models-line {
   margin-bottom: 10px;
@@ -590,7 +586,6 @@ a:hover {
   left: -16px;
   padding: 15px;
   z-index: 100;
-  display: none;
 }
 #top-info .main-slider {
   float: left;
@@ -722,6 +717,49 @@ body * {
     float: left;
     border: 1px solid #EDEDED;
   }
+  .carsContent .adviserInitAnimate {
+    margin-top: 2.7%;
+    *margin-top: 2.5%;
+    margin-left: -2.69%;
+    *margin-left: -2.4%;
+    width: 66.5%;
+    *width: 69.9%;
+  }
+  .carsContent .adviserInitAnimate img {
+    left: -800px;
+  }
+  .carsContent .adviserInitAnimate .road {
+    position: absolute;
+    width: 100%;
+    height: 61px;
+    top: 294px;
+  }
+  .carsContent .adviserInitAnimate .boy,
+  .carsContent .adviserInitAnimate .girl {
+    position: absolute;
+    top: 25%;
+    left: -800px;
+    height: 75%;
+    width: 25%;
+  }
+  .carsContent .adviserInitAnimate .boy {
+    margin-left: 6%;
+  }
+  .carsContent .adviserInitAnimate .girl {
+    margin-left: 70%;
+  }
+  .carsContent .adviserInitAnimate .boytalk {
+    position: absolute;
+    top: 22%;
+    margin-left: 24%;
+    width: 22%;
+  }
+  .carsContent .adviserInitAnimate .girltalk {
+    position: absolute;
+    top: 57%;
+    margin-left: 50%;
+    width: 22%;
+  }
   .dialogContentContainer,
   .dialogContent {
     width: 97%;
@@ -756,6 +794,47 @@ body * {
     float: left;
     border: 1px solid #EDEDED;
   }
+  .carsContent .adviserInitAnimate {
+    margin-left: -1.8%;
+    margin-top: 2%;
+    width: 75%;
+    *width: 87.8%;
+  }
+  .carsContent .adviserInitAnimate img {
+    left: -800px;
+  }
+  .carsContent .adviserInitAnimate .road {
+    position: absolute;
+    width: 100%;
+    height: 61px;
+    top: 294px;
+  }
+  .carsContent .adviserInitAnimate .boy,
+  .carsContent .adviserInitAnimate .girl {
+    position: absolute;
+    top: 25%;
+    left: -800px;
+    height: 75%;
+    width: 22%;
+  }
+  .carsContent .adviserInitAnimate .boy {
+    margin-left: 6%;
+  }
+  .carsContent .adviserInitAnimate .girl {
+    margin-left: 70%;
+  }
+  .carsContent .adviserInitAnimate .boytalk {
+    position: absolute;
+    top: 20%;
+    margin-left: 24%;
+    width: 20%;
+  }
+  .carsContent .adviserInitAnimate .girltalk {
+    position: absolute;
+    top: 50%;
+    margin-left: 50%;
+    width: 20%;
+  }
 }
 @media screen and (min-width: 1440px) {
   #carsNav,
@@ -782,6 +861,44 @@ body * {
     *width: 22.92%;
     float: left;
     border: 1px solid #EDEDED;
+  }
+  .carsContent .adviserInitAnimate {
+    margin-left: -1.89%;
+    *margin-left: -1.5%;
+    margin-top: 2%;
+    width: 75%;
+  }
+  .carsContent .adviserInitAnimate img {
+    left: -800px;
+  }
+  .carsContent .adviserInitAnimate .road {
+    position: absolute;
+    width: 100%;
+    height: 61px;
+    top: 294px;
+  }
+  .carsContent .adviserInitAnimate .boy,
+  .carsContent .adviserInitAnimate .girl {
+    position: absolute;
+    top: 25%;
+    left: -800px;
+    height: 75%;
+  }
+  .carsContent .adviserInitAnimate .boy {
+    margin-left: 6%;
+  }
+  .carsContent .adviserInitAnimate .girl {
+    margin-left: 70%;
+  }
+  .carsContent .adviserInitAnimate .boytalk {
+    position: absolute;
+    top: 22%;
+    margin-left: 24%;
+  }
+  .carsContent .adviserInitAnimate .girltalk {
+    position: absolute;
+    top: 50%;
+    margin-left: 53%;
   }
 }
 .clearBoth {
@@ -906,6 +1023,15 @@ body * {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
+.carsContent .adviserInitAnimate {
+  float: left;
+  height: 357px;
+  position: relative;
+  z-index: -10;
+}
+.carsContent .adviserInitAnimate img {
+  position: relative;
+}
 .carsContent .carItem {
   overflow: hidden;
   position: relative;
@@ -918,6 +1044,7 @@ body * {
   display: block;
 }
 .carsContent .carItem .carImg img {
+  border: none;
   position: absolute;
   width: 100%;
   height: 182px;
@@ -1573,9 +1700,9 @@ body * {
   color: #ffffff;
 }
 .carsContent .addInstrestCar .addInstrestCarContent {
-  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   clear: both;
-  height: 252px;
+  height: 410px;
 }
 .carsContent .addInstrestCar .addInstrestCarContent .brand {
   float: left;
@@ -1925,7 +2052,7 @@ body * {
 }
 #qa {
   padding: 15px;
-  height: 400px;
+  height: 445px;
 }
 #qa .title {
   margin-top: 10px;
@@ -1937,71 +2064,6 @@ body * {
 #qa .cheshen-nav {
   width: 210px;
   height: 30px;
-}
-#qa .cheshen-nav .nav-but {
-  position: relative;
-  width: 68px;
-  border: 1px solid #E4E3E3;
-  background: #F0F0F0;
-  float: left;
-  height: 28px;
-  line-height: 30px;
-  text-align: center;
-  cursor: pointer;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont {
-  position: absolute;
-  width: 210px;
-  height: 200px;
-  top: 45px;
-  left: 0px;
-  text-align: left;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .head {
-  height: 60px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .head img {
-  width: 60px;
-  height: 60px;
-  display: block;
-  float: left;
-  margin-right: 10px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit {
-  float: left;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit h1 {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  margin-bottom: 5px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .head .head-tit p {
-  color: #B2B2B2;
-  font-size: 12px;
-  line-height: 17px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail {
-  color: #797979;
-  line-height: 18px;
-  margin-top: 15px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .status {
-  margin-bottom: 10px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask {
-  display: block;
-  width: 70px;
-  height: 30px;
-  padding-left: 30px;
-  border-radius: 3px;
-  background: #5c9bef url(../images/index/ask.png) no-repeat left center;
-  color: #fff;
-  line-height: 31px;
-  margin-top: 15px;
-}
-#qa .cheshen-nav .nav-but .chenshen-cont .cheshen-detail .ask:hover {
-  background: #3784ec url(../images/index/ask-hover.png) no-repeat left center;
 }
 #qa .cheshen-nav .chenshen-cont-2 {
   left: -69px !important;
@@ -2057,6 +2119,8 @@ body * {
 #qa .cheshen-box .cheshen-detail {
   margin-top: 10px;
   margin-bottom: 10px;
+  overflow: hidden;
+  height: 125px;
 }
 #qa .cheshen-box .cheshen-detail h1 {
   font-size: 12px;
@@ -2084,5 +2148,5 @@ body * {
   background: #3784ec url(../images/index/ask-hover.png) no-repeat left center;
 }
 #qa .cheshen-box .detail-hidden {
-  display: none;
+  height: 0;
 }

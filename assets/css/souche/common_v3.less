@@ -98,7 +98,7 @@
     .foot-detail{
       .detail-item{
         float: left;
-        width: 210px;
+        width: 190px;
         margin-bottom: 30px;
         .title {
           color: #fff;
@@ -106,9 +106,6 @@
           font-weight: bold;
           margin-bottom: 10px;
           display: block;
-        }
-        .title:hover{
-          text-decoration: underline;
         }
         .art-link{
           display: block;
@@ -384,10 +381,25 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
           border: 1px solid #D94A16;
           width: 42px;
           height: 42px;
-          background: #FF5A00 url(../../images/index/search.png) no-repeat center;
+          background: #FF5A00; 
           display: block;
           float: left;
           cursor: pointer;
+          i{
+            background: #FF5A00 url(../../images/index/index_sprite_v2.png) no-repeat;
+            background-position: -120px 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+          }
+        }
+        .search-submit:hover{
+          background: #FF4600;
+          border: 1px solid #CA2E16;
+          i{
+            background-position: -120px -20px;
+          }
         }
         .recom{
           width: 295px;
