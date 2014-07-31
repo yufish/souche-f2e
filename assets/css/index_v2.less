@@ -9,6 +9,52 @@ a{
   font-family: 'Microsoft YaHei',Tahoma,Verdana;
 }
 
+
+// @media screen and (min-width: 1024px) and (max-width:1280px){
+//   #content{
+//   width: 1024px;
+//   margin: 0 auto;
+//     .wrapper{
+//       margin: 0 auto;
+//       .index-left{
+//         width: 784px;
+//         float: left;
+//         #top-info{
+          
+//           .filter-nav{
+//             width: 210px;
+//           }
+//         }
+//       }
+//       .index-right{
+//         width: 240px;
+//         float: right;
+//       }
+//     }
+//   }
+// }
+
+  #content{
+   width: 1220px;
+   margin: 0 auto;
+    .wrapper{
+      margin: 0 auto;
+      .index-left{
+        width: 980px;
+        float: left;
+        #top-info{
+         
+          .filter-nav{
+            width:410px;
+          }
+        }
+      }
+      .index-right{
+        width: 240px;
+        float: right;
+      }
+    }
+  }
 @media screen and (max-width: 1024px){
   #content{
   width: 972px;
@@ -39,29 +85,6 @@ a{
     }
   }
 }
-// @media screen and (min-width: 1024px) and (max-width:1280px){
-//   #content{
-//   width: 1024px;
-//   margin: 0 auto;
-//     .wrapper{
-//       margin: 0 auto;
-//       .index-left{
-//         width: 784px;
-//         float: left;
-//         #top-info{
-          
-//           .filter-nav{
-//             width: 210px;
-//           }
-//         }
-//       }
-//       .index-right{
-//         width: 240px;
-//         float: right;
-//       }
-//     }
-//   }
-// }
 @media screen and (min-width: 1024px) and (max-width:1366px){
   #content{
    width: 1024px;
@@ -75,29 +98,6 @@ a{
           
           .filter-nav{
             width:210px;
-          }
-        }
-      }
-      .index-right{
-        width: 240px;
-        float: right;
-      }
-    }
-  }
-}
-@media screen and (min-width: 1366px) and (max-width:1440px){
-  #content{
-   width: 1220px;
-   margin: 0 auto;
-    .wrapper{
-      margin: 0 auto;
-      .index-left{
-        width: 980px;
-        float: left;
-        #top-info{
-         
-          .filter-nav{
-            width:410px;
           }
         }
       }
@@ -229,6 +229,19 @@ a{
     }
   }
 }
+#header{
+    .wrapper{
+      width: 1220px;
+      .search{
+        .index-search{
+          width: 760px;
+        }
+        .search-text{
+          width: 690px;
+        }
+      }
+    }
+  }
 @media screen and (max-width: 1024px){
  #header{
     .wrapper{
@@ -258,24 +271,8 @@ a{
       }
     }
   }
-}
-@media screen and (min-width: 1366px) and (max-width:1440px){
-  #header{
-    .wrapper{
-      width: 1220px;
-      .search{
-        .index-search{
-          width: 760px;
-        }
-        .search-text{
-          width: 690px;
-        }
-      }
-    }
-  }
-}
 @media screen and (min-width: 1440px){
-    #header{
+  #header{
     .wrapper{
       width: 1280px;
       .search{
@@ -322,11 +319,17 @@ a{
     .other-navs{
       float: right;
       height: 40px;
-      
+      span{
+        display: block;
+        margin-top: 15px;
+        color: #555;
+        float: left;
+        height: 15px;
+      }
       a{
         margin-top: 15px;
         display: block;
-        padding: 0 12px;
+        padding: 0 5px;
         border-right:1px solid #EEEEEE;
         float: left; 
         height: 15px;
@@ -334,6 +337,11 @@ a{
     }
   }
 }
+#nav{
+    .wrapper{
+       width: 1220px;
+    }
+  }
 @media screen and (max-width: 1024px){
     #nav{
     .wrapper{
@@ -345,13 +353,6 @@ a{
   #nav{
     .wrapper{
        width: 1024px;
-    }
-  }
-}
-@media screen and (min-width: 1366px) and (max-width:1440px){
-   #nav{
-    .wrapper{
-       width: 1220px;
     }
   }
 }
@@ -395,11 +396,11 @@ a{
       border-bottom: 1px solid #717171;
       border-top: 1px solid #717171;
       padding: 10px 0;
-      .links{
+      a{
         color: #717171;
         margin-right: 25px;
       }
-      .links:hover{
+      aspan:hover{
         text-decoration: underline;
       }
     }
@@ -410,6 +411,11 @@ a{
     }
   }
 }
+#footer{
+    .wrapper{
+       width: 1220px;
+    }
+  }
 @media screen and (max-width: 1024px){
     #footer{
     .wrapper{
@@ -424,19 +430,14 @@ a{
     }
   }
 }
-@media screen and (min-width: 1366px) and (max-width:1440px){
-   #footer{
-    .wrapper{
-       width: 1220px;
-    }
-  }
-}
+
 @media screen and (min-width: 1440px){
    #footer{
     .wrapper{
        width: 1280px;
     }
   }
+}
 }
   // @media screen and (min-width: 1024px) and (max-width:1280px){
   //   .wrapper{

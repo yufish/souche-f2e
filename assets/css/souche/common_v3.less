@@ -121,11 +121,11 @@
       border-bottom: 1px solid #717171;
       border-top: 1px solid #717171;
       padding: 10px 0;
-      .links{
+      a{
         color: #717171;
         margin-right: 25px;
       }
-      .links:hover{
+      a:hover{
         text-decoration: underline;
       }
     }
@@ -135,6 +135,11 @@
       margin-bottom: 20px;
     }
   }
+}
+#footer{
+    .wrapper{
+       width: 1220px;
+    }
 }
 @media screen and (max-width: 1024px){
     #footer{
@@ -147,13 +152,6 @@
   #footer{
     .wrapper{
       width: 1024px;
-    }
-  }
-}
-@media screen and (min-width: 1366px) and (max-width:1440px){
-   #footer{
-    .wrapper{
-       width: 1220px;
     }
   }
 }
@@ -434,6 +432,19 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
     }
   }
 }
+#header{
+    .wrapper{
+      width: 1220px;
+      .search{
+        .index-search{
+          width: 760px;
+        }
+        .search-text{
+          width: 690px;
+        }
+      }
+    }
+  }
 @media screen and (max-width: 1024px){
  #header{
     .wrapper{
@@ -459,21 +470,6 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
         }
         .search-text{
           width: 450px;
-        }
-      }
-    }
-  }
-}
-@media screen and (min-width: 1366px) and (max-width:1440px){
-  #header{
-    .wrapper{
-      width: 1220px;
-      .search{
-        .index-search{
-          width: 760px;
-        }
-        .search-text{
-          width: 690px;
         }
       }
     }
@@ -528,11 +524,17 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
     .other-navs{
       float: right;
       height: 40px;
-      
+      span{
+        display: block;
+        margin-top: 15px;
+        color: #555;
+        float: left;
+        height: 15px;
+      }
       a{
         margin-top: 15px;
         display: block;
-        padding: 0 12px;
+        padding: 0 5px;
         border-right:1px solid #EEEEEE;
         float: left; 
         height: 15px;
@@ -540,6 +542,11 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
     }
   }
 }
+#nav{
+    .wrapper{
+       width: 1220px;
+    }
+  }
 @media screen and (max-width: 1024px){
     #nav{
     .wrapper{
@@ -554,17 +561,14 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
     }
   }
 }
-@media screen and (min-width: 1366px) and (max-width:1440px){
-   #nav{
-    .wrapper{
-       width: 1220px;
-    }
-  }
-}
 @media screen and (min-width: 1440px){
    #nav{
     .wrapper{
        width: 1280px;
     }
   }
+}
+.sort {
+margin: 30px auto;
+text-align: center;
 }

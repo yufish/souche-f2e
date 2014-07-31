@@ -5,9 +5,8 @@ html
         <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
         <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-        <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
-        <link href="../../../assets/css/mobile/h5-3/index-header.css" rel="stylesheet" type="text/css" />
+        <link href="../../../assets/css/mobile/h5-3/index.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
@@ -48,127 +47,23 @@ html
                 include ./index-tab-2
                 include ./index-tab-3
 
-        .wrapTransBg
+        .wrapTransBg.hidden
         .btn-wrapper-for-filter.hidden(style="text-align:center")
             button#J_btnFilter_reset 重置
             button#J_btnFilter_submit 为您找到100辆车
+
+        .wrapGrayBg.hidden
+        .filter-popup-wrapper.hidden#brand-list.
+            <div class='clearfix'>
+                <div class='title brand-title'>热门品牌</div>
+                <div class='buxian' id='J_brandBuxian'>不限品牌</div>
+            </div>
+            <div class='br-content'>
+                <div id='hot-brands'class='clearfix'></div>
+                <div id='other-brands' class='clearfix'></div>
+            </div>
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
             .copyright © 2012-2014 Souche.com 版权所有
-        script.
-            var touch_start = 'click',
-                tap_event='click';
-            if('ontouchstart' in window){
-                touch_start = 'touchstart';
-                tap_event='tap';
-            }
-            var transition='webkitTransition',
-                transform='webkitTransform',
-                transition_end = 'webkitTransitionEnd';
-            if(typeof document.body.style.transform==='string'){
-               transition = 'transition';
-               transform = 'transform';
-               transition_end='transitionend'
-            }
-            //variable cache and some init;
-            var tabCover = $('#J_tabCover'),
-                tabCtn = $('#J_tabContainer'),
-                tabNavBar = $('#J_tabNavbar');
-            var tabPanels = tabCtn.find('.tab-panel'),
-                navItems = $('.nav-item',tabNavBar);
-            var underline = $('#J_navbar_underline')
-            var numOfPanels = tabPanels.length;
-            var widthOfPanel = 100/numOfPanels;
-            tabCtn.css({width:numOfPanels*100+'%'});
-            tabPanels.css({width:widthOfPanel+'%'});
-            //记录每一个tabPanel的scrollTop，便于恢复到相应位置
-            var topCache=[0,0,0];
-            function beforeMove(){
-
-            }
-            function afterMove(oldIndex,curIndex){
-                navItems.removeClass('active')
-                navItems.eq(curIndex-1).addClass('active')
-                topCache[oldIndex-1]=$(window).scrollTop();
-                document.body.scrollTop = topCache[curIndex-1];
-                if(curIndex==2){
-                    $('.btn-wrapper-for-filter').removeClass('hidden')
-                }else{
-                    $('.btn-wrapper-for-filter').addClass('hidden')
-                }
-            }
-
-            function move(curIndex){
-                var moveIndex =curIndex-1;
-                // use translateZ(0) activate 3d hardware acceleration is possible
-                tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
-                var oldIndex = underline.attr('data-active-index')
-                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
-                afterMove(oldIndex,curIndex)
-
-            }
-            //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
-            move(2);
-            navItems.on(tap_event,function(){
-                var index = +$(this).attr('data-nav-index');
-                var curIndex = underline.attr('data-active-index');
-                if(curIndex == index)return;
-                move(index);
-            })
-            tabCtn.on('swipeLeft',function(){
-                var index = +underline.attr('data-active-index');
-                if(index==numOfPanels) return;
-                move(index+1);
-            }).on('swipeRight',function(){
-                var index = +underline.attr('data-active-index');
-                if(index==1) return;
-                move(index-1);
-            })
-
-
-
-            var otherTopic = $('.other-topic');
-            var topicItems = $('.topic-item',otherTopic);
-            var wrapBg = $('.wrapTransBg');
-            wrapBg.on(tap_event,function(){
-                var time =0,timeSpan =150;
-                var height = 181,hGap = 31;
-                for(var i = topicItems.length-1;i>-1;i--){
-                    !function(index){
-                        setTimeout(function(){
-                            topicItems.eq(index).removeClass('show')
-                            height-=hGap;
-                            otherTopic.css({height:height});
-                        },time)
-                    }(i)
-                    time+=timeSpan;
-                }
-                setTimeout(function(){
-                    otherTopic.css({height:0});
-                    wrapBg.hide();
-                },750)
-            })
-
-            $('.for-other-topic').on(tap_event,function(){
-                wrapBg.show();
-                var time =0,timeSpan =150;
-                var height = 26,hGap = 31;
-                var index =0;
-                topicItems.each(function(index,item){
-                    setTimeout(function(){
-                        otherTopic.css({height:height});
-                        height+=hGap;
-                        $(item).addClass("show");
-                    },time)
-                    time+=timeSpan
-                })
-            })
-
-//            $(window).scroll(function(){
-//                var top = $(window).scrollTop();
-//                top=Math.max(top,44);
-//                tabNavBar.css({top:top})
-//            })
-
-
+        script(src="../../../assets/js/mobile/index/h5-3-index.js")
