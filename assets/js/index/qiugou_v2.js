@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2014/7/8.
  */
-define(['souche/util/load-info'], function(LoadInfo) {
+define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouModel) {
     var config = {};
     var qiugou = {};
     var lock = true;
@@ -88,6 +88,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
             };
 
             hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
+
+            return false;
         });
         ///
         ///开始选车 begin
@@ -98,6 +100,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
             };
             $("." + tabID).find(".dialogContentContainer").css("zIndex", 999).css("background");
             showDialogContent($("." + tabID).find(".dialogContent"), option);
+
+            return false;
         });
         ///
         /// 关闭选车 begin
@@ -106,16 +110,39 @@ define(['souche/util/load-info'], function(LoadInfo) {
                 horizontal: true,
                 fade: true
             };
-            hideDialogContent($("." + tabID).find(".dialogContent"), option);
-            window.setTimeout(function () {
-                $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-            }, 1000);
+
+            $(".dialogContent .submit span").html("提交中");
+
+            $("body").unbind("click",rollbackOpertion);
 
             require(["index/qiugouModel"], function (qiugouModel) {
+
+                var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
+                var maxBudget =  $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
+
+                var regx= new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
+                if(regx.test(minBudget)&&regx.test(maxBudget))
+                {
+                    if(minBudget>maxBudget)
+                    {
+                        return false;
+                    }
+                }else {
+                    return false;
+                }
+
                 qiugouModel.ModifyAdviserBudget({
-                    min: $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 10000,
-                    max: $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 10000
+                    min: minBudget * 10000,
+                    max: maxBudget * 10000
                 });
+
+
+                var minYear = $("." + tabID + " .caryear .dataContainer input#age_select").val();
+                var maxYear = $("." + tabID + " .caryear .dataContainer input#age_select_high").val();
+                if(minYear> maxYear)
+                {
+                    return ;
+                }
 
                 qiugouModel.ModifyAdviserYear({
                     min: $("." + tabID + " .caryear .dataContainer input#age_select").val(),
@@ -148,25 +175,75 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     url: url,
                     dataType: "json"
                 }).done(function () {
+                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                    window.setTimeout(function () {
+                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                    }, 1000);
                     window.location.reload();
                 });
             });
+            return false;
         });
         ///
+
+        /// body click 去掉dialog 显示
+        var rollbackOpertion = function(event) {
+            var dialogContentElement = "." + tabID + " .dialogContent";
+            var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
+            if (event.target.nodeName=="BODY") {
+                if (!$(dialogContentElement).hasClass("hidden")) {
+                    var option = {
+                        horizontal: true,
+                        fade: true
+                    };
+                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                    window.setTimeout(function () {
+                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                    }, 1000);
+                }
+                else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
+                    var option = {
+                        vertical: true,
+                        fade: false
+                    };
+
+                    hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
+                    window.setTimeout(function () {
+                        showDialogContent($("." + tabID).find(".dialogContent"), option);
+                        window.setTimeout(function()
+                        {
+                            var option = {
+                                horizontal: true,
+                                fade: true
+                            };
+                            hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                            window.setTimeout(function () {
+                                $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                            }, 1000);
+                        },500);
+                    }, 500);
+                }
+
+                qiugouModel.Rollback();
+            }
+        }
+        $("body").click(rollbackOpertion);
+        ///
         ///打开添加兴趣车dialog
-        $(".addCarinstrestItem").click(function () {
+        $(".addCarinstrestItem").live("click",function (event) {
+            event.preventDefault();
             var option = {
                 vertical: true,
                 fade: false
             };
 
             hideDialogContent($("." + tabID).find(".dialogContent"), option);
-            $("." + tabID).find(".addInstrestCar").css("top", -800 + "px").removeClass("hidden");
+            $("." + tabID).find(".addInstrestCar").css("top", -900 + "px").removeClass("hidden");
             window.setTimeout(function () {
-
                 showInstrestContent($("." + tabID).find(".addInstrestCar"), option);
             }, 500);
-
+            event.stopPropagation();
+            return false;
         });
 
         ///change tab
@@ -176,10 +253,58 @@ define(['souche/util/load-info'], function(LoadInfo) {
             var id = $(this).attr("id");
             tabID = id;
 
+            if (id==="myAdviser") {
+                initAnimate();
+            }
             $(".carsContent").addClass("hidden");
             $(".carsContent." + tabID + "Content").removeClass("hidden");
+            return false;
         });
         ///
+        ///动画 顾问初始化显示的时候
+        var initAnimate = function() {
+            if ($(".adviserInitAnimate").length != 0) {
+
+                $(".adviserInitAnimate .bg").animate(
+                    {
+                        "left": ""
+                    }
+                    , 500);
+                $(".adviserInitAnimate .road").animate(
+                    {
+                        "left": ""
+                    }
+                    , 600, function () {
+
+                        $(".adviserInitAnimate .boy").animate(
+                            {
+                                "left": "0px"
+                            }
+                            , 500, function () {
+                                $(".adviserInitAnimate .boytalk").animate(
+                                    {
+                                        "left": ""
+                                    }
+                                    , 500,function()
+                                    {
+                                        $(".adviserInitAnimate .girl").animate(
+                                            {
+                                                "left": ""
+                                            }
+                                            , 500,function()
+                                            {
+                                                $(".adviserInitAnimate .girltalk").animate(
+                                                    {
+                                                        "left": ""
+                                                    }
+                                                    , 500);
+                                            });
+                                    });
+                            });
+                    });
+
+            }
+        }
 
         /// brandlist nav
         $(".brandNav a").live("click", function () {
@@ -190,6 +315,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             var top = $("." + tabID + " .brandList span[data-id='" + id + "']").offset().top - $("." + tabID + " .brandList span").eq(0).offset().top;
 
             $("." + tabID + " .brandList").scrollTop(top);
+            return false;
         });
         ///
         ///
@@ -203,6 +329,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
             window.setTimeout(function () {
                 showDialogContent($("." + tabID).find(".dialogContent"), option);
             }, 500);
+            return false;
         });
 
         $(".carinstrestItem").live("click", function () {
@@ -214,7 +341,11 @@ define(['souche/util/load-info'], function(LoadInfo) {
                     type: $(ele).attr("type")
                 });
             });
+            return false;
         });
+
+        ///初始化动画顾问
+        //
 
         /////订阅
         require(["index/qiugouModel", "index/modelSeries"], function (qiugouModel, modelSeries) {
@@ -288,6 +419,7 @@ define(['souche/util/load-info'], function(LoadInfo) {
         var widthBegin = $(".carsItem").eq(0).width();
         var widthEnd = $("#carsNav").width();
         var heightEnd = $element.height();
+        $element.removeClass("hidden");
 
         if (option.horizontal) {
             $element.css("overflow", "hidden").css("width", widthBegin);
@@ -316,6 +448,8 @@ define(['souche/util/load-info'], function(LoadInfo) {
     var showInstrestContent = function($element, option) {
         $element.css("width", $("#carsNav").width());
         offsetMove($element, option, 0, 500);
+        $element.removeClass("hidden");
+
         var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         var html = "";
         for (var i = 0; i < zimu.length; i++) {
@@ -336,7 +470,10 @@ define(['souche/util/load-info'], function(LoadInfo) {
     }
 
     var hideInstrestContent = function($element, option) {
-        offsetMove($element, option, -532, 500);
+        offsetMove($element, option, -532, 500,function()
+        {
+            $element.addClass("hidden");
+        });
         var tabID = $("#carsNav ul li.active").attr("id");
         $(".carsContent." + tabID + "Content").css({"overflow": "visible"});
         $(".carsContent." + tabID + "Content"+" ."+tabID).eq(0).css("minHeight", "402px");
@@ -359,7 +496,10 @@ define(['souche/util/load-info'], function(LoadInfo) {
             }, 500);
         } else if (option.vertical) {
             $element.css("width", widthEnd);
-            offsetMove($element, option, -532, 500);
+            offsetMove($element, option, -532, 500,function()
+            {
+                $element.addClass("hidden");
+            });
         }
 
         var tabID = $("#carsNav ul li.active").attr("id");

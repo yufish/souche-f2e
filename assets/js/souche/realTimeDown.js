@@ -64,7 +64,7 @@ define(function() {
 
         var manager = Souche.AjaxManager.init({
             aborted:true,
-            delayTime:500,
+            delayTime:150,
             predicate:function()
             {
                 return  this.url.substr(0, this.url.indexOf("?"));
