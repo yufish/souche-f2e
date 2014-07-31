@@ -8,44 +8,60 @@ html
         <link rel="stylesheet" href="http://res.souche.com/assets/css/mobile/reset.css">
         <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
         <link href="../../../assets/css/mobile/h5-3/index-header.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>
         <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     body
-        header
-            .hd-logo
-            .hd-city#J_choose_city
-                span(style="font-size:13px") 杭州
-                svg.svg-down-arrow(width=9,height=5)
-                    polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+        .placeholder-for-tabNavBar
+        .fixed-wrapper
+            header
+                .hd-logo
+                .hd-city#J_choose_city
+                    span(style="font-size:13px") 杭州
+                    svg.svg-down-arrow(width=9,height=5)
+                        polyline(points="0,0 4,4 8,0",style='fill:none;stroke:white;stroke-width:2')
+                .for-other-topic
+                    .icon-bar
+                    .icon-bar
+                    .icon-bar
+                .hd-search
             .other-topic
-                .icon-bar
-                .icon-bar
-                .icon-bar
-            .hd-search
-        nav#J_tabNavbar.clearfix
-            .nav-item(data-nav-index=1)
-                i.nav-icon.hot-icon
-                热门车型
-            .nav-item(data-nav-index=2)
-                i.nav-icon.car-icon
-                我要找车
-            .nav-item(data-nav-index=3)
-                i.nav-icon.rocket-icon
-                随便逛逛
-            #J_navbar_underline(data-active-index=1)
+                .topic-item 首页
+                .topic-item 卖车
+                .topic-item 我的大搜车
+                .topic-item 拨打客服电话
+                .topic-item 关于我们
+
+            nav#J_tabNavbar.clearfix
+                .nav-item(data-nav-index=1)
+                    i.nav-icon.hot-icon
+                    热门车型
+                .nav-item(data-nav-index=2)
+                    i.nav-icon.car-icon
+                    我要找车
+                .nav-item(data-nav-index=3)
+                    i.nav-icon.rocket-icon
+                    随便逛逛
+                #J_navbar_underline(data-active-index=1)
         section#J_tabCover
             #J_tabContainer.clearfix
                 include ./index-tab-1
                 include ./index-tab-2
                 include ./index-tab-3
+
+        .wrapTransBg
+        .btn-wrapper-for-filter.hidden(style="text-align:center")
+            button#J_btnFilter_reset 重置
+            button#J_btnFilter_submit 为您找到100辆车
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
             .copyright © 2012-2014 Souche.com 版权所有
         script.
-            var touch_start = 'click';
+            var touch_start = 'click',
+                tap_event='click';
             if('ontouchstart' in window){
                 touch_start = 'touchstart';
+                tap_event='tap';
             }
             var transition='webkitTransition',
                 transform='webkitTransform',
@@ -57,41 +73,102 @@ html
             }
             //variable cache and some init;
             var tabCover = $('#J_tabCover'),
-                tabCtn = $('#J_tabContainer');
+                tabCtn = $('#J_tabContainer'),
+                tabNavBar = $('#J_tabNavbar');
             var tabPanels = tabCtn.find('.tab-panel'),
-                navItems = $('#J_tabNavbar .nav-item');
+                navItems = $('.nav-item',tabNavBar);
             var underline = $('#J_navbar_underline')
             var numOfPanels = tabPanels.length;
             var widthOfPanel = 100/numOfPanels;
-            $(function(){
-                tabCtn.css({width:numOfPanels*100+'%'});
-                tabPanels.css({width:widthOfPanel+'%'});
-                function move(moveIndex){
-                    var activeIndex = moveIndex+1;
-                    // use translateZ(0) activate 3d hardware acceleration is possible
-                    tabCtn.css(transform,'translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)');
-                    underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',activeIndex);
-                    navItems.removeClass('active')
-                    navItems.eq(moveIndex).addClass('active')
+            tabCtn.css({width:numOfPanels*100+'%'});
+            tabPanels.css({width:widthOfPanel+'%'});
+            //记录每一个tabPanel的scrollTop，便于恢复到相应位置
+            var topCache=[0,0,0];
+            function beforeMove(){
+
+            }
+            function afterMove(oldIndex,curIndex){
+                navItems.removeClass('active')
+                navItems.eq(curIndex-1).addClass('active')
+                topCache[oldIndex-1]=$(window).scrollTop();
+                document.body.scrollTop = topCache[curIndex-1];
+                if(curIndex==2){
+                    $('.btn-wrapper-for-filter').removeClass('hidden')
+                }else{
+                    $('.btn-wrapper-for-filter').addClass('hidden')
                 }
-                //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
-                move(1);
-                navItems.on('tap',function(){
-                    var index = +$(this).attr('data-nav-index');
-                    var curIndex = underline.attr('data-active-index');
-                    if(curIndex == index)return;
-                    move(index-1);
-                })
-                tabCtn.on('swipeLeft',function(){
-                    var index = +underline.attr('data-active-index');
-                    if(index==numOfPanels) return;
-                    move(index);
-                }).on('swipeRight',function(){
-                    var index = +underline.attr('data-active-index');
-                    if(index==1) return;
-                    var moveIndex = index-2;
-                    move(moveIndex);
+            }
+
+            function move(curIndex){
+                var moveIndex =curIndex-1;
+                // use translateZ(0) activate 3d hardware acceleration is possible
+                tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
+                var oldIndex = underline.attr('data-active-index')
+                underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
+                afterMove(oldIndex,curIndex)
+
+            }
+            //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
+            move(2);
+            navItems.on(tap_event,function(){
+                var index = +$(this).attr('data-nav-index');
+                var curIndex = underline.attr('data-active-index');
+                if(curIndex == index)return;
+                move(index);
+            })
+            tabCtn.on('swipeLeft',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==numOfPanels) return;
+                move(index+1);
+            }).on('swipeRight',function(){
+                var index = +underline.attr('data-active-index');
+                if(index==1) return;
+                move(index-1);
+            })
+
+
+
+            var otherTopic = $('.other-topic');
+            var topicItems = $('.topic-item',otherTopic);
+            var wrapBg = $('.wrapTransBg');
+            wrapBg.on(tap_event,function(){
+                var time =0,timeSpan =150;
+                var height = 181,hGap = 31;
+                for(var i = topicItems.length-1;i>-1;i--){
+                    !function(index){
+                        setTimeout(function(){
+                            topicItems.eq(index).removeClass('show')
+                            height-=hGap;
+                            otherTopic.css({height:height});
+                        },time)
+                    }(i)
+                    time+=timeSpan;
+                }
+                setTimeout(function(){
+                    otherTopic.css({height:0});
+                    wrapBg.hide();
+                },750)
+            })
+
+            $('.for-other-topic').on(tap_event,function(){
+                wrapBg.show();
+                var time =0,timeSpan =150;
+                var height = 26,hGap = 31;
+                var index =0;
+                topicItems.each(function(index,item){
+                    setTimeout(function(){
+                        otherTopic.css({height:height});
+                        height+=hGap;
+                        $(item).addClass("show");
+                    },time)
+                    time+=timeSpan
                 })
             })
+
+//            $(window).scroll(function(){
+//                var top = $(window).scrollTop();
+//                top=Math.max(top,44);
+//                tabNavBar.css({top:top})
+//            })
 
 

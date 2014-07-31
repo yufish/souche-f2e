@@ -69,7 +69,9 @@
             touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
             //(2)
-            if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
+            var absX = Math.abs(touch.x1 - touch.x2),
+                absY = Math.abs(touch.y1 - touch.y2)
+            if(isAndroid && absX>10 && absX>absY )
                 e.preventDefault()
 
             clearTimeout(longTapTimer);
@@ -82,7 +84,7 @@
                 touch.el.trigger("doubleTap");
                 touch = {};
             } else if (touch.x2 > 0 || touch.y2 > 0) {
-                (Math.abs(touch.x1 - touch.x2) > 60 || Math.abs(touch.y1 - touch.y2) > 60) &&
+                (Math.abs(touch.x1 - touch.x2) > 30 || Math.abs(touch.y1 - touch.y2) > 30) &&
                 touch.el.trigger("swipe") &&
                 touch.el.trigger("swipe" + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)), touch);
                 touch.x1 = touch.x2 = touch.y1 = touch.y2 = touch.last = 0;

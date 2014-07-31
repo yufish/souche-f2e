@@ -1,51 +1,52 @@
-define(function() {
+define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     var config = {};
-    var myAdviserPageIndex=1 , hotNewCarsPageIndex=1;
+    var myAdviserPageIndex = 1,
+        hotNewCarsPageIndex = 1;
 
     var _bind = function() {
         var timeout = null;
 
-        $(".car-brand,.car-models,.car-price").mouseenter(function (event) {
+        // $(".car-brand,.car-models,.car-price").mouseenter(function(event) {
 
-            event.stopPropagation();
-            var self = this;
-            window.clearTimeout(timeout);
+        //     event.stopPropagation();
+        //     var self = this;
+        //     window.clearTimeout(timeout);
 
-            $(".models-inner,.brand-inner,.price-inner").hide();
-            timeout = window.setTimeout(function () {
-                if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-                    if ($(self).hasClass("car-models")) {
-                        $(".car-price").css("visibility", "hidden");
-                    } else {
-                        $(".car-models,.car-price").css("visibility", "hidden");
-                    }
-                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-                } else {
-                    $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
-                }
-            }, 200);
+        //     $(".models-inner,.brand-inner,.price-inner").hide();
+        //     timeout = window.setTimeout(function() {
+        //         if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
+        //             if ($(self).hasClass("car-models")) {
+        //                 $(".car-price").css("visibility", "hidden");
+        //             } else {
+        //                 $(".car-models,.car-price").css("visibility", "hidden");
+        //             }
+        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
+        //         } else {
+        //             $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", 9999).show(0);
+        //         }
+        //     }, 200);
 
-            return false;
-        });
+        //     return false;
+        // });
 
-        $(".car-brand,.car-models,.car-price").mouseleave(function () {
+        // $(".car-brand,.car-models,.car-price").mouseleave(function() {
 
-            var self = this;
-            window.clearTimeout(timeout);
+        //     var self = this;
+        //     window.clearTimeout(timeout);
 
-            if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
-                if ($(self).hasClass("car-models")) {
-                    $(".car-price").css("visibility", "");
-                } else {
-                    $(".car-models,.car-price").css("visibility", "");
-                }
-                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
-            } else {
-                $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
-            }
-        });
-
-        $(".carItem").live("mouseenter",function (event) {
+        //     if (eval("''+/*@cc_on" + " @_jscript_version@*/-0") * 1 == 5.7) {
+        //         if ($(self).hasClass("car-models")) {
+        //             $(".car-price").css("visibility", "");
+        //         } else {
+        //             $(".car-models,.car-price").css("visibility", "");
+        //         }
+        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(0);
+        //     } else {
+        //         $(self).find(".models-inner,.brand-inner,.price-inner").css("zIndex", -999).hide(100);
+        //     }
+        // });
+        //
+        $(".carItem").live("mouseenter", function(event) {
             event.stopPropagation();
             var self = $(this);
             //console.log(event.target.nodeName);
@@ -56,13 +57,14 @@ define(function() {
             var width = self.find(".carImg img").width();
 
             self.find(".carImg img").stop(true).animate({
+
                 width: width + 9 + "px",
                 height: (182 +6.8) + "px"
             }, 900, function () {
             });
         });
 
-        $(".carItem").live("mouseleave",function (event) {
+        $(".carItem").live("mouseleave", function(event) {
             event.stopPropagation();
             var self = $(this);
 
@@ -70,24 +72,27 @@ define(function() {
             self.find(".carImg img").stop(true).animate({
                 width: width + 1 + "px",
                 height: 182 + "px"
-            }, 1500, function () {
-            });
+            }, 1500, function() {});
         });
 
         var getMore = function () {
 
             $("."+$("#carsNav li.active").attr("id")+".carsMore span").html("正在获取");
 
+
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
-                $.ajax(
-                    {
-                        url: url,
-                        type: "GET",
-                        dataType: "json"
-                    }).done(function (result) {
-                        if (result.code == 204) {
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "json"
+                }).done(function(result) {
+                    if (result.code == 204) {
+                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
+                    } else {
+                        var list = result.recommendCars;
+                        if (!result.hasNext) {
                             $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
                         }
                         else {
@@ -106,13 +111,13 @@ define(function() {
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
                                     "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
                                     "<\/div>";
-                            }
-                            $(".myAdviserContent .myAdviser").eq(0).append(template);
-                            $(".myAdviserContent .myAdviser").eq(1).remove();
+
                         }
-                    });
-            }
-            else {
+                        $(".myAdviserContent .myAdviser").eq(0).append(template);
+                        $(".myAdviserContent .myAdviser").eq(1).remove();
+                    }
+                });
+            } else {
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 hotNewCarsPageIndex++;
                 $.ajax(
@@ -137,22 +142,20 @@ define(function() {
                                     "<\/div>" +
                                     "<div class='carTail clearfix'>" +
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId+ "' carid='" + list[idx].id + "'><input type='checkbox'  "+(list[idx].contrastId?"checked":"") +"><span>加入对比<\/span><\/div>" +
+                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
                                     "<\/div><\/div>";
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
                             $(".hotNewCarsContent .hotNewCars").eq(1).remove();
                         }
-                    });
+                });
             }
         };
         //查看更多
-        $(".carsMore").click(function()
-        {
+        $(".carsMore").click(function() {
             getMore.call(this);
-            $(window).scroll(function()
-            {
-                if($("."+$("#carsNav li.active").attr("id")+".carsMore").length ==0) {
+            $(window).scroll(function() {
+                if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
                     if (($("#footer").offset().top - 50) <= (window.scrollY + window.screen.availHeight)) {
                         getMore.call(this);
                     }
@@ -162,10 +165,15 @@ define(function() {
         //
 
         //head 搜索框
-        require(["souche/realTimeDown"], function (down) {
-            down.init($(".search"), {url: config.search_api, type: "GET",dataType:"json", success: function () {
-                alert(1);
-            }}, 900);
+        require(["souche/realTimeDown"], function(down) {
+            down.init($(".search"), {
+                url: config.search_api,
+                type: "GET",
+                dataType: "json",
+                success: function() {
+                    alert(1);
+                }
+            }, 900);
 
         });
         //
@@ -261,9 +269,16 @@ define(function() {
             $.extend(config, _config);
 
             _bind();
+            carGod.init();
+            topNav.init();
 
+<<<<<<< HEAD
             require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries","index/collect","lib/lazyload","index/carConstrast"],
                 function (qiugou, qiugouModel, customSelect, modelSeries,collect,lazyload,carConstrast) {
+=======
+            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "index/collect", "lib/lazyload"],
+                function(qiugou, qiugouModel, customSelect, modelSeries, collect, lazyload) {
+>>>>>>> 4b874f5eb62e1474926e0d5f76d78e6a9b144a05
 
                     qiugou.init(config);
                     //modelSeriesModel.init(config);
@@ -289,7 +304,7 @@ define(function() {
                         multi: false
                     });
 
-                    $(".down-counter").each(function () {
+                    $(".down-counter").each(function() {
                         var $this = $(this);
                         downCounter($this);
                     });
@@ -300,8 +315,7 @@ define(function() {
 
                     collect.init(config);
 
-                    $(".carsContent img").lazyload({
-                    });
+                    $(".carsContent img").lazyload({});
 
 
                 });

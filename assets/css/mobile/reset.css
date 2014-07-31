@@ -150,8 +150,22 @@ body{
     background-color: #7f7f7f;
     z-index: 1000;
     opacity: 0.6;
+    display: none;
+}
+.wrapTransBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:RGBA(255,255,255,0) ;
+    z-index: 10;
+    display: none
 }
 .wrapper-320 {
     width: 320px;
     margin: 0 auto;
+}
+.hidden{
+    display: none !important;
 }
