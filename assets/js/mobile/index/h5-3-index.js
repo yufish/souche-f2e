@@ -392,7 +392,7 @@ if(typeof document.body.style.transform==='string'){
         })
     }
     filterGlobal.queryCount = queryCount;
-    $('#J_btnAdvance').on(tap_event,function(){
+    $('#J_btnAdvance').on('click',function(){
         $('#J_advanceWrapper').addClass('hidden');
         $('#J_advancedFilterItems').removeClass('hidden')
     })
