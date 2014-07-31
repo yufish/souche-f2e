@@ -31,6 +31,8 @@ define(function() {
                     $(this).find(".cheshen-detail").animate({
                         height: ITEM_DETAIL_HEIGHT
                     }, 400)
+                    $("#qa .show").removeClass("close")
+                    $(this).find(".show").addClass("close")
                     lastExpanItem = nowDetail;
                     lastExpanIndex = nowIndex;
                 }
