@@ -16,7 +16,10 @@ if(typeof document.body.style.transform==='string'){
     transform = 'transform';
     //transition_end='transitionend'
 }
-
+var isAndroid = false;
+if (navigator.userAgent.match(/Android/i)){
+    isAndroid =true;
+}
 //tab动画的相关实现
 !function(){
     var tabCtn = $('#J_tabContainer'),
@@ -45,17 +48,30 @@ if(typeof document.body.style.transform==='string'){
         //history.replaceState({},'','index.html')
     }
 
-    function move(curIndex){
-        var moveIndex =curIndex-1;
-        // use translateZ(0) activate 3d hardware acceleration is possible
-        setTimeout(function(){
-            tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
-            var oldIndex = underline.attr('data-active-index')
-            underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
-            afterMove(oldIndex,curIndex)
-        },0)
-    }
+    var move = function(){
+        if(isAndroid){
+            return function(moveIndex) {
+                var moveIndex = curIndex - 1;
+                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+                var oldIndex = underline.attr('data-active-index')
+                underline.css({left: moveIndex * 100 / numOfPanels + '%'}).attr('data-active-index', curIndex);
+                afterMove(oldIndex, curIndex)
+            }
+        }else{
+            return function(moveIndex) {
+                var moveIndex = curIndex - 1;
+                setTimeout(function () {
+                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+                    var oldIndex = underline.attr('data-active-index')
+                    underline.css({left: moveIndex * 100 / numOfPanels + '%'}).attr('data-active-index', curIndex);
+                    afterMove(oldIndex, curIndex)
+                }, 0)
+            }
+        }
+
+    }()
     //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
+
     var hash = location.hash;
     var match = /tabindex=([1-3])/.exec(hash);
     if(match){
@@ -63,6 +79,7 @@ if(typeof document.body.style.transform==='string'){
     }else{
         move(1);
     }
+
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
         var curIndex = underline.attr('data-active-index');
@@ -400,7 +417,5 @@ if(typeof document.body.style.transform==='string'){
     })
 }();
 
-$(".car-area .look-more").click(function(e){
-    console.log(e.pageY);
-    console.log(e.clientY);
+$(".car-area .look-more").on(tap_event,function(e){
 })
