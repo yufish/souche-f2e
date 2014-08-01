@@ -67,7 +67,7 @@ if(typeof document.body.style.transform==='string'){
         if(curIndex == index)return;
         move(index);
     })
-    /*tabCtn.on('swipeLeft',function(){
+    tabCtn.on('swipeLeft',function(){
         var index = +underline.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
@@ -75,41 +75,66 @@ if(typeof document.body.style.transform==='string'){
         var index = +underline.attr('data-active-index');
         if(index==1) return;
         move(index-1);
-    })*/
-    var isAndroid = false;
-	if (navigator.userAgent.match(/Android/i)){
-		isAndroid =true;
-	}
-	var touch={};
-	tabCtn[0].addEventListener('touchstart',function(e){
-		if(!e.touches|| e.touches.length===0)return;
-		touch.x1 = e.touches[0].pageX;
-		touch.y1 = e.touches[0].pageY;
-	})
-	tabCtn[0].addEventListener('touchmove',function(e){
-		touch.x2 = e.touches[0].pageX;
-		touch.y2 = e.touches[0].pageY;
-		var absX = Math.abs(touch.x1-touch.x2),
-			absY = Math.abs(touch.y1-touch.y2);
-		if(isAndroid && absX>10 && absX>absY){
-			e.preventDefault();
-		}
-	})
-	tabCtn[0].addEventListener('touchend',function(e){
-		var deltaX = touch.x1-touch.x2,
-			deltaY = touch.y1-touch.y2;
-		if(Math.abs(deltaX)<Math.abs(deltaY)) return;
-		if(deltaX>30){
-			var index = +underline.attr('data-active-index');
-			if(index==numOfPanels) return;
-			move(index+1);
-		}
-		if(deltaX<-30){
-			var index = +underline.attr('data-active-index');
-			if(index==1) return;
-			move(index-1);
-		}
-	})
+    })
+
+    window.onerror=function(e){
+        alert(e);
+    }
+//    var isAndroid = false;
+//    var ua = navigator.userAgent.toLowerCase();
+//	if (ua.indexOf('android')!==-1){
+//		isAndroid =true;
+//	}
+//	var touch={};
+//    var isMoving = true;
+//	tabCtn[0].addEventListener('touchstart',function(e){
+//		if(!e.touches|| e.touches.length===0)return;
+//		touch.x1 = e.touches[0].pageX;
+//		touch.y1 = e.touches[0].pageY;
+//        isMoving = true;
+//        tabCtn[0].addEventListener('touchmove',onTouchmove)
+//	})
+//    function onTouchmove(e){
+//            if(!isMoving)return
+//            touch.x2 = e.touches[0].pageX;
+//            touch.y2 = e.touches[0].pageY;
+//            var absX = Math.abs(touch.x1-touch.x2),
+//                absY = Math.abs(touch.y1-touch.y2);
+//            if(isAndroid && absX>10 && absX>absY){
+//                e.preventDefault();
+//            }
+//            if(absX<absY) return;
+//            if(touch.x1-touch.x2>30){
+//                isMoving = false;
+//                tabCtn[0].removeEventListener('touchmove',onTouchmove);
+//                var index = +underline.attr('data-active-index');
+//                if(index==numOfPanels) return;
+//                move(index+1);
+//            }
+//            if(touch.x1-touch.x2<-30){
+//                isMoving = false;
+//                tabCtn[0].removeEventListener('touchmove',onTouchmove);
+//                var index = +underline.attr('data-active-index');
+//                if(index==1) return;
+//                move(index-1);
+//            }
+//    }
+	//tabCtn[0].addEventListener('touchmove',)
+//	tabCtn[0].addEventListener('touchend',function(e){
+//		var deltaX = touch.x1-touch.x2,
+//			deltaY = touch.y1-touch.y2;
+//		if(Math.abs(deltaX)<Math.abs(deltaY)) return;
+//		if(deltaX>30){
+//			var index = +underline.attr('data-active-index');
+//			if(index==numOfPanels) return;
+//			move(index+1);
+//		}
+//		if(deltaX<-30){
+//			var index = +underline.attr('data-active-index');
+//			if(index==1) return;
+//			move(index-1);
+//		}
+//	})
 }()
 
 //点击右上角，相应的抽屉动画
@@ -152,6 +177,7 @@ if(typeof document.body.style.transform==='string'){
 }()
 //筛选相关
 !function(){
+    //用于本模块中公用变量的传递
     var filterGlobal = {};
     var hotBrands_g = {
         "brand-15": "奥迪",
@@ -224,7 +250,7 @@ if(typeof document.body.style.transform==='string'){
                 return '<option value="' + price + '">' + value + '</option>';
             }
         }
-        //init options
+        //init options,exported by filterGlobal
         function initPriceOption(){
             maxSelect.empty();
             minSelect.empty();
@@ -236,7 +262,6 @@ if(typeof document.body.style.transform==='string'){
             maxSelect.append(initOption+makeOption(maxPrice,true));
         }
         initPriceOption();
-
 
         //两个下拉框的联动
         minSelect.change(function(){
@@ -385,7 +410,7 @@ if(typeof document.body.style.transform==='string'){
         })
         //重置和数量显示
         !function() {
-            $('#J_btnFilter_reset').on(tap_event, function () {
+            $('#J_btnFilter_reset').on(tap_event, function (e) {
                 filterGlobal.selectBrand = '';
                 filterGlobal.selectSeries = '';
                 $('.series-content').empty();
@@ -431,3 +456,8 @@ if(typeof document.body.style.transform==='string'){
         $('#J_advancedFilterItems').removeClass('hidden')
     })
 }();
+
+$(".car-area .look-more").click(function(e){
+    console.log(e.pageY);
+    console.log(e.clientY);
+})
