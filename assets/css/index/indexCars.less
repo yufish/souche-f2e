@@ -582,7 +582,7 @@ body *{
       }
       .submit:hover
       {
-       color: #ffffff;
+       background: #fff;
       }
     }
   }
@@ -662,7 +662,7 @@ body *{
             width: 50%;
             height: 25px;
             border: none;
-            margin-top: 5px;
+            margin-top: 3px;
             padding-left: 5%;
             letter-spacing: 0.5px;
           }
@@ -788,7 +788,7 @@ body *{
             cursor: default;
             .sc-select-content {
               padding-left: 10px;
-              padding-top: 8px;
+              padding-top: 6px;
               line-height: 20px;
               color: #333;
               .placeholder {
@@ -880,14 +880,20 @@ body *{
         margin-top: 7px;
         position: absolute;
         color: #6E6E6E;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #CCCCCC;
         cursor: pointer;
         float: right;
-        right: 120px;
+        right: 130px;
+      }
+      .cancel:hover{
+        background: #fff;
       }
       .submit {
         float: right;
@@ -895,13 +901,24 @@ body *{
         position: absolute;
         color: #ffffff;
         right: 30px;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         background-color: #FF5719;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #D94A16;
         cursor: pointer;
+      }
+      .submit:hover{
+        background-color:#ff7744;
+      }
+      .submit.loading{
+        background-color: #fda05b;
+        cursor: default;
+        border: 1px solid #fda05b;
       }
     }
 
@@ -1252,7 +1269,6 @@ body *{
     //width: 98%;
     width: 1020px;
     position: relative;
-    height: 40px;
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
