@@ -18,9 +18,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             var height = self.find(".carImg .img").height();
 
             self.find(".carImg .img").stop(true).animate({
-                width: width + 9 + "px",
-                height: (height + 6.8) + "px"
-            }, 900, function () {
+                top: "-3px",
+                left: "-4px",
+                width: width + 8 + "px",
+                height: (height + 6) + "px"
+            }, 50, function () {
             });
         });
 
@@ -33,8 +35,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
             self.find(".carImg .img").stop(true).animate({
                 width: width + 1 + "px",
-                height: height + "px"
-            }, 1500, function () {
+                height: height + "px",
+                top: "0px",
+                left: "0px"
+            }, 50, function () {
             });
         });
 
