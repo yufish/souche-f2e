@@ -94,22 +94,33 @@ if(typeof document.body.style.transform==='string'){
 		if(isAndroid && absX>10 && absX>absY){
 			e.preventDefault();
 		}
-	})
-	tabCtn[0].addEventListener('touchend',function(e){
-		var deltaX = touch.x1-touch.x2,
-			deltaY = touch.y1-touch.y2;
-		if(Math.abs(deltaX)<Math.abs(deltaY)) return;
-		if(deltaX>30){
+        if(absX<absX) return;
+		if(touch.x1-touch.x2>30){
 			var index = +underline.attr('data-active-index');
 			if(index==numOfPanels) return;
 			move(index+1);
 		}
-		if(deltaX<-30){
+		if(touch.x1-touch.x2<-30){
 			var index = +underline.attr('data-active-index');
 			if(index==1) return;
 			move(index-1);
 		}
 	})
+//	tabCtn[0].addEventListener('touchend',function(e){
+//		var deltaX = touch.x1-touch.x2,
+//			deltaY = touch.y1-touch.y2;
+//		if(Math.abs(deltaX)<Math.abs(deltaY)) return;
+//		if(deltaX>30){
+//			var index = +underline.attr('data-active-index');
+//			if(index==numOfPanels) return;
+//			move(index+1);
+//		}
+//		if(deltaX<-30){
+//			var index = +underline.attr('data-active-index');
+//			if(index==1) return;
+//			move(index-1);
+//		}
+//	})
 }()
 
 //点击右上角，相应的抽屉动画
@@ -152,6 +163,7 @@ if(typeof document.body.style.transform==='string'){
 }()
 //筛选相关
 !function(){
+    //用于本模块中公用变量的传递
     var filterGlobal = {};
     var hotBrands_g = {
         "brand-15": "奥迪",
@@ -224,7 +236,7 @@ if(typeof document.body.style.transform==='string'){
                 return '<option value="' + price + '">' + value + '</option>';
             }
         }
-        //init options
+        //init options,exported by filterGlobal
         function initPriceOption(){
             maxSelect.empty();
             minSelect.empty();
@@ -236,7 +248,6 @@ if(typeof document.body.style.transform==='string'){
             maxSelect.append(initOption+makeOption(maxPrice,true));
         }
         initPriceOption();
-
 
         //两个下拉框的联动
         minSelect.change(function(){
