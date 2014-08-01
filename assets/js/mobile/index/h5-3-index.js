@@ -118,7 +118,7 @@ if(typeof document.body.style.transform==='string'){
                 move(index-1);
             }
     }
-	tabCtn[0].addEventListener('touchmove',)
+	//tabCtn[0].addEventListener('touchmove',)
 //	tabCtn[0].addEventListener('touchend',function(e){
 //		var deltaX = touch.x1-touch.x2,
 //			deltaY = touch.y1-touch.y2;
