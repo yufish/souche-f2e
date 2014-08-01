@@ -439,7 +439,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
         if ($(".carsContent." + tabID + "Content").height() < 500) {
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
-            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "480px");
+            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "490px");
         } else {
             $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
