@@ -50,12 +50,10 @@ if(typeof document.body.style.transform==='string'){
         // use translateZ(0) activate 3d hardware acceleration is possible
         setTimeout(function(){
             tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
+            var oldIndex = underline.attr('data-active-index')
+            underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
+            afterMove(oldIndex,curIndex)
         },0)
-
-        //tabCtn.animate({'margin-left':-moveIndex*100+'%'})
-        var oldIndex = underline.attr('data-active-index')
-        underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
-        afterMove(oldIndex,curIndex)
     }
     //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
     var hash = location.hash;
@@ -370,7 +368,6 @@ if(typeof document.body.style.transform==='string'){
             $('.select-cond').change(function(){
                 filterGlobal.queryCount();
             })
-
         }();
 
     }()
