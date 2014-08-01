@@ -15,10 +15,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             }
 
             var width = self.find(".carImg .img").width();
+            var height = self.find(".carImg .img").height();
 
             self.find(".carImg .img").stop(true).animate({
                 width: width + 9 + "px",
-                height: (182 + 6.8) + "px"
+                height: (height + 6.8) + "px"
             }, 900, function () {
             });
         });
@@ -28,9 +29,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             var self = $(this);
 
             var width = self.find(".carImg").width();
+            var height = self.find(".carImg").height();
+
             self.find(".carImg .img").stop(true).animate({
                 width: width + 1 + "px",
-                height: 182 + "px"
+                height: height + "px"
             }, 1500, function () {
             });
         });
@@ -113,7 +116,6 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         $(".carsMore").click(function () {
             getMore.call(this);
             $(window).scroll(function () {
-
                 if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
                     if (($("#footer").offset().top - 200) <= (window.scrollY + window.screen.availHeight)) {
                         if (isScrolling) {
@@ -121,7 +123,6 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                             getMore.call(this);
                         }
                     }
-
                 }
             });
         });

@@ -448,6 +448,10 @@
 .sidebar-active .sidebar-nav .sellside.active a .icon {
   background-position: -40px -20px;
 }
+.sidebar-active .sidebar-nav .suggestside:hover a .icon,
+.sidebar-active .sidebar-nav .suggestside.active a .icon {
+  background-position: -80px -20px;
+}
 .sidebar-active .sidebar-nav .scanside a .icon {
   background: url(../images/index/scan-hover.png?1);
 }
