@@ -275,8 +275,27 @@ border-radius: 50%;
 .main-slider .flex-control-nav .flex-active {
 background-color: #e70;
 }
-.main-slider .flex-direction-nav
-
+.main-slider .flex-direction-nav a{
+width: 40px;
+height: 40px;
+margin: -20px 0 0;
+display: block;
+background: url(../images/index/index_sprite_v2.png) no-repeat 0 0;
+position: absolute;
+top: 50%;
+opacity: 1;
+cursor: pointer;
+text-indent: -9999px;
+-webkit-transition: all .3s ease;
+}
+.main-slider .flex-direction-nav .flex-prev{
+  background-position: -150px 0;
+  left: 0px;
+}
+.main-slider .flex-direction-nav .flex-next{
+  background-position: -200px 0;
+  right: 0px;
+}
 .realIndexTimeDown {
   position: absolute;
   top: 0px;
