@@ -71,12 +71,10 @@ if(typeof document.body.style.transform==='string'){
         var index = +underline.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
-        alert('fuck');
     }).on('swipeRight',function(){
         var index = +underline.attr('data-active-index');
         if(index==1) return;
         move(index-1);
-        alert('fuck');
     })
 
     window.onerror=function(e){
