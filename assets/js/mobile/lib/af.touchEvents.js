@@ -54,8 +54,8 @@
             if (!e.touches || e.touches.length === 0) return;
             touch.el = $(parentIfText(e.touches[0].target));
             touchTimeout && clearTimeout(touchTimeout);
-            touch.x1 = e.touches[0].pageX;
-            touch.y1 = e.touches[0].pageY;
+            touch.x1 = e.touches[0].clientX;
+            touch.y1 = e.touches[0].clientY;
             touch.x2 = touch.y2 = 0;
             if (delta > 0 && delta <= 250)
                 touch.isDoubleTap = true;
@@ -65,8 +65,8 @@
         }).bind("touchmove", function(e) {
             if(e.originalEvent)
                 e = e.originalEvent;
-            touch.x2 = e.touches[0].pageX;
-            touch.y2 = e.touches[0].pageY;
+            touch.x2 = e.touches[0].clientX;
+            touch.y2 = e.touches[0].clientY;
             //(2)
             var absX = Math.abs(touch.x1 - touch.x2),
                 absY = Math.abs(touch.y1 - touch.y2)
