@@ -112,7 +112,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 fade: true
             };
 
-            $(".dialogContent .submit").html("提交中...").addClass("loading");
+            $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
 
             require(["index/qiugouModel"], function(qiugouModel) {
 
@@ -177,13 +177,17 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                 $.ajax({
                     url: url,
-                    dataType: "json"
-                }).done(function() {
-                    // hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                    // window.setTimeout(function() {
-                    //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                    // }, 1000);
-                    window.location.reload();
+                    dataType: "json",
+                    success: function() {
+                        // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                        // window.setTimeout(function() {
+                        //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                        // }, 1000);
+                        window.location.reload();
+                    },
+                    error: function() {
+                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", "false");
+                    }
                 });
             });
             return false;
