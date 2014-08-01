@@ -6,7 +6,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     var _bind = function () {
         var timeout = null;
 
-        $(".carItem").live("mouseenter", function (event) {
+       /* $(".carItem").live("mouseenter", function (event) {
             event.stopPropagation();
             var self = $(this);
             //console.log(event.target.nodeName);
@@ -40,7 +40,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 left: "0px"
             }, 50, function () {
             });
-        });
+        });*/
 
         var getMore = function () {
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
