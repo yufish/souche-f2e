@@ -6,7 +6,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     var _bind = function () {
         var timeout = null;
 
-        $(".carItem").live("mouseenter", function (event) {
+       /* $(".carItem").live("mouseenter", function (event) {
             event.stopPropagation();
             var self = $(this);
             //console.log(event.target.nodeName);
@@ -18,9 +18,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             var height = self.find(".carImg .img").height();
 
             self.find(".carImg .img").stop(true).animate({
-                width: width + 9 + "px",
-                height: (height + 6.8) + "px"
-            }, 900, function () {
+                top: "-3px",
+                left: "-4px",
+                width: width + 8 + "px",
+                height: (height + 6) + "px"
+            }, 50, function () {
             });
         });
 
@@ -33,10 +35,12 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
             self.find(".carImg .img").stop(true).animate({
                 width: width + 1 + "px",
-                height: height + "px"
-            }, 1500, function () {
+                height: height + "px",
+                top: "0px",
+                left: "0px"
+            }, 50, function () {
             });
-        });
+        });*/
 
         var getMore = function () {
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
@@ -95,8 +99,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                 template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO||{}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
-                                    "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
-                                    "<div class='downCounter " + (list[idx].flashPurchase ? "" : "hidden") + "'><span>剩余时间<\/span><\/div>" +
+                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
                                     "<\/div>" +
                                     "<div class='carTail clearfix'>" +
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
