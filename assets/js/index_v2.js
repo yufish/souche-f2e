@@ -99,8 +99,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                 template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO||{}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
-                                    "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
-                                    "<div class='downCounter " + (list[idx].flashPurchase ? "" : "hidden") + "'><span>剩余时间<\/span><\/div>" +
+                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
                                     "<\/div>" +
                                     "<div class='carTail clearfix'>" +
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
