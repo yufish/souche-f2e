@@ -110,7 +110,6 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 fade: true
             };
 
-            $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
 
             require(["index/qiugouModel"], function(qiugouModel) {
 
@@ -172,6 +171,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select_high").val() || "");
                 url += "&brands=" + brand.join();
                 url += "&series=" + series.join();
+                $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
 
                 $.ajax({
                     url: url,
@@ -245,9 +245,13 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             $(this).addClass("active");
             var id = $(this).attr("id");
             tabID = id;
-
+            $(window).trigger("tab_change", id)
             if (id === "myAdviser") {
                 initAnimate();
+            } else if (id == "hotNewCars") {
+                $(".hotNewCars img").each(function(i, img) {
+                    $(img).attr("src", $(img).attr("data-original"));
+                })
             }
             $(".carsContent").addClass("hidden");
             $(".carsContent." + tabID + "Content").removeClass("hidden");
