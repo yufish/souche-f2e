@@ -36,9 +36,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         });
 
         var getMore = function () {
-
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
-
 
             if ($(this).hasClass("myAdviser")) {
                 myAdviserPageIndex;
@@ -53,16 +51,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     } else {
                         var list = result.recommendCars;
                         if (!result.hasNext) {
-                            $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
-                        }
-                        else {
+                            $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser").remove();
                             var list = result.recommendCars.items;
-                            if (!result.hasNext) {
-                                $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
-                            }
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
-                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO||{}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
                                     "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
@@ -71,12 +64,13 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
                                     "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
                                     "<\/div>";
-
                             }
                             $(".myAdviserContent .myAdviser").eq(0).append(template);
                             $(".myAdviserContent .myAdviser").eq(1).remove();
+
                         }
                     }
+                    isScrolling = true;
                 });
             } else {
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
@@ -95,7 +89,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
-                                template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + list[idx].carPicturesVO.pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO||{}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
                                     "<div class='discount " + (list[idx].flashPurchase ? "" : "hidden") + "'>优惠：<span>" + (list[idx].flashPurchaseVO ? list[idx].flashPurchaseVO.totalMasterOutPrice : "") + "<\/span><\/div>" +
@@ -104,24 +98,30 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                     "<div class='carTail clearfix'>" +
                                     "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
                                     "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
-                                    "<\/div><\/div>";
+                                    "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
                             $(".hotNewCarsContent .hotNewCars").eq(1).remove();
                         }
+                        isScrolling=true;
                     });
-
             }
         }
 
+        var isScrolling = true;
         //查看更多
         $(".carsMore").click(function () {
             getMore.call(this);
             $(window).scroll(function () {
+
                 if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
-                    if (($("#footer").offset().top - 50) <= (window.scrollY + window.screen.availHeight)) {
-                        getMore.call(this);
+                    if (($("#footer").offset().top - 200) <= (window.scrollY + window.screen.availHeight)) {
+                        if (isScrolling) {
+                            isScrolling = false;
+                            getMore.call(this);
+                        }
                     }
+
                 }
             });
         });

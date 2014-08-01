@@ -111,7 +111,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 fade: true
             };
 
-            $(".dialogContent .submit span").html("提交中");
+            $(".dialogContent .submit").html("提交中");
 
             require(["index/qiugouModel"], function (qiugouModel) {
 
@@ -121,7 +121,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 var regx= new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
                 if(regx.test(minBudget)&&regx.test(maxBudget))
                 {
-                    if(minBudget>maxBudget)
+                    if(parseInt(minBudget)>parseInt(maxBudget))
                     {
                         $("." + tabID + " .warning").html("预算输入有错误").removeClass("hidden");
                         window.setTimeout(function()
@@ -131,12 +131,14 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                         return false;
                     }
                 }else {
-                    return false;
+                    if(minBudget!=""&&maxBudget!="") {
+                        return false;
+                    }
                 }
 
                 qiugouModel.ModifyAdviserBudget({
-                    min: minBudget * 10000,
-                    max: maxBudget * 10000
+                    min: parseInt(minBudget) * 10000,
+                    max: parseInt(maxBudget) * 10000
                 });
 
                 var minYear = $("." + tabID + " .caryear .dataContainer input#age_select").val();

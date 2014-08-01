@@ -104,8 +104,9 @@
                 deltaX += Math.abs(touch.x1 - touch.x2)
                 deltaY += Math.abs(touch.y1 - touch.y2)
                 //② added
-                if(isAndroid && Math.abs(touch.x1 - touch.x2) > 10)
+                if(isAndroid && deltaX > 10 && deltaX>deltaY){
                     e.preventDefault()
+                }
             })
             .on('touchend MSPointerUp pointerup', function(e){
                 if((_isPointerType = isPointerEventType(e, 'up')) &&
@@ -126,7 +127,7 @@
                 else if ('last' in touch)
                 // don't fire tap when delta position changed by more than 30 pixels,
                 // for instance when moving to a point and back to origin
-                    if (deltaX < 60 && deltaY < 60) {
+                    if (deltaX < 30 && deltaY < 30) {
                         // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
                         // ('tap' fires before 'scroll')
                         tapTimeout = setTimeout(function() {

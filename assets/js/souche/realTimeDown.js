@@ -29,9 +29,10 @@ define(function() {
 
         var downList = "<div class='realIndexTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
+            list[index].url = config.api_matchUrl+"?carSeries="+list[index].code+"&pfrom=boxsearch";
             downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
-
         }
+
         downList+="<\/div>";
         var top=$(".search").offset().top+$(".search").height();
         var width = $(".search").offset().left;
@@ -49,7 +50,7 @@ define(function() {
         $("body").append(element);
     }
 
-    var init = function ($element, option,downHeight) {
+    var init = function ($element, option,downHeight,config) {
         downWidth = $element.width();
         maxDownHeight = downHeight;
         top = $element.offset().top + $element.height();

@@ -103,7 +103,7 @@ define(function() {
                 }
                 else if (data.result == -1) {  // 已经添加
                     this.checked = true;
-                    var waring = $(this).parent().parent().find(".contrast-waring");
+                    var waring = $(this).parent().parent().parent().find(".contrast-waring");
                     waring.html("已经加入对比").removeClass("hidden");
                     $(this).parent().find("input")[0].checked = true;
                     window.setTimeout(function () {
@@ -115,7 +115,7 @@ define(function() {
                 }
                 else if (data.result == 1) //已满
                 {
-                    var waring = $(this).parent().parent().find(".contrast-waring");
+                    var waring = $(this).parent().parent().parent().find(".contrast-waring");
                     waring.html("对比项已满").removeClass("hidden");
                     $(this).parent().find("input")[0].checked = false;
                     window.setTimeout(function () {
