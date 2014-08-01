@@ -12,8 +12,10 @@ define(function() {
                     .addClass("hidden");
                 var itemWidth = $(item).width();
                 var itemHeight = $(item).height();
+                var innerWidth = inner.width();
                 $(item).attr("data-width", itemWidth);
                 $(item).attr("data-height", itemHeight);
+                $(item).attr("data-innerWidth", innerWidth);
             });
             var isIns = {
 
@@ -37,7 +39,7 @@ define(function() {
                         height: itemHeight,
                         opacity: 1
                     }).animate({
-                        width: 598,
+                        width: $(self).attr("data-innerWidth"),
                         height: innerHeight,
                         opacity: 1
                     }, 400)
