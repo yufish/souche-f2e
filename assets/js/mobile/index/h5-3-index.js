@@ -412,7 +412,7 @@ if(typeof document.body.style.transform==='string'){
         })
         //重置和数量显示
         !function() {
-            $('#J_btnFilter_reset').on(tap_event, function () {
+            $('#J_btnFilter_reset').on(tap_event, function (e) {
                 filterGlobal.selectBrand = '';
                 filterGlobal.selectSeries = '';
                 $('.series-content').empty();
@@ -458,3 +458,8 @@ if(typeof document.body.style.transform==='string'){
         $('#J_advancedFilterItems').removeClass('hidden')
     })
 }();
+
+$(".car-area .look-more").click(function(e){
+    console.log(e.pageY);
+    console.log(e.clientY);
+})
