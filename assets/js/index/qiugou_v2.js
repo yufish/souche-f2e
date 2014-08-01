@@ -91,20 +91,18 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
             return false;
         });
-        ///
         ///开始选车 begin
         $(".operationItem .dataContainer .submit,.bindunLoginInfo .modify .submit").click(function() {
             var option = {
                 horizontal: true,
                 fade: true
             };
-
             $("." + tabID).find(".dialogContentContainer").css("zIndex", 999).css("background");
             showDialogContent($("." + tabID).find(".dialogContent"), option);
-
+            $(".dialogContentContainer .low-price").val($(".operationItem .low-price").val());
+            $(".dialogContentContainer .high-price").val($(".operationItem .high-price").val());
             return false;
         });
-        ///
         /// 关闭选车 确定 begin
         $(".dialogContent .submit").click(function() {
             var option = {
