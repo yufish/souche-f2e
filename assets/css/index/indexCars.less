@@ -415,33 +415,6 @@ body *{
 
       }
     }
-    .carlike{
-      margin-top: 12px;
-      padding-top: 8px !important;
-      height: 31px;
-      .collect{
-        float: right;
-        margin-top: 5px;
-      }
-      .nolike{
-        float: left;
-        width: 50px;
-        height: 21px;
-        border: 1px solid #ededed;
-        border-radius: 2px;
-        background: #fff;
-        color: #999;
-        text-align: center;
-        line-height: 21px;
-        font-size: 12px;
-        cursor: pointer;
-      }
-      .nolike:hover{
-        background: #F2F2F2;
-        border: 1px solid #E1E1E1;
-
-      }
-    }
   }
   .infoItem {
     position: relative;
@@ -1386,6 +1359,142 @@ body *{
         top: 50%;
         margin-left: 53%;
       }
+    }
+  }
+}
+//猜你喜欢
+.guess-like{
+   width: 1220px;
+   margin: 0 auto;
+   padding-top: 20px;
+  .title{
+    em{
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    span{
+      color: #999;
+      font-size: 12px;
+    }
+  }
+  .car-youlike{
+    margin-top: 12px;
+    width: 228px;
+    margin-right: 13px;
+    float: left;
+    border: 1px solid #EDEDED;
+    .carImg {
+    position: relative;
+    width: 100%;
+    height: 182px;
+    overflow: hidden;
+    display: block;
+    }
+    .car-link {
+    font-size: 14px;
+    margin: 12px 16px 0px 16px;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    color: #333;
+    }
+    .car-link:hover {
+    color: #ff571a;
+    }
+    .info {
+    margin: 5px 16px 0px 16px;
+    position: relative;
+      .price {
+      color: #FF4400;
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 25px;
+      }
+      .shangpai {
+      font-size: 12px;
+      position: absolute;
+      right: 0px;
+      color: #8C8C8C;
+      line-height: 18px;
+      }
+    }
+    .collect {
+      padding-left: 20px;
+      color: #999;
+      background: url(../images/index/index_sprite_v2.png) no-repeat center;
+      background-position: -10px -40px;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 15px;
+      float: right;
+      margin-top: 5px;
+      display: block;
+      a {
+        color: #999;
+      }
+    }
+    .collect:hover {
+      background-position: -10px -60px;
+    }
+    .collect.active {
+      background-position: -10px -80px;
+    }
+    .carTail {
+    width: 206px;
+    height: 31px;
+    padding-top: 7px;
+    border-top: 1px solid #EEEEEE;
+    margin: 0 auto;
+    }
+    .nolike{
+      float: left;
+      width: 50px;
+      height: 21px;
+      border: 1px solid #ededed;
+      border-radius: 2px;
+      background: #fff;
+      color: #999;
+      text-align: center;
+      line-height: 21px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .nolike:hover{
+      background: #F2F2F2;
+      border: 1px solid #E1E1E1;
+
+    }
+  }
+}
+@media screen and (min-width: 1400px){
+  .guess-like{
+    width: 1280px;
+    margin: 0 auto;
+    .car-youlike{
+      width: 240px;
+      margin: 18px 12px 0px 0px;
+      .carImg {
+        width:240px ;
+        height: 160px;
+      }
+    }
+  }
+}
+@media screen  and (max-width: 1024px){
+  .guess-like{
+    width: 972px;
+    margin: 0 auto;
+    height: 3200px;
+    overflow: hidden;
+    .car-youlike{
+      width: 228px;
+      margin-right: 12px;
+      margin-top: 19px;
+      .carImg{
+        height: 152px;
+      } 
     }
   }
 }
