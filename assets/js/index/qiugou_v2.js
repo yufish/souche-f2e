@@ -179,8 +179,8 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 var url = config.submit_api;
                 url += "?minPrice=" + $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
                 url += "&maxPrice=" + $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
-                url += "&minYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select").val() || "");
-                url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select_high").val() || "");
+                url += "&minYear=" + ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "");
+                url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "");
                 url += "&brands=" + brand.join();
                 url += "&series=" + series.join();
 
