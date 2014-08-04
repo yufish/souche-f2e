@@ -55,7 +55,6 @@ body *{
   .carsContent {
     .carsItem {
       width: 228px;
-      height: 355px;
       margin-top:19px;
       margin-right: 13px;
       float: left;
@@ -301,21 +300,20 @@ body *{
     }
    .car-link {
       font-size: 14px;
-      margin: 15px 20px 0px 20px;
+      margin: 12px 16px 0px 16px;
       height: 40px;
       overflow: hidden;
       display: block;
+      color: #333;
     }
     .car-link:hover{
-      color: #F44B0B;
+      color: #ff571a;
     }
     .info {
-      margin: 7px 20px 0px 20px;
-      padding-bottom: 5px;
-
+      margin: 5px 16px 0px 16px;
       position: relative;
       .price {
-        color: #ff571a;
+        color: #FF4400;
         font-weight: bold;
         font-size: 14px;
         margin-right: 25px;
@@ -325,13 +323,14 @@ body *{
         position: absolute;
         right: 0px;
         color: #8C8C8C;
+        line-height: 18px;
       }
     }
-    .other {
-      margin: 7px 20px 0px 20px;
-      font-size: 12px;
 
-      padding-bottom: 10px;
+    .other {
+      margin: 7px 16px 0px 16px;
+      font-size: 12px;
+      padding-bottom: 12px;
       .discount {
         color: #FF571A;
       }
@@ -339,7 +338,6 @@ body *{
 
       }
       .recommended {
-        margin-top: 5px;
         font-size: 14px;
         color: #999;
         line-height: 20px;
@@ -348,41 +346,36 @@ body *{
       }
     }
     .carTail {
-      bottom: 10px;
-      left: 15px;
-      width: 85%;
-      position: absolute;
+      width: 206px;
+      height: 26px;
+      padding-top: 12px;
       border-top: 1px solid #EEEEEE;
-      padding-top: 10px;
+      margin:0 auto;
       .collect {
-        padding-left: 15px;
+        padding-left: 20px;
         position: relative;
         color: #999;
-        background: url(../images/index/car-nocollect.png) no-repeat;
-        background-position: -4px -2px;
+        background: url(../images/index/index_sprite_v2.png) no-repeat center;
+        background-position: -10px -40px;
         cursor: pointer;
         font-size: 12px;
+        line-height: 15px;
         a {
           color: #999;
         }
         float: left;
       }
       .collect:hover {
-        background: url(../images/index/hover.png) no-repeat;
-        background-position: 0px 2px;
-        cursor: pointer;
+        background-position: -10px -60px;
       }
       .collect.active {
-        background: url(../images/index/active.png) no-repeat;
-        background-position: 0px 2px;
-        cursor: pointer;
+        background-position: -10px -80px;
       }
       .recommendedToday {
         font-size: 12px;
         display: block;
         float: right;
         color: #999;
-
       }
       .carConstrast {
         padding: 2px;
@@ -421,6 +414,33 @@ body *{
           padding: 10px;
           font-size: 13px;
         }
+
+      }
+    }
+    .carlike{
+      margin-top: 12px;
+      padding-top: 8px !important;
+      height: 31px;
+      .collect{
+        float: right;
+        margin-top: 5px;
+      }
+      .nolike{
+        float: left;
+        width: 50px;
+        height: 21px;
+        border: 1px solid #ededed;
+        border-radius: 2px;
+        background: #fff;
+        color: #999;
+        text-align: center;
+        line-height: 21px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .nolike:hover{
+        background: #F2F2F2;
+        border: 1px solid #E1E1E1;
 
       }
     }
@@ -1214,7 +1234,6 @@ body *{
       //width: 30.3% ;
       //*width: 30.03% ;
       width: 228px;
-      height: 355px;
       margin-right: 17px;
       margin-top: 19px;
       float: left;
@@ -1315,7 +1334,6 @@ body *{
     .carsItem {
       //width: 22.9%;
       width: 240px;
-      height: 350px;
       //margin: 2% 1.9% 0px 0px;
       //*margin: 2% 1.519% 0px 0px;
       margin: 18px 18px 0px 0px;
