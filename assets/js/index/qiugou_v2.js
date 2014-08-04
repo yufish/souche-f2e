@@ -425,8 +425,11 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
         var widthBegin = $(".carsItem").eq(0).width();
         var widthEnd = $("#carsNav").width();
         var heightEnd = $element.height();
+        if ($(window).width() < 1024) {
+            widthEnd = 981
+        }
         $element.removeClass("hidden");
-
+        $(".dialogContentContainer").css("width", widthEnd)
         if (option.horizontal) {
             $element.css("overflow", "hidden").css("width", widthBegin);
 
@@ -438,6 +441,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 $element.css("overflow", "");
             });
         } else {
+
             $element.css("width", widthEnd);
             offsetMove($element, option, 0, 500);
         }
@@ -447,7 +451,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
             $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
         } else {
-            $(".carsContent." + tabID + "Content").css("overflow", "auto");
+            // $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
     }
 
@@ -469,7 +473,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
             $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "490px");
         } else {
-            $(".carsContent." + tabID + "Content").css("overflow", "auto");
+            // $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
 
         $element.find(".brandList ul li").eq(0).find("a").click();
@@ -509,9 +513,9 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
         }
 
         var tabID = $("#carsNav ul li.active").attr("id");
-        $(".carsContent." + tabID + "Content").css({
-            "overflow": "auto"
-        });
+        // $(".carsContent." + tabID + "Content").css({
+        //     "overflow": "auto"
+        // });
         $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "");
     }
 
@@ -523,7 +527,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 function() {
                     if (callback)
                         callback();
-                    $element.css("width", $("#carsNav").width());
+                    // $element.css("width", $("#carsNav").width());
                 });
         } else {
             $element.stop(true).animate({
@@ -531,7 +535,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             }, time, function() {
                 if (callback)
                     callback();
-                $element.css("width", $("#carsNav").width());
+                // $element.css("width", $("#carsNav").width());
             });
         }
     }
