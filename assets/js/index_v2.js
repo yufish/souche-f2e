@@ -268,7 +268,14 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                         var $this = $(this);
                         downCounter($this);
                     });
-
+                    setInterval(function() {
+                        $(".low-price").each(function(i, p) {
+                            $(p).val($(p).val().replace(/[^0-9]/, ""))
+                        })
+                        $(".high-price").each(function(i, p) {
+                            $(p).val($(p).val().replace(/[^0-9]/, ""))
+                        })
+                    }, 200)
 
                     collect.init(config);
 
