@@ -45,7 +45,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         var getMore = function() {
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
 
-            if ($(this).hasClass("myAdviser")) {
+            if ($(this).hasClass("myAdviser-more")) {
                 myAdviserPageIndex;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
                 $.ajax({
@@ -54,11 +54,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     dataType: "json"
                 }).done(function(result) {
                     if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser").remove();
+                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
                     } else {
                         var list = result.recommendCars;
                         if (!result.hasNext) {
-                            $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser").remove();
+                            $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
                             var list = result.recommendCars.items;
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
@@ -73,7 +73,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                     "<\/div>";
                             }
                             $(".myAdviserContent .myAdviser").eq(0).append(template);
-                            $(".myAdviserContent .myAdviser").eq(1).remove();
+                            $(".myAdviserContent .myAdviser-more").remove();
 
                         }
                     }
@@ -88,7 +88,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     dataType: "json"
                 }).done(function(result) {
                     if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars").remove();
+                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars-more").remove();
                     } else {
                         var list = result.newCars.items;
 
@@ -105,7 +105,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                 "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
                         }
                         $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                        $(".hotNewCarsContent .hotNewCars").eq(1).remove();
+                        $(".hotNewCarsContent .hotNewCars-more").remove();
                     }
                     isScrolling = true;
                 });

@@ -16,7 +16,12 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 $(".brandList a").removeClass("active");
                 $(this).addClass("active");
                 var code = $(this).attr("code");
-                var name = $(this).html();
+                var name;
+                if ($(this).attr("data-name")) {
+                    name = $(this).attr("data-name")
+                } else {
+                    name = $(this).html()
+                }
                 require(["index/modelSeries"], function(modelSeries) {
                     modelSeries.GetSeries(code, name);
                 });
@@ -26,9 +31,11 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                     var seriesCode = $(this).attr("code");
 
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
-                    if ($(this).parent().hasClass("chexiTitle")) {
-                        name = name.substr(0, name.length - 4);
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
                     }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
@@ -42,7 +49,12 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 } else {
                     $(this).removeClass("active");
                     var seriesCode = $(this).attr("code");
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
+                    }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
                     require(["index/qiugouModel"], function(qiugouModel) {
@@ -171,22 +183,27 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select_high").val() || "");
                 url += "&brands=" + brand.join();
                 url += "&series=" + series.join();
-                $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
 
-                $.ajax({
-                    url: url,
-                    dataType: "json",
-                    success: function() {
-                        // hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                        // window.setTimeout(function() {
-                        //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                        // }, 1000);
-                        window.location.reload();
-                    },
-                    error: function() {
-                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", "false");
-                    }
-                });
+                Souche.NoRegLogin.checkLogin(function() {
+                    $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
+                    $.ajax({
+                        url: url,
+                        dataType: "json",
+                        success: function() {
+                            // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                            // window.setTimeout(function() {
+                            //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                            // }, 1000);
+                            window.location.reload();
+                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                        },
+                        error: function() {
+                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                        }
+                    });
+                })
+
+
             });
             return false;
         });
@@ -198,31 +215,31 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
         /// body click 去掉dialog 显示
         var rollbackOpertion = function(event) {
-            var dialogContentElement = "." + tabID + " .dialogContent";
-            var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
-            if (!$(dialogContentElement).hasClass("hidden")) {
-                var option = {
-                    horizontal: true,
-                    fade: true
-                };
-                hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                window.setTimeout(function() {
-                    $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                }, 1000);
-            } else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
-                var option = {
-                    vertical: true,
-                    fade: false
-                };
+                var dialogContentElement = "." + tabID + " .dialogContent";
+                var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
+                if (!$(dialogContentElement).hasClass("hidden")) {
+                    var option = {
+                        horizontal: true,
+                        fade: true
+                    };
+                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                    window.setTimeout(function() {
+                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                    }, 1000);
+                } else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
+                    var option = {
+                        vertical: true,
+                        fade: false
+                    };
 
-                hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
-                window.setTimeout(function() {
-                    showDialogContent($("." + tabID).find(".dialogContent"), option);
-                }, 500);
-                qiugouModel.Rollback();
+                    hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
+                    window.setTimeout(function() {
+                        showDialogContent($("." + tabID).find(".dialogContent"), option);
+                    }, 500);
+                    qiugouModel.Rollback();
+                }
             }
-        }
-        ///打开添加兴趣车dialog
+            ///打开添加兴趣车dialog
         $(".addCarinstrestItem").live("click", function(event) {
             event.preventDefault();
             var option = {
@@ -352,10 +369,10 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             });
 
             qiugouModel.AddSubscribe("budget", function() {
-                if ( !! this.minBudget)
+                if (!!this.minBudget)
                     $(".carBudget .dataContainer .leftContainer input").val(parseInt(this.minBudget) / 10000);
 
-                if ( !! this.maxBudget)
+                if (!!this.maxBudget)
                     $(".carBudget .dataContainer .rightContainer input").val(parseInt(this.maxBudget) / 10000);
 
                 if (this.minBudget || this.maxBudget) {
