@@ -57,7 +57,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                         $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
                     } else {
                         var list = result.recommendCars;
-                        if (!result.hasNext) {
+                        if (result.hasNext) {
                             $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
                             var list = result.recommendCars.items;
                             var template = "";
@@ -74,8 +74,9 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                             }
                             $(".myAdviserContent .myAdviser").eq(0).append(template);
                             $(".myAdviserContent .myAdviser-more").remove();
-
                         }
+
+
                     }
                     isScrolling = true;
                 });
