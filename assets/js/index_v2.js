@@ -48,7 +48,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             if ($(this).hasClass("myAdviser-more")) {
                 myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
-                $(self).find("span").html("正在加载中。。。")
+                $(self).find("span").html("正在加载中...")
                 $.ajax({
                     url: url,
                     type: "GET",
@@ -85,7 +85,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             } else {
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 hotNewCarsPageIndex++;
-                $(self).find("span").html("正在加载中。。。")
+                $(self).find("span").html("正在加载中...")
                 $.ajax({
                     url: url,
                     type: "GET",
