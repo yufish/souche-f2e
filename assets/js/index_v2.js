@@ -254,12 +254,12 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                         placeholder: "请选择",
                         multi: false
                     });
-                    var ageSelect = new customSelect("age_select1", {
+                    var ageSelect = new customSelect("age_select_1", {
                         placeholder: "请选择",
                         multi: false
                     });
 
-                    var ageSelect = new customSelect("age_select_high1", {
+                    var ageSelect = new customSelect("age_select_high_1", {
                         placeholder: "请选择",
                         multi: false
                     });

@@ -111,8 +111,13 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
             };
             $("." + tabID).find(".dialogContentContainer").css("zIndex", 999).css("background");
             showDialogContent($("." + tabID).find(".dialogContent"), option);
-            $(".dialogContentContainer .low-price").val($(".operationItem .low-price").val());
-            $(".dialogContentContainer .high-price").val($(".operationItem .high-price").val());
+            if ($("." + tabID + " .operationItem .low-price").val()) {
+                $("." + tabID + " .dialogContentContainer .low-price").val($("." + tabID + " .operationItem .low-price").val());
+            }
+            if ($("." + tabID + " .operationItem .high-price").val()) {
+                $("." + tabID + " .dialogContentContainer .high-price").val($("." + tabID + " .operationItem .high-price").val());
+            }
+
             return false;
         });
         /// 关闭选车 确定 begin
@@ -148,8 +153,8 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                     max: parseInt(maxBudget) * 10000
                 });
 
-                var minYear = $("." + tabID + " .caryear .dataContainer input#age_select").val();
-                var maxYear = $("." + tabID + " .caryear .dataContainer input#age_select_high").val();
+                var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
+                var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
                 if (minYear > maxYear) {
                     $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
                     window.setTimeout(function() {
@@ -159,8 +164,8 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 }
 
                 qiugouModel.ModifyAdviserYear({
-                    min: $("." + tabID + " .caryear .dataContainer input#age_select").val(),
-                    max: $("." + tabID + " .caryear .dataContainer input#age_select_high").val()
+                    min: $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val(),
+                    max: $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val()
                 });
 
                 var instrest = qiugouModel.GetAdviserInstrest();
