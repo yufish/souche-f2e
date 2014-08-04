@@ -5,7 +5,7 @@ define(function() {
     var brand = {};
     var series = {};
 
-    var selectedSeries={};
+    var selectedSeries = {};
     var modelSeries = {};
 
     var groupBy = function(array, predicate, context) {
@@ -25,16 +25,16 @@ define(function() {
     modelSeries.init = function(config) {
         var brandUrl = config.brand_api;
         var adviser = config.userRequementJson;
-        adviser.brand=adviser.brand||[];
-        adviser.series=adviser.series||[];
+        adviser.brand = adviser.brand || [];
+        adviser.series = adviser.series || [];
 
         for (var index = 0; index < adviser.brand.length; index++) {
             var temp = adviser.brand[index].split(",");
-            selectedSeries[temp[1]]=true;
+            selectedSeries[temp[1]] = true;
         }
         for (var index = 0; index < adviser.series.length; index++) {
             var temp = adviser.series[index].split(",");
-            selectedSeries[temp[0]]=true;
+            selectedSeries[temp[0]] = true;
         }
 
         $.ajax({
@@ -48,7 +48,7 @@ define(function() {
 
             for (var key in brand) {
                 if (brand.hasOwnProperty(key)) {
-                    templateHTML += "<li><span data-id='"+key+"'>" + key + "<\/span>"; //<a>哈弗H6<\/a><a>哈弗H6<\/a><a>哈弗H6<\/a>
+                    templateHTML += "<li><span data-id='" + key + "'>" + key + "<\/span>"; //<a>哈弗H6<\/a><a>哈弗H6<\/a><a>哈弗H6<\/a>
                     for (var key1 in brand[key]) {
                         if (brand[key].hasOwnProperty(key1)) {
 
@@ -88,14 +88,11 @@ define(function() {
             series[code].name = name;
         }
 
-        $(".chexi .chexiTitle span").html(name + "全部车系");
+        $(".chexi .chexiTitle").html("<h1>全部车系</h1><span data-name=" + name + ">全部</span>");
         $(".chexi .chexiTitle span").attr("code", code);
-        if(selectedSeries[code])
-        {
+        if (selectedSeries[code]) {
             $(".chexi .chexiTitle span").addClass("active");
-        }
-        else
-        {
+        } else {
             $(".chexi .chexiTitle span").removeClass("active");
         }
 
@@ -106,10 +103,9 @@ define(function() {
                 templateHTML += "<h1>" + key + "<\/h1>";
                 for (var key1 in series[code][key]) {
                     if (series[code][key].hasOwnProperty(key1)) {
-                        if(!selectedSeries[series[code][key][key1].code])
-                        templateHTML += "<span code='" + series[code][key][key1].code + "'>" + series[code][key][key1].name + "<\/span>";
-                        else
-                        {
+                        if (!selectedSeries[series[code][key][key1].code])
+                            templateHTML += "<span code='" + series[code][key][key1].code + "'>" + series[code][key][key1].name + "<\/span>";
+                        else {
                             templateHTML += "<span code='" + series[code][key][key1].code + "' class='active'>" + series[code][key][key1].name + "<\/span>";
                         }
                     }
@@ -119,18 +115,17 @@ define(function() {
         $(".chexi .chexiContent ul").html(templateHTML);
     }
 
-    modelSeries.addSelectedSeries = function(code)
-    {
+    modelSeries.addSelectedSeries = function(code) {
         selectedSeries[code] = true;
     }
 
     modelSeries.deleteSelectedSeries = function(code) {
         delete selectedSeries[code];
-        var tabID=$("#carsNav ul li.active").attr("id");
-        var brandCode =$("."+tabID+" .brandList ul li a.active").attr("code");
-        var name = $("."+tabID+" .brandList ul li a.active").html();
+        var tabID = $("#carsNav ul li.active").attr("id");
+        var brandCode = $("." + tabID + " .brandList ul li a.active").attr("code");
+        var name = $("." + tabID + " .brandList ul li a.active").html();
 
-        this.GetSeries(brandCode,name);
+        this.GetSeries(brandCode, name);
     }
 
     return modelSeries;

@@ -16,7 +16,12 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 $(".brandList a").removeClass("active");
                 $(this).addClass("active");
                 var code = $(this).attr("code");
-                var name = $(this).html();
+                var name;
+                if ($(this).attr("data-name")) {
+                    name = $(this).attr("data-name")
+                } else {
+                    name = $(this).html()
+                }
                 require(["index/modelSeries"], function(modelSeries) {
                     modelSeries.GetSeries(code, name);
                 });
@@ -26,9 +31,11 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                     var seriesCode = $(this).attr("code");
 
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
-                    if ($(this).parent().hasClass("chexiTitle")) {
-                        name = name.substr(0, name.length - 4);
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
                     }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
@@ -42,7 +49,12 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                 } else {
                     $(this).removeClass("active");
                     var seriesCode = $(this).attr("code");
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
+                    }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
                     require(["index/qiugouModel"], function(qiugouModel) {
