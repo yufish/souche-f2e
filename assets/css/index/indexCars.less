@@ -65,6 +65,7 @@ body *{
       margin-left: -1.8%;
       margin-top: 2%;
       width: 75%;
+      overflow: hidden;
       *width: 87.8%;
       img
       {
@@ -121,6 +122,9 @@ body *{
   min-height: 390px;
   overflow: hidden;
   border-right: 1px solid #EDEDED;
+  .myAdviser{
+    min-height: 402px;
+  }
   .myAdviser ,.hotNewCars {
     position: relative;
     overflow: hidden;
@@ -251,7 +255,7 @@ body *{
   }
   .adviserInitAnimate {
     float: left;
-    height: 357px;
+    height: 351px;
     position: relative;
     z-index: -10;
     img
@@ -288,7 +292,7 @@ body *{
       }
     }
    .car-link {
-      font-size: 15px;
+      font-size: 14px;
       margin: 15px 20px 0px 20px;
       height: 40px;
       overflow: hidden;
@@ -309,7 +313,7 @@ body *{
         margin-right: 25px;
       }
       .shangpai {
-        font-size: 13px;
+        font-size: 12px;
         position: absolute;
         right: 0px;
         color: #8C8C8C;
@@ -317,7 +321,7 @@ body *{
     }
     .other {
       margin: 7px 20px 0px 20px;
-      font-size: 13px;
+      font-size: 12px;
 
       padding-bottom: 10px;
       .discount {
@@ -333,7 +337,6 @@ body *{
         line-height: 20px;
         overflow: hidden;
         height: 40px;
-        cursor: default;
       }
     }
     .carTail {
@@ -522,12 +525,10 @@ body *{
       margin-left:20px;
       clear: both;
       color: #999;
-      height:80px;
       overflow: hidden;
       .interestCarConatainer
       {
         overflow: auto;
-        height: 60px;
         span{
           float: left;
           padding-right:8px;
@@ -582,7 +583,7 @@ body *{
       }
       .submit:hover
       {
-       color: #ffffff;
+       background: #fff;
       }
     }
   }
@@ -615,7 +616,7 @@ body *{
     width: 97%;
     height: 356px;
     position: absolute;
-    margin-top: 2%;
+    margin-top: 18px;
     left: 0px;
     background: #F5F5F5;
     border: 1px solid #CCCCCC;
@@ -662,7 +663,7 @@ body *{
             width: 50%;
             height: 25px;
             border: none;
-            margin-top: 5px;
+            margin-top: 3px;
             padding-left: 5%;
             letter-spacing: 0.5px;
           }
@@ -788,7 +789,7 @@ body *{
             cursor: default;
             .sc-select-content {
               padding-left: 10px;
-              padding-top: 8px;
+              padding-top: 6px;
               line-height: 20px;
               color: #333;
               .placeholder {
@@ -866,7 +867,7 @@ body *{
       .warning
       {
         float: right;
-        right: 210px;
+        right: 231px;
         border: 1px solid #FCD4A5;
         background: #FFFEE6;
         margin-top: 7px;
@@ -880,14 +881,20 @@ body *{
         margin-top: 7px;
         position: absolute;
         color: #6E6E6E;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #CCCCCC;
         cursor: pointer;
         float: right;
-        right: 120px;
+        right: 130px;
+      }
+      .cancel:hover{
+        background: #fff;
       }
       .submit {
         float: right;
@@ -895,13 +902,24 @@ body *{
         position: absolute;
         color: #ffffff;
         right: 30px;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         background-color: #FF5719;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #D94A16;
         cursor: pointer;
+      }
+      .submit:hover{
+        background-color:#ff7744;
+      }
+      .submit.loading{
+        background-color: #fda05b;
+        cursor: default;
+        border: 1px solid #fda05b;
       }
     }
 
@@ -1252,7 +1270,6 @@ body *{
     //width: 98%;
     width: 1020px;
     position: relative;
-    height: 40px;
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
   }
@@ -1288,7 +1305,7 @@ body *{
       margin-left: -20px;
       //*margin-left: -1.5%;
      // margin-top: 2%;
-      margin-top: 20px;
+      margin-top: 19px;
       width: 75%;
       img
       {
