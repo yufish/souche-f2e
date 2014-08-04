@@ -44,15 +44,17 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
 
         var getMore = function() {
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
-
+            var self = this;
             if ($(this).hasClass("myAdviser-more")) {
-                myAdviserPageIndex;
+                myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
+                $(self).find("span").html("正在加载中。。。")
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
+                    $(self).find("span").html("查看更多")
                     if (result.code == 204) {
                         $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
                     } else {
@@ -83,11 +85,13 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             } else {
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 hotNewCarsPageIndex++;
+                $(self).find("span").html("正在加载中。。。")
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
+                    $(self).find("span").html("查看更多")
                     if (result.code == 204) {
                         $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars-more").remove();
                     } else {
