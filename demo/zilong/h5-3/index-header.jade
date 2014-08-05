@@ -29,18 +29,19 @@ html
                 .topic-item 我的大搜车
                 .topic-item 拨打客服电话
                 .topic-item 关于我们
-
-            nav#J_tabNavbar.clearfix
+            nav#J_tabNavbar.clearfix(data-active-index=1)
                 .nav-item(data-nav-index=1)
-                    i.nav-icon.hot-icon
-                    热门车型
+                    span.nav-item-content
+                        i.nav-icon.hot-icon
+                        热门车型
                 .nav-item(data-nav-index=2)
-                    i.nav-icon.car-icon
-                    我要找车
+                    span.nav-item-content
+                        i.nav-icon.car-icon
+                        我要找车
                 .nav-item(data-nav-index=3)
-                    i.nav-icon.rocket-icon
-                    随便逛逛
-                #J_navbar_underline(data-active-index=1)
+                    span.nav-item-content
+                        i.nav-icon.rocket-icon
+                        随便逛逛
         section#J_tabCover
             #J_tabContainer.clearfix
                 include ./index-tab-1

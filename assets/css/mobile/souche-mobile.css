@@ -1,0 +1,13 @@
+/*s 表示严重；n表示一般；t:表示不重要*/
+.sc-txt-s{color:#333;}
+.sc-txt-n{color:#666;}
+.sc-txt-t{color:#999;}
+
+.sc-txt-sm{font-size: 12px;}
+.sc-txt-mid{font-size: 14px;}
+.sc-txt-big{font-size: 16px;}
+.sc-txt-huge{font-size: 18px;}
+
+.sc-border-s{border: 1px solid #ccc}
+.sc-border-n{border: 1px solid #e6e6e6}
+.sc-border-t{border: 1px solid #e7e7e7}

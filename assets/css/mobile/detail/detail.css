@@ -1,0 +1,190 @@
+*{
+    box-sizing: border-box;
+}
+#detail-main #pic-cover{
+    width: 100%;
+    overflow: hidden;
+}
+#detail-main #pic-container{
+    padding: 10px 5px;
+    height: 83px;
+}
+#detail-main .img-card{
+    float: left;
+    padding: 0 5px;
+}
+#detail-main .img-card img{
+    height: 63px;
+    width: 100%;
+}
+#detail-main #pic-dots{
+    text-align: center;
+    font-size: 0;
+    padding-bottom: 10px;
+}
+#detail-main #pic-dots .dot{
+    display: inline-block;
+    width: 6px;
+    border-radius: 80%;
+    border:1px solid #e7e7e7;
+    background: #f9f9f9;
+    height: 6px;
+    margin: 0 4px;
+}
+#detail-main #pic-dots .dot.active{
+    border:1px solid #FF571A;
+    background: #FF571A;
+}
+#detail-main .car-all-name-info{
+    padding-left: 16px;
+    margin-bottom: 16px;
+}
+#detail-main .car-all-name-info .all-name{
+    font-size: 18px;
+    line-height: 26px;
+    color:#333;
+    margin-right: 80px;
+    height: 52px;
+    overflow: hidden;
+}
+#detail-main .detail-fav{
+    float: right;
+    width: 64px;
+    border-left: 1px solid #e7e7e7;
+}
+#detail-main .detail-item{
+    border-bottom: 1px solid #E6E6E6;
+    margin: 0 16px;
+}
+#detail-main .detail-item.last{
+    border:none;
+}
+#detail-main .five-star{
+    width: 21px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../../../../assets/images/mob/h5-3/detail-fav-star.png) no-repeat;
+    background-size: 100%;
+}
+#detail-main .fav-text{
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color:#666;
+}
+#detail-main .sec-info .price .price-num{
+    font-size: 16px;
+    color:#FF571A;
+    font-weight: bold;
+}
+#detail-main .sec-info .new-price {
+    font-size: 12px;
+    color:#999;
+    margin: 8px 0 16px;
+}
+#detail-main .sec-info .fenqi-item,
+#detail-main .sec-info .more-config{
+    line-height: 44px;
+    font-size: 14px;
+    color: #333;
+    display: block;
+}
+#detail-main .sec-info .fenqi-text{
+    color:#fff;
+    background:#FF571A;
+    padding:2px 3px;
+}
+#detail-main .sec-info .go-fenqi {
+    font-weight: bold;
+    line-height: 22px;
+    margin-top: 4px;
+    color: #FF571A;
+}
+#detail-main .sale-info-item{
+    width: 50%;
+    float: left;
+    margin:8px 0 8px;
+}
+#detail-main .sale-info-item .info-value{
+    color:#333;
+    font-size: 14px;
+}
+#detail-main .sale-info-item .info-key{
+    color:#999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+#detail-main .more-config{
+    border:none;
+}
+.gray-12px{
+    clear:both;
+    height: 12px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+}
+.detail-item .ss-title{
+    color: #333;
+    margin:16px 0;
+    font-size: 14px;
+}
+.detail-item .ss-content{
+    color:#666;
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 12px;
+}
+#actions .action-btn-bar{
+    text-align: center;
+}
+#actions .btn {
+    width: 145px;
+    height: 36px;
+    border-radius: 3px;
+    border: none;
+}
+#actions .yuyue-btn {
+    background: #FF571A;
+    color:#fff;
+}
+#actions .contact-souche-btn {
+    background: #fff;
+    border:1px solid #ccc;
+    color: #333;
+}
+.yuyue-btn .clock{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 80%;
+    border: 1px solid #fff;
+    line-height: 5px;
+    padding-left: 4px;
+    vertical-align: 4px;
+    font-size: 16px;
+}
+.contact-souche-btn .call-icon{
+    background: url(../../../../assets/images/mob/h5-3/call.png) no-repeat center;
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background-size: 100%;
+    vertical-align: -3px;
+}
+#detail-main .address .address-icon{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background: #FF571A url(../../../../assets/images/mob/h5-3/addr-location.png) no-repeat center;
+}
+#detail-main .address .address-name{
+    line-height: 44px;
+    font-size: 12px;
+    padding-left: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

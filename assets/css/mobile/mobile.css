@@ -665,10 +665,6 @@ body {
     background-color: #fff;
     padding-bottom: 70px;
 }
-#detail #detail-main .top-info {
-    margin: 10px 5px;
-    /*height: 55px;*/
-}
 #detail #detail-main .top-info .lft {
     width: 100%;
     /*float: left;*/
@@ -739,17 +735,6 @@ body {
     width: 100%;
     text-align: center;
 }
-#detail #detail-main .sec-info {
-    margin: 0 5px;
-}
-#detail #detail-main .sec-info .price {
-    float: left;
-}
-#detail #detail-main .sec-info .item.new {
-    float: left;
-    text-align: right;
-    font-size: 12px;
-}
 #detail #detail-main .sec-info .price s {
     font-size: 14px;
 }
@@ -766,10 +751,7 @@ body {
     margin: 0;
     margin-right: 2px;
 }
-#detail #detail-main .sec-info .first-price-info {
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
-}
+
 #detail #detail-main .sec-info .item {
     margin: 8px 0;
     line-height: 25px;
@@ -862,12 +844,7 @@ body {
     margin-top: 4px;
     color: #0090e2;
 }
-#detail #detail-main .go-fenqi {
-    font-weight: bold;
-    line-height: 22px;
-    margin-top: 4px;
-    color: #0090e2;
-}
+
 #detail #actions {
     padding-top: 10px;
     padding-bottom: 5px;
@@ -879,16 +856,7 @@ body {
     z-index: 100;
     box-shadow: -1px -2px 3px #aaa;
 }
-#detail #actions .btn {
-    background: #e68322;
-    color: #fff;
-    line-height: 35px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 5px;
-    display: block;
-    margin: 0 5px;
-}
+
 #detail #actions .fav {
     float: left;
     vertical-align: middle;
@@ -965,6 +933,7 @@ body {
 }
 #detail #quality-test .cube .h {
     line-height: 30px;
+    font-size: 0;
 }
 #detail #quality-test .cube .h .l {
     width: 60%;

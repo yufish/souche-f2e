@@ -16,14 +16,16 @@ if(typeof document.body.style.transform==='string'){
     transform = 'transform';
     //transition_end='transitionend'
 }
-
+var isAndroid = false;
+if (navigator.userAgent.match(/Android/i)){
+    isAndroid =true;
+}
 //tab动画的相关实现
 !function(){
     var tabCtn = $('#J_tabContainer'),
         tabNavBar = $('#J_tabNavbar');
     var tabPanels = tabCtn.find('.tab-panel'),
         navItems = $('.nav-item',tabNavBar);
-    var underline = $('#J_navbar_underline')
     var numOfPanels = tabPanels.length;
     var widthOfPanel = 100/numOfPanels;
     tabCtn.css({width:numOfPanels*100+'%'});
@@ -42,20 +44,32 @@ if(typeof document.body.style.transform==='string'){
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
+        tabNavBar.attr('data-active-index',curIndex)
         //history.replaceState({},'','index.html')
     }
 
-    function move(curIndex){
-        var moveIndex =curIndex-1;
-        // use translateZ(0) activate 3d hardware acceleration is possible
-        setTimeout(function(){
-            tabCtn[0].style[transform]='translateX(-'+moveIndex*widthOfPanel+'%) translateZ(0)';
-            var oldIndex = underline.attr('data-active-index')
-            underline.css({left:moveIndex*100/numOfPanels+'%'}).attr('data-active-index',curIndex);
-            afterMove(oldIndex,curIndex)
-        },0)
-    }
+    var move = function(){
+        if(isAndroid){
+            return function(curIndex) {
+                var moveIndex = curIndex - 1;
+                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+                var oldIndex = tabNavBar.attr('data-active-index')
+                afterMove(oldIndex, curIndex)
+            }
+        }else{
+            return function(curIndex) {
+                var moveIndex = curIndex - 1;
+                setTimeout(function () {
+                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+                    var oldIndex = tabNavBar.attr('data-active-index')
+                    afterMove(oldIndex, curIndex)
+                }, 0)
+            }
+        }
+
+    }()
     //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
+
     var hash = location.hash;
     var match = /tabindex=([1-3])/.exec(hash);
     if(match){
@@ -63,22 +77,22 @@ if(typeof document.body.style.transform==='string'){
     }else{
         move(1);
     }
+
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
-        var curIndex = underline.attr('data-active-index');
+        var curIndex = tabNavBar.attr('data-active-index');
         if(curIndex == index)return;
         move(index);
     })
     tabCtn.on('swipeLeft',function(){
-        var index = +underline.attr('data-active-index');
+        var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
     }).on('swipeRight',function(){
-        var index = +underline.attr('data-active-index');
+        var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
     })
-
 }()
 
 //点击右上角，相应的抽屉动画
@@ -86,9 +100,10 @@ if(typeof document.body.style.transform==='string'){
     var otherTopic = $('.other-topic');
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
+    var timeSpan = 100,hGap=31;
     wrapBg.on(tap_event,function(){
-        var time =0,timeSpan =150;
-        var height = 181,hGap = 31;
+        var time =0;
+        var height = 181;
         for(var i = topicItems.length-1;i>-1;i--){
             !function(index){
                 setTimeout(function(){
@@ -102,12 +117,12 @@ if(typeof document.body.style.transform==='string'){
         setTimeout(function(){
             otherTopic.css({height:0});
             wrapBg.addClass('hidden');
-        },750)
+        },timeSpan*5)
     })
 
     $('.for-other-topic').on(tap_event,function(){
         wrapBg.removeClass('hidden');
-        var time =0,timeSpan =150;
+        var time =0;
         var height = 26,hGap = 31;
         topicItems.each(function(index,item){
             setTimeout(function(){
@@ -400,7 +415,6 @@ if(typeof document.body.style.transform==='string'){
     })
 }();
 
-$(".car-area .look-more").click(function(e){
-    console.log(e.pageY);
-    console.log(e.clientY);
+$(".car-area .look-more").on(tap_event,function(e){
 })
+
