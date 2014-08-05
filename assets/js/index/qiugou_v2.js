@@ -155,7 +155,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                 var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
                 var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
-                if (minYear > maxYear) {
+                if (maxYear && maxYear && (minYear > maxYear)) {
                     $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
                     window.setTimeout(function() {
                         $("." + tabID + " .warning").addClass("hidden");
