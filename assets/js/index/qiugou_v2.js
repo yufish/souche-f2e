@@ -180,15 +180,21 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                         series.push(instrest[idx].seriesCode);
                     }
                 }
-
+                var minPrice = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
+                var maxPrice = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
+                var minYear = ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "")
+                var maxYear = ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "")
                 var url = config.submit_api;
-                url += "?minPrice=" + $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-                url += "&maxPrice=" + $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
-                url += "&minYear=" + ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "");
-                url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "");
+                url += "?minPrice=" + minPrice;
+                url += "&maxPrice=" + maxPrice;
+                url += "&minYear=" + minYear;
+                url += "&maxYear=" + maxYear;
                 url += "&brands=" + brand.join();
                 url += "&series=" + series.join();
-
+                if (!(minPrice || maxPrice || minYear || maxYear || brand.length || series.length)) {
+                    $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
+                    return;
+                }
                 Souche.NoRegLogin.checkLogin(function() {
                     $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
                     $.ajax({

@@ -41,14 +41,16 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             }, 50, function () {
             });
         });*/
-
-        var getMore = function() {
+        var adviser_end = false;
+        var newcar_end = false;
+        var getMore = function(id) {
             $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
             var self = this;
-            if ($(this).hasClass("myAdviser-more")) {
+            if ($(this).hasClass("myAdviser-more") || id == "myAdviser") {
+                if (adviser_end) return;
                 myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
-                $(self).find("span").html("正在加载中。。。")
+                $(self).find("span").html("正在加载中...")
                 $.ajax({
                     url: url,
                     type: "GET",
@@ -64,7 +66,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                             var list = result.recommendCars.items;
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
-                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
                                     "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
@@ -76,6 +78,8 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                             }
                             $(".myAdviserContent .myAdviser").eq(0).append(template);
                             $(".myAdviserContent .myAdviser-more").remove();
+                        } else {
+                            adviser_end = true;
                         }
 
 
@@ -83,9 +87,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     isScrolling = true;
                 });
             } else {
-                var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
+                if (newcar_end) return;
+
                 hotNewCarsPageIndex++;
-                $(self).find("span").html("正在加载中。。。")
+                var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
+                $(self).find("span").html("正在加载中...")
                 $.ajax({
                     url: url,
                     type: "GET",
@@ -93,24 +99,32 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
                     if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.hotNewCars-more").remove();
+                        $(".carsMore.hotNewCars-more").remove();
                     } else {
+                        $(".carsMore.hotNewCars-more").remove();
                         var list = result.newCars.items;
+                        if (list.length == 0) {
+                            newcar_end = true;
+                        } else {
+                            var template = "";
 
-                        var template = "";
-                        for (var idx = 0, len = list.length; idx < len; idx++) {
-                            template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' height='182'><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                "<div class='other'>" +
-                                "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                "<\/div>" +
-                                "<div class='carTail clearfix'>" +
-                                "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
-                                "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
+                            for (var idx = 0, len = list.length; idx < len; idx++) {
+                                template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                    "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
+                                    "<div class='other'>" +
+                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
+                                    "<\/div>" +
+                                    "<div class='carTail clearfix'>" +
+                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
+                                    "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
+                            }
+                            $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
+                            $(".hotNewCarsContent .hotNewCars-more").remove();
+
                         }
-                        $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                        $(".hotNewCarsContent .hotNewCars-more").remove();
+
+
                     }
                     isScrolling = true;
                 });
@@ -121,12 +135,13 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         //查看更多
         $(".carsMore").click(function() {
             getMore.call(this);
+            var self = this;
             $(window).scroll(function() {
-                if ($("." + $("#carsNav li.active").attr("id") + ".carsMore").length == 0) {
-                    if (($("#footer").offset().top - 200) <= (window.scrollY + window.screen.availHeight)) {
+                if ($("." + $("#carsNav li.active").attr("id") + " .carsMore").length == 0) {
+                    if (($("#footer").offset().top - 600) <= ($(window).scrollTop() + $(window).height())) {
                         if (isScrolling) {
                             isScrolling = false;
-                            getMore.call(this);
+                            getMore($("#carsNav li.active").attr("id"));
                         }
                     }
                 }
