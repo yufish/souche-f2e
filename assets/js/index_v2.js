@@ -51,7 +51,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
                 $(self).find("span").html("正在加载中...")
-                $(".myAdviser-loading").removeClass("hidden")
+                if (myAdviserPageIndex > 2) {
+                    $(".myAdviser-loading").removeClass("hidden")
+                }
+
                 $.ajax({
                     url: url,
                     type: "GET",
@@ -94,7 +97,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 hotNewCarsPageIndex++;
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 $(self).find("span").html("正在加载中...")
-                $(".hotNewCars-loading").removeClass("hidden")
+                if (hotNewCarsPageIndex > 2) {
+                    $(".hotNewCars-loading").removeClass("hidden")
+                }
+
                 $.ajax({
                     url: url,
                     type: "GET",
