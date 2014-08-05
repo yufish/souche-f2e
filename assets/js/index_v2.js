@@ -157,18 +157,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         });
         //
 
-        //head 搜索框
-        require(["souche/realTimeDown"], function(down) {
-            down.init($(".search"), {
-                url: config.search_api,
-                type: "GET",
-                dataType: "json",
-                success: function() {
-                    alert(1);
-                }
-            }, 900);
 
-        });
         //
 
     }

@@ -83,6 +83,7 @@ define(function() {
 
                 $(".realIndexTimeDown .hover").removeClass("hover");
                 $(".realIndexTimeDown .list").eq(index).addClass("hover");
+                $(".search-text").val($(".realIndexTimeDown .list").eq(index).find("a").html())
                 return;
             }
             if (e.keyCode == 38) {
@@ -91,6 +92,7 @@ define(function() {
 
                 $(".realIndexTimeDown .hover").removeClass("hover");
                 $(".realIndexTimeDown .list").eq(index).addClass("hover");
+                $(".search-text").val($(".realIndexTimeDown .list").eq(index).find("a").html())
                 return;
             }
 
