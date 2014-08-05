@@ -52,8 +52,8 @@ header{
     border-bottom: 1px solid #fff;
     background: #333;
     padding-left: 20px;
-    -webkit-transition: -webkit-transform 0.15s linear;
-    transition:transform 0.15s linear;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition:transform 0.1s linear;
     -webkit-transform-origin: top;
     transform-origin: top;
     -webkit-transform-style:preserve-3d;
@@ -133,6 +133,14 @@ nav .nav-item{
 nav .nav-item.active{
     color:#FF571A;
 }
+nav .nav-item .nav-item-content{
+    height: 44px;
+    display: inline-block;
+    padding: 0 6px;
+}
+nav .nav-item.active .nav-item-content{
+    border-bottom: 4px solid #FF571A;
+}
 #J_navbar_underline{
     height: 4px;
     background: #ff571a;
@@ -174,15 +182,15 @@ nav .nav-item.active{
     width: 145px;
     margin: 10px auto 0;
     background: #fff;
+    border:1px solid #d9d9d9;
 }
 .car-card img{
-    width: 145px;
+    width: 143px;
     height: 98px;
 }
 .car-card .car-info{
     padding: 10px 8px 0;
     font-size:12px;
-    border:1px solid #e6e6e6;
     border-top:none;
     overflow: hidden;
 }
@@ -246,12 +254,11 @@ nav .nav-item.active{
     color: #FF571A;
     line-height: 22px;
 }
-
 .car-area .look-more{
     height: 36px;
     line-height: 36px;
     color:#666;
-    border:1px solid #E6E6E6;
+    border:1px solid #ccc;
     background:#fff ;
     margin: 10px 5px;
     text-align: center;
@@ -263,7 +270,6 @@ nav .nav-item.active{
     color:#000;
     font-size: 12px;
 }
-
 .quick-search-area{
     margin: 0 16px;
 }
@@ -300,7 +306,7 @@ nav .nav-item.active{
     line-height: 45px;
 }
 /*tab-panel-2*/
-.filter-area{
+.tab-panel.panel-2{
     background: #f5f5f5;
 }
 .filter-item{

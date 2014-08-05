@@ -26,7 +26,6 @@ if (navigator.userAgent.match(/Android/i)){
         tabNavBar = $('#J_tabNavbar');
     var tabPanels = tabCtn.find('.tab-panel'),
         navItems = $('.nav-item',tabNavBar);
-    var underline = $('#J_navbar_underline')
     var numOfPanels = tabPanels.length;
     var widthOfPanel = 100/numOfPanels;
     tabCtn.css({width:numOfPanels*100+'%'});
@@ -45,25 +44,24 @@ if (navigator.userAgent.match(/Android/i)){
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
+        tabNavBar.attr('data-active-index',curIndex)
         //history.replaceState({},'','index.html')
     }
 
     var move = function(){
         if(isAndroid){
-            return function(moveIndex) {
+            return function(curIndex) {
                 var moveIndex = curIndex - 1;
                 tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                var oldIndex = underline.attr('data-active-index')
-                underline.css({left: moveIndex * 100 / numOfPanels + '%'}).attr('data-active-index', curIndex);
+                var oldIndex = tabNavBar.attr('data-active-index')
                 afterMove(oldIndex, curIndex)
             }
         }else{
-            return function(moveIndex) {
+            return function(curIndex) {
                 var moveIndex = curIndex - 1;
                 setTimeout(function () {
                     tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                    var oldIndex = underline.attr('data-active-index')
-                    underline.css({left: moveIndex * 100 / numOfPanels + '%'}).attr('data-active-index', curIndex);
+                    var oldIndex = tabNavBar.attr('data-active-index')
                     afterMove(oldIndex, curIndex)
                 }, 0)
             }
@@ -82,20 +80,19 @@ if (navigator.userAgent.match(/Android/i)){
 
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
-        var curIndex = underline.attr('data-active-index');
+        var curIndex = tabNavBar.attr('data-active-index');
         if(curIndex == index)return;
         move(index);
     })
     tabCtn.on('swipeLeft',function(){
-        var index = +underline.attr('data-active-index');
+        var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
     }).on('swipeRight',function(){
-        var index = +underline.attr('data-active-index');
+        var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
     })
-
 }()
 
 //点击右上角，相应的抽屉动画
@@ -103,9 +100,10 @@ if (navigator.userAgent.match(/Android/i)){
     var otherTopic = $('.other-topic');
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
+    var timeSpan = 100,hGap=31;
     wrapBg.on(tap_event,function(){
-        var time =0,timeSpan =150;
-        var height = 181,hGap = 31;
+        var time =0;
+        var height = 181;
         for(var i = topicItems.length-1;i>-1;i--){
             !function(index){
                 setTimeout(function(){
@@ -119,12 +117,12 @@ if (navigator.userAgent.match(/Android/i)){
         setTimeout(function(){
             otherTopic.css({height:0});
             wrapBg.addClass('hidden');
-        },750)
+        },timeSpan*5)
     })
 
     $('.for-other-topic').on(tap_event,function(){
         wrapBg.removeClass('hidden');
-        var time =0,timeSpan =150;
+        var time =0;
         var height = 26,hGap = 31;
         topicItems.each(function(index,item){
             setTimeout(function(){
