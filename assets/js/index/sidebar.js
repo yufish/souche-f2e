@@ -137,79 +137,79 @@ Souche.Sidebar = (function() {
         //     $(".erweima-big").hide();
         // });
         //建议
-        $("#suggest").mouseenter(function() {
-            $('.suggest-tag').addClass("suggest-tag-active");
-        }).mouseleave(function() {
-            $('.suggest-tag').removeClass("suggest-tag-active");
-        });
-        $(".suggest-tag").click(function() {
-            $(".suggest-area").val('请填写反馈，我们会重视每一位用户的意见');
-            if (!$('.suggest-remind').hasClass('hidden')) {
-                $('.suggest-remind').addClass('hidden');
-            }
-            $('.suggest-popup').removeClass("hidden");
-            if ($('.wrapGrayBg').length) {
-                $('.wrapGrayBg').show();
-            } else {
-                $('<div class="wrapGrayBg" style="opacity: 0.7; display: block;"></div>').appendTo(document.body).css({
-                    opacity: 0.7
-                })
-            }
+        // $("#suggest").mouseenter(function() {
+        //     $('.suggest-tag').addClass("suggest-tag-active");
+        // }).mouseleave(function() {
+        //     $('.suggest-tag').removeClass("suggest-tag-active");
+        // });
+        // $(".suggest-tag").click(function() {
+        //     $(".suggest-area").val('请填写反馈，我们会重视每一位用户的意见');
+        //     if (!$('.suggest-remind').hasClass('hidden')) {
+        //         $('.suggest-remind').addClass('hidden');
+        //     }
+        //     $('.suggest-popup').removeClass("hidden");
+        //     if ($('.wrapGrayBg').length) {
+        //         $('.wrapGrayBg').show();
+        //     } else {
+        //         $('<div class="wrapGrayBg" style="opacity: 0.7; display: block;"></div>').appendTo(document.body).css({
+        //             opacity: 0.7
+        //         })
+        //     }
 
-        });
+        // });
 
-        $(".suggest-close").click(function() {
-            $(".suggest-popup").addClass("hidden");
-            $(".suggest-result").addClass("hidden");
-            $('.wrapGrayBg').hide();
-        });
-        var oldVal = $(".suggest-area").val();
-        var numLen = parseInt($(".suggest-num ins").text());
-        $(".suggest-area").focus(function() {
-            var $this = $(this);
-            $this.addClass('suggest-area-active');
-            if ($this.val() == oldVal) {
-                $this.val('');
-            }
-        }).blur(function() {
-            var $this = $(this);
-            $this.removeClass('suggest-area-active');
-            if ($this.val() == '') {
-                $this.val(oldVal);
-            }
-        }).keyup(function() {
-            if (!$('.suggest-remind').hasClass('hidden')) {
-                $('.suggest-remind').addClass('hidden');
-            }
-            var $this = $(this);
-            var length = $this.val().length;
-            if (length > numLen) {
-                $(".suggest-num").html("您已超过<ins>" + (length - numLen) + "</ins>字");
-                $(".suggest-submit").addClass("hidden");
-                $(".suggest-no").removeClass("hidden");
-            } else {
-                $(".suggest-num").html("您还可以输入<ins>" + (numLen - length) + "</ins>字");
-                $(".suggest-no").addClass("hidden");
-                $(".suggest-submit").removeClass("hidden");
-            }
-        });
-        $("#J_suggest_form").submit(function(event) {
-            event.preventDefault();
-            if ($('.suggest-area').val() == '' || $('.suggest-area').val() == $('.suggest-area').attr('default')) {
-                $('.suggest-remind').removeClass("hidden");
-                return;
-            }
-            $.ajax({
-                url: $("#J_suggest_form").attr("action"),
-                type: "post",
-                data: $("#J_suggest_form").serialize(),
-                success: function() {
-                    $(".suggest-popup").addClass("hidden");
-                    $(".suggest-result").removeClass("hidden");
-                }
-            })
+        // $(".suggest-close").click(function() {
+        //     $(".suggest-popup").addClass("hidden");
+        //     $(".suggest-result").addClass("hidden");
+        //     $('.wrapGrayBg').hide();
+        // });
+        // var oldVal = $(".suggest-area").val();
+        // var numLen = parseInt($(".suggest-num ins").text());
+        // $(".suggest-area").focus(function() {
+        //     var $this = $(this);
+        //     $this.addClass('suggest-area-active');
+        //     if ($this.val() == oldVal) {
+        //         $this.val('');
+        //     }
+        // }).blur(function() {
+        //     var $this = $(this);
+        //     $this.removeClass('suggest-area-active');
+        //     if ($this.val() == '') {
+        //         $this.val(oldVal);
+        //     }
+        // }).keyup(function() {
+        //     if (!$('.suggest-remind').hasClass('hidden')) {
+        //         $('.suggest-remind').addClass('hidden');
+        //     }
+        //     var $this = $(this);
+        //     var length = $this.val().length;
+        //     if (length > numLen) {
+        //         $(".suggest-num").html("您已超过<ins>" + (length - numLen) + "</ins>字");
+        //         $(".suggest-submit").addClass("hidden");
+        //         $(".suggest-no").removeClass("hidden");
+        //     } else {
+        //         $(".suggest-num").html("您还可以输入<ins>" + (numLen - length) + "</ins>字");
+        //         $(".suggest-no").addClass("hidden");
+        //         $(".suggest-submit").removeClass("hidden");
+        //     }
+        // });
+        // $("#J_suggest_form").submit(function(event) {
+        //     event.preventDefault();
+        //     if ($('.suggest-area').val() == '' || $('.suggest-area').val() == $('.suggest-area').attr('default')) {
+        //         $('.suggest-remind').removeClass("hidden");
+        //         return;
+        //     }
+        //     $.ajax({
+        //         url: $("#J_suggest_form").attr("action"),
+        //         type: "post",
+        //         data: $("#J_suggest_form").serialize(),
+        //         success: function() {
+        //             $(".suggest-popup").addClass("hidden");
+        //             $(".suggest-result").removeClass("hidden");
+        //         }
+        //     })
 
-        });
+        // });
 
 
     });
