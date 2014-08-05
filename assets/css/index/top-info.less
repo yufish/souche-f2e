@@ -9,10 +9,12 @@
     border: 1px solid #E6E6E6;
     background: #F5F5F5;
     padding: 15px;
-
+    position: relative;
+    z-index: 10000;
     .car-brand{
       border-bottom: 1px solid #E6E6E6;
       position: relative;
+      z-index: 10001;
       .title{
         color: #333;
         font-size: 15px;
@@ -31,13 +33,12 @@
         color: #666;
         font-size: 12px;
         margin-bottom: 5px;
-        
         .brand-line{
           .brand-item{
             margin-right: 15px;
             margin-bottom: 10px;
             float: left;
-            display: block;
+            display: inline-block;
           }
         }
       }
@@ -48,7 +49,6 @@
         top: -16px;
         left:-16px;
         background: #fff;
-        z-index: 100000;
         padding:15px;
         .brand-conf{
           margin-bottom: 15px;
@@ -62,13 +62,11 @@
           .brand-line{
             color: #666;
             font-size: 12px;
-            margin-bottom: 10px;
-            height: 17px;
             .brand-item{
               margin-right: 15px;
               margin-bottom: 10px;
               float: left;
-              display: block;
+              display: inline-block;
             }
           }
         }
@@ -97,7 +95,7 @@
                 .brand-item{
                 margin-right: 13px;
                 margin-bottom: 5px;
-                display: block;
+                display: inline-block;
                 float: left;
               }
               }
@@ -111,6 +109,7 @@
       border-bottom: 1px solid #E6E6E6;
       position: relative;
       margin-top: 15px;
+      z-index: 10001;
       .title{
         color: #333;
         font-size: 15px;
@@ -157,7 +156,6 @@
         background: #fff;
         border:1px solid #fc7000;
         position: absolute;
-        z-index: 100000;
         top: -16px;
         left: -16px;
         padding: 15px;
@@ -190,6 +188,7 @@
     .car-price{
       position: relative;
       margin-top: 15px;
+      z-index: 10001;
       .title{
         color: #333;
         font-size: 15px;
@@ -226,7 +225,7 @@
         top: -16px;
         left: -16px;
         padding: 15px;
-        z-index: 100;
+       
       }
     }
   }
