@@ -62,12 +62,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
                     $(".myAdviser-loading").addClass("hidden")
-                    if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
-                    } else {
+                    $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
+                    if (result.code == 204) {} else {
                         var list = result.recommendCars;
                         if (result.hasNext) {
-                            $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
+
                             var list = result.recommendCars.items;
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
@@ -108,10 +107,10 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
                     $(".hotNewCars-loading").addClass("hidden")
+                    $(".carsMore.hotNewCars-more").remove();
                     if (result.code == 204) {
-                        $(".carsMore.hotNewCars-more").remove();
+
                     } else {
-                        $(".carsMore.hotNewCars-more").remove();
                         var list = result.newCars.items;
                         if (list.length == 0) {
                             newcar_end = true;
@@ -130,7 +129,6 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                     "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                            $(".hotNewCarsContent .hotNewCars-more").remove();
 
                         }
 
