@@ -62,7 +62,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
                     $(".myAdviser-loading").addClass("hidden")
-                    $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
+                    $(".carsMore.myAdviser-more").remove();
                     if (result.code == 204) {} else {
                         var list = result.recommendCars;
                         if (result.hasNext) {
