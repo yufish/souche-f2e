@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2014/7/8.
  */
-define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouModel) {
+define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugouModel) {
     var config = {};
     var qiugou = {};
     var lock = true;
@@ -10,14 +10,19 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
         ///添加兴趣车 事件绑定 begin
 
-        $(".brandList a,.chexiContent span,.chexiTitle span").live("click", function (event) {
+        $(".brandList a,.chexiContent span,.chexiTitle span").live("click", function(event) {
 
             if (event.target.tagName == "A") {
                 $(".brandList a").removeClass("active");
                 $(this).addClass("active");
                 var code = $(this).attr("code");
-                var name = $(this).html();
-                require(["index/modelSeries"], function (modelSeries) {
+                var name;
+                if ($(this).attr("data-name")) {
+                    name = $(this).attr("data-name")
+                } else {
+                    name = $(this).html()
+                }
+                require(["index/modelSeries"], function(modelSeries) {
                     modelSeries.GetSeries(code, name);
                 });
             } else {
@@ -26,13 +31,15 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
                     var seriesCode = $(this).attr("code");
 
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
-                    if ($(this).parent().hasClass("chexiTitle")) {
-                        name = name.substr(0, name.length - 4);
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
                     }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
-                    require(["index/qiugouModel"], function (qiugouModel) {
+                    require(["index/qiugouModel"], function(qiugouModel) {
                         qiugouModel.AddAdviserInstrest({
                             seriesCode: seriesCode,
                             name: name,
@@ -42,10 +49,15 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 } else {
                     $(this).removeClass("active");
                     var seriesCode = $(this).attr("code");
-                    var name = event.target.tagName == "SPAN" ? $(this).html() : $(".brandList a[class='active']").html();
+                    var name;
+                    if ($(this).attr("data-name")) {
+                        name = $(this).attr("data-name")
+                    } else {
+                        name = $(this).html()
+                    }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
-                    require(["index/qiugouModel"], function (qiugouModel) {
+                    require(["index/qiugouModel"], function(qiugouModel) {
                         qiugouModel.DeleteAdviserInstrest({
                             seriesCode: seriesCode,
                             name: name,
@@ -58,14 +70,14 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             return false;
         });
 
-        $(".instrestCarItem").live("click", function (event) {
+        $(".instrestCarItem").live("click", function(event) {
             //alert(1);
 
             var seriesCode = $(this).attr("seriescode");
             var name = $(this).find("a").html();
             var type = $(this).attr("type");
 
-            require(["index/qiugouModel"], function (qiugouModel) {
+            require(["index/qiugouModel"], function(qiugouModel) {
                 qiugouModel.DeleteAdviserInstrest({
                     seriesCode: seriesCode,
                     name: name,
@@ -77,7 +89,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             return false;
         });
 
-        $(".addInstrestCarSubmit span").click(function () {
+        $(".addInstrestCarSubmit span").click(function() {
             var widthEnd = $(".carsItem").eq(0).width();
             var heightTilte = $(".addInstrestCarTilte").height();
             var heightEnd = $("." + tabID).find(".addInstrestCar").eq(0).height();
@@ -91,47 +103,47 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
             return false;
         });
-        ///
         ///开始选车 begin
-        $(".operationItem .dataContainer .submit,.bindunLoginInfo .modify .submit").click(function () {
+        $(".operationItem .dataContainer .submit,.bindunLoginInfo .modify .submit").click(function() {
             var option = {
                 horizontal: true,
                 fade: true
             };
             $("." + tabID).find(".dialogContentContainer").css("zIndex", 999).css("background");
             showDialogContent($("." + tabID).find(".dialogContent"), option);
+            if ($("." + tabID + " .operationItem .low-price").val()) {
+                $("." + tabID + " .dialogContentContainer .low-price").val($("." + tabID + " .operationItem .low-price").val());
+            }
+            if ($("." + tabID + " .operationItem .high-price").val()) {
+                $("." + tabID + " .dialogContentContainer .high-price").val($("." + tabID + " .operationItem .high-price").val());
+            }
 
             return false;
         });
-        ///
         /// 关闭选车 确定 begin
-        $(".dialogContent .submit").click(function () {
+        $(".dialogContent .submit").click(function() {
             var option = {
                 horizontal: true,
                 fade: true
             };
 
-            $(".dialogContent .submit").html("提交中");
 
-            require(["index/qiugouModel"], function (qiugouModel) {
+            require(["index/qiugouModel"], function(qiugouModel) {
 
                 var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-                var maxBudget =  $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
+                var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
 
-                var regx= new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
-                if(regx.test(minBudget)&&regx.test(maxBudget))
-                {
-                    if(parseInt(minBudget)>parseInt(maxBudget))
-                    {
+                var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
+                if (regx.test(minBudget) && regx.test(maxBudget)) {
+                    if (parseInt(minBudget) > parseInt(maxBudget)) {
                         $("." + tabID + " .warning").html("预算输入有错误").removeClass("hidden");
-                        window.setTimeout(function()
-                        {
+                        window.setTimeout(function() {
                             $("." + tabID + " .warning").addClass("hidden");
-                        },2000);
+                        }, 2000);
                         return false;
                     }
-                }else {
-                    if(minBudget!=""&&maxBudget!="") {
+                } else {
+                    if (minBudget != "" && maxBudget != "") {
                         return false;
                     }
                 }
@@ -141,21 +153,19 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                     max: parseInt(maxBudget) * 10000
                 });
 
-                var minYear = $("." + tabID + " .caryear .dataContainer input#age_select").val();
-                var maxYear = $("." + tabID + " .caryear .dataContainer input#age_select_high").val();
-                if(minYear> maxYear)
-                {
+                var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
+                var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
+                if (minYear > maxYear) {
                     $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
-                    window.setTimeout(function()
-                    {
+                    window.setTimeout(function() {
                         $("." + tabID + " .warning").addClass("hidden");
-                    },2000);
-                    return ;
+                    }, 2000);
+                    return;
                 }
 
                 qiugouModel.ModifyAdviserYear({
-                    min: $("." + tabID + " .caryear .dataContainer input#age_select").val(),
-                    max: $("." + tabID + " .caryear .dataContainer input#age_select_high").val()
+                    min: $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val(),
+                    max: $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val()
                 });
 
                 var instrest = qiugouModel.GetAdviserInstrest();
@@ -166,69 +176,82 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                     var type = instrest[idx].type;
                     if (type == "brand") {
                         brand.push(instrest[idx].seriesCode);
-                    }
-                    else {
+                    } else {
                         series.push(instrest[idx].seriesCode);
                     }
                 }
-
+                var minPrice = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
+                var maxPrice = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
+                var minYear = ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "")
+                var maxYear = ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "")
                 var url = config.submit_api;
-                url += "?minPrice=" + $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-                url += "&maxPrice=" + $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
-                url += "&minYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select").val() || "");
-                url += "&maxYear=" + ($("." + tabID + " .caryear .dataContainer input#age_select_high").val() || "");
+                url += "?minPrice=" + minPrice;
+                url += "&maxPrice=" + maxPrice;
+                url += "&minYear=" + minYear;
+                url += "&maxYear=" + maxYear;
                 url += "&brands=" + brand.join();
                 url += "&series=" + series.join();
+                if (!(minPrice || maxPrice || minYear || maxYear || brand.length || series.length)) {
+                    $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
+                    return;
+                }
+                Souche.NoRegLogin.checkLogin(function() {
+                    $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
+                    $.ajax({
+                        url: url,
+                        dataType: "json",
+                        success: function() {
+                            // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                            // window.setTimeout(function() {
+                            //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                            // }, 1000);
+                            window.location.reload();
+                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                        },
+                        error: function() {
+                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                        }
+                    });
+                })
 
-                $.ajax({
-                    url: url,
-                    dataType: "json"
-                }).done(function () {
-                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                    window.setTimeout(function () {
-                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                    }, 1000);
-                    window.location.reload();
-                });
+
             });
             return false;
         });
 
-        $(".dialogContent .cancel").click(function(event)
-        {
+        $(".dialogContent .cancel").click(function(event) {
             rollbackOpertion(event);
         });
         ///
 
         /// body click 去掉dialog 显示
         var rollbackOpertion = function(event) {
-            var dialogContentElement = "." + tabID + " .dialogContent";
-            var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
-            if (!$(dialogContentElement).hasClass("hidden")) {
-                var option = {
-                    horizontal: true,
-                    fade: true
-                };
-                hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                window.setTimeout(function () {
-                    $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                }, 1000);
-            }
-            else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
-                var option = {
-                    vertical: true,
-                    fade: false
-                };
+                var dialogContentElement = "." + tabID + " .dialogContent";
+                var dialogInstrestContentElement = "." + tabID + " .addInstrestCar";
+                if (!$(dialogContentElement).hasClass("hidden")) {
+                    var option = {
+                        horizontal: true,
+                        fade: true
+                    };
+                    hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                    window.setTimeout(function() {
+                        $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                    }, 1000);
+                } else if (!$(dialogInstrestContentElement).hasClass("hidden")) {
+                    var option = {
+                        vertical: true,
+                        fade: false
+                    };
 
-                hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
-                window.setTimeout(function () {
-                    showDialogContent($("." + tabID).find(".dialogContent"), option);
-                }, 500);
-                qiugouModel.Rollback();
+                    hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
+                    window.setTimeout(function() {
+                        showDialogContent($("." + tabID).find(".dialogContent"), option);
+                    }, 500);
+                    qiugouModel.Rollback();
+                }
             }
-        }
-        ///打开添加兴趣车dialog
-        $(".addCarinstrestItem").live("click",function (event) {
+            ///打开添加兴趣车dialog
+        $(".addCarinstrestItem").live("click", function(event) {
             event.preventDefault();
             var option = {
                 vertical: true,
@@ -237,7 +260,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
             hideDialogContent($("." + tabID).find(".dialogContent"), option);
             $("." + tabID).find(".addInstrestCar").css("top", -900 + "px").removeClass("hidden");
-            window.setTimeout(function () {
+            window.setTimeout(function() {
                 showInstrestContent($("." + tabID).find(".addInstrestCar"), option);
             }, 500);
             event.stopPropagation();
@@ -245,14 +268,18 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
         });
 
         ///change tab
-        $("#carsNav li").click(function () {
+        $("#carsNav li").click(function() {
             $("#carsNav li").removeClass("active");
             $(this).addClass("active");
             var id = $(this).attr("id");
             tabID = id;
-
-            if (id==="myAdviser") {
+            $(window).trigger("tab_change", id)
+            if (id === "myAdviser") {
                 initAnimate();
+            } else if (id == "hotNewCars") {
+                $(".hotNewCars img").each(function(i, img) {
+                    $(img).attr("src", $(img).attr("data-original"));
+                })
             }
             $(".carsContent").addClass("hidden");
             $(".carsContent." + tabID + "Content").removeClass("hidden");
@@ -263,49 +290,35 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
         var initAnimate = function() {
             if ($(".adviserInitAnimate").length != 0) {
 
-                $(".adviserInitAnimate .bg").animate(
-                    {
-                        "left": ""
-                    }
-                    , 500);
-                $(".adviserInitAnimate .road").animate(
-                    {
-                        "left": ""
-                    }
-                    , 600, function () {
+                $(".adviserInitAnimate .bg").animate({
+                    "left": ""
+                }, 500);
+                $(".adviserInitAnimate .road").animate({
+                    "left": ""
+                }, 600, function() {
 
-                        $(".adviserInitAnimate .boy").animate(
-                            {
-                                "left": "0px"
-                            }
-                            , 500, function () {
-                                $(".adviserInitAnimate .boytalk").animate(
-                                    {
-                                        "left": ""
-                                    }
-                                    , 500,function()
-                                    {
-                                        $(".adviserInitAnimate .girl").animate(
-                                            {
-                                                "left": ""
-                                            }
-                                            , 500,function()
-                                            {
-                                                $(".adviserInitAnimate .girltalk").animate(
-                                                    {
-                                                        "left": ""
-                                                    }
-                                                    , 500);
-                                            });
-                                    });
+                    $(".adviserInitAnimate .boy").animate({
+                        "left": "0px"
+                    }, 500, function() {
+                        $(".adviserInitAnimate .boytalk").animate({
+                            "left": ""
+                        }, 500, function() {
+                            $(".adviserInitAnimate .girl").animate({
+                                "left": ""
+                            }, 500, function() {
+                                $(".adviserInitAnimate .girltalk").animate({
+                                    "left": ""
+                                }, 500);
                             });
+                        });
                     });
+                });
 
             }
         }
 
         /// brandlist nav
-        $(".brandNav a").live("click", function () {
+        $(".brandNav a").live("click", function() {
             var id = $(this).attr("data-id");
             var tabID = $("#carsNav ul li.active").attr("id");
             if (!$("." + tabID + " .brandList span[data-id='" + id + "']").offset())
@@ -317,27 +330,27 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
         });
         ///
         ///
-        $(".addInstrestCar .addInstrestCarSubmit .submit ").click(function () {
+        $(".addInstrestCar .addInstrestCarSubmit .submit ").click(function() {
             var option = {
                 vertical: true,
                 fade: false
             };
 
             hideInstrestContent($("." + tabID).find(".addInstrestCar"), option);
-            window.setTimeout(function () {
+            window.setTimeout(function() {
                 showDialogContent($("." + tabID).find(".dialogContent"), option);
             }, 500);
             return false;
         });
-   ///取消
-        $(".addInstrestCar .addInstrestCarSubmit .cancel ").click(function (event) {
+        ///取消
+        $(".addInstrestCar .addInstrestCarSubmit .cancel ").click(function(event) {
             rollbackOpertion(event)
             return false;
         });
 
-        $(".carinstrestItem").live("click", function () {
+        $(".carinstrestItem").live("click", function() {
             var ele = $(this);
-            require(["index/qiugouModel"], function (qiugouModel) {
+            require(["index/qiugouModel"], function(qiugouModel) {
                 qiugouModel.DeleteAdviserInstrest({
                     seriesCode: $(ele).attr("seriescode"),
                     name: $(ele).find("a").html(),
@@ -348,9 +361,9 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
         });
 
         /////订阅
-        require(["index/qiugouModel", "index/modelSeries"], function (qiugouModel, modelSeries) {
+        require(["index/qiugouModel", "index/modelSeries"], function(qiugouModel, modelSeries) {
             //alert(qiugouModel);
-            qiugouModel.AddSubscribe("year", function () {
+            qiugouModel.AddSubscribe("year", function() {
                 if (this.minYear || this.maxYear) {
                     $(".carsItem .year span").html(this.minYear + "-" + this.maxYear);
                     $(".caryear .dataContainer .age_select .sc-select-content").html(this.minYear);
@@ -366,7 +379,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 }
             });
 
-            qiugouModel.AddSubscribe("budget", function () {
+            qiugouModel.AddSubscribe("budget", function() {
                 if (!!this.minBudget)
                     $(".carBudget .dataContainer .leftContainer input").val(parseInt(this.minBudget) / 10000);
 
@@ -376,8 +389,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 if (this.minBudget || this.maxBudget) {
                     if (!this.minBudget) {
                         $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "万以内");
-                    }
-                    else if (!this.maxBudget) {
+                    } else if (!this.maxBudget) {
                         $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "万以上");
                     } else {
                         $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
@@ -387,7 +399,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 }
             });
 
-            qiugouModel.AddSubscribe("addInstrest", function () {
+            qiugouModel.AddSubscribe("addInstrest", function() {
                 var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
                 $(".addInstrestCarTilte").append(template);
                 $("<span class=\"carinstrestItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>").insertBefore($(".addCarinstrestItem"));
@@ -400,7 +412,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
                 }
             });
 
-            qiugouModel.AddSubscribe("deleteInstrest", function () {
+            qiugouModel.AddSubscribe("deleteInstrest", function() {
                 //var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
                 $(".addInstrestCarTilte span[seriesCode='" + this.seriesCode + "']").remove();
                 $(".carinstrest span[seriesCode='" + this.seriesCode + "']").remove();
@@ -426,7 +438,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
             $element.find("div,a").fadeTo(0, 0);
             $element.removeClass("hidden");
-            offsetMove($element, option, widthEnd, 500, function () {
+            offsetMove($element, option, widthEnd, 500, function() {
                 // fadeIn($element.find("div,a"),300);
                 $element.find("div,a").fadeTo("fast", 1);
                 $element.css("overflow", "");
@@ -439,7 +451,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
         if ($(".carsContent." + tabID + "Content").height() < 500) {
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
-            $(".carsContent." + tabID + "Content"+" ."+tabID).eq(0).css("minHeight", "402px");
+            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
         } else {
             $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
@@ -461,7 +473,7 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
 
         if ($(".carsContent." + tabID + "Content").height() < 500) {
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
-            $(".carsContent." + tabID + "Content"+" ."+tabID).eq(0).css("minHeight", "480px");
+            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "490px");
         } else {
             $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
@@ -470,13 +482,14 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
     }
 
     var hideInstrestContent = function($element, option) {
-        offsetMove($element, option, -532, 500,function()
-        {
+        offsetMove($element, option, -532, 500, function() {
             $element.addClass("hidden");
         });
         var tabID = $("#carsNav ul li.active").attr("id");
-        $(".carsContent." + tabID + "Content").css({"overflow": "visible"});
-        $(".carsContent." + tabID + "Content"+" ."+tabID).eq(0).css("minHeight", "402px");
+        $(".carsContent." + tabID + "Content").css({
+            "overflow": "visible"
+        });
+        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
     }
 
     var hideDialogContent = function($element, option) {
@@ -487,8 +500,8 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
         if (option.horizontal) {
             //fadeOut($element.find("div,a"), 300);
             $element.find("div,a").fadeTo("fast", 0);
-            window.setTimeout(function () {
-                offsetMove($element, option, widthBegin, 500, function () {
+            window.setTimeout(function() {
+                offsetMove($element, option, widthBegin, 500, function() {
                     $element.addClass("hidden").css("width", widthEnd);
                     //fadeIn($element.find("div,a"), 300);
                     $element.find("div,a").fadeTo("fast", "1");
@@ -496,15 +509,16 @@ define(['souche/util/load-info',"index/qiugouModel"], function(LoadInfo,qiugouMo
             }, 500);
         } else if (option.vertical) {
             $element.css("width", widthEnd);
-            offsetMove($element, option, -532, 500,function()
-            {
+            offsetMove($element, option, -532, 500, function() {
                 $element.addClass("hidden");
             });
         }
 
         var tabID = $("#carsNav ul li.active").attr("id");
-        $(".carsContent." + tabID + "Content").css({"overflow": "auto"});
-        $(".carsContent." + tabID + "Content"+" ."+tabID).eq(0).css("minHeight", "");
+        $(".carsContent." + tabID + "Content").css({
+            "overflow": "auto"
+        });
+        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "");
     }
 
     var offsetMove = function($element, direction, offset, time, callback) {

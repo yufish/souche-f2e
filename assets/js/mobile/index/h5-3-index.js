@@ -37,7 +37,7 @@ if (navigator.userAgent.match(/Android/i)){
     function afterMove(oldIndex,curIndex){
         navItems.removeClass('active')
         navItems.eq(curIndex-1).addClass('active')
-        topCache[oldIndex-1]=$(window).scrollTop();
+        topCache[oldIndex-1]=document.body.scrollTop;
         document.body.scrollTop = topCache[curIndex-1];
         if(curIndex==2){
             $('.btn-wrapper-for-filter').removeClass('hidden')
@@ -296,7 +296,7 @@ if (navigator.userAgent.match(/Android/i)){
             //显示品牌弹出框
             $('.wrapGrayBg').removeClass('hidden');
             $('#brand-list').css({
-                top: $(window).scrollTop() + 50
+                top: document.body.scrollTop + 50
             }).removeClass('hidden');
 
             var self = $(this);
@@ -318,7 +318,7 @@ if (navigator.userAgent.match(/Android/i)){
         $('#J_series').on(tap_event,function(){
             $('.wrapGrayBg').removeClass('hidden');
             $('#series-list').css({
-                top: $(window).scrollTop() + 50
+                top: document.body.scrollTop + 50
             }).removeClass('hidden');
         })
         $('.wrapGrayBg').on(tap_event,function(){
@@ -417,3 +417,4 @@ if (navigator.userAgent.match(/Android/i)){
 
 $(".car-area .look-more").on(tap_event,function(e){
 })
+

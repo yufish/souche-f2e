@@ -1,4 +1,4 @@
-body *{
+body {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
 
@@ -26,7 +26,7 @@ body *{
       color: #333;
     }
     li.active{
-      color: #fc7000;
+      color: #ff571a;
       background: #ffffff;
       font-weight: bold;
       border-right: 1px solid #E6E6E6;
@@ -54,10 +54,9 @@ body *{
 
   .carsContent {
     .carsItem {
-      width: 22.9%;
-      *width: 22%;
-      height: 355px;
-      margin: 2% 1.8% 0px 0px;
+      width: 228px;
+      margin-top:19px;
+      margin-right: 13px;
       float: left;
       border: 1px solid #EDEDED;
     }
@@ -65,6 +64,7 @@ body *{
       margin-left: -1.8%;
       margin-top: 2%;
       width: 75%;
+      overflow: hidden;
       *width: 87.8%;
       img
       {
@@ -107,86 +107,7 @@ body *{
   }
 
 
-@media screen and (min-width: 1440px) {
-  #carsNav, .carsMore {
-    //width: 98%;
-    width: 1020px;
-    position: relative;
-    height: 40px;
-    background: #F5F5F5;
-    border: 1px solid #E6E6E6;
-  }
 
-  .dialogContentContainer,.dialogContent
-  {
-    width: 98% ;
-    height: 360px;
-  }
-
-  .addInstrestCar {
-    width: 98%;
-  }
-
-  .carsContent {
-    .carsItem {
-      //width: 22.9%;
-      width: 240px;
-      height: 350px;
-      //margin: 2% 1.9% 0px 0px;
-      //*margin: 2% 1.519% 0px 0px;
-      margin: 18px 18px 0px 0px;
-      //*width: 22.92%;
-      float: left;
-      border: 1px solid #EDEDED;
-      .carImg,.img{
-        width:240px ;
-        height: 160px;
-      }
-    }
-    .adviserInitAnimate
-    {
-      margin-left: -20px;
-      //*margin-left: -1.5%;
-     // margin-top: 2%;
-      margin-top: 20px;
-      width: 75%;
-      img
-      {
-        left: -800px;
-      }
-      .road{
-        position: absolute;
-        width: 100%;
-        height: 61px;
-        top:294px
-      }
-      .boy, .girl{
-        position: absolute;
-        top: 25%;
-        left: -800px;
-        height: 75%;
-      }
-      .boy {
-        margin-left: 6%;
-      }
-      .girl{
-        margin-left: 70%;
-      }
-      .boytalk
-      {
-        position: absolute;
-        top: 22%;
-        margin-left: 24%;
-      }
-      .girltalk
-      {
-        position: absolute;
-        top: 50%;
-        margin-left: 53%;
-      }
-    }
-  }
-}
 
 
 .clearBoth
@@ -200,11 +121,27 @@ body *{
   min-height: 390px;
   overflow: hidden;
   border-right: 1px solid #EDEDED;
+  .myAdviser{
+    min-height: 402px;
+    .operationItem {
+    background: #F5F5F5;
+    height: 350px;
+  }
+  }
   .myAdviser ,.hotNewCars {
     position: relative;
     overflow: hidden;
   }
-
+  .no-recommendcar{
+    margin-top:18px;
+    background-color: #f5f5f5;
+    border:1px solid #EDEDED;
+    float:left;
+    height:334px;
+    width:75%;
+    margin-left: -20px;
+    overflow: hidden;
+  }
   .carsItem {
     >img
     {
@@ -213,6 +150,7 @@ body *{
   }
   .operationItem {
     background: #F5F5F5;
+    height: 317px;
     .mm {
       width: 100px;
       position: absolute;
@@ -330,7 +268,7 @@ body *{
   }
   .adviserInitAnimate {
     float: left;
-    height: 357px;
+    height: 351px;
     position: relative;
     z-index: -10;
     img
@@ -345,8 +283,13 @@ body *{
     {
       position: relative;
       width: 100%;
+      height: 150px;
       overflow: hidden;
       display: block;
+      img{
+        width:100%;
+        border:none;
+      }
       .img
       {
         border:none;
@@ -366,38 +309,38 @@ body *{
       }
     }
    .car-link {
-      font-size: 15px;
-      margin: 15px 20px 0px 20px;
+      font-size: 14px;
+      margin: 12px 16px 0px 16px;
       height: 40px;
       overflow: hidden;
       display: block;
+      color: #333;
     }
     .car-link:hover{
-      color: #F44B0B;
+      color: #ff571a;
     }
     .info {
-      margin: 7px 20px 0px 20px;
-      padding-bottom: 5px;
-
+      margin: 5px 16px 0px 16px;
       position: relative;
       .price {
-        color: #FF571A;
+        color: #FF4400;
         font-weight: bold;
         font-size: 14px;
         margin-right: 25px;
       }
       .shangpai {
-        font-size: 13px;
+        font-size: 12px;
         position: absolute;
         right: 0px;
         color: #8C8C8C;
+        line-height: 18px;
       }
     }
-    .other {
-      margin: 7px 20px 0px 20px;
-      font-size: 13px;
 
-      padding-bottom: 10px;
+    .other {
+      margin: 7px 16px 0px 16px;
+      font-size: 12px;
+      padding-bottom: 12px;
       .discount {
         color: #FF571A;
       }
@@ -405,51 +348,45 @@ body *{
 
       }
       .recommended {
-        margin-top: 5px;
         font-size: 14px;
         color: #999;
         line-height: 20px;
         overflow: hidden;
         height: 40px;
-        cursor: default;
       }
     }
     .carTail {
-      bottom: 10px;
-      left: 15px;
-      width: 85%;
-      position: absolute;
+      width: 206px;
+      height: 26px;
+      padding-top: 12px;
       border-top: 1px solid #EEEEEE;
-      padding-top: 10px;
+      margin:0 auto;
+      position: relative;
       .collect {
-        padding-left: 15px;
+        padding-left: 20px;
         position: relative;
         color: #999;
-        background: url(../images/index/car-nocollect.png) no-repeat;
-        background-position: -4px -2px;
+        background: url(../images/index/index_sprite_v2.png) no-repeat center;
+        background-position: -10px -40px;
         cursor: pointer;
         font-size: 12px;
+        line-height: 15px;
         a {
           color: #999;
         }
         float: left;
       }
       .collect:hover {
-        background: url(../images/index/hover.png) no-repeat;
-        background-position: 0px 2px;
-        cursor: pointer;
+        background-position: -10px -60px;
       }
       .collect.active {
-        background: url(../images/index/active.png) no-repeat;
-        background-position: 0px 2px;
-        cursor: pointer;
+        background-position: -10px -80px;
       }
       .recommendedToday {
         font-size: 12px;
         display: block;
         float: right;
         color: #999;
-
       }
       .carConstrast {
         padding: 2px;
@@ -476,18 +413,42 @@ body *{
         }
         .contrast-waring
         {
-          right: -30px !important;
           position: absolute;
-          top: -66px;
-          right: -112px;
-          width: 180px;
-          height: 40px;
+        top: -30px;
+left: 89px;
           border: 1px solid #ee7700;
           background: #ffeed6;
           color: #333;
           padding: 10px;
           font-size: 13px;
         }
+
+      }
+    }
+    .carlike{
+      margin-top: 12px;
+      padding-top: 8px !important;
+      height: 31px;
+      .collect{
+        float: right;
+        margin-top: 5px;
+      }
+      .nolike{
+        float: left;
+        width: 50px;
+        height: 21px;
+        border: 1px solid #ededed;
+        border-radius: 2px;
+        background: #fff;
+        color: #999;
+        text-align: center;
+        line-height: 21px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .nolike:hover{
+        background: #F2F2F2;
+        border: 1px solid #E1E1E1;
 
       }
     }
@@ -578,6 +539,11 @@ body *{
       font-size: 16px;
       font-weight: bold;
     }
+    .require-info{
+      height:220px;
+      overflow: auto;
+    }
+    height:324px;
     .yusuan
     {
       margin-top: 20px;
@@ -600,12 +566,8 @@ body *{
       margin-left:20px;
       clear: both;
       color: #999;
-      height:80px;
       overflow: hidden;
-      .interestCarConatainer
-      {
-        overflow: auto;
-        height: 60px;
+      
         span{
           float: left;
           padding-right:8px;
@@ -614,7 +576,6 @@ body *{
           color: #000000;
           line-height: 20px;
         }
-      }
     }
     .year
     {
@@ -660,7 +621,7 @@ body *{
       }
       .submit:hover
       {
-       color: #ffffff;
+       background: #fff;
       }
     }
   }
@@ -693,7 +654,7 @@ body *{
     width: 97%;
     height: 356px;
     position: absolute;
-    margin-top: 2%;
+    margin-top: 18px;
     left: 0px;
     background: #F5F5F5;
     border: 1px solid #CCCCCC;
@@ -740,7 +701,7 @@ body *{
             width: 50%;
             height: 25px;
             border: none;
-            margin-top: 5px;
+            margin-top: 3px;
             padding-left: 5%;
             letter-spacing: 0.5px;
           }
@@ -767,7 +728,7 @@ body *{
     .carinstrest {
       float: left;
       margin-top: 30px;
-      //
+      overflow:auto;
       width: 48%;
       height: 240px;
       border-right: 1px solid #CCCCCC;
@@ -866,7 +827,7 @@ body *{
             cursor: default;
             .sc-select-content {
               padding-left: 10px;
-              padding-top: 8px;
+              padding-top: 6px;
               line-height: 20px;
               color: #333;
               .placeholder {
@@ -944,7 +905,7 @@ body *{
       .warning
       {
         float: right;
-        right: 210px;
+        right: 231px;
         border: 1px solid #FCD4A5;
         background: #FFFEE6;
         margin-top: 7px;
@@ -958,14 +919,20 @@ body *{
         margin-top: 7px;
         position: absolute;
         color: #6E6E6E;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #CCCCCC;
         cursor: pointer;
         float: right;
-        right: 120px;
+        right: 130px;
+      }
+      .cancel:hover{
+        background: #fff;
       }
       .submit {
         float: right;
@@ -973,13 +940,24 @@ body *{
         position: absolute;
         color: #ffffff;
         right: 30px;
-        padding: 10px 25px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
         background-color: #FF5719;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border: 1px solid #D94A16;
         cursor: pointer;
+      }
+      .submit:hover{
+        background-color:#ff7744;
+      }
+      .submit.loading{
+        background-color: #fda05b;
+        cursor: default;
+        border: 1px solid #fda05b;
       }
     }
 
@@ -1000,7 +978,6 @@ body *{
       margin-bottom: 10px;
       float: left;
       width: 70%;
-      max-height: 85px;
       overflow: hidden;
       >span
       {
@@ -1024,6 +1001,7 @@ body *{
           font-size: 13px;
           float: left;
           color: #656565;
+          line-height: 20px;
         }
         span
         {
@@ -1175,6 +1153,25 @@ body *{
             font-size: 13px;
             color:#939393;
             cursor: pointer;
+            h1{
+                font-size: 15px;
+                color:#FF5719;
+                font-weight: bolder;
+                padding-bottom: 5px;
+              }
+              span
+              {
+                padding: 1px 2px;
+                margin-right:10px;
+                margin-top:2px;
+                cursor: pointer;
+                color:#939393;
+              }
+              span.active
+              {
+                background:#F44B0B;
+                color:#ffffff;
+              }
           }
           .chexiTitle .active {
             background: #F44B0B;
@@ -1242,17 +1239,20 @@ body *{
   }
 }
 @media screen  and (max-width: 1024px) {
+  .carsContent .operationItem {
+    background: #F5F5F5;
+    height: 319px;
+  }
   .carsContent {
     .carsItem {
       //width: 30.3% ;
       //*width: 30.03% ;
       width: 228px;
-      height: 355px;
-      margin: 2.7% 2.7% 0px 0px;
-      *margin: 2.5% 2.41% 0px 0px;
+      margin-right: 17px;
+      margin-top: 19px;
       float: left;
       border: 1px solid #EDEDED;
-      .img{
+      .carImg{
         height: 152px;
       }
     }
@@ -1314,14 +1314,96 @@ body *{
   }
 }
 .contrast-waring {
-  position: absolute;
-  top: -66px;
-  right: -12px;
-  width: 180px;
-  height: 40px;
-  border: 1px solid #ee7700;
-  background: #ffeed6;
-  color: #333;
-  padding: 10px;
-  font-size: 13px;
+ position: absolute;
+        top: -30px;
+left: 89px;
+          border: 1px solid #ee7700;
+          background: #ffeed6;
+          color: #333;
+          padding: 10px;
+          font-size: 13px;
+}
+@media screen and (min-width: 1400px) {
+  #carsNav, .carsMore {
+    //width: 98%;
+    width: 1020px;
+    position: relative;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+.carsContent .operationItem {
+    background: #F5F5F5;
+    height: 327px;
+  }
+  .dialogContentContainer,.dialogContent
+  {
+    width: 98% ;
+    height: 360px;
+  }
+.carsContent .bindLoginInfo, .carsContent .bindunLoginInfo
+{
+  height:334px;
+}
+  .addInstrestCar {
+    width: 98%;
+  }
+
+  .carsContent {
+    .carsItem {
+      //width: 22.9%;
+      width: 240px;
+      //margin: 2% 1.9% 0px 0px;
+      //*margin: 2% 1.519% 0px 0px;
+      margin: 18px 18px 0px 0px;
+      //*width: 22.92%;
+      float: left;
+      border: 1px solid #EDEDED;
+      .carImg{
+        width:240px ;
+        height: 160px;
+      }
+    }
+    .adviserInitAnimate
+    {
+      margin-left: -20px;
+      //*margin-left: -1.5%;
+     // margin-top: 2%;
+      margin-top: 19px;
+      width: 75%;
+      img
+      {
+        left: -800px;
+      }
+      .road{
+        position: absolute;
+        width: 100%;
+        height: 61px;
+        top:294px
+      }
+      .boy, .girl{
+        position: absolute;
+        top: 25%;
+        left: -800px;
+        height: 75%;
+      }
+      .boy {
+        margin-left: 6%;
+      }
+      .girl{
+        margin-left: 70%;
+      }
+      .boytalk
+      {
+        position: absolute;
+        top: 22%;
+        margin-left: 24%;
+      }
+      .girltalk
+      {
+        position: absolute;
+        top: 50%;
+        margin-left: 53%;
+      }
+    }
+  }
 }

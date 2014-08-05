@@ -200,7 +200,7 @@ Souche.Sidebar = (function() {
                 return;
             }
             $.ajax({
-                url: $("#J_suggest_form").action,
+                url: $("#J_suggest_form").attr("action"),
                 type: "post",
                 data: $("#J_suggest_form").serialize(),
                 success: function() {
