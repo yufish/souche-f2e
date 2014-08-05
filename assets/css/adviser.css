@@ -632,6 +632,7 @@
   height: 625px;
   width: 835px;
   right: 230px;
+  cursor: default;
 }
 #adviser #content #shop .shop-cont .images .img-but .but .but-detail .img-box {
   height: 500px;
