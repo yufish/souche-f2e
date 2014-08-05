@@ -449,7 +449,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
         if ($(".carsContent." + tabID + "Content").height() < 500) {
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
-            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
+            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "450px");
         } else {
             $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
@@ -487,7 +487,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
         $(".carsContent." + tabID + "Content").css({
             "overflow": "visible"
         });
-        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
+        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "450px");
     }
 
     var hideDialogContent = function($element, option) {
