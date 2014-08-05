@@ -51,12 +51,14 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
                 $(self).find("span").html("正在加载中...")
+                $(".myAdviser-loading").removeClass("hidden")
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
+                    $(".myAdviser-loading").addClass("hidden")
                     if (result.code == 204) {
                         $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
                     } else {
@@ -92,12 +94,14 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 hotNewCarsPageIndex++;
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 $(self).find("span").html("正在加载中...")
+                $(".hotNewCars-loading").removeClass("hidden")
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
+                    $(".hotNewCars-loading").addClass("hidden")
                     if (result.code == 204) {
                         $(".carsMore.hotNewCars-more").remove();
                     } else {

@@ -155,13 +155,13 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                 var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
                 var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
-                if (maxYear && maxYear && (minYear > maxYear)) {
-                    $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
-                    window.setTimeout(function() {
-                        $("." + tabID + " .warning").addClass("hidden");
-                    }, 2000);
-                    return;
-                }
+                // if (maxYear && maxYear && (minYear > maxYear)) {
+                //     $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
+                //     window.setTimeout(function() {
+                //         $("." + tabID + " .warning").addClass("hidden");
+                //     }, 2000);
+                //     return;
+                // }
 
                 qiugouModel.ModifyAdviserYear({
                     min: $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val(),
