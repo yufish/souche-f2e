@@ -195,24 +195,22 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                     $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
                     return;
                 }
-                Souche.NoRegLogin.checkLogin(function() {
-                    $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
-                    $.ajax({
-                        url: url,
-                        dataType: "json",
-                        success: function() {
-                            // hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                            // window.setTimeout(function() {
-                            //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                            // }, 1000);
-                            window.location.reload();
-                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                        },
-                        error: function() {
-                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                        }
-                    });
-                })
+                $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
+                $.ajax({
+                    url: url,
+                    dataType: "json",
+                    success: function() {
+                        // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                        // window.setTimeout(function() {
+                        //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                        // }, 1000);
+                        window.location.reload();
+                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                    },
+                    error: function() {
+                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                    }
+                });
 
 
             });

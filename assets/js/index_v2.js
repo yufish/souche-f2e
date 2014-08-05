@@ -306,7 +306,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     $(".carsContent img").lazyload({
                         threshold: 200
                     });
-
+                    $(".card-login").click(function() {
+                        Souche.MiniLogin.checkLogin(function() {
+                            window.location.reload();
+                        })
+                    })
 
                 });
 
