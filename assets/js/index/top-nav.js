@@ -20,6 +20,7 @@ define(function() {
             var isIns = {
 
             }
+            var zIndexBegin = 10001;
             $(".nav-item").mouseenter(function(event) {
                 var name = $(this).attr("data-name");
                 isIns[name] = true;
@@ -30,7 +31,7 @@ define(function() {
                     var itemHeight = $(self).attr("data-height");
                     var inner = $(self).find(".nav-inner");
                     inner.removeClass("hidden");
-
+                    $(self).css("zIndex", ++zIndexBegin)
                     var innerHeight = inner.attr("data-height");
                     inner.attr("data-height", innerHeight);
                     //先显示inner，算出其宽高，然后变小，再动画变大。
