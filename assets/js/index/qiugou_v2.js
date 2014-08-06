@@ -131,9 +131,8 @@ define(['souche/util/load-info',
 
 
 
-            var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-            var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
-
+            var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 1;
+            var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 1;
             var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
             if (regx.test(minBudget) && regx.test(maxBudget)) {
                 if (parseInt(minBudget) > parseInt(maxBudget)) {
