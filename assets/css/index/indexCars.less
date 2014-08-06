@@ -1,7 +1,10 @@
 body {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
-
+.myAdviser-loading,.hotNewCars-loading{
+  height:60px;
+  background: url(../images/index/ajax-loader1.gif) no-repeat center center;
+}
 #carsNav,.carsMore {
   width: 96.8%;
   position: relative;
@@ -137,10 +140,13 @@ body {
     background-color: #f5f5f5;
     border:1px solid #EDEDED;
     float:left;
-    height:334px;
+    height:325px;
     width:75%;
     margin-left: -20px;
     overflow: hidden;
+    img{
+      width:100%;
+    }
   }
   .carsItem {
     >img
@@ -327,6 +333,11 @@ body {
         font-weight: bold;
         font-size: 14px;
         margin-right: 25px;
+        em{
+          font-family:Tahoma,Verdana;
+          font-weight: bold;
+          font-size: 14px;
+        }
       }
       .shangpai {
         font-size: 12px;
@@ -348,7 +359,7 @@ body {
 
       }
       .recommended {
-        font-size: 14px;
+        font-size: 12px;
         color: #999;
         line-height: 20px;
         overflow: hidden;
@@ -371,10 +382,11 @@ body {
         cursor: pointer;
         font-size: 12px;
         line-height: 15px;
+        float: right;
         a {
           color: #999;
         }
-        float: left;
+        
       }
       .collect:hover {
         background-position: -10px -60px;
@@ -385,7 +397,7 @@ body {
       .recommendedToday {
         font-size: 12px;
         display: block;
-        float: right;
+        float: left;
         color: #999;
       }
       .carConstrast {
@@ -403,7 +415,7 @@ body {
         *zoom: 1;
         cursor: pointer;
         margin-top: -5px;
-        margin-left:30px;
+        
         span{
           padding-left: 4px;
           vertical-align: middle;
@@ -689,6 +701,7 @@ left: 89px;
           background: #ffffff;
           color: #B6B6B6;
           overflow: hidden;
+          position: relative;
           a {
             color: #B6B6B6;
             float: right;
@@ -701,9 +714,12 @@ left: 89px;
             width: 50%;
             height: 25px;
             border: none;
-            margin-top: 3px;
+            margin-top: 2px;
             padding-left: 5%;
             letter-spacing: 0.5px;
+            position: absolute;
+width: 100%;
+background: none;
           }
         }
         .leftContainer {
@@ -899,8 +915,8 @@ left: 89px;
     .trail {
       float: right;
       clear: both;
-      border-top: 1px solid #CCCCCC;
-      height: 60px;
+      border-bottom: 1px solid #CCCCCC;
+      height: 50px;
       width: 100%;
       .warning
       {
@@ -929,7 +945,7 @@ left: 89px;
         border: 1px solid #CCCCCC;
         cursor: pointer;
         float: right;
-        right: 130px;
+        right: 120px;
       }
       .cancel:hover{
         background: #fff;
@@ -939,7 +955,7 @@ left: 89px;
         margin-top: 7px;
         position: absolute;
         color: #ffffff;
-        right: 30px;
+        right: 20px;
         width:90px;
         height:35px;
         text-align: center;
@@ -975,7 +991,7 @@ left: 89px;
     {
       margin-top: 5px;
       margin-left: 2%;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       float: left;
       width: 70%;
       overflow: hidden;
@@ -1020,34 +1036,66 @@ left: 89px;
     {
       float: right;
       width: 26%;
-      margin-top: 10px;
-      .submit {
-        padding: 10px 25px;
-        background-color: #FF5719;
-        cursor: pointer;
-        border: 1px solid #CCCCCC;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        color:#ffffff;
-        float: right;
-        margin-right: 5%;
-      }
-      .cancel
+      .warning
       {
         float: right;
-        padding: 10px 25px;
-        cursor: pointer;
-        border:1px solid #CCCCCC;
+        right: 231px;
+        border: 1px solid #FCD4A5;
+        background: #FFFEE6;
+        margin-top: 7px;
+        position: absolute;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
-        color:#6E6E6E;
-        margin-right: 2%;
+        padding: 10px 25px
+      }
+      .cancel {
+        margin-top: 7px;
+        position: absolute;
+        color: #6E6E6E;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border: 1px solid #CCCCCC;
+        cursor: pointer;
+        float: right;
+        right: 120px;
+      }
+      .cancel:hover{
+        background: #fff;
+      }
+      .submit {
+        float: right;
+        margin-top: 7px;
+        position: absolute;
+        color: #ffffff;
+        right: 20px;
+        width:90px;
+        height:35px;
+        text-align: center;
+        line-height: 35px;
+        background-color: #FF5719;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border: 1px solid #D94A16;
+        cursor: pointer;
+      }
+      .submit:hover{
+        background-color:#ff7744;
+      }
+      .submit.loading{
+        background-color: #fda05b;
+        cursor: default;
+        border: 1px solid #fda05b;
       }
     }
     .addInstrestCarContent {
-      border-bottom: 1px solid #cccccc;
+      border-top: 1px solid #cccccc;
       clear: both;
       height: 410px;
 
@@ -1239,6 +1287,9 @@ left: 89px;
   }
 }
 @media screen  and (max-width: 1024px) {
+  .carsContent .no-recommendcar{
+    width:67%;
+  }
   .carsContent .operationItem {
     background: #F5F5F5;
     height: 319px;
@@ -1315,8 +1366,8 @@ left: 89px;
 }
 .contrast-waring {
  position: absolute;
-        top: -30px;
-left: 89px;
+ top: -30px;
+ left: 89px;
           border: 1px solid #ee7700;
           background: #ffeed6;
           color: #333;
@@ -1330,6 +1381,9 @@ left: 89px;
     position: relative;
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
+  }
+  .carsContent .no-recommendcar{
+    height:334px;
   }
 .carsContent .operationItem {
     background: #F5F5F5;

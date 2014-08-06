@@ -51,18 +51,22 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 myAdviserPageIndex++;
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
                 $(self).find("span").html("正在加载中...")
+                if (myAdviserPageIndex > 2) {
+                    $(".myAdviser-loading").removeClass("hidden")
+                }
+
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
-                    if (result.code == 204) {
-                        $("." + $("#carsNav li.active").attr("id") + " .carsMore.myAdviser-more").remove();
-                    } else {
+                    $(".myAdviser-loading").addClass("hidden")
+                    $(".carsMore.myAdviser-more").remove();
+                    if (result.code == 204) {} else {
                         var list = result.recommendCars;
                         if (result.hasNext) {
-                            $("." + $("#carsNav li.active").attr("id") + ".carsMore.myAdviser-more").remove();
+
                             var list = result.recommendCars.items;
                             var template = "";
                             for (var idx = 0, len = list.length; idx < len; idx++) {
@@ -92,16 +96,21 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                 hotNewCarsPageIndex++;
                 var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
                 $(self).find("span").html("正在加载中...")
+                if (hotNewCarsPageIndex > 2) {
+                    $(".hotNewCars-loading").removeClass("hidden")
+                }
+
                 $.ajax({
                     url: url,
                     type: "GET",
                     dataType: "json"
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
+                    $(".hotNewCars-loading").addClass("hidden")
+                    $(".carsMore.hotNewCars-more").remove();
                     if (result.code == 204) {
-                        $(".carsMore.hotNewCars-more").remove();
+
                     } else {
-                        $(".carsMore.hotNewCars-more").remove();
                         var list = result.newCars.items;
                         if (list.length == 0) {
                             newcar_end = true;
@@ -120,7 +129,6 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                                     "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                            $(".hotNewCarsContent .hotNewCars-more").remove();
 
                         }
 
@@ -149,18 +157,7 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
         });
         //
 
-        //head 搜索框
-        require(["souche/realTimeDown"], function(down) {
-            down.init($(".search"), {
-                url: config.search_api,
-                type: "GET",
-                dataType: "json",
-                success: function() {
-                    alert(1);
-                }
-            }, 900);
 
-        });
         //
 
     }
@@ -302,7 +299,11 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     $(".carsContent img").lazyload({
                         threshold: 200
                     });
-
+                    $(".card-login").click(function() {
+                        Souche.MiniLogin.checkLogin(function() {
+                            window.location.reload();
+                        })
+                    })
 
                 });
 

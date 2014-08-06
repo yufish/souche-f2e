@@ -3,20 +3,19 @@
  */
 define(function() {
     var collectControl = {};
-    var config={};
+    var config = {};
     var collecting = false;
     var phoneReg = /^1[3458][0-9]{9}$/;
-
-    var _bind = function () {
-        $(".carCollect").live("click", function () {
+    var is_requesting = false;
+    var _bind = function() {
+        $(".carCollect").live("click", function() {
             var context = this;
-
+            if (is_requesting) return;
             Souche.NoRegLogin.checkLogin(function() {
                 if ($(context).hasClass("active")) {
                     var carID = $(context).attr("data-carid");
                     deleteCollect.call(context, carID);
-                }
-                else {
+                } else {
                     var carID = $(context).attr("data-carid");
                     addCollect.call(context, carID);
                 }
@@ -24,22 +23,19 @@ define(function() {
             return false;
         });
 
-        $("#noreg-phone-form .submit").click(function()
-        {
+        $("#noreg-phone-form .submit").click(function() {
             $("#noreg-phone-form").submit();
             return false;
         });
 
     };
 
-    var init = function (_config) {
-        $.extend(config,_config);
+    var init = function(_config) {
+        $.extend(config, _config);
 
-        $(".item .itemTail .carCollect , .itemInfo .carCollect").hover(function()
-        {
+        $(".item .itemTail .carCollect , .itemInfo .carCollect").hover(function() {
             $(this).addClass("hover");
-        },function()
-        {
+        }, function() {
             $(this).removeClass("hover");
         });
 
@@ -52,38 +48,38 @@ define(function() {
         var self = this;
         var url = config.api_saveFavorite;
         var collecting = true;
-
-        if(collecting) {
+        is_requesting = true;
+        if (collecting) {
             collecting = false;
-            $.ajax(
-                {
-                    url: url,
-                    type: "POST",
-                    data: {
-                        phone: $("#fav-phone").val() || $.cookie("noregisteruser"),
-                        carType: config.carType,
-                        carId: carID
-                    },
-                    context: self
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    phone: $("#fav-phone").val() || $.cookie("noregisteruser"),
+                    carType: config.carType,
+                    carId: carID
+                },
+                context: self
+            }).done(function(data) {
+                is_requesting = false;
+                if (data.errorMessage) {
+                    alert(data.errorMessage)
+                } else {
+
+                    $("#fav-popup").addClass("hidden");
+                    $(".wrapGrayBg").hide();
+                    $(this).find("span").html(parseInt($(this).attr("data-num")) + 1);
+                    $(this).addClass("active");
+
                 }
-            ).done(function (data) {
-                    if (data.errorMessage) {
-                        alert(data.errorMessage)
-                    } else {
-
-                        $("#fav-popup").addClass("hidden");
-                        $(".wrapGrayBg").hide();
-                        $(this).find("span").html(parseInt($(this).attr("data-num"))+1);
-                        $(this).addClass("active");
-
-                    }
-                    collecting = false;
-                });
+                collecting = false;
+            });
         }
     }
 
     function deleteCollect(carID) {
         var self = this;
+        is_requesting = true;
         $.ajax({
             url: config.api_delFavorite,
             data: {
@@ -91,8 +87,9 @@ define(function() {
             },
             dataType: "json",
             type: "post",
-            context:self,
+            context: self,
             success: function(data) {
+                is_requesting = false;
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
@@ -101,7 +98,7 @@ define(function() {
                     $(this).removeClass("active");
                 }
 
-                collecting=false;
+                collecting = false;
             }
         })
     }
