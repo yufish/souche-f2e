@@ -183,6 +183,7 @@ nav .nav-item.active .nav-item-content{
     margin: 10px auto 0;
     background: #fff;
     border:1px solid #d9d9d9;
+    display: block;
 }
 .car-card img{
     width: 143px;
