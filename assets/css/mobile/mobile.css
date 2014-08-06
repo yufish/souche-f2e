@@ -1305,6 +1305,7 @@ body {
 #detail .recommend .bd {
     position: relative;
     border: 1px solid #ddd;
+
 }
 #detail .recommend .bd .i-shanggou {
     position: absolute;
@@ -1919,16 +1920,7 @@ body {
     font-weight: bold;
     color: #e68322;
 }
-#config * {
-    font-size: 14px;
-}
-#config #content {
-    padding: 7px;
-    color: #444;
-}
-#config .car-title {
-    line-height: 20px;
-}
+
 #config .main-info h2 {
     font-size: 14px;
     line-height: 20px;
@@ -1947,32 +1939,13 @@ body {
 }
 #config table {
     width: 100%;
-    background: #efefef;
 }
-#config table td {
-    font-size: 14px;
-    border: 1px solid #ccc;
-    padding: 7px;
-    text-align: left;
-    line-height: 20px;
-}
+
 #config table .key {
-    background: #ddd;
     width: 50%;
 }
 #config table .key span {
     color: #999;
-}
-#config .mod {
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-#config .mod .hd {
-    font-size: 16px;
-    background: #ccc;
-    padding-left: 5px;
-    line-height: 25px;
 }
 #config .mod .bd .check_green {
     display: inline-block;
