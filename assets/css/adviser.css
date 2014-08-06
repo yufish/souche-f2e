@@ -286,6 +286,7 @@
   height: 0px;
   position: absolute;
   z-index: 5;
+  left: 7px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-2-2 {
   background: url(../images/adviser/3-2-2.png) no-repeat;
@@ -294,14 +295,16 @@
   position: absolute;
   top: 353px;
   z-index: 5;
+  left: 7px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-2-3 {
   background: url(../images/adviser/3-2-3.png) no-repeat;
-  width: 1182px;
+  width: 1026px;
   height: 0px;
   position: absolute;
-  top: 728px;
+  top: 730px;
   z-index: 5;
+  left: 193px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-2-4 {
   background: url(../images/adviser/3-2-4.png) no-repeat;
@@ -310,6 +313,7 @@
   position: absolute;
   top: 1097px;
   z-index: 5;
+  left: 7px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-2-5 {
   background: url(../images/adviser/3-2-5.png) no-repeat;
@@ -318,11 +322,12 @@
   position: absolute;
   top: 1452px;
   z-index: 5;
+  left: 7px;
 }
 #adviser #content #bargain .bargain-cont .pic-3-3 {
   background: url(../images/adviser/3-3.png) no-repeat;
-  width: 1182px;
-  height: 1864px;
+  width: 1216px;
+  height: 1865px;
   position: absolute;
   z-index: 3;
 }
@@ -418,7 +423,7 @@
 #adviser #content #back .back-cont .pic-5-1 {
   width: 1190px;
   background: url(../images/adviser/5-1.png) no-repeat;
-  height: 1384px;
+  height: 1325px;
   position: relative;
 }
 #adviser #content #back .back-cont .pic-5-1-2 {
@@ -434,15 +439,24 @@
   background: url(../images/adviser/5-1-3.png) no-repeat;
   position: absolute;
   left: 223px;
-  top: 514px;
+  top: 454px;
 }
 #adviser #content #back .back-cont .pic-5-1-4 {
   width: 337px;
   height: 0px;
   background: url(../images/adviser/5-1-4.png) no-repeat;
   left: 593px;
-  top: 1116px;
+  top: 1056px;
   position: absolute;
+}
+#adviser #content #back .back-cont .pix-5-car-1{
+  width: 494px;
+  height: 323px;
+  background: url(../images/adviser/5-car-1.png) no-repeat;
+  left:620px;
+  top: 135px;
+  position: absolute;
+
 }
 #adviser #content #back .back-cont .back-detail {
   width: 600px;
@@ -522,12 +536,13 @@
   left: 10px;
 }
 #adviser #content #qa .qa-cont .pic-6-3-1 {
-  width: 989px;
+  width: 732px;
   height: 212px;
   background: url(../images/adviser/6-3-1.png) no-repeat;
   position: absolute;
   top: 310px;
   z-index: 10;
+  left: 138px;
 }
 #adviser #content #qa .qa-cont .pic-6-3-2 {
   width: 646px;
@@ -848,8 +863,8 @@
   position: relative;
 }
 #adviser #content #address .img-7-3 {
-  width: 733px;
-  height: 495px;
+  width: 799px;
+  height: 487px;
   background: url(../images/adviser/7-3.png) no-repeat;
 }
 #adviser #content #address .img-7-4 {
@@ -859,12 +874,12 @@
   filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/adviser/7-4.png');
 }
 #adviser #content #address .img-7-5 {
-  width: 124px;
+  width: 195px;
   height: 40px;
   background: url(../images/adviser/7-5.png) no-repeat;
   position: absolute;
   right: 60px;
-  bottom: 150px;
+  bottom: 220px;
 }
 #adviser #content #address .img-7-6 {
   width: 44px;
@@ -888,19 +903,19 @@
   width: 385px;
   height: 80px;
   bottom: 0px;
-  left: 221px;
+  left: 250px;
 }
 .wrap7-6{
   width: 44px;
   height: 73px;
   top: 5px;
-  left: 249px;
+  left: 295px;
   position: absolute;
 }
 .wrap7-7{
   width: 50px;
   height: 17px;
   position: absolute;
-  top: 160px;
-  left: 245px;
+  top: 128px;
+  left: 293px;
 }
