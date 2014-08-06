@@ -58,18 +58,34 @@ $(document).ready(function() {
                 for (var i in click_types) {
                     var ele = $("*[click_type='" + i + "']");
                     var offset = ele.offset();
-                    $("<div style=''></div>").appendTo(document.body).css({
-                        position: "absolute",
-                        top: offset.top,
-                        left: offset.left,
-                        background: "#111",
-                        color: "#fff",
-                        padding: "0px 5px",
-                        fontSize: 12,
-                        opacity: 0.6,
-                        zIndex: 1000000000
-                    }).html(click_types[i]).attr("click_type", i)
+                    if (offset) {
+                        $("<div style=''></div>").appendTo(document.body).css({
+                            position: "absolute",
+                            top: offset.top,
+                            left: offset.left,
+                            background: "#111",
+                            color: "#fff",
+                            padding: "0px 5px",
+                            fontSize: 12,
+                            opacity: 0.6,
+                            zIndex: 1000000000
+                        }).html(click_types[i]).attr("for_click_type", i)
+                    }
+
                 }
+                setInterval(function() {
+                    for (var i in click_types) {
+                        var ele = $("*[click_type='" + i + "']");
+                        var offset = ele.offset();
+                        if (offset) {
+                            $("div[for_click_type='" + i + "']").animate({
+                                top: offset.top,
+                                left: offset.left
+                            })
+                        }
+
+                    }
+                }, 500)
             }
 
         });

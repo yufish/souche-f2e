@@ -1,7 +1,10 @@
 /**
  * Created by Administrator on 2014/7/8.
  */
-define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugouModel) {
+define(['souche/util/load-info',
+    "index/qiugouModel",
+    "souche/util/auto-scroll"
+], function(LoadInfo, qiugouModel, autoScroll) {
     var config = {};
     var qiugou = {};
     var lock = true;
@@ -286,8 +289,16 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
         ///
         ///动画 顾问初始化显示的时候
         var initAnimate = function() {
+
             if ($(".adviserInitAnimate").length != 0) {
 
+
+                $(".adviserInitAnimate .boytalk").css({
+                    left: -400
+                })
+                $(".adviserInitAnimate .girltalk").css({
+                    left: -600
+                })
                 $(".adviserInitAnimate .bg").animate({
                     "left": ""
                 }, 500);
@@ -299,14 +310,19 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                         "left": "0px"
                     }, 500, function() {
                         $(".adviserInitAnimate .boytalk").animate({
-                            "left": ""
+                            "left": 0
                         }, 500, function() {
                             $(".adviserInitAnimate .girl").animate({
-                                "left": ""
+                                "left": 0
                             }, 500, function() {
                                 $(".adviserInitAnimate .girltalk").animate({
-                                    "left": ""
-                                }, 500);
+                                    "left": 0
+                                }, 500, function() {
+                                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                                    setTimeout(function() {
+                                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                                    }, 500)
+                                });
                             });
                         });
                     });
