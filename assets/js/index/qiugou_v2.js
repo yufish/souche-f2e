@@ -300,14 +300,14 @@ define(['souche/util/load-info',
                     left: -600
                 })
                 $(".adviserInitAnimate .bg").animate({
-                    "left": ""
+                    "left": 0
                 }, 500);
                 $(".adviserInitAnimate .road").animate({
-                    "left": ""
+                    "left": 0
                 }, 600, function() {
 
                     $(".adviserInitAnimate .boy").animate({
-                        "left": "0px"
+                        "left": 0
                     }, 500, function() {
                         $(".adviserInitAnimate .boytalk").animate({
                             "left": 0

@@ -866,6 +866,7 @@
   width: 799px;
   height: 487px;
   background: url(../images/adviser/7-3.png) no-repeat;
+  display: block;
 }
 #adviser #content #address .img-7-4 {
   width: 385px;
