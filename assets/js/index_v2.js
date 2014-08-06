@@ -262,7 +262,32 @@ define(['index/car-god',
     return {
         init: function(_config) {
             $.extend(config, _config);
+            $(document).ready(function() {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    directionNav: true,
+                    controlNav: true,
+                    pauseOnHover: true
+                });
+                $(".right-slide").flexslider({
+                    slideshow: false,
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    controlNav: true,
+                    animationLoop: false,
+                    randomize: true,
+                    directionNav: false
 
+                });
+                $(".flex-direction-nav").hide();
+                $(".main-slider").mouseenter(function() {
+                    $(".flex-direction-nav").fadeIn("normal");
+                });
+                $(".main-slider").mouseleave(function() {
+                    $(".flex-direction-nav").fadeOut("normal");
+                });
+            });
             _bind();
             carGod.init();
             topNav.init();

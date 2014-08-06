@@ -5,10 +5,10 @@ $("#filter-form").on("submit", function(e) {
 })
 
 if (url == "http://www.souche.com/pages/choosecarpage/choose-car-detail.html") {
-    $(".refer-page").attr("src", url + "?carId=qU6uBbS")
+    $(".refer-page").attr("src", url + "?carId=qU6uBbS&load_data=1&amp;time=" + time)
 }
 if (url == "http://www.souche.com/pages/mobile/detail.html") {
-    $(".refer-page").attr("src", url + "??carId=2kauoc5")
+    $(".refer-page").attr("src", url + "?carId=2kauoc5&load_data=1&amp;time=" + time)
 }
 // loadingTip.show("正在加载中，请稍后")
 var inIn = function(data, d) {
