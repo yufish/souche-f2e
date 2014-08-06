@@ -291,10 +291,7 @@ define(['souche/util/load-info',
         var initAnimate = function() {
 
             if ($(".adviserInitAnimate").length != 0) {
-                autoScroll(".adviserInitAnimate .boytalk .talk-inner", 3000)
-                setTimeout(function() {
-                    autoScroll(".adviserInitAnimate .girltalk .talk-inner", 3000)
-                }, 500)
+
 
                 $(".adviserInitAnimate .boytalk").css({
                     left: -400
@@ -320,7 +317,12 @@ define(['souche/util/load-info',
                             }, 500, function() {
                                 $(".adviserInitAnimate .girltalk").animate({
                                     "left": 0
-                                }, 500);
+                                }, 500, function() {
+                                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                                    setTimeout(function() {
+                                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                                    }, 500)
+                                });
                             });
                         });
                     });
