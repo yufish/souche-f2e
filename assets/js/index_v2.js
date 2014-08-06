@@ -78,24 +78,24 @@ define(['index/car-god',
                     $(".carsMore.myAdviser-more").remove();
                     if (result.code == 204) {} else {
                         var list = result.recommendCars;
+                        var list = result.recommendCars.items;
+                        var template = "";
+                        for (var idx = 0, len = list.length; idx < len; idx++) {
+                            var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                            template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
+                                "<div class='other'>" +
+                                "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
+                                "<\/div>" +
+                                "<div class='carTail clearfix'>" +
+                                "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
+                                "<\/div>";
+                        }
+                        $(".myAdviserContent .myAdviser").eq(0).append(template);
+                        $(".myAdviserContent .myAdviser-more").remove();
                         if (result.hasNext) {
 
-                            var list = result.recommendCars.items;
-                            var template = "";
-                            for (var idx = 0, len = list.length; idx < len; idx++) {
-                                var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                                template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                    "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                    "<div class='other'>" +
-                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                    "<\/div>" +
-                                    "<div class='carTail clearfix'>" +
-                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                    "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
-                                    "<\/div>";
-                            }
-                            $(".myAdviserContent .myAdviser").eq(0).append(template);
-                            $(".myAdviserContent .myAdviser-more").remove();
                         } else {
                             adviser_end = true;
                         }
