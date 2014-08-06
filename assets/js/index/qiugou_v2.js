@@ -134,25 +134,12 @@ define(['souche/util/load-info',
             var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 1;
             var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 1;
             var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
-            if (regx.test(minBudget) && regx.test(maxBudget)) {
-                if (parseInt(minBudget) > parseInt(maxBudget)) {
-                    $("." + tabID + " .warning").html("预算输入有错误").removeClass("hidden");
-                    window.setTimeout(function() {
-                        $("." + tabID + " .warning").addClass("hidden");
-                    }, 2000);
-                    return false;
-                }
-            } else {
-                if (minBudget != "" && maxBudget != "") {
-                    return false;
-                }
-            }
+
 
             qiugouModel.ModifyAdviserBudget({
                 min: parseInt(minBudget) * 10000,
                 max: parseInt(maxBudget) * 10000
             });
-
             var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
             var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
             if (minBudget && maxBudget && (minBudget > maxBudget)) {
