@@ -131,9 +131,8 @@ define(['souche/util/load-info',
 
 
 
-            var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-            var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
-
+            var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 1;
+            var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 1;
             var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
             if (regx.test(minBudget) && regx.test(maxBudget)) {
                 if (parseInt(minBudget) > parseInt(maxBudget)) {
@@ -479,7 +478,7 @@ define(['souche/util/load-info',
         offsetMove($element, option, 0, 500);
         $element.removeClass("hidden");
 
-        var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        var zimu = 'ABCDFGHJKLMNOQRSTWXYZ'
         var html = "";
         for (var i = 0; i < zimu.length; i++) {
             html += "<a data-id='" + zimu[i] + "'>" + zimu[i] + "</a>";
