@@ -1,4 +1,17 @@
-define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
+define(['index/car-god',
+    'index/top-nav',
+    "index/qiugou_v2",
+    'souche/custom-select',
+    "index/collect",
+    "lib/lazyload",
+    "index/carConstrast"
+], function(carGod,
+    topNav,
+    qiugou,
+    customSelect,
+    collect,
+    lazyload,
+    carConstrast) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
@@ -254,58 +267,53 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
             carGod.init();
             topNav.init();
 
-            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "index/collect", "lib/lazyload", "index/carConstrast"],
-                function(qiugou, qiugouModel, customSelect, modelSeries, collect, lazyload, carConstrast) {
 
-                    qiugou.init(config);
-                    //modelSeriesModel.init(config);
-                    //modelSeries.init(config);
-                    carConstrast.init(config);
+            qiugou.init(config);
+            carConstrast.init(config);
 
-                    var ageSelect = new customSelect("age_select", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    var ageSelect = new customSelect("age_select_high", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
-                    var ageSelect = new customSelect("age_select_1", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select_high", {
+                placeholder: "请选择",
+                multi: false
+            });
+            var ageSelect = new customSelect("age_select_1", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    var ageSelect = new customSelect("age_select_high_1", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select_high_1", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    $(".down-counter").each(function() {
-                        var $this = $(this);
-                        downCounter($this);
-                    });
-                    setInterval(function() {
-                        $(".low-price").each(function(i, p) {
-                            $(p).val($(p).val().replace(/[^0-9]/, ""))
-                        })
-                        $(".high-price").each(function(i, p) {
-                            $(p).val($(p).val().replace(/[^0-9]/, ""))
-                        })
-                    }, 200)
+            $(".down-counter").each(function() {
+                var $this = $(this);
+                downCounter($this);
+            });
+            setInterval(function() {
+                $(".low-price").each(function(i, p) {
+                    $(p).val($(p).val().replace(/[^0-9]/, ""))
+                })
+                $(".high-price").each(function(i, p) {
+                    $(p).val($(p).val().replace(/[^0-9]/, ""))
+                })
+            }, 200)
 
-                    collect.init(config);
+            collect.init(config);
 
-                    $(".carsContent img").lazyload({
-                        threshold: 200
-                    });
-                    $(".card-login").click(function() {
-                        Souche.MiniLogin.checkLogin(function() {
-                            window.location.reload();
-                        })
-                    })
+            $(".carsContent img").lazyload({
+                threshold: 200
+            });
+            $(".card-login").click(function() {
+                Souche.MiniLogin.checkLogin(function() {
+                    window.location.reload();
+                })
+            })
 
-                });
 
 
         }
