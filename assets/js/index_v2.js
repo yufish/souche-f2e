@@ -82,7 +82,7 @@ define(['index/car-god',
                         var template = "";
                         for (var idx = 0, len = list.length; idx < len; idx++) {
                             var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                            template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                            template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                 "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                 "<div class='other'>" +
                                 "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
@@ -133,7 +133,7 @@ define(['index/car-god',
 
                             for (var idx = 0, len = list.length; idx < len; idx++) {
                                 var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                                template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
                                     "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
