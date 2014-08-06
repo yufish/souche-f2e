@@ -68,7 +68,7 @@ define(function() {
 
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
-                    $(this).find("span").html(parseInt($(this).attr("data-num")) + 1);
+                    $(this).find("span").html($(this).find("span").html() * 1 + 1);
                     $(this).addClass("active");
 
                 }
@@ -94,7 +94,7 @@ define(function() {
                     alert(data.errorMessage)
                 } else {
                     //var num =parseInt($(this).find("span").html());
-                    $(this).find("span").html(parseInt($(this).attr("data-num")));
+                    $(this).find("span").html($(this).find("span").html() * 1 - 1);
                     $(this).removeClass("active");
                 }
 
