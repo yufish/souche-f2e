@@ -68,8 +68,18 @@ $(document).ready(function() {
                         fontSize: 12,
                         opacity: 0.6,
                         zIndex: 1000000000
-                    }).html(click_types[i]).attr("click_type", i)
+                    }).html(click_types[i]).attr("for_click_type", i)
                 }
+                setInterval(function() {
+                    for (var i in click_types) {
+                        var ele = $("*[click_type='" + i + "']");
+                        var offset = ele.offset();
+                        $("div[for_click_type='" + i + "']").animate({
+                            top: offset.top,
+                            left: offset.left
+                        })
+                    }
+                }, 500)
             }
 
         });
