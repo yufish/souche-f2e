@@ -82,7 +82,8 @@ define(function() {
                         position: 'absolute',
                         top: $(this).parent().offset().top + 'px',
                         left: $(this).parent().offset().left + 'px',
-                        backgroundColor: "#BCEE68"
+                        backgroundColor: "#FF4400",
+                        color: "#fff"
                     });
 
                     var endX = $(".side-box .contrast-img").offset().left;
