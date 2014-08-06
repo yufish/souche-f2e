@@ -66,6 +66,10 @@
     background: url(../../../../assets/images/mob/h5-3/detail-fav-star.png) no-repeat;
     background-size: 100%;
 }
+#detail-main .active .five-star{
+     background: url(../../../../assets/images/mob/h5-3/fav-star-active.png) no-repeat;
+     background-size: 100%;
+ }
 #detail-main .fav-text{
     text-align: center;
     margin-top: 6px;
@@ -172,6 +176,11 @@
     background-size: 100%;
     vertical-align: -3px;
 }
+#detail-main .address{
+    width: 288px;
+    margin: 0 auto 16px;
+    display: block;
+}
 #detail-main .address .address-icon{
     display: inline-block;
     width: 44px;
@@ -179,12 +188,21 @@
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     background: #FF571A url(../../../../assets/images/mob/h5-3/addr-location.png) no-repeat center;
+    background-size: 14px 20px;
 }
 #detail-main .address .address-name{
+    height: 44px;
     line-height: 44px;
     font-size: 12px;
-    padding-left: 22px;
+    padding:0 22px 0 10px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    width: 244px;
+    color: #666;
+    border: 1px solid #ccc;
+    border-left: none;
+    display: inline-block;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }

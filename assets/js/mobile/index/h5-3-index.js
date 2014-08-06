@@ -22,6 +22,7 @@ if (navigator.userAgent.match(/Android/i)){
 }
 //tab动画的相关实现
 !function(){
+    var transition_duration=400;
     var tabCtn = $('#J_tabContainer'),
         tabNavBar = $('#J_tabNavbar');
     var tabPanels = tabCtn.find('.tab-panel'),
@@ -31,6 +32,12 @@ if (navigator.userAgent.match(/Android/i)){
     tabCtn.css({width:numOfPanels*100+'%'});
     tabPanels.css({width:widthOfPanel+'%'});
 
+    $(
+        function(){
+            var height = tabCtn.height();
+            tabPanels.css({height:height});
+        }
+    )
     //记录每一个tabPanel的scrollTop，便于恢复到相应位置
     var topCache=[0,0,0];
 
@@ -40,12 +47,14 @@ if (navigator.userAgent.match(/Android/i)){
         topCache[oldIndex-1]=document.body.scrollTop;
         document.body.scrollTop = topCache[curIndex-1];
         if(curIndex==2){
-            $('.btn-wrapper-for-filter').removeClass('hidden')
+            setTimeout(function(){
+                $('.btn-wrapper-for-filter').removeClass('hidden');
+            },transition_duration);
+
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
         tabNavBar.attr('data-active-index',curIndex)
-        //history.replaceState({},'','index.html')
     }
 
     var move = function(){
@@ -68,8 +77,9 @@ if (navigator.userAgent.match(/Android/i)){
         }
 
     }()
-    //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
 
+    //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
+    /*
     var hash = location.hash;
     var match = /tabindex=([1-3])/.exec(hash);
     if(match){
@@ -77,6 +87,7 @@ if (navigator.userAgent.match(/Android/i)){
     }else{
         move(1);
     }
+    */
 
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');

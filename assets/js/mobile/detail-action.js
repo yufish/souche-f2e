@@ -16,39 +16,6 @@ var Action = (function () {
                 }
 
             })
-            //yuyue
-            var showPopup = function ($popup) {
-                var scrollTop = $(window).scrollTop();
-                var top = scrollTop + 100;
-                $popup.css({
-                    top: top
-                }).removeClass("hidden");
-                $(".wrapGrayBg").removeClass('hidden');
-            };
-
-            var hasFav = false;
-            $("#fav_submit").on("click", function (e) {
-                e.preventDefault();
-                var self = this;
-                if (hasFav)
-                    return;
-                if (checkUserLocal().phoneNum) {
-                    submitFav();
-                } else {
-                    showPopup($('#for-fav'))
-                }
-            })
-
-            function hidePopup() {
-                $('#for-yuyue').addClass('hidden');
-                $('#for-fav').addClass('hidden');
-                $('.wrapGrayBg').addClass('hidden');
-            }
-            $('.wrapGrayBg').on("click", function (e) {
-                e.preventDefault();
-                hidePopup();
-            });
-
             $('#yuyue-form').on('submit', function (e) {
                 e.preventDefault();
                 var phoneNum = $("#phone-for-yuyue").val();
@@ -60,28 +27,13 @@ var Action = (function () {
                     })
                 }
             });
-
-            $('#fav-form').on('submit', function (e) {
-                e.preventDefault();
-                var phoneNum = $("#phone-for-fav").val();
-                if (!phoneReg.test(phoneNum)) {
-                    $(".wrong-tip", this).removeClass("hidden");
-                } else {
-                    SM.PhoneRegister(phoneNum, function () {
-                        submitFav();
-                    })
-                }
-            });
-
             var submitYuyue = function () {
                 $("#yuyue_submit").html('预约中...');
                 $("#btn-yuyue").val('预约中...');
                 $.ajax({
                     url: $("#yuyue_submit").attr("href"),
-                    // url:config.api_saleCarOrder,//TODO
                     type: "post",
                     dataType: "json",
-
                     success: function (data) {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
@@ -107,12 +59,31 @@ var Action = (function () {
                     }
                 })
             };
-
-
-
+            var hasFav = false;
+            $("#fav_submit").on("click", function (e) {
+                e.preventDefault();
+                var self = this;
+                if (hasFav)
+                    return;
+                if (checkUserLocal().phoneNum) {
+                    submitFav();
+                } else {
+                    showPopup($('#for-fav'))
+                }
+            })
+            $('#fav-form').on('submit', function (e) {
+                e.preventDefault();
+                var phoneNum = $("#phone-for-fav").val();
+                if (!phoneReg.test(phoneNum)) {
+                    $(".wrong-tip", this).removeClass("hidden");
+                } else {
+                    SM.PhoneRegister(phoneNum, function () {
+                        submitFav();
+                    })
+                }
+            });
             var submitFav = function () {
-                $("#fav_submit").html('收藏中...')
-                $("#btn-fav").val('收藏中...');
+                $("#fav_submit .fav-text").html('收藏中...')
                 $.ajax({
                     url: $('#fav_submit').attr("href"),
                     dataType: "json",
@@ -122,20 +93,31 @@ var Action = (function () {
                     success: function (data) {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
-                            $("#fav_submit").html("收藏")
-                        } else {
+                            $("#fav_submit .fav-text").html("收藏")
 
-                            $("#fav_submit").addClass("disabled").html("已收藏")
+                        } else {
+                            $("#fav_submit .fav-text").html("已收藏")
+                            $("#fav_submit").addClass('active');
                             hasFav = true
-                            $("#carFavoriteNum").html(
-                                $("#carFavoriteNum").html() * 1 + 1)
                         }
                         hidePopup();
                     }
                 })
 
             };
-
+            var showPopup = function ($popup) {
+                var scrollTop = $(window).scrollTop();
+                var top = scrollTop + 100;
+                $popup.css({
+                    top: top
+                }).removeClass("hidden");
+                $(".wrapGrayBg").removeClass('hidden');
+            };
+            function hidePopup() {
+                $('#for-yuyue').addClass('hidden');
+                $('#for-fav').addClass('hidden');
+                $('.wrapGrayBg').addClass('hidden');
+            }
             $('.phone-input').focus(function () {
                 $('.wrong-tip').addClass('hidden');
             })
