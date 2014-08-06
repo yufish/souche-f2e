@@ -38,15 +38,14 @@ header{
     position: absolute;
     z-index: 2;
     width: 100%;
-    padding: 0 10px;
     -webkit-perspective: 400;
     perspective: 400;
     height: 0;
     overflow: hidden;
 }
 .other-topic .topic-item{
-    height: 30px;
-    line-height: 30px;
+    height: 44px;
+    line-height:44px;
     font-size: 14px;
     color:#fff;
     border-bottom: 1px solid #fff;
@@ -78,7 +77,7 @@ header{
     position: fixed;
     width: 100%;
     top:0;
-    z-index: 100;
+    z-index: 1001;
 }
 #J_tabNavbar{
     height: 44px;

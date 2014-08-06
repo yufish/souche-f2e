@@ -111,10 +111,39 @@ if (navigator.userAgent.match(/Android/i)){
     var otherTopic = $('.other-topic');
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
-    var timeSpan = 100,hGap=31;
+    var timeSpan = 100,hGap=44;
     wrapBg.on(tap_event,function(){
+        hideTopic();
+        $('.for-other-topic').attr('data-show-state',0)
+    })
+    $('.for-other-topic').on(tap_event,function(){
+        var self =$(this);
+        if(self.attr('data-show-state')=='1'){
+            hideTopic();
+            self.attr('data-show-state',0)
+        }else{
+            showTopic()
+            self.attr('data-show-state',1)
+        }
+
+    })
+
+    function showTopic(){
+        wrapBg.removeClass('hidden');
         var time =0;
-        var height = 181;
+        var height = 40;
+        topicItems.each(function(index,item){
+            setTimeout(function(){
+                otherTopic.css({height:height});
+                height+=hGap;
+                $(item).addClass("show");
+            },time)
+            time+=timeSpan
+        })
+    }
+    function hideTopic(){
+        var time =0;
+        var height = 260;
         for(var i = topicItems.length-1;i>-1;i--){
             !function(index){
                 setTimeout(function(){
@@ -129,21 +158,7 @@ if (navigator.userAgent.match(/Android/i)){
             otherTopic.css({height:0});
             wrapBg.addClass('hidden');
         },timeSpan*5)
-    })
-
-    $('.for-other-topic').on(tap_event,function(){
-        wrapBg.removeClass('hidden');
-        var time =0;
-        var height = 26,hGap = 31;
-        topicItems.each(function(index,item){
-            setTimeout(function(){
-                otherTopic.css({height:height});
-                height+=hGap;
-                $(item).addClass("show");
-            },time)
-            time+=timeSpan
-        })
-    })
+    }
 }()
 //筛选相关
 !function(){
