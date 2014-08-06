@@ -3,8 +3,9 @@
  */
 define(['souche/util/load-info',
     "index/qiugouModel",
-    "souche/util/auto-scroll"
-], function(LoadInfo, qiugouModel, autoScroll) {
+    "souche/util/auto-scroll",
+    "souche/util/animate-list"
+], function(LoadInfo, qiugouModel, autoScroll, animateList) {
     var config = {};
     var qiugou = {};
     var lock = true;
@@ -302,31 +303,63 @@ define(['souche/util/load-info',
                 $(".adviserInitAnimate .bg").animate({
                     "left": ""
                 }, 500);
-                $(".adviserInitAnimate .road").animate({
-                    "left": ""
-                }, 600, function() {
+                animateList([
+                    [".adviserInitAnimate .road", {
+                            left: 0
+                        },
+                        600
+                    ],
+                    [".adviserInitAnimate .boy", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .boytalk", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .girl", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .girltalk", {
+                            left: 0
+                        },
+                        500
+                    ]
+                ], function() {
+                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                    setTimeout(function() {
+                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                    }, 500)
+                })
+                // $(".adviserInitAnimate .road").animate({
+                //     "left": ""
+                // }, 600, function() {
 
-                    $(".adviserInitAnimate .boy").animate({
-                        "left": "0px"
-                    }, 500, function() {
-                        $(".adviserInitAnimate .boytalk").animate({
-                            "left": 0
-                        }, 500, function() {
-                            $(".adviserInitAnimate .girl").animate({
-                                "left": 0
-                            }, 500, function() {
-                                $(".adviserInitAnimate .girltalk").animate({
-                                    "left": 0
-                                }, 500, function() {
-                                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
-                                    setTimeout(function() {
-                                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
-                                    }, 500)
-                                });
-                            });
-                        });
-                    });
-                });
+                //     $(".adviserInitAnimate .boy").animate({
+                //         "left": "0px"
+                //     }, 500, function() {
+                //         $(".adviserInitAnimate .boytalk").animate({
+                //             "left": 0
+                //         }, 500, function() {
+                //             $(".adviserInitAnimate .girl").animate({
+                //                 "left": 0
+                //             }, 500, function() {
+                //                 $(".adviserInitAnimate .girltalk").animate({
+                //                     "left": 0
+                //                 }, 500, function() {
+                //                     autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                //                     setTimeout(function() {
+                //                         autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                //                     }, 500)
+                //                 });
+                //             });
+                //         });
+                //     });
+                // });
 
             }
         }
