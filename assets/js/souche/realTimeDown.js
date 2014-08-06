@@ -36,7 +36,7 @@ define(function() {
             } else if (list[index].type == 3) {
                 key = "color"
             }
-            list[index].url = config.api_matchUrl + "?" + key + "=" + list[index].code + "&pfrom=boxsearch";
+            list[index].url = contextPath + "/pages/onsale/sale_car_list.html" + "?" + key + "=" + list[index].code + "&pfrom=boxsearch";
             downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
         }
 
