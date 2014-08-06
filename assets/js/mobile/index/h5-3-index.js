@@ -105,7 +105,7 @@ if (navigator.userAgent.match(/Android/i)){
     var otherTopic = $('.other-topic');
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
-    var timeSpan = 100,hGap=45;
+
     wrapBg.on(tap_event,function(){
         hideTopic();
         $('.for-other-topic').attr('data-show-state',0)
@@ -120,13 +120,17 @@ if (navigator.userAgent.match(/Android/i)){
             self.attr('data-show-state',1)
         }
     })
-
+    var numOfTopic = topicItems.length;
+    var timeSpan = 100,hGap=44;
     function showTopic(){
         wrapBg.removeClass('hidden');
         var time =0;
-        var height = 40;
+        var height = 35;
         topicItems.each(function(index,item){
             setTimeout(function(){
+                if(index==numOfTopic-1){
+                    height=220
+                }
                 otherTopic.css({height:height});
                 height+=hGap;
                 $(item).addClass("show");
@@ -136,7 +140,7 @@ if (navigator.userAgent.match(/Android/i)){
     }
     function hideTopic(){
         var time =0;
-        var height = 260;
+        var height = 250;
         for(var i = topicItems.length-1;i>-1;i--){
             !function(index){
                 setTimeout(function(){
