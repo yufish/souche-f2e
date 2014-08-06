@@ -65,6 +65,9 @@ define(function() {
                     }).addClass("hidden")
                 })
             })
+            $(document.body).on("touchstart", function() {
+                $(".nav-inner").addClass("hidden")
+            })
         }
     }
     return topNav;
