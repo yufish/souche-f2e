@@ -155,8 +155,8 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
                 var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
                 var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
-                if (maxYear && maxYear && (minYear > maxYear)) {
-                    $("." + tabID + " .warning").html("年份选择有错误").removeClass("hidden");
+                if (minBudget && maxBudget && (minBudget > maxBudget)) {
+                    $("." + tabID + " .warning").html("价格填写有错误").removeClass("hidden");
                     window.setTimeout(function() {
                         $("." + tabID + " .warning").addClass("hidden");
                     }, 2000);
@@ -195,24 +195,22 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
                     $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
                     return;
                 }
-                Souche.NoRegLogin.checkLogin(function() {
-                    $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
-                    $.ajax({
-                        url: url,
-                        dataType: "json",
-                        success: function() {
-                            // hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                            // window.setTimeout(function() {
-                            //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                            // }, 1000);
-                            window.location.reload();
-                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                        },
-                        error: function() {
-                            $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                        }
-                    });
-                })
+                $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
+                $.ajax({
+                    url: url,
+                    dataType: "json",
+                    success: function() {
+                        // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                        // window.setTimeout(function() {
+                        //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                        // }, 1000);
+                        window.location.reload();
+                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                    },
+                    error: function() {
+                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                    }
+                });
 
 
             });
@@ -451,7 +449,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
 
         if ($(".carsContent." + tabID + "Content").height() < 500) {
             $(".carsContent." + tabID + "Content").css("overflow", "visible");
-            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
+            $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "450px");
         } else {
             $(".carsContent." + tabID + "Content").css("overflow", "auto");
         }
@@ -489,7 +487,7 @@ define(['souche/util/load-info', "index/qiugouModel"], function(LoadInfo, qiugou
         $(".carsContent." + tabID + "Content").css({
             "overflow": "visible"
         });
-        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "402px");
+        $(".carsContent." + tabID + "Content" + " ." + tabID).eq(0).css("minHeight", "450px");
     }
 
     var hideDialogContent = function($element, option) {

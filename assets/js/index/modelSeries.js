@@ -88,7 +88,7 @@ define(function() {
             series[code].name = name;
         }
 
-        $(".chexi .chexiTitle").html("<h1>全部车系</h1><span data-name=" + name + ">全部</span>");
+        // $(".chexi .chexiTitle").html("<h1>全部车系</h1><span data-name=" + name + ">全部</span>");
         $(".chexi .chexiTitle span").attr("code", code);
         if (selectedSeries[code]) {
             $(".chexi .chexiTitle span").addClass("active");
