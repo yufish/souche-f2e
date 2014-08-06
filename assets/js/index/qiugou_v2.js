@@ -479,7 +479,7 @@ define(['souche/util/load-info',
         offsetMove($element, option, 0, 500);
         $element.removeClass("hidden");
 
-        var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        var zimu = 'ABCDFGHJKLMNOQRSTWXYZ'
         var html = "";
         for (var i = 0; i < zimu.length; i++) {
             html += "<a data-id='" + zimu[i] + "'>" + zimu[i] + "</a>";
