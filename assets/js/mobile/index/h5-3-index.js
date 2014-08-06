@@ -32,12 +32,6 @@ if (navigator.userAgent.match(/Android/i)){
     tabCtn.css({width:numOfPanels*100+'%'});
     tabPanels.css({width:widthOfPanel+'%'});
 
-    $(
-        function(){
-            var height = tabCtn.height();
-            tabPanels.css({height:height});
-        }
-    )
     //记录每一个tabPanel的scrollTop，便于恢复到相应位置
     var topCache=[0,0,0];
 
@@ -111,7 +105,7 @@ if (navigator.userAgent.match(/Android/i)){
     var otherTopic = $('.other-topic');
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
-    var timeSpan = 100,hGap=44;
+    var timeSpan = 100,hGap=45;
     wrapBg.on(tap_event,function(){
         hideTopic();
         $('.for-other-topic').attr('data-show-state',0)
@@ -125,7 +119,6 @@ if (navigator.userAgent.match(/Android/i)){
             showTopic()
             self.attr('data-show-state',1)
         }
-
     })
 
     function showTopic(){
