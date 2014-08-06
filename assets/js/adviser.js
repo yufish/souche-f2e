@@ -183,7 +183,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 function() {
                     $(".wrap7-4").animate({
                         opacity: 1,
-                        bottom: 254
+                        bottom: 312
                     }, 2000)
                 }
             ],
@@ -191,7 +191,7 @@ require(['souche/util/action-list'], function(ActionList) {
                 function() {
                     $(".wrap7-6").animate({
                         opacity: 1,
-                        top: 85
+                        top: 52
                     }, 2000)
                 }
             ],
