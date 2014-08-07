@@ -69,7 +69,6 @@ if (navigator.userAgent.match(/Android/i)){
                 }, 0)
             }
         }
-
     }()
 
     //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
@@ -360,16 +359,16 @@ if (navigator.userAgent.match(/Android/i)){
             }else{
                 $('#brand-list .item').removeClass('selected');
                 self.addClass('selected');
-                $('.filter-popup-wrapper').addClass('hidden');
-                $('.wrapGrayBg').addClass('hidden');
+                setTimeout(function(){
+                    $('.filter-popup-wrapper').addClass('hidden');
+                    $('.wrapGrayBg').addClass('hidden');
+                },200);
                 var bName = self.find('.brand-name').text()
                 var bCode = self.attr('data-code');
                 $('#J_brand').text(bName);
                 $('.selected-brand-name').text(bName);
                 filterGlobal.selectBrand = bCode;
-
                 filterGlobal.queryCount();
-
                 utils.getSeriesByBrand(bCode,makeSeries);
             }
         })
@@ -381,8 +380,10 @@ if (navigator.userAgent.match(/Android/i)){
             }else{
                 $('#series-list .series-item').removeClass('selected');
                 self.addClass('selected');
-                $('.filter-popup-wrapper').addClass('hidden');
-                $('.wrapGrayBg').addClass('hidden');
+                setTimeout(function(){
+                    $('.filter-popup-wrapper').addClass('hidden');
+                    $('.wrapGrayBg').addClass('hidden');
+                },200)
                 var sName = self.find('.series-name').text()
                 var sCode = self.attr('data-code');
                 filterGlobal.selectSeries = sCode;

@@ -116,6 +116,9 @@ $(document).ready(function() {
     try {
         if ("ontouchstart" in window) {
             eventKey = "click";
+            if(typeof $.fn.tap){
+                eventKey = 'tap'
+            }
         }
     } catch (e) {
 
