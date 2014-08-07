@@ -61,7 +61,7 @@ Souche.Sidebar = (function() {
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            if ($(this).hasClass("contrast-box")) {
+            if ($(this).hasClass("contrast-box") || $(this).hasClass("suggest-box")) {
                 showSidebar(self);
             } else {
                 Souche.NoRegLogin.checkLogin(function(isLogin) {
