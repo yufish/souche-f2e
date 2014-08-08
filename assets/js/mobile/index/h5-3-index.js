@@ -314,7 +314,7 @@ if (navigator.userAgent.match(/Android/i)){
             }
             $('.series-content').append(html);
         }
-        $('#J_brand').on(tap_event,function(){
+        $('#J_brand').on('click',function(){
             //显示品牌弹出框
             $('.wrapGrayBg').removeClass('hidden');
             $('#brand-list').css({
@@ -337,7 +337,7 @@ if (navigator.userAgent.match(/Android/i)){
         })
         filterGlobal.selectBrand = ''
         filterGlobal.selectSeries = ''
-        $('#J_series').on(tap_event,function(){
+        $('#J_series').on('click',function(){
             $('.wrapGrayBg').removeClass('hidden');
             $('#series-list').css({
                 top: document.body.scrollTop + 50
