@@ -522,7 +522,7 @@ if (navigator.userAgent.match(/Android/i)){
 }()
 
 
-$('.wrapGrayBg').on(tap_event,function(){
+$('.wrapGrayBg').on('click',function(){
     $('.filter-popup-wrapper').addClass('hidden');
     $('.wrapGrayBg').addClass('hidden');
     $('.mobile-popup').addClass('hidden');
@@ -531,7 +531,7 @@ $('.wrapGrayBg').on(tap_event,function(){
 !function(){
     var isLogin =false;
     var $curNode;
-    $('.car-area .row').on(tap_event,'.fav',function(e){
+    $('.car-area .row').on('click','.fav',function(e){
         e.preventDefault();
         e.stopPropagation();
         $curNode = $(this);
