@@ -344,7 +344,7 @@ if (navigator.userAgent.match(/Android/i)){
             }).removeClass('hidden');
         })
 
-        $('#brand-list').on(tap_event,'.item',function(){
+        $('#brand-list').on('click','.item',function(){
             var self = $(this)
             //清空车系的状态
             $('.series-content').empty();
@@ -369,7 +369,7 @@ if (navigator.userAgent.match(/Android/i)){
                 utils.getSeriesByBrand(bCode,makeSeries);
             }
         })
-        $('#series-list').on(tap_event,'.series-item',function(){
+        $('#series-list').on('click','.series-item',function(){
             var self = $(this);
             if(self.hasClass('selected')){
                 self.removeClass('selected');
@@ -390,7 +390,7 @@ if (navigator.userAgent.match(/Android/i)){
         })
         //重置和数量显示
         !function() {
-            $('#J_btnFilter_reset').on(tap_event, function (e) {
+            $('#J_btnFilter_reset').on('click', function (e) {
                 filterGlobal.selectBrand = '';
                 filterGlobal.selectSeries = '';
                 $('.series-content').empty();
@@ -532,10 +532,6 @@ $('.wrapGrayBg').on('click',function(){
     var isLogin =false;
     var $curNode;
     $('.car-area .row').on('click','.fav',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-    })
-    $('.car-area .row').on(tap_event,'.fav',function(e){
         e.preventDefault();
         e.stopPropagation();
         $curNode = $(this);
