@@ -534,6 +534,10 @@ $('.wrapGrayBg').on('click',function(){
     $('.car-area .row').on('click','.fav',function(e){
         e.preventDefault();
         e.stopPropagation();
+    })
+    $('.car-area .row').on(tap_event,'.fav',function(e){
+        e.preventDefault();
+        e.stopPropagation();
         $curNode = $(this);
         if (isLogin) {
             doFav($curNode);
