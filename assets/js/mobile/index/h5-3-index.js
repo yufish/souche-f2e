@@ -343,10 +343,7 @@ if (navigator.userAgent.match(/Android/i)){
                 top: document.body.scrollTop + 50
             }).removeClass('hidden');
         })
-        $('.wrapGrayBg').on(tap_event,function(){
-            $('.filter-popup-wrapper').addClass('hidden');
-            $('.wrapGrayBg').addClass('hidden');
-        })
+
         $('#brand-list').on(tap_event,'.item',function(){
             var self = $(this)
             //清空车系的状态
@@ -409,7 +406,7 @@ if (navigator.userAgent.match(/Android/i)){
             })
         }();
 
-    }()
+    }();
 
     function buildQueryObj(){
         function getCond(val){
@@ -426,19 +423,151 @@ if (navigator.userAgent.match(/Android/i)){
         dataObj.transmissionType = getCond($('#J_transmission').val());
         return dataObj;
     }
-    function queryCount(){
+
+    filterGlobal.queryCount =  function(){
         var dObj = buildQueryObj();
         utils.queryCarsCount(dObj,function(err,count){
             $('#J_btnFilter_submit').text('为您找到'+count+'辆车')
         })
-    }
-    filterGlobal.queryCount = queryCount;
+    };
     $('#J_btnAdvance').on('click',function(){
         $('#J_advanceWrapper').addClass('hidden');
         $('#J_advancedFilterItems').removeClass('hidden')
     })
+    $('#J_btnFilter_submit').on(tap_event,function(e){
+        var dObj = buildQueryObj();
+        var addr = contextPath + '/pages/mobile/list.html?';
+        for (var i in dObj) {
+            addr += (i + '=' + dObj[i] + '&');
+        }
+        window.location.href = addr.substr(0,addr.length-1);
+    })
 }();
+!function(){
+    function cardDom(item){
+        var d = {
+            id: item.id,
+            detailUrl: item.carVo.status == 'zaishou' ? contextPath+'/detail.html?' : contextPath+'/yushou-detail.html?',
+            flashPurchase: item.flashPurchase,
+            fenqi: ( !! item.carPriceVO && item.carPriceVO.fenqi == 1),
+            downPrice: ( !! item.flashPurchaseVO) ? item.flashPurchaseVO.totalMasterOutPriceToString * 1000 : undefined,
+            favorite: item.favorite,
+            favCount: item.count,
+            year: item.carVo.yearShow,
+            month: item.carVo.monthShow,
+            newPrice: item.carVo.newPriceToString,
+            levelName: item.carVo.levelName,
+            pictureBig: ( !! item.carPicturesVO)?item.carPicturesVO.pictureBig:'',
+            carOtherAllNameShow: item.carVo.carOtherAllNameShow,
+            price: item.price,
+            zaishou: (item.carVo.status == 'zaishou'),
+            recommStr: item.recommendReasonStr
+        }
+        var activeClass= d.favorite?'active':'';
+        var str = '<div class="car-wrapper">'
+                + '<a class="car-card" href="'+d.detailUrl+ d.id+'">'
+                +    '<img src="'+ d.pictureBig+'">'
+                +    '<div class="car-info">'
+                +        '<div class="car-introduction">'+ d.carOtherAllNameShow+'</div>'
+                +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
+                +        '<div class="car-time">'+ d.year+'上牌</div>'
+                +        '<div class="recommend">'+ d.recommStr
+                +            '<div class="fav '+activeClass+'" data-id="'+ d.id+'"><span class="star-shape">☆</span><span class="fav-num">'+ d.favCount+'</span></div>'
+                +        '</div>'
+                +    '</div>'
+                +   '</a>'
+                +   '</div>'
+        return str;
+    }
+    var $lookMore = $(".car-area .look-more");
+    var cardCtn = $('.car-area .row');
+    var pageIndex,moreApi,carsProp;
+    if($lookMore.attr('data-type')=='loadUserRecommendCar'){
+        pageIndex=2;
+        moreApi ='/pages/mobile/homePageAction/loadUserRecommendCar.json';
+        carsProp = 'recommendCars';
+    }else{
+        pageIndex=1;
+        moreApi ='/pages/mobile/homePageAction/loadNewCars.json';
+        carsProp='newCars'
+    }
+    function buildCards(data){
+        if(!data || data.code!=200)return;
+        var html = "";
+        var items = data[carsProp].items;
+        for(var i = 0;i<items.length;i++){
+            html+=cardDom(items[i]);
+        }
+        cardCtn.append(html);
+        $lookMore.text('加载更多')
+        if(data.totalPage>=pageIndex){
+            $lookMore.hide();
+        }
+    }
 
-$(".car-area .look-more").on(tap_event,function(e){
+    $lookMore.on('click',function(e){
+        $lookMore.text('更多好车加载中...')
+        $.ajax({
+            url:contextPath+moreApi,
+            data:{
+                page:pageIndex++
+            },
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+                buildCards(data);
+            }
+        })
+    })
+}()
+
+
+$('.wrapGrayBg').on(tap_event,function(){
+    $('.filter-popup-wrapper').addClass('hidden');
+    $('.wrapGrayBg').addClass('hidden');
+    $('.mobile-popup').addClass('hidden');
 })
+//收藏相关代码
+!function(){
+    var isLogin =false;
+    var $curNode;
+    $('.car-area .row').on(tap_event,'.fav',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $curNode = $(this);
+        if (isLogin) {
+            doFav($curNode);
+            return;
+        }
+        Souche.checkPhoneExist(function(is_login) {
+            if (is_login) {
+                doFav($curNode);
+                isLogin = true;
+            } else {
+                showPopup();
+            }
+        })
+    })
 
+    function showPopup(){
+        $('.wrapGrayBg').removeClass('hidden');
+        var $popup = $('.mobile-popup');
+        $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+    }
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    $('#notify-form').submit(function(e) {
+        var phoneNum = $("#phone-for-notify").val();
+        e.preventDefault();
+        if (!phoneReg.test(phoneNum)) {
+            alert('请输入正确的手机号码');
+        } else {
+            Souche.PhoneRegister(phoneNum, function() {
+                isLogin = true;
+                doFav($curNode,function(){
+                    $('.wrapGrayBg').addClass('hidden');
+                    $('.mobile-popup').addClass('hidden');
+                });
+            })
+        }
+    })
+}();
