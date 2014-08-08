@@ -500,7 +500,7 @@ if (navigator.userAgent.match(/Android/i)){
         }
         cardCtn.append(html);
         $lookMore.text('加载更多')
-        if(data.totalPage>=pageIndex){
+        if(data[carsProp].totalPage>=pageIndex){
             $lookMore.hide();
         }
     }
