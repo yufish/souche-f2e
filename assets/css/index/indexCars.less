@@ -5,6 +5,57 @@ body {
   height:60px;
   background: url(../images/index/ajax-loader1.gif) no-repeat center center;
 }
+.btn{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    display: inline-block;
+    font-size: 12px;
+  }
+  .btn:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+.record_warning{
+  border:1px solid #fcd1a6;
+  background: #fffee7;
+  line-height: 40px;
+  font-size: 12px;
+  color:#d8ae86;
+  padding-left: 10px;
+  margin-top:10px;
+  margin-right: 19px;
+  a{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    line-height: 12px;
+    display: inline-block;
+    padding:8px 15px;
+    font-size: 12px;
+    float:right;
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  a:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+  s{
+    background: url(../images/index/tip-close.png) no-repeat;
+    width:10px;
+    height:10px;
+    display: inline-block;
+    margin-right:10px;
+    float:right;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+}
 #carsNav,.carsMore {
   width: 96.8%;
   position: relative;
@@ -56,9 +107,10 @@ body {
   }
 
   .carsContent {
+    margin-top: 10px;
     .carsItem {
       width: 228px;
-      margin-top:19px;
+      margin-bottom:19px;
       margin-right: 13px;
       float: left;
       border: 1px solid #EDEDED;
@@ -183,7 +235,7 @@ body {
     background: #F5F5F5;
     height: 317px;
     .mm {
-      width: 100px;
+      width: 86px;
       position: absolute;
       top: 10px;
       left: 140px;
@@ -195,16 +247,16 @@ body {
 
     }
     .opItemTitleTop {
-      margin: 50px 0px 0px 20px;
+      margin: 46px 0px 0px 20px;
     }
     .important {
       color: #fc7000;
     }
     .dataContainer {
-      border-top:1px solid #ddd;
+      border-top:1px solid #E6E6E6;
       position: relative;
-      margin-top: 66px;
-      padding-top: 28px;
+      margin-top: 46px;
+padding-top: 46px;
       margin-left: 20px;
       margin-right: 20px;
 
@@ -231,8 +283,6 @@ body {
         margin-top: 20px;
         width: 100%;
         padding-top: 10px;
-        background: #FF5719;
-        border: 1px solid #D94A16;
         height: 28px;
         color: #ffffff;
         text-align: center;
@@ -242,9 +292,7 @@ body {
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
       }
-      .submit:hover{
-        background: #FF4D09;
-      }
+      
       .inputContainer {
         margin-top: 10px;
         position:   absolute;
@@ -335,7 +383,7 @@ body {
       }
       .tiaozi
       {
-        width: 90px;
+        width: 84px;
         position:absolute;
         top: 0px;
         right:0px;
@@ -426,6 +474,7 @@ body {
         display: block;
         float: left;
         color: #999;
+        color:#fff;
       }
       .carConstrast {
         padding: 2px;
@@ -583,7 +632,7 @@ left: 89px;
       height:220px;
       overflow: auto;
     }
-    height:324px;
+    height:323px;
     .yusuan
     {
       margin-top: 20px;
@@ -948,6 +997,12 @@ background: none;
       border-bottom: 1px solid #CCCCCC;
       height: 50px;
       width: 100%;
+      .t{
+        margin: 15px 20px 0px 20px;
+        float: left;
+font-size: 16px;
+font-weight: bold;
+      }
       .warning
       {
         float: right;
@@ -984,22 +1039,14 @@ background: none;
         float: right;
         margin-top: 7px;
         position: absolute;
-        color: #ffffff;
         right: 20px;
         width:90px;
         height:35px;
         text-align: center;
         line-height: 35px;
-        background-color: #FF5719;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border: 1px solid #D94A16;
         cursor: pointer;
       }
-      .submit:hover{
-        background-color:#ff7744;
-      }
+      
       .submit.loading{
         background-color: #fda05b;
         cursor: default;
@@ -1295,7 +1342,6 @@ background: none;
 
 .carsMore
 {
-  margin-top: 20px;
   padding: 10px 0px;
   text-align: center;
   position: relative;
@@ -1427,7 +1473,7 @@ font-size: 13px;
   }
 .carsContent .bindLoginInfo, .carsContent .bindunLoginInfo
 {
-  height:334px;
+  height:333px;
 }
   .addInstrestCar {
     width: 98%;
@@ -1491,4 +1537,141 @@ font-size: 13px;
       }
     }
   }
+}
+//猜你喜欢
+.guess-like{
+   margin: 0 auto;
+   padding-top: 20px;
+  .title{
+    span{
+      color: #333;
+      font-size: 16px;
+    }
+    line-height: 30px;
+    border-bottom: 1px solid #EDEDED;
+  }
+  .like-box{
+    float: left;
+    .tit{
+      height: 25px;
+      line-height: 40px;
+      color: #999;
+      font-size: 12px;
+    }
+  }
+  .car-youlike{
+    margin-top: 12px;
+    width: 228px;
+    margin-right: 13px;
+    float: left;
+    border: 1px solid #EDEDED;
+    .carImg {
+    position: relative;
+    width: 100%;
+    height: 182px;
+    overflow: hidden;
+    display: block;
+    }
+    .car-link {
+    font-size: 14px;
+    margin: 12px 16px 0px 16px;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    color: #333;
+    }
+    .car-link:hover {
+    color: #ff571a;
+    }
+    .info {
+    margin: 5px 16px 0px 16px;
+    position: relative;
+      .price {
+      color: #FF4400;
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 25px;
+      em{
+        font-family: Tahoma, Verdana;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      }
+      .shangpai {
+      font-size: 12px;
+      position: absolute;
+      right: 0px;
+      color: #8C8C8C;
+      line-height: 18px;
+      }
+    }
+    .collect {
+      padding-left: 20px;
+      color: #999;
+      background: url(../images/index/index_sprite_v2.png) no-repeat center;
+      background-position: -10px -40px;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 15px;
+      float: right;
+      margin-top: 5px;
+      display: block;
+      a {
+        color: #999;
+
+      }
+    }
+    .collect:hover {
+      background-position: -10px -60px;
+    }
+    .collect.active {
+      background-position: -10px -80px;
+    }
+    .carTail {
+    width: 206px;
+    height: 31px;
+    padding-top: 7px;
+    border-top: 1px solid #EEEEEE;
+    margin: 0 auto;
+    }
+    .nolike{
+      float: left;
+      width: 50px;
+      height: 21px;
+      border: 1px solid #ededed;
+      border-radius: 2px;
+      background: #fff;
+      color: #999;
+      text-align: center;
+      line-height: 21px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .nolike:hover{
+      background: #F2F2F2;
+      border: 1px solid #E1E1E1;
+
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .guess-like .car-youlike{
+  width: 240px;
+  margin: 18px 18px 0px 0px;
+  float: left;
+  border: 1px solid #EDEDED;
+  }
+}
+@media screen and (max-width: 1024px){
+  .guess-like .like-line{
+   height: 336px;
+    overflow: hidden
+  }
+  .guess-like .car-youlike{
+width: 228px;
+margin-right: 17px;
+margin-top: 19px;
+float: left;
+border: 1px solid #EDEDED;
+}
 }

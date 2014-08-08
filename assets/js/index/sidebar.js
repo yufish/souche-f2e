@@ -38,12 +38,12 @@ Souche.Sidebar = (function() {
             if (!$("#toolbar").hasClass("sidebar-active")) {
                 $("#toolbar").animate({
                     width: 905,
-                    height: ($(window).height() - 20) > 555 ? 555 : ($(window).height() - 20)
+                    height: ($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)
                 }, 500, function() {
                     siderbarShow = true;
                 })
                 $(".sidebar  iframe").css({
-                    height: (($(window).height() - 20) > 555 ? 555 : ($(window).height() - 20)) - 32
+                    height: (($(window).height() - 20) > 500 ? 500 : ($(window).height() - 20)) - 32
                 })
                 $("#toolbar").addClass("sidebar-active")
                 $(".sidebar").removeClass("active")
@@ -61,7 +61,7 @@ Souche.Sidebar = (function() {
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
             var self = this;
-            if ($(this).hasClass("contrast-box")) {
+            if ($(this).hasClass("contrast-box") || $(this).hasClass("suggest-box")) {
                 showSidebar(self);
             } else {
                 Souche.NoRegLogin.checkLogin(function(isLogin) {

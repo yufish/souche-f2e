@@ -1,4 +1,17 @@
-define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
+define(['index/car-god',
+    'index/top-nav',
+    "index/qiugou_v2",
+    'souche/custom-select',
+    "index/collect",
+    "lib/lazyload",
+    "index/carConstrast"
+], function(carGod,
+    topNav,
+    qiugou,
+    customSelect,
+    collect,
+    lazyload,
+    carConstrast) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
@@ -65,23 +78,24 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                     $(".carsMore.myAdviser-more").remove();
                     if (result.code == 204) {} else {
                         var list = result.recommendCars;
+                        var list = result.recommendCars.items;
+                        var template = "";
+                        for (var idx = 0, len = list.length; idx < len; idx++) {
+                            var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                            template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
+                                "<div class='other'>" +
+                                "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
+                                "<\/div>" +
+                                "<div class='carTail clearfix'>" +
+                                "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
+                                "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
+                                "<\/div>";
+                        }
+                        $(".myAdviserContent .myAdviser").eq(0).append(template);
+                        $(".myAdviserContent .myAdviser-more").remove();
                         if (result.hasNext) {
 
-                            var list = result.recommendCars.items;
-                            var template = "";
-                            for (var idx = 0, len = list.length; idx < len; idx++) {
-                                template += "<div class=\"carsItem carItem\"><a href=\"#\" class=\"carImg\"><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                    "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                    "<div class='other'>" +
-                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                    "<\/div>" +
-                                    "<div class='carTail clearfix'>" +
-                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                    "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
-                                    "<\/div>";
-                            }
-                            $(".myAdviserContent .myAdviser").eq(0).append(template);
-                            $(".myAdviserContent .myAdviser-more").remove();
                         } else {
                             adviser_end = true;
                         }
@@ -118,7 +132,8 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
                             var template = "";
 
                             for (var idx = 0, len = list.length; idx < len; idx++) {
-                                template += "<div class='carsItem carItem'><a href='#' class='carImg'><img src='http://res.souche.com/" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a href='#' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
+                                var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                                template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
                                     "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
                                     "<div class='other'>" +
                                     "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
@@ -249,63 +264,83 @@ define(['index/car-god', 'index/top-nav'], function(carGod, topNav) {
     return {
         init: function(_config) {
             $.extend(config, _config);
+            $(document).ready(function() {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    directionNav: true,
+                    controlNav: true,
+                    pauseOnHover: true
+                });
+                $(".right-slide").flexslider({
+                    slideshow: false,
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    controlNav: true,
+                    animationLoop: false,
+                    randomize: true,
+                    directionNav: false
 
+                });
+                $(".flex-direction-nav").hide();
+                $(".main-slider").mouseenter(function() {
+                    $(".flex-direction-nav").fadeIn("normal");
+                });
+                $(".main-slider").mouseleave(function() {
+                    $(".flex-direction-nav").fadeOut("normal");
+                });
+            });
             _bind();
             carGod.init();
             topNav.init();
 
-            require(["index/qiugou_v2", "index/qiugouModel", 'souche/custom-select', "index/modelSeries", "index/collect", "lib/lazyload", "index/carConstrast"],
-                function(qiugou, qiugouModel, customSelect, modelSeries, collect, lazyload, carConstrast) {
 
-                    qiugou.init(config);
-                    //modelSeriesModel.init(config);
-                    //modelSeries.init(config);
-                    carConstrast.init(config);
+            qiugou.init(config);
+            carConstrast.init(config);
 
-                    var ageSelect = new customSelect("age_select", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    var ageSelect = new customSelect("age_select_high", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
-                    var ageSelect = new customSelect("age_select_1", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select_high", {
+                placeholder: "请选择",
+                multi: false
+            });
+            var ageSelect = new customSelect("age_select_1", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    var ageSelect = new customSelect("age_select_high_1", {
-                        placeholder: "请选择",
-                        multi: false
-                    });
+            var ageSelect = new customSelect("age_select_high_1", {
+                placeholder: "请选择",
+                multi: false
+            });
 
-                    $(".down-counter").each(function() {
-                        var $this = $(this);
-                        downCounter($this);
-                    });
-                    setInterval(function() {
-                        $(".low-price").each(function(i, p) {
-                            $(p).val($(p).val().replace(/[^0-9]/, ""))
-                        })
-                        $(".high-price").each(function(i, p) {
-                            $(p).val($(p).val().replace(/[^0-9]/, ""))
-                        })
-                    }, 200)
+            $(".down-counter").each(function() {
+                var $this = $(this);
+                downCounter($this);
+            });
+            setInterval(function() {
+                $(".low-price").each(function(i, p) {
+                    $(p).val($(p).val().replace(/[^0-9]/, ""))
+                })
+                $(".high-price").each(function(i, p) {
+                    $(p).val($(p).val().replace(/[^0-9]/, ""))
+                })
+            }, 200)
 
-                    collect.init(config);
+            collect.init(config);
 
-                    $(".carsContent img").lazyload({
-                        threshold: 200
-                    });
-                    $(".card-login").click(function() {
-                        Souche.MiniLogin.checkLogin(function() {
-                            window.location.reload();
-                        })
-                    })
+            $(".carsContent img").lazyload({
+                threshold: 200
+            });
+            $(".card-login").click(function() {
+                Souche.MiniLogin.checkLogin(function() {
+                    window.location.reload();
+                })
+            })
 
-                });
 
 
         }

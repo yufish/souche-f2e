@@ -3,8 +3,15 @@
  */
 define(['souche/util/load-info',
     "index/qiugouModel",
-    "souche/util/auto-scroll"
-], function(LoadInfo, qiugouModel, autoScroll) {
+    "souche/util/auto-scroll",
+    "souche/util/animate-list",
+    "index/qiugouModel", "index/modelSeries"
+], function(LoadInfo,
+    qiugouModel,
+    autoScroll,
+    animateList,
+    qiugouModel,
+    modelSeries) {
     var config = {};
     var qiugou = {};
     var lock = true;
@@ -25,9 +32,7 @@ define(['souche/util/load-info',
                 } else {
                     name = $(this).html()
                 }
-                require(["index/modelSeries"], function(modelSeries) {
-                    modelSeries.GetSeries(code, name);
-                });
+                modelSeries.GetSeries(code, name);
             } else {
                 if (!$(this).hasClass("active")) {
                     $(this).addClass("active");
@@ -42,12 +47,10 @@ define(['souche/util/load-info',
                     }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
-                    require(["index/qiugouModel"], function(qiugouModel) {
-                        qiugouModel.AddAdviserInstrest({
-                            seriesCode: seriesCode,
-                            name: name,
-                            type: type
-                        });
+                    qiugouModel.AddAdviserInstrest({
+                        seriesCode: seriesCode,
+                        name: name,
+                        type: type
                     });
                 } else {
                     $(this).removeClass("active");
@@ -60,12 +63,10 @@ define(['souche/util/load-info',
                     }
                     var type = event.target.tagName == "SPAN" ? "serie" : "brand";
 
-                    require(["index/qiugouModel"], function(qiugouModel) {
-                        qiugouModel.DeleteAdviserInstrest({
-                            seriesCode: seriesCode,
-                            name: name,
-                            type: type
-                        });
+                    qiugouModel.DeleteAdviserInstrest({
+                        seriesCode: seriesCode,
+                        name: name,
+                        type: type
                     });
                 }
             }
@@ -80,12 +81,10 @@ define(['souche/util/load-info',
             var name = $(this).find("a").html();
             var type = $(this).attr("type");
 
-            require(["index/qiugouModel"], function(qiugouModel) {
-                qiugouModel.DeleteAdviserInstrest({
-                    seriesCode: seriesCode,
-                    name: name,
-                    type: type
-                });
+            qiugouModel.DeleteAdviserInstrest({
+                seriesCode: seriesCode,
+                name: name,
+                type: type
             });
             $(this).remove();
 
@@ -131,89 +130,73 @@ define(['souche/util/load-info',
             };
 
 
-            require(["index/qiugouModel"], function(qiugouModel) {
 
-                var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-                var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val();
+            var minBudget = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val() * 1;
+            var maxBudget = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val() * 1;
+            var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
 
-                var regx = new RegExp(/(^\d[\d|.]*\d$)|(^\d+$)/);
-                if (regx.test(minBudget) && regx.test(maxBudget)) {
-                    if (parseInt(minBudget) > parseInt(maxBudget)) {
-                        $("." + tabID + " .warning").html("预算输入有错误").removeClass("hidden");
-                        window.setTimeout(function() {
-                            $("." + tabID + " .warning").addClass("hidden");
-                        }, 2000);
-                        return false;
-                    }
+
+            qiugouModel.ModifyAdviserBudget({
+                min: parseInt(minBudget) * 10000,
+                max: parseInt(maxBudget) * 10000
+            });
+            var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
+            var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
+            if (minBudget && maxBudget && (minBudget > maxBudget)) {
+                $("." + tabID + " .warning").html("价格填写有错误").removeClass("hidden");
+                window.setTimeout(function() {
+                    $("." + tabID + " .warning").addClass("hidden");
+                }, 2000);
+                return;
+            }
+
+            qiugouModel.ModifyAdviserYear({
+                min: $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val(),
+                max: $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val()
+            });
+
+            var instrest = qiugouModel.GetAdviserInstrest();
+            var series = [];
+            var brand = [];
+
+            for (var idx = 0, len = instrest.length; idx < len; idx++) {
+                var type = instrest[idx].type;
+                if (type == "brand") {
+                    brand.push(instrest[idx].seriesCode);
                 } else {
-                    if (minBudget != "" && maxBudget != "") {
-                        return false;
-                    }
+                    series.push(instrest[idx].seriesCode);
                 }
-
-                qiugouModel.ModifyAdviserBudget({
-                    min: parseInt(minBudget) * 10000,
-                    max: parseInt(maxBudget) * 10000
-                });
-
-                var minYear = $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val();
-                var maxYear = $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val();
-                if (minBudget && maxBudget && (minBudget > maxBudget)) {
-                    $("." + tabID + " .warning").html("价格填写有错误").removeClass("hidden");
-                    window.setTimeout(function() {
-                        $("." + tabID + " .warning").addClass("hidden");
-                    }, 2000);
-                    return;
+            }
+            var minPrice = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
+            var maxPrice = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
+            var minYear = ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "")
+            var maxYear = ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "")
+            var url = config.submit_api;
+            url += "?minPrice=" + minPrice;
+            url += "&maxPrice=" + maxPrice;
+            url += "&minYear=" + minYear;
+            url += "&maxYear=" + maxYear;
+            url += "&brands=" + brand.join();
+            url += "&series=" + series.join();
+            if (!(minPrice || maxPrice || minYear || maxYear || brand.length || series.length)) {
+                $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
+                return;
+            }
+            $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
+            $.ajax({
+                url: url,
+                dataType: "json",
+                success: function() {
+                    // hideDialogContent($("." + tabID).find(".dialogContent"), option);
+                    // window.setTimeout(function() {
+                    //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
+                    // }, 1000);
+                    window.location.reload();
+                    $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
+                },
+                error: function() {
+                    $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
                 }
-
-                qiugouModel.ModifyAdviserYear({
-                    min: $("." + tabID + " .caryear .dataContainer .age-left .selected_values").val(),
-                    max: $("." + tabID + " .caryear .dataContainer .age-right .selected_values").val()
-                });
-
-                var instrest = qiugouModel.GetAdviserInstrest();
-                var series = [];
-                var brand = [];
-
-                for (var idx = 0, len = instrest.length; idx < len; idx++) {
-                    var type = instrest[idx].type;
-                    if (type == "brand") {
-                        brand.push(instrest[idx].seriesCode);
-                    } else {
-                        series.push(instrest[idx].seriesCode);
-                    }
-                }
-                var minPrice = $("." + tabID + " .carBudget .dataContainer .leftContainer input").val();
-                var maxPrice = $("." + tabID + " .carBudget .dataContainer .rightContainer input").val()
-                var minYear = ($("." + tabID + " .caryear .dataContainer .age-left .selected_values").val() || "")
-                var maxYear = ($("." + tabID + " .caryear .dataContainer .age-right .selected_values").val() || "")
-                var url = config.submit_api;
-                url += "?minPrice=" + minPrice;
-                url += "&maxPrice=" + maxPrice;
-                url += "&minYear=" + minYear;
-                url += "&maxYear=" + maxYear;
-                url += "&brands=" + brand.join();
-                url += "&series=" + series.join();
-                if (!(minPrice || maxPrice || minYear || maxYear || brand.length || series.length)) {
-                    $("." + tabID + " .warning").html("请至少选择一项").removeClass("hidden");
-                    return;
-                }
-                $(".dialogContent .submit").html("提交中...").addClass("loading").attr("disabled", "true");
-                $.ajax({
-                    url: url,
-                    dataType: "json",
-                    success: function() {
-                        // hideDialogContent($("." + tabID).find(".dialogContent"), option);
-                        // window.setTimeout(function() {
-                        //     $("." + tabID).find(".dialogContentContainer").css("zIndex", -99);
-                        // }, 1000);
-                        window.location.reload();
-                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                    },
-                    error: function() {
-                        $(".dialogContent .submit").html("提交").removeClass("loading").attr("disabled", false);
-                    }
-                });
 
 
             });
@@ -300,33 +283,41 @@ define(['souche/util/load-info',
                     left: -600
                 })
                 $(".adviserInitAnimate .bg").animate({
-                    "left": ""
+                    "left": 0
                 }, 500);
-                $(".adviserInitAnimate .road").animate({
-                    "left": ""
-                }, 600, function() {
+                animateList([
+                    [".adviserInitAnimate .road", {
+                            left: 0
+                        },
+                        600
+                    ],
+                    [".adviserInitAnimate .boy", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .boytalk", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .girl", {
+                            left: 0
+                        },
+                        500
+                    ],
+                    [".adviserInitAnimate .girltalk", {
+                            left: 0
+                        },
+                        500
+                    ]
+                ], function() {
+                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                    setTimeout(function() {
+                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                    }, 500)
+                })
 
-                    $(".adviserInitAnimate .boy").animate({
-                        "left": "0px"
-                    }, 500, function() {
-                        $(".adviserInitAnimate .boytalk").animate({
-                            "left": 0
-                        }, 500, function() {
-                            $(".adviserInitAnimate .girl").animate({
-                                "left": 0
-                            }, 500, function() {
-                                $(".adviserInitAnimate .girltalk").animate({
-                                    "left": 0
-                                }, 500, function() {
-                                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
-                                    setTimeout(function() {
-                                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
-                                    }, 500)
-                                });
-                            });
-                        });
-                    });
-                });
 
             }
         }
@@ -364,81 +355,79 @@ define(['souche/util/load-info',
 
         $(".carinstrestItem").live("click", function() {
             var ele = $(this);
-            require(["index/qiugouModel"], function(qiugouModel) {
-                qiugouModel.DeleteAdviserInstrest({
-                    seriesCode: $(ele).attr("seriescode"),
-                    name: $(ele).find("a").html(),
-                    type: $(ele).attr("type")
-                });
+            qiugouModel.DeleteAdviserInstrest({
+                seriesCode: $(ele).attr("seriescode"),
+                name: $(ele).find("a").html(),
+                type: $(ele).attr("type")
             });
             return false;
         });
 
         /////订阅
-        require(["index/qiugouModel", "index/modelSeries"], function(qiugouModel, modelSeries) {
-            //alert(qiugouModel);
-            qiugouModel.AddSubscribe("year", function() {
-                if (this.minYear || this.maxYear) {
-                    $(".carsItem .year span").html(this.minYear + "-" + this.maxYear);
-                    $(".caryear .dataContainer .age_select .sc-select-content").html(this.minYear);
-                    $(".caryear .dataContainer .age_select_high .sc-select-content").html(this.maxYear);
-                    $(".caryear .dataContainer .age_select .selected_values").val(this.minYear);
-                    $(".caryear .dataContainer .age_select_high .selected_values").val(this.minYear);
-                } else {
-                    $(".carsItem .year span").html("不限");
-                    $(".caryear .dataContainer .age_select .sc-select-content").html("请选择");
-                    $(".caryear .dataContainer .age_select_high .sc-select-content").html("请选择");
-                    $(".caryear .dataContainer .age_select .selected_values").val("");
-                    $(".caryear .dataContainer .age_select_high .selected_values").val("");
-                }
-            });
 
-            qiugouModel.AddSubscribe("budget", function() {
-                if (!!this.minBudget)
-                    $(".carBudget .dataContainer .leftContainer input").val(parseInt(this.minBudget) / 10000);
-
-                if (!!this.maxBudget)
-                    $(".carBudget .dataContainer .rightContainer input").val(parseInt(this.maxBudget) / 10000);
-
-                if (this.minBudget || this.maxBudget) {
-                    if (!this.minBudget) {
-                        $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "万以内");
-                    } else if (!this.maxBudget) {
-                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "万以上");
-                    } else {
-                        $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
-                    }
-                } else {
-                    $(".carsItem .yusuan span").html("不限");
-                }
-            });
-
-            qiugouModel.AddSubscribe("addInstrest", function() {
-                var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
-                $(".addInstrestCarTilte").append(template);
-                $("<span class=\"carinstrestItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>").insertBefore($(".addCarinstrestItem"));
-                if ($(".interestCar span[seriesCode='" + this.seriesCode + "']").length == 0) {
-                    if ($(".interestCar span").eq(0).html() === "不限") {
-                        $(".interestCar span").eq(0).remove();
-                    }
-                    $(".interestCar").append("<span seriesCode='" + this.seriesCode + "' type='" + this.type + "'>" + this.name + "<\/span>");
-
-                }
-            });
-
-            qiugouModel.AddSubscribe("deleteInstrest", function() {
-                //var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
-                $(".addInstrestCarTilte span[seriesCode='" + this.seriesCode + "']").remove();
-                $(".carinstrest span[seriesCode='" + this.seriesCode + "']").remove();
-                $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
-                if ($(".interestCar span").length === 0) {
-                    $(".interestCar .interestCarContainer").append("<span>不限<\/span>");
-                }
-            });
-
-            qiugouModel.init(config);
-            modelSeries.init(config);
+        //alert(qiugouModel);
+        qiugouModel.AddSubscribe("year", function() {
+            if (this.minYear || this.maxYear) {
+                $(".carsItem .year span").html(this.minYear + "-" + this.maxYear);
+                $(".caryear .dataContainer .age_select .sc-select-content").html(this.minYear);
+                $(".caryear .dataContainer .age_select_high .sc-select-content").html(this.maxYear);
+                $(".caryear .dataContainer .age_select .selected_values").val(this.minYear);
+                $(".caryear .dataContainer .age_select_high .selected_values").val(this.minYear);
+            } else {
+                $(".carsItem .year span").html("不限");
+                $(".caryear .dataContainer .age_select .sc-select-content").html("请选择");
+                $(".caryear .dataContainer .age_select_high .sc-select-content").html("请选择");
+                $(".caryear .dataContainer .age_select .selected_values").val("");
+                $(".caryear .dataContainer .age_select_high .selected_values").val("");
+            }
         });
+
+        qiugouModel.AddSubscribe("budget", function() {
+            if (!!this.minBudget)
+                $(".carBudget .dataContainer .leftContainer input").val(parseInt(this.minBudget) / 10000);
+
+            if (!!this.maxBudget)
+                $(".carBudget .dataContainer .rightContainer input").val(parseInt(this.maxBudget) / 10000);
+
+            if (this.minBudget || this.maxBudget) {
+                if (!this.minBudget) {
+                    $(".carsItem .yusuan  span").html(parseInt(this.maxBudget) / 10000 + "万以内");
+                } else if (!this.maxBudget) {
+                    $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "万以上");
+                } else {
+                    $(".carsItem .yusuan span").html(parseInt(this.minBudget) / 10000 + "-" + parseInt(this.maxBudget) / 10000 + "万元");
+                }
+            } else {
+                $(".carsItem .yusuan span").html("不限");
+            }
+        });
+
+        qiugouModel.AddSubscribe("addInstrest", function() {
+            var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
+            $(".addInstrestCarTilte").append(template);
+            $("<span class=\"carinstrestItem\" seriesCode='" + this.seriesCode + "' type='" + this.type + "'><a>" + this.name + "<\/a><span><\/span><\/span>").insertBefore($(".addCarinstrestItem"));
+            if ($(".interestCar span[seriesCode='" + this.seriesCode + "']").length == 0) {
+                if ($(".interestCar span").eq(0).html() === "不限") {
+                    $(".interestCar span").eq(0).remove();
+                }
+                $(".interestCar").append("<span seriesCode='" + this.seriesCode + "' type='" + this.type + "'>" + this.name + "<\/span>");
+
+            }
+        });
+
+        qiugouModel.AddSubscribe("deleteInstrest", function() {
+            //var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
+            $(".addInstrestCarTilte span[seriesCode='" + this.seriesCode + "']").remove();
+            $(".carinstrest span[seriesCode='" + this.seriesCode + "']").remove();
+            $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
+            if ($(".interestCar span").length === 0) {
+                $(".interestCar .interestCarContainer").append("<span>不限<\/span>");
+            }
+        });
+
+        qiugouModel.init(config);
+        modelSeries.init(config);
+
     }
 
     var showDialogContent = function($element, option) {
@@ -476,7 +465,7 @@ define(['souche/util/load-info',
         offsetMove($element, option, 0, 500);
         $element.removeClass("hidden");
 
-        var zimu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        var zimu = 'ABCDFGHJKLMNOQRSTWXYZ'
         var html = "";
         for (var i = 0; i < zimu.length; i++) {
             html += "<a data-id='" + zimu[i] + "'>" + zimu[i] + "</a>";

@@ -29,6 +29,7 @@ function getQueryString(name) {
     return null;
 }
 $(document).ready(function() {
+
     if (window.location.host.indexOf("souche.com") == -1) {
         return;
     }
@@ -161,6 +162,9 @@ var setTrafficId = function(_id) {
     f2e_traffic_id = _id;
 }
 $(window).load(function() {
+    if (window.location.host.indexOf("souche.com") == -1) {
+        return;
+    }
     f2e_all_load_time = new Date().getTime();
 
     var data = {
@@ -204,6 +208,9 @@ $(window).load(function() {
 })
 
 window.onbeforeunload = function() {
+    if (window.location.host.indexOf("souche.com") == -1) {
+        return;
+    }
     var data = {
         _id: f2e_traffic_id,
         stay_second: new Date().getTime() - f2e_first_load_time,
