@@ -53,7 +53,29 @@ html
     #content
       .wrapper
         .share
+          a(href="#")
         .erweima
+        .baoming
+          .head
+          .content.clearfix
+            .explain
+              .timedown
+                .title 活动报名截止倒计时
+              .rule
+            .baoming-form
+              form
+                .name
+                  label 姓名
+                  input(placeholder="请输入您的姓名" type="text" id="baoming-name")
+                .number
+                  label 手机号码
+                  input(placeholder="请输入您的手机号码" type="text" id="baoming-number")
+                .wantcar
+                  label 意向品牌
+                  input(placeholder="请输入您想要的爱车品牌" type="text" id="baoming-car")
+                .submit
+                  input(placeholder="提交" type="submit" id="baoming-submit")
+          .map
       .wrap-car 
     #footer
       .wrapper
