@@ -9,19 +9,52 @@
     <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>
     <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
     <style>
-        header .title{
-            text-align: center;
+        .row .province-item{
+            float: left;
+            width: 25%;
         }
-        header .back{
-            position: absolute;
-            z-index: 2;
+        .row .cities{
+            display: none;
+        }
+        .row .city-item{
+            float: left;
+            width: 25%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="back">返回</div>
-        <div class="title">选择省份</div>
-    </header>
+    <script>
+        function buildRow(rowIndex){
+            var count = 0;
+            var startIndex = rowIndex*4;
+            var start = '<div class="row clearfix">';
+            var end ='</div>'
+            var html = '';
+            for(;count<4 && startIndex+count<provinces.length;count++){
+                var name = provinces[startIndex+count];
+                html+='<div data-index="'+count+'" class="province-item">'+name+'</div>';
+            }
+            var cityHtml = '';
+            for(var i=0;i<count;i++){
+                cityHtml+='<div class="cities" data-index="'+i+'"></div>'
+            }
+
+            $("body").append(start+html+cityHtml+end);
+        }
+        var provinces = ['北京','上海','广州','深圳','杭州'
+            ,'北京','上海','广州','深圳','杭州'
+            ,'北京','上海','广州','深圳','杭州'];
+        var rows = Math.ceil(provinces.length/4);
+        for(var i = 0;i<rows;i++){
+            buildRow(i);
+        }
+        $('body').on('click','.province-item',function(e){
+            var index = +$(this).attr('data-index');
+            var cityDom = $(this).closest('.row').find('.cities').eq(index);
+            for(var i =0;i<4;i++) {
+                cityDom.append('<div class="city-item">上海</div>')
+            }
+        })
+    </script>
 </body>
 </html>

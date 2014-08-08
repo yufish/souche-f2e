@@ -501,15 +501,14 @@ Souche.PhoneRegister = function(phone, callback) {
 
 Souche.AjaxManager = (function() {
     var manager = {};
-    var instance={};
+    var instance = {};
 
     var success = function() {
         var def = arguments[2];
         delete this.context.ajaxList[this.identify][this.option.url];
     }
 
-    var addDelayAborted = function(option,callback)
-    {
+    var addDelayAborted = function(option, callback) {
         var identify = this.predicate.call(option);
         option.context = {
             context: this,
@@ -533,7 +532,7 @@ Souche.AjaxManager = (function() {
             } else {
                 window.clearTimeout(this.ajaxList.handle);
                 var self = this;
-                this.ajaxList.handle = window.setTimeout(function () {
+                this.ajaxList.handle = window.setTimeout(function() {
                     self.ajaxList[identify].lastTime = +new Date();
                     if (self.ajaxList[identify][option.url] && self.aborted) {
                         self.ajaxList[identify][option.url].abort();
@@ -563,15 +562,15 @@ Souche.AjaxManager = (function() {
     }
 
     var initManager = function(option) {
-        option = option || {};
-        this.aborted = option.aborted || false;
-        this.delayTime = option.delayTime || 0;
-        this.predicate = option.predicate || function () {
-            return this.url;
-        };
-        this.ajaxList = {};
-    }
-    //manager.addAjax = add;
+            option = option || {};
+            this.aborted = option.aborted || false;
+            this.delayTime = option.delayTime || 0;
+            this.predicate = option.predicate || function() {
+                return this.url;
+            };
+            this.ajaxList = {};
+        }
+        //manager.addAjax = add;
 
     manager.init = function(option) {
         initManager.prototype.addAjax = add;
@@ -581,60 +580,7 @@ Souche.AjaxManager = (function() {
 
     return manager;
 }());
-/*
-Souche.DelayAjax = (function() {
-    var manager = {};
 
-    var urlList = {};
-    var success = function() {
-        var def = arguments[2];
-        urlList[this.url].deferred.isCallback = true;
-    }
-
-    var add = function(option, callback, delay, trailing, aborted) {
-        if (!option.url) {
-            throw new Error("url underfind");
-        }
-
-        if (urlList[option.url]) {
-            var lastTime = urlList[option.url].lastTime;
-            var currentTime = +new Date();
-            if ((currentTime - lastTime) > delay) {
-                window.clearTimeout(urlList.handle);
-                urlList[option.url].lastTime = +new Date();
-                urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
-                //callback();
-            } else if (trailing) {
-                window.clearTimeout(urlList.handle);
-                urlList.handle = window.setTimeout(function() {
-                    urlList[option.url].lastTime = +new Date();
-                    if (!urlList[option.url].deferred.isCallback && aborted) {
-                        urlList[option.url].deferred.abort();
-                    }
-                    urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
-                    //callback();
-                }, delay);
-            }
-        } else {
-            urlList.handle = undefined;
-            urlList[option.url] = urlList[option.url] || {};
-            urlList[option.url].lastTime = +new Date();
-            urlList[option.url].deferred = $.ajax(option).done(success).then(callback);
-            //callback();
-        }
-    }
-
-    manager.addAjax = add;
-    return manager;
-}());*/
-
-/*!
- * jQuery Cookie Plugin v1.4.0
- * https://github.com/carhartl/jquery-cookie
- *
- * Copyright 2013 Klaus Hartl
- * Released under the MIT license
- */
 (function() {
     var pluses = /\+/g;
 
@@ -735,95 +681,3 @@ Souche.DelayAjax = (function() {
         return !$.cookie(key);
     };
 })();
-$(document).ready(function() {
-    $(".apply_popup .apply_close").on("click", function() {
-        $(".apply_popup").addClass("hidden")
-        $(".wrapGrayBg").hide();
-    })
-    var hasShow = false;
-    var initTip = function() {
-
-        if (!hasShow) {
-            if ($(window).height() < 650) {
-                $("#guwen_slider_global").addClass("small-global")
-                $('.guwen-flexslider .slides li').each(function(i, li) {
-                    $(li).css({
-                        background: "url(" + $(li).attr("data-small-image") + ") no-repeat center center"
-                    })
-                })
-            } else {
-                $('.guwen-flexslider .slides li').each(function(i, li) {
-                    $(li).css({
-                        background: "url(" + $(li).attr("data-image") + ") no-repeat center center"
-                    })
-                })
-            }
-
-            $.getScript("http://souche.cdn.aliyuncs.com/assets/js/lib/jquery.flexslider-min.js", function() {
-                $('.guwen-flexslider').flexslider({
-                    animation: "slide",
-                    animationSpeed: 300,
-                    initDelay: 0,
-                    slideshowSpeed: 5000,
-                    useCSS: false
-                });
-                hasShow = true;
-            })
-        }
-    }
-    if (!$.cookie("show_guwen_tip")) {
-        if (window.location.href.indexOf("sellCarNew.html") == -1) {
-            initTip();
-            setTimeout(function() {
-                $("#guwen_slider_global").animate({
-                    top: 0
-                }, 600)
-                $("#guwen_show_global").css({
-                    top: -30
-                })
-            }, 900)
-            $("#guwen_slider_global").focus();
-        }
-
-    }
-
-    $("#guwen_show_global").click(function(e) {
-        initTip();
-        $("#guwen_slider_global").animate({
-            top: 0
-        }, 600)
-        $("#guwen_show_global").css({
-            top: -30
-        })
-    })
-    $(".wedo").click(function() {
-        initTip();
-        $("#guwen_slider_global").animate({
-            top: 0
-        }, 600)
-        $("#guwen_show_global").css({
-            top: -30
-        })
-    })
-    var closeTip = function() {
-        $("#guwen_slider_global").animate({
-            top: -560
-        }, 600, null, function() {
-            $("#guwen_show_global").animate({
-                top: 0
-            }, 400)
-        })
-        $.cookie("show_guwen_tip", "1", {
-            expires: 100,
-            path: '/'
-        })
-    }
-    $("#guwen_slider_global .close").on("click", function(e) {
-        e.preventDefault();
-        closeTip();
-    })
-    $("#guwen_slider_global .link").on("click", function(e) {
-        closeTip();
-    })
-
-})

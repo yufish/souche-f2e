@@ -5,6 +5,57 @@ body {
   height:60px;
   background: url(../images/index/ajax-loader1.gif) no-repeat center center;
 }
+.btn{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    display: inline-block;
+    font-size: 12px;
+  }
+  .btn:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+.record_warning{
+  border:1px solid #fcd1a6;
+  background: #fffee7;
+  line-height: 40px;
+  font-size: 12px;
+  color:#d8ae86;
+  padding-left: 10px;
+  margin-top:10px;
+  margin-right: 19px;
+  a{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    line-height: 12px;
+    display: inline-block;
+    padding:8px 15px;
+    font-size: 12px;
+    float:right;
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  a:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+  s{
+    background: url(../images/index/tip-close.png) no-repeat;
+    width:10px;
+    height:10px;
+    display: inline-block;
+    margin-right:10px;
+    float:right;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+}
 #carsNav,.carsMore {
   width: 96.8%;
   position: relative;
@@ -56,9 +107,10 @@ body {
   }
 
   .carsContent {
+    margin-top: 10px;
     .carsItem {
       width: 228px;
-      margin-top:19px;
+      margin-bottom:19px;
       margin-right: 13px;
       float: left;
       border: 1px solid #EDEDED;
@@ -231,8 +283,6 @@ padding-top: 46px;
         margin-top: 20px;
         width: 100%;
         padding-top: 10px;
-        background: #FF5719;
-        border: 1px solid #D94A16;
         height: 28px;
         color: #ffffff;
         text-align: center;
@@ -242,9 +292,7 @@ padding-top: 46px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
       }
-      .submit:hover{
-        background: #FF4D09;
-      }
+      
       .inputContainer {
         margin-top: 10px;
         position:   absolute;
@@ -991,22 +1039,14 @@ font-weight: bold;
         float: right;
         margin-top: 7px;
         position: absolute;
-        color: #ffffff;
         right: 20px;
         width:90px;
         height:35px;
         text-align: center;
         line-height: 35px;
-        background-color: #FF5719;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border: 1px solid #D94A16;
         cursor: pointer;
       }
-      .submit:hover{
-        background-color:#ff7744;
-      }
+      
       .submit.loading{
         background-color: #fda05b;
         cursor: default;
@@ -1302,7 +1342,6 @@ font-weight: bold;
 
 .carsMore
 {
-  margin-top: 20px;
   padding: 10px 0px;
   text-align: center;
   position: relative;

@@ -206,3 +206,33 @@
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
+.big-picture{
+    overflow: hidden;
+}
+.big-picture li {
+    float: left;
+}
+.big-picture li img {
+    width: 100%;
+}
+.big-picture .index {
+    top: 40px;
+    background-color: #333;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 5px;
+    float: right;
+    position: relative;
+}
+.big-picture {
+    background-color: #000;
+    top: 0;left: 0;right: 0;bottom: 0;
+    padding-top: 40px;
+    position: fixed;
+}
+.big-picture img {
+    background: url(../../../images/mob/ajax-loader-black.gif) black no-repeat center 80px;
+    min-height: 100px;
+}
+

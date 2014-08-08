@@ -293,6 +293,11 @@ nav .nav-item.active .nav-item-content{
 .car-card .fav .star-shape{
     font-size: 13px;
 }
+.car-card .fav.active .star-shape,
+.car-card .fav.active .fav-num{
+    color:#FF571A;
+}
+
 .car-card .price-num{
     font-weight: bold;
 }

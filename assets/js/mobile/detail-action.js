@@ -120,7 +120,28 @@ var Action = (function () {
             }
             $('.phone-input').focus(function () {
                 $('.wrong-tip').addClass('hidden');
+            });
+
+
+            $("#show_stantard").on("click",function(){
+                $("#standard").css({
+                    left:"2.5%",
+                    top:30
+                }).removeClass("hidden")
+                $(".wrapGrayBg").removeClass('hidden');
             })
+            $('#hide_standard').click(function(){
+                $('.wrapGrayBg').addClass('hidden');
+                $("#standard").addClass('hidden')
+            })
+            $('.wrapGrayBg').on("click", function (e) {
+                e.preventDefault();
+                $('#for-yuyue').addClass('hidden');
+                $('#for-fav').addClass('hidden');
+                $(this).addClass('hidden');
+                $("#standard").addClass('hidden')
+            });
+
         }
     }
 })();
