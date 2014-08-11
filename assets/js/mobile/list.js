@@ -247,7 +247,6 @@ var List = function() {
                     $curFav = $(this);
 
                     if (isLogin) {
-
                         doFav($curFav);
                         return;
                     }
