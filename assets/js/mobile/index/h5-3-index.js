@@ -349,6 +349,7 @@ if (navigator.userAgent.match(/Android/i)){
             //清空车系的状态
             $('.series-content').empty();
             $('#J_series').text('选择车系');
+            filterGlobal.selectSeries = '';
             $('.selected-brand-name').text('请先选择品牌');
             if(self.hasClass('selected')){
                 self.removeClass('selected');
@@ -389,7 +390,7 @@ if (navigator.userAgent.match(/Android/i)){
             }
         })
         //重置和数量显示
-        !function() {
+        /*!function() {
             $('#J_btnFilter_reset').on('click', function (e) {
                 filterGlobal.selectBrand = '';
                 filterGlobal.selectSeries = '';
@@ -404,18 +405,17 @@ if (navigator.userAgent.match(/Android/i)){
             $('.select-cond').change(function(){
                 filterGlobal.queryCount();
             })
-        }();
+        }();*/
 
     }();
 
     function buildQueryObj(){
-        function getCond(val){
-            return (!!val)?val:'';
-        }
+        function getCond(val){return (!!val)?val:'';}
         var dataObj = {};
         dataObj.carBrand = filterGlobal.selectBrand;
         dataObj.carSeries = filterGlobal.selectSeries;
-        dataObj.carYear = $('#J_year').val()+'-9999';
+        dataObj.carMinYear = getCond($('#J_year').val());
+        dataObj.carMaxYear='';
         dataObj.carPrice = $('#J_minPrice').val()+'-'+$('#J_maxPrice').val();
         dataObj.carMileage = getCond($('#J_mile').val());
         dataObj.carModel = getCond($('#J_model').val());
@@ -443,6 +443,7 @@ if (navigator.userAgent.match(/Android/i)){
         window.location.href = addr.substr(0,addr.length-1);
     })
 }();
+//加载更多车辆相关
 !function(){
     function cardDom(item){
         var d = {
@@ -482,6 +483,7 @@ if (navigator.userAgent.match(/Android/i)){
     var $lookMore = $(".car-area .look-more");
     var cardCtn = $('.car-area .row');
     var pageIndex,moreApi,carsProp;
+    //判断是推荐新车还是推荐符合需求的车
     if($lookMore.attr('data-type')=='loadUserRecommendCar'){
         pageIndex=2;
         moreApi ='/pages/mobile/homePageAction/loadUserRecommendCar.json';
@@ -520,7 +522,6 @@ if (navigator.userAgent.match(/Android/i)){
         })
     })
 }()
-
 
 $('.wrapGrayBg').on('click',function(){
     $('.filter-popup-wrapper').addClass('hidden');
