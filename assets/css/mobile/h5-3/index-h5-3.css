@@ -181,7 +181,7 @@ nav .nav-item.active .nav-item-content{
 .car-area .for-carcustom-had{
     height: 60px;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 14px;
     border: 1px solid #E6E6E6;
     background: #fff;
@@ -222,7 +222,7 @@ nav .nav-item.active .nav-item-content{
     line-height: 58px;
     color:#666;
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .car-card{
     width: 145px;
