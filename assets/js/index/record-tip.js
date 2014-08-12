@@ -4,11 +4,13 @@
 define(function() {
     var config = {}
     var submitData = {}
+    var labels = []
     return {
         init: function(_config) {
             config = _config;
             $.ajax({
                 url: config.api_showTipUrl,
+                dataType: "json",
                 success: function(data) {
                     if (data.code == 200) {
                         $(".record_warning").removeClass("hidden")
@@ -22,8 +24,11 @@ define(function() {
                                 submitData[item.parameter] = []
                             }
                             submitData[item.parameter].push(item.code)
+                            labels.push(item.name)
                         }
+                        $(".record_warning span").html(labels.join("，"))
                     }
+
                 }
             });
 
@@ -31,6 +36,7 @@ define(function() {
                 e.preventDefault();
                 $.ajax({
                     url: config.api_noShowTipUrl,
+                    dataType: "json",
                     success: function() {
                         $(".record_warning").addClass("hidden")
                     }
