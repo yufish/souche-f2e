@@ -200,6 +200,9 @@ $(window).load(function() {
             type: "post"
         })
     }
+    if (ABtest && ABtest.id) {
+        data.abtest = ABtest.id;
+    }
     var param = ""
     for (var d in data) {
         param += d + "=" + data[d] + "&"

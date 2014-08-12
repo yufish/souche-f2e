@@ -343,17 +343,24 @@ define(['index/car-god',
                 })
             })
             //猜你喜欢的不喜欢动作
-            $(".nolike").on("click",function(e){
-                    $.ajax({
-                        url:config.api_nolikeUrl,
-                        data:{
-                            id:$(this).attr("data-id")
-                        },
-                        success:function(){
-                            // $(".nolike").
-                        }
-                    })
-                });
+            $(".nolike").on("click", function(e) {
+                var self = this;
+                $.ajax({
+                    url: config.api_nolikeUrl,
+                    data: {
+                        id: $(this).attr("data-id")
+                    },
+                    success: function() {
+                        $(self).closest(".like-box").animate({
+                            opacity: 0,
+                            width: 0
+                        }, 500, function() {
+                            $(self).closest(".like-box").remove()
+                        })
+                        // $(".nolike").
+                    }
+                })
+            });
             //提示品牌是否加入心愿单
             recordTip.init(config);
 

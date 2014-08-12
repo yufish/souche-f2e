@@ -1563,14 +1563,23 @@ font-size: 13px;
     line-height: 30px;
     border-bottom: 1px solid #EDEDED;
   }
-  .like-box{
-    float: left;
-    .tit{
+  .tit{
+
+      height: 25px;
+
+    }
+    .tit-item{
+      float: left;
+      width:228px;
+      margin-right: 13px;
       height: 25px;
       line-height: 40px;
       color: #999;
       font-size: 12px;
     }
+  .like-box{
+    float: left;
+
   }
   .car-youlike{
     margin-top: 12px;
@@ -1578,7 +1587,7 @@ font-size: 13px;
     margin-right: 13px;
     float: left;
     border: 1px solid #EDEDED;
-    .carImg {
+    .list_content_img {
     position: relative;
     width: 100%;
     height: 182px;
@@ -1677,12 +1686,33 @@ font-size: 13px;
   float: left;
   border: 1px solid #EDEDED;
   }
+  .guess-like .tit-item{
+      float: left;
+      width:240px;
+      margin-right: 18px;
+      height: 25px;
+      line-height: 40px;
+      color: #999;
+      font-size: 12px;
+    }
 }
 @media screen and (max-width: 1024px){
   .guess-like .like-line{
-   height: 336px;
+   height: 320px;
     overflow: hidden
   }
+  .guess-like .car-youlike .list_content_img{
+    height:154px;
+  }
+  .guess-like .tit-item{
+      float: left;
+      width:228px;
+      margin-right: 17px;
+      height: 25px;
+      line-height: 40px;
+      color: #999;
+      font-size: 12px;
+    }
   .guess-like .car-youlike{
 width: 228px;
 margin-right: 17px;
