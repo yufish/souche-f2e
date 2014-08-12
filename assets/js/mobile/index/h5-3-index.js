@@ -657,11 +657,15 @@ if (navigator.userAgent.match(/Android/i)){
             data:{
                 page:pageIndex++
             },
+            timeout:10000,
             dataType:'json',
             success:function(data){
                 console.log(data);
                 buildCards(data);
                 $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+            },
+            error:function(){
+                $lookMore.hide();
             }
         })
     })
