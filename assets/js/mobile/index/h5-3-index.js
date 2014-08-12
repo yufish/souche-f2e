@@ -751,7 +751,7 @@ $('#login-form').submit(function(e) {
         alert('请输入正确的手机号码');
     } else {
         Souche.PhoneRegister(phoneNum, function() {
-            window.location.href=$('#J_gotoCenter').attr('data-href');
+            window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
 })
