@@ -52,6 +52,9 @@ if (navigator.userAgent.match(/Android/i)){
         tabNavBar.attr('data-active-index',curIndex)
         var height = tabPanels.eq(curIndex-1).height();
         tabCover.css({height:height+78})
+        try{
+            sessionStorage.setItem('index_tab_index',curIndex);
+        }catch(e){}
     }
 
     var move = function(){
@@ -74,16 +77,16 @@ if (navigator.userAgent.match(/Android/i)){
         }
     }()
 
-    //bug-hack:一些浏览器中，第一个transition:transfrom 时，会留下残影，因此主动触发一次（但是没有动画效果）
-    /*
-    var hash = location.hash;
-    var match = /tabindex=([1-3])/.exec(hash);
-    if(match){
-        move(+match[1]);
-    }else{
-        move(1);
-    }
-    */
+    //回复到上一次的tab
+    try{
+        var tabIndex = sessionStorage.getItem('index_tab_index');
+        tabIndex = tabIndex ||1;
+        tabCtn[0].style[transition] = 'none'
+        move(+tabIndex);
+        setTimeout(function(){
+            tabCtn[0].style[transition] = transform+' 0.4s linear'
+        },transition_duration)
+    }catch(e){}
 
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
