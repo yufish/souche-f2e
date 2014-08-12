@@ -259,7 +259,7 @@ define(['souche/util/load-info',
             tabID = id;
             $(window).trigger("tab_change", id)
             if (id === "myAdviser") {
-                initAnimate();
+                initAnimate(".myAdviser");
             } else if (id == "hotNewCars") {
                 $(".hotNewCars img").each(function(i, img) {
                     $(img).attr("src", $(img).attr("data-original"));
@@ -269,59 +269,60 @@ define(['souche/util/load-info',
             $(".carsContent." + tabID + "Content").removeClass("hidden");
             return false;
         });
+
         ///
         ///动画 顾问初始化显示的时候
-        var initAnimate = function() {
+        var initAnimate = function(selector) {
+            if ($(".adviserInitAnimate", $(selector)).length != 0) {
 
-            if ($(".adviserInitAnimate").length != 0) {
-
-
-                $(".adviserInitAnimate .boytalk").css({
+                $(".adviserInitAnimate .boytalk", $(selector)).css({
                     left: -400
                 })
-                $(".adviserInitAnimate .girltalk").css({
+                $(".adviserInitAnimate .girltalk", $(selector)).css({
                     left: -600
                 })
-                $(".adviserInitAnimate .bg").animate({
+                $(".adviserInitAnimate .bg", $(selector)).animate({
                     "left": 0
                 }, 500);
                 animateList([
-                    [".adviserInitAnimate .road", {
+                    [selector + " .adviserInitAnimate .road", {
                             left: 0
                         },
                         600
                     ],
-                    [".adviserInitAnimate .boy", {
+                    [selector + " .adviserInitAnimate .boy", {
                             left: 0
                         },
                         500
                     ],
-                    [".adviserInitAnimate .boytalk", {
+                    [selector + " .adviserInitAnimate .boytalk", {
                             left: 0
                         },
                         500
                     ],
-                    [".adviserInitAnimate .girl", {
+                    [selector + " .adviserInitAnimate .girl", {
                             left: 0
                         },
                         500
                     ],
-                    [".adviserInitAnimate .girltalk", {
+                    [selector + " .adviserInitAnimate .girltalk", {
                             left: 0
                         },
                         500
                     ]
                 ], function() {
-                    autoScroll(".adviserInitAnimate .boytalk .talk-inner", 5000)
+                    autoScroll(selector + " .adviserInitAnimate .boytalk .talk-inner", 5000)
                     setTimeout(function() {
-                        autoScroll(".adviserInitAnimate .girltalk .talk-inner", 5000)
+                        autoScroll(selector + " .adviserInitAnimate .girltalk .talk-inner", 5000)
                     }, 500)
                 })
 
 
             }
         }
-
+        if ($(".hotNewCars .adviserInitAnimate").length) {
+            initAnimate(".hotNewCars");
+        }
         /// brandlist nav
         $(".brandNav a").live("click", function() {
             var id = $(this).attr("data-id");

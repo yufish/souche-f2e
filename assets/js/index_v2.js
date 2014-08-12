@@ -4,14 +4,16 @@ define(['index/car-god',
     'souche/custom-select',
     "index/collect",
     "lib/lazyload",
-    "index/carConstrast"
+    "index/carConstrast",
+    "index/record-tip"
 ], function(carGod,
     topNav,
     qiugou,
     customSelect,
     collect,
     lazyload,
-    carConstrast) {
+    carConstrast,
+    recordTip) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
@@ -341,44 +343,26 @@ define(['index/car-god',
                 })
             })
             //猜你喜欢的不喜欢动作
-            $(".nolike").on("click",function(e){
-                    $.ajax({
-                        url:config.api_nolikeUrl,
-                        data:{
-                            id:$(this).attr("data-id")
-                        },
-                        success:function(){
-                            // $(".nolike").
-                        }
-                    })
-                });
-            //提示品牌是否加入心愿单
-            $.ajax({
-                url:config.api_showTipUrl,
-                success:function(){
-
-                }
+            $(".nolike").on("click", function(e) {
+                var self = this;
+                $.ajax({
+                    url: config.api_nolikeUrl,
+                    data: {
+                        id: $(this).attr("data-id")
+                    },
+                    success: function() {
+                        $(self).closest(".like-box").animate({
+                            opacity: 0,
+                            width: 0
+                        }, 500, function() {
+                            $(self).closest(".like-box").remove()
+                        })
+                        // $(".nolike").
+                    }
+                })
             });
-            $(".record_warning .close").on("click",function(e){
-                e.preventDefault();
-                $.ajax({
-                    url:config.api_nowShowTipUrl,
-                    success:function(){
-                        $(".record_warning").addClass("hidden")
-
-                    }
-                });
-            })
-            $(".record_warning .add").on("click",function(e){
-                e.preventDefault();
-                $.ajax({
-                    url:config.api_addToWishUrl,
-                    success:function(){
-                        $(".record_warning").addClass("hidden")
-                        window.location.reload();
-                    }
-                });
-            })
+            //提示品牌是否加入心愿单
+            recordTip.init(config);
 
         }
     }
