@@ -47,6 +47,7 @@ header{
     overflow: hidden;
 }
 .other-topic .topic-item{
+    display: block;
     height: 44px;
     line-height:44px;
     font-size: 14px;
@@ -365,6 +366,20 @@ nav .nav-item.active .nav-item-content{
 /*tab-panel-2*/
 .tab-panel.panel-2{
     background: #f5f5f5;
+}
+.history-item{
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    display: block;
+    margin: 5px 8px 5px;
+    padding: 0 8px;
+    font-size: 14px;
+    color:#666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 3px;
 }
 .filter-item{
     height: 68px;
