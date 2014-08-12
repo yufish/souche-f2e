@@ -81,10 +81,12 @@ if (navigator.userAgent.match(/Android/i)){
     try{
         var tabIndex = sessionStorage.getItem('index_tab_index');
         tabIndex = tabIndex ||1;
-        tabCtn[0].style[transition] = 'none'
+        tabCtn[0].style['transition'] = 'none'
+        tabCtn[0].style['webkitTransition'] = 'none'
         move(+tabIndex);
         setTimeout(function(){
-            tabCtn[0].style[transition] = transform+' 0.4s linear'
+            tabCtn[0].style['transition'] = +'all 0.4s linear'
+            tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
         },transition_duration)
     }catch(e){}
 
