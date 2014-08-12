@@ -147,6 +147,10 @@ define(['souche', 'lib/lazyload', 'lib/jquery.flexslider-min'], function(Lazyloa
                         }
                     })
                 })
+
+                $(".nolike").on("click",function(e){
+                    
+                })
             }
         }
     })();

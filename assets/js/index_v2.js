@@ -340,8 +340,45 @@ define(['index/car-god',
                     window.location.reload();
                 })
             })
+            //猜你喜欢的不喜欢动作
+            $(".nolike").on("click",function(e){
+                    $.ajax({
+                        url:config.api_nolikeUrl,
+                        data:{
+                            id:$(this).attr("data-id")
+                        },
+                        success:function(){
+                            // $(".nolike").
+                        }
+                    })
+                });
+            //提示品牌是否加入心愿单
+            $.ajax({
+                url:config.api_showTipUrl,
+                success:function(){
 
+                }
+            });
+            $(".record_warning .close").on("click",function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:config.api_nowShowTipUrl,
+                    success:function(){
+                        $(".record_warning").addClass("hidden")
 
+                    }
+                });
+            })
+            $(".record_warning .add").on("click",function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:config.api_addToWishUrl,
+                    success:function(){
+                        $(".record_warning").addClass("hidden")
+                        window.location.reload();
+                    }
+                });
+            })
 
         }
     }
