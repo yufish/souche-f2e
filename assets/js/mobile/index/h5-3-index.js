@@ -23,7 +23,8 @@ if (navigator.userAgent.match(/Android/i)){
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
-    var tabCtn = $('#J_tabContainer'),
+    var tabCover =$('#J_tabCover'),
+        tabCtn = $('#J_tabContainer'),
         tabNavBar = $('#J_tabNavbar');
     var tabPanels = tabCtn.find('.tab-panel'),
         navItems = $('.nav-item',tabNavBar);
@@ -49,6 +50,8 @@ if (navigator.userAgent.match(/Android/i)){
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
         tabNavBar.attr('data-active-index',curIndex)
+        var height = tabPanels.eq(curIndex-1).height();
+        tabCover.css({height:height+78})
     }
 
     var move = function(){
@@ -442,7 +445,8 @@ if (navigator.userAgent.match(/Android/i)){
     };
     $('#J_btnAdvance').on('click',function(){
         $('#J_advanceWrapper').addClass('hidden');
-        $('#J_advancedFilterItems').removeClass('hidden')
+        $('#J_advancedFilterItems').removeClass('hidden');
+        $('#J_tabCover').css({height:$('.tab-panel').eq(1).height()})
     });
     $('#J_btnFilter_submit').on(tap_event,function(e){
         var dObj = buildQueryObj();
@@ -451,93 +455,133 @@ if (navigator.userAgent.match(/Android/i)){
             if(i=='carBrandName'|| i=='carSeriesName')continue;
             addr += (i + '=' + dObj[i] + '&');
         }
-        if(!isDefaultObj(dObj)){
-            saveHistory(dObj)
-        }
+//        if(!isDefaultObj(dObj)){
+//            saveHistory(dObj)
+//        }
         window.location.href = addr.substr(0,addr.length-1);
     });
-    function saveHistory(dataObj){
-        var db = window.sessionStorage;
-        var isSupportDb = false;
-        try{
-            var filterHistories = db.getItem('filter_history');
-            isSupportDb = true;
-        }catch(e){}
-        if(!isSupportDb) return;
-        if(!filterHistories){
-            db.setItem('filter_history',JSON.stringify([dataObj]));
-        }else{
-            var objs = JSON.parse(filterHistories);
-            objs.unshift(dataObj);
-            if(objs.length>5){
-                objs.length = 5;
-            }
-            db.setItem('filter_history',JSON.stringify(objs));
-        }
-    }
-    function isDefaultObj(dataObj){
-        for(var i in dataObj){
-            if(i=='carPrice'){
-                if(dataObj[i]!='0-10000'){return false}
-            }else if(i=='carYear'){
-                if(dataObj[i]!='0000-9999'){return false}
-            }else{
-                if(dataObj[i])return false;
-            }
-        }
-        return true;
-    }
-    !function recoverHistory(){
-
-        var db = window.sessionStorage;
-        !function init(){
-            try{
-                var filterHistories = db.getItem('filter_history');
-            }catch(e){}
-            if(!filterHistories)return;
-            filterHistories = JSON.parse(filterHistories);
-            var html = ''
-            for(var i = 0;i<filterHistories.length&&i<5;i++){
-                html+=buildHistoryItem(filterHistories[i]);
-            }
-            $('.history-area').append(html);
-        }();
-        function buildHistoryItem(dataObj){
-            //cloneObj 把除了价格品牌车系的东西，clone下来
-            var cloneObj={};
-            var priceTxt = '',brandTxt='',seriesTxt='';
-            for(var i in dataObj){
-                if(i == 'carPrice'){priceTxt = dataObj[i];continue;}
-                if(i == 'carSeriesName'){brandTxt = dataObj[i];continue;}
-                if(i == 'carBrandName'){seriesTxt = dataObj[i];continue;}
-                if(i=='carBrand'|| i=='carSeries')continue;
-                cloneObj[i]=dataObj[i]
-            }
-            function getPriceTxt(priceTxt){
-                if(priceTxt=='0000-9999') {
-                    return ''
-                }
-                var minMaxPrice = priceTxt.split('-');
-                var minP= minMaxPrice[0],maxP =minMaxPrice[1];
-                minP= (minP==0?'不限':minP+'万');
-                maxP = (maxP=='10000'?'不限':maxP+'万');
-                return minP+'-' + maxP
-            }
-
-            var histTxt = getPriceTxt(priceTxt)+';'+brandTxt+';'+seriesTxt;
-            for(var i in cloneObj){
-                if(!cloneObj[i])continue;
-                if(i=='carYear'&&cloneObj[i].toString().indexOf('0000') == 0){
-                    continue
-                }
-                histTxt+=';'+cloneObj[i];
-            }
-            var html = '<div class="history-item" data-search-str="'+JSON.stringify(dataObj)+'">'
-                    + histTxt.replace(/[;]+/g,';')
-                    +'</div>'
-            return html;
-        }
-    }();
+//    function saveHistory(dataObj){
+//        var db = window.localStorage;
+//        var isSupportDb = false;
+//        try{
+//            var filterHistories = db.getItem('filter_history');
+//            isSupportDb = true;
+//        }catch(e){}
+//        if(!isSupportDb) return;
+//        if(!filterHistories){
+//            db.setItem('filter_history',JSON.stringify([dataObj]));
+//        }else{
+//            var objs = JSON.parse(filterHistories);
+//            objs.unshift(dataObj);
+//            if(objs.length>5){
+//                objs.length = 5;
+//            }
+//            db.setItem('filter_history',JSON.stringify(objs));
+//        }
+//    }
+//    function isDefaultObj(dataObj){
+//        for(var i in dataObj){
+//            if(i=='carPrice'){
+//                if(dataObj[i]!='0-10000'){return false}
+//            }else if(i=='carYear'){
+//                if(dataObj[i]!='0000-9999'){return false}
+//            }else{
+//                if(dataObj[i])return false;
+//            }
+//        }
+//        return true;
+//    }
+//    !function recoverHistory(){
+//
+//        var db = window.localStorage;
+//        !function init(){
+//            try{
+//                var filterHistories = db.getItem('filter_history');
+//            }catch(e){}
+//            if(!filterHistories)return;
+//            filterHistories = JSON.parse(filterHistories);
+//            var html = ''
+//            for(var i = 0;i<filterHistories.length&&i<5;i++){
+//                html+=buildHistoryItem(filterHistories[i]);
+//            }
+//            $('.history-area').append(html);
+//        }();
+//        function buildHistoryItem(dataObj){
+//            //cloneObj 把除了价格品牌车系的东西，clone下来
+//            function getPriceTxt(priceTxt){
+//                if(priceTxt=='0-10000') {
+//                    return ''
+//                }
+//                var minMaxPrice = priceTxt.split('-');
+//                var minP= minMaxPrice[0],maxP =minMaxPrice[1];
+//                minP= (minP=='0'?'不限':minP+'万');
+//                maxP = (maxP=='10000'?'不限':maxP+'万');
+//                return minP+'-' + maxP
+//            }
+//            var vkMap = function(){
+//                var map ={
+//                    "0-10000":'1万公里以内',
+//                    "0-20000":'2万公里以内',
+//                    "0-30000":'3万公里以内',
+//                    "0-40000":'4万公里以内',
+//                    "0-50000":'5万公里以内',
+//                    "0-60000":'6万公里以内',
+//                    "0-70000":'7万公里以内',
+//                    "0-80000":'8万公里以内',
+//                    "tinyCar":"微小型车",
+//                    "compactCar":"紧凑型车",
+//                    "midSize":"中型车",
+//                    "PremiumMidsize":"中大型车",
+//                    "SUV":"SUV",
+//                    "MPV":"MPV",
+//                    "SportsCar":"跑车",
+//                    "1.1-1.6":"1.1-1.6L",
+//                    "1.6-2.0":"1.6-2.0L",
+//                    "2.0-2.5":"2.0-2.5L",
+//                    "2.5-3.0":"2.5-3.0L",
+//                    "3.0-4.0":"3.0-4.0L",
+//                    "4.0-1000":"4.0L以上"
+//                }
+//                return function(key){
+//                    return map[key]
+//                }
+//            }();
+//
+//            var textArr=[];
+//            var pTxt = getPriceTxt(dataObj['carPrice'])
+//            if(pTxt){textArr.push(pTxt)}
+//            if(dataObj['carBrandName']){textArr.push(dataObj['carBrandName'])}
+//            if(dataObj['carSeriesName']){textArr.push(dataObj['carSeriesName'])}
+//
+//            for(var i in dataObj){
+//                if(i == 'carPrice'){continue;}
+//                if(i == 'carSeriesName'){brandTxt = dataObj[i];continue;}
+//                if(i == 'carBrandName'){seriesTxt = dataObj[i];continue;}
+//                if(i=='carBrand'|| i=='carSeries'||i == 'carPrice'
+//                        ||i == 'carSeriesName'||i == 'carBrandName'){
+//                    continue;
+//                }
+//                if(dataObj[i]==undefined|| dataObj[i]==null||dataObj[i]==''){
+//                    continue;
+//                }
+//                if(i=='carYear'){
+//                    var firstYear= dataObj[i].toString().substr(0,4);
+//                    if( firstYear == 0){}else{
+//                        textArr.push(firstYear+'年后上牌');
+//                    }
+//                    continue;
+//                }
+//                textArr.push(vkMap(dataObj[i]))
+//            }
+//
+//            var histTxt = textArr.join(';');
+//
+//            var html = '<div class="history-item" data-search-str="'+JSON.stringify(dataObj)+'">'
+//                    + histTxt
+//                    +'</div>'
+//            return html;
+//        }
+//    }();
 }();
 //加载更多车辆相关
 !function(){
@@ -614,16 +658,11 @@ if (navigator.userAgent.match(/Android/i)){
             success:function(data){
                 console.log(data);
                 buildCards(data);
+                $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
             }
         })
     })
 }()
-
-$('.wrapGrayBg').on('click',function(){
-    $('.filter-popup-wrapper').addClass('hidden');
-    $('.wrapGrayBg').addClass('hidden');
-    $('.mobile-popup').addClass('hidden');
-})
 //收藏相关代码
 !function(){
     var isLogin =false;
@@ -641,30 +680,56 @@ $('.wrapGrayBg').on('click',function(){
                 doFav($curNode);
                 isLogin = true;
             } else {
-                showPopup();
+                $('.wrapGrayBg').removeClass('hidden');
+                var $popup = $('.fav-popup');
+                $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+            }
+        })
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        $('#notify-form').submit(function(e) {
+            var phoneNum = $("#phone-for-notify").val();
+            e.preventDefault();
+            if (!phoneReg.test(phoneNum)) {
+                alert('请输入正确的手机号码');
+            } else {
+                Souche.PhoneRegister(phoneNum, function() {
+                    isLogin = true;
+                    doFav($curNode,function(){
+                        $('.wrapGrayBg').addClass('hidden');
+                        $('.mobile-popup').addClass('hidden');
+                    });
+                })
             }
         })
     })
+}();
 
-    function showPopup(){
-        $('.wrapGrayBg').removeClass('hidden');
-        var $popup = $('.mobile-popup');
-        $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
-    }
-    var phoneReg = /^1[3458][0-9]{9}$/;
-    $('#notify-form').submit(function(e) {
-        var phoneNum = $("#phone-for-notify").val();
-        e.preventDefault();
-        if (!phoneReg.test(phoneNum)) {
-            alert('请输入正确的手机号码');
+$('.wrapGrayBg').on('click',function(){
+    $('.filter-popup-wrapper').addClass('hidden');
+    $('.wrapGrayBg').addClass('hidden');
+    $('.mobile-popup').addClass('hidden');
+})
+$('#J_gotoCenter').click(function(){
+    var self =$(this);
+    Souche.checkPhoneExist(function(is_login) {
+        if (is_login) {
+            window.location.href=self.attr('data-href');
         } else {
-            Souche.PhoneRegister(phoneNum, function() {
-                isLogin = true;
-                doFav($curNode,function(){
-                    $('.wrapGrayBg').addClass('hidden');
-                    $('.mobile-popup').addClass('hidden');
-                });
-            })
+            $('.wrapGrayBg').removeClass('hidden');
+            var $popup = $('.login-popup');
+            $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
         }
     })
-}();
+})
+$('#login-form').submit(function(e) {
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    var phoneNum = $("#phone-for-login").val();
+    e.preventDefault();
+    if (!phoneReg.test(phoneNum)) {
+        alert('请输入正确的手机号码');
+    } else {
+        Souche.PhoneRegister(phoneNum, function() {
+            window.location.href=$('#J_gotoCenter').attr('data-href');
+        })
+    }
+})
