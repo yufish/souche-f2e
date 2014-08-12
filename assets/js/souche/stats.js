@@ -68,7 +68,7 @@ $(document).ready(function() {
                             color: "#fff",
                             padding: "0px 5px",
                             fontSize: 12,
-                            opacity: 0.6,
+                            opacity: 1,
                             zIndex: 1000000000
                         }).html(click_types[i]).attr("for_click_type", i)
                     }
@@ -86,7 +86,7 @@ $(document).ready(function() {
                         }
 
                     }
-                }, 500)
+                }, 1000)
             }
 
         });
