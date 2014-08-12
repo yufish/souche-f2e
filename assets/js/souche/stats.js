@@ -117,7 +117,7 @@ $(document).ready(function() {
     try {
         if ("ontouchstart" in window) {
             eventKey = "click";
-            if(typeof $.fn.tap){
+            if (typeof $.fn.tap) {
                 eventKey = 'tap'
             }
         }
@@ -143,6 +143,9 @@ $(document).ready(function() {
             user_viewwidth: $(window).width(),
             user_viewheight: $(window).height(),
             cookie: document.cookie
+        }
+        if (ABtest && ABtest.id) {
+            data.abtest = ABtest.id;
         }
         var param = ""
         for (var d in data) {
@@ -222,4 +225,12 @@ window.onbeforeunload = function() {
         param += d + "=" + data[d] + "&"
     }
     new Image().src = "http://f2e-monitor.souche.com/performance/traffic_end?" + param
+}
+
+
+var ABtest = {
+    id: "",
+    use: function(id) {
+        this.id = id;
+    }
 }
