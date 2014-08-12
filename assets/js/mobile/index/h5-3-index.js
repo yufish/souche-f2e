@@ -716,11 +716,12 @@ $('.wrapGrayBg').on('click',function(){
     $('.wrapGrayBg').addClass('hidden');
     $('.mobile-popup').addClass('hidden');
 })
-$('#J_gotoCenter').click(function(){
+$('#J_gotoCenter').on('click',function(e){
     var self =$(this);
+    e.preventDefault();
     Souche.checkPhoneExist(function(is_login) {
         if (is_login) {
-            window.location.href=self.attr('data-href');
+            window.location.href=self.attr('href');
         } else {
             $('.wrapGrayBg').removeClass('hidden');
             var $popup = $('.login-popup');
