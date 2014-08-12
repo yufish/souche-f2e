@@ -203,12 +203,12 @@ if (navigator.userAgent.match(/Android/i)){
         },
         queryCarsCount:function(dataObj,cb){
             $.ajax({
-                url: contextPath + '/pages/mobile/listAction/queryCars.json?index=999999&tracktype=0',
+                url: contextPath + '/pages/mobile/listAction/countMatchCars.json?tracktype=0',
                 data: dataObj,
                 dataType: 'json',
                 success: function(data){
-                    if(data&&data.i){
-                        cb(null,data.i)
+                    if(data&&data.count){
+                        cb(null,data.count)
                     }else{
                         cb('数据格式错误',0);
                     }
@@ -335,21 +335,25 @@ if (navigator.userAgent.match(/Android/i)){
                 makeBrands(data.items);
             })
         })
-        filterGlobal.selectBrand = ''
-        filterGlobal.selectSeries = ''
+
         $('#J_series').on('click',function(){
             $('.wrapGrayBg').removeClass('hidden');
             $('#series-list').css({
                 top: document.body.scrollTop + 50
             }).removeClass('hidden');
         })
-
+        filterGlobal.selectBrand = '';
+        filterGlobal.selectBrandName='';
+        filterGlobal.selectSeries = '';
+        filterGlobal.selectSeriesName='';
         $('#brand-list').on('click','.item',function(){
             var self = $(this)
             //清空车系的状态
             $('.series-content').empty();
             $('#J_series').text('选择车系');
             filterGlobal.selectSeries = '';
+            filterGlobal.selectSeriesName='';
+
             $('.selected-brand-name').text('请先选择品牌');
             if(self.hasClass('selected')){
                 self.removeClass('selected');
@@ -366,6 +370,7 @@ if (navigator.userAgent.match(/Android/i)){
                 $('#J_brand').text(bName);
                 $('.selected-brand-name').text(bName);
                 filterGlobal.selectBrand = bCode;
+                filterGlobal.selectBrandName = bName;
                 filterGlobal.queryCount();
                 utils.getSeriesByBrand(bCode,makeSeries);
             }
@@ -385,11 +390,12 @@ if (navigator.userAgent.match(/Android/i)){
                 var sName = self.find('.series-name').text()
                 var sCode = self.attr('data-code');
                 filterGlobal.selectSeries = sCode;
+                filterGlobal.selectSeriesName = sName;
                 filterGlobal.queryCount();
                 $('#J_series').text(sName);
             }
         })
-        //重置和数量显示
+        //重置
         /*!function() {
             $('#J_btnFilter_reset').on('click', function (e) {
                 filterGlobal.selectBrand = '';
@@ -402,25 +408,29 @@ if (navigator.userAgent.match(/Android/i)){
                 filterGlobal.initPriceOption();
                 $('#J_advancedFilterItems select>option:first-child').prop('selected', true)
             })
-            $('.select-cond').change(function(){
-                filterGlobal.queryCount();
-            })
+
         }();*/
-
+        //数量显示
+        $('.select-cond').change(function(){
+            filterGlobal.queryCount();
+        })
     }();
-
+    //
     function buildQueryObj(){
         function getCond(val){return (!!val)?val:'';}
         var dataObj = {};
         dataObj.carBrand = filterGlobal.selectBrand;
         dataObj.carSeries = filterGlobal.selectSeries;
-        dataObj.carMinYear = getCond($('#J_year').val());
-        dataObj.carMaxYear='';
+        var year = $('#J_year').val();year = year||'0000'
+        dataObj.carYear=year+'-9999';
         dataObj.carPrice = $('#J_minPrice').val()+'-'+$('#J_maxPrice').val();
         dataObj.carMileage = getCond($('#J_mile').val());
         dataObj.carModel = getCond($('#J_model').val());
         dataObj.carEngineVolume = getCond($('#J_volume').val());
         dataObj.transmissionType = getCond($('#J_transmission').val());
+        //下面两个属性和值，只为了筛选历史的展示，不应传给后台
+        dataObj.carBrandName =filterGlobal.selectBrandName;
+        dataObj.carSeriesName =filterGlobal.selectSeriesName;
         return dataObj;
     }
 
@@ -433,15 +443,101 @@ if (navigator.userAgent.match(/Android/i)){
     $('#J_btnAdvance').on('click',function(){
         $('#J_advanceWrapper').addClass('hidden');
         $('#J_advancedFilterItems').removeClass('hidden')
-    })
+    });
     $('#J_btnFilter_submit').on(tap_event,function(e){
         var dObj = buildQueryObj();
         var addr = contextPath + '/pages/mobile/list.html?';
         for (var i in dObj) {
+            if(i=='carBrandName'|| i=='carSeriesName')continue;
             addr += (i + '=' + dObj[i] + '&');
         }
+        if(!isDefaultObj(dObj)){
+            saveHistory(dObj)
+        }
         window.location.href = addr.substr(0,addr.length-1);
-    })
+    });
+    function saveHistory(dataObj){
+        var db = window.sessionStorage;
+        var isSupportDb = false;
+        try{
+            var filterHistories = db.getItem('filter_history');
+            isSupportDb = true;
+        }catch(e){}
+        if(!isSupportDb) return;
+        if(!filterHistories){
+            db.setItem('filter_history',JSON.stringify([dataObj]));
+        }else{
+            var objs = JSON.parse(filterHistories);
+            objs.unshift(dataObj);
+            if(objs.length>5){
+                objs.length = 5;
+            }
+            db.setItem('filter_history',JSON.stringify(objs));
+        }
+    }
+    function isDefaultObj(dataObj){
+        for(var i in dataObj){
+            if(i=='carPrice'){
+                if(dataObj[i]!='0-10000'){return false}
+            }else if(i=='carYear'){
+                if(dataObj[i]!='0000-9999'){return false}
+            }else{
+                if(dataObj[i])return false;
+            }
+        }
+        return true;
+    }
+    !function recoverHistory(){
+
+        var db = window.sessionStorage;
+        !function init(){
+            try{
+                var filterHistories = db.getItem('filter_history');
+            }catch(e){}
+            if(!filterHistories)return;
+            filterHistories = JSON.parse(filterHistories);
+            var html = ''
+            for(var i = 0;i<filterHistories.length&&i<5;i++){
+                html+=buildHistoryItem(filterHistories[i]);
+            }
+            $('.history-area').append(html);
+        }();
+        function buildHistoryItem(dataObj){
+            //cloneObj 把除了价格品牌车系的东西，clone下来
+            var cloneObj={};
+            var priceTxt = '',brandTxt='',seriesTxt='';
+            for(var i in dataObj){
+                if(i == 'carPrice'){priceTxt = dataObj[i];continue;}
+                if(i == 'carSeriesName'){brandTxt = dataObj[i];continue;}
+                if(i == 'carBrandName'){seriesTxt = dataObj[i];continue;}
+                if(i=='carBrand'|| i=='carSeries')continue;
+                cloneObj[i]=dataObj[i]
+            }
+            function getPriceTxt(priceTxt){
+                if(priceTxt=='0000-9999') {
+                    return ''
+                }
+                var minMaxPrice = priceTxt.split('-');
+                var minP= minMaxPrice[0],maxP =minMaxPrice[1];
+                minP= (minP==0?'不限':minP+'万');
+                maxP = (maxP=='10000'?'不限':maxP+'万');
+                return minP+'-' + maxP
+            }
+
+            var histTxt = getPriceTxt(priceTxt)+';'+brandTxt+';'+seriesTxt;
+            for(var i in cloneObj){
+                if(!cloneObj[i])continue;
+                if(i=='carYear'&&cloneObj[i].toString().indexOf('0000') == 0){
+                    continue
+                }
+                histTxt+=';'+cloneObj[i];
+            }
+            var html = '<div class="history-item" data-search-str="'+JSON.stringify(dataObj)+'">'
+                    + histTxt.replace(/[;]+/g,';')
+                    +'</div>'
+            return html;
+        }
+    }();
 }();
 //加载更多车辆相关
 !function(){
