@@ -15,9 +15,9 @@ define(function() {
                     if (data.code == 200) {
                         $(".record_warning").removeClass("hidden")
                     }
-                    if (data.brands) {
-                        for (var i = 0; i < data.brands.length; i++) {
-                            var item = data.brands[i];
+                    if (data.userTags && data.userTags.brands) {
+                        for (var i = 0; i < data.userTags.brands.length; i++) {
+                            var item = data.userTags.brands[i];
                             if (submitData[item.parameter]) {
 
                             } else {

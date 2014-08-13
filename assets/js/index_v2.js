@@ -349,6 +349,12 @@ define(['index/car-god',
                     //猜你喜欢的不喜欢动作
                     $(".nolike").on("click", function(e) {
                         var self = this;
+                        $(self).closest(".like-box").animate({
+                            opacity: 0,
+                            width: 0
+                        }, 500, function() {
+                            $(self).closest(".like-box").remove()
+                        })
                         $.ajax({
                             url: config.api_nolikeUrl,
                             data: {
@@ -356,12 +362,7 @@ define(['index/car-god',
                             },
                             dataType: "json",
                             success: function() {
-                                $(self).closest(".like-box").animate({
-                                    opacity: 0,
-                                    width: 0
-                                }, 500, function() {
-                                    $(self).closest(".like-box").remove()
-                                })
+
                                 // $(".nolike").
                             }
                         })
