@@ -408,36 +408,7 @@ body {
 #list #header {
     height: 40px;
 }
-#list #order li {
-    width: 33.3%;
-    float: left;
-    vertical-align: top;
-}
-#list #order li a {
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    display: block;
-    border-right: 1px solid #e5e5e5;
-    color: #333;
-    padding: 13px 0;
-}
-#list #order li a i {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background: url(../../images/mob/order.png) no-repeat;
-    background-size: 100%;
-    vertical-align: -3px;
-}
-#list #order li a.active {
-    color: #fc7000;
-    border-bottom: 4px solid #fc7000;
-}
-#list #order li a.active i {
-    background: url(../../images/mob/order-1.png) no-repeat;
-    background-size: 100%;
-}
+
 #list #list-tip {
     text-align: center;
     line-height: 40px;
@@ -5041,9 +5012,6 @@ body {
 }
 #list #no-result .advice a {
     color: #0090e2;
-}
-#list #order {
-    border-bottom: 1px solid #e5e5e5;
 }
 body {
     font-family: 'Heiti SC','华文黑体', '黑体';
