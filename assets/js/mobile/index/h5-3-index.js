@@ -39,6 +39,12 @@ if (navigator.userAgent.match(/Android/i)){
     function afterMove(oldIndex,curIndex){
         navItems.removeClass('active')
         navItems.eq(curIndex-1).addClass('active')
+        tabNavBar.attr('data-active-index',curIndex)
+        var height = tabPanels.eq(curIndex-1).height();
+        tabCover.css({height:height})
+        try{
+            sessionStorage.setItem('index_tab_index',curIndex);
+        }catch(e){}
         topCache[oldIndex-1]=document.body.scrollTop;
         document.body.scrollTop = topCache[curIndex-1];
         if(curIndex==2){
@@ -49,12 +55,7 @@ if (navigator.userAgent.match(/Android/i)){
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
-        tabNavBar.attr('data-active-index',curIndex)
-        var height = tabPanels.eq(curIndex-1).height();
-        tabCover.css({height:height})
-        try{
-            sessionStorage.setItem('index_tab_index',curIndex);
-        }catch(e){}
+
     }
 
     var move = function(){
