@@ -81,10 +81,12 @@ if (navigator.userAgent.match(/Android/i)){
     try{
         var tabIndex = sessionStorage.getItem('index_tab_index');
         tabIndex = tabIndex ||1;
-        tabCtn[0].style[transition] = 'none'
+        tabCtn[0].style['transition'] = 'none'
+        tabCtn[0].style['webkitTransition'] = 'none'
         move(+tabIndex);
         setTimeout(function(){
-            tabCtn[0].style[transition] = transform+' 0.4s linear'
+            tabCtn[0].style['transition'] = +'all 0.4s linear'
+            tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
         },transition_duration)
     }catch(e){}
 
@@ -716,11 +718,11 @@ $('.wrapGrayBg').on('click',function(){
     $('.wrapGrayBg').addClass('hidden');
     $('.mobile-popup').addClass('hidden');
 })
-$('#J_gotoCenter').click(function(){
-    var self =$(this);
+document.getElementById('J_gotoCenter').addEventListener('click',function(e){
+    e.preventDefault();
     Souche.checkPhoneExist(function(is_login) {
         if (is_login) {
-            window.location.href=self.attr('data-href');
+            window.location.href=$('#J_gotoCenter').attr('href');
         } else {
             $('.wrapGrayBg').removeClass('hidden');
             var $popup = $('.login-popup');
@@ -728,6 +730,19 @@ $('#J_gotoCenter').click(function(){
         }
     })
 })
+//$('#J_gotoCenter').on('click',function(e){
+//    var self =$(this);
+//    //e.preventDefault();
+//    Souche.checkPhoneExist(function(is_login) {
+//        if (is_login) {
+//            window.location.href=$('#J_gotoCenter').attr('href');
+//        } else {
+//            $('.wrapGrayBg').removeClass('hidden');
+//            var $popup = $('.login-popup');
+//            $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+//        }
+//    })
+//})
 $('#login-form').submit(function(e) {
     var phoneReg = /^1[3458][0-9]{9}$/;
     var phoneNum = $("#phone-for-login").val();
@@ -736,7 +751,7 @@ $('#login-form').submit(function(e) {
         alert('请输入正确的手机号码');
     } else {
         Souche.PhoneRegister(phoneNum, function() {
-            window.location.href=$('#J_gotoCenter').attr('data-href');
+            window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
 })
