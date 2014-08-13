@@ -4,14 +4,16 @@ define(['index/car-god',
     'souche/custom-select',
     "index/collect",
     "lib/lazyload",
-    "index/carConstrast"
+    "index/carConstrast",
+    "index/record-tip"
 ], function(carGod,
     topNav,
     qiugou,
     customSelect,
     collect,
     lazyload,
-    carConstrast) {
+    carConstrast,
+    recordTip) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 1;
@@ -340,8 +342,28 @@ define(['index/car-god',
                     window.location.reload();
                 })
             })
-
-
+            //猜你喜欢的不喜欢动作
+            $(".nolike").on("click", function(e) {
+                var self = this;
+                $.ajax({
+                    url: config.api_nolikeUrl,
+                    data: {
+                        id: $(this).attr("data-id")
+                    },
+                    dataType: "json",
+                    success: function() {
+                        $(self).closest(".like-box").animate({
+                            opacity: 0,
+                            width: 0
+                        }, 500, function() {
+                            $(self).closest(".like-box").remove()
+                        })
+                        // $(".nolike").
+                    }
+                })
+            });
+            //提示品牌是否加入心愿单
+            recordTip.init(config);
 
         }
     }

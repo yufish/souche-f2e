@@ -68,7 +68,7 @@ $(document).ready(function() {
                             color: "#fff",
                             padding: "0px 5px",
                             fontSize: 12,
-                            opacity: 0.6,
+                            opacity: 1,
                             zIndex: 1000000000
                         }).html(click_types[i]).attr("for_click_type", i)
                     }
@@ -86,7 +86,7 @@ $(document).ready(function() {
                         }
 
                     }
-                }, 500)
+                }, 1000)
             }
 
         });
@@ -117,7 +117,7 @@ $(document).ready(function() {
     try {
         if ("ontouchstart" in window) {
             eventKey = "click";
-            if(typeof $.fn.tap){
+            if (typeof $.fn.tap) {
                 eventKey = 'tap'
             }
         }
@@ -143,6 +143,9 @@ $(document).ready(function() {
             user_viewwidth: $(window).width(),
             user_viewheight: $(window).height(),
             cookie: document.cookie
+        }
+        if (ABtest && ABtest.id) {
+            data.abtest = ABtest.id;
         }
         var param = ""
         for (var d in data) {
@@ -197,6 +200,9 @@ $(window).load(function() {
             type: "post"
         })
     }
+    if (ABtest && ABtest.id) {
+        data.abtest = ABtest.id;
+    }
     var param = ""
     for (var d in data) {
         param += d + "=" + data[d] + "&"
@@ -222,4 +228,12 @@ window.onbeforeunload = function() {
         param += d + "=" + data[d] + "&"
     }
     new Image().src = "http://f2e-monitor.souche.com/performance/traffic_end?" + param
+}
+
+
+var ABtest = {
+    id: "",
+    use: function(id) {
+        this.id = id;
+    }
 }

@@ -370,7 +370,7 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                         },
                         success: function() {
                             setTimeout(function() {
-                                window.location.href = contextPath + '/mobile/carcustom.html' + location.search;
+                                window.location.href = contextPath + '/mobile/hocIndex.html' + location.search;
                             }, 50)
                         },
                         error: function() {

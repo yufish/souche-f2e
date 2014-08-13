@@ -342,6 +342,8 @@ function filter(BrandMgr, addListener) {
                 var price1 = $('#select-price-1').val();
                 var price2 = $('#select-price-2').val();
                 dataObj.carYear = year;
+                //dataObj.carMinYear = year;
+                //dataObj.carMaxYear = '';
                 dataObj.carPrice = price1 + '-' + price2;
                 dataObj.carBrand = brandSeries.brandStr;
                 dataObj.carSeries = brandSeries.seriesStr;

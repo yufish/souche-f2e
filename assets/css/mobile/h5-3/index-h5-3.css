@@ -31,6 +31,7 @@ header{
     background-size: 20px 20px;
     width: 36px;
     height: 44px;
+    display: block;
 }
 .for-other-topic{
     float: right;
@@ -46,6 +47,7 @@ header{
     overflow: hidden;
 }
 .other-topic .topic-item{
+    display: block;
     height: 44px;
     line-height:44px;
     font-size: 14px;
@@ -85,7 +87,6 @@ header{
     height: 44px;
     line-height: 44px;
     color:#666;
-    position: absolute;
     border-bottom: 1px solid #e7e7e7;
     width: 100%;
     background: #fff;
@@ -180,7 +181,7 @@ nav .nav-item.active .nav-item-content{
 .car-area .for-carcustom-had{
     height: 60px;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 14px;
     border: 1px solid #E6E6E6;
     background: #fff;
@@ -221,7 +222,7 @@ nav .nav-item.active .nav-item-content{
     line-height: 58px;
     color:#666;
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .car-card{
     width: 145px;
@@ -364,6 +365,20 @@ nav .nav-item.active .nav-item-content{
 /*tab-panel-2*/
 .tab-panel.panel-2{
     background: #f5f5f5;
+}
+.history-item{
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    display: block;
+    margin: 5px 8px 5px;
+    padding: 0 8px;
+    font-size: 14px;
+    color:#666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 3px;
 }
 .filter-item{
     height: 68px;
@@ -580,4 +595,8 @@ nav .nav-item.active .nav-item-content{
 .footer .copyright{
     text-align: center;
     margin-top: 12px;
+}
+/*overwrite*/
+.wrapGrayBg{
+    z-index: 1005;
 }
