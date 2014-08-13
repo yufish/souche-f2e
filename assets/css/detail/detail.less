@@ -453,9 +453,8 @@ border:1px solid #ddd;
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
 #detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;position: relative;}
-#detail_main .detail-share a{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;overflow:hidden;width:50px;height:18px;text-indent: 25px;cursor: pointer;}
-#detail_main .detail-share a{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;overflow:hidden;width:50px;height:18px;text-indent: 25px;cursor: pointer;}
-#detail_main .detail-share a:hover{opacity: 1;}
+#detail_main .detail-share .share-item{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;width:50px;height:18px;text-indent: 25px;cursor: pointer;}
+#detail_main .detail-share .share-item:hover{opacity: 1;}
 #detail_main .detail-share .ph{
   background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
   overflow: hidden;
@@ -475,20 +474,88 @@ cursor: pointer;
 }
 #detail_main .detail-share .address{
 background: url(../../images/detail/address.png?123) no-repeat 0 center;
-overflow: hidden;
 cursor: pointer;
-width: 80px;
+width: 75px;
+opacity: 1;
+position: relative;
+}
+#detail_main .detail-share .report{
+  background: url(../../images/detail/report.png) no-repeat 6px center;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+#detail_main .detail-share .report-active{
+  box-shadow: -1px -1px 3px 2px #DFDFDF;
+  border-right: 2px solid #dfdfdf;
+  opacity: 1;
+  color: #666;
+}
+#detail_main .detail-share .report-open{
+  width: 218px;
+  height: 155px;
+  position: absolute;
+  top: 36px;
+  right: -156px;
+  background: #fff;
+  box-shadow: -1px 1px 3px 2px #DFDFDF;
+  border-right: 2px solid #DFDFDF;
+  .border{
+    width: 62px;
+    height: 4px;
+    background: #fff;
+    margin-top: -4px;
+  }
+  .report-form{
+    margin-top: 20px;
+    .radio-list{
+      float: left;
+      width: 100px;
+      .report-item{
+        height: 30px;
+        margin-left: 15px;
+       
+        input{
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+          float: left;
+          display: block;
+        } 
+        label{
+          margin-top: -2px;
+          display: block;
+          float: left;
+          color: #666;
+        }
+      }
+    }
+    .report-submit{
+      width: 62px;
+      height:30px;
+      border: 1px solid #D42E16;
+      background: #FF5517;
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 2px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  }
 }
 #detail_main .detail-share .adress-open{
   position: absolute;
   width: 270px;
   height: 100px;
-  top: -5px;
-  right: -206px;
+  top: -16px;
+  right: -211px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding:15px;
-  z-index: 100;
+  z-index: 10000;
+  text-indent:0px;
   .adress-title{
     color: #666;
     font-size: 12px;
@@ -499,6 +566,10 @@ width: 80px;
       background: url(../../images/detail/address.png?123) no-repeat 0 center;
       float: left;
       margin-right: 7px;
+    }
+    span{
+      display: block;
+      float: left;
     }
     a{
       color: #FC7000;
