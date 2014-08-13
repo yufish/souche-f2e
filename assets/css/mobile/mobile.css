@@ -1292,9 +1292,6 @@ body {
     background-size: auto 50%;
     height: 20px;
 }
-#detail .recommend {
-    margin: 5px;
-}
 #detail .recommend .hd {
     line-height: 30px;
     background: #ddd;
@@ -1305,7 +1302,6 @@ body {
 #detail .recommend .bd {
     position: relative;
     border: 1px solid #ddd;
-
 }
 #detail .recommend .bd .i-shanggou {
     position: absolute;
