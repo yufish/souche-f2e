@@ -51,7 +51,7 @@ if (navigator.userAgent.match(/Android/i)){
         }
         tabNavBar.attr('data-active-index',curIndex)
         var height = tabPanels.eq(curIndex-1).height();
-        tabCover.css({height:height+78})
+        tabCover.css({height:height})
         try{
             sessionStorage.setItem('index_tab_index',curIndex);
         }catch(e){}
