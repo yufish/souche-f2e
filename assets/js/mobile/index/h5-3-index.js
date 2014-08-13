@@ -51,7 +51,7 @@ if (navigator.userAgent.match(/Android/i)){
         }
         tabNavBar.attr('data-active-index',curIndex)
         var height = tabPanels.eq(curIndex-1).height();
-        tabCover.css({height:height+78})
+        tabCover.css({height:height})
         try{
             sessionStorage.setItem('index_tab_index',curIndex);
         }catch(e){}
@@ -89,6 +89,11 @@ if (navigator.userAgent.match(/Android/i)){
             tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
         },transition_duration)
     }catch(e){}
+
+    navItems.on('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    })
 
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
@@ -730,19 +735,7 @@ document.getElementById('J_gotoCenter').addEventListener('click',function(e){
         }
     })
 })
-//$('#J_gotoCenter').on('click',function(e){
-//    var self =$(this);
-//    //e.preventDefault();
-//    Souche.checkPhoneExist(function(is_login) {
-//        if (is_login) {
-//            window.location.href=$('#J_gotoCenter').attr('href');
-//        } else {
-//            $('.wrapGrayBg').removeClass('hidden');
-//            var $popup = $('.login-popup');
-//            $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
-//        }
-//    })
-//})
+
 $('#login-form').submit(function(e) {
     var phoneReg = /^1[3458][0-9]{9}$/;
     var phoneNum = $("#phone-for-login").val();
@@ -754,4 +747,8 @@ $('#login-form').submit(function(e) {
             window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
+})
+$('.placeholder-for-tabNavBar').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
 })

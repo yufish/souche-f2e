@@ -235,4 +235,16 @@
     background: url(../../../images/mob/ajax-loader-black.gif) black no-repeat center 80px;
     min-height: 100px;
 }
-
+#detail-main .car-price-down{
+    font-size: 13px;
+    color: #FF571a;
+}
+#detail-main .light-rht{
+    color: #333;
+    font-size: 13px;
+}
+#detail-main .light-rht .time-limit-png{
+    width: 14px;
+    vertical-align: -2px;
+    margin-right: -5px;
+}
