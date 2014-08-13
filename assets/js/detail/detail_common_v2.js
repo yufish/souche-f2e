@@ -282,8 +282,8 @@
             })
         }
         //车牛车辆举报
-    $(".detail-share .report").click(function(e) {
-        $(this).addClass("report-active");
+    $(".detail-share .rep").click(function(e) {
+        $(this).closest(".report").addClass("report-active");
         $(".report-open").removeClass("hidden");
         e.stopPropagation();
     })
@@ -294,11 +294,21 @@
         }
     })
     var submitReport = function() {
-            $.ajax({
-                url: "#",
-                data: "#",
-                success: function() {
 
+            var Reportstring = $(".report-input")
+
+            $.ajax({
+                url: "http://niu.souche.com/open/inform_car.json",
+                data: {
+                    carId: "#",
+                    reason: "#",
+                    userId: "#",
+                },
+                dataType: "json",
+                type: "post",
+                success: function() {
+                    $(".rep").addClass("hidden");
+                    $(".has-rep").removeClass("hidden");
                 }
             })
         }
