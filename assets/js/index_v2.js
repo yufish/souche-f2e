@@ -342,6 +342,12 @@ define(['index/car-god',
                     window.location.reload();
                 })
             })
+            $.ajax({
+                url: config.api_guessCars,
+                success: function(html) {
+                    $(".guess-like").html(html)
+                }
+            })
             //猜你喜欢的不喜欢动作
             $(".nolike").on("click", function(e) {
                 var self = this;
