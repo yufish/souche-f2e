@@ -90,12 +90,12 @@ if (navigator.userAgent.match(/Android/i)){
         },transition_duration)
     }catch(e){}
 
-    navItems.on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-    })
+//    navItems.on('click',function(e){
+//        e.preventDefault();
+//        e.stopPropagation();
+//    })
 
-    navItems.on(tap_event,function(e){
+    navItems.on('click',function(e){
         e.preventDefault();
         e.stopPropagation();
         var index = +$(this).attr('data-nav-index');
