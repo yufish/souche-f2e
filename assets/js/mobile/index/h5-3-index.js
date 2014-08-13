@@ -90,6 +90,11 @@ if (navigator.userAgent.match(/Android/i)){
         },transition_duration)
     }catch(e){}
 
+    navItems.on('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    })
+
     navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
         var curIndex = tabNavBar.attr('data-active-index');
