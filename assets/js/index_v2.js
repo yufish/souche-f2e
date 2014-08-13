@@ -346,28 +346,30 @@ define(['index/car-god',
                 url: config.api_guessCars,
                 success: function(html) {
                     $(".guess-like").html(html)
-                }
-            })
-            //猜你喜欢的不喜欢动作
-            $(".nolike").on("click", function(e) {
-                var self = this;
-                $.ajax({
-                    url: config.api_nolikeUrl,
-                    data: {
-                        id: $(this).attr("data-id")
-                    },
-                    dataType: "json",
-                    success: function() {
+                    //猜你喜欢的不喜欢动作
+                    $(".nolike").on("click", function(e) {
+                        var self = this;
                         $(self).closest(".like-box").animate({
                             opacity: 0,
                             width: 0
                         }, 500, function() {
                             $(self).closest(".like-box").remove()
                         })
-                        // $(".nolike").
-                    }
-                })
-            });
+                        $.ajax({
+                            url: config.api_nolikeUrl,
+                            data: {
+                                id: $(this).attr("data-id")
+                            },
+                            dataType: "json",
+                            success: function() {
+
+                                // $(".nolike").
+                            }
+                        })
+                    });
+                }
+            })
+
             //提示品牌是否加入心愿单
             recordTip.init(config);
             //闹着玩
