@@ -95,7 +95,9 @@ if (navigator.userAgent.match(/Android/i)){
         e.stopPropagation();
     })
 
-    navItems.on(tap_event,function(){
+    navItems.on(tap_event,function(e){
+        e.preventDefault();
+        e.stopPropagation();
         var index = +$(this).attr('data-nav-index');
         var curIndex = tabNavBar.attr('data-active-index');
         if(curIndex == index)return;
