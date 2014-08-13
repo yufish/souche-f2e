@@ -267,42 +267,22 @@
         }
     })
     var submitJiangjia = function() {
-            $.ajax({
-                url: $("#jiangjia-form").attr('action'),
-                data: $("#jiangjia-form").serialize(),
-                success: function(data) {
-                    if (data.errorMessage) {
-                        alert(data.errorMessage)
-                    } else {
-                        $("#jiangjia-popup").addClass("hidden");
-                        $("#jiangjia-success-popup").removeClass("hidden");
-                        $(".wrapGrayBg").show();
-                    }
+        $.ajax({
+            url: $("#jiangjia-form").attr('action'),
+            data: $("#jiangjia-form").serialize(),
+            success: function(data) {
+                if (data.errorMessage) {
+                    alert(data.errorMessage)
+                } else {
+                    $("#jiangjia-popup").addClass("hidden");
+                    $("#jiangjia-success-popup").removeClass("hidden");
+                    $(".wrapGrayBg").show();
                 }
-            })
-        }
-        //车牛车辆举报
-    $(".detail-share .report").click(function(e) {
-        $(this).addClass("report-active");
-        $(".report-open").removeClass("hidden");
-        e.stopPropagation();
-    })
-    $(document.body).on("click", function(e) {
-        if (!$(e.target).closest(".report-open").length) {
-            $(".report-open").addClass("hidden");
-            $(".report").removeClass("report-active");
-        }
-    })
-    var submitReport = function() {
-            $.ajax({
-                url: "#",
-                data: "#",
-                success: function() {
+            }
+        })
+    }
 
-                }
-            })
-        }
-        //降价通知提交
+    //降价通知提交
     $("#jiangjia-form").submit(function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#jiangjia-phone").val())) {
@@ -977,7 +957,41 @@ Souche.DetailCommon = function() {
                     })
                     $("#onsale_tab_space").addClass("hidden")
                 }
-                // paras.$winTop = paras.$win.scrollTop();
+
+                //车牛车辆举报
+                $(".detail-share .rep").click(function(e) {
+                    $(this).closest(".report").addClass("report-active");
+                    $(".report-open").removeClass("hidden");
+                    e.stopPropagation();
+                })
+                $(document.body).on("click", function(e) {
+                    if (!$(e.target).closest(".report-open").length) {
+                        $(".report-open").addClass("hidden");
+                        $(".report").removeClass("report-active");
+                    }
+                })
+                var reason = "";
+
+                var submitReport = function() {
+
+                        var Reportstring = $(".report-input")
+
+                        $.ajax({
+                            url: "http://niu.souche.com/open/inform_car.json",
+                            data: {
+                                carId: config.carId,
+                                reason: reason,
+                                userId: "#",
+                            },
+                            dataType: "json",
+                            type: "post",
+                            success: function() {
+                                $(".rep").addClass("hidden");
+                                $(".has-rep").removeClass("hidden");
+                            }
+                        })
+                    }
+                    // paras.$winTop = paras.$win.scrollTop();
 
                 // //添加onsale-summary元素的 to fix 功能
                 // if (paras.$navSaleTab.length != 0) {
