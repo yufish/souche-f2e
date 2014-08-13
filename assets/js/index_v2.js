@@ -358,7 +358,7 @@ define(['index/car-god',
                         $.ajax({
                             url: config.api_nolikeUrl,
                             data: {
-                                id: $(this).attr("data-id")
+                                carId: $(this).attr("data-id")
                             },
                             dataType: "json",
                             success: function() {
