@@ -350,6 +350,7 @@ define(['index/car-god',
                     data: {
                         id: $(this).attr("data-id")
                     },
+                    dataType: "json",
                     success: function() {
                         $(self).closest(".like-box").animate({
                             opacity: 0,
@@ -362,7 +363,7 @@ define(['index/car-god',
                 })
             });
             //提示品牌是否加入心愿单
-            // recordTip.init(config);
+            recordTip.init(config);
 
         }
     }
