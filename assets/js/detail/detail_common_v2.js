@@ -970,6 +970,8 @@ Souche.DetailCommon = function() {
                         $(".report").removeClass("report-active");
                     }
                 })
+                var reason = "";
+
                 var submitReport = function() {
 
                         var Reportstring = $(".report-input")
@@ -978,7 +980,7 @@ Souche.DetailCommon = function() {
                             url: "http://niu.souche.com/open/inform_car.json",
                             data: {
                                 carId: config.carId,
-                                reason: "#",
+                                reason: reason,
                                 userId: "#",
                             },
                             dataType: "json",
