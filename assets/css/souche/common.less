@@ -347,9 +347,12 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
       float: left;
       width: 45px;
       height: 20px;
+      position: relative;
+      margin-top: 10px;
       span{
         display: block;
         float: left;
+        cursor: pointer;
       }
       i{
         display: block;
@@ -361,11 +364,124 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
         margin-left: 5px;
         cursor: pointer;
       }
+      .city-open{
+        position: absolute;
+        top: 31px;
+        z-index: 100000;
+        width: 362px;
+        overflow: hidden;
+        display: none;
+      }
+      .city-wrap{
+        width: 725px;
+        position: relative;
+        height: 302px;
+      }
+      .area-box{
+        position: absolute;
+        width: 320px;
+        height: 260px;
+        border: 1px solid #FF581A;
+        background: #fff;
+        padding: 20px;
+        
+        .hot-city{
+          border-bottom: 1px solid #ededed;
+          color: #777;
+          padding-bottom: 20px;
+          font-size: 13px;
+          .title{
+            color: #777;
+            margin-right: 15px;
+          }
+          .hot-item{
+            color: #FF5719;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+        .area-city{
+          margin-top: 20px;
+          font-size: 13px;
+          .area-line{
+            margin-bottom: 10px;
+            .area{
+              color: #777;
+              padding-right: 15px;
+              border-right: 1px solid #ededed;
+            }
+            .province-item{
+              margin-left: 15px;
+              color: #333;
+              cursor: pointer;
+            }
+            .province-item:hover{
+              color: #FF5719;
+            }
+          }
+        }
+      }
+      .city-box{
+        width: 320px;
+        padding: 20px;
+        height: 140px;
+        border: 1px solid #FF581A;
+        background: #fff;
+        position: absolute;
+        left: 362px;
+        .tit{
+          border-bottom: 1px solid #ededed;
+          padding-bottom: 20px;
+          .city-return{
+            display: block;
+            background: url(../../images/index/city-return.png) no-repeat 0 center;
+            padding-left: 12px;
+            color: #999;
+            float: left;
+            line-height: 13px;
+            height: 13px;
+            font-size: 13px;
+            cursor: pointer;
+          }
+          .province{
+            display: block;
+            float: left;
+            margin-left: 95px;
+            height: 14px;
+            font-size: 15px;
+            line-height: 12px;
+            color: #333;
+          }
+          .city-close{
+            display: block;
+            float: right;
+            width: 9px;
+            height: 9px;
+            background:url(../../images/index/city-close.png) no-repeat;
+            margin-top: 5px; 
+          }
+        }
+        .city-list{
+          margin-top: 20px;
+          .city-item{
+            display: block;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            font-size: 13px;
+            color: #333;
+            float: left;
+            cursor: pointer;
+          }
+          .city-item:hover{
+            color: #FF5719;
+          }
+        }
+      }
     }
     .search{
       float: left;
       height: 40px;
-      margin-left: 55px;
+      
       .index-search{
         height: 40px;
         position: relative;
@@ -584,7 +700,7 @@ background: url(../../images/fed/next.jpg) no-repeat 62px 10px #fff;
     .wrapper{
       width: 1280px;
       .search{
-        margin-left: 116px;
+        
         .index-search{
           width: 760px;
         }

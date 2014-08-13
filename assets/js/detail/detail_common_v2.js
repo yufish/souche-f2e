@@ -281,6 +281,27 @@
                 }
             })
         }
+        //车牛车辆举报
+    $(".detail-share .report").click(function(e) {
+        $(this).addClass("report-active");
+        $(".report-open").removeClass("hidden");
+        e.stopPropagation();
+    })
+    $(document.body).on("click", function(e) {
+        if (!$(e.target).closest(".report-open").length) {
+            $(".report-open").addClass("hidden");
+            $(".report").removeClass("report-active");
+        }
+    })
+    var submitReport = function() {
+            $.ajax({
+                url: "#",
+                data: "#",
+                success: function() {
+
+                }
+            })
+        }
         //降价通知提交
     $("#jiangjia-form").submit(function(e) {
         e.preventDefault();
@@ -796,8 +817,7 @@ Souche.DetailCommon = function() {
 
         var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
-        if(e.target.tagName=="INPUT")
-        {
+        if (e.target.tagName == "INPUT") {
             $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
         }
 

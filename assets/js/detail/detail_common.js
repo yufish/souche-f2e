@@ -70,13 +70,13 @@
     var price = [35.6, 46.3]
     var length = [45, 520]
 
-        function createInterpolation(minV, maxV, minD, maxD) {
-            var vGap = maxV - minV,
-                dGap = maxD - minD;
-            return function(value) {
-                return (value - minV) / vGap * dGap;
-            }
+    function createInterpolation(minV, maxV, minD, maxD) {
+        var vGap = maxV - minV,
+            dGap = maxD - minD;
+        return function(value) {
+            return (value - minV) / vGap * dGap;
         }
+    }
     var getMiddlePoint = createInterpolation(35.6, 46.3, 45, 520);
     var midD = getMiddlePoint(42.4);
     $('#sc-price').css({
@@ -321,20 +321,25 @@
         }
     })
     var submitJiangjia = function() {
-        $.ajax({
-            url: $("#jiangjia-form").attr('action'),
-            data: $("#jiangjia-form").serialize(),
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#jiangjia-popup").addClass("hidden");
-                    $("#jiangjia-success-popup").removeClass("hidden");
-                    $(".wrapGrayBg").show();
+            $.ajax({
+                url: $("#jiangjia-form").attr('action'),
+                data: $("#jiangjia-form").serialize(),
+                success: function(data) {
+                    if (data.errorMessage) {
+                        alert(data.errorMessage)
+                    } else {
+                        $("#jiangjia-popup").addClass("hidden");
+                        $("#jiangjia-success-popup").removeClass("hidden");
+                        $(".wrapGrayBg").show();
+                    }
                 }
-            }
-        })
-    }
+            })
+        }
+        //车牛车辆举报
+    $(".detail-share .report").mousemove(function() {
+        $(this).addClass("report-active");
+        $(".report-open").removeClass("hidden");
+    })
     //降价通知提交
     $("#jiangjia-form").submit(function(e) {
         e.preventDefault();
@@ -774,55 +779,53 @@ Souche.DetailCommon = function() {
 
     }
 
-   var  _bind=function() {
+    var _bind = function() {
 
-       var addCarDuibi = function(e) {
-           var carID = config.carID;
-           var self = this;
-           self.e =e;
-           $.ajax({
-               type: "GET",
-               url: config.api_addContrast,
-               dataType:"json",
-               context:self
-           }).done(function(data)
-           {
-               if (data.result == 1) {
-                   alert("加入对比失败");
-                   $(".addcarduibi").one("click",addCarDuibi);
-               }
-               if (data.result == 2) {
-                   $(".addcarduibi input").attr("checked", 'true');
-                   $(".addcarduibi input").attr("disabled", "disabled");
+        var addCarDuibi = function(e) {
+            var carID = config.carID;
+            var self = this;
+            self.e = e;
+            $.ajax({
+                type: "GET",
+                url: config.api_addContrast,
+                dataType: "json",
+                context: self
+            }).done(function(data) {
+                if (data.result == 1) {
+                    alert("加入对比失败");
+                    $(".addcarduibi").one("click", addCarDuibi);
+                }
+                if (data.result == 2) {
+                    $(".addcarduibi input").attr("checked", 'true');
+                    $(".addcarduibi input").attr("disabled", "disabled");
 
-                   var cloneElement = $(".addcarduibi").clone();
-                   cloneElement.css({
-                       opacity: 0.8,
-                       position: 'absolute',
-                       top: this.e.pageY + 'px',
-                       left: this.e.pageX + 'px',
-                       backgroundColor:"#BCEE68"
-                   });
+                    var cloneElement = $(".addcarduibi").clone();
+                    cloneElement.css({
+                        opacity: 0.8,
+                        position: 'absolute',
+                        top: this.e.pageY + 'px',
+                        left: this.e.pageX + 'px',
+                        backgroundColor: "#BCEE68"
+                    });
 
-                   var endX = $(".side-box .contrast-img").offset().left;
-                   var endY = $(".side-box .contrast-img").offset().top;
+                    var endX = $(".side-box .contrast-img").offset().left;
+                    var endY = $(".side-box .contrast-img").offset().top;
 
-                   document.body.appendChild(cloneElement[0]);
-                   cloneElement.animate({
-                       top: endY,
-                       left: endX
-                   }, 500,function()
-                   {
-                       cloneElement.remove();
-                   });
-               }
-           });
-       }
-       $(".addcarduibi").one("click",addCarDuibi);
-   }
+                    document.body.appendChild(cloneElement[0]);
+                    cloneElement.animate({
+                        top: endY,
+                        left: endX
+                    }, 500, function() {
+                        cloneElement.remove();
+                    });
+                }
+            });
+        }
+        $(".addcarduibi").one("click", addCarDuibi);
+    }
 
     return {
-        init: function (_config) {
+        init: function(_config) {
             $.extend(config, _config)
             // var carPrice = parseInt($('.price-now.now').text());
             // var nowPrice = carPrice;
