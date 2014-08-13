@@ -559,8 +559,7 @@ nav .nav-item.active .nav-item-content{
     background: #fff;
 }
 .act-card img.banner{
-    width: 299px;
-    height: 130px;
+    width: 100%;
 }
 .act-card .act-title{
     font-size: 18px;

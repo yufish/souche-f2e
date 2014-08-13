@@ -730,19 +730,7 @@ document.getElementById('J_gotoCenter').addEventListener('click',function(e){
         }
     })
 })
-//$('#J_gotoCenter').on('click',function(e){
-//    var self =$(this);
-//    //e.preventDefault();
-//    Souche.checkPhoneExist(function(is_login) {
-//        if (is_login) {
-//            window.location.href=$('#J_gotoCenter').attr('href');
-//        } else {
-//            $('.wrapGrayBg').removeClass('hidden');
-//            var $popup = $('.login-popup');
-//            $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
-//        }
-//    })
-//})
+
 $('#login-form').submit(function(e) {
     var phoneReg = /^1[3458][0-9]{9}$/;
     var phoneNum = $("#phone-for-login").val();
@@ -754,4 +742,8 @@ $('#login-form').submit(function(e) {
             window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
+})
+$('.placeholder-for-tabNavBar').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
 })
