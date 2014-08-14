@@ -23,6 +23,10 @@
                 province: [],
                 city: {}
             };
+            var cityAll = {
+                code: 'all',
+                name: '全部'
+            };
 
             var _class = {
                 proRow: 'province-row',
@@ -67,7 +71,7 @@
                                 htmlStr += '</ul></div><div class="row city-row"><ul class="clearfix">';
                             }
                         }
-                        htmlStr += '<li class="province-item" data-citycode="'+ city.code +'"><a href="javascript:void(0)">';
+                        htmlStr += '<li class="city-item" data-citycode="'+ city.code +'"><a href="javascript:void(0)">';
                         htmlStr += city.name +'</a></li>';
                         if( i === j-1){
                             htmlStr += '</div>'
@@ -90,6 +94,8 @@
                     }
                     else{
                         $.getJSON(config.cityUrl, {code: proCode}, function(data){
+                            // 在最前面压入"全部"
+                            data.items.unshift(cityAll);
                             dataStore.city[proCode] = data.items;
                             callback(data.items);
                         });
