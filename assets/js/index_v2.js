@@ -16,7 +16,7 @@ define(['index/car-god',
     recordTip) {
     var config = {};
     var myAdviserPageIndex = 1,
-        hotNewCarsPageIndex = 1;
+        hotNewCarsPageIndex = 0;
 
     var _bind = function() {
         var timeout = null;
