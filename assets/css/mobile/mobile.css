@@ -903,7 +903,6 @@ body {
     margin: 10px 5px;
 }
 #detail #quality-test .cube .h {
-    line-height: 30px;
     font-size: 0;
 }
 #detail #quality-test .cube .h .l {
@@ -914,6 +913,7 @@ body {
     font-size: 16px;
     color: #fff;
     height: 31px;
+    line-height: 31px;
 }
 #detail #quality-test .cube .h .l .w {
     padding-left: 8px;
@@ -927,6 +927,7 @@ body {
     font-size: 14px;
     color: #fff;
     height: 31px;
+    line-height: 31px;
     vertical-align: top;
 }
 #detail #quality-test .cube .h .r i {
@@ -1741,16 +1742,15 @@ body {
     height: 12px;
     border-radius: 10px;
     background: #fff;
-    vertical-align: -8px;
+    vertical-align: -10px;
     margin: 0 5px;
 }
 #report .engine .item span s {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: #44a022;
-    vertical-align: 9px;
-    margin-top: 1px;
+    vertical-align: 11px;
     margin-left: 1px;
     border-radius: 10px;
 }

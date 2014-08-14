@@ -145,6 +145,7 @@
 #actions .btn {
     width: 145px;
     height: 36px;
+    line-height: 36px;
     border-radius: 3px;
     border: none;
 }
@@ -156,6 +157,7 @@
     background: #fff;
     border:1px solid #ccc;
     color: #333;
+    display: inline-block;
 }
 .yuyue-btn .clock{
     display: inline-block;
@@ -182,7 +184,8 @@
     display: block;
 }
 #detail-main .address .address-icon{
-    display: inline-block;
+    display: block;
+    float: left;
     width: 44px;
     height: 44px;
     border-top-left-radius: 3px;
@@ -246,7 +249,7 @@
 #detail-main .light-rht .time-limit-png{
     width: 14px;
     vertical-align: -2px;
-    margin-right: -5px;
+    margin-right: -3px;
 }
 .car-wrapper{
     width: 50%;

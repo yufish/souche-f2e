@@ -214,6 +214,9 @@ nav .nav-item.active .nav-item-content{
     line-height: 23px;
     margin: 18px 18px 0 0;
 }
+.for-carcustom-had{
+    display: block;
+}
 .for-carcustom-had .go-custom{
     color: #fff;
     background: #65ae2f;
