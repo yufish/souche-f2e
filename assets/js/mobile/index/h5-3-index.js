@@ -52,6 +52,11 @@ if (navigator.userAgent.match(/Android/i)){
             document.body.scrollTop = topCache[curIndex-1];
         },transition_duration-50)
 
+        if(curIndex==1){
+            $('.footer').removeClass('hidden');
+        }else{
+            $('.footer').addClass('hidden');
+        }
         if(curIndex==2){
             setTimeout(function(){
                 $('.btn-wrapper-for-filter').removeClass('hidden');
