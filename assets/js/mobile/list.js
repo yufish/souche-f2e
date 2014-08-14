@@ -6,7 +6,6 @@ var List = function() {
     var tpl_cars;
     var carList = [];
     var loadMore = function() {
-        SM.LoadingTip.show("正在加载中")
         $.ajax({
             url: config.moreURL + "&index=" + (++config.page),
             dataType: "json",
@@ -38,17 +37,12 @@ var List = function() {
                     html = Mustache.render(tpl_cars, {
                         'cars': tpl_data
                     });
-
                     $cars.append(html);
                 }
 
                 if (data.totalPage == config.page) {
                     $("#load_more").addClass("hidden")
                 }
-                SM.LoadingTip.hide();
-            },
-            error: function() {
-                SM.LoadingTip.hide();
             }
         })
     }
