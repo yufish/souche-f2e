@@ -252,16 +252,25 @@
 			          }
           	})
           }
+
           $("#J_freeCall").on("click",function(){
             Souche.checkPhoneExist(function(is_login) {
 	                if (is_login) {
 	                    submiFreeCall();
 	                } else {
 	                    $("#free-popup").removeClass("hidden");
-	                    $(".wrapGrayBg").show();
+	                    
 	                }
 	            })
           });
+          $("#free-popup").find("#freecall-form").on("submit",function(e){
+                e.preventDefault();
+             if (!phoneReg.test($("#free-phoe").val())) {
+                    $(".warning", this).removeClass("hidden");
+                } else {
+                    submiFreeCall();
+                  }
+              });
           $("#free-popup-result").find(".change-number").on("click",function(){
           	 $("#free-popup").removeClass("hidden");
           	 $("#free-popup-result").addClass("hidden");
