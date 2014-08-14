@@ -829,6 +829,7 @@
 #detail-main #pic-container{
     padding: 10px 0;
     height: 83px;
+    overflow: hidden;
 }
 #detail-main .img-card{
     float: left;
@@ -1229,4 +1230,301 @@
 .recommend-cars .title{
     font-size: 14px;
     padding-left: 20px;
+}
+
+#report .loading {
+    text-align: center;
+    line-height: 30px;
+    color: #999;
+    font-size: 12px;
+}
+#report * {
+    font-size: 14px;
+}
+#report #content {
+    padding: 7px;
+    color: #444;
+}
+#report .main-info h2 {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 10px 5px 0;
+}
+#report .main-info table {
+    width: 100%;
+}
+#report .main-info table td {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 7px;
+}
+#report .main-info table .k {
+    background: #dedede;
+}
+#report .mod {
+    margin-top: 10px;
+    font-size: 14px;
+}
+#report .mod .hd {
+    font-size: 16px;
+    background: #ccc;
+    padding-left: 5px;
+    line-height: 25px;
+}
+#report .mod .bd .check_green {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #409f1b;
+    margin-right: 5px;
+}
+#report .mod .bd .check_blue {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #66a8f2;
+    margin-right: 5px;
+}
+#report .mod .bd .check_gray {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #aaa;
+    margin-right: 5px;
+}
+#report .mod .bd .check_red {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #dd5d25;
+    margin-right: 5px;
+}
+#report .mod .bd .result {
+    padding: 7px;
+    line-height: 18px;
+}
+#report .mod .bd .tip .line {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+#report .dipan table {
+    width: 100%;
+}
+#report .dipan table td {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 7px;
+    text-align: left;
+    line-height: 20px;
+}
+#report .dipan table .k {
+    background: #ddd;
+    width: 50%;
+}
+#report .dipan table .k span {
+    color: #999;
+}
+#report .dipan img {
+    width: 100%;
+}
+#report .dipan .pic {
+    text-align: center;
+    background: #fff;
+    padding-bottom: 10px;
+}
+#report .dipan .i {
+    font-size: 12px;
+    color: #999;
+}
+#report .qimian table {
+    width: 100%;
+    background: #efefef;
+}
+#report .qimian table td {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 7px;
+    text-align: left;
+    line-height: 20px;
+}
+#report .qimian table .k {
+    background: #ddd;
+    width: 50%;
+}
+#report .qimian table .k span {
+    color: #999;
+}
+#report .qimian img {
+    width: 100%;
+}
+#report .qimian .pic {
+    text-align: center;
+    background: #fff;
+    padding-bottom: 10px;
+}
+#report .qimian .i {
+    font-size: 12px;
+    color: #999;
+}
+#report .engine .item {
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid #ccc;
+}
+#report .engine .item span {
+    border: 1px solid #44a022;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #fff;
+    vertical-align: -10px;
+    margin: 0 5px;
+}
+#report .engine .item span s {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #44a022;
+    vertical-align: 11px;
+    margin-left: 1px;
+    border-radius: 10px;
+}
+#report .engine .blue span {
+    border: 1px solid #69a9ef;
+}
+#report .engine .blue span s {
+    background: #69a9ef;
+}
+#report .engine .red span {
+    border: 1px solid #dd5d25;
+}
+#report .engine .red span s {
+    background: #dd5d25;
+}
+#report .engine .item:nth-child(2n) {
+    background: #ddd;
+}
+#report .neishi .neishi-pic {
+    position: relative;
+}
+#report .neishi .neishi-pic img {
+    width: 100%;
+}
+#report .neishi .nspoint {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #69a9ef;
+    position: absolute;
+}
+#report .drive table {
+    width: 100%;
+}
+#report .drive table td {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    padding: 7px;
+    text-align: left;
+    line-height: 20px;
+}
+#report .drive table .k {
+    border-left: 0;
+    width: 30%;
+}
+#report .drive table .k span {
+    color: #999;
+}
+#report .drive table .val .item {
+    display: inline-block;
+    width: 45%;
+}
+#report .drive table .val .item i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #44a022;
+    vertical-align: middle;
+    margin-top: 1px;
+    margin-left: 1px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+#report .drive table .val .orange i {
+    background: #dd5e27;
+}
+#report .drive .tip {
+    padding: 10px;
+}
+#report .drive .tip i {
+    margin-left: 10px;
+}
+#report #actions {
+    margin: 5px;
+    padding: 10px;
+}
+#report #actions .btn {
+    background: #e68322;
+    color: #fff;
+    line-height: 35px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: block;
+}
+#report #actions .lft {
+    float: left;
+    vertical-align: middle;
+    width: 60%;
+    text-align: center;
+}
+#report #actions .lft label {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+}
+#report #actions .lft label em {
+    font-weight: bold;
+    color: #e68322;
+}
+#report #actions .lft .yuyue-btn.disabled {
+    background: #eec18b;
+    color: #de5d26;
+}
+#report #actions .lft .yuyue-btn.no {
+    background: #aaa;
+}
+#report #actions .rht {
+    float: left;
+    vertical-align: top;
+    width: 40%;
+    text-align: center;
+}
+#report #actions .rht .tel-btn {
+    margin-right: 0px;
+    vertical-align: middle;
+    background: url(../../../images/mob/detail-action-call.png) no-repeat;
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-indent: -10000px;
+    overflow: hidden;
+}
+#report #actions .rht label {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    display: block;
+}
+#report #actions .rht label em {
+    font-weight: bold;
+    color: #e68322;
 }
