@@ -57,26 +57,31 @@ if (navigator.userAgent.match(/Android/i)){
         }
 
     }
-
-    var move = function(){
-        if(isAndroid){
-            return function(curIndex) {
-                var moveIndex = curIndex - 1;
-                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                var oldIndex = tabNavBar.attr('data-active-index')
-                afterMove(oldIndex, curIndex)
-            }
-        }else{
-            return function(curIndex) {
-                var moveIndex = curIndex - 1;
-                setTimeout(function () {
-                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                    var oldIndex = tabNavBar.attr('data-active-index')
-                    afterMove(oldIndex, curIndex)
-                }, 0)
-            }
-        }
-    }()
+    var move = function(curIndex) {
+        var moveIndex = curIndex - 1;
+        tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+        var oldIndex = tabNavBar.attr('data-active-index')
+        afterMove(oldIndex, curIndex)
+    }
+//    var move = function(){
+//        if(isAndroid){
+//            return function(curIndex) {
+//                var moveIndex = curIndex - 1;
+//                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+//                var oldIndex = tabNavBar.attr('data-active-index')
+//                afterMove(oldIndex, curIndex)
+//            }
+//        }else{
+//            return function(curIndex) {
+//                var moveIndex = curIndex - 1;
+//                setTimeout(function () {
+//                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+//                    var oldIndex = tabNavBar.attr('data-active-index')
+//                    afterMove(oldIndex, curIndex)
+//                }, 0)
+//            }
+//        }
+//    }()
 
     //回复到上一次的tab
     try{
