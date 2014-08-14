@@ -7,53 +7,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
     <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../../assets/js/mobile/jquery-1.9.1.min.js"></script>
-    <style>
-        .row .province-item{
-            float: left;
-            width: 25%;
-        }
-        .row .cities{
-            display: none;
-        }
-        .row .city-item{
-            float: left;
-            width: 25%;
-        }
-    </style>
+    <!--<script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.min.js"></script>-->
+    <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/mobile/h5-3/city.css"/>
 </head>
 <body>
     <script>
-        function buildRow(rowIndex){
-            var count = 0;
-            var startIndex = rowIndex*4;
-            var start = '<div class="row clearfix">';
-            var end ='</div>'
-            var html = '';
-            for(;count<4 && startIndex+count<provinces.length;count++){
-                var name = provinces[startIndex+count];
-                html+='<div data-index="'+count+'" class="province-item">'+name+'</div>';
-            }
-            var cityHtml = '';
-            for(var i=0;i<count;i++){
-                cityHtml+='<div class="cities" data-index="'+i+'"></div>'
+        (function(){
+            var config = {
+                rowItemCount: 4,
+                provinceUrl: 'http://www.souche.com/pages/dicAction/loadRootLevel.json?type=area',
+                cityUrl: 'http://www.souche.com/pages/dicAction/loadNextLevel.json?type=area'
+            };
+            var dataStore = {
+                province: [],
+                city: {}
+            };
+
+            var _class = {
+                proRow: 'province-row',
+                province: 'province-item',
+                cityCtn: 'cities',
+                city: 'city-item'
+            };
+            var doc;
+            var currentProRow = null, currentProCode = null;
+            var clickEvent = 'click';
+            var _view = {
+                buildProvince: function(proData){
+                    var htmlStr = '';
+                    for(var i=0, j=proData.length; i<j; i++){
+                        var pro = proData[i];
+                        if(i%config.rowItemCount == 0){
+                            if(i === 0){
+                                htmlStr += '<div class="row province-row"><ul class="clearfix">';
+                            }
+                            else{
+                                htmlStr += '</ul></div><div class="row province-row"><ul class="clearfix">';
+                            }
+                        }
+                        htmlStr += '<li class="province-item" data-provincecode="'+ pro.code +'" data-proindex="'+i+'">';
+                        htmlStr += '<a href="javascript:void(0)">'+ pro.name +'</a></li>';
+                        if( i === j-1){
+                            htmlStr += '</div>'
+                        }
+                    }
+                    return htmlStr;
+                },
+                // ctn: province row
+                buildCity: function(cityData, activeIndex){
+                    var htmlStr = '<div class="cities active-'+activeIndex+'">';
+                    for(var i=0, j=cityData.length; i<j; i++){
+                        var city = cityData[i];
+                        if(i%config.rowItemCount == 0){
+                            if(i === 0){
+                                htmlStr += '<div class="row city-row"><ul class="clearfix">';
+                            }
+                            else{
+                                htmlStr += '</ul></div><div class="row city-row"><ul class="clearfix">';
+                            }
+                        }
+                        htmlStr += '<li class="province-item" data-citycode="'+ city.code +'"><a href="javascript:void(0)">';
+                        htmlStr += city.name +'</a></li>';
+                        if( i === j-1){
+                            htmlStr += '</div>'
+                        }
+                    }
+                    htmlStr += '</div>';
+                    return htmlStr;
+                }
+            };
+            // 获取数据的接口
+            var _data = {
+                getProvinceData: function(callback){
+                    $.getJSON(config.provinceUrl, function(data){
+                        callback(data.items);
+                    });
+                },
+                getCityData: function(proCode, callback){
+                    if( dataStore.city[proCode] ){
+                        callback(dataStore.city[proCode]);
+                    }
+                    else{
+                        $.getJSON(config.cityUrl, {code: proCode}, function(data){
+                            dataStore.city[proCode] = data.items;
+                            callback(data.items);
+                        });
+                    }
+                }
+            };
+            // 事件处理
+            var _event = {
+                bind: function(){
+                    doc.on(clickEvent, '.'+_class.province, _event.provinceClickHandler );
+                    doc.on(clickEvent, '.'+_class.city, _event.cityClickHandler );
+                },
+                provinceClickHandler: function(e){
+                    var proItem = $(this);
+                    var proCode = proItem.attr('data-provincecode');
+                    if(currentProCode == proCode ){
+                        // 仍然点击同一个province
+                        return false;
+                    }
+
+                    currentProCode == proCode;
+
+                    var proIndex = proItem.attr('data-proindex');
+                    var proRow = proItem.parents('.'+_class.proRow);
+
+                    _data.getCityData(proCode, function(cityData){
+                        _event.getCityDataCallback(proIndex, proRow, cityData);
+                    });
+                },
+                cityClickHandler: function(e){
+
+                },
+                getCityDataCallback: function(proIndex, proRow, cityData){
+                    var cityHtml = _view.buildCity(cityData, proIndex%config.rowItemCount);
+                    var thisProRow = parseInt(proIndex/config.rowItemCount);
+                    if(currentProRow === null){
+                        proRow.append(cityHtml);
+                    }
+                    // 点击同一行的另一个省份. 销毁后直接append即可
+                    else if( thisProRow  === currentProRow ){
+                        $('.'+_class.cityCtn).remove();
+                        proRow.append(cityHtml);
+                    }
+                    else{
+                        // 显示 and 隐藏旧的 销毁
+                        $('.'+_class.cityCtn).remove();
+                        proRow.append(cityHtml);
+                    }
+                    currentProRow = thisProRow;
+                }
+            };
+
+            function init(){
+                // get eles
+                doc = $(document.body);
+                // get data and build provinces
+                _data.getProvinceData( function(provinceData){
+                    var provinceHtml = _view.buildProvince( provinceData);
+                    doc.append(provinceHtml);
+                } );
+                _event.bind();
             }
 
-            $("body").append(start+html+cityHtml+end);
-        }
-        var provinces = ['北京','上海','广州','深圳','杭州'
-            ,'北京','上海','广州','深圳','杭州'
-            ,'北京','上海','广州','深圳','杭州'];
-        var rows = Math.ceil(provinces.length/4);
-        for(var i = 0;i<rows;i++){
-            buildRow(i);
-        }
-        $('body').on('click','.province-item',function(e){
-            var index = +$(this).attr('data-index');
-            var cityDom = $(this).closest('.row').find('.cities').eq(index);
-            for(var i =0;i<4;i++) {
-                cityDom.append('<div class="city-item">上海</div>')
-            }
-        })
+            init();
+
+//            function buildRow(rowIndex){
+//                var count = 0;
+//                var startIndex = rowIndex*4;
+//                var start = '<div class="row clearfix">';
+//                var end ='</div>'
+//                var html = '';
+//                for(;count<4 && startIndex+count<provinces.length;count++){
+//                    var name = provinces[startIndex+count];
+//                    html+='<div data-index="'+count+'" class="province-item">'+name+'</div>';
+//                }
+//                var cityHtml = '';
+//                for(var i=0;i<count;i++){
+//                    cityHtml+='<div class="cities" data-index="'+i+'"></div>'
+//                }
+//
+//                $("body").append(start+html+cityHtml+end);
+//            }
+//            var provinces = ['北京','上海','广州','深圳','杭州'
+//                ,'北京','上海','广州','深圳','杭州'
+//                ,'北京','上海','广州','深圳','杭州'];
+//            var rows = Math.ceil(provinces.length/4);
+//            for(var i = 0;i<rows;i++){
+//                buildRow(i);
+//            }
+//            $('body').on('click','.province-item',function(e){
+//                var index = +$(this).attr('data-index');
+//                var cityDom = $(this).closest('.row').find('.cities').eq(index);
+//                for(var i =0;i<4;i++) {
+//                    cityDom.append('<div class="city-item">上海</div>')
+//                }
+//            })
+        })();
+
     </script>
 </body>
 </html>
