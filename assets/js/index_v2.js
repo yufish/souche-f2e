@@ -194,13 +194,17 @@ define(['index/car-god',
             offHour: 0,
             offMin: 0,
             offSec: 0,
-            offMSec: 0
+            offMSec: 0,
+            offDay: 0
         };
         var showDom = function() {
             var zeroH = "",
                 zeroM = "",
-                zeroS = "";
-
+                zeroS = "",
+                zeroD = "";
+            if (counter.offDay < 10) {
+                zeroD = "0";
+            }
             if (counter.offHour < 10) {
                 zeroH = "0";
             }
@@ -211,7 +215,7 @@ define(['index/car-god',
                 zeroS = "0";
             }
 
-            container.html("<span>剩余时间：<ins>" + zeroH + counter.offHour + "</ins>&nbsp时&nbsp<ins>" + zeroM + counter.offMin + "</ins>&nbsp分&nbsp<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>&nbsp秒</span>");
+            container.html("<span>剩余：<ins>" + zeroD + counter.offDay + "</ins>&nbsp天&nbsp<ins>" + zeroH + counter.offHour + "</ins>&nbsp时&nbsp<ins>" + zeroM + counter.offMin + "</ins>&nbsp分&nbsp<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>&nbsp秒</span>");
         };
         var setInitTime = function() {
             var endDate = new Date(counter.endYear, counter.endMonth, counter.endDay, counter.endHour, 0, 0);
@@ -227,9 +231,11 @@ define(['index/car-god',
                 counter.offSec = 0;
                 counter.offMin = 0;
                 counter.offHour = 0;
+                counter.offDay = 0;
                 showDom();
                 return false;
             }
+            counter.offDay = Math.floor(offset / 24 / (3600 * 1000));
             counter.offHour = Math.floor(offset / (3600 * 1000));
             var leave = offset % (3600 * 1000);
             counter.offMin = Math.floor(leave / (60 * 1000));
