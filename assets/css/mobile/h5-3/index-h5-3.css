@@ -181,10 +181,18 @@ nav .nav-item.active .nav-item-content{
 .car-area .for-carcustom-had{
     height: 60px;
     border-radius: 3px;
-    margin: 0 5px;
+    margin: 0 10px;
     font-size: 14px;
     border: 1px solid #E6E6E6;
     background: #fff;
+}
+.car-area .for-carcustom-no{
+    height: 60px;
+    border-radius: 3px;
+    margin: 0 10px;
+    font-size: 14px;
+    background: #fffab6;
+    border:1px solid #e5cfa8;
 }
 .for-carcustom .erge{
     display: inline-block;
@@ -198,12 +206,17 @@ nav .nav-item.active .nav-item-content{
 .for-carcustom .custom-text{
     line-height: 18px;
     color:#fff;
-    display: inline-block;
+    float: left;
+    margin-top: 12px;
+}
+.for-carcustom-no .custom-text{
+    color:#333;
+    padding: 0 16px;
+    line-height: 18px;
     float: left;
     margin-top: 12px;
 }
 .go-custom{
-    display: block;
     color: #65ae2f;
     background: #fff;
     border-radius: 3px;
@@ -213,6 +226,15 @@ nav .nav-item.active .nav-item-content{
     text-align: center;
     line-height: 23px;
     margin: 18px 18px 0 0;
+
+}
+.go-custom-link{
+    float: right;
+    height: 58px;
+    line-height: 58px;
+    margin-right: 18px;
+    color:#3794e2;
+    text-decoration: underline;
 }
 .for-carcustom-had{
     display: block;
@@ -223,12 +245,16 @@ nav .nav-item.active .nav-item-content{
 }
 .for-carcustom-had .car4you{
     line-height: 58px;
+    height: 58px;
     color:#666;
-    float: left;
-    margin-left: 10px;
+    margin-right: 50px;
+    padding-left: 10px;
+}
+.for-carcustom-had .car4you .your-subscription{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 100%;
 }
 .car-card{
     width: 145px;
