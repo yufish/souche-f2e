@@ -36,11 +36,30 @@ if (navigator.userAgent.match(/Android/i)){
     //记录每一个tabPanel的scrollTop，便于恢复到相应位置
     var topCache=[0,0,0];
 
+    var isMoving = false;
     function afterMove(oldIndex,curIndex){
-        navItems.removeClass('active')
-        navItems.eq(curIndex-1).addClass('active')
-        topCache[oldIndex-1]=document.body.scrollTop;
-        document.body.scrollTop = topCache[curIndex-1];
+        setTimeout(function(){
+            isMoving = false
+            navItems.removeClass('active')
+            navItems.eq(curIndex-1).addClass('active')
+            tabNavBar.attr('data-active-index',curIndex)
+            var height = tabPanels.eq(curIndex-1).height();
+            height = height<600?600:height;
+            tabCover.css({height:height})
+            try{
+                sessionStorage.setItem('index_tab_index',curIndex);
+            }catch(e){}
+            topCache[oldIndex-1]=document.body.scrollTop;
+            document.body.scrollTop = topCache[curIndex-1];
+        },transition_duration)
+
+        if(curIndex==1){
+            setTimeout(function() {
+                $('.footer').removeClass('hidden');
+            },transition_duration);
+        }else{
+            $('.footer').addClass('hidden');
+        }
         if(curIndex==2){
             setTimeout(function(){
                 $('.btn-wrapper-for-filter').removeClass('hidden');
@@ -49,33 +68,35 @@ if (navigator.userAgent.match(/Android/i)){
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
-        tabNavBar.attr('data-active-index',curIndex)
-        var height = tabPanels.eq(curIndex-1).height();
-        tabCover.css({height:height})
-        try{
-            sessionStorage.setItem('index_tab_index',curIndex);
-        }catch(e){}
-    }
 
-    var move = function(){
-        if(isAndroid){
-            return function(curIndex) {
-                var moveIndex = curIndex - 1;
-                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                var oldIndex = tabNavBar.attr('data-active-index')
-                afterMove(oldIndex, curIndex)
-            }
-        }else{
-            return function(curIndex) {
-                var moveIndex = curIndex - 1;
-                setTimeout(function () {
-                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
-                    var oldIndex = tabNavBar.attr('data-active-index')
-                    afterMove(oldIndex, curIndex)
-                }, 0)
-            }
-        }
-    }()
+    }
+    var move = function (curIndex) {
+        if(isMoving)return;
+        isMoving = true;
+        var moveIndex = curIndex - 1;
+        tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+        var oldIndex = tabNavBar.attr('data-active-index')
+        afterMove(oldIndex, curIndex)
+    }
+//    var move = function(){
+//        if(isAndroid){
+//            return function(curIndex) {
+//                var moveIndex = curIndex - 1;
+//                tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+//                var oldIndex = tabNavBar.attr('data-active-index')
+//                afterMove(oldIndex, curIndex)
+//            }
+//        }else{
+//            return function(curIndex) {
+//                var moveIndex = curIndex - 1;
+//                setTimeout(function () {
+//                    tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
+//                    var oldIndex = tabNavBar.attr('data-active-index')
+//                    afterMove(oldIndex, curIndex)
+//                }, 0)
+//            }
+//        }
+//    }()
 
     //回复到上一次的tab
     try{
@@ -90,12 +111,14 @@ if (navigator.userAgent.match(/Android/i)){
         },transition_duration)
     }catch(e){}
 
+//    navItems.on('click',function(e){
+//        e.preventDefault();
+//        e.stopPropagation();
+//    })
+
     navItems.on('click',function(e){
         e.preventDefault();
         e.stopPropagation();
-    })
-
-    navItems.on(tap_event,function(){
         var index = +$(this).attr('data-nav-index');
         var curIndex = tabNavBar.attr('data-active-index');
         if(curIndex == index)return;
@@ -747,8 +770,4 @@ $('#login-form').submit(function(e) {
             window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
-})
-$('.placeholder-for-tabNavBar').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
 })

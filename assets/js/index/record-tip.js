@@ -44,9 +44,9 @@ define(function() {
             });
             $(".record_warning .add").on("click", function(e) {
                 e.preventDefault();
-                var url = config.submit_api;
+                var url = config.submit_api + "?tagTip=1&";
                 for (var o in submitData) {
-                    url += "&" + o + "=" + submitData[o].join()
+                    url += o + "=" + submitData[o].join() + "&"
                 }
                 $.ajax({
                     url: url,
