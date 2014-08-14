@@ -1,0 +1,99 @@
+@fontC: #333;
+
+@cityCtnBGC: #ededed;
+@rowBC: #ccc;
+
+@proPad: 3%;
+@triH: 8px;
+
+
+.row{
+  &.province-row{
+    padding: 0 @proPad;
+    border-top: 1px solid @rowBC;
+
+    &:first-child{
+      border-top: none;
+    }
+  }
+  .province-item,
+  .city-item{
+    float: left;
+    width: 25%;
+    height: 44px;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .province-item a,
+  .city-item a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    color: @fontC;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:active{
+      background-color: #ccc;
+    }
+  }
+  .cities{
+    /*display: none;*/
+    position: relative;
+    margin: 0 -3.2% 0 -3.2%;
+    padding: 0 @proPad;
+    border-top: 1px solid @rowBC;
+    background-color: @cityCtnBGC;
+
+
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border: @triH solid transparent;
+      border-top-width: 0;
+      border-bottom-color: @cityCtnBGC;
+      top: -@triH + 1px;
+      margin-left: -@triH;
+
+    }
+    &:before{
+      z-index: 20;
+    }
+    &:after{
+      z-index: 10;
+      top: -@triH;
+      border-bottom-color: @rowBC;
+    }
+
+    &.active-0{
+      &:before,
+      &:after{
+        left: @proPad + ( 100% - 2*@proPad ) * (25% * 0 + 25% / 2)/100;
+      }
+    }
+    &.active-1{
+      &:before,
+      &:after{
+        left: @proPad + ( 100% - 2*@proPad ) * (25% * 1 + 25% / 2)/100;
+      }
+    }
+    &.active-2{
+      &:before,
+      &:after{
+        left: @proPad + ( 100% - 2*@proPad ) * (25% * 2 + 25% / 2)/100;
+      }
+    }
+    &.active-3{
+      &:before,
+      &:after{
+        left: @proPad + ( 100% - 2*@proPad ) * (25% * 3 + 25% / 2)/100;
+      }
+    }
+  }
+}
