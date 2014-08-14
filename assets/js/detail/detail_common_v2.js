@@ -312,10 +312,10 @@
         };
 
         $.ajax({
-            url: "http://niu.souche.com/open/inform_car.json",
+            url: "http://niu.souche.com/open/inform_car",
             data: {
-                carId: SaleDetailConfig.carId,
-                reason: "Reasonstring",
+                carId: config.carId,
+                reason: Reasonstring,
                 userId: "#",
             },
             dataType: "json",
