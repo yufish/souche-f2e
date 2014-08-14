@@ -44,6 +44,7 @@ if (navigator.userAgent.match(/Android/i)){
             navItems.eq(curIndex-1).addClass('active')
             tabNavBar.attr('data-active-index',curIndex)
             var height = tabPanels.eq(curIndex-1).height();
+            height = height<600?600:height;
             tabCover.css({height:height})
             try{
                 sessionStorage.setItem('index_tab_index',curIndex);
@@ -53,7 +54,9 @@ if (navigator.userAgent.match(/Android/i)){
         },transition_duration-50)
 
         if(curIndex==1){
-            $('.footer').removeClass('hidden');
+            setTimeout(function() {
+                $('.footer').removeClass('hidden');
+            },transition_duration);
         }else{
             $('.footer').addClass('hidden');
         }
