@@ -226,6 +226,9 @@ nav .nav-item.active .nav-item-content{
     color:#666;
     float: left;
     margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .car-card{
     width: 145px;
@@ -580,7 +583,7 @@ nav .nav-item.active .nav-item-content{
     background: #333;
     color: #9a9a9a;
     height: 68px;
-    padding: 16px 30px;
+    padding: 16px 0;
     font-size: 12px;
     margin-top: 15px;
 }
