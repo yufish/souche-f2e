@@ -58,6 +58,12 @@ $(document).ready(function() {
                 // })
                 for (var i in click_types) {
                     var ele = $("*[click_type='" + i + "']");
+                    var count;
+                    if (click_types[i].count) {
+                        count = click_types[i].count;
+                    } else {
+                        count = click_types[i];
+                    }
                     var offset = ele.offset();
                     if (offset) {
                         $("<div style=''></div>").appendTo(document.body).css({
@@ -70,7 +76,7 @@ $(document).ready(function() {
                             fontSize: 12,
                             opacity: 1,
                             zIndex: 1000000000
-                        }).html(click_types[i]).attr("for_click_type", i)
+                        }).html(count).attr("for_click_type", i)
                     }
 
                 }
