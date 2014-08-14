@@ -829,6 +829,7 @@
 #detail-main #pic-container{
     padding: 10px 0;
     height: 83px;
+    overflow: hidden;
 }
 #detail-main .img-card{
     float: left;
