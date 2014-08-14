@@ -51,7 +51,7 @@ if (navigator.userAgent.match(/Android/i)){
             }catch(e){}
             topCache[oldIndex-1]=document.body.scrollTop;
             document.body.scrollTop = topCache[curIndex-1];
-        },transition_duration-50)
+        },transition_duration)
 
         if(curIndex==1){
             setTimeout(function() {
