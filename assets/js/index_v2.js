@@ -377,7 +377,7 @@ define(['index/car-god',
             })
 
             //提示品牌是否加入心愿单
-            recordTip.init(config);
+            // recordTip.init(config);
             //闹着玩
             // Souche.Util.appear(".hotNewCars", function() {
             //     $(".hotNewCars .carItem").css({
