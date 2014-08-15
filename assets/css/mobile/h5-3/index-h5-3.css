@@ -192,6 +192,15 @@ nav .nav-item.active .nav-item-content{
     background: #fff;
     border:1px solid #d9d9d9;
     display: block;
+    position: relative;
+}
+.car-card .time-limit-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    background:url(../../../images/mob/h5-3/timelimit-tag.png);
+    background-size: 100%;
 }
 .car-card img{
     width: 143px;
@@ -239,12 +248,10 @@ nav .nav-item.active .nav-item-content{
     display: inline-block;
     width: 12px;
     height: 12px;
-    border-radius: 12px;
-    border: 1px solid #999;
-    line-height: 5px;
-    padding-left: 4px;
-    vertical-align: 3px;
-    margin-right: 8px;
+    background: url(../../../images/mob/h5-2/time-limit.png) no-repeat center;
+    background-size: 100%;
+    vertical-align: -2px;
+    margin-right: 7px;
 }
 .car-card .fav {
     position: absolute;
@@ -252,15 +259,27 @@ nav .nav-item.active .nav-item-content{
     top:0;
     width: 40px;
     height: 40px;
+    font-size: 0;
 }
 .car-card .fav .star-shape{
-    font-size: 13px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(../../../images/mob/h5-3/small-star.png) no-repeat center;
+    background-size: 100%;
+    vertical-align: -1px;
+    margin-right: 6px;
 }
-.car-card .fav.active .star-shape,
+.car-card .fav.active .star-shape{
+    background: url(../../../images/mob/h5-3/small-star-active.png) no-repeat center;
+    background-size: 100%;
+}
 .car-card .fav.active .fav-num{
     color:#FF571A;
 }
-
+.car-card .fav  .fav-num{
+    font-size: 12px;
+}
 .car-card .price-num{
     font-weight: bold;
 }
