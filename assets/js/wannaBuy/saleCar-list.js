@@ -1,4 +1,4 @@
-require(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate){
+define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate){
     var _view = {
         init: function(){
             _view.initDropdown();
@@ -54,7 +54,9 @@ require(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
         CarOperate.init();
     }
 
-    init();
+    return {
+        init: init
+    };
 });
 Souche.Inside.init({
     fav_api : '/pages/saleDetailAction/savaCarFavorite.json',
