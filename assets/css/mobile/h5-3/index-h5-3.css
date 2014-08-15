@@ -186,108 +186,6 @@ nav .nav-item.active .nav-item-content{
     white-space: nowrap;
     width: 100%;
 }
-.car-card{
-    width: 145px;
-    margin: 10px auto 0;
-    background: #fff;
-    border:1px solid #d9d9d9;
-    display: block;
-    position: relative;
-}
-.car-card .time-limit-icon{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    right: 0;
-    background:url(../../../images/mob/h5-3/timelimit-tag.png);
-    background-size: 100%;
-}
-.car-card img{
-    width: 143px;
-    height: 98px;
-}
-.car-card .car-info{
-    padding: 10px 8px 0;
-    font-size:12px;
-    border-top:none;
-    overflow: hidden;
-}
-.car-card .car-introduction{
-    line-height: 16px;
-    height: 32px;
-    overflow: hidden;
-    margin-bottom: 6px;
-    color:#333;
-}
-.car-card .car-time{
-    color:#999;
-    float: right;
-    line-height: 22px;
-}
-.car-card .car-price{
-    font-size: 14px;
-    float: left;
-    color:#ff571a;
-    line-height: 22px;
-    margin-bottom: 3px;
-}
-.car-card .recommend{
-    clear: both;
-    color: #999;
-    border-top:1px solid #e6e6e6;
-    line-height: 32px;
-    position: relative;
-}
-.car-card .time-limit{
-    clear: both;
-    color: #999;
-    border-top:1px solid #e6e6e6;
-    line-height: 32px;
-}
-.car-card .clock{
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: url(../../../images/mob/h5-2/time-limit.png) no-repeat center;
-    background-size: 100%;
-    vertical-align: -2px;
-    margin-right: 7px;
-}
-.car-card .fav {
-    position: absolute;
-    right: -10px;
-    top:0;
-    width: 40px;
-    height: 40px;
-    font-size: 0;
-}
-.car-card .fav .star-shape{
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: url(../../../images/mob/h5-3/small-star.png) no-repeat center;
-    background-size: 100%;
-    vertical-align: -1px;
-    margin-right: 6px;
-}
-.car-card .fav.active .star-shape{
-    background: url(../../../images/mob/h5-3/small-star-active.png) no-repeat center;
-    background-size: 100%;
-}
-.car-card .fav.active .fav-num{
-    color:#FF571A;
-}
-.car-card .fav  .fav-num{
-    font-size: 12px;
-}
-.car-card .price-num{
-    font-weight: bold;
-}
-.car-card .car-price-down{
-    float: right;
-    color: #FF571A;
-    line-height: 22px;
-}
 .car-area .look-more{
     height: 36px;
     line-height: 36px;
@@ -530,7 +428,6 @@ nav .nav-item.active .nav-item-content{
 /* tab-panel-3*/
 .walkaround-area{
     padding:10px;
-    width: 320px;
     margin: 0 auto;
 }
 .act-card{
@@ -538,6 +435,7 @@ nav .nav-item.active .nav-item-content{
     display: block;
     margin-bottom: 20px;
     background: #fff;
+    padding-bottom: 12px;
 }
 .act-card img.banner{
     width: 100%;
@@ -545,13 +443,16 @@ nav .nav-item.active .nav-item-content{
 .act-card .act-title{
     font-size: 18px;
     color:#333;
-    padding: 12px;
+    padding: 16px 16px 12px;
+    font-weight: bold;
 }
 .act-card .act-content{
-    padding:0 12px 12px;
+    padding:0 16px;
     color:#666;
     font-size: 14px;
     line-height: 18px;
+    max-height: 72px;
+    overflow: hidden;
 }
 /*footer*/
 .footer{
