@@ -124,11 +124,13 @@ if (navigator.userAgent.match(/Android/i)){
         if(curIndex == index)return;
         move(index);
     })
-    tabCtn.on('swipeLeft',function(){
+    tabCtn.on('swipeLeft',function(e){
+        e.preventDefault();
         var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
-    }).on('swipeRight',function(){
+    }).on('swipeRight',function(e){
+        e.preventDefault();
         var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
