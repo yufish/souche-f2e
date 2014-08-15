@@ -1,0 +1,7 @@
+({
+    baseUrl: "../",
+
+    name: "saleCar-list",
+    include: [],
+    out: "saleCar-list.r.js"
+})
