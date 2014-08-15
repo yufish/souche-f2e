@@ -420,7 +420,7 @@ define(['souche/util/load-info',
             //var template = "<span class=\"instrestCarItem\" seriesCode='" + this.seriesCode + "'><a>" + this.name + "<\/a><span><\/span><\/span>";
             $(".addInstrestCarTilte span[seriesCode='" + this.seriesCode + "']").remove();
             $(".carinstrest span[seriesCode='" + this.seriesCode + "']").remove();
-            $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
+            // $(".interestCar span[seriesCode='" + this.seriesCode + "']").remove();
             if ($(".interestCar span").length === 0) {
                 $(".interestCar .interestCarContainer").append("<span>不限<\/span>");
             }
