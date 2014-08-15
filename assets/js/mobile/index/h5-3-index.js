@@ -116,13 +116,13 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.stopPropagation();
 //    })
 
-    navItems.on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var index = +$(this).attr('data-nav-index');
-        var curIndex = tabNavBar.attr('data-active-index');
-        if(curIndex == index)return;
-        move(index);
+    navItems.on('touchend',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var index = +$(this).attr('data-nav-index');
+            var curIndex = tabNavBar.attr('data-active-index');
+            if(curIndex == index)return;
+            move(index);
     })
     tabCtn.on('swipeLeft',function(e){
         e.preventDefault();
