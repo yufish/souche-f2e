@@ -237,7 +237,7 @@
     //     })
     // })
     //门店地址
-    $(".detail-share .address").mousemove(function() {
+    $(".car-adress .send-adress").mousemove(function() {
         $(".adress-open").removeClass("hidden");
     })
     $(document.body).on("click", function(e) {
@@ -310,7 +310,8 @@
 
             }
         };
-
+        $(".rep").addClass("hidden");
+        $(".has-rep").removeClass("hidden");
         $.ajax({
             url: "http://niu.souche.com/open/inform_car",
             data: {
