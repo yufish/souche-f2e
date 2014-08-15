@@ -193,9 +193,7 @@
         $(".wx-open").addClass("hidden");
      });
     $("#send-phone-form").on("submit",function(e){
-       
-
-        e.preventDefault();
+       e.preventDefault();
         if (!phoneReg.test($("#send-phone").val())) {
             $(".warning", this).removeClass("hidden");
             return
