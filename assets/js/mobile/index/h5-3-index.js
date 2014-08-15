@@ -136,9 +136,9 @@ if (navigator.userAgent.match(/Android/i)){
         if(index==1) return;
         move(index-1);
     }).on('swipeUp',function(){
-        $('.placeholder-for-tabNavBar,.fixed-wrapper').removeClass('hidden');
+        $('.fixed-wrapper').addClass('hidden');
     }).on("swipeDown",function(){
-        $('.placeholder-for-tabNavBar,.fixed-wrapper').addClass('hidden');
+        $('.fixed-wrapper').removeClass('hidden');
     })
 }()
 
