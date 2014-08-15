@@ -3,9 +3,11 @@
  */
 //浏览支持检测
 var touch_start = 'click',
+    touch_end='click',
     tap_event='click';
 if('ontouchstart' in window){
     touch_start = 'touchstart';
+    touch_end = 'touchend';
     tap_event='tap';
 }
 var transition='webkitTransition',
@@ -115,8 +117,7 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.preventDefault();
 //        e.stopPropagation();
 //    })
-
-    navItems.on('touchend',function(e){
+    navItems.on(touch_end,function(e){
             e.preventDefault();
             e.stopPropagation();
             var index = +$(this).attr('data-nav-index');
@@ -134,6 +135,10 @@ if (navigator.userAgent.match(/Android/i)){
         var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
+    }).on('swipeUp',function(){
+        $('.placeholder-for-tabNavBar,.fixed-wrapper').removeClass('hidden');
+    }).on("swipeDown",function(){
+        $('.placeholder-for-tabNavBar,.fixed-wrapper').addClass('hidden');
     })
 }()
 
