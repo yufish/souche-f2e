@@ -402,147 +402,87 @@
             }
         });
     })
-    var doubleClickFlag = false;
-    var submitFav = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_saveFavorite,
-            data: {
-                phone: $("#fav-phone").val(),
-                carType: SaleDetailConfig.carType,
-                carId: SaleDetailConfig.carId
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    //$('#shoucang-popup').removeClass('hidden');
-                    var favPos = $("#J_shoucang").offset();
-                    $("<div class='icon-fei'></div>").css({
-                        left: favPos.left + 7,
-                        top: favPos.top + 7
-                    })
-                        .appendTo(document.body)
-                        .animate({
-                            left: $(".sidebar").offset().left + 10,
-                            top: $(".sidebar").offset().top + 10,
-                            opacity: 0
-                        }, 700, function() {
-                            $(".collectside").addClass("flash")
-                            setTimeout(function() {
-                                $(".collectside").removeClass("flash")
-                            }, 500)
-                        })
-                    $("#fav-popup").addClass("hidden")
-                    $(".wrapGrayBg").hide();
-                    $("#J_shoucang label").html('已收藏')
-                    $("#J_shoucang").attr('value', '1').addClass("faved");
-                    var num = $('#J_car_favorite').html();
-                    $('#J_car_favorite').html(parseInt(num) + 1);
-                    doubleClickFlag = false;
-                }
-            }
-        })
-    }
-
-    var submitFav = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_saveFavorite,
-            data: {
-                phone: $("#fav-phone").val(),
-                carType: SaleDetailConfig.carType,
-                carId: SaleDetailConfig.carId
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    //$('#shoucang-popup').removeClass('hidden');
-                    var favPos = $("#J_shoucang").offset();
-                    $("<div class='icon-fei'></div>").css({
-                        left: favPos.left + 7,
-                        top: favPos.top + 7
-                    })
-                        .appendTo(document.body)
-                        .animate({
-                            left: $(".sidebar").offset().left + 10,
-                            top: $(".sidebar").offset().top + 10,
-                            opacity: 0
-                        }, 700, function() {
-                            $(".collectside").addClass("flash")
-                            setTimeout(function() {
-                                $(".collectside").removeClass("flash")
-                            }, 500)
-                        })
-                    $("#fav-popup").addClass("hidden")
-                    $(".wrapGrayBg").hide();
-                    $("#J_shoucang label").html('已收藏')
-                    $("#J_shoucang").attr('value', '1').addClass("faved");
-                    var num = $('#J_car_favorite').html();
-                    $('#J_car_favorite').html(parseInt(num) + 1);
-                    doubleClickFlag = false;
-                }
-            }
-        })
-    }
-
-    var cancelFavSubmit = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_delFavorite,
-            data: {
-                carId: SaleDetailConfig.carId //$(self).attr("data-carid")
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#J_shoucang label").html('收藏')
-                    $("#J_shoucang").removeClass("faved");
-                }
-            }
-        })
-    }
-    $("#J_shoucang").live('click', function(e) {
-
-        e.preventDefault();
-
-        if ($(this).hasClass("faved")) {
-            return;
-        } else {
-            Souche.checkPhoneExist(function(is_login) {
-                if (is_login) {
-
-                    submitFav();
-                } else {
-                    $("#fav-popup").removeClass("hidden")
-                    $(".wrapGrayBg").show();
-                }
-            })
-        }
+    // var doubleClickFlag = false;
+    // var submitFav = function() {
+    //     $.ajax({
+    //         url: SaleDetailConfig.api_saveFavorite,
+    //         data: {
+    //             phone: $("#fav-phone").val(),
+    //             carType: SaleDetailConfig.carType,
+    //             carId: SaleDetailConfig.carId
+    //         },
+    //         dataType: "json",
+    //         type: "post",
+    //         success: function(data) {
+    //             if (data.errorMessage) {
+    //                 alert(data.errorMessage)
+    //             } else {
+    //                 //$('#shoucang-popup').removeClass('hidden');
+    //                 var favPos = $("#J_shoucang").offset();
+    //                 $("<div class='icon-fei'></div>").css({
+    //                     left: favPos.left + 7,
+    //                     top: favPos.top + 7
+    //                 })
+    //                     .appendTo(document.body)
+    //                     .animate({
+    //                         left: $(".sidebar").offset().left + 10,
+    //                         top: $(".sidebar").offset().top + 10,
+    //                         opacity: 0
+    //                     }, 700, function() {
+    //                         $(".collectside").addClass("flash")
+    //                         setTimeout(function() {
+    //                             $(".collectside").removeClass("flash")
+    //                         }, 500)
+    //                     })
+    //                 $("#fav-popup").addClass("hidden")
+    //                 $(".wrapGrayBg").hide();
+    //                 $("#J_shoucang label").html('已收藏')
+    //                 $("#J_shoucang").attr('value', '1').addClass("faved");
+    //                 var num = $('#J_car_favorite').html();
+    //                 $('#J_car_favorite').html(parseInt(num) + 1);
+    //                 doubleClickFlag = false;
+    //             }
+    //         }
+    //     })
+    // }
 
 
-    });
-    $("#fav-form").on("submit", function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#fav-phone").val())) {
-            $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
-        } else {
 
-            Souche.PhoneRegister($("#fav-phone").val(), function() {
-                submitFav();
-            })
-        }
-    })
-    $('#shoucang-popup .apply_close').click(function() {
+    // var cancelFavSubmit = function() {
+    //     $.ajax({
+    //         url: SaleDetailConfig.api_delFavorite,
+    //         data: {
+    //             carId: SaleDetailConfig.carId //$(self).attr("data-carid")
+    //         },
+    //         dataType: "json",
+    //         type: "post",
+    //         success: function(data) {
+    //             if (data.errorMessage) {
+    //                 alert(data.errorMessage)
+    //             } else {
+    //                 $("#J_shoucang label").html('收藏')
+    //                 $("#J_shoucang").removeClass("faved");
+    //             }
+    //         }
+    //     })
+    // }
 
-        $(this).parent().addClass('hidden');
-        $(".wrapGrayBg").hide();
-    });
+    // $("#fav-form").on("submit", function(e) {
+    //     e.preventDefault();
+    //     if (!phoneReg.test($("#fav-phone").val())) {
+    //         $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
+    //     } else {
+
+    //         Souche.PhoneRegister($("#fav-phone").val(), function() {
+    //             submitFav();
+    //         })
+    //     }
+    // })
+    // $('#shoucang-popup .apply_close').click(function() {
+
+    //     $(this).parent().addClass('hidden');
+    //     $(".wrapGrayBg").hide();
+    // });
 
     Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function() {
 
@@ -829,212 +769,192 @@ Souche.Detail.PriceDown = function() {
         }
     }
 }();
-Souche.DetailCommon = function() {
-    var config = {}
 
-    var operationCarDuibi = function(e) {
 
-        var elem = e.srcElement | e.target;
-        if (elem) {
+define(["mod/fav", "detail/init_summary"], function(Fav, InitSummary) {
+    Souche.DetailCommon = function() {
+        var config = {}
 
-        }
-        var carID = config.carId;
-        if (carID == undefined) {
+        var operationCarDuibi = function(e) {
 
-            return;
-        }
+            var elem = e.srcElement | e.target;
+            if (elem) {
 
-        var carconstrastID = $(".addcarduibi input").attr("contrastid");
+            }
+            var carID = config.carId;
+            if (carID == undefined) {
 
-        if (e.target.tagName == "INPUT") {
-            $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
-        }
-
-        if (!$(".addcarduibi input")[0].checked) {
-
-            var self = this;
-            self.e = e;
-            $.ajax({
-                type: "POST",
-                url: config.api_addContrast,
-                dataType: "json",
-                context: self
-            }).done(function(data) {
-                if (data.result == 2) {
-                    $(".addcarduibi input").attr("checked", 'true');
-
-                    var cloneElement = $(".addcarduibi").clone();
-                    cloneElement.css({
-                        opacity: 0.8,
-                        position: 'absolute',
-                        top: this.e.pageY + 'px',
-                        left: this.e.pageX + 'px',
-                        backgroundColor: "#BCEE68"
-                    });
-
-                    var endX = $(".side-box .contrast-img").offset().left;
-                    var endY = $(".side-box .contrast-img").offset().top;
-
-                    document.body.appendChild(cloneElement[0]);
-                    cloneElement.animate({
-                        top: endY,
-                        left: endX
-                    }, 500, function() {
-                        cloneElement.remove();
-                    });
-
-                    $(".addcarduibi input").attr("contrastid", data.contrastId);
-
-                    return;
-                }
-                if (data.result == -1) {
-                    $(".addcarduibi input").attr("checked", 'true');
-                    $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
-                    var context = $(this);
-                    window.setTimeout(function() {
-                        context.find(".contrast-waring").addClass("hidden");
-                    }, 2000);
-                    return;
-                }
-                if (data.result == 1) {
-                    $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
-                    var context = $(this);
-                    window.setTimeout(function() {
-                        context.find(".contrast-waring").addClass("hidden");
-                    }, 2000);
-                    return;
-                }
-                $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
-                var context = $(this);
-                window.setTimeout(function() {
-                    context.find(".contrast-waring").addClass("hidden");
-                }, 2000);
-            });
-        } else {
-            if (!carconstrastID) {
                 return;
             }
 
-            $.ajax({
-                type: "POST",
-                url: config.api_deleteContrast,
-                data: {
-                    cid: $(".addcarduibi input").attr("contrastid")
-                }
-            }).done(function(data) {
-                $(".addcarduibi input").removeAttr("checked");
-                $(".addcarduibi input").removeAttr("contrastid");
-            });
-        }
-        return false;
-    }
+            var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
-    var _bind = function() {
-        $(".addcarduibi,.addcarduibi input").on("click", operationCarDuibi);
-    }
-
-    return {
-        init: function(_config) {
-            $.extend(config, _config)
-            require(['detail/init_summary'], function(InitSummary) {
-                InitSummary.init(config);
-            })
-            // var carPrice = parseInt($('.price-now.now').text());
-            // var nowPrice = carPrice;
-            // var nowStr = nowPrice.toString();
-            // var start = '<div class="price-num"><em>',
-            //     end = '</em></div>';
-            // for (var i = 0; i < nowStr.length; i++) {
-            //     $('.cutprice').append(start + nowStr.charAt(i) + end);
-            // }
-            Souche.Detail.PriceDown.init(config);
-            if ($(".brand-nav").length) {
-                $(window).scroll(function() {
-                    var brandNavPos = $(".brand-nav").offset().top;
-                    var brandHeight = $(".brand-wrapper").height();
-                    var brandNavHeight = $(".brand-nav").height();
-                    if ($(window).scrollTop() > brandNavPos + 40) {
-
-                        if ($(window).scrollTop() > brandNavPos + brandHeight - brandNavHeight - 150) {
-                            $(".brand-list").css({
-                                position: "absolute",
-                                top: brandHeight - brandNavHeight - 100
-                            })
-                        } else {
-                            $(".brand-list").css({
-                                position: "fixed",
-                                top: 80
-                            })
-                        }
-                    } else {
-                        $(".brand-list").css({
-                            position: "relative",
-                            top: 0
-                        })
-                    }
-
-                })
+            if (e.target.tagName == "INPUT") {
+                $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
             }
 
-            _bind();
+            if (!$(".addcarduibi input")[0].checked) {
 
+                var self = this;
+                self.e = e;
+                $.ajax({
+                    type: "POST",
+                    url: config.api_addContrast,
+                    dataType: "json",
+                    context: self
+                }).done(function(data) {
+                    if (data.result == 2) {
+                        $(".addcarduibi input").attr("checked", 'true');
 
-            var navSaleTabTop = $("#onsale_tab").offset().top;
-            var navSaleTabHeight = $("#onsale_tab").height();
+                        var cloneElement = $(".addcarduibi").clone();
+                        cloneElement.css({
+                            opacity: 0.8,
+                            position: 'absolute',
+                            top: this.e.pageY + 'px',
+                            left: this.e.pageX + 'px',
+                            backgroundColor: "#BCEE68"
+                        });
 
-            $(window).scroll(function() {
-                var winTop = $(window).scrollTop();
+                        var endX = $(".side-box .contrast-img").offset().left;
+                        var endY = $(".side-box .contrast-img").offset().top;
 
-                if (winTop > navSaleTabTop) {
-                    $("#onsale_tab").css({
-                        position: "fixed",
-                        top: 0,
+                        document.body.appendChild(cloneElement[0]);
+                        cloneElement.animate({
+                            top: endY,
+                            left: endX
+                        }, 500, function() {
+                            cloneElement.remove();
+                        });
 
-                        zIndex: 1000
-                    });
-                    $("#onsale_tab_space").removeClass("hidden")
-                } else {
-                    $("#onsale_tab").css({
-                        position: "relative"
-                    })
-                    $("#onsale_tab_space").addClass("hidden")
+                        $(".addcarduibi input").attr("contrastid", data.contrastId);
+
+                        return;
+                    }
+                    if (data.result == -1) {
+                        $(".addcarduibi input").attr("checked", 'true');
+                        $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
+                        var context = $(this);
+                        window.setTimeout(function() {
+                            context.find(".contrast-waring").addClass("hidden");
+                        }, 2000);
+                        return;
+                    }
+                    if (data.result == 1) {
+                        $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
+                        var context = $(this);
+                        window.setTimeout(function() {
+                            context.find(".contrast-waring").addClass("hidden");
+                        }, 2000);
+                        return;
+                    }
+                    $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
+                    var context = $(this);
+                    window.setTimeout(function() {
+                        context.find(".contrast-waring").addClass("hidden");
+                    }, 2000);
+                });
+            } else {
+                if (!carconstrastID) {
+                    return;
                 }
-                var onSaleHeight = $(".onsale-summary").height();
-                if (winTop > navSaleTabTop + onSaleHeight - 40) {
-                    $("#onsale_tab").css({
-                        position: "relative"
-                    })
-                    $("#onsale_tab_space").addClass("hidden")
-                }
 
-
-                // paras.$winTop = paras.$win.scrollTop();
-
-                // //添加onsale-summary元素的 to fix 功能
-                // if (paras.$navSaleTab.length != 0) {
-                //     var navSaleSumHeight = $("#onsale-summary").height();
-                //     if ((navSaleTabTop + cacheHeight) <= paras.$winTop && (navSaleTabTop + navSaleSumHeight) >= paras.$winTop) {
-                //         if (!paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
-                //             paras.$navSaleTabFixed.stop(true);
-                //             paras.$navSaleTabFixed.addClass("saleTab_fixed").removeClass("hidden");
-                //             paras.$navSaleTabFixed.animate({
-                //                 top: 0
-                //             }, 300, function() {});
-                //         }
-                //     } else {
-                //         if (paras.$navSaleTabFixed.hasClass("saleTab_fixed")) {
-
-                //             paras.$navSaleTabFixed.stop(true);
-                //             paras.$navSaleTabFixed.animate({
-                //                 top: -45
-                //             }, 300, function() {
-                //                 paras.$navSaleTabFixed.addClass("hidden").removeClass("saleTab_fixed");
-                //             });
-                //         }
-                //     }
-                // }
-            });
-
+                $.ajax({
+                    type: "POST",
+                    url: config.api_deleteContrast,
+                    data: {
+                        cid: $(".addcarduibi input").attr("contrastid")
+                    }
+                }).done(function(data) {
+                    $(".addcarduibi input").removeAttr("checked");
+                    $(".addcarduibi input").removeAttr("contrastid");
+                });
+            }
+            return false;
         }
-    }
-}();
+
+        var _bind = function() {
+            $(".addcarduibi,.addcarduibi input").on("click", operationCarDuibi);
+        }
+
+        return {
+            init: function(_config) {
+                $.extend(config, _config)
+                InitSummary.init(config);
+                Fav.init(config);
+                // var carPrice = parseInt($('.price-now.now').text());
+                // var nowPrice = carPrice;
+                // var nowStr = nowPrice.toString();
+                // var start = '<div class="price-num"><em>',
+                //     end = '</em></div>';
+                // for (var i = 0; i < nowStr.length; i++) {
+                //     $('.cutprice').append(start + nowStr.charAt(i) + end);
+                // }
+                Souche.Detail.PriceDown.init(config);
+                if ($(".brand-nav").length) {
+                    $(window).scroll(function() {
+                        var brandNavPos = $(".brand-nav").offset().top;
+                        var brandHeight = $(".brand-wrapper").height();
+                        var brandNavHeight = $(".brand-nav").height();
+                        if ($(window).scrollTop() > brandNavPos + 40) {
+
+                            if ($(window).scrollTop() > brandNavPos + brandHeight - brandNavHeight - 150) {
+                                $(".brand-list").css({
+                                    position: "absolute",
+                                    top: brandHeight - brandNavHeight - 100
+                                })
+                            } else {
+                                $(".brand-list").css({
+                                    position: "fixed",
+                                    top: 80
+                                })
+                            }
+                        } else {
+                            $(".brand-list").css({
+                                position: "relative",
+                                top: 0
+                            })
+                        }
+
+                    })
+                }
+
+                _bind();
+
+
+                var navSaleTabTop = $("#onsale_tab").offset().top;
+                var navSaleTabHeight = $("#onsale_tab").height();
+
+                $(window).scroll(function() {
+                    var winTop = $(window).scrollTop();
+
+                    if (winTop > navSaleTabTop) {
+                        $("#onsale_tab").css({
+                            position: "fixed",
+                            top: 0,
+
+                            zIndex: 1000
+                        });
+                        $("#onsale_tab_space").removeClass("hidden")
+                    } else {
+                        $("#onsale_tab").css({
+                            position: "relative"
+                        })
+                        $("#onsale_tab_space").addClass("hidden")
+                    }
+                    var onSaleHeight = $(".onsale-summary").height();
+                    if (winTop > navSaleTabTop + onSaleHeight - 40) {
+                        $("#onsale_tab").css({
+                            position: "relative"
+                        })
+                        $("#onsale_tab_space").addClass("hidden")
+                    }
+
+
+
+                });
+
+            }
+        }
+    }();
+    return Souche.DetailCommon;
+});
