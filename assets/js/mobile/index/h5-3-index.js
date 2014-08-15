@@ -38,19 +38,20 @@ if (navigator.userAgent.match(/Android/i)){
 
     var isMoving = false;
     function afterMove(oldIndex,curIndex){
+        navItems.removeClass('active')
+        navItems.eq(curIndex-1).addClass('active')
+        tabNavBar.attr('data-active-index',curIndex)
+        var height = tabPanels.eq(curIndex-1).height();
+        height = height<600?600:height;
+        tabCover.css({height:height})
+        try{
+            sessionStorage.setItem('index_tab_index',curIndex);
+        }catch(e){}
+        topCache[oldIndex-1]=document.body.scrollTop;
+        document.body.scrollTop = topCache[curIndex-1];
+
         setTimeout(function(){
             isMoving = false
-            navItems.removeClass('active')
-            navItems.eq(curIndex-1).addClass('active')
-            tabNavBar.attr('data-active-index',curIndex)
-            var height = tabPanels.eq(curIndex-1).height();
-            height = height<600?600:height;
-            tabCover.css({height:height})
-            try{
-                sessionStorage.setItem('index_tab_index',curIndex);
-            }catch(e){}
-            topCache[oldIndex-1]=document.body.scrollTop;
-            document.body.scrollTop = topCache[curIndex-1];
         },transition_duration)
 
         if(curIndex==1){
@@ -68,7 +69,6 @@ if (navigator.userAgent.match(/Android/i)){
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
-
     }
     var move = function (curIndex) {
         if(isMoving)return;
@@ -124,11 +124,13 @@ if (navigator.userAgent.match(/Android/i)){
         if(curIndex == index)return;
         move(index);
     })
-    tabCtn.on('swipeLeft',function(){
+    tabCtn.on('swipeLeft',function(e){
+        e.preventDefault();
         var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
-    }).on('swipeRight',function(){
+    }).on('swipeRight',function(e){
+        e.preventDefault();
         var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
@@ -639,7 +641,7 @@ if (navigator.userAgent.match(/Android/i)){
         }
         var activeClass= d.favorite?'active':'';
         var str = '<div class="car-wrapper">'
-                + '<a class="car-card" href="'+d.detailUrl+ d.id+'">'
+                + '<a class="car-card" href="'+d.detailUrl+ 'carId='+d.id+'">'
                 +    '<img src="'+ d.pictureBig+'">'
                 +    '<div class="car-info">'
                 +        '<div class="car-introduction">'+ d.carOtherAllNameShow+'</div>'
