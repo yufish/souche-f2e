@@ -512,7 +512,7 @@ border:1px solid #ddd;
 #detail_main .detail-collect a.faved span{float:left;width: 15px;height: 15px;background:url("../../images/fed/detail-collect-star-rady.png") no-repeat;}
 #detail_main .detail-collect:hover span{opacity: 1;}
 #detail_main .detail-share{float:left;color: #666;height: 40px;padding-top:10px;position: relative;}
-#detail_main .detail-share .share-item{vertical-align:middle;color: #666666;opacity: 0.75;display:inline-block;width:50px;height:18px;text-indent: 25px;}
+#detail_main .detail-share .share-item{vertical-align:middle;color: #666666;display:inline-block;width:55px;height:18px;text-indent: 25px;}
 #detail_main .detail-share .share-item:hover{opacity: 1;}
 #detail_main .detail-share .ph{
   background: url(../../images/detail/share-phone.png?123) no-repeat 0 center;
@@ -522,9 +522,9 @@ border:1px solid #ddd;
 }
 #detail_main .detail-share .wx{
 background: url(../../images/detail/share-weixin.png?123) no-repeat 0 center;
-overflow: hidden;
 cursor: pointer;
 width: 110px;
+position: relative;
 }
 #detail_main .detail-share .weibo{
 background: url(../../images/detail/share-weibo.png?123) no-repeat 0 center;
@@ -616,7 +616,7 @@ position: relative;
   width: 270px;
   height: 55px;
   top: -16px;
-  right: -211px;
+  right: -202px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
   padding:15px;
@@ -2138,6 +2138,92 @@ top: 12px;
       margin-left: 5px;
       float: left;
       position: relative;
+      cursor: pointer;
+      
+    }
+  }
+}
+#detail_main #J_wx_phone .wx-open{
+  width: 350px;
+  height: 190px;
+  border:1px solid #E4E3E3;
+  background: #F9F9F9;
+  position: absolute;
+  padding: 5px;
+  top: -6px;
+  left: -6px;
+  z-index: 10000;
+  .tit{
+    background: url(../../images/detail/share-weixin.png?123) no-repeat 0 center;
+    width: 110px;
+    height: 19px;
+    margin-bottom: 20px;
+  }
+  .open-cont{
+    width: 290px;
+    margin: 0 auto;
+    .wx-box{
+      width: 100px;
+      float: left;
+      .title{
+        font-size: 14px;
+        color: #666;
+        text-indent: 0px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    .or{
+      float: left;
+      height: 135px;
+      text-align: center;
+      line-height: 135px;
+      margin: 0 25px;
+      text-indent: 0px;
+    }
+    .phone-box{
+      float: left;
+      width: 120px;
+      .title{
+        font-size: 14px;
+        color: #666;
+        text-indent: 0px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      #send-phone-form{
+        text-indent: 0px;
+        #send-phone{
+          width: 108px;
+          background: #fff;
+          border: 1px solid #E4E3E3;
+          height: 18px;
+          padding: 5px;
+          margin-bottom: 10px;
+        }
+        #send-phone-submit{
+          border: none;
+          border-radius: 2px;
+          background: #FF5517;
+          color: #fff;
+          width: 120px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+          cursor: pointer;
+        }
+        .warning{
+          height: 25px;
+          border: 1px solid #f29797;
+          background-color: #ffe8ef;
+          color: #ee394b;
+          font-size: 12px;
+          text-align: center;
+          padding-top: 10px;
+          margin-top: 10px;
+          position: relative;
+        }
+      }
     }
   }
 }

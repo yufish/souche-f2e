@@ -160,17 +160,50 @@
             //$(this).attr("disabled",true);
         }
     })
-    $(".detail-share .wx").click(function(e) {
-        e.stopPropagation()
-        $("#wx-popup").removeClass("hidden").css({
-            left: $(".detail-share .wx").offset().left - 98,
-            top: $(".detail-share .wx").offset().top - 210
+    // $(".detail-share .wx").click(function(e) {
+    //     e.stopPropagation()
+    //     $("#wx-popup").removeClass("hidden").css({
+    //         left: $(".detail-share .wx").offset().left - 98,
+    //         top: $(".detail-share .wx").offset().top - 210
+    //     })
+    //     $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
+    // });
+    // $(document.body).click(function() {
+    //     $("#wx-popup").addClass("hidden")
+    // });
+    
+    //发送到微信or手机
+    var submitToPhoneNew = function(){
+        $.ajax({
+            url: SaleDetailConfig.api_sendCarToPhone,
+            data: {
+                carId: SaleDetailConfig.carId
+            },
+            type: "post",
+            success: function(data) {
+                $(".wx-open").addClass("hidden");
+            }
         })
-        $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
+    }
+    $(".detail-share #J_wx_phone").click(function(e){
+       e.stopPropagation();
+       $(".wx-open").removeClass("hidden");
     });
     $(document.body).click(function() {
-        $("#wx-popup").addClass("hidden")
-    });
+        $(".wx-open").addClass("hidden");
+     });
+    $("#send-phone-form").on("submit",function(e){
+       
+
+        e.preventDefault();
+        if (!phoneReg.test($("#send-phone").val())) {
+            $(".warning", this).removeClass("hidden");
+            return
+        } else {
+            submitToPhoneNew();
+        }
+     })
+
     var submitToPhone = function() {
         $.ajax({
             url: $("#ph-form")[0].action,
