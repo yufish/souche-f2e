@@ -5,7 +5,8 @@ define(['index/car-god',
     "index/collect",
     "lib/lazyload",
     "index/carConstrast",
-    "index/record-tip"
+    "index/record-tip",
+    "souche/util/image-resize"
 ], function(carGod,
     topNav,
     qiugou,
@@ -13,7 +14,8 @@ define(['index/car-god',
     collect,
     lazyload,
     carConstrast,
-    recordTip) {
+    recordTip,
+    ImageResize) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
@@ -352,6 +354,8 @@ define(['index/car-god',
                 url: config.api_guessCars,
                 success: function(html) {
                     $(".guess-like").html(html)
+
+                    ImageResize.init(".guess-like .carsItem img", 240, 160);
                     //猜你喜欢的不喜欢动作
                     $(".nolike").on("click", function(e) {
                         var self = this;
@@ -375,7 +379,7 @@ define(['index/car-god',
                     });
                 }
             })
-
+            ImageResize.init(".carsItem img", 240, 160);
             //提示品牌是否加入心愿单
             // recordTip.init(config);
             //闹着玩
