@@ -40,10 +40,14 @@
       background-color: #ccc;
     }
   }
+  .city-item a{
+    padding: 0 0.5em;
+    box-sizing: border-box;
+  }
   .cities{
     /*display: none;*/
     position: relative;
-    margin: 0 -3.2% 0 -3.2%;
+    margin: 0 -(percentage(@proPad/(100% - 2*@proPad )));
     padding: 0 @proPad;
     border-top: 1px solid @rowBC;
     background-color: @cityCtnBGC;

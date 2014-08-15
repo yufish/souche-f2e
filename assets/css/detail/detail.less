@@ -302,9 +302,54 @@ body{background-color:#f2f2f2}
 #detail_main .detail_photosGallary .photosWrap .photoActive{z-index:3}
 #detail_main .detail_photosGallary .photosWrap .photoLastActive{z-index:2}
 #detail_main .detail_photosGallary .photoInfo{line-height:40px;height:40px;overflow:hidden;color:#333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
-#detail_main .detail_photosGallary .photosSmall{width:630px;padding-left:5px;margin-left:-5px}
-#detail_main .detail_photosGallary .photosSmall li{float:left;width:118px;height:88px;border:1px solid #fff;overflow:hidden;margin-right:5px;cursor:pointer}
-#detail_main .detail_photosGallary .photosSmall li img{width:120px;}
+#detail_main .detail_photosGallary .photosSmall{float: left;}
+#detail_main .detail_photosGallary .photosSmall li{float:left;width:108px;height:72px;overflow:hidden;cursor:pointer;border-right: 1px solid #fff;}
+#detail_main .detail_photosGallary .photosSmall li img{width:108px;}
+.yushou-photoWrap .photoSmallTab{
+  float: left;
+  width: 37px;
+  height: 72px;
+  cursor: pointer;
+}
+.yushou-photoWrap .photosSmall-box{
+  width: 545px;
+  height: 72px;
+  overflow: hidden;
+  float: left;
+}
+.yushou-photoWrap .photosSmall-box .photosSmall-wrap{
+  width: 1090px;
+  height: 72px;
+  margin-left: 0px;
+}
+.yushou-photoWrap .photoSmallPre{
+  background: url(../../images/detail/pre.png) no-repeat;
+}
+.yushou-photoWrap .photoSmallPre:hover{
+  background: url(../../images/detail/activepre.png) no-repeat;
+}
+.yushou-photoWrap .unActivePre{
+  background:url(../../images/detail/unpre.png) no-repeat; 
+  cursor: default;
+}
+.yushou-photoWrap .unActivePre:hover{
+  background:url(../../images/detail/unpre.png) no-repeat; 
+  cursor: default;
+}
+.yushou-photoWrap .photoSmallNext{
+  background: url(../../images/detail/next.png) no-repeat;
+}
+.yushou-photoWrap .photoSmallNext:hover{
+  background: url(../../images/detail/activenext.png) no-repeat;
+}
+.yushou-photoWrap .unActiveNext{
+  background: url(../../images/detail/unnext.png) no-repeat;
+  cursor: default;
+}
+.yushou-photoWrap .unActiveNext:hover{
+  background: url(../../images/detail/unnext.png) no-repeat;
+  cursor: default;
+}
 #detail_main .detail_photosGallary .photoTab{position:absolute;z-index:4;top:188px;}
 #detail_main .detail_photosGallary .photoTab span{position:absolute;top:0;left:0;width:30px;height:56px;cursor:pointer;background:url("../../images/fed/onsale_slider.png") no-repeat -2px 2px;opacity:0.8}
 #detail_main .detail_photosGallary .photoTab span:hover{opacity:1;}
@@ -411,11 +456,10 @@ border:1px solid #ddd;
       float: left;
     }
     .fav,.jiangjia_tongzhi_wo{
-        padding-left:35px;
-        padding-right: 10px;
+        padding-left:30px;
+        padding-right: 5px;
         height:40px;
         line-height: 40px;
-        
         color:#666;
         border:1px solid #e4e3e3;
         border-radius: 3px;
@@ -431,6 +475,7 @@ border:1px solid #ddd;
     }
     .fav{
         background: #fff url(../../images/detail/fav-btn.png) no-repeat 10px center;
+        margin-left: 0px;
         i{
             font-style:normal;
             padding-left: 5px;
@@ -452,29 +497,7 @@ border:1px solid #ddd;
         background: #fff url(../../images/detail/jiangjia-btn.png) no-repeat 10px center;
     }
 }
-#detail_main .cheniu-button{
-  padding: 30px 0;
-  height: 50px;
-  overflow: hidden;
-  padding-bottom: 15px;
-  padding-top: 35px;
-  .cheniu-info{
-    width: 200px;
-    float: left;
-  }
-  .free-call{
-    float: right;
-    width: 110px;
-    height: 40px;
-    border-radius: 2px;
-    line-height: 40px;
-    padding-left: 65px;
-    background:#FF5517 url(../../images/detail/free-call.png) no-repeat 40px center;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-  }
-}
+
 #detail_main .detail-zixun{float:left;display:inline;width: 143px;height: 55px;margin-left:50px;background:url("../../images/fed/detail_sprite_common.png?124") no-repeat 0 -155px;}
 #detail_main .detail-collect{float:left;display:inline;line-height: 20px;}
 #detail_main .detail-collect span{float:left;width: 15px;height: 15px; margin:5px 5px;background:url("../../images/fed/detail-collect-star.png") no-repeat;}
@@ -1042,7 +1065,8 @@ top: 139px !important;}
 #onsale_detail #detail_main .detail_photosGallary .photoSmallNext{background-position:-319px 0}#onsale_detail #detail_main .detail_photosGallary .photoSmallNext:hover{background-position:-376px 0}
 #onsale_detail #detail_main .detail_photosGallary .photoActiveNext{background-position:-259px 0}
 #onsale_detail #detail_main .detail_photosGallary .photosSmallWrap{width:546px;height:121px;overflow:hidden;float:left;position:relative}#onsale_detail #detail_main .detail_photosGallary .photosSmallWrap div{width:1249px}
-#onsale_detail #detail_main .detail_photosGallary .photosSmall{float:left;width:546px}#onsale_detail #detail_main .detail_photosGallary .photosSmall li{width:90px;height:60px;border:none;margin-right:1px;margin-bottom:1px;position:relative}#onsale_detail #detail_main .detail_photosGallary .photosSmall li span{width:86px;height:56px;border:2px solid #e70;position:absolute;top:0;left:0;display:none}
+#onsale_detail #detail_main .detail_photosGallary .photosSmall{float:left;width:546px}#onsale_detail #detail_main .detail_photosGallary .photosSmall li{width:90px;height:60px;border:none;margin-right:1px;margin-bottom:1px;position:relative}
+#onsale_detail #detail_main .detail_photosGallary .photosSmall li span{width:86px;height:56px;border:2px solid #e70;position:absolute;top:0;left:0;display:none}
 #onsale_detail #detail_main .detail_photosGallary .photosSmall li img{width:90px;}
 
 
@@ -1862,6 +1886,219 @@ top: 12px;
   }
   img{
     margin-bottom: 10px;
+  }
+}
+#yushou_detail #detail_main .host-info{
+  padding: 30px 0;
+  height: 50px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  padding-top: 35px;
+  .cheniu-info{
+    width: 200px;
+    float: left;
+  }
+}
+#yushou_detail #detail_main .detail-button{
+  padding-top: 0px;
+} 
+#yushou_detail .free-call{
+    float: left;
+    width: 85px;
+    height: 40px;
+    border-radius: 2px;
+    line-height: 40px;
+    padding-left: 30px;
+    background:#FF5517 url(../../images/detail/free-call.png) no-repeat 10px center;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+#yushou_detail #detail_main .detail-button .contact-souche{
+  color: #999;
+  font-size: 12px;
+  margin-left: 5px;
+  float: left;
+  line-height: 40px;
+}
+#yushou_detail #detail_main .detail-feed-hd .addcarduibi{
+  background: #fff;
+  color: #999;
+  padding-top: 15px;
+}
+#yushou_detail #detail_main .detail-feed-hd .addcarduibi:hover{
+  background: #fff;
+  color: #999;
+}
+#yushou_detail #detail_main .detail-button .fav{
+  float: left;
+}
+#yushou_detail .free-call-pop{
+  width: 500px;
+  height: 360px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px 1px #CDCDCD;
+  .apply_close {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../../images/common/popup-close2.png") no-repeat;
+    right: 15px;
+    top: 20px;
+    cursor: pointer;
+
+  }
+  .close-text{
+    width: 156px;
+    height: 34px;
+    position: absolute;
+    top: 13px;
+    right: 40px;
+    background: #fff;
+    .cont{
+      width: 148px;
+      height: 32px;
+      border: 1px solid #FCD4A6;
+      background: #FFFEE6;
+      color: #BF9771;
+      font-size: 12px;
+      text-align: center;
+      float: left;
+      line-height: 32px;
+    }
+    .text-icon{
+      float: left;
+      height: 34px;
+      width: 6px;
+      margin-left: -1px;
+      background: #fff url(../../images/detail/free-close-text.png) no-repeat;
+      margin-top: 11px;
+      height: 11px;
+    }
+  }
+  .popup-title {
+    font-size: 18px;
+    color: #333;
+  }
+  .form-cont{
+    border: none;
+    width: 500px;
+    padding-top: 50px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    .warning{
+      margin-left: 0;
+      width: 252px;
+      position: absolute;
+      top: 0px;
+      left:122px;
+      text-decoration: none;
+      color: #ff0000;
+      font-size: 12px;
+      .input-error-tip {
+        height: 25px;
+        border: 1px solid #f29797;
+        background-color: #ffe8ef;
+        color: #ee394b;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 10px;
+        margin-top: 10px;
+        position: relative;
+        .error-icon {
+          width: 12px;
+          height: 12px;
+          background: url(../../images/common/input-error-tip.png) no-repeat;
+          display: block;
+          position: absolute;
+          left: 35px;
+          top: 12px;
+        }
+      }
+    }
+    .tip{
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    .number{
+      margin-bottom: 40px;
+      #free-phoe{
+        width: 140px;
+        height: 20px;
+        border: 1px solid #CCCCCC;
+        margin-right: 10px;
+        line-height: 20px;
+        padding: 5px 5px;
+      }
+      #free-sub{
+        width: 90px;
+        height: 32px;
+        border: 1px solid #D32E16;
+        background: #FF5517;
+        color: #fff;
+        text-align: center;
+        border-radius: 1px;
+        cursor: pointer;
+      }
+    }
+    .free-result{
+      height: 46px;
+      width: 290px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+      .free-icon{
+        float: left;
+        width: 46px;
+        height: 46px;
+        background: url(../../images/detail/free-result.png) no-repeat;
+      }
+      .phone-call{
+        text-align: left;
+        float: left;
+        margin-left: 15px;
+        h1{
+          color: #444;
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        .calling{
+          font-family: Tahoma, Verdana;
+          color: #333;
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+      .change-number{
+        color: #FF5417;
+        float: right;
+        line-height: 15px;
+        border-bottom: 1px solid #FF5417;
+        cursor: pointer;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+    }
+    .free-text{
+      margin: 0 auto;
+      border: 1px solid #D1D1D1;
+      background: #F9F9F9;
+      width: 320px;
+      height: 50px;
+      border-radius: 4px;
+      padding: 20px 0px;
+      text-align: center;
+      p{
+        color: #666;
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
   }
 }
 @import "less/summary.less";

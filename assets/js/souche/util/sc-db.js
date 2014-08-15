@@ -6,15 +6,15 @@
 define(function() {
 
     var SCDB = function(_namespace) {
-        this.namespace = (_namespace || 'souche') + "_";
-    }
-    // if (typeof(localStorage) == "undefined") {
-    //     alert(typeof(localStorage))
-    //     var localStorage = {
-    //         getItem: function() {
-    //             return "";
-    //         },
-    //         setItem: function() {
+            this.namespace = (_namespace || 'souche') + "_";
+        }
+        // if (typeof(localStorage) == "undefined") {
+        //     alert(typeof(localStorage))
+        //     var localStorage = {
+        //         getItem: function() {
+        //             return "";
+        //         },
+        //         setItem: function() {
 
     //         }
     //     }
@@ -34,10 +34,21 @@ define(function() {
         }
     }
     SCDB.prototype = {
-        get: function(key) {
+        /**
+         * [get description]
+         * @param  {[type]} key  [description]
+         * @param  {[type]} time [缓存时间，超过此时间，返回空]
+         * @return {[type]}      [description]
+         */
+        get: function(key, time) {
             key = this.namespace + key;
             var value = localStorage.getItem(key);
-            value = JSON.parse(value);
+            var _data = JSON.parse(value);
+            value = _data.data;
+            var lastTime = _data.time;
+            if (time && ((new Date()).getTime() - lastTime > time)) {
+                return null;
+            }
             if (!value.length) {
                 value = null;
                 return value;
@@ -48,23 +59,35 @@ define(function() {
             key = this.namespace + key;
             value = util.valueToArray(value);
             try {
-                localStorage.setItem(key, JSON.stringify(value));
+                localStorage.setItem(key, JSON.stringify({
+                    time: new Date().getTime(),
+                    data: value
+                }));
             } catch (e) {
 
             }
 
         },
-        gets: function(key) {
+        gets: function(key, time) {
             key = this.namespace + key;
             var value = localStorage.getItem(key);
-            value = JSON.parse(value);
+            var _data = JSON.parse(value);
+
+            value = _data.data;
+            var lastTime = _data.time;
+            if (time && ((new Date()).getTime() - lastTime > time)) {
+                return null;
+            }
             return value;
         },
         sets: function(key, value) {
             key = this.namespace + key;
             value = util.valueToArray(value);
             try {
-                localStorage.setItem(key, JSON.stringify(value));
+                localStorage.setItem(key, JSON.stringify({
+                    time: new Date().getTime(),
+                    data: value
+                }));
             } catch (e) {
 
             }

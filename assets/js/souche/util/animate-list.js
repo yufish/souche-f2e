@@ -1,3 +1,7 @@
+/**
+ * 这是一个动画列表的方法
+ * @return {[type]} [description]
+ */
 define(function() {
     var Anim = function(list, callback) {
         this.list = list || [];

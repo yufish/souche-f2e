@@ -96,6 +96,60 @@
 			            photoSlide(lastPhoto + 1);
 			        }
 			    });
+			    //预售车辆图片左右切换
+			    // var smallSlideWidth = "-545px";
+			    // var smallSlide = function(current) {
+       //      var left = "0px";
+       //      if (current.is($(".photoSmallNext"))) {
+       //          left = smallSlideWidth;
+       //          current.addClass("unActiveNext");
+       //          $(".photoSmallPre").removeClass("unActivePre");
+       //      } else {
+       //          current.addClass("unActivePre");
+       //          $(".photoSmallNext").removeClass("unActiveNext");
+       //      }
+       //      $(".photosSmall-box .photosSmall-wrap").animate({
+       //          "margin-left": left
+       //      }, 300);
+       //  };
+	      //   $(".photoSmallNext").click(function() {
+	      //       smallSlide($(this));
+	      //   });
+	      //   $(".photoSmallPre").click(function() {
+	      //       smallSlide($(this));
+	      //   });
+
+			   $(".photoSmallPre").click(function(){
+			   	  var imgBox = $(this).closest(".yushou-photoWrap");
+            var imgScroll = imgBox.find(".photosSmall-wrap").animate({
+            'margin-left': '+=109'
+            },300);
+            var count = imgScroll.find('li').length;
+            var index = imgScroll.data('data-index')||1;
+            imgScroll.data('data-index',index-1);
+            if(count < 6){
+            	$(this).removeClass("unActivePre").addClass("hidden");
+            	$(this).closest(".unActivePre").removeClass("hidden");
+            }
+            else{
+              $(this).removeClass("unActivePre").removeClass("hidden");
+              $(this).closest(".unActivePre").addClass("hidden");
+            }
+            
+			   });
+			     $(".photoSmallNext").click(function(){
+			   	  var imgBox = $(this).closest(".yushou-photoWrap");
+            var imgScroll = imgBox.find(".photosSmall-wrap").animate({
+            'margin-left': '-=109'
+            },300);
+            var count = imgScroll.find('li').length;
+            var index = imgScroll.data('data-index')||1;
+            imgScroll.data('data-index',index+1);
+            if(count < 6){
+
+            }
+			   });
+			    //预约
 			    var submitYuyue = function() {
 			        $.ajax({
 			            url: config.api_yushouForSale,
@@ -142,7 +196,7 @@
 			        $("#J_yuyue").html("预约看车");
 			        $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
 			    });
-
+          
 			    var setImgHeight = function(img, wrapH, wrapW) {
 			        if (img.height() < wrapH) {
 			            img.height(wrapH).width("auto");
@@ -183,6 +237,44 @@
 			            $("#quick_buy").fadeOut(200);
 			        }
 			    });
+          //免费通话
+          var submiFreeCall = function(){
+          	$.ajax({
+          		  url: "#",
+			              data: {
+			                phone: $("#free-phoe").val(),
+			                carId: config.carId
+			            },
+			          type: "post",
+			          success: function(data){
+			          	$("#free-popup-result").removeClass("hidden");
+			          	
+			          }
+          	})
+          }
+
+          $("#J_freeCall").on("click",function(){
+            Souche.checkPhoneExist(function(is_login) {
+	                if (is_login) {
+	                    submiFreeCall();
+	                } else {
+	                    $("#free-popup").removeClass("hidden");
+	                    
+	                }
+	            })
+          });
+          $("#free-popup").find("#freecall-form").on("submit",function(e){
+                e.preventDefault();
+             if (!phoneReg.test($("#free-phoe").val())) {
+                    $(".warning", this).removeClass("hidden");
+                } else {
+                    submiFreeCall();
+                  }
+              });
+          $("#free-popup-result").find(".change-number").on("click",function(){
+          	 $("#free-popup").removeClass("hidden");
+          	 $("#free-popup-result").addClass("hidden");
+          })
 
 			    var config = {
 			        api_isLogin: '',
