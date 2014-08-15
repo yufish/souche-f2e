@@ -428,7 +428,6 @@ nav .nav-item.active .nav-item-content{
 /* tab-panel-3*/
 .walkaround-area{
     padding:10px;
-    width: 320px;
     margin: 0 auto;
 }
 .act-card{
@@ -436,6 +435,7 @@ nav .nav-item.active .nav-item-content{
     display: block;
     margin-bottom: 20px;
     background: #fff;
+    padding-bottom: 12px;
 }
 .act-card img.banner{
     width: 100%;
@@ -443,13 +443,16 @@ nav .nav-item.active .nav-item-content{
 .act-card .act-title{
     font-size: 18px;
     color:#333;
-    padding: 12px;
+    padding: 16px 16px 12px;
+    font-weight: bold;
 }
 .act-card .act-content{
-    padding:0 12px 12px;
+    padding:0 16px;
     color:#666;
     font-size: 14px;
     line-height: 18px;
+    max-height: 72px;
+    overflow: hidden;
 }
 /*footer*/
 .footer{
