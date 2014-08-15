@@ -628,7 +628,7 @@ if (navigator.userAgent.match(/Android/i)){
     function cardDom(item){
         var d = {
             id: item.id,
-            detailUrl: item.carVo.status == 'zaishou' ? contextPath+'/detail.html?' : contextPath+'/yushou-detail.html?',
+            detailUrl: item.carVo.status == 'zaishou' ? contextPath+'/pages/mobile/detail.html?' : contextPath+'/pages/mobile/yushou-detail.html?',
             flashPurchase: item.flashPurchase,
             fenqi: ( !! item.carPriceVO && item.carPriceVO.fenqi == 1),
             downPrice: ( !! item.flashPurchaseVO) ? item.flashPurchaseVO.totalMasterOutPriceToString * 1000 : undefined,
