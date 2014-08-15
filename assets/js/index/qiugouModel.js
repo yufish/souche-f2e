@@ -1,33 +1,32 @@
 /**
  * Created by Administrator on 2014/7/16.
  */
-define(function()
-{
-    var config={};
-    var adviserModel ={};
+define(function() {
+    var config = {};
+    var adviserModel = {};
 
-    var adviserYear ={};
-    var adviserBudget={};
-    var adviserInstrest=[];
+    var adviserYear = {};
+    var adviserBudget = {};
+    var adviserInstrest = [];
 
-    var initAdviserData={};
+    var initAdviserData = {};
 
-    adviserModel.adviserYear=adviserYear;
-    adviserModel.adviserBudget=adviserBudget;
-    adviserModel.adviserInstrest=adviserInstrest;
-    adviserModel.adviserYear.modify=false;
-    adviserModel.adviserBudget.modify=false;
-    adviserModel.adviserInstrest.modify=false;
+    adviserModel.adviserYear = adviserYear;
+    adviserModel.adviserBudget = adviserBudget;
+    adviserModel.adviserInstrest = adviserInstrest;
+    adviserModel.adviserYear.modify = false;
+    adviserModel.adviserBudget.modify = false;
+    adviserModel.adviserInstrest.modify = false;
 
-    var subscribeCallback={};
-    var map={
-        year:"adviserYear",
-        budget:"adviserBudget",
-        addInstrest:"addAdviserInstrest",
-        deleteInstrest:""
+    var subscribeCallback = {};
+    var map = {
+        year: "adviserYear",
+        budget: "adviserBudget",
+        addInstrest: "addAdviserInstrest",
+        deleteInstrest: ""
     };
 
-    var publicCallback  = function(name) {
+    var publicCallback = function(name) {
         subscribeCallback[name] = subscribeCallback[name] || [];
 
         for (var idx = 0, len = subscribeCallback[name].length; idx < len; idx++) {
@@ -35,7 +34,7 @@ define(function()
         }
     }
 
-    var render = function(name,obj) {
+    var render = function(name, obj) {
         for (var key in map) {
             if (map.hasOwnProperty(key) && key === name) {
                 publicCallback.call(obj, key);
@@ -43,42 +42,37 @@ define(function()
         }
     }
 
-    var result ={};
+    var result = {};
 
-    result.ModifyAdviserYear = function(year)
-    {
+    result.ModifyAdviserYear = function(year) {
         if (adviserYear.minYear == year.min && adviserBudget.maxYear == year.max) {
             return true;
-        }
-        else {
+        } else {
             adviserYear.minYear = year.min;
-            adviserYear.maxYear= year.max;
+            adviserYear.maxYear = year.max;
 
-            render("year",adviserYear);
+            render("year", adviserYear);
 
             return true;
         }
     }
 
-    result.GetAdviserYear = function()
-    {
+    result.GetAdviserYear = function() {
         return adviserYear;
     }
 
     result.ModifyAdviserBudget = function(budget) {
         if (adviserBudget.minBudget == budget.min && adviserBudget.maxBudget == budget.max) {
             return true;
-        }
-        else {
+        } else {
             adviserBudget.minBudget = budget.min;
             adviserBudget.maxBudget = budget.max;
-            render("budget",adviserBudget);
+            render("budget", adviserBudget);
             return true;
         }
     }
 
-    result.GetAdviserBudget = function()
-    {
+    result.GetAdviserBudget = function() {
         return adviserBudget;
     }
 
@@ -89,9 +83,8 @@ define(function()
             }
         }
 
-        require(["index/modelSeries"],function(modelSeries)
-        {
-                modelSeries.addSelectedSeries(instrest.seriesCode);
+        require(["index/modelSeries"], function(modelSeries) {
+            modelSeries.addSelectedSeries(instrest.seriesCode);
         });
 
         adviserInstrest.push(instrest);
@@ -101,23 +94,21 @@ define(function()
 
     result.DeleteAdviserInstrest = function(instrest) {
         for (var idx = 0, len = adviserInstrest.length; idx < len; idx++) {
-            if ( adviserInstrest[idx].seriesCode == instrest.seriesCode) {
+            if (adviserInstrest[idx].seriesCode == instrest.seriesCode) {
                 adviserInstrest.splice(idx, 1);
 
-                require(["index/modelSeries"],function(modelSeries)
-                {
+                require(["index/modelSeries"], function(modelSeries) {
                     modelSeries.deleteSelectedSeries(instrest.seriesCode);
                 });
 
-                render("deleteInstrest",instrest);
+                render("deleteInstrest", instrest);
                 return true;
             }
         }
         return false;
     }
 
-    result.GetAdviserInstrest = function()
-    {
+    result.GetAdviserInstrest = function() {
         return adviserInstrest;
     }
 
@@ -125,16 +116,15 @@ define(function()
 
     }
 
-    result.AddSubscribe = function(name,callback) {
-        subscribeCallback[name] = subscribeCallback[name]||[];
+    result.AddSubscribe = function(name, callback) {
+        subscribeCallback[name] = subscribeCallback[name] || [];
         subscribeCallback[name].push(callback);
     }
 
     result.Rollback = function() {
         config.userRequementJson = initAdviserData;
 
-        while(adviserInstrest[0])
-        {
+        while (adviserInstrest[0]) {
             this.DeleteAdviserInstrest(adviserInstrest[0]);
         }
 
@@ -144,11 +134,17 @@ define(function()
     result.init = function(_config) {
         config = _config;
         var adviser = config.userRequementJson;
-        initAdviserData  = adviser;
+        initAdviserData = adviser;
 
         for (var key in adviser) {
-            this.ModifyAdviserBudget({min: adviser.startBudget, max: adviser.endBudget});
-            this.ModifyAdviserYear({min: adviser.startYear, max: adviser.endYear});
+            this.ModifyAdviserBudget({
+                min: adviser.startBudget,
+                max: adviser.endBudget
+            });
+            this.ModifyAdviserYear({
+                min: adviser.startYear,
+                max: adviser.endYear
+            });
 
             for (var index = 0; index < adviser.brand.length; index++) {
                 var temp = adviser.brand[index].split(",");
