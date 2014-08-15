@@ -39,13 +39,16 @@ if (navigator.userAgent.match(/Android/i)){
     var topCache=[0,0,0];
 
     var isMoving = false;
-    function afterMove(oldIndex,curIndex){
+    function afterMove(oldIndex,curIndex,init){
         navItems.removeClass('active')
         navItems.eq(curIndex-1).addClass('active')
         tabNavBar.attr('data-active-index',curIndex)
-        var height = tabPanels.eq(curIndex-1).height();
-        height = height<600?600:height;
-        tabCover.css({height:height})
+        if(!init){
+            var height = tabPanels.eq(curIndex-1).height();
+            height = height<610?610:height;
+            tabCover.css({height:height})
+        }
+
         try{
             sessionStorage.setItem('index_tab_index',curIndex);
         }catch(e){}
@@ -72,13 +75,13 @@ if (navigator.userAgent.match(/Android/i)){
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
     }
-    var move = function (curIndex) {
+    var move = function (curIndex,init) {
         if(isMoving)return;
         isMoving = true;
         var moveIndex = curIndex - 1;
         tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
         var oldIndex = tabNavBar.attr('data-active-index')
-        afterMove(oldIndex, curIndex)
+        afterMove(oldIndex, curIndex,init)
     }
 //    var move = function(){
 //        if(isAndroid){
@@ -106,7 +109,7 @@ if (navigator.userAgent.match(/Android/i)){
         tabIndex = tabIndex ||1;
         tabCtn[0].style['transition'] = 'none'
         tabCtn[0].style['webkitTransition'] = 'none'
-        move(+tabIndex);
+        move(+tabIndex,true);
         setTimeout(function(){
             tabCtn[0].style['transition'] = +'all 0.4s linear'
             tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
@@ -486,7 +489,6 @@ if (navigator.userAgent.match(/Android/i)){
     $('#J_btnAdvance').on('click',function(){
         $('#J_advanceWrapper').addClass('hidden');
         $('#J_advancedFilterItems').removeClass('hidden');
-        $('#J_tabCover').css({height:$('.tab-panel').eq(1).height()})
     });
     $('#J_btnFilter_submit').on(tap_event,function(e){
         var dObj = buildQueryObj();
