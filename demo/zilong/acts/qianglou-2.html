@@ -7,13 +7,64 @@
     <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         img{
             width: 100%;
             vertical-align: middle;
+        }
+        #cover{
+            position: fixed;
+            top:0;left:0;right: 0;bottom: 0;
+            background: RGBA(0,0,0,0.8);
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <img src="">
+    <img src="http://res.souche.com/assets/images/mob/huodong/qianglou/new-banner.png">
+    <img src="http://res.souche.com/assets/images/mob/huodong/qianglou/new-join-way.png">
+    <img src="http://res.souche.com/assets/images/mob/huodong/qianglou/share-btn.png" id="share">
+    <a href="http://www.souche.com/pages/app-h5.html?channel=weixin">
+        <img src="http://res.souche.com/assets/images/mob/huodong/qianglou/download-app.png">
+    </a>
+    <div id="cover">
+        <img width="320" height="277" id='cover-png' src="http://res.souche.com/assets/images/mob/huodong/qianglou/cover.png">
+    </div>
+    <script>
+        var cover = document.getElementById('cover')
+        document.getElementById("share").addEventListener("click",function(){
+            cover.style.display='block';
+        });
+        cover.addEventListener("click",function(){
+            cover.style.display='none';
+        })
+        try{
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                WeixinJSBridge.on('menu:share:timeline', function(argv){
+                    WeixinJSBridge.invoke('shareTimeline',{
+                        "img_url":"",
+                        "img_width":"120",
+                        "img_height":"120",
+                        "link":window.location.href,
+                        "desc":"小伙伴们，免费领大奖啦！",
+                        "title":"小伙伴们，免费领大奖啦！"
+                    }, function(res){});
+                });
+                WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                    WeixinJSBridge.invoke('sendAppMessage',{
+                        "img_url":"",
+                        "img_width":"120",
+                        "img_height":"120",
+                        "link":window.location.href,
+                        "desc":"小伙伴们，免费领大奖啦！",
+                        "title":"小伙伴们，免费领大奖啦！"
+                    }, function(res){});
+                });
+            });
+        }catch(e){}
+    </script>
 </body>
