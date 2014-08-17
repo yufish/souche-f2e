@@ -29,6 +29,11 @@ $.ajax({
     success: function(data) {
         $("#pv_count").html(data.pv);
         $("#uv_count").html(data.uv);
+        var html = ""
+        for (var i in data) {
+            html += "<span style='margin-right:10px;'>" + (i + "=" + data[i]) + "</span>"
+        }
+        $("#traffic_data").html(html)
     }
 });
 // $.ajax({
