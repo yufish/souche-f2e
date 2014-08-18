@@ -45,11 +45,18 @@ define(function() {
             $(".record_warning .add").on("click", function(e) {
                 e.preventDefault();
                 var url = config.submit_api + "?tagTip=1&";
-                for (var o in submitData) {
-                    url += o + "=" + submitData[o].join() + "&"
+                // for (var o in submitData) {
+                //     url += o + "=" + submitData[o].join() + "&"
+                // }
+                if (userRequirementJsonForTag) {
+                    for (var i in userRequirementJsonForTag) {
+                        var items = userRequirementJsonForTag[i];
+
+                    }
                 }
                 $.ajax({
                     url: url,
+                    data: userRequirementJsonForTag,
                     dataType: "json",
                     success: function() {
                         window.location.reload();

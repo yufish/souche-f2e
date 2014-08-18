@@ -238,7 +238,7 @@ define(['index/car-god',
                 return false;
             }
             counter.offDay = Math.floor(offset / 24 / (3600 * 1000));
-            counter.offHour = Math.floor(offset / (3600 * 1000));
+            counter.offHour = Math.floor(offset / (3600 * 1000) % 24);
             var leave = offset % (3600 * 1000);
             counter.offMin = Math.floor(leave / (60 * 1000));
             var leave2 = leave % (60 * 1000);
@@ -381,7 +381,7 @@ define(['index/car-god',
             })
             ImageResize.init(".carsItem img", 240, 160);
             //提示品牌是否加入心愿单
-            // recordTip.init(config);
+            recordTip.init(config);
             //闹着玩
             // Souche.Util.appear(".hotNewCars", function() {
             //     $(".hotNewCars .carItem").css({
