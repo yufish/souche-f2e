@@ -181,7 +181,11 @@
             },
             type: "post",
             success: function(data) {
-                $(".wx-open").addClass("hidden");
+                $("#send-phone-submit").addClass("hidden");
+                $(".send-success").removeClass("hidden");
+                window.setTimeout(function(){
+                   $(".wx-open").addClass("hidden");
+                },2000);
             }
         })
     }
@@ -198,6 +202,7 @@
             $(".warning", this).removeClass("hidden");
             return
         } else {
+            $(".warning", this).addClass("hidden");
             submitToPhoneNew();
         }
      })
