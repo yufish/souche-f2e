@@ -47,12 +47,11 @@
 .header {
     position: relative;
     background-color: #ff4400;
-    height: 45px;
+    height: 44px;
 }
 .header .text {
     color: #fff;
     text-align: center;
-    padding-top: 12px;
     font-size: 18px;
 }
 .header .header-feature {
@@ -192,6 +191,7 @@
 .header .hd-city{
     float: left;
     font-size: 13px;
+    color:#fff;
 }
 .header .hd-city .svg-down-arrow{
     vertical-align: 3px;
@@ -337,7 +337,7 @@
     height: 12px;
     background: url(../../images/mob/h5-3/small-star.png) no-repeat center;
     background-size: 100%;
-    vertical-align: -1px;
+    vertical-align: -4px;
     margin-right: 6px;
 }
 .car-card .fav.active .star-shape{
@@ -357,4 +357,18 @@
     float: right;
     color: #FF571A;
     line-height: 22px;
+}
+#global-subscription{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #63aa25;
+    font-size: 14px;
+    line-height: 40px;
+    color:#fff;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    top:50%;
+    text-align: center;
 }

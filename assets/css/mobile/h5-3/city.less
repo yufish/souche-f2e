@@ -9,12 +9,15 @@
 
 .row{
   &.province-row{
-    padding: 0 @proPad;
-    border-top: 1px solid @rowBC;
-
+    margin: 0 10px;
+    border-bottom: 1px solid @rowBC;
+    font-size: 12px;
     &:first-child{
       border-top: none;
     }
+  }
+  &.province-row.active{
+    border-bottom: none;
   }
   .province-item,
   .city-item{
@@ -47,8 +50,8 @@
   .cities{
     /*display: none;*/
     position: relative;
-    margin: 0 -(percentage(@proPad/(100% - 2*@proPad )));
-    padding: 0 @proPad;
+    margin: 0 -10px;
+    padding: 0 10px;
     border-top: 1px solid @rowBC;
     background-color: @cityCtnBGC;
 
@@ -63,8 +66,6 @@
       border-top-width: 0;
       border-bottom-color: @cityCtnBGC;
       top: -@triH + 1px;
-      margin-left: -@triH;
-
     }
     &:before{
       z-index: 20;
@@ -78,25 +79,28 @@
     &.active-0{
       &:before,
       &:after{
-        left: @proPad + ( 100% - 2*@proPad ) * (25% * 0 + 25% / 2)/100;
+        left:   12.5%;
       }
     }
     &.active-1{
       &:before,
       &:after{
-        left: @proPad + ( 100% - 2*@proPad ) * (25% * 1 + 25% / 2)/100;
+        left:   37.5%;
+        margin-left: -5px;
       }
     }
     &.active-2{
       &:before,
       &:after{
-        left: @proPad + ( 100% - 2*@proPad ) * (25% * 2 + 25% / 2)/100;
+        left: 62.5%;
+        margin-left: -10px;
       }
     }
     &.active-3{
       &:before,
       &:after{
-        left: @proPad + ( 100% - 2*@proPad ) * (25% * 3 + 25% / 2)/100;
+        left:  87.5%;
+        margin-left: -15px;
       }
     }
   }
