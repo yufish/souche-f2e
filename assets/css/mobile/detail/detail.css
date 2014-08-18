@@ -270,7 +270,8 @@
 }
 #detail #quality-test .cube .h .l {
     width: 60%;
-    display: inline-block;
+    float: left;
+    display: block;
     background: #91ad2d;
     text-align: left;
     font-size: 16px;
@@ -284,7 +285,8 @@
 }
 #detail #quality-test .cube .h .r {
     width: 40%;
-    display: inline-block;
+    display: block;
+    float: left;
     text-align: center;
     background: #698517;
     font-size: 14px;
@@ -567,63 +569,6 @@
     line-height: 30px;
     margin: 10px 5px;
     padding: 0 10px;
-}
-#detail .yushou-shuoming .hd {
-    line-height: 30px;
-    background: #ddd;
-    padding-left: 8px;
-    font-size: 16px;
-    color: #333;
-}
-#detail .yushou-shuoming .bd {
-    padding: 10px 10px;
-    background: #eaeaea;
-}
-#detail .yushou-shuoming .item {
-    position: relative;
-    border: 1px solid #e88300;
-    line-height: 20px;
-    overflow: hidden;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 0px;
-}
-#detail .yushou-shuoming .item i {
-    font-size: 16px;
-    font-weight: bold;
-    background: #eedecb;
-    float: left;
-    width: 20px;
-    text-align: center;
-    line-height: 30px;
-    font-style: normal;
-    height: 60px;
-    margin-right: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    color: #e88300;
-    border-right: 1px solid #e88300;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-#detail .yushou-shuoming .item .red {
-    color: #e88300;
-}
-#detail .yushou-shuoming .item .blue {
-    color: #0d8baa;
-}
-#detail .yushou-shuoming .item .r {
-    float: left;
-    width: 84%;
-    padding: 5px 0;
-    padding-left: 30px;
-}
-#detail .yushou-shuoming .arrow {
-    background: url(../../../images/mob/yushou-detail-arrow1.png) no-repeat center center;
-    background-size: auto 50%;
-    height: 20px;
 }
 #detail .recommend .hd {
     line-height: 30px;
@@ -913,6 +858,9 @@
     color: #333;
     display: block;
 }
+#detail-main .sec-info .fenqi-item a{
+    color:#666;
+}
 #detail-main .sec-info .fenqi-text{
     color:#fff;
     background:#FF571A;
@@ -920,8 +868,7 @@
 }
 #detail-main .sec-info .go-fenqi {
     font-weight: bold;
-    line-height: 22px;
-    margin-top: 4px;
+    float: right;
     color: #FF571A;
 }
 #detail-main .sale-info-item{
@@ -999,12 +946,11 @@
     vertical-align: -3px;
 }
 #detail-main .address{
-    width: 288px;
     margin: 16px auto;
+    padding: 0 16px;
     display: block;
 }
 #detail-main .address .address-icon{
-    display: block;
     float: left;
     width: 44px;
     height: 44px;
@@ -1021,11 +967,9 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 244px;
     color: #666;
     border: 1px solid #ccc;
     border-left: none;
-    display: inline-block;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }

@@ -9,12 +9,15 @@
 
 .row{
   &.province-row{
-    padding: 0 @proPad;
-    border-top: 1px solid @rowBC;
-
+    margin: 0 10px;
+    border-bottom: 1px solid @rowBC;
+    font-size: 12px;
     &:first-child{
       border-top: none;
     }
+  }
+  &.province-row.active{
+    border-bottom: none;
   }
   .province-item,
   .city-item{
@@ -47,8 +50,8 @@
   .cities{
     /*display: none;*/
     position: relative;
-    margin: 0 -(percentage(@proPad/(100% - 2*@proPad )));
-    padding: 0 @proPad;
+    margin: 0 -10px;
+    padding: 0 10px;
     border-top: 1px solid @rowBC;
     background-color: @cityCtnBGC;
 

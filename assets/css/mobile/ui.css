@@ -47,12 +47,11 @@
 .header {
     position: relative;
     background-color: #ff4400;
-    height: 45px;
+    height: 44px;
 }
 .header .text {
     color: #fff;
     text-align: center;
-    padding-top: 12px;
     font-size: 18px;
 }
 .header .header-feature {
@@ -192,6 +191,7 @@
 .header .hd-city{
     float: left;
     font-size: 13px;
+    color:#fff;
 }
 .header .hd-city .svg-down-arrow{
     vertical-align: 3px;

@@ -46,7 +46,7 @@ var checkUserLocal = function () {
         phoneNum: undefined
     }
 }
-SM=SM||{};
+window.SM=window.SM||{};
 //检查是否填过手机号
 SM.checkPhoneExist = function(callback) {
     $.ajax({
