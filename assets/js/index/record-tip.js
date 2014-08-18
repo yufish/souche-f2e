@@ -45,8 +45,28 @@ define(function() {
             $(".record_warning .add").on("click", function(e) {
                 e.preventDefault();
                 var url = config.submit_api + "?tagTip=1&";
-                for (var o in submitData) {
-                    url += o + "=" + submitData[o].join() + "&"
+                // for (var o in submitData) {
+                //     url += o + "=" + submitData[o].join() + "&"
+                // }
+                if (userRequirementJsonForTag) {
+                    for (var i in userRequirementJsonForTag) {
+                        var item = userRequirementJsonForTag[i];
+                        if (item.length) {
+                            for (var m = 0; m < item.length; m++) {
+                                item[m] = item[m].split(",")[0];
+                            }
+                            if (submitData[i].length) {
+                                item = item.concat(submitData[i])
+                            }
+                        } else {
+                            if (submitData[i]) {
+                                userRequirementJsonForTag[i] = submitData[i];
+                            }
+                        }
+                    }
+                }
+                for (var o in userRequirementJsonForTag) {
+                    url += o + "=" + userRequirementJsonForTag[o].join(",") + "&"
                 }
                 $.ajax({
                     url: url,
