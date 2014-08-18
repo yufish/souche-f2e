@@ -247,67 +247,67 @@
         }
      })
     //
-    $(".detail-share .wx").click(function(e) {
-        e.stopPropagation()
-        $("#wx-popup").removeClass("hidden").css({
-            left: $(".detail-share .wx").offset().left - 98,
-            top: $(".detail-share .wx").offset().top - 210
-        })
-        $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
-    });
-    $(document.body).click(function() {
-        $("#wx-popup").addClass("hidden")
-    });
-    var submitToPhone = function() {
-        $.ajax({
-            url: $("#ph-form")[0].action,
-            data: {
-                carId: SaleDetailConfig.carId
-            },
-            type: "post",
-            success: function(data) {
-                $('body').append(data);
-                $(".wrapGrayBg").show();
-                $("#ph-popup").addClass("hidden")
-                $("#ph-result-popup").removeClass('hidden');
-            }
-        })
-    }
-    $(".detail-share .ph").click(function() {
-        $("#ph-popup .popup-title").html("保存到手机")
-        $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendCarClose)
-        $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
-        $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
-        $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
-        Souche.checkPhoneExist(function(is_login) {
-            if (is_login) {
-                submitToPhone();
-            } else {
-                $("#ph-popup").removeClass("hidden")
-                $(".wrapGrayBg").show();
-            }
-        })
-    })
-    $("#ph-form").on("submit", function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#ph-phone").val())) {
-            $(".warning", this).removeClass("hidden");
-        } else {
-            Souche.PhoneRegister($("#ph-phone").val(), function() {
-                submitToPhone();
-            })
+    // $(".detail-share .wx").click(function(e) {
+    //     e.stopPropagation()
+    //     $("#wx-popup").removeClass("hidden").css({
+    //         left: $(".detail-share .wx").offset().left - 98,
+    //         top: $(".detail-share .wx").offset().top - 210
+    //     })
+    //     $("#wx-popup img").attr("src", $("#wx-popup img").attr("data-src"))
+    // });
+    // $(document.body).click(function() {
+    //     $("#wx-popup").addClass("hidden")
+    // });
+    // var submitToPhone = function() {
+    //     $.ajax({
+    //         url: $("#ph-form")[0].action,
+    //         data: {
+    //             carId: SaleDetailConfig.carId
+    //         },
+    //         type: "post",
+    //         success: function(data) {
+    //             $('body').append(data);
+    //             $(".wrapGrayBg").show();
+    //             $("#ph-popup").addClass("hidden")
+    //             $("#ph-result-popup").removeClass('hidden');
+    //         }
+    //     })
+    // }
+    // $(".detail-share .ph").click(function() {
+    //     $("#ph-popup .popup-title").html("保存到手机")
+    //     $("#ph-popup .apply_close").attr("click_type", SaleDetailConfig.sendCarClose)
+    //     $("#ph-popup .ph-submit").attr("click_type", SaleDetailConfig.sendCarSubmit)
+    //     $("#ph-popup .tip").html("车辆内容会以短信方式保存到您的手机")
+    //     $("#ph-form")[0].action = SaleDetailConfig.api_sendCarToPhone
+    //     Souche.checkPhoneExist(function(is_login) {
+    //         if (is_login) {
+    //             submitToPhone();
+    //         } else {
+    //             $("#ph-popup").removeClass("hidden")
+    //             $(".wrapGrayBg").show();
+    //         }
+    //     })
+    // })
+    // $("#ph-form").on("submit", function(e) {
+    //     e.preventDefault();
+    //     if (!phoneReg.test($("#ph-phone").val())) {
+    //         $(".warning", this).removeClass("hidden");
+    //     } else {
+    //         Souche.PhoneRegister($("#ph-phone").val(), function() {
+    //             submitToPhone();
+    //         })
 
-        }
-    })
-    $("#ph-phone").blur(function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#ph-phone").val())) {
-            $(".warning", $("#ph-form")).removeClass("hidden");
-        } else {
-            $(".warning", $("#ph-form")).addClass("hidden");
-            $(".phone-true").removeClass("hidden");
-        }
-    })
+    //     }
+    // })
+    // $("#ph-phone").blur(function(e) {
+    //     e.preventDefault();
+    //     if (!phoneReg.test($("#ph-phone").val())) {
+    //         $(".warning", $("#ph-form")).removeClass("hidden");
+    //     } else {
+    //         $(".warning", $("#ph-form")).addClass("hidden");
+    //         $(".phone-true").removeClass("hidden");
+    //     }
+    // })
     // $(".send_addr_tophone").click(function() {
     //     $("#ph-popup .popup-title").html("发地址到手机")
     //     $("#ph-popup .tip").html("输入手机号码，即可发送")
