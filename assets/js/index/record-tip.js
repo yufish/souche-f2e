@@ -50,13 +50,26 @@ define(function() {
                 // }
                 if (userRequirementJsonForTag) {
                     for (var i in userRequirementJsonForTag) {
-                        var items = userRequirementJsonForTag[i];
-
+                        var item = userRequirementJsonForTag[i];
+                        if (item.length) {
+                            for (var m = 0; m < item.length; m++) {
+                                item[m] = item[m].split(",")[0];
+                            }
+                            if (submitData[i].length) {
+                                item = item.concat(submitData[i])
+                            }
+                        } else {
+                            if (submitData[i]) {
+                                userRequirementJsonForTag[i] = submitData[i];
+                            }
+                        }
                     }
+                }
+                for (var o in userRequirementJsonForTag) {
+                    url += o + "=" + userRequirementJsonForTag[o].join(",") + "&"
                 }
                 $.ajax({
                     url: url,
-                    data: userRequirementJsonForTag,
                     dataType: "json",
                     success: function() {
                         window.location.reload();
