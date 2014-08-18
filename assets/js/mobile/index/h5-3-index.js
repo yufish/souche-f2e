@@ -56,13 +56,6 @@ if (navigator.userAgent.match(/Android/i)){
         setTimeout(function(){
             isMoving = false
         },transition_duration)
-        if(curIndex==1){
-            setTimeout(function() {
-                $('.footer').removeClass('hidden');
-            },transition_duration);
-        }else{
-            $('.footer').addClass('hidden');
-        }
         if(curIndex==2){
             setTimeout(function(){
                 $('.btn-wrapper-for-filter').removeClass('hidden');
