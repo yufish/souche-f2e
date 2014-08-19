@@ -12,7 +12,7 @@ define(function() {
                 url: config.api_showTipUrl,
                 dataType: "json",
                 success: function(data) {
-                    if (data.code == 200) {
+                    if (data.code == 200 && data.userTags && (data.userTags.brands || data.userTags.maxPrice || data.userTags.minPrice)) {
                         $(".record_warning").removeClass("hidden")
                     }
                     if (data.userTags && data.userTags.brands) {
@@ -68,7 +68,6 @@ define(function() {
                             if (submitData[i] && submitData[i].join) {
                                 config.userRequirementJsonForTag[i] = item.concat(submitData[i])
                             }
-                            console.log(item)
                         } else {
                             if (submitData[i]) {
                                 config.userRequirementJsonForTag[i] = submitData[i];
