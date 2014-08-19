@@ -5,57 +5,9 @@
 /*
 * dom:
 *   .fav(data-id = carId)
-*       span.star-shape (这个不强求)
+*       span.star-shape
 *       span.fav-num
 * */
-
-//检查是否填过手机号
-!function(){
-    window.Souche = window.Souche || {};
-    if(!Souche.checkPhoneExist){
-        Souche.checkPhoneExist = function(callback) {
-            $.ajax({
-                url: contextPath + "/pages/evaluateAction/isNoRegisterLogin.json",
-                type: "post",
-                dataType: "json",
-                success: function(data) {
-                    if (data.result == "true") {
-                        callback(true)
-                    } else {
-                        callback(false)
-                    }
-                },
-                error: function() {
-                    callback(false)
-                }
-            })
-        };
-    }
-
-//一步注册手机号
-    if(!Souche.PhoneRegister) {
-        Souche.PhoneRegister = function (phone, callback) {
-            $.ajax({
-                url: contextPath + "/pages/evaluateAction/noRegisterLogin.json",
-                type: "post",
-                dataType: "json",
-                data: {
-                    phone: phone
-                },
-                success: function (data) {
-                    if (data.errorMessage) {
-                        callback(false)
-                    } else {
-                        callback(true)
-                    }
-                },
-                error: function () {
-                    callback(false)
-                }
-            })
-        };
-    }
-}()
 
  var doFav = function() {
     var api = {
