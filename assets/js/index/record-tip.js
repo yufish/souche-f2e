@@ -12,7 +12,7 @@ define(function() {
                 url: config.api_showTipUrl,
                 dataType: "json",
                 success: function(data) {
-                    if (data.code == 200) {
+                    if (data.code == 200 && data.userTags && (data.userTags.brands || data.userTags.maxPrice || data.userTags.minPrice)) {
                         $(".record_warning").removeClass("hidden")
                     }
                     if (data.userTags && data.userTags.brands) {
@@ -24,11 +24,11 @@ define(function() {
                                 submitData[item.parameter] = []
                             }
                             submitData[item.parameter].push(item.code)
-                            labels.push(item.name)
+                            labels.push("<em>" + item.name + "</em>")
 
                         }
                         if (data.userTags.maxPrice && data.userTags.minPrice) {
-                            labels.push((data.userTags.minPrice / 10000).toFixed(0) + "-" + (data.userTags.maxPrice / 10000).toFixed(0) + "万的车")
+                            labels.push("<em>" + (data.userTags.minPrice / 10000).toFixed(0) + "-" + (data.userTags.maxPrice / 10000).toFixed(0) + "万" + "</em>" + "的车")
                         }
                         $(".record_warning span").html(labels.join("，"))
                     }
@@ -68,7 +68,6 @@ define(function() {
                             if (submitData[i] && submitData[i].join) {
                                 config.userRequirementJsonForTag[i] = item.concat(submitData[i])
                             }
-                            console.log(item)
                         } else {
                             if (submitData[i]) {
                                 config.userRequirementJsonForTag[i] = submitData[i];
