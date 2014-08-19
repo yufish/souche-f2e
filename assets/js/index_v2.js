@@ -379,7 +379,7 @@ define(['index/car-god',
                     });
                 }
             })
-            ImageResize.init(".carsItem img", 240, 160);
+            ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单
             recordTip.init(config);
             //闹着玩
