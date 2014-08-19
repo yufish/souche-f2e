@@ -28,6 +28,12 @@ define(function() {
                         }
                         $(".record_warning span").html(labels.join("，"))
                     }
+                    if (data.userTags && data.userTags.maxPrice) {
+                        submitData['maxPrice'] = data.userTags.maxPrice
+                    }
+                    if (data.userTags && data.userTags.minPrice) {
+                        submitData['minPrice'] = data.userTags.minPrice
+                    }
 
                 }
             });
@@ -48,25 +54,32 @@ define(function() {
                 // for (var o in submitData) {
                 //     url += o + "=" + submitData[o].join() + "&"
                 // }
-                if (userRequirementJsonForTag) {
-                    for (var i in userRequirementJsonForTag) {
-                        var item = userRequirementJsonForTag[i];
-                        if (item.length) {
+                if (config.userRequirementJsonForTag) {
+                    for (var i in submitData) {
+                        var item = config.userRequirementJsonForTag[i];
+                        if (item && item.length) {
                             for (var m = 0; m < item.length; m++) {
                                 item[m] = item[m].split(",")[0];
                             }
-                            if (submitData[i].length) {
-                                item = item.concat(submitData[i])
+                            if (submitData[i] && submitData[i].join) {
+                                config.userRequirementJsonForTag[i] = item.concat(submitData[i])
                             }
+                            console.log(item)
                         } else {
                             if (submitData[i]) {
-                                userRequirementJsonForTag[i] = submitData[i];
+                                config.userRequirementJsonForTag[i] = submitData[i];
+
                             }
                         }
                     }
                 }
-                for (var o in userRequirementJsonForTag) {
-                    url += o + "=" + userRequirementJsonForTag[o].join(",") + "&"
+                for (var o in config.userRequirementJsonForTag) {
+                    if (config.userRequirementJsonForTag[o].join) {
+                        url += o + "=" + config.userRequirementJsonForTag[o].join(",") + "&"
+                    } else {
+                        url += o + "=" + config.userRequirementJsonForTag[o] + "&"
+                    }
+
                 }
                 $.ajax({
                     url: url,
