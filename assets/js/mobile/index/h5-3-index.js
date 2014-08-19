@@ -1,7 +1,6 @@
 /**
  * Created by zilong on 2014/7/30.
  */
-//浏览支持检测
 var touch_start = 'click',
     touch_end='click',
     tap_event='click';
@@ -48,29 +47,18 @@ if (navigator.userAgent.match(/Android/i)){
             height = height<610?610:height;
             tabCover.css({height:height})
         }
-
         try{
             sessionStorage.setItem('index_tab_index',curIndex);
         }catch(e){}
         topCache[oldIndex-1]=document.body.scrollTop;
         document.body.scrollTop = topCache[curIndex-1];
-
         setTimeout(function(){
             isMoving = false
         },transition_duration)
-
-        if(curIndex==1){
-            setTimeout(function() {
-                $('.footer').removeClass('hidden');
-            },transition_duration);
-        }else{
-            $('.footer').addClass('hidden');
-        }
         if(curIndex==2){
             setTimeout(function(){
                 $('.btn-wrapper-for-filter').removeClass('hidden');
             },transition_duration);
-
         }else{
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
@@ -109,6 +97,7 @@ if (navigator.userAgent.match(/Android/i)){
         tabIndex = tabIndex ||1;
         tabCtn[0].style['transition'] = 'none'
         tabCtn[0].style['webkitTransition'] = 'none'
+        
         move(+tabIndex,true);
         setTimeout(function(){
             tabCtn[0].style['transition'] = +'all 0.4s linear'
@@ -204,8 +193,7 @@ if (navigator.userAgent.match(/Android/i)){
 }()
 //筛选相关
 !function(){
-    //用于本模块中公用变量的传递
-    var filterGlobal = {};
+    var filterGlobal = {}; //用于本模块中公用变量的传递
     var hotBrands_g = {
         "brand-15": "奥迪",
         "brand-20": "宝马",
@@ -417,9 +405,9 @@ if (navigator.userAgent.match(/Android/i)){
                 $('.selected-brand-name').text(bName);
                 filterGlobal.selectBrand = bCode;
                 filterGlobal.selectBrandName = bName;
-                filterGlobal.queryCount();
                 utils.getSeriesByBrand(bCode,makeSeries);
             }
+            filterGlobal.queryCount();
         })
         $('#series-list').on('click','.series-item',function(){
             var self = $(this);
@@ -437,9 +425,9 @@ if (navigator.userAgent.match(/Android/i)){
                 var sCode = self.attr('data-code');
                 filterGlobal.selectSeries = sCode;
                 filterGlobal.selectSeriesName = sName;
-                filterGlobal.queryCount();
                 $('#J_series').text(sName);
             }
+            filterGlobal.queryCount();
         })
         //重置
         /*!function() {

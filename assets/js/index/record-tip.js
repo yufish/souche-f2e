@@ -25,8 +25,18 @@ define(function() {
                             }
                             submitData[item.parameter].push(item.code)
                             labels.push(item.name)
+
+                        }
+                        if (data.userTags.maxPrice && data.userTags.minPrice) {
+                            labels.push((data.userTags.minPrice / 10000).toFixed(0) + "-" + (data.userTags.maxPrice / 10000).toFixed(0) + "万的车")
                         }
                         $(".record_warning span").html(labels.join("，"))
+                    }
+                    if (data.userTags && data.userTags.maxPrice) {
+                        submitData['maxPrice'] = (data.userTags.maxPrice / 10000).toFixed(0)
+                    }
+                    if (data.userTags && data.userTags.minPrice) {
+                        submitData['minPrice'] = (data.userTags.minPrice / 10000).toFixed(0)
                     }
 
                 }
@@ -48,25 +58,32 @@ define(function() {
                 // for (var o in submitData) {
                 //     url += o + "=" + submitData[o].join() + "&"
                 // }
-                if (userRequirementJsonForTag) {
-                    for (var i in userRequirementJsonForTag) {
-                        var item = userRequirementJsonForTag[i];
-                        if (item.length) {
+                if (config.userRequirementJsonForTag) {
+                    for (var i in submitData) {
+                        var item = config.userRequirementJsonForTag[i];
+                        if (item && item.length) {
                             for (var m = 0; m < item.length; m++) {
                                 item[m] = item[m].split(",")[0];
                             }
-                            if (submitData[i].length) {
-                                item = item.concat(submitData[i])
+                            if (submitData[i] && submitData[i].join) {
+                                config.userRequirementJsonForTag[i] = item.concat(submitData[i])
                             }
+                            console.log(item)
                         } else {
                             if (submitData[i]) {
-                                userRequirementJsonForTag[i] = submitData[i];
+                                config.userRequirementJsonForTag[i] = submitData[i];
+
                             }
                         }
                     }
                 }
-                for (var o in userRequirementJsonForTag) {
-                    url += o + "=" + userRequirementJsonForTag[o].join(",") + "&"
+                for (var o in config.userRequirementJsonForTag) {
+                    if (config.userRequirementJsonForTag[o].join) {
+                        url += o + "=" + config.userRequirementJsonForTag[o].join(",") + "&"
+                    } else {
+                        url += o + "=" + config.userRequirementJsonForTag[o] + "&"
+                    }
+
                 }
                 $.ajax({
                     url: url,

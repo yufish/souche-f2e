@@ -85,7 +85,9 @@
             var _data = {
                 getProvinceData: function(callback){
                     $.getJSON(config.provinceUrl, function(data){
-                        callback(data.items);
+                        var items = data.items;
+                        items.push({code:'country',name:'全国'})
+                        callback(items);
                     });
                 },
                 getCityData: function(proCode, callback){
