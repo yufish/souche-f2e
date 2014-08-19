@@ -1,7 +1,6 @@
 /**
  * Created by zilong on 2014/7/30.
  */
-//浏览支持检测
 var touch_start = 'click',
     touch_end='click',
     tap_event='click';
@@ -194,8 +193,7 @@ if (navigator.userAgent.match(/Android/i)){
 }()
 //筛选相关
 !function(){
-    //用于本模块中公用变量的传递
-    var filterGlobal = {};
+    var filterGlobal = {}; //用于本模块中公用变量的传递
     var hotBrands_g = {
         "brand-15": "奥迪",
         "brand-20": "宝马",
