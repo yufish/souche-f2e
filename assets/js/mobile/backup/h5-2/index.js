@@ -9,20 +9,20 @@ define([], function(){
           position:'absolute',
           left:'100%',
           display:none,
-          top:0;
+          top:0
         })
         jqObj.parent().css({
           position:'relative'
         })
         pages.eq(0).css({
           left:'0',
-          display:'block',
+          display:'block'
         })
     }
     return{
       config:{
         autoMove:false,
-        timeSpan:1000;
+        timeSpan:1000
       },
       init:function(_config){
         $.extend(this.config,_config);

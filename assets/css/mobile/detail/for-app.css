@@ -5,7 +5,7 @@
 #detail #quality-test .cube .h .l{
     height: 65px;
     line-height: 65px;
-    background: #ff4400 url(../../images/mob/for-app/check_tag.png) no-repeat;
+    background: #ff4400 url(../../../images/mob/for-app/check_tag.png) no-repeat;
     background-size: 98px 65px;
 
 }
@@ -75,10 +75,10 @@
     position: relative;
 }
 #detail #quality-test .cube .s .ok{
-    background: url(../../images/mob/for-app/report_ok.png) no-repeat;
+    background: url(../../../images/mob/for-app/report_ok.png) no-repeat;
     background-size: 100%;
 }
 #detail #quality-test .cube .s .nook{
-    background: url(../../images/mob/for-app/report_fail.png) no-repeat;
+    background: url(../../../images/mob/for-app/report_fail.png) no-repeat;
     background-size: 100%;
 }

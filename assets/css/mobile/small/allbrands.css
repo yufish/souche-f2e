@@ -1,0 +1,47 @@
+#allbrands #content {
+    padding: 10px;
+}
+#allbrands #brands {
+    overflow: hidden;
+}
+#allbrands .brands {
+    background: #fff;
+    width: 102%;
+}
+#allbrands .brands .brand {
+    width: 32.5%;
+    border: 1px;
+    float: left;
+    padding: 8px 0;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    height: 48px;
+}
+#allbrands .brands .brand img {
+    width: 30px;
+}
+#allbrands .brands .brand .name {
+    line-height: 14px;
+    width: 80px;
+    text-align: left;
+}
+#allbrands .brands .brand .lft {
+    float: left;
+    text-align: left;
+    color: #666;
+    width: 28px;
+    margin-left: 5px;
+}
+#allbrands .brands .brand .rht {
+    float: right;
+    line-height: 40px;
+    padding-right: 5px;
+    color: #666;
+}
+#allbrands .brands .brand-more {
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #999;
+}

@@ -1,0 +1,246 @@
+#advance .header .back-icon {
+    padding: 0;
+    padding-left: 12px;
+    margin-left: 10px;
+    background: url(../../../images/mob/h5-2/back.png) no-repeat left center;
+    background-size: 10px;
+    width: 10%;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    color: #fff;
+}
+#advance .header .back-icon .back-text {
+    color: #fff;
+}
+#advance #tagSection {
+    padding: 12px 9px;
+}
+#advance #tagSection .tag ins {
+    display: inline-block;
+    position: relative;
+    padding: 5px 16px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+#advance #tagSection .tag ins span {
+    position: absolute;
+    right: -4px;
+    top: 11px;
+    z-index: 3;
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-right: none;
+}
+#advance #tagSection .tag .tag-fx {
+    background-color: #0099bf;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+#advance #tagSection .tag .tag-fx span {
+    border-left-color: #0099bf;
+    border-top-color: #db4666;
+    border-bottom-color: #db4666;
+}
+#advance #tagSection .tag .tag-fb {
+    background-color: #db4666;
+}
+#advance #tagSection .tag .tag-fb span {
+    border-left-color: #db4666;
+    border-top-color: #f0a900;
+    border-bottom-color: #f0a900;
+}
+#advance #tagSection .tag .tag-ws {
+    background-color: #f0a900;
+}
+#advance #tagSection .tag .tag-ws span {
+    border-left-color: #f0a900;
+    border-top-color: #cfcfcf;
+    border-bottom-color: #cfcfcf;
+}
+#advance #tagSection .tag .tag-es {
+    width: 90px;
+    background-color: #cfcfcf;
+    color: #df5d16;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#advance .banner-title {
+    color: #fff;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 39px;
+}
+#advance .banner-title span {
+    float: left;
+    margin-top: 2px;
+    margin-right: 3px;
+    width: 21px;
+    height: 21px;
+    background-repeat: no-repeat;
+}
+#advance .banner-title span.title-tag1 {
+    background-image: url(../../../images/mob/adv-title1.png);
+}
+#advance .banner-title span.title-tag2 {
+    background-image: url(../../../images/mob/adv-title2.png);
+}
+#advance .intro-content {
+    margin: 15px 0;
+}
+#advance .intro-content li {
+    background-image: url(../../../images/mob/list-style.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+    padding-left: 23px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 14px;
+}
+#advance .intro-content li ins {
+    color: #ff4301;
+}
+#advance .introBanner {
+    margin: 25px 0 9px;
+    padding: 15px 0 30px;
+}
+#advance .banner-content {
+    font-size: 13px;
+    color: #fff;
+    padding-left: 60px;
+}
+#advance #doorSection .door1 {
+    height: 130px;
+    background-image: url(../../../images/mob/adv-door1.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-color: #886c90;
+}
+#advance #doorSection .door2 {
+    width: 304px;
+    height: 190px;
+    margin: 0 auto;
+    background-image: url(../../../images/mob/adv-door2.jpg);
+    background-repeat: no-repeat;
+}
+#advance #shijianSection .introBanner {
+    background-color: #4398ca;
+}
+#advance #shijianSection .shijia {
+    width: 304px;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url(../../../images/mob/adv-door3.jpg);
+    background-repeat: no-repeat;
+}
+#advance #checkSection .introBanner {
+    background-color: #a98c7b;
+}
+#advance #checkSection .check {
+    width: 304px;
+    height: 233px;
+    margin: 0 auto;
+    background-image: url(../../../images/mob/adv-check.jpg);
+    background-repeat: no-repeat;
+}
+#advance #newCarSection .introBanner {
+    background-color: #72954f;
+}
+#advance #newCarSection .newCar {
+    width: 304px;
+    height: 111px;
+    margin: 0 auto;
+    background-image: url(../../../images/mob/adv-door4.jpg);
+    background-repeat: no-repeat;
+}
+#advance #fenqiSection {
+    margin-top: 25px;
+}
+#advance #fenqiSection .banner-title {
+    padding-top: 28px;
+}
+#advance #fenqiSection .fenqi {
+    height: 225px;
+    background-image: url(../../../images/mob/adv-fenqi.jpg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-color: #4398ca;
+}
+#advance #zhibaoSection .introBanner {
+    background-color: #93715d;
+}
+#advance #zhibaoSection .zhibao-intro {
+    width: 288px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#advance #zhibaoSection .zhibao-intro .zhibao-title {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    width: 103px;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    position: relative;
+    z-index: 10;
+}
+#advance #zhibaoSection .zhibao-intro .zhibao-content {
+    padding: 14px;
+    margin-top: -10px;
+    border: 1px dotted #a3a3a3;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #6a6a6a;
+}
+#advance #jishouSection {
+    padding-bottom: 30px;
+}
+#advance #jishouSection .introBanner {
+    background-color: #72954f;
+}
+#advance #jishouSection ul {
+    border-radius: 5px;
+    font-size: 13px;
+    margin: 0 5px;
+}
+#advance #jishouSection ul li {
+    color: #666;
+    line-height: 20px;
+    background: #f6f6f6;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+#advance #jishouSection ul li i {
+    width: 20px;
+    height: 23px;
+    background: url(../../../images/mob/sell-arrow.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    padding: 3px;
+    padding-top: 0;
+    color: #fff;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 12px;
+}
+#advance #jishouSection ul li em {
+    color: #df5d16;
+    font-size: 14px;
+    font-style: italic;
+    padding-top: 5px;
+    display: inline-block;
+}
+#advance #jishouSection ul li .l {
+    width: 30%;
+    float: left;
+}
+#advance #jishouSection ul li .r {
+    width: 70%;
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

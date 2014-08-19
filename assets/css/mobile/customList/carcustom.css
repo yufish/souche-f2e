@@ -1,0 +1,181 @@
+#guwen-list-h5-2 {
+    background-color: white;
+    font-size: 14px;
+}
+#guwen-list-h5-2 .content a {
+    color: #000;
+
+}
+#guwen-list-h5-2 .content .gouche-info {
+    margin-bottom: 10px;
+}
+#guwen-list-h5-2 .content .gouche-info .text.found {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#guwen-list-h5-2 .content .gouche-info .text.found p {
+    line-height: 45px;
+}
+#guwen-list-h5-2 .content .modify-demand {
+    padding-right: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+#guwen-list-h5-2 .content .modify-demand #change-btn {
+    float: right;
+    background-color: #9caed2;
+    width: 72px;
+    border: none;
+    height: 28px;
+    border-radius: 8px;
+    color: #fff;
+}
+#guwen-list-h5-2 .content .all-group {
+    padding: 7px 0 0 10px;
+    margin-left: 10px;
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+}
+#guwen-list-h5-2 .content .all-group .car-group {
+    position: relative;
+    margin-bottom: 50px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .guwen-circle {
+    background: url(../../../images/mob/h5-2/guwen-circle.png) no-repeat center center;
+    background-size: 7px;
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    left: -14px;
+    top: -20px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .title {
+    position: absolute;
+    top: -25px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .title .today {
+    color: #7f7f7f;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item {
+    margin: 7px 0;
+    overflow: hidden;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .left {
+    position: relative;
+    float: left;
+    width: 105px;
+    height: 70px;
+    overflow: hidden;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .left img {
+    width: 100%;
+}
+#guwen-list-h5-2 .content .car-item .time-icon {
+    background: url(../../../images/mob/i-shangou.png) no-repeat center center;
+    background-size: 27px;
+    height: 27px;
+    width: 27px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right {
+    margin-left: 105px;
+    padding: 3px 7px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand {
+    line-height: 20px;
+    min-height: 40px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand .good {
+    padding: 2px;
+    margin-right: 2px;
+    background-color: #fc7000;
+    color: #fff;
+    height: 16px;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .brand .new {
+    padding: 2px;
+    margin-right: 2px;
+    background-color: #77b154;
+    color: #fff;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom {
+    margin-top: 10px;
+    overflow: hidden;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom .price {
+    float: left;
+    color: #fc7000;
+}
+#guwen-list-h5-2 .content .all-group .car-group .car-item .right .bottom .time {
+    float: right;
+    color: #999999;
+}
+
+.content .gouche-info {
+    margin: 10px 10px;
+}
+.content .gouche-info .photo {
+    float: left;
+}
+.content .gouche-info .photo .head-photo {
+    width: 45px;
+    height: 45px;
+    background: url(../../../images/mob/h5-2/head-photo.png) no-repeat center center;
+    background-size: 45px;
+}
+.content .gouche-info .text {
+    position: relative;
+    padding: 8px 10px;
+    width: 220px;
+    margin: 0 10px 0 55px;
+    background-color: #fff7d4;
+    border-radius: 8px;
+    border: 1px solid #f2e4a5;
+}
+.content .gouche-info .text p {
+    line-height: 20px;
+}
+.content .gouche-info .text .hi-img {
+    background: url(../../../images/mob/h5-2/hi-array.png) no-repeat;
+    background-size: 8px;
+    width: 8px;
+    height: 11px;
+    position: absolute;
+    top: 15px;
+    left: -8px;
+}
+.content .gouche-info .text .step {
+    width: 215px;
+    position: relative;
+    margin: 10px 0;
+    border: 1px solid #d5cda9;
+    border-top: none;
+}
+.content .gouche-info .text .step .circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #d5cda9;
+    position: absolute;
+    top: -3px;
+}
+.content .gouche-info .text .step .circle.active {
+    width: 11px;
+    height: 11px;
+    background-color: #fc7000;
+    top: -5px;
+}
+.content .gouche-info .text .step #step-circle-1 {
+    left: -6px;
+}
+.content .gouche-info .text .step #step-circle-2 {
+    left: 102px;
+}
+.content .gouche-info .text .step #step-circle-3 {
+    left: 210px;
+}
+

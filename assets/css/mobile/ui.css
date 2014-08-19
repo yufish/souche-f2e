@@ -217,7 +217,7 @@
 /*抽屉效果*/
 .other-topic{
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     width: 100%;
     -webkit-perspective: 400;
     perspective: 400;
