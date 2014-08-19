@@ -707,7 +707,7 @@ if (navigator.userAgent.match(/Android/i)){
         var left1 = offset1.left,top1 = offset1.top;
         var offset2 = $('.for-other-topic').offset();
         var left2 = offset2.left,top2 = offset2.top;
-        var moveDom = $('<div style="width:9px;height: 9px;position: absolute;border-radius: 80%;background: #FF571a;z-index:1002"></div>');
+        var moveDom = $('<div class="fly-fivestar"></div>');
         moveDom.css({
             left:left1,
             top:top1
@@ -716,6 +716,7 @@ if (navigator.userAgent.match(/Android/i)){
             top:top2+10
         },700,function(){
             moveDom.remove();
+            $('.other-topic .icon-dot').show();
         })
     }
     $('.car-area .row').on('click','.fav',function(e){
