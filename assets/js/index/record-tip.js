@@ -24,11 +24,11 @@ define(function() {
                                 submitData[item.parameter] = []
                             }
                             submitData[item.parameter].push(item.code)
-                            labels.push(item.name)
+                            labels.push("<em>" + item.name + "</em>")
 
                         }
                         if (data.userTags.maxPrice && data.userTags.minPrice) {
-                            labels.push((data.userTags.minPrice / 10000).toFixed(0) + "-" + (data.userTags.maxPrice / 10000).toFixed(0) + "万的车")
+                            labels.push("<em>" + (data.userTags.minPrice / 10000).toFixed(0) + "-" + (data.userTags.maxPrice / 10000).toFixed(0) + "万" + "</em>" + "的车")
                         }
                         $(".record_warning span").html(labels.join("，"))
                     }
