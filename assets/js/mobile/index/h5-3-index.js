@@ -709,7 +709,7 @@ if (navigator.userAgent.match(/Android/i)){
             doFav($curNode);
             return;
         }
-        Souche.checkPhoneExist(function(is_login) {
+        SM.checkPhoneExist(function(is_login) {
             if (is_login) {
                 doFav($curNode);
                 isLogin = true;
@@ -726,7 +726,7 @@ if (navigator.userAgent.match(/Android/i)){
             if (!phoneReg.test(phoneNum)) {
                 alert('请输入正确的手机号码');
             } else {
-                Souche.PhoneRegister(phoneNum, function() {
+                SM.PhoneRegister(phoneNum, function() {
                     isLogin = true;
                     doFav($curNode,function(){
                         $('.wrapGrayBg').addClass('hidden');
@@ -745,7 +745,7 @@ $('.wrapGrayBg').on('click',function(){
 })
 document.getElementById('J_gotoCenter').addEventListener('click',function(e){
     e.preventDefault();
-    Souche.checkPhoneExist(function(is_login) {
+    SM.checkPhoneExist(function(is_login) {
         if (is_login) {
             window.location.href=$('#J_gotoCenter').attr('href');
         } else {
@@ -763,7 +763,7 @@ $('#login-form').submit(function(e) {
     if (!phoneReg.test(phoneNum)) {
         alert('请输入正确的手机号码');
     } else {
-        Souche.PhoneRegister(phoneNum, function() {
+        SM.PhoneRegister(phoneNum, function() {
             window.location.href=$('#J_gotoCenter').attr('href');
         })
     }
