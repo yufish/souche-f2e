@@ -162,7 +162,7 @@ var List = function() {
                     $('.wrapPhoneBg').removeClass('hidden');
                     var $popup = $('#phone-popup');
                     $popup.removeClass('hidden').css({
-                        'left': ($(window).width() - $popup.width()) / 2
+                        top: $(window).scrollTop()+50
                     });
 
                 }
