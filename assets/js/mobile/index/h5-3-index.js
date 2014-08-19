@@ -701,17 +701,34 @@ if (navigator.userAgent.match(/Android/i)){
 !function(){
     var isLogin =false;
     var $curNode;
+    function saveCallback($node){
+        $('.fixed-wrapper').removeClass('hidden');
+        var offset1 = $node.offset();
+        var left1 = offset1.left,top1 = offset1.top;
+        var offset2 = $('.for-other-topic').offset();
+        var left2 = offset2.left,top2 = offset2.top;
+        var moveDom = $('<div style="width:9px;height: 9px;position: absolute;border-radius: 80%;background: #FF571a;z-index:1002"></div>');
+        moveDom.css({
+            left:left1,
+            top:top1
+        }).appendTo(document.body).animate({
+            left:left2+20,
+            top:top2+10
+        },700,function(){
+            moveDom.remove();
+        })
+    }
     $('.car-area .row').on('click','.fav',function(e){
         e.preventDefault();
         e.stopPropagation();
         $curNode = $(this);
         if (isLogin) {
-            doFav($curNode);
+            doFav($curNode,saveCallback);
             return;
         }
         SM.checkPhoneExist(function(is_login) {
             if (is_login) {
-                doFav($curNode);
+                doFav($curNode,saveCallback);
                 isLogin = true;
             } else {
                 $('.wrapGrayBg').removeClass('hidden');
@@ -719,22 +736,23 @@ if (navigator.userAgent.match(/Android/i)){
                 $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
             }
         })
+    })
+    $('#notify-form').submit(function(e) {
         var phoneReg = /^1[3458][0-9]{9}$/;
-        $('#notify-form').submit(function(e) {
-            var phoneNum = $("#phone-for-notify").val();
-            e.preventDefault();
-            if (!phoneReg.test(phoneNum)) {
-                alert('请输入正确的手机号码');
-            } else {
-                SM.PhoneRegister(phoneNum, function() {
-                    isLogin = true;
-                    doFav($curNode,function(){
-                        $('.wrapGrayBg').addClass('hidden');
-                        $('.mobile-popup').addClass('hidden');
-                    });
-                })
-            }
-        })
+        var phoneNum = $("#phone-for-notify").val();
+        e.preventDefault();
+        if (!phoneReg.test(phoneNum)) {
+            alert('请输入正确的手机号码');
+        } else {
+            SM.PhoneRegister(phoneNum, function() {
+                isLogin = true;
+                doFav($curNode,function($node){
+                    $('.wrapGrayBg').addClass('hidden');
+                    $('.mobile-popup').addClass('hidden');
+                    saveCallback($node)
+                });
+            })
+        }
     })
 }();
 

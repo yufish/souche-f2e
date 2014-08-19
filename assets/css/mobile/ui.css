@@ -225,6 +225,7 @@
     overflow: hidden;
     top:44px;
 }
+
 .other-topic .topic-item{
     display: block;
     height: 44px;
@@ -242,6 +243,16 @@
     transform-style:preserve-3d;
     -webkit-transform:rotateX(-90deg);
     transform:rotateX(-90deg);
+}
+.other-topic .topic-item .icon-dot{
+    width:9px;
+    height: 9px;
+    position: absolute;
+    border-radius: 80%;
+    background: #FF571a;
+    top: 10px;
+    left: 95px;
+    display: none;
 }
 .other-topic .topic-item.show{
     -webkit-transform:rotateX(0deg);

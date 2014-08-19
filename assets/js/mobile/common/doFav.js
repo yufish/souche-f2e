@@ -29,7 +29,7 @@
                 var i = parseInt($numSpan.text());
                 $numSpan.text(i + 1);
                 $node.attr('data-processing','0');
-                if(cb)cb()
+                if(cb)cb($node)
             }
         })
     }
@@ -48,18 +48,18 @@
                 var i = parseInt($numSpan.text());
                 $numSpan.text(i - 1);
                 $node.attr('data-processing','0');
-                if(cb)cb();
+                if(cb)cb($node);
             }
         })
     }
 
-    function doFav($node,cb) {
+    function doFav($node,saveCallBack,delCallBack) {
         if($node.attr('data-processing')=='1'){return;}
         $node.attr('data-processing','1');
         if ($node.hasClass('active')) {
-            delFav($node,cb);
+            delFav($node,delCallBack);
         } else {
-            saveFav($node,cb);
+            saveFav($node,saveCallBack);
         }
     }
     return doFav;
