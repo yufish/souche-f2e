@@ -240,12 +240,17 @@
           //免费通话
           var submiFreeCall = function(){
           	$.ajax({
-          		  url: "#",
-			              data: {
-			                phone: $("#free-phoe").val(),
-			                carId: config.carId
+          		  url: "http://www.souche.com/pages/telephoneAction/call.json",
+			          data: {
+			                customerCellphone : $("#free-phoe").val(),
+			                userCellphone:"#",
+			                carId: config.carId,
+			                time:"#",
+			                token:"#",
+			                from:"#"
 			            },
-			          type: "post",
+			          type: "get",
+			          
 			          success: function(data){
 			          	$("#free-popup-result").removeClass("hidden");
 			          	
