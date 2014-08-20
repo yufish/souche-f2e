@@ -771,7 +771,6 @@
 }
 #detail-main #pic-container{
     padding: 10px 0;
-    height: 83px;
     overflow: hidden;
 }
 #detail-main .img-card{
@@ -779,7 +778,6 @@
     padding: 0 5px;
 }
 #detail-main .img-card img{
-    height: 63px;
     width: 100%;
 }
 #detail-main #pic-dots{
