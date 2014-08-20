@@ -225,6 +225,7 @@
     overflow: hidden;
     top:44px;
 }
+
 .other-topic .topic-item{
     display: block;
     height: 44px;
@@ -242,6 +243,16 @@
     transform-style:preserve-3d;
     -webkit-transform:rotateX(-90deg);
     transform:rotateX(-90deg);
+}
+.other-topic .topic-item .icon-dot{
+    width:9px;
+    height: 9px;
+    position: absolute;
+    border-radius: 80%;
+    background: #FF571a;
+    top: 10px;
+    left: 95px;
+    display: none;
 }
 .other-topic .topic-item.show{
     -webkit-transform:rotateX(0deg);
@@ -268,9 +279,27 @@
     width: 50px;
     height: 50px;
     right: 0;
-    background:url(../../images/mob/h5-3/timelimit-tag.png);
+    background:url(../../images/mob/h5-3/timelimit-tag.png) no-repeat center;
     background-size: 100%;
     z-index:2;
+}
+.car-card .quality-A{
+    position: absolute;
+    width: 25px;height: 19px;
+    top:10px;
+    left:10px;
+    background: url(../../images/mob/h5-3/quality-A.png) no-repeat center;
+    background-size: 100%;
+    z-index: 2;
+}
+.car-card .quality-B{
+    position: absolute;
+    width: 25px;height: 19px;
+    top:10px;
+    left:10px;
+    background: url(../../images/mob/h5-3/quality-B.png) no-repeat center;
+    background-size: 100%;
+    z-index: 2;
 }
 .car-card img{
     width: 143px;
@@ -369,6 +398,6 @@
     position: fixed;
     z-index: 1000;
     right: 0;
-    top:50%;
+    top:75%;
     text-align: center;
 }
