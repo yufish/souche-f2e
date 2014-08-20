@@ -1,14 +1,12 @@
 *{
     box-sizing: border-box;
 }
-
 #detail {
     background-color: #fff;
     padding-bottom: 35px;
 }
 #detail #detail-main .top-info .lft {
     width: 100%;
-
 }
 #detail #detail-main .top-info .rht {
     margin: 5px 0;
@@ -82,10 +80,8 @@
     font-size: 18px;
     color: #dd5e25;
     font-style: normal;
-    margin: 0;
     margin-right: 2px;
 }
-
 #detail #detail-main .sec-info .item {
     margin: 8px 0;
     line-height: 25px;
@@ -178,7 +174,6 @@
     margin-top: 4px;
     color: #0090e2;
 }
-
 #detail #actions {
     padding-top: 10px;
     padding-bottom: 5px;
@@ -190,7 +185,6 @@
     z-index: 100;
     box-shadow: -1px -2px 3px #aaa;
 }
-
 #detail #actions .fav {
     float: left;
     vertical-align: middle;
@@ -242,7 +236,6 @@
     text-align: center;
 }
 #detail #actions .rht .tel-btn {
-    margin-right: 0px;
     vertical-align: middle;
     background: url(../../../images/mob/detail-action-call.png) no-repeat center center;
     background-size: 80%;
@@ -373,7 +366,6 @@
 #detail #quality-test .mod {
     font-size: 14px;
     border: 1px solid #d5d5d5;
-    margin: 5px 5px;
     color: #444;
     margin: 15px 0;
 }
@@ -686,9 +678,8 @@
 }
 #detail .standard table thead th {
     color: #333;
-    background: url(../../../images/mob/test-hd-bg.png?dd) no-repeat 10px 5px;
+    background:#eaeaea url(../../../images/mob/test-hd-bg.png?dd) no-repeat 10px 5px;
     background-size: 50px;
-    background-color: #eaeaea;
     padding-left: 70px;
     text-align: left;
 }
@@ -763,7 +754,6 @@
     background: url(../../../images/mob/ajax-loader.gif) white no-repeat center center;
     min-height: 150px;
 }
-
 /*new detail style*/
 #detail-main #pic-cover{
     width: 100%;
@@ -1355,7 +1345,6 @@
     text-align: center;
 }
 #report #actions .rht .tel-btn {
-    margin-right: 0px;
     vertical-align: middle;
     background: url(../../../images/mob/detail-action-call.png) no-repeat;
     background-size: 100%;

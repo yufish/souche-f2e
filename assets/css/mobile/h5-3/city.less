@@ -6,7 +6,9 @@
 @proPad: 3%;
 @triH: 8px;
 
-
+*{
+  box-sizing: border-box;
+}
 .row{
   &.province-row{
     margin: 0 10px;
@@ -24,38 +26,33 @@
     float: left;
     width: 25%;
     height: 44px;
-    line-height: 44px;
     cursor: pointer;
     text-align: center;
   }
   .province-item a,
   .city-item a{
     display: inline-block;
-    height: 100%;
-    width: 100%;
+    padding: 4px 5px;
+    margin-top: 10px;
     color: @fontC;
-    max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-
     &:active{
       background-color: #ccc;
     }
   }
-  .city-item a{
-    padding: 0 0.5em;
-    box-sizing: border-box;
+  .province-item.active a{
+    border:1px solid #ff571a;
+    border-radius: 2px;
+    color:#FF571a;
   }
   .cities{
-    /*display: none;*/
     position: relative;
     margin: 0 -10px;
     padding: 0 10px;
     border-top: 1px solid @rowBC;
     background-color: @cityCtnBGC;
-
-
     &:before,
     &:after{
       content: '';
