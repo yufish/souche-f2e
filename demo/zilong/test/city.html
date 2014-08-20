@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jq.js"></script>
+</head>
+<body>
+<div class="area-city">
+    <div class="area-line">
+        <span class="area">华东</span>
+        <a class="province-item" data-code="01398">山东</a>
+        <a class="province-item" data-code="00858">江苏</a>
+        <a class="province-item" data-code="00974">浙江</a>
+        <a class="province-item" data-code="01075">安徽</a>
+    </div>
+    <div class="area-line">
+        <span class="area">华南</span>
+        <a class="province-item" data-code="02122">广西</a>
+        <a class="province-item" data-code="01193">福建</a>
+        <a class="province-item" data-code="01977">广东</a>
+        <a class="province-item" data-code="02245">海南</a>
+    </div>
+    <div class="area-line">
+        <span class="area">中南</span>
+        <a class="province-item" data-code="01556">河南</a>
+        <a class="province-item" data-code="01725">湖北</a>
+        <a class="province-item" data-code="01840">湖南</a>
+        <a class="province-item" data-code="01288">江西</a>
+    </div>
+    <div class="area-line">
+        <span class="area">西南</span>
+        <a class="province-item" data-code="02272">四川</a>
+        <a class="province-item" data-code="02572">云南</a>
+        <a class="province-item" data-code="02474">贵州</a>
+        <a class="province-item" data-code="02718">西藏</a>
+    </div>
+    <div class="area-line">
+        <span class="area">东北</span>
+        <a class="province-item" data-code="00530">辽宁</a>
+        <a class="province-item" data-code="00644">吉林</a>
+        <a class="province-item" data-code="00714">黑龙江</a>
+    </div>
+    <div class="area-line">
+        <span class="area">华北</span>
+        <a class="province-item" data-code="00105">河北</a>
+        <a class="province-item" data-code="00289">山西</a>
+        <a class="province-item" data-code="00419">内蒙古</a>
+    </div>
+    <div class="area-line">
+        <span class="area">西北</span>
+        <a class="province-item" data-code="02799">陕西</a>
+        <a class="province-item" data-code="03095">新疆</a>
+        <a class="province-item" data-code="03066">宁夏</a>
+        <a class="province-item" data-code="02914">甘肃</a>
+        <a class="province-item" data-code="03014">青海</a>
+    </div>
+</div>
+
+<script>
+    var cityJSON = {};
+    $(".area-city .area-line").each(function(){
+        var key= $(this).find('.area').text();
+        var value = {}
+        $(this).find(".province-item").each(function(){
+            value[$(this).attr('data-code')] = $(this).text();
+            cityJSON[key] = value;
+        })
+    })
+    console.log(cityJSON)
+</script>
+</body>
+</html>
