@@ -102,6 +102,9 @@ nav .nav-item.active .nav-item-content{
     padding: 10px 5px 0;
     overflow: hidden;
 }
+.car-area .row{
+    margin: 0 5px;
+}
 .car-wrapper{
     width: 50%;
     float: left;

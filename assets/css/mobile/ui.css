@@ -283,23 +283,27 @@
     background-size: 100%;
     z-index:2;
 }
-.car-card .quality-A{
+.car-card .quality{
     position: absolute;
-    width: 25px;height: 19px;
+    width: 32px;
+    height: 21px;
     top:10px;
     left:10px;
-    background: url(../../images/mob/h5-3/quality-A.png) no-repeat center;
-    background-size: 100%;
+    background: url(../../images/mob/h5-3/quality.png) no-repeat center;
+    background-size: 121px 21px;
     z-index: 2;
 }
-.car-card .quality-B{
-    position: absolute;
-    width: 25px;height: 19px;
-    top:10px;
-    left:10px;
-    background: url(../../images/mob/h5-3/quality-B.png) no-repeat center;
-    background-size: 100%;
-    z-index: 2;
+.car-card .quality.quality-A-p{
+    background-position: 1px 0;
+}
+.car-card .quality.quality-A{
+    background-position: -31px 0;
+}
+.car-card .quality.quality-B-p{
+    background-position: -63px 0;
+}
+.car-card .quality.quality-B{
+    background-position: -95px 0;
 }
 .car-card img{
     width: 143px;
