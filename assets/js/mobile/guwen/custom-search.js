@@ -379,14 +379,17 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                     });
                 }
 
+                function showLoading(){
+
+                }
                 $('#submit-btn').click(function() {
                     if (curPageIndex == pages.length - 1) {
-                        gotoPage()
+                        //gotoPage()
                         submitGuWenInfo();
                         return;
                     }
                     if (curPageIndex == 2 && brandManager.brands.length == 0) {
-                        gotoPage(4)
+                        //gotoPage(4)
                         submitGuWenInfo();
                         return;
                     }
