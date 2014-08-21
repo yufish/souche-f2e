@@ -53,7 +53,7 @@
 			    var photosSmall = $(".photosSmall li");
 			    var photoInfo = $(".photoInfo");
 			    var timer = null;
-			    photoInfo.text("1/5 " + photos.eq(0).find("img").attr("alt"));
+			    photoInfo.text("1/" + $('.photosSmall').find('li').length + "  " + photos.eq(0).find("img").attr("alt"));
 			    photosSmall.eq(0).css("border-color", "#00B0B4");
 
 			    var photoSlide = function(targetPhoto) {
@@ -67,8 +67,10 @@
 			            var targetP = photos.eq(targetPhoto);
 
 
-			            photosSmall.eq(targetPhoto).css("border-color", "#00B0B4");
-			            photosSmall.eq(lastPhoto).css("border-color", "#fff");
+			            // photosSmall.eq(targetPhoto).css("border-color", "#00B0B4");
+			            photosSmall.eq(targetPhoto).css("border-color", "#00B0B4").addClass("active");
+			            // photosSmall.eq(lastPhoto).css("border-color", "#fff");
+			            photosSmall.eq(lastPhoto).css("border-color", "#fff").removeClass('active');
 
 			            lastP.addClass("photoLastActive");
 			            targetP.css("opacity", "0").addClass("photoActive").animate({
@@ -79,7 +81,7 @@
 			            lastPhoto = targetPhoto;
 
 			            var text = targetP.find("img").attr("alt");
-			            photoInfo.text(targetPhoto + 1 + "/5 " + text);
+			            photoInfo.text(targetPhoto + 1 + "/" + $('.photosSmall').find('li').length + "  " + text);
 			        }, 150);
 			    };
 
@@ -96,59 +98,94 @@
 			            photoSlide(lastPhoto + 1);
 			        }
 			    });
-			    //预售车辆图片左右切换
-			    // var smallSlideWidth = "-545px";
-			    // var smallSlide = function(current) {
-       //      var left = "0px";
-       //      if (current.is($(".photoSmallNext"))) {
-       //          left = smallSlideWidth;
-       //          current.addClass("unActiveNext");
-       //          $(".photoSmallPre").removeClass("unActivePre");
-       //      } else {
-       //          current.addClass("unActivePre");
-       //          $(".photoSmallNext").removeClass("unActiveNext");
-       //      }
-       //      $(".photosSmall-box .photosSmall-wrap").animate({
-       //          "margin-left": left
-       //      }, 300);
-       //  };
-	      //   $(".photoSmallNext").click(function() {
-	      //       smallSlide($(this));
-	      //   });
-	      //   $(".photoSmallPre").click(function() {
-	      //       smallSlide($(this));
-	      //   });
+			    //缩略图切换
+			    var photoList = $('.photosSmall');
+			    var lis = photoList.find('li');
+			    initPhotoBox();
 
-			   $(".photoSmallPre").click(function(){
-			   	  var imgBox = $(this).closest(".yushou-photoWrap");
-            var imgScroll = imgBox.find(".photosSmall-wrap").animate({
-            'margin-left': '+=109'
-            },300);
-            var count = imgScroll.find('li').length;
-            var index = imgScroll.data('data-index')||1;
-            imgScroll.data('data-index',index-1);
-            if(count < 6){
-            	$(this).removeClass("unActivePre").addClass("hidden");
-            	$(this).closest(".unActivePre").removeClass("hidden");
-            }
-            else{
-              $(this).removeClass("unActivePre").removeClass("hidden");
-              $(this).closest(".unActivePre").addClass("hidden");
-            }
-            
-			   });
-			     $(".photoSmallNext").click(function(){
-			   	  var imgBox = $(this).closest(".yushou-photoWrap");
-            var imgScroll = imgBox.find(".photosSmall-wrap").animate({
-            'margin-left': '-=109'
-            },300);
-            var count = imgScroll.find('li').length;
-            var index = imgScroll.data('data-index')||1;
-            imgScroll.data('data-index',index+1);
-            if(count < 6){
+			    function initPhotoBox() {
+			        // photo click/hover proview event bind
+			        // get li count
+			        var liCount = lis.length;
+			        if (liCount <= 5) {
+			            // no event, deactive
+			        } else {
+			            // bind event
+			            var nextBtn = $('.photoSmallNext');
+			            nextBtn.removeClass('unActiveNext');
 
-            }
-			   });
+			        }
+			    }
+			    var smallSlide = function(current) {
+			        var left = "0px";
+			        if (current.is($(".photoSmallNext"))) {
+			            left = "-550px";
+			            current.addClass("unActiveNext");
+			            $(".photoSmallPre").removeClass("unActivePre");
+			        } else {
+			            current.addClass("unActivePre");
+			            $(".photoSmallNext").removeClass("unActiveNext");
+			        }
+			        current.closest(".yushou-photoWrap").find(".photosSmall-wrap").animate({
+			            "margin-left": left
+			        }, 300);
+			    };
+			    $(".photoSmallNext").click(function() {
+			        smallSlide($(this));
+			    });
+			    $(".photoSmallPre").click(function() {
+			        smallSlide($(this));
+			    });
+			    // function bindPhotoBoxEvent(){
+			    // get pre/next ele
+			    // var preBtn = $('.photoSmallPre'), nextBtn = $('.photoSmallNext')
+			    // bind pre btn
+			    // var left = "0px";
+			    // preBtn.on('click', function(){
+			    // var curLi = photoList.find('li.active');
+			    // var preLi = curLi.prev('li');
+
+			    //  curLi.removeClass('active');
+			    // preLi.addClass('active');
+
+			    // nextBtn.removeClass('unActiveNext');
+			    // // check if first active
+			    // if( lis.eq(0).hasClass('active') ){
+			    // 	preBtn.addClass('unActivePre');
+			    // }
+			    // else{
+			    //        preBtn.closest(".yushou-photoWrap").find(".photosSmall-wrap").animate({
+			    //         'margin-left': '+=109'
+			    //         },300);
+			    // };
+			    // });
+
+			    // nextBtn.on('click',function(){
+			    // 	var curLi = photoList.find('li.active');
+			    // 	var preLi = curLi.prev('li');
+
+			    // 	$(this).closest(".yushou-photoWrap").find(".photosSmall-wrap").animate({
+			    //          'margin-left': '-=109'
+			    //          },300);
+
+			    // 	curLi.addClass('active');
+			    // 	preLi.removeClass('active');
+
+			    //       preBtn.removeClass('unActivePre');
+
+			    // 	if( lis.last().hasClass('active') ){
+			    // 		nextBtn.addClass('unActiveNext');
+			    // 	}
+
+			    // });
+			    // diasble
+			    // click to active previous photo
+			    // get current li
+			    // pre sibling
+			    // active 
+			    // 
+			    // }
+
 			    //预约
 			    var submitYuyue = function() {
 			        $.ajax({
@@ -196,7 +233,7 @@
 			        $("#J_yuyue").html("预约看车");
 			        $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
 			    });
-          
+
 			    var setImgHeight = function(img, wrapH, wrapW) {
 			        if (img.height() < wrapH) {
 			            img.height(wrapH).width("auto");
@@ -237,49 +274,44 @@
 			            $("#quick_buy").fadeOut(200);
 			        }
 			    });
-          //免费通话
-          var submiFreeCall = function(){
-          	$.ajax({
-          		  url: "http://www.souche.com/pages/telephoneAction/call.json",
-			          data: {
-			                customerCellphone : $("#free-phoe").val(),
-			                userCellphone:"#",
+			    //免费通话
+			    var submiFreeCall = function() {
+			        $.ajax({
+			            url: "http://www.souche.com/pages/telephoneAction/call.json",
+			            data: {
+			                customerCellphone: $("#free-phoe").val(),
+			                // userCellphone:"#",
 			                carId: config.carId,
-			                time:"#",
-			                token:"#",
-			                from:"#"
+			                time: (new Date()).valueOf(),
+			                token: "#", // get from page
+			                from: "web"
 			            },
-			          type: "get",
-			          
-			          success: function(data){
-			          	$("#free-popup-result").removeClass("hidden");
-			          	
-			          }
-          	})
-          }
+			            type: "get",
 
-          $("#J_freeCall").on("click",function(){
-            Souche.checkPhoneExist(function(is_login) {
-	                if (is_login) {
-	                    submiFreeCall();
-	                } else {
-	                    $("#free-popup").removeClass("hidden");
-	                    
-	                }
-	            })
-          });
-          $("#free-popup").find("#freecall-form").on("submit",function(e){
-                e.preventDefault();
-             if (!phoneReg.test($("#free-phoe").val())) {
-                    $(".warning", this).removeClass("hidden");
-                } else {
-                    submiFreeCall();
-                  }
-              });
-          $("#free-popup-result").find(".change-number").on("click",function(){
-          	 $("#free-popup").removeClass("hidden");
-          	 $("#free-popup-result").addClass("hidden");
-          })
+			            success: function(data) {
+			                $("#free-popup-result").removeClass("hidden");
+
+			            }
+			        })
+			    }
+
+			    $("#J_freeCall").on("click", function() {
+
+
+			        $("#free-popup").removeClass("hidden");
+			    });
+			    $("#free-popup").find("#freecall-form").on("submit", function(e) {
+			        e.preventDefault();
+			        if (!phoneReg.test($("#free-phoe").val())) {
+			            $(".warning", this).removeClass("hidden");
+			        } else {
+			            submiFreeCall();
+			        }
+			    });
+			    $("#free-popup-result").find(".change-number").on("click", function() {
+			        $("#free-popup").removeClass("hidden");
+			        $("#free-popup-result").addClass("hidden");
+			    })
 
 			    var config = {
 			        api_isLogin: '',
