@@ -71,7 +71,7 @@ nav .nav-item .nav-item-content{
     padding: 0 6px;
 }
 nav .nav-item.active .nav-item-content{
-    border-bottom: 4px solid #FF571A;
+    border-bottom: 2px solid #FF571A;
 }
 #J_navbar_underline{
     height: 4px;
@@ -113,13 +113,13 @@ nav .nav-item.active .nav-item-content{
     height: 60px;
     background: #65ae2f;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 14px;
 }
 .car-area .for-carcustom-had{
     height: 60px;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 14px;
     border: 1px solid #E6E6E6;
     background: #fff;
@@ -127,7 +127,7 @@ nav .nav-item.active .nav-item-content{
 .car-area .for-carcustom-no{
     height: 60px;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 14px;
     background: #fffab6;
     border:1px solid #e5cfa8;
@@ -186,7 +186,7 @@ nav .nav-item.active .nav-item-content{
     height: 58px;
     color:#666;
     margin-right: 50px;
-    padding-left: 10px;
+    padding-left: 16px;
 }
 .for-carcustom-had .car4you .your-subscription{
     overflow: hidden;
@@ -203,13 +203,9 @@ nav .nav-item.active .nav-item-content{
     margin: 10px 5px;
     text-align: center;
     font-size: 12px;
+    border-radius: 3px;
 }
-.hot-brands .brand {
-    display: block;
-    margin: 10px 0;
-    color:#000;
-    font-size: 12px;
-}
+
 .quick-search-area{
     margin: 10px 0 0;
     padding: 0 16px;
@@ -225,17 +221,27 @@ nav .nav-item.active .nav-item-content{
     line-height: 14px;
     border-left: 2px solid #FF571A;
     padding-left: 8px;
+    font-weight: bold;
 }
 .quick-search-area .title .more{
     color:#666;
     font-size: 12px;
     float: right;
+    font-weight: normal;
 }
 .quick-search-area .bd{
     border-top:1px solid #E6E6E6;
+    padding: 12px 0;
+}
+.hot-brands .brand {
+    display: block;
+    margin: 12px 0;
+    color:#000;
+    font-size: 12px;
 }
 .hot-brands .brand img {
-    width: 30px;
+    width: 35px;
+    margin-bottom: 8px;
 }
 .hot-brands .brand .brand-name {
     line-height: 14px;
@@ -436,14 +442,13 @@ nav .nav-item.active .nav-item-content{
 /* tab-panel-3*/
 .walkaround-area{
     padding:10px;
-    margin: 0 auto;
 }
 .act-card{
-    border:1px solid #ccc;
+    border:1px solid #e5e5e5;
     display: block;
     margin-bottom: 20px;
     background: #fff;
-    padding-bottom: 12px;
+    padding-bottom: 20px;
 }
 .act-card img.banner{
     width: 100%;
@@ -451,8 +456,9 @@ nav .nav-item.active .nav-item-content{
 .act-card .act-title{
     font-size: 18px;
     color:#333;
-    padding: 16px 16px 12px;
+    padding: 12px 16px;
     font-weight: bold;
+    font-size: 20px;
 }
 .act-card .act-content{
     padding:0 16px;

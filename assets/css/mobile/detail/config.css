@@ -40,3 +40,6 @@
 #config .mod .bd{
     margin: 0 16px;
 }
+#config .mod .bd table{
+    width: 100%;
+}

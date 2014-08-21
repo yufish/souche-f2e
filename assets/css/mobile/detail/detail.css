@@ -3,7 +3,7 @@
 }
 #detail {
     background-color: #fff;
-    padding-bottom: 35px;
+    padding-bottom: 45px;
 }
 #detail #detail-main .top-info .lft {
     width: 100%;
@@ -773,7 +773,6 @@
 #detail-main #pic-dots{
     text-align: center;
     font-size: 0;
-    padding-bottom: 10px;
 }
 #detail-main #pic-dots .dot{
     display: inline-block;
@@ -788,30 +787,25 @@
     border:1px solid #FF571A;
     background: #FF571A;
 }
+
 #detail-main .car-all-name-info{
-    padding-left: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 #detail-main .car-all-name-info .all-name{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 22px;
     color:#333;
     margin-right: 80px;
     height: 52px;
-    overflow: hidden;
+    font-weight: bold;
 }
 #detail-main .detail-fav{
     float: right;
     width: 64px;
     border-left: 1px solid #e7e7e7;
+    margin-top: 6px;
 }
-.detail-item{
-    border-bottom: 1px solid #E6E6E6;
-    margin: 0 16px;
-}
-.detail-item.last{
-    border:none;
-}
+
 #detail-main .five-star{
     width: 21px;
     height: 20px;
@@ -829,19 +823,26 @@
     font-size: 12px;
     color:#666;
 }
+#detail-main .sec-info{
+    margin: 16px 16px 0;
+}
 #detail-main .sec-info .price .price-num{
-    font-size: 16px;
+    font-size: 20px;
     color:#FF571A;
     font-weight: bold;
+    margin-left: -3px;
+    line-height: 20px;
 }
 #detail-main .sec-info .new-price {
     font-size: 12px;
     color:#999;
     margin: 8px 0 16px;
+    line-height: 12px;
 }
 #detail-main .sec-info .fenqi-item,
 #detail-main .sec-info .more-config{
     line-height: 44px;
+    height: 46px;
     font-size: 14px;
     color: #333;
     display: block;
@@ -852,29 +853,38 @@
 #detail-main .sec-info .fenqi-text{
     color:#fff;
     background:#FF571A;
-    padding:2px 3px;
+    padding:2px 4px;
+    font-size: 12px;
+    line-height: 12px;
+    margin-right: 2px;
 }
 #detail-main .sec-info .go-fenqi {
     font-weight: bold;
     float: right;
     color: #FF571A;
 }
+#detail-main .sale-info{
+    padding: 8px 0;
+}
 #detail-main .sale-info-item{
     width: 50%;
     float: left;
-    margin:8px 0 8px;
-}
-#detail-main .sale-info-item .info-value{
-    color:#333;
-    font-size: 14px;
+    margin:8px 0;
 }
 #detail-main .sale-info-item .info-key{
     color:#999;
     font-size: 12px;
+    line-height: 12px;
     margin-top: 10px;
 }
 #detail-main .more-config{
     border:none;
+}
+#detail-main .detail-item{
+    border-bottom: 1px solid #E6E6E6;
+}
+#detail-main .detail-item.last{
+    border-bottom: none;
 }
 .gray-12px{
     clear:both;
@@ -883,16 +893,22 @@
     border-bottom: 1px solid #E6E6E6;
     border-top: 1px solid #E6E6E6;
 }
-.detail-item .ss-title{
-    color: #333;
-    margin:16px 0;
-    font-size: 14px;
+.detail-card{
+    border-bottom: 1px solid #E6E6E6;
+    margin: 16px;
 }
-.detail-item .ss-content{
+.detail-card.last{
+    border:none;
+}
+.detail-card .ss-title{
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.detail-card .ss-content{
     color:#666;
     font-size: 14px;
     line-height: 26px;
-    margin-bottom: 12px;
 }
 #actions .action-btn-bar{
     text-align: center;
@@ -1003,70 +1019,15 @@
     vertical-align: -2px;
     margin-right: -3px;
 }
-.car-wrapper{
-    width: 50%;
-    float: left;
-}
-.car-area .for-carcustom{
-    height: 60px;
-    background: #65ae2f;
-    border-radius: 3px;
-    margin: 0 10px;
-    font-size: 14px;
-}
-.car-area .for-carcustom-had{
-    height: 60px;
-    border-radius: 3px;
-    margin: 0 5px;
-    font-size: 14px;
-    border: 1px solid #E6E6E6;
-    background: #fff;
-}
-.for-carcustom .erge{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url(../../../images/mob/h5-3/erge-index.png) center no-repeat;
-    background-size: 100%;
-    margin: 10px;
-    float: left;
-}
-.for-carcustom .custom-text{
-    line-height: 18px;
-    color:#fff;
-    display: inline-block;
-    float: left;
-    margin-top: 12px;
-}
-.go-custom{
-    display: block;
-    color: #65ae2f;
-    background: #fff;
-    border-radius: 3px;
-    float: right;
-    width: 47px;
-    height: 23px;
-    text-align: center;
-    line-height: 23px;
-    margin: 18px 18px 0 0;
-}
-.for-carcustom-had .go-custom{
-    color: #fff;
-    background: #65ae2f;
-}
-.for-carcustom-had .car4you{
-    line-height: 58px;
-    color:#666;
-    float: left;
-    margin-left: 10px;
-}
 .recommend-cars{
     background: #f5f5f5;
     padding: 10px 0;
+    border-top: 1px solid #E6E6E6;
 }
 .recommend-cars .title{
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 20px;
+    margin: 16px 0 6px;
 }
 
 #report .loading {
