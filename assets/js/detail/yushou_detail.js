@@ -313,7 +313,7 @@
 			    // })
 			    var submiFreeCall = function() {
 			        $.ajax({
-			            url: "<c:url value=" / pages / telephoneAction / freecall.json "/>",
+			            url: contextPath + "/pages/telephoneAction/freecall.json",
 			            data: {
 			                customerCellphone: $("#free-phoe").val(),
 			                // userCellphone: "18667932551",
