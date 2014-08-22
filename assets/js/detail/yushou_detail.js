@@ -311,6 +311,42 @@
 			    //     $("#free-popup").removeClass("hidden");
 			    //     $("#free-popup-result").addClass("hidden");
 			    // })
+			    var submiFreeCall = function() {
+			        $.ajax({
+			            url: "<c:url value=" / pages / telephoneAction / freecall.json "/>",
+			            data: {
+			                customerCellphone: $("#free-phoe").val(),
+			                // userCellphone: "18667932551",
+			                carId: config.carId,
+			                time: (new Date()).valueOf(),
+			                // token: "3fef20ec1692c27590a4e924a9d5c6aa", // get from pagetime=1402679812551&token=3fef20ec1692c27590a4e924a9d5c6aa
+			                from: "web"
+			            },
+			            type: "get",
+
+			            success: function(data) {
+			                $("#free-popup").addClass("hidden");
+			                $("#free-popup-result").removeClass("hidden");
+			                $(".calling").text($("#free-phoe").val());
+			            }
+			        })
+			    }
+
+			    $("#J_freeCall").on("click", function() {
+			        $("#free-popup").removeClass("hidden");
+			    });
+			    $("#free-popup").find("#freecall-form").on("submit", function(e) {
+			        e.preventDefault();
+			        if (!phoneReg.test($("#free-phoe").val())) {
+			            $(".warning", this).removeClass("hidden");
+			        } else {
+			            submiFreeCall();
+			        }
+			    });
+			    $("#free-popup-result").find(".change-number").on("click", function() {
+			        $("#free-popup").removeClass("hidden");
+			        $("#free-popup-result").addClass("hidden");
+			    })
 
 			    var config = {
 			        api_isLogin: '',
