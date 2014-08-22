@@ -5,8 +5,8 @@
 !function(){
     var numOfImg = $('#pic-container .img-card').length;
     var numOfScreen = Math.ceil(numOfImg / 3);
-    $('#pic-container').css({width: numOfScreen * 100 + '%'});
-    $('#pic-container .img-card').css({width: 100 / numOfScreen / 3 + '%'});
+    $('#pic-container').css({width: numOfImg * 96 + '%'});
+    $('#pic-container .img-card').css({width: 96 / numOfImg / 3 + '%'});
 
     !function makeDots() {
         var dotContainer = $('#pic-dots');
@@ -22,7 +22,7 @@
         var picIndex = +self.attr('data-index');
         if (picIndex == numOfScreen - 1)return;
         var nextIndex = picIndex + 1;
-        self.animate({'margin-left': -nextIndex * 100 + '%'})
+        self.animate({'margin-left': -nextIndex * 92 + '%'})
         self.attr('data-index', nextIndex)
         dots.eq(picIndex).removeClass('active');
         dots.eq(nextIndex).addClass('active');
@@ -31,7 +31,7 @@
         var picIndex = +self.attr('data-index');
         if (picIndex == 0)return;
         var nextIndex = picIndex - 1;
-        self.animate({'margin-left': -nextIndex * 100 + '%'})
+        self.animate({'margin-left': -nextIndex * 92 + '%'})
         self.attr('data-index', nextIndex);
         dots.eq(picIndex).removeClass('active');
         dots.eq(nextIndex).addClass('active');

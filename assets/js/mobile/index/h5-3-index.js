@@ -371,6 +371,7 @@ if (navigator.userAgent.match(/Android/i)){
         })
 
         $('#J_series').on('click',function(){
+            if(filterGlobal.selectBrand=='')return;
             $('.wrapGrayBg').removeClass('hidden');
             $('#series-list').css({
                 top: document.body.scrollTop + 50
@@ -384,14 +385,15 @@ if (navigator.userAgent.match(/Android/i)){
             var self = $(this)
             //清空车系的状态
             $('.series-content').empty();
-            $('#J_series').text('选择车系');
+            $('#J_series').text('请先选择品牌').css({color:'#999'});
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName='';
-
             $('.selected-brand-name').text('请先选择品牌');
             if(self.hasClass('selected')){
                 self.removeClass('selected');
                 $('#J_brand').text('选择品牌');
+                filterGlobal.selectBrand = "";
+                filterGlobal.selectBrandName = "";
             }else{
                 $('#brand-list .item').removeClass('selected');
                 self.addClass('selected');
@@ -405,11 +407,14 @@ if (navigator.userAgent.match(/Android/i)){
                 $('.selected-brand-name').text(bName);
                 filterGlobal.selectBrand = bCode;
                 filterGlobal.selectBrandName = bName;
+
                 utils.getSeriesByBrand(bCode,makeSeries);
+                $('#J_series').text('选择车系').css({color:'#333'});
             }
             filterGlobal.queryCount();
         })
         $('#series-list').on('click','.series-item',function(){
+
             var self = $(this);
             if(self.hasClass('selected')){
                 self.removeClass('selected');
@@ -462,7 +467,7 @@ if (navigator.userAgent.match(/Android/i)){
         dataObj.carModel = getCond($('#J_model').val());
         dataObj.carEngineVolume = getCond($('#J_volume').val());
         dataObj.transmissionType = getCond($('#J_transmission').val());
-        //下面两个属性和值，只为了筛选历史的展示，不应传给后台
+        //下面两个属性和值，只为了筛选历史的展示
         dataObj.carBrandName =filterGlobal.selectBrandName;
         dataObj.carSeriesName =filterGlobal.selectSeriesName;
         return dataObj;
