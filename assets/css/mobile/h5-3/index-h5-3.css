@@ -229,6 +229,14 @@ nav .nav-item.active .nav-item-content{
     float: right;
     font-weight: normal;
 }
+.quick-search-area .title .left-arrow{
+    width:7px;
+    height: 12px;
+    background: url(../../../images/mob/h5-3/left-arrow.png);
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: -1px;
+}
 .quick-search-area .bd{
     border-top:1px solid #E6E6E6;
     padding: 12px 0;
