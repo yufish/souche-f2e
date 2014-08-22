@@ -59,12 +59,8 @@ var Action = (function () {
                     }
                 })
             };
-            var hasFav = false;
             $("#fav_submit").on("click", function (e) {
                 e.preventDefault();
-                var self = this;
-                if (hasFav)
-                    return;
                 if (checkUserLocal().phoneNum) {
                     submitFav();
                 } else {
@@ -83,28 +79,47 @@ var Action = (function () {
                 }
             });
             var submitFav = function () {
+                if($("#fav_submit").hasClass("active")){
+                    delFav()
+                }else{
+                    saveFav();
+                }
+
+            };
+            var favUrl = {
+                fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
+                unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
+            };
+            function saveFav(){
                 $("#fav_submit .fav-text").html('收藏中...')
                 $.ajax({
-                    url: $('#fav_submit').attr("href"),
+                    url: favUrl.fav,
                     dataType: "json",
                     data: {
                         platform : 'PLATFORM_H5'
                     },
                     success: function (data) {
-                        if (data.errorMessage) {
-                            alert(data.errorMessage)
-                            $("#fav_submit .fav-text").html("收藏")
-
-                        } else {
-                            $("#fav_submit .fav-text").html("已收藏")
-                            $("#fav_submit").addClass('active');
-                            hasFav = true
-                        }
+                        $("#fav_submit .fav-text").html("已收藏")
+                        $("#fav_submit").addClass('active');
                         hidePopup();
                     }
                 })
-
-            };
+            }
+            function delFav(){
+                $("#fav_submit .fav-text").html('取消中...')
+                $.ajax({
+                    url: favUrl.unfav,
+                    dataType: "json",
+                    data: {
+                        platform : 'PLATFORM_H5'
+                    },
+                    success: function (data) {
+                        $("#fav_submit .fav-text").html("收藏")
+                        $("#fav_submit").removeClass('active');
+                        hidePopup();
+                    }
+                })
+            }
             var showPopup = function ($popup) {
                 var scrollTop = $(window).scrollTop();
                 var top = scrollTop + 100;

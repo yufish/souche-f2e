@@ -7,12 +7,7 @@ body{
 .placeholder-for-tabNavBar{
     height: 88px;
 }
-.fixed-wrapper{
-    position: fixed;
-    width: 100%;
-    top:0;
-    z-index: 1001;
-}
+
 #J_tabNavbar{
     height: 44px;
     line-height: 44px;

@@ -6,7 +6,7 @@
     var numOfImg = $('#pic-container .img-card').length;
     var numOfScreen = Math.ceil(numOfImg / 3);
     $('#pic-container').css({width: numOfImg * 96 + '%'});
-    $('#pic-container .img-card').css({width: 96 / numOfImg / 3 + '%'});
+    $('#pic-container .img-card').css({width: 96 / numOfImg /3 + '%'});
 
     !function makeDots() {
         var dotContainer = $('#pic-dots');

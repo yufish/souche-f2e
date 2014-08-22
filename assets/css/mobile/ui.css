@@ -49,6 +49,15 @@
     color:#fff;
     background: #ff571a;
 }
+.fixed-wrapper{
+     position: fixed;
+     width: 100%;
+     top:0;
+     z-index: 1001;
+ }
+.header-placeholder{
+    height: 44px;
+}
 .header .hd-logo{
     float: left;
     margin: 12px 17px 0 10px;
@@ -144,12 +153,9 @@
     -webkit-transform:rotateX(0deg);
     transform:rotateX(0deg);
 }
-.header-back a{
+.header .back{
     color: #fff;
     margin-left: 10px;
-}
-.header-back .svg-back{
-    margin-right: -2px
 }
 /*car card*/
 .car-wrapper{
