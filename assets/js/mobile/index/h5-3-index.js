@@ -715,7 +715,8 @@ if (navigator.userAgent.match(/Android/i)){
         var moveDom = $('<div class="fly-fivestar"></div>');
         moveDom.css({
             left:left1,
-            top:top1
+            top:top1,
+            "z-index":10005
         }).appendTo(document.body).animate({
             left:left2+20,
             top:top2+10

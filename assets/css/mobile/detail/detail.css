@@ -913,16 +913,28 @@
 #actions .action-btn-bar{
     text-align: center;
 }
-#actions .btn {
-    width: 145px;
+#actions .btn-wrapper {
+    width: 50%;
+    float: left;
+    padding:0 5px;
+}
+#actions .btn-wrapper:first-child{
+    padding-left: 10px;
+}
+#actions .btn-wrapper:last-child{
+    padding-right: 10px;
+}
+#actions .btn{
     height: 36px;
     line-height: 36px;
     border-radius: 3px;
-    border: none;
+    width: 100%;
 }
 #actions .yuyue-btn {
     background: #FF571A;
-    color:#fff;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
 }
 #actions .contact-souche-btn {
     background: #fff;
@@ -933,13 +945,9 @@
 .yuyue-btn .clock{
     display: inline-block;
     width: 16px;
-    height: 16px;
-    border-radius: 80%;
-    border: 1px solid #fff;
-    line-height: 5px;
-    padding-left: 4px;
-    vertical-align: 4px;
-    font-size: 16px;
+    height: 36px;
+    background: url(../../../images/mob/h5-3/detail-btn-clock.png) no-repeat center;
+    background-size: 16px 16px;
 }
 .contact-souche-btn .call-icon{
     background: url(../../../../assets/images/mob/h5-3/call.png) no-repeat center;
