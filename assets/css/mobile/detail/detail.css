@@ -877,6 +877,11 @@
     line-height: 12px;
     margin-top: 10px;
 }
+#detail-main .sale-info-item .info-value{
+    color:#333;
+    font-size: 14px;
+    line-height: 14px;
+}
 #detail-main .more-config{
     border:none;
 }
