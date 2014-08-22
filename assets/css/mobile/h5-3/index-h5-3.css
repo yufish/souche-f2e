@@ -105,27 +105,52 @@ nav .nav-item.active .nav-item-content{
     float: left;
 }
 .car-area .for-carcustom{
+    margin: 0 5px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.car-area .for-carcustom-new{
     height: 60px;
     background: #65ae2f;
-    border-radius: 3px;
-    margin: 0 5px;
-    font-size: 14px;
 }
 .car-area .for-carcustom-had{
     height: 46px;
-    border-radius: 3px;
-    margin: 0 5px;
-    font-size: 14px;
     border: 1px solid #E6E6E6;
     background: #fff;
 }
 .car-area .for-carcustom-no{
     height: 60px;
-    border-radius: 3px;
-    margin: 0 5px;
-    font-size: 14px;
     background: #fffab6;
     border:1px solid #e5cfa8;
+}
+.car-area .add-sub{
+    background:#fff;
+    border:1px solid #E6E6E6;
+    color:#666;
+}
+.car-area .add-sub-text{
+    padding: 20px;
+    font-size: 14px;
+    line-height: 18px;
+}
+.car-area .sub-action{
+    height: 45px;
+    line-height: 44px;
+    border-top:1px solid #E6E6E6;
+}
+.car-area .sub-action-btn{
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+}
+.car-area .sub-action-btn.add-to-sub{
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #E6E6E6;
+    font-weight: bold;
+    color:#FF571a;
 }
 .for-carcustom .erge{
     display: inline-block;

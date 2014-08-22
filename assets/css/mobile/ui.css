@@ -48,6 +48,14 @@
     line-height: 44px;
     color:#fff;
     background: #ff571a;
+    position: relative;
+}
+.header .header-title{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:0;
+    left:0;
 }
 .fixed-wrapper{
      position: fixed;
