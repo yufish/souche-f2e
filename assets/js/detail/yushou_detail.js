@@ -318,8 +318,8 @@
 			                customerCellphone: $("#free-phoe").val(),
 			                // userCellphone: "18667932551",
 			                carId: config.carId,
-			                time: (new Date()).valueOf(),
-			                // token: "3fef20ec1692c27590a4e924a9d5c6aa", // get from pagetime=1402679812551&token=3fef20ec1692c27590a4e924a9d5c6aa
+			                time: config.timeStamp,
+			                token: config.token, // get from pagetime=1402679812551&token=3fef20ec1692c27590a4e924a9d5c6aa
 			                from: "web"
 			            },
 			            type: "get",
@@ -352,7 +352,9 @@
 			        api_isLogin: '',
 			        api_yushouForSale: '',
 			        api_jsonparams: '',
-			        api_detail: ''
+			        api_detail: '',
+			        timeStamp: '',
+			        token: ''
 			    };
 			    return {
 			        init: function(_config) {
