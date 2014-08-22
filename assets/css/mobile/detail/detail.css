@@ -760,12 +760,12 @@
     overflow: hidden;
 }
 #detail-main #pic-container{
-    padding: 10px 0;
+    padding: 10px 0 10px 10px;
     overflow: hidden;
 }
 #detail-main .img-card{
     float: left;
-    padding: 0 5px;
+    padding-right: 10px;
 }
 #detail-main .img-card img{
     width: 100%;
@@ -796,14 +796,14 @@
     line-height: 22px;
     color:#333;
     margin-right: 80px;
-    height: 52px;
+    height: 46px;
     font-weight: bold;
+    overflow:hidden;
 }
 #detail-main .detail-fav{
     float: right;
     width: 64px;
     border-left: 1px solid #e7e7e7;
-    margin-top: 6px;
 }
 
 #detail-main .five-star{
@@ -824,7 +824,7 @@
     color:#666;
 }
 #detail-main .sec-info{
-    margin: 16px 16px 0;
+    margin: 10px 16px 0;
 }
 #detail-main .sec-info .price .price-num{
     font-size: 20px;
@@ -1350,4 +1350,7 @@
 #guohu-history .explain{
     color:#666;
     font-size: 12px;
+}
+.car-card-container{
+    padding: 5px 0;
 }
