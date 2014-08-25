@@ -67,6 +67,8 @@ define(function() {
                     minPrice:null,
                     maxPrice:null
                 }
+
+                //合并两处需求到一起
                 if (config.userRequirementJsonForTag) {
                     for (var i in data) {
                         var item = config.userRequirementJsonForTag[i];
