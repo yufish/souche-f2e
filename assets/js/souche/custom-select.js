@@ -31,6 +31,25 @@ Souche.UI.CustomSelect = function() {
                 $(".sc-select-list .option[data-value='" + this.selected[i].key + "']").addClass("active");
             }
         },
+        setSelected:function(key){
+            if (!this.config.multi) {
+                this.selected=[{
+                    key: key,
+                    value:key
+                }]
+
+            }else{
+                this.selected.push({
+                    key: key,
+                    value: key
+                })
+            }
+            $(self).trigger("change", {
+                key: key,
+                value: key
+            })
+            this._renderSelected();
+        },
         removeSelected: function(key) {
             this._delKey(key);
             this._renderSelected();
