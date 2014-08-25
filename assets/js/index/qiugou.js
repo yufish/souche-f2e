@@ -18,7 +18,7 @@ function(AddSeries,CustomSelect){
             this._initData(_config.userRequementJson);
             this._bind();
             if(_config.userRequementJson.series){
-                this._renderSelected(_config.userRequementJson.series)
+                this._renderSelected(_config.userRequementJson.series,_config.userRequementJson.brands)
             }
             this._initSelect();
         },
@@ -125,7 +125,13 @@ function(AddSeries,CustomSelect){
                     var _code = series[0];
                     data.series.push(_code);
                 }
-                self._renderSelected(_data.selectedSeries);
+                data.brands = [];
+                for(var i=0;i<_data.selectedBrands.length;i++) {
+                    var series = _data.selectedBrands[i].split(",");
+                    var _code = series[0];
+                    data.brands.push(_code);
+                }
+                self._renderSelected(_data.selectedSeries,_data.selectedBrands);
             })
             //删除的动作，
             $(".selected_series_result").on("click",".selected-item",function(){
@@ -200,13 +206,19 @@ function(AddSeries,CustomSelect){
                 })
             })
         },
-        _renderSelected:function(selectedSeries){
+        _renderSelected:function(selectedSeries,selectedBrands){
             var html = "";
             for(var i=0;i<selectedSeries.length;i++) {
                 var series = selectedSeries[i].split(",");
                 var _code = series[0];
                 var _name = series[1];
                 html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/series/"+_code+".png'/>"+_name+"</div>"
+            }
+            for(var i=0;i<selectedBrands.length;i++) {
+                var series = selectedBrands[i].split(",");
+                var _code = series[0];
+                var _name = series[1];
+                html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/brand/"+_code+".png'/>"+_name+"</div>"
             }
             $(".selected_series_result").html(html);
 
