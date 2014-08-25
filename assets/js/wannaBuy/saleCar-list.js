@@ -59,9 +59,3 @@ define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/
         init: init
     };
 });
-Souche.Inside.init({
-    fav_api : '/pages/saleDetailAction/savaCarFavorite.json',
-    cancelfav_api : '/pages/saleDetailAction/delCarFavorite.json',
-    api_isNoRegisterLogin : '/pages/evaluateAction/isNoRegisterLogin.json',
-    api_noRegisterLogin : '/pages/evaluateAction/noRegisterLogin.jso'
-});
