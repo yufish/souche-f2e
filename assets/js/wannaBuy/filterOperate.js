@@ -1,6 +1,8 @@
 // 筛选条件的 保存和移除
 define(function(){
 
+    var config = {};
+
     var _class = {
         removeFilter: 'historyRecord_content ul li .close'
     };
@@ -33,7 +35,7 @@ define(function(){
                 };
 
                 $.ajax({
-                    url : '/pages/saleDetailAction/saveSearchResult.json',
+                    url : config.saveSearchResult,
                     type : 'POST',
                     data : {
                         queryName : queryName,
@@ -81,7 +83,7 @@ define(function(){
             var self = this;
 
             $.ajax({
-                url : '/pages/saleDetailAction/delSearchResult.json',
+                url : config.deleteSearchResult,
                 type : 'POST',
                 data : {
                     id : chooseValueID
@@ -97,7 +99,8 @@ define(function(){
 
     
 
-    function init(){
+    function init(_config){
+        $.extend(config, _config);
         doc = $(document.body);
         _event.bind();
     }

@@ -1,5 +1,6 @@
 // 车辆列表 车辆item的操作
 define(function(){
+    var config = {};
     var phoneReg = /^1[3458][0-9]{9}$/;
     
     var _event = {
@@ -74,7 +75,10 @@ define(function(){
                 if(!!carid) {
                     $.ajax({
                         type : "POST",
-                        url : '/pages/carContrastAction/addContrastCar.json?carId=' + carid,
+                        url : config.addContrast,
+                        data: {
+                            carId: carid
+                        },
                         dataType : "json",
                         context : self
                     }).done(function(data) {
@@ -131,7 +135,7 @@ define(function(){
                 if(!!contrastId) {
                     $.ajax({
                         type : "POST",
-                        url : '/pages/carContrastAction/deleteContrastCar.json',
+                        url : config.deleteContrast,
                         data : {
                             cid : contrastId
                         },
@@ -163,7 +167,8 @@ define(function(){
         }
     }
 
-    function init(){
+    function init(_config){
+        $.extend(config, _config);
         _event.bind();
     }
 
