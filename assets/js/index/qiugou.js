@@ -141,7 +141,7 @@ function(AddSeries,CustomSelect){
             var rss_isSubmiting = false;
             //提交订阅
             $("#J_xuqiu_submit").on("click",function(){
-                $(this).addClass("loading").html("提交中")
+
                 if(rss_isSubmiting) return;
                 rss_isSubmiting = true;
                 data.minPrice = $(".low-price").val();
@@ -157,10 +157,13 @@ function(AddSeries,CustomSelect){
                 }
                 if(data.startYear&&data.endYear&&data.minYear>data.maxYear){
                     $(".trail .warning").html("年份选择错误").removeClass("hidden")
+                    return;
                 }
                 if(data.minPrice&&data.maxPrice&&data.minYear>data.maxYear){
                     $(".trail .warning").html("预算填写错误").removeClass("hidden")
+                    return;
                 }
+                $(this).addClass("loading").html("提交中")
                 $.ajax({
                     url:config.submit_api,
                     data:{
