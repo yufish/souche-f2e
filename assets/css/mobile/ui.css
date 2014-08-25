@@ -253,6 +253,8 @@
     color: #999;
     border-top:1px solid #e6e6e6;
     line-height: 32px;
+    height: 32px;
+    position: relative;
 }
 .car-card .clock{
     display: inline-block;

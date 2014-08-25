@@ -819,7 +819,7 @@
  }
 #detail-main .fav-text{
     text-align: center;
-    margin-top: 6px;
+    margin-top: 8px;
     font-size: 12px;
     color:#666;
 }
@@ -1023,14 +1023,29 @@
     font-size: 13px;
     color: #FF571a;
 }
-#detail-main .light-rht{
-    color: #333;
-    font-size: 13px;
+#detail-main .timelimt-info{
+    font-size: 14px;
+    color:#999;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
 }
-#detail-main .light-rht .time-limit-png{
+#detail-main .limit-time{
+    line-height: 18px;
+    margin-left: 12px;
+    float: left;
+}
+#detail-main .timelimt-info .time-limit-png{
     width: 14px;
     vertical-align: -2px;
     margin-right: -3px;
+}
+#detail-main .timelimt-info .detail-timelimit-tag{
+    background:#65ae2f;
+    color:#fff;
+    float: left;
+    padding:3px 6px;
+    font-size: 12px;
 }
 .recommend-cars{
     background: #f5f5f5;
