@@ -240,19 +240,13 @@
     line-height: 22px;
     margin-bottom: 3px;
 }
-.car-card .recommend{
+.car-card .car-footer{
     clear: both;
     color: #999;
     border-top:1px solid #e6e6e6;
     line-height: 32px;
     height: 32px;
     position: relative;
-}
-.car-card .time-limit{
-    clear: both;
-    color: #999;
-    border-top:1px solid #e6e6e6;
-    line-height: 32px;
 }
 .car-card .clock{
     display: inline-block;

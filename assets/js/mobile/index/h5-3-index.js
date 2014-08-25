@@ -97,8 +97,8 @@ if (navigator.userAgent.match(/Android/i)){
         tabIndex = tabIndex ||1;
         tabCtn[0].style['transition'] = 'none'
         tabCtn[0].style['webkitTransition'] = 'none'
-        
-        move(+tabIndex,true);
+
+        move(+tabIndex,tabIndex==3);
         setTimeout(function(){
             tabCtn[0].style['transition'] = +'all 0.4s linear'
             tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
