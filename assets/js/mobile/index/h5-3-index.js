@@ -762,34 +762,118 @@ if (navigator.userAgent.match(/Android/i)){
         }
     })
 }();
-
 $('.wrapGrayBg').on('click',function(){
     $('.filter-popup-wrapper').addClass('hidden');
     $('.wrapGrayBg').addClass('hidden');
     $('.mobile-popup').addClass('hidden');
 })
-document.getElementById('J_gotoCenter').addEventListener('click',function(e){
-    e.preventDefault();
-    SM.checkPhoneExist(function(is_login) {
-        if (is_login) {
-            window.location.href=$('#J_gotoCenter').attr('href');
+//个人中心相关
+!function(){
+    document.getElementById('J_gotoCenter').addEventListener('click',function(e){
+        e.preventDefault();
+        SM.checkPhoneExist(function(is_login) {
+            if (is_login) {
+                window.location.href=$('#J_gotoCenter').attr('href');
+            } else {
+                $('.wrapGrayBg').removeClass('hidden');
+                var $popup = $('.login-popup');
+                $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+            }
+        })
+    })
+
+    $('#login-form').submit(function(e) {
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        var phoneNum = $("#phone-for-login").val();
+        e.preventDefault();
+        if (!phoneReg.test(phoneNum)) {
+            alert('请输入正确的手机号码');
         } else {
-            $('.wrapGrayBg').removeClass('hidden');
-            var $popup = $('.login-popup');
-            $popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+            SM.PhoneRegister(phoneNum, function() {
+                window.location.href=$('#J_gotoCenter').attr('href');
+            })
         }
     })
-})
+}();
+//加入订阅相关
+!function(){
+    var apiUrls={
+        hasNewReq:contextPath+'/pages/mobile/homePageAction/queryTagTip.json',
+        addToReq:contextPath+'/pages/mobile/carCustomAction/saveBuyInfo.json?tagTip=1',
+        cancelNewReq:contextPath+'/pages/mobile/homePageAction/closeTagTip.json'
+    }
 
-$('#login-form').submit(function(e) {
-    var phoneReg = /^1[3458][0-9]{9}$/;
-    var phoneNum = $("#phone-for-login").val();
-    e.preventDefault();
-    if (!phoneReg.test(phoneNum)) {
-        alert('请输入正确的手机号码');
-    } else {
-        SM.PhoneRegister(phoneNum, function() {
-            window.location.href=$('#J_gotoCenter').attr('href');
+
+    $.getJSON(apiUrls.hasNewReq,function(e){
+        if(e.code!=200){
+            return;
+        }
+        var data={};
+        var sCodeList=[],sNameList=[];
+        var tags = e.userTags;
+        var brands = tags.brands;
+        for(var i=0;i<brands.length;i++){
+            var brand = brands[i];
+            if(brand['type']=="TAGTYPE_SERIES"){
+                sCodeList.push(brand['code']);
+                sNameList.push(brand['name'])
+            }
+        }
+        var maxStr='不限',minStr='不限';
+        if(sCodeList.length>0){
+            data.series = sCodeList.join(',')
+        }
+        if(tags['maxPrice']){
+            data.maxPrice=tags['maxPrice']/10000;
+            maxStr = data.maxPrice;
+        }
+        if(tags['minPrice']){
+            data.minPrice=tags['minPrice']/10000;
+            minStr = data.minPrice
+        }
+        if(maxStr=='不限'&&minStr=='不限'){
+            //do nothing
+        }else{
+            sNameList.push(minStr+'-'+maxStr);
+        }
+        $('.new-sub-content').text(sNameList.join('，'));
+        buildEvent({saveData:data})
+
+    })
+
+
+    function buildEvent(options){
+        var subDialog = $('.add-sub-dialog')
+        subDialog.removeClass('hidden');
+        $('.j_notSub',subDialog).click(function(){
+            $.ajax({url:apiUrls.cancelNewReq})
+            subDialog.addClass('hidden');
+        })
+        $('.j_addToSub',subDialog).click(function(){
+            $.ajax({
+                url:apiUrls.addToReq,
+                data:options.saveData,
+                success:function(){
+                    window.location.reload()
+                }
+            })
         })
     }
-})
+    /*
+    $.ajax({
+        url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
+        dataType: 'json',
+        data: {
+            brands: bStr,
+            series: sStr,
+            minPrice: minPrice,
+            maxPrice: maxPrice
+        },
+        success: function() {
+
+        }
+
+    });*/
+
+}()
+
