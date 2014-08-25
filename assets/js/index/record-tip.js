@@ -58,34 +58,57 @@ define(function() {
                 // for (var o in submitData) {
                 //     url += o + "=" + submitData[o].join() + "&"
                 // }
+                var is = ["brands","series","maxPrice","minPrice","minYear","maxYear"]
+                var data = {
+                    brands:[],
+                        series:[],
+                    startYear:null,
+                    endYear:null,
+                    minPrice:null,
+                    maxPrice:null
+                }
                 if (config.userRequirementJsonForTag) {
-                    for (var i in submitData) {
+                    for (var i in data) {
                         var item = config.userRequirementJsonForTag[i];
                         if (item && item.length) {
                             for (var m = 0; m < item.length; m++) {
                                 item[m] = item[m].split(",")[0];
                             }
                             if (submitData[i] && submitData[i].join) {
-                                config.userRequirementJsonForTag[i] = item.concat(submitData[i])
+                                data[i] = item.concat(submitData[i])
+                            }else{
+                                data[i] = item
                             }
                         } else {
                             if (submitData[i]) {
-                                config.userRequirementJsonForTag[i] = submitData[i];
+                                data[i] = submitData[i];
+                            }else{
+                                if(config.userRequirementJsonForTag[i]){
+                                    data[i] = config.userRequirementJsonForTag[i]
+                                }
 
                             }
                         }
                     }
                 }
-                for (var o in config.userRequirementJsonForTag) {
-                    if (config.userRequirementJsonForTag[o].join) {
-                        url += o + "=" + config.userRequirementJsonForTag[o].join(",") + "&"
-                    } else {
-                        url += o + "=" + config.userRequirementJsonForTag[o] + "&"
-                    }
-
-                }
+//                for (var o in data) {
+//                    if (data[o]&&data[o].join) {
+//                        url += o + "=" + data[o].join(",") + "&"
+//                    } else {
+//                        url += o + "=" + data[o] + "&"
+//                    }
+//
+//                }
                 $.ajax({
                     url: url,
+                    data:{
+                        brands:data.brands.join(","),
+                        series:data.series.join(","),
+                        minYear:data.startYear,
+                        maxYear:data.endYear,
+                        minPrice:data.minPrice,
+                        maxPrice:data.maxPrice
+                    },
                     dataType: "json",
                     success: function() {
                         window.location.reload();

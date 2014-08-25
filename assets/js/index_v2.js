@@ -1,6 +1,6 @@
 define(['index/car-god',
     'index/top-nav',
-    "index/qiugou_v2",
+    "index/qiugou",
     'souche/custom-select',
     "index/collect",
     "lib/lazyload",
@@ -308,24 +308,7 @@ define(['index/car-god',
             qiugou.init(config);
             carConstrast.init(config);
 
-            var ageSelect = new customSelect("age_select", {
-                placeholder: "请选择",
-                multi: false
-            });
 
-            var ageSelect = new customSelect("age_select_high", {
-                placeholder: "请选择",
-                multi: false
-            });
-            var ageSelect = new customSelect("age_select_1", {
-                placeholder: "请选择",
-                multi: false
-            });
-
-            var ageSelect = new customSelect("age_select_high_1", {
-                placeholder: "请选择",
-                multi: false
-            });
 
             $(".down-counter").each(function() {
                 var $this = $(this);
@@ -379,6 +362,24 @@ define(['index/car-god',
                     });
                 }
             })
+            ///change tab
+            $("#carsNav li").click(function() {
+                $("#carsNav li").removeClass("active");
+                $(this).addClass("active");
+                var id = $(this).attr("id");
+                tabID = id;
+                $(window).trigger("tab_change", id)
+                if (id === "myAdviser") {
+//                    initAnimate(".myAdviser");
+                } else if (id == "hotNewCars") {
+                    $(".hotNewCars img").each(function(i, img) {
+                        $(img).attr("src", $(img).attr("data-original"));
+                    })
+                }
+                $(".carsContent").addClass("hidden");
+                $(".carsContent." + tabID + "Content").removeClass("hidden");
+                return false;
+            });
             ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单
             recordTip.init(config);
