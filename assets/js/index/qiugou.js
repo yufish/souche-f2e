@@ -132,9 +132,12 @@ function(AddSeries,CustomSelect){
                 AddSeries.delSeries($(this).attr("code"))
             })
 
+            var rss_isSubmiting = false;
             //提交订阅
             $("#J_xuqiu_submit").on("click",function(){
-                console.log(data)
+                $(this).addClass("loading").html("提交中")
+                if(rss_isSubmiting) return;
+                rss_isSubmiting = true;
                 data.minPrice = $(".low-price").val();
                 data.maxPrice = $(".high-price").val();
                 if(!(data.brands.length
@@ -165,6 +168,10 @@ function(AddSeries,CustomSelect){
                     dataType:"json",
                     success:function(result){
                         window.location.reload()
+                    },
+                    error:function(){
+
+                        rss_isSubmiting = false;
                     }
                 })
             })
