@@ -18,7 +18,7 @@ function(AddSeries,CustomSelect){
             this._initData(_config.userRequementJson);
             this._bind();
             if(_config.userRequementJson.series){
-                this._renderSelected(_config.userRequementJson.series)
+                this._renderSelected(_config.userRequementJson.series,_config.userRequementJson.brands)
             }
             this._initSelect();
         },
@@ -125,7 +125,13 @@ function(AddSeries,CustomSelect){
                     var _code = series[0];
                     data.series.push(_code);
                 }
-                self._renderSelected(_data.selectedSeries);
+                data.brands = [];
+                for(var i=0;i<_data.selectedBrands.length;i++) {
+                    var series = _data.selectedBrands[i].split(",");
+                    var _code = series[0];
+                    data.brands.push(_code);
+                }
+                self._renderSelected(_data.selectedSeries,_data.selectedBrands);
             })
             //删除的动作，
             $(".selected_series_result").on("click",".selected-item",function(){
@@ -135,7 +141,7 @@ function(AddSeries,CustomSelect){
             var rss_isSubmiting = false;
             //提交订阅
             $("#J_xuqiu_submit").on("click",function(){
-                $(this).addClass("loading").html("提交中")
+
                 if(rss_isSubmiting) return;
                 rss_isSubmiting = true;
                 data.minPrice = $(".low-price").val();
@@ -151,10 +157,13 @@ function(AddSeries,CustomSelect){
                 }
                 if(data.startYear&&data.endYear&&data.minYear>data.maxYear){
                     $(".trail .warning").html("年份选择错误").removeClass("hidden")
+                    return;
                 }
                 if(data.minPrice&&data.maxPrice&&data.minYear>data.maxYear){
                     $(".trail .warning").html("预算填写错误").removeClass("hidden")
+                    return;
                 }
+                $(this).addClass("loading").html("提交中")
                 $.ajax({
                     url:config.submit_api,
                     data:{
@@ -200,13 +209,19 @@ function(AddSeries,CustomSelect){
                 })
             })
         },
-        _renderSelected:function(selectedSeries){
+        _renderSelected:function(selectedSeries,selectedBrands){
             var html = "";
             for(var i=0;i<selectedSeries.length;i++) {
                 var series = selectedSeries[i].split(",");
                 var _code = series[0];
                 var _name = series[1];
                 html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/series/"+_code+".png'/>"+_name+"</div>"
+            }
+            for(var i=0;i<selectedBrands.length;i++) {
+                var series = selectedBrands[i].split(",");
+                var _code = series[0];
+                var _name = series[1];
+                html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/brand/"+_code+".png'/>"+_name+"</div>"
             }
             $(".selected_series_result").html(html);
 

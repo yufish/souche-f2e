@@ -15,13 +15,18 @@ define(['souche/util/load-info'],function(LoadInfo){
     var config = {
     };
     var tempSelected = [];
+
     return {
         selectedSeries:[],
+        selectedBrands:[],
         init:function(_config){
             var self = this;
             $.extend(config,_config);
             if(config.userRequementJson['series']){
                 this.selectedSeries = config.userRequementJson['series']
+            }
+            if(config.userRequementJson['brands']){
+                this.selectedBrands = config.userRequementJson['brands']
             }
             self._createAtoZ();
             self._createBrands();
@@ -42,20 +47,32 @@ define(['souche/util/load-info'],function(LoadInfo){
             this._renderSelected()
         },
         delSeries:function(code){
-            for(var i=0;i<this.selectedSeries.length;i++){
-                var series = this.selectedSeries[i].split(",");
-                var _code = series[0];
-                if(_code==code){
-                   this.selectedSeries.splice(i,1);
-                    break;
+            if(code.indexOf("brand")!=-1){
+                for(var i=0;i<this.selectedBrands.length;i++){
+                    var brand = this.selectedBrands[i].split(",");
+                    var _code = brand[0];
+                    if(_code==code){
+                        this.selectedBrands.splice(i,1);
+                        break;
+                    }
                 }
+            }else{
+                for(var i=0;i<this.selectedSeries.length;i++){
+                    var series = this.selectedSeries[i].split(",");
+                    var _code = series[0];
+                    if(_code==code){
+                        this.selectedSeries.splice(i,1);
+                        break;
+                    }
+                }
+                $(".chexiContent .series-item").each(function(i,item){
+                    if($(item).attr("code")==code){
+                        $(item).removeClass("active")
+                    }
+                })
             }
-            $(".chexiContent .series-item").each(function(i,item){
-                if($(item).attr("code")==code){
-                    $(item).removeClass("active")
-                }
-            })
-            $(this).trigger("change",{selectedSeries:this.selectedSeries})
+
+            $(this).trigger("change",{selectedSeries:this.selectedSeries,selectedBrands:this.selectedBrands})
             this._renderSelected();
         },
         _bind:function(){
@@ -79,7 +96,7 @@ define(['souche/util/load-info'],function(LoadInfo){
                     self.selectedSeries.push(tempSelected[i])
                 }
                 self._renderSelected();
-                $(self).trigger("change",{selectedSeries:self.selectedSeries})
+                $(self).trigger("change",{selectedSeries:self.selectedSeries,selectedBrands:self.selectedBrands})
                 $(self).trigger("cancel")
             })
             $("#J_selected_series").on("click",".selected-item",function(){
@@ -161,12 +178,12 @@ define(['souche/util/load-info'],function(LoadInfo){
                     if($(this).hasClass("active")){
                         $(this).removeClass("active");
                         self.delSeries($(this).attr("code"))
-                        $(self).trigger("change",{selectedSeries:self.selectedSeries})
+                        $(self).trigger("change",{selectedSeries:self.selectedSeries,selectedBrands:self.selectedBrands})
                         self._renderSelected();
                     }else{
                         $(this).addClass("active");
                         self._addSelected($(this).attr("code"),$(this).text())
-                        $(self).trigger("change",{selectedSeries:self.selectedSeries})
+                        $(self).trigger("change",{selectedSeries:self.selectedSeries,selectedBrands:self.selectedBrands})
                         self._renderSelected();
                     }
 
@@ -199,6 +216,12 @@ define(['souche/util/load-info'],function(LoadInfo){
                 var _code = series[0];
                 var _name = series[1];
                 html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/series/"+_code+".png'/>"+_name+"</div>"
+            }
+            for(var i=0;i<this.selectedBrands.length;i++) {
+                var series = this.selectedBrands[i].split(",");
+                var _code = series[0];
+                var _name = series[1];
+                html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/brand/"+_code+".png'/>"+_name+"</div>"
             }
             $(".selected-series").html(html);
 
