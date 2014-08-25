@@ -9,6 +9,7 @@ function(AddSeries,CustomSelect){
         maxPrice:null
     }
     var ageSelect,ageSelectHigh;
+    var priceSelect,priceSelectHigh;
     var config = {};
     return {
         init:function(_config){
@@ -28,7 +29,6 @@ function(AddSeries,CustomSelect){
             });
             $(ageSelect).on("change",function(e,_data){
                 data.startYear = _data.value;
-                console.log(data)
             })
             ageSelectHigh = new CustomSelect("age_select_high", {
                 placeholder: "请选择",
@@ -37,6 +37,54 @@ function(AddSeries,CustomSelect){
             $(ageSelectHigh).on("change",function(e,_data){
                 data.endYear = _data.value;
             })
+
+            priceSelect = new CustomSelect("price_select", {
+                placeholder: "请选择",
+                multi: false
+            });
+            $(priceSelect).on("change",function(e,_data){
+                if(_data.key==-1){
+                    $(".select_dataContainer").addClass("hidden");
+                    $(".input_dataContainer").removeClass("hidden")
+                    return;
+                }
+                _data.value = _data.value.replace(/[^0-9]/g,"")
+                data.minPrice = _data.value;
+                $(".low-price").val(data.minPrice);
+            })
+            priceSelectHigh = new CustomSelect("price_select_high", {
+                placeholder: "请选择",
+                multi: false
+            });
+            $(priceSelectHigh).on("change",function(e,_data){
+                if(_data.key==-1){
+                    $(".select_dataContainer").addClass("hidden");
+                    $(".input_dataContainer").removeClass("hidden")
+                    return;
+                }
+                _data.value = _data.value.replace(/[^0-9]/g,"")
+                data.maxPrice = _data.value;
+                $(".high-price").val(data.maxPrice);
+            })
+//            $(".low-price").on("keyup",function(){
+//                $(this).val($(this).val().replace(/[^0-9]/, ""))
+//            })
+//            $(".low-price").on("keyup",function(){
+//                $(this).val($(this).val().replace(/[^0-9]/, ""))
+//            })
+            setInterval(function() {
+                $(".low-price").each(function(i, p) {
+                    if(/[^0-9]/.test($(p).val())){
+
+                    $(p).val($(p).val().replace(/[^0-9]/, ""))
+                        }
+                })
+                $(".high-price").each(function(i, p) {
+                    if(/[^0-9]/.test($(p).val())) {
+                        $(p).val($(p).val().replace(/[^0-9]/, ""))
+                    }
+                })
+            }, 200)
         },
         //根据配置的userRequementJson的生成初始数据
         _initData:function(initJson){
