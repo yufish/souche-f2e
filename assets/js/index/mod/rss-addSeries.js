@@ -15,6 +15,7 @@ define(['souche/util/load-info'],function(LoadInfo){
     var config = {
     };
     var tempSelected = [];
+
     return {
         selectedSeries:[],
         init:function(_config){
