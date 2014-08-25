@@ -21,7 +21,7 @@
 @sepBGC: #EBEBEB;
     // review 配置
 @reviewFS: 14px;
-@reviewFC: #666;
+@reviewFC: #888;
 
 
 
@@ -81,7 +81,8 @@
                 height: 30px;
                 padding: 0 16px 0 34px;
                 font-size: @profileFS;
-                line-height: 30px;
+                // 由于box-sizing, 30px - 2px border
+                line-height: 30px - 2px;
                 color: #fff;
                 border: 1px solid @btnBGC;
                 background-color: @btnBGC;
@@ -123,11 +124,18 @@
         width: auto;
         margin-left: @profileW + @sepW;
 
-        .review-quote{
+        .review-quote-pre{
             height: 30px;
             background-image: url('../../images/detail/cargod-quote.png');
             background-repeat: no-repeat;
             background-position: 5px 10px;
+        }
+        .review-quote-after{
+            height: 30px;
+            margin-right: 10px;
+            background-image: url('../../images/detail/cargod-quote-after.png');
+            background-repeat: no-repeat;
+            background-position: 100% 0;
         }
         .review-list{
             padding-left: 27px;
