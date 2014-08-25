@@ -274,43 +274,7 @@
 			            $("#quick_buy").fadeOut(200);
 			        }
 			    });
-			    //免费通话
-			    // var submiFreeCall = function() {
-			    //     $.ajax({
-			    //         url: "http://www.souche.com/pages/telephoneAction/call.json",
-			    //         data: {
-			    //             customerCellphone: $("#free-phoe").val(),
-			    //             // userCellphone:"#",
-			    //             carId: config.carId,
-			    //             time: (new Date()).valueOf(),
-			    //             token: "#", // get from page
-			    //             from: "web"
-			    //         },
-			    //         type: "get",
 
-			    //         success: function(data) {
-			    //             $("#free-popup").addClass("hidden");
-			    //             $("#free-popup-result").removeClass("hidden");
-
-			    //         }
-			    //     })
-			    // }
-
-			    // $("#J_freeCall").on("click", function() {
-			    //     $("#free-popup").removeClass("hidden");
-			    // });
-			    // $("#free-popup").find("#freecall-form").on("submit", function(e) {
-			    //     e.preventDefault();
-			    //     if (!phoneReg.test($("#free-phoe").val())) {
-			    //         $(".warning", this).removeClass("hidden");
-			    //     } else {
-			    //         submiFreeCall();
-			    //     }
-			    // });
-			    // $("#free-popup-result").find(".change-number").on("click", function() {
-			    //     $("#free-popup").removeClass("hidden");
-			    //     $("#free-popup-result").addClass("hidden");
-			    // })
 			    var submiFreeCall = function() {
 			        $.ajax({
 			            url: contextPath + "/pages/telephoneAction/freecall.json",
