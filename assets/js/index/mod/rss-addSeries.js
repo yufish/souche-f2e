@@ -135,7 +135,6 @@ define(['souche/util/load-info'],function(LoadInfo){
         _loadSeries:function(brandCode){
             var self = this;
             LoadInfo.loadSeries(brandCode,function(result){
-                console.log(result)
                 // $(".chexi .chexiTitle").html("<h1>全部车系</h1><span data-name=" + name + ">全部</span>");
 //                $(".chexi .chexiTitle span").attr("code", code);
 //                if (selectedresult.items) {
@@ -185,8 +184,6 @@ define(['souche/util/load-info'],function(LoadInfo){
                     isIn = true;
                 }
             }
-            console.log(this.selectedSeries)
-            console.log(isIn)
             return isIn;
         },
         _addSelected:function(code,name){
