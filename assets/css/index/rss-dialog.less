@@ -159,6 +159,7 @@ background: none;
       float: left;
       overflow:auto;
       height: 273px;
+      overflow-x:hidden;
       .instrest-tip{
         font-size:12px;
         line-height: 25px;
@@ -824,7 +825,10 @@ font-weight: bold;
 .bindLoginInfo .require-info, .bindunLoginInfo .require-info{
   height:240px;
 }
-
+.bindLoginInfo .interestCar .selected-item, .bindunLoginInfo .interestCar .selected-item
+{
+  width:77px;
+}
 @media screen and (max-width: 1024px){
   .carsModule{
     width:742px;
@@ -852,5 +856,15 @@ font-weight: bold;
   }
   .bindLoginInfo .require-info, .bindunLoginInfo .require-info{
     height:250px;
+  }
+  .bindLoginInfo .year span, .bindunLoginInfo .year span{
+    font-size:18px;
+  }
+  .bindLoginInfo .yusuan span, .bindunLoginInfo .yusuan span{
+    font-size: 18px;
+  }
+  .bindLoginInfo .interestCar .selected-item, .bindunLoginInfo .interestCar .selected-item
+  {
+    width:83px;
   }
 }

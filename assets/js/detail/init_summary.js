@@ -11,7 +11,7 @@ define(function() {
     return {
         load_price: function() {
             $.ajax({
-                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : "") + "/p/北京",
+                url: config.api_price + config.brandCode + "/s/" + config.seriesCode + (config.modelCode ? "/m/" + config.modelCode : "") + "/p/默认",
                 dataType: "jsonp",
                 success: function(_data) {
                     var data = _data.data;

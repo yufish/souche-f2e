@@ -1,5 +1,7 @@
 // define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate){
 define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FilterOperate, CarOperate){
+
+    var config = {};
     var _view = {
         init: function(){
             _view.initDropdown();
@@ -46,13 +48,15 @@ define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/
     };
 
 
-    function init(){
+    function init(_config){
+        $.extend(config, _config);
+
         _view.init();
 
         LeftNav.init();
         // FiltByLoan.init();
-        FilterOperate.init();
-        CarOperate.init();
+        FilterOperate.init(config);
+        CarOperate.init(config);
     }
 
     return {

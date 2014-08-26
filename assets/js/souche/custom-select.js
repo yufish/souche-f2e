@@ -1,6 +1,7 @@
 /**
  * [CustomSelect 自定义下拉框，可以多选，可定义下拉样式]
  */
+define(['souche/util/num-animate'],function(NumAnimate) {
 Souche.UI.CustomSelect = function() {
     var select = function(id, _config) {
         this.id = id;
@@ -315,7 +316,8 @@ Souche.UI.CustomSelect = function() {
                 {
                     this.selected[0].value = this.config.format(this.selected[0].value);
                 }
-                $(".sc-select-content", this.ele).html(this.selected[0].value);
+//                $(".sc-select-content", this.ele).html(this.selected[0].value);
+                NumAnimate.animateInnerHTML($(".sc-select-content", this.ele),this.selected[0].value)
             } else {
                 $(".sc-select-content", this.ele).html("<span class='placeholder'>" + this.config.placeholder + "</span>")
             }
@@ -347,6 +349,6 @@ Souche.UI.CustomSelect = function() {
     return select;
 }();
 
-define(function() {
+
     return Souche.UI.CustomSelect;
 });
