@@ -330,27 +330,11 @@
     });
 
     var submitReport = function() {
-
-        var rlist = $(".report-input");
-        var rlistlength = rlist.length;
-        var Reasonstring;
-        $(".report-input").on("click", function() {
-            $(this).attr({
-                checked: "checked"
-            });
-        });
-        for (var i = 0; i < rlistlength; i++) {
-            if (rlist[i].checked) {
-                Reasonstring = rlist[i].value;
-
-            }
-        };
-
         $.ajax({
             url: "http://niu.souche.com/open/inform_car",
             data: {
-                carId: config.carId,
-                reason: Reasonstring,
+                carId: SaleDetailConfig.carId,
+                reason: $(".report-input:checked").val(),
                 userId: "#",
             },
             dataType: "json",
