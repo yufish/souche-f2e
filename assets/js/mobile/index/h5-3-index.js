@@ -21,6 +21,14 @@ var isAndroid = false;
 if (navigator.userAgent.match(/Android/i)){
     isAndroid =true;
 }
+
+!function(){
+    var txt = $(".city-name").text();
+    //不是北京地区
+    if(txt.indexOf('北京')== -1){
+        $('.j_just4bj').remove();
+    }
+}()
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
@@ -174,8 +182,8 @@ if (navigator.userAgent.match(/Android/i)){
     }
     function hideTopic(){
         var time =0;
-        var height = 250;
-        for(var i = topicItems.length-1;i>-1;i--){
+        var height = 50*numOfTopic;
+        for(var i = numOfTopic-1;i>-1;i--){
             !function(index){
                 setTimeout(function(){
                     topicItems.eq(index).removeClass('show')
@@ -188,7 +196,7 @@ if (navigator.userAgent.match(/Android/i)){
         setTimeout(function(){
             otherTopic.css({height:0});
             wrapBg.addClass('hidden');
-        },timeSpan*5)
+        },timeSpan*numOfTopic)
     }
 }()
 //筛选相关
@@ -647,7 +655,7 @@ if (navigator.userAgent.match(/Android/i)){
                 +        '<div class="car-introduction">'+ d.carOtherAllNameShow+'</div>'
                 +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
                 +        '<div class="car-time">'+ d.year+'上牌</div>'
-                +        '<div class="recommend">'+ d.recommStr
+                +        '<div class="recommend car-footer">'+ d.recommStr
                 +            '<div class="fav '+activeClass+'" data-id="'+ d.id+'"><span class="star-shape">☆</span><span class="fav-num">'+ d.favCount+'</span></div>'
                 +        '</div>'
                 +    '</div>'
