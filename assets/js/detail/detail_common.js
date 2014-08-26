@@ -831,7 +831,8 @@ define(["detail/mod/fav", "detail/init_summary"], function(Fav, InitSummary) {
                             position: 'absolute',
                             top: this.e.pageY + 'px',
                             left: this.e.pageX + 'px',
-                            backgroundColor: "#BCEE68"
+                            backgroundColor: "#ff5517",
+                            color: "#fff"
                         });
 
                         var endX = $(".side-box .contrast-img").offset().left;
