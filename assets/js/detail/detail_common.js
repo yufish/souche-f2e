@@ -330,32 +330,17 @@
     });
 
     var submitReport = function() {
-
-        var rlist = $(".report-input");
-        var rlistlength = rlist.length;
-        var Reasonstring;
-        $(".report-input").on("click", function() {
-            $(this).attr({
-                checked: "checked"
-            });
-        });
-        for (var i = 0; i < rlistlength; i++) {
-            if (rlist[i].checked) {
-                Reasonstring = rlist[i].value;
-
-            }
-        };
-
         $.ajax({
             url: "http://niu.souche.com/open/inform_car",
             data: {
-                carId: config.carId,
-                reason: Reasonstring,
+                carId: SaleDetailConfig.carId,
+                reason: $(".report-input:checked").val(),
                 userId: "#",
             },
             dataType: "json",
             type: "post",
             success: function() {
+                $(".report-open").addClass("hidden");
                 $(".rep").addClass("hidden");
                 $(".has-rep").removeClass("hidden");
             }
@@ -364,6 +349,10 @@
     $(".report-form").on("submit", function(e) {
         e.preventDefault();
         submitReport();
+        $(".report-open").addClass("hidden");
+        $(".rep").addClass("hidden");
+        $(".has-rep").removeClass("hidden");
+        $(".share-item").removeClass("report-active");
     })
     //车牛车辆举报 end
     //降价通知提交
@@ -847,7 +836,8 @@ define(["detail/mod/fav", "detail/init_summary"], function(Fav, InitSummary) {
                             position: 'absolute',
                             top: this.e.pageY + 'px',
                             left: this.e.pageX + 'px',
-                            backgroundColor: "#BCEE68"
+                            backgroundColor: "#ff5517",
+                            color: "#fff"
                         });
 
                         var endX = $(".side-box .contrast-img").offset().left;
