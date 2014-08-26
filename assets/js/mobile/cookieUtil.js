@@ -21,9 +21,22 @@ var CookieUtil = function () {
         },
         setCookie: function (key, value) {
             cookie = key + '=' + value;
+            (document.cookie = [
+                key, '=', value,
+                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.path ? '; path=' + options.path : '',
+                options.domain ? '; domain=' + options.domain : '',
+                options.secure ? '; secure' : ''
+            ].join(''));
         },
         update: function () {
             initCookie();
+        },
+        removeCookie:function(key,value){
+            if (this.getCookie(key) === undefined) {
+                return false;
+            }
+            this.setCookie(key,values,{expires: -1})
         }
     }
 }();
