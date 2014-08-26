@@ -1,3 +1,8 @@
+/**
+ * 让dom的文字里的数字变化动起来。
+ *
+ * NumAnimate.animateInnerHTML($(".num"),"2万");
+ */
 define(function(){
     return {
         animateInnerHTML:function($ele,to){
