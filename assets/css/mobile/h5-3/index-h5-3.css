@@ -105,7 +105,7 @@ nav .nav-item.active .nav-item-content{
     float: left;
 }
 .car-area .for-carcustom{
-    margin: 0 5px;
+    margin: 0 10px;
     border-radius: 3px;
     font-size: 14px;
 }
@@ -225,7 +225,7 @@ nav .nav-item.active .nav-item-content{
     color:#666;
     border:1px solid #ccc;
     background:#fff ;
-    margin: 10px 5px;
+    margin: 10px 10px 0;
     text-align: center;
     font-size: 12px;
     border-radius: 3px;
