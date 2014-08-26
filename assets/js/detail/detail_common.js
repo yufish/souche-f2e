@@ -340,6 +340,7 @@
             dataType: "json",
             type: "post",
             success: function() {
+                $(".report-open").addClass("hidden");
                 $(".rep").addClass("hidden");
                 $(".has-rep").removeClass("hidden");
             }
@@ -348,6 +349,10 @@
     $(".report-form").on("submit", function(e) {
         e.preventDefault();
         submitReport();
+        $(".report-open").addClass("hidden");
+        $(".rep").addClass("hidden");
+        $(".has-rep").removeClass("hidden");
+        $(".share-item").removeClass("report-active");
     })
     //车牛车辆举报 end
     //降价通知提交
