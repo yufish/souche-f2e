@@ -100,9 +100,16 @@ if (navigator.userAgent.match(/Android/i)){
 //    }()
 
     //回复到上一次的tab
+
     try{
         var tabIndex = sessionStorage.getItem('index_tab_index');
         tabIndex = tabIndex ||1;
+        //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
+        var tabCookie = CookieUtil.getCookie("temp_tab");
+        if(tabCookie==2 || tabCookie==3){
+            tabIndex=tabCookie;
+            CookieUtil.removeCookie("temp_tab",-1)
+        }
         tabCtn[0].style['transition'] = 'none'
         tabCtn[0].style['webkitTransition'] = 'none'
 

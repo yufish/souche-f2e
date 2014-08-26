@@ -175,8 +175,7 @@
     color: #0090e2;
 }
 #detail #actions {
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding:10px 0;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -908,7 +907,7 @@
 .detail-card .ss-title{
     color: #333;
     font-size: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 .detail-card .ss-content{
     color:#666;
@@ -1049,7 +1048,6 @@
 }
 .recommend-cars{
     background: #f5f5f5;
-    padding: 10px 0;
     border-top: 1px solid #E6E6E6;
 }
 .recommend-cars .title{
@@ -1378,7 +1376,4 @@
 #guohu-history .explain{
     color:#666;
     font-size: 12px;
-}
-.car-card-container{
-    padding: 5px 0;
 }
