@@ -427,81 +427,85 @@
         });
     })
     var doubleClickFlag = false;
-    var submitFav = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_saveFavorite,
-            data: {
-                phone: $("#fav-phone").val(),
-                carType: SaleDetailConfig.carType,
-                carId: SaleDetailConfig.carId
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    //$('#shoucang-popup').removeClass('hidden');
-                    var favPos = $("#J_shoucang").offset();
-                    $("<div class='icon-fei'></div>").css({
-                        left: favPos.left + 7,
-                        top: favPos.top + 7
-                    })
-                        .appendTo(document.body)
-                        .animate({
-                            left: $(".sidebar").offset().left + 10,
-                            top: $(".sidebar").offset().top + 10,
-                            opacity: 0
-                        }, 700, function() {
-                            $(".collectside").addClass("flash")
-                            setTimeout(function() {
-                                $(".collectside").removeClass("flash")
-                            }, 500)
-                        })
-                    $("#fav-popup").addClass("hidden")
-                    $(".wrapGrayBg").hide();
-                    $("#J_shoucang label").html('已收藏')
-                    $("#J_shoucang").attr('value', '1').addClass("faved");
-                    var num = $('#J_car_favorite').html();
-                    $('#J_car_favorite').html(parseInt(num) + 1);
-                    doubleClickFlag = false;
-                }
-            }
-        })
-    }
+    // var submitFav = function() {
+    //     $.ajax({
+    //         url: SaleDetailConfig.api_saveFavorite,
+    //         data: {
+    //             phone: $("#fav-phone").val(),
+    //             carType: SaleDetailConfig.carType,
+    //             carId: SaleDetailConfig.carId
+    //         },
+    //         dataType: "json",
+    //         type: "post",
+    //         success: function(data) {
+    //             if (data.errorMessage) {
+    //                 alert(data.errorMessage)
+    //             } else {
+    //                 //$('#shoucang-popup').removeClass('hidden');
+    //                 var favPos = $("#J_shoucang").offset();
+    //                 $("<div class='icon-fei'></div>").css({
+    //                     left: favPos.left + 7,
+    //                     top: favPos.top + 7
+    //                 })
+    //                     .appendTo(document.body)
+    //                     .animate({
+    //                         left: $(".sidebar").offset().left + 10,
+    //                         top: $(".sidebar").offset().top + 10,
+    //                         opacity: 0
+    //                     }, 700, function() {
+    //                         $(".collectside").addClass("flash")
+    //                         setTimeout(function() {
+    //                             $(".collectside").removeClass("flash")
+    //                         }, 500)
+    //                     })
+    //                 $("#fav-popup").addClass("hidden")
+    //                 $(".wrapGrayBg").hide();
+    //                 $("#J_shoucang label").html('已收藏')
+    //                 $("#J_shoucang").attr('value', '1').addClass("faved");
+    //                 $("#J_shoucang").attr('value', '1').removeClass("fav");
+    //                 var num = $('#J_car_favorite').html();
+    //                 $('#J_car_favorite').html(parseInt(num) + 1);
+    //                 doubleClickFlag = false;
+    //             }
+    //         }
+    //     })
+    // }
 
 
 
-    var cancelFavSubmit = function() {
-        $.ajax({
-            url: SaleDetailConfig.api_delFavorite,
-            data: {
-                carId: SaleDetailConfig.carId //$(self).attr("data-carid")
-            },
-            dataType: "json",
-            type: "post",
-            success: function(data) {
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
-                } else {
-                    $("#J_shoucang label").html('收藏')
-                    $("#J_shoucang").removeClass("faved");
-                }
-            }
-        })
-    }
+    // var cancelFavSubmit = function() {
+    //     $.ajax({
+    //         url: SaleDetailConfig.api_delFavorite,
+    //         data: {
+    //             carId: SaleDetailConfig.carId //$(self).attr("data-carid")
+    //         },
+    //         dataType: "json",
+    //         type: "post",
+    //         success: function(data) {
+    //             $("#J_shoucang label").html('收藏');
+    //             $("#J_shoucang").removeClass("faved");
+    //             $("#J_shoucang").addClass("fav");
+    //             var num = $('#J_car_favorite').html();
+    //             $('#J_car_favorite').html(parseInt(num) - 1);
+    //             doubleClickFlag = false;
+    //         }
+    //     })
+    // }
 
-    $("#fav-form").on("submit", function(e) {
-        e.preventDefault();
-        if (!phoneReg.test($("#fav-phone").val())) {
-            $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
-        } else {
+    // $(".faved").on("click", function() {
+    //     cancelFavSubmit();
+    // })
+    // $("#fav-form").on("submit", function(e) {
+    //     e.preventDefault();
+    //     if (!phoneReg.test($("#fav-phone").val())) {
+    //         $(".warning", this).removeClass("hidden"); //("请填写正确的手机号码")
+    //     } else {
 
-            Souche.PhoneRegister($("#fav-phone").val(), function() {
-                submitFav();
-            })
-        }
-    })
+    //         Souche.PhoneRegister($("#fav-phone").val(), function() {
+    //             submitFav();
+    //         })
+    //     }
+    // })
     $('#shoucang-popup .apply_close').click(function() {
 
         $(this).parent().addClass('hidden');
