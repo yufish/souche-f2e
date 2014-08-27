@@ -28,6 +28,8 @@ if (navigator.userAgent.match(/Android/i)){
     if(txt.indexOf('北京')== -1){
         $('.j_just4bj').remove();
     }
+    $('.other-topic').css({height:0});
+    $('.wrapTransBg').addClass('hidden');
 }()
 //tab动画的相关实现
 !function(){
@@ -100,25 +102,28 @@ if (navigator.userAgent.match(/Android/i)){
 //    }()
 
     //回复到上一次的tab
+    !function recovTab() {
+        try {
+            var tabIndex = sessionStorage.getItem('index_tab_index');
+            tabIndex = tabIndex || 1;
+            //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
+            var tabCookie = $.cookie("temp_tab");
+            if (tabCookie == 2 || tabCookie == 3) {
+                tabIndex = tabCookie;
+                $.removeCookie("temp_tab", {path: "/"})
+                //$.cookie('temp_tab',-1)
+            }
+            tabCtn[0].style['transition'] = 'none'
+            tabCtn[0].style['webkitTransition'] = 'none'
 
-    try{
-        var tabIndex = sessionStorage.getItem('index_tab_index');
-        tabIndex = tabIndex ||1;
-        //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
-        var tabCookie = CookieUtil.getCookie("temp_tab");
-        if(tabCookie==2 || tabCookie==3){
-            tabIndex=tabCookie;
-            CookieUtil.removeCookie("temp_tab",-1)
+            move(+tabIndex, tabIndex == 3);
+            setTimeout(function () {
+                tabCtn[0].style['transition'] = +'all 0.4s linear'
+                tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
+            }, transition_duration)
+        } catch (e) {
         }
-        tabCtn[0].style['transition'] = 'none'
-        tabCtn[0].style['webkitTransition'] = 'none'
-
-        move(+tabIndex,tabIndex==3);
-        setTimeout(function(){
-            tabCtn[0].style['transition'] = +'all 0.4s linear'
-            tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
-        },transition_duration)
-    }catch(e){}
+    }()
 
 //    navItems.on('click',function(e){
 //        e.preventDefault();
@@ -155,7 +160,7 @@ if (navigator.userAgent.match(/Android/i)){
     var topicItems = $('.topic-item',otherTopic);
     var wrapBg = $('.wrapTransBg');
 
-    wrapBg.on(tap_event,function(){
+    wrapBg.on("click",function(){
         hideTopic();
         $('.for-other-topic').attr('data-show-state',0)
     })
@@ -178,7 +183,7 @@ if (navigator.userAgent.match(/Android/i)){
         topicItems.each(function(index,item){
             setTimeout(function(){
                 if(index==numOfTopic-1){
-                    height=220
+                    height=44*numOfTopic;
                 }
                 otherTopic.css({height:height});
                 height+=hGap;
@@ -840,11 +845,11 @@ $('.wrapGrayBg').on('click',function(){
         }
         if(tags['maxPrice']){
             data.maxPrice=tags['maxPrice']/10000;
-            maxStr = data.maxPrice;
+            maxStr = data.maxPrice+"万";
         }
         if(tags['minPrice']){
             data.minPrice=tags['minPrice']/10000;
-            minStr = data.minPrice
+            minStr = data.minPrice+"万"
         }
         if(maxStr=='不限'&&minStr=='不限'){
             //do nothing

@@ -3,7 +3,7 @@
 }
 #detail {
     background-color: #fff;
-    padding-bottom: 45px;
+    padding-bottom: 60px;
 }
 #detail #detail-main .top-info .lft {
     width: 100%;
@@ -922,9 +922,22 @@
     float: left;
     padding:0 5px;
 }
+#actions .single-btn-wrapper{
+    width: 100%;
+    padding:0 10px;
+}
+#actions .single-btn{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    background: #fff;
+    color: #333;
+    border-radius: 3px;
+}
 #actions .btn-wrapper:first-child{
     padding-left: 10px;
 }
+
 #actions .btn-wrapper:last-child{
     padding-right: 10px;
 }

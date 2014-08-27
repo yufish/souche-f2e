@@ -274,21 +274,18 @@
     font-size: 12px;
 }
 #list #cars .more {
-    font-size: 14px;
-    line-height: 50px;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin: 10px 10px 0;
     text-align: center;
+    font-size: 12px;
+    border-radius: 3px;
     display: block;
-    color: #999;
 }
-#list #cars .more i {
-    width: 18px;
-    height: 23px;
-    display: inline-block;
-    background: url(../../../images/mob/list-more.png) no-repeat;
-    background-size: 100%;
-    vertical-align: -10px;
-    margin-right: 5px;
-}
+
 #list #cars .time-limit-price {
     background-color: #fc7000;
     float: left;

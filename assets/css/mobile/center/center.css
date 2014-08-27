@@ -84,31 +84,27 @@
     line-height: 42px;
     font-size: 14px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
 }
 #center .nav-item {
     float: left;
     width: 50%;
-    height: 42px;
-    display: inline;
+    height: 44px;
     color: #333;
-    border-bottom: 4px solid #fff;
+    border-bottom: 1px solid #E6E6E6;
 }
 #center .nav-item span {
-    border-right: 1px solid #ddd;
-    line-height: 16px;
-    display: block;
-    width: 100%;
-    height: 16px;
-    margin-top: 15px;
+    line-height: 44px;
+    height: 44px;
+    padding: 0 4px;
+    display: inline-block;
 }
 #center .nav-item:last-child span {
     border-right: none;
 }
-#center .nav-active,
-#center .nav-item:active {
+#center .nav-item.nav-active span,
+#center .nav-item:active span{
     color: #fa7022;
-    border-bottom: 4px solid #fa7022;
+    border-bottom: 2px solid #fa7022;
 }
 #center .date {
     font-size: 14px;
@@ -144,6 +140,10 @@
     position: absolute;
     right: 15px;
     top: 15px;
+}
+#center .no-item{
+    text-align: center;
+    margin-top: 50px;
 }
 .common-cars {
     width: 100%;
