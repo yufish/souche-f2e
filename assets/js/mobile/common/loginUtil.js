@@ -4,6 +4,7 @@
 if(typeof $.cookie == "function") {
     var checkUserLocal = function () {
         var phoneReg = /^1[3458][0-9]{9}$/;
+
         var username = $.cookie('username')
         if (phoneReg.test(username)) {
             return {
@@ -14,6 +15,12 @@ if(typeof $.cookie == "function") {
         if (phoneReg.test(noregisteruser)) {
             return {
                 phoneNum: noregisteruser
+            };
+        }
+        var crmid=$.cookie('crmid');
+        if (phoneReg.test(crmid)) {
+            return {
+                phoneNum: crmid
             };
         }
         return {
