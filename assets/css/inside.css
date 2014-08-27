@@ -689,18 +689,19 @@ cursor: pointer;
 }
 
 #list_wrap .list_main .list-noResult{
-  width:618px;height:400px;
+  width:680px;height:400px;
   background-color:#fff;
   border:1px solid #d9d9d9;
   padding-top:60px;
   *margin-bottom:40px;
-  padding-left: 100px;
+  padding-left: 40px;
 }
 #list_wrap .list_main .list-noResult .list-noResult-bg{
-  background: url("../images/common/advisor-bg.png") no-repeat;
+  background: url("../images/common/advisor-bg.png?123") no-repeat;
   background-position: right bottom;
-  width:618px;
-  height:400px;
+  width:645px;
+  height:290px;
+  padding-top: 110px;
   }
 #list_wrap .list_main .list-noResult .list-noResult-bg .list-noResult-title{
   font-size: 18px;
