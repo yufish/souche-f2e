@@ -16,7 +16,7 @@ define(function() {
                 var vGap = maxV - minV,
                     dGap = maxD - minD;
                 return function(value) {
-                    return (value - minV) / vGap * dGap;
+                    return (value - minV) / vGap * dGap+minD;
                 }
             }
             var getMiddlePoint = createInterpolation(minPrice, maxPrice, minLength, maxLength);

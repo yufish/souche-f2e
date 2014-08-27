@@ -8,13 +8,13 @@ var Action = (function () {
                 var self = this;
                 if (hasYuyue)
                     return;
-
-                if (checkUserLocal().phoneNum) {
-                    submitYuyue();
-                } else {
-                    showPopup($('#for-yuyue'));
-                }
-
+                SM.checkPhoneExist(function(is_login) {
+                    if (is_login) {
+                        submitYuyue();
+                    } else {
+                        showPopup($('#for-yuyue'));
+                    }
+                })
             })
             $('#yuyue-form').on('submit', function (e) {
                 e.preventDefault();
@@ -61,11 +61,13 @@ var Action = (function () {
             };
             $("#fav_submit").on("click", function (e) {
                 e.preventDefault();
-                if (checkUserLocal().phoneNum) {
-                    submitFav();
-                } else {
-                    showPopup($('#for-fav'))
-                }
+                SM.checkPhoneExist(function(is_login) {
+                    if (is_login) {
+                        submitFav();;
+                    } else {
+                        showPopup($('#for-fav'))
+                    }
+                })
             })
             $('#fav-form').on('submit', function (e) {
                 e.preventDefault();

@@ -11,6 +11,7 @@ var CookieUtil = function () {
             cookieMap[key.trim()] = value.trim();
         })
     };
+    initCookie();
 
     return {
         init: function () {
@@ -19,29 +20,22 @@ var CookieUtil = function () {
         getCookie: function (cName) {
             return cookieMap[cName];
         },
-        setCookie: function (key, value) {
-            cookie = key + '=' + value;
-            (document.cookie = [
-                key, '=', value,
-                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
-                options.path ? '; path=' + options.path : '',
-                options.domain ? '; domain=' + options.domain : '',
-                options.secure ? '; secure' : ''
-            ].join(''));
+        setCookie: function (key, value,options) {
+            document.cookie=key+'='+value;
         },
         update: function () {
             initCookie();
         },
         removeCookie:function(key,value){
-            if (this.getCookie(key) === undefined) {
+            if (cookieMap[key] === undefined) {
                 return false;
             }
-            this.setCookie(key,values,{expires: -1})
+            document.cookie = name + '='+value+'; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
         }
     }
 }();
 var checkUserLocal = function () {
-    CookieUtil.update();
     var phoneReg = /^1[3458][0-9]{9}$/;
     var username = CookieUtil.getCookie('username')
     if (phoneReg.test(username)) {

@@ -6,6 +6,7 @@ var List = function() {
     var tpl_cars;
     var carList = [];
     var loadMore = function() {
+        $("#load_more").text('加载中...')
         $.ajax({
             url: config.moreURL + "&index=" + (++config.page),
             dataType: "json",
@@ -39,7 +40,7 @@ var List = function() {
                     });
                     $cars.append(html);
                 }
-
+                $("#load_more").text('点击查看更多')
                 if (data.totalPage == config.page) {
                     $("#load_more").addClass("hidden")
                 }
@@ -218,8 +219,8 @@ var List = function() {
                 var isLogin = false;
                 var $curFav;
                 var phoneReg = /^1[3458][0-9]{9}$/;
-                $('#phone-form').submit(function(e) {
-                    var phoneNum = $("#phone-num").val();
+                $('#fav-form').submit(function(e) {
+                    var phoneNum = $("#phone-for-fav").val();
                     e.preventDefault();
                     if (!phoneReg.test(phoneNum)) {
                         alert('请输入正确的手机号码');
