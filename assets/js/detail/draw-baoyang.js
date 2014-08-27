@@ -71,8 +71,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                     max = feiyongs[i];
                 }
             }
-
-            for (var i = 0; i < maxL; i++) {
+            for(var i=0;i<(data.distanceData.length>20?20:data.distanceData.length);i++){
                 var d = feiyongs[i];
                 var fillColor = "#cfe6cf";
                 var textColor = "#a0c9a0";
@@ -85,13 +84,36 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 }
                 this.drawColumn(i, feiyongs[i])
 
-                svg.plain((i + 1) * 0.5 + "万").attr({
+                svg.plain((data.distanceData[i].distance/10000).toFixed(1) + "万").attr({
                     x: i * 45 + 6 + 30,
                     y: 370
                 }).font({
                     size: 12
                 }).fill(textColor);
             }
+
+
+//
+//            for (var i = 0; i < maxL; i++) {
+//                var d = feiyongs[i];
+//                var fillColor = "#cfe6cf";
+//                var textColor = "#a0c9a0";
+//                if (i < nowIndex) {
+//                    fillColor = "#e6e6e6";
+//                    textColor = "#ccc";
+//                } else if (i == nowIndex) {
+//                    fillColor = "#63b162"
+//                    textColor = "#999";
+//                }
+//                this.drawColumn(i, feiyongs[i])
+//
+//                svg.plain((i + 1) * 0.5 + "万").attr({
+//                    x: i * 45 + 6 + 30,
+//                    y: 370
+//                }).font({
+//                    size: 12
+//                }).fill(textColor);
+//            }
             svg.plain("里程:公里").attr({
                 x: 998,
                 y: 371
@@ -133,11 +155,18 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             })
         },
         draw: function(_data) {
+            console.log(_data)
             data = _data;
             for (var i = 0; i < data.distanceData.length; i++) {
                 feiyongs.push(data.distanceData[i].price);
             }
-            nowIndex = Math.floor(data.nowDistance / 0.5)
+            for (var i = 0; i < data.distanceData.length; i++) {
+                if(data.distanceData[i].distance*1>=data.nowDistance*10000){
+                    nowIndex = i
+                    break;
+                }
+            }
+
             this.drawChart();
             var distanceSelect;
             distanceSelect = new CustomSelect("distance_select", {
