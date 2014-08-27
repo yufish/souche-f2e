@@ -44,6 +44,24 @@ define(function() {
             }
         })
     }
+    var cancelFavSubmit = function() {
+        $.ajax({
+            url: config.api_delFavorite,
+            data: {
+                carId: config.carId //$(self).attr("data-carid")
+            },
+            dataType: "json",
+            type: "post",
+            success: function(data) {
+                $("#J_shoucang label").html('收藏');
+                $("#J_shoucang").removeClass("faved");
+                $("#J_shoucang").addClass("fav");
+                var num = $('#J_car_favorite').html();
+                $('#J_car_favorite').html(parseInt(num) - 1);
+                doubleClickFlag = false;
+            }
+        })
+    }
     return {
         init: function(_config) {
             config = _config;
@@ -53,6 +71,8 @@ define(function() {
                 e.preventDefault();
 
                 if ($(this).hasClass("faved")) {
+
+                    cancelFavSubmit()
                     return;
                 } else {
                     if (doubleClickFlag) {
