@@ -17,9 +17,9 @@ define(['souche/util/sc-db'], function(DB) {
             } catch (e) {
 
             }
-            if (data) {
-                callback(data);
-            } else {
+//            if (data) {
+//                callback(data);
+//            } else {
                 $.ajax({
                     url: contextPath + "/pages/dicAction/loadRootLevel.json",
                     dataType: "json",
@@ -38,7 +38,7 @@ define(['souche/util/sc-db'], function(DB) {
                         // alert("品牌信息请求出错，刷新后再试")
                     }
                 });
-            }
+//            }
 
         },
         loadSeries: function(brandid, callback) {
@@ -48,9 +48,9 @@ define(['souche/util/sc-db'], function(DB) {
             } catch (e) {
 
             }
-            if (data) {
-                callback(data);
-            } else {
+//            if (data) {
+//                callback(data);
+//            } else {
                 $.ajax({
                     url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
                     dataType: "json",
@@ -69,7 +69,7 @@ define(['souche/util/sc-db'], function(DB) {
                         // alert("车系信息请求出错，刷新后再试")
                     }
                 });
-            }
+//            }
         },
         loadProvince: function(callback) {
             var data = null;
@@ -78,9 +78,9 @@ define(['souche/util/sc-db'], function(DB) {
             } catch (e) {
 
             }
-            if (data) {
-                callback(data);
-            } else {
+//            if (data) {
+//                callback(data);
+//            } else {
                 $.ajax({
                     url: contextPath + "/pages/dicAction/loadRootLevel.json?type=area",
                     dataType: "json",
@@ -99,7 +99,7 @@ define(['souche/util/sc-db'], function(DB) {
                         // alert("品牌信息请求出错，刷新后再试")
                     }
                 });
-            }
+//            }
         },
         loadCity: function(provinceCode, callback) {
             var data = null;
@@ -108,9 +108,9 @@ define(['souche/util/sc-db'], function(DB) {
             } catch (e) {
 
             }
-            if (data) {
-                callback(data);
-            } else {
+//            if (data) {
+//                callback(data);
+//            } else {
                 $.ajax({
                     url: contextPath + "/pages/dicAction/loadRootLevel.json?request_message={\"code\":\"" + provinceCode + "\",\"type\":\"area\"}",
                     dataType: "json",
@@ -129,7 +129,7 @@ define(['souche/util/sc-db'], function(DB) {
                         // alert("品牌信息请求出错，刷新后再试")
                     }
                 });
-            }
+//            }
         }
     }
 });
