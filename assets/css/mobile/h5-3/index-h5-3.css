@@ -127,6 +127,7 @@ nav .nav-item.active .nav-item-content{
     background:#fff;
     border:1px solid #E6E6E6;
     color:#666;
+    margin-top:10px
 }
 .car-area .add-sub-text{
     padding: 20px;
@@ -354,7 +355,6 @@ nav .nav-item.active .nav-item-content{
     border: 1px solid #ccc;
     border-radius: 3px;
     color:#333;
-    width: 288px;
 }
 .btn-wrapper-for-filter{
     font-size: 0;
@@ -363,6 +363,7 @@ nav .nav-item.active .nav-item-content{
     width: 100%;
     z-index: 2;
     text-align: center;
+    padding: 0 16px;
 }
 .btn-wrapper-for-filter button{
     font-size: 14px;
@@ -379,7 +380,7 @@ nav .nav-item.active .nav-item-content{
 }
 #J_btnFilter_submit{
     background: #ff5a00;
-    width: 288px;
+    width: 100%;
     border-radius: 3px;
 }
 .filter-popup-wrapper {

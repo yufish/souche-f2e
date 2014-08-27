@@ -20,6 +20,7 @@
     $("#pic-container").swipeLeft(function (e) {
         var self = $(this);
         var picIndex = +self.attr('data-index');
+        picIndex=picIndex|0;
         if (picIndex == numOfScreen - 1)return;
         var nextIndex = picIndex + 1;
         self.animate({'margin-left': -nextIndex * 92 + '%'})
