@@ -7,6 +7,16 @@ body {
     position: relative;
     overflow: hidden;
 }
+#footer{
+    margin-top: 0px;
+}
+.sellcar-app{
+    width: 100%;
+}
+.sellcar-app .app-img{
+    width: 100%;
+    display: block;
+}
 #sellcar #content .banner {
     width: 100%;
     background: url(../images/sellcar/banner-x.png) no-repeat;

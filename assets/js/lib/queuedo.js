@@ -5,7 +5,7 @@ var QueueDo = function() {
         loop: function() {
             this.index++;
             if (this.index == this.list.length) {
-                this.next_func();
+                this.next_func&&this.next_func();
             } else {
                 this.handle_func(this.list[this.index], this.loop, this);
             }
@@ -13,7 +13,7 @@ var QueueDo = function() {
         check_asyn: function() {
             this.index++;
             if (this.index == this.list.length) {
-                this.next_func();
+                this.next_func&&this.next_func();
             }
         },
         loop_asyn: function() {
