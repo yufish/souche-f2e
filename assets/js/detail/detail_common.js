@@ -484,13 +484,19 @@
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
-                    $("#J_shoucang label").html('收藏')
+                    $("#J_shoucang label").html('收藏');
                     $("#J_shoucang").removeClass("faved");
+                    var num = $('#J_car_favorite').html();
+                    $('#J_car_favorite').html(parseInt(num) - 1);
                 }
             }
         })
     }
 
+    $(".faved").on("click", function() {
+
+        cancelFavSubmit();
+    })
     $("#fav-form").on("submit", function(e) {
         e.preventDefault();
         if (!phoneReg.test($("#fav-phone").val())) {
