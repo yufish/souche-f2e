@@ -882,20 +882,15 @@ $('.wrapGrayBg').on('click',function(){
         $('.new-sub-content').text(sNameList.join('，'));
 
         var oldData = req_config.userRequirementJson;
-        var oldBrands = oldData.brands,
-            oldSeries = oldData.series,
-            oldMinPrice = oldData.minPrice,
-            oldMaxPrice = oloData.maxPrice;
-        data.brands = oldBrands;
+        var saveData = $.extend({},oldData);
         if(data.series){
-            data.series+=(','+oldSeries)
-        }else{
-            data.series=oldSeries;
+            if(saveData.series) {
+                saveData.series += (',' + data.series);
+            }else{
+                saveData.series = data.series;
+            }
         }
-        data.maxPrice = oldMaxPrice;
-        data.minPrice = oldMinPrice;
-        buildEvent({saveData:data})
-
+        buildEvent({saveData:saveData})
     })
 
 
