@@ -31,6 +31,17 @@ if (navigator.userAgent.match(/Android/i)){
     }
 }()
 */
+!function() {
+    /*var txt = $(".city-name").text();
+    //不是北京地区
+    if(txt.indexOf('北京')== -1){
+        $('.j_just4bj').remove();
+    }*/
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.indexOf("micromessenger") != -1){
+        $("#J_tab1_name").text('好车推荐')
+    }
+}()
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
@@ -825,14 +836,15 @@ $('.wrapGrayBg').on('click',function(){
     })
 }();
 //加入订阅相关
-!function(){
+!function(req_config){
     var apiUrls={
         hasNewReq:contextPath+'/pages/mobile/homePageAction/queryTagTip.json',
         addToReq:contextPath+'/pages/mobile/carCustomAction/saveBuyInfo.json?tagTip=1',
         cancelNewReq:contextPath+'/pages/mobile/homePageAction/closeTagTip.json'
     }
-
-
+    var oldData = req_config.userRequirementJson;
+    var oldBrands = oldData.brands;
+    var oldSeries = oldData.series;
     $.getJSON(apiUrls.hasNewReq,function(e){
         if(e.code!=200){
             return;
@@ -869,6 +881,12 @@ $('.wrapGrayBg').on('click',function(){
             return;
         }
         $('.new-sub-content').text(sNameList.join('，'));
+        data.brands = oldBrands;
+        if(data.series){
+            data.series+=(','+oldSeries)
+        }else{
+            data.series=oldSeries;
+        }
         buildEvent({saveData:data})
 
     })
@@ -907,5 +925,5 @@ $('.wrapGrayBg').on('click',function(){
 
     });*/
 
-}()
+}(req_config)
 
