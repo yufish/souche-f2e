@@ -842,9 +842,7 @@ $('.wrapGrayBg').on('click',function(){
         addToReq:contextPath+'/pages/mobile/carCustomAction/saveBuyInfo.json?tagTip=1',
         cancelNewReq:contextPath+'/pages/mobile/homePageAction/closeTagTip.json'
     }
-    var oldData = req_config.userRequirementJson;
-    var oldBrands = oldData.brands;
-    var oldSeries = oldData.series;
+
     $.getJSON(apiUrls.hasNewReq,function(e){
         if(e.code!=200){
             return;
@@ -860,10 +858,11 @@ $('.wrapGrayBg').on('click',function(){
                 sNameList.push(brand['name'])
             }
         }
-        var maxStr='不限',minStr='不限';
+        //var maxStr='不限',minStr='不限';
         if(sCodeList.length>0){
             data.series = sCodeList.join(',')
         }
+        /*
         if(tags['maxPrice']){
             data.maxPrice=tags['maxPrice']/10000;
             maxStr = data.maxPrice+"万";
@@ -876,17 +875,25 @@ $('.wrapGrayBg').on('click',function(){
             //do nothing
         }else{
             sNameList.push(minStr+'-'+maxStr);
-        }
+        }*/
         if($.isEmptyObject(data)){
             return;
         }
         $('.new-sub-content').text(sNameList.join('，'));
+
+        var oldData = req_config.userRequirementJson;
+        var oldBrands = oldData.brands,
+            oldSeries = oldData.series,
+            oldMinPrice = oldData.minPrice,
+            oldMaxPrice = oloData.maxPrice;
         data.brands = oldBrands;
         if(data.series){
             data.series+=(','+oldSeries)
         }else{
             data.series=oldSeries;
         }
+        data.maxPrice = oldMaxPrice;
+        data.minPrice = oldMinPrice;
         buildEvent({saveData:data})
 
     })
