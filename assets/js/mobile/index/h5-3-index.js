@@ -22,15 +22,15 @@ if (navigator.userAgent.match(/Android/i)){
     isAndroid =true;
 }
 
+/* 非北京地区隐藏一些东西
 !function(){
     var txt = $(".city-name").text();
     //不是北京地区
     if(txt.indexOf('北京')== -1){
         $('.j_just4bj').remove();
     }
-    $('.other-topic').css({height:0});
-    $('.wrapTransBg').addClass('hidden');
 }()
+*/
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
