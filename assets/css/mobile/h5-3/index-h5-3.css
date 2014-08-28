@@ -336,6 +336,11 @@ nav .nav-item.active .nav-item-content{
     height: 36px;
     width: 230px;
 }
+.filter-content .select-cond.no-active{
+    background: #fafafa;
+    color: #ccc;
+    border:1px solid #EBEBEB;
+}
 
 .filter-item .select-price.select-cond{
     width: 100px;

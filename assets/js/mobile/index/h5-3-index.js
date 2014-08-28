@@ -22,15 +22,15 @@ if (navigator.userAgent.match(/Android/i)){
     isAndroid =true;
 }
 
+/* 非北京地区隐藏一些东西
 !function(){
     var txt = $(".city-name").text();
     //不是北京地区
     if(txt.indexOf('北京')== -1){
         $('.j_just4bj').remove();
     }
-    $('.other-topic').css({height:0});
-    $('.wrapTransBg').addClass('hidden');
 }()
+*/
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
@@ -173,6 +173,16 @@ if (navigator.userAgent.match(/Android/i)){
             showTopic()
             self.attr('data-show-state',1)
         }
+    })
+    topicItems.on("click",function(){
+        if($(this).hasClass('not-fold')){
+            return;
+        }
+        setTimeout(function(){
+            hideTopic();
+            $('.for-other-topic').attr('data-show-state',0)
+        },100);
+
     })
     var numOfTopic = topicItems.length;
     var timeSpan = 100,hGap=44;
@@ -405,10 +415,9 @@ if (navigator.userAgent.match(/Android/i)){
             var self = $(this)
             //清空车系的状态
             $('.series-content').empty();
-            $('#J_series').text('请先选择品牌').css({color:'#999'});
+            $('#J_series').text('请先选择品牌').addClass('no-active');
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName='';
-            $('.selected-brand-name').text('请先选择品牌');
             if(self.hasClass('selected')){
                 self.removeClass('selected');
                 $('#J_brand').text('选择品牌');
@@ -429,7 +438,7 @@ if (navigator.userAgent.match(/Android/i)){
                 filterGlobal.selectBrandName = bName;
 
                 utils.getSeriesByBrand(bCode,makeSeries);
-                $('#J_series').text('选择车系').css({color:'#333'});
+                $('#J_series').text('选择车系').removeClass('no-active')
             }
             filterGlobal.queryCount();
         })
@@ -668,7 +677,7 @@ if (navigator.userAgent.match(/Android/i)){
                 +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
                 +        '<div class="car-time">'+ d.year+'上牌</div>'
                 +        '<div class="recommend car-footer">'+ d.recommStr
-                +            '<div class="fav '+activeClass+'" data-id="'+ d.id+'"><span class="star-shape">☆</span><span class="fav-num">'+ d.favCount+'</span></div>'
+                +            '<div class="fav '+activeClass+'" data-id="'+ d.id+'"><span class="star-shape"></span><span class="fav-num">'+ d.favCount+'</span></div>'
                 +        '</div>'
                 +    '</div>'
                 +   '</a>'
@@ -855,6 +864,9 @@ $('.wrapGrayBg').on('click',function(){
             //do nothing
         }else{
             sNameList.push(minStr+'-'+maxStr);
+        }
+        if($.isEmptyObject(data)){
+            return;
         }
         $('.new-sub-content').text(sNameList.join('，'));
         buildEvent({saveData:data})

@@ -60,10 +60,11 @@ var Action = (function () {
                 })
             };
             $("#fav_submit").on("click", function (e) {
+                var carId=$(this).attr('data-id')
                 e.preventDefault();
                 SM.checkPhoneExist(function(is_login) {
                     if (is_login) {
-                        submitFav();;
+                        submitFav(carId);;
                     } else {
                         showPopup($('#for-fav'))
                     }
@@ -80,11 +81,11 @@ var Action = (function () {
                     })
                 }
             });
-            var submitFav = function () {
+            var submitFav = function (carId) {
                 if($("#fav_submit").hasClass("active")){
-                    delFav()
+                    delFav(carId)
                 }else{
-                    saveFav();
+                    saveFav(carId);
                 }
 
             };
@@ -92,13 +93,14 @@ var Action = (function () {
                 fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
                 unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
             };
-            function saveFav(){
+            function saveFav(carId){
                 $("#fav_submit .fav-text").html('收藏中...')
                 $.ajax({
                     url: favUrl.fav,
                     dataType: "json",
                     data: {
-                        platform : 'PLATFORM_H5'
+                        platform : 'PLATFORM_H5',
+                        carId: carId
                     },
                     success: function (data) {
                         $("#fav_submit .fav-text").html("已收藏")
@@ -107,13 +109,14 @@ var Action = (function () {
                     }
                 })
             }
-            function delFav(){
+            function delFav(carId){
                 $("#fav_submit .fav-text").html('取消中...')
                 $.ajax({
                     url: favUrl.unfav,
                     dataType: "json",
                     data: {
-                        platform : 'PLATFORM_H5'
+                        platform : 'PLATFORM_H5',
+                        carId: carId
                     },
                     success: function (data) {
                         $("#fav_submit .fav-text").html("收藏")
