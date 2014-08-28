@@ -415,10 +415,9 @@ if (navigator.userAgent.match(/Android/i)){
             var self = $(this)
             //清空车系的状态
             $('.series-content').empty();
-            $('#J_series').text('请先选择品牌').css({color:'#999'});
+            $('#J_series').text('请先选择品牌').addClass('no-active');
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName='';
-            $('.selected-brand-name').text('请先选择品牌');
             if(self.hasClass('selected')){
                 self.removeClass('selected');
                 $('#J_brand').text('选择品牌');
@@ -439,7 +438,7 @@ if (navigator.userAgent.match(/Android/i)){
                 filterGlobal.selectBrandName = bName;
 
                 utils.getSeriesByBrand(bCode,makeSeries);
-                $('#J_series').text('选择车系').css({color:'#333'});
+                $('#J_series').text('选择车系').removeClass('no-active')
             }
             filterGlobal.queryCount();
         })
