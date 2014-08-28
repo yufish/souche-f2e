@@ -174,6 +174,16 @@ if (navigator.userAgent.match(/Android/i)){
             self.attr('data-show-state',1)
         }
     })
+    topicItems.on("click",function(){
+        if($(this).hasClass('not-fold')){
+            return;
+        }
+        setTimeout(function(){
+            hideTopic();
+            $('.for-other-topic').attr('data-show-state',0)
+        },100);
+
+    })
     var numOfTopic = topicItems.length;
     var timeSpan = 100,hGap=44;
     function showTopic(){
@@ -855,6 +865,9 @@ $('.wrapGrayBg').on('click',function(){
             //do nothing
         }else{
             sNameList.push(minStr+'-'+maxStr);
+        }
+        if($.isEmptyObject(data)){
+            return;
         }
         $('.new-sub-content').text(sNameList.join('，'));
         buildEvent({saveData:data})
