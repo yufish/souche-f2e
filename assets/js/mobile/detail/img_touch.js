@@ -55,7 +55,7 @@
         }
     }
     $('#pic-container .img-card').on('click',function(e){
-        var index = $(this).attr('data-index');
+        var index = +$(this).attr('data-index');
         $(".big-picture").removeClass("hidden")
         bigImgCtn.css({'margin-left':-index*100+'%'})
         showImg(bigImgCard.eq(index).find('img'));

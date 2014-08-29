@@ -757,6 +757,7 @@
 #detail-main #pic-cover{
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 #detail-main #pic-container{
     padding: 10px 0 10px 10px;
@@ -1399,7 +1400,30 @@
     margin-left: 5px;
 }
 .fly-fivestar{
-    width:12px;height:12px;position: absolute;
-    background: url(../../../images/mob/h5-3/small-star-active.png) no-repeat center;
+    width:21px;height:20px;position: absolute;
+    background: url(../../../images/mob/h5-3/fav-fly.png) no-repeat center;
+    background-size: 100%;
+}
+.process-item{
+    line-height: 14px;
+    margin-bottom: 16px;
+}
+.process-item .p-key{
+    color:#333;
+    font-size: 14px;
+}
+.process-item .p-val{
+    margin-left: 8px;
+    color:#999;
+    font-size: 12px;
+}
+.yushou-tag{
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 21px;
+    top:10px;
+    left:18px;
+    background: url(../../../images/mob/h5-3/yushou-tag.png) no-repeat center;
     background-size: 100%;
 }
