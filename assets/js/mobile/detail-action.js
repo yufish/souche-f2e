@@ -5,7 +5,6 @@ var Action = (function () {
             var hasYuyue = false;
             $("#yuyue_submit").on("click", function (e) {
                 e.preventDefault();
-                var self = this;
                 if (hasYuyue)
                     return;
                 SM.checkPhoneExist(function(is_login) {
@@ -102,9 +101,27 @@ var Action = (function () {
                         platform : 'PLATFORM_H5',
                         carId: carId
                     },
-                    success: function (data) {
+                    success: function () {
                         $("#fav_submit .fav-text").html("已收藏")
                         $("#fav_submit").addClass('active');
+                        //收藏成功后的动画
+                        var offset1 = $("#fav_submit").offset();
+                        var left1 = offset1.left,top1 = offset1.top;
+                        var offset2 = $('.for-other-topic').offset();
+                        var left2 = offset2.left,top2 = offset2.top;
+                        var moveDom = $('<div class="fly-fivestar"></div>');
+                        moveDom.css({
+                            left:left1,
+                            top:top1,
+                            "z-index":10005
+                        }).appendTo(document.body).animate({
+                            left:left2+30,
+                            top:top2+10
+                        },700,function(){
+                            moveDom.remove();
+                            $('.other-topic .icon-dot').show();
+                        })
+
                         hidePopup();
                     }
                 })

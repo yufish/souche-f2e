@@ -91,7 +91,6 @@ nav .nav-item.active .nav-item-content{
     width:12px;height:12px;position: absolute;
     background: url(../../../images/mob/h5-3/small-star-active.png) no-repeat center;
     background-size: 100%;
-
 }
 .car-area{
     padding-top: 10px;
@@ -496,6 +495,7 @@ nav .nav-item.active .nav-item-content{
     color:#333;
     padding: 12px 16px;
     font-weight: bold;
+    line-height: 24px;
 }
 .act-card .act-content{
     padding:0 16px;

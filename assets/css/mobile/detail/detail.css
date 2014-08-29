@@ -182,7 +182,7 @@
     width: 100%;
     background: #eaeaea;
     z-index: 100;
-    box-shadow: -1px -2px 3px #aaa;
+    box-shadow: -1px -2px 2px #ccc;
 }
 #detail #actions .fav {
     float: left;
@@ -1048,8 +1048,7 @@
 }
 #detail-main .timelimt-info .time-limit-png{
     width: 14px;
-    vertical-align: -2px;
-    margin-right: -3px;
+    vertical-align: -3px;
 }
 #detail-main .timelimt-info .detail-timelimit-tag{
     background:#65ae2f;
@@ -1387,5 +1386,33 @@
 }
 #guohu-history .explain{
     color:#666;
+    font-size: 12px;
+}
+
+.left-arrow {
+    width: 7px;
+    height: 12px;
+    background: url(../../../images/mob/h5-3/left-arrow.png) no-repeat center;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: -1px;
+    margin-left: 5px;
+}
+.fly-fivestar{
+    width:12px;height:12px;position: absolute;
+    background: url(../../../images/mob/h5-3/small-star-active.png) no-repeat center;
+    background-size: 100%;
+}
+.process-item{
+    line-height: 14px;
+    margin-bottom: 16px;
+}
+.process-item .p-key{
+    color:#333;
+    font-size: 14px;
+}
+.process-item .p-val{
+    margin-left: 8px;
+    color:#999;
     font-size: 12px;
 }

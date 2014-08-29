@@ -101,6 +101,7 @@
 			    //缩略图切换
 			    var photoList = $('.photosSmall');
 			    var lis = photoList.find('li');
+			    var picleng = $(".yushoudetail-bigPhoto li").length;
 			    initPhotoBox();
 
 			    function initPhotoBox() {
