@@ -104,6 +104,7 @@ var Action = (function () {
                     success: function (data) {
                         $("#fav_submit .fav-text").html("已收藏")
                         $("#fav_submit").addClass('active');
+
                         hidePopup();
                     }
                 })
