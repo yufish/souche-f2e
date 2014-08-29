@@ -182,7 +182,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 url: config.api_sentiment.replace("/b","") +"/s/" + seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
-                    if (data&&_data.data&&_data.data.items&&_data.data.items.length) {
+                    if (_data&&_data.data&&_data.data.items&&_data.data.items.length) {
                         var koubeiData = [];
                         var kv = {
                             upholstery: "内饰",
