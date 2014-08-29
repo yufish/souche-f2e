@@ -146,7 +146,7 @@ define(function() {
                                     "relatedSeries": data.relatedSeries,
                                     "topPosReview": data.topPosReview,
                                     "topNegReview": data.topNegReview
-                                })
+                                },config)
                                 $(".onsale-tab-item-koubei").removeClass("hidden");
                                 $(".float-nav-item-koubei").removeClass("hidden")
                             }

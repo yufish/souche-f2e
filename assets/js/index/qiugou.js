@@ -143,7 +143,7 @@ function(AddSeries,CustomSelect){
             $("#J_xuqiu_submit").on("click",function(){
 
                 if(rss_isSubmiting) return;
-                rss_isSubmiting = true;
+
                 data.minPrice = $(".low-price").val();
                 data.maxPrice = $(".high-price").val();
                 if(!(data.brands.length
@@ -163,6 +163,7 @@ function(AddSeries,CustomSelect){
                     $(".trail .warning").html("预算填写错误").removeClass("hidden")
                     return;
                 }
+                rss_isSubmiting = true;
                 $(this).addClass("loading").html("提交中")
                 $.ajax({
                     url:config.submit_api,

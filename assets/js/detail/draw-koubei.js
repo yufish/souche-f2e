@@ -33,9 +33,12 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
     var item_tpl;
     var realPoints = [];
     var outlinePoints = [];
+    var config = {}
     var DrawKoubei = {
-        draw: function(_data) {
+        draw: function(_data,_config) {
             data = _data;
+            var self = this;
+            $.extend(config,_config);
             var totalScore = 0;
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
@@ -61,14 +64,18 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
             $(".series-tab").append(tab)
             tab.click(function() {
-                self.redraw(item.seriesCode);
+                self.loadOtherSeries($(this).attr("data-code"));
+                $(".series-tab-item").removeClass("item-active")
+                $(this).addClass("item-active")
             })
             for (var i = 0; i < data.relatedSeries.length; i++) {
                 var item = data.relatedSeries[i];
                 var tab = $("<div class='series-tab-item'></div>").html(item.name).attr("data-code", item.seriesCode);
                 $(".series-tab").append(tab)
                 tab.click(function() {
-                    self.redraw(item.seriesCode);
+                    self.loadOtherSeries($(this).attr("data-code"));
+                    $(".series-tab-item").removeClass("item-active")
+                    $(this).addClass("item-active")
                 })
             }
             for (var i = 0; i < data.topPosReview.length; i++) {
@@ -104,8 +111,122 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             }
 
         },
-        redraw: function() {
+        redraw:function(_data){
+            data = _data;
+            var totalScore = 0;
+            for (var i = 0; i < data.items.length; i++) {
+                rateData.push(data.items[i].rate);
+                totalScore += data.items[i].rate * 10;
+                var labels = data.items[i].labels;
+                if (labels) {
+                    for (var n = 0; n < labels.length; n++) {
+                        var label = labels[n];
 
+                        labels[n] = label.replace(/\(([0-9]*?)\)/, function(r, r1) {
+                            return "<span>(" + r1 + "人)</span>"
+                        })
+                    }
+                }
+            }
+            $("#koubei_svg").html("")
+            item_tpl = $("#koubei_item_template").html();
+            this.drawRadar();
+            this.drawLabel();
+
+            $(".all-score em").html((totalScore / 9).toFixed(2))
+
+            for (var i = 0; i < data.topPosReview.length; i++) {
+                if (data.topPosReview[i].indexOf("�") != -1) {
+                    data.topPosReview.splice(i, 1)
+                    i--
+                }
+            }
+            for (var i = 0; i < data.topNegReview.length; i++) {
+                if (data.topNegReview[i].indexOf("�") != -1) {
+                    data.topNegReview.splice(i, 1)
+                    i--
+                }
+            }
+            data.topPosReview = data.topPosReview.splice(0, 10)
+            data.topNegReview = data.topNegReview.splice(0, 10);
+            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
+            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
+            data.items.sort(function(i1, i2) {
+                return i1.rate < i2.rate
+            });
+            var t = 3;
+            var bestLabels = [];
+            $(".koubei-labels").html("")
+            for (var i = 0; i < t; i++) {
+                if (data.items[i].labels.length) {
+                    bestLabels.push(data.items[i].labels[0])
+                    $(".koubei-labels").append("<label>" + data.items[i].labels[0] + "</label>")
+                } else {
+                    t++;
+                    if (t > 8) t = 8;
+                }
+            }
+        },
+        loadOtherSeries: function(seriesCode) {
+            var self = this;
+            $.ajax({
+                url: config.api_sentiment.replace("/b","") +"/s/" + seriesCode,
+                dataType: "jsonp",
+                success: function(_data) {
+                    if (_data && _data.data) {
+                        var koubeiData = [];
+                        var kv = {
+                            upholstery: "内饰",
+                            accelerate: '加速',
+                            manipulate: '操控',
+                            space: '空间',
+                            detail: '细节',
+                            appearance: '外观',
+                            configuration: '配置',
+                            comfortable: "舒适",
+                            noise: "噪音"
+                        }
+                        var data = _data.data.items[0]
+                        if (_data.data) {
+                            var koubeiData = [];
+                            for (var i in kv) {
+                                if (data[i]) {
+                                    for (var c = 0; c < data[i].comments.length; c++) {
+                                        var label = data[i].comments[c];
+                                        label = label.replace(/\((.*?)\)/, function(v, v2) {
+                                            return "(" + ((v2 * 1)).toFixed(0) + ")"
+                                        })
+                                        data[i].comments[c] = label
+                                    }
+                                    koubeiData.push({
+                                        name: kv[i],
+                                        rate: (data[i].score * 1).toFixed(2),
+                                        labels: data[i].comments.slice(0, 3)
+                                    })
+                                } else {
+                                    koubeiData.push({
+                                        name: kv[i],
+                                        rate: 1,
+                                        labels: []
+                                    })
+                                }
+                            }
+                        }
+                        self.redraw({
+                            items: koubeiData,
+                            allScore: data.generalScore,
+                            "seriesName": data.seriesName,
+                            "seriesCode": data.seriesCode,
+                            "relatedSeries": data.relatedSeries,
+                            "topPosReview": data.topPosReview,
+                            "topNegReview": data.topNegReview
+                        })
+
+
+                    }
+
+                }
+            })
         },
         drawRadar: function() {
             draw = SVG("koubei_svg").size(500, 500);

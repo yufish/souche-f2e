@@ -858,9 +858,8 @@
     margin-right: 2px;
 }
 #detail-main .sec-info .go-fenqi {
-    font-weight: bold;
     float: right;
-    color: #FF571A;
+    color: #999;
 }
 #detail-main .sale-info{
     padding: 8px 0;
