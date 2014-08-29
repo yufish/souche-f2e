@@ -155,7 +155,6 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
             })
         },
         draw: function(_data) {
-            console.log(_data)
             data = _data;
             for (var i = 0; i < data.distanceData.length; i++) {
                 feiyongs.push(data.distanceData[i].price);

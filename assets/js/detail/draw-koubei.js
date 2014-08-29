@@ -54,42 +54,51 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     }
                 }
             }
-
             item_tpl = $("#koubei_item_template").html();
             this.drawRadar();
             this.drawLabel();
 
             $(".all-score em").html((totalScore / 9).toFixed(2))
             $(".series-tab").html("")
-            var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
+            var tab = $(document.createElement("div"));
+            tab.addClass("series-tab-item item-active")
+            tab.attr("data-code", data.seriesCode);
+            tab.html(data.seriesName)
             $(".series-tab").append(tab)
             tab.click(function() {
                 self.loadOtherSeries($(this).attr("data-code"));
                 $(".series-tab-item").removeClass("item-active")
                 $(this).addClass("item-active")
             })
-            for (var i = 0; i < data.relatedSeries.length; i++) {
-                var item = data.relatedSeries[i];
-                var tab = $("<div class='series-tab-item'></div>").html(item.name).attr("data-code", item.seriesCode);
-                $(".series-tab").append(tab)
-                tab.click(function() {
-                    self.loadOtherSeries($(this).attr("data-code"));
-                    $(".series-tab-item").removeClass("item-active")
-                    $(this).addClass("item-active")
-                })
-            }
-            for (var i = 0; i < data.topPosReview.length; i++) {
-                if (data.topPosReview[i].indexOf("�") != -1) {
-                    data.topPosReview.splice(i, 1)
-                    i--
+            if(data.relatedSeries){
+                for (var i = 0; i < data.relatedSeries.length; i++) {
+                    var item = data.relatedSeries[i];
+                    var tab = $("<div class='series-tab-item'></div>").html(item.name).attr("data-code", item.seriesCode);
+                    $(".series-tab").append(tab)
+                    tab.click(function() {
+                        self.loadOtherSeries($(this).attr("data-code"));
+                        $(".series-tab-item").removeClass("item-active")
+                        $(this).addClass("item-active")
+                    })
                 }
             }
-            for (var i = 0; i < data.topNegReview.length; i++) {
-                if (data.topNegReview[i].indexOf("�") != -1) {
-                    data.topNegReview.splice(i, 1)
-                    i--
+            if(data.topPosReview){
+                for (var i = 0; i < data.topPosReview.length; i++) {
+                    if (data.topPosReview[i].indexOf("�") != -1) {
+                        data.topPosReview.splice(i, 1)
+                        i--
+                    }
                 }
             }
+            if(data.topNegReview){
+                for (var i = 0; i < data.topNegReview.length; i++) {
+                    if (data.topNegReview[i].indexOf("�") != -1) {
+                        data.topNegReview.splice(i, 1)
+                        i--
+                    }
+                }
+            }
+
             data.topPosReview = data.topPosReview.splice(0, 10)
             data.topNegReview = data.topNegReview.splice(0, 10);
             $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
@@ -173,7 +182,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 url: config.api_sentiment.replace("/b","") +"/s/" + seriesCode,
                 dataType: "jsonp",
                 success: function(_data) {
-                    if (_data && _data.data) {
+                    if (_data&&_data.data&&_data.data.items&&_data.data.items.length) {
                         var koubeiData = [];
                         var kv = {
                             upholstery: "内饰",

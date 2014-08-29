@@ -1,7 +1,7 @@
 ({
-    baseUrl: "../",
+    baseUrl: "./../",
 
-    name: "saleCar-list",
+    name: "wannaBuy/saleCar-list",
     include: [],
     out: "saleCar-list.r.js"
 })
