@@ -28,7 +28,7 @@
     height: 44px;
     color:#333;
     padding-left: 16px;
-    border-top:1px solid #E6E6E6;
+    border:1px solid #E6E6E6;
 }
 #config table .key{
     color:#999;
