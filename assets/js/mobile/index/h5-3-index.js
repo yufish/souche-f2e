@@ -31,6 +31,17 @@ if (navigator.userAgent.match(/Android/i)){
     }
 }()
 */
+!function() {
+    /*var txt = $(".city-name").text();
+    //不是北京地区
+    if(txt.indexOf('北京')== -1){
+        $('.j_just4bj').remove();
+    }*/
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.indexOf("micromessenger") != -1){
+        $("#J_tab1_name").text('好车推荐')
+    }
+}()
 //tab动画的相关实现
 !function(){
     var transition_duration=400;
@@ -825,13 +836,12 @@ $('.wrapGrayBg').on('click',function(){
     })
 }();
 //加入订阅相关
-!function(){
+!function(req_config){
     var apiUrls={
         hasNewReq:contextPath+'/pages/mobile/homePageAction/queryTagTip.json',
         addToReq:contextPath+'/pages/mobile/carCustomAction/saveBuyInfo.json?tagTip=1',
         cancelNewReq:contextPath+'/pages/mobile/homePageAction/closeTagTip.json'
     }
-
 
     $.getJSON(apiUrls.hasNewReq,function(e){
         if(e.code!=200){
@@ -848,10 +858,11 @@ $('.wrapGrayBg').on('click',function(){
                 sNameList.push(brand['name'])
             }
         }
-        var maxStr='不限',minStr='不限';
+        //var maxStr='不限',minStr='不限';
         if(sCodeList.length>0){
             data.series = sCodeList.join(',')
         }
+        /*
         if(tags['maxPrice']){
             data.maxPrice=tags['maxPrice']/10000;
             maxStr = data.maxPrice+"万";
@@ -864,13 +875,22 @@ $('.wrapGrayBg').on('click',function(){
             //do nothing
         }else{
             sNameList.push(minStr+'-'+maxStr);
-        }
+        }*/
         if($.isEmptyObject(data)){
             return;
         }
         $('.new-sub-content').text(sNameList.join('，'));
-        buildEvent({saveData:data})
 
+        var oldData = req_config.userRequirementJson;
+        var saveData = $.extend({},oldData);
+        if(data.series){
+            if(saveData.series) {
+                saveData.series += (',' + data.series);
+            }else{
+                saveData.series = data.series;
+            }
+        }
+        buildEvent({saveData:saveData})
     })
 
 
@@ -907,5 +927,5 @@ $('.wrapGrayBg').on('click',function(){
 
     });*/
 
-}()
+}(req_config)
 
