@@ -5,7 +5,6 @@ var Action = (function () {
             var hasYuyue = false;
             $("#yuyue_submit").on("click", function (e) {
                 e.preventDefault();
-                var self = this;
                 if (hasYuyue)
                     return;
                 SM.checkPhoneExist(function(is_login) {
