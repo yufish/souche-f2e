@@ -61,7 +61,8 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
 
             $(".all-score em").html((totalScore / 9).toFixed(2))
             $(".series-tab").html("")
-            var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName).attr("data-code", data.seriesCode);
+            var tab = $("<div class='series-tab-item item-active'></div>").html(data.seriesName)
+            tab.attr("data-code", data.seriesCode);
             $(".series-tab").append(tab)
             tab.click(function() {
                 self.loadOtherSeries($(this).attr("data-code"));
