@@ -76,6 +76,9 @@ nav .nav-item.active .nav-item-content{
     bottom: 0;
     left: 0;
 }
+#J_tab1_name{
+    margin-left: -8px;
+}
 #J_tabCover{
     overflow: hidden;
 }
