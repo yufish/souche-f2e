@@ -123,6 +123,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
         redraw:function(_data){
             data = _data;
             var totalScore = 0;
+            rateData = [];
             for (var i = 0; i < data.items.length; i++) {
                 rateData.push(data.items[i].rate);
                 totalScore += data.items[i].rate * 10;
@@ -241,6 +242,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
             draw = SVG("koubei_svg").size(500, 500);
             realPoints = [];
             outlinePoints = [];
+
             //画9个点
             for (var i = 0; i < rateData.length; i++) {
                 var pointNow = {
