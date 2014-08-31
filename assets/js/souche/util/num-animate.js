@@ -12,8 +12,9 @@ define(function(){
             if(num_from!==""&&num_to!==""){
                 num_from = num_from*1;
                 num_to = num_to*1;
-
-                if(num_from<num_to){
+                if(num_from-num_to>50||num_from-num_to<-50){
+                    $ele.html(to)
+                }else if(num_from<num_to){
                     setTimeout(function(){
                         if(num_from<num_to){
                             num_from++;
