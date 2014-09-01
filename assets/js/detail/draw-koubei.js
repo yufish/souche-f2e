@@ -15,9 +15,9 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
         })
         return str;
     }
-    var drawPoint = function(x, y) {
+    var drawPoint = function(x, y,color) {
         return draw.circle(10).move(x - 5, y - 5).fill({
-            color: "#63b162"
+            color:color
         }).stroke({
             color: "#ffffff",
             width: 1
@@ -34,6 +34,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
     var realPoints = [];
     var outlinePoints = [];
     var config = {}
+    var otherDraw;
     var DrawKoubei = {
         draw: function(_data,_config) {
             data = _data;
@@ -118,7 +119,7 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     if (t > 8) t = 8;
                 }
             }
-
+            otherDraw =  SVG("koubei_svg").size(500, 500);
         },
         redraw:function(_data){
             data = _data;
@@ -138,47 +139,48 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                     }
                 }
             }
-            $("#koubei_svg").html("")
-            item_tpl = $("#koubei_item_template").html();
-            this.drawRadar();
-            this.drawLabel();
-
-            $(".all-score em").html((totalScore / 9).toFixed(2))
-
-            for (var i = 0; i < data.topPosReview.length; i++) {
-                if (data.topPosReview[i].indexOf("�") != -1) {
-                    data.topPosReview.splice(i, 1)
-                    i--
-                }
-            }
-            for (var i = 0; i < data.topNegReview.length; i++) {
-                if (data.topNegReview[i].indexOf("�") != -1) {
-                    data.topNegReview.splice(i, 1)
-                    i--
-                }
-            }
-            data.topPosReview = data.topPosReview.splice(0, 10)
-            data.topNegReview = data.topNegReview.splice(0, 10);
-            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
-            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
-            data.items.sort(function(i1, i2) {
-                return i1.rate < i2.rate
-            });
-            var t = 3;
-            var bestLabels = [];
-            $(".koubei-labels").html("")
-            for (var i = 0; i < t; i++) {
-                if (data.items[i].labels.length) {
-                    bestLabels.push(data.items[i].labels[0])
-                    $(".koubei-labels").append("<label>" + data.items[i].labels[0] + "</label>")
-                } else {
-                    t++;
-                    if (t > 8) t = 8;
-                }
-            }
+//            $("#koubei_svg").html("")
+//            item_tpl = $("#koubei_item_template").html();
+            this.drawRadar(otherDraw,"#66b7ce");
+//            this.drawLabel();
+//
+//            $(".all-score em").html((totalScore / 9).toFixed(2))
+//
+//            for (var i = 0; i < data.topPosReview.length; i++) {
+//                if (data.topPosReview[i].indexOf("�") != -1) {
+//                    data.topPosReview.splice(i, 1)
+//                    i--
+//                }
+//            }
+//            for (var i = 0; i < data.topNegReview.length; i++) {
+//                if (data.topNegReview[i].indexOf("�") != -1) {
+//                    data.topNegReview.splice(i, 1)
+//                    i--
+//                }
+//            }
+//            data.topPosReview = data.topPosReview.splice(0, 10)
+//            data.topNegReview = data.topNegReview.splice(0, 10);
+//            $(".advantage-left .advantage-content").html("<li>" + data.topPosReview.join("</li><li>") + "</li>")
+//            $(".advantage-right .advantage-content").html("<li>" + data.topNegReview.join("</li><li>") + "</li>")
+//            data.items.sort(function(i1, i2) {
+//                return i1.rate < i2.rate
+//            });
+//            var t = 3;
+//            var bestLabels = [];
+//            $(".koubei-labels").html("")
+//            for (var i = 0; i < t; i++) {
+//                if (data.items[i].labels.length) {
+//                    bestLabels.push(data.items[i].labels[0])
+//                    $(".koubei-labels").append("<label>" + data.items[i].labels[0] + "</label>")
+//                } else {
+//                    t++;
+//                    if (t > 8) t = 8;
+//                }
+//            }
         },
         loadOtherSeries: function(seriesCode) {
             var self = this;
+
             $.ajax({
                 url: config.api_sentiment.replace("/b","") +"/s/" + seriesCode,
                 dataType: "jsonp",
@@ -238,8 +240,14 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 }
             })
         },
-        drawRadar: function() {
-            draw = SVG("koubei_svg").size(500, 500);
+        drawRadar: function(svgD,color) {
+            if(svgD){
+                draw = svgD;
+                draw.clear()
+            }else{
+                draw = SVG("koubei_svg").size(500, 500);
+            }
+
             realPoints = [];
             outlinePoints = [];
 
@@ -283,14 +291,14 @@ define(['lib/mustache', 'lib/svg.min', 'lib/queuedo'], function(Mustache, SVG, q
                 realPathPoints.push([centerPoint.x, centerPoint.y])
             }
             var polygon = draw.polygon(realPathStr + "").fill({
-                color: "#95c194",
+                color:color?color: "#95c194",
                 opacity: 0.6
             }).stroke({
-                color: "#63b162",
+                color: color?color:"#63b162",
                 width: 3
             })
             for (var i = 0; i < realPoints.length; i++) {
-                svgPoints.push(drawPoint(centerPoint.x, centerPoint.y));
+                svgPoints.push(drawPoint(centerPoint.x, centerPoint.y,color?color:"#63b162"));
             }
             queuedo([0, 1, 2, 3, 4, 5, 6, 7, 8], function(index, next, context) {
                 realPathPoints[index] = tempPathPoints[index];
