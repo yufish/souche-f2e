@@ -132,7 +132,7 @@ $(document).ready(function() {
 
     }
 
-    $(document).on(eventKey, function(e) {
+    $(document.body).on(eventKey, function(e) {
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
         if (!clickType) {

@@ -700,8 +700,8 @@ cursor: pointer;
   background: url("../images/common/advisor-bg.png?123") no-repeat;
   background-position: right bottom;
   width:645px;
-  height:350px;
-  padding-top: 50px;
+  height:290px;
+  padding-top: 110px;
   }
 #list_wrap .list_main .list-noResult .list-noResult-bg .list-noResult-title{
   font-size: 18px;
