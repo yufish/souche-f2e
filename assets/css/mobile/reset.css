@@ -119,7 +119,7 @@ img{
 
 /*common for souche mobile*/
 body{
-    font-family: 'Heiti SC','华文黑体', '黑体',"Helvetica Neue";
+    font-family: "Helvetica Neue",'Heiti SC','华文黑体', '黑体';
     -webkit-user-select: none;
 }
 .col-1-2 {
