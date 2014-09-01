@@ -209,6 +209,8 @@
     display: inline-block;
     vertical-align: top;
     padding-left: 120px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .common-cars .car .rht .title {
     line-height: 16px;
