@@ -15,7 +15,7 @@ define(['souche/util/load-info'],function(LoadInfo){
     var config = {
     };
     var tempSelected = [];
-
+    var inited = false;
     return {
         selectedSeries:[],
         selectedBrands:[],
@@ -28,12 +28,15 @@ define(['souche/util/load-info'],function(LoadInfo){
             if(config.userRequementJson['brands']){
                 this.selectedBrands = config.userRequementJson['brands']
             }
-            self._createAtoZ();
-            self._createBrands();
-            self._bind();
-            $(".brandList li").eq(0).find("a").click();
+
         },
         show:function(){
+            if(!inited){
+                this._createAtoZ();
+                this._createBrands();
+                this._bind();
+                $(".brandList li").eq(0).find("a").click();
+            }
             tempSelected = []
             for(var i=0;i<this.selectedSeries.length;i++){
                 tempSelected.push(this.selectedSeries[i])
