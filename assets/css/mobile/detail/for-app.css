@@ -1,4 +1,5 @@
-#header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title{
+#header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
+.recommend-cars,.header-placeholder{
     display:none !important;
 }
 
