@@ -142,7 +142,7 @@ if (navigator.userAgent.match(/Android/i)){
 //    })
     navItems.on(touch_end,function(e){
             e.preventDefault();
-            e.stopPropagation();
+            //e.stopPropagation();
             var index = +$(this).attr('data-nav-index');
             var curIndex = tabNavBar.attr('data-active-index');
             if(curIndex == index)return;
@@ -175,7 +175,7 @@ if (navigator.userAgent.match(/Android/i)){
         hideTopic();
         $('.for-other-topic').attr('data-show-state',0)
     })
-    $('.for-other-topic').on(tap_event,function(){
+    $('.for-other-topic').on("click",function(){
         var self =$(this);
         if(self.attr('data-show-state')=='1'){
             hideTopic();
