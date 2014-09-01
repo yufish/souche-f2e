@@ -7,7 +7,6 @@ body{
 .placeholder-for-tabNavBar{
     height: 88px;
 }
-
 #J_tabNavbar{
     height: 44px;
     line-height: 44px;
@@ -75,6 +74,9 @@ nav .nav-item.active .nav-item-content{
     position: absolute;
     bottom: 0;
     left: 0;
+}
+#J_tab1_name{
+    margin-left: -8px;
 }
 #J_tabCover{
     overflow: hidden;
