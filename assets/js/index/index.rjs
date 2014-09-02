@@ -1,7 +1,7 @@
 ({
     baseUrl: ".", //基础路径，默认是当前路径
 
-    name: "index_v2", //主入口的模块名
+    name: "index", //主入口的模块名
     include: [], //在入口模块引入的同时还引入的其他模块
-    out: "index_v2.r.js" //输出的文件名
+    out: "index.r.js" //输出的文件名
 })
