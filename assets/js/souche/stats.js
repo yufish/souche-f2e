@@ -7,7 +7,24 @@ var f2e_all_load_time = 0;
 var f2e_traffic_id = 0;
 var f2e_click_count = 0;
 var f2e_scroll_max = 0;
-
+var Souche = Souche||{};
+Souche.stats = {
+    add_click:function(click_type){
+        var data = {
+            element_id: click_type || "",
+            page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+            cookie: document.cookie
+        }
+        if (ABtest && ABtest.id) {
+            data.abtest = ABtest.id;
+        }
+        var param = ""
+        for (var d in data) {
+            param += d + "=" + data[d] + "&"
+        }
+        new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
+    }
+};
 function viewPageStat(url) {
     $.ajax({
         url: contextPath + '/stats/click_stat',
