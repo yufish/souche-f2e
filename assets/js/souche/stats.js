@@ -153,6 +153,7 @@ $(document).ready(function() {
         console.log(e.target)
         touchestarttime = new Date().getTime();
     }).on("touchend",function(e){
+        console.log(e.target)
         console.log(new Date().getTime()-touchestarttime)
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
