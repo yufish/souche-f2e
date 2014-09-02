@@ -148,13 +148,13 @@ $(document).ready(function() {
     } catch (e) {
 
     }
-    var touchestarttime = 0;
+    var touchestart_scrollTop = 0;
     $(document.body).on(eventKey, function(e) {
         console.log(e.target)
-        touchestarttime = new Date().getTime();
+        touchestart_scrollTop = $(window).scrollTop()
     }).on("touchend",function(e){
         console.log(e.target)
-        console.log(new Date().getTime()-touchestarttime)
+        console.log($(window).scrollTop()-touchestart_scrollTop)
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
         if (!clickType) {
