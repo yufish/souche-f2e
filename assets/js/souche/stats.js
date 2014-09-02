@@ -8,6 +8,7 @@ var f2e_traffic_id = 0;
 var f2e_click_count = 0;
 var f2e_scroll_max = 0;
 var Souche = Souche||{};
+
 Souche.stats = {
     add_click:function(click_type){
         var data = {
@@ -47,10 +48,9 @@ function getQueryString(name) {
 }
 $(document).ready(function() {
 
-    if (window.location.host.indexOf("souche.com") == -1) {
-        return;
-    }
-
+//    if (window.location.host.indexOf("souche.com") == -1) {
+//        return;
+//    }
     f2e_first_load_time = new Date().getTime();
     viewPageStat(document.location.href);
     //加载点击数据
@@ -118,38 +118,43 @@ $(document).ready(function() {
 
         });
     }
-    $('body').on('click', 'a,[type=submit]', function() {
-        var href = $(this).attr("href");
-        var clickType = $(this).attr("click_type");
-        if (!clickType) {
-            clickType = $(this).closest("[click_type]").attr("click_type");
-        }
-        var ref_url = document.location.href;
-        $.ajax({
-            url: contextPath + '/stats/click_stat',
-            type: 'POST',
-            data: {
-                "click_url": href,
-                "refer_url": ref_url,
-                "type": "pageclick",
-                "click_type": clickType
-            },
-            dataType: 'json',
-            timeout: 5000,
-            error: function(XMLHttpRequest, textStatus, errorThrown) {},
-            success: function(data) {}
-        });
-    });
+//    $('body').on('click', 'a,[type=submit]', function() {
+//        var href = $(this).attr("href");
+//        var clickType = $(this).attr("click_type");
+//        if (!clickType) {
+//            clickType = $(this).closest("[click_type]").attr("click_type");
+//        }
+//        var ref_url = document.location.href;
+//        $.ajax({
+//            url: contextPath + '/stats/click_stat',
+//            type: 'POST',
+//            data: {
+//                "click_url": href,
+//                "refer_url": ref_url,
+//                "type": "pageclick",
+//                "click_type": clickType
+//            },
+//            dataType: 'json',
+//            timeout: 5000,
+//            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+//            success: function(data) {}
+//        });
+//    });
     var eventKey = "mousedown";
     try {
         if ("ontouchstart" in window) {
-            eventKey = "click";
+            eventKey = "touchstart";
         }
     } catch (e) {
 
     }
-
+    var touchestarttime = 0;
     $(document.body).on(eventKey, function(e) {
+        console.log(e.target)
+        touchestarttime = new Date().getTime();
+    }).on("touchend",function(e){
+        console.log(e.target)
+        console.log(new Date().getTime()-touchestarttime)
         f2e_click_count++;
         var clickType = $(e.target).attr("click_type");
         if (!clickType) {
