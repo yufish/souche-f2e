@@ -22,18 +22,7 @@ if (navigator.userAgent.match(/Android/i)){
     isAndroid =true;
 }
 
-function sendClickType(clickType){
-    var data = {
-        element_id: clickType || "",
-        page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, "")
-    }
-    var param = ""
-    for (var d in data) {
-        param += d + "=" + data[d] + "&"
-    }
-    new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
 
-}
 /* 非北京地区隐藏一些东西
 !function(){
     var txt = $(".city-name").text();
@@ -154,7 +143,7 @@ function sendClickType(clickType){
 //    })
     navItems.on(touch_end,function(e){
             var clickType=$(this).attr('click_type');
-            sendClickType(clickType);
+            Souche.stats.add_click(clickType);
             e.preventDefault();
             //e.stopPropagation();
             var index = +$(this).attr('data-nav-index');
