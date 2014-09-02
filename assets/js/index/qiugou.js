@@ -1,4 +1,4 @@
-define(['index/mod/rss-addSeries','souche/custom-select',],
+define(['index/mod/rss-addSeries','souche/custom-select'],
 function(AddSeries,CustomSelect){
     var data = {
         brands:[],
