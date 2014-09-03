@@ -8,6 +8,7 @@ var f2e_traffic_id = 0;
 var f2e_click_count = 0;
 var f2e_scroll_max = 0;
 var Souche = Souche||{};
+
 Souche.stats = {
     add_click:function(click_type){
         var data = {
@@ -47,10 +48,9 @@ function getQueryString(name) {
 }
 $(document).ready(function() {
 
-    if (window.location.host.indexOf("souche.com") == -1) {
-        return;
-    }
-
+//    if (window.location.host.indexOf("souche.com") == -1) {
+//        return;
+//    }
     f2e_first_load_time = new Date().getTime();
     viewPageStat(document.location.href);
     //加载点击数据
@@ -118,65 +118,101 @@ $(document).ready(function() {
 
         });
     }
-    $('body').on('click', 'a,[type=submit]', function() {
-        var href = $(this).attr("href");
-        var clickType = $(this).attr("click_type");
-        if (!clickType) {
-            clickType = $(this).closest("[click_type]").attr("click_type");
-        }
-        var ref_url = document.location.href;
-        $.ajax({
-            url: contextPath + '/stats/click_stat',
-            type: 'POST',
-            data: {
-                "click_url": href,
-                "refer_url": ref_url,
-                "type": "pageclick",
-                "click_type": clickType
-            },
-            dataType: 'json',
-            timeout: 5000,
-            error: function(XMLHttpRequest, textStatus, errorThrown) {},
-            success: function(data) {}
-        });
-    });
+//    $('body').on('click', 'a,[type=submit]', function() {
+//        var href = $(this).attr("href");
+//        var clickType = $(this).attr("click_type");
+//        if (!clickType) {
+//            clickType = $(this).closest("[click_type]").attr("click_type");
+//        }
+//        var ref_url = document.location.href;
+//        $.ajax({
+//            url: contextPath + '/stats/click_stat',
+//            type: 'POST',
+//            data: {
+//                "click_url": href,
+//                "refer_url": ref_url,
+//                "type": "pageclick",
+//                "click_type": clickType
+//            },
+//            dataType: 'json',
+//            timeout: 5000,
+//            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+//            success: function(data) {}
+//        });
+//    });
     var eventKey = "mousedown";
     try {
         if ("ontouchstart" in window) {
-            eventKey = "click";
+            eventKey = "touchstart";
+            var touchestart_scrollTop = 0;
+            $(document.body).on(eventKey, function(e) {
+                touchestart_scrollTop = $(window).scrollTop()
+            }).on("touchend",function(e){
+                var movedistance = $(window).scrollTop()-touchestart_scrollTop;
+                if(movedistance>2||movedistance<-2){
+                    return;
+                }
+                f2e_click_count++;
+                var clickType = $(e.target).attr("click_type");
+                if (!clickType) {
+                    clickType = $(e.target).closest("[click_type]").attr("click_type");
+                }
+                var data = {
+                    page_x: e.pageX - ($(window).width() / 2 - 595),
+                    page_y: e.pageY,
+                    element_id: clickType || "",
+                    page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+                    refer_url: document.referrer,
+                    user_agent: navigator.userAgent,
+                    user_screenwidth: screen.width,
+                    user_screenheight: screen.height,
+                    user_viewwidth: $(window).width(),
+                    user_viewheight: $(window).height(),
+                    cookie: document.cookie
+                }
+                if (ABtest && ABtest.id) {
+                    data.abtest = ABtest.id;
+                }
+                var param = ""
+                for (var d in data) {
+                    param += d + "=" + data[d] + "&"
+                }
+                new Image().src = "http://localhost:3456/performance/click?" + param
+            })
+        }else{
+            $(document.body).on("click",function(e){
+                f2e_click_count++;
+                var clickType = $(e.target).attr("click_type");
+                if (!clickType) {
+                    clickType = $(e.target).closest("[click_type]").attr("click_type");
+                }
+                var data = {
+                    page_x: e.pageX - ($(window).width() / 2 - 595),
+                    page_y: e.pageY,
+                    element_id: clickType || "",
+                    page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+                    refer_url: document.referrer,
+                    user_agent: navigator.userAgent,
+                    user_screenwidth: screen.width,
+                    user_screenheight: screen.height,
+                    user_viewwidth: $(window).width(),
+                    user_viewheight: $(window).height(),
+                    cookie: document.cookie
+                }
+                if (ABtest && ABtest.id) {
+                    data.abtest = ABtest.id;
+                }
+                var param = ""
+                for (var d in data) {
+                    param += d + "=" + data[d] + "&"
+                }
+                new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
+            })
         }
     } catch (e) {
 
     }
 
-    $(document.body).on(eventKey, function(e) {
-        f2e_click_count++;
-        var clickType = $(e.target).attr("click_type");
-        if (!clickType) {
-            clickType = $(e.target).closest("[click_type]").attr("click_type");
-        }
-        var data = {
-            page_x: e.pageX - ($(window).width() / 2 - 595),
-            page_y: e.pageY,
-            element_id: clickType || "",
-            page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
-            refer_url: document.referrer,
-            user_agent: navigator.userAgent,
-            user_screenwidth: screen.width,
-            user_screenheight: screen.height,
-            user_viewwidth: $(window).width(),
-            user_viewheight: $(window).height(),
-            cookie: document.cookie
-        }
-        if (ABtest && ABtest.id) {
-            data.abtest = ABtest.id;
-        }
-        var param = ""
-        for (var d in data) {
-            param += d + "=" + data[d] + "&"
-        }
-        new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
-    })
     $(window).scroll(function() {
         var top = $(window).scrollTop();
         if (top > f2e_scroll_max) {

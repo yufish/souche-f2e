@@ -142,8 +142,6 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.stopPropagation();
 //    })
     navItems.on(touch_end,function(e){
-            var clickType=$(this).attr('click_type');
-            Souche.stats.add_click(clickType);
             e.preventDefault();
             //e.stopPropagation();
             var index = +$(this).attr('data-nav-index');

@@ -79,15 +79,15 @@
             <form id="submit-form">
                 <div class="form-item">
                     <div class="f-key">姓名</div>
-                    <div class="f-val"><input placeholder="请输入您的姓名"></div>
+                    <div class="f-val"><input id="baoming-name" placeholder="请输入您的姓名"></div>
                 </div>
                 <div class="form-item">
                     <div class="f-key">手机号码</div>
-                    <div class="f-val"><input type='tel' placeholder="请输入您的手机号码"></div>
+                    <div class="f-val"><input id="baoming-number" type='tel' placeholder="请输入您的手机号码"></div>
                 </div>
                 <div class="form-item">
                     <div class="f-key">意向品牌</div>
-                    <div class="f-val"><input type='tel' placeholder="请输入您想要的爱车品牌"></div>
+                    <div class="f-val"><input id="baoming-car" type='tel' placeholder="请输入您想要的爱车品牌"></div>
                 </div>
                 <div style="text-align: center">
                     <button type="submit" id="btn-submit">提交</button>
@@ -129,8 +129,35 @@
             </a>
         </div>
         <div style="text-align: center;padding: 16px 0">
-            <img src="http://res.souche.com/assets/images/mob/huodong/shoppingday/logo.png">
+            <img style="width: 56px" src="http://res.souche.com/assets/images/mob/huodong/shoppingday/logo.png">
         </div>
     </div>
+    <script>
+        var submitSign = function(){
+            $.ajax({
+                url:contextPath+'/pages/frontActivitiesAction/shoppingDay.json',
+                data:{
+                    name:$("#baoming-name").val(),
+                    phone:$("#baoming-number").val(),
+                    brand:$("#baoming-car").val()
+                },
+                type:"post",
+                dataType: "json",
+                success:function(){
+                    alert("您已报名成功");
+                }
+            })
+        }
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        $("#form-baoming").on("submit",function(e){
+            e.preventDefault();
+            if (!phoneReg.test($("#baoming-number").val())){
+                alert("请输入正确手机号码");
+                return;
+            }
+            submitSign();
+        })
+
+    </script>
 </body>
 </html>

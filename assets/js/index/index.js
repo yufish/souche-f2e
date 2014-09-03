@@ -326,33 +326,36 @@ define(['index/car-god',
                     window.location.reload();
                 })
             })
+            // 获取"猜你喜欢"的数据, 用apear方法控制lazy加载到dom
             $.ajax({
                 url: config.api_guessCars,
                 success: function(html) {
-                    $(".guess-like").html(html)
+                    var guessLikeCtn = $(".guess-like");
+                    
+                    Souche.Util.appear( ".guess-like", fillGuessCallback );
 
-                    ImageResize.init(".guess-like .carsItem img", 240, 160);
-                    //猜你喜欢的不喜欢动作
-                    $(".nolike").on("click", function(e) {
-                        var self = this;
-                        $(self).closest(".like-box").animate({
-                            opacity: 0,
-                            width: 0
-                        }, 500, function() {
-                            $(self).closest(".like-box").remove()
+                    function fillGuessCallback(){
+                        guessLikeCtn.html(html);
+                        ImageResize.init(".guess-like .carsItem img", 240, 160);
+                        // "不喜欢"事件处理
+                        guessLikeCtn.on('click', '.nolike', function(e) {
+                            var self = this;
+                            $(self).closest(".like-box").animate({
+                                opacity: 0,
+                                width: 0
+                            }, 500, function() {
+                                $(self).closest(".like-box").remove()
+                            })
+                            $.ajax({
+                                url: config.api_nolikeUrl,
+                                data: {
+                                    carId: $(this).attr("data-id")
+                                },
+                                dataType: "json",
+                                success: function() {}
+                            })
                         })
-                        $.ajax({
-                            url: config.api_nolikeUrl,
-                            data: {
-                                carId: $(this).attr("data-id")
-                            },
-                            dataType: "json",
-                            success: function() {
-
-                                // $(".nolike").
-                            }
-                        })
-                    });
+                    }
                 }
             })
             ///change tab
