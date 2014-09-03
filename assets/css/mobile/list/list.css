@@ -137,12 +137,12 @@
     margin-right: 5px;
 }
 #list #cars {
-    margin: 10px;
+    margin:0 10px;
 }
 #list #cars .car {
     position: relative;
     padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #E6E6E6;
     font-size: 12px;
     display: block;
 }
@@ -158,68 +158,48 @@
 }
 #list #cars .car .lft {
     position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 105px;
+    width: 38%;
     float: left;
-    height: 80px;
-    overflow: hidden;
 }
 #list #cars .car .lft img {
     width: 100%;
     margin: 0;
 }
 #list #cars .car .rht {
-    vertical-align: top;
-    padding-left: 117px;
+    float: left;
+    width: 62%;
+    padding-left: 10px;
 }
 #list #cars .car .rht .title {
-    line-height: 16px;
-    font-size: 12px;
+    line-height: 18px;
+    font-size: 14px;
     color: #333;
-}
-#list #cars .car .rht .price {
-    line-height: 20px;
-    position: relative;
-}
-#list #cars .car .rht .price s {
-    color: #999;
-    font-size: 14px;
-}
-#list #cars .car .rht .price em {
-    color: #ff4301;
-    font-size: 14px;
-    font-weight: bold;
-    min-width: 65px;
-    float: left;
+    margin-top: 3px;
+    height: 36px;
+    overflow: hidden;
 }
 #list #cars .car .rht .info {
-    color: #888;
+    color: #999;
     line-height: 18px;
     font-size: 12px;
+    margin-top: 7px;
 }
-#list #cars .car .rht .info .car-card-time {
-    margin-left: 10px;
+#list #cars .car .sc-price{
+    font-weight: bold;
+    color:#FF571a;
+    font-size: 14px;
+    line-height: 14px;
+    float: left;
+    margin-right: 10px;
 }
-#list #cars .car .rht .buy-time {
-    color: #888;
-    line-height: 16px;
+#list #cars .car .buy-time {
+    color: #999;
+    line-height: 14px;
     font-size: 12px;
 }
-#list #cars .car .rht .rate-yushou {
-    background: #208ba7;
-    height: 18px;
-    line-height: 18px;
-    position: absolute;
-    right: -10px;
-    bottom: 10px;
-    font-size: 12px;
-    color: #fff;
-    margin-top: -2px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    width: 60px;
-    text-align: center;
+#list .car-footer{
+    position: relative;
+    margin-top: 7px;
 }
 #list #cars .car .rht .rate span {
     display: inline-block;
@@ -248,15 +228,6 @@
 #list #cars .car .lft .extra-info .time-limit {
     margin-top: 3px;
     background-color: #fc7000;
-    color: #fff;
-    border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 3px;
-    padding-right: 5px;
-}
-#list #cars .car .lft .extra-info .period {
-    margin-top: 3px;
-    background-color: #5eb1bd;
     color: #fff;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
@@ -306,7 +277,7 @@
     padding-top: 20px;
     position: absolute;
     right: -10px;
-    top: -18px;
+    top: -22px;
     line-height: 14px;
     color: #000;
     width: 60px;
@@ -347,7 +318,7 @@
     margin: 0 5px 0 0;
 }
 #list #cars a {
-    color: #fff;
+    color: #999;
 }
 .wrapPhoneBg {
     height: 100%;
@@ -378,5 +349,3 @@
     margin: 0 auto;
     text-align: center;
 }
-
-
