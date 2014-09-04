@@ -35,7 +35,7 @@ define(['souche/util/load-info'],function(LoadInfo){
                 this._createAtoZ();
                 this._createBrands();
                 this._bind();
-                $(".brandList li").eq(0).find("a").click();
+
             }
             tempSelected = []
             for(var i=0;i<this.selectedSeries.length;i++){
@@ -150,6 +150,7 @@ define(['souche/util/load-info'],function(LoadInfo){
                     $(".brandList").animate({scrollTop:top});
                     return false;
                 });
+                $(".brandList li").eq(0).find("a").click();
             })
         },
         _loadSeries:function(brandCode){
