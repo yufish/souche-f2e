@@ -825,12 +825,15 @@ font-size: 13px;
   margin-top: 20px;
   .hotImages{
     margin-bottom: 20px;
+    overflow: hidden;
+    height: 304px;
     .imabox{
       float:left;
       position: relative;
-      height: 320px;
+      height: 304px;
       display: block;
-      margin-right: 20px;
+      margin-right: 13px;
+      overflow: hidden;
       img{
         width: 100%;
       }
@@ -873,10 +876,12 @@ font-size: 13px;
       }
      }
     .imgbox-b{
-      width: 500px;
+      width: 475px;
+
     }
     .imgbox-s{
-      width: 240px;
+      width: 228px;
+      margin-right: 17px;
     }
   }
   // .Image211{
@@ -894,6 +899,23 @@ font-size: 13px;
   //    margin-right: 20px;
   //   }
   // }
+}
+@media screen and (min-width: 1400px) {
+  .hotCarImages{
+    .hotImages{
+      height: 320px;
+    }
+    .imabox{
+      height: 320px;
+      margin-right: 20px;
+      .imgbox-b{
+      width: 500px;
+      }
+      .imgbox-s{
+        width: 240px;
+      }
+    }
+  }
 }
 //猜你喜欢
 .guess-like{
