@@ -177,7 +177,7 @@ $(document).ready(function() {
                 for (var d in data) {
                     param += d + "=" + data[d] + "&"
                 }
-                new Image().src = "http://localhost:3456/performance/click?" + param
+                new Image().src = "http://f2e-monitor.souche.com/performance/click?" + param
             })
         }else{
             $(document.body).on("click",function(e){
