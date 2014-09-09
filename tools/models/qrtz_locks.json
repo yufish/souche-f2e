@@ -1,0 +1,16 @@
+{
+  "SCHED_NAME": {
+    "type": "varchar(120)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "LOCK_NAME": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  }
+}

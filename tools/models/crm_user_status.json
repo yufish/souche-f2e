@@ -1,0 +1,86 @@
+{
+  "ID": {
+    "type": "varchar(45)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "last_contact_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_reservation_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_arrivestore_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_buy_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_registcar_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_upcar_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_salecar_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_backcar_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "last_registreadycar_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "register_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "用户注册时间"
+  },
+  "last_purchase_time": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "用户最近一次求购时间"
+  }
+}

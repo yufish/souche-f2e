@@ -1,0 +1,79 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "activity_code": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "carId": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "begin_date": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "end_date": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "dindex": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "activity_parent_code": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "live": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

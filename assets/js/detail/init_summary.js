@@ -59,8 +59,13 @@ define(function() {
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
                         var prices = {};
+                        var totalPrice = 0;
                         for (var i = 0; i < baoyangData.maintenanceItem.length; i++) {
                             prices[baoyangData.maintenanceItem[i].name] = baoyangData.maintenanceItem[i].price;
+                            totalPrice+=baoyangData.maintenanceItem[i].price;
+                        }
+                        if(totalPrice<0){
+                            $("*[data-id=onsale_baoyang]").addClass("hidden")
                         }
                         var distanceData = [];
                         for (var i in baoyangData.mileageMark) {

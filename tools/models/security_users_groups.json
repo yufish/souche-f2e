@@ -1,0 +1,23 @@
+{
+  "id": {
+    "type": "varchar(255)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "group_id": {
+    "type": "varchar(255)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "user_id": {
+    "type": "varchar(255)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

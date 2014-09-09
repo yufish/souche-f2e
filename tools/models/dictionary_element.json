@@ -1,0 +1,212 @@
+{
+  "id": {
+    "type": "varchar(255)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "code": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "name": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "type": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "level": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "parent": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "en_name": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "description": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "update_date": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field01": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field02": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field03": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field04": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field05": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field06": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field07": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field08": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field09": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field10": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field11": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field12": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field13": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field14": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field15": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "field16": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "51auto 数据"
+  },
+  "field17": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "同步工具用"
+  },
+  "field18": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "同步工具用"
+  },
+  "field19": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "同步工具用"
+  },
+  "field20": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "同步工具用"
+  },
+  "dindex": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

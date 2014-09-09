@@ -1,0 +1,44 @@
+{
+  "SCHED_NAME": {
+    "type": "varchar(120)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "TRIGGER_NAME": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "TRIGGER_GROUP": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "REPEAT_COUNT": {
+    "type": "bigint(7)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "REPEAT_INTERVAL": {
+    "type": "bigint(12)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "TIMES_TRIGGERED": {
+    "type": "bigint(10)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

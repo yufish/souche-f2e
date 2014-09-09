@@ -1,0 +1,86 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "title": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "banner标题"
+  },
+  "image": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "banner主图"
+  },
+  "content": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "banner展示内容"
+  },
+  "type": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "类型"
+  },
+  "status": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "状态:valid,invalid"
+  },
+  "pos": {
+    "type": "int(3)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "展示位置，值越小越靠前"
+  },
+  "remark": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "备注"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "code": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "banner code"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": {
+    "type": "varchar(255)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "type": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "name": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "priority": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "resource": {
+    "type": "varchar(1024)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "indexs": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "parent": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": "-1",
+    "primaryKey": false,
+    "comment": null
+  },
+  "update_date": {
+    "type": "datetime",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

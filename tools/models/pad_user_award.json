@@ -1,0 +1,58 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "user_code": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "中奖用户代码"
+  },
+  "award_id": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "奖品id"
+  },
+  "date": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "日期"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "type": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

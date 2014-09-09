@@ -1,0 +1,149 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "carId": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "daoshou_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "到手价"
+  },
+  "purchase_tax_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "购置税"
+  },
+  "chechuan_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "车船税"
+  },
+  "other_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "其他"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "saler_flash_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "车主降价"
+  },
+  "live": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "是否为当前价格 1,当前价格,0,历史价格"
+  },
+  "tax_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "是否包含车船税, 1为包含，0为不包含"
+  },
+  "user": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "操作者"
+  },
+  "discuss": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "是否支持议价 1：支持 0：不支持"
+  },
+  "guohu_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "是否包含过户费"
+  },
+  "jiance_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "是否包含检测费"
+  },
+  "shangpai_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "上牌费用"
+  },
+  "jiaoqiang_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "交强险"
+  },
+  "quality_guarantee": {
+    "type": "varchar(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "0：不质保，1：质保，2：延保"
+  },
+  "safety_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "安全整备费用"
+  },
+  "advice_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "建议整备费用"
+  }
+}

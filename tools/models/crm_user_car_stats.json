@@ -1,0 +1,79 @@
+{
+  "id": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "pub_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "发布车辆数"
+  },
+  "yushou_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "预售车辆数"
+  },
+  "onsale_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "在售车辆数"
+  },
+  "saled_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "已售车辆数"
+  },
+  "xiajia_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "下架车辆数"
+  },
+  "numbers": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "存储各种消息数字，以json方式存储"
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录删除时间"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录创建时间"
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录修改时间"
+  },
+  "wuxiao_car_num": {
+    "type": "int(6)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "无效车辆数"
+  }
+}

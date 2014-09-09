@@ -1,0 +1,100 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "job_name": {
+    "type": "varchar(100)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "职位名称"
+  },
+  "job_number": {
+    "type": "int(10)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "招聘人数"
+  },
+  "job_address": {
+    "type": "varchar(200)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "工作地点"
+  },
+  "date_begin": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "发布时间"
+  },
+  "date_end": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "结束时间"
+  },
+  "job_type": {
+    "type": "varchar(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "职位类别"
+  },
+  "job_nature": {
+    "type": "varchar(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "工作性质"
+  },
+  "degree_demand": {
+    "type": "varchar(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "学历要求"
+  },
+  "job_desc": {
+    "type": "varchar(1000)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "职位描述"
+  },
+  "job_demand": {
+    "type": "varchar(1000)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "职位要求"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

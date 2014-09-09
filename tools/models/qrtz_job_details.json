@@ -1,0 +1,72 @@
+{
+  "SCHED_NAME": {
+    "type": "varchar(120)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "JOB_NAME": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "JOB_GROUP": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "DESCRIPTION": {
+    "type": "varchar(250)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "JOB_CLASS_NAME": {
+    "type": "varchar(250)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "IS_DURABLE": {
+    "type": "varchar(1)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "IS_NONCONCURRENT": {
+    "type": "varchar(1)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "IS_UPDATE_DATA": {
+    "type": "varchar(1)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "REQUESTS_RECOVERY": {
+    "type": "varchar(1)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "JOB_DATA": {
+    "type": "blob",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

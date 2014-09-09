@@ -1,0 +1,16 @@
+{
+  "SCHED_NAME": {
+    "type": "varchar(120)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "TRIGGER_GROUP": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  }
+}
