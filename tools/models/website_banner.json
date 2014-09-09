@@ -1,0 +1,93 @@
+{
+  "id": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "name": {
+    "type": "varchar(128)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "banner名称"
+  },
+  "image": {
+    "type": "varchar(100)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "图片路径"
+  },
+  "url": {
+    "type": "varchar(500)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "跳转url"
+  },
+  "open_type": {
+    "type": "tinyint(4)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "0:新开页面,1:原页面打开"
+  },
+  "sort": {
+    "type": "int(10)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "排序依据，按照数字从大到小"
+  },
+  "status": {
+    "type": "tinyint(4)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "0:生效,1:失效"
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录删除时间"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": false,
+    "defaultValue": "CURRENT_TIMESTAMP",
+    "primaryKey": false,
+    "comment": "记录创建时间"
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录修改时间"
+  },
+  "bg_color": {
+    "type": "varchar(100)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "source": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "type": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "图片类型 1：网站 0：移动端    2:通栏banner"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": "",
+    "primaryKey": true,
+    "comment": null
+  },
+  "content": {
+    "type": "mediumtext",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "kk"
+  },
+  "date_create": {
+    "type": "datetime",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "title": {
+    "type": "varchar(100)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "????"
+  },
+  "type": {
+    "type": "int(1)",
+    "allowNull": true,
+    "defaultValue": "1",
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "datetime",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "is_rss": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": null
+  }
+}

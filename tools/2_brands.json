@@ -1,0 +1,414 @@
+[
+    {
+        "code": "brand-167",
+        "name": "中华"
+    },
+    {
+        "code": "brand-150",
+        "name": "西雅特"
+    },
+    {
+        "code": "brand-35",
+        "name": "昌河"
+    },
+    {
+        "code": "brand-96",
+        "name": "林肯"
+    },
+    {
+        "code": "brand-76",
+        "name": "江铃"
+    },
+    {
+        "code": "brand-24",
+        "name": "北汽制造"
+    },
+    {
+        "code": "brand-43",
+        "name": "帝豪"
+    },
+    {
+        "code": "brand-59",
+        "name": "悍马"
+    },
+    {
+        "code": "brand-156",
+        "name": "一汽"
+    },
+    {
+        "code": "brand-29",
+        "name": "标致"
+    },
+    {
+        "code": "brand-160",
+        "name": "英伦"
+    },
+    {
+        "code": "brand-48",
+        "name": "菲亚特"
+    },
+    {
+        "code": "brand-84",
+        "name": "凯迪拉克"
+    },
+    {
+        "code": "brand-108",
+        "name": "迷你"
+    },
+    {
+        "code": "brand-132",
+        "name": "双龙"
+    },
+    {
+        "code": "brand-134",
+        "name": "斯巴鲁"
+    },
+    {
+        "code": "brand-26",
+        "name": "奔腾"
+    },
+    {
+        "code": "brand-172",
+        "name": "众泰"
+    },
+    {
+        "code": "brand-138",
+        "name": "天津一汽"
+    },
+    {
+        "code": "brand-144",
+        "name": "威麟"
+    },
+    {
+        "code": "brand-95",
+        "name": "青年莲花"
+    },
+    {
+        "code": "brand-78",
+        "name": "捷豹"
+    },
+    {
+        "code": "brand-145",
+        "name": "威兹曼"
+    },
+    {
+        "code": "brand-23",
+        "name": "北京汽车"
+    },
+    {
+        "code": "brand-22",
+        "name": "保时捷"
+    },
+    {
+        "code": "brand-157",
+        "name": "依维柯"
+    },
+    {
+        "code": "brand-33",
+        "name": "布加迪"
+    },
+    {
+        "code": "brand-113",
+        "name": "讴歌"
+    },
+    {
+        "code": "brand-45",
+        "name": "东南"
+    },
+    {
+        "code": "brand-88",
+        "name": "兰博基尼"
+    },
+    {
+        "code": "brand-75",
+        "name": "江淮"
+    },
+    {
+        "code": "brand-15",
+        "name": "奥迪"
+    },
+    {
+        "code": "brand-170",
+        "name": "中兴"
+    },
+    {
+        "code": "brand-12",
+        "name": "阿尔法罗米欧"
+    },
+    {
+        "code": "brand-103",
+        "name": "玛莎拉蒂"
+    },
+    {
+        "code": "brand-122",
+        "name": "荣威"
+    },
+    {
+        "code": "brand-30",
+        "name": "别克"
+    },
+    {
+        "code": "brand-161",
+        "name": "永源汽车"
+    },
+    {
+        "code": "brand-28",
+        "name": "比亚迪"
+    },
+    {
+        "code": "brand-44",
+        "name": "东风"
+    },
+    {
+        "code": "brand-72",
+        "name": "吉利"
+    },
+    {
+        "code": "brand-46",
+        "name": "法拉利"
+    },
+    {
+        "code": "brand-151",
+        "name": "现代"
+    },
+    {
+        "code": "brand-52",
+        "name": "福迪"
+    },
+    {
+        "code": "brand-102",
+        "name": "马自达"
+    },
+    {
+        "code": "brand-74",
+        "name": "吉普"
+    },
+    {
+        "code": "brand-68",
+        "name": "黄海"
+    },
+    {
+        "code": "brand-465",
+        "name": "海格"
+    },
+    {
+        "code": "brand-114",
+        "name": "欧宝"
+    },
+    {
+        "code": "brand-99",
+        "name": "路虎"
+    },
+    {
+        "code": "brand-109",
+        "name": "名爵"
+    },
+    {
+        "code": "brand-27",
+        "name": "本田"
+    },
+    {
+        "code": "brand-165",
+        "name": "长城"
+    },
+    {
+        "code": "brand-123",
+        "name": "瑞麒"
+    },
+    {
+        "code": "brand-49",
+        "name": "丰田"
+    },
+    {
+        "code": "brand-98",
+        "name": "陆风"
+    },
+    {
+        "code": "brand-13",
+        "name": "阿斯顿马丁"
+    },
+    {
+        "code": "brand-130",
+        "name": "世爵"
+    },
+    {
+        "code": "brand-89",
+        "name": "蓝旗亚"
+    },
+    {
+        "code": "brand-82",
+        "name": "开瑞"
+    },
+    {
+        "code": "brand-86",
+        "name": "克莱斯勒"
+    },
+    {
+        "code": "brand-146",
+        "name": "沃尔沃"
+    },
+    {
+        "code": "brand-57",
+        "name": "哈飞"
+    },
+    {
+        "code": "brand-119",
+        "name": "起亚"
+    },
+    {
+        "code": "brand-79",
+        "name": "金杯"
+    },
+    {
+        "code": "brand-53",
+        "name": "福特"
+    },
+    {
+        "code": "brand-42",
+        "name": "道奇"
+    },
+    {
+        "code": "brand-164",
+        "name": "长安"
+    },
+    {
+        "code": "brand-154",
+        "name": "雪佛兰"
+    },
+    {
+        "code": "brand-148",
+        "name": "五菱"
+    },
+    {
+        "code": "brand-18",
+        "name": "宝骏"
+    },
+    {
+        "code": "brand-65",
+        "name": "华泰"
+    },
+    {
+        "code": "brand-124",
+        "name": "萨博"
+    },
+    {
+        "code": "brand-135",
+        "name": "斯柯达"
+    },
+    {
+        "code": "brand-121",
+        "name": "日产"
+    },
+    {
+        "code": "brand-58",
+        "name": "海马"
+    },
+    {
+        "code": "brand-20",
+        "name": "宝马"
+    },
+    {
+        "code": "brand-93",
+        "name": "雷诺"
+    },
+    {
+        "code": "brand-97",
+        "name": "铃木"
+    },
+    {
+        "code": "brand-100",
+        "name": "路特斯"
+    },
+    {
+        "code": "brand-56",
+        "name": "广汽"
+    },
+    {
+        "code": "brand-166",
+        "name": "长丰"
+    },
+    {
+        "code": "brand-62",
+        "name": "红旗"
+    },
+    {
+        "code": "brand-111",
+        "name": "纳智捷"
+    },
+    {
+        "code": "brand-118",
+        "name": "奇瑞"
+    },
+    {
+        "code": "brand-69",
+        "name": "汇众"
+    },
+    {
+        "code": "brand-64",
+        "name": "华普"
+    },
+    {
+        "code": "brand-158",
+        "name": "英菲尼迪"
+    },
+    {
+        "code": "brand-41",
+        "name": "大众"
+    },
+    {
+        "code": "brand-104",
+        "name": "迈巴赫"
+    },
+    {
+        "code": "brand-31",
+        "name": "宾利"
+    },
+    {
+        "code": "brand-10",
+        "name": "Smart"
+    },
+    {
+        "code": "brand-3",
+        "name": "GMC"
+    },
+    {
+        "code": "brand-126",
+        "name": "三菱"
+    },
+    {
+        "code": "brand-92",
+        "name": "雷克萨斯"
+    },
+    {
+        "code": "brand-155",
+        "name": "雪铁龙"
+    },
+    {
+        "code": "brand-71",
+        "name": "吉奥"
+    },
+    {
+        "code": "brand-131",
+        "name": "双环"
+    },
+    {
+        "code": "brand-25",
+        "name": "奔驰"
+    },
+    {
+        "code": "brand-54",
+        "name": "福田"
+    },
+    {
+        "code": "brand-91",
+        "name": "劳斯莱斯"
+    },
+    {
+        "code": "brand-94",
+        "name": "力帆"
+    },
+    {
+        "code": "brand-401",
+        "name": "新龙马"
+    }
+]

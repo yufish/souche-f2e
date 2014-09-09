@@ -1,0 +1,23 @@
+{
+  "id": {
+    "type": "int(11)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "configkey": {
+    "type": "varchar(11)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "配置的key值"
+  },
+  "value": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "value值"
+  }
+}
