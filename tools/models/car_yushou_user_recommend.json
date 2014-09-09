@@ -1,0 +1,58 @@
+{
+  "id": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "user_id": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "用户id"
+  },
+  "recommend_user": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "推荐用户的id"
+  },
+  "status": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "推荐的状态, 1-有效，0-未生效"
+  },
+  "msg_num": {
+    "type": "int(3)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "该推荐发送的消息数"
+  },
+  "date_delete": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录删除时间"
+  },
+  "date_create": {
+    "type": "timestamp",
+    "allowNull": false,
+    "defaultValue": "CURRENT_TIMESTAMP",
+    "primaryKey": false,
+    "comment": "记录创建时间"
+  },
+  "date_update": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "记录修改时间"
+  }
+}

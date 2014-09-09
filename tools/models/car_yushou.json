@@ -1,0 +1,100 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "user": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "发车人"
+  },
+  "price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "诚意销售价"
+  },
+  "description": {
+    "type": "varchar(1000)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "车况描述"
+  },
+  "yushou_sale_deadline": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "交易期限"
+  },
+  "expired_date": {
+    "type": "date",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "过期时间"
+  },
+  "judge_id": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "审核ID"
+  },
+  "judge_status": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "审核状态"
+  },
+  "judge_pass_date": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "审核通过时间"
+  },
+  "pre_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "上一次诚意销售价"
+  },
+  "renewal_type": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "续约类型"
+  },
+  "renewal_reduce_price": {
+    "type": "bigint(20)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "续约降价价格"
+  },
+  "wuxiao_reason_code": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "车辆失效原因code"
+  },
+  "last_message_time": {
+    "type": "timestamp",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "上次产生消息的时间"
+  }
+}

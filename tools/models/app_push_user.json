@@ -1,0 +1,30 @@
+{
+  "ID": {
+    "type": "varchar(40)",
+    "allowNull": false,
+    "defaultValue": "",
+    "primaryKey": true,
+    "comment": null
+  },
+  "user_id": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "baidu_user_id": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "baidu_channel": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

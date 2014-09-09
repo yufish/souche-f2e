@@ -1,0 +1,51 @@
+{
+  "id": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "nickname": {
+    "type": "varchar(45)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "email": {
+    "type": "varchar(45)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "phone": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "place": {
+    "type": "varchar(255)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "qq": {
+    "type": "varchar(45)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "update_date": {
+    "type": "timestamp",
+    "allowNull": false,
+    "defaultValue": "CURRENT_TIMESTAMP",
+    "primaryKey": false,
+    "comment": null
+  }
+}

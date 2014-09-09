@@ -1,0 +1,93 @@
+{
+  "SCHED_NAME": {
+    "type": "varchar(120)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "ENTRY_ID": {
+    "type": "varchar(95)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": true,
+    "comment": null
+  },
+  "TRIGGER_NAME": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "TRIGGER_GROUP": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "INSTANCE_NAME": {
+    "type": "varchar(200)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "FIRED_TIME": {
+    "type": "bigint(13)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "SCHED_TIME": {
+    "type": "bigint(13)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "PRIORITY": {
+    "type": "int(11)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "STATE": {
+    "type": "varchar(16)",
+    "allowNull": false,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "JOB_NAME": {
+    "type": "varchar(200)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "JOB_GROUP": {
+    "type": "varchar(200)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "IS_NONCONCURRENT": {
+    "type": "varchar(1)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "REQUESTS_RECOVERY": {
+    "type": "varchar(1)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}

@@ -1,0 +1,6306 @@
+[
+    {
+        "code": "series-2592",
+        "name": "中华 中华H320"
+    },
+    {
+        "code": "series-2585",
+        "name": "中华 中华H230"
+    },
+    {
+        "code": "series-427",
+        "name": "中华 中华"
+    },
+    {
+        "code": "series-2736",
+        "name": "中华 中华H330"
+    },
+    {
+        "code": "series-215",
+        "name": "中华 酷宝"
+    },
+    {
+        "code": "series-2287",
+        "name": "中华 中华H530"
+    },
+    {
+        "code": "series-350",
+        "name": "中华 尊驰"
+    },
+    {
+        "code": "series-121",
+        "name": "中华 骏捷"
+    },
+    {
+        "code": "series-2354",
+        "name": "中华 中华V5"
+    },
+    {
+        "code": "series-1092",
+        "name": "中华 骏捷FSV"
+    },
+    {
+        "code": "series-1663",
+        "name": "西雅特 Altea-XL"
+    },
+    {
+        "code": "series-1662",
+        "name": "西雅特 Altea"
+    },
+    {
+        "code": "series-2210",
+        "name": "西雅特 伊比飒"
+    },
+    {
+        "code": "series-1857",
+        "name": "西雅特 Inca"
+    },
+    {
+        "code": "series-2186",
+        "name": "西雅特 Altea-Freetrack"
+    },
+    {
+        "code": "series-1665",
+        "name": "西雅特 科多巴"
+    },
+    {
+        "code": "series-1856",
+        "name": "西雅特 Exeo"
+    },
+    {
+        "code": "series-2195",
+        "name": "西雅特 图雷多"
+    },
+    {
+        "code": "series-1667",
+        "name": "西雅特 阿罗莎"
+    },
+    {
+        "code": "series-1580",
+        "name": "西雅特 利昂"
+    },
+    {
+        "code": "series-1852",
+        "name": "西雅特 Marbella"
+    },
+    {
+        "code": "series-1666",
+        "name": "西雅特 阿尔汉布拉"
+    },
+    {
+        "code": "series-2569",
+        "name": "西雅特 Mii"
+    },
+    {
+        "code": "series-2783",
+        "name": "西雅特 欧悦博"
+    },
+    {
+        "code": "series-2458",
+        "name": "昌河 福运"
+    },
+    {
+        "code": "series-96",
+        "name": "昌河 海象"
+    },
+    {
+        "code": "series-1058",
+        "name": "昌河 骏马"
+    },
+    {
+        "code": "series-1689",
+        "name": "昌河 昌河面包"
+    },
+    {
+        "code": "series-412",
+        "name": "昌河 爱迪尔"
+    },
+    {
+        "code": "series-20",
+        "name": "昌河 海豚"
+    },
+    {
+        "code": "series-102",
+        "name": "昌河 福瑞达"
+    },
+    {
+        "code": "series-1235",
+        "name": "林肯 MKS"
+    },
+    {
+        "code": "series-1234",
+        "name": "林肯 MKX "
+    },
+    {
+        "code": "series-1230",
+        "name": "林肯 Mark LT"
+    },
+    {
+        "code": "series-1236",
+        "name": "林肯 MKT "
+    },
+    {
+        "code": "series-1229",
+        "name": "林肯 Zephyr"
+    },
+    {
+        "code": "series-1233",
+        "name": "林肯 MKZ"
+    },
+    {
+        "code": "series-1232",
+        "name": "林肯 领航员"
+    },
+    {
+        "code": "series-1224",
+        "name": "林肯 LS"
+    },
+    {
+        "code": "series-1226",
+        "name": "林肯 Blackwood"
+    },
+    {
+        "code": "series-1231",
+        "name": "林肯 城市"
+    },
+    {
+        "code": "series-1225",
+        "name": "林肯 Aviator"
+    },
+    {
+        "code": "series-1227",
+        "name": "林肯 Continental"
+    },
+    {
+        "code": "series-216",
+        "name": "江铃 江铃轻卡"
+    },
+    {
+        "code": "series-2216",
+        "name": "江铃 运霸"
+    },
+    {
+        "code": "series-651",
+        "name": "江铃 宝威"
+    },
+    {
+        "code": "series-92",
+        "name": "江铃 宝典"
+    },
+    {
+        "code": "series-2068",
+        "name": "江铃 驭胜"
+    },
+    {
+        "code": "series-2886",
+        "name": "江铃 域虎"
+    },
+    {
+        "code": "series-257",
+        "name": "北汽制造 战旗"
+    },
+    {
+        "code": "series-1079",
+        "name": "北汽制造 御虎"
+    },
+    {
+        "code": "series-172",
+        "name": "北汽制造 北汽骑士"
+    },
+    {
+        "code": "series-2862",
+        "name": "北汽制造 锐玲"
+    },
+    {
+        "code": "series-661",
+        "name": "北汽制造 陆铃"
+    },
+    {
+        "code": "series-2710",
+        "name": "北汽制造 北京212"
+    },
+    {
+        "code": "series-326",
+        "name": "北汽制造 雷驰"
+    },
+    {
+        "code": "series-1913",
+        "name": "北汽制造 勇士"
+    },
+    {
+        "code": "series-1080",
+        "name": "北汽制造 京城海狮"
+    },
+    {
+        "code": "series-256",
+        "name": "北汽制造 陆霸"
+    },
+    {
+        "code": "series-5",
+        "name": "北汽制造 旋风"
+    },
+    {
+        "code": "series-2711",
+        "name": "北汽制造 角斗士"
+    },
+    {
+        "code": "series-2092",
+        "name": "北汽制造 域胜007"
+    },
+    {
+        "code": "series-1682",
+        "name": "帝豪 帝豪EC7"
+    },
+    {
+        "code": "series-2054",
+        "name": "帝豪 帝豪EC8"
+    },
+    {
+        "code": "series-1209",
+        "name": "悍马 H1"
+    },
+    {
+        "code": "series-788",
+        "name": "悍马 H3"
+    },
+    {
+        "code": "series-787",
+        "name": "悍马 H2"
+    },
+    {
+        "code": "series-2517",
+        "name": "一汽 欧朗"
+    },
+    {
+        "code": "series-202",
+        "name": "一汽 森雅M80"
+    },
+    {
+        "code": "series-2805",
+        "name": "一汽 佳宝V52"
+    },
+    {
+        "code": "series-2804",
+        "name": "一汽 佳宝V80"
+    },
+    {
+        "code": "series-2690",
+        "name": "一汽 新赛宝"
+    },
+    {
+        "code": "series-107",
+        "name": "一汽 自由风"
+    },
+    {
+        "code": "series-499",
+        "name": "一汽 佳宝"
+    },
+    {
+        "code": "series-2032",
+        "name": "一汽 解放陆豹"
+    },
+    {
+        "code": "series-2884",
+        "name": "一汽 坤程"
+    },
+    {
+        "code": "series-2300",
+        "name": "一汽 森雅S80"
+    },
+    {
+        "code": "series-259",
+        "name": "一汽 特锐"
+    },
+    {
+        "code": "series-31",
+        "name": "一汽 幸福使者"
+    },
+    {
+        "code": "series-1816",
+        "name": "标致 3008"
+    },
+    {
+        "code": "series-604",
+        "name": "标致 标致207"
+    },
+    {
+        "code": "series-2533",
+        "name": "标致 Tepee"
+    },
+    {
+        "code": "series-978",
+        "name": "标致 406"
+    },
+    {
+        "code": "series-1062",
+        "name": "标致 标致505"
+    },
+    {
+        "code": "series-2526",
+        "name": "标致 208"
+    },
+    {
+        "code": "series-1798",
+        "name": "标致 RCZ"
+    },
+    {
+        "code": "series-552",
+        "name": "标致 标致206"
+    },
+    {
+        "code": "series-2532",
+        "name": "标致 408"
+    },
+    {
+        "code": "series-980",
+        "name": "标致 607"
+    },
+    {
+        "code": "series-1061",
+        "name": "标致 207"
+    },
+    {
+        "code": "series-2845",
+        "name": "标致 标致301"
+    },
+    {
+        "code": "series-1900",
+        "name": "标致 标致408"
+    },
+    {
+        "code": "series-2323",
+        "name": "标致 标致308"
+    },
+    {
+        "code": "series-1799",
+        "name": "标致 1007"
+    },
+    {
+        "code": "series-667",
+        "name": "标致 206"
+    },
+    {
+        "code": "series-2232",
+        "name": "标致 标致508"
+    },
+    {
+        "code": "series-979",
+        "name": "标致 407"
+    },
+    {
+        "code": "series-2692",
+        "name": "标致 标致3008"
+    },
+    {
+        "code": "series-1821",
+        "name": "标致 5008"
+    },
+    {
+        "code": "series-1822",
+        "name": "标致 Partner"
+    },
+    {
+        "code": "series-1160",
+        "name": "标致 107"
+    },
+    {
+        "code": "series-320",
+        "name": "标致 标致307"
+    },
+    {
+        "code": "series-1161",
+        "name": "标致 308"
+    },
+    {
+        "code": "series-1164",
+        "name": "标致 807"
+    },
+    {
+        "code": "series-981",
+        "name": "标致 806"
+    },
+    {
+        "code": "series-2060",
+        "name": "标致 405"
+    },
+    {
+        "code": "series-2505",
+        "name": "标致 4008"
+    },
+    {
+        "code": "series-2111",
+        "name": "标致 307"
+    },
+    {
+        "code": "series-1712",
+        "name": "标致 4007"
+    },
+    {
+        "code": "series-2064",
+        "name": "英伦 英伦SC5"
+    },
+    {
+        "code": "series-2628",
+        "name": "英伦 英伦SC6"
+    },
+    {
+        "code": "series-2625",
+        "name": "英伦 英伦SC3"
+    },
+    {
+        "code": "series-1084",
+        "name": "英伦 英伦TX4"
+    },
+    {
+        "code": "series-2725",
+        "name": "英伦 英伦SX7"
+    },
+    {
+        "code": "series-1939",
+        "name": "英伦 英伦SC7"
+    },
+    {
+        "code": "series-1294",
+        "name": "菲亚特 熊猫"
+    },
+    {
+        "code": "series-1871",
+        "name": "菲亚特 克罗玛"
+    },
+    {
+        "code": "series-779",
+        "name": "菲亚特 古贝"
+    },
+    {
+        "code": "series-762",
+        "name": "菲亚特 飞鹰"
+    },
+    {
+        "code": "series-1301",
+        "name": "菲亚特 小帆船"
+    },
+    {
+        "code": "series-2363",
+        "name": "菲亚特 马力昂旅行版"
+    },
+    {
+        "code": "series-1293",
+        "name": "菲亚特 600"
+    },
+    {
+        "code": "series-1015",
+        "name": "菲亚特 多能"
+    },
+    {
+        "code": "series-877",
+        "name": "菲亚特 周末风"
+    },
+    {
+        "code": "series-934",
+        "name": "菲亚特 乌诺"
+    },
+    {
+        "code": "series-371",
+        "name": "菲亚特 派力奥"
+    },
+    {
+        "code": "series-1310",
+        "name": "菲亚特 领雅"
+    },
+    {
+        "code": "series-2364",
+        "name": "菲亚特 时尚旅行版"
+    },
+    {
+        "code": "series-1305",
+        "name": "菲亚特 Idea"
+    },
+    {
+        "code": "series-1308",
+        "name": "菲亚特 博悦"
+    },
+    {
+        "code": "series-1311",
+        "name": "菲亚特 时尚"
+    },
+    {
+        "code": "series-372",
+        "name": "菲亚特 西耶那"
+    },
+    {
+        "code": "series-1870",
+        "name": "菲亚特 500"
+    },
+    {
+        "code": "series-2075",
+        "name": "菲亚特 126"
+    },
+    {
+        "code": "series-1296",
+        "name": "菲亚特 派力奥"
+    },
+    {
+        "code": "series-2607",
+        "name": "菲亚特 菲翔"
+    },
+    {
+        "code": "series-1880",
+        "name": "菲亚特 Qubo"
+    },
+    {
+        "code": "series-2457",
+        "name": "菲亚特 菲跃"
+    },
+    {
+        "code": "series-1313",
+        "name": "菲亚特 Sedici"
+    },
+    {
+        "code": "series-1001",
+        "name": "菲亚特 朋多"
+    },
+    {
+        "code": "series-1300",
+        "name": "菲亚特 多宝"
+    },
+    {
+        "code": "series-854",
+        "name": "菲亚特 马力昂"
+    },
+    {
+        "code": "series-1307",
+        "name": "菲亚特 Albea"
+    },
+    {
+        "code": "series-125",
+        "name": "菲亚特 派朗"
+    },
+    {
+        "code": "series-5011-ly",
+        "name": "菲亚特 致悦"
+    },
+    {
+        "code": "series-668",
+        "name": "凯迪拉克 XLR"
+    },
+    {
+        "code": "series-2252",
+        "name": "凯迪拉克 BLS"
+    },
+    {
+        "code": "series-2239",
+        "name": "凯迪拉克 帝威"
+    },
+    {
+        "code": "series-344",
+        "name": "凯迪拉克 凯迪拉克SRX"
+    },
+    {
+        "code": "series-2705",
+        "name": "凯迪拉克 凯迪拉克XTS"
+    },
+    {
+        "code": "series-2687",
+        "name": "凯迪拉克 XTS"
+    },
+    {
+        "code": "series-1277",
+        "name": "凯迪拉克 凯雷德"
+    },
+    {
+        "code": "series-1269",
+        "name": "凯迪拉克 Allante"
+    },
+    {
+        "code": "series-1271",
+        "name": "凯迪拉克 Brougham"
+    },
+    {
+        "code": "series-1280",
+        "name": "凯迪拉克 伍德"
+    },
+    {
+        "code": "series-2686",
+        "name": "凯迪拉克 ATS"
+    },
+    {
+        "code": "series-1037",
+        "name": "凯迪拉克 SRX"
+    },
+    {
+        "code": "series-143",
+        "name": "凯迪拉克 赛威SLS"
+    },
+    {
+        "code": "series-2434",
+        "name": "凯迪拉克 CTS-V旅行版"
+    },
+    {
+        "code": "series-994",
+        "name": "凯迪拉克 CTS"
+    },
+    {
+        "code": "series-1276",
+        "name": "凯迪拉克 Eldorado"
+    },
+    {
+        "code": "series-664",
+        "name": "凯迪拉克 凯迪拉克CTS"
+    },
+    {
+        "code": "series-1275",
+        "name": "凯迪拉克 DTS"
+    },
+    {
+        "code": "series-1272",
+        "name": "凯迪拉克 Catera"
+    },
+    {
+        "code": "series-1039",
+        "name": "凯迪拉克 STS"
+    },
+    {
+        "code": "series-1282",
+        "name": "凯迪拉克 Seville"
+    },
+    {
+        "code": "series-2052",
+        "name": "迷你 one"
+    },
+    {
+        "code": "series-2471",
+        "name": "迷你 Cooper Coupe"
+    },
+    {
+        "code": "series-1216",
+        "name": "迷你 Clubman"
+    },
+    {
+        "code": "series-865",
+        "name": "迷你 Cooper"
+    },
+    {
+        "code": "series-2747",
+        "name": "迷你 Paceman"
+    },
+    {
+        "code": "series-2470",
+        "name": "迷你 Cooper Roadster"
+    },
+    {
+        "code": "series-1215",
+        "name": "迷你 敞篷版"
+    },
+    {
+        "code": "series-1942",
+        "name": "迷你 Countryman"
+    },
+    {
+        "code": "series-948",
+        "name": "双龙 主席"
+    },
+    {
+        "code": "series-1171",
+        "name": "双龙 享御"
+    },
+    {
+        "code": "series-825",
+        "name": "双龙 柯兰多"
+    },
+    {
+        "code": "series-848",
+        "name": "双龙 路帝"
+    },
+    {
+        "code": "series-841",
+        "name": "双龙 雷斯特"
+    },
+    {
+        "code": "series-680",
+        "name": "双龙 爱腾"
+    },
+    {
+        "code": "series-5008-ly",
+        "name": "双龙 爱腾"
+    },
+    {
+        "code": "series-2573",
+        "name": "斯巴鲁 BRZ"
+    },
+    {
+        "code": "series-2604",
+        "name": "斯巴鲁 翼豹"
+    },
+    {
+        "code": "series-773",
+        "name": "斯巴鲁 小公主"
+    },
+    {
+        "code": "series-1758",
+        "name": "斯巴鲁 斯特拉"
+    },
+    {
+        "code": "series-843",
+        "name": "斯巴鲁 力狮"
+    },
+    {
+        "code": "series-902",
+        "name": "斯巴鲁 森林人"
+    },
+    {
+        "code": "series-1761",
+        "name": "斯巴鲁 Sambar"
+    },
+    {
+        "code": "series-682",
+        "name": "斯巴鲁 傲虎"
+    },
+    {
+        "code": "series-1764",
+        "name": "斯巴鲁 Exiga"
+    },
+    {
+        "code": "series-1755",
+        "name": "斯巴鲁 Pleo"
+    },
+    {
+        "code": "series-740",
+        "name": "斯巴鲁 驰鹏"
+    },
+    {
+        "code": "series-1765",
+        "name": "斯巴鲁 Baja"
+    },
+    {
+        "code": "series-1762",
+        "name": "斯巴鲁 Justy"
+    },
+    {
+        "code": "series-1756",
+        "name": "斯巴鲁 R1"
+    },
+    {
+        "code": "series-1763",
+        "name": "斯巴鲁 Dex"
+    },
+    {
+        "code": "series-2466",
+        "name": "斯巴鲁 XV"
+    },
+    {
+        "code": "series-1757",
+        "name": "斯巴鲁 R2"
+    },
+    {
+        "code": "series-1912",
+        "name": "奔腾 奔腾B50"
+    },
+    {
+        "code": "series-105",
+        "name": "奔腾 奔腾B70"
+    },
+    {
+        "code": "series-2579",
+        "name": "奔腾 奔腾B90"
+    },
+    {
+        "code": "series-2748",
+        "name": "奔腾 奔腾X80"
+    },
+    {
+        "code": "series-2161",
+        "name": "众泰 朗骏Z200"
+    },
+    {
+        "code": "series-2194",
+        "name": "众泰 郎朗Z200HB"
+    },
+    {
+        "code": "series-620",
+        "name": "众泰 众泰5008"
+    },
+    {
+        "code": "series-2033",
+        "name": "众泰 朗悦"
+    },
+    {
+        "code": "series-2734",
+        "name": "众泰 众泰T200"
+    },
+    {
+        "code": "series-2800",
+        "name": "众泰 众泰V10"
+    },
+    {
+        "code": "series-2858",
+        "name": "众泰 众泰T600"
+    },
+    {
+        "code": "series-2534",
+        "name": "众泰 众泰Z300"
+    },
+    {
+        "code": "series-2825",
+        "name": "众泰 众泰Z100"
+    },
+    {
+        "code": "series-554",
+        "name": "众泰 众泰2008"
+    },
+    {
+        "code": "series-293",
+        "name": "天津一汽 威姿"
+    },
+    {
+        "code": "series-300",
+        "name": "天津一汽 威乐"
+    },
+    {
+        "code": "series-331",
+        "name": "天津一汽 夏利"
+    },
+    {
+        "code": "series-1096",
+        "name": "天津一汽 夏利A骏雅"
+    },
+    {
+        "code": "series-2714",
+        "name": "天津一汽 夏利N7"
+    },
+    {
+        "code": "series-295",
+        "name": "天津一汽 雅酷"
+    },
+    {
+        "code": "series-1760",
+        "name": "天津一汽 夏利N5"
+    },
+    {
+        "code": "series-2137",
+        "name": "天津一汽 威志V2"
+    },
+    {
+        "code": "series-2514",
+        "name": "天津一汽 威志V5"
+    },
+    {
+        "code": "series-299",
+        "name": "天津一汽 夏利"
+    },
+    {
+        "code": "series-2016",
+        "name": "天津一汽 威志三厢"
+    },
+    {
+        "code": "series-1692",
+        "name": "威麟 威麟V5"
+    },
+    {
+        "code": "series-1931",
+        "name": "威麟 威麟H5"
+    },
+    {
+        "code": "series-1930",
+        "name": "威麟 威麟X5"
+    },
+    {
+        "code": "series-2058",
+        "name": "威麟 威麟H3"
+    },
+    {
+        "code": "series-12302",
+        "name": "青年莲花 竞速"
+    },
+    {
+        "code": "series-2151",
+        "name": "青年莲花 莲花L5三厢"
+    },
+    {
+        "code": "series-2013",
+        "name": "青年莲花 莲花L3"
+    },
+    {
+        "code": "series-805",
+        "name": "捷豹 X-Type"
+    },
+    {
+        "code": "series-804",
+        "name": "捷豹 XK"
+    },
+    {
+        "code": "series-806",
+        "name": "捷豹 S-Type"
+    },
+    {
+        "code": "series-1197",
+        "name": "捷豹 XF"
+    },
+    {
+        "code": "series-2675",
+        "name": "捷豹 F-TYPE"
+    },
+    {
+        "code": "series-1207",
+        "name": "捷豹 XKR"
+    },
+    {
+        "code": "series-803",
+        "name": "捷豹 XJ"
+    },
+    {
+        "code": "series-2318",
+        "name": "威兹曼 敞篷车"
+    },
+    {
+        "code": "series-2316",
+        "name": "威兹曼 GT"
+    },
+    {
+        "code": "series-2860",
+        "name": "北京汽车 威旺307"
+    },
+    {
+        "code": "series-5001-ly",
+        "name": "北京汽车 E系列"
+    },
+    {
+        "code": "series-2859",
+        "name": "北京汽车 威旺206"
+    },
+    {
+        "code": "series-2837",
+        "name": "北京汽车 威旺M20"
+    },
+    {
+        "code": "series-2746",
+        "name": "北京汽车 绅宝"
+    },
+    {
+        "code": "series-2706",
+        "name": "北京汽车 威旺205"
+    },
+    {
+        "code": "series-2531",
+        "name": "北京汽车 威旺306"
+    },
+    {
+        "code": "series-2878",
+        "name": "北京汽车 北京40"
+    },
+    {
+        "code": "series-1994",
+        "name": "保时捷 Carrera-GT"
+    },
+    {
+        "code": "series-821",
+        "name": "保时捷 卡曼"
+    },
+    {
+        "code": "series-1110",
+        "name": "保时捷 Panamera"
+    },
+    {
+        "code": "series-2047",
+        "name": "保时捷 959"
+    },
+    {
+        "code": "series-5005-ly",
+        "name": "保时捷 Cayenne"
+    },
+    {
+        "code": "series-2833",
+        "name": "保时捷 918"
+    },
+    {
+        "code": "series-815",
+        "name": "保时捷 968"
+    },
+    {
+        "code": "series-1112",
+        "name": "保时捷 博克斯特"
+    },
+    {
+        "code": "series-982",
+        "name": "保时捷 911"
+    },
+    {
+        "code": "series-1111",
+        "name": "保时捷 卡宴"
+    },
+    {
+        "code": "series-2050",
+        "name": "保时捷 944"
+    },
+    {
+        "code": "series-1000-manual",
+        "name": "保时捷 Macan"
+    },
+    {
+        "code": "series-36",
+        "name": "依维柯 都灵V"
+    },
+    {
+        "code": "series-2070",
+        "name": "依维柯 宝迪"
+    },
+    {
+        "code": "series-1075",
+        "name": "依维柯 依维柯"
+    },
+    {
+        "code": "series-1569",
+        "name": "布加迪 威航"
+    },
+    {
+        "code": "series-1102",
+        "name": "讴歌 Integra"
+    },
+    {
+        "code": "series-2676",
+        "name": "讴歌 ILX"
+    },
+    {
+        "code": "series-1105",
+        "name": "讴歌 SLX"
+    },
+    {
+        "code": "series-2640",
+        "name": "讴歌 Legend"
+    },
+    {
+        "code": "series-1025",
+        "name": "讴歌 RL"
+    },
+    {
+        "code": "series-2768",
+        "name": "讴歌 RLX"
+    },
+    {
+        "code": "series-1924",
+        "name": "讴歌 ZDX"
+    },
+    {
+        "code": "series-1012",
+        "name": "讴歌 MDX"
+    },
+    {
+        "code": "series-1041",
+        "name": "讴歌 TSX"
+    },
+    {
+        "code": "series-1019",
+        "name": "讴歌 NSX"
+    },
+    {
+        "code": "series-1040",
+        "name": "讴歌 TL"
+    },
+    {
+        "code": "series-1106",
+        "name": "讴歌 Vigor"
+    },
+    {
+        "code": "series-1101",
+        "name": "讴歌 CL"
+    },
+    {
+        "code": "series-1104",
+        "name": "讴歌 RDX"
+    },
+    {
+        "code": "series-1026",
+        "name": "讴歌 RSX"
+    },
+    {
+        "code": "series-415",
+        "name": "东南 菱帅"
+    },
+    {
+        "code": "series-662",
+        "name": "东南 菱悦"
+    },
+    {
+        "code": "series-5013-ly",
+        "name": "东南 V5菱致"
+    },
+    {
+        "code": "series-2118",
+        "name": "东南 希旺"
+    },
+    {
+        "code": "series-414",
+        "name": "东南 富利卡"
+    },
+    {
+        "code": "series-581",
+        "name": "东南 菱动"
+    },
+    {
+        "code": "series-2740",
+        "name": "东南 菱仕"
+    },
+    {
+        "code": "series-560",
+        "name": "东南 得利卡"
+    },
+    {
+        "code": "series-2642",
+        "name": "东南 菱致"
+    },
+    {
+        "code": "series-57",
+        "name": "东南 菱利"
+    },
+    {
+        "code": "series-1016",
+        "name": "兰博基尼 蝙蝠"
+    },
+    {
+        "code": "series-999",
+        "name": "兰博基尼 盖拉多"
+    },
+    {
+        "code": "series-2189",
+        "name": "兰博基尼 Aventador "
+    },
+    {
+        "code": "series-2656",
+        "name": "兰博基尼 Reventon"
+    },
+    {
+        "code": "series-2165",
+        "name": "江淮 星锐"
+    },
+    {
+        "code": "series-2735",
+        "name": "江淮 瑞风M5"
+    },
+    {
+        "code": "series-283",
+        "name": "江淮 瑞风"
+    },
+    {
+        "code": "series-140",
+        "name": "江淮 瑞鹰"
+    },
+    {
+        "code": "series-2887",
+        "name": "江淮 瑞铃"
+    },
+    {
+        "code": "series-2838",
+        "name": "江淮 和悦A30"
+    },
+    {
+        "code": "series-2067",
+        "name": "江淮 悦悦"
+    },
+    {
+        "code": "series-1719",
+        "name": "江淮 和悦"
+    },
+    {
+        "code": "series-606",
+        "name": "江淮 同悦"
+    },
+    {
+        "code": "series-2719",
+        "name": "江淮 瑞风S5"
+    },
+    {
+        "code": "series-192",
+        "name": "江淮 宾悦"
+    },
+    {
+        "code": "series-2327",
+        "name": "奥迪 RS3"
+    },
+    {
+        "code": "series-2231",
+        "name": "奥迪 A7"
+    },
+    {
+        "code": "series-687",
+        "name": "奥迪 A3"
+    },
+    {
+        "code": "series-2043",
+        "name": "奥迪 200"
+    },
+    {
+        "code": "series-690",
+        "name": "奥迪 A8"
+    },
+    {
+        "code": "series-686",
+        "name": "奥迪 A2"
+    },
+    {
+        "code": "series-174",
+        "name": "奥迪 奥迪100"
+    },
+    {
+        "code": "series-2418",
+        "name": "奥迪 A1"
+    },
+    {
+        "code": "series-2106",
+        "name": "奥迪 Allroad"
+    },
+    {
+        "code": "series-2036",
+        "name": "奥迪 S3"
+    },
+    {
+        "code": "series-685",
+        "name": "奥迪 Q7"
+    },
+    {
+        "code": "series-689",
+        "name": "奥迪 A6"
+    },
+    {
+        "code": "series-2035",
+        "name": "奥迪 S8"
+    },
+    {
+        "code": "series-1116",
+        "name": "奥迪 Q5"
+    },
+    {
+        "code": "series-693",
+        "name": "奥迪 TT"
+    },
+    {
+        "code": "series-2037",
+        "name": "奥迪 S6"
+    },
+    {
+        "code": "series-2044",
+        "name": "奥迪 80"
+    },
+    {
+        "code": "series-1676",
+        "name": "奥迪 A5"
+    },
+    {
+        "code": "series-2038",
+        "name": "奥迪 RS6"
+    },
+    {
+        "code": "series-688",
+        "name": "奥迪 A4"
+    },
+    {
+        "code": "series-2039",
+        "name": "奥迪 RS4"
+    },
+    {
+        "code": "series-2728",
+        "name": "奥迪 奥迪Q3"
+    },
+    {
+        "code": "series-1677",
+        "name": "奥迪 R8"
+    },
+    {
+        "code": "series-269",
+        "name": "奥迪 奥迪A6L"
+    },
+    {
+        "code": "series-1919",
+        "name": "奥迪 奥迪Q5"
+    },
+    {
+        "code": "series-2040",
+        "name": "奥迪 S5"
+    },
+    {
+        "code": "series-2045",
+        "name": "奥迪 90"
+    },
+    {
+        "code": "series-2227",
+        "name": "奥迪 Q3"
+    },
+    {
+        "code": "series-2034",
+        "name": "奥迪 S4"
+    },
+    {
+        "code": "series-2241",
+        "name": "奥迪 100"
+    },
+    {
+        "code": "series-621",
+        "name": "奥迪 奥迪A4L"
+    },
+    {
+        "code": "series-4",
+        "name": "奥迪 奥迪200"
+    },
+    {
+        "code": "series-2723",
+        "name": "奥迪 S7"
+    },
+    {
+        "code": "series-2041",
+        "name": "奥迪 RS5"
+    },
+    {
+        "code": "series-2902",
+        "name": "奥迪 SQ5"
+    },
+    {
+        "code": "series-5009-ly",
+        "name": "奥迪 A3"
+    },
+    {
+        "code": "series-2882",
+        "name": "中兴 昌铃"
+    },
+    {
+        "code": "series-76",
+        "name": "中兴 无限V3"
+    },
+    {
+        "code": "series-289",
+        "name": "中兴 旗舰SUV"
+    },
+    {
+        "code": "series-2905",
+        "name": "中兴 威虎G3"
+    },
+    {
+        "code": "series-95",
+        "name": "中兴 旗舰A9皮卡"
+    },
+    {
+        "code": "series-290",
+        "name": "中兴 老虎"
+    },
+    {
+        "code": "series-2904",
+        "name": "中兴 威虎TUV"
+    },
+    {
+        "code": "series-137",
+        "name": "中兴 威虎"
+    },
+    {
+        "code": "series-1943",
+        "name": "中兴 无限V7"
+    },
+    {
+        "code": "series-1107",
+        "name": "中兴 田野"
+    },
+    {
+        "code": "series-2160",
+        "name": "中兴 无限V5"
+    },
+    {
+        "code": "series-2230",
+        "name": "中兴 长铃皮卡"
+    },
+    {
+        "code": "series-285",
+        "name": "中兴 驰野"
+    },
+    {
+        "code": "series-287",
+        "name": "中兴 福星"
+    },
+    {
+        "code": "series-2857",
+        "name": "中兴 中兴C3"
+    },
+    {
+        "code": "series-75",
+        "name": "中兴 万禧龙"
+    },
+    {
+        "code": "series-674",
+        "name": "阿尔法罗米欧 Spider"
+    },
+    {
+        "code": "series-1679",
+        "name": "阿尔法罗米欧 8C"
+    },
+    {
+        "code": "series-672",
+        "name": "阿尔法罗米欧 166"
+    },
+    {
+        "code": "series-2098",
+        "name": "阿尔法罗米欧 布雷拉"
+    },
+    {
+        "code": "series-1222",
+        "name": "阿尔法罗米欧 GT"
+    },
+    {
+        "code": "series-671",
+        "name": "阿尔法罗米欧 156"
+    },
+    {
+        "code": "series-2097",
+        "name": "阿尔法罗米欧 MiTo"
+    },
+    {
+        "code": "series-2099",
+        "name": "阿尔法罗米欧 Giulietta"
+    },
+    {
+        "code": "series-1223",
+        "name": "阿尔法罗米欧 159"
+    },
+    {
+        "code": "series-670",
+        "name": "阿尔法罗米欧 147"
+    },
+    {
+        "code": "series-1289",
+        "name": "玛莎拉蒂 MC12"
+    },
+    {
+        "code": "series-1959",
+        "name": "玛莎拉蒂 GranCabrio"
+    },
+    {
+        "code": "series-1965",
+        "name": "玛莎拉蒂 GranSport "
+    },
+    {
+        "code": "series-1772",
+        "name": "玛莎拉蒂 3200GT"
+    },
+    {
+        "code": "series-1099",
+        "name": "玛莎拉蒂 总裁"
+    },
+    {
+        "code": "series-1098",
+        "name": "玛莎拉蒂 GranTurismo"
+    },
+    {
+        "code": "series-2850",
+        "name": "玛莎拉蒂 Ghibli"
+    },
+    {
+        "code": "series-1288",
+        "name": "玛莎拉蒂 斯派德"
+    },
+    {
+        "code": "series-1287",
+        "name": "玛莎拉蒂 Coupe"
+    },
+    {
+        "code": "series-138",
+        "name": "荣威 荣威750"
+    },
+    {
+        "code": "series-2666",
+        "name": "荣威 荣威E50"
+    },
+    {
+        "code": "series-2233",
+        "name": "荣威 荣威W5"
+    },
+    {
+        "code": "series-253",
+        "name": "荣威 荣威550"
+    },
+    {
+        "code": "series-2501",
+        "name": "荣威 荣威950"
+    },
+    {
+        "code": "series-1940",
+        "name": "荣威 荣威350"
+    },
+    {
+        "code": "series-351",
+        "name": "别克 荣御"
+    },
+    {
+        "code": "series-2688",
+        "name": "别克 昂科拉"
+    },
+    {
+        "code": "series-1548",
+        "name": "别克 君威"
+    },
+    {
+        "code": "series-2689",
+        "name": "别克 Verano"
+    },
+    {
+        "code": "series-1541",
+        "name": "别克 昂科雷"
+    },
+    {
+        "code": "series-1550",
+        "name": "别克 路霸"
+    },
+    {
+        "code": "series-1539",
+        "name": "别克 世纪"
+    },
+    {
+        "code": "series-1553",
+        "name": "别克 Terraza"
+    },
+    {
+        "code": "series-369",
+        "name": "别克 凯越"
+    },
+    {
+        "code": "series-183",
+        "name": "别克 林荫大道"
+    },
+    {
+        "code": "series-83",
+        "name": "别克 君越"
+    },
+    {
+        "code": "series-2208",
+        "name": "别克 LeSabre"
+    },
+    {
+        "code": "series-368",
+        "name": "别克 君威"
+    },
+    {
+        "code": "series-1546",
+        "name": "别克 Rainier"
+    },
+    {
+        "code": "series-1543",
+        "name": "别克 君越"
+    },
+    {
+        "code": "series-1545",
+        "name": "别克 林荫大道"
+    },
+    {
+        "code": "series-1899",
+        "name": "别克 英朗"
+    },
+    {
+        "code": "series-1815",
+        "name": "别克 荣御"
+    },
+    {
+        "code": "series-1547",
+        "name": "别克 Reatta"
+    },
+    {
+        "code": "series-1540",
+        "name": "别克 Electra"
+    },
+    {
+        "code": "series-1901",
+        "name": "别克 皇朝"
+    },
+    {
+        "code": "series-610",
+        "name": "别克 赛欧"
+    },
+    {
+        "code": "series-2643",
+        "name": "别克 昂科拉"
+    },
+    {
+        "code": "series-1551",
+        "name": "别克 Skylark"
+    },
+    {
+        "code": "series-1544",
+        "name": "别克 Lucerne"
+    },
+    {
+        "code": "series-1549",
+        "name": "别克 朗迪"
+    },
+    {
+        "code": "series-220",
+        "name": "别克 别克GL8"
+    },
+    {
+        "code": "series-609",
+        "name": "别克 别克"
+    },
+    {
+        "code": "series-25",
+        "name": "永源汽车 飞碟UFO"
+    },
+    {
+        "code": "series-2749",
+        "name": "永源汽车 猎鹰"
+    },
+    {
+        "code": "series-613",
+        "name": "比亚迪 比亚迪F3DM"
+    },
+    {
+        "code": "series-319",
+        "name": "比亚迪 比亚迪F6"
+    },
+    {
+        "code": "series-381",
+        "name": "比亚迪 比亚迪F3"
+    },
+    {
+        "code": "series-188",
+        "name": "比亚迪 比亚迪S8"
+    },
+    {
+        "code": "series-2308",
+        "name": "比亚迪 比亚迪G6"
+    },
+    {
+        "code": "series-2009",
+        "name": "比亚迪 比亚迪L3"
+    },
+    {
+        "code": "series-2855",
+        "name": "比亚迪 秦"
+    },
+    {
+        "code": "series-577",
+        "name": "比亚迪 比亚迪F0"
+    },
+    {
+        "code": "series-2733",
+        "name": "比亚迪 思锐"
+    },
+    {
+        "code": "series-2183",
+        "name": "比亚迪 比亚迪S6"
+    },
+    {
+        "code": "series-2325",
+        "name": "比亚迪 比亚迪E6"
+    },
+    {
+        "code": "series-1972",
+        "name": "比亚迪 比亚迪M6"
+    },
+    {
+        "code": "series-199",
+        "name": "比亚迪 比亚迪F3R"
+    },
+    {
+        "code": "series-218",
+        "name": "比亚迪 福莱尔"
+    },
+    {
+        "code": "series-2577",
+        "name": "比亚迪 速锐"
+    },
+    {
+        "code": "series-1729",
+        "name": "比亚迪 比亚迪G3"
+    },
+    {
+        "code": "series-2806",
+        "name": "东风 御风"
+    },
+    {
+        "code": "series-642",
+        "name": "东风 菱越"
+    },
+    {
+        "code": "series-643",
+        "name": "东风 菱通"
+    },
+    {
+        "code": "series-2802",
+        "name": "东风 俊风"
+    },
+    {
+        "code": "series-2022",
+        "name": "东风 小康K06"
+    },
+    {
+        "code": "series-2821",
+        "name": "东风 小康风光"
+    },
+    {
+        "code": "series-2819",
+        "name": "东风 小康V26"
+    },
+    {
+        "code": "series-271",
+        "name": "东风 风行"
+    },
+    {
+        "code": "series-2876",
+        "name": "东风 小康C35"
+    },
+    {
+        "code": "series-2900",
+        "name": "东风 虎视"
+    },
+    {
+        "code": "series-2707",
+        "name": "东风 小康C37"
+    },
+    {
+        "code": "series-2027",
+        "name": "东风 东风EQ7240BP"
+    },
+    {
+        "code": "series-2333",
+        "name": "东风 途逸"
+    },
+    {
+        "code": "series-2055",
+        "name": "东风 猛士"
+    },
+    {
+        "code": "series-639",
+        "name": "东风 小王子"
+    },
+    {
+        "code": "series-98",
+        "name": "东风 小康K07"
+    },
+    {
+        "code": "series-2156",
+        "name": "东风 风神H30-Cross"
+    },
+    {
+        "code": "series-1903",
+        "name": "东风 风神H30"
+    },
+    {
+        "code": "series-2021",
+        "name": "东风 小康K17"
+    },
+    {
+        "code": "series-641",
+        "name": "东风 菱智"
+    },
+    {
+        "code": "series-2820",
+        "name": "东风 小康V07S"
+    },
+    {
+        "code": "series-2495",
+        "name": "东风 风神A60"
+    },
+    {
+        "code": "series-2234",
+        "name": "东风 景逸Cross"
+    },
+    {
+        "code": "series-187",
+        "name": "东风 景逸"
+    },
+    {
+        "code": "series-1118",
+        "name": "东风 风神S30"
+    },
+    {
+        "code": "series-2496",
+        "name": "东风 小康V29"
+    },
+    {
+        "code": "series-2901",
+        "name": "东风 信天游"
+    },
+    {
+        "code": "series-640",
+        "name": "东风 风神水星"
+    },
+    {
+        "code": "series-2498",
+        "name": "东风 景逸SUV"
+    },
+    {
+        "code": "series-2020",
+        "name": "东风 小康K07-ii"
+    },
+    {
+        "code": "series-2023",
+        "name": "东风 小康V27"
+    },
+    {
+        "code": "series-2812",
+        "name": "东风 景逸X5"
+    },
+    {
+        "code": "series-416",
+        "name": "吉利 豪情"
+    },
+    {
+        "code": "series-148",
+        "name": "吉利 自由舰"
+    },
+    {
+        "code": "series-591",
+        "name": "吉利 金鹰"
+    },
+    {
+        "code": "series-1083",
+        "name": "吉利 熊猫"
+    },
+    {
+        "code": "series-130",
+        "name": "吉利 远景"
+    },
+    {
+        "code": "series-141",
+        "name": "吉利 雳靓"
+    },
+    {
+        "code": "series-1789",
+        "name": "吉利 豹风GT"
+    },
+    {
+        "code": "series-106",
+        "name": "吉利 金刚"
+    },
+    {
+        "code": "series-190",
+        "name": "吉利 美人豹"
+    },
+    {
+        "code": "series-1077",
+        "name": "吉利 中国龙"
+    },
+    {
+        "code": "series-417",
+        "name": "吉利 美日"
+    },
+    {
+        "code": "series-2421",
+        "name": "吉利 全球鹰GC7"
+    },
+    {
+        "code": "series-562",
+        "name": "吉利 优利欧"
+    },
+    {
+        "code": "series-2510",
+        "name": "吉利 全球鹰GX7"
+    },
+    {
+        "code": "series-2077",
+        "name": "吉利 全球鹰GX2"
+    },
+    {
+        "code": "series-1263",
+        "name": "法拉利 FXX"
+    },
+    {
+        "code": "series-2484",
+        "name": "法拉利 550"
+    },
+    {
+        "code": "series-1260",
+        "name": "法拉利 F149 California"
+    },
+    {
+        "code": "series-760",
+        "name": "法拉利 360"
+    },
+    {
+        "code": "series-2158",
+        "name": "法拉利 FF"
+    },
+    {
+        "code": "series-759",
+        "name": "法拉利 Enzo"
+    },
+    {
+        "code": "series-1247",
+        "name": "法拉利 F355"
+    },
+    {
+        "code": "series-758",
+        "name": "法拉利 612"
+    },
+    {
+        "code": "series-1251",
+        "name": "法拉利 F430"
+    },
+    {
+        "code": "series-1267",
+        "name": "法拉利 F50"
+    },
+    {
+        "code": "series-757",
+        "name": "法拉利 599"
+    },
+    {
+        "code": "series-1253",
+        "name": "法拉利 456"
+    },
+    {
+        "code": "series-2536",
+        "name": "法拉利 F12 Berlinetta"
+    },
+    {
+        "code": "series-2712",
+        "name": "法拉利 LaFerrari"
+    },
+    {
+        "code": "series-1896",
+        "name": "法拉利 348"
+    },
+    {
+        "code": "series-1897",
+        "name": "法拉利 458"
+    },
+    {
+        "code": "series-1898",
+        "name": "法拉利 Dino"
+    },
+    {
+        "code": "series-1261",
+        "name": "法拉利 512"
+    },
+    {
+        "code": "series-756",
+        "name": "法拉利 575"
+    },
+    {
+        "code": "series-1858",
+        "name": "现代 i10"
+    },
+    {
+        "code": "series-2844",
+        "name": "现代 名图"
+    },
+    {
+        "code": "series-2789",
+        "name": "现代 格锐"
+    },
+    {
+        "code": "series-1869",
+        "name": "现代 Satellite"
+    },
+    {
+        "code": "series-1177",
+        "name": "现代 Scoupe"
+    },
+    {
+        "code": "series-1174",
+        "name": "现代 Entourage"
+    },
+    {
+        "code": "series-294",
+        "name": "现代 途胜"
+    },
+    {
+        "code": "series-2066",
+        "name": "现代 H-1辉翼"
+    },
+    {
+        "code": "series-2144",
+        "name": "现代 ix35"
+    },
+    {
+        "code": "series-1867",
+        "name": "现代 Galloper"
+    },
+    {
+        "code": "series-1180",
+        "name": "现代 维拉克斯"
+    },
+    {
+        "code": "series-1100",
+        "name": "现代 世纪百年"
+    },
+    {
+        "code": "series-862",
+        "name": "现代 美佳"
+    },
+    {
+        "code": "series-1185",
+        "name": "现代 劳恩斯"
+    },
+    {
+        "code": "series-5012-ly",
+        "name": "现代 瑞奕"
+    },
+    {
+        "code": "series-410",
+        "name": "现代 御翔"
+    },
+    {
+        "code": "series-212",
+        "name": "现代 伊兰特"
+    },
+    {
+        "code": "series-1179",
+        "name": "现代 酷派"
+    },
+    {
+        "code": "series-211",
+        "name": "现代 索纳塔"
+    },
+    {
+        "code": "series-1511",
+        "name": "现代 名驭"
+    },
+    {
+        "code": "series-617",
+        "name": "现代 领翔"
+    },
+    {
+        "code": "series-1868",
+        "name": "现代 Trajet"
+    },
+    {
+        "code": "series-335",
+        "name": "现代 悦动"
+    },
+    {
+        "code": "series-1861",
+        "name": "现代 Atos"
+    },
+    {
+        "code": "series-1176",
+        "name": "现代 新胜达"
+    },
+    {
+        "code": "series-1935",
+        "name": "现代 现代ix35"
+    },
+    {
+        "code": "series-77",
+        "name": "现代 雅绅特"
+    },
+    {
+        "code": "series-1974",
+        "name": "现代 瑞纳"
+    },
+    {
+        "code": "series-2089",
+        "name": "现代 王朝"
+    },
+    {
+        "code": "series-925",
+        "name": "现代 途胜"
+    },
+    {
+        "code": "series-2307",
+        "name": "现代 飞思"
+    },
+    {
+        "code": "series-1647",
+        "name": "现代 君爵"
+    },
+    {
+        "code": "series-2581",
+        "name": "现代 朗动"
+    },
+    {
+        "code": "series-2083",
+        "name": "现代 圣达菲"
+    },
+    {
+        "code": "series-1697",
+        "name": "现代 现代i30"
+    },
+    {
+        "code": "series-1170",
+        "name": "现代 雅绅特"
+    },
+    {
+        "code": "series-1860",
+        "name": "现代 i30"
+    },
+    {
+        "code": "series-1864",
+        "name": "现代 Getz"
+    },
+    {
+        "code": "series-2147",
+        "name": "现代 i45"
+    },
+    {
+        "code": "series-1172",
+        "name": "现代 雅尊"
+    },
+    {
+        "code": "series-953",
+        "name": "现代 雅科仕"
+    },
+    {
+        "code": "series-2683",
+        "name": "现代 胜达"
+    },
+    {
+        "code": "series-1865",
+        "name": "现代 i800"
+    },
+    {
+        "code": "series-1173",
+        "name": "现代 伊兰特"
+    },
+    {
+        "code": "series-1178",
+        "name": "现代 索纳塔"
+    },
+    {
+        "code": "series-1866",
+        "name": "现代 特拉卡-得利"
+    },
+    {
+        "code": "series-1859",
+        "name": "现代 i20"
+    },
+    {
+        "code": "series-2030",
+        "name": "福迪 小超人"
+    },
+    {
+        "code": "series-659",
+        "name": "福迪 探索者Ⅲ"
+    },
+    {
+        "code": "series-355",
+        "name": "福迪 探索者Ⅰ"
+    },
+    {
+        "code": "series-2897",
+        "name": "福迪 雄狮F16"
+    },
+    {
+        "code": "series-354",
+        "name": "福迪 飞越"
+    },
+    {
+        "code": "series-2896",
+        "name": "福迪 雄狮"
+    },
+    {
+        "code": "series-2709",
+        "name": "福迪 探索者6"
+    },
+    {
+        "code": "series-658",
+        "name": "福迪 探索者Ⅱ"
+    },
+    {
+        "code": "series-1466",
+        "name": "马自达 CX-7"
+    },
+    {
+        "code": "series-1483",
+        "name": "马自达 MX-5"
+    },
+    {
+        "code": "series-856",
+        "name": "马自达 5"
+    },
+    {
+        "code": "series-1489",
+        "name": "马自达 RX-8"
+    },
+    {
+        "code": "series-2384",
+        "name": "马自达 马自达3"
+    },
+    {
+        "code": "series-2544",
+        "name": "马自达 CX-5"
+    },
+    {
+        "code": "series-2644",
+        "name": "马自达 Flairwagon"
+    },
+    {
+        "code": "series-1485",
+        "name": "马自达 MPV"
+    },
+    {
+        "code": "series-1467",
+        "name": "马自达 CX-9"
+    },
+    {
+        "code": "series-mazida323-1000001",
+        "name": "马自达 323"
+    },
+    {
+        "code": "series-2782",
+        "name": "马自达 ATENZA"
+    },
+    {
+        "code": "series-1051",
+        "name": "马自达 睿翼"
+    },
+    {
+        "code": "series-2378",
+        "name": "马自达 626"
+    },
+    {
+        "code": "series-1487",
+        "name": "马自达 Navajo"
+    },
+    {
+        "code": "series-2793",
+        "name": "马自达 马自达CX-5"
+    },
+    {
+        "code": "series-82",
+        "name": "马自达 马自达3"
+    },
+    {
+        "code": "series-1490",
+        "name": "马自达 Tribute"
+    },
+    {
+        "code": "series-2637",
+        "name": "马自达 马自达2"
+    },
+    {
+        "code": "series-270",
+        "name": "马自达 马自达6"
+    },
+    {
+        "code": "series-1484",
+        "name": "马自达 Millenia"
+    },
+    {
+        "code": "series-1488",
+        "name": "马自达 RX-7"
+    },
+    {
+        "code": "series-239",
+        "name": "马自达 马自达2"
+    },
+    {
+        "code": "series-2072",
+        "name": "马自达 马自达8"
+    },
+    {
+        "code": "series-2291",
+        "name": "马自达 8"
+    },
+    {
+        "code": "series-1486",
+        "name": "马自达 MX-6"
+    },
+    {
+        "code": "series-2380",
+        "name": "马自达 马自达6"
+    },
+    {
+        "code": "series-1465",
+        "name": "马自达 929"
+    },
+    {
+        "code": "series-377",
+        "name": "吉普 切诺基"
+    },
+    {
+        "code": "series-1501",
+        "name": "吉普 指南者"
+    },
+    {
+        "code": "series-49",
+        "name": "吉普 城市猎人"
+    },
+    {
+        "code": "series-374",
+        "name": "吉普 大切诺基"
+    },
+    {
+        "code": "series-1498",
+        "name": "吉普 大切诺基"
+    },
+    {
+        "code": "series-1705",
+        "name": "吉普 自由客"
+    },
+    {
+        "code": "series-1500",
+        "name": "吉普 指挥官"
+    },
+    {
+        "code": "series-2108",
+        "name": "吉普 切诺基"
+    },
+    {
+        "code": "series-2880",
+        "name": "吉普 自由光"
+    },
+    {
+        "code": "series-1988",
+        "name": "吉普 狂潮"
+    },
+    {
+        "code": "series-376",
+        "name": "吉普 JEEP2500"
+    },
+    {
+        "code": "series-1704",
+        "name": "吉普 自由人"
+    },
+    {
+        "code": "series-1499",
+        "name": "吉普 牧马人"
+    },
+    {
+        "code": "series-50",
+        "name": "吉普 JEEP2700"
+    },
+    {
+        "code": "series-1715",
+        "name": "黄海 傲骏"
+    },
+    {
+        "code": "series-2153",
+        "name": "黄海 旗胜V3"
+    },
+    {
+        "code": "series-153",
+        "name": "黄海 旗胜CUV"
+    },
+    {
+        "code": "series-154",
+        "name": "黄海 大柴神"
+    },
+    {
+        "code": "series-147",
+        "name": "黄海 领航者CUV"
+    },
+    {
+        "code": "series-111",
+        "name": "黄海 翱龙"
+    },
+    {
+        "code": "series-146",
+        "name": "黄海 傲龙CUV"
+    },
+    {
+        "code": "series-1713",
+        "name": "黄海 小柴神"
+    },
+    {
+        "code": "series-110",
+        "name": "黄海 傲羚"
+    },
+    {
+        "code": "series-45",
+        "name": "黄海 挑战者"
+    },
+    {
+        "code": "series-2899",
+        "name": "海格 御骏"
+    },
+    {
+        "code": "series-2898",
+        "name": "海格 龙威"
+    },
+    {
+        "code": "series-1754",
+        "name": "欧宝 Tigra"
+    },
+    {
+        "code": "series-1034",
+        "name": "欧宝 Signum"
+    },
+    {
+        "code": "series-870",
+        "name": "欧宝 欧捷利"
+    },
+    {
+        "code": "series-2742",
+        "name": "欧宝 威达"
+    },
+    {
+        "code": "series-2176",
+        "name": "欧宝 雅特"
+    },
+    {
+        "code": "series-1035",
+        "name": "欧宝 Speedster"
+    },
+    {
+        "code": "series-893",
+        "name": "欧宝 赛飞利"
+    },
+    {
+        "code": "series-1751",
+        "name": "欧宝 GT"
+    },
+    {
+        "code": "series-1752",
+        "name": "欧宝 英速亚"
+    },
+    {
+        "code": "series-1143",
+        "name": "欧宝 安德拉"
+    },
+    {
+        "code": "series-1750",
+        "name": "欧宝 Combo"
+    },
+    {
+        "code": "series-2174",
+        "name": "欧宝 雅特Coupe"
+    },
+    {
+        "code": "series-1013",
+        "name": "欧宝 Meriva"
+    },
+    {
+        "code": "series-873",
+        "name": "欧宝 欧美佳"
+    },
+    {
+        "code": "series-826",
+        "name": "欧宝 可赛"
+    },
+    {
+        "code": "series-1211",
+        "name": "路虎 卫士"
+    },
+    {
+        "code": "series-840",
+        "name": "路虎 揽胜"
+    },
+    {
+        "code": "series-754",
+        "name": "路虎 发现"
+    },
+    {
+        "code": "series-2313",
+        "name": "路虎 极光"
+    },
+    {
+        "code": "series-903",
+        "name": "路虎 神行者"
+    },
+    {
+        "code": "series-2114",
+        "name": "名爵 ZR"
+    },
+    {
+        "code": "series-866",
+        "name": "名爵 F"
+    },
+    {
+        "code": "series-2493",
+        "name": "名爵 名爵5系两厢"
+    },
+    {
+        "code": "series-2091",
+        "name": "名爵 名爵6系"
+    },
+    {
+        "code": "series-2112",
+        "name": "名爵 XPower"
+    },
+    {
+        "code": "series-2113",
+        "name": "名爵 ZT"
+    },
+    {
+        "code": "series-2117",
+        "name": "名爵 TF"
+    },
+    {
+        "code": "series-2133",
+        "name": "名爵 名爵3系"
+    },
+    {
+        "code": "series-2116",
+        "name": "名爵 ZT-T"
+    },
+    {
+        "code": "series-2115",
+        "name": "名爵 ZS"
+    },
+    {
+        "code": "series-186",
+        "name": "名爵 名爵TF"
+    },
+    {
+        "code": "series-170",
+        "name": "名爵 名爵7系"
+    },
+    {
+        "code": "series-683",
+        "name": "本田 奥德赛"
+    },
+    {
+        "code": "series-78",
+        "name": "本田 思域"
+    },
+    {
+        "code": "series-1329",
+        "name": "本田 FCX"
+    },
+    {
+        "code": "series-1321",
+        "name": "本田 Passport"
+    },
+    {
+        "code": "series-1319",
+        "name": "本田 飞度"
+    },
+    {
+        "code": "series-2053",
+        "name": "本田 歌诗图"
+    },
+    {
+        "code": "series-1320",
+        "name": "本田 Insight"
+    },
+    {
+        "code": "series-2647",
+        "name": "本田 HR-V"
+    },
+    {
+        "code": "series-2822",
+        "name": "本田 杰德"
+    },
+    {
+        "code": "series-2507",
+        "name": "本田 思铭"
+    },
+    {
+        "code": "series-1324",
+        "name": "本田 Ridgeline"
+    },
+    {
+        "code": "series-1325",
+        "name": "本田 S2000"
+    },
+    {
+        "code": "series-80",
+        "name": "本田 思迪"
+    },
+    {
+        "code": "series-1318",
+        "name": "本田 Element"
+    },
+    {
+        "code": "series-612",
+        "name": "本田 锋范"
+    },
+    {
+        "code": "series-1316",
+        "name": "本田 思域"
+    },
+    {
+        "code": "series-1326",
+        "name": "本田 里程"
+    },
+    {
+        "code": "series-2348",
+        "name": "本田 雅阁两厢"
+    },
+    {
+        "code": "series-2149",
+        "name": "本田 理念"
+    },
+    {
+        "code": "series-993",
+        "name": "本田 CR-V"
+    },
+    {
+        "code": "series-1691",
+        "name": "本田 思铂睿"
+    },
+    {
+        "code": "series-1328",
+        "name": "本田 时韵"
+    },
+    {
+        "code": "series-2651",
+        "name": "本田 FR-V"
+    },
+    {
+        "code": "series-2551",
+        "name": "本田 艾力绅"
+    },
+    {
+        "code": "series-1323",
+        "name": "本田 Prelude"
+    },
+    {
+        "code": "series-2093",
+        "name": "本田 CR-Z"
+    },
+    {
+        "code": "series-2007",
+        "name": "本田 飞度"
+    },
+    {
+        "code": "series-2785",
+        "name": "本田 凌派"
+    },
+    {
+        "code": "series-2394",
+        "name": "本田 思域两厢"
+    },
+    {
+        "code": "series-1322",
+        "name": "本田 领航员"
+    },
+    {
+        "code": "series-452",
+        "name": "本田 奥德赛"
+    },
+    {
+        "code": "series-1327",
+        "name": "本田 气浪"
+    },
+    {
+        "code": "series-1315",
+        "name": "本田 雅阁"
+    },
+    {
+        "code": "series-1317",
+        "name": "本田 CR-X-Del-Sol"
+    },
+    {
+        "code": "series-1018",
+        "name": "本田 NSX"
+    },
+    {
+        "code": "series-226",
+        "name": "本田 CR-V思威"
+    },
+    {
+        "code": "series-564",
+        "name": "本田 雅阁"
+    },
+    {
+        "code": "series-459",
+        "name": "长城 赛弗"
+    },
+    {
+        "code": "series-457",
+        "name": "长城 赛铃"
+    },
+    {
+        "code": "series-194",
+        "name": "长城 炫丽"
+    },
+    {
+        "code": "series-1969",
+        "name": "长城 哈弗H3"
+    },
+    {
+        "code": "series-222",
+        "name": "长城 嘉誉"
+    },
+    {
+        "code": "series-1699",
+        "name": "长城 迷你SUV"
+    },
+    {
+        "code": "series-2014",
+        "name": "长城 腾翼V80"
+    },
+    {
+        "code": "series-1957",
+        "name": "长城 腾翼C30"
+    },
+    {
+        "code": "series-1918",
+        "name": "长城 哈弗M2"
+    },
+    {
+        "code": "series-309",
+        "name": "长城 赛骏"
+    },
+    {
+        "code": "series-193",
+        "name": "长城 酷熊"
+    },
+    {
+        "code": "series-2542",
+        "name": "长城 哈弗M4"
+    },
+    {
+        "code": "series-2863",
+        "name": "长城 金迪尔"
+    },
+    {
+        "code": "series-589",
+        "name": "长城 哈弗汽油系列"
+    },
+    {
+        "code": "series-1049",
+        "name": "长城 哈弗-派"
+    },
+    {
+        "code": "series-2292",
+        "name": "长城 腾翼C20R"
+    },
+    {
+        "code": "series-195",
+        "name": "长城 长城精灵"
+    },
+    {
+        "code": "series-458",
+        "name": "长城 赛影"
+    },
+    {
+        "code": "series-hafo-1000001",
+        "name": "长城 哈佛"
+    },
+    {
+        "code": "series-2355",
+        "name": "长城 腾翼C50"
+    },
+    {
+        "code": "series-164",
+        "name": "长城 风骏"
+    },
+    {
+        "code": "series-1962",
+        "name": "长城 哈弗H5"
+    },
+    {
+        "code": "series-1773",
+        "name": "长城 凌傲"
+    },
+    {
+        "code": "series-302",
+        "name": "长城 赛酷"
+    },
+    {
+        "code": "series-2284",
+        "name": "长城 哈弗H6"
+    },
+    {
+        "code": "series-455",
+        "name": "长城 迪尔"
+    },
+    {
+        "code": "series-1050",
+        "name": "长城 哈弗柴油系列"
+    },
+    {
+        "code": "series-456",
+        "name": "长城 大脚兽"
+    },
+    {
+        "code": "series-1914",
+        "name": "长城 哈弗M1"
+    },
+    {
+        "code": "series-1684",
+        "name": "瑞麒 瑞麒M1"
+    },
+    {
+        "code": "series-2225",
+        "name": "瑞麒 派拉蒙"
+    },
+    {
+        "code": "series-2028",
+        "name": "瑞麒 瑞麒M5"
+    },
+    {
+        "code": "series-2420",
+        "name": "瑞麒 瑞麒G3"
+    },
+    {
+        "code": "series-1759",
+        "name": "瑞麒 瑞麒X1"
+    },
+    {
+        "code": "series-2267",
+        "name": "瑞麒 瑞麒G6"
+    },
+    {
+        "code": "series-1820",
+        "name": "瑞麒 瑞麒G5"
+    },
+    {
+        "code": "series-2088",
+        "name": "丰田 考斯特"
+    },
+    {
+        "code": "series-1376",
+        "name": "丰田 4Runner"
+    },
+    {
+        "code": "series-2399",
+        "name": "丰田 MR2敞篷版"
+    },
+    {
+        "code": "series-1823",
+        "name": "丰田 威飒"
+    },
+    {
+        "code": "series-1384",
+        "name": "丰田 汉兰达"
+    },
+    {
+        "code": "series-2626",
+        "name": "丰田 Avensis Wagon"
+    },
+    {
+        "code": "series-100",
+        "name": "丰田 凯美瑞"
+    },
+    {
+        "code": "series-2472",
+        "name": "丰田 MARK X"
+    },
+    {
+        "code": "series-1396",
+        "name": "丰田 T100"
+    },
+    {
+        "code": "series-2228",
+        "name": "丰田 逸致"
+    },
+    {
+        "code": "series-1496",
+        "name": "丰田 普拉多"
+    },
+    {
+        "code": "series-2595",
+        "name": "丰田 86"
+    },
+    {
+        "code": "series-1497",
+        "name": "丰田 小霸王"
+    },
+    {
+        "code": "series-1072",
+        "name": "丰田 汉兰达"
+    },
+    {
+        "code": "series-284",
+        "name": "丰田 威驰"
+    },
+    {
+        "code": "series-1378",
+        "name": "丰田 佳美"
+    },
+    {
+        "code": "series-1399",
+        "name": "丰田 坦途"
+    },
+    {
+        "code": "series-1966",
+        "name": "丰田 世纪"
+    },
+    {
+        "code": "series-1390",
+        "name": "丰田 普瑞维亚"
+    },
+    {
+        "code": "series-555",
+        "name": "丰田 普拉多"
+    },
+    {
+        "code": "series-521",
+        "name": "丰田 普锐斯"
+    },
+    {
+        "code": "series-2132",
+        "name": "丰田 杰路驰"
+    },
+    {
+        "code": "series-780",
+        "name": "丰田 光冠"
+    },
+    {
+        "code": "series-1023",
+        "name": "丰田 RAV4"
+    },
+    {
+        "code": "series-2846",
+        "name": "丰田 致炫"
+    },
+    {
+        "code": "series-2903",
+        "name": "丰田 Fortuner"
+    },
+    {
+        "code": "series-1053",
+        "name": "丰田 丰田RAV4"
+    },
+    {
+        "code": "series-2638",
+        "name": "丰田 iQ"
+    },
+    {
+        "code": "series-159",
+        "name": "丰田 卡罗拉"
+    },
+    {
+        "code": "series-1389",
+        "name": "丰田 Paseo"
+    },
+    {
+        "code": "series-286",
+        "name": "丰田 花冠"
+    },
+    {
+        "code": "series-1386",
+        "name": "丰田 美佳"
+    },
+    {
+        "code": "series-2601",
+        "name": "丰田 Avensis"
+    },
+    {
+        "code": "series-1749",
+        "name": "丰田 海狮"
+    },
+    {
+        "code": "series-339",
+        "name": "丰田 雅力士"
+    },
+    {
+        "code": "series-1393",
+        "name": "丰田 赛纳"
+    },
+    {
+        "code": "series-2460",
+        "name": "丰田 Aygo"
+    },
+    {
+        "code": "series-1377",
+        "name": "丰田 亚洲龙"
+    },
+    {
+        "code": "series-1392",
+        "name": "丰田 红杉"
+    },
+    {
+        "code": "series-1394",
+        "name": "丰田 Solara"
+    },
+    {
+        "code": "series-361",
+        "name": "丰田 皇冠"
+    },
+    {
+        "code": "series-277",
+        "name": "丰田 兰德酷路泽"
+    },
+    {
+        "code": "series-1397",
+        "name": "丰田 Tacoma"
+    },
+    {
+        "code": "series-2056",
+        "name": "丰田 埃尔法"
+    },
+    {
+        "code": "series-281",
+        "name": "丰田 陆地巡洋舰"
+    },
+    {
+        "code": "series-1379",
+        "name": "丰田 赛利卡"
+    },
+    {
+        "code": "series-1400",
+        "name": "丰田 雅力士"
+    },
+    {
+        "code": "series-1382",
+        "name": "丰田 Echo"
+    },
+    {
+        "code": "series-1380",
+        "name": "丰田 花冠"
+    },
+    {
+        "code": "series-1391",
+        "name": "丰田 普锐斯"
+    },
+    {
+        "code": "series-1388",
+        "name": "丰田 MR2"
+    },
+    {
+        "code": "series-1383",
+        "name": "丰田 FJ酷路泽"
+    },
+    {
+        "code": "series-1385",
+        "name": "丰田 陆地巡洋舰"
+    },
+    {
+        "code": "series-69",
+        "name": "丰田 柯斯达"
+    },
+    {
+        "code": "series-238",
+        "name": "丰田 锐志"
+    },
+    {
+        "code": "series-2290",
+        "name": "丰田 Wish"
+    },
+    {
+        "code": "series-1398",
+        "name": "丰田 Tercel"
+    },
+    {
+        "code": "series-1395",
+        "name": "丰田 Supra"
+    },
+    {
+        "code": "series-794",
+        "name": "丰田 皇冠"
+    },
+    {
+        "code": "series-2606",
+        "name": "丰田 Avensis verso"
+    },
+    {
+        "code": "series-450",
+        "name": "陆风 陆风X6"
+    },
+    {
+        "code": "series-93",
+        "name": "陆风 陆风X9"
+    },
+    {
+        "code": "series-1698",
+        "name": "陆风 陆风X8"
+    },
+    {
+        "code": "series-2691",
+        "name": "陆风 陆风X5"
+    },
+    {
+        "code": "series-217",
+        "name": "陆风 风华"
+    },
+    {
+        "code": "series-94",
+        "name": "陆风 新饰界"
+    },
+    {
+        "code": "series-541",
+        "name": "陆风 风尚"
+    },
+    {
+        "code": "series-1189",
+        "name": "阿斯顿马丁 One-77"
+    },
+    {
+        "code": "series-2454",
+        "name": "阿斯顿马丁 DB9"
+    },
+    {
+        "code": "series-1192",
+        "name": "阿斯顿马丁 Vanquish"
+    },
+    {
+        "code": "series-1191",
+        "name": "阿斯顿马丁 V8"
+    },
+    {
+        "code": "series-2101",
+        "name": "阿斯顿马丁 Cygnet"
+    },
+    {
+        "code": "series-1193",
+        "name": "阿斯顿马丁 Rapide"
+    },
+    {
+        "code": "series-677",
+        "name": "阿斯顿马丁 DB7"
+    },
+    {
+        "code": "series-2107",
+        "name": "阿斯顿马丁 V12"
+    },
+    {
+        "code": "series-2456",
+        "name": "阿斯顿马丁 DBS"
+    },
+    {
+        "code": "series-2331",
+        "name": "阿斯顿马丁 Virage"
+    },
+    {
+        "code": "series-908",
+        "name": "世爵 D12"
+    },
+    {
+        "code": "series-1404",
+        "name": "世爵 C12"
+    },
+    {
+        "code": "series-1819",
+        "name": "世爵 D8"
+    },
+    {
+        "code": "series-907",
+        "name": "世爵 C8"
+    },
+    {
+        "code": "series-2538",
+        "name": "蓝旗亚 Thema"
+    },
+    {
+        "code": "series-1577",
+        "name": "蓝旗亚 Thesis"
+    },
+    {
+        "code": "series-1767",
+        "name": "蓝旗亚 穆沙"
+    },
+    {
+        "code": "series-1581",
+        "name": "蓝旗亚 菲德拉"
+    },
+    {
+        "code": "series-1768",
+        "name": "蓝旗亚 三角洲"
+    },
+    {
+        "code": "series-1766",
+        "name": "蓝旗亚 Ypsilon"
+    },
+    {
+        "code": "series-1721",
+        "name": "开瑞 优雅(瑞麒2)"
+    },
+    {
+        "code": "series-1722",
+        "name": "开瑞 优派"
+    },
+    {
+        "code": "series-2907",
+        "name": "开瑞 优劲"
+    },
+    {
+        "code": "series-2073",
+        "name": "开瑞 优胜"
+    },
+    {
+        "code": "series-1685",
+        "name": "开瑞 优翼(开瑞3)"
+    },
+    {
+        "code": "series-1723",
+        "name": "开瑞 优优"
+    },
+    {
+        "code": "series-1503",
+        "name": "克莱斯勒 Cirrus"
+    },
+    {
+        "code": "series-814",
+        "name": "克莱斯勒 君王"
+    },
+    {
+        "code": "series-802",
+        "name": "克莱斯勒 交叉火力"
+    },
+    {
+        "code": "series-142",
+        "name": "克莱斯勒 克莱斯勒300C"
+    },
+    {
+        "code": "series-1906",
+        "name": "克莱斯勒 彩虹"
+    },
+    {
+        "code": "series-236",
+        "name": "克莱斯勒 大捷龙"
+    },
+    {
+        "code": "series-1020",
+        "name": "克莱斯勒 PT漫步者"
+    },
+    {
+        "code": "series-1507",
+        "name": "克莱斯勒 赛百灵"
+    },
+    {
+        "code": "series-936",
+        "name": "克莱斯勒 五星卷云"
+    },
+    {
+        "code": "series-1504",
+        "name": "克莱斯勒 纽约客"
+    },
+    {
+        "code": "series-1502",
+        "name": "克莱斯勒 Aspen"
+    },
+    {
+        "code": "series-916",
+        "name": "克莱斯勒 太平洋"
+    },
+    {
+        "code": "series-2257",
+        "name": "克莱斯勒 200"
+    },
+    {
+        "code": "series-744",
+        "name": "克莱斯勒 大捷龙"
+    },
+    {
+        "code": "series-973",
+        "name": "克莱斯勒 300C"
+    },
+    {
+        "code": "series-234",
+        "name": "克莱斯勒 铂锐"
+    },
+    {
+        "code": "series-751",
+        "name": "克莱斯勒 帝王"
+    },
+    {
+        "code": "series-917",
+        "name": "克莱斯勒 太阳舞"
+    },
+    {
+        "code": "series-1028",
+        "name": "沃尔沃 S40"
+    },
+    {
+        "code": "series-2525",
+        "name": "沃尔沃 V50"
+    },
+    {
+        "code": "series-1347",
+        "name": "沃尔沃 760"
+    },
+    {
+        "code": "series-1029",
+        "name": "沃尔沃 S60"
+    },
+    {
+        "code": "series-1349",
+        "name": "沃尔沃 850"
+    },
+    {
+        "code": "series-1345",
+        "name": "沃尔沃 240"
+    },
+    {
+        "code": "series-1042",
+        "name": "沃尔沃 V70"
+    },
+    {
+        "code": "series-1032",
+        "name": "沃尔沃 S90"
+    },
+    {
+        "code": "series-2853",
+        "name": "沃尔沃 沃尔沃S60L"
+    },
+    {
+        "code": "series-988",
+        "name": "沃尔沃 C30"
+    },
+    {
+        "code": "series-1348",
+        "name": "沃尔沃 780"
+    },
+    {
+        "code": "series-1044",
+        "name": "沃尔沃 XC70"
+    },
+    {
+        "code": "series-933",
+        "name": "沃尔沃 940"
+    },
+    {
+        "code": "series-1350",
+        "name": "沃尔沃 960"
+    },
+    {
+        "code": "series-1045",
+        "name": "沃尔沃 XC90"
+    },
+    {
+        "code": "series-2365",
+        "name": "沃尔沃 C70"
+    },
+    {
+        "code": "series-1346",
+        "name": "沃尔沃 740"
+    },
+    {
+        "code": "series-2061",
+        "name": "沃尔沃 V40"
+    },
+    {
+        "code": "series-1047",
+        "name": "沃尔沃 沃尔沃S80L"
+    },
+    {
+        "code": "series-2504",
+        "name": "沃尔沃 V60"
+    },
+    {
+        "code": "series-1030",
+        "name": "沃尔沃 S70"
+    },
+    {
+        "code": "series-1031",
+        "name": "沃尔沃 S80"
+    },
+    {
+        "code": "series-118",
+        "name": "沃尔沃 沃尔沃S40"
+    },
+    {
+        "code": "series-1702",
+        "name": "沃尔沃 XC60"
+    },
+    {
+        "code": "series-445",
+        "name": "哈飞 中意"
+    },
+    {
+        "code": "series-635",
+        "name": "哈飞 松花江"
+    },
+    {
+        "code": "series-1088",
+        "name": "哈飞 路尊小霸王"
+    },
+    {
+        "code": "series-2814",
+        "name": "哈飞 骏意"
+    },
+    {
+        "code": "series-443",
+        "name": "哈飞 赛马"
+    },
+    {
+        "code": "series-444",
+        "name": "哈飞 百利"
+    },
+    {
+        "code": "series-310",
+        "name": "哈飞 赛豹Ⅲ系"
+    },
+    {
+        "code": "series-2720",
+        "name": "哈飞 中意V5"
+    },
+    {
+        "code": "series-442",
+        "name": "哈飞 民意"
+    },
+    {
+        "code": "series-200",
+        "name": "哈飞 路尊大霸王"
+    },
+    {
+        "code": "series-149",
+        "name": "哈飞 赛豹Ⅴ系"
+    },
+    {
+        "code": "series-441",
+        "name": "哈飞 路宝"
+    },
+    {
+        "code": "series-1085",
+        "name": "起亚 福瑞迪"
+    },
+    {
+        "code": "series-869",
+        "name": "起亚 欧菲莱斯"
+    },
+    {
+        "code": "series-1771",
+        "name": "起亚 秀尔"
+    },
+    {
+        "code": "series-1998",
+        "name": "起亚 凯尊"
+    },
+    {
+        "code": "series-150",
+        "name": "起亚 锐欧"
+    },
+    {
+        "code": "series-1184",
+        "name": "起亚 霸锐"
+    },
+    {
+        "code": "series-822",
+        "name": "起亚 康柯德"
+    },
+    {
+        "code": "series-868",
+        "name": "起亚 欧迪玛"
+    },
+    {
+        "code": "series-1208",
+        "name": "起亚 帝国"
+    },
+    {
+        "code": "series-2124",
+        "name": "起亚 起亚K5"
+    },
+    {
+        "code": "series-324",
+        "name": "起亚 千里马"
+    },
+    {
+        "code": "series-914",
+        "name": "起亚 索兰托"
+    },
+    {
+        "code": "series-2322",
+        "name": "起亚 福瑞迪"
+    },
+    {
+        "code": "series-1824",
+        "name": "起亚 Picanto"
+    },
+    {
+        "code": "series-2258",
+        "name": "起亚 起亚K2"
+    },
+    {
+        "code": "series-905",
+        "name": "起亚 狮跑"
+    },
+    {
+        "code": "series-1929",
+        "name": "起亚 威客"
+    },
+    {
+        "code": "series-1839",
+        "name": "起亚 秀尔"
+    },
+    {
+        "code": "series-949",
+        "name": "起亚 维斯特"
+    },
+    {
+        "code": "series-894",
+        "name": "起亚 Sephia"
+    },
+    {
+        "code": "series-2547",
+        "name": "起亚 Rondo"
+    },
+    {
+        "code": "series-2646",
+        "name": "起亚 起亚K3"
+    },
+    {
+        "code": "series-325",
+        "name": "起亚 普莱特"
+    },
+    {
+        "code": "series-909",
+        "name": "起亚 首都"
+    },
+    {
+        "code": "series-334",
+        "name": "起亚 远舰"
+    },
+    {
+        "code": "series-301",
+        "name": "起亚 嘉华"
+    },
+    {
+        "code": "series-179",
+        "name": "起亚 赛拉图"
+    },
+    {
+        "code": "series-1838",
+        "name": "起亚 速迈"
+    },
+    {
+        "code": "series-799",
+        "name": "起亚 佳乐"
+    },
+    {
+        "code": "series-801",
+        "name": "起亚 嘉华"
+    },
+    {
+        "code": "series-2535",
+        "name": "起亚 K9"
+    },
+    {
+        "code": "series-229",
+        "name": "起亚 狮跑"
+    },
+    {
+        "code": "series-1024",
+        "name": "起亚 丽欧"
+    },
+    {
+        "code": "series-2321",
+        "name": "起亚 赛拉图"
+    },
+    {
+        "code": "series-1535",
+        "name": "起亚 贝斯塔"
+    },
+    {
+        "code": "series-1835",
+        "name": "起亚 cee’d"
+    },
+    {
+        "code": "series-2046",
+        "name": "起亚 智跑"
+    },
+    {
+        "code": "series-2660",
+        "name": "起亚 VQ-R"
+    },
+    {
+        "code": "series-2546",
+        "name": "起亚 Venga"
+    },
+    {
+        "code": "series-2803",
+        "name": "起亚 K5"
+    },
+    {
+        "code": "series-2893",
+        "name": "金杯 大力神"
+    },
+    {
+        "code": "series-2042",
+        "name": "金杯 海星"
+    },
+    {
+        "code": "series-2798",
+        "name": "金杯 小海狮X30"
+    },
+    {
+        "code": "series-122",
+        "name": "金杯 锐驰"
+    },
+    {
+        "code": "series-2892",
+        "name": "金杯 雷龙"
+    },
+    {
+        "code": "series-430",
+        "name": "金杯 阁瑞斯"
+    },
+    {
+        "code": "series-2285",
+        "name": "金杯 S50"
+    },
+    {
+        "code": "series-2894",
+        "name": "金杯 金典"
+    },
+    {
+        "code": "series-432",
+        "name": "金杯 金杯海狮"
+    },
+    {
+        "code": "series-2549",
+        "name": "金杯 智尚S30"
+    },
+    {
+        "code": "series-1071",
+        "name": "金杯 金杯霸道"
+    },
+    {
+        "code": "series-963",
+        "name": "福特 翼虎Maverick"
+    },
+    {
+        "code": "series-393",
+        "name": "福特 嘉年华"
+    },
+    {
+        "code": "series-791",
+        "name": "福特 Escort"
+    },
+    {
+        "code": "series-1338",
+        "name": "福特 500"
+    },
+    {
+        "code": "series-1889",
+        "name": "福特 Ka"
+    },
+    {
+        "code": "series-1937",
+        "name": "福特 房车E系列"
+    },
+    {
+        "code": "series-2716",
+        "name": "福特 翼搏"
+    },
+    {
+        "code": "series-1888",
+        "name": "福特 Galaxy"
+    },
+    {
+        "code": "series-932",
+        "name": "福特 稳达"
+    },
+    {
+        "code": "series-1883",
+        "name": "福特 Everest"
+    },
+    {
+        "code": "series-1882",
+        "name": "福特 翼虎Escape"
+    },
+    {
+        "code": "series-809",
+        "name": "福特 金牛座陶若斯"
+    },
+    {
+        "code": "series-2695",
+        "name": "福特 翼虎"
+    },
+    {
+        "code": "series-1895",
+        "name": "福特 全顺Connect"
+    },
+    {
+        "code": "series-1891",
+        "name": "福特 蒙迪欧"
+    },
+    {
+        "code": "series-413",
+        "name": "福特 福克斯三厢"
+    },
+    {
+        "code": "series-1339",
+        "name": "福特 Flex"
+    },
+    {
+        "code": "series-1343",
+        "name": "福特 Probe"
+    },
+    {
+        "code": "series-961",
+        "name": "福特 依克诺莱恩"
+    },
+    {
+        "code": "series-1330",
+        "name": "福特 Bronco"
+    },
+    {
+        "code": "series-1003",
+        "name": "福特 GT"
+    },
+    {
+        "code": "series-1886",
+        "name": "福特 Fusion"
+    },
+    {
+        "code": "series-1894",
+        "name": "福特 Taurus-X"
+    },
+    {
+        "code": "series-2296",
+        "name": "福特 F-150猛禽"
+    },
+    {
+        "code": "series-921",
+        "name": "福特 天蝎座"
+    },
+    {
+        "code": "series-1333",
+        "name": "福特 爱虎"
+    },
+    {
+        "code": "series-1892",
+        "name": "福特 S-Max"
+    },
+    {
+        "code": "series-2694",
+        "name": "福特 Grand C-Max"
+    },
+    {
+        "code": "series-2277",
+        "name": "福特 锐界"
+    },
+    {
+        "code": "series-1341",
+        "name": "福特 Freestyle"
+    },
+    {
+        "code": "series-2240",
+        "name": "福特 Taurus-SHO"
+    },
+    {
+        "code": "series-1332",
+        "name": "福特 维多利亚皇冠"
+    },
+    {
+        "code": "series-1344",
+        "name": "福特 雷鸟"
+    },
+    {
+        "code": "series-920",
+        "name": "福特 天霸"
+    },
+    {
+        "code": "series-2693",
+        "name": "福特 B-Max"
+    },
+    {
+        "code": "series-394",
+        "name": "福特 蒙迪欧"
+    },
+    {
+        "code": "series-296",
+        "name": "福特 全顺"
+    },
+    {
+        "code": "series-178",
+        "name": "福特 麦柯斯S-MAX"
+    },
+    {
+        "code": "series-1881",
+        "name": "福特 C-Max"
+    },
+    {
+        "code": "series-1337",
+        "name": "福特 Expedition"
+    },
+    {
+        "code": "series-1979",
+        "name": "福特 福克斯两厢"
+    },
+    {
+        "code": "series-1890",
+        "name": "福特 Kuga"
+    },
+    {
+        "code": "series-959",
+        "name": "福特 野马"
+    },
+    {
+        "code": "series-2278",
+        "name": "福特 探险者皮卡"
+    },
+    {
+        "code": "series-1885",
+        "name": "福特 嘉年华"
+    },
+    {
+        "code": "series-1340",
+        "name": "福特 自由之星"
+    },
+    {
+        "code": "series-1884",
+        "name": "福特 探险者"
+    },
+    {
+        "code": "series-2242",
+        "name": "福特 福克斯"
+    },
+    {
+        "code": "series-245",
+        "name": "道奇 凯领"
+    },
+    {
+        "code": "series-769",
+        "name": "道奇 锋哲"
+    },
+    {
+        "code": "series-831",
+        "name": "道奇 酷搏"
+    },
+    {
+        "code": "series-2407",
+        "name": "道奇 Stratus Coupe"
+    },
+    {
+        "code": "series-2214",
+        "name": "道奇 Magnum SRT8"
+    },
+    {
+        "code": "series-1217",
+        "name": "道奇 蝰蛇"
+    },
+    {
+        "code": "series-1292",
+        "name": "道奇 翼龙"
+    },
+    {
+        "code": "series-2221",
+        "name": "道奇 Dakota Club Cab"
+    },
+    {
+        "code": "series-1219",
+        "name": "道奇 酷威"
+    },
+    {
+        "code": "series-1281",
+        "name": "道奇 拓远者"
+    },
+    {
+        "code": "series-2217",
+        "name": "道奇 Stratus"
+    },
+    {
+        "code": "series-1290",
+        "name": "道奇 无畏"
+    },
+    {
+        "code": "series-2220",
+        "name": "道奇 Magnum"
+    },
+    {
+        "code": "series-1314",
+        "name": "道奇 Stealth"
+    },
+    {
+        "code": "series-2222",
+        "name": "道奇 Dakota Quad Cab"
+    },
+    {
+        "code": "series-1302",
+        "name": "道奇 公羊"
+    },
+    {
+        "code": "series-1291",
+        "name": "道奇 霓虹"
+    },
+    {
+        "code": "series-2553",
+        "name": "道奇 Dart"
+    },
+    {
+        "code": "series-1654",
+        "name": "道奇 凯领"
+    },
+    {
+        "code": "series-1304",
+        "name": "道奇 Ram"
+    },
+    {
+        "code": "series-1268",
+        "name": "道奇 C-harger"
+    },
+    {
+        "code": "series-2218",
+        "name": "道奇 Journey"
+    },
+    {
+        "code": "series-1306",
+        "name": "道奇 Spirit"
+    },
+    {
+        "code": "series-2215",
+        "name": "道奇 Dakota"
+    },
+    {
+        "code": "series-1264",
+        "name": "道奇 Challenger"
+    },
+    {
+        "code": "series-2729",
+        "name": "长安 睿骋"
+    },
+    {
+        "code": "series-12",
+        "name": "长安 雪虎"
+    },
+    {
+        "code": "series-2062",
+        "name": "长安 金牛星"
+    },
+    {
+        "code": "series-18",
+        "name": "长安 都市彩虹"
+    },
+    {
+        "code": "series-2661",
+        "name": "长安 长安CS35"
+    },
+    {
+        "code": "series-15",
+        "name": "长安 星韵"
+    },
+    {
+        "code": "series-201",
+        "name": "长安 志翔"
+    },
+    {
+        "code": "series-16",
+        "name": "长安 镭蒙"
+    },
+    {
+        "code": "series-19",
+        "name": "长安 星光"
+    },
+    {
+        "code": "series-2873",
+        "name": "长安 星光45"
+    },
+    {
+        "code": "series-2057",
+        "name": "长安 长安CX20"
+    },
+    {
+        "code": "series-2875",
+        "name": "长安 星光6402"
+    },
+    {
+        "code": "series-2492",
+        "name": "长安 逸动"
+    },
+    {
+        "code": "series-1970",
+        "name": "长安 欧雅"
+    },
+    {
+        "code": "series-2801",
+        "name": "长安 致尚XT"
+    },
+    {
+        "code": "series-2485",
+        "name": "长安 欧诺"
+    },
+    {
+        "code": "series-2074",
+        "name": "长安 长安CX30"
+    },
+    {
+        "code": "series-2834",
+        "name": "长安 睿行"
+    },
+    {
+        "code": "series-1980",
+        "name": "长安 悦翔两厢"
+    },
+    {
+        "code": "series-17",
+        "name": "长安 运通"
+    },
+    {
+        "code": "series-2835",
+        "name": "长安 尊行"
+    },
+    {
+        "code": "series-559",
+        "name": "长安 长安之星"
+    },
+    {
+        "code": "series-185",
+        "name": "长安 杰勋"
+    },
+    {
+        "code": "series-2727",
+        "name": "长安 欧力威"
+    },
+    {
+        "code": "series-131",
+        "name": "长安 奔奔"
+    },
+    {
+        "code": "series-14",
+        "name": "长安 绿色新星"
+    },
+    {
+        "code": "series-2871",
+        "name": "长安 长安之星6363"
+    },
+    {
+        "code": "series-2867",
+        "name": "长安 长安之星S460"
+    },
+    {
+        "code": "series-1048",
+        "name": "长安 悦翔三厢"
+    },
+    {
+        "code": "series-13",
+        "name": "长安 运动星"
+    },
+    {
+        "code": "series-308",
+        "name": "长安 长安CM8"
+    },
+    {
+        "code": "series-2874",
+        "name": "长安 星光6395"
+    },
+    {
+        "code": "series-2869",
+        "name": "长安 长安之星4500"
+    },
+    {
+        "code": "series-2872",
+        "name": "长安 长安之星6378"
+    },
+    {
+        "code": "series-2870",
+        "name": "长安 星光4500"
+    },
+    {
+        "code": "series-1408",
+        "name": "雪佛兰 科宝"
+    },
+    {
+        "code": "series-678",
+        "name": "雪佛兰 阿斯特罗"
+    },
+    {
+        "code": "series-264",
+        "name": "雪佛兰 雪佛兰S10"
+    },
+    {
+        "code": "series-1410",
+        "name": "雪佛兰 春分"
+    },
+    {
+        "code": "series-2193",
+        "name": "雪佛兰 爱唯欧"
+    },
+    {
+        "code": "series-2699",
+        "name": "雪佛兰 Spin"
+    },
+    {
+        "code": "series-2080",
+        "name": "雪佛兰 斯帕可"
+    },
+    {
+        "code": "series-1411",
+        "name": "雪佛兰 HHR"
+    },
+    {
+        "code": "series-1460",
+        "name": "雪佛兰 Uplander"
+    },
+    {
+        "code": "series-1911",
+        "name": "雪佛兰 Rezzo"
+    },
+    {
+        "code": "series-816",
+        "name": "雪佛兰 开拓者"
+    },
+    {
+        "code": "series-1416",
+        "name": "雪佛兰 普林斯"
+    },
+    {
+        "code": "series-1417",
+        "name": "雪佛兰 Suburban"
+    },
+    {
+        "code": "series-1910",
+        "name": "雪佛兰 乐驰"
+    },
+    {
+        "code": "series-1989",
+        "name": "雪佛兰 雪佛兰豪放"
+    },
+    {
+        "code": "series-1413",
+        "name": "雪佛兰 迈锐宝"
+    },
+    {
+        "code": "series-2422",
+        "name": "雪佛兰 科帕奇"
+    },
+    {
+        "code": "series-356",
+        "name": "雪佛兰 雪佛兰赛欧"
+    },
+    {
+        "code": "series-1402",
+        "name": "雪佛兰 Cavalier"
+    },
+    {
+        "code": "series-1902",
+        "name": "雪佛兰 雪崩"
+    },
+    {
+        "code": "series-336",
+        "name": "雪佛兰 乐骋"
+    },
+    {
+        "code": "series-357",
+        "name": "雪佛兰 景程"
+    },
+    {
+        "code": "series-1412",
+        "name": "雪佛兰 英帕拉"
+    },
+    {
+        "code": "series-1461",
+        "name": "雪佛兰 罗米娜"
+    },
+    {
+        "code": "series-1458",
+        "name": "雪佛兰 全能先锋"
+    },
+    {
+        "code": "series-1374",
+        "name": "雪佛兰 乐骋"
+    },
+    {
+        "code": "series-1995",
+        "name": "雪佛兰 沃蓝达"
+    },
+    {
+        "code": "series-1409",
+        "name": "雪佛兰 科西嘉"
+    },
+    {
+        "code": "series-1435",
+        "name": "雪佛兰 追踪者"
+    },
+    {
+        "code": "series-79",
+        "name": "雪佛兰 乐风"
+    },
+    {
+        "code": "series-262",
+        "name": "雪佛兰 雪佛兰开拓者"
+    },
+    {
+        "code": "series-1415",
+        "name": "雪佛兰 蒙特卡洛"
+    },
+    {
+        "code": "series-2701",
+        "name": "雪佛兰 Sonic"
+    },
+    {
+        "code": "series-1680",
+        "name": "雪佛兰 特使"
+    },
+    {
+        "code": "series-1418",
+        "name": "雪佛兰 豪放"
+    },
+    {
+        "code": "series-1905",
+        "name": "雪佛兰 科鲁兹"
+    },
+    {
+        "code": "series-614",
+        "name": "雪佛兰 科鲁兹"
+    },
+    {
+        "code": "series-1459",
+        "name": "雪佛兰 Traverse"
+    },
+    {
+        "code": "series-1369",
+        "name": "雪佛兰 科迈罗"
+    },
+    {
+        "code": "series-1375",
+        "name": "雪佛兰 Beretta"
+    },
+    {
+        "code": "series-2445",
+        "name": "雪佛兰 克尔维特"
+    },
+    {
+        "code": "series-1066",
+        "name": "雪佛兰 科帕奇"
+    },
+    {
+        "code": "series-2479",
+        "name": "雪佛兰 迈锐宝"
+    },
+    {
+        "code": "series-1907",
+        "name": "雪佛兰 景程"
+    },
+    {
+        "code": "series-2003",
+        "name": "五菱 小旋风"
+    },
+    {
+        "code": "series-151",
+        "name": "五菱 鸿途"
+    },
+    {
+        "code": "series-2025",
+        "name": "五菱 宏光"
+    },
+    {
+        "code": "series-2004",
+        "name": "五菱 PN系列货车"
+    },
+    {
+        "code": "series-268",
+        "name": "五菱 五菱之光"
+    },
+    {
+        "code": "series-1863",
+        "name": "五菱 大发"
+    },
+    {
+        "code": "series-1067",
+        "name": "五菱 兴旺"
+    },
+    {
+        "code": "series-582",
+        "name": "五菱 荣光"
+    },
+    {
+        "code": "series-358",
+        "name": "五菱 扬光"
+    },
+    {
+        "code": "series-5015-ly",
+        "name": "五菱 五菱宏光"
+    },
+    {
+        "code": "series-2796",
+        "name": "宝骏 宝骏乐驰"
+    },
+    {
+        "code": "series-2229",
+        "name": "宝骏 宝骏630"
+    },
+    {
+        "code": "series-565",
+        "name": "华泰 吉田"
+    },
+    {
+        "code": "series-454",
+        "name": "华泰 特拉卡"
+    },
+    {
+        "code": "series-2087",
+        "name": "华泰 华泰B11"
+    },
+    {
+        "code": "series-2353",
+        "name": "华泰 宝利格"
+    },
+    {
+        "code": "series-2715",
+        "name": "华泰 路盛E70"
+    },
+    {
+        "code": "series-128",
+        "name": "华泰 圣达菲"
+    },
+    {
+        "code": "series-1220",
+        "name": "萨博 9-7X"
+    },
+    {
+        "code": "series-887",
+        "name": "萨博 9000"
+    },
+    {
+        "code": "series-1334",
+        "name": "萨博 9-2X"
+    },
+    {
+        "code": "series-2305",
+        "name": "萨博 9-3-Coupe"
+    },
+    {
+        "code": "series-1335",
+        "name": "萨博 900"
+    },
+    {
+        "code": "series-888",
+        "name": "萨博 9-3"
+    },
+    {
+        "code": "series-889",
+        "name": "萨博 9-5"
+    },
+    {
+        "code": "series-1850",
+        "name": "斯柯达 Yeti"
+    },
+    {
+        "code": "series-2797",
+        "name": "斯柯达 速派"
+    },
+    {
+        "code": "series-1187",
+        "name": "斯柯达 弗雷西亚"
+    },
+    {
+        "code": "series-2843",
+        "name": "斯柯达 野帝"
+    },
+    {
+        "code": "series-2731",
+        "name": "斯柯达 昕锐"
+    },
+    {
+        "code": "series-2131",
+        "name": "斯柯达 法比亚"
+    },
+    {
+        "code": "series-2567",
+        "name": "斯柯达 Rapid"
+    },
+    {
+        "code": "series-616",
+        "name": "斯柯达 晶锐"
+    },
+    {
+        "code": "series-2568",
+        "name": "斯柯达 昊锐旅行车"
+    },
+    {
+        "code": "series-1690",
+        "name": "斯柯达 Roomster"
+    },
+    {
+        "code": "series-874",
+        "name": "斯柯达 欧雅"
+    },
+    {
+        "code": "series-2344",
+        "name": "斯柯达 福尔曼"
+    },
+    {
+        "code": "series-1678",
+        "name": "斯柯达 昊锐"
+    },
+    {
+        "code": "series-2029",
+        "name": "斯柯达 明锐RS"
+    },
+    {
+        "code": "series-156",
+        "name": "斯柯达 明锐"
+    },
+    {
+        "code": "series-913",
+        "name": "斯柯达 速派"
+    },
+    {
+        "code": "series-2560",
+        "name": "斯柯达 Citigo"
+    },
+    {
+        "code": "series-1419",
+        "name": "日产 Silvia"
+    },
+    {
+        "code": "series-1422",
+        "name": "日产 奥蒂玛"
+    },
+    {
+        "code": "series-2600",
+        "name": "日产 Skyline"
+    },
+    {
+        "code": "series-923",
+        "name": "日产 途乐"
+    },
+    {
+        "code": "series-117",
+        "name": "日产 锐骐皮卡"
+    },
+    {
+        "code": "series-2474",
+        "name": "日产 Almera"
+    },
+    {
+        "code": "series-365",
+        "name": "日产 颐达"
+    },
+    {
+        "code": "series-2372",
+        "name": "日产 阳光"
+    },
+    {
+        "code": "series-116",
+        "name": "日产 锐骐"
+    },
+    {
+        "code": "series-880",
+        "name": "日产 奇骏"
+    },
+    {
+        "code": "series-1423",
+        "name": "日产 Armada"
+    },
+    {
+        "code": "series-213",
+        "name": "日产 奥丁"
+    },
+    {
+        "code": "series-451",
+        "name": "日产 帕拉丁"
+    },
+    {
+        "code": "series-768",
+        "name": "日产 风雅"
+    },
+    {
+        "code": "series-2594",
+        "name": "日产 Note"
+    },
+    {
+        "code": "series-1741",
+        "name": "日产 GT-R"
+    },
+    {
+        "code": "series-1735",
+        "name": "日产 帅客"
+    },
+    {
+        "code": "series-113",
+        "name": "日产 轩逸"
+    },
+    {
+        "code": "series-937",
+        "name": "日产 西玛"
+    },
+    {
+        "code": "series-341",
+        "name": "日产 骐达"
+    },
+    {
+        "code": "series-1425",
+        "name": "日产 Frontier"
+    },
+    {
+        "code": "series-2548",
+        "name": "日产 Stanza"
+    },
+    {
+        "code": "series-1782",
+        "name": "日产 Micra"
+    },
+    {
+        "code": "series-1786",
+        "name": "日产 370Z"
+    },
+    {
+        "code": "series-67",
+        "name": "日产 多功能商用车"
+    },
+    {
+        "code": "series-2593",
+        "name": "日产 Pixo"
+    },
+    {
+        "code": "series-1441",
+        "name": "日产 帕拉丁"
+    },
+    {
+        "code": "series-2584",
+        "name": "日产 Juke"
+    },
+    {
+        "code": "series-133",
+        "name": "日产 逍客"
+    },
+    {
+        "code": "series-2289",
+        "name": "日产 楼兰"
+    },
+    {
+        "code": "series-322",
+        "name": "日产 蓝鸟"
+    },
+    {
+        "code": "series-1428",
+        "name": "日产 Murano"
+    },
+    {
+        "code": "series-1963",
+        "name": "日产 日产NV200"
+    },
+    {
+        "code": "series-1437",
+        "name": "日产 Sentra"
+    },
+    {
+        "code": "series-2597",
+        "name": "日产 XTerra"
+    },
+    {
+        "code": "series-1429",
+        "name": "日产 100NX"
+    },
+    {
+        "code": "series-2589",
+        "name": "日产 逍客"
+    },
+    {
+        "code": "series-1421",
+        "name": "日产 300ZX"
+    },
+    {
+        "code": "series-782",
+        "name": "日产 贵士"
+    },
+    {
+        "code": "series-1431",
+        "name": "日产 寻路者"
+    },
+    {
+        "code": "series-184",
+        "name": "日产 骊威"
+    },
+    {
+        "code": "series-66",
+        "name": "日产 日产D22皮卡"
+    },
+    {
+        "code": "series-1436",
+        "name": "日产 Rogue"
+    },
+    {
+        "code": "series-1424",
+        "name": "日产 Axxess"
+    },
+    {
+        "code": "series-323",
+        "name": "日产 阳光"
+    },
+    {
+        "code": "series-2018",
+        "name": "日产 玛驰"
+    },
+    {
+        "code": "series-976",
+        "name": "日产 350Z"
+    },
+    {
+        "code": "series-1538",
+        "name": "日产 佳奔"
+    },
+    {
+        "code": "series-1493",
+        "name": "日产 桂冠"
+    },
+    {
+        "code": "series-2515",
+        "name": "日产 启辰D50"
+    },
+    {
+        "code": "series-2157",
+        "name": "日产 帕拉骐"
+    },
+    {
+        "code": "series-2851",
+        "name": "日产 俊风"
+    },
+    {
+        "code": "series-1426",
+        "name": "日产 马克西马"
+    },
+    {
+        "code": "series-1439",
+        "name": "日产 Titan"
+    },
+    {
+        "code": "series-317",
+        "name": "日产 天籁"
+    },
+    {
+        "code": "series-594",
+        "name": "日产 奇骏"
+    },
+    {
+        "code": "series-2598",
+        "name": "日产 启辰R50"
+    },
+    {
+        "code": "series-1997",
+        "name": "日产 March"
+    },
+    {
+        "code": "series-2103",
+        "name": "日产 公爵王"
+    },
+    {
+        "code": "series-837",
+        "name": "日产 蓝鸟"
+    },
+    {
+        "code": "series-2599",
+        "name": "日产 Platina"
+    },
+    {
+        "code": "series-1777",
+        "name": "日产 Cube"
+    },
+    {
+        "code": "series-766",
+        "name": "日产 风度"
+    },
+    {
+        "code": "series-219",
+        "name": "日产 御轩"
+    },
+    {
+        "code": "series-129",
+        "name": "日产 骏逸"
+    },
+    {
+        "code": "series-2373",
+        "name": "日产 骐达"
+    },
+    {
+        "code": "series-2766",
+        "name": "海马 海马S7"
+    },
+    {
+        "code": "series-1783",
+        "name": "海马 丘比特"
+    },
+    {
+        "code": "series-2491",
+        "name": "海马 爱尚"
+    },
+    {
+        "code": "series-60",
+        "name": "海马 马自达323"
+    },
+    {
+        "code": "series-303",
+        "name": "海马 福美来"
+    },
+    {
+        "code": "series-611",
+        "name": "海马 欢动"
+    },
+    {
+        "code": "series-1927",
+        "name": "海马 海马骑士"
+    },
+    {
+        "code": "series-1973",
+        "name": "海马 王子"
+    },
+    {
+        "code": "series-197",
+        "name": "海马 海马3"
+    },
+    {
+        "code": "series-207",
+        "name": "海马 海福星"
+    },
+    {
+        "code": "series-61",
+        "name": "海马 马自达旅行车"
+    },
+    {
+        "code": "series-2738",
+        "name": "海马 海马M3"
+    },
+    {
+        "code": "series-305",
+        "name": "海马 普力马"
+    },
+    {
+        "code": "series-2854",
+        "name": "海马 海马M8"
+    },
+    {
+        "code": "series-2024",
+        "name": "海马 福仕达"
+    },
+    {
+        "code": "series-2776",
+        "name": "宝马 Z4"
+    },
+    {
+        "code": "series-2773",
+        "name": "宝马 X5"
+    },
+    {
+        "code": "series-2774",
+        "name": "宝马 X6"
+    },
+    {
+        "code": "series-709",
+        "name": "宝马 Z4 敞篷车"
+    },
+    {
+        "code": "series-699",
+        "name": "宝马 3系"
+    },
+    {
+        "code": "series-2769",
+        "name": "宝马 M3"
+    },
+    {
+        "code": "series-710",
+        "name": "宝马 Z8"
+    },
+    {
+        "code": "series-1078",
+        "name": "宝马 X6"
+    },
+    {
+        "code": "series-705",
+        "name": "宝马 7系"
+    },
+    {
+        "code": "series-707",
+        "name": "宝马 X3"
+    },
+    {
+        "code": "series-2357",
+        "name": "宝马 3系旅行车"
+    },
+    {
+        "code": "series-1921",
+        "name": "宝马 6系双门轿跑"
+    },
+    {
+        "code": "series-2772",
+        "name": "宝马 M1"
+    },
+    {
+        "code": "series-425",
+        "name": "宝马 宝马5系"
+    },
+    {
+        "code": "series-2477",
+        "name": "宝马 Z3 敞篷车"
+    },
+    {
+        "code": "series-669",
+        "name": "宝马 Z3"
+    },
+    {
+        "code": "series-2633",
+        "name": "宝马 AC宝马"
+    },
+    {
+        "code": "series-422",
+        "name": "宝马 宝马3系"
+    },
+    {
+        "code": "series-708",
+        "name": "宝马 X5"
+    },
+    {
+        "code": "series-1686",
+        "name": "宝马 X1"
+    },
+    {
+        "code": "series-2271",
+        "name": "宝马 1系"
+    },
+    {
+        "code": "series-2771",
+        "name": "宝马 M6"
+    },
+    {
+        "code": "series-2841",
+        "name": "宝马 4系"
+    },
+    {
+        "code": "series-2775",
+        "name": "宝马 Z3"
+    },
+    {
+        "code": "series-2770",
+        "name": "宝马 M5"
+    },
+    {
+        "code": "series-2476",
+        "name": "宝马 Z4 Coupe"
+    },
+    {
+        "code": "series-2487",
+        "name": "宝马 宝马X1"
+    },
+    {
+        "code": "series-1114",
+        "name": "宝马 Alpina-B7"
+    },
+    {
+        "code": "series-1109",
+        "name": "宝马 8系"
+    },
+    {
+        "code": "series-702",
+        "name": "宝马 5系"
+    },
+    {
+        "code": "series-5010-ly",
+        "name": "宝马 2系"
+    },
+    {
+        "code": "series-1709",
+        "name": "雷诺 丽人行"
+    },
+    {
+        "code": "series-2162",
+        "name": "雷诺 克里欧"
+    },
+    {
+        "code": "series-1710",
+        "name": "雷诺 太空车"
+    },
+    {
+        "code": "series-1707",
+        "name": "雷诺 Modus"
+    },
+    {
+        "code": "series-860",
+        "name": "雷诺 梅甘娜"
+    },
+    {
+        "code": "series-927",
+        "name": "雷诺 威赛帝"
+    },
+    {
+        "code": "series-1167",
+        "name": "雷诺 科雷傲"
+    },
+    {
+        "code": "series-1708",
+        "name": "雷诺 甘果"
+    },
+    {
+        "code": "series-2537",
+        "name": "雷诺 风"
+    },
+    {
+        "code": "series-835",
+        "name": "雷诺 拉古那"
+    },
+    {
+        "code": "series-2209",
+        "name": "雷诺 风朗"
+    },
+    {
+        "code": "series-2508",
+        "name": "雷诺 塔利斯曼"
+    },
+    {
+        "code": "series-1169",
+        "name": "雷诺 古贝"
+    },
+    {
+        "code": "series-767",
+        "name": "雷诺 风景"
+    },
+    {
+        "code": "series-2169",
+        "name": "雷诺 梅甘娜旅行车"
+    },
+    {
+        "code": "series-1926",
+        "name": "雷诺 塔菲克"
+    },
+    {
+        "code": "series-2154",
+        "name": "雷诺 纬度"
+    },
+    {
+        "code": "series-5002-ly",
+        "name": "铃木 速翼特"
+    },
+    {
+        "code": "series-144",
+        "name": "铃木 天语"
+    },
+    {
+        "code": "series-1775",
+        "name": "铃木 APV"
+    },
+    {
+        "code": "series-1356",
+        "name": "铃木 超级维特拉"
+    },
+    {
+        "code": "series-431",
+        "name": "铃木 北斗星"
+    },
+    {
+        "code": "series-1357",
+        "name": "铃木 Reno"
+    },
+    {
+        "code": "series-97",
+        "name": "铃木 昌铃王"
+    },
+    {
+        "code": "series-2425",
+        "name": "铃木 Swift三厢"
+    },
+    {
+        "code": "series-392",
+        "name": "铃木 羚羊"
+    },
+    {
+        "code": "series-2877",
+        "name": "铃木 锋驭"
+    },
+    {
+        "code": "series-2670",
+        "name": "铃木 利亚纳两厢"
+    },
+    {
+        "code": "series-1353",
+        "name": "铃木 利亚纳"
+    },
+    {
+        "code": "series-1362",
+        "name": "铃木 Verona"
+    },
+    {
+        "code": "series-382",
+        "name": "铃木 雨燕"
+    },
+    {
+        "code": "series-1922",
+        "name": "铃木 维特拉"
+    },
+    {
+        "code": "series-2084",
+        "name": "铃木 尚悦"
+    },
+    {
+        "code": "series-391",
+        "name": "铃木 奥拓"
+    },
+    {
+        "code": "series-1354",
+        "name": "铃木 Esteem"
+    },
+    {
+        "code": "series-1361",
+        "name": "铃木 天语"
+    },
+    {
+        "code": "series-1364",
+        "name": "铃木 X-90"
+    },
+    {
+        "code": "series-1909",
+        "name": "铃木 凯泽西"
+    },
+    {
+        "code": "series-158",
+        "name": "铃木 浪迪"
+    },
+    {
+        "code": "series-796",
+        "name": "铃木 吉姆尼"
+    },
+    {
+        "code": "series-1355",
+        "name": "铃木 Forenza"
+    },
+    {
+        "code": "series-315",
+        "name": "铃木 利亚纳"
+    },
+    {
+        "code": "series-1366",
+        "name": "铃木 XL7"
+    },
+    {
+        "code": "series-2351",
+        "name": "铃木 派喜"
+    },
+    {
+        "code": "series-1463",
+        "name": "铃木 奥拓"
+    },
+    {
+        "code": "series-1951",
+        "name": "铃木 Splash"
+    },
+    {
+        "code": "series-1841",
+        "name": "路特斯 Europa"
+    },
+    {
+        "code": "series-1845",
+        "name": "路特斯 Elan"
+    },
+    {
+        "code": "series-1847",
+        "name": "路特斯 Elite"
+    },
+    {
+        "code": "series-996",
+        "name": "路特斯 Esprit "
+    },
+    {
+        "code": "series-1840",
+        "name": "路特斯 Exige"
+    },
+    {
+        "code": "series-1842",
+        "name": "路特斯 2-Eleven"
+    },
+    {
+        "code": "series-1843",
+        "name": "路特斯 Evora"
+    },
+    {
+        "code": "series-995",
+        "name": "路特斯 Elise"
+    },
+    {
+        "code": "series-1846",
+        "name": "路特斯 Excel"
+    },
+    {
+        "code": "series-2079",
+        "name": "广汽 传祺GA5"
+    },
+    {
+        "code": "series-2791",
+        "name": "广汽 传祺GA3"
+    },
+    {
+        "code": "series-2486",
+        "name": "广汽 传祺GS5"
+    },
+    {
+        "code": "series-1925",
+        "name": "长丰 飞扬"
+    },
+    {
+        "code": "series-434",
+        "name": "长丰 飞腾"
+    },
+    {
+        "code": "series-648",
+        "name": "长丰 长丰DUV"
+    },
+    {
+        "code": "series-2866",
+        "name": "长丰 猎豹CT5"
+    },
+    {
+        "code": "series-433",
+        "name": "长丰 黑金刚"
+    },
+    {
+        "code": "series-5000-ly",
+        "name": "长丰 猎豹"
+    },
+    {
+        "code": "series-244",
+        "name": "长丰 猎豹CS6"
+    },
+    {
+        "code": "series-1069",
+        "name": "长丰 猎豹CS7"
+    },
+    {
+        "code": "series-650",
+        "name": "长丰 飞铃"
+    },
+    {
+        "code": "series-2865",
+        "name": "长丰 飞扬"
+    },
+    {
+        "code": "series-467",
+        "name": "长丰 长丰奇兵"
+    },
+    {
+        "code": "series-251",
+        "name": "长丰 骐菱"
+    },
+    {
+        "code": "series-2864",
+        "name": "长丰 飞铃"
+    },
+    {
+        "code": "series-590",
+        "name": "红旗 盛世"
+    },
+    {
+        "code": "series-272",
+        "name": "红旗 旗舰"
+    },
+    {
+        "code": "series-279",
+        "name": "红旗 红旗"
+    },
+    {
+        "code": "series-276",
+        "name": "红旗 明仕"
+    },
+    {
+        "code": "series-274",
+        "name": "红旗 世纪星"
+    },
+    {
+        "code": "series-359",
+        "name": "红旗 红旗HQ3"
+    },
+    {
+        "code": "series-2767",
+        "name": "红旗 红旗H7"
+    },
+    {
+        "code": "series-5014-ly",
+        "name": "纳智捷 优6 SUV"
+    },
+    {
+        "code": "series-5004-ly",
+        "name": "纳智捷 大7 SUV"
+    },
+    {
+        "code": "series-2310",
+        "name": "纳智捷 纳智捷大7-SUV"
+    },
+    {
+        "code": "series-2790",
+        "name": "纳智捷 纳智捷5-Sedan"
+    },
+    {
+        "code": "series-2648",
+        "name": "纳智捷 纳智捷CEO"
+    },
+    {
+        "code": "series-2741",
+        "name": "纳智捷 纳智捷大7-MPV"
+    },
+    {
+        "code": "series-5003-ly",
+        "name": "纳智捷 5 Sedan"
+    },
+    {
+        "code": "series-258",
+        "name": "奇瑞 东方之子"
+    },
+    {
+        "code": "series-104",
+        "name": "奇瑞 奇瑞V5"
+    },
+    {
+        "code": "series-2908",
+        "name": "奇瑞 爱卡"
+    },
+    {
+        "code": "series-2140",
+        "name": "奇瑞 旗云3"
+    },
+    {
+        "code": "series-2852",
+        "name": "奇瑞 瑞虎5"
+    },
+    {
+        "code": "series-2494",
+        "name": "奇瑞 旗云5"
+    },
+    {
+        "code": "series-2138",
+        "name": "奇瑞 旗云1"
+    },
+    {
+        "code": "series-362",
+        "name": "奇瑞 瑞虎"
+    },
+    {
+        "code": "series-561",
+        "name": "奇瑞 奇瑞A5"
+    },
+    {
+        "code": "series-1089",
+        "name": "奇瑞 奇瑞QQme"
+    },
+    {
+        "code": "series-265",
+        "name": "奇瑞 奇瑞QQ3"
+    },
+    {
+        "code": "series-2139",
+        "name": "奇瑞 旗云2"
+    },
+    {
+        "code": "series-2824",
+        "name": "奇瑞 奇瑞E3"
+    },
+    {
+        "code": "series-230",
+        "name": "奇瑞 奇瑞A3"
+    },
+    {
+        "code": "series-2226",
+        "name": "奇瑞 奇瑞E5"
+    },
+    {
+        "code": "series-2792",
+        "name": "奇瑞 艾瑞泽7"
+    },
+    {
+        "code": "series-260",
+        "name": "奇瑞 旗云"
+    },
+    {
+        "code": "series-169",
+        "name": "奇瑞 奇瑞A1"
+    },
+    {
+        "code": "series-115",
+        "name": "奇瑞 奇瑞QQ6"
+    },
+    {
+        "code": "series-263",
+        "name": "奇瑞 风云"
+    },
+    {
+        "code": "series-1090",
+        "name": "汇众 伊斯坦纳"
+    },
+    {
+        "code": "series-2206",
+        "name": "汇众 德驰"
+    },
+    {
+        "code": "series-1073",
+        "name": "华普 海悦"
+    },
+    {
+        "code": "series-1074",
+        "name": "华普 朗风"
+    },
+    {
+        "code": "series-563",
+        "name": "华普 华普M203"
+    },
+    {
+        "code": "series-167",
+        "name": "华普 海迅MA"
+    },
+    {
+        "code": "series-34",
+        "name": "华普 飓风"
+    },
+    {
+        "code": "series-33",
+        "name": "华普 杰士达美鹿"
+    },
+    {
+        "code": "series-168",
+        "name": "华普 海域MB"
+    },
+    {
+        "code": "series-1744",
+        "name": "华普 海景"
+    },
+    {
+        "code": "series-89",
+        "name": "华普 海炫"
+    },
+    {
+        "code": "series-35",
+        "name": "华普 海域AA"
+    },
+    {
+        "code": "series-461",
+        "name": "华普 海尚MA"
+    },
+    {
+        "code": "series-210",
+        "name": "华普 海域"
+    },
+    {
+        "code": "series-313",
+        "name": "华普 海域MA"
+    },
+    {
+        "code": "series-428",
+        "name": "华普 海迅AA"
+    },
+    {
+        "code": "series-91",
+        "name": "华普 海迅AB"
+    },
+    {
+        "code": "series-240",
+        "name": "华普 海锋"
+    },
+    {
+        "code": "series-208",
+        "name": "华普 海迅"
+    },
+    {
+        "code": "series-1718",
+        "name": "华普 飙风"
+    },
+    {
+        "code": "series-209",
+        "name": "华普 海尚"
+    },
+    {
+        "code": "series-1017",
+        "name": "英菲尼迪 M"
+    },
+    {
+        "code": "series-2281",
+        "name": "英菲尼迪 G"
+    },
+    {
+        "code": "series-2818",
+        "name": "英菲尼迪 QX80"
+    },
+    {
+        "code": "series-998",
+        "name": "英菲尼迪 FX"
+    },
+    {
+        "code": "series-2810",
+        "name": "英菲尼迪 QX50"
+    },
+    {
+        "code": "series-2813",
+        "name": "英菲尼迪 Q60S"
+    },
+    {
+        "code": "series-2816",
+        "name": "英菲尼迪 QX60"
+    },
+    {
+        "code": "series-2815",
+        "name": "英菲尼迪 Q70L"
+    },
+    {
+        "code": "series-2658",
+        "name": "英菲尼迪 JX"
+    },
+    {
+        "code": "series-1022",
+        "name": "英菲尼迪 Q45"
+    },
+    {
+        "code": "series-1675",
+        "name": "英菲尼迪 EX"
+    },
+    {
+        "code": "series-2811",
+        "name": "英菲尼迪 Q60"
+    },
+    {
+        "code": "series-2817",
+        "name": "英菲尼迪 QX70"
+    },
+    {
+        "code": "series-1021",
+        "name": "英菲尼迪 QX"
+    },
+    {
+        "code": "series-924",
+        "name": "大众 途锐"
+    },
+    {
+        "code": "series-1968",
+        "name": "大众 帕萨特R"
+    },
+    {
+        "code": "series-1932",
+        "name": "大众 途观"
+    },
+    {
+        "code": "series-819",
+        "name": "大众 凯乐威"
+    },
+    {
+        "code": "series-946",
+        "name": "大众 甲壳虫"
+    },
+    {
+        "code": "series-595",
+        "name": "大众 帕萨特"
+    },
+    {
+        "code": "series-2270",
+        "name": "大众 尚酷R"
+    },
+    {
+        "code": "series-2839",
+        "name": "大众 朗境"
+    },
+    {
+        "code": "series-1742",
+        "name": "大众 开迪"
+    },
+    {
+        "code": "series-2635",
+        "name": "大众 途安"
+    },
+    {
+        "code": "series-876",
+        "name": "大众 帕萨特"
+    },
+    {
+        "code": "series-340",
+        "name": "大众 朗逸"
+    },
+    {
+        "code": "series-598",
+        "name": "大众 桑塔纳2000"
+    },
+    {
+        "code": "series-2419",
+        "name": "大众 迈腾旅行车"
+    },
+    {
+        "code": "series-1526",
+        "name": "大众 Eos"
+    },
+    {
+        "code": "series-2521",
+        "name": "大众 POLO"
+    },
+    {
+        "code": "series-2522",
+        "name": "大众 POLO Coupe"
+    },
+    {
+        "code": "series-1529",
+        "name": "大众 Routan"
+    },
+    {
+        "code": "series-332",
+        "name": "大众 桑塔纳"
+    },
+    {
+        "code": "series-1525",
+        "name": "大众 CC"
+    },
+    {
+        "code": "series-367",
+        "name": "大众 开迪"
+    },
+    {
+        "code": "series-1119",
+        "name": "大众 Tiguan途威"
+    },
+    {
+        "code": "series-1967",
+        "name": "大众 迈腾"
+    },
+    {
+        "code": "series-448",
+        "name": "大众 宝来"
+    },
+    {
+        "code": "series-566",
+        "name": "大众 速腾"
+    },
+    {
+        "code": "series-321",
+        "name": "大众 途安"
+    },
+    {
+        "code": "series-795",
+        "name": "大众 辉腾"
+    },
+    {
+        "code": "series-2667",
+        "name": "大众 UP!"
+    },
+    {
+        "code": "series-599",
+        "name": "大众 志俊"
+    },
+    {
+        "code": "series-2786",
+        "name": "大众 朗行"
+    },
+    {
+        "code": "series-1117",
+        "name": "大众 尚酷"
+    },
+    {
+        "code": "series-1916",
+        "name": "大众 迈特威"
+    },
+    {
+        "code": "series-2523",
+        "name": "大众 POLO旅行版"
+    },
+    {
+        "code": "series-266",
+        "name": "大众 高尔夫"
+    },
+    {
+        "code": "series-939",
+        "name": "大众 夏朗"
+    },
+    {
+        "code": "series-449",
+        "name": "大众 捷达"
+    },
+    {
+        "code": "series-1971",
+        "name": "大众 大众CC"
+    },
+    {
+        "code": "series-2555",
+        "name": "大众 高尔夫"
+    },
+    {
+        "code": "series-135",
+        "name": "大众 迈腾"
+    },
+    {
+        "code": "series-600",
+        "name": "大众 桑塔纳3000"
+    },
+    {
+        "code": "series-329",
+        "name": "大众 领驭"
+    },
+    {
+        "code": "series-330",
+        "name": "大众 POLO"
+    },
+    {
+        "code": "series-333",
+        "name": "大众 高尔"
+    },
+    {
+        "code": "series-597",
+        "name": "大众 POLO劲取"
+    },
+    {
+        "code": "series-1528",
+        "name": "大众 FOX"
+    },
+    {
+        "code": "series-774",
+        "name": "大众 高尔夫三门版"
+    },
+    {
+        "code": "series-1728",
+        "name": "大众 捷达"
+    },
+    {
+        "code": "series-5007-ly",
+        "name": "大众 凯路威"
+    },
+    {
+        "code": "series-857",
+        "name": "迈巴赫 57"
+    },
+    {
+        "code": "series-858",
+        "name": "迈巴赫 62"
+    },
+    {
+        "code": "series-1688",
+        "name": "迈巴赫 Exelero"
+    },
+    {
+        "code": "series-1999",
+        "name": "宾利 慕尚"
+    },
+    {
+        "code": "series-2713",
+        "name": "宾利 飞驰"
+    },
+    {
+        "code": "series-872",
+        "name": "宾利 欧陆"
+    },
+    {
+        "code": "series-955",
+        "name": "宾利 雅致"
+    },
+    {
+        "code": "series-2105",
+        "name": "宾利 Brooklands"
+    },
+    {
+        "code": "series-2104",
+        "name": "宾利 雅骏"
+    },
+    {
+        "code": "series-811",
+        "name": "Smart ForTwo"
+    },
+    {
+        "code": "series-812",
+        "name": "Smart Roadster"
+    },
+    {
+        "code": "series-810",
+        "name": "Smart ForFour"
+    },
+    {
+        "code": "series-1693",
+        "name": "Smart Crossblade"
+    },
+    {
+        "code": "series-1731",
+        "name": "GMC 峡谷"
+    },
+    {
+        "code": "series-1533",
+        "name": "GMC Savana"
+    },
+    {
+        "code": "series-1732",
+        "name": "GMC 西拉"
+    },
+    {
+        "code": "series-1733",
+        "name": "GMC 旅行"
+    },
+    {
+        "code": "series-1532",
+        "name": "GMC Jimmy"
+    },
+    {
+        "code": "series-1534",
+        "name": "GMC 育空河"
+    },
+    {
+        "code": "series-1531",
+        "name": "GMC 使节"
+    },
+    {
+        "code": "series-2685",
+        "name": "GMC Terrain"
+    },
+    {
+        "code": "series-1530",
+        "name": "GMC 阿卡迪亚"
+    },
+    {
+        "code": "series-1446",
+        "name": "三菱 戈蓝"
+    },
+    {
+        "code": "series-2679",
+        "name": "三菱 劲炫"
+    },
+    {
+        "code": "series-378",
+        "name": "三菱 欧蓝德"
+    },
+    {
+        "code": "series-1445",
+        "name": "三菱 Expo"
+    },
+    {
+        "code": "series-615",
+        "name": "三菱 君阁"
+    },
+    {
+        "code": "series-972",
+        "name": "三菱 GTO"
+    },
+    {
+        "code": "series-139",
+        "name": "三菱 戈蓝"
+    },
+    {
+        "code": "series-1797",
+        "name": "三菱 西格玛"
+    },
+    {
+        "code": "series-871",
+        "name": "三菱 欧蓝德"
+    },
+    {
+        "code": "series-375",
+        "name": "三菱 帕杰罗速跑"
+    },
+    {
+        "code": "series-1457",
+        "name": "三菱 Starion"
+    },
+    {
+        "code": "series-1442",
+        "name": "三菱 Diamante"
+    },
+    {
+        "code": "series-2668",
+        "name": "三菱 Colt两厢"
+    },
+    {
+        "code": "series-347",
+        "name": "三菱 帕杰罗"
+    },
+    {
+        "code": "series-1011",
+        "name": "三菱 Maven"
+    },
+    {
+        "code": "series-2809",
+        "name": "三菱 帕杰罗劲畅"
+    },
+    {
+        "code": "series-316",
+        "name": "三菱 菱绅"
+    },
+    {
+        "code": "series-1449",
+        "name": "三菱 Mirage"
+    },
+    {
+        "code": "series-1007",
+        "name": "三菱 翼豪陆神"
+    },
+    {
+        "code": "series-2672",
+        "name": "三菱 Colt CZC"
+    },
+    {
+        "code": "series-1727",
+        "name": "三菱 太空"
+    },
+    {
+        "code": "series-1717",
+        "name": "三菱 翼神 "
+    },
+    {
+        "code": "series-108",
+        "name": "三菱 蓝瑟"
+    },
+    {
+        "code": "series-875",
+        "name": "三菱 帕杰罗"
+    },
+    {
+        "code": "series-2807",
+        "name": "三菱 风迪思"
+    },
+    {
+        "code": "series-2015",
+        "name": "三菱 ASX劲炫"
+    },
+    {
+        "code": "series-1444",
+        "name": "三菱 Endervor"
+    },
+    {
+        "code": "series-1447",
+        "name": "三菱 蓝瑟"
+    },
+    {
+        "code": "series-776",
+        "name": "三菱 格蓝迪"
+    },
+    {
+        "code": "series-1443",
+        "name": "三菱 伊柯丽斯"
+    },
+    {
+        "code": "series-1010",
+        "name": "雷克萨斯 LX"
+    },
+    {
+        "code": "series-997",
+        "name": "雷克萨斯 ES"
+    },
+    {
+        "code": "series-1033",
+        "name": "雷克萨斯 SC"
+    },
+    {
+        "code": "series-1949",
+        "name": "雷克萨斯 LFA"
+    },
+    {
+        "code": "series-1009",
+        "name": "雷克萨斯 LS"
+    },
+    {
+        "code": "series-1950",
+        "name": "雷克萨斯 CT"
+    },
+    {
+        "code": "series-1006",
+        "name": "雷克萨斯 IS"
+    },
+    {
+        "code": "series-1004",
+        "name": "雷克萨斯 GX"
+    },
+    {
+        "code": "series-1027",
+        "name": "雷克萨斯 RX"
+    },
+    {
+        "code": "series-1002",
+        "name": "雷克萨斯 GS"
+    },
+    {
+        "code": "series-1948",
+        "name": "雷克萨斯 HS"
+    },
+    {
+        "code": "series-2561",
+        "name": "雪铁龙 DS5"
+    },
+    {
+        "code": "series-1091",
+        "name": "雪铁龙 世嘉"
+    },
+    {
+        "code": "series-311",
+        "name": "雪铁龙 爱丽舍"
+    },
+    {
+        "code": "series-2223",
+        "name": "雪铁龙 DS4"
+    },
+    {
+        "code": "series-1730",
+        "name": "雪铁龙 雪铁龙C5"
+    },
+    {
+        "code": "series-1165",
+        "name": "雪铁龙 C6"
+    },
+    {
+        "code": "series-318",
+        "name": "雪铁龙 赛纳"
+    },
+    {
+        "code": "series-314",
+        "name": "雪铁龙 毕加索"
+    },
+    {
+        "code": "series-990",
+        "name": "雪铁龙 C5"
+    },
+    {
+        "code": "series-1650",
+        "name": "雪铁龙 C1"
+    },
+    {
+        "code": "series-1649",
+        "name": "雪铁龙 C2"
+    },
+    {
+        "code": "series-81",
+        "name": "雪铁龙 凯旋"
+    },
+    {
+        "code": "series-1653",
+        "name": "雪铁龙 C-Crosser"
+    },
+    {
+        "code": "series-306",
+        "name": "雪铁龙 富康"
+    },
+    {
+        "code": "series-1960",
+        "name": "雪铁龙 桑蒂雅"
+    },
+    {
+        "code": "series-2224",
+        "name": "雪铁龙 DS3"
+    },
+    {
+        "code": "series-2506",
+        "name": "雪铁龙 C4 Aircross"
+    },
+    {
+        "code": "series-124",
+        "name": "雪铁龙 雪铁龙C2"
+    },
+    {
+        "code": "series-2541",
+        "name": "雪铁龙 Nemo Combi"
+    },
+    {
+        "code": "series-989",
+        "name": "雪铁龙 C4"
+    },
+    {
+        "code": "series-1218",
+        "name": "雪铁龙 C8"
+    },
+    {
+        "code": "series-2543",
+        "name": "雪铁龙 萨拉毕加索"
+    },
+    {
+        "code": "series-1651",
+        "name": "雪铁龙 C3"
+    },
+    {
+        "code": "series-2681",
+        "name": "雪铁龙 雪铁龙C4L"
+    },
+    {
+        "code": "series-2539",
+        "name": "雪铁龙 Berlingo"
+    },
+    {
+        "code": "series-2828",
+        "name": "雪铁龙 DS5"
+    },
+    {
+        "code": "series-327",
+        "name": "吉奥 财运"
+    },
+    {
+        "code": "series-587",
+        "name": "吉奥 吉奥GX6"
+    },
+    {
+        "code": "series-1060",
+        "name": "吉奥 帅驰"
+    },
+    {
+        "code": "series-348",
+        "name": "吉奥 帅威"
+    },
+    {
+        "code": "series-30",
+        "name": "吉奥 伊美"
+    },
+    {
+        "code": "series-29",
+        "name": "吉奥 吉奥凯旋"
+    },
+    {
+        "code": "series-2051",
+        "name": "吉奥 奥轩G3"
+    },
+    {
+        "code": "series-346",
+        "name": "吉奥 猛将旅"
+    },
+    {
+        "code": "series-1494",
+        "name": "吉奥 星旺"
+    },
+    {
+        "code": "series-1990",
+        "name": "吉奥 帅凌"
+    },
+    {
+        "code": "series-2518",
+        "name": "吉奥 奥轩GX5"
+    },
+    {
+        "code": "series-1059",
+        "name": "吉奥 帅舰"
+    },
+    {
+        "code": "series-2150",
+        "name": "吉奥 奥轩G5"
+    },
+    {
+        "code": "series-345",
+        "name": "吉奥 吉奥GS50"
+    },
+    {
+        "code": "series-586",
+        "name": "吉奥 奥腾"
+    },
+    {
+        "code": "series-2799",
+        "name": "吉奥 星朗"
+    },
+    {
+        "code": "series-1788",
+        "name": "吉奥 帅豹"
+    },
+    {
+        "code": "series-328",
+        "name": "吉奥 凯睿"
+    },
+    {
+        "code": "series-637",
+        "name": "双环 来旺"
+    },
+    {
+        "code": "series-165",
+        "name": "双环 小贵族"
+    },
+    {
+        "code": "series-384",
+        "name": "双环 双环SCEO"
+    },
+    {
+        "code": "series-278",
+        "name": "双环 来宝S-RV"
+    },
+    {
+        "code": "series-2673",
+        "name": "奔驰 CLS级旅行车"
+    },
+    {
+        "code": "series-726",
+        "name": "奔驰 R级"
+    },
+    {
+        "code": "series-734",
+        "name": "奔驰 威霆"
+    },
+    {
+        "code": "series-1147",
+        "name": "奔驰 C级"
+    },
+    {
+        "code": "series-725",
+        "name": "奔驰 ML级"
+    },
+    {
+        "code": "series-2511",
+        "name": "奔驰 奔驰GLK"
+    },
+    {
+        "code": "series-1955",
+        "name": "奔驰 马可波罗"
+    },
+    {
+        "code": "series-1087",
+        "name": "奔驰 B级"
+    },
+    {
+        "code": "series-1952",
+        "name": "奔驰 唯雅诺 "
+    },
+    {
+        "code": "series-1156",
+        "name": "奔驰 SL级"
+    },
+    {
+        "code": "series-2754",
+        "name": "奔驰 G"
+    },
+    {
+        "code": "series-1149",
+        "name": "奔驰 CLK级"
+    },
+    {
+        "code": "series-2758",
+        "name": "奔驰 S"
+    },
+    {
+        "code": "series-723",
+        "name": "奔驰 G级"
+    },
+    {
+        "code": "series-2761",
+        "name": "奔驰 CLK"
+    },
+    {
+        "code": "series-1150",
+        "name": "奔驰 CLS级"
+    },
+    {
+        "code": "series-713",
+        "name": "奔驰 AMG"
+    },
+    {
+        "code": "series-1157",
+        "name": "奔驰 SLR级"
+    },
+    {
+        "code": "series-2757",
+        "name": "奔驰 SLS"
+    },
+    {
+        "code": "series-246",
+        "name": "奔驰 奔驰C级"
+    },
+    {
+        "code": "series-532",
+        "name": "奔驰 奔驰E级"
+    },
+    {
+        "code": "series-1740",
+        "name": "奔驰 Sprinter"
+    },
+    {
+        "code": "series-733",
+        "name": "奔驰 唯雅诺"
+    },
+    {
+        "code": "series-1155",
+        "name": "奔驰 S级"
+    },
+    {
+        "code": "series-724",
+        "name": "奔驰 MB100"
+    },
+    {
+        "code": "series-1168",
+        "name": "奔驰 GLK级"
+    },
+    {
+        "code": "series-1163",
+        "name": "奔驰 A级"
+    },
+    {
+        "code": "series-728",
+        "name": "奔驰 SLK级"
+    },
+    {
+        "code": "series-2750",
+        "name": "奔驰 CLS"
+    },
+    {
+        "code": "series-2760",
+        "name": "奔驰 CL"
+    },
+    {
+        "code": "series-2283",
+        "name": "奔驰 E级旅行车"
+    },
+    {
+        "code": "series-1151",
+        "name": "奔驰 E级"
+    },
+    {
+        "code": "series-2352",
+        "name": "奔驰 凌特"
+    },
+    {
+        "code": "series-1154",
+        "name": "奔驰 GL级"
+    },
+    {
+        "code": "series-1148",
+        "name": "奔驰 CL级"
+    },
+    {
+        "code": "series-2765",
+        "name": "奔驰 CLA"
+    },
+    {
+        "code": "series-2755",
+        "name": "奔驰 M"
+    },
+    {
+        "code": "series-1953",
+        "name": "奔驰 奔驰威霆 "
+    },
+    {
+        "code": "series-2883",
+        "name": "福田 萨普"
+    },
+    {
+        "code": "series-26",
+        "name": "福田 奥铃"
+    },
+    {
+        "code": "series-2512",
+        "name": "福田 拓路者"
+    },
+    {
+        "code": "series-198",
+        "name": "福田 蒙派克"
+    },
+    {
+        "code": "series-583",
+        "name": "福田 迷迪"
+    },
+    {
+        "code": "series-163",
+        "name": "福田 福田传奇"
+    },
+    {
+        "code": "series-280",
+        "name": "福田 风景海狮"
+    },
+    {
+        "code": "series-273",
+        "name": "福田 风景冲浪"
+    },
+    {
+        "code": "series-27",
+        "name": "福田 风景爱尔法"
+    },
+    {
+        "code": "series-5016-ly",
+        "name": "福田 风景"
+    },
+    {
+        "code": "series-5006-ly",
+        "name": "劳斯莱斯 魅影"
+    },
+    {
+        "code": "series-1714",
+        "name": "劳斯莱斯 古思特"
+    },
+    {
+        "code": "series-964",
+        "name": "劳斯莱斯 银刺"
+    },
+    {
+        "code": "series-2236",
+        "name": "劳斯莱斯 银影"
+    },
+    {
+        "code": "series-2235",
+        "name": "劳斯莱斯 银灵"
+    },
+    {
+        "code": "series-793",
+        "name": "劳斯莱斯 幻影"
+    },
+    {
+        "code": "series-2069",
+        "name": "劳斯莱斯 银色天使"
+    },
+    {
+        "code": "series-2842",
+        "name": "劳斯莱斯 魅影"
+    },
+    {
+        "code": "series-2516",
+        "name": "力帆 福顺"
+    },
+    {
+        "code": "series-2677",
+        "name": "力帆 力帆720"
+    },
+    {
+        "code": "series-2152",
+        "name": "力帆 力帆X60"
+    },
+    {
+        "code": "series-2830",
+        "name": "力帆 力帆530"
+    },
+    {
+        "code": "series-2808",
+        "name": "力帆 兴顺"
+    },
+    {
+        "code": "series-2000",
+        "name": "力帆 丰顺"
+    },
+    {
+        "code": "series-569",
+        "name": "力帆 力帆520"
+    },
+    {
+        "code": "series-349",
+        "name": "力帆 力帆620"
+    },
+    {
+        "code": "series-2831",
+        "name": "力帆 力帆630"
+    },
+    {
+        "code": "series-1054",
+        "name": "力帆 力帆320"
+    },
+    {
+        "code": "series-2829",
+        "name": "力帆 力帆330"
+    },
+    {
+        "code": "series-2881",
+        "name": "新龙马 启腾M70"
+    }
+]

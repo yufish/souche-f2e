@@ -1,0 +1,97 @@
+{
+  "id": {
+    "type": "varchar(40)"
+    
+  },
+  "pic_str": {
+    "type": "text",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "图片参数的值，更新时无需再次上传"
+  },
+  "car_id": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "推送的车辆id"
+  },
+  "platform_id": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "平台对应的id，再enum Platform中定义，-1表示全平台"
+  },
+  "status": {
+    "type": "int(1)",
+    "allowNull": true,
+    "defaultValue": "1",
+    "primaryKey": false,
+    "comment": "操作状态，1：创建 2：推送中 3：成功 4：失败"
+  },
+  "fail_reason": {
+    "type": "varchar(1000)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "推送失败的原因，status为4的时候存在"
+  },
+  "item_id": {
+    "type": "varchar(100)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "第三方平台上的id"
+  },
+  "creator": {
+    "type": "varchar(40)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": "创建者"
+  },
+  "action_type": {
+    "type": "int(1)",
+    "allowNull": true,
+    "defaultValue": "1",
+    "primaryKey": false,
+    "comment": "操作类型：1，创建 2：删除 3：更新"
+  },
+  "warning": {
+    "type": "varchar(1000)",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "start_push_time": {
+    "type": "int(11)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "开始推送的时间，用来判断是否超时"
+  },
+  "is_yushou": {
+    "type": "int(1)",
+    "allowNull": true,
+    "defaultValue": "0",
+    "primaryKey": false,
+    "comment": "是否是预售"
+  },
+  "date_create": {
+    "type": "datetime",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  },
+  "date_update": {
+    "type": "datetime",
+    "allowNull": true,
+    "defaultValue": null,
+    "primaryKey": false,
+    "comment": null
+  }
+}
