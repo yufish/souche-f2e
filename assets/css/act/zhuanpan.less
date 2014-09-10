@@ -5,6 +5,14 @@
       background: url(../../images/acts/dazhuanpan/banner.png) no-repeat center;
       height: 579px;
     }
+    .erweima{
+      position: fixed;
+      top: 150px;
+      width: 192px;
+      height: 240px;
+      background:  url(../../images/acts/dazhuanpan/erweima.png) no-repeat;
+      right: 10px;
+    }
     .zhuanpan{
       width: 100%;
       background: url(../../images/acts/dazhuanpan/bg-1.png) no-repeat center;
@@ -22,11 +30,12 @@
         .cont{
           background: #fff;
           padding-bottom: 20px;
+          height: 750px;
           .rule-text{
-            width: 380px;
+            width: 360px;
             margin-left: 25px;
-
-             .text-item{
+            float: left;
+            .text-item{
               font-size: 20px;
               line-height: 30px;
               margin-bottom: 5px;
@@ -37,6 +46,47 @@
                 color: #eb4c20;
               }
              }
+          }
+          .luck{
+            width: 545px;
+            position: relative;
+            float: left;
+            height: 750px;
+            .pointer{
+              position: absolute;
+              width: 102px;
+              height: 200px;
+              background: url(../../images/acts/dazhuanpan/jiantou.png) no-repeat;
+              left: 218px;
+              top: -187px;
+              z-index: 5;
+            }
+            .bule-bottom{
+              position: absolute;
+              width: 551px;
+              height: 556px;
+              background: url(../../images/acts/dazhuanpan/zhuanpan-bg.png) no-repeat;
+              top: -123px;
+              z-index: 2;
+            }
+            .table{
+              width: 548px;
+              height: 548px;
+              background: url(../../images/acts/dazhuanpan/zhuanpan.png) no-repeat;
+              position: absolute;
+              top: -123px;
+              z-index: 3;
+              left: -5px;
+            }
+            .button{
+              width: 340px;
+              height: 142px;
+              position: absolute;
+              background: url(../../images/acts/dazhuanpan/buttom.png) no-repeat;
+              bottom:170px;
+              left: 111px;
+              cursor: pointer;
+            }
           }
         }
       }
