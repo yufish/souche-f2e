@@ -1,9 +1,21 @@
 #zhuanpan{
   #content{
+    position: relative;
     .banner{
       width: 100%;
       background: url(../../images/acts/dazhuanpan/banner.png) no-repeat center;
       height: 579px;
+    }
+    .mask{
+      width: 100%;
+      height: 1800px;
+      background: #000;
+      opacity: 0.5;
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      filter:alpha(opacity=50);
     }
     .erweima{
       position: fixed;
@@ -32,9 +44,10 @@
           padding-bottom: 20px;
           height: 750px;
           .rule-text{
-            width: 360px;
+            width: 350px;
             margin-left: 25px;
             float: left;
+            margin-right: 10px;
             .text-item{
               font-size: 20px;
               line-height: 30px;
@@ -60,6 +73,7 @@
               left: 218px;
               top: -187px;
               z-index: 5;
+              z-index: 200;
             }
             .bule-bottom{
               position: absolute;
@@ -77,8 +91,9 @@
               top: -123px;
               z-index: 3;
               left: -5px;
+              z-index: 100;
             }
-            .button{
+            .button#start-turn{
               width: 340px;
               height: 142px;
               position: absolute;
@@ -86,9 +101,144 @@
               bottom:170px;
               left: 111px;
               cursor: pointer;
+              z-index: 200;
             }
           }
         }
+      }
+    }
+    .zhuanpan-popup{
+      position: fixed;
+      width: 785px;
+      height: 530px;
+      left: 50%;
+      margin-left: -350px;
+      top: 150px;
+      background: #fff;
+      z-index: 1000;
+      .head{
+        width: 100%;
+        height: 66px;
+        background: #2fb998;
+        position: relative;
+        .close{
+          width: 34px;
+          height: 34px;
+          background: url(../../images/acts/dazhuanpan/close.png) no-repeat;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          cursor: pointer;
+        }
+      }
+      .choujiang{
+        height: 464px;
+        width: 100%;
+        background: #fff url(../../images/acts/dazhuanpan/choujiang-popup.png) no-repeat center 20px;
+        form{
+          width: 350px;
+          margin: 0 auto;
+          padding-top: 245px;
+          input{
+            width: 333px;
+            border:1px solid #000;
+            height: 26px;
+            font-size: 20px;
+            color: #333;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 26px;
+          }
+          p{
+            text-align: center;
+            font-size: 17px;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+          button{
+            width: 200px;
+            height: 105px;
+            background: #fd5426;
+            border: none;
+            text-align: center;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            line-height: 105px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .zhongjiang{
+        height: 414px;
+        width: 100%;
+        padding-top: 50px;
+        h1{
+          text-align: center;
+          font-size: 38px;
+          color: #fd5426; 
+        }
+        p{
+          text-align: center;
+          font-size: 20px;
+          color: #fd5426; 
+        }
+        .prompt{
+          margin-top: 60px;
+          margin-left: 50px;
+          em{
+            font-size: 20px;
+            display: block;
+            float: left;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background: #fd5426; 
+            color: #fff;
+            margin-right: 5px;
+            margin-top: 21px;
+          }
+          i{
+            display: block;
+            float: left;
+            width: 83px;
+            height: 52px;
+          }
+          .baijian1{
+            background: url(../../images/acts/dazhuanpan/baijian1.png) no-repeat ;
+            margin-right: 10px;
+          }
+          .baijian2{
+            background: url(../../images/acts/dazhuanpan/baijian2.png) no-repeat ;
+          }
+          span{
+            color: #333;
+            font-size: 20px;
+            float: left;
+            display: block;
+            line-height: 80px;
+          }
+         
+        }
+         .end{
+            font-size: 20px;
+            color: #333;
+            position: absolute;
+            bottom: 145px;
+            left: 55px;
+          }
+      }
+      .wrong{
+        text-align: center;
+        height: 464px;
+        margin-top: 180px;
+        font-size: 40px;
+        color: #fd5426;
       }
     }
     .bottom{

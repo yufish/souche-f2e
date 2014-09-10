@@ -4,7 +4,7 @@ head
     title html5实现转盘旋转和停留
     script(src="/assets/js/lib/jquery-1.9.1.min.js")
     style.
-        #table{
+        .table{
             width: 300px;
             height: 300px;
             border-radius: 150px;
@@ -14,7 +14,7 @@ head
             background-repeat: no-repeat;
             background-position: center center;
         }
-        #turnto{
+        .turnto{
             list-style: none;
         }
         .turn-target{
@@ -26,9 +26,10 @@ head
             cursor: pointer;
         }
 body
-    #truntable
-        #pointer
-        #table
+    .truntable
+        .pointer
+        .table
+    .button#start-turn 开始抽奖
     p#console
         
     script(src="./turntable.js")
