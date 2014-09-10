@@ -321,6 +321,7 @@ define(['index/car-god',
             $(".carsContent img").lazyload({
                 threshold: 200
             });
+
             $(".card-login").click(function() {
                 Souche.MiniLogin.checkLogin(function() {
                     window.location.reload();
@@ -371,6 +372,10 @@ define(['index/car-god',
                     $(".hotNewCars img").each(function(i, img) {
                         $(img).attr("src", $(img).attr("data-original"));
                     })
+                    $(".hotCarImages img").each(function(i, img) {
+                        $(img).attr("src", $(img).attr("data-original"));
+                    })
+
                 }
                 $(".carsContent").addClass("hidden");
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
