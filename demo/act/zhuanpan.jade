@@ -72,9 +72,12 @@ html
                 span 5.此次活动不支持奖品带领，需本人到店领取。
               .text-item
                 span 6.兑奖时间
-                em 9月16日-9月28日 13:00-18:00
+                em 9月16日-9月28日
+                br 
+                em 13:00-18:00
               .text-item
                 span 7.凭手机号到店购车还有机会获得
+                br 
                 em 更多神秘大奖！
             .luck
               .pointer
@@ -82,6 +85,25 @@ html
               .table
               .button
       .bottom
+      .mask
+      .zhuanpan-popup
+        .head
+          .close
+        .choujiang.hidden
+          form#zhuanpan-form
+            input#zhuanpan-phone(placeholder="请输入您的手机号码")
+            p 兑奖时间：9月16日-28日 13:00-18:00
+            button#zhuanpan-submit(type="submit" ) 去抽奖啦!!!
+        .zhongjiang
+          h1 恭喜您！
+          h1 抽中 22元“大虫”挂饰一份
+          p 请于9月16日-28日 13:00-18:00 至大搜车门店凭手机号兑换
+          .prompt.clearfix
+            em 提示
+            span 如您已获得购车指标，另有太阳能车摆件
+            i.baijian1
+            i.baijian2
+          .end 送出，请携带本人指标（复印件）+身份证（复印件）到店领取。 
     #footer
       .wrapper
         .foot-detail.clearfix
