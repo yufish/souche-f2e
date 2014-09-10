@@ -85,8 +85,8 @@ html
               .table
               .button#start-turn
       .bottom
-      //- .mask
-      //- .zhuanpan-popup
+      .mask.hidden
+      .zhuanpan-popup.hidden
         .head
           .close
         .choujiang.hidden
@@ -94,7 +94,7 @@ html
             input#zhuanpan-phone(placeholder="请输入您的手机号码")
             p 兑奖时间：9月16日-28日 13:00-18:00
             button#zhuanpan-submit(type="submit" ) 去抽奖啦!!!
-        .zhongjiang
+        .zhongjiang.hidden
           h1 恭喜您！
           h1 抽中 22元“大虫”挂饰一份
           p 请于9月16日-28日 13:00-18:00 至大搜车门店凭手机号兑换
@@ -104,6 +104,8 @@ html
             i.baijian1
             i.baijian2
           .end 送出，请携带本人指标（复印件）+身份证（复印件）到店领取。 
+        .wrong.hidden
+          h1 您的手机号已重复抽奖
     #footer
       .wrapper
         .foot-detail.clearfix

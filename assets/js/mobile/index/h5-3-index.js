@@ -535,7 +535,10 @@ if (navigator.userAgent.match(/Android/i)){
 //        if(!isDefaultObj(dObj)){
 //            saveHistory(dObj)
 //        }
-        window.location.href = addr.substr(0,addr.length-1);
+        setTimeout(function(){
+            window.location.href = addr.substr(0,addr.length-1);
+        },50)
+        Souche.stats.add_click('index-filter-car');
     });
 //    function saveHistory(dataObj){
 //        var db = window.localStorage;
