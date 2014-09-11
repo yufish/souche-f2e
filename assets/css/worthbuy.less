@@ -1,6 +1,55 @@
 #gouchejie{
   #content{
     background: #F2F2F2 url(../../assets/images/worthbuy/banner.png) no-repeat top;
+    .ribao-list{
+      width: 240px;
+      position: fixed;
+      top: 200px;
+      left: 440px;
+      .tit-icon{
+        width: 240px;
+        height: 142px;
+        background: url(../../assets/images/worthbuy/ribao-list.png) no-repeat;
+        position: relative;
+        .date{
+          position: absolute;
+          color: #5E4D39;
+          font-size: 12px;
+          top: 90px;
+          right: 20px;
+          font-weight: bold;
+        }
+      }
+      .title{
+        color: #fff;
+        font-size: 14px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 25px;
+        span{
+          background: #FF5517;
+          padding: 5px 10px; 
+        }
+      }
+      .reason{
+        color: #fff;
+        font-size: 14px;
+        margin-left: 25px;
+        li{
+          height: 30px;
+          
+          overflow: hidden;
+          margin-bottom: 5px;
+          margin-top: 10px;
+          a{
+            background: #000000;
+            padding: 10px 10px; 
+            color: #fff;
+            line-height: 30px;
+          }
+        }
+      }
+    }
     .car-box{
       margin: 0 auto;
         .recom-car{
@@ -19,7 +68,7 @@
           .car-info{
             float: left;
             height: 175px;
-            padding: 0px 20px;
+            padding-left:30px;
             .tit{
               font-size: 17px;
               color: #333;
@@ -118,6 +167,13 @@
                 background: url(../../assets/images/worthbuy/zhibao.png) no-repeat;
               }
             }
+            .find-more{
+              display: block;
+              color: #FF5417;
+              font-size: 14px;
+              text-decoration: underline;
+              margin-top: 30px;
+            }
           }
         }
       }
@@ -182,6 +238,52 @@
         }
         .share{
           
+        }
+        .ribao{
+          width: 700px;
+          padding: 30px 0px;
+          border: 1px solid #E4E3E3;
+          background: #F5F5F5;
+          margin-top: 40px;
+          .ribao-icon{
+            float: left;
+            margin-left: 25px;
+            width: 83px;
+            height: 61px;
+            background: url(../../assets/images/worthbuy/ribao-icon.png) no-repeat;
+          }
+          .ribao-text{
+            float: left;
+            width: 555px;
+            margin-left: 15px;
+            color: #666;
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 9px;
+          }
+        }
+        .review{
+          margin-top: 40px;
+          width: 700px;
+          .tit{
+            color: #333;
+            font-size: 18px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E4E3E3;
+          }
+          .review-cont{
+            margin-top: 15px;
+            font-size: 14px;
+            ul{
+              width: 330px;
+              float: left;
+              padding-left: 20px;
+              li{
+                list-style-type: disc;
+                color: #666;
+              }
+            }
+          }
         }
         .car-recom{
           margin-top: 20px;
