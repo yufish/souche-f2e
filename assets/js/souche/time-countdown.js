@@ -1,12 +1,13 @@
 define(['souche/core-data'],function(CoreData) {
 
-    var CountDown = function(selector){
+    var CountDown = function(selector,tpl){
         var data = this.data = CoreData({
             day:0,
             hour:0,
             minute:0,
             second:0
         })
+        if(!tpl)
         var tpl = "<span>剩余：<ins>{{day}}</ins>&nbsp;天&nbsp;<ins>{{hour}}</ins>&nbsp;时&nbsp;<ins>{{minute}}</ins>&nbsp;分&nbsp;<ins>{{second}}</ins>&nbsp;秒</span>"
         data.bindToDOM(selector,tpl)
         var counter = this.counter = {
@@ -36,8 +37,8 @@ define(['souche/core-data'],function(CoreData) {
         }
     }
     return {
-        init:function(selector){
-           var down = new CountDown(selector);
+        init:function(selector,tpl){
+           var down = new CountDown(selector,tpl);
            down.init()
         }
 
