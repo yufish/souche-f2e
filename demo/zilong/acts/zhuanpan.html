@@ -10,10 +10,46 @@
     <link href="http://f2e.souche.com/assets/css/mobile/ui.css" rel="stylesheet" type="text/css">
     <script src="/js/mob/jquery-1.9.1.min.js?t=11"></script>
     <style>
-
+        body{
+            background: #2fb998;
+        }
+        *{box-sizing: border-box;}
+        img{width: 100%;}
+        .bg-container{
+            width: 249px;
+            margin: 0 auto;
+            position: relative;
+            top: -57px;
+            height: 240px;
+        }
+        .bg-container img{
+            position: absolute;
+        }
+        .zhen{
+            width: 46px;
+            top:0;
+            left: 95px;
+            z-index: 10;
+        }
+        .circle{
+            top: 28px;
+            left: -7px;
+        }
+        .btn{
+            width: 146px;
+        }
     </style>
 </head>
 <body>
-    <img src="">
+    <img src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/1.png">
+    <div class="bg-container">
+        <img class="circle-bg" src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/circle-bg.png">
+        <img class="zhen" src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/zhen.png">
+        <img class="circle" src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/circle.png">
+    </div>
+    <div style="text-align: center;margin-bottom: 15px">
+        <img class="btn" src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/award-btn.png">
+    </div>
+    <img src="http://assets.souche.com/assets/images/mob/huodong/zhuanpan/rule.png">
 </body>
 </html>
