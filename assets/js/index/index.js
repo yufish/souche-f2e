@@ -6,7 +6,8 @@ define(['index/car-god',
     "lib/lazyload",
     "index/carConstrast",
     "index/record-tip",
-    "souche/util/image-resize"
+    "souche/util/image-resize",
+    "souche/time-countdown"
 ], function(carGod,
     topNav,
     qiugou,
@@ -15,7 +16,8 @@ define(['index/car-god',
     lazyload,
     carConstrast,
     recordTip,
-    ImageResize) {
+    ImageResize,
+    TimeCountDown) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
@@ -180,95 +182,95 @@ define(['index/car-god',
         //
 
     }
-    var downCounter = function(target, fakeTime) {
-        var container = target;
-        var counter = {
-            endYear: container.attr("endYear"),
-            endMonth: container.attr("endMonth"),
-            endDay: container.attr("endDay"),
-            endHour: container.attr("endHour"),
-            serverYear: container.attr("serverYear"),
-            serverMonth: container.attr("serverMonth"),
-            serverDay: container.attr("serverDay"),
-            serverHour: container.attr("serverHour"),
-            serverMin: container.attr("serverMin"),
-            serverSec: container.attr("serverSec"),
-            offHour: 0,
-            offMin: 0,
-            offSec: 0,
-            offMSec: 0,
-            offDay: 0
-        };
-        var showDom = function() {
-            var zeroH = "",
-                zeroM = "",
-                zeroS = "",
-                zeroD = "";
-            if (counter.offDay < 10) {
-                zeroD = "0";
-            }
-            if (counter.offHour < 10) {
-                zeroH = "0";
-            }
-            if (counter.offMin < 10) {
-                zeroM = "0";
-            }
-            if (counter.offSec < 10) {
-                zeroS = "0";
-            }
-
-            container.html("<span>剩余：<ins>" + zeroD + counter.offDay + "</ins>&nbsp天&nbsp<ins>" + zeroH + counter.offHour + "</ins>&nbsp时&nbsp<ins>" + zeroM + counter.offMin + "</ins>&nbsp分&nbsp<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>&nbsp秒</span>");
-        };
-        var setInitTime = function() {
-            var endDate = new Date(counter.endYear, counter.endMonth, counter.endDay, counter.endHour, 0, 0);
-            var serverDate = new Date(counter.serverYear, counter.serverMonth, counter.serverDay, counter.serverHour, counter.serverMin, counter.serverSec);
-            if (fakeTime) {
-                endDate = fakeTime.endDate;
-                serverDate = fakeTime.startDate;
-            }
-            var offset = Date.parse(endDate) - Date.parse(serverDate);
-
-            if (offset < 0) {
-                counter.offMSec = 0;
-                counter.offSec = 0;
-                counter.offMin = 0;
-                counter.offHour = 0;
-                counter.offDay = 0;
-                showDom();
-                return false;
-            }
-            counter.offDay = Math.floor(offset / 24 / (3600 * 1000));
-            counter.offHour = Math.floor(offset / (3600 * 1000) % 24);
-            var leave = offset % (3600 * 1000);
-            counter.offMin = Math.floor(leave / (60 * 1000));
-            var leave2 = leave % (60 * 1000);
-            counter.offSec = Math.floor(leave2 / 1000);
-            showDom();
-        };
-        setInitTime(); //初始化
-        var timer = setInterval(function() {
-            --counter.offMSec;
-            if (counter.offMSec < 0) {
-                counter.offMSec = 9;
-                --counter.offSec;
-                if (counter.offSec < 0) {
-                    counter.offSec = 59;
-                    --counter.offMin;
-                    if (counter.offMin < 0) {
-                        counter.offMin = 59;
-                        --counter.offHour;
-                        if (counter.offHour < 0) {
-                            clearInterval(timer);
-                            counter.offSec = 0;
-                            counter.offMin = 0;
-                            counter.offHour = 0;
-                        }
-                    }
-                }
-            }
-            showDom();
-        }, 100);
-    };
+//    var downCounter = function(target, fakeTime) {
+//        var container = target;
+//        var counter = {
+//            endYear: container.attr("endYear"),
+//            endMonth: container.attr("endMonth"),
+//            endDay: container.attr("endDay"),
+//            endHour: container.attr("endHour"),
+//            serverYear: container.attr("serverYear"),
+//            serverMonth: container.attr("serverMonth"),
+//            serverDay: container.attr("serverDay"),
+//            serverHour: container.attr("serverHour"),
+//            serverMin: container.attr("serverMin"),
+//            serverSec: container.attr("serverSec"),
+//            offHour: 0,
+//            offMin: 0,
+//            offSec: 0,
+//            offMSec: 0,
+//            offDay: 0
+//        };
+//        var showDom = function() {
+//            var zeroH = "",
+//                zeroM = "",
+//                zeroS = "",
+//                zeroD = "";
+//            if (counter.offDay < 10) {
+//                zeroD = "0";
+//            }
+//            if (counter.offHour < 10) {
+//                zeroH = "0";
+//            }
+//            if (counter.offMin < 10) {
+//                zeroM = "0";
+//            }
+//            if (counter.offSec < 10) {
+//                zeroS = "0";
+//            }
+//
+//            container.html("<span>剩余：<ins>" + zeroD + counter.offDay + "</ins>&nbsp天&nbsp<ins>" + zeroH + counter.offHour + "</ins>&nbsp时&nbsp<ins>" + zeroM + counter.offMin + "</ins>&nbsp分&nbsp<ins>" + zeroS + counter.offSec + "." + counter.offMSec + "</ins>&nbsp秒</span>");
+//        };
+//        var setInitTime = function() {
+//            var endDate = new Date(counter.endYear, counter.endMonth, counter.endDay, counter.endHour, 0, 0);
+//            var serverDate = new Date(counter.serverYear, counter.serverMonth, counter.serverDay, counter.serverHour, counter.serverMin, counter.serverSec);
+//            if (fakeTime) {
+//                endDate = fakeTime.endDate;
+//                serverDate = fakeTime.startDate;
+//            }
+//            var offset = Date.parse(endDate) - Date.parse(serverDate);
+//
+//            if (offset < 0) {
+//                counter.offMSec = 0;
+//                counter.offSec = 0;
+//                counter.offMin = 0;
+//                counter.offHour = 0;
+//                counter.offDay = 0;
+//                showDom();
+//                return false;
+//            }
+//            counter.offDay = Math.floor(offset / 24 / (3600 * 1000));
+//            counter.offHour = Math.floor(offset / (3600 * 1000) % 24);
+//            var leave = offset % (3600 * 1000);
+//            counter.offMin = Math.floor(leave / (60 * 1000));
+//            var leave2 = leave % (60 * 1000);
+//            counter.offSec = Math.floor(leave2 / 1000);
+//            showDom();
+//        };
+//        setInitTime(); //初始化
+//        var timer = setInterval(function() {
+//            --counter.offMSec;
+//            if (counter.offMSec < 0) {
+//                counter.offMSec = 9;
+//                --counter.offSec;
+//                if (counter.offSec < 0) {
+//                    counter.offSec = 59;
+//                    --counter.offMin;
+//                    if (counter.offMin < 0) {
+//                        counter.offMin = 59;
+//                        --counter.offHour;
+//                        if (counter.offHour < 0) {
+//                            clearInterval(timer);
+//                            counter.offSec = 0;
+//                            counter.offMin = 0;
+//                            counter.offHour = 0;
+//                        }
+//                    }
+//                }
+//            }
+//            showDom();
+//        }, 100);
+//    };
 
     ////
     return {
@@ -312,7 +314,7 @@ define(['index/car-god',
 
             $(".down-counter").each(function() {
                 var $this = $(this);
-                downCounter($this);
+                TimeCountDown.init($this);
             });
 
 
