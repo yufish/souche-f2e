@@ -904,8 +904,16 @@ font-size: 13px;
 
 //猜你喜欢
 .guess-like{
-   margin: 0 auto;
-   padding-top: 20px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  &.loading{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-image: url('../../assets/images/index/ajax-loader1.gif');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
   .title{
     span{
       color: #ff5517;
@@ -915,26 +923,23 @@ font-size: 13px;
     border-bottom: 1px solid #EDEDED;
   }
   .tit{
-
-      height: 25px;
-
-    }
-    .tit-item{
-      float: left;
-      width:228px;
-      margin-right: 13px;
-      height: 25px;
-      line-height: 40px;
-      color: #999;
-      font-size: 12px;
-    }
-    .like-line{
-      height:331px;
-      overflow: hidden;
-    }
+    height: 25px;
+  }
+  .tit-item{
+    float: left;
+    width:228px;
+    margin-right: 13px;
+    height: 25px;
+    line-height: 40px;
+    color: #999;
+    font-size: 12px;
+  }
+  .like-line{
+    height:331px;
+    overflow: hidden;
+  }
   .like-box{
     float: left;
-
   }
   .car-youlike{
     margin-top: 12px;
