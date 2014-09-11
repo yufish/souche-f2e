@@ -158,7 +158,7 @@
 }
 #list #cars .car .lft {
     position: relative;
-    width: 38%;
+    width: 38.2%;
     float: left;
 }
 #list #cars .car .lft img {
@@ -167,15 +167,15 @@
 }
 #list #cars .car .rht {
     float: left;
-    width: 62%;
+    width: 61.8%;
     padding-left: 10px;
 }
 #list #cars .car .rht .title {
-    line-height: 18px;
+    line-height: 16px;
     font-size: 14px;
     color: #333;
-    margin-top: 3px;
-    height: 36px;
+    margin-top: 5px;
+    height: 32px;
     overflow: hidden;
 }
 #list #cars .car .rht .info {
@@ -199,14 +199,16 @@
 }
 #list .car-footer{
     position: relative;
-    margin-top: 9px;
+    margin-top: 7px;
 }
 #list .car-footer .time-limit{
     background: #65ae2f;
     color: #fff;
     float: left;
-    padding: 3px 6px;
+    padding:0 6px;
     font-size: 12px;
+    height: 15px;
+    line-height: 15px;
 }
 #list #cars .car .rht .rate span {
     display: inline-block;
@@ -265,7 +267,7 @@
     padding-top: 20px;
     position: absolute;
     right: -10px;
-    top: -18px;
+    top: -20px;
     line-height: 14px;
     color: #000;
     width: 60px;
