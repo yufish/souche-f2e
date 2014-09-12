@@ -5,6 +5,9 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
     // 版本 >= 9 的IE  不支持transition, 用flash代替
     var isLowIE = LTE_IE9_REG.test(navigator.userAgent);
+    if(isLowIE){
+        $('.zhuanpan-popup .close').addClass('hidden');
+    }
     // 开始转: 显示flash ele
     // 弹出结果提示: hide flash
 
