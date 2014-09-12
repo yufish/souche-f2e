@@ -1,8 +1,8 @@
 define([], function(){
     var _config = null;
 
-    var MIN_ROUND = 3;
-    var MAX_ROUND = 6;
+    var MIN_ROUND = 6;
+    var MAX_ROUND = 9;
 
 
     var ele = {

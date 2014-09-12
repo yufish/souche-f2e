@@ -2,14 +2,18 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title></title>
+    <style>
+        *{margin:0;padding: 0}
+    </style>
 </head>
 <body>
+    <button id="play">click to play</button>
 
-
-    <audio controls id="audio">
+    <audio style="display: none"  id="audio">
         <!--<source src="http://res.souche.com/assets/hello1.mp3" type="audio/ogg">-->
-        <source src="http://res.souche.com/assets/2.mp3" type="audio/mpeg">
+        <source src="../../../assets/audio/real_2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
@@ -20,6 +24,11 @@
         }else{
             audio.src='http://res.souche.com/assets/2.mp3'
         }*/
+        document.getElementById('play').addEventListener('click',function(){
+            var audio = document.getElementById('audio');
+            audio.play()
+        })
+
 
     </script>
 </body>

@@ -120,7 +120,7 @@ if (navigator.userAgent.match(/Android/i)){
             tabIndex = tabIndex || 1;
             //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
             var tabCookie = $.cookie("temp_tab");
-            if (tabCookie == 2 || tabCookie == 3) {
+            if (tabCookie==1||tabCookie == 2 || tabCookie == 3) {
                 tabIndex = tabCookie;
                 $.removeCookie("temp_tab", {path: "/"})
                 //$.cookie('temp_tab',-1)
@@ -682,14 +682,19 @@ if (navigator.userAgent.match(/Android/i)){
             carOtherAllNameShow: item.carVo.carOtherAllNameShow,
             price: item.price,
             zaishou: (item.carVo.status == 'zaishou'),
-            recommStr: item.recommendReasonStr
+            recommStr: item.recommendReasonStr,
+            carOtherAllName:item.carVo.carOtherAllName,
+            carShortName:item.carVo.carShortName
         }
         var activeClass= d.favorite?'active':'';
         var str = '<div class="car-wrapper">'
                 + '<a class="car-card" href="'+d.detailUrl+ 'carId='+d.id+'">'
                 +    '<img src="'+ d.pictureBig+'">'
                 +    '<div class="car-info">'
-                +        '<div class="car-introduction">'+ d.carOtherAllNameShow+'</div>'
+                +        '<div class="car-introduction">'
+                +           '<div class="car-series">'+ d.carShortName+'</div>'
+                +           '<div class="other-detail-info">'+ d.carOtherAllName+'</div>'
+                +        '</div>'
                 +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
                 +        '<div class="car-time">'+ d.year+'上牌</div>'
                 +        '<div class="recommend car-footer">'+ d.recommStr

@@ -1,6 +1,16 @@
 define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
     var _config = null;
     var phoneReg = /^1[34578][0-9]{9}$/;
+    var LTE_IE9_REG =  /MSIE\ [6789].0/i;
+
+    // 版本 >= 9 的IE  不支持transition, 用flash代替
+    var isLowIE = LTE_IE9_REG.test(navigator.userAgent);
+    if(isLowIE){
+        $('.zhuanpan-popup .close').addClass('hidden');
+    }
+    // 开始转: 显示flash ele
+    // 弹出结果提示: hide flash
+
 
     var _view = {
         readyPop: function(){
@@ -31,6 +41,7 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
             $('.wrong').addClass('hidden');
             $('.zhongjiang').addClass('hidden');
             $('.choujiang').addClass('hidden');
+            $('#flash-ctn').addClass('hidden');
         },
         startHandler: function(){
             _view.readyPop();
@@ -54,7 +65,14 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
         goGet: function(){
             prizeGot = true;
             _event.closePop();
-            zhuanpan.reset();
+            if(isLowIE){
+                // 显示flash
+                $('#flash-ctn').removeClass('hidden');
+            }
+            else{
+                zhuanpan.reset();
+            }
+            
             _data.getPrize(function(data,status){
 
                 if( status === 'success' ){
@@ -64,14 +82,22 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
                     if(data.code == 401){
                         // 提示重复抽奖
-                        _view.readyPop();
+                         $('#flash-ctn').addClass('hidden');
+                         _view.readyPop();
                         $('.wrong').removeClass('hidden');
                     }
                     else if(data.prize > 0 && data.prize <=5 ){
                         var prizeText = '';
                         $('#prize-text').text(zhuanConfig.angles[data.prize].name);
-                        var time = zhuanpan.startZhuan(data.prize);
+                        var time = 0;
+                        if( isLowIE ){
+                            time = 1500;
+                        }
+                        else{
+                            time = zhuanpan.startZhuan(data.prize);
+                        }
                         setTimeout(function(){
+                            $('#flash-ctn').addClass('hidden');
                             _view.readyPop();
                             $('.zhongjiang').removeClass('hidden');
                         }, time + 1000);
