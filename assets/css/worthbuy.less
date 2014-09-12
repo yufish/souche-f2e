@@ -1,37 +1,65 @@
 #gouchejie{
   #content{
-    background: #F2F2F2;
-    .banner{
-      background: #232326 url(../../assets/images/worthbuy/banner.png) center;
-      height: 460px;
-      width: 100%;
-      .wrap{
-        width: 860px;
-        margin: 0 auto;
-        padding-top: 70px;
-        .title{
-          height: 45px;
-          position: relative;
-          span{
+    background: #F2F2F2 url(../../assets/images/worthbuy/banner.png) no-repeat top;
+    .ribao-nav{
+      width: 240px;
+      float: left;
+      margin-top: 40px;
+    }
+    .ribao-list{
+      width: 240px;
+      position: relative;
+      float: left;
+      .tit-icon{
+        width: 240px;
+        height: 142px;
+        background: url(../../assets/images/worthbuy/ribao-list.png) no-repeat;
+        position: relative;
+        .date{
+          position: absolute;
+          color: #5E4D39;
+          font-size: 12px;
+          top: 90px;
+          right: 20px;
+          font-weight: bold;
+        }
+      }
+      .title{
+        color: #fff;
+        font-size: 14px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 25px;
+        span{
+          background: #FF5517;
+          padding: 5px 10px; 
+        }
+      }
+      .reason{
+        color: #fff;
+        font-size: 14px;
+        margin-left: 25px;
+        li{
+          height: 30px;
+          
+          overflow: hidden;
+          margin-bottom: 5px;
+          margin-top: 10px;
+          a{
+            background: #000000;
+            padding: 10px 10px; 
             color: #fff;
-            font-size: 30px;
-          }
-          i{
-            color: #fff;
-            background: #5C9BEF;
-            font-size: 14px;
-            font-style: normal;
-            padding: 1px 3px;
-            position: absolute;
-            top: 7px;
-            left: 155px;
+            line-height: 30px;
           }
         }
+      }
+    }
+    .car-box{
+      margin: 0 auto;
         .recom-car{
-          width: 820px;
           height: 215px;
-          padding: 20px;
           background: #fff;
+          margin-bottom: 50px;
           .car-img{
             display: block;
             width: 322px;
@@ -42,10 +70,9 @@
             }
           }
           .car-info{
-            width: 450px;
             float: left;
             height: 175px;
-            padding: 20px;
+            padding-left:30px;
             .tit{
               font-size: 17px;
               color: #333;
@@ -144,21 +171,32 @@
                 background: url(../../assets/images/worthbuy/zhibao.png) no-repeat;
               }
             }
+            .find-more{
+              display: block;
+              color: #FF5417;
+              font-size: 14px;
+              text-decoration: underline;
+              margin-top: 30px;
+            }
           }
         }
       }
-    }
+    
     .wrapper{
-      width: 860px;
+      width: 1110px;
       margin: 0 auto;
       padding-bottom: 30px;
+      padding-left: 80px;
+      padding-right: 45px;
       .article{
         width: 700px;
-        padding: 50px 80px;
+        float: right;
+        padding: 40px 50px;
         background: #fff;
         border: 1px solid #E4E3E3;
         border: 1px solid #E4E3E3;
         border-top: none;
+        margin-top: 115px;
         .title{
           font-size: 45px;
           font-weight: bold;
@@ -206,6 +244,52 @@
         }
         .share{
           
+        }
+        .ribao{
+          width: 700px;
+          padding: 30px 0px;
+          border: 1px solid #E4E3E3;
+          background: #F5F5F5;
+          margin-top: 40px;
+          .ribao-icon{
+            float: left;
+            margin-left: 25px;
+            width: 83px;
+            height: 61px;
+            background: url(../../assets/images/worthbuy/ribao-icon.png) no-repeat;
+          }
+          .ribao-text{
+            float: left;
+            width: 555px;
+            margin-left: 15px;
+            color: #666;
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 9px;
+          }
+        }
+        .review{
+          margin-top: 40px;
+          width: 700px;
+          .tit{
+            color: #333;
+            font-size: 18px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E4E3E3;
+          }
+          .review-cont{
+            margin-top: 15px;
+            font-size: 14px;
+            ul{
+              width: 330px;
+              float: left;
+              padding-left: 20px;
+              li{
+                list-style-type: disc;
+                color: #666;
+              }
+            }
+          }
         }
         .car-recom{
           margin-top: 20px;
