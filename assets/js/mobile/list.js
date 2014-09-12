@@ -32,7 +32,9 @@ var List = function() {
                         pictureBig: ( !! item.carPicturesVO)?item.carPicturesVO.pictureBig:'',
                         carOtherAllNameShow: item.carVo.carOtherAllNameShow,
                         price: item.price,
-                        zaishou: (item.carVo.status == 'zaishou')
+                        zaishou: (item.carVo.status == 'zaishou'),
+                        carOtherAllName:item.carVo.carOtherAllName,
+                        carShortName:item.carVo.carShortName
                     }
                     carList.push(tpl_data);
                     html = Mustache.render(tpl_cars, {
