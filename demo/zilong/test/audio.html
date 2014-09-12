@@ -9,9 +9,9 @@
     </style>
 </head>
 <body>
+    <button id="play">click to play</button>
 
-
-    <audio controls id="audio">
+    <audio  controls id="audio">
         <!--<source src="http://res.souche.com/assets/hello1.mp3" type="audio/ogg">-->
         <source src="../../../assets/audio/real_1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -24,6 +24,11 @@
         }else{
             audio.src='http://res.souche.com/assets/2.mp3'
         }*/
+        document.getElementById('play').addEventListener('click',function(){
+            var audio = document.getElementById('audio');
+            audio.play()
+        })
+
 
     </script>
 </body>
