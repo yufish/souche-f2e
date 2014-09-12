@@ -171,12 +171,17 @@
     padding-left: 10px;
 }
 #list #cars .car .rht .title {
-    line-height: 16px;
     font-size: 14px;
     color: #333;
     margin-top: 3px;
     height: 32px;
     overflow: hidden;
+}
+#list #cars .car .car-series{
+    font-weight: bold;
+}
+#list #cars .car .other-detail-info{
+    margin-top: 2px;
 }
 #list #cars .car .rht .info {
     color: #999;

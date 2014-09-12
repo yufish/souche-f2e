@@ -232,6 +232,9 @@
     color:#333;
     font-weight: 600;
 }
+.car-card .car-introduction .car-series{
+    font-weight: bold;
+}
 .car-card .car-time{
     color:#999;
     float: right;
