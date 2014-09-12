@@ -5,6 +5,9 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
     // 版本 >= 9 的IE  不支持transition, 用flash代替
     var isLowIE = LTE_IE9_REG.test(navigator.userAgent);
+    if(isLowIE){
+        $('.zhuanpan-popup .close').addClass('hidden');
+    }
     // 开始转: 显示flash ele
     // 弹出结果提示: hide flash
 
@@ -74,12 +77,13 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
                 if( status === 'success' ){
                     // test & dev
-                    data.code = 200;
-                    data.prize = zhuanpan.randomPrize();
+                    // data.code = 200;
+                    // data.prize = zhuanpan.randomPrize();
 
                     if(data.code == 401){
                         // 提示重复抽奖
-                        _view.readyPop();
+                         $('#flash-ctn').addClass('hidden');
+                         _view.readyPop();
                         $('.wrong').removeClass('hidden');
                     }
                     else if(data.prize > 0 && data.prize <=5 ){
@@ -93,7 +97,7 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
                             time = zhuanpan.startZhuan(data.prize);
                         }
                         setTimeout(function(){
-                            // $('#flash-ctn').addClass('hidden');
+                            $('#flash-ctn').addClass('hidden');
                             _view.readyPop();
                             $('.zhongjiang').removeClass('hidden');
                         }, time + 1000);
