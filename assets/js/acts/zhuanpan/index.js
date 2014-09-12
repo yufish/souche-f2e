@@ -79,7 +79,8 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
                     if(data.code == 401){
                         // 提示重复抽奖
-                        _view.readyPop();
+                         $('#flash-ctn').addClass('hidden');
+                         _view.readyPop();
                         $('.wrong').removeClass('hidden');
                     }
                     else if(data.prize > 0 && data.prize <=5 ){
@@ -93,7 +94,7 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
                             time = zhuanpan.startZhuan(data.prize);
                         }
                         setTimeout(function(){
-                            // $('#flash-ctn').addClass('hidden');
+                            $('#flash-ctn').addClass('hidden');
                             _view.readyPop();
                             $('.zhongjiang').removeClass('hidden');
                         }, time + 1000);
