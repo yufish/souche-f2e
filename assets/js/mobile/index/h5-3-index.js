@@ -120,7 +120,7 @@ if (navigator.userAgent.match(/Android/i)){
             tabIndex = tabIndex || 1;
             //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
             var tabCookie = $.cookie("temp_tab");
-            if (tabCookie == 2 || tabCookie == 3) {
+            if (tabCookie==1||tabCookie == 2 || tabCookie == 3) {
                 tabIndex = tabCookie;
                 $.removeCookie("temp_tab", {path: "/"})
                 //$.cookie('temp_tab',-1)
