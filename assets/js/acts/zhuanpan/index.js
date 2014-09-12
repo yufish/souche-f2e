@@ -59,8 +59,8 @@ define(['acts/zhuanpan/zhuanpan'], function(zhuanpan){
 
                 if( status === 'success' ){
                     // test & dev
-                    data.code = 200;
-                    data.prize = zhuanpan.randomPrize();
+                    // data.code = 200;
+                    // data.prize = zhuanpan.randomPrize();
 
                     if(data.code == 401){
                         // 提示重复抽奖
