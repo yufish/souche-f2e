@@ -13,7 +13,7 @@
 
     <audio style="display: none"  id="audio">
         <!--<source src="http://res.souche.com/assets/hello1.mp3" type="audio/ogg">-->
-        <source src="../../../assets/audio/real_2.mp3" type="audio/mpeg">
+        <source id='mp3source' src type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
@@ -26,7 +26,14 @@
         }*/
         document.getElementById('play').addEventListener('click',function(){
             var audio = document.getElementById('audio');
-            audio.play()
+            document.getElementById('mp3source').src='http://f2e.souche.com/assets/audio/real_2.mp3';
+
+            audio.addEventListener('canplaythrough',function(){
+                var duration = Math.round(audio.duration)
+                alert(duration)
+                audio.play()
+            })
+            audio.load()
         })
 
 
