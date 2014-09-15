@@ -914,6 +914,12 @@
     font-size: 14px;
     line-height: 26px;
 }
+.detail-card .ss-content .chechen-order{
+    float: left;
+}
+.detail-card .ss-content .chechen-p{
+    margin-left: 16px;
+}
 #actions .action-btn-bar{
     text-align: center;
 }

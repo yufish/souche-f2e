@@ -179,9 +179,11 @@
 }
 #list #cars .car .car-series{
     font-weight: bold;
+    line-height: 16px;
 }
 #list #cars .car .other-detail-info{
     margin-top: 2px;
+    line-height: 14px;
 }
 #list #cars .car .rht .info {
     color: #999;
