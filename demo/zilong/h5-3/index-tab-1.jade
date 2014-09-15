@@ -1,25 +1,5 @@
 .tab-panel(data-panel-index=1)
     .car-area
-        .for-carcustom.clearfix
-            .erge
-            .custom-text
-                div 告知购车需求
-                div 我们每天为您推荐好车
-            .go-custom 订阅
-        |<a href="custom-search.html" class="for-carcustom-no clearfix">
-        |<div class="custom-text">
-        |    <div>告知购车需求</div>
-        |    <div>我们每天为您推荐好车</div>
-        |</div>
-        |<div class="go-custom-link">修改</div>
-        |</a>
-        |<a href="custom-search.html" class="for-carcustom-had clearfix">
-        | <div class="go-custom-link">修改</div>
-        |<div class="car4you">
-        |   <div class='your-subscription'>您订阅了您订阅了您订阅了您订阅了您订阅了您订阅了您订阅了</div>
-        |</div>
-
-        |</a>
 
         .car-row.clearfix
              .car-wrapper
@@ -31,9 +11,9 @@
                             span.price-num 21.56
                             | 万
                         .car-time 2012上牌
-                        .recommend 性价比是非常高
+                        .recommend.car-footer 性价比是非常高
                             .fav
-                                span.star-shape ☆
+                                span.star-shape
                                 span.fav-num 10
              .car-wrapper
                  a.car-card(href='#')
@@ -44,8 +24,8 @@
                             span.price-num 21.56
                             | 万
                         .car-price-down 直降3000元
-                        .time-limit
-                            span.clock ˪
+                        .time-limit.car-footer
+                            span.clock
                             | 5天21时07分
         .car-row.clearfix
             .car-wrapper
@@ -57,9 +37,9 @@
                             span.price-num 21.56
                             | 万
                         .car-time 2012上牌
-                        .recommend 性价比是非常高
+                        .recommend.car-footer 性价比是非常高
                             .fav
-                                span.star-shape ☆
+                                span.star-shape
                                 span.fav-num 10
             .car-wrapper
                 a.car-card(href='#')
@@ -70,12 +50,12 @@
                             span.price-num 21.56
                             | 万
                         .car-price-down 直降3000元
-                        .recommend 性价比是非常高
+                        .recommend.car-footer 性价比是非常高
                             .fav
-                                span.star-shape ☆
+                                span.star-shape
                                 span.fav-num 10
 
-        .look-more 查看更多
+        .look-more(disabled='disabled') 查看更多
 
     .hot-brands.quick-search-area
         .title 热门品牌
