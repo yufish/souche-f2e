@@ -56,10 +56,6 @@
             touch.last = now;
             longTapTimer = setTimeout(longTap, longTapDelay);
 
-            if ($.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-                touch.el.addClass("pressed");
-            if (prevEl && $.ui.useAutoPressed && !prevEl.data("ignore-pressed") && prevEl[0] !== touch.el[0])
-                prevEl.removeClass("pressed");
             prevEl = touch.el;
         }).bind("touchmove", function(e) {
             if(e.originalEvent)
@@ -92,8 +88,6 @@
                 }, 250);
             }
         }).bind("touchcancel", function() {
-            if(touch.el && $.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-                touch.el.removeClass("pressed");
             touch = {};
             clearTimeout(longTapTimer);
         });
