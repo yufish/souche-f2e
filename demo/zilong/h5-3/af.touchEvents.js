@@ -68,8 +68,6 @@
                 e=e.originalEvent;
             if (!touch.el)
                 return;
-            if ($.ui.useAutoPressed && !touch.el.data("ignore-pressed"))
-                touch.el.removeClass("pressed");
             if (touch.isDoubleTap) {
                 touch.el.trigger("doubleTap");
                 touch = {};
