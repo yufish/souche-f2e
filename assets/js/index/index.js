@@ -338,7 +338,7 @@ define(['index/car-god',
                     success: function(html) {
                         
                         Souche.Util.appear( ".guess-like", fillGuessCallback );
-
+                        $(window).trigger("scroll")
                         function fillGuessCallback(){
                             guessLikeCtn.removeClass('loading');
                             guessLikeCtn.html(html);
