@@ -684,7 +684,8 @@ if (navigator.userAgent.match(/Android/i)){
             zaishou: (item.carVo.status == 'zaishou'),
             recommStr: item.recommendReasonStr,
             carOtherAllName:item.carVo.carOtherAllName,
-            carShortName:item.carVo.carShortName
+            carShortName:item.carVo.carShortName,
+            modelName:item.carVo.modelName
         }
         var activeClass= d.favorite?'active':'';
         var str = '<div class="car-wrapper">'
@@ -693,7 +694,7 @@ if (navigator.userAgent.match(/Android/i)){
                 +    '<div class="car-info">'
                 +        '<div class="car-introduction">'
                 +           '<div class="car-series">'+ d.carShortName+'</div>'
-                +           '<div class="other-detail-info">'+ d.carOtherAllName+'</div>'
+                +           '<div class="other-detail-info">'+ d.modelName+'</div>'
                 +        '</div>'
                 +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
                 +        '<div class="car-time">'+ d.year+'上牌</div>'
