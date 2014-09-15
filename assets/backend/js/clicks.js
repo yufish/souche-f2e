@@ -31,67 +31,18 @@ $.ajax({
         $("#uv_count").html(data.uv);
         var html = ""
         for (var i in data) {
-            html += "<span style='margin-right:10px;'>" + (i + "=" + data[i]) + "</span>"
+            if(typeof(data[i])=='object'){
+                for(var n in data[i]){
+                    html += "<span style='margin-right:10px;'>" + (n + "=" + data[i][n]) + "</span>"
+                }
+            }else{
+                html += "<span style='margin-right:10px;'>" + (i + "=" + data[i]) + "</span>"
+            }
+
         }
         $("#traffic_data").html(html)
     }
 });
-// $.ajax({
-//     url: "/performance/draw_data",
-//     dataType: "json",
-//     data: {
-//         url: encodeURIComponent(url),
-//         time: time
-//     },
-//     success: function(data) {
-//         alert(data)
-//         globalData = data;
-//         // $('.jcrop-container').Jcrop({
-//         //     bgColor: 'black',
-//         //     onSelect: function(_d) {
-//         //         var count = 0;
-
-//         //         globalData.forEach(function(d) {
-//         //             if (inIn(_d, d)) {
-//         //                 count++;
-//         //             }
-//         //         })
-//         //         $("<div class='area-p'></div>").appendTo($(".con")).css({
-//         //             left: _d.x,
-//         //             top: _d.y,
-//         //             width: _d.w,
-//         //             height: _d.h
-//         //         }).html(count + "<br/>" + (count * 100 / globalData.length).toFixed(2) + "%")
-//         //     }
-//         // });
-//         $(".loading").css("display", "none");
-//         var hdata = []
-//         data.forEach(function(d) {
-//             hdata.push({
-//                 x: d.page_x,
-//                 y: d.page_y,
-//                 count: 1
-//             })
-//         })
-//         var config = {
-//             element: document.getElementById("map"),
-//             radius: 10,
-//             opacity: 50
-//         };
-
-//         //creates and initializes the heatmap
-//         var heatmap = h337.create(config);
-
-//         // let's get some data
-//         var data = {
-//             max: 70,
-//             data: hdata
-//         };
-
-//         heatmap.store.setDataSet(data);
-//         loadingTip.hide()
-//     }
-// });
 
 
 $("#show-map").click(function() {
