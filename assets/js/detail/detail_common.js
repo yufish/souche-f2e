@@ -11,7 +11,6 @@
         return false;
     });
 
-
     $("#detailDoor .tab-item").mouseenter(function() {
         var $this = $(this);
         var index = $this.index();
