@@ -307,11 +307,11 @@ Souche.MiniLogin = function() {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
                     display: "block",
-                    width: 400,
-                    height: 340,
+                    width: 500,
+                    height: 380,
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 200,
+                    left: $(window).width() / 2 - 220,
                     zIndex: 100000001
                 });
 
