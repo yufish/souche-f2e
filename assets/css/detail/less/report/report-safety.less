@@ -1,0 +1,65 @@
+
+@indexW: 40px;
+
+.safety-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #666;
+    
+    // item common
+    .safety-item{
+        float: left;
+        width: 50%;
+        height: 500px;
+        padding: 45px 45px 0 45px;
+        .box-sizing();
+
+        .safety-item-hd{
+            .safety-item-hd-index{
+                position: relative;
+                top: -8px;
+                float: left;
+                width: @indexW;
+                font-size: 52px;
+                // text-align: center;
+            }
+            .safety-item-hd-name{
+                margin-right: @indexW;
+                font-size: 16px;
+                margin-bottom: 4px;
+
+            }
+            .safety-item-hd-summary{
+                font-size: 20px;
+            }
+        }
+        .safety-item-bd{
+            padding-top: 45px;
+        }
+    }
+    .lft,
+    .rht{
+        border: none;
+        border-bottom: 1px solid @moduleBC;
+    }
+    .lft{
+        border-right: 1px solid @moduleBC;
+    }
+    // endof item common
+
+}
+
+
+.histogram{
+    
+    .y-axis{
+
+    }
+    .x-axis{
+
+    }
+    .chart-content{
+
+    }
+}
