@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <title>柱状图 demo</title>
+        <script src="/assets/js/lib/react-with-addons.js"></script>
+        <script src="/assets/js/lib/JSXTransformer.js"></script>
+        style.
+            .histogram{
+
+            }
+            .chart-content{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .chart-content.hor li{
+                position: relative;
+                height: 200px;
+                width: 40px;
+                background-color: #eee;
+                float: left;
+                margin-right: 2em;
+            }
+            .chart-content.hor li .bar-value{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: #ccc;
+                transition: height 300ms ease, background-color 300ms ease 250ms;
+            }
+            .chart-content.hor li .bar-value.danger{
+                background-color: #EF503B;
+            }
+            .chart-content.hor li .bar-value.normal{
+                background-color: #27C198;
+            }
+
+            .chart-content.hor li .guideLine{
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                border-top: 2px dashed #395175;
+                /*background-color: #000;*/
+            }
+    body
+        #ctn
+        a(href="javascript:update()") 更新数据
+
+        script(src="config.js")
+        script(type="text/jsx" src="coms-bar.js")
+        script(type="text/jsx" src="coms-histogram.js")
+        script(type="text/jsx" src="demo.js")
+        script.
+            var Histogram = window.Histogram;
+            // basic Histogram
+            function update(){
+                React.renderComponent( Histogram({config:window.config}), document.querySelector('#ctn'));
+            }

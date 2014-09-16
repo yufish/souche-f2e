@@ -3,7 +3,7 @@
   background: #fff;
   width:1144px;
   .report_module{
-    border:1px solid #eee;
+    border:1px solid @moduleBC;
     .report_hd{
       height:90px;
       background: #F2F2F2;
@@ -58,4 +58,13 @@
     }
   }
 
+}
+
+
+.clear-flt{
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
