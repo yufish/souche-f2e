@@ -291,23 +291,82 @@
             padding-bottom: 5px;
             
           }
+          .review-box{
+            overflow: hidden;
+            width: 700px;
+            height: 240px;
+            position: relative;
+          }
+          .flex-direction-nav{
+            width: 30px;
+            height: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+            .flex-prev{
+              display: block;
+              width: 4px;
+              height: 9px;
+              background: url(../../assets/images/worthbuy/Previous.png) no-repeat;
+             margin: 0;
+             left: 0px;
+             top: 0;
 
-          .review-cont{
-            margin-top: 15px;
+            }
+            .flex-next{
+              display: block;
+              width: 4px;
+              height: 9px;
+              background: url(../../assets/images/worthbuy/Next.png) no-repeat;
+              margin: 0;
+              left: 22px;
+              top: 0;
+            }
+          }
+          .flex-viewport{
+           
             font-size: 14px;
             border: 1px solid #E4E3E3;
             border-bottom: none;
-            padding: 15px;
+            
             ul{
-              width: 330px;
-              float: left;
-              padding-left: 20px;
-              border-right: 1px dotted #E4E3E3;
               li{
-                list-style-type: disc;
                 color: #999;
-                em{
-                  color: #FF5517;
+                width:700px;
+                height: 240px;
+                .old-journal{
+                  margin: 40px ;
+                  margin-left: 50px;
+                  .journal-item{
+                    width: 300px;
+                    float: left;
+                   a{
+                      display: block;
+                      color: #999;
+                      height: 30px;
+                      line-height: 30px;
+                      i{
+                        display: block;
+                        width: 5px;
+                        height: 5px;
+                        background: url(../../assets/images/worthbuy/list-des.png) no-repeat;
+                        margin-top: 12px;
+                        margin-right: 10px;
+                        float: left;
+
+                      }
+                      em{
+                        float: left;
+                      }
+                      span{
+                        color: #FF5517;
+                        font-style: normal;
+                        font-size: 16px;
+                        float: left;
+                      }
+                    }
+                  }
                 }
               }
             }
