@@ -173,15 +173,15 @@
 .car-wrapper{
     width: 50%;
     float: left;
+    padding: 0 5px;
 }
 .car-card{
-    width: 145px;
+    width: 100%;
     margin: 10px auto 0;
     background: #fff;
     border:1px solid #d9d9d9;
     display: block;
     position: relative;
-
 }
 .car-card .time-limit-icon{
     position: absolute;
@@ -215,8 +215,7 @@
     background-position: -95px 0;
 }
 .car-card img{
-    width: 143px;
-    height: 98px;
+    width: 100%;
 }
 .car-card .car-info{
     padding: 10px 8px 0;
