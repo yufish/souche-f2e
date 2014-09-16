@@ -92,28 +92,6 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                 }).fill(textColor);
             }
 
-
-//
-//            for (var i = 0; i < maxL; i++) {
-//                var d = feiyongs[i];
-//                var fillColor = "#cfe6cf";
-//                var textColor = "#a0c9a0";
-//                if (i < nowIndex) {
-//                    fillColor = "#e6e6e6";
-//                    textColor = "#ccc";
-//                } else if (i == nowIndex) {
-//                    fillColor = "#63b162"
-//                    textColor = "#999";
-//                }
-//                this.drawColumn(i, feiyongs[i])
-//
-//                svg.plain((i + 1) * 0.5 + "万").attr({
-//                    x: i * 45 + 6 + 30,
-//                    y: 370
-//                }).font({
-//                    size: 12
-//                }).fill(textColor);
-//            }
             svg.plain("里程:公里").attr({
                 x: 998,
                 y: 371
