@@ -51,7 +51,7 @@ body{
     background-size: 100%;
 }
 nav .nav-item{
-    width: 33.3%;
+    width: 25%;
     float: left;
     text-align: center;
     font-size: 13px;
@@ -74,9 +74,6 @@ nav .nav-item.active .nav-item-content{
     position: absolute;
     bottom: 0;
     left: 0;
-}
-#J_tab1_name{
-    margin-left: -8px;
 }
 #J_tabCover{
     overflow: hidden;
@@ -371,23 +368,20 @@ nav .nav-item.active .nav-item-content{
     text-align: center;
     padding: 0 16px;
 }
-.btn-wrapper-for-filter button{
-    font-size: 14px;
-    border: none;
-    height: 40px;
-    color: #fff;
-    vertical-align: middle;
-}
 #J_btnFilter_reset{
     background: #e44700;
     width: 60px;
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
 }
-#J_btnFilter_submit{
+.btn-submit{
     background: #ff5a00;
     width: 100%;
     border-radius: 3px;
+    font-size: 14px;
+    border: none;
+    height: 40px;
+    color: #fff;
 }
 .filter-popup-wrapper {
     position: absolute;

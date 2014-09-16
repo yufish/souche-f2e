@@ -118,9 +118,9 @@ if (navigator.userAgent.match(/Android/i)){
         try {
             var tabIndex = sessionStorage.getItem('index_tab_index');
             tabIndex = tabIndex || 1;
-            //如果cookie中有temp_tab，那么跳到相应的tab。只有2、3是合法值
+            //如果cookie中有temp_tab，那么跳到相应的tab。只有1,2,3,4是合法值
             var tabCookie = $.cookie("temp_tab");
-            if (tabCookie==1||tabCookie == 2 || tabCookie == 3) {
+            if (tabCookie==1||tabCookie == 2 || tabCookie == 3||tabCookie==4) {
                 tabIndex = tabCookie;
                 $.removeCookie("temp_tab", {path: "/"})
                 //$.cookie('temp_tab',-1)
@@ -235,65 +235,66 @@ if (navigator.userAgent.match(/Android/i)){
     }
 }()
 //筛选相关
+var hotBrands_g = {
+    "brand-15": "奥迪",
+    "brand-20": "宝马",
+    "brand-25": "奔驰",
+    "brand-27": "本田",
+    "brand-29": "标致",
+    "brand-30": "别克",
+    "brand-41": "大众",
+    "brand-49": "丰田",
+    "brand-53": "福特",
+    "brand-99": "路虎",
+    "brand-102": "马自达",
+    "brand-108": "迷你",
+    "brand-119": "起亚",
+    "brand-121": "日产",
+    "brand-134": "斯巴鲁",
+    "brand-135": "斯柯达",
+    "brand-146": "沃尔沃",
+    "brand-151": "现代",
+    "brand-154": "雪佛兰",
+    "brand-155": "雪铁龙"
+};
+var utils = {
+    getAllBrand : function (cb) {
+        $.ajax({
+            url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
+            dataType: "json",
+            success: cb
+        })
+    },
+    getSeriesByBrand :function (bCode, cb) {
+        $.ajax({
+            url: contextPath + "/pages/dicAction/loadExistSeries.json",
+            dataType: "json",
+            data: {
+                type: "car-subdivision",
+                code: bCode
+            },
+            success: cb
+        })
+    },
+    queryCarsCount:function(dataObj,cb){
+        $.ajax({
+            url: contextPath + '/pages/mobile/listAction/countMatchCars.json?tracktype=0',
+            data: dataObj,
+            dataType: 'json',
+            success: function(data){
+                if(data&&data.count){
+                    cb(null,data.count)
+                }else{
+                    cb('数据格式错误',0);
+                }
+
+            }
+        })
+    }
+}
 !function(){
     var filterGlobal = {}; //用于本模块中公用变量的传递
-    var hotBrands_g = {
-        "brand-15": "奥迪",
-        "brand-20": "宝马",
-        "brand-25": "奔驰",
-        "brand-27": "本田",
-        "brand-29": "标致",
-        "brand-30": "别克",
-        "brand-41": "大众",
-        "brand-49": "丰田",
-        "brand-53": "福特",
-        "brand-99": "路虎",
-        "brand-102": "马自达",
-        "brand-108": "迷你",
-        "brand-119": "起亚",
-        "brand-121": "日产",
-        "brand-134": "斯巴鲁",
-        "brand-135": "斯柯达",
-        "brand-146": "沃尔沃",
-        "brand-151": "现代",
-        "brand-154": "雪佛兰",
-        "brand-155": "雪铁龙"
-    };
-    var utils = {
-        getAllBrand : function (cb) {
-            $.ajax({
-                url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
-                dataType: "json",
-                success: cb
-            })
-        },
-        getSeriesByBrand :function (bCode, cb) {
-            $.ajax({
-                url: contextPath + "/pages/dicAction/loadExistSeries.json",
-                dataType: "json",
-                data: {
-                    type: "car-subdivision",
-                    code: bCode
-                },
-                success: cb
-            })
-        },
-        queryCarsCount:function(dataObj,cb){
-            $.ajax({
-                url: contextPath + '/pages/mobile/listAction/countMatchCars.json?tracktype=0',
-                data: dataObj,
-                dataType: 'json',
-                success: function(data){
-                    if(data&&data.count){
-                        cb(null,data.count)
-                    }else{
-                        cb('数据格式错误',0);
-                    }
 
-                }
-            })
-        }
-    }
 
     !function buildPrice(minSelect,maxSelect){
         var prices =[5, 8, 12, 16, 20, 25, 30, 50, 70, 100];
@@ -389,7 +390,7 @@ if (navigator.userAgent.match(/Android/i)){
                 }
                 html += '</div>';
             }
-            $('.series-content').append(html);
+            $('#series-list .series-content').append(html);
         }
         $('#J_brand').on('click',function(){
             //显示品牌弹出框
@@ -427,7 +428,7 @@ if (navigator.userAgent.match(/Android/i)){
         $('#brand-list').on('click','.item',function(){
             var self = $(this)
             //清空车系的状态
-            $('.series-content').empty();
+            $('#series-list .series-content').empty();
             $('#J_series').text('请先选择品牌').addClass('no-active');
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName='';
@@ -437,7 +438,7 @@ if (navigator.userAgent.match(/Android/i)){
                 filterGlobal.selectBrand = "";
                 filterGlobal.selectBrandName = "";
             }else{
-                $('#brand-list .item').removeClass('selected');
+                self.find('.item').removeClass('selected');
                 self.addClass('selected');
                 setTimeout(function(){
                     $('.filter-popup-wrapper').addClass('hidden');
@@ -456,13 +457,12 @@ if (navigator.userAgent.match(/Android/i)){
             filterGlobal.queryCount();
         })
         $('#series-list').on('click','.series-item',function(){
-
             var self = $(this);
             if(self.hasClass('selected')){
                 self.removeClass('selected');
                 $('#J_series').text('选择车系');
             }else{
-                $('#series-list .series-item').removeClass('selected');
+                self.find('.series-item').removeClass('selected');
                 self.addClass('selected');
                 setTimeout(function(){
                     $('.filter-popup-wrapper').addClass('hidden');
@@ -939,4 +939,149 @@ $('.wrapGrayBg').on('click',function(){
     });*/
 
 }(req_config)
+
+//sell-car brand-series
+!function(){
+    var sellGlobal = {}
+
+    function makeBrands(brands) {
+        var b, otherBrandsStr = '';
+        var brandList = $('#brand-list-for-sell');
+
+        var $otherCtn = brandList.find('#other-brands-for-sell');
+        for (var i = 0; i < brands.length; i++) {
+            b = brands[i];
+            if (!hotBrands_g[b.code]) {
+                otherBrandsStr += '<div data-code="' + b.code + '" class="item col-1-4"><span class="brand-name">' + b.enName + '</span></div>';
+            }
+        }
+        $otherCtn.append(otherBrandsStr);
+    }
+    function makeSeries(data){
+        var codes = data['codes'];
+        var html = '';
+        for (var i in codes) {
+            //html += '<div class="clearfix" >';
+            html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
+            var s = codes[i];
+            for (var j in s) {
+                var b = s[j];
+                html += '<div class="series-item" data-code="' + b.code + '"><span class="series-name">' + b.name + '</span></div>';
+            }
+            html += '</div>';
+        }
+        $('#series-list-for-sell .series-content').append(html);
+    }
+    $('#J_brand-for-sell').on('click',function(){
+        //显示品牌弹出框
+        $('.wrapGrayBg').removeClass('hidden');
+        $('#brand-list-for-sell').css({
+            top: document.body.scrollTop + 50
+        }).removeClass('hidden');
+
+        var self = $(this);
+        if(self.attr('hasLoaded'))return;
+        //add hot brands first
+        var hotBrandsStr = '';
+        var $hotCtn = $('#brand-list-for-sell #hot-brands-for-sell');
+        for (var i in hotBrands_g) {
+            hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
+        }
+        $hotCtn.append(hotBrandsStr);
+        utils.getAllBrand(function(data){
+            self.attr('hasLoaded',true);
+            makeBrands(data.items);
+        })
+    })
+
+    $('#J_series-for-sell').on('click',function(){
+        if(sellGlobal.selectBrand=='')return;
+        $('.wrapGrayBg').removeClass('hidden');
+        $('#series-list-for-sell').css({
+            top: document.body.scrollTop + 50
+        }).removeClass('hidden');
+    })
+    sellGlobal.selectBrand = '';
+    sellGlobal.selectBrandName='';
+    sellGlobal.selectSeries = '';
+    sellGlobal.selectSeriesName='';
+    $('#brand-list-for-sell').on('click','.item',function(){
+        var self = $(this)
+        //清空车系的状态
+        $('#series-list-for-sell .series-content').empty();
+        $('#J_series-for-sell').text('请先选择品牌').addClass('no-active');
+        sellGlobal.selectSeries = '';
+        sellGlobal.selectSeriesName='';
+        if(self.hasClass('selected')){
+            self.removeClass('selected');
+            $('#J_brand-for-sell').text('选择品牌');
+            sellGlobal.selectBrand = "";
+            sellGlobal.selectBrandName = "";
+        }else{
+            $('#brand-list-for-sell .item').removeClass('selected');
+            self.addClass('selected');
+            setTimeout(function(){
+                $('.filter-popup-wrapper').addClass('hidden');
+                $('.wrapGrayBg').addClass('hidden');
+            },200);
+            var bName = self.find('.brand-name').text()
+            var bCode = self.attr('data-code');
+            $('#J_brand-for-sell').text(bName);
+            $('.selected-brand-name').text(bName);
+            sellGlobal.selectBrand = bCode;
+            sellGlobal.selectBrandName = bName;
+
+            utils.getSeriesByBrand(bCode,makeSeries);
+            $('#J_series-for-sell').text('选择车系').removeClass('no-active')
+        }
+    })
+    $('#series-list-for-sell').on('click','.series-item',function(){
+        var self = $(this);
+        if(self.hasClass('selected')){
+            self.removeClass('selected');
+            $('#J_series-for-sell').text('选择车系');
+        }else{
+            self.find('.series-item').removeClass('selected');
+            self.addClass('selected');
+            setTimeout(function(){
+                $('.filter-popup-wrapper').addClass('hidden');
+                $('.wrapGrayBg').addClass('hidden');
+            },200)
+            var sName = self.find('.series-name').text()
+            var sCode = self.attr('data-code');
+            sellGlobal.selectSeries = sCode;
+            sellGlobal.selectSeriesName = sName;
+            $('#J_series-for-sell').text(sName);
+        }
+    })
+
+    $('#J_sellcar_submit').click(function(){
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        var phoneNum = $('#phonenum-for-sell').val();
+        if(!phoneReg.test(phoneNum)){
+            alert('手机号填写错误，请输入正确的手机号码');
+            return;
+        }
+        var ajaxData= {
+            brand:sellGlobal.selectBrand,
+            series:sellGlobal.selectSeries,
+            mobile:phoneNum
+        }
+        var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
+
+        $.ajax({
+            url:actionUrl,
+            data:ajaxData,
+            dataType:"json",
+            success:function(data){
+                if(data.errorMessage){
+                    alert(data.errorMessage)
+                }else{
+                    alert("提交成功，稍后客服会主动联系您，请确保您注册的手机号可以联系到您。")
+                    //window.location.href="sell-success.html"
+                }
+            }
+        })
+    })
+}()
 

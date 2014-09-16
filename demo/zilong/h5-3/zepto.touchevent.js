@@ -1,20 +1,12 @@
-
 //     Zepto.js
 //     (c) 2010-2014 Thomas Fuchs
 //     Zepto.js may be freely distributed under the MIT license.
 
-//在原开源文件中，加了2处,用于解决android上的bug
 ;(function($){
     var touch = {},
         touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
         longTapDelay = 750,
         gesture
-
-    //① added
-    var isAndroid = false;
-    if (navigator.userAgent.match(/Android/i)){
-        isAndroid =true;
-    }
 
     function swipeDirection(x1, x2, y1, y2) {
         return Math.abs(x1 - x2) >=
@@ -86,8 +78,8 @@
                 touch.el = $('tagName' in firstTouch.target ?
                     firstTouch.target : firstTouch.target.parentNode)
                 touchTimeout && clearTimeout(touchTimeout)
-                touch.x1 = firstTouch.clientX
-                touch.y1 = firstTouch.clientY
+                touch.x1 = firstTouch.pageX
+                touch.y1 = firstTouch.pageY
                 if (delta > 0 && delta <= 250) touch.isDoubleTap = true
                 touch.last = now
                 longTapTimeout = setTimeout(longTap, longTapDelay)
@@ -99,14 +91,11 @@
                     !isPrimaryTouch(e)) return
                 firstTouch = _isPointerType ? e : e.touches[0]
                 cancelLongTap()
-                touch.x2 = firstTouch.clientX
-                touch.y2 = firstTouch.clientY
+                touch.x2 = firstTouch.pageX
+                touch.y2 = firstTouch.pageY
+
                 deltaX += Math.abs(touch.x1 - touch.x2)
                 deltaY += Math.abs(touch.y1 - touch.y2)
-                //② added
-                if(isAndroid && deltaX > 10 && deltaX>deltaY){
-                    e.preventDefault()
-                }
             })
             .on('touchend MSPointerUp pointerup', function(e){
                 if((_isPointerType = isPointerEventType(e, 'up')) &&
