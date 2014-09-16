@@ -914,12 +914,22 @@
     font-size: 14px;
     line-height: 26px;
 }
-.detail-card .ss-content .chechen-order{
+.detail-card .ss-content .cheshen-order{
     float: left;
 }
-.detail-card .ss-content .chechen-p{
+.detail-card .ss-content .cheshen-p{
     margin-left: 16px;
 }
+.detail-card .ss-content .cheshen-lookall{
+    border: 1px solid #e6e6e6;
+    margin-top: 16px;
+    padding:10px 15px;
+    background: #fff;
+    border-radius: 3px;
+    color: #666;
+}
+
+
 #actions .action-btn-bar{
     text-align: center;
 }
