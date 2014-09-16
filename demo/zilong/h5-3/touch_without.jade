@@ -9,7 +9,7 @@ html
         <link href="../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
         <link href="../../../assets/css/mobile/h5-3/index-h5-3.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../../assets/js/mobile/lib/appframework.min.js"></script>
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.touchevent.js"></script>
+        <script type="text/javascript" src="zepto.touchevent.js"></script>
     body
         .placeholder-for-tabNavBar
         .fixed-wrapper
@@ -48,13 +48,10 @@ html
                 include ./index-tab-1
                 include ./index-tab-2
                 include ./index-tab-3
-
         .wrapTransBg.hidden
         .btn-wrapper-for-filter.hidden(style="text-align:center")
             button#J_btnFilter_submit 为您找到100辆车
-
         .wrapGrayBg.hidden
-
         #brand-list.filter-popup-wrapper.hidden.
             <div class='title brand-title'>热门品牌</div>
             <div class='brand-content'>
@@ -69,9 +66,9 @@ html
             </div>
             <div class='series-content'>
             </div>
-
         footer.footer
             span.promise 服务承诺
             a.service(href="tel:4008-010-010") 拨打服务热线400-010-010
             .copyright © 2012-2014 Souche.com 版权所有
         script(src="../../../assets/js/mobile/index/h5-3-index.js")
+
