@@ -528,3 +528,147 @@ nav .nav-item.active .nav-item-content{
 .wrapGrayBg{
     z-index: 1005;
 }
+
+/*sell-car*/
+.img-ad{
+    box-sizing: border-box;
+}
+.img-ad .intro{
+    padding:0 20px;
+}
+.img-ad .title{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.img-ad .spec-title{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+
+}
+.img-ad .content{
+    color: #666;
+    font-size: 12px;
+}
+.img-ad .image-wrapper img{
+    width: 100%;
+}
+.img-ad p{
+    line-height: 18px;
+}
+.ad-1{
+    padding:23px 0 45px;
+    background-color: #f3f3f3;
+    border-top:1px solid #d9d9d9;
+}
+.ad-2{
+    padding:32px 0 30px;
+    background-color: #fff;
+}
+.ad-3{
+    padding:35px 0 40px;
+    background-color: #f3f3f3;
+}
+.ad-4{
+    padding:35px 0 40px;
+    background-color: #fff;
+}
+.image-w-1{
+    margin:0 auto;
+    margin-top: 15px;
+    width: 218px;
+    height: 141px;
+}
+.image-w-2{
+    margin:0 auto;
+    margin-top: 30px;
+    width: 232px;
+    height: 115px;
+}
+.image-w-3{
+    margin:0 auto;
+    margin-top: 45px;
+    width: 265px;
+    height: 97px;
+}
+.image-w-4{
+    margin:0 auto;
+    margin-top: 22px;
+    width: 273px;
+    height: 181px;
+}
+.text-center{
+    text-align: center;
+}
+ #faq {
+    background-color: #f3f3f3;
+    padding: 58px 20px 10px;
+}
+ #faq .title {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+}
+ #faq .title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #262626;
+}
+ #faq .faq-content {
+    margin: 0 auto;
+}
+ #faq .faq-content .faq-left {
+    float: left;
+}
+ #faq .faq-content .faq-left .question .q-title {
+    border-bottom: 3px solid #262626;
+    margin-right: 45px;
+
+}
+ #faq .faq-content .faq-left .question .q-title i {
+    display: inline-block;
+    vertical-align: -3px;
+    width: 15px;
+    height: 15px;
+    background: url(../../../images/mob/sellcar/q.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: 5px;
+}
+ #faq .faq-content .faq-left .question .q-title span {
+    font-size: 14px;
+    color: #262626;
+    line-height: 20px;
+}
+ #faq .faq-content .faq-left .question .q-answer {
+    margin-top: 15px;
+}
+ #faq .faq-content .faq-left .question .q-answer p {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+ #faq .faq-content .faq-left .question .q-answer p a {
+    color: #0090cc;
+    cursor: pointer;
+}
+ #faq .faq-content .faq-left .q2 .q-answer h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    margin-top: 15px;
+}
+ #faq .faq-content .faq-left .q3 .q-answer ul li {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+ #faq .faq-content .faq-left .q3 .q-answer .answer-left {
+    float: left;
+    margin-right: 60px;
+}
+ #faq .faq-content .faq-left .q3 .q-answer .answer-right {
+    float: left;
+}
+

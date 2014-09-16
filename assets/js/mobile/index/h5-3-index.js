@@ -57,18 +57,23 @@ if (navigator.userAgent.match(/Android/i)){
     tabPanels.css({width:widthOfPanel+'%'});
 
     //记录每一个tabPanel的scrollTop，便于恢复到相应位置
-    var topCache=[0,0,0];
+    var topCache=[0,0,0];//topCache=[] 即可
 
     var isMoving = false;
-    function afterMove(oldIndex,curIndex,init){
+    function afterMove(oldIndex,curIndex){
         navItems.removeClass('active')
         navItems.eq(curIndex-1).addClass('active')
         tabNavBar.attr('data-active-index',curIndex)
-        if(!init){
-            var height = tabPanels.eq(curIndex-1).height();
-            height = height<610?610:height;
-            tabCover.css({height:height})
-        }
+
+        tabPanels.each(function(index,item){
+            if(index==curIndex-1){
+                $(this).css("height",'auto')
+            }else{
+                $(this).css('height',610)
+            }
+        })
+
+
         try{
             sessionStorage.setItem('index_tab_index',curIndex);
         }catch(e){}
@@ -85,13 +90,13 @@ if (navigator.userAgent.match(/Android/i)){
             $('.btn-wrapper-for-filter').addClass('hidden')
         }
     }
-    var move = function (curIndex,init) {
+    var move = function (curIndex) {
         if(isMoving)return;
         isMoving = true;
         var moveIndex = curIndex - 1;
         tabCtn[0].style[transform] = 'translateX(-' + moveIndex * widthOfPanel + '%) translateZ(0)';
         var oldIndex = tabNavBar.attr('data-active-index')
-        afterMove(oldIndex, curIndex,init)
+        afterMove(oldIndex, curIndex)
     }
 //    var move = function(){
 //        if(isAndroid){
@@ -128,12 +133,14 @@ if (navigator.userAgent.match(/Android/i)){
             tabCtn[0].style['transition'] = 'none'
             tabCtn[0].style['webkitTransition'] = 'none'
 
-            move(+tabIndex, tabIndex == 3);
+            //move(+tabIndex, tabIndex != 2);
+            move(+tabIndex);
             setTimeout(function () {
                 tabCtn[0].style['transition'] = +'all 0.4s linear'
                 tabCtn[0].style['webkitTransition'] = 'all 0.4s linear'
             }, transition_duration)
         } catch (e) {
+            console.log(e)
         }
     }()
 
@@ -142,12 +149,12 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.stopPropagation();
 //    })
     navItems.on(touch_end,function(e){
-            e.preventDefault();
-            //e.stopPropagation();
-            var index = +$(this).attr('data-nav-index');
-            var curIndex = tabNavBar.attr('data-active-index');
-            if(curIndex == index)return;
-            move(index);
+        e.preventDefault();
+        //e.stopPropagation();
+        var index = +$(this).attr('data-nav-index');
+        var curIndex = tabNavBar.attr('data-active-index');
+        if(curIndex == index)return;
+        move(index);
     })
     tabCtn.on('swipeLeft',function(e){
         e.preventDefault();
@@ -1079,6 +1086,17 @@ $('.wrapGrayBg').on('click',function(){
                 }else{
                     alert("提交成功，稍后客服会主动联系您，请确保您注册的手机号可以联系到您。")
                     //window.location.href="sell-success.html"
+                    $('#J_sellcar_submit').css({
+                        background:'#999'
+                    }).prop("disabled",true)
+                        .text("您已提交成功")
+
+                    setTimeout(function(){
+                        $('#J_sellcar_submit').css({
+                            background:'#ff571a'
+                        }).prop('disabled',false)
+                            .text('提交')
+                    },1500)
                 }
             }
         })
