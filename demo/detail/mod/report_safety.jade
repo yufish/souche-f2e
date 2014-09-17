@@ -9,18 +9,36 @@
       .icon 退
   .report_bd
     ul.safety-list.clear-flt
-        li.safety-item.lft
+        li.safety-item.lft.wheel-depth
             .safety-item-hd
                 h3.safety-item-hd-index 1
                 p.safety-item-hd-name 胎纹深度
                     .icon.icon-info
                 h4.safety-item-hd-summary 左后轮磨损严重, 建议更换
             .safety-item-bd
-                div.histogram
-                    ul.y-axis
-                    ul.x-axis
-                    ul.chart-content
-
+                //- div.histogram.with-y.with-x
+                //-     ul.y-axis
+                //-         li.y-scale-item(style="top: 0%;") 1.9mm
+                //-         li.y-scale-item(style="top: 50%;") 1.6mm
+                //-         li.y-scale-item(style="top: 100%;") 1.2mm
+                //-     ul.chart-content
+                //-         li.chart-bar
+                //-             .bar-value(style="height:60%;").normal
+                //-             .guideLine
+                //-         li.chart-bar
+                //-             .bar-value(style="height:50%;").danger
+                //-             .guideLine
+                //-         li.chart-bar
+                //-             .bar-value(style="height:75%;")
+                //-             .guideLine
+                //-         li.chart-bar
+                //-             .bar-value(style="height:85%;")
+                //-             .guideLine
+                //-     ul.x-axis
+                //-         li.x-scale-item 左前轮
+                //-         li.x-scale-item 左后轮
+                //-         li.x-scale-item 右前轮
+                //-         li.x-scale-item 右后轮
         li.safety-item.rht
             .safety-item-hd
                 h3.safety-item-hd-index 2
@@ -44,3 +62,7 @@
                     .icon.icon-info
                 h4.safety-item-hd-summary 正常
             .safety-item-bd
+
+script.
+    require(['detail/report/histogram'], function(){
+    });
