@@ -61,6 +61,11 @@ if (navigator.userAgent.match(/Android/i)){
 
     var isMoving = false;
     function afterMove(oldIndex,curIndex){
+        if(curIndex!=1){
+            $('#buy-app').addClass('hidden')
+        }else{
+            $('#buy-app').removeClass('hidden')
+        }
         navItems.removeClass('active')
         navItems.eq(curIndex-1).addClass('active')
         tabNavBar.attr('data-active-index',curIndex)
@@ -946,6 +951,16 @@ $('.wrapGrayBg').on('click',function(){
     });*/
 
 }(req_config)
+
+//buy-app
+!function(){
+    var buyApp = $('#buy-app')
+    $('#buy-app .close').click(function(e){
+        e.preventDefault();
+        buyApp.hide();
+        $('#J_tabContainer .tab-panel:first-child').css({'margin-bottom':0})
+    })
+}()
 
 //sell-car brand-series
 !function(){
