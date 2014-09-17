@@ -1,8 +1,7 @@
 /**
  * Created by Administrator on 2014/6/27.
  */
-define(function()
-{
+define(function() {
     var constrastControl = {};
     var config = {};
 
@@ -15,8 +14,7 @@ define(function()
 
         var carconstrastID = $(".addcarduibi input").attr("contrastid");
 
-        if(e.target.tagName=="INPUT")
-        {
+        if (e.target.tagName == "INPUT") {
             $(".addcarduibi input")[0].checked = !$(".addcarduibi input")[0].checked;
         }
 
@@ -29,7 +27,7 @@ define(function()
                 url: config.api_addContrast,
                 dataType: "json",
                 context: self
-            }).done(function (data) {
+            }).done(function(data) {
                 if (data.result == 2) {
                     $(".addcarduibi input").attr("checked", 'true');
 
@@ -49,7 +47,7 @@ define(function()
                     cloneElement.animate({
                         top: endY,
                         left: endX
-                    }, 500, function () {
+                    }, 500, function() {
                         cloneElement.remove();
                     });
 
@@ -60,31 +58,27 @@ define(function()
                 if (data.result == -1) {
                     $(".addcarduibi input").attr("checked", 'true');
                     $(this).find(".contrast-waring").html("对比已添加！你不需要继续添加。").removeClass("hidden");
-                    var context= $(this);
-                    window.setTimeout(function()
-                    {
+                    var context = $(this);
+                    window.setTimeout(function() {
                         context.find(".contrast-waring").addClass("hidden");
-                    },2000);
+                    }, 2000);
                     return;
                 }
                 if (data.result == 1) {
                     $(this).find(".contrast-waring").html("对比栏已满！你可以删除不需要的车辆，再继续添加。").removeClass("hidden");
-                    var context= $(this);
-                    window.setTimeout(function()
-                    {
+                    var context = $(this);
+                    window.setTimeout(function() {
                         context.find(".contrast-waring").addClass("hidden");
-                    },2000);
+                    }, 2000);
                     return;
                 }
                 $(this).find(".contrast-waring").html("加入对比失败，请刷新页面。").removeClass("hidden");
-                var context= $(this);
-                window.setTimeout(function()
-                {
+                var context = $(this);
+                window.setTimeout(function() {
                     context.find(".contrast-waring").addClass("hidden");
-                },2000);
+                }, 2000);
             });
-        }
-        else {
+        } else {
             if (!carconstrastID) {
                 return;
             }
@@ -95,7 +89,7 @@ define(function()
                 data: {
                     cid: $(".addcarduibi input").attr("contrastid")
                 }
-            }).done(function (data) {
+            }).done(function(data) {
                 $(".addcarduibi input").removeAttr("checked");
                 $(".addcarduibi input").removeAttr("contrastid");
             });
@@ -104,9 +98,8 @@ define(function()
     }
 
 
-    var init = function(_config)
-    {
-        $.extend(config,_config);
+    var init = function(_config) {
+        $.extend(config, _config);
         $(".addcarduibi").on("click", operationCarDuibi);
     }
 
