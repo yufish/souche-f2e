@@ -50,16 +50,124 @@
 
 }
 
+@barBGC: @moduleHeadBGC;
+@yW: 58px;
+@yDis: 15px;
+@barW: 50px;
+@barH: 215px;
+@barDis: 25px;
+// 几个样式值由js实例化对象的时候设定:
+// y轴是否显示, y轴的宽度, 高度(与bar的高度一致)
+// chart-bar的宽高, (颜色暂时不给定义), 间隔距离
+// x轴宽度 = bar数量*bar宽 + (bar数量-1)*间隔宽
+// x轴刻度不可以超出bar的宽度
+// x轴刻度间隔 = bar间隔
+
 
 .histogram{
-    
-    .y-axis{
+    position: relative;
+    margin: 0 auto;
+    .clear-flt();
 
+    width: @barW*4 + @barDis*3 + @yW + @yDis;
+    
+    &.with-x{
+        .x-axis{
+            display: block;
+        }
+    }
+    &.with-y{
+        .y-axis{
+            display: block;
+        }
+        .chart-content{
+            margin-left: @yW + @yDis;
+        }
+    }
+    .y-axis{
+        position: absolute;
+        display: none;
+        font-size: 14px;
+        top: 0;
+        left: 0;
+        
+        // set by js, same as chart-bar;
+        width: @yW;
+        height: @barH;
+
+        .y-scale-item{
+            position: absolute;
+            width: 100%;
+            color: #aaa;
+            line-height: 16px;
+            margin-top: -8px;
+            text-align: right;
+        }
     }
     .x-axis{
+        float: right;
+        display: none;
+        margin-top: 5px;
+        padding-top: 8px;
+        border-top: 2px solid @moduleBC;
+        font-size: 16px;
+        .clear-flt();
 
+        width: @barW*4 + @barDis*3;
+
+        .x-scale-item{
+            float: left;
+            text-align: center;
+            .text-collapse();
+
+            // set by js
+            width: @barW;
+            margin-left: @barDis;
+            &:first-child{
+                margin-left: 0;
+            }
+            // end of set by js
+        }
     }
     .chart-content{
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
+        .chart-bar{
+            position: relative;
+            float: left;
+            background-color: @barBGC;
+                
+            // temp value
+            width: @barW;
+            height: @barH;
+            margin-left: @barDis;
+            &:first-child{
+                margin-left: 0;
+            }
+
+
+            .bar-value,
+            .guideLine{
+                position: absolute;
+                left: 0;
+                right: 0;
+            }
+            .bar-value{
+                bottom: 0;
+                background-color: darken(@moduleBC, 10%);
+                &.normal{
+                    background-color: @green;
+                }
+                &.danger{
+                    background-color: @red;
+                }
+            }
+            .guideLine{
+                bottom: percentage((1.6-1.2)/(1.9-1.2));
+                border-top: 2px dashed #aaa;
+            }
+        }    
     }
 }
