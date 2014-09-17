@@ -165,25 +165,28 @@ function(AddSeries,CustomSelect){
                 }
                 rss_isSubmiting = true;
                 $(this).addClass("loading").html("提交中")
-                $.ajax({
-                    url:config.submit_api,
-                    data:{
-                        brands:data.brands.join(","),
-                        series:data.series.join(","),
-                        minYear:data.startYear,
-                       maxYear:data.endYear,
-                        minPrice:data.minPrice,
-                        maxPrice:data.maxPrice
-                    },
-                    dataType:"json",
-                    success:function(result){
-                        window.location.reload()
-                    },
-                    error:function(){
+                Souche.MiniLogin.checkLogin(function(){
+                    $.ajax({
+                        url:config.submit_api,
+                        data:{
+                            brands:data.brands.join(","),
+                            series:data.series.join(","),
+                            minYear:data.startYear,
+                            maxYear:data.endYear,
+                            minPrice:data.minPrice,
+                            maxPrice:data.maxPrice
+                        },
+                        dataType:"json",
+                        success:function(result){
+                            window.location.reload()
+                        },
+                        error:function(){
 
-                        rss_isSubmiting = false;
-                    }
+                            rss_isSubmiting = false;
+                        }
+                    })
                 })
+
             })
             //获取一个初始宽度
             if($(".dialogContentContainer").hasClass("hidden")){
