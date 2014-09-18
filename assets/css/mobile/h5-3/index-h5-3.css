@@ -473,6 +473,32 @@ nav .nav-item.active .nav-item-content{
     margin-right: 10px;
 }
 /* tab-panel-3*/
+.walk-tabs{
+    margin-bottom: 10px;
+}
+.walk-tabs .walk-tab-item{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #F5F5F5;
+    color: #666;
+    border:1px solid #ccc;
+    border-left:none
+}
+.walk-tabs .walk-tab-item.active{
+    background: #fff;
+    color: #ff571a;
+}
+.walk-tabs .walk-tab-item:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border:1px solid #ccc;
+}
+.walk-tabs .walk-tab-item:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 .walkaround-area{
     padding:10px;
 }
@@ -534,7 +560,7 @@ nav .nav-item.active .nav-item-content{
     box-sizing: border-box;
 }
 .img-ad .intro{
-    padding:0 20px;
+    padding:0 15px;
 }
 .img-ad .title{
     font-size: 14px;
