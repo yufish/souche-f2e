@@ -484,21 +484,16 @@ nav .nav-item.active .nav-item-content{
     background: #F5F5F5;
     color: #666;
     border:1px solid #ccc;
-    border-left:none
+    padding:0 10px;
+    border-radius: 15px;
+    margin-right: 15px;
 }
 .walk-tabs .walk-tab-item.active{
     background: #fff;
     color: #ff571a;
+    border:1px solid #ff571a;
 }
-.walk-tabs .walk-tab-item:first-child{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border:1px solid #ccc;
-}
-.walk-tabs .walk-tab-item:last-child{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+
 .walkaround-area{
     padding:10px;
 }
