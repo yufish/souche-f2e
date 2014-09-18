@@ -6,7 +6,7 @@ define(function(){
     // 
     /* demo:
     var demoConfig = {
-        axix: {
+        axis: {
             style: {},
             className: 'y-axis'
         },
@@ -24,8 +24,8 @@ define(function(){
     */
          
     var Axis = function(config){
-        var axix = document.createElement('ul');
-        axix.setAttribute('class', config.axix.className);
+        var axis = document.createElement('ul');
+        axis.setAttribute('class', config.axis.className);
         var scaleItemClassName = config.scale.className;
 
         var styleStr = '';
@@ -86,9 +86,9 @@ define(function(){
             }
         }
 
-        axix.innerHTML = html;
-        axix.setAttribute('style', styleStr);
-        return axix;
+        axis.innerHTML = html;
+        axis.setAttribute('style', styleStr);
+        return axis;
     };
 
 

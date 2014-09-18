@@ -41,6 +41,7 @@ define(function(){
     //     <div class="guideLine"></div>
     // </li>
 
+    var DEFAULT_VALUECLASS = 'bar-value';
 
     var Bar = function(config){
         var li = document.createElement('li');
@@ -112,7 +113,7 @@ define(function(){
         var result = {};
 
         var valueStyle = 'height: '+ safeValue((value - min)/(max - min))*100 +'%;';
-        var classArr = ['bar-value'];
+        var classArr = [DEFAULT_VALUECLASS];
         var text = '';
         if( typeof guide === 'number'){
             if(value >= guide){
@@ -129,9 +130,17 @@ define(function(){
         // }
 
         result.attr = {
-            _style: valueStyle,
-            _class: classArr.join(' ')
+            _style: valueStyle
         };
+        // 如果传入的condClass为真
+        if(config.condClass){
+            result.attr._class = classArr.join(' ');
+        }
+        // false时  只带有默认class
+        else{
+            result.attr._class = DEFAULT_VALUECLASS;
+        }
+        
         result.content = text;
         return result;
     }

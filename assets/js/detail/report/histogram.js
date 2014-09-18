@@ -33,7 +33,8 @@ define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
             max: config.bar.max,
             min: config.bar.min,
             guide: config.bar.guide,
-            cond: config.bar.cond
+            cond: config.bar.cond,
+            condClass: false
         };
         var items = config.bar.items;
         for(var i=0, j=items.length; i<j; i++){
@@ -95,6 +96,7 @@ define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
         if( valueArray.length !== this.bar.length ){
             console.log('传入新值的数量与柱子数量不符... 只更新部分bar或部分数据...');
         }
+        this.barConf.condClass = true;
         // 遍历传入数组, 边界为柱子个数(多传值忽略)
         for(var i=0, j=getMin(this.bar.length, valueArray.length); i<j; i++){
             // 允许某个值为undefined或null, 这样就跳过这个更新
