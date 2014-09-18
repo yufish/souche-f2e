@@ -27,7 +27,7 @@ html
         <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=6" rel="stylesheet" type="text/css" />
         <link href="http://f2e.souche.com/assets/css/souche/common.css?t=12" rel="stylesheet" type="text/css" />
         <link href="http://f2e.souche.com/assets/css/sidebar.css?t=6" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=6"></script>
+        <script type="text/javascript" src="http://chenllos.com/util/jquery-1.8.3.js?t=6"></script>
         <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js?t=6"></script>
         <script>
             var contextPath = "";
@@ -118,4 +118,8 @@ body#onsale_detail
         require(['detail/detail_common'], function (DetailCommon){
             DetailCommon.init(SaleDetailConfig);
         });
+        require(['detail/report/index'], function (report){
+            //- report.init();
+        });
+
         Souche.OnsaleDetail.init(SaleDetailConfig);

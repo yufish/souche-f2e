@@ -1,99 +1,10 @@
-define(function(){
-    var demoConfig = {
-        y:{
-            show: true,
-            style: {
-                width: '58px',
-                dis: '20px'
-            },
-
-            axix: {
-                style: {},
-                className: 'y-axis'
-            },
-            scale: {
-                style: {},
-                className: 'y-scale-item',
-                items: [
-                    {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>警戒值', value: 1.6},
-                    {text: '1.2mm', value: 1.2}
-                ],
-                valueStyleProp: 'top'
-            }
-        },
-        bar: {
-            style: {
-                width: '50px',
-                height: '215px',
-                dis: '25px'
-            },
-            items: [
-                {
-                    // join name and value together and show as title
-                    name: '左前轮',
-                    value: 1.8
-                },
-                {
-                    name: '左后轮',
-                    value: 1.55
-                },
-                {
-                    name: '右前轮',
-                    value: 1.65
-                },
-                {
-                    name: '右后轮',
-                    value: 1.75
-                }
-            ],
-            max: 1.9,
-            min: 1.2,
-            guide: 1.6,
-            cond: {
-                more: {
-                    className: 'normal',
-                    text: '安全'
-                },
-                less: {
-                    className: 'danger',
-                    text: '危险'
-                }
-            }
-            // another version:
-            // if guide is a array
-            // classes can have a between porp
-            // guide: [1.5, 1.7],
-            // classes: {
-            //     more: 'danger',
-            //     less: 'danger',
-            //     between: 'normal'
-            // }
-        },
-        x: {
-            show: true,
-            axix: {
-                style: {},
-                className: 'x-axis'
-            },
-            scale: {
-                style: {},
-                className: 'x-scale-item',
-                items: [
-                    {text: '左前轮'},
-                    {text: '左后轮'},
-                    {text: '右前轮'},
-                    {text: '右后轮'}
-                ]
-            }
-        },
-        ctn: $('.wheel-depth .safety-item-bd')
-    };
+define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
 
 
     var Histogram = function(config){
         this.ctn = config.ctn;
         this.ele = $(document.createElement('div'));
+        this.bar = [];
         var gramClass = ['histogram'];
         var htmlStr = '';
         // 默认加上"竖直的"类
@@ -106,7 +17,7 @@ define(function(){
             gramClass.push('with-y');
             // y轴高度和bar一样
             config.y.style.height = config.bar.style.height;
-            this.yAxis = new window.Axis(config.y);
+            this.yAxis = new Axis(config.y);
             this.ele.append(this.yAxis);
         }
         // Y轴占据的空间的宽度
@@ -117,29 +28,34 @@ define(function(){
         var chartContent = $(document.createElement('ul'));
         chartContent.attr('class', 'chart-content');
         var chartFrag = document.createDocumentFragment();
+        this.barConf = {
+            style: config.bar.style,
+            max: config.bar.max,
+            min: config.bar.min,
+            guide: config.bar.guide,
+            cond: config.bar.cond
+        };
         var items = config.bar.items;
         for(var i=0, j=items.length; i<j; i++){
-            var barConf = {
-                style: config.bar.style,
-                max: config.bar.max,
-                min: config.bar.min,
-                guide: config.bar.guide,
-                cond: config.bar.cond
-            };
+            var barConf = {};
+            for( var k in this.barConf ){
+                barConf[k] = this.barConf[k];
+            }
             barConf.name = items[i].name;
             barConf.value = items[i].value;
             var tmpBar = new Bar(barConf);
             if(i !== 0){
-                tmpBar.style.marginLeft = config.bar.style.dis;
+                tmpBar.el.style.marginLeft = config.bar.style.dis;
             }
-            chartFrag.appendChild( tmpBar );
+            chartFrag.appendChild( tmpBar.el );
+            this.bar.push(tmpBar);
         }
         var chartW = j*px2Number(config.bar.style.width) + (j-1)*px2Number(config.bar.style.dis);
         chartContent.css({
-            width: chartW,
+            width: chartW + 'px',
             height: config.bar.style.height,
-            'margin-left': yAxisSpaceW
-        })
+            'margin-left': yAxisSpaceW + 'px'
+        });
         chartContent.append(chartFrag);
         this.ele.append(chartContent);
 
@@ -154,10 +70,14 @@ define(function(){
                 config.x.style = {};
             }
             config.x.style.width = chartW + 'px';
-            config.x.scale.style.width = chartW + 'px';
-            config.x.scale.style.dis = config.bar.style.dis;
+            // 根据bar宽度和间距, 定位x-axis刻度的宽度和间距
+            if(!config.x.scale.style){
+                config.x.scale.style = {};
+            }
+            config.x.scale.style.width = config.bar.style.width || 'auto';
+            config.x.scale.style.dis = config.bar.style.dis || 'auto';
 
-            this.xAxis = new window.Axis(config.x);
+            this.xAxis = new Axis(config.x);
             this.ele.append(this.xAxis);
         }
         // this.ele.html(htmlStr);
@@ -170,16 +90,51 @@ define(function(){
         return this;
     };
 
+    // 接受一个数组作为参数, 对应各个bar
+    Histogram.prototype.updateBar = function(valueArray) {
+        if( valueArray.length !== this.bar.length ){
+            console.log('传入新值的数量与柱子数量不符... 只更新部分bar或部分数据...');
+        }
+        // 遍历传入数组, 边界为柱子个数(多传值忽略)
+        for(var i=0, j=getMin(this.bar.length, valueArray.length); i<j; i++){
+            // 允许某个值为undefined或null, 这样就跳过这个更新
+            if( valueArray[i] !== undefined && valueArray[i] !== null){
+                var barConf = {};
+                for( var k in this.barConf ){
+                    barConf[k] = this.barConf[k];
+                }
+                barConf.value = Number(valueArray[i]);
+                this.bar[i].update(barConf);
+            }
+        }
+        return this;
+    };
+
     function px2Number(pxStr){
         return Number(pxStr.substr(0, pxStr.length-2));
     }
+    function getMin(){
+        var arr = null;
+        if( arguments[0].isArray() ){
+            arr = arguments[0];
+        }
+        else{
+            arr = [].slice.call(arguments);
+        }
+        var min = Infinity;
+        for(var i=0, j=arr.length; i<j; i++){
+            if( arr[i] < min ){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
 
-
-
-    // function getMax
-
-    var hist = new Histogram(demoConfig);
-
+    if( !Object.prototype.isArray ){
+        Object.prototype.isArray = function(){
+            return Object.prototype.toString.call(this) === '[object Array]';
+        }
+    }
 
     return Histogram;
 });

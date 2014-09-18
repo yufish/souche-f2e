@@ -1,4 +1,4 @@
-(function(){
+define(function(){
     // config
     //      list className
     //      scale item className
@@ -37,15 +37,15 @@
 
         var html = '';
         var items = config.scale.items;
-        // var itemStyle = config.scale.style;
-        // var styleStr = {
-        //     first: '',
-        //     common: ''
-        // }
-        // if(itemStyle){
-        //     styleStr.first = 'width: ' +(itemStyle.width|| 'auto')+ '; margin-left: 0;';
-        //     styleStr.common = 'width: ' +(itemStyle.width|| 'auto')+ ';' + 'margin-left: ' +(itemStyle.dis||'auto')+';';
-        // }
+        var itemStyle = config.scale.style;
+        var scaleStyle = {
+            first: '',
+            common: ''
+        }
+        if(itemStyle){
+            scaleStyle.first = 'width: ' +(itemStyle.width|| 'auto')+ '; margin-left: 0;';
+            scaleStyle.common = 'width: ' +(itemStyle.width|| 'auto')+ ';' + 'margin-left: ' +(itemStyle.dis||'auto')+';';
+        }
 
         if(items.length > 0 ){
             // 有item 而且是有值的那种, 不是只有文本text
@@ -60,13 +60,13 @@
                 var range = max - min;
                 
                 for(var i=0, j=items.length; i<j; i++){
-                    var style = config.scale.valueStyleProp+': '+ ((max - items[i].value)/range)*100 +'%';
-                    // if(i==0){
-                    //     style += styleStr.first;
-                    // }
-                    // else{
-                    //     style += styleStr.common;
-                    // }
+                    var style = config.scale.valueStyleProp+': '+ ((max - items[i].value)/range)*100 +'%;';
+                    if(i==0){
+                        style += scaleStyle.first;
+                    }
+                    else{
+                        style += scaleStyle.common;
+                    }
                     
                     html += '<li class="'+scaleItemClassName+'" style="'+style+'">' + items[i].text + '</li>';
                 }
@@ -75,13 +75,13 @@
             else{
                 for(var i=0, j=items.length; i<j; i++){
                     var style = '';
-                    // if(i==0){
-                    //     style += styleStr.first;
-                    // }
-                    // else{
-                    //     style += styleStr.common;
-                    // }
-                    html += '<li class="'+scaleItemClassName+'">' + items[i].text + '</li>';
+                    if(i==0){
+                        style += scaleStyle.first;
+                    }
+                    else{
+                        style += scaleStyle.common;
+                    }
+                    html += '<li class="'+scaleItemClassName+'" style="'+style+'">' + items[i].text + '</li>';
                 }
             }
         }
@@ -92,7 +92,5 @@
     };
 
 
-    window.Axis = Axis;
-
-
-})();
+    return Axis;
+});
