@@ -60,6 +60,10 @@ define(function(){
                 var range = max - min;
                 
                 for(var i=0, j=items.length; i<j; i++){
+                    // 如果没有文本  就不生成li 该项只会被作为求max/min的一员
+                    if(!items[i].text){
+                        continue;
+                    }
                     var style = config.scale.valueStyleProp+': '+ ((max - items[i].value)/range)*100 +'%;';
                     if(i==0){
                         style += scaleStyle.first;
