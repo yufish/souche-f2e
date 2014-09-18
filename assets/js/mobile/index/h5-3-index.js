@@ -1123,6 +1123,48 @@ $('.wrapGrayBg').on('click',function(){
     var walkItems = $('.walk-tab-item');
     var length = walkItems.length;
     walkItems.css({width:100/length+'%'})
+
+    var actUrl=contextPath + '/pages/mobile/homePageAction/loadThemeActivity.json';
+
+    $('.walk-tabs').on('click','.walk-tab-item',function(){
+        walkItems.removeClass('active')
+        var self = $(this);
+        self.addClass('active');
+        var tagId = self.attr('data-tag-id');
+        var curWalkContent = $('.walk-content[data-tag-id='+tagId+']');
+        $('.walk-content').addClass('hidden');
+        if(curWalkContent.length>0){
+            curWalkContent.removeClass('hidden');
+        }else{
+            $.ajax({
+                url:actUrl,
+                data:{
+                    tagId:tagId
+                },
+                dataType:'json',
+                success:function(e){
+                    if(!e.themeActPage){
+                        return
+                    }
+                    var items = e.themeActPage.items;
+                    var html='';
+                    for(var i=0;i<items.length;i++){
+                        var item = items[i]
+                        var data = {
+                            img_src:item.bannerImage,
+                            car_url:contextPath+item.url,
+                            act_title:item.name,
+                            act_content:item.activityDesc
+                        }
+                        html+=makeDom(data);
+                    }
+                    var begin = '<div data-tag-id='+tagId+' class="walk-content">',
+                        end = '</div>'
+                    $('.walkaround-area').append(begin+html+end);
+                }
+            })
+        }
+    })
     function makeDom(data){
         var html =  '<a href="'+data.car_url+'" class="act-card">'
             +       '<img src="'+data.img_src+'" class="banner">'
@@ -1132,17 +1174,5 @@ $('.wrapGrayBg').on('click',function(){
 
         return html;
     }
-    var actUrl='';
-    var walkContainer = $('.walkaround-area');
-    $.ajax({
-        url:actUrl,
-        data:{
-
-        },
-        dataType:'json',
-        success:function(e){
-
-        }
-    })
 }()
 
