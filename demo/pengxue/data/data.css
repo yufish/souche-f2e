@@ -1,0 +1,10 @@
+/*body{
+  background: #000;
+ font-family: 'Microsoft YaHei', Tahoma, Verdana;
+ background-image: -moz-linear-gradient(linear,top left, #343554, #1b2b44);
+ background-image:-webkit-gradient(linear, left top, right bottom, color-stop(0, #343554), color-stop(1, #1b2b44));
+}*/
+
+body{
+  background-color: #000;
+}
