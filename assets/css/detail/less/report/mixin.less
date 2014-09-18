@@ -4,7 +4,7 @@
     box-sizing: @v;
 }
 
-.clear-flt{
+.clear-flt(){
     &:after{
         content: '';
         display: table;
@@ -16,4 +16,12 @@
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+// transition
+.tst(@v: all 300ms ease;){
+    -webkit-transition: @v;
+    -moz-transition: @v;
+    -ms-transition: @v;
+    transition: @v;
 }

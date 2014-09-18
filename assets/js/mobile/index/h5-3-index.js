@@ -1118,3 +1118,31 @@ $('.wrapGrayBg').on('click',function(){
     })
 }()
 
+//随便狂狂异步加载
+!function(){
+    var walkItems = $('.walk-tab-item');
+    var length = walkItems.length;
+    walkItems.css({width:100/length+'%'})
+    function makeDom(data){
+        var html =  '<a href="'+data.car_url+'" class="act-card">'
+            +       '<img src="'+data.img_src+'" class="banner">'
+            +       '<div class="act-title">'+data.act_title+'</div>'
+            +       '<div class="act-content">'+data.act_content+'</div>'
+            +   '</a>'
+
+        return html;
+    }
+    var actUrl='';
+    var walkContainer = $('.walkaround-area');
+    $.ajax({
+        url:actUrl,
+        data:{
+
+        },
+        dataType:'json',
+        success:function(e){
+
+        }
+    })
+}()
+
