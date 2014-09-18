@@ -1,207 +1,140 @@
-define(function(){
-    var demoConfig = {
-        y:{
-            show: true,
-            style: {
-                width: '60px'
-            },
-            scales: [
-                {
-                    text: '1.2mm',
-                    value: 1.2
-                },
-                {
-                    text: '1.6mm<br/>(警戒值)',
-                    value: 1.6
-                },
-                {
-                    text: '1.9mm',
-                    value: 1.9
-                }
-            ]
-        },
-        bar: {
-            style: {
-                width: '50px',
-                height: '215px',
-                dis: '25px'
-            },
-            values: [
-                {
-                    // join name and value together and show as title
-                    name: '左前轮',
-                    value: 1.8
-                },
-                {
-                    name: '左后轮',
-                    value: 1.55
-                },
-                {
-                    name: '右前轮',
-                    value: 1.65
-                },
-                {
-                    name: '右后轮',
-                    value: 1.75
-                }
-            ],
-            max: 1.9,
-            min: 1.2,
-            guide: 1.6,
-            classes: {
-                more: 'normal',
-                less: 'danger'
-            }
-            // another version:
-            // if guide is a array
-            // classes can have a between porp
-            // guide: [1.5, 1.7],
-            // classes: {
-            //     more: 'danger',
-            //     less: 'danger',
-            //     between: 'normal'
-            // }
-        },
-        x: {
-            show: true,
-            scales: ['左前轮', '左后轮', '右前轮', '右后轮'],
-            scaleUnit: '',
-            // 要不要给高度呢...
-            height: '20px'
-        },
-        ctn: $('.wheel-depth .safety-item-bd')
-    };
+define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
 
 
     var Histogram = function(config){
         this.ctn = config.ctn;
         this.ele = $(document.createElement('div'));
+        this.bar = [];
         var gramClass = ['histogram'];
         var htmlStr = '';
         // 默认加上"竖直的"类
         gramClass.push('ver');
+
+        var Width = 0;
+
+        // 构造Y轴
         if(config.y && config.y.show == true){
             gramClass.push('with-y');
-            // 构造y轴
-            var yAxis = initY(config);
-            // 填充...
-            htmlStr += yAxis;
+            // y轴高度和bar一样
+            config.y.style.height = config.bar.style.height;
+            this.yAxis = new Axis(config.y);
+            this.ele.append(this.yAxis);
         }
-        if(!(config.bar && config.bar.values)){
-            console.warn('请在config中传递config.bar 和 config.bar.valus');
-            return false;
-        }
-        var chartContent = initChartContent(config);
-        htmlStr += chartContent;
+        // Y轴占据的空间的宽度
+        var yAxisSpaceW = px2Number(config.y.style.width) + px2Number(config.y.style.dis);
+        Width += yAxisSpaceW;
 
-        if(config.x && config.x.show == true){
-            gramClass.push('with-x');
-            var xAxis = initX(config);
-            htmlStr += xAxis;
+        // 构建ChartContent
+        var chartContent = $(document.createElement('ul'));
+        chartContent.attr('class', 'chart-content');
+        var chartFrag = document.createDocumentFragment();
+        this.barConf = {
+            style: config.bar.style,
+            max: config.bar.max,
+            min: config.bar.min,
+            guide: config.bar.guide,
+            cond: config.bar.cond
+        };
+        var items = config.bar.items;
+        for(var i=0, j=items.length; i<j; i++){
+            var barConf = {};
+            for( var k in this.barConf ){
+                barConf[k] = this.barConf[k];
+            }
+            barConf.name = items[i].name;
+            barConf.value = items[i].value;
+            var tmpBar = new Bar(barConf);
+            if(i !== 0){
+                tmpBar.el.style.marginLeft = config.bar.style.dis;
+            }
+            chartFrag.appendChild( tmpBar.el );
+            this.bar.push(tmpBar);
         }
+        var chartW = j*px2Number(config.bar.style.width) + (j-1)*px2Number(config.bar.style.dis);
+        chartContent.css({
+            width: chartW + 'px',
+            height: config.bar.style.height,
+            'margin-left': yAxisSpaceW + 'px'
+        });
+        chartContent.append(chartFrag);
+        this.ele.append(chartContent);
+
+        Width += chartW;
+
+        // 构造X轴
+        if(config.x && config.x.show == true){
+            // 构造x轴
+            gramClass.push('with-x');
+            // 通过bar的样式 计算和定位x轴
+            if(!config.x.style){
+                config.x.style = {};
+            }
+            config.x.style.width = chartW + 'px';
+            // 根据bar宽度和间距, 定位x-axis刻度的宽度和间距
+            if(!config.x.scale.style){
+                config.x.scale.style = {};
+            }
+            config.x.scale.style.width = config.bar.style.width || 'auto';
+            config.x.scale.style.dis = config.bar.style.dis || 'auto';
+
+            this.xAxis = new Axis(config.x);
+            this.ele.append(this.xAxis);
+        }
+        // this.ele.html(htmlStr);
+
         this.ele.attr('class', gramClass.join(' '));
-        this.ele.html(htmlStr);
         if(this.ele.length >0 ){
             this.ctn.append( this.ele );
+        }
+        this.ele.css('width', Width);
+        return this;
+    };
+
+    // 接受一个数组作为参数, 对应各个bar
+    Histogram.prototype.updateBar = function(valueArray) {
+        if( valueArray.length !== this.bar.length ){
+            console.log('传入新值的数量与柱子数量不符... 只更新部分bar或部分数据...');
+        }
+        // 遍历传入数组, 边界为柱子个数(多传值忽略)
+        for(var i=0, j=getMin(this.bar.length, valueArray.length); i<j; i++){
+            // 允许某个值为undefined或null, 这样就跳过这个更新
+            if( valueArray[i] !== undefined && valueArray[i] !== null){
+                var barConf = {};
+                for( var k in this.barConf ){
+                    barConf[k] = this.barConf[k];
+                }
+                barConf.value = Number(valueArray[i]);
+                this.bar[i].update(barConf);
+            }
         }
         return this;
     };
 
-    function initY(config){
-        var ycon = config.y;
-        // 重新排列
-        ycon.scales.sort(function(a, b){
-            // 降序
-            return b.value - a.value;
-        });
-        // 值范围
-        var max = ycon.scales[0].value, min = ycon.scales[ycon.scales.length-1].value;
-        var range = max - min;
-
-        var html = '<ul class="y-axis">';
-        for(var i=0, j=ycon.scales.length; i<j; i++){
-            var style = 'top: '+ ((max - ycon.scales[i].value)/range)*100 +'%';
-            html += '<li class="y-scale-item" style="'+style+'">' + ycon.scales[i].text + '</li>';
-        }
-        html += '</ul>';
-        return html;
+    function px2Number(pxStr){
+        return Number(pxStr.substr(0, pxStr.length-2));
     }
-
-    function initChartContent(config){
-        var html = '<ul class="chart-content">';
-        var max = config.bar.max, min = config.bar.min;
-        var guide = config.bar.guide;
-        for(var i=0, j=config.bar.values.length; i<j; i++){
-            var valObj = config.bar.values[i];
-            html += '<li class="chart-bar" title="'+valObj.name+': '+valObj.value+'">';
-            
-            html += buildBarValue(valObj.value, max, min, guide, config.bar.classes);
-
-            html += buildGuideLine(guide, max, min);
-            
-            html += '</li>';
-        }
-        html += '</ul>';
-        return html;
-    }
-    function buildBarValue(cur, max, min, guide, classes){
-        var html = '';
-        var valueStyle = 'height: '+ safeValue((cur - min)/(max - min))*100 +'%;';
-        var classArr = ['bar-value'];
-        if( typeof guide === 'number'){
-            if(cur >= guide){
-                classArr.push(classes.more);
-            }
-            else if(cur < guide){
-                classArr.push(classes.less);
-            }
+    function getMin(){
+        var arr = null;
+        if( arguments[0].isArray() ){
+            arr = arguments[0];
         }
         else{
-
+            arr = [].slice.call(arguments);
         }
-
-        html += '<div class="'+classArr.join(' ')+'" style="'+valueStyle+'">';
-        html += '</div>';
-        return html;
-    }
-    function buildGuideLine(guide, max, min){
-        var html = '';
-        var guideLineStyle = 'top: '+ safeValue((max - guide)/(max - min))*100 +'%'
-        html += '<div class="guideLine">';
-        html += '</div>';
-
-        return html;
-    }
-    function safeValue(val, safeZone){
-        safeZone = safeZone || {max: 1, min:0};
-        if(val > safeZone.max){
-            return safeZone.max;
+        var min = Infinity;
+        for(var i=0, j=arr.length; i<j; i++){
+            if( arr[i] < min ){
+                min = arr[i];
+            }
         }
-        else if(val < safeZone.min){
-            return safeZone.min;
-        }
-        else{
-            return val;
-        }
+        return min;
     }
 
-    function initX(config){
-        var xcon = config.x;
-        var html = '';
-        html += '<ul class="x-axis">';
-        for(var i=0,j=xcon.scales.length; i<j; i++){
-            html +='<li class="x-scale-item">'+xcon.scales[i]+'</li>';
+    if( !Object.prototype.isArray ){
+        Object.prototype.isArray = function(){
+            return Object.prototype.toString.call(this) === '[object Array]';
         }
-        html += '</ul>';
-        return html;
     }
-
-
-
-    // function getMax
-
-    var hist = new Histogram(demoConfig);
-
 
     return Histogram;
 });

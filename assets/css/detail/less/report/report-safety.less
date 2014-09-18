@@ -69,7 +69,7 @@
     margin: 0 auto;
     .clear-flt();
 
-    width: @barW*4 + @barDis*3 + @yW + @yDis;
+    // width: @barW*4 + @barDis*3 + @yW + @yDis;
     
     &.with-x{
         .x-axis{
@@ -92,8 +92,8 @@
         left: 0;
         
         // set by js, same as chart-bar;
-        width: @yW;
-        height: @barH;
+        // width: @yW;
+        // height: @barH;
 
         .y-scale-item{
             position: absolute;
@@ -113,7 +113,7 @@
         font-size: 16px;
         .clear-flt();
 
-        width: @barW*4 + @barDis*3;
+        // width: @barW*4 + @barDis*3;
 
         .x-scale-item{
             float: left;
@@ -121,11 +121,11 @@
             .text-collapse();
 
             // set by js
-            width: @barW;
-            margin-left: @barDis;
-            &:first-child{
-                margin-left: 0;
-            }
+            // width: @barW;
+            // margin-left: @barDis;
+            // &:first-child{
+            //     margin-left: 0;
+            // }
             // end of set by js
         }
     }
@@ -140,12 +140,12 @@
             background-color: @barBGC;
                 
             // temp value
-            width: @barW;
-            height: @barH;
-            margin-left: @barDis;
-            &:first-child{
-                margin-left: 0;
-            }
+            // width: @barW;
+            // height: @barH;
+            // margin-left: @barDis;
+            // &:first-child{
+            //     margin-left: 0;
+            // }
 
 
             .bar-value,
@@ -163,10 +163,19 @@
                 &.danger{
                     background-color: @red;
                 }
+
+                .value-text{
+                    position: absolute;
+                    width: 100%;
+                    font-size: 14px;
+                    text-align: center;
+                    bottom: 50px;
+                    color: #eee;
+                }
             }
             .guideLine{
                 bottom: percentage((1.6-1.2)/(1.9-1.2));
-                border-top: 2px dashed #aaa;
+                border-top: 2px dashed rgba(0,0,0,0.2);
             }
         }    
     }
