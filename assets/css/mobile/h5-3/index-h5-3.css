@@ -479,7 +479,7 @@ nav .nav-item.active .nav-item-content{
 .walk-tabs .walk-tab-item{
     float: left;
     height: 32px;
-    line-height: 32px;
+    line-height: 30px;
     text-align: center;
     background: #F5F5F5;
     color: #666;
