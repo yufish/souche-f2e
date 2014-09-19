@@ -916,9 +916,17 @@
 }
 .detail-card .ss-content .cheshen-order{
     float: left;
+    width:4px;
+    height: 4px;
+    background: #656565;
+    border-radius: 80%;
+}
+.detail-card .ss-content .cheshen-item{
+    line-height: 14px;
+    margin:16px 0;
 }
 .detail-card .ss-content .cheshen-p{
-    margin-left: 16px;
+    margin-left: 10px;
 }
 .detail-card .ss-content .cheshen-lookall{
     border: 1px solid #e6e6e6;
@@ -928,7 +936,6 @@
     border-radius: 3px;
     color: #666;
 }
-
 
 #actions .action-btn-bar{
     text-align: center;
