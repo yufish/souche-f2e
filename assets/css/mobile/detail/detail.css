@@ -1443,3 +1443,25 @@
     background: url(../../../images/mob/h5-3/yushou-tag.png) no-repeat center;
     background-size: 100%;
 }
+.cheshen-profile{
+    margin-bottom: 5px;
+}
+.cheshen-pic{
+    width: 36px;
+    height: 36px;
+    float: left;
+}
+.cheshen-pic img{
+    width: 100%;
+}
+.cheshen-person-info{
+    margin-left: 50px;
+    line-height: 18px;
+}
+.cheshen-name{
+    color: #666;
+}
+.cheshen-title{
+    color:#999;
+    font-size: 12px;
+}
