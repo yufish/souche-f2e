@@ -1125,7 +1125,7 @@ $('.wrapGrayBg').on('click',function(){
 
     var actUrl=contextPath + '/pages/mobile/homePageAction/loadThemeActivity.json';
 
-    $('.walk-tabs').on('click','.walk-tab-item',function(){
+    walkItems.on('click',function(){
         walkItems.removeClass('active')
         var self = $(this);
         self.addClass('active');
