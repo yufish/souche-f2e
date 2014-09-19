@@ -382,12 +382,17 @@ define(['index/car-god',
                     $(".hotCarImages img").each(function(i, img) {
                         $(img).attr("src", $(img).attr("data-original"));
                     })
-
+                    if($(".new-tip").length){
+                        $.ajax({
+                            url:contextPath+"/pages/homePageAction/markReadHotCar.json"
+                        })
+                    }
                 }
                 $(".carsContent").addClass("hidden");
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
                 return false;
             });
+            
             ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单
             recordTip.init(config);

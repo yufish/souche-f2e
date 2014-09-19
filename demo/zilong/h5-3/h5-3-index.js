@@ -153,7 +153,7 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.preventDefault();
 //        e.stopPropagation();
 //    })
-    navItems.on(touch_end,function(e){
+    navItems.on(tap_event,function(e){
         e.preventDefault();
         //e.stopPropagation();
         var index = +$(this).attr('data-nav-index');
@@ -1121,7 +1121,6 @@ $('.wrapGrayBg').on('click',function(){
 //随便狂狂异步加载
 !function(){
     var walkItems = $('.walk-tab-item');
-
 
     var actUrl=contextPath + '/pages/mobile/homePageAction/loadThemeActivity.json';
 
