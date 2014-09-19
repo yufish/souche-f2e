@@ -11,7 +11,7 @@
     .safety-item{
         float: left;
         width: 50%;
-        height: 500px;
+        height: 505px;
         padding: 45px 45px 0 45px;
         .box-sizing();
 
@@ -31,11 +31,11 @@
 
             }
             .safety-item-hd-summary{
-                font-size: 20px;
+                font-size: 18px;
             }
         }
         .safety-item-bd{
-            padding-top: 45px;
+            padding-top: 70px;
         }
     }
     .lft,
@@ -182,5 +182,39 @@
                 border-top: 2px dashed rgba(0,0,0,0.2);
             }
         }    
+    }
+}
+
+.antifreeze{
+    .safety-item-bd{
+        position: relative;
+        padding-right: 30px;
+
+        .hist-ctn{
+            
+        }
+        .histogram{
+            margin-top: -30px;
+        }
+        .bottom-ball{
+            position: absolute;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 35px;
+            margin-top: -10px;
+            background-color: darken(@moduleBC, 10%);
+            .tst(background-color 200ms ease 200ms;);
+            
+            &.normal{
+                background-color: @green;
+            }
+            &.danger{
+                background-color: @red;
+            }
+            
+
+            // margin-left: (118px/2 - 50px) + 5px - 30px/2;
+        }
     }
 }
