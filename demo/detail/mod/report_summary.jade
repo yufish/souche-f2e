@@ -29,3 +29,12 @@
       .cont-item.clearfix
         .name 重要配置
         .resule 重要配置完好，功能正常
+script.
+  $(".card-stage").mouseenter(function(){
+
+    $(".card-box").addClass("card-trans");
+    });
+  $(".card-stage").mouseout(function(){
+    $(".card-box").removeClass("card-trans");
+    });
+  

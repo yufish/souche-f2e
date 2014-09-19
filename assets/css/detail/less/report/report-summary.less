@@ -2,13 +2,78 @@
   height: 500px;
   .level-card{
     height: 500px;
-    width: 450px;
+    width: 360px;
     float: left;
-    .card-box{
-      .card-stage{
+    padding-top: 90px;
+    .card-stage{
+      width: 256px;
+      height: 297px;
+      margin: 0 auto;
+      -webkit-transform-style: preserve-3d;
+      -webkit-perspective: 1000;
+      .card-box{
         width: 256px;
         height: 297px;
+        -webkit-transform: rotateY(0deg);
+        -webkit-transition: all ease 600ms;
+        -webkit-transform-style: preserve-3d;
+        -webkit-perspective: 1000;
+        position: relative;
+        .card-cont{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          -webkit-transition: all ease 600ms;
+          background: url(../../images/detail/level.png) no-repeat;
+          width: 256px;
+          height: 297px;
+          -webkit-background-size: cover;
+          -webkit-backface-visibility: hidden;
+          -webkit-transform: rotateY(0deg);
+          p{
+            text-align: center;
+            font-size: 100px;
+            color: #FF571A;
+            font-weight: bold;
+            line-height: 290px;
+
+          }
+        }
+        .card-rule{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          -webkit-transition: all ease 600ms;
+          background: url(../../images/detail/rule.png) no-repeat;
+          width: 256px;
+          height: 297px;
+          -webkit-transform: rotateY(180deg);
+          -webkit-backface-visibility: hidden;
+          cursor: normal;
+        }
       }
+      // .card-box:hover{
+      //   -webkit-transform: rotateY(180deg);
+      // }
+    }
+    // .card-stage:hover{
+    //   .card-box{
+    //     -webkit-transform: rotateY(180deg);
+    //   }
+    // }
+    .card-trans{
+      -webkit-transform: rotateY(180deg) !important;
+    }
+    .look-rule{
+      color: #999;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
     }
   }
   .summary-box{
