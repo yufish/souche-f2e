@@ -697,7 +697,7 @@ nav .nav-item.active .nav-item-content{
     bottom:0;
     left:0;
     right:0;
-    height:50px;
+    height:54px;
     background: rgba(0,0,0,0.8);
     color:#fff;
     display:block;
@@ -722,7 +722,7 @@ nav .nav-item.active .nav-item-content{
     float: right;
     margin: 16px 10px 0 0 ;
     height: 16px;
-    line-height: 16px;
+    line-height: 14px;
     width: 16px;
     text-align: center;
 }
