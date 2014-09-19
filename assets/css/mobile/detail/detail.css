@@ -920,6 +920,7 @@
     height: 4px;
     background: #656565;
     border-radius: 80%;
+    margin-top: 5px;
 }
 .detail-card .ss-content .cheshen-item{
     line-height: 14px;
