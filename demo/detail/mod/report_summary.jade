@@ -5,7 +5,9 @@
         .card-cont
           p A+
         .card-rule
-    .look-rule 查看规则
+    .look-rule 
+      span.look 查看规则
+      span.back.hidden 返回
   .summary-box
     .title.clearfix 
       .text 大搜车检测报告
@@ -37,4 +39,9 @@ script.
   $(".card-stage").mouseout(function(){
     $(".card-box").removeClass("card-trans");
     });
-  
+  $(".look-rule").click(function(){
+    $(".look-rule .look").toggleClass("hidden");
+    $(".look-rule .back").toggleClass("hidden");
+    $(".card-cont").toggleClass("card-click");
+    $(".card-box").toggleClass("card-trans");
+    })
