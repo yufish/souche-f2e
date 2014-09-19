@@ -1,6 +1,7 @@
 
 @indexW: 40px;
 
+// 整体布局
 .safety-list{
     list-style: none;
     padding: 0;
@@ -46,8 +47,10 @@
     .lft{
         border-right: 1px solid @moduleBC;
     }
+    .full{
+        width: 100%;
+    }
     // endof item common
-
 }
 
 @barBGC: @moduleHeadBGC;
@@ -63,7 +66,7 @@
 // x轴刻度不可以超出bar的宽度
 // x轴刻度间隔 = bar间隔
 
-
+// 柱状图
 .histogram{
     position: relative;
     margin: 0 auto;
@@ -185,6 +188,7 @@
     }
 }
 
+// 防冻液温度
 .antifreeze{
     .safety-item-bd{
         position: relative;
@@ -218,3 +222,63 @@
         }
     }
 }
+
+// 制动系统
+.brake-system{
+    &.safety-item .safety-item-bd{
+        padding-top: 10px;
+    }
+    .brake-system-list{
+        width: 600px;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.5;
+
+        .brake-system-item{
+            padding: 16px 30px 16px 0;
+            border-top: 1px solid @moduleBC;
+            .clear-flt();
+
+            .brake-system-icon{
+                // display: inline-block;
+                float: left;
+                width: 14px;
+                height: 14px;
+                background: url("../../images/detail/config-normal.png") no-repeat;
+                margin-right: 8px;
+                margin-top: 5px;
+            }
+            .item-name{
+                float: left;
+                width: 145px;
+                margin-right: 20px;
+            }
+            .item-detail{
+                float: left;
+                max-width: 350px;
+
+                ol.detail-list{
+                    list-style: decimal;
+                    margin-left: 24px;
+                }
+            }
+            
+            &.first{
+                border-top: none;
+            }
+            &.good{
+
+            }
+            &.warn{
+                color: @red;
+                .brake-system-icon{
+                    background: url("../../images/detail/config-abnormal.png") no-repeat;
+                }
+            }
+        }
+    }
+
+}
+
