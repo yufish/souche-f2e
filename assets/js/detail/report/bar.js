@@ -1,4 +1,4 @@
-define(function(){
+define(['souche/util/tool'], function(Tool){
 
     // config
     //      height
@@ -68,7 +68,9 @@ define(function(){
         this.barValue = barValue;
         var barValleDetail = getBarValueDetail(config);
         for( var i in barValleDetail.attr){
-            this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
+            if( barValleDetail.attr.hasOwnProperty(i) ){
+                this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
+            }
         }
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
         this.el.appendChild(this.barValue);
@@ -79,7 +81,7 @@ define(function(){
             var el = document.createElement('div');
             el.setAttribute('class', 'guideLine');
             this.guideLineArr.push(el);
-            this.guideLineArr[i].style = guideStyleArr[i];
+            this.guideLineArr[i].setAttribute('style', guideStyleArr[i]);
 
             this.el.appendChild( this.guideLineArr[i] );
         }
@@ -90,7 +92,9 @@ define(function(){
         // 更新bar
         var barValleDetail = getBarValueDetail(config);
         for( var i in barValleDetail.attr){
-            this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
+            if( barValleDetail.attr.hasOwnProperty(i) ){
+                this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
+            }
         }
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
         // this.el.appendChild(this.barValue);
@@ -99,7 +103,7 @@ define(function(){
         var guideStyleArr = getGuideLineStyle(config);
         for( var i=0, j=guideStyleArr.length; i<j; i++ ){
             var el = document.createElement('div');
-            this.guideLineArr[i].style = guideStyleArr[i];
+            this.guideLineArr[i].setAttribute('style', guideStyleArr[i]);
         }
     };
 
@@ -125,9 +129,21 @@ define(function(){
                 text = cond.less.text || '';
             }
         }
-        // else{
-
-        // }
+        else if(Array.isArray(guide)){
+            var mm = Tool.getMaxMin(guide);
+            if(value > mm.max){
+                classArr.push(cond.more.className);
+                text = cond.more.text || '';
+            }
+            else if(value < mm.min){
+                classArr.push(cond.less.className);
+                text = cond.less.text || '';
+            }
+            else{
+                classArr.push(cond.between.className);
+                text = cond.between.text || '';
+            }
+        }
 
         result.attr = {
             _style: valueStyle
@@ -150,12 +166,12 @@ define(function(){
         var guide = config.guide;
         // var html = '';
         if( typeof guide == 'number' ){
-            return 'top: '+ safeValue((max - guide)/(max - min))*100 +'%;'
+            return ['top: '+ safeValue((max - guide)/(max - min))*100 +'%;'];
         }
-        else if( guide.isArray() ){
+        else if( Array.isArray(guide) ){
             var arr = [];
             for( var i=0, j=guide.length; i<j; i++ ){
-                arr.push( 'top: '+ safeValue((max - guide)/(max - min))*100 +'%;' );
+                arr.push( 'top: '+ safeValue((max - guide[i])/(max - min))*100 +'%;' );
             }
             return arr;
         }

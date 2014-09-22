@@ -1,5 +1,4 @@
-define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
-
+define([ 'souche/util/tool',  'detail/report/axis', 'detail/report/bar' ], function(Tool, Axis, Bar){
 
     var Histogram = function(config){
         this.ctn = config.ctn;
@@ -40,7 +39,9 @@ define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
         for(var i=0, j=items.length; i<j; i++){
             var barConf = {};
             for( var k in this.barConf ){
-                barConf[k] = this.barConf[k];
+                if( this.barConf.hasOwnProperty(k) ){
+                    barConf[k] = this.barConf[k];
+                }
             }
             barConf.name = items[i].name;
             barConf.value = items[i].value;
@@ -98,12 +99,14 @@ define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
         }
         this.barConf.condClass = true;
         // 遍历传入数组, 边界为柱子个数(多传值忽略)
-        for(var i=0, j=getMin(this.bar.length, valueArray.length); i<j; i++){
+        for(var i=0, j=Tool.getMin(this.bar.length, valueArray.length); i<j; i++){
             // 允许某个值为undefined或null, 这样就跳过这个更新
             if( valueArray[i] !== undefined && valueArray[i] !== null){
                 var barConf = {};
                 for( var k in this.barConf ){
-                    barConf[k] = this.barConf[k];
+                    if( this.barConf.hasOwnProperty(k)){
+                        barConf[k] = this.barConf[k];
+                    }
                 }
                 barConf.value = Number(valueArray[i]);
                 this.bar[i].update(barConf);
@@ -114,28 +117,6 @@ define([ 'detail/report/axis', 'detail/report/bar' ], function(Axis, Bar){
 
     function px2Number(pxStr){
         return Number(pxStr.substr(0, pxStr.length-2));
-    }
-    function getMin(){
-        var arr = null;
-        if( arguments[0].isArray() ){
-            arr = arguments[0];
-        }
-        else{
-            arr = [].slice.call(arguments);
-        }
-        var min = Infinity;
-        for(var i=0, j=arr.length; i<j; i++){
-            if( arr[i] < min ){
-                min = arr[i];
-            }
-        }
-        return min;
-    }
-
-    if( !Object.prototype.isArray ){
-        Object.prototype.isArray = function(){
-            return Object.prototype.toString.call(this) === '[object Array]';
-        }
     }
 
     return Histogram;

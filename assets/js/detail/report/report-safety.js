@@ -42,7 +42,7 @@ define(['detail/report/histogram'], function(Histogram){
         else{
             newConf.y.show = false;
         }
-        newConf.bar.items = bar;
+        newConf.bar = $.extend(true, {}, newConf.bar, bar);
         newConf.ctn = ctn;
         // console.log(newConf);
         return newConf;
@@ -66,13 +66,23 @@ define(['detail/report/histogram'], function(Histogram){
                     {text: '左后轮'},
                     {text: '右前轮'},
                     {text: '右后轮'} ];
-            var barItems = [
+             var barConf = {
+                max: 1.9,
+                min: 1.2,
+                guide: 1.6,
+                items: [
                 { name: '左前轮', value:  0},
                 { name: '左后轮', value:  0},
                 { name: '右前轮', value:  0},
                 { name: '右后轮', value:  0}
-            ];
-            return getConfig( xItems, yItems, barItems, $('.wheel-depth .safety-item-bd') );
+                ],
+                cond: {
+                    more: { className: 'normal', text: '安全' },
+                    less: { className: 'danger', text: '危险' }
+                },
+                condClass: false
+            };
+            return getConfig( xItems, yItems, barConf, $('.wheel-depth .safety-item-bd') );
         },
         bind: function(){
             setTimeout(function(){
@@ -97,13 +107,23 @@ define(['detail/report/histogram'], function(Histogram){
                     {text: '左后轮'},
                     {text: '右前轮'},
                     {text: '右后轮'} ];
-            var barItems = [
+             var barConf = {
+                max: 1.9,
+                min: 1.2,
+                guide: 1.6,
+                items: [
                 { name: '左前轮', value:  0},
                 { name: '左后轮', value:  0},
                 { name: '右前轮', value:  0},
                 { name: '右后轮', value:  0}
-            ];
-            return getConfig( xItems, yItems, barItems, $('.brake-thickness .safety-item-bd') );
+                ],
+                cond: {
+                    more: { className: 'normal', text: '安全' },
+                    less: { className: 'danger', text: '危险' }
+                },
+                condClass: false
+            };
+            return getConfig( xItems, yItems, barConf, $('.brake-thickness .safety-item-bd') );
         },
         bind: function(){
             setTimeout(function(){
@@ -120,50 +140,90 @@ define(['detail/report/histogram'], function(Histogram){
         },
         getConfig: function(){
             var yItems =  [
-                    {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>警戒值', value: 1.6},
-                    {text: '1.2mm', value: 1.2}
+                    {text: '', value: 3},
+                    {text: '(最高警戒值)', value: 2},
+                    {text: '(最高警戒值)', value: 1},
+                    {text: '', value: 0}
                     ];
             var xItems =  [{text: '制动液'},
                     {text: '机油'},
                     {text: '助力油'},
                     {text: '变速箱'} ];
-            var barItems = [
-                { name: '左前轮', value:  0},
-                { name: '左后轮', value:  0},
-                { name: '右前轮', value:  0},
-                { name: '右后轮', value:  0}
-            ];
-            return getConfig( xItems, yItems, barItems, $('.liquid-level .safety-item-bd') );
+            var barConf = {
+                max: 3,
+                min: 0,
+                guide: [1, 2],
+                items: [
+                { name: '制动液', value:  0},
+                { name: '机油', value:  0},
+                { name: '助力油', value:  0},
+                { name: '变速箱', value:  0}
+                ],
+                cond: {
+                    more: { className: 'danger', text: '危险' },
+                    less: { className: 'danger', text: '危险' },
+                    between: { className: 'normal', text: '安全' }
+                },
+                condClass: false
+            };
+            return getConfig( xItems, yItems, barConf, $('.liquid-level .safety-item-bd') );
         },
         bind: function(){
             setTimeout(function(){
-                liquidLevel.hist.updateBar([1.65, 1.85, 1.65, 1.7]);
-            }, 3000);
+                liquidLevel.hist.updateBar([1.65, 1.85, 1.65, 2.3]);
+            }, 4000);
         }
     };
 
     var antiFreeze = {
         init: function(){
             var hist = new Histogram(antiFreeze.getConfig());
+            var bottomBallPos = -(30/2);
+            bottomBallPos += (hist.ele.width()/2 - 50) + 5;
+            $('.antifreeze .bottom-ball').css('margin-left',  bottomBallPos);
+
             antiFreeze.hist = hist;
             antiFreeze.bind();
         },
         getConfig: function(){
             var yItems =  [
+                    {text: '', value: -10},
                     {text: '-25C<br/>最高警戒值', value: -25},
-                    {text: '-45C<br/>最低警戒值', value: -45}
+                    {text: '-45C<br/>最低警戒值', value: -45},
+                    {text: '', value: -70}
                     ];
             var xItems =  false;
-            var barItems = [
-                { name: '防冻液冰点', value:  0}
-            ];
-            return getConfig( xItems, yItems, barItems, $('.antifreeze .safety-item-bd') );
+            var barConf = {
+                style: { width: '40px', height: '275px', dis: '0' },
+                max: -10,
+                min: -70,
+                guide: [-25, -45],
+                // 初始值 应该为底部 而不是简单的0
+                items: [
+                    { name: '防冻液冰点', value:  -65}
+                ],
+                cond: {
+                    more: { className: 'danger', text: '危险' },
+                    less: { className: 'danger', text: '危险' },
+                    between: { className: 'normal', text: '安全' }
+                },
+                // 初始时 不通过值判断class
+                condClass: false
+            };
+            return getConfig( xItems, yItems, barConf, $('.antifreeze .safety-item-bd .hist-ctn') );
         },
         bind: function(){
             setTimeout(function(){
-                antiFreeze.hist.updateBar([30]);
-            }, 6000);
+                antiFreeze.hist.updateBar([-30]);
+                // 更新底部小球的class
+                if( antiFreeze.hist.ele.find('.bar-value').hasClass('normal') ){
+                    $('.antifreeze .bottom-ball').addClass('normal');
+                }
+                else{
+                    $('.antifreeze .bottom-ball').addClass('danger');
+                }
+                
+            }, 4000);
         }
     };
     
@@ -176,7 +236,7 @@ define(['detail/report/histogram'], function(Histogram){
             wheelDepth.init();
             brakeThickness.init();
             liquidLevel.init();
-            // antiFreeze.init();
+            antiFreeze.init();
         }
     };
     

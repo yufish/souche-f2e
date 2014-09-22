@@ -916,9 +916,18 @@
 }
 .detail-card .ss-content .cheshen-order{
     float: left;
+    width:4px;
+    height: 4px;
+    background: #656565;
+    border-radius: 80%;
+    margin-top: 5px;
+}
+.detail-card .ss-content .cheshen-item{
+    line-height: 14px;
+    margin:16px 0;
 }
 .detail-card .ss-content .cheshen-p{
-    margin-left: 16px;
+    margin-left: 10px;
 }
 .detail-card .ss-content .cheshen-lookall{
     border: 1px solid #e6e6e6;
@@ -928,7 +937,6 @@
     border-radius: 3px;
     color: #666;
 }
-
 
 #actions .action-btn-bar{
     text-align: center;
@@ -1442,4 +1450,26 @@
     left:18px;
     background: url(../../../images/mob/h5-3/yushou-tag.png) no-repeat center;
     background-size: 100%;
+}
+.cheshen-profile{
+    margin-bottom: 5px;
+}
+.cheshen-pic{
+    width: 36px;
+    height: 36px;
+    float: left;
+}
+.cheshen-pic img{
+    width: 100%;
+}
+.cheshen-person-info{
+    margin-left: 50px;
+    line-height: 18px;
+}
+.cheshen-name{
+    color: #666;
+}
+.cheshen-title{
+    color:#999;
+    font-size: 12px;
 }
