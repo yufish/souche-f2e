@@ -28,22 +28,22 @@
                  .trigger.trigger-4(data-pic="pic-4")
                  .trigger.trigger-5(data-pic="pic-5")
 
-      .con-1-1-1.clearfix.con
-        .item
+      .con-1-1-1.clearfix.con.row2
+        .item.huoshao
             .wrapper
               .hd
                   .num 2
                   .title 排查火烧车痕迹 <i class="report-tip" data-text="1234"></i>
                   .sub-title 非火烧车
               .bd
-        .item
+        .item.shuijin
             .wrapper
                 .hd
                     .num 3
                     .title 排查水浸车痕迹 <i class="report-tip" data-text="1234"></i>
                     .sub-title 非水浸车
                 .bd
-        .item
+        .item.fadongji
             .wrapper
                 .hd
                     .num 4
@@ -69,27 +69,4 @@
                           i *
                           |低于30毫米的划痕及小于30*30平方毫米的凹陷，不影响安全性能，对于外观影响也比较小，不在此处标出，请以实车为准
                       img(src="http://f2e.souche.com/assets/images/detail/report-i-allview.png")
-script.
-    $(".trigger").on("mouseover",function(){
-        $(".pics .pic").addClass("hidden");
-        var picname = $(this).attr("data-pic");
-        if(picname=="pic-5"){
-            $(".pic-main").addClass("hidden")
-        }else{
-            $(".pic-main").removeClass("hidden")
-        }
-        $(".pics").find("."+picname).removeClass("hidden")
-    })
-    var tip_popup = $("<div class='record-tip-popup'><div class='arrow'></div><div class='tip-title'></div><div class='tip-summary'></div></div>");
-    tip_popup.appendTo($(".car_report"));
-    $(".report-tip").on("mouseover",function(){
-    console.log($(this).offset())
-        var title = $(this).attr("data-title");
-        var summary = $(this).attr("data-summary");
-        $(".tip-title",tip_popup).html(title);
-        $(".tip-summary",tip_popup).html(summary);
-        tip_popup.css({
-            left:$(this).offset().left-67,
-            top:$(this).offset().top+30
-        })
-    })
+
