@@ -392,7 +392,7 @@ define(['index/car-god',
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
                 return false;
             });
-            
+
             ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单
             recordTip.init(config);
