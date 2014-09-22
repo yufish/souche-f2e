@@ -161,20 +161,24 @@ if (navigator.userAgent.match(/Android/i)){
         if(curIndex == index)return;
         move(index);
     })
+
+    var fixedWrapper = $('.fixed-wrapper');
     tabCtn.on('swipeLeft',function(e){
         e.preventDefault();
+        fixedWrapper.removeClass('hidden');
         var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
     }).on('swipeRight',function(e){
         e.preventDefault();
+        fixedWrapper.removeClass('hidden');
         var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
     }).on('swipeUp',function(){
-        $('.fixed-wrapper').addClass('hidden');
+        fixedWrapper.addClass('hidden');
     }).on("swipeDown",function(){
-        $('.fixed-wrapper').removeClass('hidden');
+        fixedWrapper.removeClass('hidden');
     })
 }()
 
