@@ -54,7 +54,7 @@ nav .nav-item{
     width: 25%;
     float: left;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
 }
 nav .nav-item.active{
     color:#FF571A;
@@ -487,6 +487,7 @@ nav .nav-item.active .nav-item-content{
     padding:0 10px;
     border-radius: 15px;
     margin-right: 15px;
+    font-size: 14px;
 }
 .walk-tabs .walk-tab-item.active{
     background: #fff;

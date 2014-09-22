@@ -161,20 +161,24 @@ if (navigator.userAgent.match(/Android/i)){
         if(curIndex == index)return;
         move(index);
     })
+
+    var fixedWrapper = $('.fixed-wrapper');
     tabCtn.on('swipeLeft',function(e){
         e.preventDefault();
+        fixedWrapper.removeClass('hidden');
         var index = +tabNavBar.attr('data-active-index');
         if(index==numOfPanels) return;
         move(index+1);
     }).on('swipeRight',function(e){
         e.preventDefault();
+        fixedWrapper.removeClass('hidden');
         var index = +tabNavBar.attr('data-active-index');
         if(index==1) return;
         move(index-1);
     }).on('swipeUp',function(){
-        $('.fixed-wrapper').addClass('hidden');
+        fixedWrapper.addClass('hidden');
     }).on("swipeDown",function(){
-        $('.fixed-wrapper').removeClass('hidden');
+        fixedWrapper.removeClass('hidden');
     })
 }()
 
@@ -1125,7 +1129,7 @@ $('.wrapGrayBg').on('click',function(){
 
     var actUrl=contextPath + '/pages/mobile/homePageAction/loadThemeActivity.json';
 
-    $('.walk-tabs').on('click','.walk-tab-item',function(){
+    walkItems.on('click',function(){
         walkItems.removeClass('active')
         var self = $(this);
         self.addClass('active');

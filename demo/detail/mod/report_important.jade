@@ -13,25 +13,37 @@
            .wrapper
                .hd
                  .num 1
-                 .title 排除车身重大撞击 <i class="report-tip" data-text="1234"></i>
+                 .title 排除车身重大撞击 <i class="report-tip" data-title="1234" data-summary="summary"></i>
                  .sub-title 无重大撞击，车身左右对称
-               .bd
-    .con-1-1-1.clearfix.con
-        .item
+               .bd.pics
+                 .pic-main
+                 .pic.pic-1
+                 .pic.pic-2.hidden
+                 .pic.pic-3.hidden
+                 .pic.pic-4.hidden
+                 .pic.pic-5.hidden
+                 .trigger.trigger-1(data-pic="pic-1")
+                 .trigger.trigger-2(data-pic="pic-2")
+                 .trigger.trigger-3(data-pic="pic-3")
+                 .trigger.trigger-4(data-pic="pic-4")
+                 .trigger.trigger-5(data-pic="pic-5")
+
+      .con-1-1-1.clearfix.con.row2
+        .item.huoshao
             .wrapper
               .hd
                   .num 2
                   .title 排查火烧车痕迹 <i class="report-tip" data-text="1234"></i>
                   .sub-title 非火烧车
               .bd
-        .item
+        .item.shuijin
             .wrapper
                 .hd
                     .num 3
                     .title 排查水浸车痕迹 <i class="report-tip" data-text="1234"></i>
                     .sub-title 非水浸车
                 .bd
-        .item
+        .item.fadongji
             .wrapper
                 .hd
                     .num 4
@@ -39,12 +51,22 @@
                     .sub-title 发动机正常
                 .bd
       .con-3.con
-          .item
+          .item.banjin
               .wrapper
                   .hd
                       .num 5
                       .title 钣金修复 <i class="report-tip" data-text="1234"></i>
                       .sub-title.red 该车共 4 处钣金修复
                   .bd
-
+                      .tips
+                        .tip.normal
+                            i
+                            |原车漆或刮痕修复
+                        .tip.nonormal
+                          i
+                          |钣金修复
+                        .tip.desc
+                          i *
+                          |低于30毫米的划痕及小于30*30平方毫米的凹陷，不影响安全性能，对于外观影响也比较小，不在此处标出，请以实车为准
+                      img(src="http://f2e.souche.com/assets/images/detail/report-i-allview.png")
 

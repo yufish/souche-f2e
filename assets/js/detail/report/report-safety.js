@@ -178,6 +178,10 @@ define(['detail/report/histogram'], function(Histogram){
     var antiFreeze = {
         init: function(){
             var hist = new Histogram(antiFreeze.getConfig());
+            var bottomBallPos = -(30/2);
+            bottomBallPos += (hist.ele.width()/2 - 50) + 5;
+            $('.antifreeze .bottom-ball').css('margin-left',  bottomBallPos);
+
             antiFreeze.hist = hist;
             antiFreeze.bind();
         },
@@ -190,12 +194,13 @@ define(['detail/report/histogram'], function(Histogram){
                     ];
             var xItems =  false;
             var barConf = {
+                style: { width: '40px', height: '275px', dis: '0' },
                 max: -10,
                 min: -70,
                 guide: [-25, -45],
                 // 初始值 应该为底部 而不是简单的0
                 items: [
-                    { name: '防冻液冰点', value:  -70}
+                    { name: '防冻液冰点', value:  -65}
                 ],
                 cond: {
                     more: { className: 'danger', text: '危险' },
@@ -205,11 +210,19 @@ define(['detail/report/histogram'], function(Histogram){
                 // 初始时 不通过值判断class
                 condClass: false
             };
-            return getConfig( xItems, yItems, barConf, $('.antifreeze .safety-item-bd') );
+            return getConfig( xItems, yItems, barConf, $('.antifreeze .safety-item-bd .hist-ctn') );
         },
         bind: function(){
             setTimeout(function(){
                 antiFreeze.hist.updateBar([-30]);
+                // 更新底部小球的class
+                if( antiFreeze.hist.ele.find('.bar-value').hasClass('normal') ){
+                    $('.antifreeze .bottom-ball').addClass('normal');
+                }
+                else{
+                    $('.antifreeze .bottom-ball').addClass('danger');
+                }
+                
             }, 4000);
         }
     };
