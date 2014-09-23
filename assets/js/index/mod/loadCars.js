@@ -115,6 +115,7 @@ define(function(){
     return {
         init:function(_config){
             config = _config;
+            var isdialogShow = !$(".dialogContentContainer").hasClass("hidden");
             ///change tab
             $("#carsNav li").click(function() {
                 $("#carsNav li").removeClass("active");
@@ -126,6 +127,9 @@ define(function(){
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
                 if (id === "myAdviser") {
 //                    initAnimate(".myAdviser");
+                    if(isdialogShow){
+                        $(".dialogContentContainer").removeClass("hidden")
+                    }
                 } else if (id == "hotNewCars") {
                     $(".hotNewCars img").each(function(i, img) {
                         $(img).attr("src", $(img).attr("data-original"));
@@ -138,6 +142,9 @@ define(function(){
                             url:contextPath+"/pages/homePageAction/markReadHotCar.json"
                         })
                     }
+                    if(isdialogShow){
+                        $(".dialogContentContainer").removeClass("hidden")
+                    }
                 }else{
                     var carContent;
                     var code = $(this).attr("searchcode");
@@ -149,6 +156,7 @@ define(function(){
                     }
                     carContent.removeClass("hidden")
                     loadOtherCars(code)
+                    $(".dialogContentContainer").addClass("hidden")
 
                 }
 
