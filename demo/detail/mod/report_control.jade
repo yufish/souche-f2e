@@ -10,7 +10,7 @@
   .report_bd
     .costum-slide-ctn
         ul.content
-            li.control-start
+            li.slide-item.control-start
                 .car-and-info
                     .info-item.right-dir.fire-switch.good
                         .info-icon
@@ -33,7 +33,7 @@
                             .info-text-title 火花塞
                             .info-text-detail 发动机转速平稳, 无抖动, 漏电现象. 正常电极间隙为(1.3-1.7mm)
                 .road
-            li.control-accelerate.active
+            li.slide-item.control-accelerate
                 .car-and-info
                     .info-item.acc-hub.good
                         .info-icon
@@ -60,27 +60,110 @@
                             .info-text-title 喷油嘴
                             .info-text-detail 喷油雾化正常, 怠速平稳, 发动机加速正常.
                 .road
-            li.control-steady
+            li.slide-item.control-steady
                 .car-and-info
+                    .info-item.drive-shaft.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 传动轴
+                            .info-text-detail 传动平稳, 无跳动,共振,异响情况
+                    .info-item.axle-shaft.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 驱动半轴
+                            .info-text-detail 燃油压力正常值为230-250kpa, 在工作时无异常声音
+                    .info-item.back-arm.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 后支臂,平衡杆
+                            .info-text-detail 后支臂和衬套应无损伤,变形,裂纹情况
+                    .info-item.back-cantilever-hub.warn
+                        .info-icon
+                        .info-text
+                            .info-text-title 后悬臂总成
+                            .info-text-detail 下摆臂及拉杆无松旷,变形,异常磨损情况
+
                 .road
-            li.control-turn
+            li.slide-item.control-turn
                 .car-and-info
+                    .info-item.right-dir.steering-box.warn
+                        .info-icon
+                        .info-text
+                            .info-text-title 转向机
+                            .info-text-detail 传动平稳, 无跳动,共振,异响情况
+                    .info-item.right-dir.draglink.warn
+                        .info-icon
+                        .info-text
+                            .info-text-title 转向拉杆及球头
+                            .info-text-detail 无松旷和异响, 防尘套无破损
+                    .info-item.front-arm.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 前支臂,平衡杆
+                            .info-text-detail 支臂胶套无开裂及松旷现象, 平衡杆无变形
+                    .info-item.power-steering-pump.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 转向助力泵
+                            .info-text-detail 无异响, 有严重漏油情况
+                    .info-item.power-assisted-steering.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 转向助力液压管路
+                            .info-text-detail 无漏油现象,胶管无开裂
+                    .info-item.front-damper.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 前减震器
+                            .info-text-detail
+                                ul
+                                    li 安装隔垫无裂纹, 橡胶零部件无异常磨损
+                                    li 前减震器的活塞推杆无损坏, 磨损不均匀,变形,漏油的情况
+                                    li 前减震器护套无老化,开裂,破损情况
+
                 .road
-            li.control-brake
+            li.slide-item.control-brake
                 .car-and-info
+                    .info-item.right-dir.brake-assist-pump.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 刹车真空助力泵
+                            .info-text-detail
+                                ul
+                                    li 外观无腐蚀
+                                    li 制动踏板无漏真空现象, 形成正常
+
+                    .info-item.brake-pump-hub.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 刹车分泵,总泵
+                            .info-text-detail 总泵分泵回位正常, 无渗油
+                    .info-item.brake-abs.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 制动油管及ABS传感器
+                            .info-text-detail
+                                ul
+                                    li 管路安装牢靠, 无渗漏情况
+                                    li ABS传感器安装牢靠, 感应信号正常, 无损坏
+                    .info-item.brake-booster.good
+                        .info-icon
+                        .info-text
+                            .info-text-title 制动助力器及软管
+                            .info-text-detail 液压制动助力泵组件. 管理安装牢靠, 无渗漏情况
                 .road
         ul.indicator
             li.idc-item.first.active
-                p.idc-text(data-target="start") 启动
+                p.idc-target(data-target="control-start") 启动
             li.idc-item
                 span.idc-line
-                p.idc-text(data-target="accelerate") 加速
+                p.idc-target(data-target="control-accelerate") 加速
             li.idc-item
                 span.idc-line
-                p.idc-text(data-target="steady") 匀速
+                p.idc-target(data-target="control-steady") 匀速
             li.idc-item
                 span.idc-line
-                p.idc-text(data-target="turn") 转弯
+                p.idc-target(data-target="control-turn") 转弯
             li.idc-item
                 span.idc-line
-                p.idc-text(data-target="brake") 制动
+                p.idc-target(data-target="control-brake") 制动
