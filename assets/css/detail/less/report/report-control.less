@@ -6,7 +6,7 @@
     }
     .costum-slide-ctn{
         // height: 645px;
-        padding-top: 60px;
+        // padding-top: 60px;
         padding-bottom: 130px;
 
         .content,
@@ -34,9 +34,59 @@
                     z-index: 100;
                 }
                 .car-and-info{
+                    position: relative;
                     height: 350px;
                     margin-top: 80px;
                     background-repeat: no-repeat;
+
+                    .info-item{
+                        position: absolute;
+                        width: 370px;
+
+                        .info-icon{
+                            float: left;
+                            position: relative;
+                            top: 3px;
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+
+                        }
+                        .info-text{
+                            margin-left: 20px;
+                            overflow: hidden;
+
+                            .info-text-title,
+                            .info-text-detail{
+                                font-size: 14px;
+                                line-height: 1.35;
+                            }
+                            .info-text-title{
+                                color: #666;
+                                margin-bottom: 2px;
+                            }
+                            .info-text-detail{
+                                color: #9F9F9F;
+                            }
+                        }
+                        &.good .info-icon{
+                            background: url("../../images/detail/config-normal.png") no-repeat;
+                        }
+                        &.warn .info-icon{
+                            background: url("../../images/detail/config-abnormal.png") no-repeat;
+                        }
+                        &.right-dir{
+                            width: 310px;
+                            .info-icon{
+                                float: right;
+                            }
+                            .info-text{
+                                margin-right: 20px;
+                                margin-left: 0;
+                                text-align: right;
+                            }
+                        }
+                    }
                 }
                 .road{
                     height: 20px;
@@ -60,30 +110,108 @@
                 }
             }
         }
+        @itemW: 50px;
+        @itemBC: #ccc;
+        @itemBW: 2px;
+        @lineW: 45px;
         .indicator{
             height: 50px;
+            width: 860px;
+            margin-top: 50px;
             // background-color: #ddd;
             
-            @itemW: 50px;
-            @itemBC: #ccc;
+            
             .idc-item{
                 float: left;
-                height: @itemW;
-                width: @itemW;
-                border-radius: @itemW/2;
-                border: 2px solid @itemBC;
-                
-                font-size: 16px;
-                text-align: center;
-                line-height: @itemW - 2*2px;
-                color: @itemBC;
+                .clear-flt();
 
-                background-color: #fff;
+                .idc-line{
+                    float: left;
+                    display: block;
+                    height: @itemBW;
+                    width: 45px;
+                    background-color: @itemBC;
+                    margin-top: (@itemW - @itemBW)/2;
+                }
+                .idc-text{
+                    float: left;
+                    height: @itemW;
+                    width: @itemW;
+                    border-radius: @itemW/2;
+                    border: @itemBW solid @itemBC;
+                    
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: @itemW - 2*@itemBW;
+                    color: @itemBC;
+                    cursor: pointer;
+                    background-color: #fff;
+                }
+                &.first{
+                    margin-left: (860px - (5*@itemW + 4*@lineW))/2;
+                }
 
-                &.active{
+                &.active .idc-text{
+                    color: #fff;
                     border-color: @green;
                     background-color: @green;
                 }
+            }
+        }
+    }
+}
+
+
+// 操控性 检车结果 定位
+// 上面做了所有的基础样式, 这里只做定位
+.report_control{
+    .costum-slide-ctn{
+        .content{}
+        // 启动
+        .car-and-info .info-item{
+            // 点火开关
+            &.fire-switch{
+                left: 22px;
+                top: 70px;
+            }
+            // 启动马达及线路
+            &.start-engine{
+                left: 442px;
+                top: 70px;
+            }
+            // 点火线圈
+            &.fire-loops{
+                left: 442px;
+                top: 142px;
+            }
+            // 火花塞
+            &.spark-plug{
+                left: 442px;
+                top: 216px;
+            }
+        }
+        // 加速
+        @accCommonLeft: 442px;
+        .car-and-info .info-item{
+            // 变速器总成
+            &.acc-hub{
+                left: @accCommonLeft;
+                top: 38px;
+            }
+            // 汽油泵
+            &.petrol-pump{
+                left: @accCommonLeft;
+                top: 121px;
+            }
+            // 燃油压力调节器
+            &.fuel-pressure-regulator{
+                left: @accCommonLeft;
+                top: 172px;
+            }
+            // 喷油嘴
+            &.injection-nozzle{
+                left: @accCommonLeft;
+                top: 226px;
             }
         }
     }
