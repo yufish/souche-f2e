@@ -2,8 +2,11 @@
   box-sizing: border-box;
 }
 .has-problem{
-  color:#ff000;
+  color:#ff0000;
 }
+.has-problem-bg{
+   background:#ff0000;
+ }
 .left-1-5{
   float: left;
   width: 20%;
@@ -144,12 +147,19 @@
     }
     .ya-item{
       position: absolute;
+      text-align: right;
     }
     .ya-item.ya-item-top{
       top:0;
     }
     .ya-item.ya-item-bottom{
       bottom: 0;
+    }
+    .ya-item.dianya{
+      width: 50px;
+    }
+    .ya-item.fangdong{
+      width: 65px;
     }
     .x-axis{
       position: relative;
@@ -164,8 +174,10 @@
     }
     .bar-area{
       width: 180px;
-      height: 120px;
       margin-left: 55px;
+    }
+    .bar-area.fangdong{
+      margin-left:70px;
     }
     .bar-wrapper{
       position: relative;
@@ -181,25 +193,64 @@
     .bar{
       background: #3dbd74;
       position: absolute;
-      height: 80px;
+      height: 60px;
       width: 100%;
       bottom: 0;
+    }
+    .bar-bottom{
+      position: absolute;
+      bottom: -15px;
+      left:-5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 80%;
+      background: #3dbd74;
     }
     .guide-line{
       border-top: 2px dotted rgba(0, 0, 0, 0.2);
       position: absolute;
-      bottom:70px;
+      bottom:50px;
       width: 100%;
     }
-    .bar.has-problem{
+    .bar.has-problem-bg{
       background: #ff4200;
     }
     .dianping-bg{
-      background: url(../../../../assets/images/mob/h5-3/dianping-bg.png);
+      background:url(../../../../assets/images/mob/h5-3/dianping-bg.png);
       background-size: 100%;
       width:169px;
       height: 142px;
-
+      position: relative;
+    }
+    .bar-wrapper.bar-wrapper-large{
+      width: 144px;
+      position: absolute;
+      top:50px;
+      height: 70px;
+      left:12px
     }
   }
+}
+.qual-detail-card{
+    .chart-area{
+      .chart-text-wrapper{
+        margin:8px;
+      }
+      .chart-text-wrapper .ct-order{
+        float: left;
+        width: 14px;
+        height: 14px;
+      }
+      .chart-text-wrapper.no-problem .ct-order{
+        background: url(../../../images/mob/h5-3/ok.png);
+        background-size: 100%;
+      }
+      .chart-text-wrapper.has-problem .ct-order{
+        background: url(../../../images/mob/h5-3/not-ok.png);
+        background-size: 100%;
+      }
+      .ct-text{
+        margin-left: 20px;
+      }
+    }
 }
