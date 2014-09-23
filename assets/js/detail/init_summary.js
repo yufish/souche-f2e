@@ -19,12 +19,13 @@ define(function() {
                         var priceData = data;
                         config.maxPrice = config.maxPrice * 1;
                         config.minPrice = config.minPrice * 1;
+                        config.taxPrice = config.taxPrice*1;
                         if (config.minPrice == 0) {
                             config.minPrice = config.maxPrice;
                         }
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        var maxPrice = (priceData.price_guide).toFixed(1) * 1;
+                        var maxPrice = (priceData.price_guide).toFixed(1) * 1+config.taxPrice;
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
                         if (config.minPrice == config.maxPrice) {
@@ -35,7 +36,7 @@ define(function() {
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
                         }
-
+                        middlePrice=middlePrice*1+config.taxPrice
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })

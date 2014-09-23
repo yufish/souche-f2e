@@ -1,7 +1,7 @@
 body {
   font-family: 'Microsoft YaHei', Tahoma, Verdana;
 }
-.myAdviser-loading,.hotNewCars-loading{
+.myAdviser-loading,.hotNewCars-loading,.carsContent .loading{
   height:60px;
   background: url(../images/index/ajax-loader1.gif) no-repeat center center;
 }
@@ -100,8 +100,12 @@ body {
       background: #ffffff;
       font-weight: bold;
       border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
       border-bottom: 1px solid #ffffff;
       height: 20px;
+    }
+    li:first-child.active{
+      border-left:none;
     }
   }
 }

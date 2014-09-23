@@ -32,11 +32,11 @@
         .name 重要配置
         .resule 重要配置完好，功能正常
 script.
-  $(".card-stage").mouseenter(function(){
-
-    $(".card-box").addClass("card-trans");
+  var summary_stage_time = 0;
+  $(".level-card").mouseenter(function(){
+        $(".card-box").addClass("card-trans");
     });
-  $(".card-stage").mouseout(function(){
+  $(".level-card").mouseleave(function(){
     $(".card-box").removeClass("card-trans");
     });
   $(".look-rule").click(function(){
