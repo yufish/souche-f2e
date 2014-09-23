@@ -66,7 +66,7 @@ img{vertical-align: middle}
 }
 .good-car-card .gc-title{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 .gc-img{
     margin: 12px 0;
@@ -81,11 +81,11 @@ img{vertical-align: middle}
 }
 .gc-title-order{
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 80%;
     color: #fff;
     background: #ff571a;
     text-align: center;
-    line-height: 18px;
+    line-height: 16px;
 }
