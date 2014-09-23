@@ -153,9 +153,10 @@ define(function(){
                     }else{
                         carContent = $("<div class='carsContent carContent-"+code+"' data-code='"+code+"'><div class=loading></div></div>")
                         carContent.appendTo($(".otherCarsContents"))
+                        loadOtherCars(code)
                     }
                     carContent.removeClass("hidden")
-                    loadOtherCars(code)
+
                     $(".dialogContentContainer").addClass("hidden")
 
                 }
