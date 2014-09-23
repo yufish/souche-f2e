@@ -23,7 +23,6 @@ html
                         .qual-profile-item 检测专员： 蒋子龙
                         .qual-profile-item 检测时间: 2014年9月9日
                         .qual-profile-item 检测项目： 154项国家标准检测及95项大搜车专项检测
-
             .qual-detail
                 .qual-detail-card
                     .qual-detail-title
@@ -73,6 +72,7 @@ html
                             .qdt-icon 修
                     .qual-detail-content
                         .chart-area
+                            .chart-title 1.胎纹深度正常
                             .y-axis(data-max-value='1.9',data-min-value='1.2')
                                 .ya-item.ya-item-top 1.9mm
                                 .ya-item(style='top:20px;') 1.6mm
@@ -95,8 +95,42 @@ html
                                 .x-item 左前轮
                                 .x-item 左前轮
                                 .x-item 左前轮
+                        .chart-area
+                            .chart-title 2.刹车片厚度正常
+                            .y-axis(data-max-value='1.9',data-min-value='1.2')
+                                .ya-item.ya-item-top 1.9mm
+                                .ya-item(style='top:20px;')
+                                    p 1.6mm
+                                    p 警戒值
+                                .ya-item.ya-item-bottom 1.2mm
+                            .bar-area
+                                .bar-wrapper
+                                    .bar(style='')
+                                    .guide-line
+                                .bar-wrapper
+                                    .bar(style='')
+                                    .guide-line
+                                .bar-wrapper
+                                    .bar(style='')
+                                    .guide-line
+                                .bar-wrapper
+                                    .bar(style='')
+                                    .guide-line
+                            .x-axis.clearfix
+                                .x-item 左前轮
+                                .x-item 左前轮
+                                .x-item 左前轮
+                                .x-item 左前轮
+                        .chart-area
+                            .chart-title 电瓶正常
+                            .y-axis
+                                .ya-item(style='top:20px')
+                                    p 正常电压
+                                    p 12V
+                            .bar-area
+                                .dianping-bg
 
-
+    script(src='../../../assets/js/mobile/common/templateRender.js')
     script(src='../../../assets/js/mobile/detail/chart.js')
 
 
