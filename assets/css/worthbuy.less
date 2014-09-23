@@ -65,6 +65,62 @@
             overflow: hidden;
           }
         }
+        .share-nav{
+          height: 30px;
+          width: 211px;
+          background: #000;
+          color: #fff;
+          position: relative;
+          overflow: visible;
+          span{
+            line-height: 30px;
+            margin-left: 10px;
+            display: block;
+            float: left;
+            margin-right: 25px;
+          }
+          .share-item{
+            display: block;
+            float: left;
+            margin-right: 15px;
+            margin-top: 7px;
+
+          }
+          .sina{
+            width: 18px;
+            height: 16px;
+            background: url(../../assets/images/worthbuy/sina.png) no-repeat;
+          }
+          .qq{
+            width: 17px;
+            height: 16px;
+            background: url(../../assets/images/worthbuy/qq.png) no-repeat;
+          }
+          .weixin{
+            width: 19px;
+            height: 15px;
+            background: url(../../assets/images/worthbuy/weixin.png) no-repeat;
+            margin-top: 9px;
+           position: relative;
+           overflow: visible;
+            .weixin-box{
+              position: absolute;
+              width: 140px;
+              height: 150px;
+              background: #fff;
+              border:1px solid #ededed;
+              top: 0px;
+              left: 0px;
+              text-align: center;
+
+              .tit{
+                font-size: 14px;
+                color: #333;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
       }
     }
     .car-box{
@@ -78,8 +134,17 @@
             width: 322px;
             height: 215px;
             float: left;
+            position: relative;
             img{
               width: 100%;
+            }
+            .sold{
+              position: absolute;
+              width: 78px;
+              height: 78px;
+              background: url(../../assets/images/worthbuy/sold.png) no-repeat;
+              top: 75px;
+              left: 125px;
             }
           }
           .car-info{
@@ -296,7 +361,7 @@
             }
             img{
               width: 700px;
-              
+
             }
             p{
               font-size: 16px;
