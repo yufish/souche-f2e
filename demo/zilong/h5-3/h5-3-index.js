@@ -153,7 +153,7 @@ if (navigator.userAgent.match(/Android/i)){
 //        e.preventDefault();
 //        e.stopPropagation();
 //    })
-    navItems.on(tap_event,function(e){
+    navItems.on(touch_start,function(e){
         e.preventDefault();
         //e.stopPropagation();
         var index = +$(this).attr('data-nav-index');
