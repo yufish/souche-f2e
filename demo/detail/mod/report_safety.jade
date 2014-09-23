@@ -18,53 +18,34 @@
             //- 后端填充数据
             //-     胎纹深度
             //-     最大最小和警戒值
-            .safety-item-bd(data-reportdata="1.7 1.55 1.78 1.65" data-edgedata="1.9 1.2 1.5")
-                //- div.histogram.with-y.with-x
-                //-     ul.y-axis
-                //-         li.y-scale-item(style="top: 0%;") 1.9mm
-                //-         li.y-scale-item(style="top: 50%;") 1.6mm
-                //-         li.y-scale-item(style="top: 100%;") 1.2mm
-                //-     ul.chart-content
-                //-         li.chart-bar
-                //-             .bar-value(style="height:60%;").normal
-                //-             .guideLine
-                //-         li.chart-bar
-                //-             .bar-value(style="height:50%;").danger
-                //-             .guideLine
-                //-         li.chart-bar
-                //-             .bar-value(style="height:75%;")
-                //-             .guideLine
-                //-         li.chart-bar
-                //-             .bar-value(style="height:85%;")
-                //-             .guideLine
-                //-     ul.x-axis
-                //-         li.x-scale-item 左前轮
-                //-         li.x-scale-item 左后轮
-                //-         li.x-scale-item 右前轮
-                //-         li.x-scale-item 右后轮
+            .safety-item-bd(data-reportdata="1.7 1.55 1.78 1.65")
+               
         li.safety-item.rht.brake-thickness
             .safety-item-hd
                 h3.safety-item-hd-index 2
                 p.safety-item-hd-name 刹车片厚度
                     i.report-tip(data-text="1234", data-summary="安全性评估细节")
                 h4.safety-item-hd-summary 左后轮刹车片磨损严重, 建议更换
-            .safety-item-bd
+            .safety-item-bd(data-reportdata="1.65 1.85 1.65 1.7")
+
         li.safety-item.lft.liquid-level
             .safety-item-hd
                 h3.safety-item-hd-index 3
                 p.safety-item-hd-name 液位
                     i.report-tip(data-text="1234", data-summary="安全性评估细节")
                 h4.safety-item-hd-summary 正常
-            .safety-item-bd
+            .safety-item-bd(data-reportdata="1.65 1.85 1.65 2.3")
+
         li.safety-item.rht.antifreeze
             .safety-item-hd
                 h3.safety-item-hd-index 4
                 p.safety-item-hd-name 防冻液
                     i.report-tip(data-text="1234", data-summary="安全性评估细节")
                 h4.safety-item-hd-summary 正常
-            .safety-item-bd
+            .safety-item-bd(data-reportdata="-30")
                 .hist-ctn
                 .bottom-ball
+
         li.safety-item.full.brake-system
             .safety-item-hd
                 h3.safety-item-hd-index 5
