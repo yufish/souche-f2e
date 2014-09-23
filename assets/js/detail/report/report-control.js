@@ -1,5 +1,8 @@
 define(function(){
     
+    var _config = {
+        interval: 3000
+    };
     // 绑定事件
     var _view = {
         init: function(){
@@ -21,8 +24,6 @@ define(function(){
     var _event = {
         bind: function(){
             slideIndicator.on('click', '.idc-target', _event.clickSwitch );
-            _event.autoSlide();
-
             _view.init();
         },
         clickSwitch: function(){
@@ -46,17 +47,20 @@ define(function(){
                     next = slideIndicator.find('.idc-item').eq(0);
                 }
                 next.find('.idc-target').trigger('click');
-            }, 3000);
+            }, _config.interval);
         }
     }
 
 
-    function init(){
+    function init(config){
         _event.bind();
+
+        $.extend(_config, config);
     }
 
 
     return {
-        init: init
+        init: init,
+        startAudoSlide: _event.autoSlide
     };
 });

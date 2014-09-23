@@ -4,7 +4,14 @@ define(['detail/report/report-safety',
 ], function(Safety,Important, Control){
     Safety.init();
     Important.init();
-    Control.init();
+
+    var controlConfig = {
+        // set auto slide interval here
+    };
+    Control.init(controlConfig);
+    // start auto slide
+    // or bind to "appear"
+    Control.startAudoSlide();
 
     //tip的脚本
     var tip_popup = $("<div class='record-tip-popup hidden'><div class='arrow'></div><div class='tip-title'></div><div class='tip-summary'></div></div>");
