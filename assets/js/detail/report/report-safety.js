@@ -28,16 +28,16 @@ define(['detail/report/histogram'], function(Histogram){
     };
 
 
-    function getConfig( x, y, bar, ctn){
+    function getConfig( xItems, yItems, bar, ctn){
         var newConf = $.extend(true, {}, baseConfig);
-        if(x){
-            newConf.x.scale.items = x;
+        if(xItems){
+            newConf.x.scale.items = xItems;
         }
         else{
             newConf.x.show = false;
         }
-        if(y){
-            newConf.y.scale.items = y;
+        if(yItems){
+            newConf.y.scale.items = yItems;
         }
         else{
             newConf.y.show = false;
@@ -47,6 +47,8 @@ define(['detail/report/histogram'], function(Histogram){
         // console.log(newConf);
         return newConf;
     }
+
+    var APPEAR_DIS = 300;
 
     var wheelDepth = {
         init: function(){
@@ -59,7 +61,7 @@ define(['detail/report/histogram'], function(Histogram){
         getConfig: function(){
             var yItems =  [
                     {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>警戒值', value: 1.6},
+                    {text: '1.6mm<br/>(警戒值)', value: 1.6},
                     {text: '1.2mm', value: 1.2}
                     ];
             var xItems =  [{text: '左前轮'},
@@ -85,9 +87,10 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.wheel-depth .safety-item-bd') );
         },
         bind: function(){
-            setTimeout(function(){
-                wheelDepth.hist.updateBar([1.8, 1.55, 1.65, 1.75]);
-            }, 3000);
+            Souche.Util.appear( ".wheel-depth .safety-item-bd", function(){
+                var relValue = $('.wheel-depth .safety-item-bd').attr('data-reportdata').split(' ');
+                wheelDepth.hist.updateBar( relValue );
+            }, APPEAR_DIS);
         }
     };
 
@@ -100,7 +103,7 @@ define(['detail/report/histogram'], function(Histogram){
         getConfig: function(){
             var yItems =  [
                     {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>警戒值', value: 1.6},
+                    {text: '1.6mm<br/>(警戒值)', value: 1.6},
                     {text: '1.2mm', value: 1.2}
                     ];
             var xItems =  [{text: '左前轮'},
@@ -126,9 +129,10 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.brake-thickness .safety-item-bd') );
         },
         bind: function(){
-            setTimeout(function(){
-                brakeThickness.hist.updateBar([1.65, 1.85, 1.65, 1.7]);
-            }, 3000);
+            Souche.Util.appear( ".brake-thickness .safety-item-bd", function(){
+                var relValue = $('.brake-thickness .safety-item-bd').attr('data-reportdata').split(' ');
+                brakeThickness.hist.updateBar( relValue );
+            }, APPEAR_DIS);
         }
     };
 
@@ -169,16 +173,20 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.liquid-level .safety-item-bd') );
         },
         bind: function(){
-            setTimeout(function(){
-                liquidLevel.hist.updateBar([1.65, 1.85, 1.65, 2.3]);
-            }, 4000);
+            Souche.Util.appear( ".liquid-level .safety-item-bd", function(){
+                var relValue = $('.liquid-level .safety-item-bd').attr('data-reportdata').split(' ');
+                liquidLevel.hist.updateBar( relValue );
+            }, APPEAR_DIS);
         }
     };
 
     var antiFreeze = {
         init: function(){
-            var hist = new Histogram(antiFreeze.getConfig());
-            var bottomBallPos = -(30/2);
+            var antiConfig = antiFreeze.getConfig();
+            // 修正config, 增加新的调整
+            antiConfig.y.style.width = '82px';
+            var hist = new Histogram( antiConfig );
+            var bottomBallPos = -(40/2);
             bottomBallPos += (hist.ele.width()/2 - 50) + 5;
             $('.antifreeze .bottom-ball').css('margin-left',  bottomBallPos);
 
@@ -188,8 +196,8 @@ define(['detail/report/histogram'], function(Histogram){
         getConfig: function(){
             var yItems =  [
                     {text: '', value: -10},
-                    {text: '-25C<br/>最高警戒值', value: -25},
-                    {text: '-45C<br/>最低警戒值', value: -45},
+                    {text: '-25C<br/>(最高警戒值)', value: -25},
+                    {text: '-45C<br/>(最低警戒值)', value: -45},
                     {text: '', value: -70}
                     ];
             var xItems =  false;
@@ -213,8 +221,9 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.antifreeze .safety-item-bd .hist-ctn') );
         },
         bind: function(){
-            setTimeout(function(){
-                antiFreeze.hist.updateBar([-30]);
+            Souche.Util.appear( ".antifreeze .safety-item-bd", function(){
+                var relValue = [Number($('.antifreeze .safety-item-bd').attr('data-reportdata'))];
+                antiFreeze.hist.updateBar(relValue);
                 // 更新底部小球的class
                 if( antiFreeze.hist.ele.find('.bar-value').hasClass('normal') ){
                     $('.antifreeze .bottom-ball').addClass('normal');
@@ -222,8 +231,7 @@ define(['detail/report/histogram'], function(Histogram){
                 else{
                     $('.antifreeze .bottom-ball').addClass('danger');
                 }
-                
-            }, 4000);
+            },APPEAR_DIS);
         }
     };
     

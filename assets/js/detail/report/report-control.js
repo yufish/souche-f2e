@@ -28,26 +28,30 @@ define(function(){
         },
         clickSwitch: function(){
             var targetClass = $(this).attr('data-target');
-            allSlide.removeClass('active');
-            slideContent.find('.'+targetClass).addClass('active');
-
-            allIdc.removeClass('active');
-            $(this).parents('.idc-item').addClass('active');
-
-            // 清空之前的定时
-            clearInterval(autoSlideTimer);
-            // 从现在开始auto
+            _event.switchSlide(targetClass);
+            
+            // 从新的起点开始auto
             _event.autoSlide();
         },
         autoSlide: function(){
+            // 清空之前的定时
+            clearInterval(autoSlideTimer);
             autoSlideTimer = setInterval(function(){
                 var cur = slideIndicator.find('.idc-item.active');
                 var next = cur.next('.idc-item');
                 if(next.length <= 0){
                     next = slideIndicator.find('.idc-item').eq(0);
                 }
-                next.find('.idc-target').trigger('click');
+
+                _event.switchSlide( next.find('.idc-target').attr('data-target') );
             }, _config.interval);
+        },
+        switchSlide: function(targetClass){
+            allSlide.removeClass('active');
+            slideContent.find('.'+targetClass).addClass('active');
+
+            allIdc.removeClass('active');
+            $('.idc-target[data-target="'+targetClass+'"]').parents('.idc-item').addClass('active');
         }
     }
 
