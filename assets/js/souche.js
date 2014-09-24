@@ -267,7 +267,7 @@ Souche.Form = function() {
 
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function() {
-    var static_login_url = contextPath + "/pages/minilogin.html";
+    var static_login_url = contextPath + "/pages/phonelogin.html";
     var minilogin = null;
     var minilayer = null;
     var callback = function() {
@@ -363,9 +363,11 @@ Souche.NoRegLogin = function() {
     var minilogin = null;
     var minilayer = null;
     var phoneReg = /^1[3458][0-9]{9}$/;
+    var static_login_url = contextPath + "/pages/minilogin.html";
     var callback = function() {
 
     };
+    var has_third = true;
     return {
         callback: function() {
             this.close();
@@ -395,11 +397,19 @@ Souche.NoRegLogin = function() {
                     display: "block"
                 });
             } else {
-                minilogin = $('<div id="noreg-popup" class="apply_popup">      <span class="apply_close"></span>      <h1 class="popup-title">手机号一键登录</h1>      <form id="noreg-phone-form" action="">      <div class="result_p">      <div class="warning hidden clearfix">       <div class="input-error-tip">     <span class="error-icon"></span>    请输入正确的手机号</div>     </div>  <div class="tip">输入您的手机号码，完成后续操作:</div>            <div class="phone">            <input type="text" name="" value="" id="noreg-phone"  placeholder="输入你的手机号"/>    <i class="phone-true hidden"></i>      </div>      </div>      <button type="submit" class="submit">确认</button>      </form>    </div>');
+                minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
+
+                minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
                 minilogin.css({
                     display: "block",
-                    zIndex: 100000001
-                }).removeClass("hidden");
+                    width: 750,
+                    height: 400,
+                    position: "fixed",
+                    top: 100,
+                    left: $(window).width() / 2 - 370,
+                    zIndex: 100000001,
+                    background:"#fff"
+                });
 
                 minilayer = $("<div id='minilayer'></div>");
                 minilayer.css({
@@ -414,33 +424,7 @@ Souche.NoRegLogin = function() {
                 }).css("opacity", 0.7);
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
-                //              $(window).scroll(function(){
-                //                  minilogin.css({
-                //                      top:$(window).scrollTop()+100,
-                //                      left:$(window).width()/2-300
-                //                  })
-                //              })
-
-                $("#noreg-phone-form").on("submit", function(e) {
-                    e.preventDefault();
-                    if (!phoneReg.test($("#noreg-phone").val())) {
-                        $(".warning", this).removeClass("hidden");
-                    } else {
-                        Souche.PhoneRegister($("#noreg-phone").val(), function() {
-                            self.callback && self.callback();
-                        })
-                    }
-                })
-                $("#noreg-phone").blur(function(e) {
-                    e.preventDefault();
-                    if (!phoneReg.test($("#noreg-phone").val())) {
-                        $(".warning", $("#noreg-phone-form")).removeClass("hidden");
-                    } else {
-                        $(".warning", $("#noreg-phone-form")).addClass("hidden");
-                        $(".phone-true").removeClass("hidden");
-                    }
-                })
-                $("#noreg-popup .apply_close").on("click", function(e) {
+                $(document.body).on("click",function(){
                     self.close();
                 })
             }
@@ -450,10 +434,14 @@ Souche.NoRegLogin = function() {
          * @param _callback
          * @param is_phone 是否包含第三方登录的检查
          */
-        checkLogin: function(_callback,is_phone) {
+        checkLogin: function(_callback,has_third) {
             callback = _callback;
             var self = this;
-            if(!is_phone){
+            if(has_third!==false){
+                has_third = true;
+            }
+
+            if(has_third){
                 Souche.checkAllLogin(function(isLogin) {
                     if (isLogin) {
                         self.callback && self.callback();
