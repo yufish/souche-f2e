@@ -307,11 +307,11 @@ Souche.MiniLogin = function() {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
                     display: "block",
-                    width: 750,
-                    height: 400,
+                    width: 400,
+                    height: 320,
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 370,
+                    left: $(window).width() / 2 - 200,
                     zIndex: 100000001,
                     background:"#fff"
                 });
@@ -373,6 +373,13 @@ Souche.NoRegLogin = function() {
             this.close();
             callback();
         },
+        resizeTo:function(w,h){
+            minilogin.animate({
+                width: w,
+                height: h,
+                left: $(window).width() / 2 - w/2,
+            })
+        },
         close: function() {
             $(".result_p .warning ").addClass("hidden");
             if (minilogin) {
@@ -391,11 +398,15 @@ Souche.NoRegLogin = function() {
             var self = this;
             if (minilogin) {
                 minilogin.css({
-                    display: "block"
+                    display: "block",
+                    width: 750,
+                    height: 400,
+                    left: $(window).width() / 2 - 370,
                 }).removeClass("hidden");
                 minilayer.css({
                     display: "block"
                 });
+                minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
             } else {
                 minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
 
