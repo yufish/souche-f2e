@@ -434,13 +434,10 @@ Souche.NoRegLogin = function() {
          * @param _callback
          * @param is_phone 是否包含第三方登录的检查
          */
-        checkLogin: function(_callback,has_third) {
+        checkLogin: function(_callback,no_third) {
             callback = _callback;
             var self = this;
-            if(has_third!==false){
-                has_third = true;
-            }
-
+            has_third = !no_third;
             if(has_third){
                 Souche.checkAllLogin(function(isLogin) {
                     if (isLogin) {
