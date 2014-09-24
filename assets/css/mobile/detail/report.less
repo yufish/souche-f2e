@@ -17,6 +17,7 @@
 #report{
   color:#333;
   font-size:12px;
+  padding-bottom: 20px;
 }
 .qual-summary{
   padding:32px 24px;
@@ -268,7 +269,7 @@
       width: 14px;
       height: 14px;
     }
-    .report-text-wrapper.no-problem .rt-order{
+    .report-text-wrapper .rt-order{
       background: url(../../../images/mob/h5-3/ok.png);
       background-size: 100%;
     }
@@ -291,4 +292,64 @@
 
 .qdc-list-item {
   height: 45px;
+  border-bottom: 1px solid #E6E6E6;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  .qli-tushi{
+    float: left;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    .qt-left-icon{
+      float: left;
+      margin-right: 4px;
+    }
+    .qt-right-text{
+      color:#999;
+    }
+  }
+  .qli-key{
+    width: 60%;
+    float:left;
+    display: flex;
+    align-items: center;
+  }
+  .qli-value{
+    float:left;
+    width: 20%;
+
+  }
+}
+.icon-circle{
+  width:8px;
+  height: 8px;
+  background: #454853;
+  border-radius: 80%;
+}
+.icon-line{
+  height: 2px;
+  width:10px;
+  background: #454853;
+}
+
+.icon-normal{
+  background: url(../../../images/mob/h5-3/ok.png) no-repeat;
+  background-size: 100%;
+  width: 14px;
+  height: 14px;
+}
+.icon-problem,{
+  background: url(../../../images/mob/h5-3/not-ok.png) no-repeat;
+  background-size: 100%;
+  width: 14px;
+  height: 14px;
+}
+.icon-five-star{
+  background: url(../../../images/mob/h5-3/icon-five-star.png) no-repeat;
+  background-size: 100%;
+  width: 16px;
+  height: 16px;
+  margin-top:-5px;
 }
