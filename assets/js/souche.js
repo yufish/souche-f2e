@@ -486,7 +486,7 @@ Souche.NoRegLogin = function() {
  --(仅包含手机号码+验证码一种登录)
 
  */
-Souche.checkAllLogin = function(){
+Souche.checkAllLogin = function(callback){
     $.ajax({
         url: contextPath + "/pages/evaluateAction/isLogin.json",
         type: "post",
