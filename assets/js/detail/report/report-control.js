@@ -11,7 +11,7 @@ define(function(){
                 // 取第一个
                 initSlide = $('.idc-item .idc-target').eq(0);
             }
-            initSlide.trigger('click');
+            _event.switchSlide( initSlide.attr('data-target') )
         }
     }
     var slideContent = $('.costum-slide-ctn .content');

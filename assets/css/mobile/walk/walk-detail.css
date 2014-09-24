@@ -77,15 +77,15 @@ img{vertical-align: middle}
 .gc-content{
     color: #666;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 26px;
 }
 .gc-title-order{
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 80%;
     color: #fff;
     background: #ff571a;
     text-align: center;
-    line-height: 16px;
+    line-height: 18px;
 }

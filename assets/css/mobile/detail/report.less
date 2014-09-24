@@ -17,6 +17,7 @@
 #report{
   color:#333;
   font-size:12px;
+  padding-bottom: 20px;
 }
 .qual-summary{
   padding:32px 24px;
@@ -64,6 +65,7 @@
         float: left;
         margin: 18px 5px;
         text-align: right;
+        color:#999;
       }
       .qdt-icon{
         float: left;
@@ -154,7 +156,7 @@
 .qual-detail-card{
   .qual-detail-content{
     .chart-area{
-      padding:0 24px 16px;
+      padding:0 8px 16px;
     }
     .chart-title{
       margin:16px 0;
@@ -294,12 +296,16 @@
   border-bottom: 1px solid #E6E6E6;
   display: flex;
   align-items: center;
+  display: -webkit-flex;
+  -webkit-align-items: center;
   padding: 0 8px;
   .qli-tushi{
-    float: left;
-    width: 20%;
     display: flex;
     align-items: center;
+    flex:1;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-flex:1;
     height: 44px;
     .qt-left-icon{
       float: left;
@@ -312,13 +318,10 @@
   .qli-key{
     width: 60%;
     float:left;
-    display: flex;
-    align-items: center;
   }
   .qli-value{
     float:left;
     width: 20%;
-
   }
 }
 .icon-circle{
@@ -334,10 +337,21 @@
 }
 
 .icon-normal{
-  background: url(../../../images/mob/h5-3/ok.png);
+  background: url(../../../images/mob/h5-3/ok.png) no-repeat;
   background-size: 100%;
+  width: 14px;
+  height: 14px;
 }
 .icon-problem,{
-  background: url(../../../images/mob/h5-3/not-ok.png);
+  background: url(../../../images/mob/h5-3/not-ok.png) no-repeat;
   background-size: 100%;
+  width: 14px;
+  height: 14px;
+}
+.icon-five-star{
+  background: url(../../../images/mob/h5-3/icon-five-star.png) no-repeat;
+  background-size: 100%;
+  width: 16px;
+  height: 16px;
+  margin-top:-5px;
 }
