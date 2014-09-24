@@ -308,7 +308,7 @@ Souche.MiniLogin = function() {
                 minilogin.css({
                     display: "block",
                     width: 750,
-                    height: 380,
+                    height: 400,
                     position: "fixed",
                     top: 100,
                     left: $(window).width() / 2 - 370,
