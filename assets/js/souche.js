@@ -308,7 +308,7 @@ Souche.MiniLogin = function() {
                 minilogin.css({
                     display: "block",
                     width: 750,
-                    height: 380,
+                    height: 400,
                     position: "fixed",
                     top: 100,
                     left: $(window).width() / 2 - 370,
@@ -486,7 +486,7 @@ Souche.NoRegLogin = function() {
  --(仅包含手机号码+验证码一种登录)
 
  */
-Souche.checkAllLogin = function(){
+Souche.checkAllLogin = function(callback){
     $.ajax({
         url: contextPath + "/pages/evaluateAction/isLogin.json",
         type: "post",
