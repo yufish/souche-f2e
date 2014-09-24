@@ -341,7 +341,7 @@ Souche.MiniLogin = function() {
             callback = _callback;
             var self = this;
             $.ajax({
-                url: contextPath + "/pages/evaluateAction/isLogin.json",
+                url: contextPath + "/pages/evaluateAction/isPhoneVerifyLogin.json",
                 type: "post",
                 dataType: "json",
                 success: function(data) {
@@ -445,25 +445,68 @@ Souche.NoRegLogin = function() {
                 })
             }
         },
-        checkLogin: function(_callback) {
+        /**
+         *
+         * @param _callback
+         * @param is_phone 是否包含第三方登录的检查
+         */
+        checkLogin: function(_callback,is_phone) {
             callback = _callback;
             var self = this;
-            Souche.checkPhoneExist(function(isLogin) {
-                if (isLogin) {
-                    self.callback && self.callback();
-                } else {
-                    self._show();
-                }
-            })
+            if(!is_phone){
+                Souche.checkAllLogin(function(isLogin) {
+                    if (isLogin) {
+                        self.callback && self.callback();
+                    } else {
+                        self._show();
+                    }
+                })
+            }else{
+                Souche.checkPhoneExist(function(isLogin) {
+                    if (isLogin) {
+                        self.callback && self.callback();
+                    } else {
+                        self._show();
+                    }
+                })
+            }
+
 
         }
     };
 }();
+/*
+ 1.pages/evaluateAction/isLogin.json    收藏，对比，订阅
+ --( 包含了全部的登录方式)
 
+ 2.pages/evaluateAction/isPhoneLogin.json  预约看车，降价通知
+ --(包含填写手机号码和，手机号码+验证 两种登录方式)
+
+ 3.pages/evaluateAction/isPhoneVerifyLogin.json   后续订单业务相关所有操作
+ --(仅包含手机号码+验证码一种登录)
+
+ */
+Souche.checkAllLogin = function(){
+    $.ajax({
+        url: contextPath + "/pages/evaluateAction/isLogin.json",
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if (data.result == "true") {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        },
+        error: function() {
+            callback(false)
+        }
+    })
+}
 //检查是否填过手机号
 Souche.checkPhoneExist = function(callback) {
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/isNoRegisterLogin.json",
+        url: contextPath + "/pages/evaluateAction/isPhoneLogin.json",
         type: "post",
         dataType: "json",
         success: function(data) {
