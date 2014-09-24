@@ -72,6 +72,7 @@ define(['souche/util/tool'], function(Tool){
                 this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
             }
         }
+        this.barValue.title = this.name + ': ' + this.value;
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
         this.el.appendChild(this.barValue);
 
@@ -96,6 +97,7 @@ define(['souche/util/tool'], function(Tool){
                 this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
             }
         }
+        this.barValue.title = this.name + ': ' + config.value;
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
         // this.el.appendChild(this.barValue);
 

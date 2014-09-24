@@ -312,7 +312,8 @@ Souche.MiniLogin = function() {
                     position: "fixed",
                     top: 100,
                     left: $(window).width() / 2 - 370,
-                    zIndex: 100000001
+                    zIndex: 100000001,
+                    background:"#fff"
                 });
 
                 minilayer = $("<div id='minilayer'></div>");
