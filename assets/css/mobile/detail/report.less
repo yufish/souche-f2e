@@ -65,6 +65,7 @@
         float: left;
         margin: 18px 5px;
         text-align: right;
+        color:#999;
       }
       .qdt-icon{
         float: left;
@@ -155,7 +156,7 @@
 .qual-detail-card{
   .qual-detail-content{
     .chart-area{
-      padding:0 24px 16px;
+      padding:0 8px 16px;
     }
     .chart-title{
       margin:16px 0;
@@ -295,12 +296,16 @@
   border-bottom: 1px solid #E6E6E6;
   display: flex;
   align-items: center;
+  display: -webkit-flex;
+  -webkit-align-items: center;
   padding: 0 8px;
   .qli-tushi{
-    float: left;
-    width: 20%;
     display: flex;
     align-items: center;
+    flex:1;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-flex:1;
     height: 44px;
     .qt-left-icon{
       float: left;
@@ -313,13 +318,10 @@
   .qli-key{
     width: 60%;
     float:left;
-    display: flex;
-    align-items: center;
   }
   .qli-value{
     float:left;
     width: 20%;
-
   }
 }
 .icon-circle{
