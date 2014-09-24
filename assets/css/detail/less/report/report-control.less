@@ -10,6 +10,7 @@
         padding-bottom: 95px;
 
         .content,
+        .road,
         .indicator{
             list-style: none;
             padding: 0;
@@ -18,7 +19,7 @@
         }
         .content{
             position: relative;
-            height: 450px;
+            height: 430px;
 
             .slide-item{
                 position: absolute;
@@ -28,13 +29,21 @@
                 right: 0;
                 z-index: -10;
                 opacity: 0;
+                
+                // IE Hack, for less than IE8
+                display: ~"none\9";
 
                 &.active{
                     opacity: 1;
                     z-index: 100;
+                    display: ~"block\9";
 
-                    .car-and-info .info-item{
-                        opacity: 1;
+
+                    .car-and-info{
+                        .guide-lines,
+                        .info-item{
+                            opacity: 1;
+                        }
                     }
                 }
                 .car-and-info{
@@ -42,7 +51,13 @@
                     height: 350px;
                     margin-top: 80px;
                     background-repeat: no-repeat;
+
+                    .guide-lines{
+                        position: absolute;
+                        z-index: 50;
+                    }
     
+                    .guide-lines,
                     .info-item{
                         opacity: 0;
                         .tst(opacity 300ms ease-in-out;);
@@ -51,6 +66,7 @@
                     .info-item{
                         position: absolute;
                         width: 370px;
+                        z-index: 100;
 
                         .info-icon{
                             float: left;
@@ -114,27 +130,84 @@
                         }
                     }
                 }
-                .road{
-                    height: 20px;
-                    background-image: url("../../images/detail/road.png");
-                    background-repeat: no-repeat;
+
+                &.control-start .car-and-info .guide-lines{
+                    width: 130px;
+                    height: 190px;
+                    top: 79px;
+                    left: 323px;
+                    background-image: url("../../images/detail/guideline-start.png");
                 }
-                &.control-start .car-and-info{
-                    background-image: url("../../images/detail/start.png");
+                &.control-accelerate .car-and-info .guide-lines{
+                    width: 109px;
+                    height: 249px;
+                    top: 47px;
+                    left: 343px;
+                    background-image: url("../../images/detail/guideline-acc.png");
                 }
-                &.control-accelerate .car-and-info{
-                    background-image: url("../../images/detail/accelerate.png");
+                &.control-steady .car-and-info .guide-lines{
+                    width: 206px;
+                    height: 233px;
+                    top: 85px;
+                    left: 245px;
+                    background-image: url("../../images/detail/guideline-steady.png");
                 }
-                &.control-steady .car-and-info{
-                    background-image: url("../../images/detail/steady.png");
+                &.control-turn .car-and-info .guide-lines{
+                    width: 238px;
+                    height: 237px;
+                    top: 46px;
+                    left: 261px;
+                    background-image: url("../../images/detail/guideline-turn.png");
                 }
-                &.control-turn .car-and-info{
-                    background-image: url("../../images/detail/turn.png");
-                }
-                &.control-brake .car-and-info{
-                    background-image: url("../../images/detail/brake.png");
+                &.control-brake .car-and-info .guide-lines{
+                    width: 205px;
+                    height: 214px;
+                    top: 86px;
+                    left: 268px;
+                    background-image: url("../../images/detail/guideline-brake.png");
                 }
             }
+            .no-slide{
+                // 一直显示的slide item
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                opacity: 1;
+                &.car-shake{
+                    height: 149px;
+                    width: 426px;
+                    top: auto;
+                    right: auto;
+                    left: 61px;
+                    // bottom: 17px;
+                    background: url("../../images/detail/car_shake.gif") no-repeat;
+
+                    .wheel{
+                        position: absolute;
+                        bottom: 0;
+                        height: 58px;
+                        width: 58px;
+                        background: url("../../images/detail/wheel.gif") no-repeat;
+                        z-index: 50;
+
+                        &.wheel-back{
+                            left: 64px;
+                        }
+                        &.wheel-front{
+                            left: 315px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .road{
+            height: 20px;
+            background-image: url("../../images/detail/road.gif");
+            background-repeat: no-repeat;
         }
         @itemW: 50px;
         @itemBC: #ccc;
