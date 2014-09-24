@@ -33,7 +33,7 @@ html
                                 p 7天包退
                             .qdt-icon 退
                     .qual-detail-content
-                        .qual-detail-sub-item
+                        .qual-detail-sub-card
                             .qdc-title 1.无重大撞击，车身左右对称
                             .qdc-tab.clearfix
                                 .qdc-tab-item.left-1-5.active 车头
@@ -43,15 +43,19 @@ html
                                 .qdc-tab-item.left-1-5 底盘
                             .qdc-tab-panel
                                 .qdc-panel-item
-                                    img(src='')
-                        .qual-detail-sub-item
+                                    img(src='../../../assets/images/mob/h5-3/report-car-1.png')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-2.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-3.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-4.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-5.png' class='hidden')
+                        .qual-detail-sub-card
                             .qdc-title 2.排除火烧痕迹，非火烧车
-                        .qual-detail-sub-item
+                        .qual-detail-sub-card
                             .qdc-title 3.排除水浸痕迹，非水浸车
-                        .qual-detail-sub-item
+                        .qual-detail-sub-card
                             .qdc-title 4.检查发动机重要部件，发动机正常
-                        .qual-detail-sub-item
-                            .qdc-title  5.该车共有4处钣金修复
+                        .qual-detail-sub-card
+                            .qdc-title 5.该车共有4处钣金修复
                             .qual-gp
                                 .qual-icon.guaHenXiuFu
                                 .qual-pre-text 原车漆或刮痕修复
@@ -61,7 +65,8 @@ html
                             .qual-gp
                                 .qual-icon *
                                 .qual-pre-text 深度小于30mm的划痕及面积小于30*30mm的凹陷，不影响安全性能，不在此标出
-
+                            .qual-gp
+                                img(src='../../../assets/images/mob/h5-3/report-car-1.png')
                 .qual-detail-card
                     .qual-detail-title
                         .qdt-left 安全性评估
@@ -71,100 +76,161 @@ html
                                 p 7天包修
                             .qdt-icon 修
                     .qual-detail-content
-                        .chart-area
+                        .chart-area.qual-detail-sub-card
                             .chart-title 1.胎纹深度正常
-                            .y-axis(data-max-value='1.9',data-min-value='1.2')
-                                .ya-item.ya-item-top 1.9mm
-                                .ya-item(style='top:20px;') 1.6mm
-                                .ya-item.ya-item-bottom 1.2mm
                             .bar-area.clearfix
-                                .bar-wrapper
-                                    .bar(style='height:{{bar1}}px')
-                                    .guide-line(style='bottom:{{guideline}}px')
-                                .bar-wrapper
-                                    .bar(style='height:{{bar2}}px')
-                                    .guide-line(style='bottom:{{guideline}}px')
-                                .bar-wrapper
-                                    .bar(style='height:{{bar3}}px' class='{{class3}}')
-                                    .guide-line(style='bottom:{{guideline}}px')
-                                .bar-wrapper
-                                    .bar(style='height:{{bar4}}px')
-                                    .guide-line(style='bottom:{{guideline}}px')
-                            .x-axis.clearfix
-                                .x-item 左前轮
-                                .x-item 左前轮
-                                .x-item 左前轮
-                                .x-item 左前轮
-                        .chart-area
+                                .y-axis(data-max-value='1.9',data-min-value='1.2')
+                                    .ya-item.ya-item-top 1.9mm
+                                    .ya-item(style='bottom:80px;') 1.6mm
+                                    .ya-item.ya-item-bottom 1.2mm
+                                .bar-with-x.first
+                                    .bar-wrapper.first
+                                        .bar(style='height:{{bar1}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar2}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar3}}px' class='{{class3}}')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar4}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                        .chart-area.qual-detail-sub-card
                             .chart-title 2.刹车片厚度正常
-                            .y-axis(data-max-value='1.9',data-min-value='1.2')
-                                .ya-item.ya-item-top 1.9mm
-                                .ya-item(style='top:20px;').
-                                    1.6mm</br>
-                                    警戒值
-                                .ya-item.ya-item-bottom 1.2mm
                             .bar-area.clearfix
-                                .bar-wrapper
-                                    .bar(style='')
-                                    .guide-line
-                                .bar-wrapper
-                                    .bar(style='')
-                                    .guide-line
-                                .bar-wrapper
-                                    .bar(style='')
-                                    .guide-line
-                                .bar-wrapper
-                                    .bar(style='')
-                                    .guide-line
-                            .x-axis.clearfix
-                                .x-item 左前轮
-                                .x-item 左前轮
-                                .x-item 左前轮
-                                .x-item 左前轮
-                        .chart-area
+                                .y-axis(data-max-value='1.9',data-min-value='1.2')
+                                    .ya-item.ya-item-top 1.9mm
+                                    .ya-item(style='bottom:80px;') 1.6mm
+                                    .ya-item.ya-item-bottom 1.2mm
+                                .bar-with-x.first
+                                    .bar-wrapper.first
+                                        .bar(style='height:{{bar1}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar2}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar3}}px' class='{{class3}}')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar4}}px')
+                                        .guide-line(style='bottom:{{guideline}}px')
+                                    .x-item 左前轮
+                        .chart-area.qual-detail-sub-card
                             .chart-title 3.电瓶正常
-                            .y-axis
-                                .ya-item.dianya(style='top:20px').
-                                    正常电压</br>
-                                    12V
                             .bar-area.clearfix
+                                .y-axis.dianping
+                                    .ya-item(style='bottom:70px').
+                                        12V</br>
+                                        正常电压
                                 .dianping-bg
                                     .bar-wrapper.bar-wrapper-large
                                         .bar(style='')
                                         .guide-line
-                        .chart-area
+                        .chart-area.qual-detail-sub-card
                             .chart-title 4.防冻液正常
-                            .y-axis
-                                .ya-item.fangdong.
-                                    -25</br> 最低警戒线
                             .bar-area.fangdong.clearfix
-                                .bar-wrapper
-                                    .bar
-                                        .bar-bottom
-                                    .guide-line(style='bottom:{{guideline1}}px')
-                                    .guide-line(style='bottom:{{guideline2}}px')
-                        .chart-area
+                                .y-axis.fangdong
+                                    .ya-item(style='bottom:70px').
+                                        -25</br> 最低警戒线
+                                    .ya-item(style='bottom:30px').
+                                        -25</br> 最低警戒线
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar4}}px')
+                                            .bar-bottom
+                                        .guide-line(style='bottom:{{guideline1}}px')
+                                        .guide-line(style='bottom:{{guideline2}}px')
+
+                        .chart-area.qual-detail-sub-card
                             .chart-title.has-problem 6.制动系统需调整
-                            .chart-text-wrapper.no-problem
-                                .ct-order
-                                .ct-text
-                                    .ct-category 刹车真空助力泵
-                                    .ct-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
-                            .chart-text-wrapper.has-problem
-                                .ct-order
-                                .ct-text
-                                    .ct-category 刹车真空助力泵
-                                    .ct-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
-                            .chart-text-wrapper.no-problem
-                                .ct-order
-                                .ct-text
-                                    .ct-category 刹车真空助力泵
-                                    .ct-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
-                            .chart-text-wrapper.no-problem
-                                .ct-order
-                                .ct-text
-                                    .ct-category 刹车真空助力泵
-                                    .ct-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 刹车真空助力泵
+                                    .rt-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
+                            .report-text-wrapper.has-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 刹车真空助力泵
+                                    .rt-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 刹车真空助力泵
+                                    .rt-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 刹车真空助力泵
+                                    .rt-desc 外观没有腐蚀情况；制动踏板无漏真空现象；真空助力正常。
+                .qual-detail-card
+                    .qual-detail-title
+                        .qdt-left 操控性评估
+                        .qdt-right
+                            .qdt-text
+                                p 若有不符
+                                p 7天包退
+                            .qdt-icon 退
+                    .qual-detail-content
+                        .qual-detail-sub-card
+                            .qdc-tab.pt-16px.clearfix
+                                .qdc-tab-item.left-1-5.active 车头
+                                .qdc-tab-item.left-1-5 车尾
+                                .qdc-tab-item.left-1-5 左侧
+                                .qdc-tab-item.left-1-5 右侧
+                                .qdc-tab-item.left-1-5 底盘
+                            .qdc-tab-panel
+                                .qdc-panel-item
+                                    img(src='../../../assets/images/mob/h5-3/report-car-1.png')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-2.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-3.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-4.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-car-5.png' class='hidden')
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 点火开关
+                                    .rt-desc 旋转正常,无卡滞
+                            .report-text-wrapper.has-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 启动马达及线路
+                                    .rt-desc 启动正常,无卡滞及异常.连接启动马达线路无破损及接触不良
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 点火线圈
+                                    .rt-desc 发动机加速动力异常
+                            .report-text-wrapper.no-problem
+                                .rt-order
+                                .rt-text
+                                    .rt-category 火花塞
+                                    .rt-desc 发动机转速平稳，无抖动、漏电现象。正常电极间隙为（1.3-1.7mm）
+                .qual-detail-card
+                    .qual-detail-title
+                        .qdt-left 重要配置
+                        .qdt-right
+                            .qdt-text
+                                p 配置若
+                                p 7天包退
+                            .qdt-icon 退
+                    .qual-detail-content
+                        .qual-detail-sub-card
 
     script(src='../../../assets/js/mobile/common/templateRender.js')
     script(src='../../../assets/js/mobile/detail/chart.js')

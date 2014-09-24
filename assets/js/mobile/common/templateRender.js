@@ -8,10 +8,11 @@ function d_equals(val1,val2){
 function getValue(data,key){
     return data[key]
 }
+var replaceDefault = ''
 function render_template(str,data){
     return str.replace(regex_placeholder,function(match,key){
         var replaceValue = getValue(data,key);
-        if(!replaceValue) replaceValue='';
+        if(!replaceValue) replaceValue=replaceDefault;
         return replaceValue;
     })
 }
