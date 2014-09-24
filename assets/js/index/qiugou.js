@@ -165,7 +165,7 @@ function(AddSeries,CustomSelect){
                 }
                 rss_isSubmiting = true;
                 $(this).addClass("loading").html("提交中")
-                Souche.MiniLogin.checkLogin(function(){
+//                Souche.MiniLogin.checkLogin(function(){
                     $.ajax({
                         url:config.submit_api,
                         data:{
@@ -185,7 +185,7 @@ function(AddSeries,CustomSelect){
                             rss_isSubmiting = false;
                         }
                     })
-                })
+//                })
 
             })
             //获取一个初始宽度
