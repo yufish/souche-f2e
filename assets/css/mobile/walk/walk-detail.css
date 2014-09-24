@@ -5,7 +5,7 @@ img{vertical-align: middle}
 #wrapper{
     margin:0 auto;
 }
-#act-title{
+.act-title{
     font-size: 20px;
     line-height: 24px;
     margin-top: 10px;
@@ -53,7 +53,6 @@ img{vertical-align: middle}
 .car-card .price-time{
     overflow: hidden;
     padding: 8px 0 12px;
-    border-bottom: 1px solid #ebebeb;
 }
 .car-wrapper{
     padding:0 16px;
@@ -62,11 +61,12 @@ img{vertical-align: middle}
 }
 .good-car-card{
     color:#333;
-    padding: 8px 10px;
+    padding:16px;
 }
 .good-car-card .gc-title{
     font-weight: bold;
     font-size: 16px;
+    margin-left: 8px;
 }
 .gc-img{
     margin: 12px 0;
