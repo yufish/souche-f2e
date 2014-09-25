@@ -267,107 +267,16 @@ Souche.Form = function() {
 
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function() {
-    var static_login_url = contextPath + "/pages/phonelogin.html";
+    var secret_login_url = contextPath + "/pages/phonelogin.html";
+    var static_login_url = contextPath+"/pages/minilogin.html";
     var minilogin = null;
     var minilayer = null;
+    var is_secret = false;
+    var has_third=true;
+    var useCheck = true;
     var callback = function() {
 
     };
-    return {
-        callback: function() {
-            this.close();
-            callback();
-        },
-        close: function() {
-            $(".result_p .warning ").addClass("hidden");
-            if (minilogin) {
-                minilogin.css({
-                    display: "none"
-                });
-            }
-            if (minilayer) {
-                minilayer && minilayer.css({
-                    display: "none"
-                });
-            }
-
-        },
-        _show: function() {
-            if (minilogin) {
-                minilogin.attr("src", static_login_url);
-                minilogin.css({
-                    display: "block"
-                });
-                minilayer.css({
-                    display: "block"
-                });
-            } else {
-                minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
-
-                minilogin.attr("src", static_login_url);
-                minilogin.css({
-                    display: "block",
-                    width: 400,
-                    height: 320,
-                    position: "fixed",
-                    top: 100,
-                    left: $(window).width() / 2 - 200,
-                    zIndex: 100000001,
-                    background:"#fff"
-                });
-
-                minilayer = $("<div id='minilayer'></div>");
-                minilayer.css({
-                    display: "block",
-                    width: $(document.body).width(),
-                    left: 0,
-                    top: 0,
-                    height: $(document.body).height(),
-                    position: "absolute",
-                    background: "#111",
-                    zIndex: 100000000
-                }).css("opacity", 0.7);
-                $(document.body).append(minilayer);
-                $(document.body).append(minilogin);
-                //				$(window).scroll(function(){
-                //					minilogin.css({
-                //						top:$(window).scrollTop()+100,
-                //						left:$(window).width()/2-300
-                //					})
-                //				})
-            }
-        },
-        checkLogin: function(_callback) {
-            callback = _callback;
-            var self = this;
-            $.ajax({
-                url: contextPath + "/pages/evaluateAction/isPhoneVerifyLogin.json",
-                type: "post",
-                dataType: "json",
-                success: function(data) {
-                    if (data.result == "true") {
-                        self.callback && self.callback();
-                    } else {
-                        self._show();
-                    }
-                },
-                error: function() {
-                    self._show();
-                }
-            });
-        }
-    };
-}();
-Souche.NoRegLogin = Souche.NoRegLogin || {};
-Souche.NoRegLogin = function() {
-    var minilogin = null;
-    var minilayer = null;
-    var phoneReg = /^1[3458][0-9]{9}$/;
-    var static_login_url = contextPath + "/pages/minilogin.html";
-    var callback = function() {
-
-    };
-    var has_third = true;
     return {
         callback: function() {
             this.close();
@@ -377,7 +286,7 @@ Souche.NoRegLogin = function() {
             minilogin.animate({
                 width: w,
                 height: h,
-                left: $(window).width() / 2 - w/2,
+                left: $(window).width() / 2 - w/2
             })
         },
         close: function() {
@@ -395,29 +304,34 @@ Souche.NoRegLogin = function() {
 
         },
         _show: function() {
-            var self = this;
             if (minilogin) {
+                minilogin.attr("src", static_login_url);
                 minilogin.css({
-                    display: "block",
-                    width: 750,
-                    height: 400,
-                    left: $(window).width() / 2 - 370,
-                }).removeClass("hidden");
+                    display: "block"
+                });
                 minilayer.css({
                     display: "block"
                 });
-                minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
+                if(is_secret){
+                    minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0));
+                }else{
+                    minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
+                }
             } else {
                 minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
+               if(is_secret){
+                   minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0));
+               }else{
+                   minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
+               }
 
-                minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
                 minilogin.css({
                     display: "block",
                     width: 750,
                     height: 400,
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 370,
+                    left: $(window).width() / 2 - 380,
                     zIndex: 100000001,
                     background:"#fff"
                 });
@@ -435,42 +349,63 @@ Souche.NoRegLogin = function() {
                 }).css("opacity", 0.7);
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
+
                 $(document.body).on("click",function(){
                     self.close();
                 })
             }
         },
-        /**
-         *
-         * @param _callback
-         * @param is_phone 是否包含第三方登录的检查
-         */
-        checkLogin: function(_callback,no_third) {
+        checkLogin: function(_callback,_is_secret,no_third,no_useCheck) {
             callback = _callback;
             var self = this;
+            is_secret = !!_is_secret;
             has_third = !no_third;
-            if(has_third){
-                Souche.checkAllLogin(function(isLogin) {
-                    if (isLogin) {
-                        self.callback && self.callback();
-                    } else {
-                        self._show();
+            useCheck = !no_useCheck;
+            if(useCheck){
+                if(!is_secret){
+                    if(has_third){
+                        Souche.checkAllLogin(function(isLogin) {
+                            if (isLogin) {
+                                self.callback && self.callback();
+                            } else {
+                                self._show();
+                            }
+                        })
+                    }else{
+                        Souche.checkPhoneExist(function(isLogin) {
+                            if (isLogin) {
+                                self.callback && self.callback();
+                            } else {
+                                self._show();
+                            }
+                        })
                     }
-                })
+                }else{
+                    $.ajax({
+                        url: contextPath + "/pages/evaluateAction/isPhoneVerifyLogin.json",
+                        type: "post",
+                        dataType: "json",
+                        success: function(data) {
+                            if (data.result == "true") {
+                                self.callback && self.callback();
+                            } else {
+                                self._show();
+                            }
+                        },
+                        error: function() {
+                            self._show();
+                        }
+                    });
+                }
             }else{
-                Souche.checkPhoneExist(function(isLogin) {
-                    if (isLogin) {
-                        self.callback && self.callback();
-                    } else {
-                        self._show();
-                    }
-                })
+                self._show();
             }
-
 
         }
     };
 }();
+
+
 /*
  1.pages/evaluateAction/isLogin.json    收藏，对比，订阅
  --( 包含了全部的登录方式)

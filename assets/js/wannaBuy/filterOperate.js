@@ -19,7 +19,7 @@ define(function(){
         },
         saveFilter: function(e) {
             var self = this;
-            Souche.NoRegLogin.checkLogin(function(isLogin) {
+            Souche.MiniLogin.checkLogin(function(isLogin) {
                 $(".historyRecord").removeClass("hidden");
 
                 var chooseValue = $(".choose_save").attr("");
