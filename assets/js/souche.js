@@ -304,6 +304,7 @@ Souche.MiniLogin = function() {
 
         },
         _show: function() {
+            var self = this;
             if (minilogin) {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
@@ -350,7 +351,7 @@ Souche.MiniLogin = function() {
                 $(document.body).append(minilayer);
                 $(document.body).append(minilogin);
 
-                $(document.body).on("click",function(){
+                minilayer.on("click",function(){
                     self.close();
                 })
             }
