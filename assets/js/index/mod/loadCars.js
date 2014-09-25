@@ -126,10 +126,16 @@ define(function(){
                 $(".carsContent").addClass("hidden");
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
                 if (id === "myAdviser") {
+                    $(".guess-like").removeClass("hidden")
+                }else{
+                    $(".guess-like").addClass("hidden")
+                }
+                if (id === "myAdviser") {
 //                    initAnimate(".myAdviser");
                     if(isdialogShow){
                         $(".dialogContentContainer").removeClass("hidden")
                     }
+
                 } else if (id == "hotNewCars") {
                     $(".hotNewCars img").each(function(i, img) {
                         $(img).attr("src", $(img).attr("data-original"));
