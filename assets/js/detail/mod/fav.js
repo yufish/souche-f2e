@@ -87,7 +87,7 @@ define(function() {
                     //         $(".wrapGrayBg").show();
                     //     }
                     // })
-                    Souche.NoRegLogin.checkLogin(function() {
+                    Souche.MiniLogin.checkLogin(function() {
                         doubleClickFlag = true;
                         submitFav();
                     })

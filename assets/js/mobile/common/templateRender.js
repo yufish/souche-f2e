@@ -1,13 +1,24 @@
-var regex_placeholder  = /{{(\w+)}}/g,
-    regex_check = /.*{{\w+}}.*/;
+var regex_placeholder  = /\{\{([\w|\.]+)\}\}/g,
+    regex_check = /.*\{\{[\w|\.]+\}\}.*/;
 
 function d_equals(val1,val2){
     return val1===val2;
 }
-
-function getValue(data,key){
-    return data[key]
+function getValue(data,str){
+    var ss = str.split('.')
+    var tempObj=data[ ss[0] ];
+    for(var i = 1;i<ss.length;i++){
+        if(tempObj==undefined){
+            //error
+            return undefined
+        }
+        tempObj=tempObj[ss[i]]
+    }
+    return tempObj;
 }
+//function getValue(data,key){
+//    return data[key]
+//}
 var replaceDefault = ''
 function render_template(str,data){
     return str.replace(regex_placeholder,function(match,key){

@@ -85,7 +85,7 @@ html
                                     .ya-item.ya-item-bottom 1.2mm
                                 .bar-with-x.first
                                     .bar-wrapper.first
-                                        .bar(style='height:{{bar1}}px')
+                                        .bar(style='height:{{bar1.value}}px')
                                         .guide-line(style='bottom:{{guideline}}px')
                                     .x-item 左前轮
                                 .bar-with-x
@@ -226,25 +226,25 @@ html
                         .qdt-left 重要配置
                         .qdt-right
                             .qdt-text
-                                p 配置若
-                                p 7天包退
-                            .qdt-icon 退
+                                p 配置若损坏，7天保修
+                                p 配置若缺失，7天保退
+                            .qdt-icon 退/修
                     .qual-detail-content
                         .qual-detail-sub-card
                             .qdc-list-item
-                                .qli-tushi
+                                .qli-tushi.clearfix
                                     .qt-left-icon.icon-circle
                                     .qt-right-text 标配
-                                .qli-tushi
+                                .qli-tushi.clearfix
                                     .qt-left-icon.icon-five-star
                                     .qt-right-text 加配
-                                .qli-tushi
+                                .qli-tushi.clearfix
                                     .qt-left-icon.icon-line
                                     .qt-right-text 无
-                                .qli-tushi
+                                .qli-tushi.clearfix
                                     .qt-left-icon.icon-normal
                                     .qt-right-text 正常
-                                .qli-tushi
+                                .qli-tushi.clearfix
                                     .qt-left-icon.icon-problem
                                     .qt-right-text 异常
                             .qdc-list-item
