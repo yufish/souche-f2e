@@ -7,6 +7,7 @@ define(['detail/report/report-safety',
 
     var controlConfig = {
         // set auto slide interval here
+        interval: 1000*3
     };
     Control.init(controlConfig);
     // start auto slide
