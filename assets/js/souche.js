@@ -328,11 +328,11 @@ Souche.MiniLogin = function() {
 
                 minilogin.css({
                     display: "block",
-                    width: 750,
-                    height: (has_third?400:320),
+                    width:  (has_third?750:400),
+                    height: (has_third?400:300),
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 380,
+                    left: $(window).width() / 2 - (has_third?750:400)/2,
                     zIndex: 100000001,
                     background:"#fff"
                 });
