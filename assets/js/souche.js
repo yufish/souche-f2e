@@ -283,11 +283,11 @@ Souche.MiniLogin = function() {
             callback();
         },
         resizeTo:function(w,h){
-            minilogin.animate({
-                width: w,
-                height: h,
-                left: $(window).width() / 2 - w/2
-            })
+//            minilogin.animate({
+//                width: w,
+//                height: h,
+//                left: $(window).width() / 2 - w/2
+//            })
         },
         close: function() {
             $(".result_p .warning ").addClass("hidden");
@@ -329,7 +329,7 @@ Souche.MiniLogin = function() {
                 minilogin.css({
                     display: "block",
                     width: 750,
-                    height: 400,
+                    height: (has_third?400:320),
                     position: "fixed",
                     top: 100,
                     left: $(window).width() / 2 - 380,
