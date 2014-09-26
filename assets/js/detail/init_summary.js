@@ -19,7 +19,7 @@ define(function() {
                         var priceData = data;
                         config.maxPrice = config.maxPrice * 1;
                         config.minPrice = config.minPrice * 1;
-                        config.taxPrice = config.taxPrice*1;
+                        config.taxPrice = (config.taxPrice*1).toFixed(1)*1;
                         if (config.minPrice == 0) {
                             config.minPrice = config.maxPrice;
                         }

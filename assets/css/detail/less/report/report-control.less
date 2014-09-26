@@ -1,3 +1,11 @@
+
+@disappTF: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+@disappDur: 750ms;
+
+
+@appTF: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+@appDelay: 500ms;
+@appDur: 500ms;
 .report_control{
     *{
         -webkit-box-sizing: border-box;
@@ -20,7 +28,7 @@
         .content{
             position: relative;
             height: 430px;
-
+            
             .slide-item{
                 position: absolute;
                 top: 0px;
@@ -29,6 +37,7 @@
                 right: 0;
                 z-index: -10;
                 opacity: 0;
+                .tst( opacity 0ms @disappTF @disappDur, z-index 0ms @disappTF @disappDur;);
                 
                 // IE Hack, for less than IE8
                 display: ~"none\9";
@@ -36,6 +45,8 @@
                 &.active{
                     opacity: 1;
                     z-index: 100;
+                    .tst( opacity 0ms ease 0ms, z-index 0ms ease 0ms;);
+
                     display: ~"block\9";
 
 
@@ -43,6 +54,7 @@
                         .guide-lines,
                         .info-item{
                             opacity: 1;
+                            .tst(opacity @appDur @appTF @appDelay;);
                         }
                     }
                 }
@@ -60,7 +72,7 @@
                     .guide-lines,
                     .info-item{
                         opacity: 0;
-                        .tst(opacity 300ms ease-in-out;);
+                        .tst(opacity @disappDur @disappTF;);
                     }
 
                     .info-item{

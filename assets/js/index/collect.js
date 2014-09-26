@@ -11,7 +11,7 @@ define(function() {
         $(".carCollect").live("click", function() {
             var context = this;
             if (is_requesting) return;
-            Souche.NoRegLogin.checkLogin(function() {
+            Souche.MiniLogin.checkLogin(function() {
                 if ($(context).hasClass("active")) {
                     var carID = $(context).attr("data-carid");
                     deleteCollect.call(context, carID);

@@ -23,15 +23,16 @@ define(function(){
     var autoSlideTimer = null;
     var _event = {
         bind: function(){
-            slideIndicator.on('click', '.idc-target', _event.clickSwitch );
+            slideIndicator.on('mouseenter', '.idc-target', _event.clickSwitch );
             _view.init();
         },
         clickSwitch: function(){
             var targetClass = $(this).attr('data-target');
             _event.switchSlide(targetClass);
             
+            clearInterval(autoSlideTimer);
             // 从新的起点开始auto
-            _event.autoSlide();
+            // _event.autoSlide();
         },
         autoSlide: function(){
             // 清空之前的定时

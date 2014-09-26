@@ -64,7 +64,7 @@ Souche.Sidebar = (function() {
             if ($(this).hasClass("contrast-box") || $(this).hasClass("suggest-box")) {
                 showSidebar(self);
             } else {
-                Souche.NoRegLogin.checkLogin(function(isLogin) {
+                Souche.MiniLogin.checkLogin(function(isLogin) {
                     showSidebar(self);
                 })
             }

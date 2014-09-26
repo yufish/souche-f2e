@@ -79,8 +79,8 @@ define(['detail/report/histogram'], function(Histogram){
                 { name: '右后轮', value:  0}
                 ],
                 cond: {
-                    more: { className: 'normal', text: '安全' },
-                    less: { className: 'danger', text: '危险' }
+                    more: { className: 'normal bounceInUp animated', text: '安全' },
+                    less: { className: 'danger bounceInUp animated', text: '危险' }
                 },
                 condClass: false
             };
@@ -121,8 +121,8 @@ define(['detail/report/histogram'], function(Histogram){
                 { name: '右后轮', value:  0}
                 ],
                 cond: {
-                    more: { className: 'normal', text: '安全' },
-                    less: { className: 'danger', text: '危险' }
+                    more: { className: 'normal bounceInUp animated', text: '安全' },
+                    less: { className: 'danger bounceInUp animated', text: '危险' }
                 },
                 condClass: false
             };
@@ -164,9 +164,9 @@ define(['detail/report/histogram'], function(Histogram){
                 { name: '变速箱', value:  0}
                 ],
                 cond: {
-                    more: { className: 'danger', text: '危险' },
-                    less: { className: 'danger', text: '危险' },
-                    between: { className: 'normal', text: '安全' }
+                    more: { className: 'danger bounceInUp animated', text: '危险' },
+                    less: { className: 'danger bounceInUp animated', text: '危险' },
+                    between: { className: 'normal bounceInUp animated', text: '安全' }
                 },
                 condClass: false
             };
@@ -211,9 +211,9 @@ define(['detail/report/histogram'], function(Histogram){
                     { name: '防冻液冰点', value:  -65}
                 ],
                 cond: {
-                    more: { className: 'danger', text: '危险' },
-                    less: { className: 'danger', text: '危险' },
-                    between: { className: 'normal', text: '安全' }
+                    more: { className: 'danger bounceInUp animated', text: '危险' },
+                    less: { className: 'danger bounceInUp animated', text: '危险' },
+                    between: { className: 'normal bounceInUp animated', text: '安全' }
                 },
                 // 初始时 不通过值判断class
                 condClass: false
