@@ -276,16 +276,15 @@ visibility: hidden;
 
 @import "list/car-list-view.less";
 #list_wrap .list_main{
-    width: 1040px;
+    width: 1020px;
     float: left;
-    
+    margin-left: 20px;
 }
 #list_wrap .list_main .car-nav{
     width: 1018px;
     height: 80px;
     border: 1px solid #E6E6E6;
     margin-bottom: 20px;
-    margin-left: 20px;
 }
 .card-box{
   .carItem{
@@ -347,6 +346,9 @@ visibility: hidden;
         span{
             margin-left: 3px;
         }
+        .info-item-name{
+            display: none;
+        }
     }
     .carTail{
         position: absolute;
@@ -368,6 +370,10 @@ visibility: hidden;
             cursor: pointer;
             span{
                 margin-left: 25px;
+            }
+            .add-to-coll,
+            .already-colled{
+                display: none;
             }
         } 
         .collect:hover{
@@ -399,6 +405,13 @@ visibility: hidden;
                 float: right;
                 margin-right: 5px;
             }
+            .constrast-without-add{
+                display: inline-block;
+            }
+            .constrast-add{
+                
+                display: none;
+            }
         }
         .carConstrast:hover{
             opacity: 1;
@@ -411,23 +424,25 @@ visibility: hidden;
         border-top:1px solid #E6E6E6;
         padding-top: 10px;
         .zhijian{
-            height: 16px;
-            background: #FF5517;
-            color: #fff;
-            padding: 0 3px;
-            line-height: 16px;
-            font-size: 12px;
             margin-right: 3px;
             float: left;
+            .type-icon{
+                height: 16px;
+                background: #FF5517;
+                color: #fff;
+                padding: 0 3px;
+                line-height: 16px;
+                font-size: 12px;
+            }
         }
-        .baoxian{
+        .baoxian .type-icon{
             width: 16px;
             height: 16px;
             float: left;
             background: url(../images/list/baoxiu.png) no-repeat;
             margin-right: 3px;
         }
-        .shouquan{
+        .shouquan .type-icon{
             height: 16px;
             background: #EBBB58;
             color: #fff;
@@ -435,6 +450,9 @@ visibility: hidden;
             margin-right: 3px;
             float: left;
             padding: 0 3px;
+        }
+        .extra-text{
+            display: none;
         }
         .up-time{
             float: right;

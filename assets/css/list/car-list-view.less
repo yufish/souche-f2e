@@ -82,50 +82,54 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             color: #999;
             height: 28px;
             
-            @dis: 14px;
+            @dis: 6px;
             .info-item{
                 position: relative;
-                margin-left: 2*@dis + 1px;
 
-                &:before{
-                    content: '';
-                    position: absolute;
-                    width: 1px;
-                    background-color: @bc;
-                    height: 12px;
-                    top: 2px;
-                    left: -(@dis + 2px);
+                .info-item-name{
+                    display: inline;
                 }
-
-                &:first-child{
-                    border-left: none;
-                    margin-left: 0;
-
-                    &:before{
-                        display: none;
-                    }
-                }
+            }
+            em{
+                margin: 0 @dis;
             }
         }
         .car-type{
             font-size: 14px;
-            .type-icon{
+            .zhijian,
+            .baoxian,
+            .shouquan{
                 display: inline-block;
                 margin-right: 1em;
                 margin-bottom: 7px;
-                
-                .icon{
-                    position: relative;
-                    top: 2px;
+
+                .type-icon{
                     display: inline-block;
                     height: 16px;
-                    width: 32px;
-                    background-color: #ccc;
+                    color: #fff;
+                    padding: 0 3px;
+                    line-height: 16px;
+                    font-size: 12px;
                 }
-                &.qc-icon{}
-                &.insurance-icon{}
-                &.authorised-shop-icon{
-                    color: #999;
+            }
+            .extra-text{
+                display: inline;
+            }
+            .zhijian .type-icon{
+                background: #FF5517;
+            }
+            .baoxian .type-icon{
+                width: 16px;
+                height: 16px;
+                background: url(../images/list/baoxiu.png) no-repeat;
+                background-position: 0 100%;
+                margin-bottom: -2px;
+            }
+            .shouquan{
+                color: #999;
+
+                .type-icon{
+                    background: #EBBB58;
                 }
             }
         }
@@ -157,17 +161,50 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             top: @paddingTB;
             width: 77px;
             
-            .collect{
-                margin-bottom: 8px;
+            .carCollect{
+                text-align: left;
+                background: #fff url(../images/list/collect.png) no-repeat 5px center;
+
+                .add-to-coll{
+                    margin-left: 26px;
+                }
+                .already-colled{
+                    margin-left: 22px;
+                    display: none;
+                }
+                &.colled{
+                    background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
+
+                    .add-to-coll{
+                        display: none;
+                    }
+                    .already-colled{
+                        display: inline-block;
+                    }
+                }
             }
-            .collect,
+
+            .carCollect{
+                top: 40px;
+            }
             .carConstrast{
+                top: 0;
+                text-align: center;
+                .constrast-without-add{
+                    display: none;
+                }
+                .constrast-add{
+                    display: inline-block;
+                }
+            }
+            .carCollect,
+            .carConstrast{
+                position: absolute;
                 display: inline-block;
                 line-height: 26px;
                 width: 77px;
                 font-size: 12px;
                 border: 1px solid #ccc;
-                text-align: center;
                 cursor: pointer;
             }
             .contrast-waring{
