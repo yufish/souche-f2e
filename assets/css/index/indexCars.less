@@ -60,6 +60,7 @@ body {
     cursor: pointer;
   }
 }
+#carsNav{
   .new-tip{
     width:30px;
     height:18px;
@@ -67,17 +68,15 @@ body {
     right:-20px;
     top:-10px;
     display: block;
-    z-index:10;
     background: url(../images/index/update.png) no-repeat;
   }
+}
 #carsNav,.carsMore {
   width: 96.8%;
   position: relative;
   height: 40px;
   background: #F5F5F5;
   border: 1px solid #E6E6E6;
-  overflow: hidden;
-  border-bottom:none;
   ul {
     height: auto;
     list-style: none;
@@ -89,7 +88,7 @@ body {
       padding: 10px 15px;
       font-size: 15px;
       color:#666666 ;
-      height: 19px;
+      height: 20px;
       border-bottom: 1px solid #E6E6E6;
      
     }
@@ -115,6 +114,7 @@ body {
     position: relative;
     height: 40px;
     background: #F5F5F5;
+    border: 1px solid #E6E6E6;
   }
 
 
@@ -124,7 +124,7 @@ body {
     margin-top: 10px;
     .carsItem {
       width: 228px;
-      height:326px;
+      height:280px;
       margin-bottom:9px;
       margin-top: 10px;
       margin-right: 13px;
@@ -427,7 +427,7 @@ padding-top: 46px;
       color: #ff571a;
     }
     .info {
-      margin: 5px 16px 0px 16px;
+      margin: 5px 16px 10px 16px;
       position: relative;
       .price {
         color: #FF4400;
@@ -453,6 +453,7 @@ padding-top: 46px;
       margin: 7px 16px 0px 16px;
       font-size: 12px;
       padding-bottom: 12px;
+      display:none;
       .discount {
         color: #FF571A;
       }
@@ -689,7 +690,7 @@ left: 89px;
       //width: 30.3% ;
       //*width: 30.03% ;
       width: 228px;
-      height:328px;
+      height:280px;
       margin-right: 17px;
       margin-bottom: 9px;
       margin-top: 10px;
@@ -764,6 +765,7 @@ font-size: 13px;
     width: 1020px;
     position: relative;
     background: #F5F5F5;
+    border: 1px solid #E6E6E6;
   }
   .carsContent .no-recommendcar{
     height:334px;
@@ -779,7 +781,7 @@ font-size: 13px;
     .carsItem {
       //width: 22.9%;
       width: 240px;
-      height:336px;
+      height:290px;
       //margin: 2% 1.9% 0px 0px;
       //*margin: 2% 1.519% 0px 0px;
       margin: 10px 18px 8px 0px;
@@ -889,7 +891,8 @@ font-size: 13px;
       left: 0px;
       background: #000;
       opacity: 0;
-      filter:alpha(opacity=0); 
+      filter:alpha(opacity=0);
+      
      }
      }
     .imgbox-b{
