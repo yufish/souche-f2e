@@ -11,29 +11,12 @@ for(var i = 0;i<barArea.length;i++){
     new DdObject(barArea.get(i),chartData[i]);
 }
 
-function getPropertyValue(data,str){
-    var ss = str.split('.')
-    var tempObj=data[ ss[0] ];
-    for(var i = 1;i<ss.length;i++){
-        if(tempObj==undefined){
-            //error
-            return undefined
-        }
-        tempObj=tempObj[ss[i]]
-    }
-    return tempObj;
-}
-
-var data ={
-    hello:{
-        world:{
-            name:'jzl'
-        }
-    },
-    ni:'zilong'
-}
-
-var s = getPropertyValue(data,'hello.worlds.name')
-var d = getPropertyValue(data,'ni')
-console.log(s);
-console.log(d);
+!function(){
+    var opTabPanelItems =$('#J_operate_panel .qdc-panel-item');
+    $('#J_operate_tab .qdc-tab-item').each(function(index){
+        $(this).click(function(){
+            opTabPanelItems.addClass("hidden");
+            opTabPanelItems.eq(index).removeClass("hidden");
+        })
+    })
+}()
