@@ -125,7 +125,7 @@ define(function(){
                 $(window).trigger("tab_change", id)
                 $(".carsContent").addClass("hidden");
                 $(".carsContent." + tabID + "Content").removeClass("hidden");
-                if (id === "myAdviser") {
+                if (id === "myAdviser"||id == "hotNewCars") {
                     $(".guess-like").removeClass("hidden")
                 }else{
                     $(".guess-like").addClass("hidden")

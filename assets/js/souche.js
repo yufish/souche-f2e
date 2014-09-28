@@ -283,11 +283,11 @@ Souche.MiniLogin = function() {
             callback();
         },
         resizeTo:function(w,h){
-            minilogin.animate({
-                width: w,
-                height: h,
-                left: $(window).width() / 2 - w/2
-            })
+//            minilogin.animate({
+//                width: w,
+//                height: h,
+//                left: $(window).width() / 2 - w/2
+//            })
         },
         close: function() {
             $(".result_p .warning ").addClass("hidden");
@@ -328,11 +328,11 @@ Souche.MiniLogin = function() {
 
                 minilogin.css({
                     display: "block",
-                    width: 750,
-                    height: 400,
+                    width:  (has_third?750:400),
+                    height: (has_third?400:300),
                     position: "fixed",
                     top: 100,
-                    left: $(window).width() / 2 - 380,
+                    left: $(window).width() / 2 - (has_third?750:400)/2,
                     zIndex: 100000001,
                     background:"#fff"
                 });
@@ -360,7 +360,7 @@ Souche.MiniLogin = function() {
             callback = _callback;
             var self = this;
             is_secret = !!_is_secret;
-            has_third = !no_third;
+            has_third = false;//!no_third;
             useCheck = !no_useCheck;
             if(useCheck){
                 if(!is_secret){
