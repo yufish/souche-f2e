@@ -60,65 +60,68 @@ define(function() {
         var constrasting = true;
 
         if (constrasting) {
-            $.ajax({
-                type: "POST",
-                url: config.api_addContrast,
-                data: {
-                    carId: carID
-                },
-                dataType: "json",
-                context: self
-            }).done(function(data) {
-                if (data.result == 2) { //正常
-                    this.checked = true;
-                    $(this).parent().find("input")[0].checked = true;
+            Souche.MiniLogin.checkLogin(function(){
+                $.ajax({
+                    type: "POST",
+                    url: config.api_addContrast,
+                    data: {
+                        carId: carID
+                    },
+                    dataType: "json",
+                    context: self
+                }).done(function(data) {
+                    if (data.result == 2) { //正常
+                        this.checked = true;
+                        $(this).parent().find("input")[0].checked = true;
 
-                    var contrastId = data.contrastId;
-                    $(this).parent().attr("contrastId", contrastId);
+                        var contrastId = data.contrastId;
+                        $(this).parent().attr("contrastId", contrastId);
 
-                    var cloneElement = $(this).parent().clone();
-                    cloneElement.css({
-                        opacity: 0.8,
-                        position: 'absolute',
-                        top: $(this).parent().offset().top + 'px',
-                        left: $(this).parent().offset().left + 'px',
-                        backgroundColor: "#FF4400",
-                        color: "#fff"
-                    });
+                        var cloneElement = $(this).parent().clone();
+                        cloneElement.css({
+                            opacity: 0.8,
+                            position: 'absolute',
+                            top: $(this).parent().offset().top + 'px',
+                            left: $(this).parent().offset().left + 'px',
+                            backgroundColor: "#FF4400",
+                            color: "#fff"
+                        });
 
-                    var endX = $(".side-box .contrast-img").offset().left;
-                    var endY = $(".side-box .contrast-img").offset().top;
+                        var endX = $(".side-box .contrast-img").offset().left;
+                        var endY = $(".side-box .contrast-img").offset().top;
 
-                    document.body.appendChild(cloneElement[0]);
-                    cloneElement.animate({
-                        top: endY,
-                        left: endX
-                    }, 500, function() {
-                        cloneElement.remove();
-                    });
-                } else if (data.result == -1) { // 已经添加
-                    this.checked = true;
-                    var waring = $(this).parent().parent().parent().find(".contrast-waring");
-                    waring.html("已经加入对比").removeClass("hidden");
-                    $(this).parent().find("input")[0].checked = true;
-                    window.setTimeout(function() {
-                        waring.addClass("hidden");
-                    }, 3000);
+                        document.body.appendChild(cloneElement[0]);
+                        cloneElement.animate({
+                            top: endY,
+                            left: endX
+                        }, 500, function() {
+                            cloneElement.remove();
+                        });
+                    } else if (data.result == -1) { // 已经添加
+                        this.checked = true;
+                        var waring = $(this).parent().parent().parent().find(".contrast-waring");
+                        waring.html("已经加入对比").removeClass("hidden");
+                        $(this).parent().find("input")[0].checked = true;
+                        window.setTimeout(function() {
+                            waring.addClass("hidden");
+                        }, 3000);
 
-                    var contrastId = data.contrastId;
-                    $(this).parent().attr("contrastId", contrastId);
-                } else if (data.result == 1) //已满
-                {
-                    var waring = $(this).parent().parent().parent().find(".contrast-waring");
-                    waring.html("对比项已满").removeClass("hidden");
-                    $(this).parent().find("input")[0].checked = false;
-                    window.setTimeout(function() {
-                        waring.addClass("hidden");
-                    }, 3000);
-                }
+                        var contrastId = data.contrastId;
+                        $(this).parent().attr("contrastId", contrastId);
+                    } else if (data.result == 1) //已满
+                    {
+                        var waring = $(this).parent().parent().parent().find(".contrast-waring");
+                        waring.html("对比项已满").removeClass("hidden");
+                        $(this).parent().find("input")[0].checked = false;
+                        window.setTimeout(function() {
+                            waring.addClass("hidden");
+                        }, 3000);
+                    }
 
-                constrasting = false;
-            });
+                    constrasting = false;
+                });
+            })
+
         }
     }
     //function end
