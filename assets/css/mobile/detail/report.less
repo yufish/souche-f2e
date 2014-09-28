@@ -80,7 +80,6 @@
       }
     }
   }
-
   .qual-detail-content{
     .qual-detail-sub-card{
       font-size: 14px;
@@ -121,11 +120,23 @@
     .qdc-tab-panel{
       padding:10px 0;
     }
+    #J_operate_panel .qdc-panel-item{
+      width: 277px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .operate-tag{
+      position: absolute;
+    }
+    .operate-tag .operate-order{
+      width: 14px;
+      text-align: center;
+    }
     .qdc-panel-item img{
       width:100%;
     }
     .qual-gp{
-      margin:4px 0;
+      margin:-4px 0 4px;
     }
     .qual-gp img{
       width: 100%;
@@ -137,7 +148,7 @@
       height: 12px;
       text-align: center;
       border-radius: 80%;
-      margin-top: 2px;
+      margin-top: 4px;
     }
     .qual-pre-text{
       margin-left: 15px;
@@ -291,8 +302,7 @@
     }
 }
 
-
-.qdc-list-item {
+.qdc-list-title{
   height: 45px;
   border-bottom: 1px solid #E6E6E6;
   line-height: 44px;
@@ -312,6 +322,13 @@
       height: 44px;
     }
   }
+}
+
+.qdc-list-item {
+  height: 45px;
+  border-bottom: 1px solid #E6E6E6;
+  line-height: 44px;
+  padding: 0 8px;
   .qli-key{
     width: 60%;
     float:left;
@@ -321,6 +338,8 @@
     float:left;
     width: 20%;
     height:44px;
+    display: flex;
+    align-items: center;
   }
 }
 .icon-circle{
@@ -328,13 +347,11 @@
   height: 8px;
   background: #454853;
   border-radius: 80%;
-  margin-top: 17px;
 }
 .icon-line{
   height: 2px;
   width:10px;
   background: #454853;
-  margin-top: 20px;
 }
 
 .icon-normal{
@@ -342,19 +359,16 @@
   background-size: 100%;
   width: 14px;
   height: 14px;
-  margin-top: 15px;
 }
 .icon-problem,{
   background: url(../../../images/mob/h5-3/not-ok.png) no-repeat;
   background-size: 100%;
   width: 14px;
   height: 14px;
-  margin-top: 15px;
 }
 .icon-five-star{
   background: url(../../../images/mob/h5-3/icon-five-star.png) no-repeat;
   background-size: 100%;
   width: 16px;
   height: 16px;
-  margin-top:11px;
 }

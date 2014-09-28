@@ -360,7 +360,7 @@ Souche.MiniLogin = function() {
             callback = _callback;
             var self = this;
             is_secret = !!_is_secret;
-            has_third = false;//!no_third;
+            has_third = !no_third;
             useCheck = !no_useCheck;
             if(useCheck){
                 if(!is_secret){

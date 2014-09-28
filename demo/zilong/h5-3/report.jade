@@ -35,19 +35,23 @@ html
                     .qual-detail-content
                         .qual-detail-sub-card
                             .qdc-title 1.无重大撞击，车身左右对称
-                            .qdc-tab.clearfix
+                            .qdc-tab.clearfix#J_accident_tab
                                 .qdc-tab-item.left-1-5.active 车头
                                 .qdc-tab-item.left-1-5 车尾
                                 .qdc-tab-item.left-1-5 左侧
                                 .qdc-tab-item.left-1-5 右侧
                                 .qdc-tab-item.left-1-5 底盘
-                            .qdc-tab-panel
+                            .qdc-tab-panel#J_accident_panel
                                 .qdc-panel-item
                                     img(src='../../../assets/images/mob/h5-3/report-car-1.png')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-2.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-3.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-4.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-5.png' class='hidden')
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-car-2.png')
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-car-3.png')
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-car-4.png')
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-car-5.png')
                         .qual-detail-sub-card
                             .qdc-title 2.排除火烧痕迹，非火烧车
                         .qual-detail-sub-card
@@ -55,7 +59,7 @@ html
                         .qual-detail-sub-card
                             .qdc-title 4.检查发动机重要部件，发动机正常
                         .qual-detail-sub-card
-                            .qdc-title 5.该车共有4处钣金修复
+                            .qdc-title.has-problem 5.该车共有4处钣金修复
                             .qual-gp
                                 .qual-icon.guaHenXiuFu
                                 .qual-pre-text 原车漆或刮痕修复
@@ -188,19 +192,89 @@ html
                             .qdt-icon 退
                     .qual-detail-content
                         .qual-detail-sub-card
-                            .qdc-tab.pt-16px.clearfix
+                            .qdc-tab.pt-16px.clearfix#J_operate_tab
                                 .qdc-tab-item.left-1-5.active 车头
                                 .qdc-tab-item.left-1-5 车尾
                                 .qdc-tab-item.left-1-5 左侧
                                 .qdc-tab-item.left-1-5 右侧
                                 .qdc-tab-item.left-1-5 底盘
-                            .qdc-tab-panel
+                            .qdc-tab-panel#J_operate_panel
                                 .qdc-panel-item
-                                    img(src='../../../assets/images/mob/h5-3/report-car-1.png')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-2.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-3.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-4.png' class='hidden')
-                                    img(src='../../../assets/images/mob/h5-3/report-car-5.png' class='hidden')
+                                    img(src='../../../assets/images/mob/h5-3/report-operate-1.png')
+                                    .operate-tag(style='top:10px;right:98px')
+                                        .operate-order 1
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:73px')
+                                        .operate-order 2
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:48px')
+                                        .operate-order.has-problem 3
+                                        div(class="icon-problem")
+                                    .operate-tag(style='top:10px;right:23px')
+                                        .operate-order 4
+                                        div(class="icon-normal")
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-operate-2.png')
+                                    .operate-tag(style='top:10px;right:98px')
+                                        .operate-order 5
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:73px')
+                                        .operate-order 6
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:48px')
+                                        .operate-order 7
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:23px')
+                                        .operate-order 8
+                                        div(class="icon-normal")
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-operate-3.png')
+                                    .operate-tag(style='top:10px;right:142px')
+                                        .operate-order 9
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:117px')
+                                        .operate-order 10
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:92px')
+                                        .operate-order 11
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:67px')
+                                        .operate-order 12
+                                        div(class="icon-normal")
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-operate-4.png')
+                                    .operate-tag(style='top:10px;right:147px')
+                                        .operate-order 13
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:122px')
+                                        .operate-order 14
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:97px')
+                                        .operate-order 15
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:72px')
+                                        .operate-order 16
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:47px')
+                                        .operate-order 17
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:10px;right:22px')
+                                        .operate-order 18
+                                        div(class="icon-normal")
+                                .qdc-panel-item.hidden
+                                    img(src='../../../assets/images/mob/h5-3/report-operate-5.png')
+                                    .operate-tag(style='top:11px;right:98px')
+                                        .operate-order 19
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:11px;right:73px')
+                                        .operate-order 20
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:11px;right:48px')
+                                        .operate-order 21
+                                        div(class="icon-normal")
+                                    .operate-tag(style='top:11px;right:23px')
+                                        .operate-order 22
+                                        div(class="icon-normal")
                             .report-text-wrapper.no-problem
                                 .rt-order
                                 .rt-text
@@ -231,21 +305,21 @@ html
                             .qdt-icon 退/修
                     .qual-detail-content
                         .qual-detail-sub-card
-                            .qdc-list-item
+                            .qdc-list-title
                                 .qli-tushi.clearfix
-                                    .qt-left-icon.icon-circle
+                                    .qt-left-icon.icon-circle(style='margin-top: 17px;')
                                     .qt-right-text 标配
                                 .qli-tushi.clearfix
-                                    .qt-left-icon.icon-five-star
+                                    .qt-left-icon.icon-five-star(style='margin-top: 11px;')
                                     .qt-right-text 加配
                                 .qli-tushi.clearfix
-                                    .qt-left-icon.icon-line
+                                    .qt-left-icon.icon-line(style='margin-top: 20px;')
                                     .qt-right-text 无
                                 .qli-tushi.clearfix
-                                    .qt-left-icon.icon-normal
+                                    .qt-left-icon.icon-normal(style='margin-top: 15px;')
                                     .qt-right-text 正常
                                 .qli-tushi.clearfix
-                                    .qt-left-icon.icon-problem
+                                    .qt-left-icon.icon-problem(style='margin-top: 15px;')
                                     .qt-right-text 异常
                             .qdc-list-item
                                 .qli-key 防抱死制动系统
@@ -273,5 +347,7 @@ html
                                     .icon-problem
     script(src='../../../assets/js/mobile/common/templateRender.js')
     script(src='../../../assets/js/mobile/detail/chart.js')
+
+
 
 
