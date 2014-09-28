@@ -71,7 +71,7 @@ define(function(){
             }
             self.e = e;
             Souche.MiniLogin.checkLogin(function(){
-                if(!$(this).find("input")[0].checked) {
+                if(!self.find("input")[0].checked) {
                     if(!!carid) {
                         $.ajax({
                             type : "POST",
