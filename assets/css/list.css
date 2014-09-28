@@ -276,6 +276,12 @@ visibility: hidden;
 #list_wrap .list_main{
     width: 1020px;
     float: left;
-    margin-left: 10px;
+    margin-left: 20px;
+}
+#list_wrap .list_main .car-nav{
+    width: 1018px;
+    height: 80px;
+    border: 1px solid #E6E6E6;
+    margin-bottom: 20px;
 }
 
