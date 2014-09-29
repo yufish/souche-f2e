@@ -1,0 +1,223 @@
+/*
+
+a.carImg
+  img
+  .timebuy.hidden
+
+a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3')
+  | 雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
+
+.car-price
+  span.price ￥18.36万
+  span.recommended 直降5000元
+
+.car-info
+  span.info-item 2012-04  上牌
+  span.info-item 6.4万公里
+  span.info-item 杭州
+
+.carTail.clearfix
+  a.collect.carCollect(data-carid='0388PhM1E3', data-num='7')
+    | 收藏
+    span 7
+  .carConstrast(contrastid='null', carid='0388PhM1E3')
+    input(type='checkbox')
+    span 加入对比
+  .contrast-waring.hidden 对比栏已满！你可以删除不需要的车辆，再继续添加。
+
+.car-type
+  .type-icon
+  .up-time 三天前
+
+*/
+
+.car-wrap.list-box{
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    @paddingTB: 20px;
+    @bc: #ccc;
+    .carItem{
+        position: relative;
+        height: 120px + 2*@paddingTB;
+        padding: @paddingTB 0;
+        border-bottom: 1px solid @bc;
+
+        &:after{
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .carImg{
+            float: left;
+            margin-right: 20px;
+            img{
+                width: 180px;
+                height: 120px;
+            }
+        }
+        
+        .car-link,
+        .car-info,
+        .car-type{
+            margin-left: 200px;
+            width: 290px;
+        }
+
+        .car-link{
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            height: 40px;
+            line-height: 20px;
+        }
+        .car-info{
+            font-size: 14px;
+            color: #999;
+            height: 28px;
+            
+            @dis: 6px;
+            .info-item{
+                position: relative;
+
+                .info-item-name{
+                    display: inline;
+                }
+            }
+            em{
+                margin: 0 @dis;
+            }
+        }
+        .car-type{
+            font-size: 14px;
+            .zhijian,
+            .baoxian,
+            .shouquan{
+                display: inline-block;
+                margin-right: 1em;
+                margin-bottom: 7px;
+
+                .type-icon{
+                    display: inline-block;
+                    height: 16px;
+                    color: #fff;
+                    padding: 0 3px;
+                    line-height: 16px;
+                    font-size: 12px;
+                }
+            }
+            .extra-text{
+                display: inline;
+            }
+            .zhijian .type-icon{
+                background: #FF5517;
+            }
+            .baoxian .type-icon{
+                width: 16px;
+                height: 16px;
+                background: url(../images/list/baoxiu.png) no-repeat;
+                background-position: 0 100%;
+                margin-bottom: -2px;
+            }
+            .shouquan{
+                color: #999;
+
+                .type-icon{
+                    background: #EBBB58;
+                }
+            }
+        }
+  
+        .car-price{
+            position: absolute;
+            left: 575px;
+            top: @paddingTB;
+            height: 120px;
+            width: 200px;
+            
+            .price{
+                display: block;
+                margin-bottom: 6px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #ff4400;
+            }
+            .recommended{
+                display: block;
+                color: #999;
+            }
+        }
+
+
+        .carTail{
+            position: absolute;
+            right: 0;
+            top: @paddingTB;
+            width: 77px;
+            
+            .carCollect{
+                text-align: left;
+                background: #fff url(../images/list/collect.png) no-repeat 5px center;
+
+                .add-to-coll{
+                    margin-left: 26px;
+                }
+                .already-colled{
+                    margin-left: 22px;
+                    display: none;
+                }
+                &.colled{
+                    background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
+
+                    .add-to-coll{
+                        display: none;
+                    }
+                    .already-colled{
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .carCollect{
+                top: 40px;
+            }
+            .carConstrast{
+                top: 0;
+                text-align: center;
+                .constrast-without-add{
+                    display: none;
+                }
+                .constrast-add{
+                    display: inline-block;
+                }
+            }
+            .carCollect,
+            .carConstrast{
+                position: absolute;
+                display: inline-block;
+                line-height: 26px;
+                width: 77px;
+                font-size: 12px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+            }
+            .contrast-waring{
+                width: 200px;
+            }
+        }
+        .up-time{
+            position: absolute;
+            right: 0;
+            bottom: 20px;
+            width: 200px;
+            text-align: right;
+            color: #999;
+        }
+    }
+}
