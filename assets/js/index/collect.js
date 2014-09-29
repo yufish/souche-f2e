@@ -12,7 +12,7 @@ define(function() {
             var context = this;
             if (is_requesting) return;
             Souche.MiniLogin.checkLogin(function() {
-                if ($(context).hasClass("active")) {
+                if ($(context).hasClass("colled")) {
                     var carID = $(context).attr("data-carid");
                     deleteCollect.call(context, carID);
                 } else {
@@ -69,7 +69,7 @@ define(function() {
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
                     $(this).find("span").html($(this).find("span").html() * 1 + 1);
-                    $(this).addClass("active");
+                    $(this).addClass("colled");
 
                 }
                 collecting = false;
@@ -95,7 +95,7 @@ define(function() {
                 } else {
                     //var num =parseInt($(this).find("span").html());
                     $(this).find("span").html($(this).find("span").html() * 1 - 1);
-                    $(this).removeClass("active");
+                    $(this).removeClass("colled");
                 }
 
                 collecting = false;

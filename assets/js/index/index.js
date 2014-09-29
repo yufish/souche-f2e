@@ -8,18 +8,20 @@ define(['index/car-god',
     "index/record-tip",
     "souche/util/image-resize",
     "souche/time-countdown",
-    "index/mod/loadCars"
+    "index/mod/loadCars",
+    "lib/mustache"
 ], function(carGod,
-    topNav,
-    qiugou,
-    customSelect,
-    collect,
-    lazyload,
-    carConstrast,
-    recordTip,
-    ImageResize,
-    TimeCountDown,
-    loadCars) {
+            topNav,
+            qiugou,
+            customSelect,
+            collect,
+            lazyload,
+            carConstrast,
+            recordTip,
+            ImageResize,
+            TimeCountDown,
+            loadCars,
+            Mustache) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
@@ -27,7 +29,7 @@ define(['index/car-god',
     var _bind = function() {
         var timeout = null;
 
-
+        var carTemplate = $("#carTemplate").html();
         var adviser_end = false;
         var newcar_end = false;
         var getMore = function(id) {
@@ -56,18 +58,14 @@ define(['index/car-god',
                         var list = result.recommendCars.items;
                         var template = "";
                         for (var idx = 0, len = list.length; idx < len; idx++) {
-                            var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                            template += "<div class=\"carsItem carItem\"><a target='_blank' href=\"" + url + "\" class=\"carImg\"><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                "<div class='info'><span class='price'>￥" + list[idx].carVo.salePriceToString + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                "<div class='other'>" +
-                                "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                "<\/div>" +
-                                "<div class='carTail clearfix'>" +
-                                "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                "<span class='recommendedToday'>" + list[idx].recommendTime + "<\/span><\/div>" +
-                                "<\/div>";
+                            list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                            list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+                            template += Mustache.render(carTemplate,list[idx])
                         }
+
+
                         $(".myAdviserContent .myAdviser").eq(0).append(template);
+                        ImageResize.init($(".img",$(".myAdviserContent .myAdviser")), 240, 160);
                         $(".myAdviserContent .myAdviser-more").remove();
                         if (result.hasNext) {
 
@@ -105,20 +103,13 @@ define(['index/car-god',
                             newcar_end = true;
                         } else {
                             var template = "";
-
                             for (var idx = 0, len = list.length; idx < len; idx++) {
-                                var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                                template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                                    "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                                    "<div class='other'>" +
-                                    "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                                    "<\/div>" +
-                                    "<div class='carTail clearfix'>" +
-                                    "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                                    "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
-                                    "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
+                                list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                                list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+                                template += Mustache.render(carTemplate,list[idx])
                             }
                             $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
+                            ImageResize.init($(".img",$(".hotNewCarsContent .hotNewCars")), 240, 160);
 
                         }
 
@@ -214,7 +205,7 @@ define(['index/car-god',
                 $.ajax({
                     url: config.api_guessCars,
                     success: function(html) {
-                        
+
                         Souche.Util.appear( ".guess-like", fillGuessCallback );
                         $(window).trigger("scroll")
                         function fillGuessCallback(){
