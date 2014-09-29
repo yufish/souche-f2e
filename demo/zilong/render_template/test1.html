@@ -7,9 +7,18 @@
 </head>
 <body>
     <div id="div">
+        test
         <div style="color:{{color}}">{{txt}}</div>
+        <div id="div1">
+            hehehe
+            <div style="color:red">
+                hahaha
+            </div>
+        </div>
     </div>
+
     <script>
+        /*
         var data = [
             {color:'red',txt:'hello world'},
             {color:'green',txt:'hello zilong'},
@@ -17,6 +26,98 @@
         ]
         var ddArr = new DdArray(document.getElementById('div'),data);
         ddArr.$push({color:'blue',txt:'hello f2e'})
+        */
+
+        var class2type ={
+            "[object Boolean]": "boolean",
+            "[object Number]": "number",
+            "[object String]": "string",
+            "[object Function]": "function",
+            "[object Array]": "array",
+            "[object Date]": "date",
+            "[object RegExp]": "regexp",
+            "[object Object]": "object",
+            "[object Error]": "error"
+        }
+        var core_toString = Object.prototype.toString;
+        var getType = function (obj) {
+            if (obj == null) {
+                return String(obj);
+            }
+            return typeof obj === "object" || typeof obj === "function" ? class2type[core_toString.call(obj)] || "object" : typeof obj;
+        }
+
+        var isWindow=function (obj) {
+                return obj != null && obj == obj.window;
+        }
+
+        function isArraylike( obj ) {
+            var length = obj.length,
+                    type = getType( obj );
+
+            if ( type === "function" || isWindow(obj)) {
+                return false;
+            }
+
+            if ( obj.nodeType === 1 && length ) {
+                return true;
+            }
+
+            return type === "array" || length === 0 ||
+                    typeof length === "number" && length > 0 && ( length - 1 ) in obj;
+        }
+
+        function isArraylike2(o) {
+            if (o &&                                // o is not null, undefined, etc.
+                    typeof o === "object" &&            // o is an object
+                    isFinite(o.length) &&               // o.length is a finite number
+                    o.length >= 0 &&                    // o.length is non-negative
+                    o.length===Math.floor(o.length) &&  // o.length is an integer
+                    o.length < 4294967296)              // o.length < 2^32
+                return true;                        // Then o is array-like
+            else
+                return false;                       // Otherwise it is not
+        }
+
+        function Stack(){
+            this.items = [];
+        }
+        Stack.prototype = {
+            isEmpty :function(){
+                return this.items.length==0;
+            },
+            push:function(item){
+                if(isArraylike2(item)){
+                    for(var i = 0;i<item.length;i++){
+                        this.items.push(item[i])
+                    }
+                }else{
+                    this.items.push(item);
+                }
+            },
+            pop:function(){
+                return this.items.pop();
+            },
+            top:function(){
+                return this.items[this.items.length-1];
+            }
+        }
+        var div =document.getElementById('div');
+
+        var stack = new Stack();
+        stack.push(div.childNodes);
+
+        while(!stack.isEmpty()){
+            var node = stack.pop();
+            if(node.nodeType == 3){
+                if(node.nodeValue.trim()=='') continue;
+                node.nodeValue = 'success';
+            }else{
+                if(node.nodeType == 1){
+                    stack.push(node.childNodes)
+                }
+            }
+        }
     </script>
 </body>
 </html>
