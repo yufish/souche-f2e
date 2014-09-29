@@ -1152,7 +1152,9 @@ $('.wrapGrayBg').on('click',function(){
                             img_src:item.bannerImage,
                             car_url:contextPath+item.url,
                             act_title:item.name,
-                            act_content:item.activityDesc
+                            act_content:item.activityDesc,
+                            tag_id:tagId,
+                            date_create:item.dateCreate
                         }
                         html+=makeDom(data);
                     }
@@ -1164,9 +1166,14 @@ $('.wrapGrayBg').on('click',function(){
         }
     })
     function makeDom(data){
+        var dateCreate = '';
+        if(data.tagId=='hcrb'){
+            var d = new Date(data.date_create);
+            dateCreate = d.getYear() +'/'+ (d.getMonth()+1)
+        }
         var html =  '<a href="'+data.car_url+'" class="act-card">'
             +       '<img src="'+data.img_src+'" class="banner">'
-            +       '<div class="act-title">'+data.act_title+'</div>'
+            +       '<div class="act-title">'+dateCreate+' '+data.act_title+'</div>'
             +       '<div class="act-content">'+data.act_content+'</div>'
             +   '</a>'
 
