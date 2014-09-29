@@ -1,4 +1,4 @@
-define(function(){
+define(['lib/mustache',"souche/util/image-resize",],function(Mustache,ImageResize){
     var nowTabCode = 0;
     var pageInfos = {
 
@@ -22,7 +22,7 @@ define(function(){
         if( pageInfos[code]>2){
             carContent.append("<div class=loading></div>")
         }
-
+        var carTemplate = $("#carTemplate").html();
         $.ajax({
             url: url,
             type: "GET",
@@ -40,20 +40,15 @@ define(function(){
                 if (list.length == 0) {
                     endInfos[code]=true;
                 } else {
+
                     var template = "";
                     for (var idx = 0, len = list.length; idx < len; idx++) {
-                        var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                        template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                            "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                            "<div class='other'>" +
-                            "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                            "<\/div>" +
-                            "<div class='carTail clearfix'>" +
-                            "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                            "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
-                            "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
+                        list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                        list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+                        template += Mustache.render(carTemplate,list[idx])
                     }
                     $(".cars",carContent).append(template);
+                    ImageResize.init($(".img",carContent), 240, 160);
                 }
                 $(".carsMore",carContent).remove();
 
@@ -69,6 +64,8 @@ define(function(){
         var url = config.getMoreOtherCars_api;
         var carContent = $(".carsModule "+".carContent-"+code);
         isLoading = true;
+        var carTemplate = $("#carTemplate").html();
+
         $.ajax({
             url: url,
             type: "GET",
@@ -88,20 +85,16 @@ define(function(){
                 } else {
                     var template = "";
                     for (var idx = 0, len = list.length; idx < len; idx++) {
-                        var url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                        template += "<div class='carsItem carItem'><a target='_blank' href='" + url + "' class='carImg'><img src='" + (list[idx].carPicturesVO || {}).pictureBig + "' ><\/a><a target='_blank' href='" + url + "' class='car-link'>" + list[idx].carVo.carOtherAllName + "<\/a>" +
-                            "<div class='info'><span class='price'>￥" + (list[idx].limitSpec || list[idx].price) + "万<\/span><span class='shangpai'>上牌：" + list[idx].carVo.firstLicensePlateDateShow + "<\/span><\/div>" +
-                            "<div class='other'>" +
-                            "<div title='" + list[idx].recommendReasonStr + "' class='recommended'><span class='" + (list[idx].recommendReasonStr ? "" : "hidden") + "' >推荐理由：" + list[idx].recommendReasonStr + "<\/span><\/div>" +
-                            "<\/div>" +
-                            "<div class='carTail clearfix'>" +
-                            "<a data-carid='" + list[idx].id + "' data-num='" + list[idx].count + "' class='collect carCollect " + (list[idx].favorite ? "active" : "") + "'>收藏<span>" + list[idx].count + "<\/span><\/a>" +
-                            "<div class='carConstrast' contrastid='" + list[idx].contrastId + "' carid='" + list[idx].id + "'><input type='checkbox'  " + (list[idx].contrastId ? "checked" : "") + "><span>加入对比<\/span><\/div>" +
-                            "<div class='contrast-waring hidden'>对比栏已满！你可以删除不需要的车辆，再继续添加。<\/div><\/div><\/div>";
+                        list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                        list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+                        template += Mustache.render(carTemplate,list[idx])
                     }
                     carContent.html("<div class='clearfix cars'>"+template+"</div>");
+
                     carContent.append("<div class='carsMore'><span>查看更多</span></div>")
+                    ImageResize.init($(".img",carContent), 240, 160);
                 }
+
                 $(".carsMore",carContent).on("click",function(){
                     $("span",$(this)).html("正在加载中")
                     loadOtherMore(code);
