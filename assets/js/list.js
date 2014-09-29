@@ -170,22 +170,10 @@ Souche.Inside = (function() {
                 e.preventDefault();
                 fav_carId = $(this).attr("data-carid")
                 if ($(this).hasClass("faved")){
-                    Souche.checkPhoneExist(function(is_login) {
-                        if (is_login) {
                             cancelFavSubmit()
-                        } else {
-                            $("#fav-popup").removeClass("hidden");
-                            $(".fav-wrapGrayBg").show();
-                        }
-                    })
                 }else{
-                    Souche.checkPhoneExist(function(is_login) {
-                        if (is_login) {
-                            favSubmit()
-                        } else {
-                            $("#fav-popup").removeClass("hidden");
-                            $(".fav-wrapGrayBg").show();
-                        }
+                    Souche.MiniLogin.checkLogin(function(){
+                        favSubmit()
                     })
                 }
 
