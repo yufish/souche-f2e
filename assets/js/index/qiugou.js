@@ -178,7 +178,7 @@ function(AddSeries,CustomSelect){
                         },
                         dataType:"json",
                         success:function(result){
-                            window.location.reload()
+                            window.location.href=(window.location.href.indexOf("fromRss=1")!=-1)?window.location.href:(window.location.href+"?fromRss=1")
                         },
                         error:function(){
 

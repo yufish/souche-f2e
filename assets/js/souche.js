@@ -1,5 +1,8 @@
 var contextPath = contextPath || "";
 var Souche = Souche || {};
+if(window.location.href.indexOf("souche.com")!=-1){
+    document.domain  = "souche.com";
+}
 Souche.Util = function() {
     var appearKV = {
 
