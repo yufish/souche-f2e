@@ -44,6 +44,7 @@ define(['lib/mustache',"souche/util/image-resize",],function(Mustache,ImageResiz
                     var template = "";
                     for (var idx = 0, len = list.length; idx < len; idx++) {
                         list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                        list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
                         template += Mustache.render(carTemplate,list[idx])
                     }
                     $(".cars",carContent).append(template);
@@ -85,6 +86,7 @@ define(['lib/mustache',"souche/util/image-resize",],function(Mustache,ImageResiz
                     var template = "";
                     for (var idx = 0, len = list.length; idx < len; idx++) {
                         list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+                        list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
                         template += Mustache.render(carTemplate,list[idx])
                     }
                     carContent.html("<div class='clearfix cars'>"+template+"</div>");
