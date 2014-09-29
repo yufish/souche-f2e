@@ -166,7 +166,7 @@ define(['souche/util/load-info'],function(LoadInfo){
 
                 var templateHTML = "";
                 for (var key in result.codes) {
-                        templateHTML += "<li>";
+                        templateHTML += "<li class=clearfix>";
                         templateHTML += "<h1>" + key + "<\/h1>";
                         for (var i=0;i<result.codes[key].length;i++){
                             var item = result.codes[key][i];
