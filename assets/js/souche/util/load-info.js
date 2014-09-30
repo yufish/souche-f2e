@@ -12,11 +12,11 @@ define(['souche/util/sc-db'], function(DB) {
     return {
         loadBrands: function(callback) {
             var data = null;
-            try {
-                data = db.get(BRAND_KEY);
-            } catch (e) {
-
-            }
+//            try {
+//                data = db.get(BRAND_KEY);
+//            } catch (e) {
+//
+//            }
 //            if (data) {
 //                callback(data);
 //            } else {
@@ -27,7 +27,7 @@ define(['souche/util/sc-db'], function(DB) {
                         type: "car-subdivision"
                     },
                     success: function(data) {
-                        db.set(BRAND_KEY, data);
+//                        db.set(BRAND_KEY, data);
                         callback(data);
 
                     },
@@ -43,11 +43,11 @@ define(['souche/util/sc-db'], function(DB) {
         },
         loadSeries: function(brandid, callback) {
             var data = null;
-            try {
-                data = db.get(SERIES_KEY + brandid);
-            } catch (e) {
-
-            }
+//            try {
+//                data = db.get(SERIES_KEY + brandid);
+//            } catch (e) {
+//
+//            }
 //            if (data) {
 //                callback(data);
 //            } else {
@@ -59,7 +59,7 @@ define(['souche/util/sc-db'], function(DB) {
                         code: brandid
                     },
                     success: function(data) {
-                        db.set(SERIES_KEY + brandid, data);
+//                        db.set(SERIES_KEY + brandid, data);
                         callback(data)
                     },
                     error: function() {

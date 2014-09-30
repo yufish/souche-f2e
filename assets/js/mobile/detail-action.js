@@ -36,7 +36,7 @@ var Action = (function () {
                     success: function (data) {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
-                            $("#yuyue_submit").html("预约到店看车")
+                            $("#yuyue_submit").html("预约看车")
                         } else {
                             if (data.code && data.code == "200") {
                                 $("#contactNum")
@@ -51,7 +51,7 @@ var Action = (function () {
                                 hasYuyue = true
                             } else {
                                 alert("预约出错，请联系客服!")
-                                $("#yuyue_submit").html("预约到店看车")
+                                $("#yuyue_submit").html("预约看车")
                             }
                         }
                         hidePopup();
@@ -144,7 +144,7 @@ var Action = (function () {
             }
             var showPopup = function ($popup) {
                 var scrollTop = $(window).scrollTop();
-                var top = scrollTop + 100;
+                var top = scrollTop + 50;
                 $popup.css({
                     top: top
                 }).removeClass("hidden");

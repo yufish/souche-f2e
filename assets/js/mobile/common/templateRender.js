@@ -5,7 +5,7 @@
     function d_equals(val1, val2) {
         return val1 === val2;
     }
-
+    //支持类似 xx.yy.zz的字符处 取值
     function getValue(data, str) {
         var ss = str.split('.')
         var tempObj = data[ ss[0] ];
@@ -86,6 +86,10 @@
         }
     }
 
+
+    function defaultFilter(obj1,obj2){
+        return obj1 === obj2;
+    }
     function DdArray(ele,dataArr){
         this.dataArr = dataArr;
         this.ele = ele;
@@ -105,10 +109,10 @@
         },
         $push:function(obj){
             this.dataArr.push(obj)
-            new_innerHTML = render_template(this.cache_innerHTML,obj);
+            var new_innerHTML = render_template(this.cache_innerHTML,obj);
             this.ele.insertAdjacentHTML('beforeend', new_innerHTML);
         },
-        $del:function(){
+        $del:function(filter){
 
         },
         $set:function(){
