@@ -1173,7 +1173,7 @@ $('.wrapGrayBg').on('click',function(){
     function makeDom(data){
         var dateCreate = '';
         if(data.tag_id=='hcrb'){
-            dateCreate = data.date_create.trim().substr(0,7).replace('-','/')+' '
+            dateCreate = data.date_create.trim().substr(5,5).replace('-','/')+' '
         }
         var html =  '<a href="'+data.car_url+'" class="act-card">'
             +           '<img src="'+data.img_src+'" class="banner">'
