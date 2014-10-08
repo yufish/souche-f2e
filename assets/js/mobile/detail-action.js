@@ -58,12 +58,14 @@ var Action = (function () {
                     }
                 })
             };
-            $("#fav_submit").on("click", function (e) {
+            var favDom;
+            $(".detail-fav").on("click", function (e) {
+                favDom =  $(this);
                 var carId=$(this).attr('data-id')
                 e.preventDefault();
                 SM.checkPhoneExist(function(is_login) {
                     if (is_login) {
-                        submitFav(carId);;
+                        submitFav(carId);
                     } else {
                         showPopup($('#for-fav'))
                     }
@@ -76,12 +78,12 @@ var Action = (function () {
                     $(".wrong-tip", this).removeClass("hidden");
                 } else {
                     SM.PhoneRegister(phoneNum, function () {
-                        submitFav();
+                        submitFav(favDom.attr('data-id'));
                     })
                 }
             });
             var submitFav = function (carId) {
-                if($("#fav_submit").hasClass("active")){
+                if(favDom.hasClass("active")){
                     delFav(carId)
                 }else{
                     saveFav(carId);
@@ -93,7 +95,7 @@ var Action = (function () {
                 unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
             };
             function saveFav(carId){
-                $("#fav_submit .fav-text").html('收藏中...')
+                $(".detail-fav .fav-text").html('收藏中...')
                 $.ajax({
                     url: favUrl.fav,
                     dataType: "json",
@@ -102,10 +104,10 @@ var Action = (function () {
                         carId: carId
                     },
                     success: function () {
-                        $("#fav_submit .fav-text").html("已收藏")
-                        $("#fav_submit").addClass('active');
+                        $(".detail-fav .fav-text").html("已收藏")
+                        $(".detail-fav").addClass('active');
                         //收藏成功后的动画
-                        var offset1 = $("#fav_submit").offset();
+                        var offset1 = favDom.offset();
                         var left1 = offset1.left,top1 = offset1.top;
                         var offset2 = $('.for-other-topic').offset();
                         var left2 = offset2.left,top2 = offset2.top;
@@ -127,7 +129,7 @@ var Action = (function () {
                 })
             }
             function delFav(carId){
-                $("#fav_submit .fav-text").html('取消中...')
+                $(".detail-fav .fav-text").html('取消中...')
                 $.ajax({
                     url: favUrl.unfav,
                     dataType: "json",
@@ -136,8 +138,8 @@ var Action = (function () {
                         carId: carId
                     },
                     success: function (data) {
-                        $("#fav_submit .fav-text").html("收藏")
-                        $("#fav_submit").removeClass('active');
+                        $(".detail-fav .fav-text").html("收藏")
+                        $(".detail-fav").removeClass('active');
                         hidePopup();
                     }
                 })
