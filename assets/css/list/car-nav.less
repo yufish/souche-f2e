@@ -1,6 +1,6 @@
 .car-nav{
-  background: #fff;
-
+    margin-left: 20px;
+    background: #fff;
     *{
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -65,18 +65,27 @@
                         width: 7px;
                         height: 9px;
                         margin: 2px 0 0 1px;
-                        background-color: #ccc;
+                        // background-color: #ccc;
+                        background-image: url('../../assets/images/list/arrow-down.png');
                     }
 
-                    &.active a{
-                        color: #FB5417;
+                    &.active{
+                        a{
+                            color: #FB5417;
+                        }
+                        &.asc .order-arrow{
+                            background-image: url('../../assets/images/list/arrow-up-active.png');
+                        }
+                        &.desc .order-arrow{
+                            background-image: url('../../assets/images/list/arrow-down-active.png');
+                        }
                     }
 
-                    &.asc{
-
+                    &.asc .order-arrow{
+                        background-image: url('../../assets/images/list/arrow-up.png');
                     }
-                    &.desc{
-                        
+                    &.desc .order-arrow{
+                        background-image: url('../../assets/images/list/arrow-down.png');
                     }
                 }
             }
@@ -94,13 +103,19 @@
                 cursor: pointer;
                 
                 &.card{
-                    background-image: url();
+                    background-image: url('../../assets/images/list/view-card.png');
                 }
                 &.list{
-                    background-image: url();
+                    background-image: url('../../assets/images/list/view-list.png');
                 }
                 &.active{
                     background-color: #fff;
+                    &.card{
+                        background-image: url('../../assets/images/list/view-card-active.png');
+                    }
+                    &.list{
+                        background-image: url('../../assets/images/list/view-list-active.png');
+                    }
                 }
             }
         }
