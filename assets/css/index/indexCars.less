@@ -438,7 +438,7 @@ padding-top: 46px;
         }
       }
       .car-info{
-        margin: 0 15px;
+        margin: 0 10px;
         color: #999;
         font-size: 12px;
         margin-bottom: 20px;
@@ -493,6 +493,7 @@ padding-top: 46px;
           filter:alpha(opacity=50);
           border-radius:2px;
           cursor: pointer;
+          display:none;
           input{
             margin-top: 7px;
             margin-left: 8px;
@@ -552,6 +553,11 @@ padding-top: 46px;
         }
       }
     }
+  .carItem:hover {
+    .carTail .carConstrast{
+      display:block;
+    }
+  }
   .infoItem {
     position: relative;
 
@@ -749,6 +755,10 @@ font-size: 13px;
     position: relative;
     background: #F5F5F5;
     border: 1px solid #E6E6E6;
+  }
+  .carsContent .carItem .car-info{
+    margin:0 15px;
+    margin-bottom: 20px;
   }
   .carsContent .no-recommendcar{
     height:334px;
