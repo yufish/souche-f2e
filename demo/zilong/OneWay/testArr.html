@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <ul id="ul" class="{{ulClass}}">
+        <li z-repeat="arr.tests">
+            {{liText}}
+            <div z-if="hasName">
+                {{ul.vo.name}}
+                {{ul.vo.pwd}}
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+<script src="G.js"></script>
+<script src="stack.js"></script>
+<script src="DdObject.js"></script>
+<!--<script src="DbArr.js"></script>-->
+<script>
+    var data={
+        ulClass:"red",
+        arr:{
+            tests:[
+                {liText:'li1',ul:{vo:{name:'zilong','pwd':'111111'}},hasName:true},
+                {liText:'li2',ul:{vo:{name:'yutou','pwd':'123456'}},hasName:true},
+                {liText:'li3',ul:{vo:{name:'liangliang','pwd':'123456'}},hasName:true},
+                {liText:'li3',ul:{vo:{name:'meizi','pwd':'123456'}},hasName:false},
+                {liText:'li3',ul:{vo:{name:'bingbing','pwd':'123456'}},hasName:false}
+            ]
+        }
+
+    }
+    function $(id){
+        return document.getElementById(id)
+    }
+    var ddObj = new DdObject($('ul'),data);
+    //var ddObj = new DdObject(document.getElementById('ul'),data);
+    var dd = ddObj.arr.tests;
+    dd.$push(        {liText:'li1',spanText:'span1'}    );
+    dd.$set(0,{liText:'new one1',ul:{vo:{name:'jiangzilong',pwd:'111111'}}})
+    dd.$set(1,{liText:'new one2'})
+    dd.$set(2,{liText:'new one3',hasName:false})
+    dd.$insertBefore(0,{liText:'first one',spanText:'success'});
+
+    var lis = document.getElementsByTagName('li')
+    for(var i = 0;i<lis.length;i++){
+        lis[i].addEventListener('click',function(){
+            dd.$delByFilter(this);
+        })
+    }
+
+
+    //var els = document.getElementsByTagName('ul')
+
+</script>
+</body>
+</html>
