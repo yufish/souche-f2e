@@ -84,8 +84,16 @@ function filter(BrandMgr, addListener) {
                 $('.popup-btns-wrapper').removeClass('hidden');
                 bugHack()
             }
-
-
+            var initBrandCode,initBrandName;
+            !function initBrandByKeyword(){
+                var brandDom = $('#brand-filter-content');
+                initBrandCode = brandDom.attr('init_brand');
+                initBrandName = brandDom.attr('init_brand_name');
+                if(initBrandName) {
+                    $('#btn-select-brand').text(initBrandName);
+                }
+                history.replaceState({},document.title,'filter-car.html')
+            }()
             var brandLoaded = false;
             $('#btn-select-brand').click(function() {
                 showPopup_b();
@@ -93,8 +101,14 @@ function filter(BrandMgr, addListener) {
                     //add hotbrand first;
                     var b, hotBrandsStr = '';
                     var $hotCtn = $('#brand-list #hot-brands');
+
                     for (var i in hotBrands_g) {
-                        hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
+                        var selectedClass = ''
+                        if(i == initBrandCode){
+                            selectedClass = 'selected'
+                            BrandMgr.addBrand(initBrandCode,initBrandName);
+                        }
+                        hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4 '+selectedClass+'"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
                     }
                     $hotCtn.append(hotBrandsStr);
 
@@ -117,15 +131,12 @@ function filter(BrandMgr, addListener) {
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
                     //$remainNum.text(BrandMgr.brands.length);
+                    $('#btn-select-brand').text('选择品牌');
                 } else {
-                    if ( BrandMgr.brands.length>= 5) {
-                        $('#tips4brandLimit5').show();
-                        setTimeout(function(){
-                            $('#tips4brandLimit5').hide();
-                        },1000)
-                        return;
-                    }
+                    BrandMgr.noLimitBrand();
+                    $('#btn-select-brand').text(name);
                     BrandMgr.addBrand(code, name);
+                    setTimeout(_hidePopup,200);
                     //$remainNum.text(BrandMgr.brands.length);
                 }
             });
