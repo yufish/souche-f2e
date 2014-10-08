@@ -51,7 +51,7 @@
     //var ddObj = new DdObject(document.getElementById('ul'),data);
     var dd = ddObj.arr.tests;
     dd.$push(        {liText:'li1',spanText:'span1'}    );
-    dd.$set(0,{liText:'new one1',ul:{vo:{name:'jiangzilong',pwd:'111111'}}})
+    dd.$set(0,{liText:'new one1',ul:{vo:{name:'jiangzilong'}}})//问题!!pwd会被搞掉
     dd.$set(1,{liText:'new one2'})
     dd.$set(2,{liText:'new one3',hasName:false})
     dd.$insertBefore(0,{liText:'first one',spanText:'success'});
