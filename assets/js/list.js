@@ -23,20 +23,17 @@ Souche.Inside = (function() {
             effect: "fadeIn",
             threshold: 250
         });
-
-        if ($("#choose").length != 0) {
-            var chooseTop = $("#choose").offset().top;
+        if ($(".car-nav").length != 0) {
+            var chooseTop = $(".car-nav").offset().top;
         }
         var isIE = !! $.browser.msie;
         $(window).scroll(function() {
             var targetTop = $(window).scrollTop();
             //列表页条件栏固定
             if (targetTop >= chooseTop) {
-                $("#choose").addClass("choose_fixed");
-                !isIE && $("#choose_blank").removeClass("hidden");
+                $(".car-nav").addClass("car-nav-fixed");
             } else {
-                $("#choose").removeClass("choose_fixed");
-                !isIE && $("#choose_blank").addClass("hidden");
+                $(".car-nav").removeClass("car-nav-fixed");
             };
         });
         $(".custom-price-input").on("click", function() {
