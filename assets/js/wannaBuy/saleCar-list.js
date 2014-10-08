@@ -1,4 +1,4 @@
-define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate) {
+define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate', 'wannaBuy/new-list-nav'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate, NewListNav) {
     // define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FilterOperate, CarOperate){
 
     var config = {};
@@ -12,6 +12,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
                 type: "car-subdivision",
                 defaultValues: []
             });
+            NewListNav.init();
         },
         // 初始化"下拉选择"
         initDropdown: function() {
