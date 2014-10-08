@@ -180,9 +180,10 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #eaeaea;
+    background: #F5F5F5;
     z-index: 100;
     box-shadow: -1px -2px 2px #ccc;
+    font-size: 14px;
 }
 #detail #actions .fav {
     float: left;
@@ -937,7 +938,9 @@
     border-radius: 3px;
     color: #666;
 }
-
+#detail #actions{
+    font-size: 14px;
+}
 #actions .action-btn-bar{
     text-align: center;
 }
@@ -945,6 +948,30 @@
     width: 50%;
     float: left;
     padding:0 5px;
+}
+#actions .btn-wrapper-left{
+    float:left;
+    width: 100px;
+}
+#actions .btn-wrapper-right{
+    margin-left: 100px;
+}
+#actions .wrapper-fav{
+    float: left;
+    width: 33%;
+    padding: 0 5px;
+}
+#actions .wrapper-submit{
+    float: left;
+    width: 66%;
+    padding: 0 5px;
+}
+#actions .wrapper-fav .detail-fav{
+    background: #ffa43a;
+    color:#fff;
+    border-radius: 3px;
+    height: 36px;
+    line-height: 36px;
 }
 #actions .single-btn-wrapper{
     width: 100%;
@@ -978,9 +1005,7 @@
     vertical-align: top;
 }
 #actions .contact-souche-btn {
-    background: #fff;
-    border:1px solid #ccc;
-    color: #333;
+    color: #666;
     display: inline-block;
 }
 .yuyue-btn .clock{
@@ -991,12 +1016,12 @@
     background-size: 16px 16px;
 }
 .contact-souche-btn .call-icon{
-    background: url(../../../../assets/images/mob/h5-3/call.png) no-repeat center;
+    background: url(../../../../assets/images/mob/h5-3/detail-call.png) no-repeat center;
     display: inline-block;
-    width: 12px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     background-size: 100%;
-    vertical-align: -3px;
+    vertical-align: -6px;
 }
 #detail-main .address{
     margin: 16px auto;
@@ -1325,68 +1350,7 @@
 #report .drive .tip i {
     margin-left: 10px;
 }
-#report #actions {
-    margin: 5px;
-    padding: 10px;
-}
-#report #actions .btn {
-    background: #e68322;
-    color: #fff;
-    line-height: 35px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 5px;
-    margin-right: 10px;
-    display: block;
-}
-#report #actions .lft {
-    float: left;
-    vertical-align: middle;
-    width: 60%;
-    text-align: center;
-}
-#report #actions .lft label {
-    font-size: 14px;
-    color: #666;
-    line-height: 20px;
-}
-#report #actions .lft label em {
-    font-weight: bold;
-    color: #e68322;
-}
-#report #actions .lft .yuyue-btn.disabled {
-    background: #eec18b;
-    color: #de5d26;
-}
-#report #actions .lft .yuyue-btn.no {
-    background: #aaa;
-}
-#report #actions .rht {
-    float: left;
-    vertical-align: top;
-    width: 40%;
-    text-align: center;
-}
-#report #actions .rht .tel-btn {
-    vertical-align: middle;
-    background: url(../../../images/mob/detail-action-call.png) no-repeat;
-    background-size: 100%;
-    width: 35px;
-    height: 35px;
-    display: inline-block;
-    text-indent: -10000px;
-    overflow: hidden;
-}
-#report #actions .rht label {
-    font-size: 14px;
-    color: #666;
-    line-height: 20px;
-    display: block;
-}
-#report #actions .rht label em {
-    font-weight: bold;
-    color: #e68322;
-}
+
 #guohu-history #guhuo-table{
     width: 100%;
     font-size: 14px;
