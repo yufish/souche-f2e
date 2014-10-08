@@ -148,7 +148,7 @@ body{
     right: 0;
     bottom: 0;
     background-color: #7f7f7f;
-    z-index: 1000;
+    z-index: 1100;
     opacity: 0.7;
 }
 .wrapTransBg{
