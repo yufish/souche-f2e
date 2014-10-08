@@ -1,0 +1,121 @@
+.car-nav{
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .cat-nav-upper{
+        background-color: #F5F5F5;
+        border-bottom: 1px solid #E6E6E6;
+        height: 50%;
+
+        .car-tab,
+        .view-switch{
+            height: 100%;
+        }
+
+        .car-tab{
+            float: left;
+            .tab-item{
+                float: left;
+                width: 90px;
+                height: 40px;
+                border-right: 1px solid #E6E6E6;
+                border-bottom: 1px solid #E6E6E6;
+
+                line-height: 40px;
+                text-align: center;
+                cursor: pointer;
+
+                a{
+                    text-decoration: none;
+                    color: #666;
+                    font-size: 14px;
+                }
+
+                &.active{
+                    border-bottom: 1px solid #fff;
+                    background-color: #fff;
+                    .tab-item-carstatus{                        
+                        color: #FB5417;
+                    }
+                }
+            }
+        }
+        .orderby-ctn{
+            float: right;
+            margin-top: 12px;
+            padding: 2px 4px 2px 20px;
+            border-left: 1px solid #E6E6E6;
+            
+            .orderby-text{
+                float: left;
+            }
+            .car-orderby{
+                float: left;
+                .orderby-item{
+                    float: left;
+                    margin:0 10px;
+                    cursor: pointer;
+
+                    .order-arrow{
+                        display: inline-block;
+                        width: 7px;
+                        height: 9px;
+                        margin: 2px 0 0 1px;
+                        background-color: #ccc;
+                    }
+
+                    &.active a{
+                        color: #FB5417;
+                    }
+
+                    &.asc{
+
+                    }
+                    &.desc{
+                        
+                    }
+                }
+            }
+
+        }
+        .view-switch{
+            float: right;
+            width: 80px;
+            height: 100%;
+            .view-item{
+                float: left;
+                width: 40px;
+                height: 100%;
+                border-left: 1px solid #E6E6E6;
+                cursor: pointer;
+                
+                &.card{
+                    background-image: url();
+                }
+                &.list{
+                    background-image: url();
+                }
+                &.active{
+                    background-color: #fff;
+                }
+            }
+        }
+        
+    }
+    .car-filter-group{
+        margin-top: 12px;
+        padding-left: 10px;
+
+        .car-filter-item{
+            float: left;
+            margin: 0 10px;
+            cursor: pointer;
+            
+            input, label{
+                cursor: pointer;
+            }
+        }
+    }
+}

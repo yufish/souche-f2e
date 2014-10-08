@@ -330,14 +330,14 @@
         <div class="navContainer">
           <!-- history begin -->
           <div class="historyRecord  ">
-              <h1 class="historyRecord_title">已保存的筛选<a href="/pages/onsale/sale_car_list.html" class="choose_clear" click_type="List-clear-all">清除所有</a></h1>
+              <h1 class="historyRecord_title">共找到*辆车<a href="/pages/onsale/sale_car_list.html" class="choose_clear" click_type="List-clear-all">清除全部</a></h1>
               <div class="choose_condition">
-                  <div class="choose_items">
+                  <div class="choose_items clearfix">
                       <div class="choose_item">
-                          雪铁龙<a href="/pages/onsale/sale_car_list.html?maxInstallment=&amp;minInstallment=&amp;firstPrice=&amp;loanMonths=&amp;emissionStandard=&amp;country=&amp;color=&amp;maxYear=2014&amp;minYear=&amp;carEngineVolume=&amp;transmissionType=&amp;code=&amp;fenqi=&amp;match=&amp;flash=&amp;carPrice=15-20&amp;carModel=&amp;carMileage=&amp;sortName=&amp;sortType="><span></span></a>
+                          雪铁龙<a href="/pages/onsale/sale_car_list.html?maxInstallment=&amp;minInstallment=&amp;firstPrice=&amp;loanMonths=&amp;emissionStandard=&amp;country=&amp;color=&amp;maxYear=2014&amp;minYear=&amp;carEngineVolume=&amp;transmissionType=&amp;code=&amp;fenqi=&amp;match=&amp;flash=&amp;carPrice=15-20&amp;carModel=&amp;carMileage=&amp;sortName=&amp;sortType="><span>x</span></a>
                       </div>
                       <div class="choose_item">
-                          15-20万<a href="/pages/onsale/sale_car_list.html?maxInstallment=&amp;minInstallment=&amp;firstPrice=&amp;loanMonths=&amp;emissionStandard=&amp;country=&amp;color=&amp;maxYear=2014&amp;minYear=&amp;carEngineVolume=&amp;transmissionType=&amp;code=&amp;fenqi=&amp;match=&amp;flash=&amp;carBrand=brand-155&amp;carSeries=&amp;carModel=&amp;carMileage=&amp;sortName=&amp;sortType="><span></span></a>
+                          15-20万<a href="/pages/onsale/sale_car_list.html?maxInstallment=&amp;minInstallment=&amp;firstPrice=&amp;loanMonths=&amp;emissionStandard=&amp;country=&amp;color=&amp;maxYear=2014&amp;minYear=&amp;carEngineVolume=&amp;transmissionType=&amp;code=&amp;fenqi=&amp;match=&amp;flash=&amp;carBrand=brand-155&amp;carSeries=&amp;carModel=&amp;carMileage=&amp;sortName=&amp;sortType="><span>x</span></a>
                       </div>
                   </div>
 
@@ -1564,7 +1564,91 @@
           
         </div>
         <div class="list_main">
-          <div class="car-nav"></div>
+          <div class="car-nav">
+            <div class="cat-nav-upper">
+              <ul class="car-tab">
+                <li class="tab-item active">
+                  <a href="#">
+                    <h4>
+                      <span class="tab-item-carstatus">出售中</span>
+                      <span class="car-kind-count-ctn">
+                        <span>(</span><span class="car-kind-count-saling">36</span><span>)</span>
+                      </span>
+                    </h4>
+                  </a>
+                </li>
+                <li class="tab-item">
+                  <a href="#">
+                    <h4>
+                      <span class="tab-item-carstatus">已售</span>
+                      <span class="car-kind-count-ctn">
+                        <span>(</span><span class="car-kind-count-sold">59</span><span>)</span>
+                      </span>
+                    </h4>
+                  </a>
+                </li>
+              </ul>
+              
+              <ul class="view-switch">
+                <li class="view-item card active"></li>
+                <li class="view-item list"></li>
+              </ul>
+              <div class="orderby-ctn">
+                <span class="orderby-text">排序：</span>
+                <ul class="car-orderby">
+                  <li class="orderby-item active">
+                    <a href="#">默认</a>
+                  </li>
+                  <li class="orderby-item">
+                    <a href="#">
+                      上牌时间
+                      <span class="order-arrow"></span>
+                    </a>
+                  </li>
+                  <li class="orderby-item">
+                    <a href="#">
+                      价格
+                      <span class="order-arrow"></span>
+                    </a>
+                  </li>
+                  <li class="orderby-item">
+                    <a href="#">
+                      里程
+                      <span class="order-arrow"></span>
+                    </a>
+                  </li>
+                  <li class="orderby-item">
+                    <a href="#">
+                      质检等级
+                      <span class="order-arrow"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="car-filter-group">
+              <div class="car-filter-item">
+                <input type="checkbox" id="quality-check">
+                <label for="quality-check">质保</labdel>
+              </div>
+              <div class="car-filter-item">
+                <input type="checkbox" id="shouquan-shop-check">
+                <label for="shouquan-shop-check">授权店</label>
+              </div>
+              <div class="car-filter-item">
+                <input type="checkbox" id="on-sale-check">
+                <label for="on-sale-check">限时优惠</label>
+              </div>
+              <div class="car-filter-item">
+                <input type="checkbox" id="almost-new-check">
+                <label for="almost-new-check">准新车</label>
+              </div>
+              <div class="car-filter-item">
+                <input type="checkbox" id="stage-pay-check">
+                <label for="stage-pay-check">分期付款</label>
+              </div>
+            </div>
+          </div>
           <!-- <div class="card-box clearfix car-wrap"> -->
           <!-- card-box: 卡片视图 -->
           <!-- list-box: 列表视图 -->
