@@ -36,7 +36,9 @@ define(['detail/report/report-safety',
         tip_popup.css({
             left:pos_x,
             top:pos_y
-        }).removeClass("hidden")
+        }).removeClass("hidden").stop().animate({
+                opacity:1
+            },300)
     })
     tip_popup.on("mouseover",function(){
         popup_should_show = true;

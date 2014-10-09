@@ -264,6 +264,7 @@ var DdObject = function (ele, data,options) {
 }
 DdObject.prototype = {
     syncData: function () {
+        //wrong implementation for DdArr
         for (var i in this.$$key2node) {
             updateDom(this.$$key2node[i], this.$$data);
         }

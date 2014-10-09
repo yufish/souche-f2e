@@ -35,8 +35,10 @@ define(function() {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
+
                         }
-                        middlePrice=middlePrice*1+config.taxPrice
+                        middlePrice=(middlePrice*1+config.taxPrice).toFixed(2)
+
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
