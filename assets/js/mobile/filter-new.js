@@ -90,7 +90,7 @@ function filter(BrandMgr, addListener) {
                 initBrandCode = brandDom.attr('init_brand');
                 initBrandName = brandDom.attr('init_brand_name');
                 if(initBrandName) {
-                    $('#btn-select-brand').text(initBrandName);
+                    $('#btn-select-brand').text(initBrandName).css('color','#333');
                 }
                 history.replaceState({},document.title,'filter-car.html')
             }()
@@ -131,10 +131,10 @@ function filter(BrandMgr, addListener) {
                 if (self.hasClass('selected')) {
                     BrandMgr.removeBrand(code);
                     //$remainNum.text(BrandMgr.brands.length);
-                    $('#btn-select-brand').text('选择品牌');
+                    $('#btn-select-brand').text('选择品牌').css('color','#999');
                 } else {
                     BrandMgr.noLimitBrand();
-                    $('#btn-select-brand').text(name);
+                    $('#btn-select-brand').text(name).css('color','#333');
                     BrandMgr.addBrand(code, name);
                     setTimeout(_hidePopup,200);
                     //$remainNum.text(BrandMgr.brands.length);

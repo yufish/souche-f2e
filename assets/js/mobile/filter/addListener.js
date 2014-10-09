@@ -96,38 +96,6 @@
 
     }
 
-    var selectedBrandsLtn ={
-        container: $('#brand-pane .selected-items'),
-        parent:$('#brand-pane'),
-        process:function(e){
-            var eType = e.eventType;
-            if(eType == 'addBrand'){
-                var code = e.item.code,
-                    name = e.item.name;
-                this._addSelectedBrand(code,name);
-                this.parent.show();
-            }
-            if(eType=='removeBrand'){
-                var code = e.item.code;
-                this.container.find('.selected-item[data-code='+code+']').remove();
-                if(e.bLen==0){
-                    this.parent.hide();
-                }
-            }
-            if(eType=='noLimitBrand'){
-                this.container.empty();
-                this.parent.hide();
-            }
-        },
-        _addSelectedBrand:function(code,name){
-            name=name.trim();
-            var html =''
-                    +'<div class="selected-item" data-code="'+code+'">'
-                        +'<span class="selected-text">'+name+'</span>'
-                    +'<i class="close-icon"></i></div>'
-            this.container.append(html);
-        }
-    }
 
     var seriesPaneLtn={
         container :$('.content-tabs'),
@@ -253,7 +221,7 @@
     function addLtns(BrandMgr){
         BrandMgr.addLtn(brandPaneLtn);
         BrandMgr.addLtn(makeSeriesDomByBrandLtn);
-        BrandMgr.addLtn(selectedBrandsLtn);
+        //BrandMgr.addLtn(selectedBrandsLtn);
         BrandMgr.addLtn(seriesPaneLtn);
         BrandMgr.addLtn(selectedSeriesLtn);
         BrandMgr.addLtn(seriesNumLtn);
