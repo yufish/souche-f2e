@@ -8,7 +8,7 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/shouquan/mycar.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/auth-shop/mycar.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
@@ -51,7 +51,154 @@ html
           a.nsv-item(href="#") 微博登陆
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
     #content
-
+      .wrapper.clearfix
+        .car-nav
+          h1.title 我的大搜车
+          h2.stateAct.clearfix
+            a(href="#") 预约看车
+            span >
+          h2.carFav.clearfix
+            a(href="#") 收藏的车
+            span >
+        .car-state
+          .yuyue-box
+            .yuyue-time 预约时间：2014-9-23
+            .car-box.clearfix
+              a.car-image(href="#" target="_blank")
+                img(src="http://img.souche.com/files/carpicture/F982A27B0A5C0C39FA7266369669C86D_690x460.jpg@325w")
+              .car-detail
+                a.car-title(href="#" target="_blank") 大众帕萨特2011款帕萨特新领域1.8T手动舒适版帕萨特新
+                .car-info
+                  span 2012-12 首次上牌
+                  span 3.35万公里
+                  span 归属地：北京
+                .car-type.clearfix
+                  .zhijian 检A+
+                  .baoxian
+                  .shouquan
+                    .type-icon 授权店
+                    .extra-text 老余杭小张汽车店
+              .car-price ￥35.6万
+              .order-state
+                .title 订单状态：
+                span 已预约看车，等待支付购车款
+            .yuyue-state
+              .state-open 
+                span 显示详情
+                i
+              //yuyueBox表示已预约
+              //payBox表示已付款
+              //tranBox表示已过户
+              //finBox表示交易完成
+              .state-box.yuyueBox.hidden
+                .title
+                .flow-pic
+                .state-cont  
+          .yuyue-box
+            .yuyue-time 预约时间：2014-9-23
+            .car-box.clearfix
+              a.car-image(href="#" target="_blank")
+                img(src="http://img.souche.com/files/carpicture/F982A27B0A5C0C39FA7266369669C86D_690x460.jpg@325w")
+              .car-detail
+                a.car-title(href="#" target="_blank") 大众帕萨特2011款帕萨特新领域1.8T手动舒适版帕萨特新
+                .car-info
+                  span 2012-12 首次上牌
+                  span 3.35万公里
+                  span 归属地：北京
+                .car-type.clearfix
+                  .zhijian 检A+
+                  .baoxian
+                  .shouquan
+                    .type-icon 授权店
+                    .extra-text 老余杭小张汽车店
+              .car-price ￥35.6万
+              .order-state
+                .title 订单状态：
+                span 已支付购车款，等待提车过户
+            .yuyue-state
+              .state-open 
+                span 显示详情
+                i
+              //yuyueBox表示已预约
+              //payBox表示已付款
+              //tranBox表示已过户
+              //finBox表示交易完成
+              .state-box.payBox.hidden
+                .title
+                .flow-pic
+                .state-cont  
+          .yuyue-box
+            .yuyue-time 预约时间：2014-9-23
+            .car-box.clearfix
+              a.car-image(href="#" target="_blank")
+                img(src="http://img.souche.com/files/carpicture/F982A27B0A5C0C39FA7266369669C86D_690x460.jpg@325w")
+              .car-detail
+                a.car-title(href="#" target="_blank") 大众帕萨特2011款帕萨特新领域1.8T手动舒适版帕萨特新
+                .car-info
+                  span 2012-12 首次上牌
+                  span 3.35万公里
+                  span 归属地：北京
+                .car-type.clearfix
+                  .zhijian 检A+
+                  .baoxian
+                  .shouquan
+                    .type-icon 授权店
+                    .extra-text 老余杭小张汽车店
+              .car-price ￥35.6万
+              .order-state
+                .title 订单状态：
+                span 已提车过户，等待交易完成
+            .yuyue-state
+              .state-open 
+                span 显示详情
+                i
+              //yuyueBox表示已预约
+              //payBox表示已付款
+              //tranBox表示已过户
+              //finBox表示交易完成
+              .state-box.tranBox.hidden
+                .title
+                .flow-pic
+                .state-cont  
+          .yuyue-box
+            .yuyue-time 预约时间：2014-9-23
+            .car-box.clearfix
+              a.car-image(href="#" target="_blank")
+                img(src="http://img.souche.com/files/carpicture/F982A27B0A5C0C39FA7266369669C86D_690x460.jpg@325w")
+              .car-detail
+                a.car-title(href="#" target="_blank") 大众帕萨特2011款帕萨特新领域1.8T手动舒适版帕萨特新
+                .car-info
+                  span 2012-12 首次上牌
+                  span 3.35万公里
+                  span 归属地：北京
+                .car-type.clearfix
+                  .zhijian 检A+
+                  .baoxian
+                  .shouquan
+                    .type-icon 授权店
+                    .extra-text 老余杭小张汽车店
+              .car-price ￥35.6万
+              .order-state
+                .title 订单状态：
+                span 交易完成
+            .yuyue-state
+              .state-open 
+                span 显示详情
+                i
+              //yuyueBox表示已预约
+              //payBox表示已付款
+              //tranBox表示已过户
+              //finBox表示交易完成
+              .state-box.finBox.hidden
+                .title
+                .flow-pic
+                .state-cont
+      .sort.clearfix
+        a.pre 上一页
+        a.activeNumber(href="#") 1
+        a 2
+        span ...
+        a.next(href="#") 下一页
     #footer
       .wrapper
         .foot-detail.clearfix
@@ -95,4 +242,7 @@ html
             a.links(href="#") 成都二手车
             a.links(href="#") 车险信息网
         p Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号
-    
+    script.
+      $(".state-open span").on("click",function(){
+          $(this).closest(".yuyue-state").find(".state-box").toggleClass("hidden");
+        })
