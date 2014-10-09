@@ -147,7 +147,10 @@ html
               .car-price ￥35.6万
               .order-state
                 .title 订单状态：
-                span 已提车过户，等待交易完成
+                span 已提车过户
+                .servi
+                  .adults 申请维权
+                  .eval 评价
             .yuyue-state
               .state-open 
                 span 显示详情
@@ -181,6 +184,8 @@ html
               .order-state
                 .title 订单状态：
                 span 交易完成
+                .servi
+                  .eval 评价
             .yuyue-state
               .state-open 
                 span 显示详情
@@ -242,6 +247,24 @@ html
             a.links(href="#") 成都二手车
             a.links(href="#") 车险信息网
         p Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号
+      .popup-adults.hidden
+        .close
+        .adults-cont
+          .title 
+            h1 请填写维权原因
+            h2 1小时内我们的客服会与你联系
+          form.adults-form.clearfix
+            .adults-text
+              textarea
+            input.adults-submit(type="submit")
+        .adults-succ.hidden
+          .succ-icon
+          .succ-text
+            h1 您已成功申请维权
+            p.day 大搜车客服人员会在1小时内联系您，请注意接听。
+            p.other.hidden 大搜车客服人员会在明天上午10点前联系您，请注意接听
+            p 呼出号码为：4008-010-010
+      //.wrapGrayBg(style=" opacity: 0.5; filter: alpha(opacity=50);")
     script.
       $(".state-open span").on("click",function(){
           $(this).closest(".yuyue-state").find(".state-box").toggleClass("hidden");

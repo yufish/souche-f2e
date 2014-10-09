@@ -60,8 +60,8 @@
             padding-left: 20px;
           }
           .car-box{
-            height: 105px;
-            padding-top: 15px;
+            height: 85px;
+            padding-top: 20px;
             padding-left: 20px;
             border-bottom: 1px solid #ededed;
 
@@ -165,6 +165,31 @@
                 left: 70px;
                 top: 0px;
                 width: 120px;
+              }
+              .servi{
+                margin-top: 35px;
+                height: 25px;
+                font-size: 12px;
+                .adults{
+                  color: #666;
+                  text-decoration: underline;
+                  cursor: pointer;
+                  float: left;
+                  line-height: 25px;
+                  margin-right: 15px;
+                }
+                .eval{
+                  cursor: pointer;
+                  width: 50px;
+                  height: 25px;
+                  color: #fff;
+                  background: #FF5517;
+                  border-radius: 2px;
+                  float: left;
+                  
+                  line-height: 25px;
+                  text-align: center;
+                }
               }
             }
           }
@@ -273,5 +298,89 @@
         }
       }
     }
+  }
+  .popup-adults{
+   position: fixed;
+   width: 540px;
+   height: 240px;
+   background: #fff;
+   border: 1px solid #ededed;
+   box-shadow: 1px 1px 3px 1px #ededed;
+   top: 300px;
+   z-index: 100000;
+   left: 50%;
+   margin-left: -300px;
+   padding: 30px;
+   .close{
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: url("../../images/fed/member/popup-close2.png") no-repeat;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+      }
+   .adults-cont{
+    .title{
+      position: relative;
+       h1{
+        color: #333;
+        font-size: 18px;
+       }
+       h2{
+        color: #999;
+        font-size: 14px;
+       }
+    
+     }
+     .adults-form{
+      margin-top: 30px;
+      padding-right: 37px;
+       textarea{
+        width: 480px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #ededed;
+       }
+       .adults-submit{
+        display: block;
+        float: right;
+        width: 100px;
+        height: 34px;
+        color: #fff;
+        border:none;
+        text-align: center;
+        line-height: 34px;
+        margin-top: 15px;
+        background: #FF571A;
+        border-radius: 2px;
+        cursor: pointer;
+       }
+     }
+   }
+   .adults-succ{
+    padding-top: 80px;
+    width: 445px;
+    margin: 0 auto;
+    .succ-icon{
+      width: 50px;
+      height: 52px;
+      background: url(../../images/common/success-popup.png) no-repeat;
+      float: left;
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+    .succ-text{
+      float: left;
+      h1{
+        color: #333;
+        font-size: 18px;
+      }
+      p{
+        color: #999;
+        font-size: 14px;
+      }
+    }
+   }
   }
 }
