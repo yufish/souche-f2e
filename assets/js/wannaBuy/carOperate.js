@@ -14,7 +14,7 @@ define(function(){
             $("#F_buy_submit").click(_event.faseQiugouHandler);
 
             // 添加到对比
-            $(".addcontrast").on("click", _event.addContrast);
+            $(".carConstrast").on("click", _event.addContrast);
 
             // 用户输入一系列筛选条件后, 如果没有匹配, 会生成一个.list-noResult
             // 提供订阅
@@ -62,8 +62,9 @@ define(function(){
             var contrastId = $(this).find("input").attr("contrastid")||$(this).attr("contrastid");
 
             var self;
-            if(e.target.tagName !="INPUT")
-               self = $(this);
+            if(e.target.tagName !="INPUT"){
+               self = $(this); 
+            }
             else
             {
                 self = $(this);

@@ -13,8 +13,9 @@ Souche.Inside = (function() {
         //			$(".recommend img").each(function(){ 	
         //				setImgHeight($(this),150,216);
         //			}); 
-
-        $(".list_items img").lazyload({
+        
+        // list页面的图片懒加载, 兼容旧版
+        $(".list_items img, .car-wrap img").lazyload({
             effect: "fadeIn",
             threshold: 250
 
