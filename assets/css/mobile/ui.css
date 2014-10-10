@@ -314,3 +314,13 @@
     top:75%;
     text-align: center;
 }
+.right-arrow{
+    width: 7px;
+    height: 12px;
+    background: url(../../images/mob/h5-3/left-arrow.png) center no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: -1px;
+    float: right;
+    height: 44px;
+}
