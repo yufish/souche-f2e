@@ -36,6 +36,9 @@
     <link href="http://f2e.souche.com/assets/css/souche/ui.css?t=8" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css?t=16" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/sidebar.css?t=6" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/detail/new-report.css?t=19" rel="stylesheet" type="text/css" />
+
+
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=7"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js?t=7"></script>
     <script>
@@ -484,7 +487,6 @@
 
                     <li><img src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://img.souche.com/files/carpicture/903ACADF858BFEB217E01D7022FCB120_690x460.jpg@115w" alt="全景-正后图"><span></span></li>
 
-
                     <li><img src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://img.souche.com/files/carpicture/9D76D7F2A719AAE45282B4747746C433_690x460.jpg@115w" alt="外观-左前灯图"><span></span></li>
 
 
@@ -835,6 +837,9 @@
 <div class="onsale-summary">
 <div class="onsale-tab-space hidden" id="onsale_tab_space"></div>
 <div class="onsale-tab" id="onsale_tab">
+    <div class="onsale-tab-bigitem">车辆介绍</div>
+    <div class="onsale-tab-bigitem">品牌历史</div>
+    <div class="onsale-tab-bigitem" data-id="onsale_pics" data-scrollto="onsale_pics" click_type="tab-8">车辆图片</div>
     <a class="onsale-tab-item onsale-tab-item-report active" data-id="onsale_report" data-scrollto="onsale_report" click_type="tab-1">检测报告</a>
     <a class="onsale-tab-item onsale-tab-item-price hidden" data-id="onsale_price" data-scrollto="onsale_price" click_type="tab-2">价格报告</a>
     <a class="onsale-tab-item onsale-tab-item-koubei hidden" data-id="onsale_koubei"  data-scrollto="onsale_koubei" click_type="tab-3">网络口碑</a>
@@ -842,7 +847,6 @@
     <a class="onsale-tab-item onsale-tab-item-config" data-id="onsale_report" data-scrollto="detail_para" click_type="tab-5">配置参数</a>
     <a class="onsale-tab-item onsale-tab-item-history" data-id="onsale_report" data-scrollto="onsale_record" click_type="tab-6">过户历史</a>
 
-    <a class="onsale-tab-item onsale-tab-item-pics" data-id="onsale_pics" data-scrollto="onsale_pics" click_type="tab-8">车辆图片</a>
 </div>
 <div id="onsale-content">
 <div class="onsale-content-item hidden" id="onsale_baoyang" data-id="onsale_baoyang">
@@ -1205,676 +1209,697 @@
 
 </div>
 <div class="onsale-content-item" id="onsale_report">
-<!--onsale_sum-->
-<div class="onsale_wrap onsale-sum" id="onsale_sum">
-    <div class="onsale_content clearfix">
-        <h1>大搜车检测报告</h1>
-        <div class="checker">
-            <div class="check_report" style="display:none;">点击下载：<a href="#"><span></span>大搜车检测报告（2.9mb）</a></div>
-            质检时间：2014-09-26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;质检专员：马永胜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;质检对象：2011款 荣威350D 1.5L AT 讯豪版
-        </div>
-        <div class="check_explain">*车型描述仅供参考，因厂家或车主有配置调整的情况，具体以配置实际情况为准</div>
-        <div class="check_tag">B</div>
-        <div class="check_desc">发动机、底盘完好，做过钣金修复或更换过外观件</div>
-        <div class="standard">
-            <div class="check_group clearfix">
-                <p>成色级别评分标准</p>
-                <div><span class="check_right"></span>表示没有问题 </div>
-                <div><span class="check_error"></span>表示有异常</div>
-            </div>
-            <table class="check_group">
-                <thead>
-                <tr class="table_bg"><th></th><th>发动机</th><th>底盘</th><th>漆面</th><th>外观成色</th></tr>
-                </thead>
-                <tbody>
-                <tr  >
-                    <th>A+</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td>较新</td>
-                </tr>
 
-                <tr >
-                    <th>A</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td>较旧</td>
-                </tr>
-                <tr  >
-                    <th>B+</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_error"></span></td>
-                    <td>较新</td>
-                </tr>
-                <tr  class="currentStand" >
-                    <th>B</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_error"></span></td>
-                    <td>较旧</td>
-                </tr>
-                <tr  >
-                    <th>C+</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_error"></span></td>
-                    <td class="report-no"></td>
-                    <td>较新</td>
-                </tr>
-                <tr >
-                    <th>C</th>
-                    <td><span class="check_right"></span></td>
-                    <td><span class="check_error"></span></td>
-                    <td class="report-no"></td>
-                    <td>较旧</td>
-                </tr>
-                <tbody>
-            </table>
+<div class="car_report">
+<div class="wrapper">
+<div class="report_summary clearfix">
+    <div class="level-card">
+        <div class="card-stage">
+            <div class="card-box">
+                <div class="card-cont">
+                    <p>A+</p>
+                </div>
+                <div class="card-rule"></div>
+            </div>
+        </div>
+        <div class="look-rule"><span class="look">查看规则</span><span class="back hidden">返回</span></div>
+    </div>
+    <div class="summary-box">
+        <div class="title clearfix">
+            <div class="text">大搜车检测报告</div>
+            <div class="report-num"><span>编号 ：</span><em>No.60140518</em></div>
+        </div>
+        <div class="summary-info">
+            <p>质检对象 ：福特2007款蒙迪欧致胜2.3-M/MT豪华运动型</p>
+            <p>检测项目 ：154项国家标准检测及95项大搜车专项检测</p>
+            <p>质检专员 ：范丁丁  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 质检时间 ：2014年9月5日</p>
+        </div>
+        <div class="summary-cont">
+            <div class="cont-item clearfix">
+                <div class="name">事故车排除</div>
+                <div class="resule">不是事故车、火烧车、水浸车，共4处钣金修复</div>
+            </div>
+            <div class="cont-item clearfix">
+                <div class="name">安全性评估</div>
+                <div class="resule">无安全隐患</div>
+            </div>
+            <div class="cont-item clearfix">
+                <div class="name">操控性能评估</div>
+                <div class="resule">操控系统健康良好，无操控障碍</div>
+            </div>
+            <div class="cont-item clearfix">
+                <div class="name">重要配置</div>
+                <div class="resule">重要配置完好，功能正常</div>
+            </div>
         </div>
     </div>
 </div>
-<!--onsale_sum end-->
-
-<!--onsale_fadongji-->
-<div class="onsale_wrap onsale_fadongji" id="onsale_fadongji">
-    <div class="onsale_title">
-        <h2>发动机检测<span></span></h2>
-        <p>   <span></span> 经过缸压检测、汽缸壁检测、活塞顶检测，发动机状况良好，所有气缸缸压正常</p>
-    </div>
-    <div class="onsale_content clearfix">
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div><span class="check_green"></span>缸压正常</div>
-            <div><span class="check_red"></span>缸压偏高</div>
-            <div><span class="check_blue"></span>缸压偏低</div>
+<script>
+    var summary_stage_time = 0;
+    $(".level-card").mouseenter(function(){
+        $(".card-box").addClass("card-trans");
+    });
+    $(".level-card").mouseleave(function(){
+        $(".card-box").removeClass("card-trans");
+    });
+    $(".look-rule").click(function(){
+        $(".look-rule .look").toggleClass("hidden");
+        $(".look-rule .back").toggleClass("hidden");
+        $(".card-cont").toggleClass("card-click");
+        $(".card-box").toggleClass("card-trans");
+    });
+</script>
+<div class="report_important report_module">
+    <div class="report_hd clearfix">
+        <div class="num"></div>
+        <div class="title">
+            <div class="main_title">重大事故排除</div>
+            <div class="sub_title">“该车没有发生重大事故、不是火烧车，不是水浸车。共4处钣金修复，不影响安全性能。”</div>
         </div>
-        <div class="fadongji_views">
-
-
-            <div class="fadongji_view">
-                <div class="fadongji_title">1号气缸</div>
-                <div class="fadongji_rule"><img width="180px" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://res.souche.com/images/fed/detail-gangya.png" /></div>
-                <div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/C0A86694E0D1F664646189BDFA8C4C79_90x90.jpg" width="90"  /></div>
-                        <p>气缸壁</p>
-                    </div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/300214037F16598640284D0162817EB4_90x90.jpg" width="90" /></div>
-                        <p>活塞顶</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fadongji_view">
-                <div class="fadongji_title">2号气缸</div>
-                <div class="fadongji_rule"><img width="180px" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://res.souche.com/images/fed/detail-gangya.png" /></div>
-                <div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/104B406382C2E0B35080ADD57761D1F9_90x90.jpg" width="90"  /></div>
-                        <p>气缸壁</p>
-                    </div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/F4C53A86253C9D73047ACBD9FDFE6DE6_90x90.jpg" width="90" /></div>
-                        <p>活塞顶</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fadongji_view">
-                <div class="fadongji_title">3号气缸</div>
-                <div class="fadongji_rule"><img width="180px" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://res.souche.com/images/fed/detail-gangya.png" /></div>
-                <div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/05A9129894687BCDE736EB7D21DDEC28_90x90.jpg" width="90"  /></div>
-                        <p>气缸壁</p>
-                    </div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/D9643386E1E2D9C7E791582CD6D368EC_90x90.jpg" width="90" /></div>
-                        <p>活塞顶</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fadongji_view">
-                <div class="fadongji_title">4号气缸</div>
-                <div class="fadongji_rule"><img width="180px" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://res.souche.com/images/fed/detail-gangya.png" /></div>
-                <div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/197CFF3CD00E60CDF930FD822194F7B1_90x90.jpg" width="90"  /></div>
-                        <p>气缸壁</p>
-                    </div>
-                    <div class="fadongji_viewImg">
-                        <div><img src="http://img.souche.com/files/default/5B43F80A3CB5441254EB0C3FA80F6C7A_90x90.jpg" width="90" /></div>
-                        <p>活塞顶</p>
-                    </div>
-                </div>
-            </div>
-
+        <div class="promise">
+            <div class="desc">若有不符<br>7天包退</div>
+            <div class="icon">退</div>
         </div>
     </div>
-</div>
-<!--onsale_fadongji-->
-
-<!--onsale_dipan-->
-<div class="onsale_wrap" id="onsale_dipan">
-    <div class="onsale_title">
-        <h2>底盘检测<span></span></h2>
-        <p><span></span>经仪器检测，底盘26个点均未发生偏移</p>
-    </div>
-    <div class="onsale_content clearfix">
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div><span class="check_green"></span>绿色表示正常</div>
-            <div><span class="check_red"></span>红色表示有问题</div>
-            <div><span class="check_dir"></span>箭头表示偏移的方向</div>
-            <div><span class="check_dis"></span>表示偏移距离</div>
+    <div class="report_bd">
+        <div class="con-3 con">
+            <div class="item">
+                <div class="wrapper">
+                    <div class="hd">
+                        <div class="num">1</div>
+                        <div class="title">排除车身重大撞击 <i class="report-tip" data-title="1、排除车身重大撞击" data-summary="指排除车辆遭受猛烈撞击的事故车。正常情况车身都能保证一定的强度和刚度。事故车撞击后，车辆很容易散架，非常危险。"></i></div>
+                        <div class="sub-title">无重大撞击，车身左右对称</div>
+                    </div>
+                    <div class="bd pics">
+                        <div class="pic-main" style="opacity: 1;"></div>
+                        <div class="pic pic-1" style="opacity: 1;"></div>
+                        <div class="pic pic-2" style="opacity: 0;"></div>
+                        <div style="opacity: 0;" class="pic pic-3"></div>
+                        <div class="pic pic-4" style="opacity: 0;"></div>
+                        <div class="pic pic-5" style="opacity: 0;"></div>
+                        <div data-pic="pic-1" class="trigger trigger-1"></div>
+                        <div data-pic="pic-2" class="trigger trigger-2"></div>
+                        <div data-pic="pic-3" class="trigger trigger-3"></div>
+                        <div data-pic="pic-4" class="trigger trigger-4"></div>
+                        <div data-pic="pic-5" class="trigger trigger-5"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="files_dipan"><img src="http://img.souche.com/files/sketch/body_1655E35062E64295F0D9CD5D015A26AB_460x350.png" width="460" alt="底盘" /></div>
-        <div class="dipan_point">
-            <p><ins>关键承重点</ins>（关键承重点不能发生任何毫米级的偏移）</p>
-            <ul class="clearfix">
-
-
-
-
-                <li>5<ins>ok</ins></li>
-
-
-
-
-                <li>6<ins>ok</ins></li>
-
-
-
-
-                <li>7<ins>ok</ins></li>
-
-
-
-
-                <li>8<ins>ok</ins></li>
-
-
-
-
-                <li>9<ins>ok</ins></li>
-
-
-
-
-                <li>10<ins>ok</ins></li>
-
-
-
-
-                <li>11<ins>ok</ins></li>
-
-
-
-
-                <li>12<ins>ok</ins></li>
-
-
-
-
-                <li>13<ins>ok</ins></li>
-
-
-
-
-                <li>14<ins>ok</ins></li>
-
-
-
-
-                <li>15<ins>ok</ins></li>
-
-
-
-
-                <li>16<ins>ok</ins></li>
-
-
-
-
-                <li>17<ins>ok</ins></li>
-
-
-
-
-                <li>18<ins>ok</ins></li>
-
-
-
-
-                <li>19<ins>ok</ins></li>
-
-
-
-
-                <li>20<ins>ok</ins></li>
-
-
-
-
-                <li>21<ins>ok</ins></li>
-
-
-
-
-                <li>22<ins>ok</ins></li>
-
-
-            </ul>
-            <p><ins>次要承重点</ins>（偏移范围在10mm以下不会影响安全和操控）</p>
-            <ul class="clearfix">
-
-
-
-                <li>1<ins>ok</ins></li>
-
-
-
-
-                <li>2<ins>ok</ins></li>
-
-
-
-
-                <li>3<ins>ok</ins></li>
-
-
-
-
-                <li>4<ins>ok</ins></li>
-
-
-
-
-
-                <li>23<ins>ok</ins></li>
-
-
-
-
-                <li>24<ins>ok</ins></li>
-
-
-
-
-                <li>25<ins>ok</ins></li>
-
-
-
-
-                <li>26<ins>ok</ins></li>
-
-
-            </ul>
-
+        <div class="con-1-1-1 clearfix con row2">
+            <div class="item huoshao">
+                <div class="wrapper">
+                    <div class="hd">
+                        <div class="num">2</div>
+                        <div class="title">排查火烧车痕迹 <i class="report-tip" data-title="2、排查火烧车痕迹" data-summary="指排除被高温烧灼过的车辆。火烧车易引起全车电路问题，且随时都有可能二次燃烧。"></i></div>
+                        <div class="sub-title">非火烧车</div>
+                    </div>
+                    <div class="bd"></div>
+                </div>
+            </div>
+            <div class="item shuijin">
+                <div class="wrapper">
+                    <div class="hd">
+                        <div class="num">3</div>
+                        <div class="title">排查水浸车痕迹 <i class="report-tip" data-title="3、排查水淹车痕迹" data-summary="指排除被水淹过的车辆。水淹车的电器容易出现间接性故障，而且不容易排查，费钱费时。"></i></div>
+                        <div class="sub-title">非水浸车</div>
+                    </div>
+                    <div class="bd"></div>
+                </div>
+            </div>
+            <div class="item fadongji">
+                <div class="wrapper">
+                    <div class="hd">
+                        <div class="num">4</div>
+                        <div class="title">排查发动机重要部件 <i class="report-tip" data-title="4、排查发动机重要部件" data-summary="指排除发动缸体、缸盖、活塞、曲轴连杆、轴承等关键部件受损。若发动机产生故障，维修麻烦且费用昂贵。"></i></div>
+                        <div class="sub-title">发动机正常</div>
+                    </div>
+                    <div class="bd"></div>
+                </div>
+            </div>
+        </div>
+        <div class="con-3 con">
+            <div class="item banjin">
+                <div class="wrapper">
+                    <div class="hd">
+                        <div class="num">5</div>
+                        <div class="title">钣金修复 <i class="report-tip" data-title="5、钣金修复" data-summary="指车辆外观件受损变形后，进行的整形喷漆修复。主要保证金属不受腐蚀和美化外观的效果，对车辆行驶安全无影响。"></i></div>
+                        <div class="sub-title red">该车共 4 处钣金修复</div>
+                    </div>
+                    <div class="bd">
+                        <div class="tips">
+                            <div class="tip normal"><i></i>原车漆或刮痕修复</div>
+                            <div class="tip nonormal"><i></i>钣金修复</div>
+                            <div class="tip desc"><i>*</i>低于30毫米的划痕及小于30*30平方毫米的凹陷，不影响安全性能，对于外观影响也比较小，不在此处标出，请以实车为准</div>
+                        </div><img src="http://f2e.souche.com/assets/images/detail/report-i-allview.png">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!--onsale_dipan-->
-
-
-
-<!--onsale_qimian-->
-<div class="onsale_wrap" id="onsale_qimian">
-    <div class="onsale_title">
-        <h2>漆面修复历史<span></span></h2>
-        <p> <span class="title_error"></span>经检测，车身有6处钣金修复  </p>
+<div class="report_safety report_module">
+    <div class="report_hd clearfix">
+        <div class="num"></div>
+        <div class="title">
+            <div class="main_title">安全性评估</div>
+            <div class="sub_title">"经76项专业检测, 该车无安全隐患"</div>
+        </div>
+        <div class="promise">
+            <div class="desc">若有不符<br>7天包修</div>
+            <div class="icon">修</div>
+        </div>
     </div>
-    <div class="onsale_content clearfix">
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div><span class="check_gray"></span>灰色，表示原车漆或刮痕修复</div>
-            <div><span class="check_blue"></span>蓝色，表示钣金修复</div>
-            <div></div>
-        </div>
-        <div class="check_callout">* 低于30毫米的划痕及小于30*30平方毫米的凹陷，不影响安全性能，对于外观影响也比较小，不在此处标出，请以实车为准</div>
-        <div class="qimian_img"><img width="700px" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://img.souche.com/files/paint/paint_1411801622362.png" /></div>
-        <p class="img_title">车身示意图</p>
-    </div>
-</div>
-<!--onsale_qimian-->
-
-<!--onsale_perform-->
-<div class="onsale_wrap" id="onsale_perform">
-    <div class="onsale_title">
-        <h2>外观及内饰检测<span></span></h2>
-        <p> <span class="title_error"></span>车辆外观有11处瑕疵  </p>
-    </div>
-    <div class="onsale_content clearfix">
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div><span class="check_blue"></span>表示有瑕疵</div>
-        </div>
-        <div class="perform_img">
-            <div class="perform-contain">
-                <img src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://img.souche.com/files/sketch/body_8F6FD0FB05F8629EED656F075C2E3B12_388x229.png" />
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="252" y="190"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>1</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/939A7B2FE7115F994D06D279FD9BB773_350x200.JPG" />
-
-                    </div>
+    <div class="report_bd">
+        <ul class="safety-list clear-flt">
+            <li class="safety-item lft wheel-depth">
+                <div class="safety-item-hd">
+                    <h3 class="safety-item-hd-index">1</h3>
+                    <p class="safety-item-hd-name">胎纹深度<i data-title="安全性评估细节" data-summary="俗称轮胎沟槽深度，新胎正常在7mm左右，能保证车轮不容易打滑。低于1.6mm后应及时更换，否则雨天容易滑车，高速容易爆胎发生事故。" class="report-tip"></i></p>
+                    <h4 class="safety-item-hd-summary">左后轮磨损严重, 建议更换</h4>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="77" y="19"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>2</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/32B0B2696542D4A0511303CF4FA1AC46_350x200.JPG" />
-
-                    </div>
+                <div data-reportdata="1.7 1.55 1.78 1.65" class="safety-item-bd"><div class="histogram ver with-y with-x" style="width: 353px;"><ul class="y-axis" style="width: 58px;height: 215px;"><li class="y-scale-item" style="top: 0%;">1.9mm</li><li class="y-scale-item" style="top: 42.85714285714283%;">1.6mm<br>(警戒值)</li><li class="y-scale-item" style="top: 100%;">1.2mm</li></ul><ul class="chart-content" style="width: 275px; height: 215px; margin-left: 78px;"><li class="chart-bar" style="width:50px;height:215px;"><div style="height: 71.42857142857143%;" class="bar-value normal bounceInUp animated" title="左前轮: 1.7"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 50.000000000000014%;" class="bar-value danger bounceInUp animated" title="左后轮: 1.55"><div class="value-text">危险</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 82.85714285714288%;" class="bar-value normal bounceInUp animated" title="右前轮: 1.78"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 64.28571428571428%;" class="bar-value normal bounceInUp animated" title="右后轮: 1.65"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li></ul><ul class="x-axis" style="width: 275px;height: auto;"><li class="x-scale-item" style="width: 50px; margin-left: 0;">左前轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">左后轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">右前轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">右后轮</li></ul></div></div>
+            </li>
+            <li class="safety-item rht brake-thickness">
+                <div class="safety-item-hd">
+                    <h3 class="safety-item-hd-index">2</h3>
+                    <p class="safety-item-hd-name">刹车片厚度<i data-title="安全性评估细节" data-summary="正常情况下，新刹车片厚度一般在13-17mm，当厚度低于1/3之后，导致刹车距离过长，引发追尾等事故。" class="report-tip"></i></p>
+                    <h4 class="safety-item-hd-summary">左后轮刹车片磨损严重, 建议更换</h4>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="349" y="76"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>3</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/FB1A8A4E68BF85F009371984FA7AC626_350x200.JPG" />
-
-                    </div>
+                <div data-reportdata="1.65 1.85 1.65 1.7" class="safety-item-bd"><div class="histogram ver with-y with-x" style="width: 353px;"><ul class="y-axis" style="width: 58px;height: 215px;"><li class="y-scale-item" style="top: 0%;">1.9mm</li><li class="y-scale-item" style="top: 42.85714285714283%;">1.6mm<br>(警戒值)</li><li class="y-scale-item" style="top: 100%;">1.2mm</li></ul><ul class="chart-content" style="width: 275px; height: 215px; margin-left: 78px;"><li class="chart-bar" style="width:50px;height:215px;"><div style="height: 64.28571428571428%;" class="bar-value normal bounceInUp animated" title="左前轮: 1.65"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 92.85714285714289%;" class="bar-value normal bounceInUp animated" title="左后轮: 1.85"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 64.28571428571428%;" class="bar-value normal bounceInUp animated" title="右前轮: 1.65"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 71.42857142857143%;" class="bar-value normal bounceInUp animated" title="右后轮: 1.7"><div class="value-text">安全</div></div><div class="guideLine" style="top: 42.85714285714283%;"></div></li></ul><ul class="x-axis" style="width: 275px;height: auto;"><li class="x-scale-item" style="width: 50px; margin-left: 0;">左前轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">左后轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">右前轮</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">右后轮</li></ul></div></div>
+            </li>
+            <li class="safety-item lft liquid-level">
+                <div class="safety-item-hd">
+                    <h3 class="safety-item-hd-index">3</h3>
+                    <p class="safety-item-hd-name">液位<i data-title="安全性评估细节" data-summary="是指机油、助力油等液体的高度。正常情况下，液位处于标尺高低刻度线之间；否则容易导致发动机、变速器、制动系统等关键部位故障。" class="report-tip"></i></p>
+                    <h4 class="safety-item-hd-summary">正常</h4>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="368" y="95"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>4</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/A9325E1DB4719B40DBAB09C629ABB302_350x200.JPG" />
-
-                    </div>
+                <div data-reportdata="1.65 1.85 1.65 2.3" class="safety-item-bd"><div class="histogram ver with-y with-x" style="width: 353px;"><ul class="y-axis" style="width: 58px;height: 215px;"><li class="y-scale-item" style="top: 33.33333333333333%;">(最高警戒值)</li><li class="y-scale-item" style="top: 66.66666666666666%;">(最高警戒值)</li></ul><ul class="chart-content" style="width: 275px; height: 215px; margin-left: 78px;"><li class="chart-bar" style="width:50px;height:215px;"><div style="height: 54.99999999999999%;" class="bar-value normal bounceInUp animated" title="制动液: 1.65"><div class="value-text">安全</div></div><div class="guideLine" style="top: 66.66666666666666%;"></div><div class="guideLine" style="top: 33.33333333333333%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 61.66666666666667%;" class="bar-value normal bounceInUp animated" title="机油: 1.85"><div class="value-text">安全</div></div><div class="guideLine" style="top: 66.66666666666666%;"></div><div class="guideLine" style="top: 33.33333333333333%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 54.99999999999999%;" class="bar-value normal bounceInUp animated" title="助力油: 1.65"><div class="value-text">安全</div></div><div class="guideLine" style="top: 66.66666666666666%;"></div><div class="guideLine" style="top: 33.33333333333333%;"></div></li><li class="chart-bar" style="width: 50px; height: 215px; margin-left: 25px;"><div style="height: 76.66666666666666%;" class="bar-value danger bounceInUp animated" title="变速箱: 2.3"><div class="value-text">危险</div></div><div class="guideLine" style="top: 66.66666666666666%;"></div><div class="guideLine" style="top: 33.33333333333333%;"></div></li></ul><ul class="x-axis" style="width: 275px;height: auto;"><li class="x-scale-item" style="width: 50px; margin-left: 0;">制动液</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">机油</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">助力油</li><li class="x-scale-item" style="width: 50px;margin-left: 25px;">变速箱</li></ul></div></div>
+            </li>
+            <li class="safety-item rht antifreeze">
+                <div class="safety-item-hd">
+                    <h3 class="safety-item-hd-index">4</h3>
+                    <p class="safety-item-hd-name">防冻液<i data-title="安全性评估细节" data-summary="俗称冷却液，正常情况下，温度在零下30°到零下25°之间，保证发动机各个部件能正常工作；否则会因热胀冷缩导致发动机缸体变形。" class="report-tip"></i></p>
+                    <h4 class="safety-item-hd-summary">正常</h4>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="349" y="95"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>5</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/CDA8C6A25A03CD3BD6A7840407F72582_350x200.JPG" />
-
-                    </div>
+                <div data-reportdata="-30" class="safety-item-bd">
+                    <div class="hist-ctn"><div class="histogram ver with-y" style="width: 142px;"><ul class="y-axis" style="width: 82px;height: 275px;"><li class="y-scale-item" style="top: 25%;">-25C<br>(最高警戒值)</li><li class="y-scale-item" style="top: 58.333333333333336%;">-45C<br>(最低警戒值)</li></ul><ul class="chart-content" style="width: 40px; height: 275px; margin-left: 102px;"><li class="chart-bar" style="width:40px;height:275px;"><div style="height: 66.66666666666666%;" class="bar-value normal bounceInUp animated" title="防冻液冰点: -30"><div class="value-text">安全</div></div><div class="guideLine" style="top: 25%;"></div><div class="guideLine" style="top: 58.333333333333336%;"></div></li></ul></div></div>
+                    <div class="bottom-ball normal" style="margin-left: 6px;"></div>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="271" y="171"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>6</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/BC3F66840750A49BA136BE12E7603AA1_350x200.JPG" />
-
-                    </div>
+            </li>
+            <li class="safety-item full brake-system">
+                <div class="safety-item-hd">
+                    <h3 class="safety-item-hd-index">5</h3>
+                    <p class="safety-item-hd-name">制动系统<i data-title="安全性评估细节" data-summary="俗称刹车系统，出现故障以后，车辆容易导致追尾、溜车、甩尾等各种交通事故。" class="report-tip"></i></p>
+                    <h4 class="safety-item-hd-summary">正常</h4>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="232" y="190"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>7</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/7A25D2420B537F8B27C77B270E6893DB_350x200.JPG" />
-
-                    </div>
+                <div class="safety-item-bd">
+                    <ul class="brake-system-list">
+                        <li class="brake-system-item good first"><span class="brake-system-icon"></span>
+                            <div class="item-name">刹车分泵, 总泵</div>
+                            <div class="item-detail">总泵分泵回位正常, 无渗油</div>
+                        </li>
+                        <li class="brake-system-item good"><span class="brake-system-icon"></span>
+                            <div class="item-name">制动助理器及软管</div>
+                            <div class="item-detail">液压制动助力泵组件, 管路安装牢靠,<br>无渗漏情况</div>
+                        </li>
+                        <li class="brake-system-item warn"><span class="brake-system-icon"></span>
+                            <div class="item-name">刹车真空助力泵</div>
+                            <div class="item-detail">
+                                <ol class="detail-list">
+                                    <li>真空助力泵外观没有腐蚀的情况</li>
+                                    <li>制动踏板无漏真空现象</li>
+                                    <li>真空助理正常</li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li class="brake-system-item good"><span class="brake-system-icon"></span>
+                            <div class="item-name">制动油管<br>及ABS传感器</div>
+                            <div class="item-detail">
+                                <ol class="detail-list">
+                                    <li>管路安装牢靠, 无渗漏情况</li>
+                                    <li>ABS传感器牢靠, 感应信号正常, 无顺坏</li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="174" y="190"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>8</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/E4739CB7CFB66FAC5D802A3E50D6F09A_350x200.JPG" />
-
-                    </div>
-                </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="155" y="209"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>9</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/FBA737502C989A3DF7D8BDBDFE5DAABF_350x200.JPG" />
-
-                    </div>
-                </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="19" y="114"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>10</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/952A82D80638C776ADD20B8EAEF5E91B_350x200.JPG" />
-
-                    </div>
-                </div>
-
-                <div class="perform-detail">
-                    <i class="perform-point" x="0" y="133"></i>
-                    <div class="perform-intro">
-                        <span class="perform-tangle"></span>
-                        <p class="perform-intro-p"><span>11</span>划痕</p>
-                        <img width="350px" src="http://img.souche.com/files/delect/2D109B77EE2B543D0C6D9282F26B5977_350x200.JPG" />
-
-                    </div>
-                </div>
-
-            </div>
-            <p class="img_title">外观示意图</p>
-        </div>
-        <div class="perform_img perform_neishi">
-            <div class="perform-contain">
-                <img class="neishi-img" src="http://res.souche.com/images/fed/zhanwei.png" data-original="http://img.souche.com/files/sketch/trim_21A117F095CD9A5FB52EBD687B3BD200_399x174.png" />
-
-            </div>
-            <p class="img_title">内饰示意图</p>
-        </div>
+            </li>
+        </ul>
     </div>
 </div>
-<!--onsale_perform end-->
-
-<!--onsale_ride-->
-<div class="onsale_wrap" id="onsale_ride">
-    <div class="onsale_title">
-        <h2>驾驶体验<span></span></h2>
-        <p>  <span></span>经检测，汽车行驶过程中运行良好，未发现异常 </p>
+<div class="report_control report_module">
+<div class="report_hd clearfix">
+    <div class="num"></div>
+    <div class="title">
+        <div class="main_title">操控性评估</div>
+        <div class="sub_title">"经76项专业检测, 操控系统健康良好, 无操控障碍"</div>
     </div>
-    <div class="onsale_content clearfix">
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div><span class="check_ok"></span>表示正常</div>
-            <div><span class="check_wrong"></span>红色，表示故障</div>
-        </div>
-        <div class="ride_steps">
-
-            <div class="ride_step">
-                <div class="ride_title ride_step1">启动</div>
-                <ul>
-
-                    <li>发动机<span    class="check_ok"    ></span></li>
-
-                    <li>制动系统<span    class="check_ok"    ></span></li>
-
-                </ul>
-            </div>
-
-            <div class="ride_step">
-                <div class="ride_title ride_step2">起步</div>
-                <ul>
-
-                    <li>发动机<span    class="check_ok"    ></span></li>
-
-                    <li>变速箱<span    class="check_ok"    ></span></li>
-
-                    <li>传动系统<span    class="check_ok"    ></span></li>
-
-                    <li>悬挂系统<span    class="check_ok"    ></span></li>
-
-                </ul>
-            </div>
-
-            <div class="ride_step">
-                <div class="ride_title ride_step3">加速</div>
-                <ul>
-
-                    <li>发动机<span    class="check_ok"    ></span></li>
-
-                    <li>传动系统<span    class="check_ok"    ></span></li>
-
-                    <li>变速箱<span    class="check_ok"    ></span></li>
-
-                </ul>
-            </div>
-
-            <div class="ride_step">
-                <div class="ride_title ride_step4">匀速行驶</div>
-                <ul>
-
-                    <li>制动系统<span    class="check_ok"    ></span></li>
-
-                    <li>发动机<span    class="check_ok"    ></span></li>
-
-                    <li>转向系统<span    class="check_ok"    ></span></li>
-
-                    <li>悬挂系统<span    class="check_ok"    ></span></li>
-
-                    <li>变速箱<span    class="check_ok"    ></span></li>
-
-                </ul>
-            </div>
-
-            <div class="ride_step">
-                <div class="ride_title ride_step5">减速与制动</div>
-                <ul>
-
-                    <li>悬挂系统<span    class="check_ok"    ></span></li>
-
-                    <li>变速箱<span    class="check_ok"    ></span></li>
-
-                    <li>传动系统<span    class="check_ok"    ></span></li>
-
-                    <li>发动机<span    class="check_ok"    ></span></li>
-
-                </ul>
-            </div>
-
-        </div>
-
+    <div class="promise">
+        <div class="desc">若有不符<br>7天包修</div>
+        <div class="icon">修</div>
     </div>
 </div>
-<!--onsale_ride-->
-
-<!--detail_para-->
-<div class="onsale_wrap" id="detail_para">
-    <div class="onsale_content clearfix">
-
-        <h3>配置</h3>
-        <div class="check_group clearfix">
-            <p>图示说明：</p>
-            <div class="para_standard para_check"><span></span><ins>标配</ins>表示车辆标准配置</div>
-            <div class="para_plus para_check"><span></span><ins>加配</ins>表示车主自行添加的配置</div>
-            <div class="para_select para_check"><span></span><ins>选配</ins>表示您在大搜车购车时可以选购此项配置</div>
+<div class="report_bd">
+<div class="costum-slide-ctn">
+<ul class="content">
+<li class="slide-item control-start">
+    <div class="car-and-info">
+        <div class="guide-lines"></div>
+        <div class="info-item right-dir fire-switch good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">点火开关</div>
+                <div class="info-text-detail">旋转正常, 无卡滞</div>
+            </div>
         </div>
-        <div class="para-table clearfix">
-            <table>
-                <caption>安全配置</caption>
-                <tr><th>安全带未系提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>发动机启动防盗锁装置</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>车门关闭提示</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>车门自动落锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>遥控中控锁</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>遥控钥匙</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>安全气囊</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            </table>
-            <table class="marginRight0 floatRight">
-                <caption>外部配置</caption>
-                <tr><th>前后电动升降窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>四门电动窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>电动天窗</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>电动折叠后视镜</th><td>——</td></tr>
-                <tr><th>全景天窗</th><td>——</td></tr>
-                <tr><th>卤素前大灯</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>氙气灯</th><td>——</td></tr>
-                <tr><th></th><td></td></tr>
-                <tr><th></th><td></td></tr>
-                <tr><th></th><td></td></tr>
-                <tr><th></th><td></td></tr>
-            </table>
-            <table class="floatRight">
-                <caption>内饰配置</caption>
-                <tr><th>手动调节前座椅</th><td>——</td></tr>
-                <tr><th>电动调节前座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>真皮座椅</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>倒车影像系统</th><td>——</td></tr>
-                <tr><th>自动恒温空调系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>手动空调</th><td>——</td></tr>
-                <tr><th>车载电话（蓝牙系统）</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>车载雷达</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>DVD多媒体语音导航系统</th><td>——</td></tr>
-                <tr><th>智能语音导航系统</th><td>——</td></tr>
-                <tr><th>MP3播放器</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            </table>
-
-            <table>
-                <caption>操控配置</caption>
-                <tr><th>电子制动力分配系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-                <tr><th>TRC牵引力控制系统</th><td>——</td></tr>
-                <tr><th>防抱死制动系统</th><td><img src='http://res.souche.com//images/fed/report-biaopei.png'/></td></tr>
-            </table>
+        <div class="info-item start-engine good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">启动马达及线路</div>
+                <div class="info-text-detail">马达启动正常, 无卡滞及异常声音. 接启动马达显露无破损和接触不良.</div>
+            </div>
         </div>
-        <h3>参数</h3>
-        <div class="para-table clearfix">
-            <table>
-                <caption>基本参数</caption>
-                <tr><th>车型</th><td>三厢车</td></tr>
-                <tr><th>车辆颜色</th><td>白色</td></tr>
-                <tr><th>变速箱</th><td>自动</td></tr>
-                <tr><th>变速箱档位</th><td>4档</td></tr>
-                <tr><th>车门数</th><td>四门</td></tr>
-                <tr><th>座位数</th><td>五座</td></tr>
-                <tr><th>长*宽*高(mm*mm*mm)</th><td>4521*1788*1492</td></tr>
-                <tr><th>行李箱容积(L)</th><td>458</td></tr>
-                <tr><th>轮毂材料</th><td>铝合金</td></tr>
-            </table>
-            <table>
-                <caption>发动机参数</caption>
-                <tr><th>百公里油耗(L)</th><td>8.3</td></tr>
-                <tr><th>排量(L)</th><td>1.5</td></tr>
-                <tr><th>油箱容积(L)</th><td>55</td></tr>
-                <tr><th>进气形式</th><td>自然</td></tr>
-                <tr><th>最大扭矩(N·m)</th><td>135.0</td></tr>
-                <tr><th>燃油</th><td>汽油</td></tr>
-                <tr><th>燃油标号</th><td>93</td></tr>
-                <tr><th>排放标准</th><td>国四</td></tr>
-                <tr><th></th><td></td></tr>
-            </table>
-            <table class="marginRight0">
-                <caption>底盘参数</caption>
-                <tr><th>驱动方式</th><td>前驱</td></tr>
-                <tr><th>转向系统</th><td>机械液压助力</td></tr>
-                <tr><th>前悬挂</th><td>麦弗逊式</td></tr>
-                <tr><th>后悬挂</th><td>H型扭力梁半独立悬架</td></tr>
-            </table>
-            <table class="marginRight0">
-                <caption>车轮制动</caption>
-                <tr><th>前制动</th><td>盘式</td></tr>
-                <tr><th>后制动</th><td>盘式</td></tr>
-                <tr><th>前轮胎规格(mm)</th><td>205</td></tr>
-                <tr><th>后轮胎规格(mm)</th><td>205</td></tr>
-            </table>
+        <div class="info-item fire-loops warn">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">点火线圈</div>
+                <div class="info-text-detail">发动机怠速平稳, 在加速即负荷下动力正常(无加速迟滞, 无怠速抖动); 无漏电和启动不凉现象.</div>
+            </div>
         </div>
-
+        <div class="info-item spark-plug good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">火花塞</div>
+                <div class="info-text-detail">发动机转速平稳, 无抖动, 漏电现象. 正常电极间隙为(1.3-1.7mm)</div>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="slide-item control-accelerate">
+    <div class="car-and-info">
+        <div class="guide-lines"></div>
+        <div class="info-item acc-hub good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">变速器总成</div>
+                <div class="info-text-detail">
+                    <ol>
+                        <li>无明显挂档冲击, 无异响, 行驶中无明显闯档</li>
+                        <li>离合器片无打滑, 无抖动, 无烧焦味</li>
+                        <li>无机械故障, 电子故障</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="info-item petrol-pump good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">汽油泵</div>
+                <div class="info-text-detail">燃油压力正常值为230-250kpa, 在工作时无异常声音.</div>
+            </div>
+        </div>
+        <div class="info-item fuel-pressure-regulator warn">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">燃油压力调节器</div>
+                <div class="info-text-detail">燃油压力正常, 值为230-250kpa之间</div>
+            </div>
+        </div>
+        <div class="info-item injection-nozzle good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">喷油嘴</div>
+                <div class="info-text-detail">喷油雾化正常, 怠速平稳, 发动机加速正常.</div>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="slide-item control-steady">
+    <div class="car-and-info">
+        <div class="guide-lines"></div>
+        <div class="info-item drive-shaft good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">传动轴</div>
+                <div class="info-text-detail">传动平稳, 无跳动,共振,异响情况</div>
+            </div>
+        </div>
+        <div class="info-item axle-shaft good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">驱动半轴</div>
+                <div class="info-text-detail">燃油压力正常值为230-250kpa, 在工作时无异常声音</div>
+            </div>
+        </div>
+        <div class="info-item back-arm good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">后支臂,平衡杆</div>
+                <div class="info-text-detail">后支臂和衬套应无损伤,变形,裂纹情况</div>
+            </div>
+        </div>
+        <div class="info-item back-cantilever-hub warn">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">后悬臂总成</div>
+                <div class="info-text-detail">下摆臂及拉杆无松旷,变形,异常磨损情况</div>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="slide-item control-turn">
+    <div class="car-and-info">
+        <div class="guide-lines"></div>
+        <div class="info-item right-dir steering-box warn">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">转向机</div>
+                <div class="info-text-detail">传动平稳, 无跳动,共振,异响情况</div>
+            </div>
+        </div>
+        <div class="info-item right-dir draglink warn">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">转向拉杆及球头</div>
+                <div class="info-text-detail">无松旷和异响, 防尘套无破损</div>
+            </div>
+        </div>
+        <div class="info-item front-arm good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">前支臂,平衡杆</div>
+                <div class="info-text-detail">支臂胶套无开裂及松旷现象, 平衡杆无变形</div>
+            </div>
+        </div>
+        <div class="info-item power-steering-pump good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">转向助力泵</div>
+                <div class="info-text-detail">无异响, 有严重漏油情况</div>
+            </div>
+        </div>
+        <div class="info-item power-assisted-steering good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">转向助力液压管路</div>
+                <div class="info-text-detail">无漏油现象,胶管无开裂</div>
+            </div>
+        </div>
+        <div class="info-item front-damper good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">前减震器</div>
+                <div class="info-text-detail">
+                    <ul>
+                        <li>安装隔垫无裂纹, 橡胶零部件无异常磨损</li>
+                        <li>前减震器的活塞推杆无损坏, 磨损不均匀,变形,漏油的情况</li>
+                        <li>前减震器护套无老化,开裂,破损情况</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="slide-item control-brake active">
+    <div class="car-and-info">
+        <div class="guide-lines"></div>
+        <div class="info-item right-dir brake-assist-pump good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">刹车真空助力泵</div>
+                <div class="info-text-detail">
+                    <ul>
+                        <li>外观无腐蚀</li>
+                        <li>制动踏板无漏真空现象, 形成正常</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="info-item brake-pump-hub good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">刹车分泵,总泵</div>
+                <div class="info-text-detail">总泵分泵回位正常, 无渗油</div>
+            </div>
+        </div>
+        <div class="info-item brake-abs good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">制动油管及ABS传感器</div>
+                <div class="info-text-detail">
+                    <ul>
+                        <li>管路安装牢靠, 无渗漏情况</li>
+                        <li>ABS传感器安装牢靠, 感应信号正常, 无损坏</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="info-item brake-booster good">
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="info-text-title">制动助力器及软管</div>
+                <div class="info-text-detail">液压制动助力泵组件. 管理安装牢靠, 无渗漏情况</div>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="no-slide car-shake">
+    <div class="wheel wheel-back"></div>
+    <div class="wheel wheel-front"></div>
+</li>
+</ul>
+<div class="road"></div>
+<ul class="indicator">
+    <li class="idc-item first">
+        <p data-target="control-start" class="idc-target">启动</p>
+    </li>
+    <li class="idc-item"><span class="idc-line"></span>
+        <p data-target="control-accelerate" class="idc-target">加速</p>
+    </li>
+    <li class="idc-item"><span class="idc-line"></span>
+        <p data-target="control-steady" class="idc-target">匀速</p>
+    </li>
+    <li class="idc-item"><span class="idc-line"></span>
+        <p data-target="control-turn" class="idc-target">转弯</p>
+    </li>
+    <li class="idc-item active"><span class="idc-line"></span>
+        <p data-target="control-brake" class="idc-target">制动</p>
+    </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="report_config report_module">
+<div class="report_hd clearfix">
+    <div class="num"></div>
+    <div class="title">
+        <div class="main_title">重要配置</div>
+        <div class="sub_title">"经76项专业配置，重要配置运行良好"</div>
+    </div>
+    <div class="promise">
+        <div class="icon">退</div>
+        <div class="desc">
+            <p>配置若损坏，7天包修</p>
+            <p>配置若缺失，7天包退</p>
+        </div>
     </div>
 </div>
-<!--detail_para end-->
+<div class="report_bd">
+    <div class="config-table">
+        <div class="config_legend clearfix">
+            <div class="legenf-item"><i class="biaopei"></i><span>标配</span></div>
+            <div class="legenf-item"><i class="jiapei"></i><span>加配</span></div>
+            <div class="legenf-item"><i class="nopei"></i><span>无此配置</span></div>
+            <div class="legenf-item"><i class="config-normal"></i><span>配置正常</span></div>
+            <div class="legenf-item"><i class="config-abnormal"></i><span>配置异常</span></div>
+        </div>
+        <div class="config-detail clearfix">
+            <div class="detail-box config-left">
+                <div class="config-item clearfix">
+                    <div class="config-name">防抱死制动系统</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">车载雷达</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">真皮座椅</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">导航系统</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">疝气大灯</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">DVD多媒体系统</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">倒车影像</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="jiapei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">电动调节前座椅</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-box">
+                <div class="config-item clearfix">
+                    <div class="config-name">全景天窗</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">电动天窗</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">前后门电动升降窗</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">电动折叠后视镜</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="nopei"></div>
+                        </div>
+                        <div class="con-state"></div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">安全气囊</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">自动独立恒温空调</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">一键启动</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-abnormal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item clearfix">
+                    <div class="config-name">定速巡航</div>
+                    <div class="config-cont">
+                        <div class="con-exist">
+                            <div class="biaopei"></div>
+                        </div>
+                        <div class="con-state">
+                            <div class="config-normal"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="record-tip-popup hidden"><div class="arrow"></div><div class="tip-title"></div><div class="tip-summary"></div></div></div>
+
 <!--onsale_record-->
 <div class="onsale_wrap" id="onsale_record">
     <div class="onsale_content clearfix">
