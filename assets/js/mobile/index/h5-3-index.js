@@ -701,7 +701,7 @@ var utils = {
             recommStr: item.recommendReasonStr,
             carOtherAllName:item.carVo.carOtherAllName,
             carShortName:item.carVo.carShortName,
-            modelName:item.carVo.modelName
+            modelName:item.carVo.simpleModelName
         }
         var activeClass= d.favorite?'active':'';
         var str = '<div class="car-wrapper">'
@@ -759,7 +759,6 @@ var utils = {
             timeout:10000,
             dataType:'json',
             success:function(data){
-                console.log(data);
                 buildCards(data);
                 $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
             },
