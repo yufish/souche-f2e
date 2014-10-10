@@ -121,7 +121,7 @@ Souche.Inside = (function() {
                             alert(data.errorMessage)
                         } else {
                             $(".fav[data-carid=" + fav_carId + "]").addClass("faved")
-                            $("span", $(".fav[data-carid=" + fav_carId + "]")).html("已收藏")
+                            // $("span", $(".fav[data-carid=" + fav_carId + "]")).html("已收藏")
                         }
                     }
                 })
@@ -140,7 +140,7 @@ Souche.Inside = (function() {
                             alert(data.errorMessage)
                         } else {
                             $(".fav[data-carid=" + fav_carId + "]").removeClass("faved")
-                            $("span", $(".fav[data-carid=" + fav_carId + "]")).html("加入收藏")
+                            // $("span", $(".fav[data-carid=" + fav_carId + "]")).html("加入收藏")
                         }
                     }
                 })
