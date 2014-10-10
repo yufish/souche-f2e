@@ -35,7 +35,7 @@ var List = function() {
                         zaishou: (item.carVo.status == 'zaishou'),
                         carOtherAllName:item.carVo.carOtherAllName,
                         carShortName:item.carVo.carShortName,
-                        modelName:item.carVo.modelName
+                        modelName:item.carVo.simpleModelName
                     }
                     carList.push(tpl_data);
                     html = Mustache.render(tpl_cars, {
