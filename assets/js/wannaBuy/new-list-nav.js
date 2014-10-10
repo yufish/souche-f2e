@@ -5,7 +5,8 @@ define(function(){
 
     var _event = {
         bind: function(){
-            $('.view-switch').on('click', '.view-item', _event.listViewSiwtch);
+            // 决定用链接刷新页面来实现视图模式的切换...
+            // $('.view-switch').on('click', '.view-item', _event.listViewSiwtch);
         },
         listViewSiwtch: function(){
             var viewItem = $(this);

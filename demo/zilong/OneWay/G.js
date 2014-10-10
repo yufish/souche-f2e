@@ -2,9 +2,6 @@
  * Created by zilong on 9/29/14.
  */
 var G = {
-    d_equals:function(val1,val2){
-        return val1===val2
-    },
     C_ATTRIBUTE_NODE:'ATTRIBUTE',
     C_TEXT_NODE:'TEXT',
     C_ELEMENT_IF:'ELEMENT_IF'
