@@ -11,7 +11,8 @@
         <link href="../../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
         <link href="../../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
         <link href="../../../../assets/css/mobile/center/new-center.css" rel="stylesheet" type="text/css" />
-</head>
+        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+    </head>
 <body>
 
     <section class="card-area">
@@ -20,12 +21,12 @@
             <span>137****1234</span>
         </div>
         <nav class="nav-bar card-item clearfix">
-            <div class="nav-item col-1-2 active"><span class="nav-text">收藏的车</span></div>
-            <div class="nav-item col-1-2"><span class="nav-text">预约看车</span></div>
+            <div id='J_fav-tab' class="nav-item col-1-2 active"><span class="nav-text">收藏的车</span></div>
+            <div id='J_yuyue-tab' class="nav-item col-1-2"><span class="nav-text">预约看车</span></div>
         </nav>
     </section>
     <div class="hr-10-gray-bb"></div>
-    <section id="fav-center" class="hidden">
+    <section id="fav-center">
         <section class="card-area car-list">
             <div class="card-item shop-title">
                 大搜车品牌店<i class="right-arrow"></i>
@@ -44,7 +45,7 @@
             </a>
         </section>
     </section>
-    <section id="yuyue-center">
+    <section id="yuyue-center" class="hidden">
         <section class="card-area car-list">
             <div class="card-item shop-title">
                 大搜车品牌店<i class="right-arrow"></i>
@@ -67,5 +68,19 @@
             </div>
         </section>
     </section>
+    <script>
+        $('#J_fav-tab').click(function(){
+            $('#yuyue-center').addClass('hidden');
+            $('#fav-center').removeClass('hidden');
+            $(this).addClass('active');
+            $('#J_yuyue-tab').removeClass('active')
+        })
+        $('#J_yuyue-tab').click(function(){
+            $('#fav-center').addClass('hidden');
+            $('#yuyue-center').removeClass('hidden');
+            $(this).addClass('active');
+            $('#J_fav-tab').removeClass('active')
+        })
+    </script>
 </body>
 </html>
