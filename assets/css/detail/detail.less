@@ -362,9 +362,10 @@ body{background-color:#f2f2f2}
 #detail_main .detail_photosGallary .soucheNum{float: left;width: 106px;height: 28px;line-height:28px;text-align: center;background:#000;opacity:0.7;border:1px solid #aaa;}
 #detail_main .detail_photosGallary .soucheNum i{font-style: normal;color: #ff4301;font-family: Arial;}
 #detail_main .detail_photosGallary .showBig{float: left;width: 67px;height: 28px;line-height: 28px;text-align: center; background:#000;opacity:0.7;border:1px solid #aaa;border-left:0px;cursor:pointer;}
-#detail_main .detail_main_info{float:right;width:465px;margin-top:5px;margin-right: 10px;position: relative;height: 580px;}
-#detail_main .detail_main_info h1{color:#333;font-size:24px;font-weight:bold;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;height:65px;width:460px;overflow:hidden;display:table;}
+#detail_main .detail_main_info{float: left; width:520px; margin-top:5px;margin-left: 40px;position: relative;height: 580px;}
+#detail_main .detail_main_info h1{color:#333;font-size:24px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;height:65px;overflow:hidden;display:table;}
 #detail_main .detail_main_info h1 ins {display:table-cell;vertical-align:middle;}
+#detail_main .detail_main_info .push-time{color: #CCCCCC;font-size: 12px;margin: 5px 0;}
 @import "./../../../less/detail/price.less";
 #detail_main .detail_main_info .apply_sell{float:right;margin-top:12px;*margin-top:-53px;margin-right:85px;width:105px;height:41px;background:url("../../images/fed/inside_sprite3.png") no-repeat -77px 0;color:#fff;font-size:18px;text-align:center;line-height:41px;text-indent:0;}
 #detail_main .detail_main_info span.apply_selled{background:url("../../images/fed/inside_sprite3.png") no-repeat -77px -59px;font-size:18px;}
@@ -413,23 +414,29 @@ body{background-color:#f2f2f2}
 #detail_main .detail_price_souche del{color:#333;font-size: 18px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";margin-right: 5px;}
 #detail_main .detail_price_new{margin-top:12px;margin-bottom: 0px;}
 #detail_main .detail_price_youhui ins{display:inline-block;padding:3px 5px;margin-right:8px;color: #fff;background-color: #ff8914;}
-#detail_main .detail-button{height:50px;overflow: hidden;padding-bottom: 0px;padding-top: 35px;}
+#detail_main .detail-button{height:50px;overflow: hidden;padding-bottom: 0px;padding-top:15px;}
 #detail_main .detail-yuyue{
-    float:left;display:inline;width:104px;height: 40px;
-    margin-right:10px;font-size:18px;line-height:40px;
-    text-align:left;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
-    background:#fc7000 url("../../images/detail/yuyue-button-bg.png") no-repeat  30px center;
+    float:left;
+    display:inline;
+    width:90px;
+    height: 40px;
+    margin-right:10px;
+    font-size:18px;
+    line-height:40px;
+    text-align:left;
+    font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
+    background:#FF5517 url("../../images/detail/yuyue-button-bg.png") no-repeat 15px center;
     border-radius: 3px;
     color:#fff;
     font-weight: normal;
-    padding-left: 70px;
+    padding-left:48px;
     border:1px solid #fc7000;
 }
 #detail_main .detail-yuyue:hover{
     background-color:#fa7b15;
 }
 #detail_main .yuyue-loading{
-     float:left;display:inline;width:104px;height: 40px;
+    float:left;display:inline;width:104px;height: 40px;
     margin-right:5px;font-size:18px;line-height:40px;
     text-align:left;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;
     background:#fc7000 url("../../images/detail/yuyue-button-bg.png") no-repeat  30px center;
@@ -447,7 +454,55 @@ padding:0;
 border:1px solid #f6f6f6;
 border:1px solid #ddd;
 }
-
+#detail_main .freecall{
+  float: left;
+  width: 80px;
+  height: 20px;
+  border:1px solid #e4e3e3;
+  border-radius: 3px;
+  margin-left: 20px;
+  line-height: 20px;
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+  display: block;
+  cursor: pointer;
+  i{
+    width: 12px;
+    height: 13px;
+    display: block;
+    float: left;
+    background: url(../../images/detail/free-call-icon.png) no-repeat;
+    margin-top: 4px;
+    margin-right: 5px;
+  }
+}
+#detail_main  .add-phone{
+    float: left;
+    width: 100px;
+    height:40px;
+    margin-left:10px;
+    .phone-num{
+      color: #B3B3B3;
+      font-size: 16px;
+      font-family: Arial,Tahoma, Verdana;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size: 14px;
+      color: #CCCCCC;
+      font-family: Arial,Tahoma, Verdana;
+      i{
+        display: block;
+        width: 13px;
+        height: 12px;
+        background: url(../../images/detail/open-time.png) no-repeat;
+        float: left;
+        margin-top: 2px;
+        margin-right: 5px;
+      }
+    }
+  }
 #detail_main .detail-no{
     float:left;width:174px;line-height: 40px;margin-right:5px;
     background-color: #f6f6f6;color:#414141;border:1px solid #ddd;
@@ -687,23 +742,7 @@ bottom: -15px;
   margin-top: 9px;
 }
 #detail_main .detail-feed-hd{
-  .qq-zixun{
-    float: right;
-    height:30px;
-    background: #5c9bef url(../../images/index/ask.png) no-repeat left center;
-    cursor:pointer;
-    width:66px;
-    display: block;
-    margin-left: 10px;
-    color: #fff;
-    line-height: 30px;
-    border-radius: 3px;
-    padding-left: 34px;
-    margin-top: 5px;
-  }
-  .qq-zixun:hover{
-   background: #3784ec url(../../images/index/ask-hover.png) no-repeat left center;
-  }
+  
   .addcarduibi{
     width:75px;
     height: 23px;
@@ -1877,7 +1916,7 @@ top: 12px;
   }
 }
 #yushou_detail #detail_main .detail-button{
-  padding-top: 40px;
+  padding-top: 15px;
 }
 #yushou_detail #detail_main .price-others{
   height: 45px;
@@ -2071,7 +2110,126 @@ top: 12px;
   }
 }
 #detail_main .main-top{
-  height: 413px;
+  height: 400px;
+}
+#detail_main .prot-ex{
+  width: 430px;
+  height: 50px;
+  padding:10px 20px;
+  border: 1px solid #FCD4A5;
+  background: #FFFEE6;
+  position: relative;
+  .tit{
+    color: #AD5925;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  p{
+    color: #BF9771;
+    font-size: 12px;
+    a{
+      text-decoration: underline;
+      color: #BF9771;
+      font-size: 12px;
+    }
+  }
+  .prot-icon{
+    position: absolute;
+    width: 36px;
+    height: 42px;
+    background: url(../../images/auth-shop/protect.png) no-repeat;
+    top: 15px;
+    right: 30px;
+  }
+}
+#detail_main .car-type{
+  margin-top: 10px;
+  .zhijian{
+    float: left;
+    height: 18px;
+    margin-right: 10px;
+    width: 85px;
+    .type-icon{
+      color: #fff;
+      background: #FF5517;
+      height: 16px;
+      line-height: 16px;
+      padding: 0px 3px;
+      float: left;
+    }
+    .extra-text{
+      color: #666;
+      margin-left: 4px;
+      float: left;
+    }
+  }
+  .baoxian{
+    float: left;
+    height: 20px;
+    width: 100px;
+    .type-icon{
+      width: 16px;
+      height: 16px;
+      background: url(../../images/list/baoxiu.png) no-repeat;
+      float: left;
+    }
+    .extra-text{
+      color: #666;
+      margin-left: 4px;
+      float: left;
+    }
+  }
+}
+#detail_main .car-act{
+  margin-top: 25px;
+  border-top: 1px solid #E4E4E4;
+  padding-top: 15px;
+
+  .act-left{
+    float: left;
+    .act-item{
+      color: #999;
+      font-size: 12px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    em{
+      margin-right: 10px;
+      color: #999;
+    }
+  }
+  .act-right{
+    float: right;
+    .act-but{
+      float: left;
+      height: 25px;
+      padding: 0px 10px;
+      line-height: 25px;
+      border: 1px solid #E4E4E4;
+      border-radius: 2px;
+      color: #999;
+      text-align: center;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+      .qq-zixun{
+      float: right;
+      height:25px;
+      background: #5c9bef url(../../images/index/ask.png) no-repeat left center;
+      cursor:pointer;
+      width:60px;
+      display: block;
+      margin-left: 10px;
+      color: #fff;
+      line-height: 25px;
+      border-radius: 3px;
+      padding-left: 30px;
+    }
+    .qq-zixun:hover{
+     background: #3784ec url(../../images/index/ask-hover.png) no-repeat left center;
+    }
+  }
 }
 #detail_main .car-adress{
   color: #999;
@@ -2094,25 +2252,7 @@ top: 12px;
     
     line-height: 20px;
   }
-  .add-phone{
-    float: left;
-    width: 145px;
-    height: 55px;
-    border-right: 1px solid #EDEDED;
-    margin-right:20px;
-    .phone-num{
-      margin-top: 5px;
-      margin-bottom: 5px;
-      color: #999;
-      font-size: 20px;
-      font-family: Arial,Tahoma, Verdana;
-    }
-    p{
-      font-size: 12px;
-      color: #999;
-      font-family: Arial,Tahoma, Verdana;
-    }
-  }
+
   .get-adress{
     width:165px;
     .map{
@@ -2232,6 +2372,94 @@ top: 12px;
           position: relative;
         }
       }
+    }
+  }
+}
+.wrap{
+  width: 1280px !important;
+}
+.shop-head{
+  background: #F5F5F5;
+  height: 60px;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 20px 0px;
+  .auth-icon{
+    width: 60px;
+    height: 61px;
+    background: url(../../images/auth-shop/auth-icon.png) no-repeat;
+    float: left;
+    margin-right: 10px;
+  }
+  .shop-info{
+    float: left;
+    margin-top: 5px;
+    .shop-name{
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .shop-add{
+      font-size: 12px;
+      color: #666;
+    }
+    .shop-score{
+      font-size: 12px;
+      color: #333;
+      .score-sum{
+        float: left;
+        span{
+          font-size: 16px;
+          color: #FF571A;
+          margin-left: 5px;
+        }
+      }
+      .score-item{
+        float: left;
+        margin-left: 25px;
+        color: #333;
+        font-size: 12px;
+        width: 125px;
+        line-height: 23px;
+        i{
+          display: block;
+          width: 70px;
+          height: 11px;
+          float: right;
+          margin-top: 6px;
+        }
+        .star-1{
+          background: url(../../images/auth-shop/score-1.png) no-repeat;
+        }
+        .star-2{
+          background: url(../../images/auth-shop/score-2.png) no-repeat;
+        }
+        .star-3{
+          background: url(../../images/auth-shop/score-3.png) no-repeat;
+        }
+        .star-4{
+          background: url(../../images/auth-shop/score-4.png) no-repeat;
+        }
+        .star-5{
+          background: url(../../images/auth-shop/score-5.png) no-repeat;
+        }
+      }
+    }
+
+  }
+  .shop-brand{
+    float: right;
+    margin-top: 8px;
+    .brand-item{
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: 1px solid #E9E9E9;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-left: 20px;
+      float: left;
+      line-height: 45px;
     }
   }
 }
