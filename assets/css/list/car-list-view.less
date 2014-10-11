@@ -183,7 +183,7 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
                     margin-left: 22px;
                     display: none;
                 }
-                &.colled{
+                &.faved{
                     background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
 
                     .add-to-coll{
@@ -201,11 +201,22 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             .carConstrast{
                 top: 0;
                 text-align: center;
-                .constrast-without-add{
+                .constrast-notyet{
                     display: none;
                 }
-                .constrast-add{
+                .constrast-notyet-verbose{
                     display: inline-block;
+                }
+                .constrast-added{
+                    display: none;
+                }
+                &.added{
+                  .constrast-notyet-verbose{
+                    display: none;
+                  }
+                  .constrast-added{
+                    display: inline-block;
+                  }
                 }
             }
             .carCollect,
@@ -218,9 +229,6 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
                 border: 1px solid #ccc;
                 cursor: pointer;
             }
-            .contrast-waring{
-                width: 200px;
-            }
         }
         .up-time{
             position: absolute;
@@ -229,6 +237,25 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             width: 200px;
             text-align: right;
             color: #999;
+        }
+    }
+}
+
+// 已售列表, 图片上显示已售的遮罩
+.car-wrap.sold{
+    .carItem .carImg{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            background-image: url('../../assets/images/list/soldtag.png');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
     }
 }
