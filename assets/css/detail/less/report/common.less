@@ -3,7 +3,7 @@
   background: #fff;
   width:1144px;
   .red{
-    color:@red;
+    color:@red !important;
   }
   .report_module{
     border:1px solid @moduleBC;
@@ -28,6 +28,8 @@
           font-size:24px;
           line-height: 25px;
           color:#444;
+          font-weight: bold;
+          margin-bottom: 5px;
         }
         .sub_title{
           font-size: 14px;
@@ -37,28 +39,28 @@
       }
       .promise{
         float: right;
-        width:140px;
+        width:280px;
         margin-right: 20px;
         .desc{
-          width:70px;
+          
           float: left;
-          font-size: 14px;
-          color:#999;
+          font-size: 24px;
+          color:#666;
           text-align: right;
-          padding-top: 25px;
+          padding-top: 30px;
           padding-right: 10px;
         }
         .icon{
           float: right;
-          border-radius: 100px;
-          width:60px;
-          height:60px;
-          font-size: 20px;
-          text-align: center;
-          line-height: 60px;
-          background: @green;
-          color:#fff;
+          width:61px;
+          height:61px;
           margin-top: 15px;
+        }
+        .icon-tui{
+          background: url(../../images/detail/tui.png) no-repeat;
+        }
+        .icon-xiu{
+          background: url(../../images/detail/xiu.png) no-repeat;
         }
       }
     }
@@ -81,6 +83,13 @@
   height:16px;
   background: url(../../images/detail/report-tip.png) no-repeat;
   vertical-align: middle;
+  margin-left: 10px;
+}
+.tip-text{
+  color: #CCCCCC;
+  font-size: 14px;
+  margin-left: 10px;
+
 }
 .record-tip-popup{
   .arrow{
@@ -123,5 +132,6 @@
     top: -16px;
     right:50px;
     left:auto;
+
   }
 }
