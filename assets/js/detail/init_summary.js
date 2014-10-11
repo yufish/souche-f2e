@@ -203,6 +203,25 @@ define(function() {
                 var self = this;
 
             });
+            $(".onsale-tab-bigitem .bigitem-inner").on("click", function(e) {
+                var id = $(this).attr("data-id");
+                $(".onsale-content-item").addClass("hidden")
+                $("#" + id).removeClass("hidden");
+                // $(".onsale-tab-item").removeClass("active");
+                // $(this).addClass("active")
+                $(window).trigger("nav_change", id);
+
+                if ($(this).attr("data-scrollto")) {
+                    $('html,body').animate({
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
+                    }, 500, function() {
+                        $(".onsale-tab-bigitem").removeClass("active");
+                        $(self.parentNode).addClass("active")
+                    });
+                }
+                var self = this;
+
+            });
 
 
 

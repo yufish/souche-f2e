@@ -12,7 +12,8 @@
         height:38px;
         font-size: 0px;
         width:1188px;
-        .onsale-tab-item{
+
+        .onsale-tab-bigitem{
             font-size:16px;
             padding:0 30px;
             color:#666;
@@ -22,14 +23,38 @@
             border-bottom:1px solid #eee;
             display: inline-block;
             border-top:3px solid #f9f9f9;
+          position: relative;
+          overflow: hidden;
+          vertical-align: top;
         }
-        .onsale-tab-item.active{
+        .onsale-tab-bigitem.active{
             color:#e70;
             background: #fff;
             border-top:3px solid #ef5c1e;
             border-bottom: none;
             line-height: 36px;
+          overflow: visible;
         }
+      .sub-item{
+        position: absolute;
+        top:35px;
+        width:800px;
+        left:13px;
+        background: #fff;
+        a{
+          font-size: 14px;
+          color:#666;
+          padding:0 20px;
+          line-height: 30px;
+          border-right:1px solid #eee;
+        }
+        a:last-child{
+          border:none;
+        }
+        a.active{
+          color:#e70;
+        }
+      }
     }
     .onsale-content{
         .onsale-content-item{
