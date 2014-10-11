@@ -9,6 +9,9 @@
     <link href="../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
     <style>
         *{box-sizing: border-box}
+        body{
+            background: #f5f5f5;
+        }
         .logo{
             text-align: center;
         }
@@ -16,13 +19,13 @@
             width: 162px;
         }
         .login-input{
-            height: 44px;
+            height: 46px;
             border:1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 4px;
             width: 100%;
             appearance: none;
             -webkit-appearance:none;
-            padding-left: 15px;
+            padding-left: 16px;
         }
         .login-btn{
             background: #FF571a;
@@ -30,7 +33,7 @@
             width: 100%;
             height: 44px;
             border:none;
-            border-radius: 3px;
+            border-radius: 4px;
             margin-top: 9px;
         }
         .login-area{
@@ -39,9 +42,26 @@
         .form-item{
             margin: 16px 0;
         }
+        .item-1-2{
+            float: left;
+            width: 50%;
+        }
+        .item-1-2:first-child{
+            padding-right: 8px;
+        }
+        .item-1-2:last-child{
+            padding-left: 8px;
+        }
+        .valid-code-btn{
+            width: 100%;
+            height: 46px;
+            background: #e6e6e6;
+            border:1px solid #bfbfbf;
+            border-radius: 4px;
+            color: #666;
+        }
     </style>
     <script type="text/javascript" src="../../../assets/js/mobile/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../../../assets/js/mobile/lib/af.touchEvents.js"></script>
 </head>
 <body>
     <div class="logo">
@@ -51,13 +71,44 @@
     <div class="login-area">
         <form id="login-form">
             <div class="form-item">
-                <input class='login-input' type='tel' placeholder="输入手机号">
+                <input id="J_phone" class='login-input phone-input' type='tel' placeholder="输入手机号">
             </div>
 
             <div class="form-item">
-                <button type="submit" class="login-btn">登录</button>
+                <div class="item-1-2">
+                    <input id="J_valid-code" type="tel" class='valid-code-input login-input' placeholder="输入验证码">
+                </div>
+                <div class="item-1-2">
+                    <button type="button" class='valid-code-btn' id="J_get-vcode">获取手机验证码</button>
+                </div>
             </div>
+
+            <div class="form-item">
+                <button type="submit" class="login-btn" id="J_login">登录</button>
+            </div>
+
         </form>
     </div>
+    <script>
+        $('#J_login').click(function(){
+            var phoneNum = $('#J_phone').val();
+            //TOOD test phoneNum
+            var validCode = $("#J_valid-code").val();
+        })
+        $('#J_get-vcode').click(function(){
+            var time = 5;
+            var self = $(this).text('xx '+time+'s xx').prop({disabled:true});
+            var handle = setInterval(function(){
+                time--;
+                if(time==0){
+                    self.text('获取手机验证码').prop({disabled:false});
+                    clearInterval(handle);
+
+                }else{
+                    self.text('xx '+time+'s xx');
+                }
+            },1000)
+        })
+    </script>
 </body>
 </html>

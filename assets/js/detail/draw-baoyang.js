@@ -157,7 +157,7 @@ define(['lib/svg.min', 'souche/custom-select'], function(SVG, CustomSelect) {
                             price += data.distanceData[i].price * 1;
                         }
                     }
-                    $("#baoyang_price").html(price)
+                    $("#baoyang_price").html(price.toFixed(2))
                 }
             })
             // $(distanceSelect).on("change", function(e, d) {

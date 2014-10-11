@@ -324,3 +324,77 @@
     float: right;
     height: 44px;
 }
+
+.car-card-2 {
+    padding: 10px 0;
+}
+.car-card-2 .lft {
+    width: 38.2%;
+    float: left;
+}
+.car-card-2 .lft img {
+    width: 100%;
+}
+.car-card-2 .rht {
+    width: 61.8%;
+    float: left;
+    padding-left: 10px;
+}
+.car-card-2 .rht .title {
+    color: #333;
+    margin-top: 3px;
+    height: 32px;
+    overflow: hidden;
+}
+.car-card-2 .rht .car-series {
+    font-weight: bold;
+    line-height: 16px;
+}
+.car-card-2 .rht .other-detail-info {
+    margin-top: 2px;
+    line-height: 14px;
+}
+.car-card-2 .rht .sc-price {
+    font-weight: bold;
+    color: #FF571a;
+    font-size: 14px;
+    line-height: 14px;
+    float: left;
+    margin: 7px 10px 0 0;
+}
+.car-card-2 .rht .car-footer{
+    clear:both;
+    font-size: 12px;
+    padding-top:6px;
+    color:#fff;
+}
+.car-card-2 .tag{
+    padding: 2px;
+}
+.car-card-2 .car-footer .level-tag{
+    background: #ff571a;
+}
+.car-card-2 .car-footer .quality-tag{
+    background: #64b662;
+}
+.car-order {
+    height: 44px;
+    line-height: 44px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+}
+.car-order .go-to-order-detail {
+    border: 1px solid #666;
+    padding: 6px;
+    float: right;
+    line-height: 14px;
+    border-radius: 4px;
+    margin-left: auto;
+}
+.shop-title {
+    height: 44px;
+    line-height: 44px;
+}

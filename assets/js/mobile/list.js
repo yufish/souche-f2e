@@ -51,8 +51,6 @@ var List = function() {
         })
     }
 
-
-
     var storeStorage = function() {
         var db = window.sessionStorage;
         db.setItem('timestamp', Date.now());
