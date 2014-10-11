@@ -85,7 +85,7 @@ define(function(){
                         }).done(function(data) {
                             if(data.result == 2) {
                                 self.find("input").attr("checked", 'true');
-                                self.find("span").html("对比");
+                                self.addClass('added');
 
                                 var cloneElement = self.clone();
                                 cloneElement.css({

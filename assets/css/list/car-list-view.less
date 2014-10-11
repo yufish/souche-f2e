@@ -201,11 +201,22 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             .carConstrast{
                 top: 0;
                 text-align: center;
-                .constrast-without-add{
+                .constrast-notyet{
+                    display: none;
+                }
+                .constrast-notyet-verbose{
                     display: inline-block;
                 }
-                .constrast-add{
+                .constrast-added{
+                    display: none;
+                }
+                &.added{
+                  .constrast-notyet-verbose{
+                    display: none;
+                  }
+                  .constrast-added{
                     display: inline-block;
+                  }
                 }
             }
             .carCollect,
