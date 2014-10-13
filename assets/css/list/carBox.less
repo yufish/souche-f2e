@@ -8,13 +8,17 @@
     position: relative;
     margin-bottom: 20px;
     .carImg{
-      width: 238px;
-      height: 160px;
       display: block;
       position: relative;
+      
+      width: 240px;
+      height: 160px;
+      margin: -1px 0 0 -1px;
+      
       overflow: hidden;
       img{
         width: 100%;
+        height: auto;
         border: none;
       }
       .timebuy{
@@ -34,19 +38,18 @@
       margin: 10px 15px 0 15px;
     }
     .car-link:hover{
-      color: #FF5517;
+      color: @soucheOrange;
     }
     .car-price{
       margin: 5px 15px;
       .price{
-        font-size: 18px;
-        color: #FF5517;
+        color: @soucheOrange;
         font-weight: bold;
         margin-right: 5px;
       }
       .recommended{
         font-size: 12px;
-        color: #FF5517;
+        color: @soucheOrange;
       }
     }
     .car-info{
@@ -99,7 +102,7 @@
         background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
       }
       .carConstrast{
-        width: 55px;
+        width: 45px;
         height: 23px;
         float: right;
         background: #fff;
@@ -115,9 +118,10 @@
         text-align: center;
 
         #addconst{
-          margin-top: 5px;
-          margin-left: 2px;
-          margin-right: 2px;
+          display: none;
+          // margin-top: 5px;
+          // margin-left: 2px;
+          // margin-right: 2px;
           // display: block;
         }
         span{
@@ -132,6 +136,7 @@
         }
         
         &.added{
+          width: 55px;
           #addconst{
             display: none;
           }
