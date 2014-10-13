@@ -15,7 +15,9 @@
         #logo-img{
             width: 162px;
         }
-
+        body{
+            padding: 0 16px;
+        }
     </style>
     <script type="text/javascript" src="../../../assets/js/mobile/jquery-1.9.1.min.js"></script>
 </head>
@@ -24,10 +26,10 @@
         <img id="logo-img" src="">
     </div>
 
-    <div class="login-area">
-        <form id="login-form">
+    <div class="login-area" id="login-form-valid-code">
+        <form id="login-form-valid">
             <div class="form-item">
-                <input id="J_phone" class='login-input phone-input' type='tel' placeholder="输入手机号">
+                <input id="J_phone-valid" class='login-input phone-input' type='tel' placeholder="输入手机号">
             </div>
 
             <div class="form-item">
@@ -35,12 +37,12 @@
                     <input id="J_valid-code" type="tel" class='valid-code-input login-input' placeholder="输入验证码">
                 </div>
                 <div class="item-1-2">
-                    <button type="button" class='valid-code-btn' id="J_get-vcode">获取手机验证码</button>
+                    <button type="button" class='valid-code-btn' id="J_get-valid">获取手机验证码</button>
                 </div>
             </div>
 
             <div class="form-item">
-                <button type="submit" class="login-btn" id="J_login">登录</button>
+                <button type="submit" class="login-btn" id="J_login-valid">登录</button>
             </div>
 
         </form>
@@ -48,11 +50,11 @@
     <script>
         var phoneReg = /^1[3458][0-9]{9}$/;
         function checkPhone(){
-            var phoneNum = $('#J_phone').val();
+            var phoneNum = $('#J_phone-valid').val();
             return phoneReg.test(phoneNum)
         }
-        $('#J_login').click(function(){
-            var phoneNum = $('#J_phone').val();
+        $('#J_login-valid').click(function(){
+            var phoneNum = $('#J_phone-valid').val();
             if(!checkPhone()){
                 e.preventDefault();
                 alert('请输入正确的手机号')
@@ -60,7 +62,7 @@
             }
             var validCode = $("#J_valid-code").val();
         })
-        $('#J_get-vcode').click(function(){
+        $('#J_get-valid').click(function(){
             if(!checkPhone()){
                 alert('请输入正确的手机号')
                 return;
