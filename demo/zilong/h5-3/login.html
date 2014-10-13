@@ -90,13 +90,26 @@
         </form>
     </div>
     <script>
+        var phoneReg = /^1[3458][0-9]{9}$/;
+        function checkPhone(){
+            var phoneNum = $('#J_phone').val();
+            return phoneReg.test(phoneNum)
+        }
         $('#J_login').click(function(){
             var phoneNum = $('#J_phone').val();
-            //TOOD test phoneNum
+            if(!checkPhone()){
+                e.preventDefault();
+                alert('请输入正确的手机号')
+                return;
+            }
             var validCode = $("#J_valid-code").val();
         })
         $('#J_get-vcode').click(function(){
-            var time = 5;
+            if(!checkPhone()){
+                alert('请输入正确的手机号')
+                return;
+            }
+            var time = 60;
             var self = $(this).text('xx '+time+'s xx').prop({disabled:true});
             var handle = setInterval(function(){
                 time--;
