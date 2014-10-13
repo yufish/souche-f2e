@@ -835,7 +835,6 @@
         <div class="sub-item">
 
         <a class="onsale-tab-item onsale-tab-item-report active" data-id="onsale_report" data-scrollto="onsale_report" click_type="tab-1">检测报告</a>
-
             <a class="onsale-tab-item onsale-tab-item-config" data-id="onsale_report" data-scrollto="detail_para" click_type="tab-5">配置参数</a>
             <a class="onsale-tab-item onsale-tab-item-price hidden" data-id="onsale_price" data-scrollto="onsale_price" click_type="tab-2">价格报告</a>
         <a class="onsale-tab-item onsale-tab-item-koubei hidden" data-id="onsale_koubei"  data-scrollto="onsale_koubei" click_type="tab-3">网络口碑</a>
@@ -849,108 +848,14 @@
 
 </div>
 <div id="onsale-content">
-<div class="onsale-content-item hidden" id="onsale_baoyang" data-id="onsale_baoyang">
-    <div class="baoyang">
-        <div class="baoyang-filter">
-            每年行驶 <div class="sc-select sc-custom-select distance-select"id="distance_select">
-            <div class="sc-select-hd">
-                <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
-                <div class="sc-select-action"><i></i></div>
-            </div>
-            <div class="sc-select-list hidden" style="top: 30px;">
-                <a target="_blank" href="#" data-value="10000" class="option"><input type="checkbox" class="hidden"><span class="value">10000公里</span></a>
-                <a target="_blank" href="#" data-value="20000" class="option"><input type="checkbox" class="hidden"><span class="value">20000公里</span></a>
-                <a target="_blank" href="#" data-value="30000" class="option"><input type="checkbox" class="hidden"><span class="value">30000公里</span></a>
-                <a target="_blank" href="#" data-value="40000" class="option"><input type="checkbox" class="hidden"><span class="value">40000公里</span></a>
-                <a target="_blank" href="#" data-value="50000" class="option"><input type="checkbox" class="hidden"><span class="value">50000公里</span></a>
-                <a target="_blank" href="#" data-value="60000" class="option"><input type="checkbox" class="hidden"><span class="value">60000公里</span></a>
-                <a target="_blank" href="#" data-value="70000" class="option"><input type="checkbox" class="hidden"><span class="value">70000公里</span></a>
-            </div>
 
-            <input type="hidden" name="minYear" class="selected_values" value="30000公里" id="age_select_input">
-        </div> 年保养费用约为 <em>￥<span id="baoyang_price">6325</span>元</em>
-        </div>
-        <div class="baoyang-main">
-            <div class="baoyang-chart" id="baoyang_chart">
+{{include ./detail.jade}}
 
-            </div>
-            <div  class="price-point">
-                <div class="price-arrow"></div>
-                <div class="price-tag new-tag">
-                    <div class="price-title new-title">本次保养费用</div>
-                    <div class="price-value">
-                        ￥2000
-                    </div>
-                    <div class="baoyang-projects clearfix">
-                        <div class="baoyang-project clearfix"><i class="icon-1"></i>机油滤清器</div>
-                        <div class="baoyang-project clearfix"><i class="icon-2"></i>变速箱油</div>
-                        <div class="baoyang-project  clearfix"><i class="icon-3"></i>空调滤清器</div>
-                        <div class="baoyang-project clearfix"><i class="icon-1"></i>差速器油</div>
-                        <div class="baoyang-project clearfix"><i   class="icon-4"></i>空气滤清器</div>
-                        <div class="baoyang-project clearfix"><i class="icon-5"></i>发动机机油</div>
-                        <div class="baoyang-project clearfix"><i class="icon-2"></i>分动器油</div>
-                        <div class="baoyang-project clearfix"><i class="icon-2"></i>发动机冷却液</div>
-                        <div class="baoyang-project clearfix"><i  class="icon-2"></i>转向助力液</div>
-                        <div class="baoyang-project clearfix"><i class="icon-6"></i>前制动器</div>
-                        <div class="baoyang-project clearfix"><i class="icon-6"></i>后制动器</div>
-                        <div class="baoyang-project clearfix"><i class="icon-2"></i>整车制动液</div>
-                        <div class="baoyang-project clearfix"><i class="icon-7"></i>全部火花塞</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="onsale-content-item hidden" id="onsale_koubei">
-    <div class="net-koubei">
-        <div class="koubei-desc">
-            <div class="koubei-l">荣威 - 荣威350 给人的印象：</div>
-            <div class="koubei-labels">
-                <label>外观时尚运动</label>
-                <label>配置不错</label>
-                <label>空间灵活宽敞</label>
-            </div>
-        </div>
-        <div class="koubei-content">
-            <div id="koubei_svg"></div>
-            <div class="all-score">综合评分<em>8.3</em></div>
-            <script id="koubei_item_template" type="text/template">
-                <div class="koubei-item">
-                    <div class="koubei-item-title"><label>{{name}}</label><span class="rate"><span class="rate-real" style="width:{{width}}%;"></span></span></div>
-                    <div class="koubei-item-labels">
-                        <div class="koubei-tri"></div>
-                        {{#labels}}
-                        <div class="koubei-label">{{{.}}}</div>
-                        {{/labels}}
-                    </div>
-                </div>
-            </script>
-        </div>
-        <div class="koubei-series clearfix">
-            <div class="series-wrapper">
-                <label class="series-t">对比车型</label>
-                <div class="series-tab">
-                    <div class="series-tab-item item-active">奥迪A4</div>
-                    <div class="series-tab-item">MBW3</div>
-                    <div class="series-tab-item">A4</div>
-                    <div class="series-tab-item">斑马纹</div>
-                </div>
-            </div>
-        </div>
-        <div class="koubei-advantage clearfix">
-            <div class="advantage-left">
-                <div class="advantage-title"><i></i>优点</div>
-                <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
-            </div>
-            <div class="advantage-right">
-                <div class="advantage-title"><i></i>缺点</div>
-                <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="onsale-content-item hidden" id="onsale_price">
+
+
+<div class="onsale_wrap hidden" id="onsale_price">
     <div class="price-report">
+        <h3>价格报告</h3>
         <div class="report-item">
             <div class="report-item-content">
                 <div id="price-distribution" class="clearfix">
@@ -1048,6 +953,129 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="onsale_wrap hidden" id="onsale_koubei">
+    <div class="net-koubei">
+        <h3>网络口碑</h3>
+        <div class="koubei-desc">
+            <div class="koubei-l">荣威 - 荣威350 给人的印象：</div>
+            <div class="koubei-labels">
+                <label>外观时尚运动</label>
+                <label>配置不错</label>
+                <label>空间灵活宽敞</label>
+            </div>
+        </div>
+        <div class="koubei-content">
+            <div id="koubei_svg"></div>
+            <div class="all-score">综合评分<em>8.3</em></div>
+            <script id="koubei_item_template" type="text/template">
+                <div class="koubei-item">
+                    <div class="koubei-item-title"><label>{{name}}</label><span class="rate"><span class="rate-real" style="width:{{width}}%;"></span></span></div>
+                    <div class="koubei-item-labels">
+                        <div class="koubei-tri"></div>
+                        {{#labels}}
+                        <div class="koubei-label">{{{.}}}</div>
+                        {{/labels}}
+                    </div>
+                </div>
+            </script>
+        </div>
+        <div class="koubei-series clearfix">
+            <div class="series-wrapper">
+                <label class="series-t">对比车型</label>
+                <div class="series-tab">
+                    <div class="series-tab-item item-active">奥迪A4</div>
+                    <div class="series-tab-item">MBW3</div>
+                    <div class="series-tab-item">A4</div>
+                    <div class="series-tab-item">斑马纹</div>
+                </div>
+            </div>
+        </div>
+        <div class="koubei-advantage clearfix">
+            <div class="advantage-left">
+                <div class="advantage-title"><i></i>优点</div>
+                <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+            </div>
+            <div class="advantage-right">
+                <div class="advantage-title"><i></i>缺点</div>
+                <div class="advantage-content">外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用外观造型时尚漂亮，整车线条流程；内饰实用，布局合理，操控方便，空间宽敞够用</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="onsale_wrap hidden" id="onsale_baoyang" data-id="onsale_baoyang">
+    <div class="baoyang">
+        <h3>保养费用</h3>
+        <div class="baoyang-filter">
+            每年行驶 <div class="sc-select sc-custom-select distance-select"id="distance_select">
+            <div class="sc-select-hd">
+                <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                <div class="sc-select-action"><i></i></div>
+            </div>
+            <div class="sc-select-list hidden" style="top: 30px;">
+                <a target="_blank" href="#" data-value="10000" class="option"><input type="checkbox" class="hidden"><span class="value">10000公里</span></a>
+                <a target="_blank" href="#" data-value="20000" class="option"><input type="checkbox" class="hidden"><span class="value">20000公里</span></a>
+                <a target="_blank" href="#" data-value="30000" class="option"><input type="checkbox" class="hidden"><span class="value">30000公里</span></a>
+                <a target="_blank" href="#" data-value="40000" class="option"><input type="checkbox" class="hidden"><span class="value">40000公里</span></a>
+                <a target="_blank" href="#" data-value="50000" class="option"><input type="checkbox" class="hidden"><span class="value">50000公里</span></a>
+                <a target="_blank" href="#" data-value="60000" class="option"><input type="checkbox" class="hidden"><span class="value">60000公里</span></a>
+                <a target="_blank" href="#" data-value="70000" class="option"><input type="checkbox" class="hidden"><span class="value">70000公里</span></a>
+            </div>
+
+            <input type="hidden" name="minYear" class="selected_values" value="30000公里" id="age_select_input">
+        </div> 年保养费用约为 <em>￥<span id="baoyang_price">6325</span>元</em>
+        </div>
+        <div class="baoyang-main">
+            <div class="baoyang-chart" id="baoyang_chart">
+
+            </div>
+            <div  class="price-point">
+                <div class="price-arrow"></div>
+                <div class="price-tag new-tag">
+                    <div class="price-title new-title">本次保养费用</div>
+                    <div class="price-value">
+                        ￥2000
+                    </div>
+                    <div class="baoyang-projects clearfix">
+                        <div class="baoyang-project clearfix"><i class="icon-1"></i>机油滤清器</div>
+                        <div class="baoyang-project clearfix"><i class="icon-2"></i>变速箱油</div>
+                        <div class="baoyang-project  clearfix"><i class="icon-3"></i>空调滤清器</div>
+                        <div class="baoyang-project clearfix"><i class="icon-1"></i>差速器油</div>
+                        <div class="baoyang-project clearfix"><i   class="icon-4"></i>空气滤清器</div>
+                        <div class="baoyang-project clearfix"><i class="icon-5"></i>发动机机油</div>
+                        <div class="baoyang-project clearfix"><i class="icon-2"></i>分动器油</div>
+                        <div class="baoyang-project clearfix"><i class="icon-2"></i>发动机冷却液</div>
+                        <div class="baoyang-project clearfix"><i  class="icon-2"></i>转向助力液</div>
+                        <div class="baoyang-project clearfix"><i class="icon-6"></i>前制动器</div>
+                        <div class="baoyang-project clearfix"><i class="icon-6"></i>后制动器</div>
+                        <div class="baoyang-project clearfix"><i class="icon-2"></i>整车制动液</div>
+                        <div class="baoyang-project clearfix"><i class="icon-7"></i>全部火花塞</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--onsale_record-->
+<div class="onsale_wrap" id="onsale_record">
+    <div class="onsale_content clearfix">
+        <h3>过户历史</h3>
+        <p class="record-num">共有1条过户记录</p>
+
+
+
+        <table>
+            <tr><th>过户主体</th><th>过户时间</th><th>过户方式</th></tr>
+
+            <tr><td>个人</td><td>2014-09-23</td><td>购买</td></tr>
+
+        </table>
+
+
+
+
+
     </div>
 </div>
 
@@ -1208,33 +1236,7 @@
 
 
 </div>
-<div class="onsale-content-item" id="onsale_report">
-
-{{include ./detail.jade}}
-
-<!--onsale_record-->
-<div class="onsale_wrap" id="onsale_record">
-    <div class="onsale_content clearfix">
-        <h3>过户历史</h3>
-        <p class="record-num">共有1条过户记录</p>
-
-
-
-        <table>
-            <tr><th>过户主体</th><th>过户时间</th><th>过户方式</th></tr>
-
-            <tr><td>个人</td><td>2014-09-23</td><td>购买</td></tr>
-
-        </table>
-
-
-
-
-
-    </div>
-</div>
 <!--onsale_record end-->
-</div>
 </div>
 </div>
 
@@ -1257,7 +1259,7 @@
 <!--detail_door end-->
 
 
-<div click_type="onsaledetail-detail-otherCars" class="detail_otherCars clearfix">
+<div click_type="onsaledetail-detail-otherCars" class="detail_otherCars clearfix ">
     <h2 class="detail_title">您可能会喜欢</h2>
 
 
