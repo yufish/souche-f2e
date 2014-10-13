@@ -1,5 +1,5 @@
 !function(){
-    var tap_event = 'click'
+    var tap_event = 'click';
     var opTabPanelItems =$('#J_operate_panel .qdc-panel-item');
     var opTabItems = $('#J_operate_tab .qdc-tab-item');
     opTabItems.each(function(index){
