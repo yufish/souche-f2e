@@ -1,3 +1,6 @@
+@soucheOrange: #ff5517;
+@yahei: "Microsoft Yahei" "微软雅黑";
+
 #list_wrap,#choose .wrap,#choose_blank .wrap {
   width:1280px;
   margin:0 auto;
@@ -156,36 +159,40 @@
         .choose_item {
           float:left;
           padding:0 5px 0 10px;
-          line-height:20px;
+          line-height:30px;
           border:1px solid #ccc;
           color:#666;
-          margin-top:8px;
-          margin-right:8px;
+          margin-top: 8px;
+          margin-right: 8px;
           display:inline;
           *width:70px;
-          height:20px;
           overflow:hidden;
-          background-color: #f9f9f9;
+          background-color: #fff;
           cursor: pointer;
           span {
             float:right;
             color:#bbb;
-            line-height:20px;
+            line-height: 28px;
             padding-left: 6px;
             font-size:12px;
           }
-        }
-        .choose_item:hover {
-          border:1px solid #FC7000;
-          span{
-            color:#fc7000;
+          &:hover {
+            border:1px solid #FC7000;
+            span{
+              color:#fc7000;
+            }
           }
         }
+        
         .choose_save {
-          color:#666;
-          text-decoration: underline;
           display: block;
-          padding-top: 10px;
+          margin-top: 10px;
+          padding: 0 8px;
+          width: 72px;
+          line-height: 30px;
+          text-decoration: none;
+          color: #fff;
+          background-color: @soucheOrange;
         }
       }
       .choose_clear {
@@ -228,7 +235,7 @@
         }
       }
       .historyRecord_title {
-        color: #ff4400;
+        color: @soucheOrange;
         font-size: 14px;
       }
     }
@@ -368,7 +375,8 @@
             margin-bottom:15px;
             dt {
               float:left;
-              color:#00b0b4;
+              // color:#00b0b4;
+              color: @soucheOrange;
               font-size:18px;
               line-height:18px;
               width:16px;
@@ -381,7 +389,7 @@
               a {
                 float:left;
                 color:#666;
-                font-family:"������",Tahoma,Verdana;
+                font-family: @yahei, Tahoma,Verdana;
                 font-size:12px;
                 margin-right:18px;
                 line-height:18px;
@@ -451,6 +459,7 @@
         color:#999;
         float:left;
         margin:0 6px;
+        line-height: 32px;
       }
       .list_nav_title {
         span {
@@ -679,6 +688,7 @@
   padding: 5px;
   z-index:20;
   .custom-title {
+    margin-left: 18px;
     color: #666;
     font-size: 12px;
     font-weight: normal;
@@ -751,10 +761,10 @@
       cursor: pointer;
     }
     i:hover {
-      background-color: #fc7000;
+      background-color: @soucheOrange;
     }
     .price-active {
-      background-color: #fc7000;
+      background-color: @soucheOrange;
     }
     span {
       font-size: 12px;
@@ -766,8 +776,8 @@
 }
 .unlimited {
   position: absolute;
-  top: 70px;
-  right: 3px;
+  top: 59px;
+  right: -4px;
   font-size: 12px;
   color: #8c8c8c;
 }
@@ -798,19 +808,24 @@
 #list_wrap {
       .list_main {
           .list-noResult {
-              width:680px;
-              height:400px;
+              height:402px;
+              margin-left: 20px;
               background-color:#fff;
               border:1px solid #d9d9d9;
-              padding-top:60px;
+              // padding-top:60px;
               *margin-bottom:40px;
               padding-left: 40px;
+
               .list-noResult-bg {
+                  
+                  width:645px;
+                  height:400px;
+                  padding-top: 110px;
+                  margin: 0 auto;
+
                   background: url("../images/common/advisor-bg.png?123") no-repeat;
                   background-position: right bottom;
-                  width:645px;
-                  height:290px;
-                  padding-top: 110px;
+
                   .list-noResult-title {
                       font-size: 18px;
                       color: #333;
@@ -857,7 +872,30 @@
 }
 
 @import "list/car-nav.less";
+
+.carItem .car-price .price{
+  // 多个inline元素间在代码缩进之后有间距
+  // 既然子元素都单独定义了font-size
+  // 就把父元素定义为0  解决这个问题
+  font-size: 0;
+  .rmb-symbol{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-amount{
+    font-family: 'Tahoma';
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-unit{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
 @import "list/car-list-view.less";
 @import "list/carBox.less";
+
 @import "list/list-leftaside.less";
 @import "list/list-mediaquery.less";
