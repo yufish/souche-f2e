@@ -13,10 +13,23 @@ for(var i = 0;i<barArea.length;i++){
 
 !function(){
     var opTabPanelItems =$('#J_operate_panel .qdc-panel-item');
-    $('#J_operate_tab .qdc-tab-item').each(function(index){
+    var opTabItems = $('#J_operate_tab .qdc-tab-item');
+    opTabItems.each(function(index){
         $(this).click(function(){
+            opTabItems.removeClass('active');
+            $(this).addClass('active')
             opTabPanelItems.addClass("hidden");
             opTabPanelItems.eq(index).removeClass("hidden");
+        })
+    })
+    var accTabPanelItems = $('#J_accident_panel .qdc-panel-item');
+    var accTabItems  =$('#J_accident_tab .qdc-tab-item');
+    accTabItems.each(function(index){
+        $(this).click(function(){
+            accTabItems.removeClass('active');
+            $(this).addClass('active')
+            accTabPanelItems.addClass("hidden");
+            accTabPanelItems.eq(index).removeClass("hidden");
         })
     })
 }()
