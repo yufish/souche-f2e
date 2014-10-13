@@ -46,7 +46,7 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
         margin-left: 20px;
         height: 120px + 2*@paddingTB;
         padding: @paddingTB 0;
-        border-bottom: 1px solid @bc;
+        border-bottom: 1px solid #EDEDED;
 
         &:after{
             content: ".";
@@ -157,8 +157,6 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             .price{
                 display: block;
                 margin-bottom: 6px;
-                font-size: 16px;
-                font-weight: bold;
                 color: @soucheOrange;
             }
             .recommended{
@@ -212,7 +210,13 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
                 .constrast-added{
                     display: none;
                 }
+                #addconst{
+                    display: none;
+                }
                 &.added{
+                    #addconst{
+                        display: inline-block;
+                    }
                   .constrast-notyet-verbose{
                     display: none;
                   }
@@ -225,11 +229,12 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             .carConstrast{
                 position: absolute;
                 display: inline-block;
-                line-height: 26px;
+                line-height: 24px;
                 width: 77px;
                 font-size: 12px;
-                border: 1px solid #ccc;
+                border: 1px solid #e0e0e0;
                 cursor: pointer;
+                color: #999;
             }
         }
         .up-time{

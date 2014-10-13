@@ -1,4 +1,5 @@
 @soucheOrange: #ff5517;
+@yahei: "Microsoft Yahei" "微软雅黑";
 
 #list_wrap,#choose .wrap,#choose_blank .wrap {
   width:1280px;
@@ -388,7 +389,7 @@
               a {
                 float:left;
                 color:#666;
-                font-family:"������",Tahoma,Verdana;
+                font-family: @yahei, Tahoma,Verdana;
                 font-size:12px;
                 margin-right:18px;
                 line-height:18px;
@@ -807,19 +808,24 @@
 #list_wrap {
       .list_main {
           .list-noResult {
-              width:680px;
-              height:400px;
+              height:402px;
+              margin-left: 20px;
               background-color:#fff;
               border:1px solid #d9d9d9;
-              padding-top:60px;
+              // padding-top:60px;
               *margin-bottom:40px;
               padding-left: 40px;
+
               .list-noResult-bg {
+                  
+                  width:645px;
+                  height:400px;
+                  padding-top: 110px;
+                  margin: 0 auto;
+
                   background: url("../images/common/advisor-bg.png?123") no-repeat;
                   background-position: right bottom;
-                  width:645px;
-                  height:290px;
-                  padding-top: 110px;
+
                   .list-noResult-title {
                       font-size: 18px;
                       color: #333;
@@ -866,7 +872,30 @@
 }
 
 @import "list/car-nav.less";
+
+.carItem .car-price .price{
+  // 多个inline元素间在代码缩进之后有间距
+  // 既然子元素都单独定义了font-size
+  // 就把父元素定义为0  解决这个问题
+  font-size: 0;
+  .rmb-symbol{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-amount{
+    font-family: 'Tahoma';
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-unit{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
 @import "list/car-list-view.less";
 @import "list/carBox.less";
+
 @import "list/list-leftaside.less";
 @import "list/list-mediaquery.less";
