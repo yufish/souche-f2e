@@ -64,9 +64,16 @@ Souche.Inside = (function() {
                 $(".car-nav").removeClass("car-nav-fixed");
             };
         });
-        $(".custom-price-input").on("click", function() {
-            $(".custom-price").removeClass("no-active")
-        })
+        
+        $('.custom-price .custom-title').on('click', function(){
+            var customPriceCtn = $(".custom-price");
+            if(customPriceCtn.hasClass('no-active')){
+                customPriceCtn.removeClass("no-active");
+            }
+            else{
+                customPriceCtn.addClass("no-active");
+            }
+        });
         $(document.body).on("click", function(e) {
             if (!$(e.target).closest(".custom-price").length) {
                 $(".custom-price").addClass("no-active")
