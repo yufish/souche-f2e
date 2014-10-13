@@ -69,4 +69,14 @@ define(['detail/report/report-safety',
             }
         },300)
     })
+
+    $(".look").click(function(){
+        $(".rule-popup").css({
+            left:$(window).width()/2-350,
+            top:100
+        }).removeClass("hidden")
+    })
+    $(".rule-popup .close").click(function(){
+        $(".rule-popup").addClass("hidden")
+    })
 });
