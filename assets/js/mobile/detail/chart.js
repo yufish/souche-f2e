@@ -12,11 +12,28 @@ for(var i = 0;i<barArea.length;i++){
 }
 
 !function(){
+    var tap_event = 'click'
+    if('ontouchstart' in window){
+        tap_event = tap;
+    }
     var opTabPanelItems =$('#J_operate_panel .qdc-panel-item');
-    $('#J_operate_tab .qdc-tab-item').each(function(index){
-        $(this).click(function(){
+    var opTabItems = $('#J_operate_tab .qdc-tab-item');
+    opTabItems.each(function(index){
+        $(this).on(tap_event,function(){
+            opTabItems.removeClass('active');
+            $(this).addClass('active')
             opTabPanelItems.addClass("hidden");
             opTabPanelItems.eq(index).removeClass("hidden");
+        })
+    })
+    var accTabPanelItems = $('#J_accident_panel .qdc-panel-item');
+    var accTabItems  =$('#J_accident_tab .qdc-tab-item');
+    accTabItems.each(function(index){
+        $(this).on(tap_event,function(){
+            accTabItems.removeClass('active');
+            $(this).addClass('active')
+            accTabPanelItems.addClass("hidden");
+            accTabPanelItems.eq(index).removeClass("hidden");
         })
     })
 }()

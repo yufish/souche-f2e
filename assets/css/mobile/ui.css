@@ -324,7 +324,6 @@
     float: right;
     height: 44px;
 }
-
 .car-card-2 {
     padding: 10px 0;
 }
@@ -397,4 +396,50 @@
 .shop-title {
     height: 44px;
     line-height: 44px;
+}
+
+
+#login-form-valid-code{box-sizing: border-box}
+
+#login-form-valid-code .login-input{
+    height: 46px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance:none;
+    padding-left: 16px;
+}
+#login-form-valid-code .login-btn{
+    background: #FF571a;
+    color: #fff;
+    width: 100%;
+    height: 44px;
+    border:none;
+    border-radius: 4px;
+    margin-top: 9px;
+}
+#login-form-valid-code .login-area{
+    padding: 0 25px;
+}
+#login-form-valid-code .form-item{
+    margin: 16px 0;
+}
+#login-form-valid-code .item-1-2{
+    float: left;
+    width: 50%;
+}
+#login-form-valid-code .item-1-2:first-child{
+    padding-right: 8px;
+}
+#login-form-valid-code .item-1-2:last-child{
+    padding-left: 8px;
+}
+#login-form-valid-code .valid-code-btn{
+    width: 100%;
+    height: 46px;
+    background: #e6e6e6;
+    border:1px solid #bfbfbf;
+    border-radius: 4px;
+    color: #666;
 }

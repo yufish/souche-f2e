@@ -2,6 +2,33 @@ Souche.Inside = (function() {
     var config = {
         fav_api: ""
     }
+
+    function updateFav( favCtn, favOrNot ){
+        var favCount = favCtn.find('.fav-count');
+        var lastFavCount = Number(favCount.attr('data-favcount'));
+        var newFavCount = 0;
+        if(favOrNot){
+            favCtn.addClass("faved");
+            // 判断是NaN
+            if(lastFavCount !== 0 && !Boolean(lastFavCount) ){
+                newFavCount = 1;
+            }
+            else{
+                newFavCount = lastFavCount + 1;
+            }
+        }
+        else{
+            favCtn.removeClass("faved");
+            if(lastFavCount !== 0 && !Boolean(lastFavCount) ){
+                newFavCount = 0;
+            }
+            else{
+                newFavCount = lastFavCount - 1 ;
+            }
+        }
+        favCount.attr('data-favcount', newFavCount);
+        favCount.html( newFavCount );
+    }
     $(document).ready(function() {
         //			var setImgHeight = function(img, wrapH, wrapW){
         //				if(img.height() < wrapH){
@@ -120,8 +147,8 @@ Souche.Inside = (function() {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
                         } else {
-                            $(".fav[data-carid=" + fav_carId + "]").addClass("faved")
-                            // $("span", $(".fav[data-carid=" + fav_carId + "]")).html("已收藏")
+                            var favCtn = $(".fav[data-carid=" + fav_carId + "]");
+                            updateFav( favCtn, true);
                         }
                     }
                 })
@@ -139,8 +166,9 @@ Souche.Inside = (function() {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
                         } else {
-                            $(".fav[data-carid=" + fav_carId + "]").removeClass("faved")
-                            // $("span", $(".fav[data-carid=" + fav_carId + "]")).html("加入收藏")
+                            var favCtn = $(".fav[data-carid=" + fav_carId + "]");
+                            favCtn.removeClass("faved")
+                            updateFav( favCtn, false);
                         }
                     }
                 })

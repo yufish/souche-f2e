@@ -161,7 +161,6 @@
 
     module.exports = Stack;
 },{"./utils":3}],3:[function(_dereq_,module,exports){
-//code from JavaScript: The Definitive Guide
     var toString = Object.prototype.toString;
     var isArray = function (arr) {
         return toString.call(arr) === "[object Array]";
