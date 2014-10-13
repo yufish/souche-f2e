@@ -1,0 +1,24 @@
+// card-list-common.less
+
+
+.carItem .car-price .price{
+  // 多个inline元素间在代码缩进之后有间距
+  // 既然子元素都单独定义了font-size
+  // 就把父元素定义为0  解决这个问题
+  font-size: 0;
+  .rmb-symbol{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-amount{
+    font-family: 'Tahoma';
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .price-unit{
+    font-family: @yahei;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
