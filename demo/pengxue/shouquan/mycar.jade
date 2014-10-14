@@ -83,14 +83,15 @@ html
                 .title 订单状态：
                 span 已预约看车，等待支付购车款
             .yuyue-state
-              .state-open 
+              .state-open.open-box
                 span 显示详情
                 i
               //yuyueBox表示已预约
               //payBox表示已付款
               //tranBox表示已过户
               //finBox表示交易完成
-              .state-box.yuyueBox.hidden
+              .state-box.yuyueBox
+                .yuyue-succ 已预约成功
                 .title
                   .state-icon
                   .tit-cont 订单状态：已预约看车，等待支付购车款
@@ -133,14 +134,14 @@ html
                 .title 订单状态：
                 span 已支付购车款，等待提车过户
             .yuyue-state
-              .state-open 
+              .state-open.open-box 
                 span 显示详情
                 i
               //yuyueBox表示已预约
               //payBox表示已付款
               //tranBox表示已过户
               //finBox表示交易完成
-              .state-box.payBox.hidden
+              .state-box.payBox
                 .title
                   .state-icon
                   .tit-cont 订单状态：已支付购车款，等待提车过户
@@ -181,14 +182,14 @@ html
                   .adults 申请维权
                   .eval 评价
             .yuyue-state
-              .state-open 
+              .state-open.open-box 
                 span 显示详情
                 i
               //yuyueBox表示已预约
               //payBox表示已付款
               //tranBox表示已过户
               //finBox表示交易完成
-              .state-box.tranBox.hidden
+              .state-box.tranBox
                 .title
                   .state-icon
                   .tit-cont 订单状态：已提车过户，等待交易完成
@@ -230,14 +231,14 @@ html
                 .servi
                   .eval 评价
             .yuyue-state
-              .state-open 
+              .state-open.open-box 
                 span 显示详情
                 i
               //yuyueBox表示已预约
               //payBox表示已付款
               //tranBox表示已过户
               //finBox表示交易完成
-              .state-box.finBox.hidden
+              .state-box.finBox
                 .title
                   .state-icon
                   .tit-cont 订单状态：交易完成
@@ -321,6 +322,15 @@ html
             p 呼出号码为：4008-010-010
       //.wrapGrayBg(style=" opacity: 0.5; filter: alpha(opacity=50);")
     script.
-      $(".state-open span").on("click",function(){
-          $(this).closest(".yuyue-state").find(".state-box").toggleClass("hidden");
-        })
+      $(".state-open").on("click",function(){
+
+          if($(this).hasClass("open-box")){
+            $(this).closest(".yuyue-state").find(".state-box").slideDown("slow");
+            $(this).removeClass("open-box");
+          }else{
+            $(this).closest(".yuyue-state").find(".state-box").slideUp("slow");
+            $(this).addClass("open-box");
+          }
+    
+        });
+      
