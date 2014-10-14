@@ -199,7 +199,7 @@ Souche.Inside = (function() {
                 $("#fav-popup").addClass("hidden");
                 $(".fav-wrapGrayBg").hide();
             });
-            $(".fav").click(function(e) {
+            $(".fav, .carCollect").click(function(e) {
                 e.preventDefault();
                 fav_carId = $(this).attr("data-carid")
                 if ($(this).hasClass("faved")){
