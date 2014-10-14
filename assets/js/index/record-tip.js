@@ -101,22 +101,25 @@ define(function() {
 //                    }
 //
 //                }
-                $.ajax({
-                    url: url,
-                    data:{
-                        brands:data.brands.join(","),
-                        series:data.series.join(","),
-                        minYear:data.startYear,
-                        maxYear:data.endYear,
-                        minPrice:data.minPrice,
-                        maxPrice:data.maxPrice
-                    },
-                    dataType: "json",
-                    success: function() {
-                        window.location.reload();
-                    },
-                    error: function() {}
-                });
+                Souche.MiniLogin.checkLogin(function(){
+                    $.ajax({
+                        url: url,
+                        data:{
+                            brands:data.brands.join(","),
+                            series:data.series.join(","),
+                            minYear:data.startYear,
+                            maxYear:data.endYear,
+                            minPrice:data.minPrice,
+                            maxPrice:data.maxPrice
+                        },
+                        dataType: "json",
+                        success: function() {
+                            window.location.reload();
+                        },
+                        error: function() {}
+                    });
+                })
+
 
             });
         }
