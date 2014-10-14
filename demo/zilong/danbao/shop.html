@@ -58,8 +58,9 @@
                 </a>
             </div>
         </div>
-        <div class="look-more">查看更多</div>
     </div>
+    <div class="look-more">查看更多<i class="right-arrow"></i></div>
+    <div class="h-16-gray"></div>
     <div id="comment-area">
         <div class="comment-count">245条评论</div>
         <div class="comments">
@@ -88,49 +89,7 @@
         <a class="all-comment" href=''>查看全部评论<i class="right-arrow"></i></a>
     </div>
     <div class="h-16-gray"></div>
-    <script src="OneWayNoChange.js"></script>
-    <script>
-        var data={
-            cars:[
-                {
-                    carHref:'/pages/mobile/detail.html?carId=xl8YM2rHA8',
-                    imgSrc:'http://img.souche.com/files/carpicture/17089DBAA966A9D4F5B2531CE3B89DE3_690x460.jpg@240w',
-                    shortName:'大众 POLO',
-                    modelName:'2013款 POLO-1.4-A/MT豪华版两厢',
-                    carPrice:'10.1',
-                    licenseTime:'2013/04',
-                    recommendReason:'好车',
-                    carId:'xl8YM2rHA8',
-                    favCount:6
-                },
-                {
-                    carHref:'/pages/mobile/detail.html?carId=xl8YM2rHA8',
-                    imgSrc:'http://img.souche.com/files/carpicture/17089DBAA966A9D4F5B2531CE3B89DE3_690x460.jpg@240w',
-                    shortName:'大众 POLO',
-                    modelName:'2013款 POLO-1.4-A/MT豪华版两厢',
-                    carPrice:'10.1',
-                    licenseTime:'2013/04',
-                    recommendReason:'好车',
-                    carId:'xl8YM2rHA8',
-                    favCount:6
-                }
-            ]
-        }
-        var carModel = new OneWay($('#car-card-area .car-wrapper')[0],data)
-        var newItem = {
-                    carHref:'/pages/mobile/detail.html?carId=xl8YM2rHA8',
-                    imgSrc:'http://img.souche.com/files/carpicture/17089DBAA966A9D4F5B2531CE3B89DE3_690x460.jpg@240w',
-                    shortName:'大众 POLO',
-                    modelName:'2013款 POLO-1.4-A/MT豪华版两厢',
-                    carPrice:'10.1',
-                    licenseTime:'2013/04',
-                    recommendReason:'车震牛B',
-                    carId:'xl8YM2rHA8',
-                    favCount:99
-                };
-        carModel.cars.$push(newItem)
-        carModel.cars.$push(newItem)
-    </script>
+
     <script>
         var maxStars = 5;
         $('.star-cover').each(function(index){
