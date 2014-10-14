@@ -185,12 +185,13 @@
         }
         .choose_item {
           float:left;
+          position: relative;
 
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
 
-          padding:0 4px 0 10px;
+          padding:0 20px 0 10px;
           line-height:30px;
           border:1px solid #ccc;
           color:#666;
@@ -202,11 +203,14 @@
           background-color: #fff;
           cursor: pointer;
           span {
-            float:right;
+            position: absolute;
             color:#bbb;
             line-height: 28px;
             padding: 0 6px;
             font-size:12px;
+            top: 0px;
+            right: 1px;
+            z-index: 100;
           }
           &:hover {
             border:1px solid #FC7000;
