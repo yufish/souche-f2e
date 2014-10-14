@@ -222,7 +222,7 @@
           background-color: @soucheOrange;
         }
       }
-      .choose_clear {
+      .choose_clear{
         color:#666;
         font-size: 12px;
         float:right;
@@ -264,6 +264,18 @@
       .historyRecord_title {
         color: @soucheOrange;
         font-size: 14px;
+      }
+
+      &.no-choose-yet{
+        .choose_clear,
+        .choose_condition{
+          display: none;
+        }
+      }
+      &.no-record-yet{
+        .historyRecord_content{
+          display: none;
+        }
       }
     }
   }
