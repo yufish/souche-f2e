@@ -94,7 +94,7 @@ define(function(){
                                     top : this.e.pageY + 'px',
                                     left : this.e.pageX + 'px',
                                     backgroundColor : "#BCEE68"
-                                });
+                                }).html("对比");
 
                                 var endX = $(".side-box .contrast-img").offset().left;
                                 var endY = $(".side-box .contrast-img").offset().top;
