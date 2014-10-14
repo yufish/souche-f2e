@@ -8,9 +8,7 @@ html
         <link href="../../../assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
         <link href="../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
         <link href="../../../assets/css/mobile/detail/report.css" rel="stylesheet" type="text/css" />
-
         <script type="text/javascript" src="../../../assets/js/mobile/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="../../../assets/js/mobile/lib/zepto.touchevent.js"></script>
 
     body
         #report
@@ -20,7 +18,7 @@ html
                     .qual-level A
                     .qual-profile
                         .qual-profile-item 报告编号：
-                            span.report-no No.1234567
+                            span.report-no No.60140126
                         .qual-profile-item 检测专员： 蒋子龙
                         .qual-profile-item 检测时间: 2014年9月9日
                         .qual-profile-item 检测项目： 154项国家标准检测及95项大搜车专项检测
@@ -32,7 +30,7 @@ html
                             .qdt-text
                                 p 若有不符
                                 p 7天包退
-                            .qdt-icon 退
+                            .qdt-icon.qdt-icon-tui
                     .qual-detail-content
                         .qual-detail-sub-card
                             .qdc-title 1.无重大撞击，车身左右对称
@@ -71,7 +69,7 @@ html
                                 .qual-icon *
                                 .qual-pre-text 深度小于30mm的划痕及面积小于30*30mm的凹陷，不影响安全性能，不在此标出
                             .qual-gp
-                                img(src='../../../assets/images/mob/h5-3/report-car-1.png')
+                                img(src='../../../assets/images/mob/h5-3/report-car-model.png')
                 .qual-detail-card
                     .qual-detail-title
                         .qdt-left 安全性评估
@@ -79,7 +77,7 @@ html
                             .qdt-text
                                 p 若有不符
                                 p 7天包修
-                            .qdt-icon 修
+                            .qdt-icon.qdt-icon-xiu
                     .qual-detail-content
                         .chart-area.qual-detail-sub-card
                             .chart-title 1.胎纹深度正常
@@ -136,24 +134,45 @@ html
                                         .guide-line(style='bottom:{{guideline}}px')
                                     .x-item 左前轮
                         .chart-area.qual-detail-sub-card
-                            .chart-title 3.电瓶正常
+                            .chart-title 3.液位正常
                             .bar-area.clearfix
-                                .y-axis.dianping
-                                    .ya-item(style='bottom:70px').
-                                        12V</br>
-                                        正常电压
-                                .dianping-bg
-                                    .bar-wrapper.bar-wrapper-large
-                                        .bar(style='')
-                                        .guide-line
+                                .y-axis(data-max-value='1.9',data-min-value='1.2')
+                                    .ya-item(style='bottom:60px').
+                                        最高警戒线
+                                    .ya-item(style='bottom:20px').
+                                        最低警戒线
+                                .bar-with-x.first
+                                    .bar-wrapper.first
+                                        .bar(style='height:{{bar1}}px')
+                                        .guide-line(style='bottom:{{guideline1}}px')
+                                        .guide-line(style='bottom:{{guideline2}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar2}}px')
+                                        .guide-line(style='bottom:{{guideline1}}px')
+                                        .guide-line(style='bottom:{{guideline2}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar3}}px' class='{{class3}}')
+                                        .guide-line(style='bottom:{{guideline1}}px')
+                                        .guide-line(style='bottom:{{guideline2}}px')
+                                    .x-item 左前轮
+                                .bar-with-x
+                                    .bar-wrapper
+                                        .bar(style='height:{{bar4}}px')
+                                        .guide-line(style='bottom:{{guideline1}}px')
+                                        .guide-line(style='bottom:{{guideline2}}px')
+                                    .x-item 左前轮
                         .chart-area.qual-detail-sub-card
                             .chart-title 4.防冻液正常
                             .bar-area.fangdong.clearfix
                                 .y-axis.fangdong
                                     .ya-item(style='bottom:70px').
-                                        -25</br> 最低警戒线
+                                        -25℃</br> 最高警戒线
                                     .ya-item(style='bottom:30px').
-                                        -25</br> 最低警戒线
+                                        -40℃</br> 最低警戒线
                                 .bar-with-x
                                     .bar-wrapper
                                         .bar(style='height:{{bar4}}px')
@@ -189,14 +208,14 @@ html
                         .qdt-right
                             .qdt-text
                                 p 若有不符
-                                p 7天包退
-                            .qdt-icon 退
+                                p 7天包修
+                            .qdt-icon.qdt-icon-xiu
                     .qual-detail-content
                         .qual-detail-sub-card
                             .qdc-tab.pt-16px.clearfix#J_operate_tab
-                                .qdc-tab-item.left-1-5.active 车头
-                                .qdc-tab-item.left-1-5 车尾
-                                .qdc-tab-item.left-1-5 左侧
+                                .qdc-tab-item.left-1-5.active 启动
+                                .qdc-tab-item.left-1-5 加速
+                                .qdc-tab-item.left-1-5 匀速
                                 .qdc-tab-item.left-1-5 右侧
                                 .qdc-tab-item.left-1-5 底盘
                             .qdc-tab-panel#J_operate_panel
@@ -276,26 +295,27 @@ html
                                     .operate-tag(style='top:11px;right:23px')
                                         .operate-order 22
                                         div(class="icon-normal")
-                            .report-text-wrapper.no-problem
-                                .rt-order
-                                .rt-text
-                                    .rt-category 点火开关
-                                    .rt-desc 旋转正常,无卡滞
-                            .report-text-wrapper.has-problem
-                                .rt-order
-                                .rt-text
-                                    .rt-category 启动马达及线路
-                                    .rt-desc 启动正常,无卡滞及异常.连接启动马达线路无破损及接触不良
-                            .report-text-wrapper.no-problem
-                                .rt-order
-                                .rt-text
-                                    .rt-category 点火线圈
-                                    .rt-desc 发动机加速动力异常
-                            .report-text-wrapper.no-problem
-                                .rt-order
-                                .rt-text
-                                    .rt-category 火花塞
-                                    .rt-desc 发动机转速平稳，无抖动、漏电现象。正常电极间隙为（1.3-1.7mm）
+                            .report-text-wrapper-panel
+                                .report-text-wrapper.no-problem
+                                    .rt-order
+                                    .rt-text
+                                        .rt-category 点火开关
+                                        .rt-desc 旋转正常,无卡滞
+                                .report-text-wrapper.has-problem
+                                    .rt-order
+                                    .rt-text
+                                        .rt-category 启动马达及线路
+                                        .rt-desc 启动正常,无卡滞及异常.连接启动马达线路无破损及接触不良
+                                .report-text-wrapper.no-problem
+                                    .rt-order
+                                    .rt-text
+                                        .rt-category 点火线圈
+                                        .rt-desc 发动机加速动力异常
+                                .report-text-wrapper.no-problem
+                                    .rt-order
+                                    .rt-text
+                                        .rt-category 火花塞
+                                        .rt-desc 发动机转速平稳，无抖动、漏电现象。正常电极间隙为（1.3-1.7mm）
                 .qual-detail-card
                     .qual-detail-title
                         .qdt-left 重要配置
@@ -303,7 +323,7 @@ html
                             .qdt-text
                                 p 配置若损坏，7天保修
                                 p 配置若缺失，7天保退
-                            .qdt-icon 退/修
+                            .qdt-icon.qdt-icon-tui
                     .qual-detail-content
                         .qual-detail-sub-card
                             .qdc-list-title
@@ -331,7 +351,7 @@ html
                             .qdc-list-item
                                 .qli-key 导航系统
                                 .qli-value
-                                    .icon-line
+                                    .icon-circle
                                 .qli-value
                                     .icon-problem
                             .qdc-list-item
@@ -343,10 +363,82 @@ html
                             .qdc-list-item
                                 .qli-key DVD多媒体系统
                                 .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 真皮座椅
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 氙气大灯
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 倒车影像
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 电动调节前座椅
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 全景天窗
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 电动天窗
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 前后门电动升降窗
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 电动折叠后视镜
+                                .qli-value
                                     .icon-line
                                 .qli-value
-                                    .icon-problem
-        script(src='../../../assets/js/mobile/common/templateRender.js')
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 安全气囊
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 自动独立恒温空调
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 一键启动
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+                            .qdc-list-item
+                                .qli-key 定速巡航
+                                .qli-value
+                                    .icon-circle
+                                .qli-value
+                                    .icon-normal
+        script(src='../../../assets/js/mobile/common/TplRender.js')
         script(src='../../../assets/js/mobile/detail/chart.js')
 
 
