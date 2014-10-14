@@ -4,9 +4,6 @@
 // import basic ui classes
 // import module less
 @import "less/cargod.less";
-
-
-
 #onsale_detail{background-color:#ededed;}
 .wrapGrayBg{display:none}
 .nowPos{line-height:50px;color:#666}
@@ -2221,7 +2218,6 @@ top: 12px;
       cursor:pointer;
       width:60px;
       display: block;
-      margin-left: 10px;
       color: #fff;
       line-height: 25px;
       border-radius: 3px;
@@ -2470,4 +2466,58 @@ top: 12px;
   font-size:20px;
   padding-left:50px;
   padding-top:30px;
+}
+@media screen and (max-width:1024px){
+  #onsale_detail #detail_main .detail_photosGallary{
+    width: 445px;
+    margin-left: 0;
+    .photo-more{
+      top:240px;
+    }
+    .photosSmall {
+      width: 368px;
+    }
+    .photosSmallWrap{
+      width: 368px;
+    }
+    .photosWrap{
+      width: 445px;
+      height: 293px !important;
+      margin-bottom: 40px;
+      li{
+        width: 445px !important;
+        height: 293px !important;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  #detail_main .detail_main_info{
+    margin-left: 20px;
+  }
+  #detail_main .detail-price{
+    width: 410px;
+  }
+  #detail_main .prot-ex{
+    width: 410px;
+  }
+  #detail_main .prot-ex .prot-icon{
+    right: 15px;
+  }
+  #detail_main .detail_main_info{
+    width: 450px;
+  }
+  #detail_main .detail-yuyue{
+    background: #ff5517 url("../../images/detail/yuyue-button-bg.png") no-repeat 10px center;
+    width: 80px;
+    padding-left: 40px;
+  }
+  #detail_main .freecall{
+    margin-left: 10px;
+    width: 75px;
+  }
+  #detail_main .car-act .act-left .act-item{
+    margin-right: 5px;
+  }
 }
