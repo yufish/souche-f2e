@@ -185,13 +185,18 @@
         }
         .choose_item {
           float:left;
-          padding:0 5px 0 10px;
+
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+          padding:0 4px 0 10px;
           line-height:30px;
           border:1px solid #ccc;
           color:#666;
           margin-top: 8px;
           margin-right: 8px;
-          display:inline;
+          
           *width:70px;
           overflow:hidden;
           background-color: #fff;
@@ -200,7 +205,7 @@
             float:right;
             color:#bbb;
             line-height: 28px;
-            padding-left: 6px;
+            padding: 0 6px;
             font-size:12px;
           }
           &:hover {
