@@ -144,6 +144,7 @@ define(function(){
                             dataType : "json",
                             context : self
                         }).done(function(data) {
+                            self.removeClass('added');
                             self.find("input").removeAttr("checked");
                             self.find("input").removeAttr("contrastid");
                         });
