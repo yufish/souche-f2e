@@ -50,6 +50,7 @@ define(function(){
                         if($(".historyRecord_content ul li").length==0)
                         {
                             $(".historyRecord_content ul").append($(template));
+                            $('.historyRecord').removeClass('no-record-yet');
                         }
                         else
                         {
@@ -91,6 +92,9 @@ define(function(){
                 context : self
             }).done(function(data) {
                 $(this).parent().remove();
+                if($(".historyRecord_content ul li").length==0){
+                    $('.historyRecord').addClass('no-record-yet');
+                }
             });
 
             return false;
