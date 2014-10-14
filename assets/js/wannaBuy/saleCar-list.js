@@ -50,8 +50,8 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
 
         initLimitYouhuiCountdown: function(){
             $('.time-limit-offer').each(function(i, el){
-                var curTime = $(el).attr('serverTime');
-                var endTime = $(el).attr('endTime');
+                var curTime = $(el).attr('servertime');
+                var endTime = $(el).attr('endtime');
                 SweetCountdown.mini( {
                     nowTime: Number(curTime),
                     endTime: Number(endTime),
