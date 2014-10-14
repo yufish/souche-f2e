@@ -161,7 +161,29 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             }
             .recommended{
                 display: block;
+                display: none;
+            }
+            .recommended,
+            .recommanded-staging-price,
+            .time-limit-offer{
                 color: #999;
+            }
+            .recommanded-staging-price{
+                .month-pay{
+                    margin-left: 8px;
+                }
+            }
+            .time-limit-offer{
+                margin-top: 10px;
+                line-height: 1.35;
+
+                .offer-content,
+                offer-countdown{
+                    margin: 0;
+                }
+                .offer-content{
+                    color: @soucheOrange;
+                }
             }
         }
 
