@@ -1,18 +1,5 @@
-var chartData=[
-    {bar1:{value:62},bar2:60,bar3:80,bar4:100,guideline:80,class3:'has-problem-bg'},
-    {bar1:60,bar2:60,bar3:80,bar4:100,guideline:80,class4:'has-problem-bg'},
-    {bar1:60,guideline:60},
-    {bar1:60,guideline1:80,guideline2:40,class1:'has-problem-bg'}
-]
-
-var barArea = $('.bar-area');
-
-for(var i = 0;i<barArea.length;i++){
-    new DdObject(barArea.get(i),chartData[i]);
-}
-
 !function(){
-    var tap_event = 'click'
+    var tap_event = 'click';
     var opTabPanelItems =$('#J_operate_panel .qdc-panel-item');
     var opTabItems = $('#J_operate_tab .qdc-tab-item');
     opTabItems.each(function(index){
@@ -34,3 +21,16 @@ for(var i = 0;i<barArea.length;i++){
         })
     })
 }()
+var chartData=[
+    {bar1:{value:85},bar2:88,bar3:82,bar4:100,guideline:80},
+    {bar1:90,bar2:105,bar3:100,bar4:88,guideline:80},
+    {bar1:55,bar2:40,bar3:38,bar4:61,'guideline1':30,'guideline2':70},
+    {bar1:60,guideline1:80,guideline2:40,class1:'has-problem-bg'}
+]
+
+var barArea = $('.bar-area');
+
+for(var i = 0;i<barArea.length;i++){
+    TplRender(barArea.get(i),chartData[i]);
+}
+

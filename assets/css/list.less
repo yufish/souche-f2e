@@ -131,6 +131,33 @@
   margin-top:20px;
   margin-bottom:20px;
   position:relative;
+  
+  .service-promise{
+    height: 100px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #4F5364;
+
+    &, *{
+      -webkit-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .service-promise-1{
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+    .service-promise-2{
+      font-size: 16px;
+    }
+    
+    
+
+
+  }
+
   .navContainer {
     width:240px;
     position:relative;
@@ -195,7 +222,7 @@
           background-color: @soucheOrange;
         }
       }
-      .choose_clear {
+      .choose_clear{
         color:#666;
         font-size: 12px;
         float:right;
@@ -237,6 +264,18 @@
       .historyRecord_title {
         color: @soucheOrange;
         font-size: 14px;
+      }
+
+      &.no-choose-yet{
+        .choose_clear,
+        .choose_condition{
+          display: none;
+        }
+      }
+      &.no-record-yet{
+        .historyRecord_content{
+          display: none;
+        }
       }
     }
   }
@@ -873,27 +912,7 @@
 
 @import "list/car-nav.less";
 
-.carItem .car-price .price{
-  // 多个inline元素间在代码缩进之后有间距
-  // 既然子元素都单独定义了font-size
-  // 就把父元素定义为0  解决这个问题
-  font-size: 0;
-  .rmb-symbol{
-    font-family: @yahei;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  .price-amount{
-    font-family: 'Tahoma';
-    font-weight: bold;
-    font-size: 16px;
-  }
-  .price-unit{
-    font-family: @yahei;
-    font-weight: bold;
-    font-size: 14px;
-  }
-}
+@import "list/card-list-common.less";
 @import "list/car-list-view.less";
 @import "list/carBox.less";
 

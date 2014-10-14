@@ -398,9 +398,20 @@
     line-height: 44px;
 }
 
-
-#login-form-valid-code{box-sizing: border-box}
-
+/*login-form*/
+#login-form-valid-code{
+    box-sizing: border-box;
+    padding:0 16px;
+    position: fixed;
+    top:50px;
+    width: 100%;
+    z-index:1105;
+}
+#login-form-valid-code #login-form-valid {
+    background: #FFF;
+    padding:16px;
+    border-radius: 4px;
+}
 #login-form-valid-code .login-input{
     height: 46px;
     border:1px solid #ccc;

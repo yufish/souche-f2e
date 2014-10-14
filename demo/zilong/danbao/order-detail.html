@@ -10,6 +10,7 @@
     <link href="../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
     <link href="../../../assets/css/mobile/authorization/order-detail.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+    <script type="text/javascript" src="../../../assets/js/mobile/common/loginUtil.js"></script>
 </head>
 
 <body>
@@ -47,12 +48,22 @@
         </a>
         <div class="card-item car-order-action">
             <a class="order-action-item"><div class="oai-btn"><i class="call-icon"></i>联系客服</div></a>
-            <a class="order-action-item"><div class="oai-btn">申请维权</div></a>
-            <a class="order-action-item"><div class="oai-btn">评价</div></a>
+            <a class="order-action-item"><div class="oai-btn" id="J_rights-defend">申请维权</div></a>
+            <a class="order-action-item"><div class="oai-btn" id="J_appraise">评价</div></a>
         </div>
     </section>
     <div class="protect-time">
         申请交易保护时间: 2014-09-09 10:00
     </div>
+    <div class="wrapGrayBg"></div>
+    <script>
+        createLoginWithValid();
+        $('.wrapGrayBg').click(function(){
+            $(this).addClass('hidden')
+            $('#login-form-valid-code').addClass('hidden')
+        })
+        $('#J_rights-defend').click(function(){})
+        $('#J_appraise').click(function(){})
+    </script>
 </body>
 </html>
