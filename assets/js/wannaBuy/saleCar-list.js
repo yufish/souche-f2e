@@ -1,4 +1,4 @@
-define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate', 'wannaBuy/new-list-nav'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate, NewListNav) {
+define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate', 'wannaBuy/new-list-nav', 'wannaBuy/sweetCountdown'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate, NewListNav, SweetCountdown) {
     // define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FilterOperate, CarOperate){
 
     var config = {};
@@ -13,6 +13,8 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
                 defaultValues: []
             });
             NewListNav.init();
+
+            _view.initLimitYouhuiCountdown();
         },
         // 初始化"下拉选择"
         initDropdown: function() {
@@ -42,6 +44,27 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             new CustomSelect("downpayment_select_custom", {
                 placeholder: "请选择",
                 multi: false
+            });
+        },
+
+        initLimitYouhuiCountdown: function(){
+            $('.time-limit-offer').each(function(i, el){
+                var curTime = $(el).attr('beginTime');
+                var endTime = $(el).attr('endTime');
+                SweetCountdown.mini( {
+                    nowTime: Number(curTime),
+                    endTime: Number(endTime),
+                    zeroCallback: function(){
+                        $(el).find('.offer-countdown').html('限时优惠已结束');
+                    },
+                    ctn: $(el).find('.offer-countdown'),
+                    word: {
+                        pre: '剩余',
+                        hour: '时',
+                        minute: '分',
+                        second: '秒'
+                    }
+                });
             });
         }
     };
