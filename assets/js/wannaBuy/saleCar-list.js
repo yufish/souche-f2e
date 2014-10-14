@@ -15,6 +15,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             NewListNav.init();
 
             _view.initLimitYouhuiCountdown();
+            _view.initGuessLike();
         },
         // 初始化"下拉选择"
         initDropdown: function() {
@@ -49,7 +50,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
 
         initLimitYouhuiCountdown: function(){
             $('.time-limit-offer').each(function(i, el){
-                var curTime = $(el).attr('beginTime');
+                var curTime = $(el).attr('serverTime');
                 var endTime = $(el).attr('endTime');
                 SweetCountdown.mini( {
                     nowTime: Number(curTime),
@@ -65,6 +66,41 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
                         second: '秒'
                     }
                 });
+            });
+        },
+        // 获取"猜你喜欢"的数据, 用apear方法控制lazy加载到dom
+        initGuessLike: function(){
+            var guessLikeCtn = $(".guess-like");
+            guessLikeCtn.addClass('loading');
+            $.ajax({
+                url: config.api_guessCars,
+                success: function(html) {
+                    Souche.Util.appear( ".guess-like", fillGuessCallback );
+                    $(window).trigger("scroll")
+                    function fillGuessCallback(){
+                        guessLikeCtn.removeClass('loading');
+                        guessLikeCtn.html(html);
+                        // ImageResize.init(".guess-like .carsItem img", 240, 160);
+                        // "不喜欢"事件处理
+                        guessLikeCtn.on('click', '.nolike', function(e) {
+                            var self = this;
+                            $(self).closest(".like-box").animate({
+                                opacity: 0,
+                                width: 0
+                            }, 500, function() {
+                                $(self).closest(".like-box").remove()
+                            })
+                            $.ajax({
+                                url: config.api_nolikeUrl,
+                                data: {
+                                    carId: $(this).attr("data-id")
+                                },
+                                dataType: "json",
+                                success: function() {}
+                            })
+                        })
+                    }
+                }
             });
         }
     };
