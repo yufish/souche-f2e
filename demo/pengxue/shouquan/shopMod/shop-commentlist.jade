@@ -29,7 +29,7 @@
                     .comment-content
                         .comment-info.clearfix
                             .buy-status 购买了 吉普-指南者-2013款 指南者2.4-CVT/MT豪华版四驱
-                            .comment-time 发表于 2014-10-10
+                            .comment-time 发表于 2014-10-10 12:45
                         p.comment-text 这款吉普指南者经过大搜车超过300多项的细致检测，得到的质检结果是A+级，即发动机、底盘完好，未做过钣金修复，基本无瑕疵，外观如新。同时这辆高配豪华版内饰丰富，配置齐全。可以看作是一辆准新车。
                         .gallery
                             img.comment-img
@@ -48,8 +48,11 @@
                     //- http://www.souche.com/pages/car-journal.html?id=KPMLee7N86
                     .comment-content
                         .comment-info.clearfix
-                            .buy-status 购买了 吉普-指南者-2013款 指南者2.4-CVT/MT豪华版四驱
-                            .comment-time 发表于 2014-10-10
+                            .buy-status 购买了
+                                //- link to this car
+                                a.bought-car-link(href="#") 吉普-指南者-2013款 指南者2.4-CVT/MT豪华版四驱
+                            //- 年-月-日 时:分
+                            .comment-time 发表于 2014-10-10 12:05
                         p.comment-text 这款吉普指南者经过大搜车超过300多项的细致检测，得到的质检结果是A+级，即发动机、底盘完好，未做过钣金修复，基本无瑕疵，外观如新。同时这辆高配豪华版内饰丰富，配置齐全。可以看作是一辆准新车。
                         .gallery
                             img.comment-img
@@ -58,4 +61,5 @@
 
 
         div.pagination-ctn
+            //- 后端有方法直接渲染分页~?
             p 这里是分页
