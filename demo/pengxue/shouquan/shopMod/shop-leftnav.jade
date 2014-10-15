@@ -1,0 +1,27 @@
+- var allBrand = ['大众', '奥迪', '本田', '奔驰', '标致', '宝马', '别克']
+
+
+div.shop-left
+    div.search-car
+        .search-result
+        .searchby-price
+            .search-title 价格
+            .searchby-content
+                input#min-price(type="text")
+                span -
+                input#max-price(type="text")
+                a#btn.btn-primary 确定
+        .searchby-brand
+            .search-title 品牌
+            .searchby-content
+                ul.brand-list
+                    each brand in allBrand
+                        li.brand-item
+                            a
+                                //- brand-img图片文件来自res服务器...?
+                                img.brand-img(src="http://res.souche.com/files/carproduct/brand/brand-118.png")
+                                span.brand-name= brand
+
+
+
+    div.shop-intro
