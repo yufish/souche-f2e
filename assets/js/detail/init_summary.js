@@ -26,7 +26,7 @@ define(function() {
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
                         $("#onsale_price").removeClass("hidden")
-                        var maxPrice = (priceData.price_guide).toFixed(1) * 1+config.taxPrice;
+                        var maxPrice = ((priceData.price_guide).toFixed(1) * 1+config.taxPrice).toFixed(2);
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
                         if (config.minPrice == config.maxPrice) {
