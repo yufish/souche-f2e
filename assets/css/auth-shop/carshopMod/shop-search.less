@@ -1,20 +1,127 @@
+.text-collapse{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .search-car{
+    padding: 10px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid @bc;
+
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
     .search-result,
     .searchby-price,
     .searchby-brand{
+        .search-title{
+            font-size: 14px;
+            color: #333;
+        }
+        .searchby-content{
+            margin-top: 12px;
+        }
+    }
+
+    .search-result{
+        position: relative;
+        padding-bottom: 12px;
+        border-bottom: 1px solid @bc;
+        margin-bottom: 15px;
+        font-size: 14px;
+
+        .search-result-count{
+            max-width: 110px;
+            color: @soucheOrange;
+
+            .text-collapse();
+            // .search-result-count-number{
+                
+            // }
+        }
+        .back-to-all{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            text-decoration: underline;
+            z-index: 100;
+            cursor: pointer;
+        }
+    }
+
+    .searchby-price{
+        .searchby-content{
+            *{
+                float: left;
+            }
+        }
+        .to{
+            margin: 0 5px;
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .price-unit{
+            margin-left: 6px;
+            line-height: 22px;
+        }
+        #min-price,
+        #max-price{
+            width: 50px;
+            height: 22px;
+            padding: 4px;
+            font-size: 12px;
+            line-height: normal;
+        }
+
+        #submit-price.btn{
+            display: inline-block;
+            padding: 0 6px;
+            margin-left: 13px;
+            line-height: 20px;
+            border: 1px solid darken(@soucheOrange, 10%);
+            color: #fff;
+            background-color: @soucheOrange;
+            cursor: pointer;
+        }
 
     }
+
     .searchby-brand{
-        .searchby-content .brand-list .brand-item{
+        margin-top: 20px;
+        .searchby-content .brand-list{
 
-            cursor: pointer;
-            
-            .brand-img{
-                width: 20px;
-                height: auto;
-            }
-            .brand-name{
+            .brand-item{
+                float: left;
+                width: 50%;
+                margin-bottom: 12px;
+                // cursor: pointer;
+                
+                a{
+                    display: inline-block;
+                    height: 100%;
+                    max-width: 100%;
+                    padding: 5px 5px 5px 0;
+                    cursor: pointer;
+                    color: #666;
 
+                    .text-collapse();
+                }
+                
+                .brand-img{
+                    position: relative;
+                    width: 20px;
+                    top: 2px;
+                    height: auto;
+                }
+                .brand-name{
+                    margin-left: 8px;
+                }
             }
         }
         
