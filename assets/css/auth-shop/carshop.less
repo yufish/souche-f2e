@@ -1,7 +1,19 @@
 @soucheOrange: #ff5517;
 @yahei: "Microsoft Yahei" "微软雅黑";
-
 @bc: #E6E6E6;
+
+.text-collapse(){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.box-sizing(@v: border-box;){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+
+
 .shop-head{
   background: #F5F5F5;
   height: 60px;
@@ -156,4 +168,6 @@
   }
 }
 
+
 @import "carshopMod/shop-search.less";
+@import "carshopMod/shop-comment.less";
