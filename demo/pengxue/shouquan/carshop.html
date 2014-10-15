@@ -230,9 +230,7 @@
 <div id="listContain" class="wrap clearfix">
     <div id="list_wrap" class="wrap clearfix">
         <div class="navContainer">
-            <div class="shop-left">
-                <div class="search-car"></div>
-            </div>
+          {{include ./shopMod/shop-leftnav.jade}}
         </div>
         <div class="list_main">
             <div class="car-nav">
@@ -592,6 +590,7 @@
                 </div>
             </div>
         </div>
+            {{include ./shopMod/shop-commentlist.jade}}
     </div>
 </div>
 <div class="apply_popup popup-result hidden" id="fav-popup">

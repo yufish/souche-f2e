@@ -1,0 +1,47 @@
+- var allBrand = ['大众', '奥迪', '本田', '奔驰', '标致', '宝马', '别克']
+
+
+div.shop-left
+    div.search-car
+        .search-result
+            //- title 避免过长时显示不全
+            .search-result-count(title="共找到19辆") 共找到19辆
+            a.back-to-all 查看所有车辆
+        .searchby-price
+            .search-title 价格
+            .searchby-content.clearfix
+                input#min-price(type="text")
+                span.to -
+                input#max-price(type="text")
+                span.price-unit 万元
+                a.btn#submit-price 确定
+        .searchby-brand
+            .search-title 品牌
+            .searchby-content
+                ul.brand-list.clearfix
+                    each brand in allBrand
+                        li.brand-item
+                            a(title=brand)
+                                //- brand-img图片文件来自res服务器...?
+                                img.brand-img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
+                                span.brand-name= brand
+   
+    .shop-detail
+        .detail-tit 海华二手车精品店
+            span 授权店
+        .info
+            .info-item
+                span 电话：
+                em 0571-85350333
+            .info-item
+                span 手机：
+                em 1571-85350333
+            .info-item
+                span 营业： 
+                em 9:00-17:00  周一至周六 
+        h1 门店介绍： 
+        p 车辆置换,价格评估,车辆寄售,分期贷款,延长质保,整备翻新,车辆美容,试乘试驾车辆置换,价格评估,车辆寄售,分期贷款,延长质保,整备翻新,车辆美容
+     
+            
+
+    div.shop-intro

@@ -1,4 +1,4 @@
-define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate', 'wannaBuy/new-list-nav', 'wannaBuy/sweetCountdown'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate, NewListNav, SweetCountdown) {
+define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filtByLoan', 'wannaBuy/filterOperate', 'wannaBuy/carOperate', 'wannaBuy/new-list-nav', 'wannaBuy/sweetCountdown', 'souche/util/image-resize'], function(CustomDropdown, CustomSelect, LeftNav, FiltByLoan, FilterOperate, CarOperate, NewListNav, SweetCountdown, ImageResize) {
     // define(['souche/dropdown','souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy/filterOperate', 'wannaBuy/carOperate'],function(CustomDropdown,CustomSelect, LeftNav, FilterOperate, CarOperate){
 
     var config = {};
@@ -16,6 +16,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
 
             _view.initLimitYouhuiCountdown();
             _view.initGuessLike();
+            _view.autoFitImage();
         },
         // 初始化"下拉选择"
         initDropdown: function() {
@@ -48,6 +49,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             });
         },
 
+        // 限时优惠倒计时
         initLimitYouhuiCountdown: function(){
             $('.time-limit-offer').each(function(i, el){
                 var curTime = $(el).attr('servertime');
@@ -72,6 +74,8 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
         initGuessLike: function(){
             var guessLikeCtn = $(".guess-like");
             guessLikeCtn.addClass('loading');
+            // TBD, server added this hidden
+            // guessLikeCtn.removeClass('hidden');
             $.ajax({
                 url: config.api_guessCars,
                 success: function(html) {
@@ -102,6 +106,18 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
                     }
                 }
             });
+        },
+        // 避免尺寸不同的car-img造成样式错乱
+        autoFitImage: function(){
+            var carWrap = $('.car-wrap');
+
+            if( carWrap.hasClass('card-box') ){
+                ImageResize.init(".carsItem .img", 240, 160);
+            }
+            else if(carWrap.hasClass('list-box')){
+                ImageResize.init(".carsItem .img", 180, 120);
+            }
+            
         }
     };
 

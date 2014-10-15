@@ -1,0 +1,199 @@
+.shop-comment{
+    float: right;
+    width: 1040px;
+    padding-left: 20px;
+    margin-top: 40px;
+    .box-sizing();
+
+    *{
+        .box-sizing();
+    }
+
+    .shop-comment-title{
+        .comment-text{
+            float: left;
+            font-size: 24px;
+        }
+        .comment-count{
+            position: relative;
+            margin-left: 8px;
+            top: 12px;
+            color: #999;
+            vertical-align: bottom;
+        }
+    }
+    .shop-comment-body{
+        margin-top: 20px;
+        border: 1px solid @bc;
+
+        .comment-summary{
+            height: 100px;
+            padding: 40px 40px 35px 40px;
+            font-size: 14px;
+            border-bottom: 1px solid @bc;
+            background-color: #F5F5F5;
+
+            .comment-result,
+            .comment-subitem-ctn{
+                float: left;
+            }
+            
+            .comment-result{
+                & > *{
+                    float: left;
+                }
+                .result-name{
+                    font-size: 16px;
+                }
+                .score{
+                    position: relative;
+                    top: -26px;
+                    margin: 0 10px 0 20px;
+                    font-size: 42px;
+                    color: @soucheOrange;
+                }
+                .score-unit{
+                    position: relative;
+                    top: 2px;
+                    color: @soucheOrange;
+                }
+                .score-stars{
+                    position: relative;
+                    top: 4px;
+                    margin-left: 10px;
+                    height: 13px;
+                    width: 16px * 5;
+                    background-image: url(../../images/auth-shop/star-grey.png);
+                    background-repeat: repeat-x;
+                    .active-stars{
+                        height: 100%;
+                        background-image: url(../../images/auth-shop/star-active.png);
+                        background-repeat: repeat-x;
+                    }
+                }
+            }
+
+            .comment-subitem-ctn{
+                position: relative;
+                margin-left: 30px;
+                padding: 3px 0;
+                top: -3px;
+
+                border-left: 1px solid #ccc;
+
+                .comment-subitem{
+                    float: left;
+                    margin-left: 30px;
+
+                    .subitem-name{
+
+                    }
+                    .subitem-score{
+                        font-size: 16px;
+                        margin-left: 5px;
+                        margin-right: 10px;
+                        color: @soucheOrange;
+                    }
+                }
+            }
+            
+
+            #i-want-comment{
+                float: right;
+                margin-top: -6px;
+                padding: 0 20px;
+
+                font-size: 14px;
+                line-height: 30px;
+                border: 1px solid darken(@soucheOrange, 5%);
+                border-radius: 3px;
+                color: #fff;
+                background-color: @soucheOrange;
+            }
+        }
+        .comment-detail-list{
+            .comment-detail-item{
+                // 上下左右都是
+                padding: 40px;
+                border-bottom: 1px solid @bc;
+
+                .comment-user{
+                    float: left;
+                    width: 140px;
+                    img.user-avatar{
+                        float: left;
+                        height: 32px;
+                        width: 32px;
+                    }
+                    .user-name{
+                        float: left;
+                        margin-left: 10px;
+                    }
+                }
+                    
+                .comment-content{
+                    line-height: 1.75;
+                    overflow: hidden;
+
+                    .comment-info{
+                        color: #999;
+
+                        .buy-status{
+                            float: left;
+                            max-width: 600px;
+                            .text-collapse();
+
+                            .bought-car-link{
+                                margin-left: 0.5em;
+                                color: #999;
+                            }
+                        }
+                        .comment-time{
+                            float: right;
+                        }
+                    }
+                    .comment-text{
+                        margin-top: 20px;
+                        color: #666;
+                    }
+
+                    .gallery{
+                        margin-top: 20px;
+                        // 为内部img的间距
+                        margin-left: -10px;
+                        margin-right: 0;
+                        img.comment-img{
+                            width: 100px;
+                            height: auto;
+                            max-height: 100px;
+                            margin-left: 10px;
+                            background-color: #f5f5f5;
+                        }
+                    }
+    
+                }
+                .comment-reply{
+                    margin-left: 140px;
+                    padding: 22px;
+                    line-height: 1.75;
+                    color: #666;
+                    background-color: #f5f5f5;
+
+                    .replyer-name{
+                        color: @soucheOrange;
+                        // margin-right: 0.5em;
+                    }
+                    .reply-content{
+                        
+                    }
+                }
+
+            }
+        }
+        .pagination-ctn{
+            padding: 60px;
+        }
+
+        // div.pagination 这里是分页
+    }
+}
