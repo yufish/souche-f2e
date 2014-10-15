@@ -1,209 +1,236 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>二手车交易_北京二手车买卖_北京买二手车-大搜车</title>
-    <meta name="Keywords" content="大搜车，二手车，北京二手车，二手车寄售，二手车门店,二手车检测,二手车交易" />
-    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
-    <meta name="viewport" id="viewport" content="width=1200" />
+    <meta name="Keywords" content="大搜车，二手车，北京二手车，二手车寄售，二手车门店,二手车检测,二手车交易"/>
+    <meta name="Description"
+          content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务"/>
+    <meta name="viewport" id="viewport" content="width=1200"/>
     <meta name="renderer" content="webkit"/>
-    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
-    <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
-    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
-    <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
-    <meta name="renderer" content="webkit"/> 
-    <link href="http://assets.souche.com/assets/css/souche/reset.css " rel="stylesheet" type="text/css" />
-    <link href="http://assets.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
-    <link href="http://assets.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://assets.souche.com/assets/css/sidebar.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/list.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/auth-shop/carshop.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://assets.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="http://assets.souche.com/assets/js/lib/require.js?t=7"></script>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="/images/favicon.ico" type="image/x-icon"/>
+    <meta name="renderer" content="webkit"/>
+    <link href="http://assets.souche.com/assets/css/souche/reset.css " rel="stylesheet"
+          type="text/css"/>
+    <link href="http://assets.souche.com/assets/css/souche/ui.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="http://assets.souche.com/assets/css/souche/common.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="http://assets.souche.com/assets/css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link href="http://f2e.souche.com/assets/css/list.css" rel="stylesheet" type="text/css"/>
+    <link href="http://f2e.souche.com/assets/css/auth-shop/carshop.css" rel="stylesheet"
+          type="text/css"/>
+    <script type="text/javascript"
+            src="http://assets.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript"
+            src="http://assets.souche.com/assets/js/lib/require.js?t=7"></script>
     <script>
-      var contextPath = "";
-      require.config({
+        var contextPath = "";
+        require.config({
             baseUrl: "http://assets.souche.com/assets/js",
-            urlArgs:"bust=v10"
-          }); 
+            urlArgs: "bust=v10"
+        });
     </script>
     <script type="text/javascript" src="http://assets.souche.com/assets/js/souche.js?"></script>
-    <script type="text/javascript" src="http://assets.souche.com/assets/js/index/sidebar.js"></script>
-    <script type="text/javascript" src="http://assets.souche.com/assets/js/souche/stats.js"></script> 
+    <script type="text/javascript"
+            src="http://assets.souche.com/assets/js/index/sidebar.js"></script>
+    <script type="text/javascript"
+            src="http://assets.souche.com/assets/js/souche/stats.js"></script>
     <script type="text/javascript" src="http://assets.souche.com/assets/js/souche.js"></script>
-    <script type="text/javascript" src="http://res.souche.com/js/common/lazyload,jquery.validate,json2,Bimu-base,Bimu-util,Bimu-load,Bimu-url,Bimu-ajax,Bimu,Bimu-form,Bimu-select.js"></script>
-    </head>
-    <body id="list">
-      <div id="header">
-        <div class="wrapper"><a href="http://www.souche.com" class="logo"><img src="http://assets.souche.com/assets/images/index/logo-new.png?t=7"></a>
-          <div class="city clearfix hidden">
+    <script type="text/javascript"
+            src="http://res.souche.com/js/common/lazyload,jquery.validate,json2,Bimu-base,Bimu-util,Bimu-load,Bimu-url,Bimu-ajax,Bimu,Bimu-form,Bimu-select.js"></script>
+</head>
+<body id="list">
+<div id="header">
+    <div class="wrapper">
+        <a href="http://www.souche.com" class="logo">
+            <img src="http://assets.souche.com/assets/images/index/logo-new.png?t=7">
+        </a>
+
+        <div class="city clearfix hidden">
             <span class="J_city" id="J_city_show"></span>
             <i class="J_city"></i>
+
             <div class="city-open hidden">
-             <div class="city-wrap clearfix">
-             <div class="area-box">
-              <div class="hot-city">
-                <span class="title">热门</span>
-                <a class="hot-item hot-item-all" data-code="country">全国</a>
-                <a data-code="00001" class="J_hotcity">北京</a>
-                <a class="J_hotcity" data-code="00989">宁波</a>
-                <a class="J_hotcity" data-code="01991">深圳</a>
-                <a class="J_hotcity" data-code="01208">厦门</a>
-                <a class="J_hotcity" data-code="02273">成都</a>
-                <a class="J_hotcity" data-code="other">其他</a>
-              </div>
-              <div class="area-city">
-               <div class="area-line">
-                   <span class="area">华东</span>
-                   <a class="province-item" data-code="00974">浙江</a>
-                   <a class="province-item" data-code="00858">江苏</a>
-                   <a class="province-item" data-code="01075">安徽</a>
-                   <a class="province-item" data-code="01398">山东</a>
-                   <a class="province-item direct-item J_hotcity" data-code="00021">上海</a>
+                <div class="city-wrap clearfix">
+                    <div class="area-box">
+                        <div class="hot-city">
+                            <span class="title">热门</span>
+                            <a class="hot-item hot-item-all" data-code="country">全国</a>
+                            <a data-code="00001" class="J_hotcity">北京</a>
+                            <a class="J_hotcity" data-code="00989">宁波</a>
+                            <a class="J_hotcity" data-code="01991">深圳</a>
+                            <a class="J_hotcity" data-code="01208">厦门</a>
+                            <a class="J_hotcity" data-code="02273">成都</a>
+                            <a class="J_hotcity" data-code="other">其他</a>
+                        </div>
+                        <div class="area-city">
+                            <div class="area-line">
+                                <span class="area">华东</span>
+                                <a class="province-item" data-code="00974">浙江</a>
+                                <a class="province-item" data-code="00858">江苏</a>
+                                <a class="province-item" data-code="01075">安徽</a>
+                                <a class="province-item" data-code="01398">山东</a>
+                                <a class="province-item direct-item J_hotcity"
+                                   data-code="00021">上海</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">华南</span>
+                                <a class="province-item" data-code="01977">广东</a>
+                                <a class="province-item" data-code="01193">福建</a>
+                                <a class="province-item" data-code="02122">广西</a>
+                                <a class="province-item" data-code="02245">海南</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">东北</span>
+                                <a class="province-item" data-code="00530">辽宁</a>
+                                <a class="province-item" data-code="00714">黑龙江</a>
+                                <a class="province-item" data-code="00644">吉林</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">中南</span>
+                                <a class="province-item" data-code="01556">河南</a>
+                                <a class="province-item" data-code="01840">湖南</a>
+                                <a class="province-item" data-code="01725">湖北</a>
+                                <a class="province-item" data-code="01288">江西</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">西南</span>
+                                <a class="province-item" data-code="02272">四川</a>
+                                <a class="province-item" data-code="02572">云南</a>
+                                <a class="province-item" data-code="02474">贵州</a>
+                                <a class="province-item direct-item J_hotcity"
+                                   data-code="00063">重庆</a>
+                                <a class="province-item" data-code="02718">西藏</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">华北</span>
+                                <a class="province-item direct-item J_hotcity"
+                                   data-code="00001">北京</a>
+                                <a class="province-item" data-code="00106">石家庄</a>
+                                <a class="province-item" data-code="00289">山西</a>
+                                <a class="province-item" data-code="00419">内蒙古</a>
+                                <a class="province-item direct-item J_hotcity"
+                                   data-code="00043">天津</a>
+                            </div>
+                            <div class="area-line">
+                                <span class="area">西北</span>
+                                <a class="province-item" data-code="02799">陕西</a>
+                                <a class="province-item" data-code="03095">新疆</a>
+                                <a class="province-item" data-code="02914">甘肃</a>
+                                <a class="province-item" data-code="03066">宁夏</a>
+                                <a class="province-item" data-code="03014">青海</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-box">
+                        <div class="tit clearfix">
+                            <a class="city-return">返回</a>
+                            <span class="province" id="J_province_title">浙江省</span>
+                            <a class="city-close"></a>
+                        </div>
+                        <div class="city-list clearfix">
+                            <a class="city-item">全部地区</a>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="area-line">
-                   <span class="area">华南</span>
-                    <a class="province-item" data-code="01977">广东</a>
-                    <a class="province-item" data-code="01193">福建</a>
-                    <a class="province-item" data-code="02122">广西</a>
-                    <a class="province-item" data-code="02245">海南</a>
-                </div>
-                 <div class="area-line">
-                   <span class="area">东北</span>
-                   <a class="province-item" data-code="00530">辽宁</a>
-                   <a class="province-item" data-code="00714">黑龙江</a>
-                   <a class="province-item" data-code="00644">吉林</a>
-                </div>
-                  <div class="area-line">
-                   <span class="area">中南</span>
-                   <a class="province-item" data-code="01556">河南</a>
-                   <a class="province-item" data-code="01840">湖南</a>
-                   <a class="province-item" data-code="01725">湖北</a>
-                   <a class="province-item" data-code="01288">江西</a>
-                </div>
-                 <div class="area-line">
-                   <span class="area">西南</span>
-                   <a class="province-item" data-code="02272">四川</a>
-                   <a class="province-item" data-code="02572">云南</a>
-                   <a class="province-item" data-code="02474">贵州</a>
-                   <a class="province-item direct-item J_hotcity" data-code="00063">重庆</a>
-                   <a class="province-item" data-code="02718">西藏</a>
-                </div>
-                 <div class="area-line">
-                   <span class="area">华北</span>
-                   <a class="province-item direct-item J_hotcity" data-code="00001">北京</a>
-                   <a class="province-item" data-code="00106">石家庄</a>
-                   <a class="province-item" data-code="00289">山西</a>
-                   <a class="province-item" data-code="00419">内蒙古</a>
-                   <a class="province-item direct-item J_hotcity" data-code="00043">天津</a>
-                </div>
-                <div class="area-line">
-                   <span class="area">西北</span>
-                   <a class="province-item" data-code="02799">陕西</a>
-                   <a class="province-item" data-code="03095">新疆</a>
-                   <a class="province-item" data-code="02914">甘肃</a>
-                   <a class="province-item" data-code="03066">宁夏</a>
-                   <a class="province-item" data-code="03014">青海</a>
-                </div>
-                </div>
-              </div>
-              <div class="city-box">
-                 <div class="tit clearfix">
-                   <a class="city-return">返回</a>
-                   <span class="province" id="J_province_title">浙江省</span>
-                   <a class="city-close"></a>
-                 </div>
-                 <div class="city-list clearfix">
-                   <a class="city-item">全部地区</a>
-                   
-                 </div>
-              </div>
             </div>
-           </div>  
-          </div>
-          <div class="search">
+        </div>
+        <div class="search">
             <form class="index-search" action="/pages/onsale/sale_car_list.html">
-              <input type="text" name="keyword" placeholder="搜索你想要的车" class="search-text" autocomplete="off"  click_type="header-search-input"/>
-              <button type="submit" class="search-submit" click_type="search-submit"><i></i></button>
-              <div class="recom"></div>
+                <input type="text" name="keyword" placeholder="搜索你想要的车" class="search-text"
+                       autocomplete="off" click_type="header-search-input"/>
+                <button type="submit" class="search-submit" click_type="search-submit"><i></i>
+                </button>
+                <div class="recom"></div>
             </form>
-          </div>
-          <div class="phone-number"><img src="http://assets.souche.com/assets/images/index/phone-num.png?t=6"></div>
-          <a class="cord-h5" href="http://app.souche.com" target="_blank">
+        </div>
+        <div class="phone-number">
+            <img src="http://assets.souche.com/assets/images/index/phone-num.png?t=6">
+        </div>
+        <a class="cord-h5" href="http://app.souche.com" target="_blank">
             <i class="phone-icon"></i>
             <span>手机版</span>
             <i class="open-icon"></i>
+
             <div class="h5-open clearfix">
-              <div class="h5-text">
-                 <div class="text">
-                 </div>
-              </div>
-              <div class="h5-code"></div>
+                <div class="h5-text">
+                    <div class="text">
+                    </div>
+                </div>
+                <div class="h5-code"></div>
             </div>
-          </a>
+        </a>
+    </div>
+</div>
+<div id="nav">
+    <div class="wrapper clearfix">
+        <div class="main-navs">
+            <a click_type="index-navindex" href="http://www.souche.com">首页</a>
+            <a click_type="index-navsalecarlist" href="/pages/onsale/sale_car_list.html"
+               class="active">我要买车</a>
+            <a click_type="index-navsellCar" href="/pages/caruser/sellCarNew.html">我要卖车</a>
+            <a click_type="index-atcsAll" href="/pages/acts/theme-activity-all.html">主题精选</a>
         </div>
-      </div>
-      <div id="nav">
-        <div class="wrapper clearfix">
-          <div class="main-navs">
-            <a click_type="index-navindex"  href="http://www.souche.com"  >首页</a>
-            <a click_type="index-navsalecarlist"  href="/pages/onsale/sale_car_list.html"  class="active" >我要买车</a>
-                <a click_type="index-navsellCar" href="/pages/caruser/sellCarNew.html" >我要卖车</a>
-            <a click_type="index-atcsAll"  href="/pages/acts/theme-activity-all.html" >主题精选</a>
-          </div>
-          <div class="other-navs">
-           
-              <span class="phoneInfo" style="border-right:none; margin-left:10px;">18768196844,欢迎您</span><a  class="logonOut" style="border-right:none;" href="/pages/j_spring_security_logout?loginType=createUserLogin">[退出]</a>
-             
-            
-          </div>
+        <div class="other-navs">
+
+            <span class="phoneInfo"
+                  style="border-right:none; margin-left:10px;">18768196844,欢迎您</span><a
+                class="logonOut" style="border-right:none;"
+                href="/pages/j_spring_security_logout?loginType=createUserLogin">[退出]</a>
+
+
         </div>
-      </div>
-   <script>$(".search-text").focus();</script>
-    <script>
-   $(".cord-h5").mouseenter(function(){
-      $(".h5-open").slideDown("normal");
+    </div>
+</div>
+<script>$(".search-text").focus();</script>
+<script>
+    $(".cord-h5").mouseenter(function () {
+        $(".h5-open").slideDown("normal");
     });
-    $(document.body).on("click", function(e) {
+    $(document.body).on("click", function (e) {
         if (!$(e.target).closest(".h5-open").length) {
             $(".h5-open").slideUp("normal");
         }
     });
-   $("#J_phone_login").on("click", function(e) {
-       e.preventDefault();
-       Souche.MiniLogin.checkLogin(function() {
-           $(".qiugou .go-login").addClass("hidden")
-           window.location.reload() ;
-       },true,false,true);
-   });
-  </script>
+    $("#J_phone_login").on("click", function (e) {
+        e.preventDefault();
+        Souche.MiniLogin.checkLogin(function () {
+            $(".qiugou .go-login").addClass("hidden")
+            window.location.reload();
+        }, true, false, true);
+    });
+</script>
 
-    <!--  产品库入口 -->
-    <div class="shop-head">
-      <div class="wrap clearfix">
+<div class="shop-head">
+    <div class="wrap clearfix">
         <div class="auth-icon"></div>
         <div class="shop-info">
-           <div class="shop-name">海华二手车精品店</div>
-           <div class="shop-add">
-              <div class="add">浙江省杭州市绍兴路367号</div>
-           </div>
+            <div class="shop-name">海华二手车精品店</div>
+            <div class="shop-add">
+                <div class="add">浙江省杭州市绍兴路367号</div>
+            </div>
         </div>
         <div class="shop-brand">
-          <div class="brand-item">品牌</div>
-          <div class="brand-item">品牌</div>
-          <div class="brand-item">品牌</div>
+            <div class="brand-item">品牌</div>
+            <div class="brand-item">品牌</div>
+            <div class="brand-item">品牌</div>
         </div>
-      </div>
     </div>
-    <div class="shop-banner">
-      <img src="http://f2e.souche.com/assets/images/auth-shop/shop-banner.png">
-    </div>
-    <!--choose-->
-    <div id="choose_blank" class="hidden" style="height:55px;"></div>
-    <!--listContain-->
-    <div id="listContain" class="wrap clearfix">
-      <div id="list_wrap" class="wrap clearfix">
+</div>
+<div class="shop-banner">
+    <img src="http://f2e.souche.com/assets/images/auth-shop/shop-banner.png">
+</div>
+<!--choose-->
+<div id="choose_blank" class="hidden" style="height:55px;"></div>
+<!--listContain-->
+<div id="listContain" class="wrap clearfix">
+    <div id="list_wrap" class="wrap clearfix">
         <div class="navContainer">
+<<<<<<< HEAD
           <div class="shop-left">
             <div class="search-car"></div>
             <div class="shop-detail">
@@ -229,500 +256,573 @@
               </div>
             </div>
           </div>
+=======
+
+            {{include ./shopMod/shop-leftnav.jade}}
+
+>>>>>>> 9d0454e6ab734844a8c17a7b4aa7e84bff50dcde
         </div>
         <div class="list_main">
-          <div class="car-nav">
-            <div class="cat-nav-upper">
-              <ul class="car-tab">
-                <li class="tab-item active">
-                  <a href="#">
-                    <h4>
-                      <span class="tab-item-carstatus">出售中</span>
-                      <span class="car-kind-count-ctn">
-                        <span>(</span><span class="car-kind-count-saling">36</span><span>)</span>
-                      </span>
-                    </h4>
-                  </a>
-                </li>
-                <li class="tab-item">
-                  <a href="#">
-                    <h4>
-                      <span class="tab-item-carstatus">已售</span>
-                      <span class="car-kind-count-ctn">
-                        <span>(</span><span class="car-kind-count-sold">59</span><span>)</span>
-                      </span>
-                    </h4>
-                  </a>
-                </li>
-              </ul>
-              
-              <ul class="view-switch">
-                <li class="view-item card active"></li>
-                <li class="view-item list"></li>
-              </ul>
-              <div class="orderby-ctn">
-                <span class="orderby-text">排序：</span>
-                <ul class="car-orderby">
-                  <li class="orderby-item active">
-                    <a href="#">默认</a>
-                  </li>
-                  <li class="orderby-item">
-                    <a href="#">
-                      上牌时间
-                      <span class="order-arrow"></span>
+            <div class="car-nav">
+                <div class="cat-nav-upper">
+                    <ul class="car-tab">
+                        <li class="tab-item active">
+                            <a href="#">
+                                <h4>
+                                    <span class="tab-item-carstatus">出售中</span>
+                                  <span class="car-kind-count-ctn">
+                                    <span>(</span><span class="car-kind-count-saling">36</span><span>)</span>
+                                  </span>
+                                </h4>
+                            </a>
+                        </li>
+                        <li class="tab-item">
+                            <a href="#">
+                                <h4>
+                                    <span class="tab-item-carstatus">已售</span>
+                                  <span class="car-kind-count-ctn">
+                                    <span>(</span><span class="car-kind-count-sold">59</span><span>)</span>
+                                  </span>
+                                </h4>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="view-switch">
+                        <li class="view-item card active"></li>
+                        <li class="view-item list"></li>
+                    </ul>
+                    <div class="orderby-ctn">
+                        <span class="orderby-text">排序：</span>
+                        <ul class="car-orderby">
+                            <li class="orderby-item active">
+                                <a href="#">默认</a>
+                            </li>
+                            <li class="orderby-item">
+                                <a href="#">
+                                    上牌时间
+                                    <span class="order-arrow"></span>
+                                </a>
+                            </li>
+                            <li class="orderby-item">
+                                <a href="#">
+                                    价格
+                                    <span class="order-arrow"></span>
+                                </a>
+                            </li>
+                            <li class="orderby-item">
+                                <a href="#">
+                                    里程
+                                    <span class="order-arrow"></span>
+                                </a>
+                            </li>
+                            <li class="orderby-item">
+                                <a href="#">
+                                    质检等级
+                                    <span class="order-arrow"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="car-filter-group">
+                    <div class="car-filter-item">
+                        <input type="checkbox" id="quality-check">
+                        <label for="quality-check">质保</labdel>
+                    </div>
+                    <div class="car-filter-item">
+                        <input type="checkbox" id="shouquan-shop-check">
+                        <label for="shouquan-shop-check">授权店</label>
+                    </div>
+                    <div class="car-filter-item">
+                        <input type="checkbox" id="on-sale-check">
+                        <label for="on-sale-check">限时优惠</label>
+                    </div>
+                    <div class="car-filter-item">
+                        <input type="checkbox" id="almost-new-check">
+                        <label for="almost-new-check">准新车</label>
+                    </div>
+                    <div class="car-filter-item">
+                        <input type="checkbox" id="stage-pay-check">
+                        <label for="stage-pay-check">分期付款</label>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card-box clearfix car-wrap"> -->
+            <!-- card-box: 卡片视图 -->
+            <!-- list-box: 列表视图 -->
+            <div class="card-box clearfix car-wrap">
+                <div class="carsItem carItem">
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="carImg">
+                        <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
+
+                        <div class="timebuy"></div>
                     </a>
-                  </li>
-                  <li class="orderby-item">
-                    <a href="#">
-                      价格
-                      <span class="order-arrow"></span>
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="car-link">
+                        雪佛兰 2013款 科帕奇2.4-A/MT七座城市版前驱
                     </a>
-                  </li>
-                  <li class="orderby-item">
-                    <a href="#">
-                      里程
-                      <span class="order-arrow"></span>
+
+                    <div class="car-price">
+                        <span class="price">￥18.36万</span>
+                        <span class="recommended">直降5000元</span>
+                    </div>
+                    <div class="car-info">
+                        <span class="info-item">2012-04  上牌</span>
+                        <em>|</em>
+                        <span class="info-item">6.4万公里</span>
+                        <em>|</em>
+                                <span class="info-item">
+                                  <span class="info-item-name">归属地:</span>
+                                  杭州
+                                </span>
+                    </div>
+                    <div class="carTail clearfix">
+                        <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
+                            <span class="add-to-coll">收藏</span>
+                            <span class="already-colled">已收藏</span>
+                            <span>7</span>
+                        </a>
+
+                        <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
+                            <input type="checkbox" id="addconst">
+                            <span for="addconst" class="constrast-without-add">对比</span>
+                            <span for="addconst" class="constrast-add">加入对比</span>
+                        </div>
+                        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+                    </div>
+                    <div class="car-type clearfix">
+
+                        <div class="zhijian">
+                            <span class="type-icon">检A+</span>
+                            <span class="extra-text">质检 A+</span>
+                        </div>
+                        <div class="baoxian">
+                            <span class="type-icon"></span>
+                            <span class="extra-text">一年保2万公里</span>
+                        </div>
+                        <div class="shouquan">
+                            <span class="type-icon">授权店</span>
+                            <span class="extra-text">台州市博奥二手车</span>
+                        </div>
+
+                        <div class="up-time">三天前</div>
+                    </div>
+                </div>
+                <div class="carsItem carItem">
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="carImg">
+                        <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
+
+                        <div class="timebuy hidden"></div>
                     </a>
-                  </li>
-                  <li class="orderby-item">
-                    <a href="#">
-                      质检等级
-                      <span class="order-arrow"></span>
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="car-link">
+                        雪佛兰 2013款 科帕奇2.4-A/MT七座城市版前驱
                     </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="car-filter-group">
-              <div class="car-filter-item">
-                <input type="checkbox" id="quality-check">
-                <label for="quality-check">质保</labdel>
-              </div>
-              <div class="car-filter-item">
-                <input type="checkbox" id="shouquan-shop-check">
-                <label for="shouquan-shop-check">授权店</label>
-              </div>
-              <div class="car-filter-item">
-                <input type="checkbox" id="on-sale-check">
-                <label for="on-sale-check">限时优惠</label>
-              </div>
-              <div class="car-filter-item">
-                <input type="checkbox" id="almost-new-check">
-                <label for="almost-new-check">准新车</label>
-              </div>
-              <div class="car-filter-item">
-                <input type="checkbox" id="stage-pay-check">
-                <label for="stage-pay-check">分期付款</label>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="card-box clearfix car-wrap"> -->
-          <!-- card-box: 卡片视图 -->
-          <!-- list-box: 列表视图 -->
-          <div class="card-box clearfix car-wrap">
-            <div class="carsItem carItem">
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="carImg">
-                <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
-                <div class="timebuy"></div>
-              </a>
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="car-link">
-                雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-              </a>
-              <div class="car-price">
-                <span class="price">￥18.36万</span>
-                <span class="recommended">直降5000元</span>
-              </div>
-              <div class="car-info">
-                <span class="info-item">2012-04  上牌</span>
-                <em>|</em>
-                <span class="info-item">6.4万公里</span>
-                <em>|</em>
-                <span class="info-item">
-                  <span class="info-item-name">归属地:</span>
-                  杭州
-                </span>
-              </div>
-              <div class="carTail clearfix">
-                <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
-                  <span class="add-to-coll">收藏</span>
-                  <span class="already-colled">已收藏</span>
-                  <span>7</span>
-                </a>
-                <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
-                  <input type="checkbox" id="addconst">
-                  <span for="addconst"class="constrast-without-add">对比</span>
-                  <span for="addconst" class="constrast-add">加入对比</span>
+
+                    <div class="car-price">
+                        <span class="price">￥18.36万</span>
+                        <span class="recommended">直降5000元</span>
+                    </div>
+                    <div class="car-info">
+                        <span class="info-item">2012-04  上牌</span>
+                        <em>|</em>
+                        <span class="info-item">6.4万公里</span>
+                        <em>|</em>
+                        <span class="info-item">杭州</span>
+                    </div>
+                    <div class="carTail clearfix">
+                        <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
+                            <span class="add-to-coll">收藏</span>
+                            <span class="already-colled">已收藏</span>
+                            <span>7</span>
+                        </a>
+
+                        <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
+                            <input type="checkbox" id="addconst">
+                            <span for="addconst" class="constrast-without-add">对比</span>
+                            <span for="addconst" class="constrast-add">加入对比</span>
+                        </div>
+                        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+                    </div>
+                    <div class="car-type clearfix">
+
+                        <div class="zhijian">
+                            <span class="type-icon">检A+</span>
+                            <span class="extra-text">质检 A+</span>
+                        </div>
+                        <div class="baoxian">
+                            <span class="type-icon"></span>
+                            <span class="extra-text">一年保2万公里</span>
+                        </div>
+                        <div class="shouquan">
+                            <span class="type-icon">授权店</span>
+                            <span class="extra-text">台州市博奥二手车</span>
+                        </div>
+
+                        <div class="up-time">三天前</div>
+                    </div>
                 </div>
-                <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
-              </div>
-              <div class="car-type clearfix">
-                
-                    <div class="zhijian">
-                      <span class="type-icon">检A+</span>
-                      <span class="extra-text">质检 A+</span>
+                <div class="carsItem carItem">
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="carImg">
+                        <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
+
+                        <div class="timebuy hidden"></div>
+                    </a>
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="car-link">
+                        雪佛兰 2013款 科帕奇2.4-A/MT七座城市版前驱
+                    </a>
+
+                    <div class="car-price">
+                        <span class="price">￥18.36万</span>
+                        <span class="recommended">直降5000元</span>
                     </div>
-                    <div class="baoxian">
-                      <span class="type-icon"></span>
-                      <span class="extra-text">一年保2万公里</span>
+                    <div class="car-info">
+                        <span class="info-item">2012-04  上牌</span>
+                        <em>|</em>
+                        <span class="info-item">6.4万公里</span>
+                        <em>|</em>
+                        <span class="info-item">杭州</span>
                     </div>
-                    <div class="shouquan">
-                      <span class="type-icon">授权店</span>
-                      <span class="extra-text">台州市博奥二手车</span>
+                    <div class="carTail clearfix">
+                        <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
+                            <span class="add-to-coll">收藏</span>
+                            <span class="already-colled">已收藏</span>
+                            <span>7</span>
+                        </a>
+
+                        <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
+                            <input type="checkbox" id="addconst">
+                            <span for="addconst" class="constrast-without-add">对比</span>
+                            <span for="addconst" class="constrast-add">加入对比</span>
+                        </div>
+                        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
                     </div>
-          
-                 <div class="up-time">三天前</div>
-              </div>
-            </div>
-            <div class="carsItem carItem">
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="carImg">
-                <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
-                <div class="timebuy hidden"></div>
-              </a>
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="car-link">
-                雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-              </a>
-              <div class="car-price">
-                <span class="price">￥18.36万</span>
-                <span class="recommended">直降5000元</span>
-              </div>
-              <div class="car-info">
-                <span class="info-item">2012-04  上牌</span>
-                <em>|</em>
-                <span class="info-item">6.4万公里</span>
-                <em>|</em>
-                <span class="info-item">杭州</span>
-              </div>
-              <div class="carTail clearfix">
-                <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
-                  <span class="add-to-coll">收藏</span>
-                  <span class="already-colled">已收藏</span>
-                  <span>7</span>
-                </a>
-                <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
-                  <input type="checkbox" id="addconst">
-                  <span for="addconst"class="constrast-without-add">对比</span>
-                  <span for="addconst" class="constrast-add">加入对比</span>
+                    <div class="car-type clearfix">
+
+                        <div class="zhijian">
+                            <span class="type-icon">检A+</span>
+                            <span class="extra-text">质检 A+</span>
+                        </div>
+                        <div class="baoxian">
+                            <span class="type-icon"></span>
+                            <span class="extra-text">一年保2万公里</span>
+                        </div>
+                        <div class="shouquan">
+                            <span class="type-icon">授权店</span>
+                            <span class="extra-text">台州市博奥二手车</span>
+                        </div>
+
+                        <div class="up-time">三天前</div>
+                    </div>
                 </div>
-                <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
-              </div>
-              <div class="car-type clearfix">
-                
-                    <div class="zhijian">
-                      <span class="type-icon">检A+</span>
-                      <span class="extra-text">质检 A+</span>
+                <div class="carsItem carItem">
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="carImg">
+                        <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
+
+                        <div class="timebuy hidden"></div>
+                    </a>
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="car-link">
+                        雪佛兰 2013款 科帕奇2.4-A/MT七座城市版前驱
+                    </a>
+
+                    <div class="car-price">
+                        <span class="price">￥18.36万</span>
+                        <span class="recommended">直降5000元</span>
                     </div>
-                    <div class="baoxian">
-                      <span class="type-icon"></span>
-                      <span class="extra-text">一年保2万公里</span>
+                    <div class="car-info">
+                        <span class="info-item">2012-04  上牌</span>
+                        <em>|</em>
+                        <span class="info-item">6.4万公里</span>
+                        <em>|</em>
+                        <span class="info-item">杭州</span>
                     </div>
-                    <div class="shouquan">
-                      <span class="type-icon">授权店</span>
-                      <span class="extra-text">台州市博奥二手车</span>
+                    <div class="carTail clearfix">
+                        <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
+                            <span class="add-to-coll">收藏</span>
+                            <span class="already-colled">已收藏</span>
+                            <span>7</span>
+                        </a>
+
+                        <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
+                            <input type="checkbox" id="addconst">
+                            <span for="addconst" class="constrast-without-add">对比</span>
+                            <span for="addconst" class="constrast-add">加入对比</span>
+                        </div>
+                        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
                     </div>
-          
-                 <div class="up-time">三天前</div>
-              </div>
-            </div>
-            <div class="carsItem carItem">
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="carImg">
-                <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
-                <div class="timebuy hidden"></div>
-              </a>
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="car-link">
-                雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-              </a>
-              <div class="car-price">
-                <span class="price">￥18.36万</span>
-                <span class="recommended">直降5000元</span>
-              </div>
-              <div class="car-info">
-                <span class="info-item">2012-04  上牌</span>
-                <em>|</em>
-                <span class="info-item">6.4万公里</span>
-                <em>|</em>
-                <span class="info-item">杭州</span>
-              </div>
-              <div class="carTail clearfix">
-                 <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
-                  <span class="add-to-coll">收藏</span>
-                  <span class="already-colled">已收藏</span>
-                  <span>7</span>
-                </a>
-                <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
-                  <input type="checkbox" id="addconst">
-                  <span for="addconst"class="constrast-without-add">对比</span>
-                  <span for="addconst" class="constrast-add">加入对比</span>
+                    <div class="car-type clearfix">
+
+                        <div class="zhijian">
+                            <span class="type-icon">检A+</span>
+                            <span class="extra-text">质检 A+</span>
+                        </div>
+                        <div class="baoxian">
+                            <span class="type-icon"></span>
+                            <span class="extra-text">一年保2万公里</span>
+                        </div>
+                        <div class="shouquan">
+                            <span class="type-icon">授权店</span>
+                            <span class="extra-text">台州市博奥二手车</span>
+                        </div>
+
+                        <div class="up-time">三天前</div>
+                    </div>
                 </div>
-                <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
-              </div>
-              <div class="car-type clearfix">
-                
-                    <div class="zhijian">
-                      <span class="type-icon">检A+</span>
-                      <span class="extra-text">质检 A+</span>
+                <div class="carsItem carItem">
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="carImg">
+                        <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
+
+                        <div class="timebuy"></div>
+                    </a>
+                    <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3"
+                       class="car-link">
+                        雪佛兰 2013款 科帕奇2.4-A/MT七座城市版前驱
+                    </a>
+
+                    <div class="car-price">
+                        <span class="price">￥18.36万</span>
+                        <span class="recommended">直降5000元</span>
                     </div>
-                    <div class="baoxian">
-                      <span class="type-icon"></span>
-                      <span class="extra-text">一年保2万公里</span>
+                    <div class="car-info">
+                        <span class="info-item">2012-04  上牌</span>
+                        <em>|</em>
+                        <span class="info-item">6.4万公里</span>
+                        <em>|</em>
+                        <span class="info-item">杭州</span>
                     </div>
-                    <div class="shouquan">
-                      <span class="type-icon">授权店</span>
-                      <span class="extra-text">台州市博奥二手车</span>
+                    <div class="carTail clearfix">
+                        <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
+                            <span>7</span>
+                        </a>
+
+                        <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
+                            <input type="checkbox" id="addconst">
+                            <span for="addconst">对比</span>
+                        </div>
+                        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
                     </div>
-          
-                 <div class="up-time">三天前</div>
-              </div>
-            </div>
-            <div class="carsItem carItem">
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="carImg">
-                <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
-                <div class="timebuy hidden"></div>
-              </a>
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="car-link">
-                雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-              </a>
-              <div class="car-price">
-                <span class="price">￥18.36万</span>
-                <span class="recommended">直降5000元</span>
-              </div>
-              <div class="car-info">
-                <span class="info-item">2012-04  上牌</span>
-                <em>|</em>
-                <span class="info-item">6.4万公里</span>
-                <em>|</em>
-                <span class="info-item">杭州</span>
-              </div>
-              <div class="carTail clearfix">
-                 <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
-                  <span class="add-to-coll">收藏</span>
-                  <span class="already-colled">已收藏</span>
-                  <span>7</span>
-                </a>
-                <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
-                  <input type="checkbox" id="addconst">
-                  <span for="addconst"class="constrast-without-add">对比</span>
-                  <span for="addconst" class="constrast-add">加入对比</span>
+                    <div class="car-type clearfix">
+
+                        <div class="zhijian">检A+</div>
+                        <div class="baoxian"></div>
+                        <div class="shouquan">授权店</div>
+
+                        <div class="up-time">三天前</div>
+                    </div>
                 </div>
-                <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
-              </div>
-              <div class="car-type clearfix">
-                
-                    <div class="zhijian">
-                      <span class="type-icon">检A+</span>
-                      <span class="extra-text">质检 A+</span>
-                    </div>
-                    <div class="baoxian">
-                      <span class="type-icon"></span>
-                      <span class="extra-text">一年保2万公里</span>
-                    </div>
-                    <div class="shouquan">
-                      <span class="type-icon">授权店</span>
-                      <span class="extra-text">台州市博奥二手车</span>
-                    </div>
-          
-                 <div class="up-time">三天前</div>
-              </div>
             </div>
-                 <div class="carsItem carItem">
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="carImg">
-                <img src="http://img.souche.com/files/carpicture/BEA768C679375419D9A5DDAD2731B338_690x460.jpg@240w">
-                <div class="timebuy"></div>
-              </a>
-              <a target="_blank" href="/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3" class="car-link">
-                雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-              </a>
-              <div class="car-price">
-                <span class="price">￥18.36万</span>
-                <span class="recommended">直降5000元</span>
-              </div>
-              <div class="car-info">
-                <span class="info-item">2012-04  上牌</span>
-                <em>|</em>
-                <span class="info-item">6.4万公里</span>
-                <em>|</em>
-                <span class="info-item">杭州</span>
-              </div>
-              <div class="carTail clearfix">
-                <a data-carid="0388PhM1E3" data-num="7" class="collect carCollect ">
-                  <span>7</span>
-                </a>
-                <div class="carConstrast" contrastid="null" carid="0388PhM1E3">
-                  <input type="checkbox" id="addconst">
-                  <span for="addconst">对比</span>
-                </div>
-                <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
-              </div>
-              <div class="car-type clearfix">
-                
-                    <div class="zhijian">检A+</div>
-                    <div class="baoxian"></div>
-                    <div class="shouquan">授权店</div>
-          
-                 <div class="up-time">三天前</div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="apply_popup popup-result hidden" id="fav-popup">
-      <span class="apply_close"></span>
-      <h1 class="popup-title">收藏</h1>
-      <form id="fav-form" action="">
+</div>
+<div class="apply_popup popup-result hidden" id="fav-popup">
+    <span class="apply_close"></span>
+
+    <h1 class="popup-title">收藏</h1>
+
+    <form id="fav-form" action="">
         <div class="result_p">
-          <div class="tip">
-            输入您的手机号码，一键完成收藏
-          </div>
-          <div class="phone">
-            <label>手机号码</label>
-            <input type="text" name="" value="" id="fav-phone"  placeholder="在此输入手机号码"/>
-            <s class="warning hidden">请输入正确的手机号码</s>
-          </div>
+            <div class="tip">
+                输入您的手机号码，一键完成收藏
+            </div>
+            <div class="phone">
+                <label>手机号码</label>
+                <input type="text" name="" value="" id="fav-phone" placeholder="在此输入手机号码"/>
+                <s class="warning hidden">请输入正确的手机号码</s>
+            </div>
         </div>
         <button type="submit" class="fav-submit">
-          收藏
+            收藏
         </button>
-      </form>
-    </div>
-    <div class="fav-wrapGrayBg" style="display:none"></div>
-    <div class="qiugou-wrapGrayBg" style="display:none"></div>
-    <div class="hidden" id="qiugou-popup">
-      <span class="apply_close"></span>
-      <h1 class="popup-title">发送到手机</h1>
-      <form id="qiugou-form" action="">
+    </form>
+</div>
+<div class="fav-wrapGrayBg" style="display:none"></div>
+<div class="qiugou-wrapGrayBg" style="display:none"></div>
+<div class="hidden" id="qiugou-popup">
+    <span class="apply_close"></span>
+
+    <h1 class="popup-title">发送到手机</h1>
+
+    <form id="qiugou-form" action="">
         <div class="result_p">
-          <div class="tip">
-            输入手机号码，即可发送
-          </div>
-          <div class="yuyue-con">
-            <label>手机号码</label>
-            <input type="text" name="" value="" id="qiugou-phone" placeholder="在此输入手机号码"/>
-            <s class="warning hidden">请输入正确的手机号码</s>
-          </div>
+            <div class="tip">
+                输入手机号码，即可发送
+            </div>
+            <div class="yuyue-con">
+                <label>手机号码</label>
+                <input type="text" name="" value="" id="qiugou-phone" placeholder="在此输入手机号码"/>
+                <s class="warning hidden">请输入正确的手机号码</s>
+            </div>
         </div>
         <button type="submit" class="ph-submit">
-          确认
+            确认
         </button>
-      </form>
-    </div>
-    <div id="footer">
-      <div class="wrapper">
+    </form>
+</div>
+<div id="footer">
+    <div class="wrapper">
         <div class="foot-detail clearfix">
-          <div class="buycarguide detail-item">
-            <a class="title">购车指南</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=1cd45ea1-2457-4a26-a4dd-942a1cae360c" class="art-link" target="_blank">如何挑选二手车</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=VpqAVgwSiF" class="art-link" target="_blank">安全购车流程</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=CUO878x35t" class="art-link" target="_blank">大搜车价格说明</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=1Yc1r7jxxJ" class="art-link" target="_blank">二手车指标问题</a>
-          </div>
-          <div class="security detail-item">
-            <a class="title" target="_blank">服务保障</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=8AMtTWD6nA" class="art-link" target="_blank">分期付款</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=1GuoqcL0E6" class="art-link" target="_blank">质保服务</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=qvMzy8lXe9" class="art-link" target="_blank">二手车外迁</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=6hamwr0W14" class="art-link" target="_blank">二手车置换</a>
-          </div>
-          <div class="about detail-item">
-            <a class="title">关于我们</a>
-            <a href="http://www.souche.com/pages/details/soucheidea.html" class="art-link" target="_blank">大搜车理念</a>
-            <a href="http://www.souche.com/pages/zhaopin/zhaopin_list.html" class="art-link" target="_blank">加入我们</a>
-            <a href="http://d.souche.com/" class="art-link" target="_blank">车牛</a>
-            <a href="http://app.souche.com/app/new/" class="art-link" target="_blank">卖车神器</a>
-          </div>
-          <div class="contact detail-item" style="width:290px;">
-            <a class="title">联系我们</a>
-            <a href="http://www.souche.com/pages/huodong/item.html?id=d7u9K9H" class="art-link" target="_blank">官方微信</a>
-            <a href="http://weibo.com/dasouche" class="art-link" target="_blank">新浪微博</a>
-          
-            <a href="http://map.baidu.com/?shareurl=1&poiShareUid=3091ded5cde9ad4cb5147f7b" class="art-link" target="_blank">门店地址：北京市海淀区世纪金源购物中心东区北广场</a>
-           </div>
+            <div class="buycarguide detail-item">
+                <a class="title">购车指南</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1cd45ea1-2457-4a26-a4dd-942a1cae360c"
+                   class="art-link" target="_blank">如何挑选二手车</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=VpqAVgwSiF"
+                   class="art-link" target="_blank">安全购车流程</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=CUO878x35t"
+                   class="art-link" target="_blank">大搜车价格说明</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1Yc1r7jxxJ"
+                   class="art-link" target="_blank">二手车指标问题</a>
+            </div>
+            <div class="security detail-item">
+                <a class="title" target="_blank">服务保障</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=8AMtTWD6nA"
+                   class="art-link" target="_blank">分期付款</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1GuoqcL0E6"
+                   class="art-link" target="_blank">质保服务</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=qvMzy8lXe9"
+                   class="art-link" target="_blank">二手车外迁</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=6hamwr0W14"
+                   class="art-link" target="_blank">二手车置换</a>
+            </div>
+            <div class="about detail-item">
+                <a class="title">关于我们</a>
+                <a href="http://www.souche.com/pages/details/soucheidea.html" class="art-link"
+                   target="_blank">大搜车理念</a>
+                <a href="http://www.souche.com/pages/zhaopin/zhaopin_list.html" class="art-link"
+                   target="_blank">加入我们</a>
+                <a href="http://d.souche.com/" class="art-link" target="_blank">车牛</a>
+                <a href="http://app.souche.com/app/new/" class="art-link" target="_blank">卖车神器</a>
+            </div>
+            <div class="contact detail-item" style="width:290px;">
+                <a class="title">联系我们</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=d7u9K9H" class="art-link"
+                   target="_blank">官方微信</a>
+                <a href="http://weibo.com/dasouche" class="art-link" target="_blank">新浪微博</a>
+
+                <a href="http://map.baidu.com/?shareurl=1&poiShareUid=3091ded5cde9ad4cb5147f7b"
+                   class="art-link" target="_blank">门店地址：北京市海淀区世纪金源购物中心东区北广场</a>
+            </div>
         </div>
-        <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号</p>
-      </div>
+        <p>Copyright © 2014 SouChe All Rights Reserved 北京搜车网科技有限公司 版权所有 京 ICP备 13012136号 京公网安备
+            11010802013095号</p>
     </div>
-    
-    
- <div class="my-advisor hidden" id="my-advisor">
-      <a class="my-advisor-box" click_type="toolbar-matchcar"  href="/pages/onsale/match_car_list.html">
+</div>
+
+
+<div class="my-advisor hidden" id="my-advisor">
+    <a class="my-advisor-box" click_type="toolbar-matchcar"
+       href="/pages/onsale/match_car_list.html">
         <img src="http://assets.souche.com/assets/images/common/my-advisor-person.png?t=4"/>
         <span>我的</span>
+
         <p>买车顾问</p>
         <i class="point-num hidden" id="advisor_notice">1</i>
-      </a>
-      <a class="my-advisor-tip hidden" click_type="toolbar-matchcartip"  href="/pages/onsale/match_car_list.html">今天又为你寻找到 <em id="advisor_count">5</em> 辆车<br/>赶快去看看吧 >><i class="advisor-tip-close">x</i></a>
-    </div>
-   
- <div class="sidebar " id="toolbar">
-      <div class="sidebar-tit">
+    </a>
+    <a class="my-advisor-tip hidden" click_type="toolbar-matchcartip"
+       href="/pages/onsale/match_car_list.html">今天又为你寻找到 <em id="advisor_count">5</em> 辆车<br/>赶快去看看吧
+        >><i class="advisor-tip-close">x</i></a>
+</div>
+
+<div class="sidebar " id="toolbar">
+    <div class="sidebar-tit">
         <i>我的车库</i>
         <span class="toolbar-close"></span>
-      </div>
-      <div class="sidebar-nav">
-         <div class="collectside side-box">
-          <a click_type="toolbar-faver" class="collect-box side-trigger" href='/pages/toolbar/favorite.html'><div class="collect-img icon"></div><i>收藏的车</i></a>
-          <i class="point-num hidden" id="fav_notice">12</i>
+    </div>
+    <div class="sidebar-nav">
+        <div class="collectside side-box">
+            <a click_type="toolbar-faver" class="collect-box side-trigger"
+               href='/pages/toolbar/favorite.html'>
+                <div class="collect-img icon"></div>
+                <i>收藏的车</i></a>
+            <i class="point-num hidden" id="fav_notice">12</i>
         </div>
-        
+
         <div class="reserveside side-box">
-           <a click_type="toolbar-yuyue" class="reserve-box side-trigger" href='/pages/toolbar/appointment.html'><div class="reserve-img icon"></div><i>预约看车</i></a>
-           <i class="point-num hidden" id="yuyue_notice">1</i>
+            <a click_type="toolbar-yuyue" class="reserve-box side-trigger"
+               href='/pages/toolbar/appointment.html'>
+                <div class="reserve-img icon"></div>
+                <i>预约看车</i></a>
+            <i class="point-num hidden" id="yuyue_notice">1</i>
         </div>
-        
-         <div class="conside side-box">
-          <a click_type="toolbar-contrast" class="contrast-box side-trigger" href='/pages/toolbar/contrast.html'><div class="contrast-img icon"></div><i>对比车辆</i></a>
-          <i class="point-num hidden" id="_notice">1</i>
+
+        <div class="conside side-box">
+            <a click_type="toolbar-contrast" class="contrast-box side-trigger"
+               href='/pages/toolbar/contrast.html'>
+                <div class="contrast-img icon"></div>
+                <i>对比车辆</i></a>
+            <i class="point-num hidden" id="_notice">1</i>
         </div>
         <div class="scanside side-box hidden">
-          <a class="scan-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="scan-img icon"></div><i>浏览记录</i></a>
+            <a class="scan-box side-trigger" href='/demo/pengxue/toolbar?id=1'>
+                <div class="scan-img icon"></div>
+                <i>浏览记录</i></a>
         </div>
         <div class="suggestside side-box">
-          <a class="suggest-box side-trigger" href='/pages/toolbar/suggest.html'><div class="suggest-img icon"></div><i>反馈信息</i></a>
+            <a class="suggest-box side-trigger" href='/pages/toolbar/suggest.html'>
+                <div class="suggest-img icon"></div>
+                <i>反馈信息</i></a>
         </div>
-      </div>
-      <div class="toolbar-content">
-        
+    </div>
+    <div class="toolbar-content">
+
         <div class="iframe-loading"></div>
-        <iframe src="" height="500px" width="855px"  name="toolbar-open" frameborder="0" class="hidden" scrolling="no"></iframe>
-      </div>
-    </div> 
+        <iframe src="" height="500px" width="855px" name="toolbar-open" frameborder="0"
+                class="hidden" scrolling="no"></iframe>
+    </div>
+</div>
 <script>
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14b4aac5aa4127a195c3dd1a4049180f' type='text/javascript'%3E%3C/script%3E"));
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14b4aac5aa4127a195c3dd1a4049180f' type='text/javascript'%3E%3C/script%3E"));
 
 </script>
 <div class="sidebar-top">
-      <div class="scroll-top" id="toTop" click_type="toolbar-top">
-         <i></i>
-         <span>TOP</span>
-      </div>
-</div>
-    <div class="suggest-popup hidden">
-      <div class="suggest-close" click_type="toolbar-fankui-close"></div>
-      <h1 class="suggest-title">意见反馈</h1>
-      <form class="suggest-form clearfix" id="J_suggest_form" action="/pages/suggestionAction/addSuggestion.json" method="post">
-        <textarea max="500"  name="content" class="suggest-area" value="请填写反馈，我们会重视每一位用户的意见" default="请填写反馈，我们会重视每一位用户的意见">请填写反馈，我们会重视每一位用户的意见</textarea>
-        <p class="suggest-remind hidden">内容不能为空</p>
-        <input type="submit" class="suggest-button suggest-submit" value="提交反馈"  click_type="toolbar-fankui-submit"/>
-        <div class="suggest-button suggest-no hidden">提交反馈</div>
-      </form>
+    <div class="scroll-top" id="toTop" click_type="toolbar-top">
+        <i></i>
+        <span>TOP</span>
     </div>
-    <div class="suggest-result hidden">
-      <div class="suggest-close"></div>
-      <h1 class="result-title clearfix">
+</div>
+<div class="suggest-popup hidden">
+    <div class="suggest-close" click_type="toolbar-fankui-close"></div>
+    <h1 class="suggest-title">意见反馈</h1>
+
+    <form class="suggest-form clearfix" id="J_suggest_form"
+          action="/pages/suggestionAction/addSuggestion.json" method="post">
+        <textarea max="500" name="content" class="suggest-area" value="请填写反馈，我们会重视每一位用户的意见"
+                  default="请填写反馈，我们会重视每一位用户的意见">请填写反馈，我们会重视每一位用户的意见</textarea>
+
+        <p class="suggest-remind hidden">内容不能为空</p>
+        <input type="submit" class="suggest-button suggest-submit" value="提交反馈"
+               click_type="toolbar-fankui-submit"/>
+
+        <div class="suggest-button suggest-no hidden">提交反馈</div>
+    </form>
+</div>
+<div class="suggest-result hidden">
+    <div class="suggest-close"></div>
+    <h1 class="result-title clearfix">
         <i></i>
         <span>提交成功</span>
-      </h1>
-      <div class="result-text">
+    </h1>
+
+    <div class="result-text">
         感谢您给我们提供宝贵的意见
-      </div>
     </div>
-    <!--listContain end-->
-    <script src="http://f2e.souche.com/assets/js/list.js?t=7" type="text/javascript"></script>
-    <script type="text/javascript" src="http://f2e.souche.com/assets/js/wannaBuy/saleCar-list.r.js?t=10"></script>
-    <script>
-      require(['wannaBuy/saleCar-list'], function (Index){
-          Index.init(pageConfig);
-        });
-    </script>
-  </body>
+</div>
+<!--listContain end-->
+<script src="http://f2e.souche.com/assets/js/list.js?t=7" type="text/javascript"></script>
+<script type="text/javascript"
+        src="http://f2e.souche.com/assets/js/wannaBuy/saleCar-list.r.js?t=10"></script>
+<script>
+    require(['wannaBuy/saleCar-list'], function (Index) {
+        Index.init(pageConfig);
+    });
+</script>
+</body>
 </html>
