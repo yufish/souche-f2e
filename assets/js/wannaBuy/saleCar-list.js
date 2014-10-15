@@ -74,6 +74,8 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
         initGuessLike: function(){
             var guessLikeCtn = $(".guess-like");
             guessLikeCtn.addClass('loading');
+            // TBD, server added this hidden
+            // guessLikeCtn.removeClass('hidden');
             $.ajax({
                 url: config.api_guessCars,
                 success: function(html) {
