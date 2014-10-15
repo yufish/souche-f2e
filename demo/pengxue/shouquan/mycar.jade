@@ -366,13 +366,22 @@ html
         .close
         .adults-cont
           .title 
-            h1 请填写维权原因
+            h1 请填写联系方式和维权原因
             h2 1小时内我们的客服会与你联系
           form.adults-form.clearfix
+            h3 手机号：
+            input#phone-num(type="text" placeholder="请输入你的手机号")
+            h3 验证码：
+            .yanzhen.clearfix
+              input#yanzhen-num(type="text" placeholder="请查收短信")
+              button 获取验证码
+            h3 维权原因：
             .adults-text
-              textarea
+              textarea(placeholder="维权原因")
             input.adults-submit(type="submit")
-        .adults-succ.hidden
+      .popup-adults-su.hidden
+        .close
+        .adults-succ
           .succ-icon
           .succ-text
             h1 您已成功申请维权
