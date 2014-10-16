@@ -25,7 +25,6 @@ define(function() {
                         }
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
-                        $("#onsale_price").removeClass("hidden")
                         var maxPrice = ((priceData.price_guide).toFixed(1) * 1+config.taxPrice).toFixed(2);
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
@@ -62,7 +61,6 @@ define(function() {
                         var baoyangData = data;
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
-                        $("#onsale_baoyang").removeClass("hidden")
                         var prices = {};
                         var totalPrice = 0;
                         for (var i = 0; i < baoyangData.maintenanceItem.length; i++) {
@@ -159,7 +157,6 @@ define(function() {
                                 },config)
                                 $(".onsale-tab-item-koubei").removeClass("hidden");
                                 $(".float-nav-item-koubei").removeClass("hidden")
-                                $("#onsale_koubei").removeClass("hidden")
                             }
                         )
 
