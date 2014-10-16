@@ -54,7 +54,6 @@ define(function() {
                 }).done(function(data) {
                     if (data.result == 2) { //正常
                         this.checked = true;
-                        $(this).parent().find("input")[0].checked = true;
                         $(this).parent().find("span").html("已对比")
                         var contrastId = data.contrastId;
                         $(this).parent().attr("contrastId", contrastId);
@@ -83,7 +82,6 @@ define(function() {
                         this.checked = true;
                         var waring = $(this).parent().parent().parent().find(".contrast-waring");
                         waring.html("已经加入对比").removeClass("hidden");
-                        $(this).parent().find("input")[0].checked = true;
                         window.setTimeout(function() {
                             waring.addClass("hidden");
                         }, 3000);
@@ -94,7 +92,6 @@ define(function() {
                     {
                         var waring = $(this).parent().parent().parent().find(".contrast-waring");
                         waring.html("对比项已满").removeClass("hidden");
-                        $(this).parent().find("input")[0].checked = false;
                         window.setTimeout(function() {
                             waring.addClass("hidden");
                         }, 3000);
