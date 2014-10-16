@@ -134,21 +134,7 @@ define(function(){
                         alert("数据不合法");
                     }
                 } else {
-                    if(!!contrastId) {
-                        $.ajax({
-                            type : "POST",
-                            url : config.deleteContrast,
-                            data : {
-                                cid : contrastId
-                            },
-                            dataType : "json",
-                            context : self
-                        }).done(function(data) {
-                            self.removeClass('added');
-                            self.find("input").removeAttr("checked");
-                            self.find("input").removeAttr("contrastid");
-                        });
-                    }
+
                 }
             })
 
