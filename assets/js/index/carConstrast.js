@@ -8,29 +8,11 @@ define(function() {
     var phoneReg = /^1[3458][0-9]{9}$/;
 
     var _bind = function() {
-        $(".carConstrast span,.carConstrast input").live("click", function(e) {
+        $(".carConstrast span").live("click", function(e) {
 
             var element = e.target || e.srcElement;
-            if (element.nodeName == "INPUT") {
-                if (this.checked) {
-                    var carID = $(this).parent().attr("carid");
-                    addConstrast.call(this, carID);
-                } else {
-                    var constrastID = $(this).parent().attr("contrastid");
-                    deleteConstrast.call(this, constrastID);
-                }
-            } else if (element.nodeName == "SPAN") {
-                if ($(this).parent().find("input")[0].checked) {
-                    var constrastID = $(this).parent().attr("contrastid");
-                    deleteConstrast.call(this, constrastID);
-
-                } else {
-                    var carID = $(this).parent().attr("carid");
-                    var input = $(this).parent().find("input")[0];
-                    addConstrast.call(input, carID);
-                    input.checked = true;
-                }
-            }
+            var carID = $(this).parent().attr("carid");
+            addConstrast.call(this, carID);
             e.stopPropagation();
             e.preventDefault();
         });
@@ -73,7 +55,7 @@ define(function() {
                     if (data.result == 2) { //正常
                         this.checked = true;
                         $(this).parent().find("input")[0].checked = true;
-
+                        $(this).parent().find("span").html("已对比")
                         var contrastId = data.contrastId;
                         $(this).parent().attr("contrastId", contrastId);
 
