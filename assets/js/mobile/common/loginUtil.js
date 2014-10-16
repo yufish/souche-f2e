@@ -70,8 +70,8 @@ SM.PhoneRegister = function(phone, callback) {
 };
 
 //带验证码的弹出框
-function createLoginWithValid(){
-    var html = '<div class="login-area" id="login-form-valid-code">'
+function createLoginWithValid(token){
+    var html = '<div class="login-area hidden" id="login-form-valid-code">'
         +'<form id="login-form-valid">'
         +    '<div class="form-item">'
         +        '<input id="J_phone-valid" class="login-input phone-input" type="tel" placeholder="输入手机号">'
@@ -87,6 +87,7 @@ function createLoginWithValid(){
         +    '<div class="form-item">'
         +        '<button type="submit" class="login-btn" id="J_login-valid">登录</button>'
         +    '</div>'
+        +    '<input type="hidden" name="token" value="'+token+'">'
         +'</form>'
         +'</div>'
     $(html).appendTo('body');
