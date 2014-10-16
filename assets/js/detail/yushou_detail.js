@@ -99,43 +99,43 @@
 			        }
 			    });
 			    //缩略图切换
-			    var photoList = $('.photosSmall');
-			    var lis = photoList.find('li');
-			    initPhotoBox();
+			    // var photoList = $('.photosSmall');
+			    // var lis = photoList.find('li');
+			    // initPhotoBox();
 
-			    function initPhotoBox() {
-			        // photo click/hover proview event bind
-			        // get li count
-			        var liCount = lis.length;
-			        if (liCount <= 5) {
-			            // no event, deactive
-			        } else {
-			            // bind event
-			            var nextBtn = $('.photoSmallNext');
-			            nextBtn.removeClass('unActiveNext');
+			    // function initPhotoBox() {
+			    //     // photo click/hover proview event bind
+			    //     // get li count
+			    //     var liCount = lis.length;
+			    //     if (liCount <= 5) {
+			    //         // no event, deactive
+			    //     } else {
+			    //         // bind event
+			    //         var nextBtn = $('.photoSmallNext');
+			    //         nextBtn.removeClass('unActiveNext');
 
-			        }
-			    }
-			    var smallSlide = function(current) {
-			        var left = "0px";
-			        if (current.is($(".photoSmallNext"))) {
-			            left = "-550px";
-			            current.addClass("unActiveNext");
-			            $(".photoSmallPre").removeClass("unActivePre");
-			        } else {
-			            current.addClass("unActivePre");
-			            $(".photoSmallNext").removeClass("unActiveNext");
-			        }
-			        current.closest(".yushou-photoWrap").find(".photosSmall-wrap").animate({
-			            "margin-left": left
-			        }, 300);
-			    };
-			    $(".photoSmallNext").click(function() {
-			        smallSlide($(this));
-			    });
-			    $(".photoSmallPre").click(function() {
-			        smallSlide($(this));
-			    });
+			    //     }
+			    // }
+			    // var smallSlide = function(current) {
+			    //     var left = "0px";
+			    //     if (current.is($(".photoSmallNext"))) {
+			    //         left = "-550px";
+			    //         current.addClass("unActiveNext");
+			    //         $(".photoSmallPre").removeClass("unActivePre");
+			    //     } else {
+			    //         current.addClass("unActivePre");
+			    //         $(".photoSmallNext").removeClass("unActiveNext");
+			    //     }
+			    //     current.closest(".yushou-photoWrap").find(".photosSmall-wrap").animate({
+			    //         "margin-left": left
+			    //     }, 300);
+			    // };
+			    // $(".photoSmallNext").click(function() {
+			    //     smallSlide($(this));
+			    // });
+			    // $(".photoSmallPre").click(function() {
+			    //     smallSlide($(this));
+			    // });
 			    // function bindPhotoBoxEvent(){
 			    // get pre/next ele
 			    // var preBtn = $('.photoSmallPre'), nextBtn = $('.photoSmallNext')
