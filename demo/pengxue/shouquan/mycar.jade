@@ -382,7 +382,7 @@ html
                 .title 订单状态：
                 span 已评价
                 .servi
-                  .adults 撤销申请维权
+                  .adults-none 撤销申请维权
             .yuyue-state
               .state-open.open-box 
                 span 显示详情
@@ -495,4 +495,13 @@ html
           }
     
         });
+      $(".adults").on("click",function(){
+        $(".popup-adults").removeClass("hidden");
+      });
+      $(".popup-adults .close").on("click",function(){
+        $(".popup-adults").addClass("hidden");
+        });
+      $(".popup-adults-su .close").on("click",function(){
+        $(".popup-adults-su").addClass("hidden");
+        })
       

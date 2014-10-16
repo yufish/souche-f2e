@@ -376,55 +376,7 @@
         //          }
         // })
     });
-    Bimu.form.selfValidate("J_dialogForm", "dialog-sendMes", function() {
-        if (!(/^\+?[1-9][0-9]*$/.test(priceVal.val()))) {
-            $("#price-valid").show();
-            return false;
-        }
 
-        if (parseInt(priceVal.val()) >= parseInt(salePrice)) {
-            $("#price-illegal").show();
-            return false;
-        }
-        var content = $("#dialog-textVal").val();
-        if (content && content.length > 250) {
-            $("#content-valid").show();
-            return false;
-        }
-        $("#content-valid").hide();
-        $("#price-illegal").hide();
-        $("#price-valid").hide();
-        //是否登录
-        $.ajax({
-            url: contextPath + "/pages/evaluateAction/isLogin.json",
-            type: "post",
-            dataType: "json",
-            async: false,
-            success: function(data) {
-                if (data.result == "true") {
-
-                    ///
-                    Bimu.ajax.formPost("J_dialogForm", function() {
-                        showMes();
-                        afterSubmit.removeClass("hidden");
-                        dialogGetMes.removeClass("dialog-error").addClass("hidden");
-                        $(".zixun-main").scrollTop($(".zixun-main").height())
-                    });
-                    ///
-                    return true;
-                } else {
-                    dialogGetMes.addClass("dialog-error");
-                    $(".zixun-main").scrollTop($(".zixun-main").height())
-                    return false;
-                }
-            },
-            error: function() {
-                dialogGetMes.addClass("dialog-error");
-                $(".zixun-main").scrollTop($(".zixun-main").height())
-                return false;
-            }
-        });
-    })
     var doubleClickFlag = false;
     // var submitFav = function() {
     //     $.ajax({
@@ -511,32 +463,7 @@
         $(".wrapGrayBg").hide();
     });
 
-    Bimu.form.selfValidate("dialog-login", "dialog-loginBtn", function() {
 
-        //登录验证
-        if (!$('#user-phone').val()) {
-            dialogLoginRemind.html("请输入手机号");
-            return false;
-        }
-        if (!$('#user-psd').val()) {
-            dialogLoginRemind.html("请输入密码");
-            return false;
-        }
-        $("#dialog-loginBtn").val("登陆中...");
-
-        return true;
-    }, function(data) {
-        if (data.errorMessage == "") {
-            Bimu.ajax.formPost("J_dialogForm", function() {
-                showMes();
-                afterSubmit.removeClass("hidden");
-                dialogGetMes.removeClass("dialog-error").addClass("hidden");
-            });
-        } else {
-            dialogLoginRemind.html(data.errorMessage);
-        }
-        $(".zixun-main").scrollTop($(".zixun-main").height())
-    });
     $("#user-phone").blur(function() {
         var phoneT = $(this).val();
         if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
@@ -546,115 +473,6 @@
         }
     });
 
-    //注册                
-    var uuid = guid();
-    $("#uuid").val(uuid);
-
-    Bimu.form.validate("dialog-reg", "dialog-regBtn", function(data) {
-
-        if (data.id) {
-            if (data.msg) {
-                dialogRegRemind.html(data.msg);
-            }
-
-            return;
-        } else {
-            dialogRegRemind.html("");
-            $("#user-phone").val($("#user-regPhone").val());
-            $("#user-psd").val($("#user-regPsd").val());
-            Bimu.ajax.loginForm("dialog-login", function(data) {
-                if (data.errorMessage == "") {
-                    //登陆       
-                    Bimu.ajax.formPost("J_dialogForm", function() {
-                        showMes();
-                        afterSubmit.removeClass("hidden");
-                        dialogGetMes.removeClass("dialog-error dialog-register").addClass("hidden");
-                    });
-                }
-            }, null);
-        }
-
-    }, function() {}, {
-        noclear: true
-    });
-
-    $("#user-regPhone").blur(function() {
-        var phoneT = $(this).val();
-        if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phoneT) && phoneT.length == 11)) {
-            dialogRegRemind.html("请正确填写手机号码");
-        } else {
-            dialogRegRemind.html("");
-        }
-    });
-
-    function setButtonValue(obj) {
-        var interVal = null;
-        var phone = $("#user-regPhone").val();
-        if (!(/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(phone) && phone.length == 11)) {
-            dialogRegRemind.html("请正确填写手机号码");
-            if (interVal != null)
-                clearInterval(interVal);
-
-            obj.attr("disabled", false);
-            obj.val("获取验证码");
-            return;
-        }
-        var it = 0;
-
-        obj.attr("disabled", true);
-
-        setTimeout(function() {
-            obj.attr("disabled", false);
-            if (interVal != null) {
-                clearInterval(interVal);
-            }
-            obj.val("获取验证码");
-        }, 60000);
-
-        interVal = setInterval(function() {
-
-            if (it < 60) {
-                obj.val((60 - it) + "秒后可重发");
-                it++;
-            }
-
-        }, 1000);
-
-        var uuid = $("#user-test").val();
-
-        Bimu.ajax.post("sendMessageAction", "sendMessage", {
-            phoneNumber: phone,
-            type: "register",
-            uuid: uuid
-        }, function(data) {
-            if (data.id) {
-                dialogRegRemind.html("该手机号码已经注册");
-                if (interVal != null) {
-
-                    clearInterval(interVal);
-                }
-                obj.val("获取验证码");
-                obj.attr("disabled", false);
-            } else {
-                dialogRegRemind.html("");
-            }
-        }, function() {});
-    }
-
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    };
-
-    function guid() {
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-            s4() + '-' + s4() + s4() + s4();
-    }
-
-    $(".dialog-get-yz").click(function() {
-        setButtonValue($(this));
-    })
 
     $("#J_zixunPrice").click(function() {
         $("#dialog-apply1,#dialog-getMes").removeClass("hidden").slideDown(200);
