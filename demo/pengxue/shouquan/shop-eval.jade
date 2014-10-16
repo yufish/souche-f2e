@@ -1,0 +1,83 @@
+doctype html
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" id="viewport" content="width=1340" /> 
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/auth-shop/shop-eval.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+  body#shop-eval
+    .eval-wrap
+      .close
+      .eval-box
+        .title
+          h1 请对本次交易作出评价
+          p 车商和其他买家都需要你的建议
+        .eval-cont
+          .service.cont-item.clearfix
+            .tit 服务水平
+            .eval
+              .eval-bg.clearfix
+                i.normal 1
+                i.normal 2
+                i.normal 3
+                i.normal 4
+                i.normal 5
+              .eval-ac.clearfix.hidden
+                i.active 1
+                i.active 2
+                i.active 3
+                i.active 4
+                i.active 5
+            .result 满意
+          .really.cont-item.clearfix
+            .tit 车况真实
+            .eval
+              .eval-bg.clearfix 
+                i.normal 1
+                i.normal 2
+                i.normal 3
+                i.normal 4
+                i.normal 5
+              .eval-ac.clearfix.hidden
+                i.active 1
+                i.active 2
+                i.active 3
+                i.active 4
+                i.active 5
+            .result 满意
+          .customer.cont-item.clearfix
+            .tit 售后服务
+            .eval
+              .eval-bg.clearfix 
+                i.normal 1
+                i.normal 2
+                i.normal 3
+                i.normal 4
+                i.normal 5
+              .eval-ac.clearfix.hidden
+                i.active 1
+                i.active 2
+                i.active 3
+                i.active 4
+                i.active 5
+            .result 满意
+        form.eval-form
+          input(type="hidden" id="eval-result")
+          textarea(id="eval-text" placeholder="说说你的购车体验") 
+          .submit.clearfix
+            .anony-eval
+              input(type="checkbox" id="anony-check" )
+              label(for="anony-check") 匿名评价
+            input(type="submit" id="eval-submit")
+      .eval-success.hidden
+        .succ-cont
+          .succ-icon
+          .succ-text
+            p 已收到你的评价
+            p 非常感谢
+
