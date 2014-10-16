@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../assets/css/mobile/lib/layout.css">
+    <style>
+        *{margin:0;padding:0};
+        .w100{
+            width:100px;
+        }
+        .fruit-item{
+            height: 44px;
+            border-bottom:1px solid #D9D9D9;
+        }
+        body{
+            padding:0 16px;;
+        }
+        .fi-address-book:before { content: "\f100"; }
+        .fi-home{
+            height: 100px;
+            width: 100px;
+        }
+        .fi-home:before {
+            content: "\f15a";
+
+        }
+    </style>
+</head>
+<body>
+    <div class="fi-home"></div>
+    <stackpanel class="">
+        <stackitem class="non-auto center">hahah</stackitem>
+        <stackitem class="non-auto w100 right">hahah</stackitem>
+        <stackitem class="non-auto w100">hahah</stackitem>
+        <stackitem class="center">hahah</stackitem>
+    </stackpanel>
+
+    <stackpanel>
+        <stackitem class="non-auto w100">title</stackitem>
+        <stackpanel class="">
+            <stackitem>value</stackitem>
+            <stackitem>value</stackitem>
+            <stackitem>value</stackitem>
+            <stackitem>value</stackitem>
+        </stackpanel>
+    </stackpanel>
+
+    <stackpanel class="vertical">
+        <stackpanel class="fruit-item fb-c-center">
+            <stackitem>apple</stackitem>
+            <stackitem class="fb-m-end"> > </stackitem>
+        </stackpanel>
+        <stackpanel class="fruit-item fb-c-center">
+            <stackitem >banana</stackitem>
+            <stackitem class="fb-m-end"> > </stackitem>
+        </stackpanel>
+        <stackpanel class="fruit-item fb-c-center">
+            <stackitem >fruit</stackitem>
+            <stackitem class="fb-m-end"> > </stackitem>
+        </stackpanel>
+    </stackpanel>
+
+    <div>下面自动平均stackitem的宽</div>
+    <stackpanel>
+        <stackitem class="fb-m-center">apple</stackitem>
+        <stackitem class="fb-m-center">apple</stackitem>
+        <stackitem class="fb-m-center">apple</stackitem>
+    </stackpanel>
+</body>
+</html>
