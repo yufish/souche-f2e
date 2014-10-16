@@ -21,8 +21,19 @@
         })
     })
 }()
+
+var chartConfig={
+    //胎纹深度的最大最小值
+    treadMin:0,//mm
+    treadMax:5,
+    //防冻液的高限和下限
+    antiFreezeUpper:0,//摄氏度
+    antiFreezeLower:-45
+
+}
+
 var chartData=[
-    {bar1:{value:85},bar2:88,bar3:82,bar4:100,guideline:80},
+    {bar1:85,bar2:88,bar3:82,bar4:100,guideline:80},
     {bar1:90,bar2:105,bar3:100,bar4:88,guideline:80},
     {bar1:55,bar2:40,bar3:38,bar4:61,'guideline1':30,'guideline2':70},
     {bar1:60,guideline1:80,guideline2:40,class1:'has-problem-bg'}

@@ -1,0 +1,25 @@
+//begin: mixin for flex box
+.display-flex(@value: flex) {
+  display: ~"-webkit-@{value}";  // Webkit Standard
+  display: @value;               // Standard
+}
+.justify-content(@value: flex-start) {
+  -webkit-justify-content: @value;  // Webkit Standard
+  justify-content: @value;  // Standard
+}
+.align-item(@value: stretch){
+  -webkit-align-items: @value;  // Webkit Standard
+  align-items: @value;  // Standard
+}
+.flex-value(@value:1){
+  -webkit-flex:@value;
+  flex:@value;
+}
+//end: mixin for flex box
+
+stack{
+  .display-flex();
+}
+stackitem{
+  .flex-value();
+}
