@@ -1,5 +1,18 @@
 @soucheOrange: #ff5517;
 @yahei: "Microsoft Yahei" "微软雅黑";
+@bc: #E6E6E6;
+
+.text-collapse(){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.box-sizing(@v: border-box;){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+
 
 .shop-head{
   background: #F5F5F5;
@@ -105,7 +118,7 @@
 .shop-detail{
   width: 238px;
   height: 300px;
-  border: 1px solid #E6E6E6;
+  border: 1px solid @bc;
   margin-top: 20px;
   .detail-tit{
     height: 30px;
@@ -114,7 +127,7 @@
     color: #333;
     font-size: 14px;
     background: #F5F5F5;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid @bc;
     span{
       background: #EBBB58;
       color: #fff;
@@ -126,7 +139,7 @@
   .info{
     padding-bottom: 15px;
     margin:20px 10px;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid @bc;
     .info-item{
       margin-bottom: 10px;
       font-size: 12px;
@@ -155,3 +168,6 @@
   }
 }
 
+
+@import "carshopMod/shop-search.less";
+@import "carshopMod/shop-comment.less";

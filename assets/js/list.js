@@ -5,10 +5,23 @@ Souche.Inside = (function() {
 
     function updateFav( favCtn, favOrNot ){
         var favCount = favCtn.find('.fav-count');
-        var lastFavCount = Number(favCount.attr('data-favcount'));
+        var favCountAttr, lastFavCount;
+        // list里的
+        if( favCount.length > 0 ){
+            favCountAttr = 'data-favcount';
+            lastFavCount = Number(favCount.attr(favCountAttr));
+        }
+        // guess-like里的
+        else{
+            favCountAttr = 'data-num';
+            lastFavCount = Number(favCtn.attr(favCountAttr));
+        }
+
+        // 计算 操纵样式
         var newFavCount = 0;
         if(favOrNot){
-            favCtn.addClass("faved");
+            // 添加active类 兼容guess-like中的收藏
+            favCtn.addClass("faved active");
             // 判断是NaN
             if(lastFavCount !== 0 && !Boolean(lastFavCount) ){
                 newFavCount = 1;
@@ -18,7 +31,7 @@ Souche.Inside = (function() {
             }
         }
         else{
-            favCtn.removeClass("faved");
+            favCtn.removeClass("faved active");
             if(lastFavCount !== 0 && !Boolean(lastFavCount) ){
                 newFavCount = 0;
             }
@@ -26,8 +39,18 @@ Souche.Inside = (function() {
                 newFavCount = lastFavCount - 1 ;
             }
         }
-        favCount.attr('data-favcount', newFavCount);
-        favCount.html( newFavCount );
+
+        // list里的
+        if( favCount.length > 0 ){
+            favCount.attr(favCountAttr, newFavCount);
+            favCount.html( newFavCount );
+        }
+        // guess-like里的
+        else{
+            favCtn.attr(favCountAttr, newFavCount);
+            favCtn.find('span').html( newFavCount );
+        }
+        
     }
     $(document).ready(function() {
         //			var setImgHeight = function(img, wrapH, wrapW){
@@ -154,7 +177,7 @@ Souche.Inside = (function() {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
                         } else {
-                            var favCtn = $(".fav[data-carid=" + fav_carId + "]");
+                            var favCtn = $(".fav[data-carid=" + fav_carId + "], .guess-like .carCollect[data-carid=" + fav_carId + "]");
                             updateFav( favCtn, true);
                         }
                     }
@@ -173,8 +196,7 @@ Souche.Inside = (function() {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
                         } else {
-                            var favCtn = $(".fav[data-carid=" + fav_carId + "]");
-                            favCtn.removeClass("faved")
+                            var favCtn = $(".fav[data-carid=" + fav_carId + "], .guess-like .carCollect[data-carid=" + fav_carId + "]");
                             updateFav( favCtn, false);
                         }
                     }
@@ -199,18 +221,28 @@ Souche.Inside = (function() {
                 $("#fav-popup").addClass("hidden");
                 $(".fav-wrapGrayBg").hide();
             });
-            $(".fav, .carCollect").click(function(e) {
+            $(".fav").click(function(e) {
                 e.preventDefault();
                 fav_carId = $(this).attr("data-carid")
                 if ($(this).hasClass("faved")){
-                            cancelFavSubmit()
+                    cancelFavSubmit()
                 }else{
                     Souche.MiniLogin.checkLogin(function(){
                         favSubmit()
                     })
                 }
-
-
+            });
+            // guess-like区域的事件代理
+            $('.guess-like').on('click', '.carCollect', function(e){
+                e.preventDefault();
+                fav_carId = $(this).attr("data-carid")
+                if ($(this).hasClass("active")){
+                    cancelFavSubmit()
+                }else{
+                    Souche.MiniLogin.checkLogin(function(){
+                        favSubmit()
+                    })
+                }
             })
 
         }
