@@ -1,0 +1,66 @@
+.shop-comment
+    .shop-comment-title.clearfix
+        h2.comment-text 点评
+        span.comment-count (36)
+    .shop-comment-body
+        .comment-summary
+            div.comment-result
+                h3.result-name 综合得分
+                span.score 8.4
+                span.score-unit 分
+                div.score-stars
+                    .active-stars(style="width: 84%;")
+            div.comment-subitem-ctn
+                div.comment-subitem
+                    span.subitem-name 服务水平
+                    span.subitem-score 5.6
+                div.comment-subitem
+                    span.subitem-name 车况真实
+                    span.subitem-score 8.3
+                div.comment-subitem
+                    span.subitem-name 售后服务
+                    span.subitem-score 9.0
+
+            a#i-want-comment.btn(href="#") 我要点评
+        ul.comment-detail-list
+            li.comment-detail-item
+                    .comment-user
+                        img.user-avatar(src="http://api.randomuser.me/portraits/thumb/men/47.jpg")
+                        span.user-name 爱德华
+                    .comment-content
+                        .comment-info.clearfix
+                            .buy-status 购买了 吉普-指南者-2013款 指南者2.4-CVT/MT豪华版四驱
+                            .comment-time 发表于 2014-10-10 12:45
+                        p.comment-text 这款吉普指南者经过大搜车超过300多项的细致检测，得到的质检结果是A+级，即发动机、底盘完好，未做过钣金修复，基本无瑕疵，外观如新。同时这辆高配豪华版内饰丰富，配置齐全。可以看作是一辆准新车。
+                        .gallery
+                            img.comment-img
+                            img.comment-img
+                            img.comment-img
+                    .comment-reply
+                        span.replyer-name 店主回复：
+                        span.reply-content 指南者最主要竞争对手是国产的途观和翼虎。无论在动力，内饰用料和配置上，途观和翼虎的实力还是要更胜一筹，而且它们国产身份所带来的价格优势也是指南者所不具备的。
+            each item in [0, 1, 2, 3,4,5]
+                li.comment-detail-item
+                    .comment-user
+                        //- 测试代码, face from http://randomuser.me/index.html
+                        img.user-avatar(src="http://api.randomuser.me/portraits/thumb/men/47.jpg")
+                        span.user-name 爱德华
+                    //- 今天的好车日报 ~~~^_^~~~  
+                    //- http://www.souche.com/pages/car-journal.html?id=KPMLee7N86
+                    .comment-content
+                        .comment-info.clearfix
+                            .buy-status 购买了
+                                //- link to this car
+                                a.bought-car-link(href="#") 吉普-指南者-2013款 指南者2.4-CVT/MT豪华版四驱
+                            //- 年-月-日 时:分
+                            .comment-time 发表于 2014-10-10 12:05
+                        p.comment-text 这款吉普指南者经过大搜车超过300多项的细致检测，得到的质检结果是A+级，即发动机、底盘完好，未做过钣金修复，基本无瑕疵，外观如新。同时这辆高配豪华版内饰丰富，配置齐全。可以看作是一辆准新车。
+                        .gallery
+                            img.comment-img
+                            img.comment-img
+                            img.comment-img
+
+
+        div.pagination-ctn
+            //- 后端有方法直接渲染分页~?
+            p 这里是分页

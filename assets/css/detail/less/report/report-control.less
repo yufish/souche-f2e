@@ -67,6 +67,7 @@
                     .guide-lines{
                         position: absolute;
                         z-index: 50;
+                        background-repeat: no-repeat;
                     }
     
                     .guide-lines,
@@ -151,16 +152,16 @@
                     background-image: url("../../images/detail/guideline-start.png");
                 }
                 &.control-accelerate .car-and-info .guide-lines{
-                    width: 109px;
-                    height: 249px;
-                    top: 47px;
-                    left: 343px;
+                    width: 48px;
+                    height: 149px;
+                    top: 130px;
+                    left: 402px;
                     background-image: url("../../images/detail/guideline-acc.png");
                 }
                 &.control-steady .car-and-info .guide-lines{
                     width: 206px;
-                    height: 233px;
-                    top: 85px;
+                    height: 252px;
+                    top: 67px;
                     left: 245px;
                     background-image: url("../../images/detail/guideline-steady.png");
                 }
@@ -305,10 +306,10 @@
         @accCommonLeft: 442px;
         .car-and-info .info-item{
             // 变速器总成
-            &.acc-hub{
-                left: @accCommonLeft;
-                top: 38px;
-            }
+            // &.acc-hub{
+            //     left: @accCommonLeft;
+            //     top: 38px;
+            // }
             // 汽油泵
             &.petrol-pump{
                 left: @accCommonLeft;
@@ -331,12 +332,12 @@
             // 传动轴
             &.drive-shaft{
                 left: @steadyCommonLeft;
-                top: 77px;
+                top: 58px;
             }
             // 驱动半轴
             &.axle-shaft{
                 left: @steadyCommonLeft;
-                top: 125px;
+                top: 106px;
             }
             // 后支臂,平衡杆
             &.back-arm{
@@ -356,7 +357,7 @@
             // 转向机
             &.steering-box{
                 left: 19px;
-                top: 92px;
+                top: 72px;
             }
             // 转向拉杆及球头
             &.draglink{

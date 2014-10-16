@@ -94,7 +94,7 @@ define(function(){
                                     top : this.e.pageY + 'px',
                                     left : this.e.pageX + 'px',
                                     backgroundColor : "#BCEE68"
-                                });
+                                }).html("加入对比");
 
                                 var endX = $(".side-box .contrast-img").offset().left;
                                 var endY = $(".side-box .contrast-img").offset().top;
@@ -134,21 +134,7 @@ define(function(){
                         alert("数据不合法");
                     }
                 } else {
-                    if(!!contrastId) {
-                        $.ajax({
-                            type : "POST",
-                            url : config.deleteContrast,
-                            data : {
-                                cid : contrastId
-                            },
-                            dataType : "json",
-                            context : self
-                        }).done(function(data) {
-                            self.removeClass('added');
-                            self.find("input").removeAttr("checked");
-                            self.find("input").removeAttr("contrastid");
-                        });
-                    }
+
                 }
             })
 

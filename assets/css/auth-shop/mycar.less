@@ -96,6 +96,7 @@
                 }
               }
               .car-type{
+                margin-top: 5px;
                 .zhijian{
                   width: 35px;
                   height: 15px;
@@ -138,6 +139,12 @@
                     float: left;
                   }
                 }
+                .shop-number{
+                  float: left;
+                  color: #999;
+                  font-size: 12px;
+                  margin-left: 10px;
+                }
               }
             }
             .car-price{
@@ -169,7 +176,7 @@
                 width: 120px;
               }
               .servi{
-                margin-top: 35px;
+                margin-top: 25px;
                 height: 25px;
                 font-size: 12px;
                 .adults{
@@ -247,9 +254,14 @@
               .pic-text{
                 margin-top: 25px;
                 font-size: 14px;
-                margin-bottom: 5px;
-                .yuyue{
-                  margin-right: 125px;
+                margin-bottom: 10px;
+                span{
+                  display: block;
+                  float: left;
+                  width: 100px;
+                  text-align: center;
+                  height: 15px;
+                  margin-right: 115px;
                 }
                 .green-text{
                   color: #438B43;
@@ -258,30 +270,35 @@
                 .grey-text{
                   color: #666666;
                 }
-                .pay{
-                  margin-right: 165px;
-                }
-                .tran{
-                  margin-right:155px;
-                }
-                .fin{
+               .fin{
                   margin-right: 0px;
                 }
               }
               .state-text{
                 margin-top: 5px;
                 color: #999;
+                span{
+                  display: block;
+                  float: left;
+                  width: 135px;
+                  text-align: center;
+                  height: 15px;
+                  margin-right: 60px;
+                }
                 .yuyue{
-                  margin-left: 30px;
+                  text-align: left;
+                  padding-left: 30px;
+                  width: 105px;
                 }
                 .tran{
-                  margin-left: 130px;
+                 margin-right:105px;
                 }
                 .pay{
-                  margin-left: 140px;
+                  margin-right: 90px;
                 }
                 .fin{
-                  margin-left: 160px;
+                  margin-right: 0px;
+                  width: 80px;
                 }
               }
               .flow-pic{
@@ -316,6 +333,13 @@
                 width: 680px;
                 height: 28px;
                 background: url(../../images/auth-shop/yuyue.png) no-repeat;
+              }
+              .state-text{
+                .yuyue{
+                  text-align: left;
+                  width: 130px;
+                  padding-left: 5px;
+                }
               }
               .state-cont{
                 width: 690px;
@@ -421,7 +445,7 @@
   .popup-adults{
    position: fixed;
    width: 540px;
-   height: 240px;
+   height: 410px;
    background: #fff;
    border: 1px solid #ededed;
    box-shadow: 1px 1px 3px 1px #ededed;
@@ -452,6 +476,49 @@
        }
     
      }
+     h3{
+      font-size: 12px;
+      color: #333;
+      margin-bottom: 5px;
+     }
+     #phone-num{
+      padding: 10px;
+      width: 230px;
+      height: 15px;
+      line-height: 15px;
+      border:1px solid #cecece;
+      font-size: 12px;
+      margin-bottom: 5px;
+     }
+     .yanzhen{
+      margin-bottom: 5px;
+      #yanzhen-num{
+        padding: 10px;
+        height: 15px;
+        line-height: 15px;
+        border:1px solid #cecece;
+        font-size: 12px;
+        width: 120px;
+        margin-right: 10px;
+        display: block;
+        float: left;
+      }
+      button{
+        width: 85px;
+        padding: 10px;
+        height: 35px;
+        font-size: 12px;
+        line-height: 15px;
+        display: block;
+        color: #333;
+        text-align: center;
+        border-radius: 2px;
+        background: #f5f5f5;
+        border: 1px solid #cecece;
+        float: left;
+        cursor: pointer;
+      }
+     }
      .adults-form{
       margin-top: 30px;
       padding-right: 37px;
@@ -477,7 +544,22 @@
        }
      }
    }
-   .adults-succ{
+   
+  }
+  .popup-adults-su{
+   position: fixed;
+   width: 540px;
+   height: 240px;
+   background: #fff;
+   border: 1px solid #ededed;
+   box-shadow: 1px 1px 3px 1px #ededed;
+   top: 300px;
+   z-index: 100000;
+   left: 50%;
+   margin-left: -300px;
+   padding: 30px;
+  }
+  .adults-succ{
     padding-top: 80px;
     width: 445px;
     margin: 0 auto;
@@ -501,6 +583,5 @@
       }
     }
    }
-  }
 }
 
