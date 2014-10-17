@@ -48,7 +48,7 @@ define(['detail/report/histogram'], function(Histogram){
         return newConf;
     }
 
-    var APPEAR_DIS = 300;
+    var APPEAR_DIS = 150;
 
     var wheelDepth = {
         init: function(){
