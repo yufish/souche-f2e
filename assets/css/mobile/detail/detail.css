@@ -938,6 +938,27 @@
     border-radius: 3px;
     color: #666;
 }
+.guarantee-item{
+    padding-bottom: 16px;
+}
+.request4guarantee{
+    background: #ff571a;
+    display: block;
+    color:#fff;
+    text-align: center;
+    margin-bottom: 5px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+}
+.gi-info{
+    background: #fffee8;
+    padding: 10px 16px;
+    color:#ff8a01;
+    border:1px solid #f7d5a8;
+    font-size: 12px;
+    line-height: 16px;
+}
 #detail #actions{
     font-size: 14px;
 }
@@ -1387,6 +1408,10 @@
     vertical-align: -1px;
     margin-left: 5px;
 }
+.left-arrow.active{
+    background: url(../../../images/mob/h5-3/left-arrow-active.png) no-repeat center;
+    background-size: 100%;
+}
 .fly-fivestar{
     width:21px;height:20px;position: absolute;
     background: url(../../../images/mob/h5-3/fav-fly.png) no-repeat center;
@@ -1436,4 +1461,43 @@
 .cheshen-title{
     color:#999;
     font-size: 12px;
+}
+.auth-info{
+    display: flex;
+    display: -webkit-flex;
+    font-size: 14px;
+    height: 45px;
+    align-items: center;
+    -webkit-align-items:center;
+    padding: 0 16px;
+    border-bottom: 1px solid #F5F5F5;
+}
+.auth-tag{
+    background: #e8bd60;
+    color:#fff;
+    font-size: 12px;
+    padding: 2px 3px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+.auth-url{
+    margin-left: auto;
+    color:#ff571a;
+}
+.auth-addr{
+    color:#666;
+    font-size: 14px;
+    padding: 16px 16px 0;
+}
+.goto-auth-shop {
+    height: 36px;
+    width: 81px;
+    line-height: 34px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    color:#666;
+    font-size: 12px;
+    display: block;
+    margin:16px auto;
+    text-align: center;
 }
