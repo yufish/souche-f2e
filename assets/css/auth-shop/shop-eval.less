@@ -1,8 +1,17 @@
+@import "../config.less";
+
+@bc: #cecece;
 #shop-eval{
   width: 600px;
   height: 400px;
   border: 1px solid #cecece;
   box-shadow: 1px 1px 2px 2px #ededed;
+  .box-sizing();
+
+  *{
+    .box-sizing();
+  }
+
   .eval-wrap{
     padding: 20px 30px;
     position: relative;
@@ -39,34 +48,46 @@
           .eval{
             float: left;
             position: relative;
-            width: 142px;
-            height: 18px;
-            margin-left: 5px;
-            background: #F5F5F5;
-            
+            // 右边少一个像素 刚好挡住多余的右边框
+            width: 140px;
             margin-right: 10px;
+            margin-left: 5px;
+
+            overflow: hidden;
+
+
             .eval-bg{
-              border: 1px solid #cecece;
-              border-right: none;
+              width: 140px;
+              // border-right: none;
               i{
-                border-right: 1px solid #cecece;
-                width: 27px;
-                color: #999;
-                display: block;
                 float: left;
+                width: 28px;
+                height: 18px;
                 text-align: center;
+                border: 1px solid @bc;
+                border-left: none;
+                color: #999;
+                background: #F5F5F5;
+
+                &.first-child{
+                  border-left: 1px solid @bc;
+                }
               }
             } 
             .eval-ac{
-              border: 1px solid #FF571A;
+              // display: none;
               background: #FF571A;
               position: absolute;
-              top: 0px;
-              left: 0px;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              overflow: hidden;
               border-right: none;
               i{
-                border-right: 1px solid #FF571A;
-                width: 27px;
+                width: 28px;
+                height: 18px;
+                line-height: 18px;
                 color: #fff;
                 display: block;
                 float: left;
@@ -80,9 +101,13 @@
           }
           .result{
             float: left;
-            color: #999;
+            color: #bbb;
             font-size: 12px;
             float: left;
+
+            &.active{
+              color: @soucheOrange;
+            }
           }
         }
       }
