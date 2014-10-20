@@ -175,7 +175,7 @@
     color: #0090e2;
 }
 #detail #actions {
-    padding:10px 0;
+    padding:10px 5px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -987,48 +987,25 @@
     width: 66%;
     padding: 0 5px;
 }
-#actions .wrapper-fav .detail-fav{
-    background: #ffa43a;
-    color:#fff;
-    border-radius: 3px;
-    height: 36px;
-    line-height: 36px;
-}
-#actions .single-btn-wrapper{
-    width: 100%;
-    padding:0 10px;
-}
-#actions .single-btn{
-    display: block;
-    height: 36px;
-    line-height: 36px;
+#actions .action-btn{
     background: #fff;
-    color: #333;
+    color:#666;
     border-radius: 3px;
-}
-#actions .btn-wrapper:first-child{
-    padding-left: 10px;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    margin: 0 5px;
+    border:1px solid #CCC;
+    display: block;
 }
 
-#actions .btn-wrapper:last-child{
-    padding-right: 10px;
-}
-#actions .btn{
-    height: 36px;
-    line-height: 36px;
-    border-radius: 3px;
-    width: 100%;
-}
 #actions .yuyue-btn {
     background: #FF571A;
     color: #fff;
     display: inline-block;
     vertical-align: top;
 }
-#actions .contact-souche-btn {
-    color: #666;
-    display: inline-block;
-}
+
 .yuyue-btn .clock{
     display: inline-block;
     width: 16px;
@@ -1036,13 +1013,13 @@
     background: url(../../../images/mob/h5-3/detail-btn-clock.png) no-repeat center;
     background-size: 16px 16px;
 }
-.contact-souche-btn .call-icon{
-    background: url(../../../../assets/images/mob/h5-3/detail-call.png) no-repeat center;
+#actions .call-icon{
+    background: url(../../../../assets/images/mob/authorization/call-active.png) no-repeat center;
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 16px;
     background-size: 100%;
-    vertical-align: -6px;
+    vertical-align: -4px;
 }
 #detail-main .address{
     margin: 16px auto;
@@ -1500,4 +1477,17 @@
     display: block;
     margin:16px auto;
     text-align: center;
+}
+.star-icon{
+    width: 17px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../../images/mob/authorization/fav-star.png) no-repeat center;
+    background-size: 100%;
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+.active .star-icon{
+    background: url(../../../images/mob/authorization/fav-star-active.png) no-repeat center;
+    background-size: 100%;
 }
