@@ -616,7 +616,7 @@ Souche.Detail.PriceDown = function() {
 }();
 
 
-define(["detail/mod/fav", "detail/init_summary"], function(Fav, InitSummary) {
+define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call"], function(Fav, InitSummary, FreeCall) {
     Souche.DetailCommon = function() {
         var config = {}
 
@@ -728,6 +728,9 @@ define(["detail/mod/fav", "detail/init_summary"], function(Fav, InitSummary) {
                 $.extend(config, _config)
                 InitSummary.init(config);
                 Fav.init(config);
+
+                FreeCall.init(config);
+
                 // var carPrice = parseInt($('.price-now.now').text());
                 // var nowPrice = carPrice;
                 // var nowStr = nowPrice.toString();

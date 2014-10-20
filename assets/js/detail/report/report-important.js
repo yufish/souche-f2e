@@ -1,24 +1,26 @@
 define(function(){
+    var PIC_TST_DURATION = 200;
+
+    var toAppear = {
+        opacity:1,
+        duration: PIC_TST_DURATION
+    };
+    var toDisappear = {
+        opacity:0,
+        duration: PIC_TST_DURATION
+    };
 
     return {
         init:function(){
             var lastPic = $(".pics .pic-3");
             var active = function(index){
                 if(index=="pic-5"){
-                    $(".pic-main").animate({
-                        opacity:0
-                    })
+                    $(".pic-main").animate(toDisappear)
                 }else{
-                    $(".pic-main").animate({
-                        opacity:1
-                    })
+                    $(".pic-main").animate(toAppear)
                 }
-                lastPic.animate({
-                    opacity:0
-                })
-                $(".pics").find("."+index).animate({
-                    opacity:1
-                })
+                lastPic.animate(toDisappear)
+                $(".pics").find("."+index).animate(toAppear)
                 lastPic = $(".pics").find("."+index)
             }
             $(".trigger").on("mouseover",function(){
