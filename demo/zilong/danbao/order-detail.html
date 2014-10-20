@@ -10,11 +10,30 @@
     <link href="../../../assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
     <link href="../../../assets/css/mobile/authorization/order-detail.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
+    <script src="../../../assets/js/mobile/lib/jquery.cookie.js"></script>
     <script type="text/javascript" src="../../../assets/js/mobile/common/loginUtil.js"></script>
 </head>
 
 <body>
     <section class='order-state-area card-area'>
+        <div class="order-state card-item">
+            <div class="os-text">
+                <p class="os-desc">已提车过户</p>
+                <p class="os-remark">1.您可以刷卡或现金支付给店主</p>
+                <p class="os-remark">2.支付车款后，请提醒车商给您办理交易保护</p>
+                <p class="os-remark">3.办理后，您将收到交易保护生效短信</p>
+            </div>
+            <div class="os-tag"></div>
+        </div>
+
+        <div class="order-state card-item">
+            <div class="os-text">
+                <p class="os-desc">已支付，交易保护生效</p>
+                <p class="os-remark">等待提车过户</p>
+            </div>
+            <div class="os-tag"></div>
+        </div>
+
         <div class="order-state card-item">
             <div class="os-text">
                 <p class="os-desc">已提车过户</p>
@@ -56,14 +75,17 @@
         申请交易保护时间: 2014-09-09 10:00
     </div>
     <div class="wrapGrayBg hidden"></div>
+
     <script>
         createLoginWithValid();
         $('.wrapGrayBg').click(function(){
             $(this).addClass('hidden')
             $('#login-form-valid-code').addClass('hidden')
         })
-        $('#J_rights-defend').click(function(){})
         $('#J_appraise').click(function(){})
+        $('#J_rights-defend').click(function(){
+            $('#login-form-valid-code').removeClass('hidden');
+        })
     </script>
 </body>
 </html>

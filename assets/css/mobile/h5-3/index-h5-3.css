@@ -730,3 +730,19 @@ nav .nav-item.active .nav-item-content{
 #J_tabContainer .tab-panel:first-child{
     margin-bottom: 60px;
 }
+
+.checkbox-cond{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border:1px solid #ccc;
+    padding: 2px;
+    border-radius: 4px;
+}
+input.checkbox-cond:checked{
+    background: url(../../../images/mob/authorization/checked.png) no-repeat center;
+    background-size: 100%;
+}
+input.checkbox-cond:checked + .filter-title{
+    color:#ff571a;
+}

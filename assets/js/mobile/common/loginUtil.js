@@ -71,10 +71,16 @@ SM.PhoneRegister = function(phone, callback) {
 
 //带验证码的弹出框
 function createLoginWithValid(token){
+    var phoneNum = checkUserLocal().phoneNum;
+    if(phoneNum){
+        var partial='<div id="J_phone_valid" class="user-phone-num">您的手机号:'+phoneNum+'</div>'
+    }else{
+       var partial='<input id="J_phone-valid" class="login-input phone-input" type="tel" placeholder="输入手机号">'
+    }
     var html = '<div class="login-area hidden" id="login-form-valid-code">'
         +'<form id="login-form-valid">'
         +    '<div class="form-item">'
-        +        '<input id="J_phone-valid" class="login-input phone-input" type="tel" placeholder="输入手机号">'
+        +        partial
         +    '</div>'
         +    '<div class="form-item clearfix">'
         +        '<div class="item-1-2">'
