@@ -21,7 +21,7 @@ html
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
-  body#mycar
+  body#favcar
     #header
       .wrapper
         a.logo(href="http://www.souche.com")
@@ -63,7 +63,11 @@ html
             a(href="#") 收藏的车
             span >
         .car-state
-          h1 你已收藏15量车
+          h1 
+            span 你已收藏15量车
+            .hideSell 
+              input(type="checkbox" id="hiseSelled")
+              label(for="hiseSelled") 隐藏已售车辆
           .car-wrap.card-box.
             <div class="carsItem carItem">
               <a href="/soucheweb/pages/choosecarpage/choose-car-detail.html?carId=RKc3s66Nzx" target="_blank" class="carImg">
