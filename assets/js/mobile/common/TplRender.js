@@ -2,7 +2,7 @@
     var utils = _dereq_('./utils');
     var Stack =_dereq_('./stack')
     var regex_placeholder = /\{\{([\w|\.]+)\}\}/g;
-    var regex_expr=/\{%[\w]%}]/;
+    var regex_expr=/\{%(.*)+%\}/;
     function renderTemplate(str, data) {
         return str.replace(regex_placeholder, function (match, key) {
             var replaceValue = utils.getValue(data, key);
@@ -10,7 +10,7 @@
             return replaceValue;
         })
     }
-    function evalCond(str){
+    function evalCond(str,data){
         var expr = '';
         for(var i = 0;i<str.length;){
             var ch = str.charAt(i)
@@ -33,17 +33,17 @@
                     variable+=str.charAt(i);
                     i++;
                 }
-                console.log(variable)
-                //var realValue  = utils.getValue(data,variable);
+                //console.log(variable)
+                var realValue  = utils.getValue(data,variable);
                 expr+=realValue
                 //expr+=variable+str.charAt(i);
             }else{
                 expr +=ch;
+                i++;
             }
-            i++;
         }
         //console.log(expr);
-        var f = new Function(expr);
+        var f = new Function('return'+ expr);
         return f();
     }
     function isAlpha(ch){
@@ -55,7 +55,8 @@
     function isWord(ch){
         return isAlpha(ch)
             || ch=='_'
-            ||isNum(ch);
+            ||isNum(ch)
+            ||ch=='.';
     }
     function doIfDirective(ele,data){
         var expr = ele.getAttribute('z-if');
@@ -83,19 +84,21 @@
             var node = stack.pop();
             switch (node.nodeType) {
                 case 2:
-                    var locValue =  node.value;
-                    if(regex_expr.text(locValue)){
-                        node.value= evalCond(locValue,data);
-                        break
-                    }
+//                    var locValue =  node.value;
+//                    if(regex_expr.test(locValue)){
+//                        var locExpr = locValue.replace('{%','').replace('%}','')
+//                        node.value= evalCond(locExpr,data);
+//                        break
+//                    }
                     node.value = renderTemplate(node.value,data)
                     break;
-                case 3:
-                    var locValue = node.nodeValue;
-                    if(regex_expr.text(locValue)){
-                        node.nodeValue= evalCond(locValue,data);
-                        break
-                    }
+//                case 3:
+//                    var locValue = node.nodeValue;
+//                    if(regex_expr.test(locValue)){
+//                        var locExpr = locValue.replace('{%','').replace('%}','')
+//                        node.nodeValue= evalCond(locExpr,data);
+//                        break
+//                    }
                     node.nodeValue = renderTemplate(node.nodeValue,data)
                     break;
                 case 1:
