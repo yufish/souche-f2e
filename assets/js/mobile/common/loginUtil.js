@@ -78,14 +78,34 @@ SM.SendValidCode = function(data){
         data:data,
         success:function(e){
             if(e.errorMessage){
-                alert('发生错误,请一分钟后重试')
+                alert('发生错误,请一分钟后重试');
+                return;
             }
+            if(e.code && e.code =='401'){
+                window.location.href = contextPath+"/pages/valid.html";
+                return;
+            }
+        }
+    })
+}
+//phone,yzm
+SM.CheckValidLogin =function(data,cb){
+    $.ajax({
+        dataType:'json',
+        url:contextPath+'/pages/evaluateAction/isNoRegisterLoginYzm.json',
+        data:data,
+        success:function(e){
+            if(e.msg){
+                alert(e.msg)
+                return;
+            }
+            if(typeof cb =='function')cb();
         }
     })
 }
 
 //带验证码的弹出框
-function createLoginWithValid(token,time){
+function createLoginWithValid(token,time,ValidSuccessCallback){
     var phoneNum = checkUserLocal().phoneNum;
     if(phoneNum){
         var partial='<div id="J_phone_valid" class="user-phone-num">您的手机号:'+phoneNum+'</div>'
@@ -121,7 +141,8 @@ function createLoginWithValid(token,time){
             return phoneReg.test(phoneNum)
         }
 
-        $('#J_login-valid').click(function(){
+        $('#J_login-valid').click(function(e){
+            e.preventDefault();
             var phoneNum = $('#J_phone-valid').val();
             if(!checkPhone()){
                 e.preventDefault();
@@ -129,6 +150,11 @@ function createLoginWithValid(token,time){
                 return;
             }
             var validCode = $("#J_valid-code").val();
+
+            SM.CheckValidLogin({
+                phone:phoneNum,
+                yzm:validCode
+            },ValidSuccessCallback)
         })
 
 
