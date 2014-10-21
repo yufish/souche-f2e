@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 #order li {
-    width: 25%;
-    float: left;
-    color:#333;
     line-height: 44px;
     height: 44px;
     text-align: center;
@@ -17,20 +14,17 @@
     border-bottom: 1px solid #e5e5e5;
 }
 #order .goto-filter{
-    background: #f5f5f5;
     display: inline-block;
     height: 28px;
-    width: 56px;
-    line-height: 28px;
-    border:1px solid #e6e6e6;
-    border-radius: 3px;
+    line-height: 26px;
+    color:#666;
 }
 #order .arrow-wrapper{
     width: 10px;
     position: relative;
     margin-left: 3px;
 }
-#order li i{
+#order li .order-icon{
     width: 8px;
     height: 11px;
     display: inline-block;
@@ -377,4 +371,10 @@
 }
 .car .quality.quality-B{
     background-position: -95px 0;
+}
+.filter-icon{
+    display: inline-block;
+    width:13px;height: 14px;
+    background: url(../../../images/mob/authorization/filter-icon.png);
+    background-size: 100%;
 }
