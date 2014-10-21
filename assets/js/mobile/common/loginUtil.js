@@ -77,12 +77,12 @@ SM.SendValidCode = function(data){
         url:contextPath+'/pages/smsCaptchaAction/send.json',
         data:data,
         success:function(e){
-            if(e.errorMessage){
-                alert(e.errorMessage);
-                return;
-            }
             if(e.code && e.code =='401'){
                 window.location.href = contextPath+"/pages/valid.html";
+                return;
+            }
+            if(e.error){
+                alert(e.error);
                 return;
             }
         }
