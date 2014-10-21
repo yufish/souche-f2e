@@ -59,7 +59,7 @@ SM.PhoneRegister = function(phone, callback) {
         },
         success: function(data) {
             if (data.errorMessage) {
-                callback(false)
+                callback(false,data.errorMessage)
             } else {
                 callback(true)
             }
