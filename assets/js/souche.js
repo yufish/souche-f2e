@@ -35,17 +35,20 @@ Souche.Util = function() {
             var check = function() {
                 var windowScrollTop = $(window).scrollTop();
                 for (var i in appearKV) {
-                    var offset = $(i).offset();
-                    var height = $(i).height();
-                    if (offset.top - windowScrollTop > 0 && offset.top - windowScrollTop < (viewportHeight - appearKV[i].distance)) {
-                        for (var b = 0; b < appearKV[i].length; b++) {
-                            appearKV[i][b]();
-                        }
-                        if (!appearKV[i].multi) {
-                            appearKV[i] = [];
-                        }
+                    if($(i).length){
+                        var offset = $(i).offset();
+                        var height = $(i).height();
+                        if (offset.top - windowScrollTop > 0 && offset.top - windowScrollTop < (viewportHeight - appearKV[i].distance)) {
+                            for (var b = 0; b < appearKV[i].length; b++) {
+                                appearKV[i][b]();
+                            }
+                            if (!appearKV[i].multi) {
+                                appearKV[i] = [];
+                            }
 
+                        }
                     }
+
                 }
             };
             $(document).ready(function() {
