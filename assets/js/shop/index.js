@@ -1,4 +1,4 @@
-define(['shop/shopMap.js', 'souche/util/tool'], function(ShopMap, Tool){
+define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
 
     var config = {};
     
