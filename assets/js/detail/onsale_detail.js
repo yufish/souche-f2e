@@ -84,10 +84,11 @@
                 },
                 type: "post",
                 success: function(data) {
-                    $('body').append(data);
-                    $(".wrapGrayBg").show();
-                    $("#yuyue-popup").addClass("hidden");
-                    $("#yuyue-result-popup").removeClass('hidden');
+//                    $('body').append(data);
+//                    $(".wrapGrayBg").show();
+//                    $("#yuyue-popup").addClass("hidden");
+//                    $("#yuyue-result-popup").removeClass('hidden');
+                    window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1"
                 }
             })
         }
