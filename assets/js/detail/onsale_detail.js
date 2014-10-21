@@ -88,7 +88,7 @@
 //                    $(".wrapGrayBg").show();
 //                    $("#yuyue-popup").addClass("hidden");
 //                    $("#yuyue-result-popup").removeClass('hidden');
-                    window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1"
+                    window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1&source=1"
                 }
             })
         }
