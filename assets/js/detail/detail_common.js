@@ -177,7 +177,7 @@
             }
         })
     }
-    $(".detail-share #J_wx_phone").click(function(e) {
+    $(".car-act #J_wx_phone").click(function(e) {
         e.stopPropagation();
         $(".wx-open").removeClass("hidden");
     });
@@ -272,7 +272,7 @@
     //     })
     // })
     //门店地址
-    $(".car-adress .send-adress").mousemove(function() {
+    $(".act-left .send-adress").mousemove(function() {
         $(".adress-open").removeClass("hidden");
     })
     $(document.body).on("click", function(e) {
