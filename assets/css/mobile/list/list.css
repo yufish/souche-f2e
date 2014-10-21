@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 #order li {
-    width: 25%;
-    float: left;
-    color:#333;
     line-height: 44px;
     height: 44px;
     text-align: center;
@@ -21,9 +18,11 @@
     display: inline-block;
     height: 28px;
     width: 56px;
-    line-height: 28px;
+    line-height: 26px;
     border:1px solid #e6e6e6;
     border-radius: 3px;
+    color:#666;
+    text-align: center;
 }
 #order .arrow-wrapper{
     width: 10px;

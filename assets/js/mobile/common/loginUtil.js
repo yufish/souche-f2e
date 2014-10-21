@@ -78,7 +78,7 @@ SM.SendValidCode = function(data){
         data:data,
         success:function(e){
             if(e.errorMessage){
-                alert('发生错误,请一分钟后重试');
+                alert(e.errorMessage);
                 return;
             }
             if(e.code && e.code =='401'){
@@ -103,15 +103,24 @@ SM.CheckValidLogin =function(data,cb){
         }
     })
 }
-
+SM.checkPhoneNumReg=function(phoneNum){
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    return phoneReg.test(phoneNum)
+}
 //带验证码的弹出框
-function createLoginWithValid(token,time,ValidSuccessCallback){
+function createLoginWithValid(token,time,isRightDefend){
     var phoneNum = checkUserLocal().phoneNum;
     if(phoneNum){
         var partial='<div id="J_phone_valid" class="user-phone-num">您的手机号:'+phoneNum+'</div>'
                     + '<input id="J_phone-valid" name="cellphone" class="user-phone-num" type="hidden" value="'+phoneNum+'">'
     }else{
        var partial='<input id="J_phone-valid" name="cellphone" class="login-input phone-input" type="tel" placeholder="输入手机号">'
+    }
+    var rightReason='';
+    if(isRightDefend){
+        rightReason =     '<div class="form-item">'
+            +         '<textarea id="guard-reason"  rows="6"  placeholder="请输入维权原因"></textarea>'
+            +    '</div>';
     }
     var html = '<div class="login-area hidden" id="login-form-valid-code">'
         +'<form id="login-form-valid">'
@@ -129,37 +138,17 @@ function createLoginWithValid(token,time,ValidSuccessCallback){
         +    '<div class="form-item">'
         +        '<button type="submit" class="login-btn" id="J_login-valid">登录</button>'
         +    '</div>'
+        +    rightReason
         +    '<input type="hidden" name="token" id="token-input" value="'+token+'">'
         +    '<input type="hidden" name="time" id="time-input" value="'+time+'">'
         +'</form>'
         +'</div>'
     $(html).appendTo('body');
-    var phoneReg = /^1[3458][0-9]{9}$/;
+
     !function(){
-        function checkPhone(){
-            var phoneNum = $('#J_phone-valid').val();
-            return phoneReg.test(phoneNum)
-        }
-
-        $('#J_login-valid').click(function(e){
-            e.preventDefault();
-            var phoneNum = $('#J_phone-valid').val();
-            if(!checkPhone()){
-                e.preventDefault();
-                alert('请输入正确的手机号')
-                return;
-            }
-            var validCode = $("#J_valid-code").val();
-
-            SM.CheckValidLogin({
-                phone:phoneNum,
-                yzm:validCode
-            },ValidSuccessCallback)
-        })
-
-
         $('#J_get-valid').click(function(){
-            if(!checkPhone()){
+            var phoneNum  =$("#J_phone-valid").val();
+            if(!SM.checkPhoneNumReg(phoneNum)){
                 alert('请输入正确的手机号')
                 return;
             }
