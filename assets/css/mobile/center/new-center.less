@@ -1,6 +1,9 @@
 *{
   box-sizing: border-box;
 }
+body{
+  font-size:14px;
+}
 .hr-10-gray-bb{
   height: 10px;
   background: #F5F5F5;
@@ -23,6 +26,7 @@
 }
 .user-profile{
   padding:16px 0;
+  border-bottom: 1px solid #e5e5e5;
 }
 .nav-text{
   padding: 0 14px;
@@ -36,6 +40,8 @@
 .shop-title{
   height: 44px;
   line-height: 44px;
+  display: block;
+  color:#666;
 }
 .car-card-2{
   padding: 10px 0;
@@ -60,9 +66,9 @@
       font-weight: bold;
       line-height: 16px;
     }
-    .other-detail-info{
+    .car-detail-name{
       margin-top: 2px;
-      line-height: 14px;
+      line-height: 16px;
     }
     .sc-price{
       font-weight: bold;
@@ -80,9 +86,11 @@
   display: flex;
   display: -webkit-flex;
   align-items: center;
-  color:#666;
+  -webkit-align-items:center;
+  color:#ff571a;
   font-size: 14px;
   .go-to-order-detail{
+    color:#666;
     border:1px solid #666;
     padding: 6px;
     float: right;
@@ -90,4 +98,15 @@
     border-radius: 4px;
     margin-left: auto;
   }
+}
+.look-more{
+  height: 36px;
+  line-height: 36px;
+  color: #666;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 10px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 3px;
 }

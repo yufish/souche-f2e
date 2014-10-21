@@ -48,7 +48,7 @@ define(['detail/report/histogram'], function(Histogram){
         return newConf;
     }
 
-    var APPEAR_DIS = 300;
+    var APPEAR_DIS = 150;
 
     var wheelDepth = {
         init: function(){
@@ -101,10 +101,13 @@ define(['detail/report/histogram'], function(Histogram){
             brakeThickness.bind();
         },
         getConfig: function(){
+            // 没有最大/最小值
+            // 只有一个界限
+            // 传来的数据也只有 0->正常  1->偏高  -1->偏低
             var yItems =  [
-                    {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>(警戒值)', value: 1.6},
-                    {text: '1.2mm', value: 1.2}
+                    {text: '', value: 1.9},
+                    {text: '警戒值', value: 1.6},
+                    {text: '', value: 1.2}
                     ];
             var xItems =  [{text: '左前轮'},
                     {text: '左后轮'},
@@ -122,7 +125,7 @@ define(['detail/report/histogram'], function(Histogram){
                 ],
                 cond: {
                     more: { className: 'normal bounceInUp animated', text: '安全' },
-                    less: { className: 'danger bounceInUp animated', text: '危险' }
+                    less: { className: 'danger bounceInUp animated', text: '偏薄' }
                 },
                 condClass: false
             };
@@ -131,6 +134,14 @@ define(['detail/report/histogram'], function(Histogram){
         bind: function(){
             Souche.Util.appear( ".brake-thickness .safety-item-bd", function(){
                 var relValue = $('.brake-thickness .safety-item-bd').attr('data-reportdata').split(' ');
+                for( var i=0, j=relValue.length; i<j; i++ ){
+                    if( relValue[i]==0 ){
+                        relValue[i] = 1.75;
+                    }
+                    else if( relValue[i] == -1){
+                        relValue[i] = 1.45;
+                    }
+                }
                 brakeThickness.hist.updateBar( relValue );
             }, APPEAR_DIS);
         }
@@ -164,8 +175,8 @@ define(['detail/report/histogram'], function(Histogram){
                 { name: '变速箱', value:  0}
                 ],
                 cond: {
-                    more: { className: 'danger bounceInUp animated', text: '危险' },
-                    less: { className: 'danger bounceInUp animated', text: '危险' },
+                    more: { className: 'danger bounceInUp animated', text: '偏高' },
+                    less: { className: 'danger bounceInUp animated', text: '偏低' },
                     between: { className: 'normal bounceInUp animated', text: '安全' }
                 },
                 condClass: false
@@ -175,6 +186,17 @@ define(['detail/report/histogram'], function(Histogram){
         bind: function(){
             Souche.Util.appear( ".liquid-level .safety-item-bd", function(){
                 var relValue = $('.liquid-level .safety-item-bd').attr('data-reportdata').split(' ');
+                for( var i=0, j=relValue.length; i<j; i++ ){
+                    if( relValue[i]==0 ){
+                        relValue[i] = 1.5;
+                    }
+                    else if( relValue[i] == -1){
+                        relValue[i] = 0.8;
+                    }
+                    else if( relValue[i] == 1){
+                        relValue[i] = 2.25;
+                    }
+                }
                 liquidLevel.hist.updateBar( relValue );
             }, APPEAR_DIS);
         }

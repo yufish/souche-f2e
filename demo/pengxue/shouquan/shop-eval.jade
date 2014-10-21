@@ -10,6 +10,14 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/auth-shop/shop-eval.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://assets.souche.com/assets/js/lib/require.js?t=7"></script>
+    <script>
+        var contextPath = "";
+        require.config({
+            baseUrl: "http://assets.souche.com/assets/js",
+            urlArgs: "bust=v10"
+        });
+    </script>
   body#shop-eval
     .eval-wrap
       .close
@@ -22,50 +30,50 @@ html
             .tit 服务水平
             .eval
               .eval-bg.clearfix
-                i.normal 1
-                i.normal 2
-                i.normal 3
-                i.normal 4
-                i.normal 5
-              .eval-ac.clearfix.hidden
-                i.active 1
-                i.active 2
-                i.active 3
-                i.active 4
-                i.active 5
-            .result 满意
+                i.normal.first-child(data-score="1") 1
+                i.normal(data-score="2") 2
+                i.normal(data-score="3") 3
+                i.normal(data-score="4") 4
+                i.normal(data-score="5") 5
+              .eval-ac.clearfix
+                i.active(data-score="1") 1
+                i.active(data-score="2") 2
+                i.active(data-score="3") 3
+                i.active(data-score="4") 4
+                i.active(data-score="5") 5
+            .result
           .really.cont-item.clearfix
             .tit 车况真实
             .eval
               .eval-bg.clearfix 
-                i.normal 1
-                i.normal 2
-                i.normal 3
-                i.normal 4
-                i.normal 5
-              .eval-ac.clearfix.hidden
-                i.active 1
-                i.active 2
-                i.active 3
-                i.active 4
-                i.active 5
-            .result 满意
+                i.normal.first-child(data-score="1") 1
+                i.normal(data-score="2") 2
+                i.normal(data-score="3") 3
+                i.normal(data-score="4") 4
+                i.normal(data-score="5") 5
+              .eval-ac.clearfix
+                i.active(data-score="1") 1
+                i.active(data-score="2") 2
+                i.active(data-score="3") 3
+                i.active(data-score="4") 4
+                i.active(data-score="5") 5
+            .result
           .customer.cont-item.clearfix
             .tit 售后服务
             .eval
               .eval-bg.clearfix 
-                i.normal 1
-                i.normal 2
-                i.normal 3
-                i.normal 4
-                i.normal 5
-              .eval-ac.clearfix.hidden
-                i.active 1
-                i.active 2
-                i.active 3
-                i.active 4
-                i.active 5
-            .result 满意
+                i.normal.first-child(data-score="1") 1
+                i.normal(data-score="2") 2
+                i.normal(data-score="3") 3
+                i.normal(data-score="4") 4
+                i.normal(data-score="5") 5
+              .eval-ac.clearfix
+                i.active(data-score="1") 1
+                i.active(data-score="2") 2
+                i.active(data-score="3") 3
+                i.active(data-score="4") 4
+                i.active(data-score="5") 5
+            .result
         form.eval-form
           input(type="hidden" id="eval-result")
           textarea(id="eval-text" placeholder="说说你的购车体验") 
@@ -80,4 +88,9 @@ html
           .succ-text
             p 已收到你的评价
             p 非常感谢
+
+    script.
+      require(['shop/evaluation-submit'], function(EvaluationSubmit){
+        EvaluationSubmit.init();
+      });
 

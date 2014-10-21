@@ -53,6 +53,18 @@ define(function(){
                 max: max,
                 min: min
             };
+        },
+        parseUrlParam: function(){
+            var search = location.search;
+            if( !search ){
+                return {};
+            }
+            var paraString = search.substring(1,search.length).split("&");
+            var params = {};
+            for(var i=0; j=paraString[i]; i++){
+                params[j.substring(0,j.indexOf("="))] = j.substring(j.indexOf("=")+1,j.length);
+            }
+            return params;
         }
     };
 

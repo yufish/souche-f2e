@@ -2,12 +2,61 @@
     var utils = _dereq_('./utils');
     var Stack =_dereq_('./stack')
     var regex_placeholder = /\{\{([\w|\.]+)\}\}/g;
+    var regex_expr=/\{%(.*)+%\}/;
     function renderTemplate(str, data) {
         return str.replace(regex_placeholder, function (match, key) {
             var replaceValue = utils.getValue(data, key);
             if (!replaceValue) replaceValue = match;
             return replaceValue;
         })
+    }
+    function evalCond(str,data){
+        var expr = '';
+        for(var i = 0;i<str.length;){
+            var ch = str.charAt(i)
+            if(ch=="'"){
+                expr+=ch;
+                i++;
+                while(str.charAt(i)!="'"){
+                    if(i>=str.length){
+                        throw new Error('表达式解析错误,"不匹配')
+                    }
+                    expr+=str.charAt(i);
+                    i++;
+                    continue;
+                }
+                expr+="'";
+            }else if(ch=='_' || isAlpha(ch)){
+                var variable = ch;
+                i++;
+                while(isWord(str.charAt(i)) && i<str.length){
+                    variable+=str.charAt(i);
+                    i++;
+                }
+                //console.log(variable)
+                var realValue  = utils.getValue(data,variable);
+                expr+=realValue
+                //expr+=variable+str.charAt(i);
+            }else{
+                expr +=ch;
+                i++;
+            }
+        }
+        //console.log(expr);
+        var f = new Function('return'+ expr);
+        return f();
+    }
+    function isAlpha(ch){
+        return ch>='A' && ch<='z';
+    }
+    function isNum(ch){
+        return ch>='0' && ch<='9'
+    }
+    function isWord(ch){
+        return isAlpha(ch)
+            || ch=='_'
+            ||isNum(ch)
+            ||ch=='.';
     }
     function doIfDirective(ele,data){
         var expr = ele.getAttribute('z-if');
@@ -35,9 +84,21 @@
             var node = stack.pop();
             switch (node.nodeType) {
                 case 2:
+//                    var locValue =  node.value;
+//                    if(regex_expr.test(locValue)){
+//                        var locExpr = locValue.replace('{%','').replace('%}','')
+//                        node.value= evalCond(locExpr,data);
+//                        break
+//                    }
                     node.value = renderTemplate(node.value,data)
                     break;
-                case 3:
+//                case 3:
+//                    var locValue = node.nodeValue;
+//                    if(regex_expr.test(locValue)){
+//                        var locExpr = locValue.replace('{%','').replace('%}','')
+//                        node.nodeValue= evalCond(locExpr,data);
+//                        break
+//                    }
                     node.nodeValue = renderTemplate(node.nodeValue,data)
                     break;
                 case 1:

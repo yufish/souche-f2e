@@ -175,7 +175,7 @@
     color: #0090e2;
 }
 #detail #actions {
-    padding:10px 0;
+    padding:10px 5px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -938,6 +938,27 @@
     border-radius: 3px;
     color: #666;
 }
+.guarantee-item{
+    padding-bottom: 16px;
+}
+.request4guarantee{
+    background: #ff571a;
+    display: block;
+    color:#fff;
+    text-align: center;
+    margin-bottom: 5px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+}
+.gi-info{
+    background: #fffee8;
+    padding: 10px 16px;
+    color:#ff8a01;
+    border:1px solid #f7d5a8;
+    font-size: 12px;
+    line-height: 16px;
+}
 #detail #actions{
     font-size: 14px;
 }
@@ -966,48 +987,25 @@
     width: 66%;
     padding: 0 5px;
 }
-#actions .wrapper-fav .detail-fav{
-    background: #ffa43a;
-    color:#fff;
-    border-radius: 3px;
-    height: 36px;
-    line-height: 36px;
-}
-#actions .single-btn-wrapper{
-    width: 100%;
-    padding:0 10px;
-}
-#actions .single-btn{
-    display: block;
-    height: 36px;
-    line-height: 36px;
+#actions .action-btn{
     background: #fff;
-    color: #333;
+    color:#666;
     border-radius: 3px;
-}
-#actions .btn-wrapper:first-child{
-    padding-left: 10px;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    margin: 0 5px;
+    border:1px solid #CCC;
+    display: block;
 }
 
-#actions .btn-wrapper:last-child{
-    padding-right: 10px;
-}
-#actions .btn{
-    height: 36px;
-    line-height: 36px;
-    border-radius: 3px;
-    width: 100%;
-}
 #actions .yuyue-btn {
     background: #FF571A;
     color: #fff;
     display: inline-block;
     vertical-align: top;
 }
-#actions .contact-souche-btn {
-    color: #666;
-    display: inline-block;
-}
+
 .yuyue-btn .clock{
     display: inline-block;
     width: 16px;
@@ -1015,13 +1013,13 @@
     background: url(../../../images/mob/h5-3/detail-btn-clock.png) no-repeat center;
     background-size: 16px 16px;
 }
-.contact-souche-btn .call-icon{
-    background: url(../../../../assets/images/mob/h5-3/detail-call.png) no-repeat center;
+#actions .call-icon{
+    background: url(../../../../assets/images/mob/authorization/call-active.png) no-repeat center;
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 16px;
     background-size: 100%;
-    vertical-align: -6px;
+    vertical-align: -4px;
 }
 #detail-main .address{
     margin: 16px auto;
@@ -1387,6 +1385,10 @@
     vertical-align: -1px;
     margin-left: 5px;
 }
+.left-arrow.active{
+    background: url(../../../images/mob/h5-3/left-arrow-active.png) no-repeat center;
+    background-size: 100%;
+}
 .fly-fivestar{
     width:21px;height:20px;position: absolute;
     background: url(../../../images/mob/h5-3/fav-fly.png) no-repeat center;
@@ -1436,4 +1438,56 @@
 .cheshen-title{
     color:#999;
     font-size: 12px;
+}
+.auth-info{
+    display: flex;
+    display: -webkit-flex;
+    font-size: 14px;
+    height: 45px;
+    align-items: center;
+    -webkit-align-items:center;
+    padding: 0 16px;
+    border-bottom: 1px solid #F5F5F5;
+}
+.auth-tag{
+    background: #e8bd60;
+    color:#fff;
+    font-size: 12px;
+    padding: 2px 3px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+.auth-url{
+    margin-left: auto;
+    color:#ff571a;
+}
+.auth-addr{
+    color:#666;
+    font-size: 14px;
+    padding: 16px 16px 0;
+}
+.goto-auth-shop {
+    height: 36px;
+    width: 81px;
+    line-height: 34px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    color:#666;
+    font-size: 12px;
+    display: block;
+    margin:16px auto;
+    text-align: center;
+}
+.star-icon{
+    width: 17px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../../images/mob/authorization/fav-star.png) no-repeat center;
+    background-size: 100%;
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+.active .star-icon{
+    background: url(../../../images/mob/authorization/fav-star-active.png) no-repeat center;
+    background-size: 100%;
 }

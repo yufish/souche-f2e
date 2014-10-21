@@ -1,4 +1,4 @@
-#mycar{
+
   #content{
     .wrapper{
       width: 1100px;
@@ -81,6 +81,7 @@
             .car-detail{
               float: left;
               margin-left: 15px;
+              width: 360px;
               .car-title{
                 display: block;
                 font-size: 14px;
@@ -150,11 +151,12 @@
             .car-price{
               float: left;
               height: 60px;
-              padding: 0 20px;
+              text-align: center;
               font-size: 16px;
               color: #FF4400;
               font-weight: bold;
               border-right: 1px solid #ededed;
+              width: 130px;
             }
             .order-state{
               margin-left: 20px;
@@ -189,6 +191,13 @@
                 }
                 .adults:hover{
                   color: #ff5517;
+                }
+                .adult-ing{
+                  color: #666;
+                  text-decoration: underline;
+                  float: left;
+                  line-height: 25px;
+                  margin-right: 15px;
                 }
                 .adults-none{
                   color: #666;
@@ -245,6 +254,7 @@
               border-top: 1px solid #ededed;
               padding:35px;
               display: none;
+              
               .title{
                 margin: 0 auto;
                 .state-icon{
@@ -339,6 +349,7 @@
                 box-shadow: 1px 1px 2px 2px #ededed;
                 text-align: center;
                 line-height: 32px;
+                
                 }
               .flow-pic{
                 width: 680px;
@@ -386,6 +397,9 @@
                 height:32px;
                 
               }
+              .yuyue-succ{
+                display: none;
+              }
               .flow-pic{
                 width: 680px;
                 height: 28px;
@@ -408,6 +422,9 @@
                 width: 450px;
                 height:30px;
                 
+              }
+              .yuyue-succ{
+                display: none;
               }
               .flow-pic{
                 width: 680px;
@@ -439,6 +456,9 @@
                 height:30px;
                 
               }
+              .yuyue-succ{
+                display: none;
+              }
               .flow-pic{
                 width: 680px;
                 height: 28px;
@@ -452,7 +472,7 @@
         }
       }
     }
-  }
+  
   .popup-adults{
    position: fixed;
    width: 540px;
@@ -515,9 +535,9 @@
         float: left;
       }
       button{
-        width: 85px;
+        width: 100px;
         padding: 10px;
-        height: 35px;
+        height: 37px;
         font-size: 12px;
         line-height: 15px;
         display: block;
@@ -531,7 +551,7 @@
       }
      }
      .adults-form{
-      margin-top: 30px;
+      margin-top: 15px;
       padding-right: 37px;
        textarea{
         width: 480px;
@@ -570,6 +590,15 @@
    margin-left: -300px;
    padding: 30px;
   }
+   .close{
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: url("../../images/fed/member/popup-close2.png") no-repeat;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+      }
   .adults-succ{
     padding-top: 80px;
     width: 445px;
@@ -595,4 +624,37 @@
     }
    }
 }
-
+body .input-error-tip{
+  width: 250px;
+  margin-top: 5px !important;
+  margin-bottom: 5px;
+}
+#favcar{
+  #content .wrapper .car-nav{
+    width: 140px;
+  }
+  #content .wrapper .car-state{
+    h1{
+      color: #666;
+      font-size: 14px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      .hideSell {
+        float: right;
+        font-size: 12px;
+        padding-right: 40px;
+        position: relative;
+        width: 90px;
+        height: 15px;
+        padding-top: 5px;
+        #hiseSelled{
+          margin-right: 5px;
+        }
+        label{
+          position: absolute;
+          top: 3px;
+        }
+      }
+    }
+  }
+}
