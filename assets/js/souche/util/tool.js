@@ -62,7 +62,7 @@ define(function(){
             var paraString = search.substring(1,search.length).split("&");
             var params = {};
             for(var i=0; j=paraString[i]; i++){
-                params[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);
+                params[j.substring(0,j.indexOf("="))] = j.substring(j.indexOf("=")+1,j.length);
             }
             return params;
         }
