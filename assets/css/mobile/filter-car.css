@@ -325,3 +325,23 @@ html,body{
     margin-left: -75px;
     text-align: center;
 }
+.checkbox-cond{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border:1px solid #ccc;
+    padding: 2px;
+    border-radius: 4px;
+}
+input.checkbox-cond:checked{
+    background: url(../../images/mob/authorization/checked.png) no-repeat center;
+    background-size: 100%;
+}
+input.checkbox-cond:checked + .filter-title{
+    color:#ff571a;
+}
+.filter-title{
+    line-height: 60px;
+    font-size: 12px;
+    color: #999;
+}
