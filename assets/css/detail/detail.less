@@ -741,17 +741,20 @@ bottom: -15px;
 #detail_main .detail-feed-hd{
   
   .addcarduibi{
-    width:75px;
-    height: 23px;
-    background: #fff;
-    border-radius: 2px;
-    cursor: pointer;
-    float: right;
-    margin-left: 10px;
-    color: #666;
-    padding-left: 5px;
-    padding-top: 11px;
-    position: relative;
+    // width:75px;
+    // height: 23px;
+    // background: #fff;
+    // border-radius: 2px;
+    // cursor: pointer;
+    // float: right;
+    // margin-left: 10px;
+    // color: #666;
+    // padding-left: 5px;
+    // padding-top: 11px;
+    // position: relative;
+    .addtoduibi{
+      display: none;
+    }
     .contrast-waring{
     position: absolute;
     top: -66px;
@@ -1919,10 +1922,10 @@ top: 12px;
   height: 45px;
   margin-bottom: 0px;
 }
-#yushou_detail #detail_main .detail-feed-hd .addcarduibi{
-  float: right;
-  padding-top: 15px;
-}
+// #yushou_detail #detail_main .detail-feed-hd .addcarduibi{
+//   float: right;
+//   padding-top: 15px;
+// }
 #yushou_detail #detail_main .detail-button .fav{
   float: left;
 }
@@ -2094,7 +2097,7 @@ top: 12px;
   }
 }
 #detail_main .main-top{
-  height: 400px;
+  
 }
 #detail_main .prot-ex{
   width: 430px;
@@ -2103,6 +2106,7 @@ top: 12px;
   border: 1px solid #FCD4A5;
   background: #FFFEE6;
   position: relative;
+  margin-top: 15px;
   .tit{
     color: #AD5925;
     font-size: 14px;
@@ -2166,10 +2170,12 @@ top: 12px;
   }
 }
 #detail_main .car-act{
-  margin-top: 25px;
+  padding-top: 10px;
   border-top: 1px solid #E4E4E4;
-  padding-top: 15px;
-
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  
   .act-left{
     float: left;
     margin-top: 5px;
@@ -2197,6 +2203,21 @@ top: 12px;
       text-align: center;
       margin-right: 10px;
       cursor: pointer;
+      .addtoduibi{
+        display: none;
+      }
+      .contrast-waring{
+        position: absolute;
+        top: -66px;
+        right: -2px;
+        width: 180px;
+        height: 40px;
+        border: 1px solid #ee7700;
+        background: #ffeed6;
+        color: #333;
+        padding: 10px;
+        font-size: 13px;
+      }
     }
       .qq-zixun{
       float: right;
