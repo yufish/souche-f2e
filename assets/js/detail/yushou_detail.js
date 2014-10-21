@@ -196,9 +196,10 @@
 			            },
 			            type: "post",
 			            success: function(data) {
-			                $('body').append(data);
-			                $(".wrapGrayBg").show();
-			                $(".apply_popup").show();
+//			                $('body').append(data);
+//			                $(".wrapGrayBg").show();
+//			                $(".apply_popup").show();
+                            window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1"
 			            }
 			        })
 			    }
