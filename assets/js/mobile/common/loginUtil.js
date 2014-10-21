@@ -108,7 +108,7 @@ SM.checkPhoneNumReg=function(phoneNum){
     return phoneReg.test(phoneNum)
 }
 //带验证码的弹出框
-function createLoginWithValid(token,time,isRightDefend){
+function createGuardWithValid(token,time,isRightDefend){
     var phoneNum = checkUserLocal().phoneNum;
     if(phoneNum){
         var partial='<div id="J_phone_valid" class="user-phone-num">您的手机号:'+phoneNum+'</div>'
@@ -118,8 +118,9 @@ function createLoginWithValid(token,time,isRightDefend){
     }
     var rightReason='';
     if(isRightDefend){
-        rightReason =     '<div class="form-item">'
-            +         '<textarea id="guard-reason"  rows="6"  placeholder="请输入维权原因"></textarea>'
+        rightReason = '<div class="form-item">'
+            +           '<textarea id="guard-reason"  rows="6"  placeholder="请输入维权原因"></textarea>'
+            +           '<input name="type" value="weiquan" type="hidden">'
             +    '</div>';
     }
     var html = '<div class="login-area hidden" id="login-form-valid-code">'
