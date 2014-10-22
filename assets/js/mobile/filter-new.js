@@ -362,6 +362,15 @@ function filter(BrandMgr, addListener) {
                 dataObj.carModel = getCond($('#select-model').val());
                 dataObj.carEngineVolume = getCond($('#select-volume').val());
                 dataObj.transmissionType = getCond($('#select-transmission').val());
+                var cbParam = '';
+                if($('#cbox-almost-new').is(':checked')){
+                    cbParam+='3';
+                }
+                if($('#cbox-fenqi').is(':checked')){
+                    if(cbParam)cbParam+=','
+                    cbParam+='4'
+                }
+                dataObj.cbParam = cbParam;
                 //$.ajax for no reuslt
                 hasResult(dataObj);
 
@@ -373,54 +382,43 @@ function filter(BrandMgr, addListener) {
                 });
             })
 
-            function goToCustom() {
-                var phoneReg = /^1[3458][0-9]{9}$/;
-                var phoneNum = $('#phone-for-notify').val();
-                if (!phoneReg.test(phoneNum)) {
-                    $('#notify-form .wrong-tip').removeClass('hidden');
-                    return;
-                }
-                $('#notify-form .wrong-tip').addClass('hidden');
-                SM.PhoneRegister(phoneNum, function() {
-                    window.location.href = contextPath + '/mobile/carcustom.html' + window.location.search;
-                });
-            }
 
             function showSorry() {
-                var $popup = $('.mobile-popup').removeClass('hidden');
-                wrapGrayBg.removeClass('hidden');
-                var scrollTop = $(window).scrollTop();
-                $popup.removeClass('hidden').css({
-                    top: scrollTop + 50,
-                    zIndex: 10000
-                });
-                var phoneNum = checkUserLocal().phoneNum
-                if (phoneNum) {
-                    $popup.find('#phone-for-notify').val(phoneNum);
-                }
-                $('#notify-form').submit(function(e) {
-                    e.preventDefault();
-                    var minP = $('#select-price-1').val();
-                    var maxP = $('#select-price-2').val();
-                    var brand = BrandMgr.brands.map(function(b) {
-                        return b['code'];
-                    }).join(',');
-                    $.ajax({
-                        url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
-                        data: {
-                            brands: brand,
-                            minPrice: minP,
-                            maxPrice: maxP,
-                            pfrom:'FILTER'
-                        },
-                        success: function() {
-                            goToCustom();
-                        },
-                        error: function() {
-                            alert('系统出现错误，我们将尽快修复。因此给您带来不便，万分抱歉');
-                        }
-                    });
-                })
+                alert('抱歉,没有符合筛选条件的车,请放宽查询条件')
+//                var $popup = $('.mobile-popup').removeClass('hidden');
+//                wrapGrayBg.removeClass('hidden');
+//                var scrollTop = $(window).scrollTop();
+//                $popup.removeClass('hidden').css({
+//                    top: scrollTop + 50,
+//                    zIndex: 10000
+//                });
+//                var phoneNum = checkUserLocal().phoneNum
+//                if (phoneNum) {
+//                    $popup.find('#phone-for-notify').val(phoneNum);
+//                }
+//                $('#notify-form').submit(function(e) {
+//                    e.preventDefault();
+//                    var minP = $('#select-price-1').val();
+//                    var maxP = $('#select-price-2').val();
+//                    var brand = BrandMgr.brands.map(function(b) {
+//                        return b['code'];
+//                    }).join(',');
+//                    $.ajax({
+//                        url: contextPath + '/mobile/carCustomAction/saveBuyInfo.json',
+//                        data: {
+//                            brands: brand,
+//                            minPrice: minP,
+//                            maxPrice: maxP,
+//                            pfrom:'FILTER'
+//                        },
+//                        success: function() {
+//                            goToCustom();
+//                        },
+//                        error: function() {
+//                            alert('系统出现错误，我们将尽快修复。因此给您带来不便，万分抱歉');
+//                        }
+//                    });
+//                })
             }
         }
     }
