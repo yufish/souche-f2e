@@ -108,7 +108,7 @@ SM.checkPhoneNumReg=function(phoneNum){
     return phoneReg.test(phoneNum)
 }
 //带验证码的弹出框
-function createGuardWithValid(token,time,isRightDefend){
+SM.createLoginWithValid =function (token,time,isRightDefend){
     var phoneNum = checkUserLocal().phoneNum;
     if(phoneNum){
         var partial='<div id="J_phone_valid" class="user-phone-num">您的手机号:'+phoneNum+'</div>'
