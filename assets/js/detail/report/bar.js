@@ -57,7 +57,7 @@ define(['souche/util/tool'], function(Tool){
 
         li.setAttribute('class', classes.join(' '));
         li.setAttribute('style', styleStr);
-        this.el = li;
+        this.ele = li;
 
         // var html = '';
         // // var styleStr = 
@@ -72,9 +72,10 @@ define(['souche/util/tool'], function(Tool){
                 this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
             }
         }
-        this.barValue.title = this.name + ': ' + this.value;
+        // title还是放在.chart-bar上, 不放在barValue上
+        this.ele.title = this.name + ': ' + this.value;
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
-        this.el.appendChild(this.barValue);
+        this.ele.appendChild(this.barValue);
 
         var guideStyleArr = getGuideLineStyle(config);
         this.guideLineArr = [];
@@ -84,7 +85,7 @@ define(['souche/util/tool'], function(Tool){
             this.guideLineArr.push(el);
             this.guideLineArr[i].setAttribute('style', guideStyleArr[i]);
 
-            this.el.appendChild( this.guideLineArr[i] );
+            this.ele.appendChild( this.guideLineArr[i] );
         }
 
         return this;
@@ -97,9 +98,9 @@ define(['souche/util/tool'], function(Tool){
                 this.barValue.setAttribute( i.substr(1), barValleDetail.attr[i] );
             }
         }
-        this.barValue.title = this.name + ': ' + config.value;
+        this.ele.title = this.name + ': ' + config.value;
         this.barValue.innerHTML = '<div class="value-text">' + barValleDetail.content + '</div>';
-        // this.el.appendChild(this.barValue);
+        // this.ele.appendChild(this.barValue);
 
         // 更新guideline
         var guideStyleArr = getGuideLineStyle(config);
@@ -142,8 +143,17 @@ define(['souche/util/tool'], function(Tool){
                 text = cond.less.text || '';
             }
             else{
-                classArr.push(cond.between.className);
-                text = cond.between.text || '';
+                // 如果判断有between选项的话
+                if( cond.between ){
+                    classArr.push(cond.between.className);
+                    text = cond.between.text || '';
+                }
+                // 没有的话就用less的class
+                // 因为between也是低于最大值的
+                else{
+                    classArr.push(cond.less.className);
+                    text = cond.less.text || '';
+                }
             }
         }
 

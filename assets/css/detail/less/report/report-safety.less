@@ -111,6 +111,17 @@
             line-height: 16px;
             margin-top: -8px;
             text-align: right;
+
+            &:after{
+                content: '';
+                position: absolute;
+                top: 5px;
+                right: -14px;
+                height: 8px;
+                width: 8px;
+                background-image: url('../../images/detail/histgram-arrow-toright.png');
+                background-repeat: no-repeat;
+            }
         }
     }
     .x-axis{
@@ -196,6 +207,10 @@
                     &:after{
                         background-color: @red;
                     }
+
+                    .value-text{
+                        color: #000;
+                    }
                 }
 
                 .value-text{
@@ -228,6 +243,18 @@
         }
         .histogram{
             margin-top: -30px;
+
+            // 为了将value-text显示到小球上面
+            .chart-content .chart-bar{
+                // 放到js里去实现
+                // overflow: visible;
+                z-index: 100;
+
+                .value-text{
+                    bottom: -26px;
+                    z-index: 100;
+                }
+            }
         }
         .bottom-ball{
             position: absolute;
@@ -309,12 +336,6 @@
         }
     }
 }
-
-// 液位
-.liquid-level .histogram .chart-content .chart-bar .bar-value .value-text{
-    bottom: 35px;
-}
-
 
 
 // *********************************** animation ***********************************
