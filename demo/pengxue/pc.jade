@@ -13,7 +13,7 @@ html
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <link href="http://f2e.souche.com/assets/css/list.css?t=10" rel="stylesheet" type="text/css" />
+   
 
     <script>
       var contextPath = "http://www.souche.com/";
@@ -21,7 +21,7 @@ html
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
-  body#favcar
+  body#pc
     #header
       .wrapper
         a.logo(href="http://www.souche.com")
@@ -58,17 +58,230 @@ html
           .title
             span 你的个人信息
           .you-item.name
-            .tlt 姓名 
+            .tlt 
+              i 
+              span 姓名 
             input#you-name
           .you-item.phone
-            .tlt 手机 
+            .tlt 
+              i 
+              span 手机 
             input#you-phone
           .you-item.wx
-            .tlt 微信 
+            .tlt
+              i
+              span 微信 
             input#you-wx
         .car-info
           .title
             span 你的淘车需求
+          .info-cont
+            .info-item.clearfix
+              .carinstrest.dialog-item
+                .carinstrestContainer.
+                  <h1 class="hd"><i></i>车系</h1>
+                  <div class="addCarinstrestItem" click_type="xuqiu_40"><span>+</span><a>添加您感兴趣的车</a><i></i></div>
+                   <div class="instrest-tip">友情建议至少添加两个车系以上</div> <div class="selected_series_result"></div>
+              .carBudget.dialog-item.
+                <div class="carBudgetContainer">
+                      <h1 class="hd"><i></i>预算</h1>
+                      <div class="dataContainer hidden input_dataContainer">
+                         <div class="inputContainer leftContainer">
+                          <input value="" class="low-price" click_type="xuqiu_41"><a>万元</a>
+                        </div><a> —</a>
+                        <div class="inputContainer rightContainer">
+                          <input value="" class="high-price" click_type="xuqiu_42"><a>万元</a>
+                        </div>
+                      </div>
+                      <div class="dataContainer select_dataContainer clearfix">
+                      <div class="sc-select sc-custom-select age_select age-left selectContainer" click_type="index-customization-price-low-1" id="price_select" style="z-index: 1001;">
+                      <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                      <div class="sc-select-action"><i></i></div>
+                      </div>
+                      <div class="sc-select-list hidden" style="top: 30px;">
+                      <a target="_blank" href="#" data-value="0" class="option"><input type="checkbox" class="hidden"><span class="value">0万</span></a>
+                       <a target="_blank" href="#" data-value="5万" class="option"><input type="checkbox" class="hidden"><span class="value">5万</span></a>
+                      <a target="_blank" href="#" data-value="8万" class="option"><input type="checkbox" class="hidden"><span class="value">8万</span></a>
+                      <a target="_blank" href="#" data-value="10万" class="option"><input type="checkbox" class="hidden"><span class="value">10万</span></a>
+                      <a target="_blank" href="#" data-value="15万" class="option"><input type="checkbox" class="hidden"><span class="value">15万</span></a>
+                      <a target="_blank" href="#" data-value="20万" class="option"><input type="checkbox" class="hidden"><span class="value">20万</span></a>
+                      <a target="_blank" href="#" data-value="30万" class="option"><input type="checkbox" class="hidden"><span class="value">30万</span></a>
+                      <a target="_blank" href="#" data-value="50万" class="option"><input type="checkbox" class="hidden"><span class="value">50万</span></a>
+                      <a target="_blank" href="#" data-value="-1" class="option"><input type="checkbox" class="hidden"><span class="value">自定义</span></a>
+                      <input type="hidden" name="minPrice" value="" class="selected_values" id="price_select">
+                      </div>
+                      </div>
+                      <a>—</a>
+                      <div class="sc-select sc-custom-select age_select_hight age-right selectContainer" click_type="index-customization-price-high-1" id="price_select_high" style="z-index: 1000;">
+                      <div class="sc-select-hd">
+                      <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                      <div class="sc-select-action"><i></i></div>
+                      </div>
+                      <div class="sc-select-list hidden" style="top: 30px;">
+                      <a target="_blank" href="#" data-value="5万" class="option"><input type="checkbox" class="hidden"><span class="value">5万</span></a>
+                      <a target="_blank" href="#" data-value="8万" class="option"><input type="checkbox" class="hidden"><span class="value">8万</span></a>
+                      <a target="_blank" href="#" data-value="10万" class="option"><input type="checkbox" class="hidden"><span class="value">10万</span></a>
+                      <a target="_blank" href="#" data-value="15万" class="option"><input type="checkbox" class="hidden"><span class="value">15万</span></a>
+                      <a target="_blank" href="#" data-value="20万" class="option"><input type="checkbox" class="hidden"><span class="value">20万</span></a>
+                      <a target="_blank" href="#" data-value="30万" class="option"><input type="checkbox" class="hidden"><span class="value">30万</span></a>
+                      <a target="_blank" href="#" data-value="50万" class="option"><input type="checkbox" class="hidden"><span class="value">50万</span></a>
+                      <a target="_blank" href="#" data-value="0" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a>
+                      <a target="_blank" href="#" data-value="-1" class="option"><input type="checkbox" class="hidden"><span class="value">自定义</span></a>
+                      <input type="hidden" name="maxPrice" value="" class="selected_values" id="price_select_high">
+                      </div>
+                      </div>
+                      </div>
+                    </div>   
+              .caryear.dialog-item.
+                <div class="caryearContainer">
+                      <h1 class="hd"><i></i>年份</h1>
+                      <div class="dataContainer clearfix">
+                        <div class="sc-select sc-custom-select age_select age-left selectContainer" click_type="index-customization-age-low-1" id="age_select" style="z-index: 1001;">
+                          <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                            <div class="sc-select-action"><i></i></div>
+                          </div>
+                          <div class="sc-select-list hidden" style="top: 30px;">
+                           <a target="_blank" href="#" data-value="2014" class="option"><input type="checkbox" class="hidden"><span class="value">2014</span></a>
+                           <a target="_blank" href="#" data-value="2013" class="option"><input type="checkbox" class="hidden"><span class="value">2013</span></a>
+                           <a target="_blank" href="#" data-value="2012" class="option"><input type="checkbox" class="hidden"><span class="value">2012</span></a>
+                           <a target="_blank" href="#" data-value="2011" class="option"><input type="checkbox" class="hidden"><span class="value">2011</span></a>
+                           <a target="_blank" href="#" data-value="2010" class="option"><input type="checkbox" class="hidden"><span class="value">2010</span></a>
+                           <a target="_blank" href="#" data-value="2009" class="option"><input type="checkbox" class="hidden"><span class="value">2009</span></a>
+                           <a target="_blank" href="#" data-value="2008" class="option"><input type="checkbox" class="hidden"><span class="value">2008</span></a>
+                           <a target="_blank" href="#" data-value="2007" class="option"><input type="checkbox" class="hidden"><span class="value">2007</span></a>
+                           <a target="_blank" href="#" data-value="2006" class="option"><input type="checkbox" class="hidden"><span class="value">2006</span></a>
+                           <a target="_blank" href="#" data-value="2005" class="option"><input type="checkbox" class="hidden"><span class="value">2005</span></a>
+                           <a target="_blank" href="#" data-value="2004" class="option"><input type="checkbox" class="hidden"><span class="value">2004</span></a>
+                           <a target="_blank" href="#" data-value="" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a></div>
+                           <input type="hidden" name="maxYear" value="" class="selected_values" id="age_select">
+                        </div>
+                        
+                        <a>—</a>
+                        <div class="sc-select sc-custom-select age_select_hight age-right selectContainer" click_type="index-customization-age-high-1" id="age_select_high" style="z-index: 1001;">
+                          <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"><span class="placeholder">请选择</span></div>
+                            <div class="sc-select-action"><i></i></div>
+                          </div>
+                          <div class="sc-select-list hidden" style="top: 30px;">
+                           <a target="_blank" href="#" data-value="2014" class="option"><input type="checkbox" class="hidden"><span class="value">2014</span></a>
+                           <a target="_blank" href="#" data-value="2013" class="option"><input type="checkbox" class="hidden"><span class="value">2013</span></a>
+                           <a target="_blank" href="#" data-value="2012" class="option"><input type="checkbox" class="hidden"><span class="value">2012</span></a>
+                           <a target="_blank" href="#" data-value="2011" class="option"><input type="checkbox" class="hidden"><span class="value">2011</span></a>
+                           <a target="_blank" href="#" data-value="2010" class="option"><input type="checkbox" class="hidden"><span class="value">2010</span></a>
+                           <a target="_blank" href="#" data-value="2009" class="option"><input type="checkbox" class="hidden"><span class="value">2009</span></a>
+                           <a target="_blank" href="#" data-value="2008" class="option"><input type="checkbox" class="hidden"><span class="value">2008</span></a>
+                           <a target="_blank" href="#" data-value="2007" class="option"><input type="checkbox" class="hidden"><span class="value">2007</span></a>
+                           <a target="_blank" href="#" data-value="2006" class="option"><input type="checkbox" class="hidden"><span class="value">2006</span></a>
+                           <a target="_blank" href="#" data-value="2005" class="option"><input type="checkbox" class="hidden"><span class="value">2005</span></a>
+                           <a target="_blank" href="#" data-value="2004" class="option"><input type="checkbox" class="hidden"><span class="value">2004</span></a>
+                           <a target="_blank" href="#" data-value="" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a></div>
+                           <input type="hidden" name="maxYear" value="" class="selected_values" id="age_select_high">
+                        </div>
+                      </div>
+                    </div>
+            .info-item.clearfix.
+              <div click_type="sale-transmissions" class="nav_transmission dialog-item">
+                <h1 class="list_nav_title"><i></i><label>变速箱</label></h1>
+                <div class="sc-option" data-ui="dropdown" id="brand_option" >
+                  <div class="sc-option-hd" click_type="list-nav-trans">
+                    <div class="sc-option-content">请选择变速箱</div>
+                    <div class="sc-option-action">
+                      <i></i>
+                    </div>
+                  </div>
+                  <ul class="sc-option-list hidden">
+                    <li>
+                      <a href="#"> 手动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 自动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 不限 </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="carcolor dialog-item">
+                <h1 class="list_nav_title"><i></i><label>外观颜色</label></h1>
+                <input id="car-color">
+              </div>
+              <div class="insidecolor dialog-item">
+                <h1 class="list_nav_title"><i></i><label>内饰颜色</label></h1>
+                <input id="inside-color">
+              </div>
+            .info-item.clearfix
+              .dialog-item.add-nav.
+                <h1 class="list_nav_title"><i></i><label>上牌地区</label></h1>
+                <div class="sc-option" data-ui="dropdown" id="brand_option" >
+                  <div class="sc-option-hd">
+                    <div class="sc-option-content">请选择省</div>
+                    <div class="sc-option-action">
+                      <i></i>
+                    </div>
+                  </div>
+                  <ul class="sc-option-list hidden">
+                    <li>
+                      <a href="#"> 手动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 自动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 不限 </a>
+                    </li>
+                  </ul>
+                </div>
+              .dialog-item.add-nav.
+                <h1 class="list_nav_title"><label></label></h1>
+                <div class="sc-option" data-ui="dropdown" id="brand_option" >
+                  <div class="sc-option-hd">
+                    <div class="sc-option-content">请选择市</div>
+                    <div class="sc-option-action">
+                      <i></i>
+                    </div>
+                  </div>
+                  <ul class="sc-option-list hidden">
+                    <li>
+                      <a href="#"> 手动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 自动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 不限 </a>
+                    </li>
+                  </ul>
+                </div>
+              .dialog-item.add-nav.
+                <h1 class="list_nav_title"><label></label></h1>
+                <div class="sc-option" data-ui="dropdown" id="brand_option" >
+                  <div class="sc-option-hd">
+                    <div class="sc-option-content">请选择区/县</div>
+                    <div class="sc-option-action">
+                      <i></i>
+                    </div>
+                  </div>
+                  <ul class="sc-option-list hidden">
+                    <li>
+                      <a href="#"> 手动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 自动 </a>
+                    </li>
+                    <li>
+                      <a href="#"> 不限 </a>
+                    </li>
+                  </ul>
+                </div>
+            .remark
+              h1.tit *备注
+              textarea(id="remark-cont")
+            .submit 
+              #button 提交
+            
     #footer
       .wrapper
         .foot-detail.clearfix
