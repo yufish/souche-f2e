@@ -24,7 +24,7 @@ define(['index/car-god',
             Mustache) {
     var config = {};
     var myAdviserPageIndex = 1,
-        hotNewCarsPageIndex = 0;
+        hotNewCarsPageIndex = 1;
 
     var _bind = function() {
         var timeout = null;
@@ -38,7 +38,6 @@ define(['index/car-god',
             if ($(this).hasClass("myAdviser-more") || id == "myAdviser") {
                 if (adviser_end) return;
                 myAdviserPageIndex++;
-                console.log(myAdviserPageIndex)
                 var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
                 $(self).find("span").html("正在加载中...")
                 if (myAdviserPageIndex > 2) {
