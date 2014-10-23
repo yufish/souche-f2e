@@ -39,6 +39,7 @@ var ChatApp = React.createClass({
     },
     componentDidMount: function() {
         console.log('chat app mounted');
+        AppServer.init();
     },
     render: function() {
         var threadStyle = {
