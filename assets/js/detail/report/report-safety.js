@@ -3,7 +3,7 @@ define(['detail/report/histogram'], function(Histogram){
     var baseConfig = {
         y: {
             show: true,
-            style: { width: '58px', dis: '20px'},
+            style: { width: '58px', dis: '32px'},
             axis: { className: 'y-axis' },
             scale: { className: 'y-scale-item', items: [], valueStyleProp: 'top' }
         },
@@ -50,6 +50,8 @@ define(['detail/report/histogram'], function(Histogram){
 
     var APPEAR_DIS = 150;
 
+
+    var WHEELDEPTH_GUIDEVALUE = 1.6;
     var wheelDepth = {
         init: function(){
             var hist = new Histogram(wheelDepth.getConfig());
@@ -58,20 +60,34 @@ define(['detail/report/histogram'], function(Histogram){
             // for debug
             window.hist = hist;
         },
+
+        // 胎纹深度模块比较特殊, 需要分段比例
+        // 安全值: 1.6 ~ 5.0
+        // 危险值: 1.0 ~ 1.6
+        // 所以在给柱状图初始化和update的时候
+        //      对值做一些手脚, 实现分段比例
+        // 定为以危险值的比例为准, 对安全值就行换算
+        // 同时注意修改bar的title, 显示的得是修改前的值
         getConfig: function(){
+            // 真正的最大值
+            // 根据设计, 1.0 ~ 1.6显示为80px,
+            //      上部显示为135px
+            // 根据这个来计算实际的最大值
+            var realTopVal = 135/80 * (1.6-1);
+            var realMax = WHEELDEPTH_GUIDEVALUE + realTopVal;
             var yItems =  [
-                    {text: '1.9mm', value: 1.9},
-                    {text: '1.6mm<br/>(警戒值)', value: 1.6},
-                    {text: '1.2mm', value: 1.2}
+                    {text: '5.0mm', value: realMax},
+                    {text: '1.6mm<br/>(警戒值)', value: WHEELDEPTH_GUIDEVALUE},
+                    {text: '1.0mm', value: 1.0}
                     ];
             var xItems =  [{text: '左前轮'},
                     {text: '左后轮'},
                     {text: '右前轮'},
                     {text: '右后轮'} ];
              var barConf = {
-                max: 1.9,
-                min: 1.2,
-                guide: 1.6,
+                max: realMax,
+                min: 1.0,
+                guide: WHEELDEPTH_GUIDEVALUE,
                 items: [
                 { name: '左前轮', value:  0},
                 { name: '左后轮', value:  0},
@@ -88,8 +104,34 @@ define(['detail/report/histogram'], function(Histogram){
         },
         bind: function(){
             Souche.Util.appear( ".wheel-depth .safety-item-bd", function(){
-                var relValue = $('.wheel-depth .safety-item-bd').attr('data-reportdata').split(' ');
-                wheelDepth.hist.updateBar( relValue );
+                var realValue = $('.wheel-depth .safety-item-bd').attr('data-reportdata').split(' ');
+                // 分段比例
+                var adjustArr = [];
+                var realTopVal = 135/80 * (1.6-1);
+                var viewTopVal = 5.0 - WHEELDEPTH_GUIDEVALUE;
+                for( var i=0, j=realValue.length; i<j; i++ ){
+                    // 高于基准值的, 要进行一些换算
+                    if( realValue[i] > WHEELDEPTH_GUIDEVALUE ){
+                        var top = (realValue[i] - WHEELDEPTH_GUIDEVALUE) * realTopVal / viewTopVal;
+                        var adjustedVal = WHEELDEPTH_GUIDEVALUE + top;
+                        adjustArr.push( adjustedVal );
+                    }
+                    // 低于的 直接push
+                    else{
+                        adjustArr.push( realValue[i] );
+                    }
+                }
+                wheelDepth.hist.updateBar( adjustArr );
+
+                // 将title换回原始值
+                setTimeout(function(){
+                    wheelDepth.hist.ele.find('.chart-bar').each(function(index, el){
+                        var adjustedTitle = el.title;
+                        var name = adjustedTitle.substr(0, 5);
+                        // console.log(adjustedTitle);
+                        el.title = name + realValue[index];
+                    })
+                }, 100);
             }, APPEAR_DIS);
         }
     };
@@ -217,25 +259,25 @@ define(['detail/report/histogram'], function(Histogram){
         },
         getConfig: function(){
             var yItems =  [
-                    {text: '', value: -10},
-                    {text: '-25C<br/>(最高警戒值)', value: -25},
-                    {text: '-45C<br/>(最低警戒值)', value: -45},
-                    {text: '', value: -70}
+                    {text: '', value: -15},
+                    {text: '-25C<br/>(警戒值)', value: -25},
+                    {text: '-35C', value: -35},
+                    {text: '-45C<br/>', value: -45},
+                    {text: '', value: -55}
                     ];
             var xItems =  false;
             var barConf = {
                 style: { width: '40px', height: '275px', dis: '0' },
-                max: -10,
-                min: -70,
-                guide: [-25, -45],
+                max: -15,
+                min: -55,
+                guide: [-25, -35, -45],
                 // 初始值 应该为底部 而不是简单的0
                 items: [
-                    { name: '防冻液冰点', value:  -65}
+                    { name: '防冻液冰点', value:  -55}
                 ],
                 cond: {
                     more: { className: 'danger bounceInUp animated', text: '危险' },
-                    less: { className: 'danger bounceInUp animated', text: '危险' },
-                    between: { className: 'normal bounceInUp animated', text: '安全' }
+                    less: { className: 'normal bounceInUp animated', text: '安全' }
                 },
                 // 初始时 不通过值判断class
                 condClass: false
@@ -253,6 +295,15 @@ define(['detail/report/histogram'], function(Histogram){
                 else{
                     $('.antifreeze .bottom-ball').addClass('danger');
                 }
+
+                // 动画结束后
+                // 将value-text定位在小球上时仍可见
+                var valueText = antiFreeze.hist.ele.find('.value-text');
+                valueText.css('opacity', 0);
+                setTimeout(function(){
+                    antiFreeze.hist.ele.find('.chart-bar').css('overflow', 'visible');
+                    valueText.animate({opacity: 1, duration: 100});
+                }, 800);
             },APPEAR_DIS);
         }
     };

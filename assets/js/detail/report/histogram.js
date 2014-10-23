@@ -47,9 +47,9 @@ define([ 'souche/util/tool',  'detail/report/axis', 'detail/report/bar' ], funct
             barConf.value = items[i].value;
             var tmpBar = new Bar(barConf);
             if(i !== 0){
-                tmpBar.el.style.marginLeft = config.bar.style.dis;
+                tmpBar.ele.style.marginLeft = config.bar.style.dis;
             }
-            chartFrag.appendChild( tmpBar.el );
+            chartFrag.appendChild( tmpBar.ele );
             this.bar.push(tmpBar);
         }
         var chartW = j*px2Number(config.bar.style.width) + (j-1)*px2Number(config.bar.style.dis);
