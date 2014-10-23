@@ -50,8 +50,8 @@ var Action = (function () {
                     dataType:'json',
                     success:function(e){
                         //e.type,e.code,e.orderSn
-                        var orderSn = 2;
-                        var type=2;
+                        var orderSn = e.orderSn;
+                        var type= e.type;
                         if(type=='2'){
                             window.location.href='yuyue_detail.html?yuyueId='+orderSn;
                         }else{
@@ -61,9 +61,6 @@ var Action = (function () {
                         }
                     }
                 })
-
-
-
             };
             var favDom;
             $(".detail-fav").on("click", function (e) {
