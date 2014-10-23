@@ -1,7 +1,6 @@
-html,body{
+*{
     margin: 0;
     padding: 0;
-    -webkit-tap-highlight-color:transparent;
 }
 fieldset,
 img {
@@ -10,8 +9,18 @@ img {
 :focus {
     outline: 0;
 }
-b, strong {
-    font-weight: bold;
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+    font-style: normal;
+    font-weight: normal;
 }
 h1,
 h2,
@@ -19,6 +28,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-size: 100%;
     font-weight: normal;
 }
 input,

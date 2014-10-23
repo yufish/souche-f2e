@@ -61,9 +61,6 @@ var Action = (function () {
                         }
                     }
                 })
-
-
-
             };
             var favDom;
             $(".detail-fav").on("click", function (e) {
