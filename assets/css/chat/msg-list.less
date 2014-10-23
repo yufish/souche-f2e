@@ -1,0 +1,77 @@
+.msg-list{
+    // list-style: decimal inside;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+
+    background-color: #E8ECED;
+    
+    @avatarW: 3em;
+    @paddingTop: 0.5em;
+    @paddingLeft: 0.5em;
+
+    .msg-item{
+        position: relative;
+        overflow: hidden;
+        min-height: @avatarW + 2*@paddingTop;
+        padding: @paddingTop @paddingLeft;
+        .clear-flt();
+
+        .msg-user-avatar{
+            // float: left;
+            position: absolute;
+            left: @paddingLeft;
+            top: @paddingTop;
+            // margin-right: 8px;
+            width: @avatarW;
+            height: @avatarW;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 0px 3px rgba(0,0,0,0.5);
+        }
+        
+        // 头像所占据的空间
+        @avatarSpace:  @avatarW + @paddingLeft + 0.25em;
+        .msg-content-ctn{
+            display: block;
+            margin-left: @avatarSpace;
+            padding: 4px 8px;
+            border-radius: 4px;
+            // max-width: 290px;
+            margin-right: @avatarSpace + 2em;
+            
+            background-color: #fff;
+            box-shadow: 0 1px 1px 0 rgba(200, 200,200, 1);
+
+            .msg-user-name{
+                margin: 0;
+                // color: #aaa;
+                color: #27C198;
+                font-size: 12px;
+                &:after{
+                    // content: ':';
+                }
+            }
+            .msg-text{
+                // display: inline-block;
+                margin-top: 4px;
+                margin-bottom: 0;
+                // margin-left: @avatarW + 8px;
+                color: #444;
+            }
+        }
+        
+        &.sendbyme{
+            .msg-user-avatar{
+                left: auto;
+                right: @paddingLeft;
+            }
+            .msg-content-ctn{
+                float: right;
+                margin-right: @avatarSpace;
+                margin-left: @avatarSpace + 2em;
+            }
+        }
+    }
+}

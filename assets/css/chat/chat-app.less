@@ -1,0 +1,41 @@
+#chat-window{
+    margin: 20px auto 0 auto;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+
+.thread-list{
+    height: 500px;
+    margin: 0;
+    // padding: 1em 0 0 1em;
+    padding: 1em 0 0 0;
+    list-style: none;
+
+    background-color: #f0f0f0;
+
+    .thread-item{
+        padding: 0.375em 0 0.25em 0.75em;
+        line-height: 1.5;
+        color: #666;
+        cursor: pointer;
+        font-size: 14px;
+        .text-collapse();
+        .tst(all 100ms ease-in;);
+        
+        &:hover{
+            background-color: rgba(57, 81, 117, 0.25);
+        }
+
+        &.active{
+            background-color: #425E88;
+            color: #fff;
+        }
+        
+    }
+}
+
+@import './msg-list.less';
+@import "./compose.less";
