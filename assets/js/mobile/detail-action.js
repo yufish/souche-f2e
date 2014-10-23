@@ -49,43 +49,18 @@ var Action = (function () {
                     type:'post',
                     dataType:'json',
                     success:function(e){
-
+                        //e.type,e.code,e.orderSn
+                        var orderSn = e.orderSn;
+                        var type= e.type;
+                        if(type=='2'){
+                            window.location.href='yuyue_detail.html?yuyueId='+orderSn;
+                        }else{
+                            $('#yuyue-success').removeClass('hidden');
+                            $('#J_fake-back').removeClass('hidden');
+                            history.pushState(null,'','#yuyue_success');
+                        }
                     }
                 })
-                $('#yuyue-success').removeClass('hidden');
-                $('#J_fake-back').removeClass('hidden');
-                history.pushState(null,'','#yuyue_success');
-
-//                $("#yuyue_submit").html('预约中...');
-//                $("#btn-yuyue").val('预约中...');
-//                $.ajax({
-//                    url: $("#yuyue_submit").attr("href"),
-//                    type: "post",
-//                    dataType: "json",
-//                    success: function (data) {
-//                        if (data.errorMessage) {
-//                            alert(data.errorMessage)
-//                            $("#yuyue_submit").html("预约看车")
-//                        } else {
-//                            if (data.code && data.code == "200") {
-//                                $("#contactNum")
-//                                    .html($("#contactNum").html() * 1 + 1)
-//                                $("#yuyue_submit").addClass("disabled")
-//                                    .html("已预约成功")
-//                                hasYuyue = true
-//                            } else if (data.code && data.code == "402") {
-//                                alert("您已经预约过该车,七天之内不能重复预约!")
-//                                $("#yuyue_submit").addClass("disabled")
-//                                    .html("已预约成功")
-//                                hasYuyue = true
-//                            } else {
-//                                alert("预约出错，请联系客服!")
-//                                $("#yuyue_submit").html("预约看车")
-//                            }
-//                        }
-//                        hidePopup();
-//                    }
-//                })
             };
             var favDom;
             $(".detail-fav").on("click", function (e) {

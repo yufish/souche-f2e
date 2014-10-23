@@ -1,0 +1,18 @@
+.tst( @v: all 300ms ease-in-out;){
+    -webkit-transition: @v;
+    -moz-transition: @v;
+    transition: @v;
+}
+.text-collapse(){
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.clear-flt{
+    &:after{
+        content: '';
+        clear: both;
+        display: table;
+    }
+}

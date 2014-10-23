@@ -24,14 +24,14 @@
 
 var chartConfig={
     //胎纹深度的最大最小值
-    treadMin:0,//mm
+    treadMin:1.0,//mm
     treadMax:5,
     treadGuideline:1.6,
     //防冻液的高限和下限
     antiFreezeMax:0,//摄氏度
     antiFreezeUpper:-25,//guideline-1
     antiFreezeLower:-45,//guideline-2
-    antiFreezeMin:-70,//应该为-45,为了画图,设为-60
+    antiFreezeMin:-65,//应该为-45,为了画图,设为-60
     barHeight:112,//px
 
     //刹车片只有正常和不正常的状态,写死他们的高度
@@ -54,15 +54,23 @@ function createInterpolation(max,min,height){
 }
 //构造胎纹深度的chart
 !function treadChart(){
-    var treadIpl = createInterpolation(chartConfig.treadMax,chartConfig.treadMin,chartConfig.barHeight)
+    var treadIpl_high = createInterpolation(chartConfig.treadMax,chartConfig.treadGuideline,80)
+    var treadIpl_low = createInterpolation(chartConfig.treadGuideline,chartConfig.treadMin,42)
+    function getRealHeight(value){
+        if(value>1.6){
+            return 42 + treadIpl_high(value-1.6)
+        }else{
+            return treadIpl_low(value);
+        }
+    }
     var treadDom = $('#J_chart-tread');
     var reporData = treadDom.attr('data-reportdata').split(' ');
     var treadData={
-        bar1:treadIpl(+reporData[0]),
-        bar2:treadIpl(+reporData[1]),
-        bar3:treadIpl(+reporData[2]),
-        bar4:treadIpl(+reporData[3]),
-        guideline:treadIpl(chartConfig.treadGuideline)
+        bar1:getRealHeight(+reporData[0]),
+        bar2:getRealHeight(+reporData[1]),
+        bar3:getRealHeight(+reporData[2]),
+        bar4:getRealHeight(+reporData[3]),
+        guideline:42
     }
     treadData.class1 = treadData.bar1<treadData.guideline?chartConfig.problemClass:'';
     treadData.class2 = treadData.bar2<treadData.guideline?chartConfig.problemClass:'';
@@ -71,24 +79,7 @@ function createInterpolation(max,min,height){
     treadData.guideY = treadData.guideline-3;
     TplRender(treadDom.get(0),treadData)
 }()
-!function antiFreezeChart(){
-    var antiIpl = createInterpolation(chartConfig.antiFreezeMax,chartConfig.antiFreezeMin,chartConfig.barHeight);
-    var antiDom = $('#J_chart-anti-freeze');
-    var reportData = antiDom.attr('data-reportdata');
-    //reportData=-30;
-    var antiData={
-        bar1:antiIpl(+reportData),
-        guideline1:antiIpl(chartConfig.antiFreezeUpper),
-        guideline2:antiIpl(chartConfig.antiFreezeLower)
-    }
-    antiData.guideY1 = antiData.guideline1 - 3;
-    antiData.guideY2 = antiData.guideline2 - 3;
-    if(antiData.bar1>antiData.guideline1
-        ||antiData.bar1<antiData.guideline2){
-        antiData.class1=chartConfig.problemClass;
-    }
-    TplRender(antiDom.get(0),antiData)
-}()
+
 //刹车片
 !function brakeChart(){
     var brakeDom = $('#J_chart-brake');
@@ -108,7 +99,7 @@ function createInterpolation(max,min,height){
 }()
 
 //液位
-!function brakeChart(){
+!function fluidChart(){
     var fluidDom = $('#J_chart-fluid');
     var reportData =  fluidDom.attr('data-reportdata').split(' ');
     var fluidData={
@@ -128,6 +119,24 @@ function createInterpolation(max,min,height){
         }
     }
     TplRender(fluidDom.get(0),fluidData)
+}()
+
+!function antiFreezeChart(){
+    var antiIpl = createInterpolation(chartConfig.antiFreezeMax,chartConfig.antiFreezeMin,chartConfig.barHeight);
+    var antiDom = $('#J_chart-anti-freeze');
+    var reportData = antiDom.attr('data-reportdata');
+    //reportData=-30;
+    var antiData={
+        bar1:antiIpl(+reportData),
+        guideline1:antiIpl(chartConfig.antiFreezeUpper),
+        guideline2:antiIpl(chartConfig.antiFreezeLower)
+    }
+    antiData.guideY1 = antiData.guideline1 - 3;
+    antiData.guideY2 = antiData.guideline2 - 3;
+    if(antiData.bar1>antiData.guideline1){
+        antiData.class1=chartConfig.problemClass;
+    }
+    TplRender(antiDom.get(0),antiData)
 }()
 
 //for(var i = 0;i<barArea.length;i++){
