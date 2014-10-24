@@ -10,7 +10,7 @@ Souche.UI.CustomSelect = function() {
             isAutoDrop: true,
             placeholder: "请选择品牌",
             multi: true,
-            listContainer: ".sc-select-list .sc-popup-bd"
+            listContainer: ".sc-select-list"
         };
         $.extend(this.config, _config)
         this.selected = [];
@@ -29,7 +29,7 @@ Souche.UI.CustomSelect = function() {
         addOptions: function(html) {
             $(this.config.listContainer, this.ele).append(html)
             for (var i = 0; i < this.selected.length; i++) {
-                $(".sc-select-list .option[data-value='" + this.selected[i].key + "']").addClass("active");
+                $(".sc-select-list .option[data-value='" + this.selected[i].key + "']", this.ele).addClass("active");
             }
         },
         setSelected:function(key){

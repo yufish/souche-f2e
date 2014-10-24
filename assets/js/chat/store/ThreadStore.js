@@ -19,10 +19,11 @@ var curThread = '';
 // set 方法们, 本文件内部维护数据
 function initThreadData(serverThreads){
     serverThreads.forEach(function(t){
-        threads[t.id] = t;
-        threads[t.id].members = t.members.map(function(userid){
-            return UserStore.getById( userid );
-        });
+        // 以聊天的对象的id作为thread的id
+        threads[t.friendId] = t;
+        //threads[t.id].members = t.members.map(function(userid){
+        //    return UserStore.getById( userid );
+        //});
     });
     // init 时 取第一个id
     changeThread(serverThreads[0].id);

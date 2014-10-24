@@ -170,6 +170,30 @@ h1{
     }
   }
 }
+.sc-select-list {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  left: -1px;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+  top: 30px !important;
+  .option {
+    display: block;
+    float: none;
+    padding-left: 22px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #333;
+  }
+  .option:hover{
+    background: @orange;
+    color:#fff;
+  }
+
+}
 .carBudget {
     float: left;
     vertical-align: top;
@@ -422,7 +446,7 @@ h1{
 
     }
   }
-  .sc-option{
+  .sc-select{
     width: 250px;
     margin-left: 10px;
   }
@@ -492,10 +516,9 @@ h1{
       background: url(../images/index/maishou_sprite.png) no-repeat;
       background-position: -20px -20px;
       margin: 2px 5px;
-
     }
   }
-  .sc-option{
+  .sc-select{
     width: 250px;
     margin-left: 10px;
   }
@@ -515,10 +538,10 @@ h1{
     padding: 10px;
   }
 }
-.submit{
+.buyer-submit{
   margin-top: 70px;
   margin-left: 15px;
-  #button{
+  button{
    width: 150px;
    height: 50px;
    background:@orange;

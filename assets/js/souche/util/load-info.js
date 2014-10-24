@@ -112,7 +112,7 @@ define(['souche/util/sc-db'], function(DB) {
 //                callback(data);
 //            } else {
                 $.ajax({
-                    url: contextPath + "/pages/dicAction/loadRootLevel.json?request_message={\"code\":\"" + provinceCode + "\",\"type\":\"area\"}",
+                    url: contextPath + "/pages/dicAction/loadNextLevel.json?request_message={\"code\":\"" + provinceCode + "\",\"type\":\"area\"}",
                     dataType: "json",
                     data: {
 
@@ -129,6 +129,36 @@ define(['souche/util/sc-db'], function(DB) {
                         // alert("品牌信息请求出错，刷新后再试")
                     }
                 });
+//            }
+        },
+        loadCounty: function(cityCode, callback) {
+            var data = null;
+            try {
+                data = db.get(CITY_KEY);
+            } catch (e) {
+
+            }
+//            if (data) {
+//                callback(data);
+//            } else {
+            $.ajax({
+                url: contextPath + "/pages/dicAction/loadNextLevel.json?request_message={\"code\":\"" + cityCode + "\",\"type\":\"area\",\"level\":\"city\"}",
+                dataType: "json",
+                data: {
+
+                },
+                success: function(data) {
+                    db.set(CITY_KEY, data);
+                    callback(data);
+
+                },
+                error: function() {
+                    // alert("品牌信息请求出错，刷新后再试")
+                },
+                failure: function() {
+                    // alert("品牌信息请求出错，刷新后再试")
+                }
+            });
 //            }
         }
     }
