@@ -8,12 +8,11 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/pc.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/buyer-form.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-   
 
     <script>
       var contextPath = "http://www.souche.com/";
@@ -325,3 +324,50 @@ html
             a.links(href="#") 成都二手车
             a.links(href="#") 车险信息网
         p Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号
+
+    .addInstrestCar
+      .addInstrestCarContent
+        .brand
+          .brandNav(click_type='xuqiu_28')
+            ul
+              li A
+              li B
+              li C
+              li D
+              li E
+              li F
+              li G
+              li H
+              li I
+              li J
+              li K
+              li L
+              li M
+              li N
+              li O
+              li P
+              li Q
+              li R
+              li S
+              li T
+              li U
+              li V
+              li W
+              li X
+              li Y
+              li Z
+          .brandList(click_type='xuqiu_29')
+            ul
+        .chexi
+          .chexiContent(click_type='xuqiu_30')
+            ul
+      .addInstrestCarSubmit
+        #J_selected_series.selected-series
+        span#J_addSeries_submit.submit.btn(click_type='xuqiu_31') 确定
+        span#J_addSeries_cancel.cancel(click_type='xuqiu_32') 取消
+    script.
+      require(['buyer-form'],function(Buyer){
+        Buyer.init({
+
+        })
+      })
