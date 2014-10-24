@@ -15,7 +15,8 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             NewListNav.init();
 
             _view.initLimitYouhuiCountdown();
-            _view.initGuessLike();
+            // 暂时没有猜你喜欢
+            // _view.initGuessLike();
             _view.autoFitImage();
         },
         // 初始化"下拉选择"
