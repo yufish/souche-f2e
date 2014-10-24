@@ -1,5 +1,9 @@
 var Action = (function () {
     var phoneReg = /^1[3458][0-9]{9}$/;
+    var globalConfig={
+        hasOrder:($('#yuyue-submit').attr('data-has-order')=='yes'),
+        yuyue_type:$('#yuyue-submit').attr('data-see-car-type')
+    }
     return {
         init: function () {
             var hasYuyue = false;
@@ -27,13 +31,13 @@ var Action = (function () {
                 }
             });
             window.onhashchange = function(e){
-                    if(location.hash=='#yuyue_success'){
-                        $('#yuyue-success').removeClass('hidden');
-                        $('#J_fake-back').removeClass('hidden');
-                    }else{
-                        $('#yuyue-success').addClass('hidden');
-                        $('#J_fake-back').addClass('hidden');
-                    }
+                if(location.hash=='#yuyue_success'){
+                    $('#yuyue-success').removeClass('hidden');
+                    $('#J_fake-back').removeClass('hidden');
+                }else{
+                    $('#yuyue-success').addClass('hidden');
+                    $('#J_fake-back').addClass('hidden');
+                }
             }
             $('#J_fake-back').click(function(){
                 $('#yuyue-success').addClass('hidden');
@@ -46,12 +50,18 @@ var Action = (function () {
             var submitYuyue = function () {
                 $.ajax({
                     url:$('#yuyue-submit').attr('data-url'),
+                    data:{
+                        type:globalConfig.yuyue_type
+                    },
                     type:'post',
                     dataType:'json',
                     success:function(e){
                         //e.type,e.code,e.orderSn
                         var orderSn = e.orderSn;
                         var type= e.type;
+                        if(globalConfig.hasOrder){
+                            window.location.href='yuyue_detail.html?yuyueId='+orderSn;
+                        }
                         if(type=='2'){
                             window.location.href='yuyue_detail.html?yuyueId='+orderSn;
                         }else{
