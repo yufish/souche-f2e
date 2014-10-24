@@ -6,11 +6,11 @@ var Action = (function () {
     }
     return {
         init: function () {
-            var hasYuyue = false;
+            //var hasYuyue = false;
             $("#yuyue-submit").on("click", function (e) {
                 e.preventDefault();
-                if (hasYuyue)
-                    return;
+                //if (hasYuyue)
+                //    return;
                 SM.checkPhoneExist(function(is_login) {
                     if (is_login) {
                         submitYuyue();
@@ -56,9 +56,10 @@ var Action = (function () {
                     type:'post',
                     dataType:'json',
                     success:function(e){
-                        //e.type,e.code,e.orderSn
+                        //e.type,e.code,e.orderSn,e.contactPhone
                         var orderSn = e.orderSn;
                         var type= e.type;
+                        $('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
                         if(globalConfig.hasOrder){
                             window.location.href='yuyue_detail.html?yuyueId='+orderSn;
                         }
