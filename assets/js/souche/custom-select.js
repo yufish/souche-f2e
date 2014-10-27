@@ -164,23 +164,24 @@ Souche.UI.CustomSelect = function() {
                 }
 
             })
-            var openTimer, closeTimer;
-            $(this.ele).mouseenter(function() {
-                mouseOverStatus = 1;
-                clearTimeout(openTimer);
-                clearTimeout(closeTimer);
-                openTimer = setTimeout(function() {
-                    checkShow();
-                }, 1000);
+            // 自定义select  暂时不需要mouseenter触发
+            // var openTimer, closeTimer;
+            // $(this.ele).mouseenter(function() {
+            //     mouseOverStatus = 1;
+            //     clearTimeout(openTimer);
+            //     clearTimeout(closeTimer);
+            //     openTimer = setTimeout(function() {
+            //         checkShow();
+            //     }, 1000);
 
-            }).mouseleave(function() {
-                mouseOverStatus = 0;
-                clearTimeout(closeTimer);
-                clearTimeout(openTimer);
-                closeTimer = setTimeout(function() {
-                    checkShow();
-                }, 500);
-            })
+            // }).mouseleave(function() {
+            //     mouseOverStatus = 0;
+            //     clearTimeout(closeTimer);
+            //     clearTimeout(openTimer);
+            //     closeTimer = setTimeout(function() {
+            //         checkShow();
+            //     }, 500);
+            // })
 
 
 

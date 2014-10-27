@@ -21,12 +21,17 @@ var ThreadList = require('./ThreadList.react');
 var Dialog = require('./MsgList.react');
 var Compose = require('./Compose.react');
 
-var socketMsg = require('../server/Msg');
+var Msg = require('../server/Msg');
 var AppServer = require('../server/appInit');
 
 // AppServer.getInitialData(function(){
 //     AppServer.init();
 // });
+
+function getReceiver(){
+    // 当前的thread的id就是聊天对象的id
+    return ThreadStore.getCurThread();
+}
 
 
 var ChatApp = React.createClass({
@@ -64,11 +69,13 @@ var ChatApp = React.createClass({
         );
     },
     _sendMsg: function(text){
-        //var newMsgId = uuid.v4();
-        var newMsgId = '';
-        var curThread = ThreadStore.getCurThread();
-        var curUser = UserStore.getCurUser();
-        AppAction.createMsg(text, newMsgId, curThread, curUser);
+        var msg = {
+            content: text,
+            type: 0,
+            receiver: getReceiver()
+        };
+
+        Msg.send(msg);
     }
 });
 

@@ -88,21 +88,21 @@ Souche.Inside = (function() {
             };
         });
         
-        $('.custom-price .custom-title').on('click', function(){
-            var customPriceCtn = $(".custom-price");
-            if(customPriceCtn.hasClass('no-active')){
+        var shouCustomTimer = null;
+        $('.custom-price .custom-title').on('mouseenter', function(){
+            shouCustomTimer = setTimeout(function(){
+                var customPriceCtn = $(".custom-price");
                 customPriceCtn.removeClass("no-active");
-            }
-            else{
-                customPriceCtn.addClass("no-active");
-            }
+                var minInput = customPriceCtn.find('#minprice');
+                minInput.focus();
+            }, 30);
         });
-        $(document.body).on("click", function(e) {
-            if (!$(e.target).closest(".custom-price").length) {
-                $(".custom-price").addClass("no-active")
-            }
+        $('.custom-price').on('mouseleave', function(){
+            clearTimeout(shouCustomTimer);
+            var customPriceCtn = $(".custom-price");
+            customPriceCtn.addClass("no-active");
+        });
 
-        })
         //列表页查看更多品牌
         var listBrand = true;
         var listTimer = null;

@@ -2138,7 +2138,6 @@ top: 12px;
     float: left;
     height: 18px;
     margin-right: 10px;
-    width: 85px;
     .type-icon{
       color: #fff;
       background: #FF5517;
@@ -2408,12 +2407,17 @@ top: 12px;
   height: 60px;
   border-bottom: 1px solid #E6E6E6;
   padding: 20px 0px;
+  .wrap{
+    width: 1280px;
+    margin: 0 auto;
+  }
   .auth-icon{
     width: 60px;
     height: 61px;
     background: url(../../images/auth-shop/auth-icon.png) no-repeat;
     float: left;
     margin-right: 10px;
+    display: block;
   }
   .shop-info{
     float: left;
@@ -2422,6 +2426,7 @@ top: 12px;
       font-size: 16px;
       color: #333;
       margin-bottom: 10px;
+      display: block;
     }
     .shop-add{
       font-size: 12px;
@@ -2496,6 +2501,12 @@ top: 12px;
   padding-top:30px;
 }
 @media screen and (max-width:1280px){
+.shop-head{
+  .wrap{
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
   #detailContain {
     width: 1024px;
   }

@@ -61,23 +61,25 @@ Souche.UI.CustomDropdown = function() {
             if ($(".sc-option-list li", this.ele).length > 10) {
                 $(".sc-option-list", this.ele).css("height", 300);
             }
-            var openTimer, closeTimer;
-            $(this.ele).mouseenter(function() {
-                mouseOverStatus = 1;
-                clearTimeout(openTimer);
-                clearTimeout(closeTimer);
-                openTimer = setTimeout(function() {
-                    checkShow();
-                }, 1000);
 
-            }).mouseleave(function() {
-                mouseOverStatus = 0;
-                clearTimeout(openTimer);
-                clearTimeout(closeTimer);
-                closeTimer = setTimeout(function() {
-                    checkShow();
-                }, 500);
-            })
+            // 自定义下拉select 当前只给点击操作启动
+            // var openTimer, closeTimer;
+            // $(this.ele).mouseenter(function() {
+            //     mouseOverStatus = 1;
+            //     clearTimeout(openTimer);
+            //     clearTimeout(closeTimer);
+            //     openTimer = setTimeout(function() {
+            //         checkShow();
+            //     }, 1000);
+
+            // }).mouseleave(function() {
+            //     mouseOverStatus = 0;
+            //     clearTimeout(openTimer);
+            //     clearTimeout(closeTimer);
+            //     closeTimer = setTimeout(function() {
+            //         checkShow();
+            //     }, 500);
+            // })
 
         }
 

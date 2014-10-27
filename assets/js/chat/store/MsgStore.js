@@ -16,12 +16,26 @@ var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
             MsgData[m.id] = m;
+            MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
         });
     },
-    // 当前用户创建新msg只需要传递内容
+    // 新建的msg只有一个时间戳 还没有id
     create: function(msgObj){
-        MsgData[msgObj.id] = merge({}, msgObj);
-        MsgData[msgObj.id].user = UserStore.getById( msgObj.user );
+        // 给时间戳添加两个下划线 形成字符串
+        // 避免obj属性按数字顺序排列
+        var tmpId = msgObj.ts + '__';
+        MsgData[tmpId] = merge({}, msgObj);
+        MsgData[tmpId].time = msgObj.ts;
+        // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
+        var user = UserStore.getById( UserStore.getCurUser() );
+        MsgData[tmpId].sender = user.id;
+        MsgData[tmpId].senderHeadImg = user.avatar;
+        MsgData[tmpId].senderName = user.name;
+    },
+    update: function(id, updates){
+        for(var key in updates){
+            MsgData[id][key] = updates[key];
+        }
     },
     receive: function(msgObj){
         msgObj.user = UserStore.getById(msgObj.user);
@@ -37,8 +51,10 @@ var MsgStore = merge(EventEmitter.prototype, {
         var msgs = {};
         for(var m in MsgData){
             // 唉, 这个架构设计的
-            // msg的sender属性是发送者, 而发送者作为了thread的id
-            if(MsgData[m].sender === threadId){
+            // Q1: msg的sender属性是发送者, 而发送者作为了thread的id
+            // Q2: 获取一个对话的所有消息数据, 不光要send是某ID, 还要获取"我发送给他的"
+            //      即 receiver是该ID的...
+            if(MsgData[m].sender === threadId || MsgData[m].receiver === threadId){
                msgs[m] = MsgData[m];
             }
         }
@@ -72,11 +88,20 @@ ChatDispatcher.register(function(payload){
             MsgStore.emitChange();
             break;
         case ChatConstants.MSG_CREATE:
-            msgObj = action.msgObj;
-            if( msgObj.text.trim() !== '' ){
+            msgObj = action.msg;
+            if( msgObj.content.trim() !== '' ){
                 _dataHandler.create( msgObj );
                 MsgStore.emitChange();
             }
+            break;
+        case ChatConstants.MSG_SEND_SUC:
+            var msgId = action.id;
+            var time = action.sendTime;
+            var tsId = action.reqTime;
+            _dataHandler.update( tsId, {id: msgId, time: time } );
+            break;
+        case ChatConstants.MSG_SEND_FAIL:
+            
             break;
         case ChatConstants.MSG_RECEIVE:
             _dataHandler.receive( action.msgObj );
