@@ -14,7 +14,7 @@ var UserStore = require('../store/UserStore');
 var MsgStore = require('../store/MsgStore');
 var ThreadStore = require('../store/ThreadStore');
 
-//var Tool = require('../util/tool');
+var Tool = require('../util/tool');
 
 
 // 临时存储的thread, 这个优化有没有必要呢... 
@@ -54,19 +54,27 @@ var MsgList = React.createClass({
     },
     render: function() {
         var msgItems = [];
+
+        if( Tool.isEmptyObj(this.state.msgData) ){
+            var noMsgTip = '还没有对话消息...';
+            return <ol className="msg-list"  style={this.props.style}>
+                <li className="no-msg-tip">{noMsgTip}</li>
+            </ol>
+        }
+
         for(var i in this.state.msgData){
             var msg = this.state.msgData[i];
             var classNameArr = ['msg-item'];
-            if( UserStore.isCurUser(msg.user.id) ){
-                classNameArr.push('sendbyme');
-            }
+            //if( UserStore.isCurUser(msg.user.id) ){
+            //    classNameArr.push('sendbyme');
+            //}
             
             var node = (
                 <li className={classNameArr.join(' ')} key={i}>
-                    <img className="msg-user-avatar" src={msg.user.avatar} />
+                    <img className="msg-user-avatar" src={msg.senderHeadImg} />
                     <div className="msg-content-ctn">
-                        <p className="msg-user-name">{msg.user.alias}</p>
-                        <p className="msg-text">{msg.text}</p>
+                        <p className="msg-user-name">{msg.sender}</p>
+                        <p className="msg-text">{msg.content}</p>
                     </div>
                 </li>
             );

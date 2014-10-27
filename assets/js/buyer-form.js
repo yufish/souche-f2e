@@ -100,6 +100,7 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                     alert("请选择预算区间")
                     return;
                 }
+                $("#main-form").submit();
             })
         }
     }

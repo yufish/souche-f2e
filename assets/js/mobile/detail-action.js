@@ -44,6 +44,7 @@ var Action = (function () {
                 $('#J_fake-back').addClass('hidden');
                 history.back()
             })
+            //removeHash
             if(location.hash=='#yuyue_success'){
                 history.replaceState(null,document.title,location.pathname+location.search)
             }
@@ -57,14 +58,18 @@ var Action = (function () {
                     dataType:'json',
                     success:function(e){
                         //e.type,e.code,e.orderSn,e.contactPhone
+                        hidePopup();
                         var orderSn = e.orderSn;
                         var type= e.type;
                         $('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
                         if(globalConfig.hasOrder){
-                            window.location.href='yuyue_detail.html?yuyueId='+orderSn;
-                        }
-                        if(type=='2'){
-                            window.location.href='yuyue_detail.html?yuyueId='+orderSn;
+                            if(orderSn) {
+                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                            }
+                        } else if(type=='2'){
+                            if(orderSn) {
+                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                            }
                         }else{
                             $('#yuyue-success').removeClass('hidden');
                             $('#J_fake-back').removeClass('hidden');

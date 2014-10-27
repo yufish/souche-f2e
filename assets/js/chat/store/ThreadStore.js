@@ -20,7 +20,8 @@ var curThread = '';
 function initThreadData(serverThreads){
     serverThreads.forEach(function(t){
         // 以聊天的对象的id作为thread的id
-        threads[t.friendId] = t;
+        t.id = t.friendId;
+        threads[t.id] = t;
         //threads[t.id].members = t.members.map(function(userid){
         //    return UserStore.getById( userid );
         //});
