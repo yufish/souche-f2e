@@ -80,3 +80,11 @@ define(['detail/report/report-safety',
         $(".rule-popup").addClass("hidden")
     })
 });
+ //质检等级翻转
+ var summary_stage_time = 0;
+  $(".level-card").mouseenter(function(){
+        $(".card-box").addClass("card-trans");
+    });
+  $(".level-card").mouseleave(function(){
+    $(".card-box").removeClass("card-trans");
+    });
