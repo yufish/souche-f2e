@@ -16,7 +16,6 @@ var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
             MsgData[m.id] = m;
-            MsgData[m.id].user = UserStore.getById( MsgData[m.id].user );
         });
     },
     // 当前用户创建新msg只需要传递内容
@@ -37,7 +36,9 @@ var MsgStore = merge(EventEmitter.prototype, {
     getByThreadId: function(threadId){
         var msgs = {};
         for(var m in MsgData){
-            if(MsgData[m].thread === threadId){
+            // 唉, 这个架构设计的
+            // msg的sender属性是发送者, 而发送者作为了thread的id
+            if(MsgData[m].sender === threadId){
                msgs[m] = MsgData[m];
             }
         }
