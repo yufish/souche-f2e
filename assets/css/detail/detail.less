@@ -2407,12 +2407,17 @@ top: 12px;
   height: 60px;
   border-bottom: 1px solid #E6E6E6;
   padding: 20px 0px;
+  .wrap{
+    width: 1280px;
+    margin: 0 auto;
+  }
   .auth-icon{
     width: 60px;
     height: 61px;
     background: url(../../images/auth-shop/auth-icon.png) no-repeat;
     float: left;
     margin-right: 10px;
+    display: block;
   }
   .shop-info{
     float: left;
@@ -2421,6 +2426,7 @@ top: 12px;
       font-size: 16px;
       color: #333;
       margin-bottom: 10px;
+      display: block;
     }
     .shop-add{
       font-size: 12px;
@@ -2487,6 +2493,46 @@ top: 12px;
     }
   }
 }
+.danbao-service{
+  float: right;
+  height: 60px;
+  .service-item{
+    width: 160px;
+    float: left;
+    .danboa-icon1{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_1.png) no-repeat;
+      margin-top: 10px;
+      float: left;
+    }
+    .danboa-icon2{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_2.png) no-repeat;
+      margin-top: 10px;
+      float: left;
+    }
+    .danboa-icon3{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_3.png) no-repeat;
+      margin-top: 10px;
+      float: left;
+    }
+    .danbao-text{
+      margin-top: 10px;
+      float: left;
+      margin-left: 15px;
+      p{
+        font-size: 14px;
+        color: #333;
+        font-weight: bold;
+
+      }
+    }
+  }
+}
 @import "less/summary.less";
 
 #onsale_koubei h3,#onsale_price h3,#onsale_baoyang h3{
@@ -2495,6 +2541,12 @@ top: 12px;
   padding-top:30px;
 }
 @media screen and (max-width:1280px){
+.shop-head{
+  .wrap{
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
   #detailContain {
     width: 1024px;
   }
@@ -2578,4 +2630,153 @@ top: 12px;
   .net-koubei .koubei-content{
     margin-left:-80px;
   }
+}
+.car_param{
+  .detail_title{
+
+  }
+  .param-content{
+    width:1300px;
+    padding:50px 150px;
+  }
+  table{
+    margin-bottom:40px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right:120px;
+    caption{
+      font-size:16px;
+      color:#333;
+      font-weight: bold;
+      height:35px;
+      border-bottom:1px solid #eee;
+    }
+    th,td{
+      width:180px;
+      border-bottom:1px solid #eee;
+      height:35px;
+      font-size: 14px;
+    }
+    th{
+      color:#444;
+    }
+    td{
+      color:#666;
+    }
+    .space{
+      width:20px;
+      border:none;
+    }
+  }
+}
+
+.cargod {
+  position: relative;
+  min-height: 200px;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e4e4e4;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cargod .cargod-profile {
+  float: left;
+  width: 280px;
+  padding-top: 22px;
+}
+.cargod .cargod-profile .profile-avatar {
+  float: left;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-color: #ccc;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+}
+.cargod .cargod-profile .profile-text-ctn {
+  margin-left: 100px;
+  padding-left: 23px;
+  overflow: hidden;
+}
+.cargod .cargod-profile .profile-text-ctn .profile-name {
+  margin: 5px 0 6px 0;
+  font-size: 16px;
+  color: #profileFC;
+}
+.cargod .cargod-profile .profile-text-ctn .profile-title {
+  margin-bottom: 18px;
+  font-size: 12px;
+  color: #666666;
+}
+.cargod .cargod-profile .profile-text-ctn .contact-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 30px;
+  padding: 0 16px 0 34px;
+  font-size: 12px;
+  line-height: 30px;
+  color: #fff;
+  border: 1px solid #3b9fea;
+  background-color: #3b9fea;
+  background-image: url('<sc:assets value="/assets/images/index/ask.png"/>');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.cargod .cargod-profile .profile-text-ctn .contact-btn:hover {
+  border: 1px solid #0089e6;
+  background-color: #0089e6;
+  background-image: url('<sc:assets value="/assets/images/index/ask-hover.png"/>');
+}
+.cargod .cargod-separator {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 322px;
+  width: 1px;
+  background-color: #ebebeb;
+  overflow: visible;
+}
+.cargod .cargod-separator .tri-left {
+  height: 20px;
+  width: 10px;
+  margin: 70px 0 0 -8px;
+  background-image: url('<sc:assets value="/assets/images/detail/cargod-trileft.png"/>');
+  background-repeat: no-repeat;
+}
+.cargod .cargod-review {
+  width: auto;
+  margin-left: 330px;
+}
+.cargod .cargod-review .review-quote {
+  height: 30px;
+  background-image: url('<sc:assets value="/assets/images/detail/cargod-quote.png"/>');
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+}
+.cargod .cargod-review .review-quote-after{
+  height: 30px;
+  margin-right: 10px;
+  background-image: url('<sc:assets value="/assets/images/detail/cargod-quote-after.png"/>');
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+.cargod .cargod-review .review-list {
+  padding-left: 27px;
+  font-size: 14px;
+  line-height: 1.5;
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #888;
 }

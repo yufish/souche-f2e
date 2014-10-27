@@ -184,42 +184,31 @@ define(function() {
             var self = this;
             var saleTabTop = $(".onsale-tab-item").offset().top;
 
-            $(".onsale-tab-item").on("click", function(e) {
+            $(".onsale-tab-bigitem .bigitem-inner-h").on("click", function(e) {
                 var id = $(this).attr("data-id");
-                $(".onsale-content-item").addClass("hidden")
+                $(".onsale-big-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
                 // $(".onsale-tab-item").removeClass("active");
                 // $(this).addClass("active")
                 $(window).trigger("nav_change", id);
-
-                if ($(this).attr("data-scrollto")) {
-                    $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
-                    }, 500, function() {
-                        $(".onsale-tab-item").removeClass("active");
-                        $(self).addClass("active")
-                    });
-                }
+                $(".onsale-tab-bigitem").removeClass("active");
+                $(this.parentNode).addClass("active")
                 var self = this;
 
             });
-            $(".onsale-tab-bigitem .bigitem-inner").on("click", function(e) {
+            $(".onsale-tab-bigitem .onsale-tab-item").on("click", function(e) {
                 var id = $(this).attr("data-id");
-                $(".onsale-content-item").addClass("hidden")
+//                $(".onsale-content-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
-                // $(".onsale-tab-item").removeClass("active");
-                // $(this).addClass("active")
                 $(window).trigger("nav_change", id);
-
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 70
                     }, 500, function() {
-                        $(".onsale-tab-bigitem").removeClass("active");
-                        $(self.parentNode).addClass("active")
                     });
                 }
                 var self = this;
+                e.stopPropagation()
 
             });
 

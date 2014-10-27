@@ -345,3 +345,21 @@ input.checkbox-cond:checked + .filter-title{
     font-size: 12px;
     color: #999;
 }
+.auth-filter-content{
+    width: 224px;
+
+}
+.auth-brand-item{
+    width:25%;
+    float:left;
+    text-align: center;
+    font-size: 14px;
+    color:#666;
+    padding:7px 0;
+    border:1px solid #F5F5F5;
+    border-radius: 4px;
+}
+.auth-brand-item.active{
+    color:#ff571a;
+    border:1px solid #ff571a;
+}
