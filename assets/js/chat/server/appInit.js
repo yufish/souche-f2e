@@ -13,19 +13,7 @@ var ChatConstants = require('../constant/ChatConstants');
 
 var AppAction = require('../action/AppAction');
 
-
-// ------------ some config ------------
-var baseUrl= 'http://115.29.10.121:10086/soucheweb/pages/app/thumbelina/messageAction/';
-
-var url = {
-    sendMsg: baseUrl + 'send.json',
-    getMsg: baseUrl + 'receive.json',
-    getChatList: baseUrl + 'getChatList.json',
-    deleteChat: baseUrl + 'deleteChat.json'
-};
-
-var user = 'buyer_gnKtBtN';
-// ------------ some config ------------
+var API = require('./apiConfig');
 
 function appInitFail(msg){
     console.log(msg|| '获取数据失败...');
@@ -53,9 +41,8 @@ function appInit(){
 
             chatList.forEach(function(chat){
                 _data.getMsgs(chat.friendId, lastReqTime, function(data, status){
-                    var d = JSON.parse(data);
-                    if( d.code == '100000' ){
-                        var msgData = d.data.msgList;
+                    if( data.code == '100000' ){
+                        var msgData = data.data.msgList;
                         ep.emit('get msg', msgData);
                     }
                     else{
@@ -99,8 +86,7 @@ function getInitialData(){
 var _data = {
     // param: Boolean blAll, 是全部, 还是只是未读的
     getChatList: function(blAll, callback){
-        $.get(url.getChatList, {unread: !blAll}, function(data, status){
-            data = JSON.parse(data);
+        $.getJSON(API.getChatList, {unread: !blAll}, function(data, status){
             callback(data, status);
         });
     },
@@ -110,7 +96,7 @@ var _data = {
             receiver: receiver,
             lastRequireTime: lastReqTime
         };
-        $.get(url.getMsg, param, callback);
+        $.getJSON(API.getMsg, param, callback);
     }
 };
 

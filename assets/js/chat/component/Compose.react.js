@@ -21,14 +21,21 @@ var Compose = React.createClass({
     },
 
     render: function() {
+        // <div className="toolbar">
+        //             <div className="tool-demo" onClick={this._insertText}>哈哈</div>
+        //         </div>
         return (
             <div className="compose-ctn"  style={this.props.style}>
+                
                 <ComposeInput submitHandler={this.submitText}/>
             </div>
         );
     },
     submitText: function(text){
         this.props.textsHandler(text);
+    },
+    _insertText: function(){
+
     }
 });
 
