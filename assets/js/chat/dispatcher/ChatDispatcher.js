@@ -14,7 +14,7 @@ var ChatAppDispatcher = copyProperties(new Dispatcher(), {
             action: action
         });
     },
-    handlerServerAction: function(action){
+    handleServerAction: function(action){
         this.dispatch({
             source: 'SERVER_ACTION',
             action: action

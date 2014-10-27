@@ -12,8 +12,8 @@
     @paddingLeft: 0.5em;
 
     .no-msg-tip{
-        padding: 0.5em 0;
-        font-size: 2em;
+        padding: 1em 0;
+        font-size: 1.5em;
         text-align: center;
         color: #ccc;
     }
@@ -41,31 +41,43 @@
         // 头像所占据的空间
         @avatarSpace:  @avatarW + @paddingLeft + 0.25em;
         .msg-content-ctn{
-            display: block;
+            float: left;
             margin-left: @avatarSpace;
             padding: 4px 8px;
             border-radius: 4px;
-            // max-width: 290px;
+            min-width: 180px;
             margin-right: @avatarSpace + 2em;
             
             background-color: #fff;
             box-shadow: 0 1px 1px 0 rgba(200, 200,200, 1);
-
-            .msg-user-name{
-                margin: 0;
-                // color: #aaa;
-                color: #27C198;
-                font-size: 12px;
+            .msg-header{
                 &:after{
-                    // content: ':';
+                    content: '';
+                    display: table;
+                    clear: both;
                 }
             }
+            
+            .msg-user-name,
+            .msg-sendtime{
+                margin: 0;
+                font-size: 12px;
+                max-width: 50%;
+                .text-collapse();
+            }
+            .msg-user-name{
+                float: left;
+                color: #27C198;
+            }
+            .msg-sendtime{
+                float: right;
+            }
             .msg-text{
-                // display: inline-block;
                 margin-top: 4px;
                 margin-bottom: 0;
-                // margin-left: @avatarW + 8px;
                 color: #444;
+                // 防止一个超级长的连接把bubble撑的特别长
+                word-break: break-all;
             }
         }
         
