@@ -13,19 +13,7 @@ var ChatConstants = require('../constant/ChatConstants');
 
 var AppAction = require('../action/AppAction');
 
-
-// ------------ some config ------------
-var baseUrl= 'http://115.29.10.121:10086/soucheweb/pages/app/thumbelina/messageAction/';
-
-var url = {
-    sendMsg: baseUrl + 'send.json',
-    getMsg: baseUrl + 'receive.json',
-    getChatList: baseUrl + 'getChatList.json',
-    deleteChat: baseUrl + 'deleteChat.json'
-};
-
-var user = 'buyer_gnKtBtN';
-// ------------ some config ------------
+var API = require('./apiConfig');
 
 function appInitFail(msg){
     console.log(msg|| '获取数据失败...');
@@ -48,14 +36,14 @@ function appInit(){
                     allMsgs = allMsgs.concat(ml);
                 });
                 var initData = getDataFromRaw(chatList, allMsgs);
+                console.log( initData.users );
                 AppAction.appInit( initData.users, initData.threads, initData.msgs);
             });
 
             chatList.forEach(function(chat){
                 _data.getMsgs(chat.friendId, lastReqTime, function(data, status){
-                    var d = JSON.parse(data);
-                    if( d.code == '100000' ){
-                        var msgData = d.data.msgList;
+                    if( data.code == '100000' ){
+                        var msgData = data.data.msgList;
                         ep.emit('get msg', msgData);
                     }
                     else{
@@ -72,6 +60,7 @@ function appInit(){
 }
 
 function getDataFromRaw(threads, msgs){
+    // 从thread数据中提取出friend的用户数据
     var users = threads.map(function(t){
         return {
             name: t.friendName || t.friendId,
@@ -83,13 +72,35 @@ function getDataFromRaw(threads, msgs){
     // 按时间排序
     msgs.sort(function(a, b){
         return (new Date(a.time)).valueOf() - (new Date(b.time)).valueOf();
-    })
+    });
+
+    // 从消息数据中找到当前用户的id和avatar
+    var curUser = null;
+    for(var i=0, j=msgs.length; i<j; i++){
+        var m = msgs[i];
+        if( idInObjArr( m.sender, users, 'id' ) ){
+            curUser = {
+                name: '我',
+                id: m.receiver,
+                avatar: m.receiverHeadImg
+            }
+            users.push(curUser);
+            AppAction.userLogin(curUser.id);
+            break;
+        }
+    }
 
     return {
         users: users,
         threads: threads,
         msgs: msgs
     };
+}
+
+function idInObjArr(someId, arr, idProp){
+    return arr.some(function(el){
+        return someId === el[idProp];
+    })
 }
 
 function getInitialData(){
@@ -99,8 +110,7 @@ function getInitialData(){
 var _data = {
     // param: Boolean blAll, 是全部, 还是只是未读的
     getChatList: function(blAll, callback){
-        $.get(url.getChatList, {unread: !blAll}, function(data, status){
-            data = JSON.parse(data);
+        $.getJSON(API.getChatList, {unread: !blAll}, function(data, status){
             callback(data, status);
         });
     },
@@ -110,7 +120,7 @@ var _data = {
             receiver: receiver,
             lastRequireTime: lastReqTime
         };
-        $.get(url.getMsg, param, callback);
+        $.getJSON(API.getMsg, param, callback);
     }
 };
 
@@ -120,7 +130,7 @@ ChatDispatcher.register(function(payload){
 
     switch(actionType){
         case ChatConstants.USER_LOGIN:
-            getInitialData();
+            // getInitialData();
             break;
     }
 
