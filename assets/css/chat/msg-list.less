@@ -41,11 +41,11 @@
         // 头像所占据的空间
         @avatarSpace:  @avatarW + @paddingLeft + 0.25em;
         .msg-content-ctn{
-            display: block;
+            float: left;
             margin-left: @avatarSpace;
             padding: 4px 8px;
             border-radius: 4px;
-            // max-width: 290px;
+            min-width: 180px;
             margin-right: @avatarSpace + 2em;
             
             background-color: #fff;
@@ -69,13 +69,15 @@
                 float: left;
                 color: #27C198;
             }
-             .msg-sendtime{
+            .msg-sendtime{
                 float: right;
             }
             .msg-text{
                 margin-top: 4px;
                 margin-bottom: 0;
                 color: #444;
+                // 防止一个超级长的连接把bubble撑的特别长
+                word-break: break-all;
             }
         }
         

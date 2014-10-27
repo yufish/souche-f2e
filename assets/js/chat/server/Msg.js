@@ -47,7 +47,7 @@ function sendMsg(msgObj){
         console.log(data);
         console.log(status);
         if(status == 'success' && data.code == '100000'){
-            Msg.sendSuc(data.data.id, data.data.sendTime, msgObj.ts);
+            MsgAction.sendSuc(data.data.id, data.data.sendTime, msgObj.ts);
         }
     })
 };

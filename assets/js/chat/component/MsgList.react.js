@@ -66,10 +66,10 @@ var MsgList = React.createClass({
             var msg = this.state.msgData[i];
             var classNameArr = ['msg-item'];
             var msgId = msg.id || '';
-            //if( UserStore.isCurUser(msg.user.id) ){
-            //    classNameArr.push('sendbyme');
-            //}
-            var d = new Date();
+            if( UserStore.isCurUser(msg.sender) ){
+                classNameArr.push('sendbyme');
+            }
+            var d = new Date(msg.time);
             var sendTime = Tool.makeDouble(d.getMonth()+1) + '-' + Tool.makeDouble(d.getDay());
             sendTime += ' ';
             sendTime += Tool.makeDouble(d.getHours()   ) + ':';
@@ -81,7 +81,7 @@ var MsgList = React.createClass({
                     <img className="msg-user-avatar" src={msg.senderHeadImg} />
                     <div className="msg-content-ctn">
                         <div className="msg-header">
-                            <p className="msg-user-name">{msg.sender}</p>
+                            <p className="msg-user-name">{msg.senderName}</p>
                             <p className="msg-sendtime">{ sendTime }</p>
                         </div>
                         <p className="msg-text">{msg.content}</p>

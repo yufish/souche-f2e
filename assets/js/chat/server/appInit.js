@@ -36,6 +36,7 @@ function appInit(){
                     allMsgs = allMsgs.concat(ml);
                 });
                 var initData = getDataFromRaw(chatList, allMsgs);
+                console.log( initData.users );
                 AppAction.appInit( initData.users, initData.threads, initData.msgs);
             });
 
@@ -59,6 +60,7 @@ function appInit(){
 }
 
 function getDataFromRaw(threads, msgs){
+    // 从thread数据中提取出friend的用户数据
     var users = threads.map(function(t){
         return {
             name: t.friendName || t.friendId,
@@ -70,13 +72,35 @@ function getDataFromRaw(threads, msgs){
     // 按时间排序
     msgs.sort(function(a, b){
         return (new Date(a.time)).valueOf() - (new Date(b.time)).valueOf();
-    })
+    });
+
+    // 从消息数据中找到当前用户的id和avatar
+    var curUser = null;
+    for(var i=0, j=msgs.length; i<j; i++){
+        var m = msgs[i];
+        if( idInObjArr( m.sender, users, 'id' ) ){
+            curUser = {
+                name: '我',
+                id: m.receiver,
+                avatar: m.receiverHeadImg
+            }
+            users.push(curUser);
+            AppAction.userLogin(curUser.id);
+            break;
+        }
+    }
 
     return {
         users: users,
         threads: threads,
         msgs: msgs
     };
+}
+
+function idInObjArr(someId, arr, idProp){
+    return arr.some(function(el){
+        return someId === el[idProp];
+    })
 }
 
 function getInitialData(){
@@ -106,7 +130,7 @@ ChatDispatcher.register(function(payload){
 
     switch(actionType){
         case ChatConstants.USER_LOGIN:
-            getInitialData();
+            // getInitialData();
             break;
     }
 

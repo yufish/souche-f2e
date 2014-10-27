@@ -16,16 +16,21 @@ var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
             MsgData[m.id] = m;
+            MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
         });
     },
     // 新建的msg只有一个时间戳 还没有id
     create: function(msgObj){
-        var tmpId = msgObj.ts;
+        // 给时间戳添加两个下划线 形成字符串
+        // 避免obj属性按数字顺序排列
+        var tmpId = msgObj.ts + '__';
         MsgData[tmpId] = merge({}, msgObj);
         MsgData[tmpId].time = msgObj.ts;
         // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
-        // var user = UserStore.getById( msgObj.receiver );
-        // MsgData[tmpId].f = 
+        var user = UserStore.getById( UserStore.getCurUser() );
+        MsgData[tmpId].sender = user.id;
+        MsgData[tmpId].senderHeadImg = user.avatar;
+        MsgData[tmpId].senderName = user.name;
     },
     update: function(id, updates){
         for(var key in updates){
@@ -49,7 +54,6 @@ var MsgStore = merge(EventEmitter.prototype, {
             // Q1: msg的sender属性是发送者, 而发送者作为了thread的id
             // Q2: 获取一个对话的所有消息数据, 不光要send是某ID, 还要获取"我发送给他的"
             //      即 receiver是该ID的...
-
             if(MsgData[m].sender === threadId || MsgData[m].receiver === threadId){
                msgs[m] = MsgData[m];
             }
