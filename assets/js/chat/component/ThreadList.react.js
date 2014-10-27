@@ -10,7 +10,6 @@ var ThreadStore = require('../store/ThreadStore');
 
 var ThreadItem = require('./ThreadItem.react');
 
-// function 
 
 var ThreadList = React.createClass({
     getInitialState: function() {
@@ -29,12 +28,14 @@ var ThreadList = React.createClass({
         var nodes = [];
         for(var i in this.state.threads){
             var thread = this.state.threads[i];
-            nodes.push( <ThreadItem
-                thread={thread}
-                itemClick={this.switchThread}
-                key={i}
-                activeClass={ curThread == thread.id }
-            /> );
+            nodes.push(
+                <ThreadItem
+                    thread={thread}
+                    itemClickHandler={this.switchThread}
+                    key={i}
+                    activeClass={ curThread == thread.id }
+                />
+            );
         }
         return (
             <ul className="thread-list" style={this.props.style}>
@@ -47,11 +48,14 @@ var ThreadList = React.createClass({
             threads: ThreadStore.getAll()
         });
     },
-    switchThread: function(e){
-        var item = e.target;
-        var threadId = item.dataset['threadid'];
-        // console.log(threadId);
-        AppAction.changeThread( threadId );
+    switchThread: function(threadId){
+        // 如果点击的就是当前激活的thread
+        if( ThreadStore.getCurThread() === threadId ){
+
+        }
+        else{
+            AppAction.changeThread( threadId );
+        }
     }
 
 });

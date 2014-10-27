@@ -32,7 +32,7 @@ var AppServer = require('../server/appInit');
 var ChatApp = React.createClass({
     getInitialState: function(){
         return {
-            threadW: 150,
+            threadW: 250,
             dialogH: 350,
             composeH: 150
         };
