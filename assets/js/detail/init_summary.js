@@ -25,6 +25,7 @@ define(function() {
                         }
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
+                        $("#onsale_price").removeClass("hidden");
                         var maxPrice = ((priceData.price_guide).toFixed(1) * 1+config.taxPrice).toFixed(2);
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
@@ -61,6 +62,7 @@ define(function() {
                         var baoyangData = data;
                         $(".onsale-tab-item-baoyang").removeClass("hidden");
                         $(".float-nav-item-baoyang").removeClass("hidden");
+                        $("#onsale_baoyang").removeClass("hidden");
                         var prices = {};
                         var totalPrice = 0;
                         for (var i = 0; i < baoyangData.maintenanceItem.length; i++) {
@@ -157,6 +159,7 @@ define(function() {
                                 },config)
                                 $(".onsale-tab-item-koubei").removeClass("hidden");
                                 $(".float-nav-item-koubei").removeClass("hidden")
+                                $("#onsale_koubei").removeClass("hidden")
                             }
                         )
 
@@ -184,42 +187,31 @@ define(function() {
             var self = this;
             var saleTabTop = $(".onsale-tab-item").offset().top;
 
-            $(".onsale-tab-item").on("click", function(e) {
+            $(".onsale-tab-bigitem .bigitem-inner-h").on("click", function(e) {
                 var id = $(this).attr("data-id");
-                $(".onsale-content-item").addClass("hidden")
+                $(".onsale-big-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
                 // $(".onsale-tab-item").removeClass("active");
                 // $(this).addClass("active")
                 $(window).trigger("nav_change", id);
-
-                if ($(this).attr("data-scrollto")) {
-                    $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
-                    }, 500, function() {
-                        $(".onsale-tab-item").removeClass("active");
-                        $(self).addClass("active")
-                    });
-                }
+                $(".onsale-tab-bigitem").removeClass("active");
+                $(this.parentNode).addClass("active")
                 var self = this;
 
             });
-            $(".onsale-tab-bigitem .bigitem-inner").on("click", function(e) {
+            $(".onsale-tab-bigitem .onsale-tab-item").on("click", function(e) {
                 var id = $(this).attr("data-id");
-                $(".onsale-content-item").addClass("hidden")
+//                $(".onsale-content-item").addClass("hidden")
                 $("#" + id).removeClass("hidden");
-                // $(".onsale-tab-item").removeClass("active");
-                // $(this).addClass("active")
                 $(window).trigger("nav_change", id);
-
                 if ($(this).attr("data-scrollto")) {
                     $('html,body').animate({
-                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 20
+                        scrollTop: $("#" + $(this).attr("data-scrollto")).offset().top - 70
                     }, 500, function() {
-                        $(".onsale-tab-bigitem").removeClass("active");
-                        $(self.parentNode).addClass("active")
                     });
                 }
                 var self = this;
+                e.stopPropagation()
 
             });
 

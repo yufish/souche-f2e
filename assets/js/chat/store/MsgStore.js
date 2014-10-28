@@ -28,9 +28,12 @@ var _dataHandler = {
         MsgData[tmpId].time = msgObj.ts;
         // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
         var user = UserStore.getById( UserStore.getCurUser() );
-        MsgData[tmpId].sender = user.id;
-        MsgData[tmpId].senderHeadImg = user.avatar;
-        MsgData[tmpId].senderName = user.name;
+        if(user){
+            MsgData[tmpId].sender = user.id;
+            MsgData[tmpId].senderHeadImg = user.avatar;
+            MsgData[tmpId].senderName = user.name;
+        }
+
     },
     update: function(id, updates){
         for(var key in updates){
