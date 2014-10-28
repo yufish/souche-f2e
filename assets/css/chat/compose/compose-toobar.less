@@ -1,0 +1,83 @@
+.compose-ctn .compose-toolbar{
+  position: relative;
+  height: @toobarH;
+  width: 100%;
+  background-color: #ACB36A;
+
+  .compose-tool{
+    height: 100%;
+    width: @toobarH;
+    margin-right: 1em;
+
+    .compose-tool-icon{
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      background-color: #fff;
+    }
+    .compose-tool-content{
+      display: none;
+      position: absolute;
+      z-index: 100;
+    }
+    &.active{
+      .compose-tool-content{
+        display: block;
+      }
+    }
+  }
+}
+
+@triH: 10px;
+
+.compose-ctn .compose-toolbar .compose-tool.compose-carid{
+  .compose-tool-icon{
+    background-color: #4F5364;
+  }
+  .compose-tool-content{
+    top: -50px;
+    left: -80px;
+    width: 250px;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: -@triH;
+      left: 83px;
+      border: @triH solid transparent;
+      border-bottom-width: 0;
+      border-top-color: #fff;
+    }
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    #carid-input{
+      float: left;
+      height: 30px;
+      width: 180px;
+      margin-right: 10px;
+      border: none;
+      outline: none;
+
+      &:active{
+        outline: none;
+      }
+    }
+    #send-carid{
+      float: left;
+      height: 30px;
+      width: 40px;
+      background-color: #4F5364;
+      font-size: 14px;
+      line-height: 30px;
+      color: #fff;
+    }
+  }
+}

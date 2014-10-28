@@ -13,7 +13,7 @@ var ThreadItem = React.createClass({
         var threadName =  thread.friendName || thread.friendId;
 
         var d = new Date(thread.nearlyMSgTime);
-        var lastContact = (d.getMonth()+1) +'月'+d.getDay()+'日';
+        var lastContact = (d.getMonth()+1) +'月'+d.getDate()+'日';
         return (
             <li
                 className={"thread-item" + (this.props.activeClass? ' active':'') }
