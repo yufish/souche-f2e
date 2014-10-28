@@ -64,11 +64,11 @@ var Action = (function () {
                         $('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
                         if(globalConfig.hasOrder){
                             if(orderSn) {
-                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                                window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;
                             }
                         } else if(type=='2'){
                             if(orderSn) {
-                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                                window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;
                             }
                         }else{
                             $('#yuyue-success').removeClass('hidden');
