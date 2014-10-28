@@ -1441,10 +1441,12 @@
     font-size: 12px;
 }
 .auth-info{
+    display: -webkit-box;
     display: flex;
     display: -webkit-flex;
     font-size: 14px;
     height: 45px;
+    -webkit-box-align: center;
     align-items: center;
     -webkit-align-items:center;
     padding: 0 16px;
@@ -1459,6 +1461,7 @@
     margin-right: 8px;
 }
 .auth-url{
+    -webkit-box-flex: 1;
     margin-left: auto;
     color:#ff571a;
 }
