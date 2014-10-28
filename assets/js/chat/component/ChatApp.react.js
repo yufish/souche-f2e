@@ -64,17 +64,27 @@ var ChatApp = React.createClass({
             <div id="chat-window">
                 <ThreadList style={threadStyle}/>
                 <Dialog style={dialogStyle} />
-                <Compose style={compostStyle} textsHandler={this._sendMsg}/>
+                <Compose style={compostStyle}
+                    sendText={this._sendText}
+                    sendCarid={this._sendCarid}
+                />
             </div>
         );
     },
-    _sendMsg: function(text){
+    _sendText: function(text){
         var msg = {
             content: text,
             type: 0,
             receiver: getReceiver()
         };
-
+        Msg.send(msg);
+    },
+    _sendCarid: function(carid){
+        var msg = {
+            content: carid,
+            type: 3,
+            receiver: getReceiver()
+        };
         Msg.send(msg);
     }
 });

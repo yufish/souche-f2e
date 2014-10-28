@@ -1,8 +1,11 @@
 .compose-ctn .compose-toolbar{
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: @toobarH;
   width: 100%;
-  background-color: #ACB36A;
+  z-index: 50;
+//  background-color: #ACB36A;
 
   .compose-tool{
     height: 100%;
@@ -32,7 +35,9 @@
 
 .compose-ctn .compose-toolbar .compose-tool.compose-carid{
   .compose-tool-icon{
-    background-color: #4F5364;
+//    background-color: #4F5364;
+    background-image: url('../../images/list/danbao-icon.png');
+    background-size: 100% auto;
   }
   .compose-tool-content{
     top: -50px;

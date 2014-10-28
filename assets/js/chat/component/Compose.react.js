@@ -38,14 +38,17 @@ var Compose = React.createClass({
             
             <div className="compose-ctn"  style={this.props.style}>
                 <div className="compose-toolbar" onClick={this._noBubble}>
-                    <ComposeCarid />
+                    <ComposeCarid
+                        validator={this._validateCarid}
+                        submitCarid={this.props.sendCarid}
+                    />
                 </div>
                 <ComposeInput submitHandler={this.submitText}/>
             </div>
         );
     },
     submitText: function(text){
-        this.props.textsHandler(text);
+        this.props.sendText(text);
     },
     _noBubble: function(e){
         // 点击到toolbar之内不要隐藏...
@@ -55,6 +58,9 @@ var Compose = React.createClass({
     },
     _insertText: function(){
 
+    },
+    _validateCarid: function(input){
+        return true;
     }
 });
 

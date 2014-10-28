@@ -100,8 +100,10 @@ ChatDispatcher.register(function(payload){
         case ChatConstants.MSG_SEND_SUC:
             var msgId = action.id;
             var time = action.sendTime;
-            var tsId = action.reqTime;
+            // 作为msgId, ts还要加两个下划线
+            var tsId = action.reqTime + '__';
             _dataHandler.update( tsId, {id: msgId, time: time } );
+            MsgStore.emitChange();
             break;
         case ChatConstants.MSG_SEND_FAIL:
             
