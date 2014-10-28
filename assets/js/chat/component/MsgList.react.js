@@ -70,7 +70,7 @@ var MsgList = React.createClass({
                 classNameArr.push('sendbyme');
             }
             var d = new Date(msg.time);
-            var sendTime = Tool.makeDouble(d.getMonth()+1) + '-' + Tool.makeDouble(d.getDay());
+            var sendTime = Tool.makeDouble(d.getMonth()+1) + '-' + Tool.makeDouble(d.getDate());
             sendTime += ' ';
             sendTime += Tool.makeDouble(d.getHours()   ) + ':';
             sendTime += Tool.makeDouble(d.getMinutes() ) + ':';
