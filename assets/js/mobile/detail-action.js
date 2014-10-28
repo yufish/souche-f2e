@@ -59,16 +59,20 @@ var Action = (function () {
                     success:function(e){
                         //e.type,e.code,e.orderSn,e.contactPhone
                         hidePopup();
+                        if(e.code!='200' || e.code!='402'){
+                            alert('系统错误,请稍后重试或联系客服.错误码:'+ e.code);
+                            return;
+                        }
                         var orderSn = e.orderSn;
                         var type= e.type;
                         $('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
                         if(globalConfig.hasOrder){
                             if(orderSn) {
-                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                                window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;
                             }
                         } else if(type=='2'){
                             if(orderSn) {
-                                window.location.href = 'yuyue_detail.html?yuyueId=' + orderSn;
+                                window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;
                             }
                         }else{
                             $('#yuyue-success').removeClass('hidden');
