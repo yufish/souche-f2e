@@ -12,49 +12,88 @@
  *      都是基于"selection插入"
  */
 
+
+
+/*
+* 折中的办法: 既然现在img是单独发送的, 那就先把获取到的img单独展示
+* 不再加到编辑的文本中, 可以避免很多复杂性
+*
+*
+* */
+
 var React = require('react');
-var ComposeInput = require('./ComposeInput.react.js');
-var ComposeCarid = require('./ComposeTool-Carid.react.js');
+
+var ComposeInput = require('./ComposeInput.react');
+var ComposeCarid = require('./ComposeTool-Carid.react');
+var ComposePic = require('./ComposeTool-Pic.react');
+var ComposePreviewImg = require('./ComposePreview-Img.react');
 
 var Compose = React.createClass({
     propTypes: {
         textsHandler: React.PropTypes.func.isRequired
     },
-    componentDidMount: function(){
-        // 由toolbar负责把所有的tool隐藏
-        //$(document.body).on('click', function(){
-        //    var allTools = $('.compose-tool');
-        //    allTools.removeClass('active');
-        //});
-        //$(this.getDOMNode()).on('click', function(e){
-        //    // 一旦使用jquery的事件就会吧react的事件逻辑破坏掉...
-        //    e.stopPropagation();
-        //});
+    getInitialState: function(){
+        return {};
     },
-
+    componentDidMount: function(){
+    },
     render: function() {
-
+        var imgPreviewClassArr = [];
+        if( this.state.img ){
+            imgPreviewClassArr.push('active');
+        }
         return (
-            
             <div className="compose-ctn"  style={this.props.style}>
-                <div className="compose-toolbar" onClick={this._noBubble}>
-                    <ComposeCarid />
+                <div className="compose-toolbar">
+                    <ComposeCarid
+                        validator={this._validateCarid}
+                        submitCarid={this.props.sendCarid}
+                    />
+
+                    <ComposePic
+                        chooseImg={this._choosedImg}
+                        unChooseImg={this._unChooseImg}
+                    />
+
                 </div>
-                <ComposeInput submitHandler={this.submitText}/>
+                <ComposeInput submitHandler={this._submitText} validator={this._textValidator}/>
             </div>
         );
     },
-    submitText: function(text){
-        this.props.textsHandler(text);
+    // 由于更多的发送方式 搞得程序越来越复杂了...
+    _textValidator: function(text){
+        if(this.haveImg){
+            return true;
+        }
+        else if( text.trim() ){
+            return true;
+        }
+        else{
+            return false;
+        }
     },
-    _noBubble: function(e){
-        // 点击到toolbar之内不要隐藏...
-        // 貌似无效啊...
-        // 是因为绑在body上的和绑在这里的事件不是一个体系的吗```
-        e.stopPropagation();
+    _submitText: function(text){
+        if( this.haveImg ){
+
+        }
+        else{
+            this.props.sendText(text);
+        }
     },
     _insertText: function(){
 
+    },
+    _validateCarid: function(input){
+        // 暂时找不到生成carid的规则, 一律返回true
+        return true;
+    },
+    // 此时发送消息前会先submit图片, 然后提交文本内容
+    _choosedImg: function(img){
+        this.haveImg = true;
+    },
+    // 将有图片这个flag置为false
+    _unChooseImg: function(){
+        this.haveImg = false;
     }
 });
 

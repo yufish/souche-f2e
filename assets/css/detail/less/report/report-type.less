@@ -1,0 +1,38 @@
+.wrapper{
+    // 类型1和2
+    // 小车商 特殊大车商
+    &.report-type-1, &.report-type-2{
+        // 没有质检等级
+        .report_summary .level-card{
+            display: none;
+        }
+        // 报告内容 居中
+        .report_summary .summary-box{
+            float: none;
+            margin: 0 auto;
+        }
+    }
+    
+
+
+    // 质检报告 -> 服务承诺
+    // 默认显示质检报告
+    .report_summary .summary-box .title .text{
+        &.quality-report{
+            display: block;
+        }
+        &.service-promise{
+            display: none;
+        }
+    }
+    &.report-type-1{
+        .report_summary .summary-box .title .text{
+            &.quality-report{
+                display: none;
+            }
+            &.service-promise{
+                display: block;
+            }
+        }
+    }
+}
