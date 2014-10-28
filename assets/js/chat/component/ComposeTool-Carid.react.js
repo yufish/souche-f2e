@@ -27,6 +27,8 @@ var ComposeCarid = React.createClass({
         this.ele = $(this.getDOMNode());
         this.input = $(this.refs['carid-input'].getDOMNode());
 
+        // leart from react-bootstrap dropdown
+        // https://github.com/react-bootstrap/react-bootstrap/blob/master/src/DropdownMenu.jsx
         $(document.body).on('click', function(e){
             // 如果点击事件发生在本元素之内
             if( isNodeInRoot(e.target, this.ele.get(0)) ){
@@ -40,7 +42,7 @@ var ComposeCarid = React.createClass({
     render: function() {
         return (
             <div className="compose-tool compose-carid">
-                <div className="compose-tool-icon" onClick={this._activeTool}></div>
+                <a className="compose-tool-icon" onClick={this._activeTool}></a>
                 <div className="compose-tool-content">
                     <input type="text" id="carid-input" placeholder="请输入carid" ref="carid-input" onKeyDown={this._keyDownHandler}/>
                     <div className="btn btn-primary" id="send-carid" onClick={this._submitBtn}>发送</div>

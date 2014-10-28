@@ -8,15 +8,24 @@
 //  background-color: #ACB36A;
 
   .compose-tool{
+    float: left;
     height: 100%;
     width: @toobarH;
+    
     margin-right: 1em;
+    background-color: #22B2EA;
 
     .compose-tool-icon{
+      display: block;
       height: 100%;
       width: 100%;
       cursor: pointer;
       background-color: #fff;
+
+//      如何做的更加可访问呢...
+//      &:active{
+//        outline: 2px solid red;
+//      }
     }
     .compose-tool-content{
       display: none;
@@ -31,58 +40,5 @@
   }
 }
 
-@triH: 10px;
-
-.compose-ctn .compose-toolbar .compose-tool.compose-carid{
-  .compose-tool-icon{
-//    background-color: #4F5364;
-    background-image: url('../../images/list/danbao-icon.png');
-    background-size: 100% auto;
-  }
-  .compose-tool-content{
-    top: -50px;
-    left: -80px;
-    width: 250px;
-    height: 40px;
-    padding: 5px 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-
-    &:before{
-      content: '';
-      position: absolute;
-      bottom: -@triH;
-      left: 83px;
-      border: @triH solid transparent;
-      border-bottom-width: 0;
-      border-top-color: #fff;
-    }
-    &:after{
-      content: '';
-      display: table;
-      clear: both;
-    }
-
-    #carid-input{
-      float: left;
-      height: 30px;
-      width: 180px;
-      margin-right: 10px;
-      border: none;
-      outline: none;
-
-      &:active{
-        outline: none;
-      }
-    }
-    #send-carid{
-      float: left;
-      height: 30px;
-      width: 40px;
-      background-color: #4F5364;
-      font-size: 14px;
-      line-height: 30px;
-      color: #fff;
-    }
-  }
-}
+@import "./compose-tool-carid.less";
+@import "./compose-tool-pic.less";
