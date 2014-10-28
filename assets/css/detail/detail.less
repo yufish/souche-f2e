@@ -1930,13 +1930,18 @@ top: 12px;
 #yushou_detail #detail_main .detail-button .fav{
   float: left;
 }
-.free-call-pop{
+#onsale_detail .free-call-pop{
   width: 500px;
   height: 360px;
   background: #fff;
   border: none;
   border-radius: 0;
   box-shadow: 1px 1px 3px 1px #CDCDCD;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 10000;
   .apply_close {
     position: absolute;
     display: block;
@@ -1979,6 +1984,8 @@ top: 12px;
   .popup-title {
     font-size: 18px;
     color: #333;
+    margin-top: 10px;
+    margin-left: 10px;
   }
   .form-cont{
     border: none;
@@ -2211,13 +2218,13 @@ top: 12px;
     .act-but{
       float: left;
       height: 25px;
-      padding: 0px 10px;
+      padding: 0px 5px;
       line-height: 25px;
       border: 1px solid #E4E4E4;
       border-radius: 2px;
       color: #999;
       text-align: center;
-      margin-right: 10px;
+      margin-right: 5px;
       cursor: pointer;
       .addtoduibi{
         display: none;
@@ -2541,7 +2548,7 @@ top: 12px;
   padding-left:50px;
   padding-top:30px;
 }
-@media screen and (max-width:1280px){
+@media screen and (max-width:1250px){
 .shop-head{
   .wrap{
     width: 1024px;
@@ -2589,7 +2596,7 @@ top: 12px;
     right: 15px;
   }
   #detail_main .detail_main_info{
-    width: 450px;
+    width: 485px;
   }
   #detail_main .detail-yuyue{
     background: #ff5517 url("../../images/detail/yuyue-button-bg.png") no-repeat 10px center;
@@ -2782,7 +2789,7 @@ top: 12px;
   color: #888;
 }
 
-@media screen and (max-width:1280px){
+@media screen and (max-width:1250px){
   .onsale-summary #onsale_sum .check_tag{
     margin:85px 0 0 142px;
   }
