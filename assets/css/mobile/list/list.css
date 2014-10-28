@@ -202,6 +202,11 @@
     position: relative;
     margin-top: 7px;
 }
+#list .car-footer .quality-level{
+    background: #ff571a;
+    color:#fff;
+    padding: 2px 3px;
+}
 #list .car-footer .time-limit{
     background: #65ae2f;
     color: #fff;
