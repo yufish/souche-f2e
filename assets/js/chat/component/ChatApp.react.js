@@ -24,6 +24,7 @@ var Compose = require('./Compose.react');
 var Msg = require('../server/Msg');
 var AppServer = require('../server/appInit');
 
+var api = require('../server/apiConfig');
 // AppServer.getInitialData(function(){
 //     AppServer.init();
 // });
@@ -67,6 +68,7 @@ var ChatApp = React.createClass({
                 <Compose style={compostStyle}
                     sendText={this._sendText}
                     sendCarid={this._sendCarid}
+                    imgUploadUrl={api.uploadImg}
                 />
             </div>
         );

@@ -33,9 +33,7 @@ var Compose = React.createClass({
         textsHandler: React.PropTypes.func.isRequired
     },
     getInitialState: function(){
-        return {
-            img: null
-        }
+        return {};
     },
     componentDidMount: function(){
     },
@@ -46,28 +44,41 @@ var Compose = React.createClass({
         }
         return (
             <div className="compose-ctn"  style={this.props.style}>
-                <div className="compose-toolbar" onClick={this._noBubble}>
+                <div className="compose-toolbar">
                     <ComposeCarid
                         validator={this._validateCarid}
                         submitCarid={this.props.sendCarid}
                     />
 
-                    <ComposePic previewImg={this._previewImg}/>
+                    <ComposePic
+                        chooseImg={this._choosedImg}
+                        unChooseImg={this._unChooseImg}
+                    />
 
                 </div>
-                <ComposeInput submitHandler={this.submitText}/>
-                <ComposePreviewImg img={this.state.img}/>
+                <ComposeInput submitHandler={this._submitText} validator={this._textValidator}/>
             </div>
         );
     },
-    submitText: function(text){
-        this.props.sendText(text);
+    // 由于更多的发送方式 搞得程序越来越复杂了...
+    _textValidator: function(text){
+        if(this.haveImg){
+            return true;
+        }
+        else if( text.trim() ){
+            return true;
+        }
+        else{
+            return false;
+        }
     },
-    _noBubble: function(e){
-        // 点击到toolbar之内不要隐藏...
-        // 貌似无效啊...
-        // 是因为绑在body上的和绑在这里的事件不是一个体系的吗```
-        e.stopPropagation();
+    _submitText: function(text){
+        if( this.haveImg ){
+
+        }
+        else{
+            this.props.sendText(text);
+        }
     },
     _insertText: function(){
 
@@ -76,11 +87,13 @@ var Compose = React.createClass({
         // 暂时找不到生成carid的规则, 一律返回true
         return true;
     },
-    // 下层负责文件选择的组件传值过来
-    // 会是input.files[0] 或者 纯文本的文件名
-    // 根据当前浏览器的support而定
-    _previewImg: function(img){
-        this.setState({img: img})
+    // 此时发送消息前会先submit图片, 然后提交文本内容
+    _choosedImg: function(img){
+        this.haveImg = true;
+    },
+    // 将有图片这个flag置为false
+    _unChooseImg: function(){
+        this.haveImg = false;
     }
 });
 

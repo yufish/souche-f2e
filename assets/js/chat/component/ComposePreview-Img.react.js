@@ -10,7 +10,7 @@ var ComposePreviewImg = React.createClass({
 
     getInitialState: function(){
         return {
-            img: false
+            img: null
         };
     },
     componentDidMount: function(){
@@ -57,7 +57,7 @@ var ComposePreviewImg = React.createClass({
         return (
             <div className={eleClassArr.join(' ')}>
                 {node}
-                <a class="btn compose-priview-img-removeimg">移除图片</a>
+                <a className="btn compose-priview-img-removeimg" onClick={this._removeImg}>移除图片</a>
             </div>
         );
     },
@@ -68,6 +68,10 @@ var ComposePreviewImg = React.createClass({
     },
     _getImgName: function(imgPath){
         return path.basename(imgPath);
+    },
+    _removeImg: function(){
+        this.setState({img: null});
+        this.props.unChooseImg();
     }
 
 });
