@@ -9,6 +9,7 @@ var $ss =$('#selected-series');
 $win.scroll(function(){
     var bOffset = $bCtn.offset();
     var winTop = $win.scrollTop();
+
     if(bOffset.top<winTop){
         var sbHeight = $sb.height();
         $sb.css({height:sbHeight});
