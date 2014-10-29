@@ -33,7 +33,9 @@ var Compose = React.createClass({
         textsHandler: React.PropTypes.func.isRequired
     },
     getInitialState: function(){
-        return {};
+        return {
+            picUploadCallback: false
+        };
     },
     componentDidMount: function(){
     },
@@ -53,6 +55,8 @@ var Compose = React.createClass({
                     <ComposePic
                         chooseImg={this._choosedImg}
                         unChooseImg={this._unChooseImg}
+                        uploadCallback={this.state.picUploadCallback}
+                        imgUploadUrl={this.props.imgUploadUrl}
                     />
 
                 </div>
@@ -74,7 +78,11 @@ var Compose = React.createClass({
     },
     _submitText: function(text){
         if( this.haveImg ){
-
+            this.setState({
+                picUploadCallback: function(imgUrl){
+                    this.props.sendTnP(text, imgUrl);
+                }
+            })
         }
         else{
             this.props.sendText(text);
