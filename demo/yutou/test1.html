@@ -1,13 +1,8 @@
-doctype html
-html
-    head.
-        <script type="text/javascript" src="http://res.souche.com/assets/js/lib/jquery-1.7.1.min.js?t=11"></script>
-    body
-        script.
-            window.onbeforeunload = function(e){
-                $.ajax({
-                    url:"http://www.souche.com",
-                    async:false
+<div style="background: #ddd;width:200px;height:10000px;"></div>
+<script type="text/javascript" src="http://assets.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/jquery.flexslider-min.js"></script>
 
-                    })
-            }
+<script>
+    $(window).scroll(function(){
+        console.log("dd")
+    })
+</script>
