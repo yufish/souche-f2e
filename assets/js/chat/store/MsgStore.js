@@ -1,5 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
-var merge = require('react/lib/merge');
+var assign = require('react/lib/Object.assign');
 
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
 var ChatConstants = require('../constant/ChatConstants');
@@ -24,7 +24,7 @@ var _dataHandler = {
         // 给时间戳添加两个下划线 形成字符串
         // 避免obj属性按数字顺序排列
         var tmpId = msgObj.ts + '__';
-        MsgData[tmpId] = merge({}, msgObj);
+        MsgData[tmpId] = assign({}, msgObj);
         MsgData[tmpId].time = msgObj.ts;
         // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
         var user = UserStore.getById( UserStore.getCurUser() );
@@ -46,7 +46,7 @@ var _dataHandler = {
     }
 };
 
-var MsgStore = merge(EventEmitter.prototype, {
+var MsgStore = assign(EventEmitter.prototype, {
     getAll: function(){
         return MsgData;
     },
