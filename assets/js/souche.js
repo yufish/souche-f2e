@@ -307,6 +307,7 @@ Souche.MiniLogin = function() {
                     display: "none"
                 });
             }
+            $(this).trigger("minilogin:close")
 
         },
         _show: function() {
@@ -314,7 +315,10 @@ Souche.MiniLogin = function() {
             if (minilogin) {
                 minilogin.attr("src", static_login_url);
                 minilogin.css({
-                    display: "block"
+                    display: "block",
+                    width:  (has_third?750:400),
+                    height: (has_third?400:300),
+                    left: $(window).width() / 2 - (has_third?750:400)/2
                 });
                 minilayer.css({
                     display: "block"

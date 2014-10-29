@@ -59,12 +59,13 @@ var MsgList = React.createClass({
 
         if( this.state.msgData.length <=0 ){
             var noMsgTip = '还没有对话消息...';
-            
-            list.push(<li className="no-msg-tip">{noMsgTip}</li>);
+            // 就算是只有一个元素也要有个key
+            list.push(<li className="no-msg-tip" key="0">{noMsgTip}</li>);
         }
         else{
             list = this.state.msgData.map(function(msg, index){
-                return <MsgItem msg={msg}/>;
+                // key应该放在"component"上
+                return <MsgItem msg={msg} key={msg.id} />;
             });
         }
 
