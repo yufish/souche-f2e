@@ -19,7 +19,7 @@ define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
             // var loca = '116.417854, 39.921988'.split(',');
             coord.log = Number(loca[0]);
             coord.lat = Number(loca[1]);
-            ShopMap.init(coord);
+            ShopMap.init(coord, config.shopLocationLevel);
         }
     };
 

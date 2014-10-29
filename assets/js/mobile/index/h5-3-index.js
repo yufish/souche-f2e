@@ -22,16 +22,30 @@ if (navigator.userAgent.match(/Android/i)){
     isAndroid =true;
 }
 
-
-/* 非北京地区隐藏一些东西
 !function(){
-    var txt = $(".city-name").text();
-    //不是北京地区
-    if(txt.indexOf('北京')== -1){
-        $('.j_just4bj').remove();
-    }
+    var $win  = $(window);
+    var $cover = $('#J_tabCover');
+    var $bannerDom  =$('#J_banner');
+    var $header = $('#J_header-wrapper')
+    var placeHolder = $('#J_fixed-placeholder');
+    var imgHeight;
+    $bannerDom.find('img').load(function(){
+        imgHeight = $(this).height();
+        placeHolder.css({height:imgHeight+88})
+    })
+    $win.scroll(function(e){
+        var winTop = $win.scrollTop();
+        var cTop = $cover.offset().top;
+        var imgHeightTmp = Math.max(imgHeight-winTop,0);
+        $bannerDom.css({height:imgHeightTmp})
+        placeHolder.css({height:imgHeightTmp+88})
+        if(winTop>cTop){
+            $bannerDom.addClass('hidden');
+        }else{
+            $bannerDom.removeClass('hidden');
+        }
+    })
 }()
-*/
 !function() {
     /*var txt = $(".city-name").text();
     //不是北京地区

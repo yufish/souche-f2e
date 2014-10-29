@@ -1,5 +1,7 @@
 define(['detail/report/histogram'], function(Histogram){
 
+    var IS_MOBILE = /ipad|iphone|android/i.test(window.navigator.userAgent);
+
     var baseConfig = {
         y: {
             show: true,
@@ -103,7 +105,7 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.wheel-depth .safety-item-bd') );
         },
         bind: function(){
-            Souche.Util.appear( ".wheel-depth .safety-item-bd", function(){
+            function readAndUpdate(){
                 var realValue = $('.wheel-depth .safety-item-bd').attr('data-reportdata').split(' ');
                 // 分段比例
                 var adjustArr = [];
@@ -132,7 +134,14 @@ define(['detail/report/histogram'], function(Histogram){
                         el.title = name + realValue[index];
                     })
                 }, 100);
-            }, APPEAR_DIS);
+            }
+            if(IS_MOBILE){
+                readAndUpdate();
+            }
+            else{
+                Souche.Util.appear( ".wheel-depth .safety-item-bd", readAndUpdate, APPEAR_DIS);
+            }
+            
         }
     };
 
@@ -174,7 +183,7 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.brake-thickness .safety-item-bd') );
         },
         bind: function(){
-            Souche.Util.appear( ".brake-thickness .safety-item-bd", function(){
+            function readAndUpdate(){
                 var relValue = $('.brake-thickness .safety-item-bd').attr('data-reportdata').split(' ');
                 for( var i=0, j=relValue.length; i<j; i++ ){
                     if( relValue[i]==0 ){
@@ -185,7 +194,13 @@ define(['detail/report/histogram'], function(Histogram){
                     }
                 }
                 brakeThickness.hist.updateBar( relValue );
-            }, APPEAR_DIS);
+            }
+            if(IS_MOBILE){
+                readAndUpdate();
+            }
+            else{
+                Souche.Util.appear( ".wheel-depth .safety-item-bd", readAndUpdate, APPEAR_DIS);
+            }
         }
     };
 
@@ -226,7 +241,7 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.liquid-level .safety-item-bd') );
         },
         bind: function(){
-            Souche.Util.appear( ".liquid-level .safety-item-bd", function(){
+            function readAndUpdate(){
                 var relValue = $('.liquid-level .safety-item-bd').attr('data-reportdata').split(' ');
                 for( var i=0, j=relValue.length; i<j; i++ ){
                     if( relValue[i]==0 ){
@@ -240,7 +255,13 @@ define(['detail/report/histogram'], function(Histogram){
                     }
                 }
                 liquidLevel.hist.updateBar( relValue );
-            }, APPEAR_DIS);
+            }
+            if(IS_MOBILE){
+                readAndUpdate();
+            }
+            else{
+                Souche.Util.appear( ".wheel-depth .safety-item-bd", readAndUpdate, APPEAR_DIS);
+            }
         }
     };
 
@@ -285,7 +306,7 @@ define(['detail/report/histogram'], function(Histogram){
             return getConfig( xItems, yItems, barConf, $('.antifreeze .safety-item-bd .hist-ctn') );
         },
         bind: function(){
-            Souche.Util.appear( ".antifreeze .safety-item-bd", function(){
+            function readAndUpdate(){
                 var relValue = [Number($('.antifreeze .safety-item-bd').attr('data-reportdata'))];
                 antiFreeze.hist.updateBar(relValue);
                 // 更新底部小球的class
@@ -304,7 +325,13 @@ define(['detail/report/histogram'], function(Histogram){
                     antiFreeze.hist.ele.find('.chart-bar').css('overflow', 'visible');
                     valueText.animate({opacity: 1, duration: 100});
                 }, 800);
-            },APPEAR_DIS);
+            }
+            if(IS_MOBILE){
+                readAndUpdate();
+            }
+            else{
+                Souche.Util.appear( ".wheel-depth .safety-item-bd", readAndUpdate, APPEAR_DIS);
+            }
         }
     };
     
