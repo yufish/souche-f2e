@@ -59,7 +59,7 @@ var Action = (function () {
                     success:function(e){
                         //e.type,e.code,e.orderSn,e.contactPhone
                         hidePopup();
-                        if(e.code!='200' || e.code!='402'){
+                        if(e.code!='200' && e.code!='402'){
                             alert('系统错误,请稍后重试或联系客服.错误码:'+ e.code);
                             return;
                         }

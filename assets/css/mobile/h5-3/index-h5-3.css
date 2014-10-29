@@ -746,3 +746,10 @@ input.checkbox-cond:checked{
 input.checkbox-cond:checked + .filter-title{
     color:#ff571a;
 }
+.guard-banner{
+    overflow: hidden;
+    display: block;
+}
+.guard-banner img{
+    width:100%;
+}

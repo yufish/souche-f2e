@@ -841,10 +841,16 @@
     margin: 8px 0 16px;
     line-height: 12px;
 }
-#detail-main .sec-info .fenqi-item,
-#detail-main .sec-info .more-config{
+#detail-main .sec-info .fenqi-item{
     line-height: 44px;
     height: 46px;
+    font-size: 14px;
+    color: #333;
+    display: block;
+}
+#detail-main  .more-config{
+    line-height: 36px;
+    height: 36px;
     font-size: 14px;
     color: #333;
     display: block;
@@ -940,25 +946,39 @@
     color: #666;
 }
 .guarantee-item{
-    padding-bottom: 16px;
+    padding:0 5px;
 }
 .request4guarantee{
     background: #ff571a;
     display: block;
     color:#fff;
     text-align: center;
-    margin-bottom: 5px;
     height: 36px;
     line-height: 36px;
     font-size: 18px;
 }
-.gi-info{
-    background: #fffee8;
-    padding: 10px 16px;
-    color:#ff8a01;
-    border:1px solid #f7d5a8;
+.icon-thumb{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../../../images/mob/authorization/big_thumb.png) no-repeat center;
+    background-size: 100%;
+}
+.guard-info-item{
+    padding: 0 16px;
+}
+.guard-info-item .gi-left{
+    width: 250px;
+}
+.guard-info-item .gi-title{
+    height: 62px;
+    color:#FF571a;
+    font-size: 14px;
+}
+.guard-info-item .gi-content{
+    color:#999;
     font-size: 12px;
-    line-height: 16px;
+    margin-bottom: 14px;
 }
 #detail #actions{
     font-size: 14px;
@@ -1440,48 +1460,6 @@
     color:#999;
     font-size: 12px;
 }
-.auth-info{
-    display: -webkit-box;
-    display: flex;
-    display: -webkit-flex;
-    font-size: 14px;
-    height: 45px;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-align-items:center;
-    padding: 0 16px;
-    border-bottom: 1px solid #F5F5F5;
-}
-.auth-tag{
-    background: #e8bd60;
-    color:#fff;
-    font-size: 12px;
-    padding: 2px 3px;
-    border-radius: 3px;
-    margin-right: 8px;
-}
-.auth-url{
-    -webkit-box-flex: 1;
-    margin-left: auto;
-    color:#ff571a;
-}
-.auth-addr{
-    color:#666;
-    font-size: 14px;
-    padding: 16px 16px 0;
-}
-.goto-auth-shop {
-    height: 36px;
-    width: 81px;
-    line-height: 34px;
-    border:1px solid #ccc;
-    border-radius: 4px;
-    color:#666;
-    font-size: 12px;
-    display: block;
-    margin:16px auto;
-    text-align: center;
-}
 .star-icon{
     width: 17px;
     height: 16px;
@@ -1542,4 +1520,10 @@
 #yuyue-success  .yuyue-content{
     color:#999;
     font-size: 14px;;
+}
+.auth-area .auth-title{
+    width: 100%;
+}
+.auth-area .auth-title .left-arrow{
+    flot:right;
 }
