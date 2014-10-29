@@ -91,6 +91,7 @@ function filter(BrandMgr, addListener) {
                 initBrandName = brandDom.attr('init_brand_name');
                 if(initBrandName) {
                     $('#btn-select-brand').text(initBrandName).css('color','#333');
+                    BrandMgr.addBrand(code, name);
                 }
                 history.replaceState({},document.title,'filter-car.html')
             }()

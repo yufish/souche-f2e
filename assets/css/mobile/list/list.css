@@ -206,6 +206,7 @@
     background: #ff571a;
     color:#fff;
     padding: 2px 3px;
+    float: left;
 }
 #list .car-footer .time-limit{
     background: #65ae2f;
