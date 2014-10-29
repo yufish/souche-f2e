@@ -125,15 +125,23 @@
             setTimeout(function() {
                 flagD = false;
             }, 1000)
-            Souche.checkPhoneExist(function(is_login) {
-                if (is_login) {
-                    submitYuyue();
-                } else {
-                    $("#yuyue-popup").removeClass("hidden")
-                    $(".wrapGrayBg").show();
-                }
-                $("#login_button").attr("disabled", false);
+            Souche.MiniLogin.checkLogin(function(){
+                submitYuyue();
+            },false,true)
+            $(Souche.MiniLogin).on("minilogin:close",function(){
+                $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
+                $("#J_yuyue").html("预约看车");
+                $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
             })
+//            Souche.checkPhoneExist(function(is_login) {
+//                if (is_login) {
+//                    submitYuyue();
+//                } else {
+//                    $("#yuyue-popup").removeClass("hidden")
+//                    $(".wrapGrayBg").show();
+//                }
+//                $("#login_button").attr("disabled", false);
+//            })
         });
         $('#yuyue-popup .apply_close').live('click', function() {
             $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
