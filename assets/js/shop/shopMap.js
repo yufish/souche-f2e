@@ -1,12 +1,12 @@
 define(function(){
-    function init( shopLocation ){
+    function init( shopLocation, zoomLevel ){
         // 百度地图API功能
         var map = new BMap.Map("shop-map");
         //- 店铺经纬度
         var point = new BMap.Point( shopLocation.log, shopLocation.lat);
         var marker = new BMap.Marker(point);  // 创建标注
         map.addOverlay(marker);              // 将标注添加到地图中
-        map.centerAndZoom(point, 20);
+        map.centerAndZoom(point, zoomLevel);
 
         // scale control
         var scaleOpts = {
