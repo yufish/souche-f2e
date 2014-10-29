@@ -158,7 +158,7 @@ define(['index/car-god',
                     slideshowSpeed: 5000,
                     controlNav: true,
                     animationLoop: false,
-                    randomize: true,
+                    randomize: false,
                     directionNav: false
 
                 });
