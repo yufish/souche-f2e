@@ -1,0 +1,39 @@
+{
+  "name": "souche-f2e",
+  "version": "1.0.0",
+  "description": "f2e project of souche",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "es5-shim": "^4.0.3",
+    "envify": "^3.0.0",
+    "gulp-browserify": "^0.5.0",
+    "eventproxy": "^0.3.1",
+    "gulp-livereload": "^2.1.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-cond": "^0.0.2",
+    "gulp": "^3.8.9",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^3.0.1",
+    "react": "~0.12.0",
+    "react-tools": "~0.12.0",
+    "reactify": "^0.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/souche/souche-f2e.git"
+  },
+  "keywords": [
+    "f2e"
+  ],
+  "author": "souche f2e team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/souche/souche-f2e/issues"
+  },
+  "homepage": "https://github.com/souche/souche-f2e"
+}
