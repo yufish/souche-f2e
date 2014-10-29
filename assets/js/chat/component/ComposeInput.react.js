@@ -29,7 +29,7 @@ var ComposeInput = React.createClass({
                 var value = this._ele.textContent.trim();
                 // console.log( value );
                 // call submitHandler
-                if(value){
+                if( this.props.validator(value) ){
                     this.props.submitHandler( value );
                     this._ele.innerHTML = '';
                 }

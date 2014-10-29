@@ -22,7 +22,6 @@ function appInitFail(msg){
 function appInit(){
     _data.getChatList(true, function(data, status){
         console.log(data);
-        console.log(status);
         console.log('--------------------------------------');
         if( data.code == '100000'){
             var chatList = data.data.chatList;
@@ -36,7 +35,7 @@ function appInit(){
                     allMsgs = allMsgs.concat(ml);
                 });
                 var initData = getDataFromRaw(chatList, allMsgs);
-                console.log( initData.users );
+                console.table( initData.users );
                 AppAction.appInit( initData.users, initData.threads, initData.msgs);
             });
 
@@ -83,6 +82,16 @@ function getDataFromRaw(threads, msgs){
                 name: '我',
                 id: m.receiver,
                 avatar: m.receiverHeadImg
+            }
+            users.push(curUser);
+            AppAction.userLogin(curUser.id);
+            break;
+        }
+        else if( idInObjArr( m.receiver, users, 'id' ) ){
+            curUser = {
+                name: '我',
+                id: m.sender,
+                avatar: m.senderHeadImg
             }
             users.push(curUser);
             AppAction.userLogin(curUser.id);
