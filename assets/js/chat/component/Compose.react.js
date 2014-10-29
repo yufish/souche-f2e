@@ -28,13 +28,38 @@ var ComposeCarid = require('./ComposeTool-Carid.react');
 var ComposePic = require('./ComposeTool-Pic.react');
 var ComposePreviewImg = require('./ComposePreview-Img.react');
 
+// 直接上传
+// 立即发出消息
+function handUploadCallback(imgUrl){
+    // this.setState({
+    //     uploadedImg: imgUrl
+    // });
+    if(imgUrl){
+        this.props.sendPic(imgUrl)
+    }
+}
+
+// 暂时用不到发图&文
+// 现在只有单纯的图
+// 所以 haveImg, enterUpload的逻辑都先用不着
+// 留着吧
+function enterUploadCallback(imgUrl){
+    this.props.sendTnP(text, imgUrl);
+    this.setState({
+        haveImg: false,
+        enterUpload: false,
+        picUploadCallback: handUploadCallback.bind(this)
+    });
+}
+
 var Compose = React.createClass({
     propTypes: {
-        textsHandler: React.PropTypes.func.isRequired
+        sendText: React.PropTypes.func.isRequired
     },
     getInitialState: function(){
         return {
-            picUploadCallback: false
+            picUploadCallback: handUploadCallback.bind(this),
+            enterUpload: false
         };
     },
     componentDidMount: function(){
@@ -56,6 +81,7 @@ var Compose = React.createClass({
                         chooseImg={this._choosedImg}
                         unChooseImg={this._unChooseImg}
                         uploadCallback={this.state.picUploadCallback}
+                        enterUpload={this.state.enterUpload}
                         imgUploadUrl={this.props.imgUploadUrl}
                     />
 
@@ -79,10 +105,9 @@ var Compose = React.createClass({
     _submitText: function(text){
         if( this.haveImg ){
             this.setState({
-                picUploadCallback: function(imgUrl){
-                    this.props.sendTnP(text, imgUrl);
-                }
-            })
+                picUploadCallback: enterUploadCallback.bind(this),
+                enterUpload: true
+            });
         }
         else{
             this.props.sendText(text);

@@ -16,7 +16,10 @@ var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
             MsgData[m.id] = m;
-            MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
+            var u = UserStore.getById(m.sender);
+            if(u){
+                MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
+            }
         });
     },
     // 新建的msg只有一个时间戳 还没有id
@@ -86,7 +89,7 @@ ChatDispatcher.register(function(payload){
 
     switch(action.actionType){
         case ChatConstants.APP_INIT:
-            ChatDispatcher.waitFor([ThreadStore.dispatchToken]);
+            ChatDispatcher.waitFor([ThreadStore.dispatchToken, UserStore.dispatchToken]);
             _dataHandler.init(action.msgs);
             MsgStore.emitChange();
             break;

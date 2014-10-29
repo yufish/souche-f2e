@@ -16,9 +16,10 @@ var PicSelect = React.createClass({
     // 也就是说组件不一定更新了, 只是这个过程走完了
     componentDidUpdate: function(){
         //console.log('updated... ');
-        if( this.props.uploadCallback instanceof Function){
+        if( this.props.enterUpload){
             // exec upload
             // exec callback
+            this.refs['upload-form'].submit();
         }
     },
     render: function() {
@@ -31,10 +32,17 @@ var PicSelect = React.createClass({
                 <a className="compose-tool-icon" onClick={this._triggerFileInput}></a>
                 <div className="compose-tool-content">
                     <form name="msg-pic-upload" id="msg-pic-upload"
-                        method="GET" target="pic_upload_iframe" enctype="multipart/form-data"
-                        action={this.props.imgUploadUrl}>
-                        <input type="file" accept="image/*" ref="pic-input" id="pic-input" onChange={this._showPicPreview} />
+                        ref="upload-form"
+                        method="POST" target="pic_upload_iframe" encType="multipart/form-data"
+                        action={this.props.imgUploadUrl}
+                        onSubmit={this._watchRes}
+                    >
+                        <input type="file" accept="image/*" name="file_info" ref="pic-input" id="pic-input" onChange={this._showPicPreview} />
+                        <span className="tip-text">也可以继续编辑消息, 回车后一起发送. 或者</span>
+                        <input type="submit" id="upload-imp-btn" value="上传并发送"/>
                     </form>
+                    {/* iframe for watch response of post */}
+                    <iframe name="pic_upload_iframe" id="pic_upload_iframe"></iframe>
                     <ImagePreview img={this.state.img}
                         unChooseImg={this._unChooseImg}
                     />
@@ -65,8 +73,32 @@ var PicSelect = React.createClass({
         this.setState({img: null});
         this.props.unChooseImg();
     },
-    _uploadImg: function(){
-
+    _watchRes: function(e){
+        var uploadIframe = window.frames[ 'pic_upload_iframe' ];
+        var watchTimer = setInterval( function(){
+            var resStr = $.trim(uploadIframe.document.body.innerText);
+            if( resStr ){
+                clearInterval( watchTimer );
+                uploadIframe.document.body.innHTML = '';
+                var res;
+                try{
+                    res = JSON.parse( resStr );
+                    if(res.code == '100000'){
+                        this.props.uploadCallback( res.data.path );
+                    }
+                    else{
+                        console.log('upload img failed...');
+                        this.props.uploadCallback(null);
+                    }
+                    this.setState({img: null});
+                    this.props.unChooseImg();
+                }
+                catch(e){
+                    alert('上传图片失败... 请稍后重试')
+                    this.props.uploadCallback( null );
+                }
+            }
+        }.bind(this), 200 );
     }
 
 });
