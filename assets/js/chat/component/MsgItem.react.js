@@ -33,7 +33,7 @@ var MsgItem = React.createClass({
         }
         
         return (
-            <li className={classNameArr.join(' ')} key={msg.id} data-msgid={msgId}>
+            <li className={classNameArr.join(' ')} data-msgid={msgId}>
                 <img className="msg-user-avatar" src={msg.senderHeadImg} />
                 <div className="msg-content-ctn">
                     <div className="msg-header">
