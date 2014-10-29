@@ -68,7 +68,7 @@ var ChatApp = React.createClass({
                 <Compose style={compostStyle}
                     sendText={this._sendText}
                     sendCarid={this._sendCarid}
-                    sendTnP={this._sendTnP}
+                    sendPic={this._sendPic}
                     imgUploadUrl={api.uploadImg}
                 />
             </div>
@@ -90,12 +90,12 @@ var ChatApp = React.createClass({
         };
         Msg.send(msg);
     },
-    // 发送图&文
-    _sendTnP: function(text, imgUrl){
+    // 发送图片
+    _sendPic: function(imgUrl){
         var msg = {
-            content: text,
+            content: imgUrl,
             type: 2,
-            imgUrl: imgUrl
+            receiver: getReceiver()
         };
         Msg.send(msg);
     }
