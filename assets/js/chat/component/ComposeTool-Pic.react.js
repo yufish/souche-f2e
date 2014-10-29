@@ -72,6 +72,7 @@ var PicSelect = React.createClass({
     _unChooseImg: function(){
         this.setState({img: null});
         this.props.unChooseImg();
+        this.picInput.value = '';
     },
     _watchRes: function(e){
         var uploadIframe = window.frames[ 'pic_upload_iframe' ];
@@ -83,20 +84,22 @@ var PicSelect = React.createClass({
                 var res;
                 try{
                     res = JSON.parse( resStr );
-                    if(res.code == '100000'){
-                        this.props.uploadCallback( res.data.path );
-                    }
-                    else{
-                        console.log('upload img failed...');
-                        this.props.uploadCallback(null);
-                    }
-                    this.setState({img: null});
-                    this.props.unChooseImg();
+                    
                 }
+                // 只去catch parseJSON的错误
                 catch(e){
                     alert('上传图片失败... 请稍后重试')
                     this.props.uploadCallback( null );
+                    return;
                 }
+                if(res.code == '100000'){
+                    this.props.uploadCallback( res.data.path );
+                }
+                else{
+                    console.log('upload img failed...');
+                    this.props.uploadCallback(null);
+                }
+                this._unChooseImg();
             }
         }.bind(this), 200 );
     }
