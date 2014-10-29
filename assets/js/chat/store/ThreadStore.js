@@ -1,7 +1,7 @@
 // ThreadStore.js
 
 var EventEmitter = require('events').EventEmitter;
-var assign = require('react/lib/Object.assign');
+var merge = require('react/lib/merge');
 
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
 var ChatConstants = require('../constant/ChatConstants');
@@ -35,7 +35,7 @@ function changeThread(newId){
 
 
 // exports出去的 只有get  没有set 
-var ThreadStore = assign(EventEmitter.prototype, {
+var ThreadStore = merge(EventEmitter.prototype, {
     getAll: function(){
         return threads;
     },

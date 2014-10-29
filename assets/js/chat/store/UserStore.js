@@ -1,5 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
-var assign = require("react/lib/Object.assign");
+var merge = require('react/lib/merge');
 
 
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
@@ -30,7 +30,7 @@ function setCurUser(userId){
     currentUser = userId;
 }
 
-var UserStore = assign(EventEmitter.prototype, {
+var UserStore = merge(EventEmitter.prototype, {
     getAll: function(){
         return UserData;
     },

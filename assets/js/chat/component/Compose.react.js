@@ -30,7 +30,7 @@ var ComposePreviewImg = require('./ComposePreview-Img.react');
 
 var Compose = React.createClass({
     propTypes: {
-        sendText: React.PropTypes.func.isRequired
+        textsHandler: React.PropTypes.func.isRequired
     },
     getInitialState: function(){
         return {
