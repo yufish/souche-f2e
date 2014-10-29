@@ -1,7 +1,8 @@
 
 // ------------ some config ------------
-// var baseUrl= 'http://115.29.10.121:10086/soucheweb/pages/app/thumbelina/messageAction';
-var baseUrl= 'http://localhost:8080/soucheweb/pages/app/thumbelina/messageAction';
+var baseUrl= 'http://115.29.10.121:10086/soucheweb/pages/app/thumbelina/messageAction';
+// var baseUrl= 'http://localhost:8080/soucheweb/pages/app/thumbelina/messageAction';
+// var baseUrl= '/soucheweb/pages/app/thumbelina/messageAction';
 
 var api = {
     sendMsg: baseUrl + '/send.json',
