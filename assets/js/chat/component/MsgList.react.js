@@ -14,6 +14,8 @@ var UserStore = require('../store/UserStore');
 var MsgStore = require('../store/MsgStore');
 var ThreadStore = require('../store/ThreadStore');
 
+var MsgItem = require('./MsgItem.react');
+
 var Tool = require('../util/tool');
 
 
@@ -53,47 +55,22 @@ var MsgList = React.createClass({
         this._scrollToBottom();
     },
     render: function() {
-        var msgItems = [];
+        var list = [];
 
-        if( Tool.isEmptyObj(this.state.msgData) ){
+        if( this.state.msgData.length <=0 ){
             var noMsgTip = '还没有对话消息...';
-            return <ol className="msg-list"  style={this.props.style}>
-                <li className="no-msg-tip">{noMsgTip}</li>
-            </ol>
-        }
-
-        for(var i in this.state.msgData){
-            var msg = this.state.msgData[i];
-            var classNameArr = ['msg-item'];
-            var msgId = msg.id || '';
-            if( UserStore.isCurUser(msg.sender) ){
-                classNameArr.push('sendbyme');
-            }
-            var d = new Date(msg.time);
-            var sendTime = Tool.makeDouble(d.getMonth()+1) + '-' + Tool.makeDouble(d.getDate());
-            sendTime += ' ';
-            sendTime += Tool.makeDouble(d.getHours()   ) + ':';
-            sendTime += Tool.makeDouble(d.getMinutes() ) + ':';
-            sendTime += Tool.makeDouble(d.getSeconds() );
             
-            var node = (
-                <li className={classNameArr.join(' ')} key={i} data-msgid={msgId}>
-                    <img className="msg-user-avatar" src={msg.senderHeadImg} />
-                    <div className="msg-content-ctn">
-                        <div className="msg-header">
-                            <p className="msg-user-name">{msg.senderName}</p>
-                            <p className="msg-sendtime">{ sendTime }</p>
-                        </div>
-                        <p className="msg-text">{msg.content}</p>
-                    </div>
-                </li>
-            );
-            msgItems.push( node );
+            list.push(<li className="no-msg-tip">{noMsgTip}</li>);
+        }
+        else{
+            list = this.state.msgData.map(function(msg, index){
+                return <MsgItem msg={msg}/>;
+            });
         }
 
         return (
             <ol className="msg-list"  style={this.props.style}>
-                {msgItems}
+                {list}
             </ol>
         );
     },

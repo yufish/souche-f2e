@@ -1,0 +1,57 @@
+
+.compose-tool.compose-pic{
+    position: relative;
+
+    .compose-tool-icon{
+        overflow: hidden;
+        background-image: url('../../images/chat/img-icon.png');
+        background-size: 100% auto;
+    }
+    
+    @cntH: 30px;
+    .compose-tool-content{
+        position: absolute;
+        // top: 0;
+        top: -@cntH;
+        left: -(200px/2 - 30px/2);
+        height: @cntH;
+        width: 200px;
+        overflow: visible;
+        
+        &:hover{
+            #msg-pic-upload{
+                opacity: 1;
+            }
+        }
+        #msg-pic-upload{
+            position: absolute;
+            width: 100%;
+            z-index: 200;
+            opacity: 0.5;
+            .tst(opacity 200ms ease;);
+
+            #upload-imp-btn{
+                float: right;
+                margin-right: 1em;
+                cursor: pointer;
+            }
+        }
+        .tip-text{
+            display: none;
+            font-size: 12px;
+        }
+        #pic_upload_iframe{
+            height: 0;
+            border: none;
+            overflow: hidden;
+        }
+
+        #pic-input{
+            display: block;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+    }
+
+}

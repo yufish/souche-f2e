@@ -16,7 +16,10 @@ var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
             MsgData[m.id] = m;
-            MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
+            var u = UserStore.getById(m.sender);
+            if(u){
+                MsgData[m.id].senderName = UserStore.getById(m.sender).name || m.sender;
+            }
         });
     },
     // 新建的msg只有一个时间戳 还没有id
@@ -26,6 +29,7 @@ var _dataHandler = {
         var tmpId = msgObj.ts + '__';
         MsgData[tmpId] = merge({}, msgObj);
         MsgData[tmpId].time = msgObj.ts;
+        MsgData[tmpId].messageType = msgObj.type;
         // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
         var user = UserStore.getById( UserStore.getCurUser() );
         if(user){
@@ -48,17 +52,21 @@ var _dataHandler = {
 
 var MsgStore = merge(EventEmitter.prototype, {
     getAll: function(){
-        return MsgData;
+        var all = [];
+        for( var i in MsgData){
+            all.push(MsgData[i]);
+        }
+        return all;
     },
     getByThreadId: function(threadId){
-        var msgs = {};
+        var msgs = [];
         for(var m in MsgData){
             // 唉, 这个架构设计的
             // Q1: msg的sender属性是发送者, 而发送者作为了thread的id
             // Q2: 获取一个对话的所有消息数据, 不光要send是某ID, 还要获取"我发送给他的"
             //      即 receiver是该ID的...
             if(MsgData[m].sender === threadId || MsgData[m].receiver === threadId){
-               msgs[m] = MsgData[m];
+               msgs.push(MsgData[m]);
             }
         }
         return msgs;
@@ -86,7 +94,7 @@ ChatDispatcher.register(function(payload){
 
     switch(action.actionType){
         case ChatConstants.APP_INIT:
-            ChatDispatcher.waitFor([ThreadStore.dispatchToken]);
+            ChatDispatcher.waitFor([ThreadStore.dispatchToken, UserStore.dispatchToken]);
             _dataHandler.init(action.msgs);
             MsgStore.emitChange();
             break;
@@ -100,8 +108,10 @@ ChatDispatcher.register(function(payload){
         case ChatConstants.MSG_SEND_SUC:
             var msgId = action.id;
             var time = action.sendTime;
-            var tsId = action.reqTime;
+            // 作为msgId, ts还要加两个下划线
+            var tsId = action.reqTime + '__';
             _dataHandler.update( tsId, {id: msgId, time: time } );
+            MsgStore.emitChange();
             break;
         case ChatConstants.MSG_SEND_FAIL:
             
