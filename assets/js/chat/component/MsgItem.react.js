@@ -28,6 +28,9 @@ var MsgItem = React.createClass({
         if( msg.messageType == '2' ){
             msgText = <p className="msg-text"><img src={msg.content} className="msg-img"/></p>;
         }
+        else if(msg.messageType == '3'){
+            msgText = <p className="msg-text"><a href={"http://souche.com/pages/choosecarpage/flash-car-detail.html?carId="+ msg.content } className="msg-carid-link" target="_black">{msg.content}</a></p>;
+        }
         else{
             msgText = <p className="msg-text">{msg.content}</p>;
         }

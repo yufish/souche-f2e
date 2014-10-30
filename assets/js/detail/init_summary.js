@@ -197,6 +197,10 @@ define(function() {
                 $(".onsale-tab-bigitem").removeClass("active");
                 $(this.parentNode).addClass("active")
                 var self = this;
+                $('html,body').animate({
+                    scrollTop: $("#" + id).offset().top - 70
+                }, 500, function() {
+                });
 
             });
             $(".onsale-tab-bigitem .onsale-tab-item").on("click", function(e) {

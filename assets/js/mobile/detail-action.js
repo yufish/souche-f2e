@@ -65,7 +65,7 @@ var Action = (function () {
                         }
                         var orderSn = e.orderSn;
                         var type= e.type;
-                        $('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
+                        //$('#contact-car-dealer').attr('href','tel:4000200086,'+ e.contactPhone);
                         if(globalConfig.hasOrder){
                             if(orderSn) {
                                 window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;

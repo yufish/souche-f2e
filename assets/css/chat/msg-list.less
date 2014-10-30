@@ -83,6 +83,26 @@
                     max-width: 100%;
                     // max-height: 
                 }
+                .msg-carid-link{
+                    position: relative;
+                    display: inline-block;
+                    padding-left: 1.6em;
+                    .tst();
+                    &:hover{
+                        background-color: #ddd;
+                    }
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: -0.1em;
+                        left: 0;
+                        height: 1.2em;
+                        width: 1.2em;
+                        background-image: url('../../images/list/danbao-icon.png');
+                        background-size: 100% auto;
+                    }
+                }
             }
         }
         
