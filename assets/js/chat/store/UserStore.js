@@ -29,6 +29,23 @@ function initUserData(serverUsers){
 function setCurUser(userId){
     currentUser = userId;
 }
+function updateUser(id, updates){
+    for(var key in updates){
+        UserData[id][key] = updates[key];
+    }
+}
+
+// 用户的update, 增加 / 更新
+function updateUserData(users){
+    users.forEach(function(u){
+        if( !UserData[u.id] ){
+            UserData[u.id] = u;
+        }
+        else{
+            updateUser(u.id, u);
+        }
+    });
+}
 
 var UserStore = merge(EventEmitter.prototype, {
     getAll: function(){
@@ -71,6 +88,9 @@ UserStore.dispatchToken = ChatDispatcher.register(function(payload){
         case ChatConstants.USER_LOGIN:
             setCurUser(action.userId);
             UserStore.emitChange();
+            break;
+        case ChatConstants.SCHEDUAL_UPDATE:
+            updateUserData(action.users);
             break;
     };
 });
