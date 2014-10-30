@@ -1,15 +1,27 @@
 .wrapper{
-    // 类型1和2
-    // 小车商 特殊大车商
-    &.report-type-1, &.report-type-2{
-        // 没有质检等级
-        .report_summary .level-card{
+    // 类型1
+    // 小车商
+    &.report-type-1{
+        // 没有质检summary
+        .report_summary{
             display: none;
         }
-        // 报告内容 居中
-        .report_summary .summary-box{
-            float: none;
-            margin: 0 auto;
+    }
+
+
+    &.report-type-2{
+        .report_summary .level-card{
+            .card-stage .card-box .card-cont{
+                background: url(../../images/detail/special-shop-report-icon.png) no-repeat;
+                background-position: center;
+
+                *{
+                    display: none;
+                }
+            }
+            .look-rule{
+                display: none;
+            }
         }
     }
     

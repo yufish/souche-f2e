@@ -43,6 +43,17 @@ var AppAction = {
             }
         })
     },
+
+    // 定时获取数据... 
+    schedualUpdate: function(users, threads, msgs){
+        ChatDispatcher.handleServerAction({
+            actionType: ChatlConstants.SCHEDUAL_UPDATE,
+            users: users,
+            threads: threads,
+            msgs: msgs
+        });
+    },
+
     receiveMsg: function(msgObj){
         ChatDispatcher.handlerServerAction({
             actionType: ChatlConstants.MSG_RECEIVE,

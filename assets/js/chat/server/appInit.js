@@ -20,42 +20,18 @@ function appInitFail(msg){
 }
 
 function appInit(){
-    _data.getChatList(true, function(data, status){
-        console.log(data);
-        console.log('--------------------------------------');
-        if( data.code == '100000'){
-            var chatList = data.data.chatList;
-
-            var lastReqTime = Date.now() - 3600*24*1000;
-            var ep = new EP();
-            ep.after('get msg',chatList.length, function(msgListArr){
-                console.log(msgListArr);
-                var allMsgs = [];
-                msgListArr.forEach(function(ml){
-                    allMsgs = allMsgs.concat(ml);
-                });
-                var initData = getDataFromRaw(chatList, allMsgs);
-                console.table( initData.users );
-                AppAction.appInit( initData.users, initData.threads, initData.msgs);
-            });
-
-            chatList.forEach(function(chat){
-                _data.getMsgs(chat.friendId, lastReqTime, function(data, status){
-                    if( data.code == '100000' ){
-                        var msgData = data.data.msgList;
-                        ep.emit('get msg', msgData);
-                    }
-                    else{
-                        appInitFail('获取和 '+(chat.friendName||chat.friendId)+' 的聊天消息失败...');
-                    }
-                });
-            });
-        }
-        else{
-            appInitFail();
-        }
-
+    _data.getAllData(function(chatList, allMsgs){
+        var initData = getDataFromRaw(chatList, allMsgs);
+        // console.table( initData.users );
+        AppAction.appInit( initData.users, initData.threads, initData.msgs);
     });
+
+    setInterval(function(){
+        _data.getAllData(function(chatList, allMsgs){
+            var schedualData = getDataFromRaw(chatList, allMsgs);
+            AppAction.schedualUpdate( schedualData.users, schedualData.threads, schedualData.msgs );
+        });
+    }, 10*1000);
 }
 
 function getDataFromRaw(threads, msgs){
@@ -130,6 +106,41 @@ var _data = {
             lastRequireTime: lastReqTime
         };
         $.getJSON(API.getMsg, param, callback);
+    },
+    getAllData: function(callback){
+        _data.getChatList(true, function(data, status){
+            // console.log(data);
+            // console.log('--------------------------------------');
+            if( data.code == '100000'){
+                var chatList = data.data.chatList;
+
+                var lastReqTime = Date.now() - 3600*24*1000;
+                var ep = new EP();
+                ep.after('get msg',chatList.length, function(msgListArr){
+                    // console.log(msgListArr);
+                    var allMsgs = [];
+                    msgListArr.forEach(function(ml){
+                        allMsgs = allMsgs.concat(ml);
+                    });
+                    callback(chatList, allMsgs );
+                });
+
+                chatList.forEach(function(chat){
+                    _data.getMsgs(chat.friendId, lastReqTime, function(data, status){
+                        if( data.code == '100000' ){
+                            var msgData = data.data.msgList;
+                            ep.emit('get msg', msgData);
+                        }
+                        else{
+                            appInitFail('获取和 '+(chat.friendName||chat.friendId)+' 的聊天消息失败...');
+                        }
+                    });
+                });
+            }
+            else{
+                appInitFail();
+            }
+        });
     }
 };
 

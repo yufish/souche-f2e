@@ -6,7 +6,7 @@ define(function(){
         $.ajax({
             url: contextPath + "/pages/telephoneAction/freecall.json",
             data: {
-                customerCellphone: $.trim($("#free-phoe").val()),
+                phone: $.trim($("#free-phoe").val()),
                 // userCellphone: "18667932551",
                 carId: config.carId,
                 time: config.timeStamp,
