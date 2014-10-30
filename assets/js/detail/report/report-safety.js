@@ -56,11 +56,12 @@ define(['detail/report/histogram'], function(Histogram){
     var WHEELDEPTH_GUIDEVALUE = 1.6;
     var wheelDepth = {
         init: function(){
-            var hist = new Histogram(wheelDepth.getConfig());
-            wheelDepth.hist = hist;
-            wheelDepth.bind();
-            // for debug
-            window.hist = hist;
+            // 元素存在才操作
+            if($('.safety-item.wheel-depth').length > 0){
+                var hist = new Histogram(wheelDepth.getConfig());
+                wheelDepth.hist = hist;
+                wheelDepth.bind();
+            }
         },
 
         // 胎纹深度模块比较特殊, 需要分段比例
@@ -141,15 +142,17 @@ define(['detail/report/histogram'], function(Histogram){
             else{
                 Souche.Util.appear( ".wheel-depth .safety-item-bd", readAndUpdate, APPEAR_DIS);
             }
-            
         }
     };
 
     var brakeThickness = {
         init: function(){
-            var hist = new Histogram(brakeThickness.getConfig());
-            brakeThickness.hist = hist;
-            brakeThickness.bind();
+            // 元素存在才操作
+            if($('.safety-item.brake-thickness').length > 0){
+                var hist = new Histogram(brakeThickness.getConfig());
+                brakeThickness.hist = hist;
+                brakeThickness.bind();
+            }
         },
         getConfig: function(){
             // 没有最大/最小值
@@ -206,9 +209,12 @@ define(['detail/report/histogram'], function(Histogram){
 
     var liquidLevel = {
         init: function(){
-            var hist = new Histogram(liquidLevel.getConfig());
-            liquidLevel.hist = hist;
-            liquidLevel.bind();
+            // 元素存在才操作
+            if($('.safety-item.liquid-level').length > 0){
+                var hist = new Histogram(liquidLevel.getConfig());
+                liquidLevel.hist = hist;
+                liquidLevel.bind();
+            }
         },
         getConfig: function(){
             var yItems =  [
@@ -267,16 +273,19 @@ define(['detail/report/histogram'], function(Histogram){
 
     var antiFreeze = {
         init: function(){
-            var antiConfig = antiFreeze.getConfig();
-            // 修正config, 增加新的调整
-            antiConfig.y.style.width = '82px';
-            var hist = new Histogram( antiConfig );
-            var bottomBallPos = -(40/2);
-            bottomBallPos += (hist.ele.width()/2 - 50) + 5;
-            $('.antifreeze .bottom-ball').css('margin-left',  bottomBallPos);
+            // 元素存在才操作
+            if($('.safety-item.antifreeze').length > 0){
+                var antiConfig = antiFreeze.getConfig();
+                // 修正config, 增加新的调整
+                antiConfig.y.style.width = '82px';
+                var hist = new Histogram( antiConfig );
+                var bottomBallPos = -(40/2);
+                bottomBallPos += (hist.ele.width()/2 - 50) + 5;
+                $('.antifreeze .bottom-ball').css('margin-left',  bottomBallPos);
 
-            antiFreeze.hist = hist;
-            antiFreeze.bind();
+                antiFreeze.hist = hist;
+                antiFreeze.bind();
+            }
         },
         getConfig: function(){
             var yItems =  [
