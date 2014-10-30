@@ -254,10 +254,10 @@
             }
         });
         var wrapWidth = $(".wrap").width();
-        if (wrapWidth == 1200) {
+        if (wrapWidth >= 1280) {
             smallSlideWidth = "-546px";
         } else {
-            smallSlideWidth = "-504px";
+            smallSlideWidth = "-368px";
         }
         var smallSlide = function(current) {
             var left = "0px";
