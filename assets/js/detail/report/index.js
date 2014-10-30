@@ -81,10 +81,19 @@ define(['detail/report/report-safety',
     })
 });
  //质检等级翻转
- var summary_stage_time = 0;
-  $(".level-card").mouseenter(function(){
+var summary_stage_time = 0;
+// 只有第type为3的报告才用到翻转
+var wapper = $('.wrapper');
+if( !wapper.hasClass('report-type-1') && !wapper.hasClass('report-type-2') ){
+    $(".level-card").mouseenter(function(){
         $(".card-box").addClass("card-trans");
     });
-  $(".level-card").mouseleave(function(){
-    $(".card-box").removeClass("card-trans");
+    $(".level-card").mouseleave(function(){
+        $(".card-box").removeClass("card-trans");
     });
+}
+else{
+     $(".level-card").unbind('mouseleave');
+     $(".level-card").unbind('mouseenter');
+}
+
