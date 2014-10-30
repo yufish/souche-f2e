@@ -37,12 +37,21 @@ var _dataHandler = {
             MsgData[tmpId].senderHeadImg = user.avatar;
             MsgData[tmpId].senderName = user.name;
         }
-
     },
     update: function(id, updates){
         for(var key in updates){
             MsgData[id][key] = updates[key];
         }
+    },
+    schedualUpdate: function(msgs){
+        msgs.forEach(function(m){
+            if( !MsgData[m.id] ){
+                MsgData[m.id] = m;
+            }
+            else{
+                _dataHandler.update(m.id, m);
+            }
+        });
     },
     receive: function(msgObj){
         msgObj.user = UserStore.getById(msgObj.user);
@@ -108,13 +117,24 @@ ChatDispatcher.register(function(payload){
         case ChatConstants.MSG_SEND_SUC:
             var msgId = action.id;
             var time = action.sendTime;
-            // 作为msgId, ts还要加两个下划线
-            var tsId = action.reqTime + '__';
-            _dataHandler.update( tsId, {id: msgId, time: time } );
+
+            rawMsg = MsgData.tsId;
+            rawMsg.id = msgId;
+            rawMsg.time = time;
+            // 将raw的msg删掉
+            delete MsgData.tsId;
+            // 将服务器返回的ID msg存起来
+            MsgData[msgId] = rawMsg
+            
             MsgStore.emitChange();
             break;
         case ChatConstants.MSG_SEND_FAIL:
             
+            break;
+        case ChatConstants.SCHEDUAL_UPDATE:
+            ChatDispatcher.waitFor([UserStore.dispatchToken, ThreadStore.dispatchToken]);
+            _dataHandler.schedualUpdate(action.msgs);
+            MsgStore.emitChange();
             break;
         case ChatConstants.MSG_RECEIVE:
             _dataHandler.receive( action.msgObj );

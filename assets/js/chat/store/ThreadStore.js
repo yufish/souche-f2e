@@ -33,6 +33,24 @@ function changeThread(newId){
     curThread = newId;
 }
 
+function updateThread(id, updates){
+    for(var key in updates){
+        threads[id][key] = updates[key];
+    }
+}
+// 增加 / 更新  先不管删除了
+function updateThreadData(threads){
+    threads.forEach(function(t){
+        t.id = t.friendId;
+        if( !threads[t.id] ){
+            threads[t.id] = t;
+        }
+        else{
+            updateThread(t.id, t);
+        }
+    })
+}
+
 
 // exports出去的 只有get  没有set 
 var ThreadStore = merge(EventEmitter.prototype, {
@@ -69,6 +87,11 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
         case ChatConstants.CHANGE_THREAD:
             // if()  // 检查是否是可用的uuid?
             changeThread( action.newId );
+            ThreadStore.emitChange();
+            break;
+        case ChatConstants.SCHEDUAL_UPDATE:
+            ChatDispatcher.waitFor([UserStore.dispatchToken]);
+            updateThreadData(action.threads);
             ThreadStore.emitChange();
             break;
     };
