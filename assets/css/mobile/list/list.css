@@ -202,11 +202,18 @@
     position: relative;
     margin-top: 7px;
 }
-#list .car-footer .quality-level{
-    background: #ff571a;
-    color:#fff;
-    padding: 2px 3px;
+#list .car-footer .quality-guide{
+    border:1px solid #639f47;
+    color:#639f47;
+    padding: 2px;
     float: left;
+}
+#list .car-footer .quality-level{
+    border:1px solid #ff571a;
+    color:#ff571a;
+    padding: 2px;
+    float: left;
+    margin-left: 4px;
 }
 #list .car-footer .time-limit{
     background: #65ae2f;
