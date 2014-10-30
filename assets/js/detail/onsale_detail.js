@@ -82,8 +82,15 @@
                     phone: $("#yuyue-phone").val(),
                     carId: config.carId
                 },
+                dataType:"json",
                 type: "post",
                 success: function(data) {
+                    //code    400:无手机号码 401:无carId  402:重复预约   403系统异常  200成功
+                    if(data&&data.code&&data.code==402){
+                        $("#J_yuyue,#J_nav_yuyue").remove();
+                        $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
+                        return;
+                    }
 //                    $('body').append(data);
 //                    $(".wrapGrayBg").show();
 //                    $("#yuyue-popup").addClass("hidden");
