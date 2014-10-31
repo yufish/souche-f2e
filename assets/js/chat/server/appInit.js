@@ -94,8 +94,8 @@ function getInitialData(){
 
 var _data = {
     // param: Boolean blAll, 是全部, 还是只是未读的
-    getChatList: function(blAll, callback){
-        $.getJSON(API.getChatList, {unread: !blAll}, function(data, status){
+    getChatList: function(blUnread, callback){
+        $.getJSON(API.getChatList, {unread: blUnread}, function(data, status){
             callback(data, status);
         });
     },
@@ -107,8 +107,8 @@ var _data = {
         };
         $.getJSON(API.getMsg, param, callback);
     },
-    getAllData: function(callback){
-        _data.getChatList(true, function(data, status){
+    getAllData: function( blUnread ,callback){
+        _data.getChatList(blUnread, function(data, status){
             // console.log(data);
             // console.log('--------------------------------------');
             if( data.code == '100000'){

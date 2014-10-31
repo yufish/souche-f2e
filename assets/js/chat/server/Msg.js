@@ -44,8 +44,8 @@ function sendMsg(msgObj){
     MsgAction.create(msgObj);
 
     _data.send(msgObj, function(data, status){
-        console.log(data);
-        console.log(status);
+        //console.log(data);
+        //console.log(status);
         if(status == 'success' && data.code == '100000'){
             MsgAction.sendSuc(data.data.id, data.data.sendTime, msgObj.ts);
         }
