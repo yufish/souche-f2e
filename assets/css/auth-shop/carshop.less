@@ -17,7 +17,7 @@
   float: right;
   height: 60px;
   .service-item{
-    width: 160px;
+    width: 250px;
     float: left;
     display: block;
     .danboa-icon1{
@@ -174,7 +174,8 @@
     font-size: 14px;
     background: #F5F5F5;
     border-bottom: 1px solid @bc;
-    span{
+    .auth-shop-tag{
+      display: none;
       background: #EBBB58;
       color: #fff;
       font-size: 12px;
@@ -226,3 +227,26 @@
 @import "carshopMod/shop-search.less";
 @import "carshopMod/shop-location.less";
 @import "carshopMod/shop-comment.less";
+
+
+// 店铺页面不显示车辆的对比按钮
+.list_main .card-box .carItem .carTail .carConstrast,
+.list_main .list-box .carItem .carTail .carConstrast{
+  display: none;
+}
+
+// 卡片视图 授权标完全不显示
+.list_main .card-box .carItem .car-type .shouquan{
+  display: none;
+}
+// 列表视图的收藏按钮上移
+.list_main .list-box .carItem .carTail .carCollect{
+  top: 0;
+}
+// 店铺页 列表视图 不显示"授权店"标, 店铺名称保留
+.list_main .list-box .carItem .car-type .shouquan{
+  display: block;
+  .type-icon{
+    display: none;
+  }
+}
