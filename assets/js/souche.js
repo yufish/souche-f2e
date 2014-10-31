@@ -30,9 +30,10 @@ Souche.Util = function() {
             appearKV[id].multi = multi;
         },
         init: function() {
-            var viewportWidth = $(window).width();
-            var viewportHeight = $(window).height();
+
             var check = function() {
+                var viewportWidth = $(window).width();
+                var viewportHeight = $(window).height();
                 var windowScrollTop = $(window).scrollTop();
                 for (var i in appearKV) {
                     if($(i).length){
@@ -57,6 +58,7 @@ Souche.Util = function() {
                 }, 200);
             })
             $(window).scroll(check);
+
         },
         /**
          * [actionList 串行动作]
@@ -363,7 +365,7 @@ Souche.MiniLogin = function() {
 
                 minilayer.on("click",function(){
                     self.close();
-                    $(this).trigger("minilogin:close")
+
                 })
             }
         },
