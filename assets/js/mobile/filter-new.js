@@ -363,15 +363,15 @@ function filter(BrandMgr, addListener) {
                 dataObj.carModel = getCond($('#select-model').val());
                 dataObj.carEngineVolume = getCond($('#select-volume').val());
                 dataObj.transmissionType = getCond($('#select-transmission').val());
-                var cbParam = '';
-                if($('#cbox-almost-new').is(':checked')){
-                    cbParam+='3';
-                }
-                if($('#cbox-fenqi').is(':checked')){
-                    if(cbParam)cbParam+=','
-                    cbParam+='4'
-                }
-                dataObj.cbParam = cbParam;
+                //var cbParam = '';
+                //if($('#cbox-almost-new').is(':checked')){
+                //    cbParam+='3';
+                //}
+                //if($('#cbox-fenqi').is(':checked')){
+                //    if(cbParam)cbParam+=','
+                //    cbParam+='4'
+                //}
+                //dataObj.cbParam = cbParam;cbParam
                 //$.ajax for no reuslt
                 hasResult(dataObj);
 
