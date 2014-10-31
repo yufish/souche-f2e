@@ -5,6 +5,8 @@ define(function(){
         //- 店铺经纬度
         var point = new BMap.Point( shopLocation.log, shopLocation.lat);
         var marker = new BMap.Marker(point);  // 创建标注
+        // 比例值
+        var ruler = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
         map.addOverlay(marker);              // 将标注添加到地图中
         map.centerAndZoom(point, zoomLevel);
 
@@ -14,6 +16,7 @@ define(function(){
             type: BMAP_NAVIGATION_CONTROL_ZOOM
         };
         map.addControl(new BMap.NavigationControl(scaleOpts));
+        map.addControl(ruler);
 
         var opts = {
           width : 100,     // 信息窗口宽度
