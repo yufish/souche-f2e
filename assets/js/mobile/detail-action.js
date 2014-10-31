@@ -74,10 +74,12 @@ var Action = (function () {
                             if(orderSn) {
                                 window.location.href = 'yuyue_detail.html?orderSn=' + orderSn;
                             }
+                            $('#yuyue-submit').text('您已申请担保好车');
                         }else{
                             $('#yuyue-success').removeClass('hidden');
                             $('#J_fake-back').removeClass('hidden');
                             history.pushState(null,'','#yuyue_success');
+                            $('#yuyue-submit').text('您已预约看车')
                             globalConfig.hasOrder = true;
                         }
                     }
