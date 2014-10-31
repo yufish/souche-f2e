@@ -115,9 +115,9 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             if( carWrap.hasClass('card-box') ){
                 ImageResize.init(".carsItem img", 240, 160);
             }
-            else if(carWrap.hasClass('list-box')){
-                ImageResize.init(".carsItem img", 180, 120);
-            }
+//            else if(carWrap.hasClass('list-box')){
+//                ImageResize.init(".carsItem img", 180, 120);
+//            }
             
         }
     };
