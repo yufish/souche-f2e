@@ -48,7 +48,15 @@ var Action = (function () {
             if(location.hash=='#yuyue_success'){
                 history.replaceState(null,document.title,location.pathname+location.search)
             }
+            var canSubmit = true;
             var submitYuyue = function () {
+                if(!canSubmit){
+                    return
+                }
+                setTimeout(function(){
+                    canSubmit = true;
+                },1000)
+                canSubmit = false;
                 $.ajax({
                     url:$('#yuyue-submit').attr('data-url'),
                     data:{
