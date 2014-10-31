@@ -28,7 +28,7 @@ var List = function() {
                         year: item.carVo.yearShow,
                         month: item.carVo.monthShow,
                         newPrice: item.carVo.newPriceToString,
-                        levelName: item.carVo.levelName?'quality-'+item.carVo.levelName.replace('+','-p'):undefined,
+                        levelName: item.carVo.levelName,
                         pictureBig: ( !! item.carPicturesVO)?item.carPicturesVO.pictureBig:'',
                         carOtherAllNameShow: item.carVo.carOtherAllNameShow,
                         price: item.price,

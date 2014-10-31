@@ -64,6 +64,7 @@ var MsgList = React.createClass({
         }
         else{
             list = this.state.msgData.map(function(msg, index){
+                console.log( 'key: ', msg.id );
                 // key应该放在"component"上
                 return <MsgItem msg={msg} key={msg.id} />;
             });
