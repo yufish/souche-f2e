@@ -78,6 +78,7 @@ var Action = (function () {
                             $('#yuyue-success').removeClass('hidden');
                             $('#J_fake-back').removeClass('hidden');
                             history.pushState(null,'','#yuyue_success');
+                            globalConfig.hasOrder = true;
                         }
                     }
                 })
