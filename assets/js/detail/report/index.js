@@ -86,10 +86,21 @@ var summary_stage_time = 0;
 var wapper = $('.wrapper');
 if( !wapper.hasClass('report-type-1') && !wapper.hasClass('report-type-2') ){
     $(".level-card").mouseenter(function(){
+       if($.browser.msie){
+$(".card-rule").removeClass("hidden");
+$(".card-cont").addClass("hidden")
+       }else{
         $(".card-box").addClass("card-trans");
+       }
+        
     });
     $(".level-card").mouseleave(function(){
+         if($.browser.msie){
+$(".card-rule").addClass("hidden");
+$(".card-cont").removeClass("hidden")
+       }else{
         $(".card-box").removeClass("card-trans");
+       }
     });
 }
 else{
