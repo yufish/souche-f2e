@@ -376,23 +376,6 @@
 .car-card-2 .car-footer .quality-tag{
     background: #64b662;
 }
-.car-order {
-    height: 44px;
-    line-height: 44px;
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    color: #666;
-    font-size: 14px;
-}
-.car-order .go-to-order-detail {
-    border: 1px solid #666;
-    padding: 6px;
-    float: right;
-    line-height: 14px;
-    border-radius: 4px;
-    margin-left: auto;
-}
 .shop-title {
     height: 44px;
     line-height: 44px;
