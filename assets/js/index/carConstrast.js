@@ -64,7 +64,7 @@ define(function() {
                             position: 'absolute',
                             top: $(this).parent().offset().top + 'px',
                             left: $(this).parent().offset().left + 'px',
-                            backgroundColor: "#FF4400",
+                            backgroundColor: "#ff5517",
                             color: "#fff"
                         });
 
