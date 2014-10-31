@@ -28,8 +28,10 @@ var _dataHandler = {
         // 避免obj属性按数字顺序排列
         var tmpId = msgObj.ts + '__';
         MsgData[tmpId] = merge({}, msgObj);
+        // 把发送时间存起来, 待会用来辨识这个未经返回的msg
         MsgData[tmpId].time = msgObj.ts;
         MsgData[tmpId].messageType = msgObj.type;
+        MsgData[tmpId].id = tmpId;
         // 里面的用户信息... 本人/发送者的信息. 唉 在没有自己的消息之前是得不到的
         var user = UserStore.getById( UserStore.getCurUser() );
         if(user){
@@ -117,12 +119,16 @@ ChatDispatcher.register(function(payload){
         case ChatConstants.MSG_SEND_SUC:
             var msgId = action.id;
             var time = action.sendTime;
+            var reqTime = action.reqTime;
 
-            rawMsg = MsgData.tsId;
+            // 临时的消息的id为发送时间 + __
+            var rawMsgId = reqTime+'__';
+            rawMsg = MsgData[rawMsgId];
             rawMsg.id = msgId;
+            // 更新为发送成功的时间
             rawMsg.time = time;
             // 将raw的msg删掉
-            delete MsgData.tsId;
+            delete MsgData[rawMsgId];
             // 将服务器返回的ID msg存起来
             MsgData[msgId] = rawMsg
             

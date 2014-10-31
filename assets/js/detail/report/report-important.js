@@ -9,18 +9,18 @@ define(function(){
         opacity:0,
         duration: PIC_TST_DURATION
     };
-
+    var isIE = !!$.browser.msie;
     return {
         init:function(){
             var lastPic = $(".pics .pic-3");
             var active = function(index){
                 if(index=="pic-5"){
-                    $(".pic-main").animate(toDisappear)
+                    isIE?$(".pic-main").css(toDisappear):$(".pic-main").animate(toDisappear)
                 }else{
-                    $(".pic-main").animate(toAppear)
+                    isIE?$(".pic-main").css(toAppear):$(".pic-main").animate(toAppear)
                 }
-                lastPic.animate(toDisappear)
-                $(".pics").find("."+index).animate(toAppear)
+                isIE?lastPic.css(toDisappear):lastPic.animate(toDisappear)
+                isIE?$(".pics").find("."+index).css(toAppear):$(".pics").find("."+index).animate(toAppear)
                 lastPic = $(".pics").find("."+index)
             }
             $(".trigger").on("mouseover",function(){
