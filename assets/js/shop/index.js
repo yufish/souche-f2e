@@ -12,6 +12,10 @@ define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
             _view.initShopMap();
         },
         initShopMap: function(){
+            // 如果是车牛店  直接不必要去渲染地图了
+            if( $('.shop-location').hasClass('shop-type-cheniu') ){
+                return false;
+            }
             var coord = {};
             
             var loca = config.shopLocation.split(',');
