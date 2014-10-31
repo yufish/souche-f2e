@@ -113,10 +113,10 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             var carWrap = $('.car-wrap');
 
             if( carWrap.hasClass('card-box') ){
-                ImageResize.init(".carsItem .img", 240, 160);
+                ImageResize.init(".carsItem img", 240, 160);
             }
             else if(carWrap.hasClass('list-box')){
-                ImageResize.init(".carsItem .img", 180, 120);
+                ImageResize.init(".carsItem img", 180, 120);
             }
             
         }

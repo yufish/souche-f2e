@@ -284,7 +284,8 @@
         $.ajax({
             url: SaleDetailConfig.api_AddressToPhone,
             data: {
-                phone: $("#address-phone").val()
+                phone: $("#address-phone").val(),
+                place:$(".adress-open p").html()
             },
             type: "post",
             success: function() {

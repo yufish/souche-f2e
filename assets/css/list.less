@@ -391,7 +391,7 @@
       margin-right: 15px;
       margin-bottom: 10px;
       a:hover {
-        color:#e70;
+        color: @soucheOrange;
       }
       ul.findall {
         width:220px;
@@ -985,6 +985,11 @@
                   .list-noResult-title {
                       font-size: 18px;
                       color: #333;
+                      
+                      .noresult-sold{
+                        display: none;
+                      }
+
                       span {
                           color: #fc7000;
                           margin: 0 5px;
@@ -1025,6 +1030,9 @@
               }
           }
       }
+}
+#list_wrap .list_main  .car-wrap.sold .list-noResult .list-noResult-bg .list-noResult-title .noresult-sold{
+  display: inline;
 }
 
 @import "list/car-nav.less";
