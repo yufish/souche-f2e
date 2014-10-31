@@ -763,7 +763,6 @@
 #detail-main #pic-container{
     padding: 10px 0 10px 10px;
     overflow: hidden;
-    max-height: 100px;
 }
 #detail-main .img-card{
     float: left;
