@@ -12,15 +12,17 @@ define(function(){
     var isIE = !!$.browser.msie;
     return {
         init:function(){
+
             var lastPic = $(".pics .pic-3");
+            
             var active = function(index){
                 if(index=="pic-5"){
-                    isIE?$(".pic-main").css(toDisappear):$(".pic-main").animate(toDisappear)
+                    isIE?$(".pic-main").css({opacity:0}):$(".pic-main").animate(toDisappear)
                 }else{
-                    isIE?$(".pic-main").css(toAppear):$(".pic-main").animate(toAppear)
+                    isIE?$(".pic-main").css({opacity:1}):$(".pic-main").animate(toAppear)
                 }
-                isIE?lastPic.css(toDisappear):lastPic.animate(toDisappear)
-                isIE?$(".pics").find("."+index).css(toAppear):$(".pics").find("."+index).animate(toAppear)
+                isIE?lastPic.css({opacity:0}):lastPic.animate(toDisappear)
+                isIE?$(".pics").find("."+index).css({opacity:1}):$(".pics").find("."+index).animate(toAppear)
                 lastPic = $(".pics").find("."+index)
             }
             $(".trigger").on("mouseover",function(){
@@ -44,6 +46,14 @@ define(function(){
             })
             var arr = [3,4,2,5,1]
             var nowIndex = 0;
+            $(".pics .pic").css({
+                opacity:0
+            })
+            lastPic.css({
+                opacity:1
+            })
+            $(".pic-main").css({opacity:1})
+
             var timer = setInterval(function(){
                 nowIndex++
                 active("pic-"+arr[(nowIndex%5)])
