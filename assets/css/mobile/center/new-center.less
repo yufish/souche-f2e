@@ -56,6 +56,7 @@ body{
     width:61.8%;
     float: left;
     padding-left: 10px;
+    position: relative;
     .title{
       color: #333;
       margin-top: 3px;
@@ -83,10 +84,6 @@ body{
 .car-order{
   height: 44px;
   line-height: 44px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items:center;
   color:#ff571a;
   font-size: 14px;
   .go-to-order-detail{
@@ -109,4 +106,15 @@ body{
   text-align: center;
   font-size: 12px;
   border-radius: 3px;
+}
+.sold-out{
+  width: 54px;
+  height: 27px;
+  background: url(../../../images/mob/h5-2/sold-out.png) no-repeat center center;
+  background-size: 100% 100%;
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
