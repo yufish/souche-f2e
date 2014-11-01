@@ -31,8 +31,8 @@ function appInit(){
         AppAction.appInit( initData.users, initData.threads, initData.msgs);
     });
 
-    //setInterval(function(){
-    setTimeout(function(){
+    setInterval(function(){
+    //setTimeout(function(){
         _data.getAllData(true,function(chatList, msgListArr){
             var allMsgs = [];
             msgListArr.forEach(function(ml){
@@ -41,7 +41,7 @@ function appInit(){
             var schedualData = getDataFromRaw(chatList, allMsgs);
             AppAction.schedualUpdate( schedualData.users, schedualData.threads, schedualData.msgs );
         });
-    }, 30*1000);
+    }, 10*1000);
 }
 
 function getDataFromRaw(threads, msgs, needFilter){
