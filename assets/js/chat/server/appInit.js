@@ -1,11 +1,6 @@
 // appInit.js
 // get all data: users, threads, msgs
 
-// use demo data as fetched from server
-//var users = require('../demoData/userData');
-//var threads = require('../demoData/threadData');
-//var msgs = require('../demoData/msgData');
-
 var EP = require('eventproxy');
 
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
@@ -20,21 +15,36 @@ function appInitFail(msg){
 }
 
 function appInit(){
-    _data.getAllData(function(chatList, allMsgs){
+    _data.getAllData(false, function(chatList, msgListArr){
+
+        // curUser应该怎么找...
+        // 之前是必须遍历融合后的msg啊...
+        filterOutOnlyWelcome(chatList, msgListArr);
+
+
+        var allMsgs = [];
+        msgListArr.forEach(function(ml){
+            allMsgs = allMsgs.concat(ml);
+        });
         var initData = getDataFromRaw(chatList, allMsgs);
         // console.table( initData.users );
         AppAction.appInit( initData.users, initData.threads, initData.msgs);
     });
 
-    setInterval(function(){
-        _data.getAllData(function(chatList, allMsgs){
+    //setInterval(function(){
+    setTimeout(function(){
+        _data.getAllData(true,function(chatList, msgListArr){
+            var allMsgs = [];
+            msgListArr.forEach(function(ml){
+                allMsgs = allMsgs.concat(ml);
+            });
             var schedualData = getDataFromRaw(chatList, allMsgs);
             AppAction.schedualUpdate( schedualData.users, schedualData.threads, schedualData.msgs );
         });
-    }, 10*1000);
+    }, 30*1000);
 }
 
-function getDataFromRaw(threads, msgs){
+function getDataFromRaw(threads, msgs, needFilter){
     // 从thread数据中提取出friend的用户数据
     var users = threads.map(function(t){
         return {
@@ -82,6 +92,52 @@ function getDataFromRaw(threads, msgs){
     };
 }
 
+function filterOutOnlyWelcome(threads, msgListArr){
+    var mlRemove = [], tlRemove = [];
+    msgListArr.forEach(function(ml, index){
+        // 如果里面只有一条消息, 而且发送者是不是对话对象
+        //if( ml.length == 0 || (ml.length === 1 && ml[0].sender !== ml[0].talkingWith) ){
+        if(ml.length === 1 && ml[0].sender !== ml[0].talkingWith ){
+            mlRemove.push(index);
+
+            var emptyThreadId = ml[0].threadId;
+            // 使用every来尽快退出循环
+            var removeSuc = !threads.every(function(t,i ){
+                 if( t.friendId == emptyThreadId ){
+                     tlRemove.push(i);
+                     return false;
+                 }
+                return true;
+            });
+        }
+        // 不需要删除的msgList
+
+        else{
+            //console.log('\n');
+            if( ml.length> 0 ){
+                //console.log( ml.length, ml[0].sender, '  vs  ', ml[0].talkingWith );
+            }
+            else{
+                //console.log('遇到一个完全没有消息的...')
+            }
+        }
+    });
+    //console.log(mlRemove);
+    //console.log(tlRemove);
+    // 从后往前splice
+    mlRemove.reverse().forEach(function(indexToRemove){
+        msgListArr.splice(indexToRemove, 1);
+    });
+
+    // 反向排序后从后往前删除
+    tlRemove.sort(function(a, b){
+        return b-a;
+    }).forEach(function(indexToRemove){
+        threads.splice(indexToRemove, 1);
+    });
+
+}
+
 function idInObjArr(someId, arr, idProp){
     return arr.some(function(el){
         return someId === el[idProp];
@@ -107,28 +163,35 @@ var _data = {
         };
         $.getJSON(API.getMsg, param, callback);
     },
-    getAllData: function( blUnread ,callback){
-        _data.getChatList(blUnread, function(data, status){
-            // console.log(data);
-            // console.log('--------------------------------------');
+    getAllData: function( blOnlyUnread ,callback){
+        _data.getChatList(blOnlyUnread, function(data, status){
             if( data.code == '100000'){
                 var chatList = data.data.chatList;
 
-                var lastReqTime = Date.now() - 3600*24*1000;
+                var aDayAgo = Date.now() - 3600*24*1000;
                 var ep = new EP();
                 ep.after('get msg',chatList.length, function(msgListArr){
                     // console.log(msgListArr);
-                    var allMsgs = [];
-                    msgListArr.forEach(function(ml){
-                        allMsgs = allMsgs.concat(ml);
-                    });
-                    callback(chatList, allMsgs );
+                    callback(chatList, msgListArr );
                 });
 
                 chatList.forEach(function(chat){
+                    var lastReqTime;
+                    if( (new Date(chat.nearlyMSgTime)).valueOf() < aDayAgo ){
+                        lastReqTime = (new Date(chat.nearlyMSgTime)).valueOf() - 1000;
+                    }
+                    else{
+                        lastReqTime = aDayAgo;
+                    }
                     _data.getMsgs(chat.friendId, lastReqTime, function(data, status){
                         if( data.code == '100000' ){
                             var msgData = data.data.msgList;
+                            // 弥补架构问题, 添加threadId到每一条msg
+                            msgData.forEach(function(m){
+                                m.threadId = chat.friendId;
+                                m.talkingWith = chat.friendId;
+                            });
+                            //console.log(chat.friendId);
                             ep.emit('get msg', msgData);
                         }
                         else{
