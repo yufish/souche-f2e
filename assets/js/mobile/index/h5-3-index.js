@@ -779,7 +779,10 @@ var utils = {
             dataType:'json',
             success:function(data){
                 buildCards(data);
-                $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+                setTimeout(function(){
+                    $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+                },500)
+
             },
             error:function(){
                 $lookMore.hide();
