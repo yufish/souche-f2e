@@ -780,7 +780,8 @@ var utils = {
             success:function(data){
                 buildCards(data);
                 setTimeout(function(){
-                    $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+
+                    $('#J_tabCover').css({height:$(".car-wrapper").height()*Math.floor($(".car-wrapper").length/2)})
                 },500)
 
             },
