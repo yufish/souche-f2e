@@ -27,7 +27,7 @@ define(function(){
             }
             $(".trigger").on("mouseover",function(){
 //                $(".pics .pic").addClass("hidden");
-                // clearInterval(timer);
+                clearInterval(timer);
                 var picname = $(this).attr("data-pic");
                 var index = picname.replace(/[^0-9]/g,"")*1;
 
