@@ -1537,6 +1537,16 @@
     color:#666;
     font-size: 14px;
 }
+.auth-title .auth-txt-with-width{
+    color:#666;
+    font-size: 14px;
+    float: left;
+    display: block;
+    width: 220px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
 .go-to-shop{
     float: right;
     font-size: 12px;
@@ -1552,7 +1562,8 @@
     height: 16px;
     background: url(../../../images/mob/authorization/location.png);
     background-size: 100%;
-    vertical-align: -2px;
+    float: left;
+    margin: 12px 4px 0 0;
 }
 .icon-call{
     display: inline-block;
