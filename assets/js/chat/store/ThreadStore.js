@@ -12,6 +12,7 @@ var CHANGE_EVENT = 'change';
 
 // 存储区
 var threads = {};
+var ThreadData = {};
 var curThread = '';
 
 
@@ -21,10 +22,7 @@ function initThreadData(serverThreads){
     serverThreads.forEach(function(t){
         // 以聊天的对象的id作为thread的id
         t.id = t.friendId;
-        threads[t.id] = t;
-        //threads[t.id].members = t.members.map(function(userid){
-        //    return UserStore.getById( userid );
-        //});
+        ThreadData[t.id] = t;
     });
     // init 时 取第一个id
     changeThread(serverThreads[0].id);
@@ -35,15 +33,15 @@ function changeThread(newId){
 
 function updateThread(id, updates){
     for(var key in updates){
-        threads[id][key] = updates[key];
+        ThreadData[id][key] = updates[key];
     }
 }
 // 增加 / 更新  先不管删除了
 function updateThreadData(threads){
     threads.forEach(function(t){
         t.id = t.friendId;
-        if( !threads[t.id] ){
-            threads[t.id] = t;
+        if( !ThreadData[t.id] ){
+            ThreadData[t.id] = t;
         }
         else{
             updateThread(t.id, t);
@@ -55,7 +53,7 @@ function updateThreadData(threads){
 // exports出去的 只有get  没有set 
 var ThreadStore = merge(EventEmitter.prototype, {
     getAll: function(){
-        return threads;
+        return ThreadData;
     },
     getCurThread: function(){
         return curThread;

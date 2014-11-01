@@ -12,6 +12,7 @@
 .mobile-popup .title {
     text-align: center;
     font-size: 18px;
+    color:#666;
 }
 .mobile-popup .phone-input {
     height: 35px;
@@ -117,6 +118,14 @@
     background: url(../../images/mob/h5-3/header-back.png);
     background-size: 100%;
     display: inline-block;
+}
+.header .header-title-txt{
+    position: absolute;
+    top:0;
+    width: 160px;
+    left:50%;
+    margin-left: -80px;
+    text-align: center;
 }
 /*抽屉效果*/
 .other-topic{

@@ -1203,3 +1203,10 @@ $('.wrapGrayBg').on('click',function(){
     }
 }()
 
+!function sellcar(){
+    var phoneNum = checkUserLocal().phoneNum
+    if(phoneNum){
+        $('#phonenum-for-sell').val(phoneNum);
+    }
+}()
+

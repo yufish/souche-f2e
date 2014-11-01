@@ -136,10 +136,10 @@ SM.createLoginWithValid =function (token,time,isRightDefend){
         +            '<button type="button" class="valid-code-btn" name="cellphone" id="J_get-valid">获取手机验证码</button>'
         +        '</div>'
         +    '</div>'
+        +    rightReason
         +    '<div class="form-item">'
         +        '<button type="submit" class="login-btn" id="J_login-valid">登录</button>'
         +    '</div>'
-        +    rightReason
         +    '<input type="hidden" name="token" id="token-input" value="'+token+'">'
         +    '<input type="hidden" name="time" id="time-input" value="'+time+'">'
         +'</form>'
