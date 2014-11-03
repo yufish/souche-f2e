@@ -8,10 +8,13 @@ var ChatConstants = require('../constant/ChatConstants');
 
 var UserStore = require('./UserStore');
 
+var Tool = require('../util/tool');
+
+
 var CHANGE_EVENT = 'change';
 
+
 // 存储区
-var threads = {};
 var ThreadData = {};
 var curThread = '';
 
@@ -25,7 +28,9 @@ function initThreadData(serverThreads){
         ThreadData[t.id] = t;
     });
     // init 时 取第一个id
-    changeThread(serverThreads[0].id);
+    if( serverThreads[0] ){
+        changeThread(serverThreads[0].id);
+    }
 }
 function changeThread(newId){
     curThread = newId;
@@ -38,6 +43,16 @@ function updateThread(id, updates){
 }
 // 增加 / 更新  先不管删除了
 function updateThreadData(threads){
+    var after = function(){};
+    // 如果之前一直没有数据
+    // 就在有更新之后 设定current thread
+    if( Tool.isEmptyObj(ThreadData) ){
+        after = function(){
+            if( threads.length > 0 ){
+                changeThread(threads[0].id);
+            }
+        }
+    }
     threads.forEach(function(t){
         t.id = t.friendId;
         if( !ThreadData[t.id] ){
@@ -46,7 +61,8 @@ function updateThreadData(threads){
         else{
             updateThread(t.id, t);
         }
-    })
+    });
+    after();
 }
 
 
