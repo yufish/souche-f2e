@@ -185,7 +185,7 @@
     padding: 0 5px;
 }
 .car-card{
-    width: 100%;
+    width: 145px;
     margin: 10px auto 0;
     background: #fff;
     border:1px solid #d9d9d9;
@@ -223,8 +223,14 @@
 .car-card .quality.quality-B{
     background-position: -95px 0;
 }
+.car-card .card-image-wrapper{
+    width:135px;
+    height: 90px;
+    overflow: hidden;
+}
 .car-card img{
     width: 100%;
+    height: 90px;
 }
 .car-card .car-info{
     padding: 10px 8px 0;
