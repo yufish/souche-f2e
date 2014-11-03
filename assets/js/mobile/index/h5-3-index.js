@@ -779,7 +779,11 @@ var utils = {
             dataType:'json',
             success:function(data){
                 buildCards(data);
-                $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+                setTimeout(function(){
+
+                    $('#J_tabCover').css({height:$('.tab-panel').eq(0).height()})
+                },1000)
+
             },
             error:function(){
                 $lookMore.hide();
@@ -1200,6 +1204,13 @@ $('.wrapGrayBg').on('click',function(){
             +       '</a>'
 
         return html;
+    }
+}()
+
+!function sellcar(){
+    var phoneNum = checkUserLocal().phoneNum
+    if(phoneNum){
+        $('#phonenum-for-sell').val(phoneNum);
     }
 }()
 

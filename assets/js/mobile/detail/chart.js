@@ -58,7 +58,10 @@ function createInterpolation(max,min,height){
     var treadIpl_low = createInterpolation(chartConfig.treadGuideline,chartConfig.treadMin,42)
     function getRealHeight(value){
         if(value>1.6){
-            return 42 + treadIpl_high(value-1.6)
+            // 子龙的错误代码
+            // return 42 + treadIpl_high(value-1.6)
+            // 亮亮的修正代码
+            return 42 + treadIpl_high(value)
         }else{
             return treadIpl_low(value);
         }
