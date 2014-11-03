@@ -2,6 +2,7 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
     return {
         init:function(_config){
             AddSeries.init(_config);
+
             ageSelect = new CustomSelect("age_select", {
                 placeholder: "请选择",
                 multi: false
@@ -65,13 +66,18 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
             })
             $(AddSeries).on("change",function(e,_data){
                 var series = [];
+                var html = "";
                 for(var i=0;i<_data.selectedSeries.length;i++) {
                     var series = _data.selectedSeries[i].split(",");
                     var _code = series[0];
+                    var _name = series[1];
+                    html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/series/"+_code+".png'/>"+_name+"</div>"
+
                     series.push(_code);
+
                 }
                 $("#car_series").val(series.join(","))
-
+                $(".selected_series_result").html(html)
             })
 
             $("#form-submit").on("click",function(e){
