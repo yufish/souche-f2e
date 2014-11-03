@@ -10,6 +10,8 @@ var ThreadStore = require('../store/ThreadStore');
 
 var ThreadItem = require('./ThreadItem.react');
 
+var Tool = require('../util/tool');
+
 
 var ThreadList = React.createClass({
     getInitialState: function() {
@@ -26,17 +28,26 @@ var ThreadList = React.createClass({
     render: function() {
         var curThread = ThreadStore.getCurThread();
         var nodes = [];
-        for(var i in this.state.threads){
-            var thread = this.state.threads[i];
+
+        if( Tool.isEmptyObj(this.state.threads) ){
             nodes.push(
-                <ThreadItem
-                    thread={thread}
-                    itemClickHandler={this.switchThread}
-                    key={i}
-                    activeClass={ curThread == thread.id }
-                />
+                <li className="thread-item no-chat-yet" key="000">没有对话</li>
             );
         }
+        else{
+            for(var i in this.state.threads){
+                var thread = this.state.threads[i];
+                nodes.push(
+                    <ThreadItem
+                        thread={thread}
+                        itemClickHandler={this.switchThread}
+                        key={i}
+                        activeClass={ curThread == thread.id }
+                    />
+                );
+            }
+        }
+
         return (
             <ul className="thread-list" style={this.props.style}>
                 {nodes}
