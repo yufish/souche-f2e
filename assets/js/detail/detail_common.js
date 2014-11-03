@@ -536,7 +536,7 @@ Souche.Detail.PriceDown = function() {
 }();
 
 
-define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call"], function(Fav, InitSummary, FreeCall) {
+define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/util/image-resize"], function(Fav, InitSummary, FreeCall,ImageResize) {
     Souche.DetailCommon = function() {
         var config = {}
 
@@ -648,7 +648,7 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call"], functi
                 $.extend(config, _config)
                 InitSummary.init(config);
                 Fav.init(config);
-
+//                ImageResize.init($(".photosWrap img"), 445, 293);
                 FreeCall.init(config);
 
                 // var carPrice = parseInt($('.price-now.now').text());

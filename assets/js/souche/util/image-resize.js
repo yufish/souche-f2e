@@ -13,6 +13,7 @@ define(function() {
                             width: "100%",
                             height: "auto"
                         })
+
                     } else {
                         $(this).css({
                             height: "100%",

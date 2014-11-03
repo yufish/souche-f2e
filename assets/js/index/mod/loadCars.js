@@ -1,4 +1,4 @@
-define(['lib/mustache',"souche/util/image-resize",],function(Mustache,ImageResize){
+define(['lib/mustache',"souche/util/image-resize"],function(Mustache,ImageResize){
     var nowTabCode = 0;
     var pageInfos = {
 
