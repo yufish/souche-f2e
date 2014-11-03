@@ -6,7 +6,11 @@
     color:@red !important;
   }
   .report_module{
-    border:1px solid @moduleBC;
+    margin-bottom: 35px;
+    // 自身没有border 
+    // 应该把border下放到report-bd中
+    // border:1px solid @moduleBC;
+
     .report_hd{
       height:90px;
       background: @moduleHeadBGC;
@@ -63,6 +67,10 @@
           background: url(../../images/detail/xiu.png) no-repeat;
         }
       }
+    }
+    .report_bd{
+      border: 1px solid @moduleBC;
+      border-top: none;
     }
   }
 
