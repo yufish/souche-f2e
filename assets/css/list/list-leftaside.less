@@ -15,6 +15,17 @@
         a{
             display: block;
             text-align: center;
+
+            &:hover{
+                .car-modal-img{
+                    opacity: 1;
+                }
+            }
+            &.listNav_active{
+                .car-modal-img{
+                    opacity: 1;
+                }
+            }
         }
 
         .car-modal-img{
@@ -24,6 +35,8 @@
             // margin-bottom: 4px;
             background-image: url('../../assets/images/list/car_modal_sprite.png');
             background-repeat: no-repeat;
+            opacity: 0.6;
+            .tst(opacity 200ms ease;);
         }
 
         .car-modal-name{
