@@ -1,5 +1,5 @@
 .report_summary{
-  height: 500px;
+  height: 550px;
   .level-card{
     height: 410px;
     width: 450px;
@@ -71,6 +71,9 @@
     // }
     .card-trans{
       -webkit-transform: rotateY(180deg) !important;
+      .card-rule{
+        z-index: 20!important;
+      }
     }
     .look-rule{
       color: #999;
@@ -130,6 +133,12 @@
           float: left;
         }
       }
+    }
+    .summary-declear{
+      margin-top: 25px;
+      line-height: 1.75;
+      font-size: 14px;
+      color: #999;
     }
   }
 }
