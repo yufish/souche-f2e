@@ -467,6 +467,7 @@ var utils = {
             $('#J_series').text('请先选择品牌').addClass('no-active');
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName='';
+            $('#brand-list .item').removeClass('selected')
             if(self.hasClass('selected')){
                 self.removeClass('selected');
                 $('#J_brand').text('选择品牌');

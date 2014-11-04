@@ -210,6 +210,6 @@
     font-size: 18px;
     border-radius: 4px;
 }
-.select-cond.no-bg{
-    background: none;
+.select-cond.clear-bg{
+    background: #fff;
 }
