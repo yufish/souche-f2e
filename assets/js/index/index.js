@@ -24,7 +24,7 @@ define(['index/car-god',
             Mustache) {
     var config = {};
     var myAdviserPageIndex = 1,
-        hotNewCarsPageIndex = 1;
+        hotNewCarsPageIndex = 0;
 
     var _bind = function() {
         var timeout = null;
@@ -138,6 +138,7 @@ define(['index/car-god',
 
             });
         });
+        getMore("hotNewCars")
     }
 
 
@@ -197,6 +198,7 @@ define(['index/car-god',
                     window.location.reload();
                 })
             })
+
             // 获取"猜你喜欢"的数据, 用apear方法控制lazy加载到dom
             function initGuessLike(){
                 var guessLikeCtn = $(".guess-like");
