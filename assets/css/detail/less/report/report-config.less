@@ -69,7 +69,7 @@
                   margin-left: -4px;
                 }
                 .nopei{
-                  margin-left: 2px;
+                  margin-left: 0px;
                 }
               }
               .con-state{
@@ -93,28 +93,10 @@
         margin-top: 6px;
       }
       .nopei{
-        position: relative;
-        left: -3px;
-        width: 12px;
+        width: 8px;
         height: 2px;
-        // background: #8C8C8C;
+        background: #8C8C8C;
         margin-top: 14px;
-
-        &:before,
-        &:after{
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 5px;
-          background-color: #8C8C8C;
-        }
-        &:before{
-          left: 0;
-        }
-        &:after{
-          right: 0;
-        }
       }
       .config-normal{
         width: 14px;
@@ -130,28 +112,11 @@
       }
       // 无此配置 时的配置状态
       .config-nopei{
-        position: relative;
-        width: 12px;
+        width: 8px;
         height: 2px;
-        // background: #8C8C8C;
+        margin-left: 2px;
+        background: #8C8C8C;
         margin-top: 14px;
-
-        &:before,
-        &:after{
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          height: 2px;
-          width: 5px;
-          background-color: #8C8C8C;
-        }
-        &:before{
-          left: 0;
-        }
-        &:after{
-          right: 0;
-        }
       }
     }
   }
