@@ -1,0 +1,225 @@
+*{
+    box-sizing: border-box;
+}
+.filter-item{
+    height: 68px;
+    line-height: 68px;
+    font-size: 12px;
+    padding:0 16px;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+}
+.filter-title{
+    float:left;
+    color:#999;
+}
+.filter-content{
+    float: right;
+    position: relative;
+}
+.filter-content .select-cond{
+    font-size: 14px;
+    color:#333;
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 3px;
+    background:#fff no-repeat right  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAOCAMAAABerG9oAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QUJDM0I2MzE2RDUxMUU0OTk3MkIwQjdBODAzQUM2NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QUJDM0I2NDE2RDUxMUU0OTk3MkIwQjdBODAzQUM2NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRBQkMzQjYxMTZENTExRTQ5OTcyQjBCN0E4MDNBQzY0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRBQkMzQjYyMTZENTExRTQ5OTcyQjBCN0E4MDNBQzY0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+PUMyawAAAIpQTFRFs7Oz/v7+m5ubmpqasbGx+/v78vLy9fX1urq629vboaGhq6ur9/f3o6Oj5eXlxcXFqamp6Ojora2t9vb2t7e3/f396+vrp6envr6+n5+f8fHxycnJnp6e4uLi+fn5paWlnZ2dwsLC7e3t8PDw7u7u9PT0srKy/Pz839/f8/Pz7+/v3t7emZmZ////Z1zXNQAAAKJJREFUeNqUy+UOwkAYRNGtUaXupYbLzPu/HiFAsFSYX7s33xGl0PkzXZQcmNgjW3zHRQZ1EOx8tJvPdm7hnwYBIxvL7XtaL2FHHAZ0Qljpq6QWQodjgI2KIniGoIDacBxQE1i597+7gtA4BXiI0dW3R90hHr1/ACYG5CN5kWEknAMo5ZBNU0EucR6g1ENR0E/dvwDpAR75B2BV8T8wa1cBBgDOQ2zg6hIshgAAAABJRU5ErkJggg==');
+    background-size: 24px 7px;
+    -webkit-appearance: none;
+    appearance: none;
+    border:1px solid #ccc;
+    height: 36px;
+    width: 230px;
+}
+.filter-content .select-cond.no-active{
+    background: #fafafa;
+    color: #ccc;
+    border:1px solid #EBEBEB;
+}
+
+.filter-item .select-price.select-cond{
+    width: 100px;
+    vertical-align: middle;
+}
+.filter-item .to{
+    display: inline-block;
+    height: 1px;
+    width: 14px;
+    background: #ccc;
+    margin: 0 8px;
+}
+#J_btnAdvance{
+    width: 100%;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color:#333;
+}
+.btn-wrapper-for-filter{
+    font-size: 0;
+    position: fixed;
+    bottom: 16px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    padding: 0 16px;
+}
+#J_btnFilter_reset{
+    background: #e44700;
+    width: 60px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.btn-submit{
+    background: #ff5a00;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 14px;
+    border: none;
+    height: 40px;
+    color: #fff;
+}
+.filter-popup-wrapper {
+    position: absolute;
+    z-index: 10000;
+    margin-bottom: 55px;
+    width:300px;
+    left: 50%;
+    margin-left: -150px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 3px;
+}
+.filter-popup-wrapper .title {
+    padding-left: 10px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: bold;
+    border-bottom: 1px solid #ececec;
+    color:#fff;
+    text-align: left;
+}
+.filter-popup-wrapper .title.brand-title {
+    color:#000;
+}
+
+.filter-popup-wrapper .item {
+    text-align: center;
+    line-height: 50px;
+}
+.filter-popup-wrapper .item .brand-name{
+    padding: 5px;
+    border-radius: 5px;
+    border:1px solid #fff;
+    font-size:13px;
+}
+.filter-popup-wrapper .item.selected .brand-name{
+    color: #ff4400;
+    border:1px solid #ff4400;
+}
+.filter-popup-wrapper #other-brands {
+    text-align: center;
+}
+.filter-popup-wrapper .selected-brand-name{
+    color:#fff;
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    float: left;
+    margin-left: 10px;
+}
+.filter-popup-wrapper .series-title-bar{
+    background: #524A4A;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.filter-popup-wrapper .series-title {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    clear: both;
+    background-color: #ececec;
+}
+.filter-popup-wrapper .series-name-wrapper {
+    padding-left: 10px;
+    overflow: hidden;
+}
+.filter-popup-wrapper .series-item{
+    float: left;
+    line-height: 16px;
+}
+.filter-popup-wrapper .series-item .series-name {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    font-size: 13px;
+    line-height: 40px;
+}
+.filter-popup-wrapper .series-item.selected .series-name {
+    color: #ff4400;
+    border: 1px solid #ff4400;
+    background-size: 12px 12px;
+}
+.filter-popup-wrapper #series-list .series-item{
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+.filter-area{
+    background: rgb(245, 245, 245);
+}
+.page-title{
+    height: 45px;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+    font-size: 17px;
+    line-height: 44px;
+}
+.info-title{
+    height: 46px;
+    line-height: 45px;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 0 16px;
+    color:#FF571a;
+    font-size: 14px;
+    background: #fff;
+}
+.filter-item-for-remark{
+    padding: 16px;
+}
+#J_remark{
+    width: 230px;
+    height: 126px;
+    font-size: 14px;
+    resize:none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+#J_submit{
+    width:100%;
+    border:none;
+    background: #FF571a;
+    height: 45px;
+    color:#fff;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 4px;
+}
+.select-cond.clear-bg{
+    background: #fff;
+}
+#J_series-ok-btn{
+    height: 30px;
+    background: #FF571a;
+    color:#FFF;
+    text-align: center;
+    width: 120px;
+    border:none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

@@ -220,7 +220,7 @@ define(['detail/report/histogram'], function(Histogram){
             var yItems =  [
                     {text: '', value: 3},
                     {text: '(最高警戒值)', value: 2},
-                    {text: '(最高警戒值)', value: 1},
+                    {text: '(最低警戒值)', value: 1},
                     {text: '', value: 0}
                     ];
             var xItems =  [{text: '制动液'},
