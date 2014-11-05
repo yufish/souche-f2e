@@ -58,27 +58,21 @@ function createInterpolation(max,min,height){
     var treadIpl_low = createInterpolation(chartConfig.treadGuideline,chartConfig.treadMin,42)
     function getRealHeight(value){
         if(value>1.6){
-            // 子龙的错误代码
-            // return 42 + treadIpl_high(value-1.6)
-            // 亮亮的修正代码
-            return 42 + treadIpl_high(value)
+            //大于1.6话,统一改成80高
+            return 80;
+            //return 42 + treadIpl_high(value)
         }else{
             return treadIpl_low(value);
         }
     }
-    function makeValueValid(value){
-        if(value>5){
-            return 5;
-        }
-        return value;
-    }
+
     var treadDom = $('#J_chart-tread');
     var reporData = treadDom.attr('data-reportdata').split(' ');
     var treadData={
-        bar1:getRealHeight(makeValueValid(+reporData[0])),
-        bar2:getRealHeight(makeValueValid(+reporData[1])),
-        bar3:getRealHeight(makeValueValid(+reporData[2])),
-        bar4:getRealHeight(makeValueValid(+reporData[3])),
+        bar1:getRealHeight(+reporData[0]),
+        bar2:getRealHeight(+reporData[1]),
+        bar3:getRealHeight(+reporData[2]),
+        bar4:getRealHeight(+reporData[3]),
         guideline:42
     }
     treadData.class1 = treadData.bar1<treadData.guideline?chartConfig.problemClass:'';
