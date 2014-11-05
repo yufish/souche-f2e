@@ -734,7 +734,7 @@ var utils = {
                 +        '</div>'
                 +        '<div class="car-price"><span class="price-num">'+ d.price+'</span>万</div>'
                 +        '<div class="car-time">'+ d.year+'上牌</div>'
-                +        '<div class="recommend car-footer">'+ d.recommStr
+                +        '<div class="recommend car-footer">'
                 +            '<div class="fav '+activeClass+'" data-id="'+ d.id+'"><span class="star-shape"></span><span class="fav-num">'+ d.favCount+'</span></div>'
                 +        '</div>'
                 +    '</div>'
