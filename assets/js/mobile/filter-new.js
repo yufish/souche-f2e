@@ -49,8 +49,12 @@ function filter(BrandMgr, addListener) {
                     if (!hotBrands_g[b.code]) {
                         otherBrandsStr += '<div data-code="' + b.code + '" class="item col-1-4"><span class="brand-name">' + b.enName + '</span></div>';
                     }
+
                 }
                 $otherCtn.append(otherBrandsStr);
+                if(initBrandCode){
+                    BrandMgr.addBrand(initBrandCode, initBrandName);
+                }
             }
 
             function bugHack(){
@@ -91,7 +95,6 @@ function filter(BrandMgr, addListener) {
                 initBrandName = brandDom.attr('init_brand_name');
                 if(initBrandName) {
                     $('#btn-select-brand').text(initBrandName).css('color','#333');
-                    BrandMgr.addBrand(code, name);
                 }
                 history.replaceState({},document.title,'filter-car.html')
             }()

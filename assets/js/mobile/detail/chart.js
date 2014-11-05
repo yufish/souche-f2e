@@ -66,13 +66,19 @@ function createInterpolation(max,min,height){
             return treadIpl_low(value);
         }
     }
+    function makeValueValid(value){
+        if(value>5){
+            return 5;
+        }
+        return value;
+    }
     var treadDom = $('#J_chart-tread');
     var reporData = treadDom.attr('data-reportdata').split(' ');
     var treadData={
-        bar1:getRealHeight(+reporData[0]),
-        bar2:getRealHeight(+reporData[1]),
-        bar3:getRealHeight(+reporData[2]),
-        bar4:getRealHeight(+reporData[3]),
+        bar1:getRealHeight(makeValueValid(+reporData[0])),
+        bar2:getRealHeight(makeValueValid(+reporData[1])),
+        bar3:getRealHeight(makeValueValid(+reporData[2])),
+        bar4:getRealHeight(makeValueValid(+reporData[3])),
         guideline:42
     }
     treadData.class1 = treadData.bar1<treadData.guideline?chartConfig.problemClass:'';
