@@ -57,6 +57,9 @@ function createInterpolation(max,min,height){
     var treadIpl_high = createInterpolation(chartConfig.treadMax,chartConfig.treadGuideline,80)
     var treadIpl_low = createInterpolation(chartConfig.treadGuideline,chartConfig.treadMin,42)
     function getRealHeight(value){
+        if(!value){
+            return 80;
+        }
         if(value>1.6){
             //大于1.6话,统一改成80高
             return 80;

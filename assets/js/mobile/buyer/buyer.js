@@ -260,3 +260,25 @@
     });
 
 }();
+
+!function(){
+    function loadProvince(cb){
+        var url = contextPath+'/pages/dicAction/loadRootLevel.json?type=area';
+        $.ajax({
+            url: url,
+            dataType:'json',
+            success:cb
+        })
+    }
+    function loadCityByProvinceCode(code,cb) {
+        var url = contextPath + '/pages/dicAction/loadNextLevel.json?type=area';
+        $.ajax({
+            url:url,
+            dataType:'json',
+            data:{
+                code:code
+            },
+            success:cb
+        })
+    }
+}()
