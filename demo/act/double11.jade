@@ -74,10 +74,10 @@ html
           a.nsv-item(href="#") 微博登陆
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
     #fix-slide
-      a.fix-item(href="#") 0元新车秒杀区
-      a.fix-item(href="#") 原价5折专区
-      a.fix-item(href="#") 精品车专区
-      a.fix-item(href="#") 活动规则
+      a.fix-item(href="#seckill-mod") 0元新车秒杀区
+      a.fix-item(href="#half-off") 原价5折专区
+      a.fix-item(href="#choice-car") 精品车专区
+      a.fix-item(href="#huodong-rule") 活动规则
       a.fix-item(href="#") 回到顶部
     #content
       .head
@@ -95,9 +95,11 @@ html
             a 活动规则
             i ?
         .head-pic
-        .praise 
+        .praise
+        .miaosha
+          img(src="../../assets/images/double11/miaosha.png") 
       .wrapper
-        .free-car
+        #seckill-mod.free-car
           .rule
             a 红包规则
             i ?
@@ -131,7 +133,7 @@ html
             .slide-viewport
               ul
                 li
-                  .car-box(data-share-content="", data-share-link-sina="",
+                  .car-box.help-getcar(data-share-content="", data-share-link-sina="",
                     data-share-link-weixin="", data-share-link-qq="",
                     data-share-link-qzone
                   )
@@ -501,7 +503,7 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>指导价:10.2万</s>
                 a.go(href="")
-      .cars-mod
+      #half-off.cars-mod
         .wrapper
           .hd
             img(src="../assets/images/double11/car-mod-hd-2.png")
@@ -540,9 +542,9 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>指导价:10.2万</s>
                 a.go(href="")
-      .banner
+      a.banner(href="")
         img(src="../assets/images/double11/danbao.png")
-      .cars-mod
+      #choice-car.cars-mod
         .wrapper
           .hd
             img(src="../assets/images/double11/car-mod-hd-3.png")
@@ -610,10 +612,9 @@ html
                 a.go(href="")
       a.banner(href="")
         img(src="../../assets/images/double11/gotolist.png")
-      .banner
+      #huodong-rule.banner
         img(src="../../assets/images/double11/desc.png")
-      .logo
-        img()
+      
     #footer
       .wrapper
         .foot-detail.clearfix
