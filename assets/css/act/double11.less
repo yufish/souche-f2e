@@ -12,7 +12,7 @@
     .free-car{
       background: url(../../images/double11/free-bg.png) no-repeat;
       height: 1075px;
-      padding:0 90px;
+      padding:0 80px;
       .rule{
         height: 35px;
         padding:20px 0;
@@ -61,12 +61,196 @@
         .number{
           float: left;
           margin-left: 20px;
+          margin-top: 8px;
           h1{
            font-size: 17px;
-           color:  #381266;
+           color:#381266;
            em{
             color: #e05030;
            }
+          }
+          h2{
+            font-size: 23px;
+            color: #381266; 
+          }
+        }
+        .free-state{
+          float: right;
+          .state-text {
+            font-size: 18px;
+            color: #1f1f1f;
+            span{
+              margin-right: 48px;
+            }
+          }
+          .state-pic{
+            height: 24px;
+            width: 332px;
+            margin-left: 15px;
+            background: url(../../images/double11/state-bg.png) no-repeat;
+            .time-down{
+              display: block;
+              float: left;
+              width: 24px;
+              height: 24px;
+              background: #e05030;
+              border-radius: 24px;
+              margin-right:78px;
+            }
+          }
+          .time{
+            margin-left: 10px;
+            span{
+              font-size: 17px;
+              color: #1f1f1f;
+              margin-right: 60px;
+
+            }
+          }
+        }
+      }
+      .free-wrap{
+        width: 1005px;
+        height: 930px;
+        overflow: hidden;
+        position: relative;
+        .slide-viewport{
+          ul{
+            li{
+              .car-box{
+                height: 450px;
+                margin: 10px;
+                box-sizing: border-box;
+                .car-head{
+                  margin-top: 10px;
+                  height: 32px;
+                  .car-time{
+                    float: left;
+                    display: block;
+                    width: 30px;
+                    height: 29px;
+                    background: url(../../images/double11/time-icon.png) no-repeat;
+                    border:1px dashed #fff; 
+                  }
+                  .time{
+                    float: left;
+                    margin-left: 5px;
+                    font-size: 25px;
+                    color: #ffdd52;
+                    line-height: 32px;
+                  }
+                  .remind{
+                    float: left;
+                    box-sizing: border-box;
+                    border: 2px solid #ffdd52;
+                    border-radius: 15px;
+                    height: 32px;
+                    padding:0 15px;
+                    margin-left: 15px;
+                    cursor: pointer;
+                    i{
+                      display: block;
+                      float: left;
+                      width: 21px;
+                      height: 21px;
+                      background: url(../../images/double11/recom.png) no-repeat;
+                      margin-top: 4px;
+                    }
+                    span{
+                      margin-left: 10px;
+                      color: #ffdd52;
+                      font-size: 16px;
+                      line-height: 32px;
+                    }
+                  }
+                }
+                .car-title{
+                  font-size: 28px;
+                  color: #e8e8e8;
+                }
+                .car-title:hover{
+                  color: #ffdd52;
+                }
+                .car-wrap{
+                  margin-top: 10px;
+                  .car-pic{
+                    float: left;
+                    width: 510px;
+                    height: 347px;
+                    border: 1px dashed #fff;
+                  }
+                  .car-detail{
+                    float: left;
+                    width: 435px;
+                    margin-left: 10px;
+                    .price{
+                      i{
+                        display: block;
+                        float: left;
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 38px;
+                        color: #542c8f;
+                        background: #ffdd52;
+                        font-style: normal;
+                        text-align: center;
+                        line-height: 38px;
+                        font-size: 30px;
+                        margin-top: 7px;
+                      }
+                      span{
+                        font-size: 40px;
+                        color: #ffdd52;
+                        margin-left: 5px;
+                      }
+                      em{
+                        font-size: 30px;
+                        color: #ffdd52;
+                      }
+                    }
+                    p{
+                      font-size: 15px;
+                      color: #e8e8e8;
+                      text-indent: 30px;
+                      line-height: 30px;
+                    }
+                    .car-recom{
+                      height: 25px;
+                      margin-top: 5px;
+                      span{
+                        font-size: 15px;
+                        color: #e8e8e8;
+                      }
+                      a{
+                        display: block;
+                        float:right;
+                        font-size: 18px;
+                        color: #ffdd52;
+
+                      }
+                    }
+                    .share{
+                      margin-top: 20px;
+                      .share-button{
+                        display: block;
+                        float: right;
+                        width: 275px;
+                        height: 91px;
+                        background: url(../../images/double11/share-button.png) no-repeat;
+                        cursor: pointer;
+                      }
+                    }
+                    .car-stock{
+                      font-size: 15px;
+                      text-align: right;
+                      margin-right: 115px;
+                      color: #e8e8e8;
+                      margin-top: 10px;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
