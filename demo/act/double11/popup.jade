@@ -1,14 +1,29 @@
 .popup.share-self
+    .pop-close
     .car-info
         img.car-img
         h4.car-name 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
-        .car-proice ￥7.98万
+        .car-proice ￥
+            span.price-num 7.98
+            span 万
     .share-info
-        h3.share-congrate 恭喜您, 点赞赢得红包
+        h3.share-congrate 恭喜您，点赞赢得红包
         .share-money ￥500元
-        .share-encourage 赶快分享给身边的朋友吧, 筹集到更多红包抵车价哦. 要记得请他们吃饭哦~
-        textarea#share-text(spellcheck='false', autocapitalize='off', autocomplete='off', autocorrect='off' value="分享模板文案")
-        .share-to 分享到:
+        .share-encourage 赶快分享给身边的朋友吧， 筹集到更多红包抵车价哦。 要记得请他们吃饭哦~
+        textarea#share-text(spellcheck='false', autocapitalize='off', autocomplete='off', autocorrect='off') 分享模板文案
+        .share-to.clearfix
+            span.text-share-to 分享到:
+            .share-icon-group
+                a.share-icon.sina
+                a.share-icon.weixin
+                a.share-icon.qq
+                a.share-icon.qzone
+    //-         .jiathis_style_32x32
+    //-             a.jiathis_button_tsina
+    //-             a.jiathis_button_weixin
+    //-             a.jiathis_button_cqq
+    //-             a.jiathis_button_qzone
+    //- script(src="http://v3.jiathis.com/code/jia.js?uid=1406374730242495" charset="utf-8")
 
 
 //- 红包送人
