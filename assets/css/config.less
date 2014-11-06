@@ -21,3 +21,12 @@
     -ms-transition: @v;
     transition: @v;
 }
+
+// support to IE8
+.clear-flt(){
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
