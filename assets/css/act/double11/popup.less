@@ -1,0 +1,174 @@
+@dH: 450px;
+@dW: 800px;
+
+@title-fs: 25px;
+@sub-title-fs: 18px;
+
+@red: #e05030;
+
+@grey-6: #6c6c6c;
+@grey-8: #8c8c8c;
+@grey-1: #1f1f1f;
+
+.form-control{
+    .box-sizing();
+    *{
+        .box-sizing();
+    }
+
+    input{
+        // height: 38px;
+        border: 1px solid #999;
+        outline: none;
+
+        &:active,
+        &:focus{
+            border-color: @soucheOrange;
+        }
+    }
+}
+
+// popup 基础样式 -------------------------
+.popup{
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: @dW;
+    height: @dH;
+    margin-left: -(@dW/2);
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    .box-sizing();
+    *{
+        .box-sizing();
+    }
+
+    &.active{
+        display: block;
+    }
+
+    .pop-hd{
+        padding: 0.5em 0;
+        margin-bottom: 1em;
+        font-size: @title-fs;
+        text-align: center;
+    }
+    .pop-bd{
+
+    }
+    .pop-subtitle{
+        font-size: @sub-title-fs;
+    }
+}
+
+.share-self{
+    padding: 20px;
+
+    .clear-flt();
+
+    .car-info,
+    .share-info{
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+    .car-info{
+        padding-right: 10px;
+        .car-img{
+            width: 100%;
+            height: 300px;
+            border: none;
+            background-color: #f5f5f5;
+        }
+        .car-name{
+            margin-bottom: 20px;
+            font-size: @sub-title-fs;
+            color: @grey-1;
+        }
+        .car-proice{
+            font-size: @sub-title-fs;
+            color: @red;
+        }
+    }
+    .share-info{
+        padding-left: 10px;
+        .share-congrate{
+            margin-bottom: 12px;
+            font-size: @title-fs;
+            color: @grey-1;
+        }
+        .share-money{
+            margin-bottom: 25px;
+            font-size: 35px;
+            color: @red;
+        }
+        .share-encourage{
+            margin-bottom: 32px;
+            font-size: @sub-title-fs;
+            color: @grey-8;
+        }
+        #share-text{
+            display: block;
+            height: 8em;
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 30px;
+            font-size: @sub-title-fs;
+            border: 1px solid #999;
+            outline: none;
+            resize: none;
+
+            &:focus{
+                border-color: @soucheOrange;
+            }
+        }
+        .share-to{
+            font-size: @sub-title-fs;
+            color: @grey-8;
+        }
+    }
+}
+
+// 功能砍掉了...
+// 红包送人  细节样式 ------------------------- 
+// .give-red-packet{
+//     .pop-hd{
+//         color: @red;
+//     }
+//     .pop-subtitle{
+//         text-align: center;
+//         color: @grey-6;
+//     }
+//     #inform-form{
+//         padding-top: 100px;
+//     }
+//     .form-control{
+//         width: 360px;
+//         margin: 0 auto;
+//         margin-bottom: 10px;
+//     }
+//     #reciver-name,
+//     #reciver-phone{
+//         height: 38px;
+//         width: 360px;
+//         padding: 0 0.5em;
+//         font-size: @sub-title-fs;
+//     }
+//     #submit-give{
+//         display: block;
+//         height: 45px;
+//         width: 160px;
+//         margin: 0 auto;
+//         margin-top: 60px;
+//         font-size: @sub-title-fs;
+//         // 有稍微的靠上
+//         line-height: 40px;
+//         text-align: center;
+//         color: #fff;
+//         background-image: url('../../images/acts/double11/give-red-pocket-btn.png');
+//         background-repeat: no-repeat;
+//     }
+// }
