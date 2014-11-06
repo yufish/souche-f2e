@@ -8,7 +8,6 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
@@ -19,6 +18,12 @@ html
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
+    
+    <!-- 样式和脚本放在head最后, 方便后端套用 -->
+    <!-- 本次活动的css  -->
+    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
+    <!-- 本次活动的js  -->
+    <!-- <script src=""></script> -->
   body#double11
     #header
       .wrapper
@@ -135,6 +140,7 @@ html
                 a 更多推荐理由 >
               .help-button 赞！帮TA筹红包
               .car-stock 库存5辆
+
     #footer
       .wrapper
         .foot-detail.clearfix
