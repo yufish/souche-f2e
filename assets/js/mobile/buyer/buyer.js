@@ -251,13 +251,11 @@
         $('.wrapGrayBg').addClass('hidden');
     })
 
-    $('.J_series-ok').click(function(){
+    $('#J_series-ok-btn').click(function(){
         $('.filter-popup-wrapper').addClass('hidden');
         $('.wrapGrayBg').addClass('hidden');
     })
-    $('#J_submit').on('click',function(e){
 
-    });
 
 }();
 
@@ -281,4 +279,60 @@
             success:cb
         })
     }
+    loadProvince(function(e){
+        var items = e.items;
+        var html='<option value="">不限</option>'
+        for(var i = 0;i<items.length;i++){
+            var code = items[i].code;
+            var name = items[i].enName;
+            html+='<option value="'+code+'">'+name+'</option>'
+        }
+        $('#J_province').html(html);
+    })
+    $('#J_province').change(function(){
+        var code =$('#J_province option:selected').val();
+        loadCityByProvinceCode(code,function(e){
+            var items = e.items
+            var html='<option value="">不限</option>'
+            for(var i = 0;i<items.length;i++){
+                var code = items[i].code;
+                var name = items[i].enName;
+                html+='<option value="'+code+'">'+name+'</option>'
+            }
+            $('#J_city').html(html);
+        })
+    })
 }()
+
+function checkRequired($dom,msg){
+    if($dom.val().trim()==''){
+        alert(msg);
+        return false;
+    }
+    return true;
+}
+$('#main-form').submit(function(e){
+    e.preventDefault();
+    if(!checkRequired($('#J_name'),'请输入用户名')){
+        return;
+    }
+
+    if(!checkRequired($("#car_series"),'请选择至少一个车系')){
+        return;
+    }
+    var phoneNum  =$('#J_phone').val();
+    var phoneReg = /^1[3458][0-9]{9}$/;
+    if(!phoneReg.test(phoneNum)){
+        alert('请输入正确的手机号')
+        return;
+    }
+    var url = $(this).attr('action');
+    $.ajax({
+        url:url,
+        data:$(this).serialize(),
+        success:function(e){
+            console.log(e)
+            alert('提交成功');
+        }
+    })
+})
