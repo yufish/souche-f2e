@@ -8,18 +8,22 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <link href="http://f2e.souche.com/assets/css/list.css?t=10" rel="stylesheet" type="text/css" />
     <script>
       var contextPath = "http://www.souche.com/";
       require.config({
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
+    
+    <!-- 样式和脚本放在head最后, 方便后端套用 -->
+    <!-- 本次活动的css  -->
+    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
+    <!-- 本次活动的js  -->
+    <!-- <script src=""></script> -->
   body#double11
     #header
       .wrapper
@@ -51,11 +55,98 @@ html
           a.nsv-item(href="#") 登陆
           a.nsv-item(href="#") 微博登陆
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
+    #banner
     #content
-      .timedown
-        p 距离大搜车11.11购车狂欢节还有：
-        p.show
-          |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins>时<ins>00</ins>分<ins>00</ins>.<ins class="offMSec">0</ins>秒</span>
+      .head
+        .timedown
+          p 距离大搜车11.11购车狂欢节还有：
+          p.show
+            |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins>时<ins>00</ins>分<ins>00</ins>.<ins class="offMSec">0</ins>秒</span>
+
+      .wrapper
+        .free-car
+          .rule
+            a 红包规则
+            i ?
+          .free-head
+            .title
+              em 0
+              span 元秒杀新车区
+            .number
+              h1 
+                span 已有
+                em 10000
+                span 人点赞分享
+              h2 11月11日9:00正式开秒！
+            .free-state
+              .state-text 
+                span 未开始
+                span 未开始
+                span 未开始
+                span 未开始
+              .state-pic
+                span
+                span
+                span
+                span
+              .time
+                span 9:00
+                span 12:00
+                span 19:00
+                span 21:00
+          .free-wrap
+            .car-box
+              .car-head
+                .car-time
+                  i
+                  span 04
+                  em :
+                  span 55
+                  em :
+                  span 16
+                .remind
+                  i
+                  span 开秒提醒我
+              a.car-title 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+              .car-wrap
+                .car-pic
+                  img
+                .car-detail
+                  .price
+                    i
+                    span 7.98万
+                  p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                  .car-recom
+                    span ———— 车神：暮雨
+                    a 更多推荐理由 >
+                  .help-button 赞！帮TA筹红包
+                  .car-stock 库存5辆
+            .car-box
+              .car-head
+                .car-time
+                  i
+                  span 04
+                  em :
+                  span 55
+                  em :
+                  span 16
+                .remind
+                  i
+                  span 开秒提醒我
+              a.car-title 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+              .car-wrap
+                .car-pic
+                  img
+                .car-detail
+                  .price
+                    i
+                    span 7.98万
+                  p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                  .car-recom
+                    span ———— 车神：暮雨
+                    a 更多推荐理由 >
+                  .help-button 赞！帮TA筹红包
+                  .car-stock 库存5辆
       .cars-mod
         .wrapper
 
