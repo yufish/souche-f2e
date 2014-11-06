@@ -52,6 +52,13 @@ html
           a.nsv-item(href="#") 微博登陆
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
     #content
+      .timedown
+        p 距离大搜车11.11购车狂欢节还有：
+        p.show
+          |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins>时<ins>00</ins>分<ins>00</ins>.<ins class="offMSec">0</ins>秒</span>
+      .cars-mod
+        .wrapper
+
     #footer
       .wrapper
         .foot-detail.clearfix
@@ -95,3 +102,7 @@ html
             a.links(href="#") 成都二手车
             a.links(href="#") 车险信息网
         p Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号
+        script.
+          require(['souche/time-countdown'],function(TimeCountDown){
+            TimeCountDown.init(".downCounter")
+          })
