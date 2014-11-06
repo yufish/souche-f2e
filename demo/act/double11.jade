@@ -85,7 +85,7 @@ html
                 span 未开始
                 span 未开始
               .state-pic
-                span.time-down(data-index="1")
+                span.active(data-index="1")
                 span(data-index="2")
                 span(data-index="3")
                 span(style="margin-right:0px;",data-index="4")
@@ -427,7 +427,8 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>指导价:10.2万</s>
                 a.go(href="")
-
+      a.banner(href="")
+        img(src="../../assets/images/double11/gotolist.png")
     #footer
       .wrapper
         .foot-detail.clearfix
@@ -482,5 +483,5 @@ html
       $(".state-pic span").on("click",function(){
             var index = $(this).attr("data-index")*1;
             $(".slide-viewport ul li").addClass("hidden");
-            $(".slide-viewport ul li:nth("+index+")").removeClass("hidden")
+            $(".slide-viewport ul li:nth("+(index-1)+")").removeClass("hidden")
       })
