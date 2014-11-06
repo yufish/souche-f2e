@@ -5,6 +5,8 @@ define(function(){
             // get img and fill
             // get name and fill
             // get price and fill
+
+            $('.share-self.popup').addClass('active');
         }
     };
 
@@ -20,7 +22,7 @@ define(function(){
     function init(){
         _event.bindShare();
     }
-    
+
     function popup(e){
         var carCtn = $(e.target).parents();
         _view.renderPopup(carCtn);
