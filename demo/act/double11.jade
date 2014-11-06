@@ -57,6 +57,12 @@ html
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
     #banner
     #content
+      .head
+        .timedown
+          p 距离大搜车11.11购车狂欢节还有：
+          p.show
+            |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins>时<ins>00</ins>分<ins>00</ins>.<ins class="offMSec">0</ins>秒</span>
+
       .wrapper
         .free-car
           .rule
@@ -148,8 +154,40 @@ html
                         .share.clearfix
                           .share-button 
                         .car-stock 库存5辆
-                
-
+      .cars-mod
+        .wrapper
+          .hd
+            img(src="../assets/images/double11/car-mod-hd-1.png")
+          .bd
+            .car-list.clearfix
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
     #footer
       .wrapper
         .foot-detail.clearfix
@@ -193,3 +231,11 @@ html
             a.links(href="#") 成都二手车
             a.links(href="#") 车险信息网
         p Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号
+
+
+    include double11/popup
+    
+    script.
+      require(['souche/time-countdown'],function(TimeCountDown){
+        TimeCountDown.init(".downCounter")
+      })
