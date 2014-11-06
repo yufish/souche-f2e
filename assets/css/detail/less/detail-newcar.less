@@ -1,0 +1,45 @@
+#detailContain.newcar{
+    #detail_main{
+        .main-top{
+            margin-bottom: 150px;
+        }
+        .price-others,
+        .car_detail,
+        .car-type{
+            display: none;
+        }
+
+        .detail-price{
+            position: relative;
+            margin-bottom: 20px;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 84px;
+                width: 84px;
+                background-image: url("../../images/detail/new-car-tag.png");
+                background-repeat: no-repeat;
+                z-index: 100;
+            }
+        }
+    }
+    .onsale-summary{
+        .onsale-tab-item{
+            display: none;
+
+            &.onsale-tab-item-config,
+            &.onsale-tab-item-price{
+                display: inline;
+            }
+        }
+        #onsale_report,
+        #onsale_koubei,
+        #onsale_record{
+            display: none;
+        }
+    }
+    
+    
+}
