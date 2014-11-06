@@ -8,18 +8,22 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
-    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <link href="http://f2e.souche.com/assets/css/list.css?t=10" rel="stylesheet" type="text/css" />
     <script>
       var contextPath = "http://www.souche.com/";
       require.config({
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
+    
+    <!-- 样式和脚本放在head最后, 方便后端套用 -->
+    <!-- 本次活动的css  -->
+    <link href="http://f2e.souche.com/assets/css/act/double11.css" rel="stylesheet" type="text/css" />
+    <!-- 本次活动的js  -->
+    <!-- <script src=""></script> -->
   body#double11
     #header
       .wrapper
@@ -52,6 +56,7 @@ html
           a.nsv-item(href="#") 微博登陆
           a.nsv-item(href="#" style="border-right:none;") QQ登陆
     #content
+      //- include jade here
     #footer
       .wrapper
         .foot-detail.clearfix
