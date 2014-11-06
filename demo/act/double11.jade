@@ -68,7 +68,7 @@ html
           .rule
             a 红包规则
             i ?
-          .free-head
+          .free-head.clearfix
             .title
               em 0
               span 元秒杀新车区
@@ -85,68 +85,246 @@ html
                 span 未开始
                 span 未开始
               .state-pic
-                span
-                span
-                span
-                span
+                span.time-down(data-index="1")
+                span(data-index="2")
+                span(data-index="3")
+                span(style="margin-right:0px;",data-index="4")
               .time
                 span 9:00
                 span 12:00
                 span 19:00
                 span 21:00
           .free-wrap
-            .car-box
-              .car-head
-                .car-time
-                  i
-                  span 04
-                  em :
-                  span 55
-                  em :
-                  span 16
-                .remind
-                  i
-                  span 开秒提醒我
-              a.car-title 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
-              .car-wrap
-                .car-pic
-                  img
-                .car-detail
-                  .price
-                    i
-                    span 7.98万
-                  p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
-                  .car-recom
-                    span ———— 车神：暮雨
-                    a 更多推荐理由 >
-                  .help-button 赞！帮TA筹红包
-                  .car-stock 库存5辆
-            .car-box
-              .car-head
-                .car-time
-                  i
-                  span 04
-                  em :
-                  span 55
-                  em :
-                  span 16
-                .remind
-                  i
-                  span 开秒提醒我
-              a.car-title 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
-              .car-wrap
-                .car-pic
-                  img
-                .car-detail
-                  .price
-                    i
-                    span 7.98万
-                  p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
-                  .car-recom
-                    span ———— 车神：暮雨
-                    a 更多推荐理由 >
-                  .help-button 赞！帮TA筹红包
-                  .car-stock 库存5辆
+            .slide-viewport
+              ul
+                li
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                li
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                li
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                li
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      .remind
+                        i
+                        span 开秒提醒我
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
       .cars-mod
         .wrapper
           .hd
@@ -181,10 +359,44 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>指导价:10.2万</s>
                 a.go(href="")
-        .cars-mod
+      .cars-mod
         .wrapper
           .hd
-            img(src="../assets/images/double11/car-mod-hd-1.png")
+            img(src="../assets/images/double11/car-mod-hd-2.png")
+          .bd
+            .car-list.clearfix
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+              .car
+                a.pic(href="")
+                  img(src="http://cheniu.u.qiniudn.com/13810901988/cca1113b558a357c8b74830b212f5643?imageView2/1/w/240/h/160")
+                a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
+                .price 促销价:￥<em>7.98</em>万
+                .n-price <s>指导价:10.2万</s>
+                a.go(href="")
+      .cars-mod
+        .wrapper
+          .hd
+            img(src="../assets/images/double11/car-mod-hd-3.png")
           .bd
             .car-list.clearfix
               .car
@@ -266,4 +478,9 @@ html
     script.
       require(['souche/time-countdown'],function(TimeCountDown){
         TimeCountDown.init(".downCounter")
+      })
+      $(".state-pic span").on("click",function(){
+            var index = $(this).attr("data-index")*1;
+            $(".slide-viewport ul li").addClass("hidden");
+            $(".slide-viewport ul li:nth("+index+")").removeClass("hidden")
       })
