@@ -176,7 +176,7 @@
         width: 644px;
         height: 344px;
         background: url(../../images/double11/head-pic.png) no-repeat;
-        margin: 0 auto;
+        margin: 35px auto;
       }
       .praise{
         position: absolute;
@@ -186,6 +186,11 @@
         bottom: 165px;
         right: 125px;
         cursor: pointer;
+      }
+      .miaosha{
+        width: 946px;
+        height: 85px;
+        margin: 35px auto;
       }
     }
     .wrapper{
@@ -283,10 +288,25 @@
         .slide-viewport{
           ul{
             li{
+              .help-getcar{
+                border: 5px solid #6da613;
+                .share-button{
+                  background: url(../../images/double11/help-getcar.png) no-repeat !important;
+                }
+                .price{
+                  span{
+                    opacity: 1;
+                  }
+                  em{
+                    opacity: 1;
+                  }
+                }
+              }
               .car-box{
                 height: 450px;
                 margin: 10px;
                 box-sizing: border-box;
+                padding: 5px;
                 .car-head{
                   margin-top: 10px;
                   height: 32px;
@@ -296,7 +316,7 @@
                     width: 30px;
                     height: 29px;
                     background: url(../../images/double11/time-icon.png) no-repeat;
-                    border:1px dashed #fff; 
+                    
                   }
                   .time{
                     float: left;
@@ -343,7 +363,7 @@
                     float: left;
                     width: 510px;
                     height: 347px;
-                    border: 1px dashed #fff;
+                    
                   }
                   .car-detail{
                     float: left;
@@ -365,11 +385,13 @@
                         margin-top: 7px;
                       }
                       span{
+                        opacity: 0.5;
                         font-size: 40px;
                         color: #ffdd52;
                         margin-left: 5px;
                       }
                       em{
+                         opacity: 0.5;
                         font-size: 30px;
                         color: #ffdd52;
                       }
@@ -540,6 +562,8 @@
   #fix-slide{
     position: fixed;
     right: 10px;
+    top: 250px;
+    z-index: 100;
     .fix-item{
       display: block;
       width: 150px;
