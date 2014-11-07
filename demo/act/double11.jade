@@ -92,7 +92,7 @@ html
             .weixin
             .qq
           .rule
-            a 活动规则
+            a(href="#rules") 活动规则
             i ?
         .head-pic
         a.praise(href="#seckill-mod") 
@@ -674,6 +674,14 @@ html
             var index = $(this).attr("data-index")*1;
             $(".slide-viewport ul li").addClass("hidden");
             $(".slide-viewport ul li:nth("+(index-1)+")").removeClass("hidden")
+      })
+      $(".others .item").on("click",function(){
+        $.ajax({
+          url:$(this).attr("data-src"),
+          success:function(html){
+              $(this).closest(".cars-mod").find(".car-list").html(html)
+          }
+        })
       })
     script.
       require(['acts/double11/index'], function(Double11){
