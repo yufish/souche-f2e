@@ -61,6 +61,26 @@ if (navigator.userAgent.match(/Android/i)){
     if(ua.indexOf("micromessenger") != -1){
         $("#J_tab1_name").text('好车推荐')
     }
+
+    $('#J_choose_city').on(touch_start,function(){
+        if($('.choose-city').hasClass('hidden')){
+            $('.choose-city').removeClass('hidden')
+            wrapBg.removeClass('hidden')
+        }else{
+            $('.choose-city').addClass('hidden')
+            wrapBg.addClass('hidden')
+        }
+    })
+    var wrapBg = $('.wrapTransBg');
+
+    wrapBg.on(touch_start,function(){
+        $('.choose-city').addClass('hidden')
+        $(this).addClass('hidden')
+    })
+
+    $('.choose-city-item').click(function(){
+
+    })
 }()
 //tab动画的相关实现
 !function(){
@@ -251,6 +271,9 @@ if (navigator.userAgent.match(/Android/i)){
         })
     }
     function hideTopic(){
+        if(otherTopic.height()<10){
+            return
+        }
         var time =0;
         var height = 50*numOfTopic;
         for(var i = numOfTopic-1;i>-1;i--){
