@@ -183,7 +183,6 @@ nav .nav-item.active .nav-item-content{
     text-align: center;
     line-height: 23px;
     margin: 18px 18px 0 0;
-
 }
 .go-custom-link{
     float: right;
@@ -752,4 +751,23 @@ input.checkbox-cond:checked + .filter-title{
 }
 .guard-banner img{
     width:100%;
+}
+.choose-city{
+    position: absolute;
+    z-index:5;
+    width:100%;
+    top:44px;
+    background: #fff;
+}
+.choose-city-item{
+    height: 44px;
+    font-size: 14px;
+    color:#333;
+    border-bottom: 1px solid #ccc;
+    padding: 0 16px;
+    border-left: 2px solid #fff;
+}
+.choose-city-item.active{
+    color:#FF571a;
+    border-left: 2px solid #ff571a;
 }
