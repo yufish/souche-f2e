@@ -28,6 +28,45 @@
     }
 }
 
+// social share icon mixin
+.s-icon(@x: 1, @y: 1){
+    background-position: -(@x - 1)*50px -(@y - 1)*50px;
+}
+.jiathis_style_32x32{
+    float: left;
+
+    .jiathis_button_tsina,
+    .jiathis_button_weixin,
+    .jiathis_button_cqq,
+    .jiathis_button_qzone{
+        float: left;
+        height: 47px;
+        width: 47px;
+        margin-left: 10px;
+        background-image: url("../../images/double11/social-icon.png");
+        background-repeat: no-repeat;
+        cursor: pointer;
+        *,
+        .jtico{
+            height: 0!important;
+            width: 0 !important;
+            overflow: hidden;
+        }
+    }
+    .jiathis_button_tsina{
+        .s-icon(1,1);
+    }
+    .jiathis_button_weixin{
+        .s-icon(2,1);
+    }
+    .jiathis_button_cqq{
+        .s-icon(3,1);
+    }
+    .jiathis_button_qzone{
+        .s-icon(4,1);
+    }
+}
+
 // popup 基础样式 -------------------------
 .popup{
     display: none;
@@ -99,7 +138,8 @@
             font-size: @sub-title-fs;
             color: @grey-1;
         }
-        .car-proice{
+        .car-price{
+            margin-top: 15px;
             font-size: @sub-title-fs;
             color: @red;
         }
@@ -141,47 +181,9 @@
             font-size: @sub-title-fs;
             color: @grey-8;
 
-            // social share icon mixin
-            .s-icon(@x: 1, @y: 1){
-                background-position: -(@x - 1)*50px -(@y - 1)*50px;
-            }
-
             .text-share-to{
                 float: left;
                 margin-top: 12px;
-            }
-
-            .jiathis_style_32x32{
-                float: left;
-
-                .jiathis_button_tsina,
-                .jiathis_button_weixin,
-                .jiathis_button_cqq,
-                .jiathis_button_qzone{
-                    float: left;
-                    height: 47px;
-                    width: 47px;
-                    margin-left: 10px;
-                    background-image: url("../../images/double11/social-icon.png");
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    *{
-                        height: 0!important;
-                        overflow: hidden;
-                    }
-                }
-                .jiathis_button_tsina{
-                    .s-icon(1,1);
-                }
-                .jiathis_button_weixin{
-                    .s-icon(2,1);
-                }
-                .jiathis_button_cqq{
-                    .s-icon(3,1);
-                }
-                .jiathis_button_qzone{
-                    .s-icon(4,1);
-                }
             }
         }
     }
