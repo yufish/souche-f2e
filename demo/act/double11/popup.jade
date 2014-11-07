@@ -13,17 +13,34 @@
         textarea#share-text(spellcheck='false', autocapitalize='off', autocomplete='off', autocorrect='off') 分享模板文案
         .share-to.clearfix
             span.text-share-to 分享到:
-            .share-icon-group
-                a.share-icon.sina
-                a.share-icon.weixin
-                a.share-icon.qq
-                a.share-icon.qzone
-    //-         .jiathis_style_32x32
-    //-             a.jiathis_button_tsina
-    //-             a.jiathis_button_weixin
-    //-             a.jiathis_button_cqq
-    //-             a.jiathis_button_qzone
-    //- script(src="http://v3.jiathis.com/code/jia.js?uid=1406374730242495" charset="utf-8")
+            //- .share-icon-group
+                //- a.share-icon.sina
+                //- a.share-icon.weixin
+                //- a.share-icon.qq
+                //- a.share-icon.qzone
+            .jiathis_style_32x32    
+                a.jiathis_button_tsina
+                a.jiathis_button_weixin
+                a.jiathis_button_cqq
+                a.jiathis_button_qzone
+    script.
+        //- 自定义分享内容
+        //- 分享的微博内容: title 空格 summary
+        //- 在点击之前修改即可
+        //- 估计文案要在: popup时设置一遍, 在编辑框blur时设置一遍.
+        //- config在点击之前都有效
+        var jiathis_config = {
+            url: 'http://分享内容里给出的链接',
+            title: '大搜车双11活动标题',
+            summary: '分享内容文案文案....',
+            pic: '车图片地址'
+        };
+        $(document).ready(function(){
+            var script = document.createElement('script');
+            script.setAttribute('src', 'http://v3.jiathis.com/code/jia.js?uid=1406374730242495');
+            script.setAttribute('charset', 'utf-8');
+            $(document.body).append( script );
+        });
 
 
 //- 红包送人
