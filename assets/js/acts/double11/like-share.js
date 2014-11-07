@@ -1,5 +1,7 @@
 define(function(){
-    
+    var CONG_4_SELF='恭喜您，点赞赢得红包';
+    var CONG_4_OTHER='恭喜您，您帮$1点赞赢得红包';
+
     var sharePop = $('.popup.share-self');
     var Ele = {
         carImg: sharePop.find('.car-img'),
@@ -31,6 +33,15 @@ define(function(){
             Ele.carTitle.text(car.title);
             Ele.carTitle.attr('href', car.link);
             Ele.carPrice.text(car.price);
+
+            // 如果是帮ta点赞
+            if( carCtn.hasClass('help-getcar') ){
+                var other = carCtn.attr('data-helpwho');
+                $('.share-congrate').text(CONG_4_OTHER.replace('$1', other));
+            }
+            else{
+                $('.share-congrate').text( CONG_4_SELF );
+            }
 
             // var shareLink = {
             //     sina: carCtn.attr('data-share-link-sina'),
