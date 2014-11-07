@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link href="http://f2e.souche.com/assets/css/mobile/reset.css" rel="stylesheet" type="text/css">
+    <link href="http://f2e.souche.com/assets/css/mobile/ui.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            background: #542c8f;
+            font-size: 14px;
+        }
+        img{
+            width:100%;
+        }
+        .yellow-band{
+            height: 56px;
+            background: #ffdd52;
+            font-style: italic;
+        }
+        .zise{
+            color:#381266;
+        }
+        .red{
+            color:#f57c74;
+        }
+        .p16{
+            padding: 0 16px;;
+        }
+        .m16{
+            margin: 0 16px;
+        }
+        .yellow-band-big{
+            font-size: 20px;
+            padding-top: 6px;
+            font-weight: bold;
+        }
+        .rank-area{
+            background: #e8e8e8;
+        }
+        .num-index{
+            float: left;
+            margin-top: 2px;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            text-align: center;
+        }
+        .rank-content{
+            margin-left: 24px;
+            line-height: 18px;;
+        }
+        .rank-item{
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .first-one{
+            background: #f57c74;
+            border-radius: 80%;
+        }
+        .my-red-package-area{
+            background: #e8e8e8;
+            padding-top: 10px;
+        }
+        .input{
+            width: 135px;
+            border:1px solid #8c8c8c;
+            height: 22px;
+            padding-left: 8px;
+            margin-top: 6px;
+            -webkit-appearance: none;
+            background: initial;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .get-valid-code{
+            width: 70px;
+            font-size: 12px;;
+            height: 22px;
+            -webkit-appearance: none;
+            border:1px solid #f57c74;
+            background: none;
+            color:#f57c74;
+        }
+        .submit{
+            background: #e05030;
+            color:#fff;
+            width: 90px;
+            height: 30px;;
+            margin-top: 10px;;
+            border:none;
+            border-radius: 16px;
+        }
+        .car-card .share{
+            width: 127px;height: 26px;margin:0 auto;clear:both;
+        }
+        .car-card img{
+            height: auto;
+        }
+        .car-card{
+            background: initial;
+            border:none ;
+            padding-bottom: 10px;
+        }
+        .car-card .car-price{
+            color:#ffdd52;
+        }
+        .car-card .car-introduction{
+            color:#fff;
+            font-weight: normal;
+        }
+        .car-card .price-num{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../../../assets/images/acts/h5/double11/1.png">
+    </div>
+    <div id="J_look-red-package">
+        <img src="../../../assets/images/acts/h5/double11/2.png">
+    </div>
+    <div>
+        <img src="../../../assets/images/acts/h5/double11/3.png">
+    </div>
+    <div class="yellow-band p16">
+        <div class="zise yellow-band-big">分享筹红包 <span style="font-size: 24px;">0元</span>购新车</div>
+        <div class="zise">已有<span class="red">10000人</span>点赞分享 11月13日9：00正式开秒！</div>
+    </div>
+    <div class="clearfix" >
+        <div class="car-wrapper">
+            <a class="car-card" href="{{href}}">
+                <img src="{{img_src}}">
+                <div class="car-info">
+                    <div class="car-introduction">
+                        {{allName}}
+                    </div>
+                    <div class="car-price"><span class="price-num">{{price}}</span>万</div>
+                    <div class="share">
+                        <img src="../../../assets/images/acts/h5/double11/share-btn.png">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="car-wrapper">
+            <a class="car-card" href="{{href}}">
+                <img src="{{img_src}}">
+                <div class="car-info">
+                    <div class="car-introduction">
+                        {{allName}}
+                    </div>
+                    <div class="car-price"><span class="price-num">{{price}}</span>万</div>
+                    <div class="share">
+                        <img src="../../../assets/images/acts/h5/double11/share-btn.png">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="yellow-band p16">
+        <div class="zise yellow-band-big">谁是万人迷</div>
+        <div class="zise">红包排行第一可以<span style="color:#ff571a;">优先购买活动车辆，无需秒购哦~</span></div>
+    </div>
+    <div class="rank-area m16 p16">
+        <div style="padding: 10px 0 6px">Top 红包排行榜<br/>(截至11月9日，每小时刷新)</div>
+        <div class="rank-items">
+            <div class="rank-item">
+                <div class="first-one num-index">1</div>
+                <div class="rank-content">
+                    <span style="color:#fff;background: #f57c74;padding: 2px">万人迷</span>xxx得到朋友宠爱，已筹集到
+                    <span class="red">10000</span>元购车红包
+                </div>
+            </div>
+            <div class="rank-item">
+                <div class="num-index">2</div>
+                <div class="rank-content">
+                    <span>183****9000得到朋友宠爱，已筹集到</span>
+                    <span class="red">10000</span>元购车红包
+                </div>
+            </div>
+        </div>
+        <div class="red" style="margin-top: 8px;font-size: 12px;">说明：排行榜第一的用户，优先购买秒杀区车辆，并红包抵车价</div>
+    </div>
+    <div class="my-red-package-area m16">
+        <img src="../../../assets/images/acts/h5/double11/4.png">
+        <div style="text-align: center;padding-top: 18px;">
+            哇~我点赞分享筹集的红包：<br/>
+                <span class="red">￥10000元</span>
+        </div>
+        <div style="width: 220px;margin: 0 auto ;padding: 30px 0 15px;">
+            <form></form>
+            <input placeholder="输入手机号码" id='J_phone' class="input">
+                <button class="get-valid-code" type="button">获取验证码</button>
+            <input placeholder="输入验证码" id="J_yzm" class="input">
+
+            <input id="J_time" type="hidden" value="">
+            <input id="J_token" type="hidden" value="">
+            <div style="text-align: center">
+                <button type=button class="submit">领取</button>
+            </div>
+            <div style="text-align: center;color:#999;font-size:12px;margin-top:16px;">
+                领取后，通过手机号码在电脑登录
+                <br/>
+                <span class="red">souche.com</span>
+                <br/>参与秒杀活动，领多少减多少
+            </div>
+        </div>
+    </div>
+    <div >
+        <img src="../../../assets/images/acts/h5/double11/5.png">
+    </div>
+    <div class="yellow-band p16">
+        <div class="yellow-band-big zise" style="line-height: 56px;padding: 0">点赞分享筹红包 活动规则</div>
+    </div>
+    <div style="margin:16px auto;width: 52px;height: 23px;">
+        <img src="../../../assets/images/acts/h5/double11/7.png">
+    </div>
+
+    <script>
+
+        function sendYzm(){
+            var phoneReg = /^1[3458][0-9]{9}$/;
+            var phoneNum = $('#J_phone').val();
+            if(!phoneReg.test(phoneNum)){
+                alert('请输入正确的手机号')
+                return ;
+            }
+            var token=$('#J_token').val();
+            var time=$('#J_time').val();
+            var data={
+                cellphone: phoneNum,
+                token:token,
+                time:time
+            }
+            SM.SendValidCode(data);
+        }
+        $('.get-valid-code').click(function(){
+            sendYzm();
+            var time = 60;
+            var self = $(this).text(time+'秒后可重发').prop({disabled:true});
+            var handle = setInterval(function(){
+                time--;
+                if(time==0){
+                    self.text('获取手机验证码').prop({disabled:false});
+                    clearInterval(handle);
+                }else{
+                    self.text(time+'秒后可重发');
+                }
+            },1000)
+        })
+    </script>
+</body>
+</html>

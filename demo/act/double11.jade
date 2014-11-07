@@ -95,7 +95,7 @@ html
             a(href="#rules") 活动规则
             i ?
         .head-pic
-        .praise
+        a.praise(href="#seckill-mod") 
         .miaosha
           img(src="../../assets/images/double11/miaosha.png") 
       .wrapper
@@ -661,6 +661,10 @@ html
 
 
     include double11/popup
+    script.
+      var double11Config = {
+        likeUrl: ''
+      };
 
     script.
       require(['souche/time-countdown'],function(TimeCountDown){
@@ -681,5 +685,5 @@ html
       })
     script.
       require(['acts/double11/index'], function(Double11){
-        Double11.init();
+        Double11.init( double11Config );
       });
