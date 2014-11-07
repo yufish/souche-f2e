@@ -136,14 +136,9 @@ html
             .slide-viewport
               ul
                 li
-<<<<<<< HEAD
-                  .car-box.help-getcar(data-share-content="分享文案", data-share-link="http://分享链接")
-=======
                   //- 在dom里填充分享的文案 和 链接
                   //- help-getcar类 和 data-helpwho属性, 在"帮别人点赞送红包"的时候渲染
-                  .car-box.help-getcar(data-share-content="分享文案", data-share-link="http://分享链接" data-helpwho="double,I Spit on Your Grave"
-                  )
->>>>>>> c084dd51d8d67db6a3791a90ae0c00dd6e539136
+                  .car-box.help-getcar(data-share-content="分享文案", data-share-link="http://分享链接" data-helpwho="double,I Spit on Your Grave")
                     .car-head
                       .car-time
                       .time
@@ -558,6 +553,8 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>新车价:10.2万</s>
                 a.go(href="")
+            .look-more
+              a (href="#") 更多车型 >
       a.banner(href="")
         img(src="../assets/images/double11/danbao.png")
       #choice-car.cars-mod
@@ -625,7 +622,9 @@ html
                 a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>新车价:10.2万</s>
-                a.go(href="")
+                a.go(href="#")
+            .look-more
+              a(href="#") 更多车型 >
       a.banner(href="")
         img(src="../../assets/images/double11/gotolist.png")
       #huodong-rule.banner
