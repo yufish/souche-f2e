@@ -1,0 +1,24 @@
+doctype html
+html
+  head.
+      <title>首页</title>
+      <link href="http://f2e.souche.com/assets/css/souche/$$reset.css,ui.css,common.css?t=8" rel="stylesheet" type="text/css" />
+      <link href="http://f2e.souche.com/assets/css/index.css?t=37" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="http://f2e.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/jquery.flexslider-min.js"></script>
+      <script>
+         var contextPath = "";
+          require.config({
+           baseUrl: "http://f2e.souche.com/assets/js",
+           urlArgs:"bust=v1"
+           });
+      </script>
+                                                                                                                                                                                                                          <script type="text/javascript" src="http://assets.souche.com/assets/js/$$souche/stats.js,souche.js,index/sidebar.js?t=6"></script>
+
+  body
+    include mod/header
+    include mod/top-head
+    include mod/choose-nav
+    include mod/main-service
+    include mod/good-car
+    include mod/love-car
+    include mod/who-buy

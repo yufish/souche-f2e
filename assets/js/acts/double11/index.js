@@ -8,7 +8,11 @@ define(['acts/double11/like-share'], function(LikeShare){
 
     var _event = {
         bind: function(){
-            // $('.like-btn').on('click', LikeShare.popup);
+            $('.share-button').on('click', _event.LikeAndPop);
+        },
+        LikeAndPop: function(e){
+
+            LikeShare.popup(e);
         }
     };
 
