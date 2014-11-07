@@ -151,10 +151,13 @@
                 margin-top: 12px;
             }
 
-            .share-icon-group{
+            .jiathis_style_32x32{
                 float: left;
 
-                .share-icon{
+                .jiathis_button_tsina,
+                .jiathis_button_weixin,
+                .jiathis_button_cqq,
+                .jiathis_button_qzone{
                     float: left;
                     height: 47px;
                     width: 47px;
@@ -162,24 +165,54 @@
                     background-image: url("../../images/double11/social-icon.png");
                     background-repeat: no-repeat;
                     cursor: pointer;
-
-                    &.sina{
-                        .s-icon(1,1);
-                    };
-                    &.weixin{
-                        .s-icon(2,1);
-                    };
-                    &.qq{
-                        .s-icon(3,1);
-                    };
-                    &.qzone{
-                        .s-icon(4,1);
-                    };
+                    *{
+                        height: 0!important;
+                        overflow: hidden;
+                    }
+                }
+                .jiathis_button_tsina{
+                    .s-icon(1,1);
+                }
+                .jiathis_button_weixin{
+                    .s-icon(2,1);
+                }
+                .jiathis_button_cqq{
+                    .s-icon(3,1);
+                }
+                .jiathis_button_qzone{
+                    .s-icon(4,1);
                 }
             }
         }
     }
 }
+
+
+// .share-icon-group{
+//     float: left;
+//     .share-icon{
+//         float: left;
+//         height: 47px;
+//         width: 47px;
+//         margin-left: 10px;
+//         background-image: url("../../images/double11/social-icon.png");
+//         background-repeat: no-repeat;
+//         cursor: pointer;
+
+//         &.sina{
+//             .s-icon(1,1);
+//         };
+//         &.weixin{
+//             .s-icon(2,1);
+//         };
+//         &.qq{
+//             .s-icon(3,1);
+//         };
+//         &.qzone{
+//             .s-icon(4,1);
+//         };
+//     }
+// }
 
 // 功能砍掉了...
 // 红包送人  细节样式 ------------------------- 
