@@ -37,7 +37,7 @@ define(function(){
             // 如果是帮ta点赞
             if( carCtn.hasClass('help-getcar') ){
                 var other = carCtn.attr('data-helpwho');
-                $('.share-congrate').text(CONG_4_OTHER.replace('$1', other));
+                $('.share-congrate').text(CONG_4_OTHER.replace('$1', other || 'TA'));
             }
             else{
                 $('.share-congrate').text( CONG_4_SELF );
