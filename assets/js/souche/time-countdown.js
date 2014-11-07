@@ -8,7 +8,7 @@ define(['souche/core-data'],function(CoreData) {
             second:0
         })
         if(!tpl)
-        var tpl = "<span>剩余：<ins>{{day}}</ins>&nbsp;天&nbsp;<ins>{{hour}}</ins>&nbsp;时&nbsp;<ins>{{minute}}</ins>&nbsp;分&nbsp;<ins>{{second}}</ins>&nbsp;秒</span>"
+        var tpl = "<span><ins>{{day}}</ins>&nbsp;<em>天</em>&nbsp;<ins>{{hour}}</ins>&nbsp;<em>时</em>&nbsp;<ins>{{minute}}</ins>&nbsp;<em>分</em>&nbsp;<ins>{{second}}</ins>&nbsp;<em>秒</em></span>"
         data.bindToDOM(selector,tpl)
         var counter = this.counter = {
             endYear: $(selector).attr("endYear"),

@@ -84,7 +84,7 @@ html
         .timedown
           p 距离大搜车11.11购车狂欢节还有：
           p.show
-            |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins>时<ins>00</ins>分<ins>00</ins>.<ins class="offMSec">0</ins>秒</span>
+            |<span class="downCounter" endYear="2014" endMonth="10" endDay="11" endHour="00" ><ins>00</ins><em>时</em><ins>00</ins><em>分</em><ins>00</ins>.<ins class="offMSec">0</ins><em>秒</em></span>
         .share
           .share-to
             span 分享到：
@@ -92,10 +92,10 @@ html
             .weixin
             .qq
           .rule
-            a 活动规则
+            a(href="#rules") 活动规则
             i ?
         .head-pic
-        .praise
+        a.praise(href="#seckill-mod") 
         .miaosha
           img(src="../../assets/images/double11/miaosha.png") 
       .wrapper
@@ -674,6 +674,14 @@ html
             var index = $(this).attr("data-index")*1;
             $(".slide-viewport ul li").addClass("hidden");
             $(".slide-viewport ul li:nth("+(index-1)+")").removeClass("hidden")
+      })
+      $(".others .item").on("click",function(){
+        $.ajax({
+          url:$(this).attr("data-src"),
+          success:function(html){
+              $(this).closest(".cars-mod").find(".car-list").html(html)
+          }
+        })
       })
     script.
       require(['acts/double11/index'], function(Double11){
