@@ -3,20 +3,22 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
 
     var _config = {};
 
+    var TEST_CARID='zBiylWh5Tm';
+
     var _view = {
         init: function(){
         }
     };
 
     var _data = {
-        sendLike: function( carid, price, callback ){
+        sendLike: function( carid, actor, callback ){
             var param = {
-                carId: carid,
-                price: price
+                carid: carid
             };
-            $.getJSON(_config.likeUrl, param, function(data, status){
-
-            });
+            if(actor){
+                param.actor = actor;
+            }
+            $.getJSON(_config.likeUrl, param, callback);
         },
         miaosha: function(carid, price, callback){
             var param = {
@@ -36,30 +38,54 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             $('.car-box.miaosha-box .share-button').on('click', _event.miaosha);
         },
         LikeAndPop: function(e){
+            var btn = $(this);
+            if(btn.hasClass('disabled')){
+                return false;
+            }
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
-            LikeShare.popup(carBox, 'like', {});
+
+            var actor = null;
+            if(carBox.hasClass('helper-getcar')){
+                actor = _config.actor;
+            }
             
-            // Souche.MiniLogin.checkLogin(function(){
-            //     _data.sendLike( '9527', function(data, status){
-            //         LikeShare.popup(e);
-            //     } );
-            // },false,false,false,true);
+            Souche.MiniLogin.checkLogin(function(){
+                _data.sendLike( carId, actor, function(data, status){
+                    if(status == 'success'){
+                        var code = data.code;
+                        if(code == '202'){
+                            alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
+                            btn.addClass('disabled');
+                        }
+                        else if(code == '200'){
+                            LikeShare.popup(carBox, 'like', data);
+                        }
+                        else{
+
+                        }
+                    }
+                    else{
+                        alert('点赞失败, 请稍后重试')
+                    }
+                    
+                } );
+            },false,false,false,true);
         },
         miaosha: function(e){
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
             var price = carBox.find('.price-num');
 
-            LikeShare.popup(carBox, 'miaosha', {});
-            // _data.miaosha( carId, price, function(data, status){
-            //     if( status == 'success'){
-            //         LikeShare.popup(carBox, 'miaosha', data);
-            //     }
-            //     else{
-            //         alert('秒杀失败...');
-            //     }
-            // } );
+            
+            _data.miaosha( carId, price, function(data, status){
+                if( status == 'success'){
+                    LikeShare.popup(carBox, 'miaosha', data);
+                }
+                else{
+                    alert('秒杀失败...');
+                }
+            } );
         }
     };
 
