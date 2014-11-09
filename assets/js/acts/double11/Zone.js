@@ -68,7 +68,7 @@ define(function(){
                 _data.getZone(zoneName, priceRange, function(carObjArr){
                     var htmlStr = '';
                     if( carObjArr.length === 0){
-                        htmlStr = '<h2>没有符合条件的车</h2>'
+                        htmlStr = '<h2 class="no-car-in-range">没有符合条件的车</h2>'
                     }
                     else{
                         for( var i=0, j=carObjArr.length; i<j; i++ ){
@@ -79,7 +79,7 @@ define(function(){
                     $('#'+zoneName+' .car-list').html(htmlStr);
                 });
 
-                $('#'+zoneName+' .others .item').removeClass('active');
+                $('#'+zoneName+' .others .price-range-item').removeClass('active');
                 btn.addClass('active')
             }
         }
