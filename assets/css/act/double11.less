@@ -11,14 +11,19 @@
       width:1000px;
       top:20px;
       right:120px;
-      .item{
+      .price-range-item{
         float:right;
         padding:5px 10px;
-        background: #ffdd52;
         color:#333;
         font-size: 16px;
         margin-right: 10px;
         cursor: pointer;
+        border: 1px solid #ffdd52;
+        color: #fff;
+      }
+      .active{
+        background:#ffdd52; 
+        color: #333;
       }
     }
     .wrapper{
@@ -37,8 +42,24 @@
         margin:0 auto;
       }
     }
+    .look-more{
+      height: 30px;
+      color: #e2bf5c;
+      font-size: 17px;
+      a{
+        display: block;
+        float: right;
+        color: #e2bf5c;
+        margin-right: 15px;
+      }
+     }
     .car-list{
-     
+      .no-car-in-range{
+        color: #eee;
+        font-size: 2em;
+        padding: 2em 0 1em 0;
+        text-align: center;
+      }
     }
     .car{
       width:220px;
@@ -306,13 +327,47 @@
         height: 930px;
         overflow: hidden;
         position: relative;
-        .slide-viewport{
+        z-index: 10;
+        .flex-direction-nav{
+          li{
+            a{
+              z-index: 100;
+            }
+            .flex-prev{
+              width: 38px;
+              height: 72px;
+              background: url(../../images/double11/flex-prev.png) no-repeat;
+              left: 0px;
+            }
+            .flex-next{
+              width: 38px;
+              height: 72px;
+              background: url(../../images/double11/flex-next.png) no-repeat;
+              right: 0px;
+            }
+          }
+          
+        }
           ul{
             li{
               .help-getcar{
                 border: 5px solid #6da613;
                 .share-button{
                   background: url(../../images/double11/help-getcar.png) no-repeat !important;
+                }
+                .price{
+                  span{
+                    opacity: 1;
+                  }
+                  em{
+                    opacity: 1;
+                  }
+                }
+              }
+              .miaosha-box{
+
+                .share-button{
+                  background: url(../../images/double11/miaosha-but.png) no-repeat !important;
                 }
                 .price{
                   span{
@@ -430,12 +485,22 @@
                         font-size: 15px;
                         color: #e8e8e8;
                       }
-                      a{
-                        display: block;
-                        float:right;
-                        font-size: 18px;
-                        color: #ffdd52;
+                    }
+                    .see-more-rec{
+                      display: block;
+                      text-align: right;
+                      font-size: 18px;
+                      color: #ffdd52;
+                    }
+                    .car-recommand{
 
+                    }
+                    // 只有在帮朋友点赞的时候才显示
+                    .ask-for-help{
+                      display: none;
+                      .quote-mayun{
+                        margin-top: 20px;
+                        text-align: right;
                       }
                     }
                     .share{
@@ -450,6 +515,7 @@
                       }
                     }
                     .car-stock{
+                      display: none;
                       font-size: 15px;
                       text-align: right;
                       margin-right: 115px;
@@ -461,7 +527,7 @@
               }
             }
           }
-        }
+        
       }
     }
     .prise-list{
@@ -609,7 +675,7 @@
   #fix-slide{
     position: fixed;
     right: 10px;
-    top: 250px;
+    bottom: 10px;
     z-index: 100;
     .erweima{
       box-sizing: border-box;
@@ -637,6 +703,19 @@
     }
   }
 }
+
+#half-off,
+#whole-newcar{
+  .bd{
+    padding-bottom: 20px;
+  }
+}
+// 太繁复了...
+#double11 #content .free-car .free-wrap ul li .car-box.help-getcar .car-wrap .car-detail .ask-for-help{
+  display: block;
+}
+
+
 
 
 @import "../config.less";
