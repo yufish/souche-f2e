@@ -55,7 +55,7 @@ define(function(){
 
     var _event = {
         bind: function(){
-            $('#half-off .others .item, #choice-car .others .item').on('click', _event.priceRange);
+            $('#half-off .others .price-range-item, #choice-car .others .price-range-item').on('click', _event.priceRange);
         },
         priceRange: function(e){
             var btn = $(this);
