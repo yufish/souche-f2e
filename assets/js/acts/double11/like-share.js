@@ -75,21 +75,27 @@ define(function(){
                 // title 必须是设置的, 否则会使用当前页title
                 shareConf.title = likeShareTitle;
                 // url必须是设置的, 否则会指向当前页url
-                shareConf.shareUrl = result.shareUrl;
+                shareConf.url = result.shareUrl;
                 
-                var text=null;
+                var text='';
                 var money = result.money || 0;
                 $('.popup.share-self .money-num').html(money);
-                // 如果是帮ta点赞
-                if( carBox.hasClass('help-getcar') ){
-                    var other = carBox.attr('data-helpwho');
-                    $('.share-congrate').text(CONG_4_OTHER.replace('$1', other || 'TA'));
-                    text = ADS_TEXT.like.help[money].replace('$2', money);
-                }
-                else{
-                    $('.share-congrate').text( CONG_4_SELF );
-                    text = ADS_TEXT.like.own[money].replace('$2', money);
-                }
+                // 自己点赞的文案
+                $('.share-congrate').text( CONG_4_SELF );
+                text = ADS_TEXT.like.own[money].replace('$2', money);
+
+                Ele.shareText.val( text );
+            }
+            else if( type == 'help-like'){
+                shareConf.title = likeShareTitle;
+                // 直接从页面里拿url
+                shareConf.url = window.location.href;
+                var text='';
+                var money = result.money || 0;
+
+                var other = carBox.find('.who-asked').text();
+                $('.share-congrate').text(CONG_4_OTHER.replace('$1', other || 'TA'));
+                text = ADS_TEXT.like.help[money].replace('$2', money);
                 Ele.shareText.val( text );
             }
 
@@ -125,8 +131,10 @@ define(function(){
     var _event = {
         bind: function(){
             sharePop.find('.pop-close').on('click', _event.closePop);
-            // 用户自己修改文案后再配置一遍
-            Ele.shareText.on('blur', _view.configShare);
+            // 用户自己修改文案后再更新一遍summary
+            Ele.shareText.on('blur', function(){
+                window.jiathis_config.summary = Ele.shareText.val();
+            });
         },
         closePop: function(){
             sharePop.removeClass('active');
