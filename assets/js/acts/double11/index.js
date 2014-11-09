@@ -50,6 +50,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                 actor = _config.actor;
             }
             
+            // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
                 _data.sendLike( carId, actor, function(data, status){
                     if(status == 'success'){
@@ -70,7 +71,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                     }
                     
                 } );
-            },false,false,false,true);
+            },true,true,false,true);
         },
         miaosha: function(e){
             var carBox = $(e.target).parents('.car-box');
