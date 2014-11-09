@@ -485,12 +485,22 @@
                         font-size: 15px;
                         color: #e8e8e8;
                       }
-                      a{
-                        display: block;
-                        float:right;
-                        font-size: 18px;
-                        color: #ffdd52;
+                    }
+                    .see-more-rec{
+                      display: block;
+                      text-align: right;
+                      font-size: 18px;
+                      color: #ffdd52;
+                    }
+                    .car-recommand{
 
+                    }
+                    // 只有在帮朋友点赞的时候才显示
+                    .ask-for-help{
+                      display: none;
+                      .quote-mayun{
+                        margin-top: 20px;
+                        text-align: right;
                       }
                     }
                     .share{
@@ -505,6 +515,7 @@
                       }
                     }
                     .car-stock{
+                      display: none;
                       font-size: 15px;
                       text-align: right;
                       margin-right: 115px;
@@ -699,6 +710,12 @@
     padding-bottom: 20px;
   }
 }
+// 太繁复了...
+#double11 #content .free-car .free-wrap ul li .car-box.help-getcar .car-wrap .car-detail .ask-for-help{
+  display: block;
+}
+
+
 
 
 @import "../config.less";

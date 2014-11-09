@@ -62,11 +62,11 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                             LikeShare.popup(carBox, 'like', data);
                         }
                         else{
-
+                            alert('点赞失败, 请稍后重试');
                         }
                     }
                     else{
-                        alert('点赞失败, 请稍后重试')
+                        alert('点赞失败, 请稍后重试');
                     }
                     
                 } );
@@ -80,7 +80,13 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             
             _data.miaosha( carId, price, function(data, status){
                 if( status == 'success'){
-                    LikeShare.popup(carBox, 'miaosha', data);
+                    var code = data.code;
+                    if(code == 0){
+                        alert('您已成功抢到');
+                    }
+                    else{
+                        alert('“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！');
+                    }
                 }
                 else{
                     alert('秒杀失败...');
