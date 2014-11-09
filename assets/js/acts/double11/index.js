@@ -11,14 +11,18 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
     };
 
     var _data = {
-        sendLike: function( carid, actor, callback ){
+        sendLike: function( carid, callback ){
             var param = {
                 carid: carid
             };
-            if(actor){
-                param.actor = actor;
-            }
             $.getJSON(_config.likeUrl, param, callback);
+        },
+        helpLike: function(carid, actor, callback){
+            var param = {
+                carid: carid,
+                actor: actor
+            };
+            $.getJSON(_config.helpLikeUrl, param, callback);
         },
         miaosha: function(carid, price, callback){
             var param = {
@@ -33,7 +37,9 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
     var _event = {
         bind: function(){
             // 点赞的事件绑定
-            $('.car-box:not(.miaosha-box) .share-button').on('click', _event.LikeAndPop);
+            $('.car-box:not(.miaosha-box,.help-getcar) .share-button').on('click', _event.LikeAndPop);
+            // 帮朋友点赞~
+            $('.car-box.help-getcar .share-button').on('click', _event.helpLike);
             // 秒杀
             $('.car-box.miaosha-box .share-button').on('click', _event.miaosha);
         },
@@ -44,15 +50,10 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             }
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
-
-            var actor = null;
-            if(carBox.hasClass('helper-getcar')){
-                actor = _config.actor;
-            }
             
             // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
-                _data.sendLike( carId, actor, function(data, status){
+                _data.sendLike( carId, function(data, status){
                     if(status == 'success'){
                         var code = data.code;
                         if(code == '202'){
@@ -69,14 +70,52 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                     else{
                         alert('点赞失败, 请稍后重试');
                     }
-                    
+                } );
+            },true,true,false,true);
+        },
+        helpLike: function(e){
+            var btn = $(this);
+            if(btn.hasClass('disabled')){
+                return false;
+            }
+            var carBox = $(e.target).parents('.car-box');
+            var carId = _config.encryptCarId;
+            var actor = _config.actor;
+            // 手机号 + 验证码登录
+            Souche.MiniLogin.checkLogin(function(){
+                _data.helpLike( carId, actor, function(data, status){
+                    if(status == 'success'){
+                        var code = data.code;
+                        if(code == '202'){
+                            alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
+                            btn.addClass('disabled');
+                        }
+                        else if(code == '402'){
+                            alert('不要自己给自己点赞哦~ ');
+                        }
+                        else if(code == '203'){
+                            alert('该分享链接无效');
+                        }
+                        else if(code == '204'){
+                            alert('您朋友的红包达到上限数');
+                        }
+                        else if(code == '200'){
+                            LikeShare.popup(carBox, 'help-like', data);
+                        }
+                        else{
+                            alert('点赞失败, 请稍后重试');
+                        }
+                    }
+                    else{
+                        alert('点赞失败, 请稍后重试');
+                    }
                 } );
             },true,true,false,true);
         },
         miaosha: function(e){
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
-            var price = carBox.find('.price-num');
+            var price = $.trim(carBox.find('.price-num').text());
 
             
             _data.miaosha( carId, price, function(data, status){
