@@ -723,6 +723,12 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
 
                 });
 
+                //大图少于14张，隐藏左右切换
+                if($(".photosSmall li").length<14){
+                    $(".photoSmallTab").addClass("hidden");
+                    $(".photosSmallWrap").css("width",620);
+                }
+
             }
         }
     }();
