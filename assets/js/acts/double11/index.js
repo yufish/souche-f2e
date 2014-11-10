@@ -71,7 +71,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                         alert('点赞失败, 请稍后重试');
                     }
                 } );
-            },true,true,false,true);
+            },true,false,false,true);
         },
         helpLike: function(e){
             var btn = $(this);
@@ -110,7 +110,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                         alert('点赞失败, 请稍后重试');
                     }
                 } );
-            },true,true,false,true);
+            },true,false,false,true);
         },
         miaosha: function(e){
             var carBox = $(e.target).parents('.car-box');
