@@ -1,0 +1,1005 @@
+.list_main(click_type='sale-list')
+  .car-nav
+    .cat-nav-upper
+      ul.car-tab
+        li.tab-item.active
+          a(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=zaishou&bodyModels=')
+            h4
+              span.tab-item-carstatus 出售中
+              span.car-kind-count-ctn
+                span (
+                span.car-kind-count-saling 546
+                span )
+        li.tab-item
+          a(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=yishou&bodyModels=')
+            h4
+              span.tab-item-carstatus 已售
+              span.car-kind-count-ctn
+                span (
+                span.car-kind-count-sold 2385
+                span )
+      ul.view-switch
+        li.view-item.card.active(title='卡片视图')
+          a(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=card&cbParam=&searchType=&bodyModels=')
+        li.view-item.list(title='列表视图')
+          a(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=list&cbParam=&searchType=&bodyModels=')
+      .orderby-ctn
+        span.orderby-text 排序：
+        ul.car-orderby
+          li.orderby-item.active
+            a#sortCreate.order_item.order_active(href=' /pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=default&sortType=desc&viewType=&cbParam=&searchType=&bodyModels=&keyword=') 默认
+          li.orderby-item.desc
+            a.order_item(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=licensePlateDate&sortType=&viewType=&cbParam=&searchType=&bodyModels=&keyword=', title='上牌时间从近到远排序')
+              | 上牌时间
+              span.order-arrow
+          li.orderby-item.asc
+            a.order_item(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=price&sortType=&viewType=&cbParam=&searchType=&bodyModels=&keyword=', title='价格从低到高排序')
+              | 价格
+              span.order-arrow
+          li.orderby-item.asc
+            a.order_item(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=mile&sortType=&viewType=&cbParam=&searchType=&bodyModels=&keyword=', title='里程数从低到高排序')
+              | 里程
+              span.order-arrow
+          li.orderby-item.desc
+            a.order_item(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=level&sortType=&viewType=&cbParam=&searchType=&bodyModels=&keyword=', title='质检等级从高到低排序')
+              | 质检等级
+              span.order-arrow
+    .car-filter-group
+      .car-filter-item.hidden
+        a.mask-link(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=1&searchType=&bodyModels=')
+        input#quality-check(type='checkbox')
+        label(for='souche-sale-check') 大搜车质保
+      //
+         <div class="car-filter-item">
+                        <a class="mask-link" href="/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=2&searchType=&bodyModels="></a>
+                        <input type="checkbox" id="on-sale-check" >
+                        <label for="on-sale-check">限时优惠</label>
+                      </div> 
+      .car-filter-item
+        a.mask-link(href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=3&searchType=&bodyModels=')
+        input#almost-new-check(type='checkbox')
+        label(for='almost-new-check') 准新车
+  // <div class="card-box clearfix car-wrap">
+  // card-box: 卡片视图
+  // list-box: 列表视图
+  .card-box.clearfix.car-wrap
+    // list main begin
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=tv4KcjgdVb', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/CFB3519180F5BF79B3F941E7AA340B79_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/CFB3519180F5BF79B3F941E7AA340B79_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2013款 Smart-ForTwo-1.0-A/MT硬顶巧克力特别版', width='325px', height='215px', style='display: inline;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=tv4KcjgdVb', target='_blank')
+        | 2013款 Smart-ForTwo-1.0-手自一体硬顶巧克力特别版
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 8.98
+          span.price-unit 万
+        span.recommended 节省5.02 万元
+        .recommanded-staging-price
+          span.first-pay 首付4.58万
+          span.month-pay 月供1480元
+      .car-info
+        span.info-item 2013/12  上牌
+        em |
+        span.info-item 1.00万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='tv4KcjgdVb', click_type='sale-favs', data-num='9', title='收藏 9')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='9') 9
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A+
+          span.extra-text 质检 A+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=iAcBnTnX5v', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/842CAEE9B542B0544F6E7BFB527466B7_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/842CAEE9B542B0544F6E7BFB527466B7_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='日产 2009款 天籁2.5-CVT 领先型  XL', width='325px', height='215px', style='display: inline;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=iAcBnTnX5v', target='_blank')
+        | 日产 2009款 天籁2.5-无级变速 领先型  XL
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 12.5
+          span.price-unit 万
+        span.recommended 节省16.48 万元
+        .recommanded-staging-price
+          span.first-pay 首付6.3万
+          span.month-pay 月供2452元
+      .car-info
+        span.info-item 2009/05  上牌
+        em |
+        span.info-item 5.32万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='iAcBnTnX5v', click_type='sale-favs', data-num='8', title='收藏 8')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='8') 8
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B
+          span.extra-text 质检 B
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=tlghmnbCPM', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/5921B8D5DD6B8D2DA4D05B018298C938_5184x3456.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/5921B8D5DD6B8D2DA4D05B018298C938_5184x3456.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2010款  宾利飞驰6.0T-AT四座', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=tlghmnbCPM', target='_blank')
+        | 2010款  宾利飞驰6.0T-自动四座
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 239.77
+          span.price-unit 万
+        span.recommended 节省0 万元
+        .recommanded-staging-price
+          span.first-pay 首付119.97万
+          span.month-pay 月供40318元
+      .car-info
+        span.info-item 2012/06  上牌
+        em |
+        span.info-item 3.40万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='tlghmnbCPM', click_type='sale-favs', data-num='5', title='收藏 5')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='5') 5
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A
+          span.extra-text 质检 A
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000008')
+            span.extra-text 北京第一站旧机动车经纪公司(酷车小镇店)
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=IK8ezr2jMv', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/E88B57FC90D7142261F39798A1AA510A_4352x3264.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/E88B57FC90D7142261F39798A1AA510A_4352x3264.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2011款  路虎揽胜运动版5.0T-A/MT-HSE-SC机械增压', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=IK8ezr2jMv', target='_blank')
+        | 2011款  路虎揽胜运动版5.0T-手自一体-HSE-SC机械增压
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 98.77
+          span.price-unit 万
+        span.recommended 节省0 万元
+        .recommanded-staging-price
+          span.first-pay 首付49.47万
+          span.month-pay 月供16591元
+      .car-info
+        span.info-item 2012/05  上牌
+        em |
+        span.info-item 5.40万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='IK8ezr2jMv', click_type='sale-favs', data-num='5', title='收藏 5')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='5') 5
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A
+          span.extra-text 质检 A
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000008')
+            span.extra-text 北京第一站旧机动车经纪公司(酷车小镇店)
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=ALKmqRVUoj', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/DEF40A49FD7AEA709B0D07B7EE63B40C_4352x3264.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/DEF40A49FD7AEA709B0D07B7EE63B40C_4352x3264.JPG@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2014款  路虎揽胜3.0T-A/MT-Vogue-SE-SC机械增压', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=ALKmqRVUoj', target='_blank')
+        | 2014款  路虎揽胜3.0T-手自一体-Vogue-SE-SC机械增压
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 170.8
+          span.price-unit 万
+        span.recommended 节省0 万元
+        .recommanded-staging-price
+          span.first-pay 首付85.4万
+          span.month-pay 月供28741元
+      .car-info
+        span.info-item 2013/11  上牌
+        em |
+        span.info-item 0.62万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='ALKmqRVUoj', click_type='sale-favs', data-num='5', title='收藏 5')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='5') 5
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A+
+          span.extra-text 质检 A+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000008')
+            span.extra-text 北京第一站旧机动车经纪公司(酷车小镇店)
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=ca8a5GBxZ7', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/B14CEDD913270436F4EE7650DC994694_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/B14CEDD913270436F4EE7650DC994694_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2013款 宝马320i-2.0T-A/MT 时尚型', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=ca8a5GBxZ7', target='_blank')
+        | 2013款 宝马320i-2.0T-手自一体 时尚型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 27.8
+          span.price-unit 万
+        span.recommended 节省9 万元
+        .recommanded-staging-price
+          span.first-pay 首付13.9万
+          span.month-pay 月供4678元
+      .car-info
+        span.info-item 2014/03  上牌
+        em |
+        span.info-item 2.20万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='ca8a5GBxZ7', click_type='sale-favs', data-num='9', title='收藏 9')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='9') 9
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=npqiCiXjhm', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/86742C1110B713D0ED1C565897887050_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/86742C1110B713D0ED1C565897887050_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2008款 大众甲壳虫2.0-A/MT前驱标配版', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=npqiCiXjhm', target='_blank')
+        | 2008款 大众甲壳虫2.0-手自一体前驱标配版
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 11.5
+          span.price-unit 万
+        span.recommended 节省12.93 万元
+        .recommanded-staging-price
+          span.first-pay 首付5.8万
+          span.month-pay 月供2254元
+      .car-info
+        span.info-item 2009/03  上牌
+        em |
+        span.info-item 6.01万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='npqiCiXjhm', click_type='sale-favs', data-num='11', title='收藏 11')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='11') 11
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B
+          span.extra-text 质检 B
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 今日
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=tZMxFD96Q4', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/236BB06DE443AFBAA6D0C00C0C7EFAEE_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/236BB06DE443AFBAA6D0C00C0C7EFAEE_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='别克 2006款  陆尊XT-3.0-AT导航型7座', width='325px', height='215px', style='display: inline;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=tZMxFD96Q4', target='_blank')
+        | 别克 2006款  陆尊XT-3.0-自动导航型7座
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 18.5
+          span.price-unit 万
+        span.recommended 节省22.54 万元
+        .recommanded-staging-price
+          span.first-pay 首付9.3万
+          span.month-pay 月供3096元
+      .car-info
+        span.info-item 2010/05  上牌
+        em |
+        span.info-item 6.51万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='tZMxFD96Q4', click_type='sale-favs', data-num='8', title='收藏 8')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='8') 8
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 昨天
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=1bsJTkh8tF', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/E79E474B976327EBF681D7A83D4E5CDD_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/E79E474B976327EBF681D7A83D4E5CDD_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='雪佛兰 2011款  科鲁兹三厢SE-1.8-A/MT', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=1bsJTkh8tF', target='_blank')
+        | 雪佛兰 2011款  科鲁兹三厢SE-1.8-手自一体
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 9.3
+          span.price-unit 万
+        span.recommended 节省5.57 万元
+        .recommanded-staging-price
+          span.first-pay 首付4.7万
+          span.month-pay 月供1548元
+      .car-info
+        span.info-item 2011/08  上牌
+        em |
+        span.info-item 6.24万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='1bsJTkh8tF', click_type='sale-favs', data-num='5', title='收藏 5')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='5') 5
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 昨天
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=uweqLJ135l', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/989341E85A9B5241D53CB8D3C64F2AF0_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/989341E85A9B5241D53CB8D3C64F2AF0_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2009款  雷克萨斯IS-300-3.0-A/MT', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=uweqLJ135l', target='_blank')
+        | 2009款  雷克萨斯IS-300-3.0-手自一体
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 23.5
+          span.price-unit 万
+        span.recommended 节省19.9 万元
+        .recommanded-staging-price
+          span.first-pay 首付11.8万
+          span.month-pay 月供3937元
+      .car-info
+        span.info-item 2010/08  上牌
+        em |
+        span.info-item 4.02万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='uweqLJ135l', click_type='sale-favs', data-num='7', title='收藏 7')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='7') 7
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 昨天
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=oscUwKkMLn', target='_blank')
+        img(src='http://cheniu.u.qiniudn.com/15110042174/02634fd7f83216bad6cbd783edd35ca0?imageView2/1/w/240/h/160', data-original='http://cheniu.u.qiniudn.com/15110042174/02634fd7f83216bad6cbd783edd35ca0?imageView2/1/w/240/h/160', alt='别克 2010款  英朗XT-1.6T-A/MT新锐运动型两厢', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=oscUwKkMLn', target='_blank')
+        | 别克 2010款  英朗XT-1.6T-手自一体新锐运动型两厢
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 9.37
+          span.price-unit 万
+        span.recommended 节省10.34 万元
+        .recommanded-staging-price
+          span.first-pay 首付4.77万
+          span.month-pay 月供1548元
+      .car-info
+        span.info-item 2010/11  上牌
+        em |
+        span.info-item 3.90万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='oscUwKkMLn', click_type='sale-favs', data-num='12', title='收藏 12')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='12') 12
+      .car-type.clearfix
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=15110042174')
+            span.extra-text 北京优途旧机动车经纪有限公司
+        .up-time.hidden 两天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=gKQZEgWgoR', target='_blank')
+        img(src='http://img.souche.com/files/carpicture/1392132311E14115314285373910C0EA_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', data-original='http://img.souche.com/files/carpicture/1392132311E14115314285373910C0EA_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2009款  沃尔沃S80L-2.5T-A/MT智雅版', width='325px', height='215px', style='display: inline; width: 100%; height: auto;')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=gKQZEgWgoR', target='_blank')
+        | 2009款  沃尔沃S80L-2.5T-手自一体智雅版
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 18.5
+          span.price-unit 万
+        span.recommended 节省28.16 万元
+        .recommanded-staging-price
+          span.first-pay 首付9.3万
+          span.month-pay 月供3638元
+      .car-info
+        span.info-item 2009/07  上牌
+        em |
+        span.info-item 8.81万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='gKQZEgWgoR', click_type='sale-favs', data-num='11', title='收藏 11')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='11') 11
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B
+          span.extra-text 质检 B
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 两天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=3SwWDF6o5h', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://cheniu.u.qiniudn.com/13910155053/271baba8c891cb30fd83bae843b06107?imageView2/1/w/240/h/160', alt='2013款 宝马320Li-2.0T-A/MT 时尚型', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=3SwWDF6o5h', target='_blank')
+        | 2013款 宝马320Li-2.0T-手自一体 时尚型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 30.2
+          span.price-unit 万
+        span.recommended 节省8.3 万元
+        .recommanded-staging-price
+          span.first-pay 首付15.1万
+          span.month-pay 月供5081元
+      .car-info
+        span.info-item 2013/09  上牌
+        em |
+        span.info-item 2.20万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='3SwWDF6o5h', click_type='sale-favs', data-num='7', title='收藏 7')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='7') 7
+      .car-type.clearfix
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=13910155053')
+            span.extra-text 宝诚宝马
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=BPduAcDFEQ', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://cheniu.u.qiniudn.com/13910155053/0d21bcb4ae566354028dabcb85eb86c6?imageView2/1/w/240/h/160', alt='2013款 宝马320Li-2.0T-A/MT 时尚型', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=BPduAcDFEQ', target='_blank')
+        | 2013款 宝马320Li-2.0T-手自一体 时尚型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 30.2
+          span.price-unit 万
+        span.recommended 节省8.3 万元
+        .recommanded-staging-price
+          span.first-pay 首付15.1万
+          span.month-pay 月供5081元
+      .car-info
+        span.info-item 2013/09  上牌
+        em |
+        span.info-item 0.90万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='BPduAcDFEQ', click_type='sale-favs', data-num='11', title='收藏 11')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='11') 11
+      .car-type.clearfix
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=13910155053')
+            span.extra-text 宝诚宝马
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=JHKx9MLWbS', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://cheniu.u.qiniudn.com/13910155053/16be33b2db86fdba29c6b6b271e8d5fc?imageView2/1/w/240/h/160', alt='2010款  宝马318i-2.0-A/MT领先型', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=JHKx9MLWbS', target='_blank')
+        | 2010款  宝马318i-2.0-手自一体领先型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 17.8
+          span.price-unit 万
+        span.recommended 节省14.01 万元
+        .recommanded-staging-price
+          span.first-pay 首付8.9万
+          span.month-pay 月供2995元
+      .car-info
+        span.info-item 2010/10  上牌
+        em |
+        span.info-item 2.60万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='JHKx9MLWbS', click_type='sale-favs', data-num='33', title='收藏 33')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='33') 33
+      .car-type.clearfix
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=13910155053')
+            span.extra-text 宝诚宝马
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=N4sLAqR1Yp', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/A0F33773055901226EFB11B8F2438F11_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2011款  奥迪A6L-2.8-CVT/MT-FSI舒适型', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=N4sLAqR1Yp', target='_blank')
+        | 2011款  奥迪A6L-2.8-无级变速-FSI舒适型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 31
+          span.price-unit 万
+        span.recommended 节省27.37 万元
+        .recommanded-staging-price
+          span.first-pay 首付15.5万
+          span.month-pay 月供5216元
+      .car-info
+        span.info-item 2011/09  上牌
+        em |
+        span.info-item 11.74万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='N4sLAqR1Yp', click_type='sale-favs', data-num='7', title='收藏 7')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='7') 7
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B
+          span.extra-text 质检 B
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 两天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=YAOEekZ3ba', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/9D28EE0A85D3D442B0254031BED3846C_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2008款  大众帕萨特R-R36-3.6-A/MT四驱旅行版', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=YAOEekZ3ba', target='_blank')
+        | 2008款  大众帕萨特R-R36-3.6-手自一体四驱旅行版
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 36.8
+          span.price-unit 万
+        span.recommended 节省20.73 万元
+        .recommanded-staging-price
+          span.first-pay 首付18.4万
+          span.month-pay 月供6192元
+      .car-info
+        span.info-item 2010/02  上牌
+        em |
+        span.info-item 3.52万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='YAOEekZ3ba', click_type='sale-favs', data-num='10', title='收藏 10')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='10') 10
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 两天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=OM4acYlF1j', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/8457FA6122D074D023E87341C1FCFCA7_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2012款 路虎极光2.0T-A/MT耀动版三门', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=OM4acYlF1j', target='_blank')
+        | 2012款 路虎极光2.0T-手自一体耀动版三门
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 42.8
+          span.price-unit 万
+        span.recommended 节省14.52 万元
+        .recommanded-staging-price
+          span.first-pay 首付21.4万
+          span.month-pay 月供7202元
+      .car-info
+        span.info-item 2012/09  上牌
+        em |
+        span.info-item 1.12万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='OM4acYlF1j', click_type='sale-favs', data-num='6', title='收藏 6')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='6') 6
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A
+          span.extra-text 质检 A
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=e0OI697NWb', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/4573AF201169EC343E83C9A75DF95F59_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='大众 2009款  领驭1.8T-MT尊享型', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=e0OI697NWb', target='_blank')
+        | 大众 2009款  领驭1.8T-手动尊享型
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 12.5
+          span.price-unit 万
+        span.recommended 节省7.24 万元
+        .recommanded-staging-price
+          span.first-pay 首付6.3万
+          span.month-pay 月供2086元
+      .car-info
+        span.info-item 2010/04  上牌
+        em |
+        span.info-item 6.47万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='e0OI697NWb', click_type='sale-favs', data-num='8', title='收藏 8')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='8') 8
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=dFs36g97gA', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/54ECE76A425EE0D7B9A3A007AF913FA3_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2011款  奥迪Q5-2.0T-A/MT技术型四驱', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=dFs36g97gA', target='_blank')
+        | 2011款  奥迪Q5-2.0T-手自一体技术型四驱
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 35.5
+          span.price-unit 万
+        span.recommended 节省10.51 万元
+        .recommanded-staging-price
+          span.first-pay 首付17.8万
+          span.month-pay 月供5956元
+      .car-info
+        span.info-item 2012/05  上牌
+        em |
+        span.info-item 4.08万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='dFs36g97gA', click_type='sale-favs', data-num='7', title='收藏 7')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='7') 7
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检B+
+          span.extra-text 质检 B+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=35MPyusI6n', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/F4620BFE4A980BE9BF8E1266A57BFAFB_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='日产 2012款  天籁2.0-CVT/MT-XL智享版', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=35MPyusI6n', target='_blank')
+        | 日产 2012款  天籁2.0-无级变速-XL智享版
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 14
+          span.price-unit 万
+        span.recommended 节省9.86 万元
+        .recommanded-staging-price
+          span.first-pay 首付7万
+          span.month-pay 月供2355元
+      .car-info
+        span.info-item 2012/07  上牌
+        em |
+        span.info-item 1.88万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='35MPyusI6n', click_type='sale-favs', data-num='18', title='收藏 18')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='18') 18
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A
+          span.extra-text 质检 A
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=63asxqXXQ1', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/C07E2184F902C5B491D4B4E1D74DF22E_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='2009款  英菲尼迪M35-3.5-A/MT-V6后驱', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=63asxqXXQ1', target='_blank')
+        | 2009款  英菲尼迪M35-3.5-手自一体-V6后驱
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 31
+          span.price-unit 万
+        span.recommended 节省35 万元
+        .recommanded-staging-price
+          span.first-pay 首付15.5万
+          span.month-pay 月供5216元
+      .car-info
+        span.info-item 2010/10  上牌
+        em |
+        span.info-item 5.55万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='63asxqXXQ1', click_type='sale-favs', data-num='8', title='收藏 8')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='8') 8
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检C+
+          span.extra-text 质检 C+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=NMgbNado2U', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/3244A88CE6EEC585089FD1AF8893783F_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='丰田 2012款  汉兰达3.5-A/MT精英版7座四驱', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=NMgbNado2U', target='_blank')
+        | 丰田 2012款  汉兰达3.5-手自一体精英版7座四驱
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 24
+          span.price-unit 万
+        span.recommended 节省5.18 万元
+        .recommanded-staging-price
+          span.first-pay 首付12万
+          span.month-pay 月供4038元
+      .car-info
+        span.info-item 2013/05  上牌
+        em |
+        span.info-item 1.75万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='NMgbNado2U', click_type='sale-favs', data-num='17', title='收藏 17')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='17') 17
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A+
+          span.extra-text 质检 A+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+    .carsItem.carItem
+      a.carImg(href='/pages/choosecarpage/choose-car-detail.html?carId=yU8i74yDWK', target='_blank')
+        img(src='http://res.souche.com/images/fed/zhanwei.png', data-original='http://img.souche.com/files/carpicture/19A3B6397DC69663A4AFB040C6963F88_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg', alt='大众 2012款  途观1.8T-A/MT风尚版四驱', width='325px', height='215px')
+        .timebuy.hidden
+      a.car-link(href='/pages/choosecarpage/choose-car-detail.html?carId=yU8i74yDWK', target='_blank')
+        | 大众 2012款  途观1.8T-手自一体风尚版四驱
+      .car-price
+        span.price
+          span.rmb-symbol ￥
+          span.price-amount 23.5
+          span.price-unit 万
+        span.recommended 节省3.73 万元
+        .recommanded-staging-price
+          span.first-pay 首付11.8万
+          span.month-pay 月供3937元
+      .car-info
+        span.info-item 2012/11  上牌
+        em |
+        span.info-item 0.94万公里
+        em |
+        span.info-item
+          span.info-item-name 归属地:
+          | 北京
+      .carTail.clearfix
+        a.fav.carCollect(data-carid='yU8i74yDWK', click_type='sale-favs', data-num='14', title='收藏 14')
+          span.add-to-coll 收藏
+          span.already-colled 已收藏
+          span.fav-count(data-favcount='14') 14
+      .car-type.clearfix
+        .zhijian
+          span.type-icon 检A+
+          span.extra-text 质检 A+
+        .baoxian
+          span.type-icon
+          span.extra-text 一年或2万公里质保
+        .shouquan
+          a(target='_blank', href='/pages/onsale/car_shop.html?authshopCode=000001')
+            span.extra-text 大搜车北京寄售店
+        .up-time.hidden 三天前
+  // 分页
+  // sort
+  .sort.clearfix
+    a.pre(click_type='page-prev') 上一页
+    a.activeNumber(click_type='page-number-1', href='/pages/onsale/sale_car_list.html?index=1') 1
+    a(click_type='page-number-2', href='/pages/onsale/sale_car_list.html?index=2') 2
+    a(click_type='page-number-3', href='/pages/onsale/sale_car_list.html?index=3') 3
+    a(click_type='page-number-4', href='/pages/onsale/sale_car_list.html?index=4') 4
+    a(click_type='page-number-5', href='/pages/onsale/sale_car_list.html?index=5') 5
+    a(click_type='page-number-6', href='/pages/onsale/sale_car_list.html?index=6') 6
+    span ...
+    a(click_type='page-number-23', href='/pages/onsale/sale_car_list.html?index=23') 23
+    a.next(click_type='page-next', href='/pages/onsale/sale_car_list.html?index=2') 下一页
+  // sort end
+  .guess-like.loading
