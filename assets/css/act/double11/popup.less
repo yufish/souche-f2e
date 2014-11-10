@@ -114,7 +114,7 @@
     }
 }
 
-.share-self{
+.share-like.popup{
     padding: 50px;
 
     .clear-flt();
@@ -190,6 +190,56 @@
         }
     }
 }
+.share-miaosha.popup{
+    padding: 20px 40px 40px 40px;
+    background-image: url('../../images/double11/miaosha-pop-bg.png');
+    background-size: 100%;
+    background-position: top left;
+    background-color: #E8E8E8;
+    .pop-hd{
+        font-size: 45px;
+        margin-bottom: 10px;
+        color: @red;
+    }
+    .pop-subtitle{
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: @grey-8;
+    }
+    #share-miaosha-text{
+        display: block;
+        height: 10em;
+        width: 70%;
+        padding: 0.5em;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-size: @sub-title-fs;
+        color: @grey-1;
+        background-color: #E8E8E8;
+        border: 1px solid #999;
+        outline: none;
+        resize: none;
+
+        &:focus{
+            background-color: #fff;
+            border-color: @soucheOrange;
+        }
+    }
+    .share-to{
+        width: 70%;
+        margin: 0 auto;
+        font-size: @sub-title-fs;
+        color: @grey-8;
+
+        .text-share-to{
+            float: left;
+            margin-top: 12px;
+        }
+    }
+}
+
+
 
 
 // .share-icon-group{
