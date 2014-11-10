@@ -1,0 +1,33 @@
+doctype html
+html
+  head.
+      <title>首页</title>
+      <link href="http://f2e.souche.com/assets/css/souche/$$reset.css,ui.css,common.css?t=8" rel="stylesheet" type="text/css" />
+      <link href="http://f2e.souche.com/assets/css/souche/common_11.css?t=37" rel="stylesheet" type="text/css" />
+      <link href="http://f2e.souche.com/assets/css/go/go.css?t=37" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="http://f2e.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/jquery.flexslider-min.js"></script>
+      <script>
+         var contextPath = "";
+          require.config({
+           baseUrl: "http://f2e.souche.com/assets/js",
+           urlArgs:"bust=v1"
+         });
+      </script>
+  body
+    include mod/header
+    #head-banner(style="background:url(../../assets/images/go/head-bg.jpg) center center;")
+      .wrapper
+        .t 去野
+        .con
+          p 突然发现路还很远，但时光很快、很快。
+          p 你心中是否会自问：什么是我想要的生活？你是否会担心，身心的疲惫迷失于都市生活之中;
+          p 你是否曾想过，一段旅途，一辆野性十足的车，将会改变你的人生。
+          p 去吧，去野吧，去遇见未知的自己
+    include mod/go-body
+    #other-go
+      .wrapper
+        .go-list
+          .go-card
+
+
+
