@@ -61,6 +61,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                             btn.addClass('disabled');
                         }
                         else if(code == '200'){
+                            $('.red-share').attr('data-shareurl', data.shareUrl);
                             LikeShare.popup(carBox, 'like', data);
                         }
                         else{
@@ -122,7 +123,8 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                 if( status == 'success'){
                     var code = data.code;
                     if(code == 0){
-                        alert('您已成功抢到');
+                        // alert('您已成功抢到');
+                        LikeShare.popup(carBox, 'miaosha', data);
                     }
                     else{
                         alert('“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！');
