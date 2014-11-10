@@ -126,6 +126,9 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             var carId = carBox.attr('data-carid');
             var price = $.trim(carBox.find('.price-num').text());
 
+            // 测试弹窗
+            // LikeShare.popup(carBox, 'miaosha', {});
+            // 正常请求
             Souche.MiniLogin.checkLogin(function(){
                 _data.miaosha( carId, price, function(data, status){
                     if( status == 'success'){
