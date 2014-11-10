@@ -7,6 +7,14 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
 
     var _view = {
         init: function(){
+            // 两秒后隐藏
+            setTimeout(function(){
+                $('.help-getcar').animate({
+                    outline: '5px #fff solid'
+                }, 300, function(){
+                    $('.help-getcar').addClass('no-green-border');
+                });
+            }, 4000);
         }
     };
 
