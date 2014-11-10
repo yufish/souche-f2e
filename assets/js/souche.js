@@ -387,7 +387,15 @@ Souche.MiniLogin = function () {
             useCheck = !no_useCheck;
             hide_weixin = !!_hide_weixin;
             if(useCheck){
-                if(!is_secret){
+                if(is_secret&&has_third){
+                    Souche.checkVerifyAndThirdLogin(function(isLogin) {
+                        if (isLogin) {
+                            self.callback && self.callback();
+                        } else {
+                            self._show();
+                        }
+                    })
+                }else if(!is_secret){
                     if(has_third){
                         Souche.checkAllLogin(function(isLogin) {
                             if (isLogin) {
@@ -440,8 +448,25 @@ Souche.MiniLogin = function () {
 
  3.pages/evaluateAction/isPhoneVerifyLogin.json   后续订单业务相关所有操作
  --(仅包含手机号码+验证码一种登录)
-
+ 4./pages/evaluateAction/isVerifyAndThirdLogin.json 验证码和第三方登录的验证
  */
+Souche.checkVerifyAndThirdLogin = function(callback){
+    $.ajax({
+        url: contextPath + "/pages/evaluateAction/isVerifyAndThirdLogin.json",
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if (data.result == "true") {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        },
+        error: function() {
+            callback(false)
+        }
+    })
+}
 Souche.checkAllLogin = function(callback){
     $.ajax({
         url: contextPath + "/pages/evaluateAction/isLogin.json",
