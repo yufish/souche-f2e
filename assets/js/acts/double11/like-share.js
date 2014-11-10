@@ -99,7 +99,7 @@ define(function(){
                 shareConf.url = window.location.href;
                 var text='';
                 var money = result.money || 0;
-
+                $('.popup.share-like .money-num').html(money);
                 var other = carBox.find('.who-asked').text();
                 $('.share-congrate').text(CONG_4_OTHER.replace('$1', other || 'TA'));
                 $('share-encourage').text(SUBTITLE_4_OTHER);
