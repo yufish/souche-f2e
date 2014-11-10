@@ -1,3 +1,4 @@
+@import "../config.less";
 #double11{
   .banner{
     display: block;
@@ -405,6 +406,7 @@
                     font-size: 25px;
                     color: #ffdd52;
                     line-height: 32px;
+                    width: 120px;
                   }
                   .remind{
                     float: left;
@@ -466,13 +468,13 @@
                         margin-top: 7px;
                       }
                       span{
-                        opacity: 0.5;
+                        
                         font-size: 40px;
                         color: #ffdd52;
                         margin-left: 5px;
                       }
                       em{
-                         opacity: 0.5;
+                         
                         font-size: 30px;
                         color: #ffdd52;
                       }
@@ -676,6 +678,8 @@
   #footer{
     margin-top: 0px;
   }
+  @purple: #542c8f;
+  @yellow: #ffdd52;
   #fix-slide{
     position: fixed;
     right: 10px;
@@ -683,19 +687,20 @@
     z-index: 100;
     .erweima{
       box-sizing: border-box;
-      width: 180px;
-      height: 220px;
+      width: 110px;
+      height: 150px;
       padding: 10px;
       background: #ffdd52;
       margin-bottom: 5px;
       .tit{
-        font-size: 20px;
-        color: #1f1f1f;
         margin-bottom: 10px;
+        font-size:18px;
+        color: @purple;
+        text-align: center;
       }
       .pic-erweima{
-        width: 160px;
-        height: 160px;
+        width: 90px;
+        height: 90px;
         img{
           width: 100%;
         }
@@ -703,14 +708,22 @@
     }
     .fix-item{
       display: block;
-      width: 150px;
-      height: 50px;
+      width: 110px;
+      height: 30px;
       background: #ffdd52;
       text-align: center;
-      line-height: 50px;
+      line-height: 30px;
       margin-bottom: 5px;
-      font-size: 18px;
-      color: #6d3bac;
+      font-size: 16px;
+      color: @yellow;
+      background-color: @purple;
+      border: 1px solid @yellow;
+      .tst();
+
+      &:hover{
+        color: @purple;
+        background-color: @yellow;
+      }
     }
   }
 }
@@ -734,7 +747,11 @@
   }
 }
 
-
+// 活动页  先不显示toobar
+#toolbar,
+.sidebar-top{
+  display: none;
+}
 
 
 @import "../config.less";

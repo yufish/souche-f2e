@@ -5,7 +5,8 @@ define(['souche/core-data'],function(CoreData) {
             day:0,
             hour:0,
             minute:0,
-            second:0
+            second:0,
+            totalHour:0
         })
         if(!tpl)
         var tpl = "<span><ins>{{day}}</ins>&nbsp;<em>天</em>&nbsp;<ins>{{hour}}</ins>&nbsp;<em>时</em>&nbsp;<ins>{{minute}}</ins>&nbsp;<em>分</em>&nbsp;<ins>{{second}}</ins>&nbsp;<em>秒</em></span>"
@@ -32,7 +33,8 @@ define(['souche/core-data'],function(CoreData) {
                 day:Math.floor(offset / 24 / (3600 * 1000)),
                 hour:Math.floor(offset / (3600 * 1000) % 24),
                 minute:Math.floor(offset % (3600 * 1000) / (60 * 1000)),
-                second:Math.floor(offset % (3600 * 1000)% (60 * 1000)/1000)
+                second:Math.floor(offset % (3600 * 1000)% (60 * 1000)/1000),
+                totalHour:Math.floor(offset / (3600 * 1000))
             })
         }
     }
