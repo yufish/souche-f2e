@@ -274,147 +274,8 @@ Souche.Form = function() {
 
 
 Souche.MiniLogin = Souche.MiniLogin || {};
-Souche.MiniLogin = function (newParam) {
-    newParam = newParam || {
-        callback: function () {
-            this.close();
-            callback();
-        },
-        resizeTo: function (w, h) {
-//            minilogin.animate({
-//                width: w,
-//                height: h,
-//                left: $(window).width() / 2 - w/2
-//            })
-        },
-        close: function () {
-            $(".result_p .warning ").addClass("hidden");
-            if (minilogin) {
-                minilogin.css({
-                    display: "none"
-                });
-            }
-            if (minilayer) {
-                minilayer && minilayer.css({
-                    display: "none"
-                });
-            }
+Souche.MiniLogin = function () {
 
-
-        },
-        _show: function () {
-            var self = this;
-            if (minilogin) {
-                minilogin.attr("src", static_login_url);
-                minilogin.css({
-                    display: "block",
-                    width: (has_third ? 750 : 400),
-                    height: (has_third ? 400 : 300),
-                    left: $(window).width() / 2 - (has_third ? 750 : 400) / 2
-                });
-                minilayer.css({
-                    display: "block"
-                });
-                if (is_secret) {
-                    minilogin.attr("src", secret_login_url + "?has_third=" + (has_third ? 1 : 0));
-                } else {
-                    minilogin.attr("src", static_login_url + "?has_third=" + (has_third ? 1 : 0));
-                }
-            } else {
-                minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
-                if (is_secret) {
-                    minilogin.attr("src", secret_login_url + "?has_third=" + (has_third ? 1 : 0));
-                } else {
-                    minilogin.attr("src", static_login_url + "?has_third=" + (has_third ? 1 : 0));
-                }
-
-                minilogin.css({
-                    display: "block",
-                    width: (has_third ? 750 : 400),
-                    height: (has_third ? 400 : 300),
-                    position: "fixed",
-                    top: 100,
-                    left: $(window).width() / 2 - (has_third ? 750 : 400) / 2,
-                    zIndex: 100000001,
-                    background: "#fff"
-                });
-
-                minilayer = $("<div id='minilayer'></div>");
-                minilayer.css({
-                    display: "block",
-                    width: $(document.body).width(),
-                    left: 0,
-                    top: 0,
-                    height: $(document.body).height(),
-                    position: "absolute",
-                    background: "#111",
-                    zIndex: 100000000
-                }).css("opacity", 0.7);
-                $(document.body).append(minilayer);
-                $(document.body).append(minilogin);
-
-                minilayer.on("click", function () {
-                    self.close();
-
-                })
-            }
-        },
-        /**
-         *
-         * @param _callback 登录后回调的函数
-         * @param _is_secret 是要加验证码的登录？
-         * @param no_third 不要第三方登录？
-         * @param no_useCheck 不检查是否登录直接弹出登录？
-         * @param hide_weixin 隐藏掉微信登陆？
-         */
-        checkLogin: function (_callback, _is_secret, no_third, no_useCheck, hide_weixin) {
-            callback = _callback;
-            var self = this;
-            is_secret = !!_is_secret;
-            has_third = !no_third;
-            useCheck = !no_useCheck;
-            if (useCheck) {
-                if (!is_secret) {
-                    if (has_third) {
-                        Souche.checkAllLogin(function (isLogin) {
-                            if (isLogin) {
-                                self.callback && self.callback();
-                            } else {
-                                self._show();
-                            }
-                        })
-                    } else {
-                        Souche.checkPhoneExist(function (isLogin) {
-                            if (isLogin) {
-                                self.callback && self.callback();
-                            } else {
-                                self._show();
-                            }
-                        })
-                    }
-                } else {
-                    $.ajax({
-                        url: contextPath + "/pages/evaluateAction/isPhoneVerifyLogin.json",
-                        type: "post",
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.result == "true") {
-                                self.callback && self.callback();
-                            } else {
-                                self._show();
-                            }
-                        },
-                        error: function () {
-                            self._show();
-                        }
-                    });
-                }
-            } else {
-                self._show();
-            }
-
-        }
-    };
     var secret_login_url = contextPath + "/pages/phonelogin.html";
     var static_login_url = contextPath+"/pages/minilogin.html";
     var minilogin = null;
@@ -422,6 +283,7 @@ Souche.MiniLogin = function (newParam) {
     var is_secret = false;
     var has_third=true;
     var useCheck = true;
+    var hide_weixin = false;
     var callback = function() {
 
     };
@@ -466,16 +328,16 @@ Souche.MiniLogin = function (newParam) {
                     display: "block"
                 });
                 if(is_secret){
-                    minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0));
+                    minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0)+"&hide_weixin="+(hide_weixin?1:0));
                 }else{
-                    minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
+                    minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0)+"&hide_weixin="+(hide_weixin?1:0));
                 }
             } else {
                 minilogin = $("<iframe id='minilogin' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>");
                if(is_secret){
-                   minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0));
+                   minilogin.attr("src", secret_login_url+"?has_third="+(has_third?1:0)+"&hide_weixin="+(hide_weixin?1:0));
                }else{
-                   minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0));
+                   minilogin.attr("src", static_login_url+"?has_third="+(has_third?1:0)+"&hide_weixin="+(hide_weixin?1:0));
                }
 
                 minilogin.css({
@@ -517,14 +379,23 @@ Souche.MiniLogin = function (newParam) {
          * @param no_useCheck 不检查是否登录直接弹出登录？
          * @param hide_weixin 隐藏掉微信登陆？
          */
-        checkLogin: function(_callback,_is_secret,no_third,no_useCheck,hide_weixin) {
+        checkLogin: function(_callback,_is_secret,no_third,no_useCheck,_hide_weixin) {
             callback = _callback;
             var self = this;
             is_secret = !!_is_secret;
             has_third = !no_third;
             useCheck = !no_useCheck;
+            hide_weixin = !!_hide_weixin;
             if(useCheck){
-                if(!is_secret){
+                if(is_secret&&has_third){
+                    Souche.checkVerifyAndThirdLogin(function(isLogin) {
+                        if (isLogin) {
+                            self.callback && self.callback();
+                        } else {
+                            self._show();
+                        }
+                    })
+                }else if(!is_secret){
                     if(has_third){
                         Souche.checkAllLogin(function(isLogin) {
                             if (isLogin) {
@@ -577,8 +448,25 @@ Souche.MiniLogin = function (newParam) {
 
  3.pages/evaluateAction/isPhoneVerifyLogin.json   后续订单业务相关所有操作
  --(仅包含手机号码+验证码一种登录)
-
+ 4./pages/evaluateAction/isVerifyAndThirdLogin.json 验证码和第三方登录的验证
  */
+Souche.checkVerifyAndThirdLogin = function(callback){
+    $.ajax({
+        url: contextPath + "/pages/evaluateAction/isVerifyAndThirdLogin.json",
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if (data.result == "true") {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        },
+        error: function() {
+            callback(false)
+        }
+    })
+}
 Souche.checkAllLogin = function(callback){
     $.ajax({
         url: contextPath + "/pages/evaluateAction/isLogin.json",
