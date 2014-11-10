@@ -11,7 +11,7 @@
       width:1000px;
       top:20px;
       right:120px;
-      .item{
+      .price-range-item{
         float:right;
         padding:5px 10px;
         color:#333;
@@ -54,7 +54,12 @@
       }
      }
     .car-list{
-
+      .no-car-in-range{
+        color: #eee;
+        font-size: 2em;
+        padding: 2em 0 1em 0;
+        text-align: center;
+      }
     }
     .car{
       width:220px;
@@ -483,12 +488,22 @@
                         font-size: 15px;
                         color: #e8e8e8;
                       }
-                      a{
-                        display: block;
-                        float:right;
-                        font-size: 18px;
-                        color: #ffdd52;
+                    }
+                    .see-more-rec{
+                      display: block;
+                      text-align: right;
+                      font-size: 18px;
+                      color: #ffdd52;
+                    }
+                    .car-recommand{
 
+                    }
+                    // 只有在帮朋友点赞的时候才显示
+                    .ask-for-help{
+                      display: none;
+                      .quote-mayun{
+                        margin-top: 10px;
+                        text-align: right;
                       }
                     }
                     .share{
@@ -503,6 +518,7 @@
                       }
                     }
                     .car-stock{
+                      display: none;
                       font-size: 15px;
                       text-align: right;
                       margin-right: 115px;
@@ -690,6 +706,24 @@
     }
   }
 }
+
+#half-off,
+#whole-newcar{
+  .bd{
+    padding-bottom: 20px;
+  }
+}
+// 太繁复了...
+#double11 #content .free-car .free-wrap ul li .car-box.help-getcar .car-wrap .car-detail{
+  .ask-for-help{
+    display: block;
+  }
+  .share{
+    margin-top: 10px;
+  }
+}
+
+
 
 
 @import "../config.less";
