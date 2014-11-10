@@ -1,2 +1,14 @@
 #top-head
-  
+  .wrapper
+    .p 更聪明、更现代的购车方式
+    .p2 不仅带给你一种全新的购车体验，更为你的车生活释放出更多想像空间。
+    a.more 了解更多
+    .search
+      form.index-search(action='/pages/onsale/sale_car_list.html')
+        input.search-text(type='text', name='keyword', placeholder='搜索你想要的车', autocomplete='off', click_type='header-search-input')
+        button.search-submit(type='submit', click_type='search-submit')
+          i
+        .recom
+          a(click_type='search-item0', href='/pages/onsale/sale_car_list.html?keyword=SUV', target='_blank') SUV
+          a(click_type='search-item1', href='/pages/onsale/sale_car_list.html?keyword=福克斯', target='_blank') 福克斯
+          a(click_type='search-item2', href='/pages/onsale/sale_car_list.html?keyword=马自达', target='_blank') 马自达

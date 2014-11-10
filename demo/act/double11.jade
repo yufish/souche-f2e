@@ -104,7 +104,7 @@ html
       .wrapper
         #seckill-mod.free-car
           .rule
-            a 红包规则
+            a(href="#huodong-rule") 红包规则
             i ?
           .free-head.clearfix
             .title
@@ -133,13 +133,12 @@ html
                 span 19:00
                 span 21:00
           .free-wrap
-            .slide-viewport
               ul
                 li
-                  .car-box.help-getcar(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  //- 在dom里填充分享的文案 和 链接
+                  //- help-getcar类 和 data-helpwho属性, 在"帮别人点赞送红包"的时候渲染
+                  //- miaosha-box类 在“已秒杀”的时候渲染
+                  .car-box.help-getcar(data-share-content="分享文案", data-share-link="http://分享链接" data-helpwho="show-shared" data-carid="carid")
                     .car-head
                       .car-time
                       .time
@@ -165,71 +164,7 @@ html
                         .share.clearfix
                           .share-button 
                         .car-stock 库存5辆
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
-                    .car-head
-                      .car-time
-                      .time
-                        span 04
-                        em :
-                        span 55
-                        em :
-                        span 16
-                      | <script>document.write('<a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) + '" target="_blank"><div class="remind"><i></i><span>开秒提醒我</span></div></a>');</script>
-
-                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
-                    .car-wrap.clearfix
-                      .car-pic
-                        img(src="../../assets/images/double11/xuetielong.png")
-                      .car-detail
-                        .price
-                          i ￥
-                          span.price-num 7.98
-                          em 万
-                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
-                        .car-recom
-                          span —— 车神：暮雨
-                          a(href="#") 更多推荐理由 >
-                        .share.clearfix
-                          .share-button 
-                        .car-stock 库存5辆
-                li
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
-                    .car-head
-                      .car-time
-                      .time
-                        span 04
-                        em :
-                        span 55
-                        em :
-                        span 16
-                      | <script>document.write('<a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) + '" target="_blank"><div class="remind"><i></i><span>开秒提醒我</span></div></a>');</script>
-
-                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
-                    .car-wrap.clearfix
-                      .car-pic
-                        img(src="../../assets/images/double11/xuetielong.png")
-                      .car-detail
-                        .price
-                          i ￥
-                          span.price-num 7.98
-                          em 万
-                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
-                        .car-recom
-                          span —— 车神：暮雨
-                          a(href="#") 更多推荐理由 >
-                        .share.clearfix
-                          .share-button 
-                        .car-stock 库存5辆
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  .car-box.miaosha-box
                     .car-head
                       .car-time
                       .time
@@ -257,10 +192,7 @@ html
                           .share-button 
                         .car-stock 库存5辆
                 li
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  .car-box
                     .car-head
                       .car-time
                       .time
@@ -287,10 +219,7 @@ html
                         .share.clearfix
                           .share-button 
                         .car-stock 库存5辆
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  .car-box
                     .car-head
                       .car-time
                       .time
@@ -318,10 +247,7 @@ html
                           .share-button 
                         .car-stock 库存5辆
                 li
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  .car-box
                     .car-head
                       .car-time
                       .time
@@ -348,10 +274,62 @@ html
                         .share.clearfix
                           .share-button 
                         .car-stock 库存5辆
-                  .car-box(data-share-content="", data-share-link-sina="",
-                    data-share-link-weixin="", data-share-link-qq="",
-                    data-share-link-qzone
-                  )
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      | <script>document.write('<a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) + '" target="_blank"><div class="remind"><i></i><span>开秒提醒我</span></div></a>');</script>
+
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span.price-num 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                li
+                  .car-box
+                    .car-head
+                      .car-time
+                      .time
+                        span 04
+                        em :
+                        span 55
+                        em :
+                        span 16
+                      | <script>document.write('<a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) + '" target="_blank"><div class="remind"><i></i><span>开秒提醒我</span></div></a>');</script>
+
+                    a.car-title(href="#") 雪铁龙-2014款-全新爱丽舍-1.6L-自动-时尚版
+                    .car-wrap.clearfix
+                      .car-pic
+                        img(src="../../assets/images/double11/xuetielong.png")
+                      .car-detail
+                        .price
+                          i ￥
+                          span.price-num 7.98
+                          em 万
+                        p “ 法国车总在无论是在外观还是内饰的设计上给人以浪漫优雅的感觉。这辆体现的淋漓尽致。内饰工艺上法式双缝线打孔工巧，彰显身份和独到的品位。空间基本满意，舒适性可以和天籁相比。”
+                        .car-recom
+                          span —— 车神：暮雨
+                          a(href="#") 更多推荐理由 >
+                        .share.clearfix
+                          .share-button 
+                        .car-stock 库存5辆
+                  .car-box
                     .car-head
                       .car-time
                       .time
@@ -436,8 +414,18 @@ html
                   span 元购车红包
               .explain 说明：排行榜第一的用户，有优先购买活动车辆的机会
             .seckill
+              .title 秒杀战况
               .seckill-wrap
-                .title 秒杀战况
+                .my-red 
+                  h1 哇~我点赞分享筹集的红包：
+                  h2 ￥1000元
+                  .red-share.clearfix
+                    .tit 战果累累！赶快分享炫耀一把：
+                    .jiathis_style_32x32    
+                      a.jiathis_button_tsina
+                      a.jiathis_button_weixin
+                      a.jiathis_button_cqq
+                      a.jiathis_button_qzone
                 ul
                   li.clearfix.
                     <div class="number">1</div>
@@ -511,10 +499,10 @@ html
           .hd
             img(src="../assets/images/double11/car-mod-hd-2.png")
             .others
-              .item(data-src="") 0-10万
-              .item(data-src="") 10-20万
-              .item(data-src="") 20-30万
               .item(data-src="") 30万以上
+              .item(data-src="") 20-30万
+              .item(data-src="") 10-20万
+              .item(data-src="") 0-10万
           .bd
             .car-list.clearfix
               .car
@@ -545,6 +533,8 @@ html
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>新车价:10.2万</s>
                 a.go(href="")
+            .look-more
+              a(href="#") 更多车型 >
       a.banner(href="")
         img(src="../assets/images/double11/danbao.png")
       #choice-car.cars-mod
@@ -552,9 +542,9 @@ html
           .hd
             img(src="../assets/images/double11/car-mod-hd-3.png")
             .others
-              .item(data-src="") 10-20万
-              .item(data-src="") 20-30万
               .item(data-src="") 30万以上
+              .item(data-src="") 20-30万
+              .item(data-src="") 10-20万
           .bd
             .car-list.clearfix
               .car
@@ -612,7 +602,9 @@ html
                 a.title(href="") 日产 2008款 骐达1.6L-自动-智能型
                 .price 促销价:￥<em>7.98</em>万
                 .n-price <s>新车价:10.2万</s>
-                a.go(href="")
+                a.go(href="#")
+            .look-more
+              a(href="#") 更多车型 >
       a.banner(href="")
         img(src="../../assets/images/double11/gotolist.png")
       #huodong-rule.banner
@@ -668,6 +660,15 @@ html
       var double11Config = {
         likeUrl: ''
       };
+      $(document).ready(function() {
+      $('.free-wrap').flexslider({
+        animation: "slide",
+        slideshowSpeed: 5000,
+        directionNav: true,
+        controlNav: true,
+        pauseOnHover: true
+      });
+      });
 
     script.
       require(['souche/time-countdown'],function(TimeCountDown){
