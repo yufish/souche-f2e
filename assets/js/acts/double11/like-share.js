@@ -2,17 +2,21 @@ define(function(){
     var CONG_4_SELF='恭喜您，点赞赢得红包';
     var CONG_4_OTHER='恭喜您，您帮$1点赞赢得红包';
 
+    var SUBTITLE_4_SELF = '赶快分享给身边的朋友吧， 筹集到更多红包抵车价哦。 要记得请他们吃饭哦~'
+    var SUBTITLE_4_OTHER = '您可以分享给身边朋友, 帮TA筹集更多红包抵车价, 当然赶紧想想让TA请您吃什么好.'
+
     var shareUrl = null;
 
     // 所有文案
     // $1 活动url
     // $2 获得的金额
     var likeShareTitle = '大搜车#点赞分享筹红包#';
+    var miaoshaShareTitle = '#大搜车0元秒新车#';
     var ADS_TEXT = {
         // 秒杀的结果
         miaosha: {
             fail: '“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！',
-            suc: '#大搜车0元秒新车#首先，我想感谢CCTV、感谢MTV、感谢ChannelV，还要感谢我的车迷，感谢所有支持我的人，没有你们的支持没有今天的我，这辆【车辆名称】是属于你们的。'
+            suc: '首先，我想感谢CCTV、感谢MTV、感谢ChannelV，还要感谢我的车迷，感谢所有支持我的人，没有你们的支持没有今天的我，这辆【$3】是属于你们的。'
         },
         // 点赞的结果
         like: {
@@ -20,7 +24,7 @@ define(function(){
             // self貌似是关键字了...
             own: {
                 1:"今天走了狗屎运啊！点赞筹红包就筹了1元！是朋友的就赶紧给我上啊！考验亲情友情爱情各种情的时候到了！点赞即可！",
-                50: "还不错嘛！点一个赞就抵了$2元的购车红包。别嘴上说我是个好人，帮我筹红包才算数！点赞即可指定！",
+                50: "还不错嘛！点一个赞就抵了$2元的购车红包。别嘴上说我是个好人，帮我筹红包才算数！点赞即可！",
                 500: "别问我挖掘机技术哪家强！我只知道点个赞就瞬间变了$2元购车红包！快来帮我点赞筹红包吧！点赞即可！",
                 3333: "好激动！动了一下手指就筹到了$2元的购车红包，同学们and老少爷们乡亲们，快快抬起你们的手指，帮我一起抢红包啊！点赞即可！"
             },
@@ -45,7 +49,7 @@ define(function(){
 
 
 
-    var sharePop = $('.popup.share-self');
+    var sharePop = $('.popup.share-like');
     var Ele = {
         carImg: sharePop.find('.car-img'),
         carTitle: sharePop.find('.car-name'),
@@ -56,19 +60,18 @@ define(function(){
     var  _view = {
         renderPopup: function(carBox, type, result){
             var shareConf = {};
-            // 秒杀结果展示
+            // 秒杀成功分享
             if( type === 'miaosha' ){
-                // 从result中取得code
-                var returnCode = 1;
-                var text = '';
-                if( returnCode === 1){
-                    text = ADS_TEXT.miaosha['suc'];
-                }
-                else{
-                    text = DS_TEXT.miaosha['suc'];
-                }
+                var shareConf = {
+                    title: miaoshaShareTitle,
+                    url: result.shareUrl,
+                    pic: carBox.find('.car-pic img').attr('src')
+                };
+                Ele.shareText = $('#share-miaosha-text');
+                Ele.shareText = ADS_TEXT.miaosha.suc.replace('$3', $.trim(carBox.find('.car-title').text()) );
 
-                Ele.shareText.val( text );
+                _view.configShare( shareConf );
+                $('.share-miaosha').addClass('active');
             }
             // 点赞结果展示和分享
             else if(type === 'like'){
@@ -79,12 +82,15 @@ define(function(){
                 
                 var text='';
                 var money = result.money || 0;
-                $('.popup.share-self .money-num').html(money);
+                $('.popup.share-like .money-num').html(money);
                 // 自己点赞的文案
                 $('.share-congrate').text( CONG_4_SELF );
+                $('share-encourage').text(SUBTITLE_4_SELF);
                 text = ADS_TEXT.like.own[money].replace('$2', money);
 
                 Ele.shareText.val( text );
+
+                _view.renderCommon(carBox, shareConf);
             }
             else if( type == 'help-like'){
                 shareConf.title = likeShareTitle;
@@ -95,11 +101,14 @@ define(function(){
 
                 var other = carBox.find('.who-asked').text();
                 $('.share-congrate').text(CONG_4_OTHER.replace('$1', other || 'TA'));
+                $('share-encourage').text(SUBTITLE_4_OTHER);
                 text = ADS_TEXT.like.help[money].replace('$2', money);
                 Ele.shareText.val( text );
+
+                _view.renderCommon(carBox, shareConf);
             }
 
-            _view.renderCommon(carBox, shareConf);
+            
         },
         renderCommon: function(carBox, shareConf){
             // get and fill
@@ -113,7 +122,6 @@ define(function(){
             Ele.carTitle.text(car.title);
             Ele.carTitle.attr('href', car.link);
             Ele.carPrice.text(car.price);
-
 
             // 配置一遍分享内容
             _view.configShare(shareConf);
@@ -131,13 +139,15 @@ define(function(){
     var _event = {
         bind: function(){
             sharePop.find('.pop-close').on('click', _event.closePop);
+            $('.share-miaosha').find('.pop-close').on('click', _event.closePop);
             // 用户自己修改文案后再更新一遍summary
-            Ele.shareText.on('blur', function(){
+            $('#share-miaosha-text, #share-text').on('blur', function(){
                 window.jiathis_config.summary = Ele.shareText.val();
             });
         },
         closePop: function(){
             sharePop.removeClass('active');
+            $('.share-miaosha').removeClass('active');
         }
     };
 
