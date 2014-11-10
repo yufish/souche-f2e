@@ -131,7 +131,7 @@ define(function(){
             window.jiathis_config = $.extend({
                 summary: Ele.shareText.val(),
                 // banner图片
-                pic: Ele.carImg.attr('src')
+                pic: 'http://assets.souche.com/assets/images/double11/share-pic.png'
             }, shareConf);
         }
     };
