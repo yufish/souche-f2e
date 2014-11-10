@@ -68,7 +68,8 @@ define(function(){
                     pic: carBox.find('.car-pic img').attr('src')
                 };
                 Ele.shareText = $('#share-miaosha-text');
-                Ele.shareText = ADS_TEXT.miaosha.suc.replace('$3', $.trim(carBox.find('.car-title').text()) );
+                var shareText = ADS_TEXT.miaosha.suc.replace('$3', $.trim(carBox.find('.car-title').text()) );
+                Ele.shareText.val( shareText );
 
                 _view.configShare( shareConf );
                 $('.share-miaosha').addClass('active');
