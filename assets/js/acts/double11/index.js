@@ -72,7 +72,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                         alert('点赞失败, 请稍后重试');
                     }
                 } );
-            },true,false,false,true);
+            },true,true,false,true);
         },
         helpLike: function(e){
             var btn = $(this);
