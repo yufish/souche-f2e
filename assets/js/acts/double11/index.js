@@ -58,7 +58,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                         var code = data.code;
                         if(code == '202'){
                             alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
-                            btn.addClass('disabled');
+                            // btn.addClass('disabled');
                         }
                         else if(code == '200'){
                             $('.red-share').attr('data-shareurl', data.shareUrl);
@@ -89,7 +89,7 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                         var code = data.code;
                         if(code == '202'){
                             alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
-                            btn.addClass('disabled');
+                            // btn.addClass('disabled');
                         }
                         else if(code == '402'){
                             alert('不要自己给自己点赞哦~ ');
