@@ -64,7 +64,7 @@ define(function(){
             if( type === 'miaosha' ){
                 var shareConf = {
                     title: miaoshaShareTitle,
-                    url: result.shareUrl,
+                    url: 'http://1115.souche.com/',
                     pic: carBox.find('.car-pic img').attr('src')
                 };
                 Ele.shareText = $('#share-miaosha-text');
@@ -117,7 +117,7 @@ define(function(){
                 img: carBox.find('.car-pic img').attr('src'),
                 title: $.trim(carBox.find('.car-title').text()),
                 link: carBox.find('.car-title').attr('href'),
-                price: $.trim(carBox.find('.price .price-num').text()),
+                price: $.trim(carBox.find('.price .price-num').text())
             };
             Ele.carImg.attr('src', car.img);
             Ele.carTitle.text(car.title);
