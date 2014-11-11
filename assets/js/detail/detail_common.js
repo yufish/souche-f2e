@@ -165,7 +165,8 @@
             url: SaleDetailConfig.api_sendCarToPhone,
             data: {
                 carId: SaleDetailConfig.carId,
-                phone: $("#send-phone").val()
+                phone: $("#send-phone").val(),
+                carPlace:$("#send-phone-form input[name='carPlace']").val()
             },
             type: "post",
             success: function(data) {

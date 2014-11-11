@@ -35,7 +35,7 @@ if (navigator.userAgent.match(/Android/i)){
     })
     $win.scroll(function(){
         var winTop = $win.scrollTop();
-        if(winTop>90){
+        if(winTop>imgHeight){
             $bannerDom.addClass('hidden')
         }else{
             $bannerDom.removeClass('hidden');
@@ -79,8 +79,22 @@ if (navigator.userAgent.match(/Android/i)){
     })
 
     $('.choose-city-item').click(function(){
-
+        if($(this).hasClass('active')){
+            return;
+        }
+        var url = contextPath+'/pages/toolbarAction/choosePosition.json?'
+        var code  =$(this).attr('data-code');
+        $.ajax({
+            url:url,
+            data:{
+                position:code
+            },
+            success:function(){
+                window.location.reload();
+            }
+        })
     })
+
 }()
 //tab动画的相关实现
 !function(){
