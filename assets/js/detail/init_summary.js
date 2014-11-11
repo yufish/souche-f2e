@@ -32,7 +32,7 @@ define(function() {
                         if (config.minPrice == config.maxPrice) {
                             rangePrice = config.minPrice;
                         }
-                        if (priceData.priceNude&&!priceData.priceNude.lowPrice&&!priceData.priceNude.highestPrice) {
+                        if (priceData.priceNude&&priceData.priceNude.lowPrice&&priceData.priceNude.highestPrice) {
                             var middlePrice = ((priceData.priceNude.lowPrice + priceData.priceNude.highestPrice) / 2).toFixed(1)
                         } else {
                             var middlePrice = ((minPrice + maxPrice) / 2).toFixed(2);
