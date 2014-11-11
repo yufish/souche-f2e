@@ -106,7 +106,7 @@ define(function(){
                     var text = ADS_TEXT.like.own.repeat.replace('$2', money);
                     Ele.shareText = $('#share-repeat-text');
                     Ele.shareText.val( text );
-                    $('.share-repeat .pop-subtitle').text('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
+                    $('.share-repeat .pop-subtitle').text('想筹集更多红包就去召唤小伙伴吧！');
 
 
                     _view.configShare(shareConf);
@@ -139,7 +139,7 @@ define(function(){
                     var text = ADS_TEXT.like.help.repeat.replace('$2', money);
                     Ele.shareText = $('#share-repeat-text');
                     Ele.shareText.val( text );
-                    $('.share-repeat .pop-subtitle').text('您对朋友真是太热心了, 可是这种好事真真儿的只有一次机会啊!');
+                    $('.share-repeat .pop-subtitle').text('您对朋友真是太热心了，您可以继续分享帮TA筹红包！');
 
 
                     _view.configShare(shareConf);
