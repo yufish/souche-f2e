@@ -1,4 +1,56 @@
 #main-service{
   height:480px;
   background: #f2f2f2;
+  .wrapper{
+    width:1180px;
+    margin:0 auto;
+    overflow: hidden;
+  }
+  .card-list{
+    width:1200px;
+
+  }
+  .service-card{
+    margin-top: 80px;
+    width:280px;
+    float:left;
+    margin-right: 20px;
+    height:320px;
+    background: #fff;
+    text-align: center;
+    .title{
+      font-size: 20px;
+      margin-top: 30px;
+      line-height: 30px;
+
+    }
+    .icon{
+      margin:30px 0px 20px 0;
+      height:50px;
+    }
+    .desc{
+      font-size: 14px;
+      color:#666;
+      line-height: 20px;
+    }
+    .go{
+      width:160px;
+      height:36px;
+      border:2px solid #B7BBC6;
+      color:#333;
+      font-size: 16px;
+      line-height: 36px;
+      text-align: center;
+      display: inline-block;
+      margin-top: 30px;
+      border-radius: 5px;
+    }
+  }
+  .gift-card{
+    .go{
+      background: @orange;
+      color:#fff;
+      border:2px solid @orange;
+    }
+  }
 }
