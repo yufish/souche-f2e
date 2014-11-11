@@ -59,17 +59,28 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
 
-            // LikeShare.popup(carBox, 'like', {code: 202, shareUrl: 'http://1113.souche.com', money: 3333});
+            // // test for 202
+            // var data = {code: 202, totalMoney: 3322, shareUrl: '1113', h5ShareUrl: 'h5'}
+            // setRedShareAttr(data);
+            // LikeShare.popup(carBox, 'like', data);
+
+            // // test for 200
+            // var data = {code: 200, money: 3333, shareUrl: '1113', h5ShareUrl: 'h5'}
+            // setRedShareAttr(data);
+            // LikeShare.popup(carBox, 'like', data);
+
+
             // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
                 _data.sendLike( carId, function(data, status){
                     if(status == 'success'){
                         var code = data.code;
                         if(code == '202'){
+                            setRedShareAttr(data);
                             LikeShare.popup(carBox, 'like', data);
                         }
                         else if(code == '200'){
-                            $('.red-share').attr('data-shareurl', data.shareUrl);
+                            setRedShareAttr(data);
                             LikeShare.popup(carBox, 'like', data);
                         }
                         else{
@@ -91,7 +102,16 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             var carId = _config.encryptCarId;
             var actor = _config.actor;
 
-            // LikeShare.popup(carBox, 'help-like', {code: 202, money: 3333});
+            // // test for 202
+            // var data = {code: 202, totalMoney: 3322, shareUrl: '1113', h5ShareUrl: 'h5'}
+            // setRedShareAttr(data);
+            // LikeShare.popup(carBox, 'help-like', data);
+
+            // // test for 200
+            // var data = {code: 200, money: 3333, shareUrl: '1113', h5ShareUrl: 'h5'}
+            // setRedShareAttr(data);
+            // LikeShare.popup(carBox, 'help-like', data);
+            
             // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
                 _data.helpLike( carId, actor, function(data, status){
@@ -158,6 +178,11 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             },true,true,false,true);
         }
     };
+
+    function setRedShareAttr(result){
+        $('.red-share').attr('data-shareurl', result.shareUrl);
+        $('.red-share').attr('data-h5shareurl', result.h5ShareUrl);
+    }
 
     function init(pageConfig){
         $.extend(_config, pageConfig);
