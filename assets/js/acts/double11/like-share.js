@@ -1,6 +1,6 @@
 define(function(){
-    var CONG_4_SELF='恭喜您，点赞赢得红包';
-    var CONG_4_OTHER='恭喜您，您帮$1点赞赢得红包';
+    var CONG_4_SELF='您真是太腻害了, 赢得红包';
+    var CONG_4_OTHER='您帮$1赢得红包';
 
     var SUBTITLE_4_SELF = '赶快分享给身边的朋友吧， 筹集到更多红包抵车价哦。 要记得请他们吃饭哦~'
     var SUBTITLE_4_OTHER = '您可以分享给身边朋友, 帮TA筹集更多红包抵车价, 当然赶紧想想让TA请您吃什么好.'
