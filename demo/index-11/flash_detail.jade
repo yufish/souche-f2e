@@ -1,0 +1,28 @@
+doctype html
+html
+  head.
+      <title>限时特价</title>
+      <link href="http://f2e.souche.com/assets/css/souche/$$reset.css,ui.css,common.css?t=8" rel="stylesheet" type="text/css" />
+      <link href="http://f2e.souche.com/assets/css/index/index_11.css?t=37" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="http://f2e.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/jquery.flexslider-min.js"></script>
+      <script>
+         var contextPath = "";
+          require.config({
+           baseUrl: "http://f2e.souche.com/assets/js",
+           urlArgs:"bust=v1"
+         });
+      </script>
+  body#flash_detail
+    include mod/header
+    #content
+      .wrapper
+        .today-box.box-item
+          .title
+            .today
+            .timedown
+              .time-icon
+              .time-end 距结束
+              .time.
+                <span class="downCounter" endyear="2014" endmonth="10" endday="15" endhour="00"><span><ins>3</ins>&nbsp;<em>天</em>&nbsp;<ins>7</ins>&nbsp;<em>时</em>&nbsp;<ins>55</ins>&nbsp;<em>分</em>&nbsp;<ins>50</ins>&nbsp;<em>秒</em></span></span>
+          .car-wrap
+            .car-box
