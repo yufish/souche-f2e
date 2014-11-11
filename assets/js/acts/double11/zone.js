@@ -52,6 +52,8 @@ define(function(){
         }
     };
 
+    var default_jingpin_url = $('#choice-car .look-more a').attr('href');
+
 
     var _event = {
         bind: function(){
@@ -80,7 +82,11 @@ define(function(){
                 });
 
                 $('#'+zoneName+' .others .price-range-item').removeClass('active');
-                btn.addClass('active')
+                btn.addClass('active');
+
+                if( zoneName == 'choice-car'){
+                    $('#choice-car').find('.look-more a').attr('href', default_jingpin_url + '?carPrice='+priceRange );
+                }
             }
         }
     };

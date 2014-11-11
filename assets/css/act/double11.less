@@ -1,5 +1,10 @@
 @import "../config.less";
 #double11{
+  #header{
+    .double11{
+      display: none;
+    }
+  }
   .banner{
     display: block;
     width:1000px;
@@ -73,6 +78,15 @@
         height:145px;
         display: block;
         overflow: hidden;
+        position: relative;
+        .had-sell{
+          position: absolute;
+          width: 78px;
+          height: 78px;
+          background: url(../../images/list/soldtag.png?123) no-repeat;
+          top: 30px;
+          right: 65px;
+        }
       }
       .title{
         font-size: 14px;
@@ -102,14 +116,14 @@
         height:46px;
         margin:10px auto;
 
-        background: url(../../images/double11/go-buy.png) center center;
+        background: url(../../images/double11/go-buy.png?123) center center;
         background-repeat:no-repeat;
 
       }
     }
   }
   #content{
-    background:#6b44b0 url(../../images/double11/bg.png) no-repeat top;
+    background:#6b44b0 url(../../images/double11/bg.png?123) no-repeat top;
     padding-bottom: 40px;
      .rule{
         display: block;
@@ -163,7 +177,7 @@
               float: left;
               width: 25px;
               height: 38px;
-              background: url(../../images/double11/timedown.png) no-repeat;
+              background: url(../../images/double11/timedown.png?123) no-repeat;
               line-height: 40px;
               text-align: center;
             }
@@ -195,7 +209,7 @@
             float: left;
             width: 30px;
             height: 30px;
-            background: url(../../images/double11/sina.png) no-repeat;
+            background: url(../../images/double11/sina.png?123) no-repeat;
             cursor: pointer;
             margin-left: 5px;
           }
@@ -204,7 +218,7 @@
             float: left;
             width: 28px;
             height: 28px;
-            background: url(../../images/double11/weixin.png) no-repeat;
+            background: url(../../images/double11/weixin.png?123) no-repeat;
             cursor: pointer;
             margin-left: 5px;
           }
@@ -220,9 +234,13 @@
         }
       }
       .head-pic{
-        width: 644px;
+        position: relative;
+        left: -50px;
+        top: 25px;
+        width: 800px;
         height: 344px;
-        background: url(../../images/double11/head-pic.png) no-repeat;
+        background: url(../../images/double11/head-pic.png?123) no-repeat;
+        background-position: center;
         margin: 35px auto;
       }
       .praise{
@@ -230,15 +248,15 @@
         position: absolute;
         width: 135px;
         height: 106px;
-        bottom: 165px;
-        right: 125px;
+        bottom: 180px;
+        right: 56px;
         cursor: pointer;
 
         &.to-actcar{
-          background: url(../../images/double11/et-to-actcar.png) no-repeat;
+          background: url(../../images/double11/et-to-actcar.png?123) no-repeat;
         }
         &.to-myred{
-          background: url(../../images/double11/et-to-myred.png) no-repeat;
+          background: url(../../images/double11/et-to-myred.png?123) no-repeat;
         }
       }
       .miaosha{
@@ -252,7 +270,7 @@
       margin: 0 auto;
     }
     .free-car{
-      background: url(../../images/double11/free-bg.png) no-repeat;
+      background: url(../../images/double11/free-bg.png?123) no-repeat;
       height: 1075px;
       padding:0 80px;
       margin-bottom: 20px;
@@ -303,7 +321,7 @@
             height: 24px;
             width: 332px;
             margin-left: 15px;
-            background: url(../../images/double11/state-bg.png) no-repeat;
+            background: url(../../images/double11/state-bg.png?123) no-repeat;
             span{
               cursor:pointer;
               display: block;
@@ -346,16 +364,16 @@
               z-index: 100;
             }
             .flex-prev{
-              width: 38px;
-              height: 72px;
-              background: url(../../images/double11/flex-prev.png) no-repeat;
-              left: -40px;
+              width: 75px;
+              height: 80px;
+              background: url(../../images/double11/flex-prev.png?123) no-repeat;
+              left: -79px;
             }
             .flex-next{
-              width: 38px;
-              height: 72px;
-              background: url(../../images/double11/flex-next.png) no-repeat;
-              right: -33px;
+              width: 75px;
+              height: 80px;
+              background: url(../../images/double11/flex-next.png?123) no-repeat;
+              right: -72px;
             }
           }
           
@@ -373,7 +391,7 @@
                 }
                 
                 .share-button{
-                  background: url(../../images/double11/help-getcar.png) no-repeat !important;
+                  background: url(../../images/double11/help-getcar.png?123) no-repeat !important;
                 }
                 .price{
                   span{
@@ -387,7 +405,7 @@
               .miaosha-box{
 
                 .share-button{
-                  background: url(../../images/double11/miaosha-but.png) no-repeat !important;
+                  background: url(../../images/double11/miaosha-but.png?123) no-repeat !important;
                 }
                 .price{
                   span{
@@ -411,7 +429,7 @@
                     display: block;
                     width: 30px;
                     height: 29px;
-                    background: url(../../images/double11/time-icon.png) no-repeat;
+                    background: url(../../images/double11/time-icon.png?123) no-repeat;
                     
                   }
                   .time{
@@ -436,7 +454,7 @@
                       float: left;
                       width: 21px;
                       height: 21px;
-                      background: url(../../images/double11/recom.png) no-repeat;
+                      background: url(../../images/double11/recom.png?123) no-repeat;
                       margin-top: 4px;
                     }
                     span{
@@ -530,8 +548,15 @@
                         float: right;
                         width: 275px;
                         height: 91px;
-                        background: url(../../images/double11/share-button.png) no-repeat;
+                        background: url(../../images/double11/share-button.png?123) no-repeat;
                         cursor: pointer;
+                      }
+                      .had-miaosha{
+                        display: block;
+                        float: right;
+                        width: 275px;
+                        height: 91px;
+                        background: url(../../images/double11/had-miaosha.png?123) no-repeat;
                       }
                     }
                     .car-stock{
@@ -557,7 +582,7 @@
       margin: 0 auto;
       padding-top: 145px;
       padding-left: 75px;
-      background:url(../../images/double11/praise-list.png) no-repeat;
+      background:url(../../images/double11/praise-list.png?123) no-repeat;
       .list-cont{
         width: 980px;
         height: 508px;
@@ -662,7 +687,7 @@
           ul{
             
             li{
-              height: 40px;
+              // height: 40px;
               margin-bottom: 7px;
               .number{
                 width: 20px;
@@ -709,7 +734,7 @@
         margin-left: -5px;
         margin-right: -5px;
         margin-bottom: 5px;
-        font-size:14px;
+        font-size:12px;
         color: @purple;
         text-align: center;
       }
