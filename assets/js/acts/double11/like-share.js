@@ -50,6 +50,8 @@ define(function(){
 
 
 
+    var shareLikeUrlFromResult = undefined;
+
 
     var sharePop = $('.popup.share-like');
     var Ele = {
@@ -81,6 +83,7 @@ define(function(){
             }
             // 点赞结果展示和分享
             else if(type === 'like'){
+                shareLikeUrlFromResult = result.h5ShareUrl;
                 if( code == 200 ){
                     // title 必须是设置的, 否则会使用当前页title
                     shareConf.title = likeShareTitle;
@@ -101,7 +104,7 @@ define(function(){
                     shareConf.title = likeShareTitle;
                     shareConf.url = result.shareUrl;
 
-                    var money = result.money;
+                    var money = result.totalMoney;
                     
                     var text = ADS_TEXT.like.own.repeat.replace('$2', money);
                     Ele.shareText = $('#share-repeat-text');
@@ -115,6 +118,7 @@ define(function(){
                 
             }
             else if( type == 'help-like'){
+                shareLikeUrlFromResult = result.h5ShareUrl;
                 if( code == 200 ){
                     shareConf.title = likeShareTitle;
                     // 直接从页面里拿url
@@ -134,7 +138,7 @@ define(function(){
                     shareConf.title = likeShareTitle;
                     shareConf.url = window.location.href;
                     
-                    var money = result.money;
+                    var money = result.totalMoney;
 
                     var text = ADS_TEXT.like.help.repeat.replace('$2', money);
                     Ele.shareText = $('#share-repeat-text');
@@ -183,10 +187,20 @@ define(function(){
             $('#share-miaosha-text, #share-text, #share-repeat-text').on('blur', function(){
                 window.jiathis_config.summary = Ele.shareText.val();
             });
+
+            // 微信的分享略微不同
+            // 自己点赞, 朋友帮忙点赞, 重复点赞
+            $('.share-repeat .share-to, .share-like .share-to').mousedown(_event.setWeixinUrl)
         },
         closePop: function(){
             var popUp = $(this).parents('.popup');
             popUp.removeClass('active');
+        },
+        setWeixinUrl: function(e){
+            // 如果点的是微信按钮
+            if( $(e.target).attr('class').indexOf('weixin') >= 0 ){
+                window.jiathis_config.url = shareLikeUrlFromResult;
+            }
         }
     };
 
