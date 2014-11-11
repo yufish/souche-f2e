@@ -58,15 +58,15 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             }
             var carBox = $(e.target).parents('.car-box');
             var carId = carBox.attr('data-carid');
-            
+
+            // LikeShare.popup(carBox, 'like', {code: 202, shareUrl: 'http://1113.souche.com', money: 3333});
             // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
                 _data.sendLike( carId, function(data, status){
                     if(status == 'success'){
                         var code = data.code;
                         if(code == '202'){
-                            alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
-                            // btn.addClass('disabled');
+                            LikeShare.popup(carBox, 'like', data);
                         }
                         else if(code == '200'){
                             $('.red-share').attr('data-shareurl', data.shareUrl);
@@ -90,14 +90,15 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             var carBox = $(e.target).parents('.car-box');
             var carId = _config.encryptCarId;
             var actor = _config.actor;
+
+            // LikeShare.popup(carBox, 'help-like', {code: 202, money: 3333});
             // 手机号 + 验证码登录
             Souche.MiniLogin.checkLogin(function(){
                 _data.helpLike( carId, actor, function(data, status){
                     if(status == 'success'){
                         var code = data.code;
                         if(code == '202'){
-                            alert('做人不能太贪心啊！想筹集更多红包就去召唤小伙伴吧！');
-                            // btn.addClass('disabled');
+                            LikeShare.popup(carBox, 'help-like', data);
                         }
                         else if(code == '402'){
                             alert('不要自己给自己点赞哦~ ');

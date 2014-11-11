@@ -1,4 +1,6 @@
 #choose-nav{
+  position: relative;
+  z-index:10;
   .wrapper{
     width:1180px;
     margin: 0 auto;
@@ -7,12 +9,76 @@
   height:100px;
   background: #fff;
   padding:20px;
+  .brand-all {
+    background: #fff;
+    position: absolute;
+    width: 598px;
+    border: 1px solid #fc7000;
+    top: 97px;
+    left:0px;
+    z-index:100;
+    background: #fff;
+    padding:15px;
+    display:none;
+    .title{
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    .brand-list {
+      .left-list {
+        float: left;
+        margin-right: 50px;
+      }
+      .right-list {
+        float: left;
+      }
+      .brand-item-l {
+        margin-bottom: 10px;
+        width: 270px;
+        .letter {
+          color: #fc7000;
+          font-weight: bold;
+          font-size: 14px;
+          float: left;
+          width: 40px;
+        }
+        .brand-letter {
+          float: left;
+          width: 225px;
+          .brand-item {
+            margin-right: 13px;
+            margin-bottom: 5px;
+            display: inline-block;
+            float: left;
+          }
+        }
+
+      }
+    }
+  }
   .item-brand{
-    width:440px;
+    width:442px;
     float:left;
     height:100px;
     border-right:1px solid #eee;
-    overflow: hidden;
+    position: relative;
+    .trigger-icon{
+      width:9px;
+      height:6px;
+      position: absolute;
+      right:20px;
+      top:20px;
+      background:url(../../images/index_11/brand-trigger.png) no-repeat;
+      z-index:102;
+    }
+    .brand-wrapper{
+      z-index:101;
+      border:1px solid #fff;
+      border-bottom:1px solid #fff;
+      background: #fff;
+      position: relative;
+    }
     .hd{
       font-size: 16px;
       line-height: 40px;
@@ -34,6 +100,16 @@
         color:#666;
       }
     }
+  }
+  .item-brand.active{
+    .brand-wrapper{
+      border:1px solid @orange;
+      border-bottom:1px solid #fff;
+    }
+    .brand-all{
+      display: block;
+    }
+
   }
   .item-model{
     width:440px;
