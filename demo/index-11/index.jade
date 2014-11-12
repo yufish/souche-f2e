@@ -1,5 +1,5 @@
 doctype html
-html
+html(xmlns:wb="http://open.weibo.com/wb")
   head.
       <title>首页</title>
       <link href="http://f2e.souche.com/assets/css/souche/$$reset.css,ui.css,common.css?t=8" rel="stylesheet" type="text/css" />
@@ -12,6 +12,7 @@ html
            urlArgs:"bust=v1"
          });
       </script>
+      <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
   body
     include mod/header
     include mod/top-head
@@ -21,6 +22,7 @@ html
     include mod/special-car
     include mod/love-car
     include mod/who-buy
+    include mod/footer
     script.
       require(['index_11/index'],function(Index){
          Index.init();
