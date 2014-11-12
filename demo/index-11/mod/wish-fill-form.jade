@@ -1,0 +1,139 @@
+.dialogContentContainer(style='opacity: 1; width: 1020px;')
+    .dialogContent
+        .carBanner.dialog-item
+        .carinstrest.dialog-item
+            .carinstrestContainer
+                h1.hd
+                    i 车系
+                .addCarinstrestItem(click_type='xuqiu_40')
+                    span +
+                    a 添加您感兴趣的车
+                    i
+                .instrest-tip 友情建议至少添加两个车系以上
+                .selected_series_result
+                    .selected-item(code='series-2111')
+                        img(src='http://res.souche.com/files/carproduct/series/series-2111.png')
+                        | 307
+
+                    .selected-item(code='series-246')
+                        img(src='http://res.souche.com/files/carproduct/series/series-246.png')
+                        | 奔驰C级
+        .carBudget.dialog-item
+            .carBudgetContainer
+                h1.hd
+                    i 预算
+                .dataContainer.hidden.input_dataContainer
+                    .inputContainer.leftContainer
+                        input.low-price(value='0', click_type='xuqiu_41')
+                        a 万元
+                    a  —
+                    .inputContainer.rightContainer
+                        input.high-price(value='50', click_type='xuqiu_42')
+                        a 万元
+                .dataContainer.select_dataContainer
+                    #price_select.sc-select.sc-custom-select.age_select.age-left.selectContainer(click_type='index-customization-price-low-1', style='z-index: 1001;')
+                        .sc-select-hd
+                            .sc-select-content.clearfix 0万
+                            .sc-select-action
+                                i
+                        .sc-select-list.hidden(style='top: 30px;')
+                            a.option(target='_blank', href='#', data-value='0')
+                                input.hidden(type='checkbox')
+                                span.value 0万
+                            a.option(target='_blank', href='#', data-value='5万')
+                                input.hidden(type='checkbox')
+                                span.value 5万
+                            a.option(target='_blank', href='#', data-value='50万')
+                                input.hidden(type='checkbox')
+                                span.value 50万
+                            a.option(target='_blank', href='#', data-value='-1')
+                                input.hidden(type='checkbox')
+                                span.value 自定义
+                            input#price_select.selected_values(type='hidden', name='minPrice', value='0万')
+                    a —
+                    #price_select_high.sc-select.sc-custom-select.age_select_hight.age-right.selectContainer(click_type='index-customization-price-high-1', style='z-index: 1001;')
+                        .sc-select-hd
+                            .sc-select-content.clearfix 50万
+                            .sc-select-action
+                                i
+                        .sc-select-list.hidden(style='top: 30px;')
+                            a.option(target='_blank', href='#', data-value='5万')
+                                input.hidden(type='checkbox')
+                                span.value 5万
+                            a.option(target='_blank', href='#', data-value='50万')
+                                input.hidden(type='checkbox')
+                                span.value 50万
+                            a.option(target='_blank', href='#', data-value='0')
+                                input.hidden(type='checkbox')
+                                span.value 不限
+                            a.option(target='_blank', href='#', data-value='-1')
+                                input.hidden(type='checkbox')
+                                span.value 自定义
+                            input#price_select_high.selected_values(type='hidden', name='maxPrice', value='50万')
+        .caryear.dialog-item
+            .caryearContainer
+                h1.hd
+                    i
+                    | 年份
+                .dataContainer
+                    #age_select.sc-select.sc-custom-select.age_select.age-left.selectContainer(click_type='index-customization-age-low-1', style='z-index: 1000;')
+                        .sc-select-hd
+                            .sc-select-content.clearfix 2010
+                            .sc-select-action
+                                i
+                        .sc-select-list.hidden(style='top: 28px;')
+                            a.option(target='_blank', href='#', data-value='2014')
+                                input.hidden(type='checkbox')
+                                span.value 2014
+                            a.option(target='_blank', href='#', data-value='2013')
+                                input.hidden(type='checkbox')
+                                span.value 2013
+                            a.option(target='_blank', href='#', data-value='2004')
+                                input.hidden(type='checkbox')
+                                span.value 2004
+                            a.option(target='_blank', href='#', data-value='')
+                                input.hidden(type='checkbox')
+                                span.value 不限
+                        input#age_select.selected_values(type='hidden', name='maxYear', value='2010')
+                    a —
+                    #age_select_high.sc-select.sc-custom-select.age_select_hight.age-right.selectContainer(click_type='index-customization-age-high-1', style='z-index: 1001;')
+                        .sc-select-hd
+                            .sc-select-content.clearfix 2014
+                            .sc-select-action
+                                i
+                        .sc-select-list.hidden(style='top: 28px;')
+                            a.option(target='_blank', href='#', data-value='2014')
+                                input.hidden(type='checkbox')
+                                span.value 2014
+                            a.option(target='_blank', href='#', data-value='2013')
+                                input.hidden(type='checkbox')
+                                span.value 2013
+                            a.option(target='_blank', href='#', data-value='2004')
+                                input.hidden(type='checkbox')
+                                span.value 2004
+                            a.option(target='_blank', href='#', data-value='')
+                                input.hidden(type='checkbox')
+                                span.value 不限
+                        input#age_select_high.selected_values(type='hidden', name='maxYear', value='2014')
+    .addInstrestCar.hidden
+        .addInstrestCarContent
+            .brand
+                .brandNav(click_type='xuqiu_28')
+                    ul
+                        li A
+                        li B
+                        li C
+
+                .brandList(click_type='xuqiu_29')
+                    ul
+            .chexi
+                .chexiContent(click_type='xuqiu_30')
+                    ul
+        .addInstrestCarSubmit
+            #J_selected_series.selected-series
+            span#J_addSeries_submit.submit.btn(click_type='xuqiu_31') 确定
+            span#J_addSeries_cancel.cancel(click_type='xuqiu_32') 取消
+    .trail
+        span#J_xuqiu_submit.submit.btn(click_type='xuqiu_44') 提交
+        span#J_xuqiu_cancel.cancel(click_type='xuqiu_43') 取消
+        span.warning.hidden 提交错误
