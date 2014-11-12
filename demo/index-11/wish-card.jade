@@ -1,0 +1,19 @@
+extends ../tmpl
+
+block title
+    title 购车心愿卡
+
+block head
+    link(href="http://f2e.souche.com/assets/css/index/index_11.css?t=37" rel="stylesheet" type="text/css")
+    link(href="http://f2e.souche.com/assets/css/layout-wish-card.css" rel="stylesheet" type="text/css")
+
+block body
+    include mod/header
+
+    // 购车心愿卡
+    // 填写心愿 和 推荐的车辆
+    .index-car-module
+        include mod/wish-fill-form
+        include mod/wish-car-list
+        .guess-like
+    
