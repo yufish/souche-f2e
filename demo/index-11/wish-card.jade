@@ -17,3 +17,38 @@ block body
         include mod/wish-car-list
         .guess-like
     
+
+        
+        
+     
+       
+    script.
+        //- 抽空看看那些接口不需要就去掉
+        var wishCardConfig={
+            userRequementJson:{},
+            userRequirementJsonForTag:{},
+            series_api:'/pages/dicAction/loadRootLevelForCar.json?type=car-subdivision&code=',
+            brand_api:'/pages/dicAction/loadRootLevel.json?type=car-subdivision',
+            getMoreUserRecommend_api:"/pages/homePageAction/loadUserRecommendCar.json?page",
+            getMoreHotCars_api:"/pages/homePageAction/loadHotRecCars.json?page=",
+            getMoreOtherCars_api:"/pages/homePageAction/loadHotNewCar.json",
+            search_api:"/pages/common/boxSuggestAction/list.json",
+            submit_api:"/pages/homePageAction/saveBuyInfo.json",
+            api_saveFavorite:'/pages/saleDetailAction/savaCarFavorite.json',
+            api_delFavorite:'/pages/saleDetailAction/delCarFavorite.json',
+            api_addContrast:'/pages/carContrastAction/addContrastCar.json',
+            api_deleteContrast:'/pages/carContrastAction/deleteContrastCar.json',
+            carType:'zaishou',
+            api_matchUrl:"http://www.souche.com/pages/onsale/sale_car_list.html",
+            api_nolikeUrl:"/pages/saleDetailAction/notLikeMatchCar.json",
+            api_guessCars:"/pages/guesscars.html",
+            api_showTipUrl:"/pages/homePageAction/queryTagTip.json",
+            api_noShowTipUrl:"/pages/homePageAction/readTagTip.json",
+            api_addToWishUrl:""
+        };
+        
+    script.
+        require(['wish-card/index'], function(Index){
+            Index.init(wishCardConfig);
+        });
+    

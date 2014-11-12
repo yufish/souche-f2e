@@ -65,6 +65,25 @@ define(function(){
                 params[j.substring(0,j.indexOf("="))] = j.substring(j.indexOf("=")+1,j.length);
             }
             return params;
+        },
+        support: {
+            // 是否支持transition
+            tst: (function(){
+                var t;
+                var el = document.createElement('fakeelement');
+                var transitions = {
+                  'transition':'transitionend',
+                  'OTransition':'oTransitionEnd',
+                  'MozTransition':'transitionend',
+                  'WebkitTransition':'webkitTransitionEnd'
+                }
+                for(t in transitions){
+                    if( el.style[t] !== undefined ){
+                        return transitions[t];
+                    }
+                }
+                return false;
+            })()
         }
     };
 
