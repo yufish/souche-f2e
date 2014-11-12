@@ -5,23 +5,25 @@
 .dialogContentContainer{
     position: absolute;
     width: 0px;
-    height: 329px;
+    height: 370px;
     left: 0px;
-    top:10px;
+    top: 0px;
     background: #fff;
     border: 1px solid #CCCCCC;
     vertical-align: top;
     z-index:1000;
     overflow: hidden;
     opacity: 0;
+    .tst();
 
     &.active{
         width: 100%;
+        opacity: 1;
+        .tst(opacity 400ms ease 100ms, width 500ms ease;);
     }
 
     .dialogContent{
         height:280px;
-        width: 1019px;
     }
 
     .dialog-item{
@@ -32,11 +34,13 @@
         }
     }
     .carBanner{
-        background:url(../images/index/rss-lft-banner.png) no-repeat;
-        width:240px;
-        height:330px;
         float: left;
+        width: 280px;
+        height: 370px;
         margin-top:0;
+        background:url(../images/index/rss-lft-banner.png) no-repeat;
+        background-color: #454954;
+        background-position: 50% 100%;
     }
     .carBudget {
         margin-bottom: 30px;

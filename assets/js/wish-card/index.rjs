@@ -1,0 +1,7 @@
+({
+    baseUrl: "./../",
+
+    name: "wish-card/index",
+    include: [],
+    out: "index.r.js"
+})
