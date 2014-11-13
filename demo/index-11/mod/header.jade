@@ -77,12 +77,16 @@
         a(click_type='index-navsellCar', href='/pages/caruser/sellCarNew.html') 我要卖车
         a(click_type='index-atcsAll', href='/pages/acts/theme-activity-all.html') 主题精选
         a(click_type='index-danbaohaoche', href='/pages/adviser.html') 担保好车
-
+    .search
+      form.index-search
+        input.search-text(placeholder="搜索")
+        button.search-submit
     .h-rht
       .phone-number
-        img(src='http://assets.souche.com/assets/images/index/phone-num.png?t=9')
+        img(src='../../assets/images/index_11/phone-num.png')
       .user
         .headpic
           img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
-        span.username 15967171060
+        span.username.hidden 15967171060
         i.trigger
+        span |

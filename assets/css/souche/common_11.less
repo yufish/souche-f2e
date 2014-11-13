@@ -13,7 +13,8 @@ html,body{
   }
   .h-lft{
     float:left;
-    width:700px;
+    width:670px;
+    margin-right: 10px;
     .logo{
       margin-left:37px;
       padding-top:25px;
@@ -22,14 +23,13 @@ html,body{
     .city{
       font-size: 14px;
       color: #999;
-
-      margin-right: 0px;
+      margin-right: 40px;
       float: left;
       width: 60px;
       height: 20px;
       position: relative;
       margin-top: 30px;
-      margin-left:30px;
+      margin-left:20px;
       .J_city{
         cursor: pointer;
       }
@@ -173,9 +173,10 @@ html,body{
       }
     }
     .main-navs{
+      float: left;
       a{
         line-height: 80px;
-        padding:0 25px;
+        padding:0 17px;
         font-size: 14px;
         color:#333;
       }
@@ -183,16 +184,45 @@ html,body{
         color:@orange;
       }
     }
+
+  }
+  .search{
+      float: left;
+      .index-search{
+        margin-top: 25px;
+        position: relative;
+        .search-text{
+          box-sizing: border-box;
+          width: 250px;
+          height: 32px;
+          padding: 5px;
+          border: 1px solid #BBBBBB;
+
+        }
+        .search-submit{
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url(../../images/index_11/search.png) no-repeat;
+          border: none;
+          position: absolute;
+          top: 9px;
+          right: 10px;
+          cursor: pointer;
+        }
+      }
   }
   .h-rht{
     float:right;
     .phone-number{
-      padding:25px 30px;
+      padding:30px 0px 30px 20px;
       float:right;
+
     }
     .user{
       float:right;
       margin-top: 20px;
+      
       .headpic{
         img{
           border-radius:30px;
@@ -201,13 +231,27 @@ html,body{
           border:3px solid #fff;
           box-shadow: 1px 1px 3px #999;
         }
-        vertical-align: -10px;
+        vertical-align: -13px;
         display: inline-block;
       }
       .username{
         padding-left: 10px;
         color:#666;
 
+      }
+      .trigger{
+        display: inline-block;
+        width: 7px;
+        height: 4px;
+        background: url(../../images/index_11/user-down.png) no-repeat;
+        margin: 0px 10px;
+        cursor: pointer;
+      }
+      span{
+        font-size: 16px;
+        color: #bbbbbb;
+        margin-left: 10px;
+        line-height: 20px;
       }
     }
   }
