@@ -1,87 +1,88 @@
 #header
-  .h-lft
-    h1.logo
-      img(src="../../assets/images/index_11/logo.png")
-    div.city.clearfix
-      span#J_city_show.J_city 北京
-      i.J_city
-      div.city-open.hidden
-        div.city-wrap.clearfix
-          div.area-box
-            div.hot-city
-              span.title 热门
-              a.hot-item.hot-item-all(data-code='country') 全国
-              a.J_hotcity.active-city(data-code='00001') 北京
-              a.J_hotcity(data-code='00989') 宁波
-              a.J_hotcity(data-code='01991') 深圳
-              a.J_hotcity(data-code='01208') 厦门
-              a.J_hotcity(data-code='02273') 成都
-              a.J_hotcity(data-code='other') 其他
-            div.area-city
-              div.area-line
-                span.area 华东
-                a.province-item(data-code='00974') 浙江
-                a.province-item(data-code='00858') 江苏
-                a.province-item(data-code='01075') 安徽
-                a.province-item(data-code='01398') 山东
-                a.province-item.direct-item.J_hotcity(data-code='00021') 上海
-              div.area-line
-                span.area 华南
-                a.province-item(data-code='01977') 广东
-                a.province-item(data-code='01193') 福建
-                a.province-item(data-code='02122') 广西
-                a.province-item(data-code='02245') 海南
-              div.area-line
-                span.area 东北
-                a.province-item(data-code='00530') 辽宁
-                a.province-item(data-code='00714') 黑龙江
-                a.province-item(data-code='00644') 吉林
-              div.area-line
-                span.area 中南
-                a.province-item(data-code='01556') 河南
-                a.province-item(data-code='01840') 湖南
-                a.province-item(data-code='01725') 湖北
-                a.province-item(data-code='01288') 江西
-              div.area-line
-                span.area 西南
-                a.province-item(data-code='02272') 四川
-                a.province-item(data-code='02572') 云南
-                a.province-item(data-code='02474') 贵州
-                a.province-item.direct-item.J_hotcity(data-code='00063') 重庆
-                a.province-item(data-code='02718') 西藏
-              div.area-line
-                span.area 华北
-                a.province-item.direct-item.J_hotcity.active-city(data-code='00001') 北京
-                a.province-item(data-code='00106') 石家庄
-                a.province-item(data-code='00289') 山西
-                a.province-item(data-code='00419') 内蒙古
-                a.province-item.direct-item.J_hotcity(data-code='00043') 天津
-              div.area-line
-                span.area 西北
-                a.province-item(data-code='02799') 陕西
-                a.province-item(data-code='03095') 新疆
-                a.province-item(data-code='02914') 甘肃
-                a.province-item(data-code='03066') 宁夏
-                a.province-item(data-code='03014') 青海
-          div.city-box
-            div.tit.clearfix
-              a.city-return 返回
-              span#J_province_title.province 浙江省
-              a.city-close
-            div.city-list.clearfix
-              a.city-item 全部地区
-    div.main-navs
-      a.active(click_type='index-navindex', href='http://www.souche.com') 首页
-      a(click_type='index-navsalecarlist', href='/pages/onsale/sale_car_list.html') 我要买车
-      a(click_type='index-navsellCar', href='/pages/caruser/sellCarNew.html') 我要卖车
-      a(click_type='index-atcsAll', href='/pages/acts/theme-activity-all.html') 主题精选
-      a(click_type='index-danbaohaoche', href='/pages/adviser.html') 担保好车
+  .wrapper
+    .h-lft
+      h1.logo
+        img(src="../../assets/images/index_11/logo.png")
+      div.city.clearfix
+        span#J_city_show.J_city 北京
+        i.J_city
+        div.city-open.hidden
+          div.city-wrap.clearfix
+            div.area-box
+              div.hot-city
+                span.title 热门
+                a.hot-item.hot-item-all(data-code='country') 全国
+                a.J_hotcity.active-city(data-code='00001') 北京
+                a.J_hotcity(data-code='00989') 宁波
+                a.J_hotcity(data-code='01991') 深圳
+                a.J_hotcity(data-code='01208') 厦门
+                a.J_hotcity(data-code='02273') 成都
+                a.J_hotcity(data-code='other') 其他
+              div.area-city
+                div.area-line
+                  span.area 华东
+                  a.province-item(data-code='00974') 浙江
+                  a.province-item(data-code='00858') 江苏
+                  a.province-item(data-code='01075') 安徽
+                  a.province-item(data-code='01398') 山东
+                  a.province-item.direct-item.J_hotcity(data-code='00021') 上海
+                div.area-line
+                  span.area 华南
+                  a.province-item(data-code='01977') 广东
+                  a.province-item(data-code='01193') 福建
+                  a.province-item(data-code='02122') 广西
+                  a.province-item(data-code='02245') 海南
+                div.area-line
+                  span.area 东北
+                  a.province-item(data-code='00530') 辽宁
+                  a.province-item(data-code='00714') 黑龙江
+                  a.province-item(data-code='00644') 吉林
+                div.area-line
+                  span.area 中南
+                  a.province-item(data-code='01556') 河南
+                  a.province-item(data-code='01840') 湖南
+                  a.province-item(data-code='01725') 湖北
+                  a.province-item(data-code='01288') 江西
+                div.area-line
+                  span.area 西南
+                  a.province-item(data-code='02272') 四川
+                  a.province-item(data-code='02572') 云南
+                  a.province-item(data-code='02474') 贵州
+                  a.province-item.direct-item.J_hotcity(data-code='00063') 重庆
+                  a.province-item(data-code='02718') 西藏
+                div.area-line
+                  span.area 华北
+                  a.province-item.direct-item.J_hotcity.active-city(data-code='00001') 北京
+                  a.province-item(data-code='00106') 石家庄
+                  a.province-item(data-code='00289') 山西
+                  a.province-item(data-code='00419') 内蒙古
+                  a.province-item.direct-item.J_hotcity(data-code='00043') 天津
+                div.area-line
+                  span.area 西北
+                  a.province-item(data-code='02799') 陕西
+                  a.province-item(data-code='03095') 新疆
+                  a.province-item(data-code='02914') 甘肃
+                  a.province-item(data-code='03066') 宁夏
+                  a.province-item(data-code='03014') 青海
+            div.city-box
+              div.tit.clearfix
+                a.city-return 返回
+                span#J_province_title.province 浙江省
+                a.city-close
+              div.city-list.clearfix
+                a.city-item 全部地区
+      div.main-navs
+        a.active(click_type='index-navindex', href='http://www.souche.com') 首页
+        a(click_type='index-navsalecarlist', href='/pages/onsale/sale_car_list.html') 我要买车
+        a(click_type='index-navsellCar', href='/pages/caruser/sellCarNew.html') 我要卖车
+        a(click_type='index-atcsAll', href='/pages/acts/theme-activity-all.html') 主题精选
+        a(click_type='index-danbaohaoche', href='/pages/adviser.html') 担保好车
 
-  .h-rht
-    .phone-number
-      img(src='http://assets.souche.com/assets/images/index/phone-num.png?t=9')
-    .user
-      .headpic
-        img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
-      span.username 15967171060
-      i.trigger
+    .h-rht
+      .phone-number
+        img(src='http://assets.souche.com/assets/images/index/phone-num.png?t=9')
+      .user
+        .headpic
+          img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
+        span.username 15967171060
+        i.trigger
