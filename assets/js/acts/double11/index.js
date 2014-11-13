@@ -122,10 +122,19 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
                 _data.miaosha( carId, price, function(data, status){
                     if( status == 'success'){
                         var code = data.code;
-                        if(code == 0){
+                        if(code == 200){
                             // alert('您已成功抢到');
                             LikeShare.popup(carBox, 'miaosha', data);
                         }
+                        else if(code== 302){
+                            alert('不能重复秒杀');
+                        }
+                        else if(code== 301){
+                            alert('莫急~莫急~秒杀还未开始，请耐心等待哦！');
+                        }
+                        else if(code== 404){
+                            alert('该车已被抢购完');
+                        } 
                         else{
                             alert('“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！');
                         }
