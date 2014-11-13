@@ -1,0 +1,322 @@
+#flash_detail{
+  #content{
+    .wrapper{
+      width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      overflow: visible;
+      .box-item{
+        margin: 30px 0;
+        .title{
+           height: 44px;
+          .day-time{
+            box-sizing: border-box;
+            float: left;
+            width: 44px;
+            height: 44px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            padding: 3px 4px;
+            margin-right: 10px;
+          }
+          .timedown{
+            float: left;
+            line-height: 44px;
+            .time-icon{
+              float: left;
+              width: 22px;
+              height: 22px;
+              margin-top: 12px;
+              margin-right: 10px;
+            }
+            .time-end{
+              float: left;
+              color: #666;
+              font-size: 14px;
+              margin-right: 10px;
+              line-height: 47px;
+            }
+            .time{
+              float: left;
+              color: #666;
+              font-size: 14px;
+              ins{
+                font-size: 20px;
+                color: @soucheOrange;
+                margin: 0 2px;
+              }
+            }
+          }
+        }
+        .car-wrap{
+          margin-top: 20px;
+           .carItem{
+            width: 278px;
+            height: 370px;
+            border: 1px solid #E6E6E6;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+            margin-bottom: 20px;
+            .carImg{
+              display: block;
+              position: relative;
+
+              width: 280px;
+              height: 200px;
+              margin: -1px 0 0 -1px;
+
+              overflow: hidden;
+              img{
+                width: 100%;
+                height: auto;
+                border: none;
+              }
+              .timebuy{
+                top: 0px;
+                right: 0px;
+              }
+
+            }
+            .car-link{
+              font-size: 14px;
+              color: #333;
+              display: block;
+              height: 40px;
+              margin: 10px 13px 0 15px;
+              &:hover{
+                color: @soucheOrange;
+              }
+            }
+            .car-price{
+              margin: 10px 15px;
+              .price{
+                float: left;
+                color: @soucheOrange;
+                font-weight: bold;
+                margin-right: 5px;
+                font-size: 16px;
+              }
+              .time{
+                float: right;
+                color: #999;
+                font-size: 12px;
+                
+              }
+              .recommended{
+                font-size: 12px;
+                color: @soucheOrange;
+              }
+              .recommanded-staging-price,
+              .time-limit-offer{
+                display: none;
+              }
+            }
+            .price-down{
+              margin: 15px 10px 15px 15px;
+              color:  @soucheOrange;
+              font-size: 13px;
+            }
+            .car-info{
+              margin: 0 15px;
+              color: #999;
+              font-size: 12px;
+              margin-left:2px;
+              margin-bottom: 20px;
+              em{
+                margin-left: 3px;
+              }
+              span{
+                margin-left: 3px;
+              }
+              .info-item{
+                padding:0 10px;
+              }
+              .info-item-name{
+                display: none;
+              }
+            }
+            .carTail{
+              position: absolute;
+              width: 230px;
+              height: 25px;
+              top: 156px;
+              left: 5px;
+              .carCollect{
+                float: left;
+                display: block;
+                min-width: 41px;
+                height: 23px;
+                padding-right: 4px;
+                border-radius:2px;
+                color: #333;
+                background: #fff url(../images/list/collect.png) no-repeat 5px center;
+                opacity: 0.5;
+                filter:alpha(opacity=50);
+                line-height: 24px;
+                cursor: pointer;
+                -webkit-transition: opacity 200ms ease;
+                -moz-transition: opacity 200ms ease;
+                transition: opacity 200ms ease;
+
+                span{
+                  margin-left: 25px;
+                }
+                .add-to-coll,
+                .already-colled{
+                  display: none;
+                }
+              }
+
+              .faved{
+                background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
+              }
+              .carConstrast{
+                width: 45px;
+                height: 23px;
+                float: right;
+                background: #fff;
+                line-height: 23px;
+                opacity: 0;
+                filter:alpha(opacity=0);
+                border-radius:2px;
+                cursor: pointer;
+                -webkit-transition: opacity 200ms ease;
+                -moz-transition: opacity 200ms ease;
+                transition: opacity 200ms ease;
+
+                text-align: center;
+
+                #addconst{
+                  display: none;
+                  // margin-top: 5px;
+                  // margin-left: 2px;
+                  // margin-right: 2px;
+                  // display: block;
+                }
+                span{
+                  line-height: 23px;
+                }
+                .constrast-notyet{
+                  display: inline-block;
+                }
+                .constrast-notyet-verbose,
+                .constrast-added{
+                  display: none;
+                }
+
+                &.added{
+                  width: 55px;
+                  #addconst{
+                    display: none;
+                  }
+                  .constrast-notyet{
+                    display: none;
+                  }
+                  .constrast-added{
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+            .car-type{
+              width: 250px;
+              margin: 0 auto;
+              border-top:1px solid #E6E6E6;
+              padding-top: 13px;
+              font-size: 12px;
+              .zhijian{
+                margin-right: 3px;
+                float: left;
+                .type-icon{
+                  height: 16px;
+                  background: #FF5517;
+                  color: #fff;
+                  padding: 0 3px;
+                  line-height: 16px;
+                  font-size: 12px;
+                }
+              }
+              .baoxian .type-icon{
+                width: 16px;
+                height: 16px;
+                float: left;
+                background: url(../images/list/baoxiu.png) no-repeat;
+                margin-right: 3px;
+              }
+              .shouquan .type-icon{
+                height: 16px;
+                background: #EBBB58;
+                color: #fff;
+                font-size: 12px;
+                margin-right: 3px;
+                float: left;
+                padding: 0 3px;
+              }
+              .extra-text{
+                display: none;
+                font-size: 12px;
+              }
+              .up-time{
+                float: right;
+                color: #D9D9D9;
+
+              }
+            }
+
+            &:hover{
+              .carTail{
+                .carConstrast{
+                  opacity: 1;
+                  filter:alpha(opacity=100);
+                }
+                .carCollect{
+                  opacity: 1;
+                  filter:alpha(opacity=100);
+                }
+              }
+            }
+          }
+        }
+      }
+      .today-box{
+        .title{
+          .day-time{
+            background: @soucheOrange;
+          }
+          .timedown{
+            .time-icon{
+              background: url(../../images/index_11/time-icon.png) no-repeat;
+            }
+          }
+        }
+      }
+      .tomo-box{
+        .title{
+          .day-time{
+            background: #60B25E;
+          }
+          .timedown{
+            .time-icon{
+              background: url(../../images/index_11/time-icon-gr.png) no-repeat;
+            }
+            .time-begin{
+              float: left;
+              color: #666;
+              font-size: 14px;
+              margin-right: 15px;
+            }
+            .begin{
+              float: left;
+              color: #333;
+              font-size: 14px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@import "../config.less";
