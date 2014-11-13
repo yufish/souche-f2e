@@ -118,22 +118,23 @@ define(['acts/double11/like-share', 'acts/double11/zone'], function(LikeShare, Z
             var carId = carBox.attr('data-carid');
             var price = $.trim(carBox.find('.price-num').text());
 
-            
-            _data.miaosha( carId, price, function(data, status){
-                if( status == 'success'){
-                    var code = data.code;
-                    if(code == 0){
-                        // alert('您已成功抢到');
-                        LikeShare.popup(carBox, 'miaosha', data);
+            Souche.MiniLogin.checkLogin(function(){
+                _data.miaosha( carId, price, function(data, status){
+                    if( status == 'success'){
+                        var code = data.code;
+                        if(code == 0){
+                            // alert('您已成功抢到');
+                            LikeShare.popup(carBox, 'miaosha', data);
+                        }
+                        else{
+                            alert('“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！');
+                        }
                     }
                     else{
-                        alert('“人固有一秒，或秒到这辆车，或秒到其他车”。别放弃！快来看看别的车，这次千万不能被别人抢走啊！');
+                        alert('秒杀失败...');
                     }
-                }
-                else{
-                    alert('秒杀失败...');
-                }
-            } );
+                } );
+            },true,true,false,true);
         }
     };
 
