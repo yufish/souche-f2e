@@ -1,87 +1,244 @@
 #header
-  .h-lft
-    h1.logo
-      img(src="../../assets/images/index_11/logo.png")
-    div.city.clearfix
-      span#J_city_show.J_city 北京
-      i.J_city
-      div.city-open.hidden
-        div.city-wrap.clearfix
-          div.area-box
-            div.hot-city
-              span.title 热门
-              a.hot-item.hot-item-all(data-code='country') 全国
-              a.J_hotcity.active-city(data-code='00001') 北京
-              a.J_hotcity(data-code='00989') 宁波
-              a.J_hotcity(data-code='01991') 深圳
-              a.J_hotcity(data-code='01208') 厦门
-              a.J_hotcity(data-code='02273') 成都
-              a.J_hotcity(data-code='other') 其他
-            div.area-city
-              div.area-line
-                span.area 华东
-                a.province-item(data-code='00974') 浙江
-                a.province-item(data-code='00858') 江苏
-                a.province-item(data-code='01075') 安徽
-                a.province-item(data-code='01398') 山东
-                a.province-item.direct-item.J_hotcity(data-code='00021') 上海
-              div.area-line
-                span.area 华南
-                a.province-item(data-code='01977') 广东
-                a.province-item(data-code='01193') 福建
-                a.province-item(data-code='02122') 广西
-                a.province-item(data-code='02245') 海南
-              div.area-line
-                span.area 东北
-                a.province-item(data-code='00530') 辽宁
-                a.province-item(data-code='00714') 黑龙江
-                a.province-item(data-code='00644') 吉林
-              div.area-line
-                span.area 中南
-                a.province-item(data-code='01556') 河南
-                a.province-item(data-code='01840') 湖南
-                a.province-item(data-code='01725') 湖北
-                a.province-item(data-code='01288') 江西
-              div.area-line
-                span.area 西南
-                a.province-item(data-code='02272') 四川
-                a.province-item(data-code='02572') 云南
-                a.province-item(data-code='02474') 贵州
-                a.province-item.direct-item.J_hotcity(data-code='00063') 重庆
-                a.province-item(data-code='02718') 西藏
-              div.area-line
-                span.area 华北
-                a.province-item.direct-item.J_hotcity.active-city(data-code='00001') 北京
-                a.province-item(data-code='00106') 石家庄
-                a.province-item(data-code='00289') 山西
-                a.province-item(data-code='00419') 内蒙古
-                a.province-item.direct-item.J_hotcity(data-code='00043') 天津
-              div.area-line
-                span.area 西北
-                a.province-item(data-code='02799') 陕西
-                a.province-item(data-code='03095') 新疆
-                a.province-item(data-code='02914') 甘肃
-                a.province-item(data-code='03066') 宁夏
-                a.province-item(data-code='03014') 青海
-          div.city-box
-            div.tit.clearfix
-              a.city-return 返回
-              span#J_province_title.province 浙江省
-              a.city-close
-            div.city-list.clearfix
-              a.city-item 全部地区
-    div.main-navs
-      a.active(click_type='index-navindex', href='http://www.souche.com') 首页
-      a(click_type='index-navsalecarlist', href='/pages/onsale/sale_car_list.html') 我要买车
-      a(click_type='index-navsellCar', href='/pages/caruser/sellCarNew.html') 我要卖车
-      a(click_type='index-atcsAll', href='/pages/acts/theme-activity-all.html') 主题精选
-      a(click_type='index-danbaohaoche', href='/pages/adviser.html') 担保好车
+  .wrapper
+    .h-lft
+      h1.logo
+        img(src="../../assets/images/index_11/logo.png")
+      div.city.clearfix
+        span#J_city_show.J_city 北京
+        i.J_city
+        div.city-open.hidden
+          div.city-wrap.clearfix
+            div.area-box
+              div.hot-city
+                span.title 热门
+                a.hot-item.hot-item-all(data-code='country') 全国
+                a.J_hotcity.active-city(data-code='00001') 北京
+                a.J_hotcity(data-code='00989') 宁波
+                a.J_hotcity(data-code='01991') 深圳
+                a.J_hotcity(data-code='01208') 厦门
+                a.J_hotcity(data-code='02273') 成都
+                a.J_hotcity(data-code='other') 其他
+              div.area-city
+                div.area-line
+                  span.area 华东
+                  a.province-item(data-code='00974') 浙江
+                  a.province-item(data-code='00858') 江苏
+                  a.province-item(data-code='01075') 安徽
+                  a.province-item(data-code='01398') 山东
+                  a.province-item.direct-item.J_hotcity(data-code='00021') 上海
+                div.area-line
+                  span.area 华南
+                  a.province-item(data-code='01977') 广东
+                  a.province-item(data-code='01193') 福建
+                  a.province-item(data-code='02122') 广西
+                  a.province-item(data-code='02245') 海南
+                div.area-line
+                  span.area 东北
+                  a.province-item(data-code='00530') 辽宁
+                  a.province-item(data-code='00714') 黑龙江
+                  a.province-item(data-code='00644') 吉林
+                div.area-line
+                  span.area 中南
+                  a.province-item(data-code='01556') 河南
+                  a.province-item(data-code='01840') 湖南
+                  a.province-item(data-code='01725') 湖北
+                  a.province-item(data-code='01288') 江西
+                div.area-line
+                  span.area 西南
+                  a.province-item(data-code='02272') 四川
+                  a.province-item(data-code='02572') 云南
+                  a.province-item(data-code='02474') 贵州
+                  a.province-item.direct-item.J_hotcity(data-code='00063') 重庆
+                  a.province-item(data-code='02718') 西藏
+                div.area-line
+                  span.area 华北
+                  a.province-item.direct-item.J_hotcity.active-city(data-code='00001') 北京
+                  a.province-item(data-code='00106') 石家庄
+                  a.province-item(data-code='00289') 山西
+                  a.province-item(data-code='00419') 内蒙古
+                  a.province-item.direct-item.J_hotcity(data-code='00043') 天津
+                div.area-line
+                  span.area 西北
+                  a.province-item(data-code='02799') 陕西
+                  a.province-item(data-code='03095') 新疆
+                  a.province-item(data-code='02914') 甘肃
+                  a.province-item(data-code='03066') 宁夏
+                  a.province-item(data-code='03014') 青海
+            div.city-box
+              div.tit.clearfix
+                a.city-return 返回
+                span#J_province_title.province 浙江省
+                a.city-close
+              div.city-list.clearfix
+                a.city-item 全部地区
+      div.main-navs
+        a.active(click_type='index-navindex', href='http://www.souche.com') 首页
+        a(click_type='index-navsalecarlist', href='/pages/onsale/sale_car_list.html') 我要买车
+        a(click_type='index-navsellCar', href='/pages/caruser/sellCarNew.html') 我要卖车
+        a(click_type='index-atcsAll', href='/pages/acts/theme-activity-all.html') 主题精选
+        a(click_type='index-danbaohaoche', href='/pages/adviser.html') 担保好车
 
-  .h-rht
-    .phone-number
-      img(src='http://assets.souche.com/assets/images/index/phone-num.png?t=9')
-    .user
-      .headpic
-        img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
-      span.username 15967171060
-      i.trigger
+    .h-rht
+      .phone-number
+        img(src='http://assets.souche.com/assets/images/index/phone-num.png?t=9')
+      .user
+        .headpic
+          img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
+        span.username 15967171060
+        i.trigger
+script.
+  <script>$(".search-text").focus();</script>
+     <script>
+     $(document).ready(function(){
+       setTimeout(function(){
+         $(".double11").animate({
+           height:"0px",
+         },1000);
+       },3000);
+       setTimeout(function(){
+         $(".double11-sort").animate({
+            height:"135px",
+            opacity: 1
+         },1000);
+       },4000);
+     });
+      $(".cord-h5").mouseenter(function(){
+       $(".h5-open").slideDown("normal");
+     });
+     $(document.body).on("click", function(e) {
+         if (!$(e.target).closest(".h5-open").length) {
+             $(".h5-open").slideUp("normal");
+         }
+     });
+    $("#J_phone_login").on("click", function(e) {
+        e.preventDefault();
+        Souche.MiniLogin.checkLogin(function() {
+            $(".qiugou .go-login").addClass("hidden")
+            window.location.reload() ;
+        },true,false,true);
+    });
+    var HeaderConfig ={
+        selectSearch:"/pages/headerAction/selectSearchCode.json"
+    };
+    $.ajax({
+      type:"GET",
+      url: HeaderConfig.selectSearch,
+        dataType: "json",
+        success:function(data){
+          if(data&&data.items){
+            var html = "";
+            for(var i=0;i<data.items.length;i++){
+              var keyword = data.items[i].name;
+              var searchcode = data.items[i].searchCode;
+              html+="<a click_type='search-item"+i+"' href='/pages/onsale/sale_car_list.html?keyword="+searchcode+"' target='_blank'>"+keyword+"</a>"
+            }
+            $(".recom").html(html)
+          }
+         }
+    });
+    var nowCity = {name:"",code:""};
+    $.ajax({
+      type:"GET",
+      url: contextPath+"/pages/toolbarAction/getAdderssMap.json",
+        dataType: "json",
+        success:function(data){
+          if(data&&data.addressName){
+              $("#J_city_show").html(data.addressName);
+              nowCity.code = data.cityCode
+                nowCity.name = data.addressName;
+             $(".city-wrap a[data-code='"+data.provinceCode+"']").addClass("active-city");
+          }
+         }
+    });
+    //城市切换
+     $(".J_city").click(function(e){
+      $(".city-open").css({opacity:0}).removeClass("hidden").animate({opacity:1},400);
+      $(".area-box").css({left:"0px"});
+      $(".city-box").css({left:"362px"});
+      e.stopPropagation();
+    })
+    $(document.body).on("click", function(e) {
+         if (!$(e.target).closest(".city-open").length) {
+             $(".city-open").addClass("hidden");
+         }
+     });
+    var loadCity = function(provinceCode,provinceName){
+    $("#J_province_title").html(provinceName);
+        $.ajax({
+          url:contextPath+"/pages/dicAction/loadNextLevel.json",
+          data:{request_message:'{"code":"'+provinceCode+'","type":"area"}'},
+          dataType:"json",
+          success:function(data){
+            console.log(data)
+             $(".city-list").html("");
+            if(data&&data.items){
+              $(".city-list").append("<a class='city-item' data-code='"+provinceCode+"'>全部城市</a>")
+              for(var i=0;i<data.items.length;i++){
+                var item = data.items[i];
+                $(".city-list").append("<a class='city-item "+(item.code==nowCity.code?"active-city":"")+"' data-code='"+item.code+"'>"+item.name+"</a>")
+              }
+               $(".city-item").on("click",function(e){
+      e.stopPropagation();
+      e.preventDefault();
+      goCity($(this).attr("data-code"))
+    });
+            }
+           }
+        })
+    }
+    var goCity = function(code){
+      $.ajax({
+          url:contextPath+"/pages/toolbarAction/choosePosition.json",
+          dataType:"json",
+          data:{position:code},
+          success:function(){
+            window.location.reload();
+          }
+        });
+    }
+    $(".J_hotcity").click(function(e){
+      e.stopPropagation();
+      e.preventDefault();
+      goCity($(this).attr("data-code"));
+      return;
+    })
+    $(".hot-item").click(function(e){
+      if($(this).hasClass("hot-item-all")){
+        goCity($(this).attr("data-code"))
+        return;
+      }
+    loadCity($(this).attr("data-code"),$(this).html());
+      $(".area-box").animate({left:"-362px"},400);
+      $(".city-box").animate({left:"0px"},400);
+      e.stopPropagation();
+    });
+    $(".province-item").click(function(e){
+    if($(this).hasClass("direct-item")){
+       goCity($(this).attr("data-code"))
+       return;
+    }
+      loadCity($(this).attr("data-code"),$(this).html());
+      $(".area-box").animate({left:"-362px"},400);
+      $(".city-box").animate({left:"0px"},400);
+      e.stopPropagation();
+    });
+    $(".city-return").click(function(e){
+      $(".area-box").animate({left:"0px"},400);
+      $(".city-box").animate({left:"362px"},400);
+      e.stopPropagation();
+    });
+     $(".city-close").on("click",function(e){
+      $(".city-open").addClass("hidden");
+      e.stopPropagation();
+     });
+    //head 搜索框
+         require(["souche/realTimeDown"], function(down) {
+             down.init($(".search"), {
+                 url: contextPath + "/pages/common/boxSuggestAction/list.json",
+                 type: "GET",
+                 dataType: "json",
+                 success: function() {}
+             }, 900);
+          });
+    </script>
+ 

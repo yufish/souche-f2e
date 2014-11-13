@@ -39,7 +39,12 @@ define(function() {
 
                         }
                         middlePrice=(middlePrice*1+config.taxPrice).toFixed(2) * 1
-
+                            if(minPrice>middlePrice){
+                                //大搜车价大于平均成交价
+                                $(".onsale-tab-item-price").addClass("hidden")
+                                $(".float-nav-item-price").addClass("hidden")
+                                $("#onsale_price").addClass("hidden");
+                            }
                         require(['detail/draw-sanprice'], function(SanPrice) {
                             SanPrice.draw(minPrice, maxPrice, middlePrice, rangePrice);
                         })
