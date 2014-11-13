@@ -102,8 +102,8 @@ function(AddSeries, CustomSelect, Tool){
             var self = this;
             //选择感兴趣的车系
             $(".addCarinstrestItem").on("click",function(){
-                // todo remove test
-                window.contextPath = 'http://souche.com';
+                // todo: remove test
+                // window.contextPath = 'http://souche.com';
 
                 AddSeries.show();
             });
