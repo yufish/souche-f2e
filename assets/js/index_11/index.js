@@ -6,6 +6,11 @@ define(function(){
             }).on("mouseleave",function(){
                 $(this).removeClass("active");
             })
+            $("#choose_model").on("mouseenter",function(){
+                $(this).addClass("active");
+            }).on("mouseleave",function(){
+                $(this).removeClass("active");
+            })
         }
     }
     return Index;

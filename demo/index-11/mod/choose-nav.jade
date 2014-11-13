@@ -6,28 +6,28 @@
       .brand-wrapper
         .hd 品牌
         .bd.clearfix
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
-          .brand-item
+          a.brand-item(href="#")
             img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
             span 宝马
       div.brand-all.clearfix
@@ -177,33 +177,111 @@
                 a.brand-item(target='_blank', href='/pages/onsale/sale_car_list.html?carBrand=brand-167', click_type='nav-brand-inner-brand-167') 中华
                 a.brand-item(target='_blank', href='/pages/onsale/sale_car_list.html?carBrand=brand-172', click_type='nav-brand-inner-brand-172') 众泰
 
-    .item-model
-      .hd 车型
-      .bd
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
-        .model-item
-          img(src="http://res.souche.com/files/carproduct/brand/brand-20.png")
-          span 宝马
+    .item-model#choose_model
+      .trigger-icon
+      .model-wrapper
+        .hd 车型
+        .bd
+          a.model-item(click_type='list-nav-body-suv', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=SUV&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-suv
+            span.car-modal-name SUV
+          a.model-item(click_type='list-nav-body-mpv', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=MPV&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-mpv
+            span.car-modal-name MPV
+          a.model-item(click_type='list-nav-body-xiaoxingche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=tinyCar&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-tinycar
+            span.car-modal-name 微小型车
+          a.model-item(click_type='list-nav-body-jincouxing', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=compactCar&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-compactcar
+            span.car-modal-name 紧凑型车
+          a.model-item(click_type='list-nav-body-zhongxingche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=midSize&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-midsize
+            span.car-modal-name 中型车
+          a.model-item(click_type='list-nav-body-daxingche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=PremiumMidsize&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-premiummidsize
+            span.car-modal-name 中大型车
+          a.model-item(click_type='list-nav-body-paoche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=SportsCar&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=')
+            .car-modal-img.modal-sportscar
+            span.car-modal-name 跑车
+          a.model-item(click_type='list-nav-body-paoche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=5')
+            .car-modal-img.modal-doublebox
+            span.car-modal-name 两厢车
+          a.model-item(click_type='list-nav-body-paoche', href='/pages/onsale/sale_car_list.html?emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=&carSeries=&carPrice=&carModel=&carMileage=&sortCreate=&sortName=&sortType=&viewType=&cbParam=&searchType=&bodyModels=6')
+            .car-modal-img.modal-sedan
+            span.car-modal-name 三厢车
+        div.model-all.clearfix
+          .models-line
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=SUV', click_type='nav-series-inner-SUV') SUV
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1932', click_type='nav-series-inner-series-1932') 途观
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1919', click_type='nav-series-inner-series-1919') 奥迪Q5
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-993', click_type='nav-series-inner-series-993') 本田CR-V
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-902', click_type='nav-series-inner-series-902') 森林人
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1072', click_type='nav-series-inner-series-1072') 汉兰达
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1168', click_type='nav-series-inner-series-1168') 奔驰GLK级
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-294', click_type='nav-series-inner-series-294') 途胜
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1935', click_type='nav-series-inner-series-1935') 现代ix35
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-594', click_type='nav-series-inner-series-594') 奇骏
+          .models-line
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=midSize', click_type='nav-series-inner-midSize') 中型车
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-317', click_type='nav-series-inner-series-317') 天籁
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-595', click_type='nav-series-inner-series-595') 帕萨特
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-621', click_type='nav-series-inner-series-621') 奥迪A4L
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-422', click_type='nav-series-inner-series-422') 宝马3系
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-135', click_type='nav-series-inner-series-135') 迈腾
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-368', click_type='nav-series-inner-series-368') 君威
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-238', click_type='nav-series-inner-series-238') 锐志
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-100', click_type='nav-series-inner-series-100') 凯美瑞
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-564', click_type='nav-series-inner-series-564') 雅阁
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-83', click_type='nav-series-inner-series-83') 君越
+          .models-line
+            input(type='hidden', name='vehicleType', value='[Ljava.lang.String;@2d5614f0')
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=compactCar', click_type='nav-series-inner-compactCar') 紧凑型车
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-369', click_type='nav-series-inner-series-369') 凯越
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-448', click_type='nav-series-inner-series-448') 宝来
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1979', click_type='nav-series-inner-series-1979') 福克斯两厢
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-159', click_type='nav-series-inner-series-159') 卡罗拉
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-78', click_type='nav-series-inner-series-78') 思域
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-335', click_type='nav-series-inner-series-335') 悦动
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-566', click_type='nav-series-inner-series-566') 速腾
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-340', click_type='nav-series-inner-series-340') 朗逸
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-449', click_type='nav-series-inner-series-449') 捷达
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1087', click_type='nav-series-inner-series-1087') 奔驰B级
+          .models-line
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=tinyCar', click_type='nav-series-inner-tinyCar') 微小型车
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-330', click_type='nav-series-inner-series-330') POLO
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-2007', click_type='nav-series-inner-series-2007') 飞度
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-79', click_type='nav-series-inner-series-79') 乐风
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-382', click_type='nav-series-inner-series-382') 雨燕
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-616', click_type='nav-series-inner-series-616') 晶锐
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-865', click_type='nav-series-inner-series-865') MINICooper
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-2418', click_type='nav-series-inner-series-2418') 奥迪A1
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-604', click_type='nav-series-inner-series-604') 标致207
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-239', click_type='nav-series-inner-series-239') 马自达2
+          .models-line
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=PremiumMidsize', click_type='nav-series-inner-PremiumMidsize') 中大型车
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-269', click_type='nav-series-inner-series-269') 奥迪A6L
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-425', click_type='nav-series-inner-series-425') 宝马5系
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-142', click_type='nav-series-inner-series-142') 克莱斯勒300C
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-532', click_type='nav-series-inner-series-532') 奔驰E级
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-361', click_type='nav-series-inner-series-361') 皇冠
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-997', click_type='nav-series-inner-series-997') 雷克萨斯ES
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1155', click_type='nav-series-inner-series-1155') 奔驰S级
+          .models-line
+            a.models-item-m(target='_blank', href='/pages/onsale/sale_car_list.html?carModel=MPV', click_type='nav-series-inner-MPV') MPV
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-744', click_type='nav-series-inner-series-744') 大捷龙
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-1952', click_type='nav-series-inner-series-1952') 唯雅诺
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-452', click_type='nav-series-inner-series-452') 奥德赛
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-220', click_type='nav-series-inner-series-220') 别克GL8
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-2635', click_type='nav-series-inner-series-2635') 途安
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-726', click_type='nav-series-inner-series-726') 奔驰R级
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=', click_type='nav-series-inner-')
+            a.models-item(target='_blank', href='/pages/onsale/sale_car_list.html?carSeries=series-314', click_type='nav-series-inner-series-314') 毕加索
+
     .item-price
       .hd 价格
       .bd
