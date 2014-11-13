@@ -1,10 +1,17 @@
+mixin selectOption(value, text)
+    a.option(target='_blank', href='#', data-value="#{value}")
+        input.hidden(type='checkbox')
+        span.value #{text}
+
+
+
 .dialogContentContainer
     .dialogContent
         .carBanner.dialog-item
         .carinstrest.dialog-item
             .carinstrestContainer
                 h1.hd
-                    i 车系
+                    span 车系
                 .addCarinstrestItem(click_type='xuqiu_40')
                     span +
                     a 添加您感兴趣的车
@@ -21,7 +28,7 @@
         .carBudget.dialog-item
             .carBudgetContainer
                 h1.hd
-                    i 预算
+                    span 预算
                 .dataContainer.hidden.input_dataContainer
                     .inputContainer.leftContainer
                         input.low-price(value='0', click_type='xuqiu_41')
@@ -36,19 +43,9 @@
                             .sc-select-content.clearfix 0万
                             .sc-select-action
                                 i
-                        .sc-select-list.hidden(style='top: 30px;')
-                            a.option(target='_blank', href='#', data-value='0')
-                                input.hidden(type='checkbox')
-                                span.value 0万
-                            a.option(target='_blank', href='#', data-value='5万')
-                                input.hidden(type='checkbox')
-                                span.value 5万
-                            a.option(target='_blank', href='#', data-value='50万')
-                                input.hidden(type='checkbox')
-                                span.value 50万
-                            a.option(target='_blank', href='#', data-value='-1')
-                                input.hidden(type='checkbox')
-                                span.value 自定义
+                        .sc-select-list.hidden
+                            each opt in [ ['0', '0万'], ['5万', '5万'], ['8万', '8万'], ['10万', '10万'], ['15万', '15万'], ['20', '20万'], ['30万', '30万'], ['50万', '50万'], ['-1', '自定义'] ]
+                                +selectOption(opt[0], opt[1])
                             input#price_select.selected_values(type='hidden', name='minPrice', value='0万')
                     a —
                     #price_select_high.sc-select.sc-custom-select.age_select_hight.age-right.selectContainer(click_type='index-customization-price-high-1', style='z-index: 1001;')
@@ -56,44 +53,23 @@
                             .sc-select-content.clearfix 50万
                             .sc-select-action
                                 i
-                        .sc-select-list.hidden(style='top: 30px;')
-                            a.option(target='_blank', href='#', data-value='5万')
-                                input.hidden(type='checkbox')
-                                span.value 5万
-                            a.option(target='_blank', href='#', data-value='50万')
-                                input.hidden(type='checkbox')
-                                span.value 50万
-                            a.option(target='_blank', href='#', data-value='0')
-                                input.hidden(type='checkbox')
-                                span.value 不限
-                            a.option(target='_blank', href='#', data-value='-1')
-                                input.hidden(type='checkbox')
-                                span.value 自定义
+                        .sc-select-list.hidden
+                            each opt in [ ['0', '0万'], ['5万', '5万'], ['8万', '8万'], ['10万', '10万'], ['15万', '15万'], ['20', '20万'], ['30万', '30万'], ['50万', '50万'], ['0', '不限'], ['-1', '自定义'] ]
+                                +selectOption(opt[0], opt[1])
                             input#price_select_high.selected_values(type='hidden', name='maxPrice', value='50万')
         .caryear.dialog-item
             .caryearContainer
                 h1.hd
-                    i
-                    | 年份
+                    span 年份
                 .dataContainer
                     #age_select.sc-select.sc-custom-select.age_select.age-left.selectContainer(click_type='index-customization-age-low-1', style='z-index: 1000;')
                         .sc-select-hd
                             .sc-select-content.clearfix 2010
                             .sc-select-action
                                 i
-                        .sc-select-list.hidden(style='top: 28px;')
-                            a.option(target='_blank', href='#', data-value='2014')
-                                input.hidden(type='checkbox')
-                                span.value 2014
-                            a.option(target='_blank', href='#', data-value='2013')
-                                input.hidden(type='checkbox')
-                                span.value 2013
-                            a.option(target='_blank', href='#', data-value='2004')
-                                input.hidden(type='checkbox')
-                                span.value 2004
-                            a.option(target='_blank', href='#', data-value='')
-                                input.hidden(type='checkbox')
-                                span.value 不限
+                        .sc-select-list.hidden
+                            each opt in [ ['2014', '2014'], ['2013', '2013'], ['2012', '2012'], ['2011', '2011'], ['2010', '2010'], ['2009', '2009'], ['2008', '2008'], ['2007', '2007'], ['2006', '2006'], ['2005', '2005'], ['2004', '2004'], ['', '不限'] ]
+                                +selectOption(opt[0], opt[1])
                         input#age_select.selected_values(type='hidden', name='maxYear', value='2010')
                     a —
                     #age_select_high.sc-select.sc-custom-select.age_select_hight.age-right.selectContainer(click_type='index-customization-age-high-1', style='z-index: 1001;')
@@ -101,28 +77,17 @@
                             .sc-select-content.clearfix 2014
                             .sc-select-action
                                 i
-                        .sc-select-list.hidden(style='top: 28px;')
-                            a.option(target='_blank', href='#', data-value='2014')
-                                input.hidden(type='checkbox')
-                                span.value 2014
-                            a.option(target='_blank', href='#', data-value='2013')
-                                input.hidden(type='checkbox')
-                                span.value 2013
-                            a.option(target='_blank', href='#', data-value='2004')
-                                input.hidden(type='checkbox')
-                                span.value 2004
-                            a.option(target='_blank', href='#', data-value='')
-                                input.hidden(type='checkbox')
-                                span.value 不限
-                        input#age_select_high.selected_values(type='hidden', name='maxYear', value='2014')
+                        .sc-select-list.hidden
+                            each opt in [ ['2014', '2014'], ['2013', '2013'], ['2012', '2012'], ['2011', '2011'], ['2010', '2010'], ['2009', '2009'], ['2008', '2008'], ['2007', '2007'], ['2006', '2006'], ['2005', '2005'], ['2004', '2004'], ['', '不限'] ]
+                                +selectOption(opt[0], opt[1])
+                        input#age_select.selected_values(type='hidden', name='maxYear', value='2014')
     .addInstrestCar.hidden
         .addInstrestCarContent
             .brand
                 .brandNav(click_type='xuqiu_28')
                     ul
-                        li A
-                        li B
-                        li C
+                        each letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
+                            li= letter
 
                 .brandList(click_type='xuqiu_29')
                     ul
@@ -131,6 +96,9 @@
                     ul
         .addInstrestCarSubmit
             #J_selected_series.selected-series
+                .selected-item(code="series-2111")
+                    img(src="http://res.souche.com/files/carproduct/series/series-2111.png")
+                    | 307
             span#J_addSeries_submit.submit.btn(click_type='xuqiu_31') 确定
             span#J_addSeries_cancel.cancel(click_type='xuqiu_32') 取消
     .trail

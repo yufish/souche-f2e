@@ -8,17 +8,18 @@
     height: 370px;
     left: 0px;
     top: 0px;
-    background: #fff;
-    border: 1px solid #CCCCCC;
     vertical-align: top;
+    background: #fff;
+    border: none;
     z-index:1000;
-    overflow: hidden;
+    overflow: visible;
     opacity: 0;
-    .tst();
+    .tst(width 400ms ease-out, opacity 300ms ease-out;);
 
     &.active{
         width: 100%;
         opacity: 1;
+        border: 1px solid #CCCCCC;
         .tst(opacity 400ms ease 100ms, width 500ms ease;);
     }
 
@@ -31,20 +32,28 @@
         margin-top: 10px;
         .hd{
             margin-bottom: 34px;
+            span{
+                display: inline-block;
+                padding-left: 25px;
+                height: 20px;
+                margin-right: 5px;
+                vertical-align: middle;
+                background-image: url(../images/index/add-series-icon.png);
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
         }
     }
     .carBanner{
         float: left;
-        width: 280px;
         height: 370px;
-        margin-top:0;
+        margin-top: -1px;
         background:url(../images/index/rss-lft-banner.png) no-repeat;
         background-color: #454954;
         background-position: 50% 100%;
     }
     .carBudget {
         margin-bottom: 30px;
-        //
         float: left;
         height: 273px;
         vertical-align: top;
@@ -57,13 +66,8 @@
         }
         .hd {
             font-size: 14px;
-            i{
-                background: url(../images/index/add-money-icon.png) no-repeat center center;
-                width:20px;
-                height:20px;
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 5px;
+            span{
+                background-image: url(../images/index/add-money-icon.png);
             }
         }
         .dataContainer {
@@ -81,28 +85,13 @@
                 vertical-align: middle;
             }
             .sc-select-list {
-                width: 100%;
-                border: 1px solid #d9d9d9;
-                left: -1px;
-                position: absolute;
-                overflow: auto;
-                z-index: 10000;
-                overflow-x: hidden;
-                background: #fff;
-                top: 30px !important;
                 .option {
                     display: block;
                     float: none;
                     padding-left: 22px;
                     font-size: 12px;
                     line-height: 24px;
-                    color: #333;
                 }
-                .option:hover{
-                    background: @soucheOrange;
-                    color:#fff;
-                }
-
             }
             > a {
                 float: left;
@@ -176,13 +165,13 @@
             text-align: center;
         }
         .hd{
-            i{
-                background: url(../images/index/add-series-icon.png) no-repeat center center;
-                width:20px;
-                height:20px;
+            span{
                 display: inline-block;
-                vertical-align: middle;
+                padding-left: 25px;
+                height: 20px;
                 margin-right: 5px;
+                vertical-align: middle;
+                background-image: url(../images/index/add-series-icon.png);
             }
         }
         .selected_series_result{
@@ -299,13 +288,8 @@
 
         .hd {
             font-size: 14px;
-            i{
-                background: url(../images/index/add-year-icon.png) no-repeat center center;
-                width:20px;
-                height:20px;
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 5px;
+            span{
+                background-image: url(../images/index/add-year-icon.png) no-repeat center center;
             }
         }
         .dataContainer {
@@ -328,64 +312,23 @@
                     font-size: 12px;
                     color: #aaa;
                     font-weight: normal;
-                    height: auto;
                     cursor: default;
                     .sc-select-content {
                         padding-left: 10px;
-                        padding-top: 6px;
                         line-height: 20px;
                         color: #333;
                         .placeholder {
                             color: #333;
                         }
-
-                    }
-                    .sc-select-action {
-                        width: 30px;
-                        height: 30px;
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        background: #fff;
-                        cursor: pointer;
-                        font-size: 0px;
-                        line-height: 0px;
-                        _right: -1px;
-
-                        i {
-                            margin-left: 0px;
-                            margin-top: 0px;
-                            display: block;
-                            width: 30px;
-                            height: 30px;
-                            font-size: 0px;
-                            line-height: 0px;
-                            background: url(../images/common/select-action-trigger.png) no-repeat center center;
-                            background-position: 6px 12px;
-                        }
                     }
                 }
                 .sc-select-list {
-                    width: 100%;
-                    border: 1px solid #d9d9d9;
-                    left: -1px;
-                    position: absolute;
-                    overflow: auto;
-                    z-index: 10000;
-                    overflow-x: hidden;
-                    background: #fff;
-                    top: 30px !important;
                     .option {
                         display: block;
                         float: none;
                         padding-left: 22px;
                         font-size: 12px;
                         line-height: 24px;
-                        color: #333;
-                    }
-                    .option:hover{
-                        background: @soucheOrange;
-                        color:#fff;
                     }
                 }
             }
@@ -473,14 +416,14 @@
 
     position: absolute;
     left: -1px;
+    right: -1px;
     top:-1px;
-    background: #fff;
     border: 1px solid #EDEDED;
     vertical-align: top;
     z-index:10000;
-    width:100%;
-    .addInstrestCarTilte
-    {
+    background: #fff;
+
+    .addInstrestCarTilte{
         margin-top: 5px;
         margin-left: 2%;
         margin-bottom: 5px;
@@ -524,11 +467,11 @@
             }
         }
     }
-    .addInstrestCarSubmit
-    {
+    .addInstrestCarSubmit{
         border-top:1px solid #EDEDED;
-        min-height: 36px;
+        min-height: 56px;
         padding:10px;
+
         .selected-series{
             width:760px;
             .selected-item{
@@ -608,6 +551,7 @@
             border: 1px solid #fda05b;
         }
     }
+    @brandW: 15%;
     .addInstrestCarContent {
         border-top: 1px solid #EDEDED;
         clear: both;
@@ -616,7 +560,7 @@
         .brand {
             float: left;
             height: 330px;
-            width:15%;
+            width: @brandW;
             bottom: 0px;
             position: relative;
             border-right: 1px solid #EDEDED;
@@ -715,10 +659,9 @@
 
         }
         .chexi {
-            float: left;
             height: 320px;
+            margin-left: @brandW;
             overflow: auto;
-            width: 811px;
             .chexiContent
             {
                 margin: 20px 20px;
@@ -832,6 +775,9 @@
 }
 .bindLoginInfo .require-info, .bindunLoginInfo .require-info{
     height:233px;
+}
+.bindunLoginInfo .require-info{
+    height: 277px;
 }
 .bindLoginInfo .interestCar .selected-item, .bindunLoginInfo .interestCar .selected-item
 {
