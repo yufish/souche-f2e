@@ -102,6 +102,9 @@ function(AddSeries, CustomSelect, Tool){
             var self = this;
             //选择感兴趣的车系
             $(".addCarinstrestItem").on("click",function(){
+                // todo remove test
+                window.contextPath = 'http://souche.com';
+
                 AddSeries.show();
             });
             //从series读取数据
@@ -118,7 +121,7 @@ function(AddSeries, CustomSelect, Tool){
                     var _code = series[0];
                     data.brands.push(_code);
                 }
-                self._renderSelected(_data.selectedSeries,_data.selectedBrands);
+                _view.renderSelected(_data.selectedSeries,_data.selectedBrands);
             })
             //删除的动作，
             $(".selected_series_result").on("click",".selected-item",function(){
@@ -165,6 +168,7 @@ function(AddSeries, CustomSelect, Tool){
                         },
                         dataType:"json",
                         success:function(result){
+                            // 带参数 刷新一下页面
                             window.location.href=(window.location.href.indexOf("fromRss=1")!=-1)?window.location.href:(window.location.href+"?fromRss=1")
                         },
                         error:function(){
@@ -183,8 +187,6 @@ function(AddSeries, CustomSelect, Tool){
             }else{
                 var dialogWidth = $(".dialogContentContainer").width();
             }
-
-            
         },
         renderSelected:function(selectedSeries,selectedBrands){
             var html = "";

@@ -9,7 +9,8 @@ define(['index/car-god',
     "souche/util/image-resize",
     "souche/time-countdown",
     "index/mod/loadCars",
-    "lib/mustache"
+    "lib/mustache",
+    "index/guess-like"
 ], function(carGod,
             topNav,
             qiugou,
@@ -21,7 +22,8 @@ define(['index/car-god',
             ImageResize,
             TimeCountDown,
             loadCars,
-            Mustache) {
+            Mustache,
+            GuessLike) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
@@ -199,44 +201,7 @@ define(['index/car-god',
                 })
             })
 
-            // 获取"猜你喜欢"的数据, 用apear方法控制lazy加载到dom
-            function initGuessLike(){
-                var guessLikeCtn = $(".guess-like");
-                guessLikeCtn.addClass('loading');
-                $.ajax({
-                    url: config.api_guessCars,
-                    success: function(html) {
-
-                        Souche.Util.appear( ".guess-like", fillGuessCallback );
-                        $(window).trigger("scroll")
-                        function fillGuessCallback(){
-                            guessLikeCtn.removeClass('loading');
-                            guessLikeCtn.html(html);
-                            ImageResize.init(".guess-like .carsItem img", 240, 160);
-                            // "不喜欢"事件处理
-                            guessLikeCtn.on('click', '.nolike', function(e) {
-                                var self = this;
-                                $(self).closest(".like-box").animate({
-                                    opacity: 0,
-                                    width: 0
-                                }, 500, function() {
-                                    $(self).closest(".like-box").remove()
-                                })
-                                $.ajax({
-                                    url: config.api_nolikeUrl,
-                                    data: {
-                                        carId: $(this).attr("data-id")
-                                    },
-                                    dataType: "json",
-                                    success: function() {}
-                                })
-                            })
-                        }
-                    }
-                });
-            }
-            initGuessLike();
-
+            GuessLike.init( config );
 
             ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单

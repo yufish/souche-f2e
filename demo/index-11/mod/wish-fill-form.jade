@@ -86,9 +86,8 @@ mixin selectOption(value, text)
             .brand
                 .brandNav(click_type='xuqiu_28')
                     ul
-                        li A
-                        li B
-                        li C
+                        each letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
+                            li= letter
 
                 .brandList(click_type='xuqiu_29')
                     ul

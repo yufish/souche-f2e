@@ -46,6 +46,8 @@ block body
             api_noShowTipUrl:"/pages/homePageAction/readTagTip.json",
             api_addToWishUrl:""
         };
+        //- todo remove test
+        wishCardConfig.api_guessCars = 'http://souche.com'+ wishCardConfig.api_guessCars;
         
     script.
         require(['wish-card/index'], function(Index){

@@ -14,7 +14,7 @@
     z-index:1000;
     overflow: visible;
     opacity: 0;
-    .tst(all 400ms ease-out;);
+    .tst(width 400ms ease-out, opacity 300ms ease-out;);
 
     &.active{
         width: 100%;
@@ -416,14 +416,14 @@
 
     position: absolute;
     left: -1px;
+    right: -1px;
     top:-1px;
-    background: #fff;
     border: 1px solid #EDEDED;
     vertical-align: top;
     z-index:10000;
-    width:100%;
-    .addInstrestCarTilte
-    {
+    background: #fff;
+
+    .addInstrestCarTilte{
         margin-top: 5px;
         margin-left: 2%;
         margin-bottom: 5px;
@@ -467,11 +467,11 @@
             }
         }
     }
-    .addInstrestCarSubmit
-    {
+    .addInstrestCarSubmit{
         border-top:1px solid #EDEDED;
-        min-height: 36px;
+        min-height: 56px;
         padding:10px;
+
         .selected-series{
             width:760px;
             .selected-item{
@@ -551,6 +551,7 @@
             border: 1px solid #fda05b;
         }
     }
+    @brandW: 15%;
     .addInstrestCarContent {
         border-top: 1px solid #EDEDED;
         clear: both;
@@ -559,7 +560,7 @@
         .brand {
             float: left;
             height: 330px;
-            width:15%;
+            width: @brandW;
             bottom: 0px;
             position: relative;
             border-right: 1px solid #EDEDED;
@@ -658,10 +659,9 @@
 
         }
         .chexi {
-            float: left;
             height: 320px;
+            margin-left: @brandW;
             overflow: auto;
-            width: 811px;
             .chexiContent
             {
                 margin: 20px 20px;
@@ -775,6 +775,9 @@
 }
 .bindLoginInfo .require-info, .bindunLoginInfo .require-info{
     height:233px;
+}
+.bindunLoginInfo .require-info{
+    height: 277px;
 }
 .bindLoginInfo .interestCar .selected-item, .bindunLoginInfo .interestCar .selected-item
 {
