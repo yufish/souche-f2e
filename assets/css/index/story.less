@@ -1,0 +1,113 @@
+#story{
+  #content{
+    .banner{
+      img{
+        width: 100%;
+      }
+    }
+    .wrapper{
+      width: 890px;
+      margin: 0 auto;
+      position: relative;
+      overflow: visible;
+      h1{
+        font-size: 21px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      p{
+        font-size: 14px;
+        color: #666;
+        line-height: 25px;
+        margin-bottom: 10px;
+      }
+      .stage-1{
+       margin-top: 90px;
+       .text{
+        float: left;
+        width:410px;
+        margin-right: 60px;
+        padding-top: 90px;
+       }
+      }
+      .stage-2{
+        margin-top: 30px;
+      }
+      .stage-3{
+        padding: 40px 0;
+      }
+      .stage-4{
+        margin-bottom: 30px;
+      }
+      .like-but{
+        margin-top: 100px;
+        .like{
+          display: inline-block;
+          margin: 0 auto;
+          padding: 7px 25px;
+          background: @soucheOrange;
+          border-radius: 4px;
+          margin-left: 370px;
+          cursor: pointer;
+          i{
+            display: block;
+            width: 19px;
+            height: 16px;
+            float: left;
+            background: url(../../images/index_11/story-love.png) no-repeat;
+            margin-top: 3px;
+            margin-right: 8px;
+          }
+          span{
+            display: block;
+            float: left;
+            color: #fff;
+            font-size: 16px;
+          }
+        }
+      }
+      .recom{
+        margin-top: 80px;
+        border-top: 1px solid #ededed;
+        padding-top: 50px;
+        .recom-cont{
+          .head{
+            float: left;
+            margin-right: 30px;
+          }
+          .recom-text{
+            width: 670px;
+            float: left;
+            margin-right: 20px;
+            margin-top: 15px;
+          }
+        }
+        .recom-car{
+          .car-box{
+            float: left;
+            width: 230px;
+            margin-right: 65px;
+            text-align: center;
+            .car-brand{
+              display: block;
+              font-size: 15px;
+              color: #666;
+              margin-bottom:6px;
+            }
+            .price{
+              font-size: 15px;
+              color: @soucheOrange;
+              margin-bottom: 6px;
+              font-weight: bold;
+            } 
+            .reason{
+              color: #333;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@import "../config.less";
