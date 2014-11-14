@@ -28,13 +28,14 @@ define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
     };
 
     var _data = {
-        checkPrice: function(p){
-            // 如果p是NaN
-            if( !Boolean(p) && p !== 0 ){
+        isValidPriceFilter: function(p1, p2){
+            if( p1 === '' || p2 === '' ){
                 return false;
             }
-            
-            if( p<0 ){
+            p1 = Number(p1);
+            p2 = Number(p2);
+            // 非null判断
+            if( !Boolean(p1) && p1 !== 0 && !Boolean(p2) && p2 !== 0 ){
                 return false;
             }
             return true;
@@ -49,9 +50,12 @@ define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
         changePriceChoose: function(e){
             e.preventDefault();
             var curPagePath = window.location.pathname;
-            var min = Number( $('#min-price').val() );
-            var max = Number( $('#max-price').val() );
-            if( _data.checkPrice(max) && _data.checkPrice(min) ){
+            var min = $.trim( $('#min-price').val() );
+            var max = $.trim( $('#max-price').val() );
+
+            if( _data.isValidPriceFilter(min, max) ){
+                min = Number(min);
+                max = Number(max);
                 if(max < min){
                     curUrlParams[MAX_PRICE_KEY] = min;
                     curUrlParams[MIN_PRICE_KEY] = max;
@@ -67,10 +71,10 @@ define(['shop/shopMap', 'souche/util/tool'], function(ShopMap, Tool){
                 window.location.href = curPagePath + '?' + newSearchArr.join('&');
             }
             else{
-                clearTimeou(priceWarnTimer);
-                $('price-warning').removeClass('hidden');
+                clearTimeout(priceWarnTimer);
+                $('.price-warning').removeClass('hidden');
                 priceWarnTimer = setTimeout(function(){
-                    $('price-warning').addClass('hidden');
+                    $('.price-warning').addClass('hidden');
                 }, 2000);
             }
             // curUrlParams
