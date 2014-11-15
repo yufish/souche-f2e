@@ -64,7 +64,7 @@ define(function(){
             if( type === 'miaosha' ){
                 var shareConf = {
                     title: miaoshaShareTitle,
-                    url: 'http://1115.souche.com/',
+                    url: 'http://1113.souche.com/',
                     pic: carBox.find('.car-pic img').attr('src')
                 };
                 Ele.shareText = $('#share-miaosha-text');
