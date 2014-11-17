@@ -70,36 +70,36 @@
       color:#666;
     }
   }
-  .social-qqgroup{
-    .social-inner{
-      padding:0 30px;
-    }
-    .desc{
-      font-size: 14px;
-      color:#999;
-    }
-    .num{
-      font-size: 14px;
-      color:#333;
-      margin-top:30px;
-    }
-  }
-  .social-weixin{
+  @socialImgW: 60px;
+  .social-tencent{
     border:none;
     .social-inner{
       padding-left: 30px;
     }
-    img{
-      float:left;
-      width:86px;
+  }
+  .social-sub-item{
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    .socila-img{
+      float: left;
+      width: @socialImgW;
+      height: @socialImgW;
     }
-    p{
-      float:left;
-      width:230px;
-      font-size: 14px;
-      line-height: 25px;
-      color:#999;
-      margin-left: 20px;
+    .social-title,
+    .social-content{
+      margin-left: @socialImgW + 30px;
+    }
+    .social-title{
+      font-size: 16px;
+      line-height: 1;
+    }
+    .social-content{
+      margin-top: 10px;
+      color: #999;
+    }
+    .num{
+      margin-bottom: 4px;
     }
   }
 }
