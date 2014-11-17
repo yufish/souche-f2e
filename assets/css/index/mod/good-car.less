@@ -1,3 +1,7 @@
+.car-info{
+    display: block;
+}
+
 // common
 #good-car{
   // height:100px;
@@ -132,14 +136,19 @@
         background-color: @soucheOrange;
     }
     .almost-new-item{
+        padding-bottom: 10px;
         border-bottom: 1px dashed #ececec;
+    }
+    .personal-zhuan{
+        padding-top: 20px;
     }
     .good-item-sub-title{
         margin-top: 10px;
         color: #999;
     }
     .car-info{
-        margin-top: 30px;
+        min-height: 80px;
+        margin-top: 25px;
         padding-top: 18px;
         .item-car-img{
             float: right;
@@ -209,5 +218,38 @@
             float: right;
             margin-top: -20px;
         }
+    }
+}
+
+// 动态效果
+#good-car{
+
+
+
+    // 准新车 和 好车日报 部分的hover动效
+    .item-car-name,
+    .item-car-img,
+    .journal-car-name,
+    .journal-car-img{
+        .tst();
+    }
+    .item-car-img,
+    .journal-car-img{
+        margin-right: 0px;
+    }
+    
+    .car-info:hover{
+        .item-car-name,
+        .journal-car-name{
+            color: @soucheOrange;
+        }
+        .item-car-img,
+        .journal-car-img{
+            margin-right: 10px;
+        }
+    }
+
+    .car-journal .journal-info{
+        
     }
 }
