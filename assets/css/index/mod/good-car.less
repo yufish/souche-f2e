@@ -1,4 +1,213 @@
+// common
 #good-car{
-  height:100px;
-  background: #fff;
+  // height:100px;
+
+    *{
+      .box-sizing();
+      &:before,
+      &:after{
+        .box-sizing();
+      }
+    }
+    background: #fff;
+
+    .module-bd{
+        margin-top: 50px;
+        padding-bottom: 80px;
+    }
+    
+    // common
+    .good-car-item{
+        float: left;
+        width: 33.3%;
+        // 定高, 使三个item的边框一样高
+        height: 360px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        .good-item-title{
+            font-weight: bold;
+            font-size: 22px;
+            color: #000;
+        }
+    }
+    // special
+    // 控制边框
+    .limit-sale,
+    .almost-new{
+        border-right: 1px solid #ececec;
+    }
+}
+
+// detail
+#good-car .limit-sale{
+    .good-item-title{
+        font-size: 28px;
+    }
+    // 背景图片的尺寸
+    .limit-info{
+        width: 300px;
+        height: 135px;
+        padding-top: 16px;
+        margin-top: 15px;
+        margin-left: 5px;
+        background-image: url("../../images/index_11/limit-sale-bubble-bg.png");
+        background-repeat: no-repeat;
+
+        .limit-sale-text{
+            margin-left: 120px;
+            font-size: 16px;
+            color: #333;
+        }
+        .limit-sale-amount{
+            margin-left: 120px;
+            color: @soucheOrange;
+            .rmb-symbol{
+                font-size: 16px;
+            }
+            .amount-num{
+                font-size: 26px;
+                font-weight: bold;
+            }
+        }
+        
+        .limit-sale-left-time{
+            margin-top: 18px;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            .left-time-text{}
+            .left-time-data{}
+        }
+
+    }
+    .car-info{
+        .limit-sale-car-img{
+            float: right;
+            height: 100px;
+            width: auto;
+            margin-top: -6px;
+        }
+        .car-name,
+        .car-price{
+            padding-left: 30px;
+        }
+        .car-name{
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .car-price{
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: bold;
+
+            .now-price{
+                color: @soucheOrange;
+            }
+            .original-price{
+                margin-left: 1em;
+                text-decoration: line-through;
+                color: #ccc;
+            }
+        }
+    }
+}
+
+#good-car .almost-new{
+    .good-car-sub-item{
+        height: 50%;
+    }
+    .good-item-title .desc{
+        position: relative;
+        display: inline-block;
+        top: -6px;
+        left: 4px;
+        height: 16px;
+        width: 16px;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        color: #fff;
+        background-color: @soucheOrange;
+    }
+    .almost-new-item{
+        border-bottom: 1px dashed #ececec;
+    }
+    .good-item-sub-title{
+        margin-top: 10px;
+        color: #999;
+    }
+    .car-info{
+        margin-top: 30px;
+        padding-top: 18px;
+        .item-car-img{
+            float: right;
+            margin-top: -18px;
+        }
+        .item-car-name,
+        .item-car-ptice{
+            font-size: 14px;
+            margin-right: 150px;
+        }
+        .item-car-name{
+            color: #666;
+        }
+        .item-car-ptice{
+            font-weight: bold;
+            color: @soucheOrange;
+        }
+    }
+}
+
+#good-car .car-journal{
+    .journal-info{
+        width: 290px;
+        min-height: 160px;
+        margin-top: 30px;
+        padding: 20px 20px 40px 20px;
+        line-height: 1.75;
+        background-color: #F7F7F7;
+        background-image: url("../../images/index_11/car-journal-bubble-bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+
+        .journal-title{
+            font-size: 14px;
+            color: #666;
+        }
+        .journal-content{
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+        .journal-link{
+            position: relative;
+            top: 6px;
+            color: @soucheOrange;
+            text-decoration: underline;
+        }
+    }
+
+    .car-info{
+        margin-top: 35px;
+        padding-top: 20px;
+
+        .journal-car-name,
+        .journal-car-price{
+            margin-right: 160px;
+            font-size: 14px;
+        }
+        .journal-car-name{
+            color: #666;
+        }
+        .journal-car-price{
+            font-weight: bold;
+            color: @soucheOrange;
+        }
+        .journal-car-img{
+            float: right;
+            margin-top: -20px;
+        }
+    }
 }

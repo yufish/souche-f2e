@@ -1,0 +1,2113 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <title>大搜车,为我选好车-北京二手车交易市场_二手车评估_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" id="viewport" content="width=1200">
+    <meta property="wb:webmaster" content="3a4a81533042fb49" />
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon"/>
+    <link rel="bookmark" href="/images/favicon.ico"  type="image/x-icon"/>
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+
+
+    <link href="http://assets.souche.com/assets/css/souche/$$reset.css,ui.css,common.css?t=9" rel="stylesheet" type="text/css" />
+    <link href="http://assets.souche.com/assets/css/sidebar.css?t=8" rel="stylesheet" type="text/css" />
+    <link href="http://assets.souche.com/assets/css/index.css?t=42" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://assets.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/jquery.flexslider-min.js"></script>
+    <script>
+        var contextPath = "";
+        require.config({
+            baseUrl: "http://assets.souche.com/assets/js",
+            urlArgs:"bust=v1"
+        });
+    </script>
+
+    <script type="text/javascript" src="http://assets.souche.com/assets/js/$$souche/stats.js,souche.js,index/sidebar.js?t=6"></script>
+
+    <meta name="google-site-verification" content="x3o4zhRLkp_LcBBoURfIdgfideapYLOig7h-pEuio94" />
+
+</head>
+<body>
+<!--Created by Administrator on 2014/7/3.
+-->
+
+
+
+
+
+
+
+<div id="header">
+    <div class="wrapper"><a href="http://www.souche.com" class="logo"><img src="http://assets.souche.com/assets/images/index/logo-new.png?t=11"></a>
+        <div class="city clearfix hidden">
+            <span class="J_city" id="J_city_show"></span>
+            <i class="J_city"></i>
+            <div class="city-open hidden">
+                <div class="city-wrap clearfix">
+                    <div class="area-box">
+                        <div class="hot-city">
+                            <span class="title">热门</span>
+                            <a data-code="00001" class="J_hotcity">北京</a>
+                            <a class="province-item direct-item J_hotcity" data-code="00043">天津</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="city-box">
+                    <div class="tit clearfix">
+                        <a class="city-return">返回</a>
+                        <span class="province" id="J_province_title">浙江省</span>
+                        <a class="city-close"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <form class="index-search" action="/pages/onsale/sale_car_list.html">
+                <input type="text" name="keyword" placeholder="搜索你想要的车" class="search-text" autocomplete="off"  click_type="header-search-input"/>
+                <button type="submit" class="search-submit" click_type="search-submit"><i></i></button>
+                <div class="recom"></div>
+            </form>
+        </div>
+        <div class="phone-number"><img src="http://assets.souche.com/assets/images/index/phone-num.png?t=9"></div>
+        <a class="cord-h5" href="http://app.souche.com" target="_blank">
+            <i class="phone-icon"></i>
+            <span>手机版</span>
+            <i class="open-icon"></i>
+            <div class="h5-open clearfix">
+                <div class="h5-text">
+                    <div class="text">
+                    </div>
+                </div>
+                <div class="h5-code"></div>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="nav">
+    <div class="wrapper clearfix">
+        <div class="main-navs">
+            <a click_type="index-navindex"  href="http://www.souche.com"  class="active"  >首页</a>
+            <a click_type="index-navsalecarlist"  href="/pages/onsale/sale_car_list.html" >我要买车</a>
+            <a click_type="index-navsellCar" href="/pages/caruser/sellCarNew.html" >我要卖车</a>
+            <a click_type="index-atcsAll"  href="/pages/acts/theme-activity-all.html" >主题精选</a>
+            <a click_type="index-danbaohaoche"  href="/pages/adviser.html" >担保好车</a>
+        </div>
+        <div class="other-navs">
+
+            <span>无需注册，直接用</span>
+            <a click_type="header2-login" id="J_phone_login" href="/pages/user/webloginv1.html" class="nsv-item" style="color:#ff571a;border-right:none;">手机号登录</a>
+
+
+
+        </div>
+    </div>
+</div>
+<script>$(".search-text").focus();</script>
+<script>
+    $(".cord-h5").mouseenter(function(){
+        $(".h5-open").slideDown("normal");
+    });
+    $(document.body).on("click", function(e) {
+        if (!$(e.target).closest(".h5-open").length) {
+            $(".h5-open").slideUp("normal");
+        }
+    });
+    $("#J_phone_login").on("click", function(e) {
+        e.preventDefault();
+        Souche.MiniLogin.checkLogin(function() {
+            $(".qiugou .go-login").addClass("hidden")
+            window.location.reload() ;
+        },true,false,true);
+    });
+    var HeaderConfig ={
+        selectSearch:"/pages/headerAction/selectSearchCode.json"
+    };
+    $.ajax({
+        type:"GET",
+        url: HeaderConfig.selectSearch,
+        dataType: "json",
+        success:function(data){
+            if(data&&data.items){
+                var html = "";
+                for(var i=0;i<data.items.length;i++){
+                    var keyword = data.items[i].name;
+                    var searchcode = data.items[i].searchCode;
+                    html+="<a click_type='search-item"+i+"' href='/pages/onsale/sale_car_list.html?keyword="+searchcode+"' target='_blank'>"+keyword+"</a>"
+                }
+                $(".recom").html(html)
+            }
+
+        }
+    });
+    var nowCity = {name:"",code:""};
+    $.ajax({
+        type:"GET",
+        url: contextPath+"/pages/toolbarAction/getAdderssMap.json",
+        dataType: "json",
+        success:function(data){
+            if(data&&data.addressName){
+                $("#J_city_show").html(data.addressName);
+                nowCity.code = data.cityCode
+                nowCity.name = data.addressName;
+                $(".city-wrap a[data-code='"+data.provinceCode+"']").addClass("active-city");
+            }
+
+        }
+    });
+    //城市切换
+
+    $(".J_city").click(function(e){
+        $(".city-open").css({opacity:0}).removeClass("hidden").animate({opacity:1},400);
+        $(".area-box").css({left:"0px"});
+        $(".city-box").css({left:"362px"});
+        e.stopPropagation();
+    })
+    $(document.body).on("click", function(e) {
+        if (!$(e.target).closest(".city-open").length) {
+            $(".city-open").addClass("hidden");
+        }
+    });
+    var loadCity = function(provinceCode,provinceName){
+        $("#J_province_title").html(provinceName);
+        $.ajax({
+            url:contextPath+"/pages/dicAction/loadNextLevel.json",
+            data:{request_message:'{"code":"'+provinceCode+'","type":"area"}'},
+            dataType:"json",
+            success:function(data){
+                console.log(data)
+
+                $(".city-list").html("");
+                if(data&&data.items){
+                    $(".city-list").append("<a class='city-item' data-code='"+provinceCode+"'>全部城市</a>")
+                    for(var i=0;i<data.items.length;i++){
+                        var item = data.items[i];
+                        $(".city-list").append("<a class='city-item "+(item.code==nowCity.code?"active-city":"")+"' data-code='"+item.code+"'>"+item.name+"</a>")
+                    }
+                    $(".city-item").on("click",function(e){
+                        e.stopPropagation();
+                        e.preventDefault();
+                        goCity($(this).attr("data-code"))
+                    });
+                }
+
+            }
+        })
+    }
+    var goCity = function(code){
+        $.ajax({
+            url:contextPath+"/pages/toolbarAction/choosePosition.json",
+            dataType:"json",
+            data:{position:code},
+            success:function(){
+                window.location.reload();
+            }
+        });
+    }
+    $(".J_hotcity").click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        goCity($(this).attr("data-code"));
+        return;
+    })
+    $(".hot-item").click(function(e){
+        if($(this).hasClass("hot-item-all")){
+            goCity($(this).attr("data-code"))
+            return;
+        }
+        loadCity($(this).attr("data-code"),$(this).html());
+        $(".area-box").animate({left:"-362px"},400);
+        $(".city-box").animate({left:"0px"},400);
+        e.stopPropagation();
+    });
+    $(".province-item").click(function(e){
+        if($(this).hasClass("direct-item")){
+            goCity($(this).attr("data-code"))
+            return;
+        }
+        loadCity($(this).attr("data-code"),$(this).html());
+        $(".area-box").animate({left:"-362px"},400);
+        $(".city-box").animate({left:"0px"},400);
+        e.stopPropagation();
+    });
+    $(".city-return").click(function(e){
+        $(".area-box").animate({left:"0px"},400);
+        $(".city-box").animate({left:"362px"},400);
+        e.stopPropagation();
+    });
+
+    $(".city-close").on("click",function(e){
+        $(".city-open").addClass("hidden");
+        e.stopPropagation();
+
+    });
+    //head 搜索框
+    require(["souche/realTimeDown"], function(down) {
+        down.init($(".search"), {
+            url: contextPath + "/pages/common/boxSuggestAction/list.json",
+            type: "GET",
+            dataType: "json",
+            success: function() {}
+        }, 900);
+
+    });
+</script>
+
+<div id="content">
+<div class="wrapper clearfix">
+<div class="index-left">
+<!--妹子-->
+<!--Created by Administrator on 2014/7/3.-->
+<div id="top-info" class="clearfix">
+<div class="filter-nav">
+<div class="car-brand clearfix nav-item">
+<div class="title">品牌</div>
+<div id="brand-open"></div>
+<div class="brand-list clearfix" style="height: 45px; overflow: hidden;">
+    <div class="brand-line">
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-41" class="brand-item" click_type="nav-brand-brand-41">大众</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-20" class="brand-item" click_type="nav-brand-brand-20">宝马</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-15" class="brand-item" click_type="nav-brand-brand-15">奥迪</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-25" class="brand-item" click_type="nav-brand-brand-25">奔驰</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-121" class="brand-item" click_type="nav-brand-brand-121">日产</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-49" class="brand-item" click_type="nav-brand-brand-49">丰田</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-27" class="brand-item" click_type="nav-brand-brand-27">本田</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-102" class="brand-item" click_type="nav-brand-brand-102">马自达</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-30" class="brand-item" click_type="nav-brand-brand-30">别克</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-53" class="brand-item" click_type="nav-brand-brand-53">福特</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-74" class="brand-item" click_type="nav-brand-brand-74">吉普</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-154" class="brand-item" click_type="nav-brand-brand-154">雪佛兰</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-99" class="brand-item" click_type="nav-brand-brand-99">路虎</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-151" class="brand-item" click_type="nav-brand-brand-151">现代</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-29" class="brand-item" click_type="nav-brand-brand-29">标致</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-146" class="brand-item" click_type="nav-brand-brand-146">沃尔沃</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-97" class="brand-item" click_type="nav-brand-brand-97">铃木</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-86" class="brand-item" click_type="nav-brand-brand-86">克莱斯勒</a>
+
+    </div>
+</div>
+<div class="brand-inner hidden nav-inner" data-name="brand">
+<div class="brand-conf clearfix">
+    <div class="title">品牌</div>
+    <div class="brand-line clearfix">
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-41" class="brand-item" click_type="nav-brand-inner-brand-41">大众</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-20" class="brand-item" click_type="nav-brand-inner-brand-20">宝马</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-15" class="brand-item" click_type="nav-brand-inner-brand-15">奥迪</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-25" class="brand-item" click_type="nav-brand-inner-brand-25">奔驰</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-121" class="brand-item" click_type="nav-brand-inner-brand-121">日产</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-49" class="brand-item" click_type="nav-brand-inner-brand-49">丰田</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-27" class="brand-item" click_type="nav-brand-inner-brand-27">本田</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-102" class="brand-item" click_type="nav-brand-inner-brand-102">马自达</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-30" class="brand-item" click_type="nav-brand-inner-brand-30">别克</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-53" class="brand-item" click_type="nav-brand-inner-brand-53">福特</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-74" class="brand-item" click_type="nav-brand-inner-brand-74">吉普</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-154" class="brand-item" click_type="nav-brand-inner-brand-154">雪佛兰</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-99" class="brand-item" click_type="nav-brand-inner-brand-99">路虎</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-151" class="brand-item" click_type="nav-brand-inner-brand-151">现代</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-29" class="brand-item" click_type="nav-brand-inner-brand-29">标致</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-146" class="brand-item" click_type="nav-brand-inner-brand-146">沃尔沃</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-97" class="brand-item" click_type="nav-brand-inner-brand-97">铃木</a>
+
+        <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-86" class="brand-item" click_type="nav-brand-inner-brand-86">克莱斯勒</a>
+
+    </div>
+</div>
+<div class="brand-all clearfix">
+<div class="title">所有品牌</div>
+<div class="brand-list clearfix" >
+<div class="left-list">
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">A</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-15" class="brand-item" click_type="nav-brand-inner-brand-15">奥迪</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">B</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-18" class="brand-item" click_type="nav-brand-inner-brand-18">宝骏</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-20" class="brand-item" click_type="nav-brand-inner-brand-20">宝马</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-22" class="brand-item" click_type="nav-brand-inner-brand-22">保时捷</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-23" class="brand-item" click_type="nav-brand-inner-brand-23">北京汽车</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-25" class="brand-item" click_type="nav-brand-inner-brand-25">奔驰</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-26" class="brand-item" click_type="nav-brand-inner-brand-26">奔腾</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-27" class="brand-item" click_type="nav-brand-inner-brand-27">本田</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-29" class="brand-item" click_type="nav-brand-inner-brand-29">标致</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-30" class="brand-item" click_type="nav-brand-inner-brand-30">别克</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-31" class="brand-item" click_type="nav-brand-inner-brand-31">宾利</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-28" class="brand-item" click_type="nav-brand-inner-brand-28">比亚迪</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">C</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-164" class="brand-item" click_type="nav-brand-inner-brand-164">长安</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-165" class="brand-item" click_type="nav-brand-inner-brand-165">长城</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-166" class="brand-item" click_type="nav-brand-inner-brand-166">长丰</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-35" class="brand-item" click_type="nav-brand-inner-brand-35">昌河</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">D</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-42" class="brand-item" click_type="nav-brand-inner-brand-42">道奇</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-41" class="brand-item" click_type="nav-brand-inner-brand-41">大众</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-43" class="brand-item" click_type="nav-brand-inner-brand-43">帝豪</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-44" class="brand-item" click_type="nav-brand-inner-brand-44">东风</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-45" class="brand-item" click_type="nav-brand-inner-brand-45">东南</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">F</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-48" class="brand-item" click_type="nav-brand-inner-brand-48">菲亚特</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-49" class="brand-item" click_type="nav-brand-inner-brand-49">丰田</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-53" class="brand-item" click_type="nav-brand-inner-brand-53">福特</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">G</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-3" class="brand-item" click_type="nav-brand-inner-brand-3">GMC</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-56" class="brand-item" click_type="nav-brand-inner-brand-56">广汽</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">H</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-58" class="brand-item" click_type="nav-brand-inner-brand-58">海马</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-62" class="brand-item" click_type="nav-brand-inner-brand-62">红旗</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-65" class="brand-item" click_type="nav-brand-inner-brand-65">华泰</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">J</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-75" class="brand-item" click_type="nav-brand-inner-brand-75">江淮</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-78" class="brand-item" click_type="nav-brand-inner-brand-78">捷豹</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-72" class="brand-item" click_type="nav-brand-inner-brand-72">吉利</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-79" class="brand-item" click_type="nav-brand-inner-brand-79">金杯</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-74" class="brand-item" click_type="nav-brand-inner-brand-74">吉普</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">K</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-84" class="brand-item" click_type="nav-brand-inner-brand-84">凯迪拉克</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-86" class="brand-item" click_type="nav-brand-inner-brand-86">克莱斯勒</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">L</div>
+        <div class="brand-letter">
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-88" class="brand-item" click_type="nav-brand-inner-brand-88">兰博基尼</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-92" class="brand-item" click_type="nav-brand-inner-brand-92">雷克萨斯</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-93" class="brand-item" click_type="nav-brand-inner-brand-93">雷诺</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-94" class="brand-item" click_type="nav-brand-inner-brand-94">力帆</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-97" class="brand-item" click_type="nav-brand-inner-brand-97">铃木</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-98" class="brand-item" click_type="nav-brand-inner-brand-98">陆风</a>
+
+            <a target="_blank"  href="/pages/onsale/sale_car_list.html?carBrand=brand-99" class="brand-item" click_type="nav-brand-inner-brand-99">路虎</a>
+
+        </div>
+    </div>
+
+</div>
+<div class="right-list">
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">M</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-103" class="brand-item" click_type="nav-brand-inner-brand-103">玛莎拉蒂</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-102" class="brand-item" click_type="nav-brand-inner-brand-102">马自达</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-109" class="brand-item" click_type="nav-brand-inner-brand-109">名爵</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-108" class="brand-item" click_type="nav-brand-inner-brand-108">迷你</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">N</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-111" class="brand-item" click_type="nav-brand-inner-brand-111">纳智捷</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">O</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-114" class="brand-item" click_type="nav-brand-inner-brand-114">欧宝</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-113" class="brand-item" click_type="nav-brand-inner-brand-113">讴歌</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">Q</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-95" class="brand-item" click_type="nav-brand-inner-brand-95">青年莲花</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-118" class="brand-item" click_type="nav-brand-inner-brand-118">奇瑞</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-119" class="brand-item" click_type="nav-brand-inner-brand-119">起亚</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">R</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-121" class="brand-item" click_type="nav-brand-inner-brand-121">日产</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-122" class="brand-item" click_type="nav-brand-inner-brand-122">荣威</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-123" class="brand-item" click_type="nav-brand-inner-brand-123">瑞麒</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">S</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-124" class="brand-item" click_type="nav-brand-inner-brand-124">萨博</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-126" class="brand-item" click_type="nav-brand-inner-brand-126">三菱</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-131" class="brand-item" click_type="nav-brand-inner-brand-131">双环</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-132" class="brand-item" click_type="nav-brand-inner-brand-132">双龙</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-134" class="brand-item" click_type="nav-brand-inner-brand-134">斯巴鲁</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-135" class="brand-item" click_type="nav-brand-inner-brand-135">斯柯达</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-10" class="brand-item" click_type="nav-brand-inner-brand-10">Smart</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">T</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-138" class="brand-item" click_type="nav-brand-inner-brand-138">天津一汽</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">W</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-144" class="brand-item" click_type="nav-brand-inner-brand-144">威麟</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-146" class="brand-item" click_type="nav-brand-inner-brand-146">沃尔沃</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-148" class="brand-item" click_type="nav-brand-inner-brand-148">五菱</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">X</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-151" class="brand-item" click_type="nav-brand-inner-brand-151">现代</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-150" class="brand-item" click_type="nav-brand-inner-brand-150">西雅特</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-154" class="brand-item" click_type="nav-brand-inner-brand-154">雪佛兰</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-155" class="brand-item" click_type="nav-brand-inner-brand-155">雪铁龙</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">Y</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-158" class="brand-item" click_type="nav-brand-inner-brand-158">英菲尼迪</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-160" class="brand-item" click_type="nav-brand-inner-brand-160">英伦</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-156" class="brand-item" click_type="nav-brand-inner-brand-156">一汽</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-157" class="brand-item" click_type="nav-brand-inner-brand-157">依维柯</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-161" class="brand-item" click_type="nav-brand-inner-brand-161">永源汽车</a>
+
+        </div>
+    </div>
+
+    <div class="brand-item-l clearfix">
+        <div class="letter">Z</div>
+        <div class="brand-letter">
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-167" class="brand-item" click_type="nav-brand-inner-brand-167">中华</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carBrand=brand-172" class="brand-item" click_type="nav-brand-inner-brand-172">众泰</a>
+
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="car-models nav-item" data-name="models">
+<div class="title">车系</div>
+<div id="models-open"></div>
+<div class="models-list" >
+
+
+
+    <div class="models-line">
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=SUV" class="models-item-m" click_type="nav-series-SUV">SUV</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1932" class="models-item" click_type="nav-series-途观">途观</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-"></a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1919" class="models-item" click_type="nav-series-奥迪Q5">奥迪Q5</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-993" class="models-item" click_type="nav-series-本田CR-V">本田CR-V</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-902" class="models-item" click_type="nav-series-森林人">森林人</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1072" class="models-item" click_type="nav-series-汉兰达">汉兰达</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1168" class="models-item" click_type="nav-series-奔驰GLK级">奔驰GLK级</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-294" class="models-item" click_type="nav-series-途胜">途胜</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1935" class="models-item" click_type="nav-series-现代ix35">现代ix35</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-594" class="models-item" click_type="nav-series-奇骏">奇骏</a>
+
+    </div>
+
+
+
+    <div class="models-line">
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=midSize" class="models-item-m" click_type="nav-series-中型车">中型车</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-317" class="models-item" click_type="nav-series-天籁">天籁</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-"></a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-595" class="models-item" click_type="nav-series-帕萨特">帕萨特</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-621" class="models-item" click_type="nav-series-奥迪A4L">奥迪A4L</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-422" class="models-item" click_type="nav-series-宝马3系">宝马3系</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-135" class="models-item" click_type="nav-series-迈腾">迈腾</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-368" class="models-item" click_type="nav-series-君威">君威</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-238" class="models-item" click_type="nav-series-锐志">锐志</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-100" class="models-item" click_type="nav-series-凯美瑞">凯美瑞</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-564" class="models-item" click_type="nav-series-雅阁">雅阁</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-83" class="models-item" click_type="nav-series-君越">君越</a>
+
+    </div>
+
+
+
+    <div class="models-line">
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=compactCar" class="models-item-m" click_type="nav-series-紧凑型车">紧凑型车</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-369" class="models-item" click_type="nav-series-凯越">凯越</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-448" class="models-item" click_type="nav-series-宝来">宝来</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1979" class="models-item" click_type="nav-series-福克斯两厢">福克斯两厢</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-"></a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-159" class="models-item" click_type="nav-series-卡罗拉">卡罗拉</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-78" class="models-item" click_type="nav-series-思域">思域</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-335" class="models-item" click_type="nav-series-悦动">悦动</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-566" class="models-item" click_type="nav-series-速腾">速腾</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-340" class="models-item" click_type="nav-series-朗逸">朗逸</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-449" class="models-item" click_type="nav-series-捷达">捷达</a>
+
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1087" class="models-item" click_type="nav-series-奔驰B级">奔驰B级</a>
+
+    </div>
+
+</div>
+<div class="models-inner hidden  nav-inner">
+    <div class="title">车系</div>
+    <div class="models-all">
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@30fb9c7d" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=SUV" class="models-item-m" click_type="nav-series-inner-SUV">SUV</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1932" class="models-item" click_type="nav-series-inner-series-1932">途观</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1919" class="models-item" click_type="nav-series-inner-series-1919">奥迪Q5</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-993" class="models-item" click_type="nav-series-inner-series-993">本田CR-V</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-902" class="models-item" click_type="nav-series-inner-series-902">森林人</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1072" class="models-item" click_type="nav-series-inner-series-1072">汉兰达</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1168" class="models-item" click_type="nav-series-inner-series-1168">奔驰GLK级</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-294" class="models-item" click_type="nav-series-inner-series-294">途胜</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1935" class="models-item" click_type="nav-series-inner-series-1935">现代ix35</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-594" class="models-item" click_type="nav-series-inner-series-594">奇骏</a>
+
+        </div>
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@56deebaa" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=midSize" class="models-item-m" click_type="nav-series-inner-midSize">中型车</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-317" class="models-item" click_type="nav-series-inner-series-317">天籁</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-595" class="models-item" click_type="nav-series-inner-series-595">帕萨特</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-621" class="models-item" click_type="nav-series-inner-series-621">奥迪A4L</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-422" class="models-item" click_type="nav-series-inner-series-422">宝马3系</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-135" class="models-item" click_type="nav-series-inner-series-135">迈腾</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-368" class="models-item" click_type="nav-series-inner-series-368">君威</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-238" class="models-item" click_type="nav-series-inner-series-238">锐志</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-100" class="models-item" click_type="nav-series-inner-series-100">凯美瑞</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-564" class="models-item" click_type="nav-series-inner-series-564">雅阁</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-83" class="models-item" click_type="nav-series-inner-series-83">君越</a>
+
+        </div>
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@45421274" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=compactCar" class="models-item-m" click_type="nav-series-inner-compactCar">紧凑型车</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-369" class="models-item" click_type="nav-series-inner-series-369">凯越</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-448" class="models-item" click_type="nav-series-inner-series-448">宝来</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1979" class="models-item" click_type="nav-series-inner-series-1979">福克斯两厢</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-159" class="models-item" click_type="nav-series-inner-series-159">卡罗拉</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-78" class="models-item" click_type="nav-series-inner-series-78">思域</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-335" class="models-item" click_type="nav-series-inner-series-335">悦动</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-566" class="models-item" click_type="nav-series-inner-series-566">速腾</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-340" class="models-item" click_type="nav-series-inner-series-340">朗逸</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-449" class="models-item" click_type="nav-series-inner-series-449">捷达</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1087" class="models-item" click_type="nav-series-inner-series-1087">奔驰B级</a>
+
+        </div>
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@74c9a131" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=tinyCar" class="models-item-m" click_type="nav-series-inner-tinyCar">微小型车</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-330" class="models-item" click_type="nav-series-inner-series-330">POLO</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-2007" class="models-item" click_type="nav-series-inner-series-2007">飞度</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-79" class="models-item" click_type="nav-series-inner-series-79">乐风</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-382" class="models-item" click_type="nav-series-inner-series-382">雨燕</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-616" class="models-item" click_type="nav-series-inner-series-616">晶锐</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-865" class="models-item" click_type="nav-series-inner-series-865">MINICooper</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-2418" class="models-item" click_type="nav-series-inner-series-2418">奥迪A1</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-604" class="models-item" click_type="nav-series-inner-series-604">标致207</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-239" class="models-item" click_type="nav-series-inner-series-239">马自达2</a>
+
+        </div>
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@6175d3dd" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=PremiumMidsize" class="models-item-m" click_type="nav-series-inner-PremiumMidsize">中大型车</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-269" class="models-item" click_type="nav-series-inner-series-269">奥迪A6L</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-425" class="models-item" click_type="nav-series-inner-series-425">宝马5系</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-142" class="models-item" click_type="nav-series-inner-series-142">克莱斯勒300C</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-532" class="models-item" click_type="nav-series-inner-series-532">奔驰E级</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-361" class="models-item" click_type="nav-series-inner-series-361">皇冠</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-997" class="models-item" click_type="nav-series-inner-series-997">雷克萨斯ES</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1155" class="models-item" click_type="nav-series-inner-series-1155">奔驰S级</a>
+
+        </div>
+
+
+
+        <div class="models-line">
+            <input type="hidden" name="vehicleType" value="[Ljava.lang.String;@7ea88427" />
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carModel=MPV" class="models-item-m" click_type="nav-series-inner-MPV">MPV</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-744" class="models-item" click_type="nav-series-inner-series-744">大捷龙</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-1952" class="models-item" click_type="nav-series-inner-series-1952">唯雅诺 </a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-452" class="models-item" click_type="nav-series-inner-series-452">奥德赛</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-220" class="models-item" click_type="nav-series-inner-series-220">别克GL8</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-2635" class="models-item" click_type="nav-series-inner-series-2635">途安</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-726" class="models-item" click_type="nav-series-inner-series-726">奔驰R级</a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=" class="models-item" click_type="nav-series-inner-"></a>
+
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carSeries=series-314" class="models-item" click_type="nav-series-inner-series-314">毕加索</a>
+
+        </div>
+
+    </div>
+</div>
+</div>
+<div class="car-price nav-item" data-name="price">
+    <div class="title">价格</div>
+    <div class="price-open"></div>
+    <div class="price-list clearfix">
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=0-8" class="price-item" click_type="nav_price_1">8万以下</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=8-10" class="price-item" click_type="nav_price_3">8-10万</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=10-15" class="price-item" click_type="nav_price_4">10-15万</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=15-20" class="price-item" click_type="nav_price_5">15-20万</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=20-30" class="price-item" click_type="nav_price_6">20-30万</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=30-50" class="price-item" click_type="nav_price_7">30-50万</a>
+        <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=50-1000" class="price-item" click_type="nav_price_8">50万以上</a>
+    </div>
+    <div class="price-inner hidden  nav-inner">
+        <div class="title">价格</div>
+        <div class="price-list">
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=0-8" class="price-item" click_type="nav_price_inner_1">8万以下</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=8-10" class="price-item" click_type="nav_price_inner_3">8-10万</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=10-15" class="price-item" click_type="nav_price_inner_4">10-15万</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=15-20" class="price-item" click_type="nav_price_inner_5">15-20万</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=20-30" class="price-item" click_type="nav_price_inner_6">20-30万</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=30-50" class="price-item" click_type="nav_price_inner_7">30-50万</a>
+            <a target="_blank" href="/pages/onsale/sale_car_list.html?carPrice=50-1000" class="price-item" click_type="nav_price_inner_8">50万以上</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="main-slider">
+    <div class="flexslider">
+        <div class="flex-viewport">
+            <ul class="slides"  click_type="main_banner">
+
+                <li>
+                    <a target="_blank" href="http://www.souche.com/pages/acts/activity_car_list.html?id=NlOmhm3dKA">
+                        <img src="http://img.souche.com/files/default/42385D103F9A34DD604D9A012D10CD26_500x335.jpg"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="http://www.souche.com/pages/acts/activity_car_list.html?id=a4QRQLbg08">
+                        <img src="http://img.souche.com/files/default/0AAA5E40814F6E7C501CDBDDF70490B3_500x335.jpg"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="http://www.souche.com/pages/acts/activity_car_list.html?id=ateAQZoFLf">
+                        <img src="http://img.souche.com/files/default/4505CDDF76D84F714BDBBDC0E123B3BD_500x335.jpg"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="http://www.souche.com/pages/acts/activity_car_list.html?id=5msZ16ffNT">
+                        <img src="http://img.souche.com/files/default/4C5227E591302EC12DAD4F9A3BA0CB9B_500x335.jpg"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="http://www.souche.com/pages/acts/activity_car_list.html?id=Uk4W07gOhr">
+                        <img src="http://img.souche.com/files/default/FBB7C445DE64874DFA2BC8D52F0D9F4B_500x335.jpg"/>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<!--汉子-->
+<!--Created by Administrator on 2014/7/3.-->
+<div id="carsNav">
+    <ul>
+        <li id="myAdviser"  click_type="car_nav_1"  ><span>我的订阅</span></li>
+        <li id="hotNewCars"  click_type="car_nav_2" class="active"><span>热门好车</span></li>
+
+        <li searchcode="109" click_type="car_nav_3"><span>准新车</span></li>
+
+        <li searchcode="155" click_type="car_nav_4"><span>练手车</span></li>
+
+        <li searchcode="159" click_type="car_nav_5"><span>商务接待车</span></li>
+
+        <li searchcode="158" click_type="car_nav_6"><span>保值精品车</span></li>
+
+        <li searchcode="157" click_type="car_nav_7"><span>家用省油车</span></li>
+
+        <li searchcode="160" click_type="car_nav_8"><span>城市SUV</span></li>
+
+        <li searchcode="161" click_type="car_nav_9"><span>女性偏好车</span></li>
+
+    </ul>
+</div>
+
+<div class="record_warning hidden">你最近浏览了 <span class="brands"></span>，请问是否要将他们加入你的心愿卡，成为你的订阅车辆？<s class="close"  click_type="xuqiu-tip-close"></s><a href="" class="add" click_type="xuqiu-tip-submit">确认</a></div>
+
+
+
+
+
+
+<div class="carsModule">
+
+<div class="dialogContentContainer hidden">
+    <div class="dialogContent ">
+        <div class="carBanner dialog-item"></div>
+        <div class="carinstrest dialog-item">
+            <div class="carinstrestContainer">
+                <h1 class="hd"><i></i>车系</h1>
+                <div class="addCarinstrestItem" click_type="xuqiu_40"><span>+</span><a>添加您感兴趣的车</a><i></i></div>
+                <div class="instrest-tip">友情建议至少添加两个车系以上</div> <div class="selected_series_result"></div>
+            </div>
+        </div>
+        <div class="carBudget dialog-item">
+            <div class="carBudgetContainer">
+                <h1 class="hd"><i></i>预算</h1>
+                <div class="dataContainer hidden input_dataContainer">
+                    <div class="inputContainer leftContainer">
+                        <input value="15" class="low-price" click_type="xuqiu_41"><a>万元</a>
+                    </div><a> —</a>
+                    <div class="inputContainer rightContainer">
+                        <input value="20" class="high-price" click_type="xuqiu_42"><a>万元</a>
+                    </div>
+                </div>
+                <div class="dataContainer select_dataContainer">
+                    <div class="sc-select sc-custom-select age_select age-left selectContainer" click_type="index-customization-price-low-1" id="price_select" style="z-index: 1001;">
+                        <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"></div>
+                            <div class="sc-select-action"><i></i></div>
+                        </div>
+                        <div class="sc-select-list hidden" style="top: 30px;">
+                            <a target="_blank" href="#" data-value="0" class="option"><input type="checkbox" class="hidden"><span class="value">0万</span></a>
+                            <a target="_blank" href="#" data-value="5万" class="option"><input type="checkbox" class="hidden"><span class="value">5万</span></a>
+                            <a target="_blank" href="#" data-value="8万" class="option"><input type="checkbox" class="hidden"><span class="value">8万</span></a>
+                            <a target="_blank" href="#" data-value="10万" class="option"><input type="checkbox" class="hidden"><span class="value">10万</span></a>
+                            <a target="_blank" href="#" data-value="15万" class="option"><input type="checkbox" class="hidden"><span class="value">15万</span></a>
+                            <a target="_blank" href="#" data-value="20万" class="option"><input type="checkbox" class="hidden"><span class="value">20万</span></a>
+                            <a target="_blank" href="#" data-value="30万" class="option"><input type="checkbox" class="hidden"><span class="value">30万</span></a>
+                            <a target="_blank" href="#" data-value="50万" class="option"><input type="checkbox" class="hidden"><span class="value">50万</span></a>
+                            <a target="_blank" href="#" data-value="-1" class="option"><input type="checkbox" class="hidden"><span class="value">自定义</span></a>
+                            <input type="hidden" name="minPrice" value="15万" class="selected_values" id="price_select">
+                        </div>
+                    </div>
+                    <a>—</a>
+                    <div class="sc-select sc-custom-select age_select_hight age-right selectContainer" click_type="index-customization-price-high-1" id="price_select_high" style="z-index: 1001;">
+                        <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"></div>
+                            <div class="sc-select-action"><i></i></div>
+                        </div>
+                        <div class="sc-select-list hidden" style="top: 30px;">
+                            <a target="_blank" href="#" data-value="5万" class="option"><input type="checkbox" class="hidden"><span class="value">5万</span></a>
+                            <a target="_blank" href="#" data-value="8万" class="option"><input type="checkbox" class="hidden"><span class="value">8万</span></a>
+                            <a target="_blank" href="#" data-value="10万" class="option"><input type="checkbox" class="hidden"><span class="value">10万</span></a>
+                            <a target="_blank" href="#" data-value="15万" class="option"><input type="checkbox" class="hidden"><span class="value">15万</span></a>
+                            <a target="_blank" href="#" data-value="20万" class="option"><input type="checkbox" class="hidden"><span class="value">20万</span></a>
+                            <a target="_blank" href="#" data-value="30万" class="option"><input type="checkbox" class="hidden"><span class="value">30万</span></a>
+                            <a target="_blank" href="#" data-value="50万" class="option"><input type="checkbox" class="hidden"><span class="value">50万</span></a>
+                            <a target="_blank" href="#" data-value="0" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a>
+                            <a target="_blank" href="#" data-value="-1" class="option"><input type="checkbox" class="hidden"><span class="value">自定义</span></a>
+                            <input type="hidden" name="maxPrice" value="20万" class="selected_values" id="price_select_high">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="caryear dialog-item">
+            <div class="caryearContainer">
+                <h1 class="hd"><i></i>年份</h1>
+                <div class="dataContainer">
+                    <div class="sc-select sc-custom-select age_select age-left selectContainer" click_type="index-customization-age-low-1" id="age_select" style="z-index: 1001;">
+                        <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"></div>
+                            <div class="sc-select-action"><i></i></div>
+                        </div>
+                        <div class="sc-select-list hidden" style="top: 30px;">
+                            <a target="_blank" href="#" data-value="2014" class="option"><input type="checkbox" class="hidden"><span class="value">2014</span></a>
+                            <a target="_blank" href="#" data-value="2013" class="option"><input type="checkbox" class="hidden"><span class="value">2013</span></a>
+                            <a target="_blank" href="#" data-value="2012" class="option"><input type="checkbox" class="hidden"><span class="value">2012</span></a>
+                            <a target="_blank" href="#" data-value="2011" class="option"><input type="checkbox" class="hidden"><span class="value">2011</span></a>
+                            <a target="_blank" href="#" data-value="2010" class="option"><input type="checkbox" class="hidden"><span class="value">2010</span></a>
+                            <a target="_blank" href="#" data-value="2009" class="option"><input type="checkbox" class="hidden"><span class="value">2009</span></a>
+                            <a target="_blank" href="#" data-value="2008" class="option"><input type="checkbox" class="hidden"><span class="value">2008</span></a>
+                            <a target="_blank" href="#" data-value="2007" class="option"><input type="checkbox" class="hidden"><span class="value">2007</span></a>
+                            <a target="_blank" href="#" data-value="2006" class="option"><input type="checkbox" class="hidden"><span class="value">2006</span></a>
+                            <a target="_blank" href="#" data-value="2005" class="option"><input type="checkbox" class="hidden"><span class="value">2005</span></a>
+                            <a target="_blank" href="#" data-value="2004" class="option"><input type="checkbox" class="hidden"><span class="value">2004</span></a>
+                            <a target="_blank" href="#" data-value="" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a></div>
+                        <input type="hidden" name="maxYear" value="" class="selected_values" id="age_select">
+                    </div>
+
+                    <a>—</a>
+                    <div class="sc-select sc-custom-select age_select_hight age-right selectContainer" click_type="index-customization-age-high-1" id="age_select_high" style="z-index: 1001;">
+                        <div class="sc-select-hd">
+                            <div class="sc-select-content clearfix"></div>
+                            <div class="sc-select-action"><i></i></div>
+                        </div>
+                        <div class="sc-select-list hidden" style="top: 30px;">
+                            <a target="_blank" href="#" data-value="2014" class="option"><input type="checkbox" class="hidden"><span class="value">2014</span></a>
+                            <a target="_blank" href="#" data-value="2013" class="option"><input type="checkbox" class="hidden"><span class="value">2013</span></a>
+                            <a target="_blank" href="#" data-value="2012" class="option"><input type="checkbox" class="hidden"><span class="value">2012</span></a>
+                            <a target="_blank" href="#" data-value="2011" class="option"><input type="checkbox" class="hidden"><span class="value">2011</span></a>
+                            <a target="_blank" href="#" data-value="2010" class="option"><input type="checkbox" class="hidden"><span class="value">2010</span></a>
+                            <a target="_blank" href="#" data-value="2009" class="option"><input type="checkbox" class="hidden"><span class="value">2009</span></a>
+                            <a target="_blank" href="#" data-value="2008" class="option"><input type="checkbox" class="hidden"><span class="value">2008</span></a>
+                            <a target="_blank" href="#" data-value="2007" class="option"><input type="checkbox" class="hidden"><span class="value">2007</span></a>
+                            <a target="_blank" href="#" data-value="2006" class="option"><input type="checkbox" class="hidden"><span class="value">2006</span></a>
+                            <a target="_blank" href="#" data-value="2005" class="option"><input type="checkbox" class="hidden"><span class="value">2005</span></a>
+                            <a target="_blank" href="#" data-value="2004" class="option"><input type="checkbox" class="hidden"><span class="value">2004</span></a>
+                            <a target="_blank" href="#" data-value="" class="option"><input type="checkbox" class="hidden"><span class="value">不限</span></a></div>
+                        <input type="hidden" name="maxYear" value="" class="selected_values" id="age_select_high">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="addInstrestCar hidden">
+
+        <div class="addInstrestCarContent">
+
+            <div class="brand">
+                <div class="brandNav" click_type="xuqiu_28">
+                    <ul>
+                        <li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>Q</li><li>R</li><li>S</li><li>T</li><li>U</li><li>V</li><li>W</li><li>X</li><li>Y</li><li>Z</li>
+                    </ul>
+                </div>
+                <div class="brandList" click_type="xuqiu_29">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="chexi">
+                <div class="chexiContent" click_type="xuqiu_30">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="addInstrestCarSubmit">
+            <div class="selected-series" id="J_selected_series"></div>
+            <span class="submit btn" id="J_addSeries_submit" click_type="xuqiu_31">确定</span><span id="J_addSeries_cancel" class="cancel" click_type="xuqiu_32">取消</span>
+        </div>
+
+    </div>
+    <div class="trail" >
+
+
+        <span class="submit btn" click_type="xuqiu_44" id="J_xuqiu_submit">提交</span>
+        <span class="cancel" click_type="xuqiu_43" id="J_xuqiu_cancel">取消</span>
+        <span class="warning hidden">提交错误</span>
+    </div>
+</div>
+<div class="carsContent myAdviserContent hidden ">
+
+<!--我的顾问-->
+<div class="myAdviser clearfix">
+
+
+
+
+<div class="carsItem bindunLoginInfo">
+    <h1>我的购车心愿卡</h1>
+    <div class="require-info">
+        <div class="interestCar">
+            <div class="interestCarConatainer">
+
+
+
+
+
+                <div class="selected-item" code="brand-26"><img src="http://res.souche.com/files/carproduct/brand/brand-26.png">奔腾</div>
+
+
+                <div class="selected-item" code="brand-18"><img src="http://res.souche.com/files/carproduct/brand/brand-18.png">宝骏</div>
+
+
+                <div class="selected-item" code="brand-150"><img src="http://res.souche.com/files/carproduct/brand/brand-150.png">西雅特</div>
+
+
+
+
+                <div class="selected-item" code="series-144"><img src="http://res.souche.com/files/carproduct/series/series-144.png">天语</div>
+
+
+
+
+
+
+                <div class="selected-item" code="series-840"><img src="http://res.souche.com/files/carproduct/series/series-840.png">揽胜</div>
+
+
+
+
+                <div class="selected-item" code="series-902"><img src="http://res.souche.com/files/carproduct/series/series-902.png">森林人</div>
+
+
+
+
+
+
+
+
+                <div class="selected-item" code="series-78"><img src="http://res.souche.com/files/carproduct/series/series-78.png">思域</div>
+
+
+
+
+                <div class="selected-item" code="series-595"><img src="http://res.souche.com/files/carproduct/series/series-595.png">帕萨特</div>
+
+
+
+
+                <div class="selected-item" code="series-425"><img src="http://res.souche.com/files/carproduct/series/series-425.png">宝马5系</div>
+
+
+
+
+                <div class="selected-item" code="series-564"><img src="http://res.souche.com/files/carproduct/series/series-564.png">雅阁</div>
+
+
+
+
+                <div class="selected-item" code="series-946"><img src="http://res.souche.com/files/carproduct/series/series-946.png">甲壳虫</div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <div class="yusuan">
+            <div>预算</div>
+
+
+
+            <span>15-20万元</span>
+
+
+
+
+
+
+        </div>
+
+        <div class="year">
+            <div>年份</div>
+
+
+
+            <span>不限</span>
+
+
+        </div>
+    </div>
+    <div class="modify">
+
+        <span class="ps"> <a class="card-login" click_type="xuqiu_46">登录</a>即可保存心愿卡</span>
+
+        <span class="submit" click_type="xuqiu_45" id="J_card_edit">修改</span>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--
+
+
+-->
+
+
+<div class="carsItem carItem" click_type="xuqiu-cars-item-xian-0">
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=44ylvFLbnv" target="_blank" class="carImg">
+        <img class="img" src="http://res.souche.com/images/fed/zhanwei.png"  data-original="http://cheniu.u.qiniudn.com/13811249528/2ECB177B71FFB1406928EFD6FD57D0EA/20141106173735?imageView2/2/w/240" alt="本田 2013款  雅阁PE-2.4-A/MT"/>
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=44ylvFLbnv" target="_blank" class="car-link">本田 2013款  雅阁PE-2.4-A/MT</a>
+    <div class="car-price">
+        <span class="price">￥<em>19.8</em>万</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2013-01 上牌</span>
+        <em>|</em>
+        <span class="info-item">1.20万公里</span>
+        <em>|</em>
+        <span class="info-item">北京</span>
+    </div>
+    <div class="carTail clearfix">
+        <span data-carid="44ylvFLbnv" data-num="9" class="collect carCollect "  click_type="xuqiu-cars-item-fav-2-0"><span>9</span></span>
+        <div class="carConstrast" contrastid="" carid="44ylvFLbnv"  click_type="xuqiu-cars-item-duibi-2-0"><span>对比</span></div>
+        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+    </div>
+    <div class="car-type clearfix">
+
+
+
+
+        <div class="baoxian " title="一年两万公里质保"></div>
+        <div class="shouquan hidden">授权店</div>
+
+        <div class="up-time">一周前</div>
+    </div>
+</div>
+
+<!--
+
+
+-->
+
+
+<div class="carsItem carItem" click_type="xuqiu-cars-item-xian-1">
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=jRQTRhQo20" target="_blank" class="carImg">
+        <img class="img" src="http://res.souche.com/images/fed/zhanwei.png"  data-original="http://img.souche.com/files/carpicture/FAFB645DFCED55DDF71EFDCFE5FBDA36_690x460.jpg@240w" alt="2013款  大众甲壳虫1.2T-A/MT前驱时尚型"/>
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=jRQTRhQo20" target="_blank" class="car-link">2013款  大众甲壳虫1.2T-A/MT前驱时尚型</a>
+    <div class="car-price">
+        <span class="price">￥<em>18.8</em>万</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2013-04 上牌</span>
+        <em>|</em>
+        <span class="info-item">1.61万公里</span>
+        <em>|</em>
+        <span class="info-item">北京</span>
+    </div>
+    <div class="carTail clearfix">
+        <span data-carid="jRQTRhQo20" data-num="19" class="collect carCollect "  click_type="xuqiu-cars-item-fav-2-1"><span>19</span></span>
+        <div class="carConstrast" contrastid="" carid="jRQTRhQo20"  click_type="xuqiu-cars-item-duibi-2-1"><span>对比</span></div>
+        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+    </div>
+    <div class="car-type clearfix">
+
+
+        <div class="zhijian">检A+</div>
+
+        <div class="baoxian " title="一年两万公里质保"></div>
+        <div class="shouquan hidden">授权店</div>
+
+        <div class="up-time">一周前</div>
+    </div>
+</div>
+
+<!--
+
+
+-->
+
+
+<div class="carsItem carItem" click_type="xuqiu-cars-item-xian-2">
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=RvML5fr" target="_blank" class="carImg">
+        <img class="img" src="http://res.souche.com/images/fed/zhanwei.png"  data-original="http://img.souche.com/files/carpicture/833EFB62B4542D8234A6523C8108E037_690x460.jpg@240w" alt="斯巴鲁 2010款  森林人2.0-A/MT-XS运动特别版"/>
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=RvML5fr" target="_blank" class="car-link">斯巴鲁 2010款  森林人2.0-A/MT-XS运动特别版</a>
+    <div class="car-price">
+        <span class="price">￥<em>19</em>万</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011-04 上牌</span>
+        <em>|</em>
+        <span class="info-item">4.48万公里</span>
+        <em>|</em>
+        <span class="info-item">北京</span>
+    </div>
+    <div class="carTail clearfix">
+        <span data-carid="RvML5fr" data-num="25" class="collect carCollect "  click_type="xuqiu-cars-item-fav-2-2"><span>25</span></span>
+        <div class="carConstrast" contrastid="" carid="RvML5fr"  click_type="xuqiu-cars-item-duibi-2-2"><span>对比</span></div>
+        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+    </div>
+    <div class="car-type clearfix">
+
+
+        <div class="zhijian">检B+</div>
+
+        <div class="baoxian " title="一年两万公里质保"></div>
+        <div class="shouquan hidden">授权店</div>
+
+        <div class="up-time">两周前</div>
+    </div>
+</div>
+
+<!--
+
+
+-->
+
+
+<div class="carsItem carItem" click_type="xuqiu-cars-item-xian-3">
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=2r6n4ns5Wx" target="_blank" class="carImg">
+        <img class="img" src="http://res.souche.com/images/fed/zhanwei.png"  data-original="http://img.souche.com/files/carpicture/9D79A66345EA11C265A384B6BDC51595_690x460.jpg@240w" alt="本田 2012款  雅阁SE-2.4-AT"/>
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/pages/choosecarpage/choose-car-detail.html?carId=2r6n4ns5Wx" target="_blank" class="car-link">本田 2012款  雅阁SE-2.4-AT</a>
+    <div class="car-price">
+        <span class="price">￥<em>15.3</em>万</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011-12 上牌</span>
+        <em>|</em>
+        <span class="info-item">4.52万公里</span>
+        <em>|</em>
+        <span class="info-item">北京</span>
+    </div>
+    <div class="carTail clearfix">
+        <span data-carid="2r6n4ns5Wx" data-num="25" class="collect carCollect "  click_type="xuqiu-cars-item-fav-2-3"><span>25</span></span>
+        <div class="carConstrast" contrastid="" carid="2r6n4ns5Wx"  click_type="xuqiu-cars-item-duibi-2-3"><span>对比</span></div>
+        <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+    </div>
+    <div class="car-type clearfix">
+
+
+        <div class="zhijian">检B+</div>
+
+        <div class="baoxian " title="一年两万公里质保"></div>
+        <div class="shouquan hidden">授权店</div>
+
+        <div class="up-time">两周前</div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+</div>
+<!--热门新车-->
+<div class="carsContent hotNewCarsContent ">
+
+    <div class="hotCarImages">
+
+
+        <div class="hotImages Image211 clearfix" >
+
+
+
+
+            <a class="imabox imgbox-b" href="http://www.souche.com/pages/car-journal.html?id=QP4IhbHPOX" target="_blank" click_type="hotcarimage-0-0">
+                <img data-original="http://img.souche.com/files/default/C279D512AE41A42AEB2F7F3A7A2B8324_500x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">优雅浪漫的狮子----标致508</div>
+                    <div class="adv  hidden"><span></span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+
+            <a class="imabox imgbox-s" href="http://www.souche.com/pages/onsale/sale_car_list.html?keyword=%E7%A6%8F%E5%85%8B%E6%96%AF" target="_blank" click_type="hotcarimage-0-1">
+                <img data-original="http://img.souche.com/files/default/833A66C32840BCBD28479276A4E31E9B_240x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">经典福克斯两厢</div>
+                    <div class="adv"><span>7.17万起</span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+
+
+            <a class="imabox imgbox-s" href="http://www.souche.com/pages/onsale/sale_car_list.html?maxInstallment=&minInstallment=&firstPrice=&loanMonths=&emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=brand-146&carPrice=&carSeries=series-118&carModel=&carMileage=&sortCreate=&sortName=&sortType=" target="_blank" click_type="hotcarimage-0-2">
+                <img data-original="http://img.souche.com/files/default/6D40F5DD2C74F353C4B90D11D09C3B1E_240x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">最安全的选择</div>
+                    <div class="adv"><span>11.91万起</span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+        </div>
+
+
+        <div class="hotImages Image211 clearfix" >
+
+
+
+            <a class="imabox imgbox-s" href="http://www.souche.com/pages/onsale/sale_car_list.html?maxInstallment=&minInstallment=&firstPrice=&loanMonths=&emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=brand-135&carPrice=&carSeries=series-156&carModel=&carMileage=&sortCreate=&sortName=&sortType=" target="_blank" click_type="hotcarimage-1-0">
+                <img data-original="http://img.souche.com/files/default/8D82A3AB3E1ED8CDCDB78803F1D962FF_240x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">高性价比德系车</div>
+                    <div class="adv"><span>7.28万起</span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+
+
+
+            <a class="imabox imgbox-b" href="http://www.souche.com/pages/onsale/sale_car_list.html?maxInstallment=&minInstallment=&firstPrice=&loanMonths=&emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carBrand=brand-102&carPrice=&carSeries=series-270&carModel=&carMileage=&sortCreate=&sortName=&topCarId=fqOqnGgb41" target="_blank" click_type="hotcarimage-1-1">
+                <img data-original="http://img.souche.com/files/default/A323BB3B9F282966A3111A53665F4DF4_500x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">弯道小王子</div>
+                    <div class="adv "><span>8万起</span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+
+            <a class="imabox imgbox-s" href="http://www.souche.com/pages/onsale/sale_car_list.html?maxInstallment=&minInstallment=&firstPrice=&loanMonths=&emissionStandard=&country=&color=&maxYear=2014&minYear=&carEngineVolume=&transmissionType=&code=&fenqi=&match=&flash=&carSeries=&carBrand=&carPrice=5-8&carModel=&carMileage=&sortCreate=&sortName=&sortType=" target="_blank" click_type="hotcarimage-1-2">
+                <img data-original="http://img.souche.com/files/default/402FA3FFFD300FD75D29F3F167FB71DE_240x320.jpg"/>
+                <div class="shadow"></div>
+                <div class="hotTit">
+                    <div class="title">初入门练手车</div>
+                    <div class="adv"><span>8万以内</span></div>
+                </div>
+                <div class="mask"></div>
+            </a>
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="hotNewCars clearfix">
+
+    </div>
+    <div class="carsMore hotNewCars-more" click_type="xuqiu-3"><span>查看更多</span></div>
+    <div class="loading hotNewCars-loading hidden"><span></span></div>
+</div>
+<div class="otherCarsContents"></div>
+<!--猜你喜欢  begin 猜你喜欢  end  -->
+<div class="guess-like  clearfix">
+
+</div>
+</div>
+</div>
+<div class="index-right">
+<!--妹子-->
+<!--Created by Administrator on 2014/7/3.
+-->
+<div id="service" >
+    <div class="sevice-slide">
+        <div class="right-slide">
+            <div class="slide-viewport">
+                <ul class="slides" click_type="side_slide">
+                    <li><a target="_blank" href="/pages/adviser.html" target="_blank"><img src="http://assets.souche.com/assets/images/index/danbao_1.png?t=3"></a></li>
+                    <li><a target="_blank" href="/pages/adviser.html" target="_blank"><img src="http://assets.souche.com/assets/images/index/danbao_2.png?t=3"></a></li>
+                    <li><a target="_blank" href="/pages/adviser.html" target="_blank"><img src="http://assets.souche.com/assets/images/index/danbao_3.png?t=3"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--汉子-->
+<!--Created by Administrator on 2014/7/3.
+-->
+<div id="qa">
+    <div class="title">车神在线问答</div>
+
+
+    <div class="cheshen-box clearfix">
+        <div class="cheshen-normal clearfix">
+            <div class="head">
+                <img src="http://img.souche.com/files/default/E2127AC0202F45EDBC3CE500DBC20120_110x110.jpg" class="head-img" src="http://img.souche.com/files/default/E2127AC0202F45EDBC3CE500DBC20120_110x110.jpg" width="55" height="55">
+            </div>
+            <div class="cheshen-name">
+                <h1>木石</h1>
+                <p>真实体验说话/态度鲜明</p>
+            </div>
+            <div class="show close"></div>
+        </div>
+        <div class="cheshen-detail" >
+            <h1>汽车行业资深专家</h1>
+            <p>专长：自主品牌、德系、日系、美系</p>
+            <p>十年汽车导购经验，试驾过几乎所有市面上销售的车型，对国内外汽车产品库“正背如流”，国内二手车鉴定专家。</p>
+            <input type="hidden" value="4008010010" id="cheshen1"><a class="ask" id="cheshenQQ1" click_type="cheshen_1">我要提问</a>
+        </div>
+    </div>
+
+
+
+    <div class="cheshen-box clearfix">
+        <div class="cheshen-normal clearfix">
+            <div class="head">
+                <img  src="http://img.souche.com/files/default/0D9F40ABB15A14A1BD66D144A0B2727C_110x110.jpg" class="head-img" src="http://img.souche.com/files/default/0D9F40ABB15A14A1BD66D144A0B2727C_110x110.jpg" width="55" height="55">
+            </div>
+            <div class="cheshen-name">
+                <h1>古月</h1>
+                <p>评估大师/专业性能测评</p>
+            </div>
+            <div class="show"></div>
+        </div>
+        <div class="cheshen-detail detail-hidden">
+            <h1>大搜车高级测评师</h1>
+            <p>专长：日系、韩系、法系、美系</p>
+            <p>汽车科班毕业，对造车理念、生产研发有深厚认识。6年汽车维修经验，高级评估师、资深汽车分析师。</p>
+            <input type="hidden" value="4008010010" id="cheshen1"><a class="ask" id="cheshenQQ2" click_type="cheshen_2">我要提问</a>
+        </div>
+    </div>
+
+
+
+    <div class="cheshen-box clearfix">
+        <div class="cheshen-normal clearfix">
+            <div class="head">
+                <img src="http://img.souche.com/files/default/E12223BF5C18DBA37CF94DE3AF51F9C9_110x110.jpg" class="head-img" src="http://img.souche.com/files/default/E12223BF5C18DBA37CF94DE3AF51F9C9_110x110.jpg" width="55" height="55">
+            </div>
+            <div class="cheshen-name">
+                <h1>暮雨</h1>
+                <p>外形甄选/犀利、爱挑刺</p>
+            </div>
+            <div class="show"></div>
+        </div>
+        <div class="cheshen-detail detail-hidden">
+            <h1>汽车协会会长</h1>
+            <p>专长：德系、英系</p>
+            <p>汽车狂热分子一枚，长期泡在各大汽车论坛，空闲时爱到各大4S店试车，对车型性价比、保值率、养护成本等方面都颇有研究。</p>
+            <input type="hidden" value="4008010010" id="cheshen1"><a class="ask" id="cheshenQQ3" click_type="cheshen_3">我要提问</a>
+        </div>
+    </div>
+
+</div>
+<!--妹子-->
+<!--Created by Administrator on 2014/7/3.
+-->
+<div id="hotsell">
+    <div class="title"><span>HOT</span><em>本周热销排行榜</em></div>
+    <ul class="hotlist">
+
+
+        <li class="hot-item">
+            <span>1</span>
+            <a target="_blank" click_type="rexiao_1" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-266">高尔夫</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item">
+            <span>2</span>
+            <a target="_blank" click_type="rexiao_2" href="/pages/onsale/sale_car_list.html?carBrand=brand-30&carSeries=series-368">君威</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item">
+            <span>3</span>
+            <a target="_blank" click_type="rexiao_3" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-566">速腾</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>4</span>
+            <a target="_blank" click_type="rexiao_4" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-595">帕萨特</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>5</span>
+            <a target="_blank" click_type="rexiao_5" href="/pages/onsale/sale_car_list.html?carBrand=brand-49&carSeries=series-1072">汉兰达</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>6</span>
+            <a target="_blank" click_type="rexiao_6" href="/pages/onsale/sale_car_list.html?carBrand=brand-20&carSeries=series-422">宝马3系</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>7</span>
+            <a target="_blank" click_type="rexiao_7" href="/pages/onsale/sale_car_list.html?carBrand=brand-49&carSeries=series-100">凯美瑞</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>8</span>
+            <a target="_blank" click_type="rexiao_8" href="/pages/onsale/sale_car_list.html?carBrand=brand-121&carSeries=series-317">天籁</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>9</span>
+            <a target="_blank" click_type="rexiao_9" href="/pages/onsale/sale_car_list.html?carBrand=brand-121&carSeries=series-341">骐达</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>10</span>
+            <a target="_blank" click_type="rexiao_10" href="/pages/onsale/sale_car_list.html?carBrand=brand-27&carSeries=series-2007">飞度</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+
+    </ul>
+</div>
+
+<div id="hotsell">
+    <div class="title"><em>本周收藏排行榜</em></div>
+    <ul class="hotlist">
+
+        <li class="hot-item">
+            <span>1</span>
+            <a target="_blank" click_type="shoucang_1" href="/pages/onsale/sale_car_list.html?carBrand=brand-20&carSeries=series-422">宝马3系</a>
+            <i class="hot-state hot-down">
+            </i>
+        </li>
+
+        <li class="hot-item">
+            <span>2</span>
+            <a target="_blank" click_type="shoucang_2" href="/pages/onsale/sale_car_list.html?carBrand=brand-25&carSeries=series-246">奔驰C级</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item">
+            <span>3</span>
+            <a target="_blank" click_type="shoucang_3" href="/pages/onsale/sale_car_list.html?carBrand=brand-20&carSeries=series-425">宝马5系</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>4</span>
+            <a target="_blank" click_type="shoucang_4" href="/pages/onsale/sale_car_list.html?carBrand=brand-15&carSeries=series-621">奥迪A4L</a>
+            <i class="hot-state hot-down">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>5</span>
+            <a target="_blank" click_type="shoucang_5" href="/pages/onsale/sale_car_list.html?carBrand=brand-155&carSeries=series-311">爱丽舍</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>6</span>
+            <a target="_blank" click_type="shoucang_6" href="/pages/onsale/sale_car_list.html?carBrand=brand-27&carSeries=series-564">雅阁</a>
+            <i class="hot-state hot-down">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>7</span>
+            <a target="_blank" click_type="shoucang_7" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-595">帕萨特</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>8</span>
+            <a target="_blank" click_type="shoucang_8" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-135">迈腾</a>
+            <i class="hot-state hot-down">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>9</span>
+            <a target="_blank" click_type="shoucang_9" href="/pages/onsale/sale_car_list.html?carBrand=brand-41&carSeries=series-1971">大众CC</a>
+            <i class="hot-state hot-rise">
+            </i>
+        </li>
+
+        <li class="hot-item-b">
+            <span>10</span>
+            <a target="_blank" click_type="shoucang_10" href="/pages/onsale/sale_car_list.html?carBrand=brand-53&carSeries=series-1979">福克斯两厢</a>
+            <i class="hot-state hot-down">
+            </i>
+        </li>
+
+    </ul>
+</div>
+
+<!--妹子-->
+<!--Created by Administrator on 2014/7/3.
+-->
+<div id="qcode">
+    <div class="weixin-code">
+        <img src="http://res.souche.com/assets/images/index/wx-banner.jpg?t=1"/>
+    </div>
+    <div class="app-code">
+        <a href="http://app.souche.com" target="_blank"><img src="http://res.souche.com/assets/images/index/app-banner.jpg?t=1"/></a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!--猜你喜欢  begin
+<div class="guess-like clearfix">
+
+  <div class="title">
+    <span>根据你的浏览记录为你推荐</span>
+  </div>
+  <div class="carsItem car-youlike carItem">
+    <a target="_blank" href="#" target="_blank" class="carImg">
+     <img class="img" src="http://res.souche.com/files/default/593F07AEBFEEE25DA882A0821B14E684_720x540.com/13910095983/49228185B33A4895AB0D5F104A7CE008/20140701100442_718x478.jpg_240x10000.jpg"/>
+    </a>
+    <a target="_blank" href="#" target="_blank" class="car-link">2013款  丰田86-2.0-AT豪华自动版</a>
+    <div class="info"><span class="price">￥25.6万</span><span class="shangpai">上牌：2014-4-11</span></div>
+    <div class="carlike carTail clearfix">
+       <div class="nolike" data-id="">不喜欢</div>
+       <a data-carid="" data-num="" class="collect carCollect ">收藏  <span></span></a>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+猜你喜欢  end  -->
+
+
+
+<div id="footer">
+    <div class="wrapper">
+        <div class="foot-detail clearfix">
+            <div class="buycarguide detail-item">
+                <a class="title">购车指南</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1cd45ea1-2457-4a26-a4dd-942a1cae360c" class="art-link" target="_blank">如何挑选二手车</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=VpqAVgwSiF" class="art-link" target="_blank">安全购车流程</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=CUO878x35t" class="art-link" target="_blank">大搜车价格说明</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1Yc1r7jxxJ" class="art-link" target="_blank">二手车指标问题</a>
+            </div>
+            <div class="security detail-item">
+                <a class="title" target="_blank">服务保障</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=8AMtTWD6nA" class="art-link" target="_blank">分期付款</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=1GuoqcL0E6" class="art-link" target="_blank">质保服务</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=qvMzy8lXe9" class="art-link" target="_blank">二手车外迁</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=6hamwr0W14" class="art-link" target="_blank">二手车置换</a>
+            </div>
+            <div class="about detail-item">
+                <a class="title">关于我们</a>
+                <a href="http://www.souche.com/pages/details/soucheidea.html" class="art-link" target="_blank">大搜车理念</a>
+                <a href="http://www.souche.com/pages/zhaopin/zhaopin_list.html" class="art-link" target="_blank">加入我们</a>
+                <a href="http://d.souche.com/" class="art-link" target="_blank">车牛</a>
+                <a href="http://app.souche.com/app/new/" class="art-link" target="_blank">卖车神器</a>
+            </div>
+            <div class="contact detail-item" style="width:290px;">
+                <a class="title">联系我们</a>
+                <a href="http://www.souche.com/pages/huodong/item.html?id=d7u9K9H" class="art-link" target="_blank">官方微信</a>
+                <a href="http://weibo.com/dasouche" class="art-link" target="_blank">新浪微博</a>
+
+                <a href="http://map.baidu.com/?shareurl=1&poiShareUid=3091ded5cde9ad4cb5147f7b" class="art-link" target="_blank">门店地址：北京市海淀区世纪金源购物中心东区北广场</a>
+
+            </div>
+        </div>
+
+        <div class="friendlinks clearfix">
+
+            <a href="http://www.chexianinfo.com/" target="_blank">车险信息网</a>
+
+            <a href="http://www.180mi.com/" target="_blank">180迈汽车保养</a>
+
+            <a href="http://zhongshan.ganji.com/ershouche/" target="_blank">中山二手车</a>
+
+            <a href="http://www.cheyipai.com/" target="_blank">车易拍</a>
+
+            <a href="http://hainan.273.cn/" target="_blank">海南二手车</a>
+
+            <a href="http://news.souche.com/" target="_blank">二手车资讯</a>
+
+            <a href="http://guide.xgo.com.cn/" target="_blank">汽车点评网</a>
+
+            <a href="http://hz.ganji.com/ershouche/" target="_blank">杭州二手车</a>
+
+            <a href="http://price.qi-che.com/" target="_blank">2014汽车报价</a>
+
+            <a href="http://bj.16888.com/" target="_blank">北京汽车网</a>
+
+            <a href="http://hangzhou.auto.qq.com/" target="_blank">大浙汽车</a>
+
+        </div>
+
+        <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号</p>
+    </div>
+</div>
+
+
+<div class="my-advisor hidden" id="my-advisor">
+    <a class="my-advisor-box" click_type="toolbar-matchcar"  href="/pages/onsale/match_car_list.html">
+        <img src="http://assets.souche.com/assets/images/common/my-advisor-person.png?t=6"/>
+        <span>我的</span>
+        <p>买车顾问</p>
+        <i class="point-num hidden" id="advisor_notice">1</i>
+    </a>
+    <a class="my-advisor-tip hidden" click_type="toolbar-matchcartip"  href="/pages/onsale/match_car_list.html">今天又为你寻找到 <em id="advisor_count">5</em> 辆车<br/>赶快去看看吧 >><i class="advisor-tip-close">x</i></a>
+</div>
+
+<div class="sidebar " id="toolbar">
+    <div class="sidebar-tit">
+        <i>我的车库</i>
+        <span class="toolbar-close"></span>
+    </div>
+    <div class="sidebar-nav">
+        <div class="collectside side-box">
+            <a click_type="toolbar-faver" class="collect-box side-trigger" href='/pages/toolbar/favorite.html'><div class="collect-img icon"></div><i>收藏的车</i></a>
+            <i class="point-num hidden" id="fav_notice">12</i>
+        </div>
+
+        <div class="reserveside side-box">
+            <a click_type="toolbar-yuyue" class="reserve-box side-trigger" href='/pages/toolbar/appointment.html'><div class="reserve-img icon"></div><i>预约看车</i></a>
+            <i class="point-num hidden" id="yuyue_notice">1</i>
+        </div>
+
+
+        <div class="scanside side-box hidden">
+            <a class="scan-box side-trigger" href='/demo/pengxue/toolbar?id=1'><div class="scan-img icon"></div><i>浏览记录</i></a>
+        </div>
+        <div class="suggestside side-box">
+            <a class="suggest-box side-trigger" href='/pages/toolbar/suggest.html'><div class="suggest-img icon"></div><i>反馈信息</i></a>
+        </div>
+    </div>
+    <div class="toolbar-content">
+
+        <div class="iframe-loading"></div>
+        <iframe src="" height="500px" width="855px"  name="toolbar-open" frameborder="0" class="hidden" scrolling="no"></iframe>
+    </div>
+</div>
+<script>
+
+    ///
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14b4aac5aa4127a195c3dd1a4049180f' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
+<div class="sidebar-top">
+    <div class="scroll-top" id="toTop" click_type="toolbar-top">
+        <i></i>
+        <span>TOP</span>
+    </div>
+    <!-- <div id="suggest" click_type="toolbar-suggest">
+       <div class="suggest-tag">
+          <i></i>
+          <span>反馈</span>
+       </div>
+    </div>
+     -->
+</div>
+<div class="suggest-popup hidden">
+    <div class="suggest-close" click_type="toolbar-fankui-close"></div>
+    <h1 class="suggest-title">意见反馈</h1>
+    <form class="suggest-form clearfix" id="J_suggest_form" action="/pages/suggestionAction/addSuggestion.json" method="post">
+        <textarea max="500"  name="content" class="suggest-area" value="请填写反馈，我们会重视每一位用户的意见" default="请填写反馈，我们会重视每一位用户的意见">请填写反馈，我们会重视每一位用户的意见</textarea>
+        <p class="suggest-remind hidden">内容不能为空</p>
+        <input type="submit" class="suggest-button suggest-submit" value="提交反馈"  click_type="toolbar-fankui-submit"/>
+        <div class="suggest-button suggest-no hidden">提交反馈</div>
+    </form>
+</div>
+<div class="suggest-result hidden">
+    <div class="suggest-close"></div>
+    <h1 class="result-title clearfix">
+        <i></i>
+        <span>提交成功</span>
+    </h1>
+    <div class="result-text">
+        感谢您给我们提供宝贵的意见
+    </div>
+</div>
+
+
+<script type="text/template" id="carTemplate">
+    <div class="carsItem carItem" click_type="xuqiu-cars-item-xian-">
+        <a href="{{url}}" target="_blank" class="carImg">
+            <img class="img" src="{{carPicturesVO.pictureBig}}" alt="{{carVo.carOtherAllName}}"/>
+            <div class="timebuy hidden"></div>
+        </a>
+        <a href="{{url}}" target="_blank" class="car-link">{{carVo.carOtherAllName}}</a>
+        <div class="car-price">
+            <span class="price">￥<em>{{price}}</em>万</span>
+        </div>
+        <div class="car-info">
+            <span class="info-item">{{carVo.firstLicensePlateDateShowNoDay }} 上牌</span>
+            <em>|</em>
+            <span class="info-item">{{carVo.mileageKMShow }}万公里</span>
+            <em>|</em>
+            <span class="info-item">北京</span>
+        </div>
+        <div class="carTail clearfix">
+            <span data-carid="{{carVo.id }}" data-num="{{count }}" class="collect carCollect {{#favorite}}colled{{/favorite}}"><span>{{count }}</span></span>
+            <div class="carConstrast" contrastid="{{contrastId}}" carid="{{carVo.id}}"><span>{{#contrastId}}已{{/contrastId}}对比</span></div>
+            <div class="contrast-waring hidden">对比栏已满！你可以删除不需要的车辆，再继续添加。</div>
+        </div>
+        <div class="car-type clearfix">
+
+            {{#isZaishou}}{{#carVo.levelName}} <div class="zhijian" title="质检等级{{carVo.levelName }}">检{{carVo.levelName }}</div> {{/carVo.levelName}}{{/isZaishou}}
+            {{#isZaishou}}<div class="baoxian " title="一年两万公里质保"></div>{{/isZaishou}}
+            <div class="shouquan hidden" title="">授权店</div>
+
+            <div class="up-time">{{recommendTime}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript" src="http://assets.souche.com/assets/js/index/index.r.js?t=33"></script>
+
+<script>
+
+
+
+
+
+    var config={
+
+        userRequementJson:{"endBudgetShow":"20","brands":["brand-26,奔腾","brand-18,宝骏","brand-150,西雅特"],"series":["series-144,天语","series-840,揽胜","series-902,森林人","series-78,思域","series-595,帕萨特","series-425,宝马5系","series-564,雅阁","series-946,甲壳虫"],"endYear":"","startBudgetShow":"15","endBudget":200000,"startYear":"","years":"","startBudget":150000},
+
+        userRequirementJsonForTag:{"maxPrice":"20","brands":["brand-26,奔腾","brand-18,宝骏","brand-150,西雅特"],"series":["series-144,天语","series-840,揽胜","series-902,森林人","series-78,思域","series-595,帕萨特","series-425,宝马5系","series-564,雅阁","series-946,甲壳虫"],"endYear":"","minPrice":"15","endBudget":200000,"startYear":"","years":"","startBudget":150000},
+
+        series_api:'/pages/dicAction/loadRootLevelForCar.json?type=car-subdivision&code=',
+        brand_api:'/pages/dicAction/loadRootLevel.json?type=car-subdivision',
+        getMoreUserRecommend_api:"/pages/homePageAction/loadUserRecommendCar.json?page",
+        getMoreHotCars_api:"/pages/homePageAction/loadHotRecCars.json?page=",
+        getMoreOtherCars_api:"/pages/homePageAction/loadHotNewCar.json",
+        search_api:"/pages/common/boxSuggestAction/list.json",
+        submit_api:"/pages/homePageAction/saveBuyInfo.json",
+        api_saveFavorite:'/pages/saleDetailAction/savaCarFavorite.json',
+        api_delFavorite:'/pages/saleDetailAction/delCarFavorite.json',
+        api_addContrast:'/pages/carContrastAction/addContrastCar.json',
+        api_deleteContrast:'/pages/carContrastAction/deleteContrastCar.json',
+        carType:'zaishou',
+        api_matchUrl:"http://www.souche.com/pages/onsale/sale_car_list.html",
+        api_nolikeUrl:"/pages/saleDetailAction/notLikeMatchCar.json",
+        api_guessCars:"/pages/guesscars.html",
+        api_showTipUrl:"/pages/homePageAction/queryTagTip.json",
+        api_noShowTipUrl:"/pages/homePageAction/readTagTip.json",
+        api_addToWishUrl:""
+    };
+
+    require(["index/index"],function(Index){
+        Index.init(config)
+    })
+</script>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<script>
+    var qqArray = [];
+    for(var index=0;index<3;index++)
+    {
+        qqArray.push({aty: '0', a: '0', nameAccount:$(".cheshen-detail").eq(index).find("input").val(), selector: 'cheshenQQ'+(index+1)});
+    }
+
+    BizQQWPA.addCustom(qqArray);
+
+    //热门好车精品图片
+    $(".imabox").mouseover(function(){
+        $(this).find(".mask").animate({
+            opacity: 0.2
+        },350)
+    });
+    $(".imabox").mouseout(function(){
+        $(this).find('.mask').animate({
+            opacity: 0
+        },350)
+    })
+</script>
+</body>
+</html>
