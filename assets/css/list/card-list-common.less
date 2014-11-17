@@ -57,3 +57,23 @@
     }
   }
 }
+
+
+// 已售列表, 图片上显示已售的遮罩
+.car-wrap.sold{
+    .carItem .carImg{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            background-image: url('../../assets/images/list/soldtag.png');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    }
+}
