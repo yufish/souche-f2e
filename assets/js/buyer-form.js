@@ -30,11 +30,17 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                 placeholder: "请选择省",
                 multi: false
             })
+            $(provinceSelect).on("change",function(e,data){
+                $("#privince .selected_values").val(data.value)
+            })
             var citySelect = new CustomSelect("city",{
                 placeholder: "请选择市",
                 multi: false
             })
-
+            $(citySelect).on("change",function(e,data){
+                console.log(data)
+                $("#privince .selected_values").val(data.value)
+            })
             LoadInfo.loadProvince(function(data){
                 provinceSelect.removeAllOption()
                 for(var i=0;i<data.items.length;i++){
@@ -68,12 +74,12 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                 var series = [];
                 var html = "";
                 for(var i=0;i<_data.selectedSeries.length;i++) {
-                    var series = _data.selectedSeries[i].split(",");
-                    var _code = series[0];
-                    var _name = series[1];
+                    var _series = _data.selectedSeries[i].split(",");
+                    var _code = _series[0];
+                    var _name = _series[1];
                     html+="<div class='selected-item' code='"+_code+"'><img src='http://res.souche.com/files/carproduct/series/"+_code+".png'/>"+_name+"</div>"
 
-                    series.push(_code);
+                    series.push(_name);
 
                 }
                 $("#car_series").val(series.join(","))

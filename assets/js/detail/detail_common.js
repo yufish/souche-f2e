@@ -728,6 +728,7 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
                 if($(".photosSmall li").length<14){
                     $(".photoSmallTab").addClass("hidden");
                     $(".photosSmallWrap").css("width",620);
+                    $(".photoInfo").html("")
                 }
 
             }
