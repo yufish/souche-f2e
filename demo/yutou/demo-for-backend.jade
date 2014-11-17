@@ -1,0 +1,433 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    title 基本CSS样式 · Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Bootstrap是Twitter推出的一个用于前端开发的开源工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap中文网致力于为广大国内开发者提供详尽的中文文档、代码实例等，助力开发者掌握并使用这一框架。')
+    meta(name='keywords', content='Bootstrap,CSS,CSS框架,CSS framework,javascript,bootcss,bootstrap开发,bootstrap代码,bootstrap入门')
+    meta(name='author', content='Bootstrap中文网')
+    //
+       Le styles
+    link(href='http://f2e.souche.com/assets/css/bootstrap/bootstrap-back.css', rel='stylesheet')
+    link(href='http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css', rel='stylesheet')
+    link(href='http://f2e.souche.com/assets/css/bootstrap/doc.css', rel='stylesheet')
+    style.
+      body {
+        font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+      }
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js')
+    //
+       Le fav and touch icons
+    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='assets/ico/apple-touch-icon-144-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+    link(rel='shortcut icon', href='assets/ico/favicon.png')
+  body(data-spy='scroll', data-target='.bs-docs-sidebar')
+    //
+       Navbar
+          ==================================================
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse.collapse
+            ul.nav
+              li
+                a(href='./index.html') 首页
+
+    //
+       Subhead
+    header#overview.jumbotron.subhead
+      .container
+        h1 大搜车后台框架基本Demo
+        p.lead 大搜车后台框架基本Demo
+    .container
+      //
+         Docs nav
+            ==================================================
+      .row
+        .span3.bs-docs-sidebar
+          ul.nav.nav-list.bs-docs-sidenav
+            li
+              a(href='#typography')
+                i.icon-chevron-right
+                | 表单
+            li
+              a(href='#code')
+                i.icon-chevron-right
+                | 代码
+            li
+              a(href='#tables')
+                i.icon-chevron-right
+                | 表格
+            li
+              a(href='#forms')
+                i.icon-chevron-right
+                | 表单
+            li
+              a(href='#buttons')
+                i.icon-chevron-right
+                | 按钮
+            li
+              a(href='#images')
+                i.icon-chevron-right
+                | 图片
+            li
+              a(href='#icons')
+                i.icon-chevron-right
+                | 由Glyphicons提供的图标
+        .span9
+          form#form.form-horizontal(name='form', method='post', enctype='multipart/form-data')
+            input(type='hidden', name='shopId', value='')
+            input(type='hidden', name='bankId', value='')
+            input#shopCode(type='hidden', name='shopCode', value='')
+            input#pictureValue(type='hidden', name='pictureValue')
+            input(type='hidden', name='token', value='true')
+            h3.form-section 公司基本信息
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 公司名称:
+                  .controls
+                    input#name.input-medium.span12(type='text', name='name', value='', placeholder='公司全称，详细，如北京大搜车汽车服务西苑北店')
+                    span#name_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 公司简称:
+                  .controls
+                    input#nickname.input-medium.span12(type='text', name='nickname', value='', placeholder='简称，如：北京大搜车')
+                    span#nickname_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 固定电话:
+                  .controls
+                    input#addresscall.input-medium.span12(type='text', value='', name='addresscall', placeholder='固定电话。如：0577-65899785')
+                    span#addresscall_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 移动电话:
+                  .controls
+                    input#phone.input-medium.span12(type='text', value='', name='phone', placeholder='手机号码,如：18869987598')
+                    span#phone_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 地址:
+                  .controls
+                    input#place.input-medium.span12(type='text', value='', name='place', placeholder='公司详细地址，精确到门牌号')
+                    span#place_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 省份城市:
+                  .controls
+                    select#province.input-medium(style='width: 80px;', name='province', tabindex='1')
+                      option(value='') -不限-
+                      option(value='00001') 北京
+                      option(value='03095') 新疆
+                      option(value='00530') 辽宁
+                      option(value='01840') 湖南
+                      option(value='02914') 甘肃
+                      option(value='00105') 河北
+                      option(value='00419') 内蒙古
+                      option(value='00043') 天津
+                      option(value='02245') 海南
+                      option(value='01193') 福建
+                      option(value='02799') 陕西
+                      option(value='00974') 浙江
+                      option(value='03231') 台湾
+                      option(value='02272') 四川
+                      option(value='02718') 西藏
+                      option(value='02474') 贵州
+                      option(value='02572') 云南
+                      option(value='00021') 上海
+                      option(value='00289') 山西
+                      option(value='01288') 江西
+                      option(value='02122') 广西
+                      option(value='00714') 黑龙江
+                      option(value='03066') 宁夏
+                      option(value='00858') 江苏
+                      option(value='01075') 安徽
+                      option(value='03206') 香港
+                      option(value='00644') 吉林
+                      option(value='01725') 湖北
+                      option(value='00063') 重庆
+                      option(value='01398') 山东
+                      option(value='03222') 澳门
+                      option(value='01556') 河南
+                      option(value='03014') 青海
+                      option(value='01977') 广东
+                    select#city.input-medium( name='city', tabindex='1')
+                      option(value='') -不限-
+                    span#province_err.help-inline(style='color: #B94A48;')
+                    span#city_err.help-inline(style='color: #B94A48;')
+                    input#provinceCode(type='hidden', value='')
+                    input#cityCode(type='hidden', value='')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 门店检测标准:
+                  .controls
+                    select#standard.small.input-medium(name='standard')
+                      option(value='A') A级检测
+                      option(value='B') B级检测
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 总库存数:
+                  .controls
+                    input#carSum.input-small.span12(type='text', value='', name='carSum', placeholder='具体库存数量，单位：台')
+                    span#carSum_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 开店日期:
+                  .controls
+                    .input-append.date
+                      input#openDate.m-wrap.date-picker.span12(type='text', value='', name='openDate', placeholder='yyyy-mm-dd')
+                      span.add-on
+                        i.icon-calendar
+                    span#openDate_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 开始营业时间:
+                  .controls
+                    .input-append
+                      input#startTime.m-wrap.span12(type='text', value='', name='startTime', placeholder='hh:mm')
+                      button#start.btn(type='button')
+                        i.icon-time
+                    span#startTime_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 结束营业时间:
+                  .controls
+                    .input-append
+                      input#endTime.m-wrap.span12(type='text', value='', name='endTime', placeholder='hh:mm')
+                      button#end.btn(type='button')
+                        i.icon-time
+                    span#endTime_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span12
+                .control-group
+                  label.control-label 公司介绍:
+                  .controls
+                    textarea#introduce.span10.input-medium(name='introduce', rows='7', wrap='physical')
+                    span#introduce_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            h3.form-section 公司银行账户信息
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 银行账户:
+                  .controls
+                    input#bankAccount.input-medium.span12(type='text', name='bankAccount', value='', placeholder='小心小心再小心')
+                    span#bankAccount_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 开户名:
+                  .controls
+                    input#accountName.input-medium.span12(type='text', name='accountName', value='', placeholder='开户名')
+                    span#accountName_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 开户银行:
+                  .controls
+                    input#bankName.input-medium.span12(type='text', name='bankName', value='', placeholder='详细银行名，如：中国农业银行')
+                    span#bankName_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 协议有效开始时间:
+                  .controls
+                    .input-append.date
+                      input#validStartDate.m-wrap.small.date-picker(name='validStartDate', value='', size='10', type='text', placeholder='yyyy-mm-dd')
+                      span.add-on
+                        i.icon-calendar
+                    span#validStartDate_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 协议有效结束时间:
+                  .controls
+                    .input-append.date
+                      input#validEndDate.m-wrap.small.date-picker(name='validEndDate', value='', size='10', type='text', placeholder='yyyy-mm-dd')
+                      span.add-on
+                        i.icon-calendar
+                    span#validEndDate_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            h3.form-section 地图设置
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label 图层级别:
+                  .controls
+                    input#level.input-medium.span12(type='text', name='level', value='', placeholder='建议13级，里面填写:13')
+                    span#level_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+              .span6
+                .control-group
+                  label.control-label 坐标值:
+                  .controls
+                    input#coordinate.input-medium.span12(type='text', name='coordinate', value='', placeholder='将地址坐标复制进来')
+                    span#coordinate_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span12
+                .control-group
+                  .alert
+                    .controls
+                      span.label.label-important 使用说明:
+                      strong
+                        | 1、访问
+                        a(href='http://api.map.baidu.com/lbsapi/getpoint/', target='_black') http://api.map.baidu.com/lbsapi/getpoint/
+                        | 2、搜索到公司实际地址
+                        | 3、复制坐标点及当前图层
+            .row-fluid
+              .span12
+                .control-group
+                  label.control-label 地图分享地址:
+                  .controls
+                    input#mapUrl.input-medium.span12(type='text', name='mapUrl', value='', placeholder='使用百度地图查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp')
+                    span#mapUrl_err.help-inline(style='color: #B94A48;')
+              //
+                /span
+            //
+               /row
+            .row-fluid
+              .span12
+                .control-group
+                  .alert
+                    .controls
+                      span.label.label-important 使用说明:
+                      strong
+                        | 使用
+                        a(href='http://map.baidu.com/', target='_black') 百度地图
+                        | 查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp
+            //
+               /row
+            h3.form-section
+              | 企业形象(图片高度建议为：
+              strong 380px
+              | )
+              //
+                 <a class="btn red" id="addpicture" ><i class="icon-plus"></i>增加一张图片</a>
+            #picturecontrols.row-fluid.search-images
+              .fileupload.fileupload-new(data-provides='fileupload', style='float: left;')
+                .fileupload-new.thumbnail(style='width: 195px; height: 150px;')
+                  img(src=' ', style='height: 150px; float: left;')
+                .fileupload-preview.fileupload-exists.thumbnail(style='max-width: 195px; max-height: 150px; line-height: 20px;')
+                  img(src=' ', style='height: 150px; float: left;')
+                div
+                  span.btn.btn-file
+                    span.fileupload-new 添加图片
+                    span.fileupload-exists 更改图片
+                    input.default(type='file', name='picture')
+                  a.btn.fileupload-exists(data-dismiss='fileupload') 移除图片
+            //
+               /row
+
+      Footer
+    footer.footer
+      .container
+        p
+          | Designed and built with all the love in the world by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | , documentation under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          a(href='http://glyphicons.com') Glyphicons Free
+          | licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        ul.footer-links
+          li
+            a(href='http://blog.getbootstrap.com') Blog
+          li.muted ·
+          li
+            a(href='https://github.com/twbs/bootstrap/issues?state=open') Issues
+          li.muted ·
+          li
+            a(href='https://github.com/twbs/bootstrap/releases') Changelog
+
+    script(src='http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js')
+    script(src='http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js')
+    script(src='http://cdn.bootcss.com/holder/2.0/holder.min.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/application.js')
+    script(type='text/javascript').
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff8075d186077efcfbc077b500516e94a' type='text/javascript'%3E%3C/script%3E"));
+                            
