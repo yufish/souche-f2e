@@ -24,12 +24,15 @@
         color:@orange;
         margin-right: 20px;
         line-height: 30px;
-       text-decoration: underline;
+        text-decoration: underline;
       }
     }
     .social-content{
       margin-top:30px ;
     }
+  }
+  .social-bbs .social-inner{
+    padding-left: 30px;
   }
   .bbs-pic{
     width:120px;
@@ -98,5 +101,36 @@
       color:#999;
       margin-left: 20px;
     }
+  }
+}
+
+@buyerAvatarW: 40px;
+.buyer-item{
+  height: 50px;
+  margin-top: -10px;
+  margin-bottom: 18px;
+  // bfc
+  overflow: hidden;
+  
+  .buyer-avatar{
+    float: left;
+    height: @buyerAvatarW;
+    width: @buyerAvatarW;
+    border-radius: @buyerAvatarW/2;
+  }
+  .buyer-name,
+  .buyer-title{
+    margin-left: @buyerAvatarW + 12px;
+  }
+  .buyer-name{
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #666;
+  }
+  .buyer-title{
+    width: auto;
+    font-size: 12px;
+    color: #999;
+    .text-collapse();
   }
 }
