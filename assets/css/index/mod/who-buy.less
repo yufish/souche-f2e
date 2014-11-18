@@ -1,0 +1,60 @@
+#who-buy{
+    .flexslider{
+        position: relative;
+    }
+    .flex-control-nav {
+        position: absolute;
+        bottom: 10px;
+        width:200px;
+        text-align: center;
+        margin-left:-100px;
+        left: 50%;
+        z-index: 100;
+    }
+    .flex-control-nav li {
+        display: inline-block;
+    }
+    .flex-control-nav a {
+        overflow: hidden;
+        text-indent: 1000px;
+        float: left;
+        display: inline;
+        width: 12px;
+        height: 12px;
+        line-height: 12px;
+        text-align: center;
+        color: #fff;
+        background-color: #000000;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    .flex-control-nav .flex-active {
+        background-color: #e70;
+    }
+    
+    .flex-direction-nav{
+        display: none;
+    }
+    .flex-direction-nav a{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0;
+        display: block;
+        background: url(../images/index/index_sprite_v2.png) no-repeat 0 0;
+        top: 50%;
+        opacity: 1;
+        cursor: pointer;
+        text-indent: -9999px;
+        -webkit-transition: all .3s ease;
+    }
+    .flex-direction-nav .flex-prev{
+        background-position: -150px 0;
+        left: 0px;
+    }
+    .flex-direction-nav .flex-next{
+        background-position: -200px 0;
+        right: 0px;
+    }
+}

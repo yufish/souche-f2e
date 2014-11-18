@@ -4,6 +4,7 @@ define(function(){
         init: function(){
             _view.initChooseNav();
             _view.initLimitSaleHover();
+            _view.initWhoBuySlide();
         },
         initChooseNav: function(){
             $("#choose_brand").on("mouseenter",function(){
@@ -25,6 +26,11 @@ define(function(){
                 affectEl.addClass('hover');
             }).on('mouseleave', function(){
                 affectEl.removeClass('hover');
+            });
+        },
+        initWhoBuySlide: function(){
+            $('.flexslider').flexslider({
+                animation: "slide"
             });
         }
     }
