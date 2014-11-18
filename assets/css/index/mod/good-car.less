@@ -1,3 +1,7 @@
+.car-info{
+    display: block;
+}
+
 // common
 #good-car{
   // height:100px;
@@ -36,6 +40,10 @@
     .limit-sale,
     .almost-new{
         border-right: 1px solid #ececec;
+    }
+    .almost-new{
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
 
@@ -96,6 +104,7 @@
             margin-top: 20px;
             font-size: 14px;
             color: #666;
+            .text-collapse();
         }
         .car-price{
             margin-top: 6px;
@@ -132,14 +141,19 @@
         background-color: @soucheOrange;
     }
     .almost-new-item{
+        padding-bottom: 10px;
         border-bottom: 1px dashed #ececec;
+    }
+    .personal-zhuan{
+        padding-top: 20px;
     }
     .good-item-sub-title{
         margin-top: 10px;
         color: #999;
     }
     .car-info{
-        margin-top: 30px;
+        min-height: 80px;
+        margin-top: 25px;
         padding-top: 18px;
         .item-car-img{
             float: right;
@@ -152,6 +166,7 @@
         }
         .item-car-name{
             color: #666;
+            .text-collapse();
         }
         .item-car-ptice{
             font-weight: bold;
@@ -161,16 +176,29 @@
 }
 
 #good-car .car-journal{
+    @journalBGC: #f7f7f7;
     .journal-info{
+        position: relative;
         width: 290px;
         min-height: 160px;
         margin-top: 30px;
-        padding: 20px 20px 40px 20px;
+        padding: 20px 20px 20px 20px;
         line-height: 1.75;
-        background-color: #F7F7F7;
-        background-image: url("../../images/index_11/car-journal-bubble-bg.png");
-        background-repeat: no-repeat;
-        background-position: 50% 100%;
+        background-color: @journalBGC;
+
+        // background-image: url("../../images/index_11/car-journal-bubble-bg.png");
+        // background-repeat: no-repeat;
+        // background-position: 50% 100%;
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            right: 1px;
+            // 不是常规的transparent
+            border: 7px solid #fff;
+            border-top-color: @journalBGC;
+            border-right-color: @journalBGC;
+        }
 
         .journal-title{
             font-size: 14px;
@@ -190,7 +218,7 @@
     }
 
     .car-info{
-        margin-top: 35px;
+        margin-top: 55px;
         padding-top: 20px;
 
         .journal-car-name,
@@ -200,6 +228,7 @@
         }
         .journal-car-name{
             color: #666;
+            .text-collapse();
         }
         .journal-car-price{
             font-weight: bold;
@@ -208,6 +237,92 @@
         .journal-car-img{
             float: right;
             margin-top: -20px;
+            margin-right: 15px;
+        }
+    }
+}
+
+// 动态效果
+#good-car{
+    // 准新车 和 好车日报 部分的hover动效
+    .item-car-name,
+    .item-car-img,
+    .journal-car-name,
+    .journal-car-img{
+        .tst();
+    }
+    .item-car-img{
+        margin-right: 0px;
+    }
+    
+    .car-info:hover{
+        .item-car-name,
+        .journal-car-name{
+            color: @soucheOrange;
+        }
+        .item-car-img{
+            margin-right: 10px;
+        }
+        // default是15px
+        .journal-car-img{
+            margin-right: 25px;
+        }
+    }
+    
+    // 好车日报的气泡 color & bgc tst
+    .car-journal .journal-info{
+        .tst();
+        
+        &:after,
+        .journal-title,
+        .journal-content,
+        .journal-link{
+            .tst();
+        }
+
+        &:hover{
+            background-color: @soucheOrange;
+            &:after{
+                border-top-color: @soucheOrange;
+                border-right-color: @soucheOrange;
+            }
+            .journal-title,
+            .journal-content,
+            .journal-link{
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 由于dom结构的原因, 使用js实现hover动效
+#good-car .limit-sale{
+    .limit-info,
+    .limit-sale-car-img{
+        .tst();
+    }
+    .limit-info{
+        position: relative;
+        top: 0;
+    }
+    .limit-sale-car-img{
+        margin-right: 0;
+    }
+    &.hover{
+        .limit-info{
+            top: -10px;
+        }
+        .limit-sale-car-img{
+            margin-right: 20px;
+        }
+    }
+
+    .car-info{
+        .car-name{
+            .tst();
+        }
+        &.hover .car-name{
+            color: @soucheOrange;
         }
     }
 }
