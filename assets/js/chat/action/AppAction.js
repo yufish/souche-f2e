@@ -43,6 +43,24 @@ var AppAction = {
             }
         })
     },
+    // --------------- unread ---------------
+    addUnread: function(threadId){
+        ChatDispatcher.handleViewAction({
+            actionType: ChatlConstants.ADD_UNREAD,
+            threadId: threadId
+        });
+    },
+    clearUnread: function(threadId){
+        ChatDispatcher.handleViewAction({
+            actionType: ChatlConstants.CLEAR_THREAD_UNREAD,
+            threadId: threadId
+        });
+    },
+    clearAllUnread: function(){
+        ChatDispatcher.handleViewAction({
+            actionType: ChatlConstants.CLEAR_ALL_UNREAD
+        });
+    },
 
     // 定时获取数据... 
     schedualUpdate: function(users, threads, msgs){
