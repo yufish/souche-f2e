@@ -163,6 +163,11 @@ var _data = {
         };
         $.getJSON(API.getMsg, param, callback);
     },
+
+    /* 把数据正规化:
+     * chatList 添加threadId属性, 用friendId  
+     * msg, 每一条增加threadId属性, 方便辨别
+     */ 
     getAllData: function( blOnlyUnread ,callback){
         _data.getChatList(blOnlyUnread, function(data, status){
             if( data.code == '100000'){
@@ -176,6 +181,7 @@ var _data = {
                 });
 
                 chatList.forEach(function(chat){
+                    chat.threadId = chat.friendId;
                     var lastReqTime;
                     if( (new Date(chat.nearlyMSgTime)).valueOf() < aDayAgo ){
                         lastReqTime = (new Date(chat.nearlyMSgTime)).valueOf() - 1000;
