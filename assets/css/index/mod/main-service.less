@@ -85,6 +85,32 @@
   }
 }
 
+.gift-card{
+  .icon{
+    position: relative;
+  }
+  .advice-count{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    margin-left: -12px + 20px;
+    height: 24px;
+    width: 24px;
+    .border-radius(12px);
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background-color: @soucheOrange;
+  }
+
+  &.has-advice{
+    .advice-count{
+      display: block;
+    }
+  }
+}
+
 // 动态效果  hover
 #main-service .service-card{
   .tst();
