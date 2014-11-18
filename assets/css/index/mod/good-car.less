@@ -244,9 +244,6 @@
 
 // 动态效果
 #good-car{
-
-
-
     // 准新车 和 好车日报 部分的hover动效
     .item-car-name,
     .item-car-img,
@@ -294,6 +291,38 @@
             .journal-link{
                 color: #fff;
             }
+        }
+    }
+}
+
+// 由于dom结构的原因, 使用js实现hover动效
+#good-car .limit-sale{
+    .limit-info,
+    .limit-sale-car-img{
+        .tst();
+    }
+    .limit-info{
+        position: relative;
+        top: 0;
+    }
+    .limit-sale-car-img{
+        margin-right: 0;
+    }
+    &.hover{
+        .limit-info{
+            top: -10px;
+        }
+        .limit-sale-car-img{
+            margin-right: 20px;
+        }
+    }
+
+    .car-info{
+        .car-name{
+            .tst();
+        }
+        &.hover .car-name{
+            color: @soucheOrange;
         }
     }
 }
