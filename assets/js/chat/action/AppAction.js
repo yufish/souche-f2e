@@ -50,7 +50,7 @@ var AppAction = {
             threadId: threadId
         });
     },
-    clearUnread: function(threadId){
+    clearThreadUnread: function(threadId){
         ChatDispatcher.handleViewAction({
             actionType: ChatlConstants.CLEAR_THREAD_UNREAD,
             threadId: threadId
