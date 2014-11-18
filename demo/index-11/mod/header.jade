@@ -84,16 +84,17 @@
     .h-rht
       .phone-number
         img(src='../../assets/images/index_11/phone-num.png')
-      //- .user
-      //-   .headpic
-      //-     img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
-      //-   span.username.hidden 15967171060
-      //-   i.trigger
-      //-   ul.dropdown-menu#user-menu
-      //-     li.subscribe-car 预约看车
-      //-     li.my-collect 我的收藏
-      //-     li.logout 退出
       .user
+        .headpic
+          img(src="http://tp1.sinaimg.cn/1717808700/180/5671070970/1")
+        span.username.hidden 15967171060
+        i.trigger
+        ul.dropdown-menu#user-menu
+          li.subscribe-car
+            a(href="#") 预约看车
+          li.logout
+            a(href="/pages/j_spring_security_logout?loginType=createUserLogin") 退出
+      //- .user
         p.login-text 马上登录
         
 script.

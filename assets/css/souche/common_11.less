@@ -282,15 +282,26 @@ html,body{
 
 .dropdown-menu{
   position: relative;
+  display: none;
   border: 1px solid #e7e7e7;
   list-style: none;
+  z-index: 1000;
   
-  // &:after{
-  //   border-width: 14px;
-  //   border-style: solid;
-  //   border-color: #fff;
-  //   border-bottom-color: 
-  // }
+  &:after{
+    content: '';
+    position: absolute;
+    top: -9px;
+    right: 6px;
+    height: 9px;
+    width: 18px;
+    background-image: url('../../images/index_11/tri-totop.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 1100;
+  }
+  &.active{
+    display: block;
+  }
 
   li{
     padding: 0.5em 1.5em;
