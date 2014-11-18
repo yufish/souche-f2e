@@ -1,4 +1,5 @@
-@orange:#ff571a;
+@import "../config.less";
+
 html,body{
   font-family: 'Microsoft YaHei',Tahoma,Verdana;
 }
@@ -181,7 +182,7 @@ html,body{
         color:#333;
       }
       a:hover,a.active{
-        color:@orange;
+        color:@soucheOrange;
       }
     }
 
@@ -220,6 +221,7 @@ html,body{
       border-left:1px solid #bbbbbb; 
     }
     .user{
+      position: relative;
       float:right;
       margin-top: 20px;
       margin-right: 10px;
@@ -237,7 +239,6 @@ html,body{
       .username{
         padding-left: 10px;
         color:#666;
-
       }
       .trigger{
         display: inline-block;
@@ -253,6 +254,63 @@ html,body{
         margin-left: 10px;
         line-height: 20px;
       }
+      .login-text{
+        margin-top: 12px;
+        margin-right: 15px;
+        font-size: 12px;
+        color: #333;
+        cursor: pointer;
+
+        &:hover{
+          color: @soucheOrange;
+        }
+      }
+
+      #user-menu{
+        position: absolute;
+        right: -3px;
+        top: 100%;
+        margin-top: 10px;
+        width: 110px;
+        // height: 120px;
+        padding: 16px 0;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.dropdown-menu{
+  position: relative;
+  display: none;
+  border: 1px solid #e7e7e7;
+  list-style: none;
+  z-index: 1000;
+  
+  &:after{
+    content: '';
+    position: absolute;
+    top: -9px;
+    right: 6px;
+    height: 9px;
+    width: 18px;
+    background-image: url('../../images/index_11/tri-totop.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 1100;
+  }
+  &.active{
+    display: block;
+  }
+
+  li{
+    padding: 0.5em 1.5em;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+    .text-collapse();
+    &:hover{
+      background-color: #e7e7e7;
     }
   }
 }

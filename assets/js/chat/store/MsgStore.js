@@ -3,6 +3,7 @@ var merge = require('react/lib/merge');
 
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
 var ChatConstants = require('../constant/ChatConstants');
+var AppAction = require('../action/AppAction');
 
 var UserStore = require('./UserStore');
 var ThreadStore = require('./ThreadStore');
@@ -15,6 +16,10 @@ var MsgData = {};
 var _dataHandler = {
     init: function(msgs){
         msgs.forEach(function(m){
+
+            // 初始化时 先将所有消息都当做未读
+            AppAction.addUnread(m.threadId);
+
             MsgData[m.id] = m;
             var u = UserStore.getById(m.sender);
             if(u){
@@ -49,6 +54,14 @@ var _dataHandler = {
         msgs.forEach(function(m){
             if( !MsgData[m.id] ){
                 MsgData[m.id] = m;
+
+                // 当前thread 不增加unread
+                if( m.threadId === ThreadStore.getCurThread() ){
+
+                }
+                else{
+                    AppAction.addUnread(m.threadId);
+                }
             }
             else{
                 _dataHandler.update(m.id, m);
