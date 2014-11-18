@@ -12,8 +12,8 @@
     background: #fff;
     border: none;
     z-index:1000;
-    overflow-y: visible;
-    overflow-x: hidden;
+    overflow: visible;
+    // overflow-x: hidden;
     opacity: 0;
     .tst(width 400ms ease-out, opacity 300ms ease-out;);
 
@@ -420,6 +420,7 @@
     right: -1px;
     top:-1px;
     border: 1px solid #EDEDED;
+    border-top: none;
     vertical-align: top;
     z-index:10000;
     background: #fff;
@@ -556,11 +557,11 @@
     .addInstrestCarContent {
         border-top: 1px solid #EDEDED;
         clear: both;
-        height: 334px;
+        height: 314px;
 
         .brand {
             float: left;
-            height: 330px;
+            height: 100%;
             width: @brandW;
             bottom: 0px;
             position: relative;
@@ -594,7 +595,7 @@
             .brandNav{
                 position: absolute;
                 width:30px;
-                height:325px;
+                height: 100%;
                 padding-top: 10px;
                 background: #f5f5f5;
                 a{
@@ -613,7 +614,7 @@
             .brandList {
                 clear: both;
                 margin-left:45px;
-                height:310px;
+                height: 100%;
                 overflow: auto;
                 padding-top:10px;
                 li {
@@ -660,7 +661,7 @@
 
         }
         .chexi {
-            height: 320px;
+            height: 100%;
             margin-left: @brandW;
             overflow: auto;
             .chexiContent
