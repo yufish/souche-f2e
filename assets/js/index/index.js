@@ -95,7 +95,9 @@ define(['index/car-god',
                 }).done(function(result) {
                     $(self).find("span").html("查看更多")
                     $(".hotNewCars-loading").addClass("hidden")
-                    $(".carsMore.hotNewCars-more").remove();
+                    if(hotNewCarsPageIndex>1){
+                        $(".carsMore.hotNewCars-more").remove();
+                    }
                     if (result.code == 204) {
 
                     } else {
