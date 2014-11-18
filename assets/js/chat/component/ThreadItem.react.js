@@ -2,29 +2,31 @@
  * @jsx React.DOM
  */
 
-var React = require('react');
+// 带有addons的react lib
+var React = require('react/addons');
+var cx = React.addons.classSet;
 
 var friendIdPrefix = 'buyer_';
 
 var contextPath = contextPath || '';
-function openCrmSalerInfo(user, name){
-    if(user==undefined) {
-        user = "";
-        name = "新增卖家用户";
-    }
-
+var tabId = tabId || '';
+function openCrmBuyerInfo(user, name){
+    if(user==undefined) user = "";
+    if(name==undefined) name = "新增买家用户";
     user = user.replace(/ /g, "");
-    
-    var url = contextPath + "/pages/crm/crm_saler_info.html?user=" + user;
-    //var url = contextPath + "/pages/crm/usercard/user_card.html?userid=" + user;还是用老页面，卖家
-    parent.addTab(user,"卖家-" + name + "的信息",url,tabId);
+    // var url = contextPath + "/pages/crm/crm_buyer_info.html?user=" + user;
+    var url = contextPath + "/pages/crm/usercard/user_card.html?userid=" + user;
+    parent.addTab("buyer-" + user,"买家-" + name + "的信息",url,tabId);
 }
 
 var ThreadItem = React.createClass({
     render: function() {
-        //var users = this.props.thread.members.map(function(u){
-        //    return u.alias;
-        //});
+        var classes = cx({
+            'thread-item': true,
+            active: this.props.activeClass,
+            'has-unread': (this.props.unreadCount > 0)
+        });
+
         var thread = this.props.thread;
         var threadName =  thread.friendName || thread.friendId;
 
@@ -32,12 +34,13 @@ var ThreadItem = React.createClass({
         var lastContact = (d.getMonth()+1) +'月'+d.getDate()+'日';
         return (
             <li
-                className={"thread-item" + (this.props.activeClass? ' active':'') }
+                className={ classes }
                 title={ threadName }
                 data-threadid={thread.id}
                 onClick={this._onClick}
             >
                 <span className="thread-name">{ threadName }</span>
+                <span className="thread-unread-count">{ this.props.unreadCount }</span>
                 <span className="icon icon-info friend-info-btn" onClick={this.openFriendInfo}></span>
                 <span className="thread-last-contact">{ lastContact }</span>
             </li>
@@ -50,7 +53,7 @@ var ThreadItem = React.createClass({
     },
     openFriendInfo: function(){
         var crmId = this.props.thread.friendId.substr(friendIdPrefix.length);
-        openCrmSalerInfo(crmId, '');
+        openCrmBuyerInfo(crmId, '');
     }
 });
 

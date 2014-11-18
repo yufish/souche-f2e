@@ -40,13 +40,16 @@ var ThreadList = React.createClass({
         else{
             for(var i in this.state.threads){
                 var thread = this.state.threads[i];
+                var unread = UnreadStore.getCountByThread(thread.id);
                 nodes.push(
                     <ThreadItem
                         thread={thread}
+                        unreadCount={unread}
                         itemClickHandler={this.switchThread}
                         key={i}
                         activeClass={ curThread == thread.id }
-                    />
+                    >
+                    </ThreadItem>
                 );
             }
         }

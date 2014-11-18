@@ -43,6 +43,11 @@
             background-color: #425E88;
             color: #fff;
         }
+        &.has-unread{
+            .thread-unread-count{
+                display: inline-block;
+            }
+        }
 
         .thread-name{}
         .thread-last-contact{
@@ -55,6 +60,19 @@
             right: 70px;
             top: 7px;
             z-index: 100;
+        }
+        .thread-unread-count{
+            position: relative;
+            display: none;
+            top: -4px;
+            left: 2px;
+            height: 16px;
+            min-width: 16px;
+            text-align: center;
+            color: #fff;
+            line-height: 18px;
+            border-radius: 8px;
+            background-color: @soucheOrange;
         }
     }
 }

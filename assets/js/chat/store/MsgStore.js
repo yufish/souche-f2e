@@ -18,7 +18,7 @@ var _dataHandler = {
         msgs.forEach(function(m){
 
             // 初始化时 先将所有消息都当做未读
-            AppAction.addUnread(m.threadId);
+            // AppAction.addUnread(m.threadId);
 
             MsgData[m.id] = m;
             var u = UserStore.getById(m.sender);
@@ -60,7 +60,7 @@ var _dataHandler = {
 
                 }
                 else{
-                    AppAction.addUnread(m.threadId);
+                    // AppAction.addUnread(m.threadId);
                 }
             }
             else{
