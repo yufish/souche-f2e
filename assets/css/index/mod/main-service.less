@@ -4,20 +4,25 @@
   .wrapper{
     width:1180px;
     margin:0 auto;
-    overflow: hidden;
   }
   .card-list{
-    width:1200px;
-
+    // 卡片横排间距 + 20
+    // 卡片阴影 左边需要有空间 10px
+    width:1180px + 20px + 10px;
+    margin-left: -20px;
+    padding: 10px 0 10px 10px;
+    
+    overflow: hidden;
   }
   .service-card{
-    margin-top: 80px;
-    width:280px;
     float:left;
+    width:280px;
+    margin-top: 70px;
     margin-right: 20px;
     height:320px;
     background: #fff;
     text-align: center;
+
     .title{
       font-size: 20px;
       margin-top: 30px;
@@ -77,5 +82,40 @@
       color:#fff;
       border:2px solid @soucheOrange;
     }
+  }
+}
+
+.gift-card{
+  .icon{
+    position: relative;
+  }
+  .advice-count{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    margin-left: -12px + 20px;
+    height: 24px;
+    width: 24px;
+    .border-radius(12px);
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background-color: @soucheOrange;
+  }
+
+  &.has-advice{
+    .advice-count{
+      display: block;
+    }
+  }
+}
+
+// 动态效果  hover
+#main-service .service-card{
+  .tst();
+
+  &:hover{
+    .box-shadow( 0 0 6px rgba(0,0,0,0.15););
   }
 }

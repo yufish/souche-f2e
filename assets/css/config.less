@@ -8,7 +8,14 @@
     -moz-box-sizing: @v;
     box-sizing: @v;
 }
-
+.box-shadow(@v: 0 0 5px rgba(0,0,0,0.25)){
+    -webkit-box-shadow: @v;
+    box-shadow: @v;
+}
+.border-radius(@v){
+    -webkit-border-radius: @v;
+    border-radius: @v;
+}
 .text-collapse(){
     text-overflow: ellipsis;
     overflow: hidden;

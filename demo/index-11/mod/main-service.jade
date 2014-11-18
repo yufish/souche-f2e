@@ -1,7 +1,7 @@
 #main-service
   .wrapper
     .card-list
-      .service-card.gift-card
+      .service-card.gift-card.hidden
         .title 购车心愿卡
         .icon
           img(src="../../assets/images/index_11/service-icon-1.png")
@@ -9,6 +9,15 @@
           p 提交你的购车心愿卡
           p 每天实时给你找到惊喜
         a.go 立即填写
+      //- .service-card.gift-card.hidden
+      .service-card.gift-card.has-advice
+        .title 有惊喜
+        .icon
+          img(src="../../assets/images/index_11/service-icon-1.png")
+          .advice-count 5
+        .desc
+          p 为您找到5辆好车
+        a.go 查看详情
       .service-card.sell-card
         .title 我要卖车
         .icon
