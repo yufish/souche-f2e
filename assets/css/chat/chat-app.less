@@ -23,6 +23,7 @@
     }
 
     .thread-item{
+        position: relative;
         padding: 0.375em 0 0.25em 0.75em;
         line-height: 1.5;
         color: #666;
@@ -33,11 +34,19 @@
         
         &:hover{
             background-color: rgba(57, 81, 117, 0.25);
+            .friend-info-btn{
+                display: inline-block;
+            }
         }
 
         &.active{
             background-color: #425E88;
             color: #fff;
+        }
+        &.has-unread{
+            .thread-unread-count{
+                display: inline-block;
+            }
         }
 
         .thread-name{}
@@ -45,7 +54,38 @@
             float: right;
         }
         
+        .friend-info-btn{
+            display: none;
+            position: absolute;
+            right: 70px;
+            top: 7px;
+            z-index: 100;
+        }
+        .thread-unread-count{
+            position: relative;
+            display: none;
+            top: -4px;
+            left: 2px;
+            height: 16px;
+            min-width: 16px;
+            text-align: center;
+            color: #fff;
+            line-height: 18px;
+            border-radius: 8px;
+            background-color: @soucheOrange;
+        }
     }
+}
+
+.icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.icon-info{
+    background-image: url("../../images/chat/person.png");
+    background-size: 100%;
 }
 
 @import './msg-list.less';

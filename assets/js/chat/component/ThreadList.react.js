@@ -17,16 +17,16 @@ var Tool = require('../util/tool');
 var ThreadList = React.createClass({
     getInitialState: function() {
         return {
-            threads: ThreadStore.getAll()
+            threads: this.getThreadData()
         };
     },
     componentDidMount: function() {
         ThreadStore.addChangeListener(this._changeHandler);
-        // UnreadStore.addChangeListener();
+        UnreadStore.addChangeListener(this._changeHandler);
     },
     componentWillUnmount: function() {
         ThreadStore.removeChangeListener(this._changeHandler);
-        // UnreadStore.removeChangeListener();
+        UnreadStore.removeChangeListener(this._changeHandler);
     },
     render: function() {
         var curThread = ThreadStore.getCurThread();
@@ -40,13 +40,16 @@ var ThreadList = React.createClass({
         else{
             for(var i in this.state.threads){
                 var thread = this.state.threads[i];
+                var unread = this.state.threads[i].unreadCount;
                 nodes.push(
                     <ThreadItem
                         thread={thread}
+                        unreadCount={unread}
                         itemClickHandler={this.switchThread}
                         key={i}
                         activeClass={ curThread == thread.id }
-                    />
+                    >
+                    </ThreadItem>
                 );
             }
         }
@@ -59,7 +62,7 @@ var ThreadList = React.createClass({
     },
     _changeHandler: function(){
         this.setState({
-            threads: ThreadStore.getAll()
+            threads: this.getThreadData()
         });
     },
     switchThread: function(threadId){
@@ -69,7 +72,16 @@ var ThreadList = React.createClass({
         }
         else{
             AppAction.changeThread( threadId );
+            AppAction.clearThreadUnread( threadId );
         }
+    },
+    getThreadData: function(){
+        var threads = ThreadStore.getAll();
+        for( var i in threads ){
+            var t = threads[i];
+            t.unreadCount = UnreadStore.getCountByThread(t.id);
+        }
+        return threads;
     }
 
 });
