@@ -66,20 +66,34 @@ define(function() {
             }
         }
     });
+    var isInCity = false;
     //城市切换
-    $(".J_city").click(function(e) {
-        $(".city-open").css({
-            opacity: 0
-        }).removeClass("hidden").animate({
-            opacity: 1
-        }, 400);
-        $(".area-box").css({
-            left: "0px"
-        });
-        $(".city-box").css({
-            left: "362px"
-        });
-        e.stopPropagation();
+    $(".city").on("mouseenter",function(e) {
+        isInCity = true;
+        setTimeout(function(){
+            if(isInCity){
+                $(".city-open").css({
+                    opacity: 1
+                }).removeClass("hidden");
+                $(".area-box").css({
+                    left: "0px"
+                });
+                $(".city-box").css({
+                    left: "362px"
+                });
+                e.stopPropagation();
+            }
+        },300)
+
+    })
+    $(".city").on("mouseleave",function(){
+        isInCity = false;
+        setTimeout(function(){
+            if(!isInCity){
+                $(".city-open").addClass("hidden");
+            }
+        },500)
+
     })
     $(document.body).on("click", function(e) {
         if (!$(e.target).closest(".city-open").length) {
@@ -177,11 +191,11 @@ define(function() {
 
 
 
-
+    var isInUser = false;
     var _event = {
         bind: function() {
             $('#header .user .login-text').on('click', _event.login);
-            $('#header .user .headpic, #header .user .trigger').on('click', _event.popUserMenu);
+            $('#header .user').on('mouseenter', _event.popUserMenu);
             _event.bindUsermenuHide();
         },
         login: function() {
@@ -190,15 +204,25 @@ define(function() {
             }, true, false, false, true);
         },
         popUserMenu: function() {
-            if ($('#user-menu').hasClass('active')) {
-                $('#user-menu').removeClass('active');
-            } else {
-                $('#user-menu').addClass('active');
-            }
+            isInUser = true;
+            setTimeout(function(){
+                if(isInUser){
+                    $('#user-menu').addClass('active');
+                }
+            },300)
+
         },
         bindUsermenuHide: function() {
             $(document.body).on('click', function() {
                 $('#user-menu').removeClass('active');
+            });
+            $('#header .user').on('mouseleave', function(){
+                isInUser = false;
+                setTimeout(function(){
+                    if(!isInUser){
+                        $('#user-menu').removeClass('active');
+                    }
+                },500)
             });
             var stopBubbleEles = $('#header .user .headpic, #header .user .trigger, #user-menu');
             stopBubbleEles.on('click', function(e) {

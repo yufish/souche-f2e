@@ -10,15 +10,43 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
             _view.initWhoBuySlide();
         },
         initChooseNav: function(){
+            var isInBrand = false;
+            var isInModel = false;
             $("#choose_brand").on("mouseenter",function(){
-                $(this).addClass("active");
+                isInBrand = true;
+                var self = this;
+                setTimeout(function(){
+                    if(isInBrand){
+                        $(self).addClass("active");
+                    }
+                },300)
+
+
             }).on("mouseleave",function(){
-                $(this).removeClass("active");
+                isInBrand = false;
+                var self = this;
+                setTimeout(function(){
+                    if(!isInBrand){
+                        $(self).removeClass("active");
+                    }
+                },300)
             })
             $("#choose_model").on("mouseenter",function(){
-                $(this).addClass("active");
+                isInModel = true;
+                var self = this;
+                setTimeout(function(){
+                    if(isInModel){
+                        $(self).addClass("active");
+                    }
+                },300)
             }).on("mouseleave",function(){
-                $(this).removeClass("active");
+                isInModel = false;
+                var self = this;
+                setTimeout(function(){
+                    if(!isInModel){
+                        $(self).removeClass("active");
+                    }
+                },300)
             })
         },
         initLimitSaleHover: function(){
