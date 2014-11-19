@@ -10,6 +10,7 @@ html(lang='zh-CN')
     //
        Le styles
     link(href='http://f2e.souche.com/assets/css/bootstrap/bootstrap-back.css', rel='stylesheet')
+    link(href='http://f2e.souche.com/assets/css/bootstrap/style-metro.css', rel='stylesheet')
     link(href='http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css', rel='stylesheet')
     link(href='http://f2e.souche.com/assets/css/bootstrap/doc.css', rel='stylesheet')
     style.
@@ -338,16 +339,12 @@ html(lang='zh-CN')
             //
                /row
             .row-fluid
-              .span12
-                .control-group
                   .alert
-                    .controls
-                      span.label.label-important 使用说明:
-                      strong
-                        | 1、访问
+                      p 使用说明:
+                      p 1、访问
                         a(href='http://api.map.baidu.com/lbsapi/getpoint/', target='_black') http://api.map.baidu.com/lbsapi/getpoint/
-                        | 2、搜索到公司实际地址
-                        | 3、复制坐标点及当前图层
+                      p 2、搜索到公司实际地址
+                      p 3、复制坐标点及当前图层
             .row-fluid
               .span12
                 .control-group
@@ -363,12 +360,10 @@ html(lang='zh-CN')
               .span12
                 .control-group
                   .alert
-                    .controls
-                      span.label.label-important 使用说明:
-                      strong
-                        | 使用
+                      p 使用说明:
+                      p 使用
                         a(href='http://map.baidu.com/', target='_black') 百度地图
-                        | 查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp
+                      p 查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp
             //
                /row
             h3.form-section
@@ -386,7 +381,6 @@ html(lang='zh-CN')
                 div
                   span.btn.btn-file
                     span.fileupload-new 添加图片
-                    span.fileupload-exists 更改图片
                     input.default(type='file', name='picture')
                   a.btn.fileupload-exists(data-dismiss='fileupload') 移除图片
             //

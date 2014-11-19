@@ -85,7 +85,7 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                 $("#car_series").val(series.join(","))
                 $(".selected_series_result").html(html)
             })
-
+            var phoneReg = /^1[3458][0-9]{9}$/;
             $("#form-submit").on("click",function(e){
                 e.preventDefault();
                 if(!$("#you-name").val()){
@@ -94,6 +94,10 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                 }
                 if(!$("#you-phone").val()){
                     alert("请填写手机");
+                    return;
+                }
+                if(!phoneReg.test($("#you-phone").val())){
+                    alert("请填写正确的手机号码");
                     return;
                 }
                 if(!$("#car_series").val()){

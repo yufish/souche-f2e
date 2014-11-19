@@ -1,0 +1,4 @@
+{ "desc" : "", "car_series" : "揽胜极光,卫士,神行者", "biansu" : "不限", "minYear" : "0000", "maxPrice" : "100", "w_color" : "", "city" : "北京", "maxYear" : "2014", "user_name" : "孙鱼头", "n_color" : "", "user_phone" : "18667987654", "province" : "北京", "user_wx" : "mier", "minPrice" : "5" }
+
+
+mongoexport -h 10.171.248.51 -u souche -p souche2014datacenter -d souche -c commActivityVO --csv -f data.user_name,data.car_series,data.biansu,data.minYear,data.maxYear,data.minPrice,data.maxPrice,data.w_color,data.city,data.maxYear,data.
