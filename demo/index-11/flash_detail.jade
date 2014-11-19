@@ -869,7 +869,13 @@ html
                   </a>
                 </div>
                 <div class="up-time">今日</div>
-              
+    script.
+      require(['souche/time-countdown'],function(TimeCountDown){
+        TimeCountDown.init(".downCounter")
+        $(".slides .time").each(function(i,s){
+         TimeCountDown.init(s,'<span>{{totalHour}}</span><em>:</em><span>{{minute}}</span><em>:</em><span>{{second}}</span>')
+         });
+    
                     
 
                   
