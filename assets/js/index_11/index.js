@@ -1,4 +1,4 @@
-define(['wannaBuy/sweetCountdown', 'index_11/header'],function(SweetCountdown, Header){
+define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
@@ -90,8 +90,6 @@ define(['wannaBuy/sweetCountdown', 'index_11/header'],function(SweetCountdown, H
             $.extend(_config, config);
             _view.init();
             _event.bind();
-
-            Header.init();
         }
     }
     return Index;
