@@ -31,7 +31,7 @@ window.location.reload() ;
 },true,false,true);
 });
 var HeaderConfig ={
-selectSearch:"/pages/headerAction/selectSearchCode.json"
+selectSearch:contextPath+"/pages/headerAction/selectSearchCode.json"
 };
 $.ajax({
 type:"GET",
