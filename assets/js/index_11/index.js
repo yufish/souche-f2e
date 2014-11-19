@@ -1,4 +1,4 @@
-define(function(){
+define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
@@ -6,6 +6,7 @@ define(function(){
         init: function(){
             _view.initChooseNav();
             _view.initLimitSaleHover();
+            _view.initLimitSaleCountdown();
             _view.initWhoBuySlide();
         },
         initChooseNav: function(){
@@ -28,6 +29,26 @@ define(function(){
                 affectEl.addClass('hover');
             }).on('mouseleave', function(){
                 affectEl.removeClass('hover');
+            });
+        },
+        initLimitSaleCountdown: function(){
+            var curTime = (new Date($('#nowtime').val())).valueOf();
+            var endTime = (new Date($('.limit-sale-left-time').attr('deadline'))).valueOf();
+            SweetCountdown.mini( {
+                nowTime: Number(curTime),
+                endTime: Number(endTime),
+                zeroCallback: function(){
+                    $('.left-time-data').html('限时优惠已结束');
+                },
+                ctn: $('.left-time-data'),
+                showDay: true,
+                word: {
+                    pre: '',
+                    day: ' 天 ',
+                    hour: ' 时 ',
+                    minute: ' 分 ',
+                    second: ' 秒 '
+                }
             });
         },
         initWhoBuySlide: function(){
