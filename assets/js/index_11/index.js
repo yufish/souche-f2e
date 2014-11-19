@@ -1,5 +1,7 @@
 define(function(){
 
+    var _config = {};
+
     var _view = {
         init: function(){
             _view.initChooseNav();
@@ -35,12 +37,24 @@ define(function(){
         }
     };
 
+    var _data = {
+        markAdviceRead: function(callback){
+            // 不考虑返回值
+            $.ajax({
+                type: 'GET',
+                url: _config.markAdivceRead
+            }).always(callback);
+        }
+    };
+
     var _event = {
         bind: function(){
             $('#header .user .login-text').on('click', _event.login);
 
             $('#header .user .headpic, #header .user .trigger').on('click', _event.popUserMenu);
             _event.bindUsermenuHide();
+            // 有推荐车辆时, 发送一个已读请求
+            $('.gift-card.has-advice .go').on('click', _event.markAdviceRead);
         },
         login: function(){
             Souche.MiniLogin.checkLogin(function(){
@@ -63,11 +77,22 @@ define(function(){
             stopBubbleEles.on('click', function(e){
                 e.stopPropagation();
             });
+        },
+        markAdviceRead: function(e){
+            e.preventDefault();
+            var card = $(this).parents('.gift-card');
+            var adviceCount = Number(card.find('.advice-count').text());
+            if(adviceCount > 0){
+                _data.markAdviceRead(function(){
+                    window.location.href= _config.wishCardPageUrl;
+                });
+            }
         }
     }
 
     var Index = {
-        init:function(){
+        init:function(config){
+            $.extend(_config, config);
             _view.init();
             _event.bind();
         }

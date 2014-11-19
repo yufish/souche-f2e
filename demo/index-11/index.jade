@@ -26,6 +26,13 @@ html(xmlns:wb="http://open.weibo.com/wb")
     include mod/social
     include mod/footer
     script.
+      var indexConfig = {
+        // 将推荐车标记为已读
+        markAdivceRead: "/pages/homePageAction/readCarNumTip.json",
+        //- wishCardPageUrl: "/pages/assem/wishCard.html"
+        wishCardPageUrl: "/demo/index-11/wish-card"
+      };
+    script.
       require(['index_11/index'],function(Index){
-         Index.init();
+         Index.init(indexConfig);
       });
