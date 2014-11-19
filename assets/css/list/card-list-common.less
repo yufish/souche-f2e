@@ -5,24 +5,26 @@
 .card-box,
 .list-box{
   .carItem{
-    .timebuy{
-      width: 84px;
-      height: 84px;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      background: url(../images/list/timebuy.png) no-repeat;
+    .timebuy,
+    .whole-new{
+        width: 84px;
+        height: 84px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-repeat: no-repeat;
     }
+    .timebuy{
+        background-image: url(../images/list/timebuy.png);
+    }
+    .whole-new{
+        background-image: url(../images/list/new-car.png);
+    }
+    
     .car-price .price{
       // 多个inline元素间在代码缩进之后有间距
       // 既然子元素都单独定义了font-size
       // 就把父元素定义为0  解决这个问题
-      .timebuy{
-        width: 84px;
-        height: 84px;
-        position: absolute;
-        background: url(../images/list/timebuy.png) no-repeat;
-      }
       font-size: 0;
       .rmb-symbol{
         font-family: @yahei;
