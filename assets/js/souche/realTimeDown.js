@@ -46,9 +46,9 @@ define(function() {
 
         $(".realIndexTimeDown").remove();
         var element = $(downList).css({
-            top: top + 2,
+            top: top-1,
             left: left,
-            width: $(".search .search-text").width() + 20,
+            width: $(".search .search-text").width() +12,
             position: "absolute"
         });
 

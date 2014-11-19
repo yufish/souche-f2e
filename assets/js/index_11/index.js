@@ -1,4 +1,4 @@
-define(function(){
+define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
@@ -6,6 +6,7 @@ define(function(){
         init: function(){
             _view.initChooseNav();
             _view.initLimitSaleHover();
+            _view.initLimitSaleCountdown();
             _view.initWhoBuySlide();
         },
         initChooseNav: function(){
@@ -30,6 +31,26 @@ define(function(){
                 affectEl.removeClass('hover');
             });
         },
+        initLimitSaleCountdown: function(){
+            var curTime = (new Date($('#nowtime').val())).valueOf();
+            var endTime = (new Date($('.limit-sale-left-time').attr('deadline'))).valueOf();
+            SweetCountdown.mini( {
+                nowTime: Number(curTime),
+                endTime: Number(endTime),
+                zeroCallback: function(){
+                    $('.left-time-data').html('限时优惠已结束');
+                },
+                ctn: $('.left-time-data'),
+                showDay: true,
+                word: {
+                    pre: '',
+                    day: ' 天 ',
+                    hour: ' 时 ',
+                    minute: ' 分 ',
+                    second: ' 秒 '
+                }
+            });
+        },
         initWhoBuySlide: function(){
             $('.flexslider').flexslider({
                 animation: "slide"
@@ -49,34 +70,8 @@ define(function(){
 
     var _event = {
         bind: function(){
-            $('#header .user .login-text').on('click', _event.login);
-
-            $('#header .user .headpic, #header .user .trigger').on('click', _event.popUserMenu);
-            _event.bindUsermenuHide();
             // 有推荐车辆时, 发送一个已读请求
             $('.gift-card.has-advice .go').on('click', _event.markAdviceRead);
-        },
-        login: function(){
-            Souche.MiniLogin.checkLogin(function(){
-                window.location.href = window.location.href;
-            },true,false,false,true);
-        },
-        popUserMenu: function(){
-            if($('#user-menu').hasClass('active')){
-                $('#user-menu').removeClass('active');
-            }
-            else{
-                $('#user-menu').addClass('active');
-            }
-        },
-        bindUsermenuHide: function(){
-            $(document.body).on('click', function(){
-                $('#user-menu').removeClass('active');
-            });
-            var stopBubbleEles = $('#header .user .headpic, #header .user .trigger, #user-menu');
-            stopBubbleEles.on('click', function(e){
-                e.stopPropagation();
-            });
         },
         markAdviceRead: function(e){
             e.preventDefault();

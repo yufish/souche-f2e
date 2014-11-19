@@ -4,6 +4,15 @@ html,body{
   font-family: 'Microsoft YaHei',Tahoma,Verdana;
 }
 #header{
+
+  *{
+    .box-sizing();
+    &:before,
+    &:after{
+      .box-sizing();
+    }
+  }
+
   height:80px;
   background: #fff;
   margin-top: 0px;
@@ -74,7 +83,7 @@ html,body{
       }
       .area-box{
         position: absolute;
-        width: 320px;
+        width: 360px;
         height: 260px;
 
         background: #fff;
@@ -209,6 +218,10 @@ html,body{
           top: 9px;
           right: 10px;
           cursor: pointer;
+
+          &:hover{
+            background: url(../../images/index_11/search-active.png) no-repeat;
+          }
         }
       }
   }
@@ -226,15 +239,17 @@ html,body{
       margin-top: 20px;
       margin-right: 10px;
       .headpic{
+        display: inline-block;
+        vertical-align: -13px;
+        cursor: pointer;
+        
         img{
           border-radius:30px;
-          width:30px;
-          height:30px;
+          width:36px;
+          height:36px;
           border:3px solid #fff;
           box-shadow: 1px 1px 3px #999;
         }
-        vertical-align: -13px;
-        display: inline-block;
       }
       .username{
         padding-left: 10px;
@@ -370,4 +385,44 @@ html,body{
   .wrapper{
     width: 1220px;
   }
+}
+
+
+.realIndexTimeDown {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+}
+.realIndexTimeDown span {
+  display: block;
+  float: none;
+  padding: 3px 0px;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #B4B4B4;
+  cursor: pointer;
+  font-size: 13px;
+  a{
+    display: block;
+    color:  #666;
+  }
+}
+
+.realIndexTimeDown span .enterChexi {
+  float: right;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #FF5719;
+  font-weight: bolder;
+  margin-top:-5px;
+}
+.realIndexTimeDown .hover {
+  background: #F8F8F6;
 }

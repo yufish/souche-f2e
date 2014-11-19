@@ -1,8 +1,10 @@
-define(['wish-card/wish-card-edit',
+define([
+    'lib/lazyload',
+    'wish-card/wish-card-edit',
     'index/collect',
     'souche/util/image-resize',
     'index/guess-like'
-    ], function(WishCardEdit, Collect, ImageResizer, GuessLike){
+    ], function(LazyLoad, WishCardEdit, Collect, ImageResizer, GuessLike){
     
 
     var _config = {
@@ -12,9 +14,22 @@ define(['wish-card/wish-card-edit',
         }
     };
 
+    var _view = {
+        init: function(){
+            _view.initLazyLoad();
+        },
+        initLazyLoad: function(){
+            $(".wish-card-main img").lazyload({
+                threshold: 200
+            });
+        }
+    };
+
 
     function init(config){
         $.extend(_config, config);
+        _view.init();
+
         WishCardEdit.init(_config);
         Collect.init(_config);
         ImageResizer.init('.wish-card-main .carImg img', 280, 200);
