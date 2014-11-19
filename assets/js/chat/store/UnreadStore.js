@@ -5,6 +5,9 @@ var merge = require('react/lib/merge');
 var ChatDispatcher = require('../dispatcher/ChatDispatcher');
 var ChatConstants = require('../constant/ChatConstants');
 
+var ThreadStore = require('./ThreadStore');
+var UserStore = require('./UserStore');
+
 var CHANGE_EVENT = 'change';
 
 // threadId : how-many-unread
@@ -47,11 +50,36 @@ UnreadStore.dispatchToken = ChatDispatcher.register(function(payload){
     var actionType = action.actionType;
 
     switch(actionType){
-        case ChatConstants.ADD_UNREAD:
-            var threadId = action.threadId;
-            addUnread(threadId);
+        // app init时 全部设为未读
+        case ChatConstants.APP_INIT:
+            ChatDispatcher.waitFor([ThreadStore.dispatchToken]);
+            var msgs = action.msgs;
+            var curActiveThread = ThreadStore.getCurThread();
+            msgs.forEach(function(m){
+                var friend = m.threadId;
+                // 不属于当前激活的thread的
+                if( m.threadId != curActiveThread){
+                    addUnread(m.threadId);
+                }
+            });
             break;
+        // 定期更新时, 检查得到的msg
+        case ChatConstants.SCHEDUAL_UPDATE:
+            var msgs = action.msgs;
+            var curActiveThread = ThreadStore.getCurThread();
+            var curUser = UserStore.getCurUser();
+            msgs.forEach(function(m){
+                var friend = m.threadId;
+                // 别人发过来的
+                // 且不属于当前激活的thread的
+                if(m.sender !== friend && m.threadId != curActiveThread){
+                    addUnread(m.threadId);
+                }
+            });
+        // 点击thread时, 清除unread
         case ChatConstants.CLEAR_THREAD_UNREAD:
+            var threadId = action.threadId;
+            clearUnread(threadId);
             break;
         case ChatConstants.CLEAR_ALL_UNREAD:
             break;
