@@ -15,11 +15,9 @@ block body
     .wish-card-main
         include mod/wish-fill-form
         include mod/wish-car-list
+        .carsMore(click_type="xuqiu-3")
+            span 查看更多
         .guess-like
-    
-
-        
-        
      
        
     script.
@@ -29,7 +27,7 @@ block body
             userRequirementJsonForTag:{},
             series_api:'/pages/dicAction/loadRootLevelForCar.json?type=car-subdivision&code=',
             brand_api:'/pages/dicAction/loadRootLevel.json?type=car-subdivision',
-            getMoreUserRecommend_api:"/pages/homePageAction/loadUserRecommendCar.json?page",
+            getMoreUserRecommend_api:"/pages/homePageAction/loadUserRecommendCar.json",
             getMoreHotCars_api:"/pages/homePageAction/loadHotRecCars.json?page=",
             getMoreOtherCars_api:"/pages/homePageAction/loadHotNewCar.json",
             search_api:"/pages/common/boxSuggestAction/list.json",
