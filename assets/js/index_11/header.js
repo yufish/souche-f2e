@@ -70,16 +70,21 @@ define(function() {
     //城市切换
     $(".city").on("mouseenter",function(e) {
         isInCity = true;
-        $(".city-open").css({
-            opacity: 1
-        }).removeClass("hidden");
-        $(".area-box").css({
-            left: "0px"
-        });
-        $(".city-box").css({
-            left: "362px"
-        });
-        e.stopPropagation();
+        setTimeout(function(){
+            if(isInCity){
+                $(".city-open").css({
+                    opacity: 1
+                }).removeClass("hidden");
+                $(".area-box").css({
+                    left: "0px"
+                });
+                $(".city-box").css({
+                    left: "362px"
+                });
+                e.stopPropagation();
+            }
+        },300)
+
     })
     $(".city").on("mouseleave",function(){
         isInCity = false;
@@ -200,7 +205,12 @@ define(function() {
         },
         popUserMenu: function() {
             isInUser = true;
-            $('#user-menu').addClass('active');
+            setTimeout(function(){
+                if(isInUser){
+                    $('#user-menu').addClass('active');
+                }
+            },300)
+
         },
         bindUsermenuHide: function() {
             $(document.body).on('click', function() {
