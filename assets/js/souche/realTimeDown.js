@@ -12,7 +12,7 @@ define(function() {
     var _bind = function() {
 
     }
-
+    var activeInput ;
     var callback = function(result) {
         var list = []
         var len = result.items.length >= 10 ? 10 : result.items.length;
@@ -41,14 +41,20 @@ define(function() {
         }
 
         downList += "<\/div>";
-        var top = $(".search").offset().top + $(".search").height();
-        var width = $(".search").offset().left;
 
+        var top = $(".search").offset().top + $(".search").height();
+        var left = $(".search").offset().left;
+        var width = $(".search").width()
+        if(activeInput){
+            var top = $(activeInput).offset().top + $(activeInput).parent().height();
+            var left = $(activeInput).offset().left;
+            var width = $(activeInput).width()
+        }
         $(".realIndexTimeDown").remove();
         var element = $(downList).css({
-            top: top + 2,
+            top: top-1,
             left: left,
-            width: $(".search .search-text").width() + 20,
+            width: width +12,
             position: "absolute"
         });
 
@@ -77,6 +83,7 @@ define(function() {
         });
 
         $element.find("input").keyup(function(e) {
+            activeInput = this;
             if (e.keyCode == 40) {
                 var num = $(".realIndexTimeDown .hover").index();
                 var index = (num + 1) % $(".realIndexTimeDown .list").length;
