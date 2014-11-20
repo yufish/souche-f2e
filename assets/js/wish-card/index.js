@@ -10,7 +10,7 @@ define([
     var _config = {
         guessLikeImgSize: {
             width: 280,
-            height: 200
+            height: 186
         }
     };
 
