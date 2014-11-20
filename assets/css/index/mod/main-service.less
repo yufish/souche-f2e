@@ -1,3 +1,14 @@
+#main-service .service-card .go .icon{
+  display: inline-block;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+.icon-qq{
+  background-image: url('../../images/index_11/qq-black.png');
+}
+
 #main-service{
   height:480px;
   background: #f2f2f2;
@@ -71,10 +82,19 @@
     }
   }
   .god-card{
+    .go .icon-qq{
+      position: relative;
+      top: 3px;
+      margin-right: 6px;
+    }
     .go:hover{
       background: #5C9BEF;
       color:#fff;
       border:2px solid #5C9BEF;
+
+      .icon-qq{
+        background-image: url('../../images/index_11/qq-white.png');
+      }
     }
   }
   .app-card{

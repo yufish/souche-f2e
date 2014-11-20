@@ -7,7 +7,7 @@
     height:36px;
     border:2px solid #e6e6e6;
     border-radius: 3px;
-    width:160px;
+    width:100px;
     color:#666;
     font-size: 16px;
     line-height: 36px;
@@ -29,17 +29,24 @@
     width:250px;
     float:left;
     margin-right:60px;
+
     .pic{
-      width:230px;
-      height:150px;
       display:block;
+      img{
+        display: block;
+        max-width:200px;
+        max-height:115px;
+        margin: 0 auto;
+      }
     }
     .title{
-      font-size:14px;
-      color:#333;
-      text-align: center;
       display: block;
+      padding: 0 1em;
+      .text-collapse();
+      font-size:14px;
+      text-align: center;
       line-height:20px;
+      color:#333;
     }
     .price{
       font-size: 16px;
@@ -47,6 +54,27 @@
       line-height: 30px;
       font-weight: bold;
       text-align: center;
+    }
+  }
+}
+
+// 动效
+#special-car .car{
+  // 车图, 容器左移(img居中, 不方便移)
+  .pic{
+    margin-left: 0px;
+  }
+  .pic,
+  .title{
+    .tst();
+  }
+
+  &:hover{
+    .pic{
+      margin-left: -20px;
+    }
+    .title{
+      color: @soucheOrange;
     }
   }
 }
