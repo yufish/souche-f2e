@@ -2,6 +2,16 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
+    // 把 yyyy-mm-dd hh:mm:ss 转化为 mm/dd/yyyy hh:mm:ss
+    // 后者是通用的new date的格式
+    function getValidDateStr(str){
+        var arr1 = str.split(' ');
+        var ymd = arr1[0];
+        var arr2 = ymd.split('-');
+        var mdy = arr2[1] + '/' + arr2[2] +'/' + arr2[0];
+        return [mdy, arr1[1]].join(' ');
+    }
+
     //banner-slide
     $(document).ready(function() {
           $('.flexslider').flexslider({
@@ -82,8 +92,8 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
             });
         },
         initLimitSaleCountdown: function(){
-            var curTime = (new Date($('#nowtime').val())).valueOf();
-            var endTime = (new Date($('.limit-sale-left-time').attr('deadline'))).valueOf();
+            var curTime = (new Date( getValidDateStr($('#nowtime').val()) )).valueOf();
+            var endTime = (new Date( getValidDateStr($('.limit-sale-left-time').attr('deadline')) )).valueOf();
             SweetCountdown.mini( {
                 nowTime: Number(curTime),
                 endTime: Number(endTime),
