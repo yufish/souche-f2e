@@ -23,10 +23,7 @@ define(function() {
             return false;
         });
 
-        $("#noreg-phone-form .submit").click(function() {
-            $("#noreg-phone-form").submit();
-            return false;
-        });
+       
 
     };
 
@@ -103,7 +100,6 @@ define(function() {
         })
     }
 
-    //function end
 
     collectControl.init = init;
 
