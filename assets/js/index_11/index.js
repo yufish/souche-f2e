@@ -2,6 +2,28 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
+    //banner-slide
+    $(document).ready(function() {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              slideshowSpeed: 4000,
+              directionNav: true,
+              controlNav: true,
+              pauseOnHover: true
+          });
+      });
+
+    $(".flexslider").mouseover(function(){
+          $(".flex-direction-nav").animate({
+              opacity:0.2
+          },500)
+      });
+    $(".flexslider").mouseout(function(){
+          $(".flex-direction-nav").animate({
+              opacity:0.1
+          },500)
+      });
+
     var _view = {
         init: function(){
             _view.initChooseNav();
