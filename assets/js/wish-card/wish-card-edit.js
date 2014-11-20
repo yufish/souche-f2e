@@ -224,6 +224,7 @@ function(AddSeries, CustomSelect, Tool){
                     opacity:1
                 },500, function(){
                     $(".dialogContentContainer").addClass("active");
+                    $(".dialogContentContainer").css({overflow:'visible'});
                 });
             }
         },
