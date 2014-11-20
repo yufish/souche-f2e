@@ -29,10 +29,15 @@
     width:250px;
     float:left;
     margin-right:60px;
+
     .pic{
-      width:230px;
-      height:150px;
       display:block;
+      img{
+        display: block;
+        max-width:200px;
+        max-height:115px;
+        margin: 0 auto;
+      }
     }
     .title{
       font-size:14px;
@@ -47,6 +52,27 @@
       line-height: 30px;
       font-weight: bold;
       text-align: center;
+    }
+  }
+}
+
+// 动效
+#special-car .car{
+  // 车图, 容器左移(img居中, 不方便移)
+  .pic{
+    margin-left: 0px;
+  }
+  .pic,
+  .title{
+    .tst();
+  }
+
+  &:hover{
+    .pic{
+      margin-left: -20px;
+    }
+    .title{
+      color: @soucheOrange;
     }
   }
 }
