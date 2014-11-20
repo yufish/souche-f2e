@@ -12,7 +12,7 @@
     background: #fff;
     border: none;
     z-index:1000;
-    overflow: visible;
+    overflow: hidden;
     // overflow-x: hidden;
     opacity: 0;
     .tst(width 400ms ease-out, opacity 300ms ease-out;);
@@ -20,6 +20,7 @@
     &.active{
         width: 100%;
         opacity: 1;
+        overflow: hidden;
         border: 1px solid #CCCCCC;
         .tst(opacity 400ms ease 100ms, width 500ms ease;);
     }
