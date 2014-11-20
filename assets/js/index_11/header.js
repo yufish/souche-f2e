@@ -201,7 +201,7 @@ define(function() {
         login: function() {
             Souche.MiniLogin.checkLogin(function() {
                 window.location.href = window.location.href;
-            }, true, false, false, true);
+            }, true, false, true);
         },
         popUserMenu: function() {
             isInUser = true;
