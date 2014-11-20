@@ -222,7 +222,9 @@ function(AddSeries, CustomSelect, Tool){
                 $(".dialogContentContainer").css({width:200}).removeClass("hidden").animate({
                     width: 1180,
                     opacity:1
-                },500)
+                },500, function(){
+                    $(".dialogContentContainer").addClass("active");
+                });
             }
         },
         cacelEdit: function(){
@@ -230,6 +232,7 @@ function(AddSeries, CustomSelect, Tool){
                 $(".dialogContentContainer").removeClass('active');
             }
             else{
+                $(".dialogContentContainer").removeClass("active");
                 $(".dialogContentContainer").animate({width:200,opacity:0},500,function(){
                     $(".dialogContentContainer").addClass("hidden")
                 })
