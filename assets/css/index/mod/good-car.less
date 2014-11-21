@@ -198,7 +198,7 @@
             bottom: -14px;
             right: 1px;
             // 不是常规的transparent
-            border: 7px solid #fff;
+            border: 7px solid transparent;
             border-top-color: @journalBGC;
             border-right-color: @journalBGC;
         }
@@ -216,7 +216,7 @@
             position: relative;
             top: 6px;
             color: @soucheOrange;
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
 
@@ -276,6 +276,7 @@
     
     // 好车日报的气泡 color & bgc tst
     .car-journal .journal-info{
+        cursor: pointer;
         .tst();
         
         &:after,
@@ -285,16 +286,24 @@
             .tst();
         }
 
+        // &:hover{
+        //     background-color: @soucheOrange;
+        //     &:after{
+        //         border-top-color: @soucheOrange;
+        //         border-right-color: @soucheOrange;
+        //     }
+        //     .journal-title,
+        //     .journal-content,
+        //     .journal-link{
+        //         color: #fff;
+        //     }
+        // }
+
         &:hover{
-            background-color: @soucheOrange;
-            &:after{
-                border-top-color: @soucheOrange;
-                border-right-color: @soucheOrange;
-            }
-            .journal-title,
-            .journal-content,
+            .box-shadow(0 3px 7px #aaa);
+
             .journal-link{
-                color: #fff;
+                text-decoration: underline;
             }
         }
     }
