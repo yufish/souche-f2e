@@ -23,12 +23,12 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
           });
       });
 
-    $(".flexslider").mouseover(function(){
+    $(".flexslider").mouseenter(function(){
           $(".flex-direction-nav").animate({
               opacity:0.2
           },500)
       });
-    $(".flexslider").mouseout(function(){
+    $(".flexslider").mouseleave(function(){
           $(".flex-direction-nav").animate({
               opacity:0.1
           },500)
