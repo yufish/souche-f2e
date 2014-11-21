@@ -1,0 +1,150 @@
+img{
+    vertical-align: middle;
+}
+.wrapper-1440{
+    width: 1440px;
+    margin:0 auto;
+    position: relative;
+}
+.hr-12{
+    height: 12px;
+    background: #ffa4a4;
+}
+#content-1{
+    background: #ffc4c4;
+}
+#content-2{
+    background: #f7efe2;
+}
+#content-3{
+    background: #c4ddce;
+}
+#content-4{
+    background: #fde1c4;
+}
+#content-5{
+    background: #cfeefa;
+}
+#erwei{
+    position: absolute;
+    top:245px ;
+    right: 355px;
+}
+#android{
+    position: absolute;
+    top:480px ;
+    right: 355px;
+}
+#ios{
+    position: absolute;
+    top:540px ;
+    right: 355px;
+}
+
+#shushu{
+    position: absolute;
+    top:60px;
+    right:260px;
+}
+.location-tag{
+    background: url('../../images/app/buy/location-tag.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    opacity: 0;
+}
+#tag-1{
+    width: 136px;
+    height: 145px;
+    top: 40px;
+    left: 375px;
+}
+#tag-2{
+    width: 91px;
+    height: 97px;
+    top: 110px;
+    left: 512px;
+}
+#tag-3{
+    height: 68px;
+    width: 72px;
+    top: 165px;
+    left: 253px;
+}
+.heart{
+    position: absolute;
+    opacity: 0;
+}
+#heart-1{
+    background: url('../../images/app/buy/heart-1.png') no-repeat;
+    background-size: 100%;
+    width: 44px;
+    height: 40px;
+    top: 150px;
+    right: 335px
+}
+#heart-2{
+    background: url('../../images/app/buy/heart-2.png') no-repeat;
+    background-size: 100%;
+    width: 33px;
+    height: 30px;
+    top: 190px;
+    right: 640px
+}
+#heart-3{
+    background: url('../../images/app/buy/heart-3.png') no-repeat;
+    background-size: 100%;
+    width: 32px;
+    height: 30px;
+    top: 230px;
+    right: 400px;
+}
+#zhang{
+    background: url('../../images/app/buy/zhang.png') no-repeat;
+    background-size: 100%;
+    width: 136px;
+    height: 145px;
+    top: 15px;
+    left: 235px;
+    position: absolute;
+    z-index: 10;
+}
+#zhang-shadow{
+    background: url('../../images/app/buy/zhang-shadow.png') no-repeat;
+    background-size: 100%;
+    width: 75px;
+    height: 52px;
+    top: 145px;
+    left: 330px;
+    position: absolute;
+    display: none;
+}
+.cloud{
+    background: url('../../images/app/buy/cloud.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+.cloud-1{
+    width:59px;
+    height: 46px;
+    top: 270px;
+    left: 430px;
+}
+.cloud-2{
+    width:52px;
+    height: 40px;
+    top: 285px;
+    left: 610px;
+}
+.cloud-3{
+    width:32px;
+    height: 24px;
+    top: 350px;
+    left: 320px;
+}
+.cloud-4{
+    width:32px;
+    height: 46px;
+    opacity: 0.8;
+    top: 380px;
+    left: 750px;
+}

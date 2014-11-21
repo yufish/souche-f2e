@@ -1,0 +1,27 @@
+.box-sizing(@v:border-box){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+
+.clear-flt(){
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.text-collapse(){
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// transition
+.tst(@v: all 300ms ease;){
+    -webkit-transition: @v;
+    -moz-transition: @v;
+    -ms-transition: @v;
+    transition: @v;
+}

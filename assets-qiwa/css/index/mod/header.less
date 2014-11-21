@@ -1,0 +1,103 @@
+#top-head{
+  height:500px;
+  width:100%;
+  background-position: center center;
+  .wrapper{
+    width:1180px;
+    margin:0 auto;
+
+  }
+  .p{
+    font-size: 48px;
+    color:#f5f5f5;
+    line-height: 60px;
+    text-align: center;
+    width:600px;
+    margin:0 auto;
+    padding-top: 60px;
+  }
+  .p2{
+    font-size: 24px;
+    color:#f5f5f5;
+    line-height: 50px;
+    text-align: center;
+    width:410px;
+    margin:0 auto;
+    margin-top: 20px;
+  }
+  .more{
+    margin:50px auto;
+    width: 100px;
+    height:40px;
+    border: 2px solid #f5f5f5;
+    font-size: 16px;
+    color:#f5f5f5;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .more:hover{
+    background:rgba(255,255,255,0.3);
+  }
+  .search{
+    height: 40px;
+    width:600px;
+    margin:0 auto;
+    .index-search{
+      height: 40px;
+      position: relative;
+      .search-text{
+        height: 20px;
+        padding: 10px;
+        line-height: 20px;
+        border: 1px solid #E6E6E6;
+        display: block;
+        float: left;
+        width:520px;
+      }
+      .search-submit{
+        border: 1px solid #D94A16;
+        width: 42px;
+        height: 42px;
+        background: #FF5A00;
+        display: block;
+        float: left;
+        cursor: pointer;
+        i{
+          background: #FF5A00 url(../../images/index/index_sprite_v2.png) no-repeat;
+          background-position: -120px 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
+        }
+      }
+      .search-submit:hover{
+        background: #FF4600;
+        border: 1px solid #CA2E16;
+        i{
+          background-position: -120px -20px;
+        }
+      }
+      .recom{
+        width: 295px;
+        height: 20px;
+        position: absolute;
+        top: 9px;
+        right: 60px;
+        a{
+          color: #666;
+          background: #F8F8F7;
+          padding: 4px 7px;
+          margin-right: 9px;
+          display: block;
+          float: right;
+        }
+        a:hover{
+          color: @soucheOrange;
+        }
+      }
+    }
+  }
+}

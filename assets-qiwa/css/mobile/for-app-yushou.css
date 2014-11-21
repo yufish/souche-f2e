@@ -1,0 +1,20 @@
+#detail .header {
+    display: none !important;
+}
+#detail #detail-main .top-info{
+    margin:0 5px;
+
+}
+#detail #detail-main .top-info .lft{
+    background: #e68322;
+    padding:8px 5px;
+}
+#detail #detail-main .top-info .rht{
+    margin:0;
+}
+#detail #detail-main .top-info .title{
+    color:#fff;
+}
+#detail #actions{
+    display: none !important;
+}

@@ -1,0 +1,7 @@
+({
+    baseUrl: "./../", //基础路径，默认是当前路径
+
+    name: "detail/detail_common", //主入口的模块名
+    include: ["detail/report/index"], //在入口模块引入的同时还引入的其他模块
+    out: "detail_common.r.js" //输出的文件名
+})

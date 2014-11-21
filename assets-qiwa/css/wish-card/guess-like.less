@@ -1,0 +1,214 @@
+//猜你喜欢
+
+@carItemW: 280px;
+@carItemDis: 20px;
+
+.guess-like{
+    margin: 0 auto;
+    padding-top: 20px;
+
+    &.loading{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        background-image: url('../images/index/ajax-loader1.gif');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .title{
+        span{
+            color: #ff5517;
+            font-size: 16px;
+        }
+        line-height: 30px;
+        border-bottom: 1px solid #EDEDED;
+    }
+    .tit{
+        height: 25px;
+    }
+    .tit-item{
+        float: left;
+        width: @carItemW;
+        margin-right: @carItemDis;
+        height: 25px;
+        line-height: 40px;
+        color: #999;
+        font-size: 12px;
+    }
+    .like-line{
+        height: 375px + 25px + 20px;
+        margin-left: 0px;
+        margin-right: -20px;
+        overflow: hidden;
+    }
+    .like-box{
+        float: left;
+        width: 300px;
+
+        .carsItem{
+            width: 280px;
+            height: 375px;
+        }
+    }
+    .car-youlike{
+        margin-top: 12px;
+        width: 228px;
+        margin-right: 13px;
+        float: left;
+        border: 1px solid #EDEDED;
+        .list_content_img {
+            position: relative;
+            margin: -1px -1px 0 -1px;
+            height: 200px;
+            overflow: hidden;
+            display: block;
+            img{
+                width:100%;
+            }
+        }
+        .car-link {
+            font-size: 14px;
+            margin: 12px 16px 0px 16px;
+            height: 40px;
+            overflow: hidden;
+            display: block;
+            color: #333;
+        }
+        .car-link:hover {
+            color: #ff571a;
+        }
+        .info {
+            margin: 5px 16px 10px 16px;
+            position: relative;
+            .price {
+                color: @soucheOrange;
+                font-weight: bold;
+                font-size: 14px;
+                margin-right: 25px;
+                em{
+                    font-family: Tahoma, Verdana;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+            .shangpai {
+                font-size: 12px;
+                position: absolute;
+                right: 0px;
+                color: #8C8C8C;
+                line-height: 18px;
+            }
+        }
+        .collect {
+            padding-left: 20px;
+            color: #999;
+            background: url(../images/index/index_sprite_v2.png) no-repeat center;
+            background-position: -10px -40px;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 15px;
+            float: right;
+            margin-top: 5px;
+            display: block;
+            a {
+                color: #999;
+
+            }
+        }
+        .collect:hover {
+            background-position: -10px -60px;
+        }
+        .collect.active {
+            background-position: -10px -80px;
+        }
+        .carTail {
+            top: auto;
+            bottom: 10px;
+            left: 50%;
+            width: 250px;
+            height: 31px;
+            padding-top: 7px;
+            margin-left: -125px;
+            border-top: 1px solid #EEEEEE;
+
+            .collect{
+                position: relative;
+                width: 6em;
+                height: 20px;
+                padding-right: 2em;
+                border: none;
+                box-shadow: none;
+                overflow: hidden;
+
+                span{
+                    position: absolute;
+                    right: 0.5em;
+                    top: 0px;
+                    margin-left: 0;
+                }
+            }
+        }
+        .nolike{
+            float: left;
+            width: 50px;
+            height: 21px;
+            border: 1px solid #ededed;
+            border-radius: 2px;
+            background: #fff;
+            color: #999;
+            text-align: center;
+            line-height: 21px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .nolike:hover{
+            background: #F2F2F2;
+            border: 1px solid #E1E1E1;
+
+        }
+    }
+}
+
+
+//
+//@media screen and (min-width: 1400px) {
+//    .guess-like .car-youlike{
+//        width: 240px;
+//        margin: 15px 18px 0px 0px;
+//        float: left;
+//        border: 1px solid #EDEDED;
+//    }
+//    .guess-like .tit-item{
+//        float: left;
+//        width:240px;
+//        margin-right: 18px;
+//        height: 25px;
+//        line-height: 40px;
+//        color: #999;
+//        font-size: 12px;
+//    }
+//}
+//@media screen and (max-width: 1024px){
+//    .guess-like .like-line{
+//        height: 330px;
+//        overflow: hidden
+//    }
+//    .guess-like .car-youlike .list_content_img{
+//        height:154px;
+//    }
+//    .guess-like .tit-item{
+//        float: left;
+//        width:228px;
+//        margin-right: 17px;
+//        height: 25px;
+//        line-height: 40px;
+//        color: #999;
+//        font-size: 12px;
+//    }
+//    .guess-like .car-youlike{
+//        width: 228px;
+//        margin-right: 17px;
+//        margin-top: 15px;
+//        float: left;
+//        border: 1px solid #EDEDED;
+//    }
+//}

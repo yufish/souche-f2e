@@ -1,0 +1,580 @@
+@orange:#fc7000;
+
+#girl{
+  font-family: 'Microsoft YaHei',Tahoma,Verdana;
+  color:#333;
+  a{
+    color:#444;
+  }
+  a:hover{
+  color:@orange;
+}
+  .module{
+    margin-top:10px;
+    .mod-main{
+      width:920px;
+      float:left;
+      display: inline;
+    }
+    .mod-side{
+      width:260px;
+      float:left;
+      margin-left:10px;
+      display: inline;
+    }
+    .hd{
+      font-size: 16px;
+      line-height: 35px;
+      color:#333;
+    }
+  }
+  #header{
+    height:115px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+
+      position: relative;
+    }
+    .logo{
+      display: block;
+      position: absolute;
+      top:40px;
+      left:0px;
+    }
+    .search{
+      position: absolute;
+      left:300px;
+      top:40px;
+      .search-text{
+        width:490px;
+        height:35px;
+        border:2px solid #e5e5e5;
+        vertical-align: top;
+        padding-left:10px;
+      }
+      .search-submit{
+        background: @orange;
+        color:#fff;
+        font-size: 16px;
+        width:88px;
+        height:38px;
+        border:none;
+        vertical-align: top;
+        margin-left: -5px;
+        cursor: pointer;
+      }
+      .hot-keywords{
+        line-height:30px;
+        a{
+          color:#666;
+          margin-left: 10px;
+        }
+        a:hover{
+          color:@orange;
+        }
+      }
+
+    }
+    .head-tel{
+      position: absolute;
+      right:0;
+      top:40px;
+    }
+  }
+  #nav{
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+    }
+    height:45px;
+    line-height: 50px;
+    border-bottom: 2px solid @orange;
+    .main-navs{
+      a{
+        font-size: 16px;
+        color:#333;
+        margin-right:50px;
+        font-weight: bold;
+      }
+      a:hover{
+        color:@orange;
+      }
+      a.active{
+        color:@orange;
+      }
+    }
+    .other-navs{
+      float: right;
+      display: inline;
+      a{
+        font-size:12px;
+        padding:0 10px;
+        border-right:1px solid #e6e6e6;
+      }
+      a.last{
+        border:none;
+      }
+    }
+    
+  }
+  #content{
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+      position: relative;
+      .sidetoolbar{
+      width: 50px;
+      height: 430px;
+      position: fixed;
+      right:10px;
+      top: 172px;
+      background-color: #fff;
+    }
+      .banner{
+        height: 363px;
+        padding-top: 10px;
+        .filter-nav{
+          width: 340px;
+          height: 365px;
+          background-color: #f7f7f7;
+          float: left;
+          display: inline;
+          overflow: hidden;
+          .nav-box{
+            padding: 26px 10px;
+            ul{
+              li{
+                width: 334px;
+                height: 83px;
+                padding-bottom: 20px;
+                a{
+                  display: inline-block;
+                  width: 80px;
+                  height: 80px;
+                  float: left;
+                  border-radius: 80px;
+                  border: 6px solid #F7F7F7;
+                  margin-right: 15px;
+                  cursor: pointer;
+                  i{font-size: 14px;color: #fff;font-style: normal;display: block;margin-top: 30px;text-align: center;font-weight: bold;}
+                }
+                a:hover{
+                  width: 96px;
+                  height: 96px;
+                  background: url(../images/girl/nav-but.png);
+                  margin-right: 12px;
+                  border: none;
+                  i{font-size: 16px;color: #fce76f; width: 70px;margin-top: 38px;padding-left: 12px;}
+                }
+              }
+            }
+          }
+        }
+        .slide{
+          width: 850px;
+          height: 363px;
+          float: left;
+          display: inline;
+          img{
+            width: 840px;
+            height: 363px;
+            display: inline;
+          }
+        }
+      }
+      .dividing {
+        width: 1190px;
+        height: 33px;
+        background: url(../images/girl/lady-only.png);
+      }
+      .firstcar{
+        height: 370px;
+        padding-bottom: 25px;
+        .hd{
+          height: 80px;
+          .hd-image{height: 34px;width: 327px;background: url(../images/girl/firstcar-hd.png);position: relative;top:15px;}
+        }
+        .car-box{
+          height: 265px;
+          float: left;
+          display: inline;
+          width: 290px;
+          margin-left: 5px;
+          border: 1px solid transparent;
+          a{
+            display: block;
+            height: 182px;
+            img{
+              width: 290px;
+              height: 182px;
+            }
+          }
+          img{width: 290px;}
+          .car-text {font-size: 12px;color: #666;text-align: center;line-height: 22px;display: block;}
+        }
+        .car-box:hover{border: 1px solid #ff3366;}
+      }
+      .mod-lower{
+        height: 1600px;
+        .mod-main{
+          width: 810px;
+          margin-right: 20px;
+          height: 1700px;
+          float: left;
+          display: inline;
+          overflow: hidden;
+          .favorite{
+            height: 455px;
+            border-bottom: 1px dashed #c0c0c0;
+            .hd{
+               height: 80px;
+               .hd-image{height: 34px;width: 467px;background: url(../images/girl/favorite-hd.png);position: relative;top:15px;}
+            }
+            .favorite-box{
+              height: 370px;
+              border-top: 1px dashed #c0c0c0;
+              .hd{
+                height: 35px;
+                border-bottom: 1px dashed #c0c0c0;
+                h1{font-size: 16px;color: #000;line-height: 35px;padding-left: 20px;}
+              }
+              .car-box{
+                height: 315px;
+               
+                .car-image{
+                  float: left;
+                  margin-top: 20px;
+                  a{cursor: pointer;}
+                  .title-image{
+                    width: 519px;height: 37px;background: url(../images/girl/title-image.png);position: relative;top: -41px;
+                    .title{font-size: 13px;color: #fff;float: right;line-height: 27px;margin-right: 20px;cursor: pointer;}
+                    .title:hover{color: #ff3366; }
+                  }
+                }
+                .car-tips{
+                  padding-left: 20px;
+                  height: 315px;
+                  float: left;
+                  width: 270px;
+                   .tips-box{
+                    height: 160px;
+                    border-bottom: 1px dashed #c0c0c0;
+                    .tips-image{
+                      float: right;
+                      background: url(../images/girl/tips-image.png);
+                      width: 232px;
+                      height: 147px;
+                      .tips-qq{
+                      position: relative;font-size: 12px;color: #fc4f7a;top: 124px;left: 53px;cursor: pointer;
+                      }
+                    }
+                    
+                   }
+                   .text-box{
+                    h1{font-size: 13px;color: #000;padding-top: 10px;line-height: 30px;}
+                    p{font-size: 12px;color: #666;}
+                   }
+                }
+              }
+            }
+          }
+          .empirical{
+            height: 620px;
+            margin-top: 20px;
+            .hd{
+              height:80px; 
+              .hd-image{height: 34px;width: 350px;background: url(../images/girl/empirical-hd.png);position: relative;top:15px;}
+            }
+            .empirical-box{
+              height: 252px;
+              .summary-box{
+                height: 252px;
+                padding-bottom: 10px;
+
+                .summary-text{
+                  width: 427px;
+                  height: 252px;
+                  float: left;
+                  display: inline;
+                  .text-box{
+                    width: 285px;
+                    height: 190px;
+                    float: right;
+                    display: inline;
+                    padding:20px; 
+                    a{
+                      cursor: pointer;
+                      h1{color: #ff3366;font-size: 14px;text-align: right;line-height: 30px;border-bottom:1px dashed #c0c0c0; }
+                    }
+                    p{color: #666;font-size: 12px;line-height: 25px;border-bottom:1px dashed #c0c0c0;text-decoration-line:underline;padding: 10px 0;}
+                    i{display: block;font-style: normal;color: #666;font-size: 13px;text-align: right;line-height: 20px;padding: 5px 0;}
+                  }
+                }
+                .bg1{background: url(../images/girl/summary1.png);}
+                .bg2{background: url(../images/girl/summary2.png);}
+               .car-box{
+                  width: 370px;
+                  height: 252px;
+                  float: left;
+                  margin-left: 5px;
+                  display: inline;
+                  a{
+                    cursor: pointer;
+                    img{width: 374px;height: 252px;}
+                  }
+                 .title-image{
+                  background: url(../images/girl/summary-title.png);
+                  width: 374px;
+                  height: 37px;
+                  position: relative;
+                  top: -41px;
+                  
+                  a{
+                    cursor: pointer;
+                    font-size: 13px;color: #fff;float: right;padding-right: 18px;line-height: 28px;
+                  }
+                  a:hover{color:#ff3366; }
+                }
+               }
+              }
+            }
+          }
+          .starcar{
+            height: 420px;
+            padding-top: 20px;
+            .hd{
+              height:80px;
+              .hd-image{height: 34px;width: 317px;background: url(../images/girl/star-hd.png);position: relative;top:15px;}
+            }
+           @import '../../less/girl/star.less';
+          }
+        }
+        .mod-side{
+          width: 345px;
+          height: 1600px;
+          float: left;
+          .timebuy{
+            height: 370px;
+            .hd{background: url(../images/girl/timebuy-hd.png);width: 345px;height: 38px;margin-top: 20px;}
+            .timebuybox{
+              height: 310px;
+              .timebuycar{
+                width: 328px;float: right;background-color: #ededed;height: 332px;
+                h1{font-size: 17px;color: #050505;}
+                .car-box{
+                  width: 250px;
+                  height: 250px;
+                  margin: 0 auto;
+                  padding-top: 20px;
+                  a{
+                    cursor: pointer;
+                    display: block;width: 250px;height: 163px;
+                    img{width: 250px;height: 163px;}
+                  }
+                  .down-counter{
+                    font-size: 12px;color: #333;height: 20px;background-color: #fff;line-height: 25px;text-align:center;
+                    span{
+                      line-height: 12px;
+                     ins{background-color: #333;color: #fff;padding:0 2px;font-size: 11px;line-height: 11px;}
+                    }
+                  }
+                .timebuy-price{
+                  height: 40px;
+                  padding: 10px;
+                  background-color: #fff;
+                  .price-down{
+                  width: 80px;
+                  height: 40px;
+                  float: left;
+                  background-color: #ff517d;
+                  i{color: #fff;font-size: 14px;text-align: center;line-height: 20px;font-family: 'Microsoft YaHei',Tahoma,Verdana;font-style: normal;display: block; }
+                  }
+                  .car-price{
+                    width: 120px;
+                    height: 40px;
+                    padding-left: 10px;
+                    float: left;
+                    a.carname{display:block;font-size: 15px;color: #444;font-family: 'Microsoft YaHei',Tahoma,Verdana;font-weight: bold;line-height: 20px;width: 100px;height: 18px;}
+                    a.carname:hover{color: @orange}
+                   .price-now{font-size: 20px;color: #ff3366;font-family: 'Arial',Tahoma,Verdana;float: left;}
+                   .price-old{font-size: 13px;color: #999;font-family: Tahoma,Verdana;line-height: 30px;text-decoration:line-through;float: left;margin-left: 8px;}
+                  }
+                }
+                }
+              }
+            }
+          }
+          .fenqi{
+            height: 350px;
+            .hd{
+              background: url(../images/girl/fenqi-hd.png);width: 345px;height: 37px;
+            }
+            .fenqicar{
+              width: 328px;float: right;background-color: #ededed;height: 313px;
+              h1{font-size: 17px;color: #050505;}
+             .car-box{
+              height: 250px;
+              margin: 0 auto;
+              padding-top: 20px;
+              width: 250px;
+              .car-image{
+                height: 163px;width: 250px;display: block;
+                img{height: 163px;width: 250px;}
+              }
+              .shoufu-image{width: 110px;height: 77px;position: relative;top: -170px;left: 160px;background: url(../images/girl/seal-image.png?233);}
+              .fenqi-title{
+                width: 263px;height: 25px;background: url(../images/girl/shoufu-image.png);position: relative;left: -7px;top: -78px;
+                a{
+                  cursor: pointer;font-size: 12px;color: #000;text-align: center;line-height: 20px;display: block;width: 263px;
+                }
+               a:hover{color: #fc4f7a;}
+              }
+              .fenqi-price{
+                height: 40px;background-color: #FFF;position: relative;top: -78px;
+                .shoufu{height: 30px;width: 110px;background-color: #fd4f7b;color: #fff;font-size: 20px;text-align: center;float: left;margin-left: 20px;}
+                i{font-size: 14px;color: #666;font-style: normal;margin-left: 16px;line-height: 42px;}
+              }
+
+            }
+          }
+          }
+        .story{
+          height: 520px;
+          .hd{background: url(../images/girl/story-hd.png);width: 345px;height: 37px;}
+          .story-box{
+            width: 328px;float: right;background-color: #ededed;height: 483px;
+            .story-mini{
+              h1{font-size: 17px;color: #050505;}
+              }
+              .story-wrap{
+                height: 290px;
+                margin: 0 auto;
+                padding-top: 20px;
+                width: 255px;
+                .story-image{display: block;background: url(../images/girl/story-image.png);width: 249px;height: 164px;}
+                .story-title{
+                  height: 45px;background-color: #fff;width: 249px;
+                  p{font-size: 14px;color: #ff3b69;padding: 3px;margin: 0 auto; }
+                }
+                p{font-size: 12px;cursor: #666;padding-top: 10px;}
+                a{
+                 
+                  i{font-style: normal;font-size: 12px;display: block;float: right;}
+               }
+                a:hover{color:#fc4f7a; }
+              }
+            }
+          }
+        .date{
+          height: 300px;
+          .hd{background: url(../images/girl/date-hd.png);width: 345px;height: 37px;}
+          .date-box{
+            width: 328px;float: right;background-color: #ededed;height: 235px;
+            .date-wrap{
+              background-color: #fff;width: 250px;height: 140px;margin: 20px auto;
+              p{color: #666;font-size: 14px;padding:10px;}
+            }
+          }
+         }
+        }
+      }
+   }
+  }
+  #footer{
+    margin-top: 30px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+      overflow: hidden;
+    }
+    .friendlinks{
+      text-align: center;
+      margin-bottom: 15px;
+      .wrapper{
+      width:1190px;
+      margin:0 auto;
+      
+      a{
+        font-size:12px;
+        color:#333;
+        padding:0 20px;
+        border-right: 1px solid #e6e6e6;
+      }
+      a.last{
+        border:none;
+      }
+    }
+  }
+    .footer-content{
+      background: #f5f5f5;
+      border-top:1px solid #e6e6e6;
+    }
+    .performance{
+      padding: 40px 0;
+      border-bottom: 1px solid #e6e6e6;
+      width:1400px;
+      i{
+        display: block;
+        width:40px;
+        height:40px;
+        position: absolute;
+        top:8px;
+        left:20px;
+
+      }
+      .per{
+        position: relative;
+        float:left;
+        width:380px;
+        padding-left:70px;
+        display: inline;
+      }
+      .t{
+        font-size: 16px;
+        line-height: 30px;
+        color:#666;
+      }
+      .st{
+        font-size: 14px;
+        color:#999;
+        line-height: 20px;
+      }
+      .per-1{
+
+        i{
+          background: url(../images/index/per-1.png) no-repeat;
+        }
+      }
+      .per-2{
+        i{
+          background: url(../images/index/per-2.png) no-repeat;
+        }
+      }
+      .per-3{
+        i{
+          background: url(../images/index/per-3.png) no-repeat;
+        }
+      }
+    }
+    .company_info{
+      padding:20px 0px;
+      .wrap{
+        text-align: center;
+        a{
+          color:#666;
+          padding:0 10px;
+        }
+      }
+      p{
+        text-align: center;
+        line-height: 30px;
+        color:#999;
+      }
+    }
+  }
+}
+
+
+
+

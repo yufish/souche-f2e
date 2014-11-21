@@ -1,0 +1,80 @@
+#special-car{
+  .wrapper{
+    border-top: 1px solid #ececec;
+  }
+  .see-more{
+    display: block;
+    height:36px;
+    border:2px solid #e6e6e6;
+    border-radius: 3px;
+    width:100px;
+    color:#666;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    margin:0 auto;
+    margin-top: 10px;
+  }
+  .see-more:hover{
+    border:2px solid @orange;
+    background: @orange;
+    color:#fff;
+  }
+  .car-list{
+    margin-bottom: 70px;
+    margin-top: 30px;
+    width:1300px;
+  }
+  .car{
+    width:250px;
+    float:left;
+    margin-right:60px;
+
+    .pic{
+      display:block;
+      img{
+        display: block;
+        max-width:200px;
+        max-height:115px;
+        margin: 0 auto;
+      }
+    }
+    .title{
+      display: block;
+      padding: 0 1em;
+      .text-collapse();
+      font-size:14px;
+      text-align: center;
+      line-height:20px;
+      color:#333;
+    }
+    .price{
+      font-size: 16px;
+      color:@soucheOrange;
+      line-height: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+// 动效
+#special-car .car{
+  // 车图, 容器左移(img居中, 不方便移)
+  .pic{
+    margin-left: 0px;
+  }
+  .pic,
+  .title{
+    .tst();
+  }
+
+  &:hover{
+    .pic{
+      margin-left: -20px;
+    }
+    .title{
+      color: @soucheOrange;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+// 购车心愿卡 页面样式
+
+@import "config.less";
+
+@import "wish-card/wish-car-list.less";
+@import "wish-card/wish-card-item.less";
+@import "wish-card/wish-fill-form.less";
+
+
+// 引入 猜你喜欢
+@import "wish-card/guess-like.less";
+
+// 先写在这里吧
+@newIndexW: 1280px;
+
+*{
+    .box-sizing();
+
+    &:before,
+    &:after{
+        .box-sizing();
+    }
+}
+
+
+.wish-card-main{
+    position: relative;
+    width: 1180px;
+    min-height: 380px;
+    margin: 0 auto;
+    margin-top: 20px;
+    // background-color: #f0f0f0;
+}
+
+// 重置自定义下拉框的样式
+.sc-custom-select{
+    .sc-select-hd{
+        height: 100%;
+        .sc-select-action{
+            &, & i{
+                height: 100%;
+            }
+            i{
+                background: url('../images/common/select-action-trigger.png') no-repeat center center;
+            }
+        }
+    }
+    .sc-select-content{
+        height: 100%;
+    }
+    // 和有边框的容器一样宽
+    .sc-select-list{
+        left: -1px;
+        right: -1px;
+        width: auto;
+        // 修正box-sizing后自定义下拉框的top计算值问题
+        margin-top: -2px;
+        .option:hover{
+            background: @soucheOrange;
+            color: #fff;
+        }
+    }
+}

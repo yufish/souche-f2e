@@ -1,0 +1,60 @@
+// shop-location.less
+.shop-location{
+
+    &.shop-type-cheniu{
+        display: none;
+    }
+    // width: 500px;
+    // padding: 
+    margin-top: 20px;
+    border: 1px solid @bc;
+
+    #shop-map{
+        height: 250px;
+        // height: 500px;
+    }
+    .location-intro{
+        padding: 10px 15px;
+        color: #666;
+        line-height: 1.5;
+        
+        .location-text,
+        .to-map-link{
+            position: relative;
+            padding-left: 18px;
+            &:before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 12px;
+                background-repeat: no-repeat;
+            }
+        }
+    
+        .location-text{
+            &:before{
+                top: 2px;
+                height: 16px;
+                background-image: url('../../images/auth-shop/location-pin.png');
+            }
+        }
+        
+
+        .to-map-link{
+            position: relative;
+            padding-left: 18px;
+            margin-top: 0.5em;
+          line-height:25px;
+            color: #666;
+            &:hover{
+                color: @soucheOrange;
+            }
+            &:before{
+                top: 2px;
+                height: 12px;
+                background-image: url('../../images/auth-shop/magnifier.png');
+            }
+        }
+    }
+}

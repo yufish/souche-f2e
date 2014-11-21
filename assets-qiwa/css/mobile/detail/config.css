@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+#config table tr{
+    line-height: 44px;
+    border-bottom: 1px solid #E6E6E6;
+}
+#config table tr:last-child{
+    border:none;
+}
+#config .car-title {
+    line-height: 44px;
+    padding-left: 16px;
+    color:#333;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#config table td {
+    font-size: 14px;
+    text-align: left;
+}
+#config .mod .hd {
+    font-size: 14px;
+    background: #f5f5f5;
+    line-height: 44px;
+    height: 44px;
+    color:#333;
+    padding-left: 16px;
+    border:1px solid #E6E6E6;
+}
+#config table .key{
+    color:#999;
+}
+#config table .val{
+    text-align: right;
+    color:#666;
+}
+#config .mod .bd{
+    margin: 0 16px;
+}
+#config .mod .bd table{
+    width: 100%;
+}

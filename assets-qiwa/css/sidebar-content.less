@@ -1,0 +1,476 @@
+html{background-color: #f2f2f2; width: 100%;height: 100%;}
+
+#toolbar{
+  width: 100%;height: 100%;
+  background-color: #F2F2F2;
+  .tool-box{
+    padding-left: 20px;
+    width: 830px;
+    height: 520px;
+    background-color: #fff;
+    overflow: hidden;
+    #toolbar-nav{
+      width: 789px;
+      height: 25px;
+      margin-top: 15px;
+      overflow: hidden;
+      .title{font-size: 14px;color: #333;float: left;}
+      .number {font-size: 14px;font-weight: normal;float: left;font-style: normal;line-height: 22px;color: #FF5719;font-weight: bold;margin-left: 5px;}
+      .path{
+        float: right;width: 50px;height: 40px;
+        a{
+          width: 23px;height: 23px;border: 1px solid #E6E6E6;background-color: #FFF;float: left;cursor: pointer;
+          span{width:6px;height:10px;display: block;margin-top: 6px;margin-left: 9px;}
+        }
+        .going{span{background: url(../images/index/index_sprite_v2.png); background-position: -100px -30px;}}
+        
+        .back{span{background: url(../images/index/index_sprite_v2.png); background-position: -100px -20px;}border-right: none;}
+        //a:hover{background-color: #FC7000;}
+        //.going:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -160px -60px;}}
+        //.back:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -120px -60px;}}
+        //a.disabled{border:1px solid #ddd;}
+        //a.disabled:hover{background-color: #f2f2f2;cursor: default;}
+        //.going.disabled:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -160px -30px;}}
+        
+        //.back.disabled:hover{span{background: url(../images/index/toolbar_sprite.png?125); background-position: -120px -30px;}}
+        
+      }
+      .pages{
+        font-size: 14px;
+        color: #666;
+        margin-right: 10px;
+        line-height: 28px;
+        float: right;
+        div{float: left;}
+      }
+    }   
+  }
+  
+  #toolbar-content{
+    width: 825px;
+    height: 466px;
+    
+    .car-wrap{
+      width: 825px;
+      height: 466px;
+      margin-top: 5px;
+      .selled{
+        width:70px;
+        height:70px;
+        border-radius: 70px;
+        background: #fff;
+        opacity: 0.8;
+        color:#ff5600;
+        font-size: 20px;
+        text-align: center;
+        line-height:70px;
+        position: absolute;
+        z-index: 10;
+        font-style: normal;
+        left:54px;
+        top:25px;
+      }
+      .car-box{
+       width: 180px;
+       height: 196px;
+       margin-top: 6px;
+       margin-bottom: 5px;
+       background-color: #fff;
+       border: 1px solid #e4e4e4;
+       padding-bottom: 0;
+       float: left;
+       margin-right: 20px;
+       position: relative;
+       overflow: hidden;
+       .car-image{
+        width: 180px;height: 120px;
+        position: relative;
+        display: block;
+        .collect-icon{
+          width: 20px;
+          height: 20px;
+          border-radius: 2px;
+          position: absolute;
+          left:3px;
+          bottom: 5px;
+          background: url(../images/index/toolbar_sprite.png?123); 
+          background-position: -200px -30px;
+        }
+        .collect-icon.active{
+          background: url(../images/index/toolbar_sprite.png?123); 
+          background-position: -240px -30px;
+        }
+        img{width: 180px;height: 120px;}
+      }
+      .car-title{font-size: 12px;color: #333;height:35px;line-height:18px;display:block;cursor: pointer;padding: 5px 10px;}
+      .car-title:hover{color: #FC7000;}
+      .car-price{
+        height: 18px;
+        padding: 6px 10px;
+        
+        .price{color: #db2400;font-size: 14px;font-weight: normal;float: left;line-height: 15px;}
+        .time{color: #999;font-size: 12px;float: right;}
+      }
+      .action{
+        height:20px;
+        border-top: 1px solid #e4e4e4;
+      }
+      .cancel{
+        display: block;
+        height: 20px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        border-radius: 4px;font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+        line-height: 20px;
+        cursor: pointer;
+        border:1px solid #ddd;
+        color:#666;
+        width:80px;
+        text-align: center;
+      }
+      .join{
+        display: block;
+        height: 20px;width: 90px;
+        background-color: #FC7000;
+        margin: 0 auto;border: 1px solid #f04f12;
+        border-radius: 4px;margin-top: 4px;
+        line-height: 20px;cursor: pointer;
+        color: #fff;
+        i{
+          vertical-align: 2px;
+          font-size: 12px;
+          font-style: normal;
+          float: left;
+          display: inline;
+          color: #fff;
+        }
+      }
+     
+      .join-collect{i{background: url(../images/index/join-collect.png) no-repeat;margin: 2px 5px;height: 18px;width: 15px;}}
+      .join-sell{i{background: url(../images/index/join-sell.png) no-repeat;height: 18px;width: 11px;margin: 1px 8px;}}
+      .join.cancel{
+        background: #f2f2f2;
+          border:1px solid #ddd;
+          color:#666;
+          width:80px;
+          text-align: center;
+        i{
+          display: none;
+        }
+      }
+      .zhijiang{
+        position: relative;width: 65px;height: 19px;
+        background-color: #FC7000;
+        border-radius: 3px;color: #fff;
+        position: absolute;
+        right:10px;
+        top:0px;
+        text-align: center;
+        line-height: 19px;
+        .triangle{
+          display: block;width: 0;height: 0;
+          border-bottom: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+          border-top: 5px solid #FC7000;
+          position: relative;
+          left: 8px;
+          top:0;
+        }
+      }
+      .price-down{
+        background: url(../images/index/zhijiang.png);
+        height: 75px;
+        width: 40px;
+        position: absolute;
+        right:10px;
+        top:0px;
+        i{
+          color: #FFFFFF;
+          display: block;
+          font-family: 'Microsoft YaHei',Tahoma,Verdana;
+          font-size: 14px;
+          font-style: normal;
+          line-height: 20px;
+          text-align: center;
+          padding-top: 40px;
+        }
+      }
+    }
+    
+  }
+}
+#reserve{
+  #content{
+    .car-wrap{
+      .car-box{
+        .car-price{border: none;}
+      }
+    }
+  }
+}
+#contrast{
+  #toolbar-nav{
+    .contrast-car{
+      float: right;
+      line-height: 27px;
+      overflow: hidden;
+      .allclear{
+        float: left;
+        cursor: pointer;
+        margin-right: 110px;
+        
+      }
+      .begin-contrast{
+        width: 95px;
+        height: 30px;
+        background: #FC7000;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 2px;
+        cursor: pointer;
+        position: absolute;
+        right: 48px;
+        top: 13px;
+      }
+    }
+  }
+  #toolbar-content{
+    .car-wrap{
+      .car-box{
+        .car-price{
+          .delete{
+            float: right;
+            cursor: pointer;
+          }
+          .delete:hover{
+            color: #FC7000;
+          }
+        }
+      }
+      .contrast-box{
+        width: 182px;
+        margin-top: 6px;
+        background-color: #f5f5f5;
+        height: 198px;
+        float: left;
+        margin-right:20px;
+        position: relative;
+        margin-bottom: 5px;
+        .car-num{
+          width: 178px;
+          height: 88px;
+          position: relative;
+          display: block;
+          padding-top: 50px;
+          .num{
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            color: #EAEAEA;
+            border-radius: 60px;
+            margin: 0 auto;
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+        .addcar{
+          font-size: 12px;
+          color: #888;
+          text-align: center;
+          margin-top:5px;
+          margin-bottom: 27px;
+        }
+      }
+    }
+  }
+}
+#scan{
+  #content{
+    overflow-y: auto;
+    width: 780px;
+    height: 900px;
+    scrollbar-face-color:#d7d7d7;
+    scrollbar-highlight-color:#fff;
+    .day-list{
+      width: 100%;
+      overflow: hidden;
+      margin: 15px 0;
+      .list-title{
+        height: 30px;
+        overflow: hidden;
+        span{
+          display: block;height: 12px;background: #FC7000;
+          border-radius: 12px;float: left;width: 12px;margin: 8px 6px;
+        }
+        .day{font-size: 14px;color: #000;float: left;font-weight: bold;line-height: 25px;}
+        .carnum{
+          font-size: 12px;color: #666;float: left;line-height :26px;
+          margin-left: 6px;
+          i{font-style: normal;}
+        }
+      }
+      .car-list{
+        width: 100%;
+        .carbox{
+          width: 230px;height: 50px;
+          border: 1px solid #dedede;
+          margin-top: 8px;margin-right: 8px;
+          padding: 10px;
+          background: #fff;
+          float: left;
+          overflow: hidden;
+          .car-image{
+            width: 75px;height: 50px;float: left;display: block;
+            img{width: 75px;height: 50px;}
+          }
+          .car-detail{
+            margin-left: 10px;float: left;width: 145px;height: 48px;font-size: 12px;
+            color: #333;
+            a{font-size: 12px;color: #333;cursor: pointer;display: block;overflow: hidden;height: 32px;}
+            i{font-style: normal;color: #db2400;font-size: 14px;}
+          }
+        }
+      }
+    }
+  }
+}
+#no-collect{
+  padding-left: 40px;
+  .nocllect-img{
+    width: 768px;height: 404px;background: url(../images/index/no-collect.png);
+    margin-top: 5px;
+  }
+}
+#no-sell{
+  padding-left: 40px;
+  .nosell-img{
+    width: 768px;height: 403px;background: url(../images/index/no-sell.png);
+    margin-top: 5px;
+  }
+}
+#no-reserve{
+  padding-left: 40px;
+  .noreserve-img{
+    width: 768px;height: 403px;background: url(../images/index/no-reserve.png);
+    margin-top: 5px;
+  }
+}
+#no-scan{
+  padding-left: 40px;
+  .noscan-img{
+    width: 768px;height: 403px;background: url(../images/index/no-scan.png);
+    margin-top: 5px;
+  }
+}
+#no-contrast{
+  padding-left: 40px;
+  .nocontrast-img{
+    width: 768px;height: 403px;background: url(../images/index/no-constrat.png);
+    margin-top: 5px;
+  }
+}
+}
+#suggest{
+  .toolbar-content{
+    margin-top: 100px;
+    .suggest-form{
+      width: 402px;
+      margin: 0 auto;
+      position: relative;
+      .suggest-area{
+        width: 390px;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        color: #A0A0A0;
+        font-size: 14px;
+        padding: 5px;
+      }
+      .suggest-remind{
+        position: absolute;
+        width: 250px;
+        height: 35px;
+        border: 1px solid #f29797;
+        background: #ffe8ef;
+        color: #ee394b;
+        font-size: 14px;
+        line-height: 35px;
+        top: 173px;
+        left: 0px;
+        i{
+          display: block;
+          width: 12px;
+          height: 12px;
+          background: url(../images/common/input-error-tip.png) no-repeat;
+          float: left;
+          margin-top: 12px;
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+      }
+      .suggest-button{
+        width: 90px;
+        height: 30px;
+        border: 1px solid #E0440B;
+        border-radius: 2px;
+        background: #FF571A;
+        color: #fff;
+        font-size: 14px;
+        line-height: 28px;
+        text-align: center;
+        margin-top: 30px;
+        display: block;
+        float: right;
+        cursor: pointer;
+      }
+      .suggest-button:hover{
+        background: #E0440B;
+      }
+    }
+    .suggest-success{
+      width: 400px;
+      height: 340px;
+      margin: 0 auto;
+      .result-title{
+        line-height: 30px;
+        font-size: 20px;
+        color: #333;
+        text-indent: 0;
+        width: 330px;
+        margin-top: 90px;
+        margin-bottom: 20px;
+        i{
+          display: block;
+          width: 50px;
+          height: 52px;
+          background: url("../images/fed/jiangjia-success.png") no-repeat;
+          float: left;
+          margin-left: 135px;
+          margin-right: 10px;
+        }
+        span{
+          line-height: 52px;
+          font-size: 20px;
+          color: #333;
+          text-indent: 0;
+        }
+      }
+      .result-text{
+        border: 1px solid #D1D1D1;
+        border-radius: 4px;
+        padding: 20px 0;
+        width: 320px;
+        text-align: center;
+        background: #F9F9F9;
+        font-size: 14px;
+        color: #333;
+        margin: 0 auto;
+      }
+    }
+  }
+}

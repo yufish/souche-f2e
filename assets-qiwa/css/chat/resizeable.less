@@ -1,0 +1,77 @@
+@resizeableW: 600px;
+@resizeableH: 500px;
+.resizeable{
+    position: relative;
+    width: @resizeableW;
+    height: @resizeableH;
+    background-color: #efefef;
+    overflow: hidden;
+
+    .resize-ver,
+    .resize-hor{
+        position: absolute;
+        background-color: #ccc;
+        // box-shadow: 0 0 2px rgba(0,0,0,0.25);
+        z-index: 1000;
+
+        &.active{
+            &:before,
+            &:after{
+                content: '';
+                position: absolute;
+                background-color: rgba(66, 94, 136, 0.25);
+                z-index: 100;
+            }
+        }
+    }
+    // @;
+    @barW: 2px;
+    .resize-ver{
+        width: @barW;
+        top: 0;
+        bottom: 0;
+        cursor: col-resize;
+        // gen by js/ component
+        left: 150px;
+        &.active{
+            &:before,
+            &:after{
+                top: 0;
+                bottom: 0;
+            }
+            &:before{
+                // left: 0;
+                left: -@resizeableW;
+                right: -@barW;
+            }
+            &:after{
+                left: @barW;
+                right: -@resizeableW;
+            }
+        }
+    }
+    .resize-hor{
+        height: @barW;
+        right: 0;
+        cursor: row-resize;
+        // gen by js
+        left: 150px + 2px;
+        top: 350px;
+
+        &.active{
+            &:before,
+            &:after{
+                left: 0;
+                right: 0;
+            }
+            &:before{
+                top: -@resizeableH;
+                bottom: -@barW;
+            }
+            &:after{
+                top: @barW;
+                bottom: -@resizeableH;
+            }
+        }
+    }
+}

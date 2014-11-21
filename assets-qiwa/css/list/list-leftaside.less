@@ -1,0 +1,82 @@
+// #list_wrap .list_nav .nav_type ul
+
+.car-modal(@x:1, @y:1, @xOffset:0px, @yOffset: 0px){
+    background-position: -((@x - 1)*50px+@xOffset) -((@y - 1)*20px+@yOffset);
+}
+#list_wrap .list_nav .nav_type.nav-model{
+    ul{
+        width: 210px;
+    }
+    li{
+        float: left;
+        width: 70px;
+        height: 50px;
+
+        a{
+            display: block;
+            text-align: center;
+
+            &:hover{
+                .car-modal-img{
+                    opacity: 1;
+                }
+            }
+            &.listNav_active{
+                .car-modal-img{
+                    opacity: 1;
+                }
+            }
+        }
+
+        .car-modal-img{
+            width: 50px;
+            height: 20px;
+            margin: 0 auto;
+            // margin-bottom: 4px;
+            background-image: url('../../assets/images/list/car_modal_sprite.png');
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            .tst(opacity 200ms ease;);
+        }
+
+        .car-modal-name{
+
+        }
+        .car-modal-img{
+            &.modal-suv{
+                .car-modal(1,1, -6px);
+            }
+            &.modal-mpv{
+                .car-modal(2,1, -5px);
+            }
+            // 微小型车
+            &.modal-tinycar{
+                .car-modal(3,1, -6px);
+            }
+            // 紧凑型车
+            &.modal-compactcar{
+                .car-modal(2,1, -5px);
+            }
+            // 中型车
+            &.modal-midsize{
+                .car-modal(2,2, -6px);
+            }
+            // 中大型车
+            &.modal-premiummidsize{
+                .car-modal(3,2, -2px);
+            }
+            // 跑车
+            &.modal-sportscar{
+                .car-modal(1,3, -6px);
+            }
+            // 两厢车
+            &.modal-doublebox{
+                .car-modal(3,3, -4px);
+            }
+            // 三厢车
+            &.modal-sedan{
+                .car-modal(2,3, -5px);
+            }
+        }
+    }
+}

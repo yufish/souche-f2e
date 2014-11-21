@@ -1,0 +1,174 @@
+@ListBGC: #f0f0f0;
+
+@R: 12px;
+@BW: 2px;
+@BC: #2C92B0;
+@BubbleBGC: #fff;
+@avatarW: 50px;
+@ABDis: 1em;  // distance between avatar and bubbble
+
+*{
+    box-sizing: border-box;
+    &:before, &:after{
+        box-sizing: border-box;
+    }
+}
+html,body{
+    font-size: 14px;
+    font-family: 'Avenir', 'monaco', 'Helvetica Neue', 'Microsoft Yahei';
+}
+#dialog-list{
+    width: 450px;
+    padding: 2em 1em;
+    list-style: none;
+    overflow: hidden;
+    background-color: @ListBGC;
+    
+    .item{
+        position: relative;
+        width: 400px;
+        // min-height: 65px;
+        margin-bottom: 1em;
+        overflow: hidden;
+
+        
+        .avatar{
+            position: absolute;
+            bottom: 2px;
+            height: @avatarW;
+            width: @avatarW;
+            border-radius: @R;
+            box-shadow: 0 2px 0 rgba(0,0,0,0.25), 0 0 2px rgba(0,0,0,0.5);
+
+            z-index: 500;
+        }
+        .bubble{
+            position: relative;
+            // position: absolute;
+            // bottom: 2px;
+
+            padding: 0.8em;
+            line-height: 1.35;
+            margin: 0;
+            background-color: @BubbleBGC;
+            z-index: 100;
+
+            border: @BW solid @BC;
+
+            &:before,
+            &:after{
+                position: absolute;
+                content: '';
+                // top: 0;
+                // left: 0;
+            }
+            &:after{
+                width: @R+@BW;
+                height: @R;
+                background-color: @BubbleBGC;
+                border: none;
+                border-bottom: @BW solid @BC;
+                z-index: 100;
+            }
+            &:before{
+                // display: none;
+                width: 2*@R;
+                height: 2*@R;
+                border: @BW solid transparent;
+                
+                border-right: @BW solid @BC;
+
+                background-color: @ListBGC;
+                border-radius: @R;
+                z-index: 150;
+            }
+
+            .tail-patch{
+                display: block;
+                position: absolute;
+                height: @R;
+                width: @BW;
+                background-color: @BC;
+                bottom: @R - @BW;
+                z-index: 200;
+            }
+        }
+        .name{
+            display: none;
+        }
+        
+        &.left{
+            float: left;
+            padding-left: @avatarW;
+            .avatar{
+                left: 0;
+            }
+            .bubble{
+                margin-left: 1em;
+                border-radius: @R @R @R 0;
+
+
+                &:after{
+                    bottom: -@BW;
+                    left: -( @R+@BW );
+                }
+                &:before{
+                    -webkit-transform: rotate(45deg);
+                    bottom: -@BW;
+                    left: -(2*@R);
+                }
+                .tail-patch{
+                    left: -@BW;
+                }
+            }
+        }
+        &.right{
+            float: right;
+            padding-right: @avatarW;
+            .avatar{
+                right: 0;
+            }
+            .bubble{
+                margin-right: 1em;
+                border-radius: @R @R 0 @R;
+
+
+                &:after{
+                    bottom: -@BW;
+                    right: -( @R+@BW );
+                }
+                &:before{
+                    -webkit-transform: rotate(135deg);
+                    bottom: -@BW;
+                    right: -(2*@R);
+                }
+                .tail-patch{
+                    right: -@BW;
+                }
+            }
+        }
+    }
+}
+
+#dialog-list.draft{
+    .item{
+        &:nth-child(2n+1){
+            background-color: #FFBB6C;
+        }
+        &:nth-child(2n){
+            background-color: #9F6C66;
+        }
+        
+        .bubble{
+            &:before{
+                background-color: #FF7641;
+            }
+            &:after{
+                background-color: #262436;
+            }
+            .tail-patch{
+                background-color: red;
+            }
+        }
+    }
+}

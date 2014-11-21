@@ -1,0 +1,91 @@
+body{background: #f5f5f5;color:#333;padding-bottom:50px}
+a{color:#333;}
+*{box-sizing: border-box}
+img{vertical-align: middle}
+#wrapper{
+    margin:0 auto;
+}
+.act-title{
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 10px;
+    color: #333;
+    padding: 25px 16px;
+    font-weight: bold;
+}
+.banner{
+    margin: 10px 0;
+    padding:0 10px;
+}
+.banner img{
+    width: 100%;
+}
+.act-content p
+{
+    color:#333;
+    font-size: 16px;
+    margin: 25px 0;
+    line-height: 26px;
+    padding:0 16px;
+}
+#cars p{
+    font-size: 16px;
+    line-height: 26px;
+    padding:0 16px;
+}
+.car-card{
+    line-height: 22px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-top: 24px;
+    display: block;
+    width:100%;
+}
+.car-card img{width: 100%;height:auto;}
+.car-card .price{font-size: 20px;color: #FF571A;float: left;font-weight: bold}
+.car-card .time{font-size: 14px;color:#999;float: right}
+.car-card .all-info-name{font-size: 18px;font-weight:bold;}
+.car-card .car-basic{padding: 16px 16px 0;;background: #fff;}
+.car-card .car-intro{
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.car-card .price-time{
+    overflow: hidden;
+    padding: 8px 0 12px;
+}
+.car-wrapper{
+    padding:0 16px;
+    width:100%;
+    float:none;
+}
+.good-car-card{
+    color:#333;
+    padding:16px;
+}
+.good-car-card .gc-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+}
+.gc-img{
+    margin: 12px 0;
+}
+.gc-img img{
+    width: 100%;
+}
+.gc-content{
+    color: #666;
+    font-size: 16px;
+    line-height: 26px;
+}
+.gc-title-order{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 80%;
+    color: #fff;
+    background: #ff571a;
+    text-align: center;
+    line-height: 18px;
+}

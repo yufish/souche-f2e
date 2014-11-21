@@ -1,0 +1,97 @@
+#fankui .terms {
+    margin: 5px;
+    margin-top: 10px;
+}
+#fankui .terms .hd {
+    font-size: 14px;
+    line-height: 20px;
+    color: #444;
+}
+#fankui .terms ul {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f6f6f6;
+    padding: 5px;
+    padding-left: 10px;
+}
+#fankui .terms ul li {
+    list-style-type: disc;
+    color: #666;
+    line-height: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    list-style-position: outside;
+}
+#fankui .terms ul em {
+    color: #df5d16;
+}
+#fankui .methods {
+    margin: 5px;
+    margin-top: 10px;
+}
+#fankui .methods .title {
+    font-size: 14px;
+    line-height: 30px;
+    color: #444;
+}
+#fankui .methods .method {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#fankui .methods .method .hd {
+    background: #dbdbdb;
+    line-height: 40px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 10px;
+}
+#fankui .methods .method .bd {
+    padding: 10px;
+    color: #666;
+    background: #f6f6f6;
+}
+#fankui .methods .method1 {
+    border: none;
+}
+#fankui .methods .method1 textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f6f6f6;
+    color: #999;
+}
+#fankui .methods .method1 input {
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f6f6f6;
+    color: #999;
+    height: 50px;
+}
+#fankui .methods .method1 button {
+    width: 36%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #ff571a;
+    color: #fff;
+    font-size: 18px;
+    height: 50px;
+    display: inline-block;
+}
+#fankui .methods .method2 .bd {
+    line-height: 20px;
+    color: #666;
+}
+#fankui .methods .method2 img {
+    vertical-align: -16px;
+}
+#fankui .methods .method3 .bd {
+    padding: 0;
+}
+#fankui .others {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}

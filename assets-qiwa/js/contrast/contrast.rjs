@@ -1,0 +1,7 @@
+({
+    baseUrl: "./../",
+
+    name: "contrast/carContrast",
+    include: [],
+    out: "contrast.r.js"
+})

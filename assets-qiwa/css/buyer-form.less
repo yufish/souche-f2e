@@ -1,0 +1,583 @@
+@orange:#ff5517;
+body{
+  color: #333;
+}
+h1{
+  font-size: 14px;
+}
+.selected_series_result{
+  margin-top:10px;
+  width:234px;
+  .selected-item{
+    float:left;
+    line-height: 30px;
+    padding-right: 15px;
+    border:2px solid #fff;
+    cursor:pointer;
+    margin-right: 4px;
+    width:93px;
+    white-space:nowrap;
+    height:30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    img{
+      width:30px;
+      height:22px;
+      vertical-align: -5px;
+      margin-right: 5px;
+    }
+  }
+  .selected-item:hover{
+    border:2px solid @orange;
+    background: url(../images/index/close.png) no-repeat right center;
+  }
+}
+#content{
+  .wrapper{
+    width: 1280px;
+    margin: 0 auto;
+  }
+  .you-info{
+    float: left;
+    width: 390px;
+    margin-right: 20px;
+    .title{
+      height: 40px;
+      background: #f5f5f5;
+      border: 1px solid #e6e6e6;
+      border-bottom: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      span{
+        display: block;
+        width: 128px;
+        height: 40px;
+        background: #fff;
+        text-align: center;
+        color: #ff571a;
+        font-size: 15px;
+        line-height: 40px;
+        border-right: 1px solid #e6e6e6;
+      }
+    }
+    .you-item{
+      margin-bottom: 40px;
+      padding-left: 10px;
+      .tlt{
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+        
+        i{
+          display: block;
+          background: url(../images/index/maishou_sprite.png) no-repeat;
+          float: left;
+          margin:0 5px;
+        } 
+      }
+      input{
+        width: 288px;
+        height: 30px;
+        padding-left: 10px;
+        border: 1px solid #d9d9d9;
+      }
+    }
+    .name{
+      .tlt{
+        i{
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    .phone{
+      .tlt{
+        i{
+          width: 15px;
+          height: 19px;
+          background-position: 0 -20px;
+        }
+      }
+    }
+    .wx{
+      .tlt{
+        i{
+          width: 18px;
+          height: 16px;
+          background-position: 0 -41px;
+        }
+      }
+    }
+  }
+  .car-info{
+    float: left;
+    .title{
+      height: 40px;
+      background: #f5f5f5;
+      border: 1px solid #e6e6e6;
+      border-bottom: none;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      span{
+        display: block;
+        width: 128px;
+        height: 40px;
+        background: #fff;
+        text-align: center;
+        color: #ff571a;
+        font-size: 15px;
+        line-height: 40px;
+        border-right: 1px solid #e6e6e6;
+      }
+    }
+    .info-cont{
+      .info-item{
+        
+      }
+    }
+  }
+}
+#pc{
+  .dialog-item{
+    float: left;
+    width: 270px;
+    padding: 5px;
+  }
+  .carinstrestContainer{
+    padding: 0px 10px 0px 10px;
+    height: 100%;
+   .hd i {
+    background: url(../images/index/add-series-icon.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    }
+    .addCarinstrestItem {
+    margin-top: 5px;
+    background: #ffffff;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 32px;
+    position: relative;
+    span {
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 10px;
+      }
+      a {
+      margin-right: 10px;
+      font-size: 14px;
+      color: #333;
+      line-height: 32px;
+      }
+      i {
+      background: url(../images/index/car-series-trigger.png) no-repeat center center;
+      display: block;
+      width: 10px;
+      height: 32px;
+      position: absolute;
+      right: 10px;
+      top: 0px;
+      }
+    }
+    .instrest-tip {
+    font-size: 12px;
+    line-height: 25px;
+    color: #aaa;
+    text-align: center;
+    }
+    .selected_series_result {
+    margin-top: 10px;
+    width: 234px;
+    }
+  }
+}
+.sc-select-list {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  left: -1px;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+  top: 30px !important;
+  .option {
+    display: block;
+    float: none;
+    padding-left: 22px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #333;
+  }
+  .option:hover{
+    background: @orange;
+    color:#fff;
+  }
+
+}
+.carBudget {
+    float: left;
+    vertical-align: top;
+    .carBudgetContainer
+      {
+        padding: 0px 10px 0px 10px;
+        height:100%;
+      }
+      .hd {
+        font-size: 14px;
+        i{
+          background: url(../images/index/add-money-icon.png) no-repeat center center;
+          width:20px;
+          height:20px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+      }
+      .dataContainer {
+        position: relative;
+        vertical-align: middle;
+        margin-top: 5px;
+        .selectContainer {
+          border: 1px solid #d9d9d9;
+          height: 30px;
+          background: #fff;
+          line-height: 25px;
+          width: 36%;
+          position: relative;
+          float: left;
+          padding-left: 5%;
+          vertical-align: middle;
+        }
+        .sc-select-list {
+          width: 100%;
+          border: 1px solid #d9d9d9;
+          left: -1px;
+          position: absolute;
+          overflow: auto;
+          z-index: 10000;
+          overflow-x: hidden;
+          background: #fff;
+          top: 30px !important;
+          .option {
+            display: block;
+            float: none;
+            padding-left: 22px;
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+          }
+          .option:hover{
+            background: @orange;
+            color:#fff;
+          }
+
+        }
+        > a {
+          float: left;
+          width: 5%;
+          margin-left: 2%;
+          margin-right: 2%;
+          overflow: hidden;
+          top: 7px;
+          position: relative;
+          font-size: 13px;
+          text-align: center;
+        }
+        .inputContainer {
+          margin-left: 0px;
+          width: 41%;
+          vertical-align: middle;
+          border: 1px solid #EDEDED;
+          height: 30px;
+          background: #ffffff;
+          color: #B6B6B6;
+          overflow: hidden;
+          position: relative;
+          a {
+            color: #B6B6B6;
+            float: right;
+            width: 45%;
+            margin-top: 7px;
+            text-align: center;
+          }
+          input {
+            float: left;
+            width: 50%;
+            height: 25px;
+            border: none;
+            margin-top: 2px;
+            padding-left: 5%;
+            letter-spacing: 0.5px;
+            position: absolute;
+            width: 100%;
+            background: none;
+          }
+        }
+        .leftContainer {
+          float: left;
+        }
+        .rightContainer {
+          float: left;
+        }
+        > a {
+          float: left;
+          width: 10%;
+          margin-left: 2%;
+          margin-right: 2%;
+          overflow: hidden;
+          top: 7px;
+          position: relative;
+          font-size: 13px;
+          text-align: center;
+        }
+      }
+    }
+  .caryear {
+      //padding: 0px 10px 0px 20px;
+      
+      float: left;
+      .caryearContainer
+      {
+        padding: 0px 15px 0px 10px;
+        height:100%;
+      }
+      
+      .hd {
+        font-size: 14px;
+        i{
+          background: url(../images/index/add-year-icon.png) no-repeat center center;
+          width:20px;
+          height:20px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+      }
+      .dataContainer {
+        position: relative;
+        vertical-align: middle;
+        margin-top: 5px;
+        .selectContainer {
+          border: 1px solid #d9d9d9;
+          height: 30px;
+          background: #fff;
+          line-height: 25px;
+          width: 39%;
+          position: relative;
+          float: left;
+          padding-left: 5%;
+          vertical-align: middle;
+          .sc-select-hd {
+            text-align: left;
+            position: relative;
+            font-size: 12px;
+            color: #aaa;
+            font-weight: normal;
+            height: auto;
+            cursor: default;
+            .sc-select-content {
+              padding-left: 10px;
+              padding-top: 6px;
+              line-height: 20px;
+              color: #333;
+              .placeholder {
+                color: #333;
+              }
+
+            }
+            .sc-select-action {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              right: 0;
+              top: 0;
+              background: #fff;
+              cursor: pointer;
+              font-size: 0px;
+              line-height: 0px;
+              _right: -1px;
+
+              i {
+                margin-left: 0px;
+                margin-top: 0px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                font-size: 0px;
+                line-height: 0px;
+                background: url(../images/common/select-action-trigger.png) no-repeat center center;
+                background-position: 6px 12px;
+              }
+            }
+          }
+          .sc-select-list {
+            width: 100%;
+            border: 1px solid #d9d9d9;
+            left: -1px;
+            position: absolute;
+            overflow: auto;
+            z-index: 10000;
+            overflow-x: hidden;
+            background: #fff;
+            top: 30px !important;
+            .option {
+              display: block;
+              float: none;
+              padding-left: 22px;
+              font-size: 12px;
+              line-height: 24px;
+              color: #333;
+            }
+            .option:hover{
+              background: @orange;
+              color:#fff;
+            }
+          }
+        }
+
+        > a {
+          float: left;
+          width: 5%;
+          margin-left: 2%;
+          margin-right: 2%;
+          overflow: hidden;
+          top: 7px;
+          position: relative;
+          font-size: 13px;
+          text-align: center;
+        }
+
+      }
+    }
+.nav_transmission{
+  .list_nav_title{
+    height: 20px;
+    line-height: 20px;
+    margin-bottom:5px;
+    margin-left: 5px;
+    i{
+      width: 16px;
+      height: 16px;
+      display: block;
+      float: left;
+      background: url(../images/index/maishou_sprite.png) no-repeat;
+      background-position: -20px 0;
+      margin: 2px 5px;
+
+    }
+  }
+  .sc-select{
+    width: 250px;
+    margin-left: 10px;
+  }
+}
+.carcolor{
+  .list_nav_title{
+    height: 20px;
+    line-height: 20px;
+    margin-bottom:5px;
+    margin-left: 5px;
+    i{
+      width: 22px;
+      height: 16px;
+      display: block;
+      float: left;
+      background: url(../images/index/maishou_sprite.png) no-repeat;
+      background-position: -20px -60px;
+      margin: 2px 5px;
+
+    }
+  }
+  input{
+    width: 240px;
+    margin-left: 10px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+    padding-left: 10px;
+  }
+}
+.insidecolor{
+  .list_nav_title{
+    height: 20px;
+    line-height: 20px;
+    margin-bottom:5px;
+    margin-left: 5px;
+    i{
+      width: 19px;
+      height: 18px;
+      display: block;
+      float: left;
+      background: url(../images/index/maishou_sprite.png) no-repeat;
+      background-position: -45px -20px;
+      margin: 2px 5px;
+
+    }
+  }
+  input{
+    width: 240px;
+    margin-left: 10px;
+    padding-left: 10px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+  }
+}
+.add-nav{
+  margin-top: 20px;
+  .list_nav_title{
+    height: 20px;
+    line-height: 20px;
+    margin-bottom:5px;
+    margin-left: 5px;
+    i{
+      width: 14px;
+      height: 19px;
+      display: block;
+      float: left;
+      background: url(../images/index/maishou_sprite.png) no-repeat;
+      background-position: -20px -20px;
+      margin: 2px 5px;
+    }
+  }
+  .sc-select{
+    width: 250px;
+    margin-left: 10px;
+  }
+}
+.remark{
+  margin-top: 40px;
+  margin-left: 15px;
+  h1{
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  #remark-cont{
+    width: 525px;
+    height: 110px;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+  }
+}
+.buyer-submit{
+  margin-top: 70px;
+  margin-left: 15px;
+  button{
+   width: 150px;
+   height: 50px;
+   background:@orange;
+   color: #fff;
+   font-weight: bold;
+   text-align: center;
+   line-height: 50px;
+   border-radius: 3px;
+   font-size: 22px;
+   cursor: pointer;
+  }
+}

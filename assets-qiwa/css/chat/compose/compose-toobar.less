@@ -1,0 +1,42 @@
+.compose-ctn .compose-toolbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: @toobarH;
+  width: 100%;
+  z-index: 50;
+  background-color: #f5f5f5;
+
+  .compose-tool{
+    float: left;
+    height: 100%;
+    width: @toobarH;
+    
+    margin-right: 1em;
+
+    .compose-tool-icon{
+      display: block;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+
+//      如何做的更加可访问呢...
+//      &:active{
+//        outline: 2px solid red;
+//      }
+    }
+    .compose-tool-content{
+      display: none;
+      position: absolute;
+      z-index: 100;
+    }
+    &.active{
+      .compose-tool-content{
+        display: block;
+      }
+    }
+  }
+}
+
+@import "./compose-tool-carid.less";
+@import "./compose-tool-pic.less";

@@ -1,0 +1,177 @@
+@import "../config.less";
+
+@bc: #cecece;
+#shop-eval{
+  width: 600px;
+  height: 400px;
+  border: 1px solid #cecece;
+  box-shadow: 1px 1px 2px 2px #ededed;
+  .box-sizing();
+
+  *{
+    .box-sizing();
+  }
+
+  .eval-wrap{
+    padding: 20px 30px;
+    position: relative;
+    .close{
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: url("../../images/fed/member/popup-close2.png") no-repeat;
+      right: 30px;
+      top: 20px;
+      cursor: pointer;
+    }
+    .eval-box{
+      .title{
+        h1{
+          font-size: 18px;
+          color: #333;
+          margin-bottom: 3px;
+        }
+        p{
+          color: #999;
+          font-size: 14px;
+        }
+      }
+      .eval-cont{
+        margin-top: 20px;
+        .cont-item{
+          margin-bottom: 10px;
+          .tit{
+            color: #333;
+            font-size: 14px;
+            float: left;
+          }
+          .eval{
+            float: left;
+            position: relative;
+            // 右边少一个像素 刚好挡住多余的右边框
+            width: 140px;
+            margin-right: 10px;
+            margin-left: 5px;
+
+            overflow: hidden;
+
+
+            .eval-bg{
+              width: 140px;
+              // border-right: none;
+              i{
+                float: left;
+                width: 28px;
+                height: 18px;
+                text-align: center;
+                border: 1px solid @bc;
+                border-left: none;
+                color: #999;
+                background: #F5F5F5;
+
+                &.first-child{
+                  border-left: 1px solid @bc;
+                }
+              }
+            } 
+            .eval-ac{
+              // display: none;
+              background: #FF571A;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              overflow: hidden;
+              border-right: none;
+              i{
+                width: 28px;
+                height: 18px;
+                line-height: 18px;
+                color: #fff;
+                display: block;
+                float: left;
+                text-align: center;
+              }
+            }
+            i{
+              font-style: normal;
+              cursor: pointer;
+            }
+          }
+          .result{
+            float: left;
+            color: #bbb;
+            font-size: 12px;
+            float: left;
+
+            &.active{
+              color: @soucheOrange;
+            }
+          }
+        }
+      }
+      .eval-form{
+        margin-top: 20px;
+        width: 502px;
+        textarea{
+          width: 480px;
+          height: 98px;
+          border: 1px solid #cecece;
+          padding: 10px;
+        }
+        .submit{
+          margin-top: 20px;
+        }
+        .anony-eval{
+          position: relative;
+          float: left;
+          width: 88px;
+          color: #999;
+          font-size: 14px;
+          #anony-check{
+            margin-top: 5px;
+          }
+          label{
+            position: absolute;
+            top: 1px;
+            left: 20px;
+            display: block;
+          }
+        }
+        #eval-submit{
+          display: block;
+          float: right;
+          width: 100px;
+          height: 34px;
+          background: #FF571A;
+          color: #fff;
+          cursor: pointer;
+          text-align: center;
+          line-height: 34px;
+          font-size: 16px;
+          border-radius: 2px;
+          border: none;
+        }
+      }
+    }
+    .succ-cont{
+      margin-top: 130px;
+      margin-left: 170px;
+      height: 52px;
+      .succ-icon{
+        float: left;
+        width: 50px;
+        height: 52px;
+        background: url(../../images/common/success-popup.png) no-repeat;
+      }
+      .succ-text{
+        font-size: 18px;
+        color: #333;
+        line-height: 25px;
+        margin-left: 15px;
+        float: left;
+      }
+    }
+  }
+}

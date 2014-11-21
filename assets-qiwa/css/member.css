@@ -1,0 +1,40 @@
+body{background-color:transparent}
+.member{width:290px;height:300px;background-color:#fff;}
+.member .member-feed{padding: 20px 20px 0;}
+.member .member-feed .member_title{padding-bottom:18px;text-indent:4px;color:#333;font-size:30px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;border-bottom: 1px solid #d8d8d8}
+.member .member-close{float:right;width:30px;height:30px;margin:4px;background:url(../../images/fed/member/login2.png) no-repeat 0 0px;cursor:pointer}
+.member .member-close.close-hover{background-position:-33px 0}
+.member .member-feed .member-form{padding-left:135px;margin-bottom:70px;padding-top:77px;position:relative}
+.member .member-feed .member-form .member-error{position:absolute;top:43px;color:#fd0202}
+.member .member-feed .member-form .member-controller{position:relative;clear:both;width:258px;height:33px;padding-left:10px;margin-bottom:27px;border:1px solid #c8c8c8}
+.member .member-feed .member-form .member-controller .member-label{float:left;width:60px;margin-right:5px;color:#333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:33px}
+.member .member-feed .member-form .member-controller .member-text-input{float:left;border:none;margin-top:4px;margin-top:12px\9;width:178px;height:25px;height:13px\9;color:#333;background-color:#fff;}
+.member .member-feed .member-form .member-controller.error-controller{border-color:#ff2e2e}
+.member .member-feed .member-form .member-controller.correct-controller{border-color:#7abd54}
+.member .member-feed .member-form .member-controller .member-input-remind{position:absolute;left:76px;top:10px;color:#b8b8b8}
+.member .member-feed .member-form .yz-controller{width:154px;float:left}
+.member .member-feed .member-form .yz-controller .member-text-input{width:74px}
+.member .member-feed .member-form .get-yz{float:left;margin:3px 0 0 10px;display:inline;}
+.member .member-feed .member-form .get-yz .get-yz-input{width:96px;height:30px;color:#9a9a9a;border:none;cursor:pointer;background:url(../../images/fed/member/login2.png) no-repeat 0 -53px}
+.member .member-feed .member-form .submit-controller{margin-bottom:18px}
+.member .member-feed .member-button{width:270px;height:38px;line-height:38px;border:none;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:#fe4e01;color:#fff;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+.member .member-feed .member-button-disabled{width:270px;height:38px;line-height:38px;border:none;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#333333;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+.member .member-feed .member-form .member-findPsd{color:#333}
+.member .member-feed .member-form .member-findPsd a{color:#06c}
+.member .member-feed .member-form .member-findPsd a:hover{text-decoration:underline}
+.member .member-other{padding:24px 0;background-color:#eee;}
+.member .member-other .other-intro{float:left;margin-left:155px;color:#333;font-size:14px;line-height: 34px;}
+.member .member-other .other-button{display:block;float:left;width:117px;margin-left:40px;color:#fff;line-height:34px;text-align:center;font-size:14px;background-color: #33b600;}.member .member-other .other-controller .other-button:hover{background-position:0 -45px}
+.register .member-feed .member-form .member-controller{margin-bottom:15px}
+.register .member-feed .member-form{padding-top:27px;margin-bottom: 26px;}
+.register .member-feed .member-form .member-error{top:5px}
+.register .member-feed .member-button{background-color:#33b600}
+.register .member-other .other-button{background-color: #fe4e01;}
+.register .member-other .other-button:hover{background-position:0 -132px}
+.register-success{height: 396px;}
+.register-success .register-tag{display:block;width:69px;height:66px;margin:75px auto 18px;background:url(../../images/fed/member/login2.png) no-repeat -98px 0px}
+.register-success .register-remind{margin-bottom:24px;color:#333;font-size:24px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align:center}
+.register-success .member-feed .member-form{padding-top:0}
+.register-success .member-feed .member-form .submit-controller{width:130px;margin:0 auto}
+.register-success .member-feed .member-button{width:130px;display:block;margin:0 auto;text-align:center}
+.register-success .login-timer{color:#666;text-align:center;line-height:35px}

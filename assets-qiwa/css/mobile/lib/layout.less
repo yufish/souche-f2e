@@ -1,0 +1,68 @@
+//begin: mixin for flex box
+.display-flex(@value: flex) {
+  display: ~"-webkit-@{value}";  // Webkit Standard
+  display: @value;               // Standard
+}
+.justify-content(@value: flex-start) {
+  -webkit-justify-content: @value;  // Webkit Standard
+  justify-content: @value;  // Standard
+}
+.align-item(@value: stretch){
+  -webkit-align-items: @value;  // Webkit Standard
+  align-items: @value;  // Standard
+}
+.flex-value(@value:1){
+  -webkit-flex:@value;
+  flex:@value;
+}
+.flex-direction(@value:column){
+  -webkit-flex-direction: @value;
+  flex-direction: @value;
+}
+//end: mixin for flex box
+.flex-1{.flex-value();}
+.flex-2{.flex-value(2);}
+.flex-3{.flex-value(3);}
+.flex-4{.flex-value(4);}
+.flex-5{.flex-value(5);}
+.flex-6{.flex-value(6);}
+
+.fb-c-center{.align-item(center)}
+.fb-m-center{.justify-content(center);}
+.fb-center{
+  .align-item(center);
+  .justify-content(center);
+}
+.fb-m-end{.justify-content(flex-end)}
+.fb-c-end{.align-item(flex-end)}
+
+.stackpanel{
+  .display-flex();
+  .flex-value();
+}
+.stackpanel.vertical{
+  .flex-direction()
+}
+.stackitem{
+  .flex-value();
+  .display-flex()
+}
+.stackitem.non-auto{
+  .flex-value(initial);
+}
+
+//for custom tag
+stackpanel{
+  .display-flex();
+  .flex-value();
+}
+stackpanel.vertical{
+  .flex-direction()
+}
+stackitem{
+  .flex-value();
+  .display-flex()
+}
+stackitem.non-auto{
+  .flex-value(initial);
+}
