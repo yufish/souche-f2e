@@ -63,6 +63,10 @@ Souche.Sidebar = (function() {
             var self = this;
             if ($(this).hasClass("suggest-box")) {
                 showSidebar(self);
+            }else if($(this).hasClass("reserve-box")) {
+                Souche.MiniLogin.checkLogin(function(isLogin) {
+                    showSidebar(self);
+                },false,true)
             } else {
                 Souche.MiniLogin.checkLogin(function(isLogin) {
                     showSidebar(self);
