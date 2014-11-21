@@ -46,6 +46,7 @@ define(function() {
         var left = $(".search").offset().left;
         var width = $(".search").width()
         if(activeInput){
+
             var top = $(activeInput).offset().top + $(activeInput).parent().height();
             var left = $(activeInput).offset().left;
             var width = $(activeInput).width()
