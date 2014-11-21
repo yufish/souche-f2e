@@ -136,6 +136,7 @@
         height: 16px;
         width: 16px;
         font-size: 10px;
+        font-weight: normal;
         line-height: 14px;
         text-align: center;
         color: #fff;
@@ -196,12 +197,12 @@
         &:after{
             content: '';
             position: absolute;
-            bottom: -14px;
-            right: 1px;
-            // 不是常规的transparent
-            border: 7px solid transparent;
-            border-top-color: @journalBGC;
-            border-right-color: @journalBGC;
+            bottom: -34px;
+            right: -6px;
+            width: 33px;
+            height: 34px;
+            background-image: url('../../images/index_11/trangle.png');
+            background-repeat: no-repeat;
         }
 
         .journal-title{
@@ -287,28 +288,18 @@
             .tst();
         }
 
-        // &:hover{
-        //     background-color: @soucheOrange;
-        //     &:after{
-        //         border-top-color: @soucheOrange;
-        //         border-right-color: @soucheOrange;
-        //     }
-        //     .journal-title,
-        //     .journal-content,
-        //     .journal-link{
-        //         color: #fff;
-        //     }
-        // }
-
         &:hover{
             .box-shadow(0 3px 7px #aaa);
-
+            &:after{
+                background-image: url('../../images/index_11/trangle-shadow.png');
+            }
             .journal-link{
                 text-decoration: underline;
             }
         }
     }
 }
+
 
 // 由于dom结构的原因, 使用js实现hover动效
 #good-car .limit-sale{
