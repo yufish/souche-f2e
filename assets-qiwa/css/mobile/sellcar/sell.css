@@ -1,0 +1,340 @@
+#sell-h5-2 .content .options .option-item {
+    font-size: 14px;
+    line-height: 20px;
+    color: #444;
+}
+#sell-h5-2 {
+    position: relative;
+    background-color: white;
+}
+#sell-h5-2 img{
+    vertical-align: middle;
+}
+#sell-h5-2 #page-1,
+#sell-h5-2 #page-2,
+#sell-h5-2 #page-3,
+#sell-h5-2 #page-4,
+#sell-h5-2 #page-5,
+#sell-h5-2 #page-6 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+#sell-h5-2 #page-1 {
+    left: 0;
+}
+#sell-h5-2 #page-2,
+#sell-h5-2 #page-3,
+#sell-h5-2 #page-4,
+#sell-h5-2 #page-5,
+#sell-h5-2 #page-6 {
+    left: 100%;
+    display: none;
+}
+#sell-h5-2 .hr20 {
+    background-color: #f3f3f3;
+}
+#sell-h5-2 .content .array-r {
+    background: url(../../../images/mob/h5-2/array.png) no-repeat;
+    background-size: 8px;
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 22px 20px 0 5px;
+}
+#sell-h5-2 .content .array-d {
+    background: url(../../../images/mob/h5-2/array.png) no-repeat;
+    background-size: 8px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    height: 13px;
+    width: 13px;
+    float: right;
+    margin: 25px 20px 0 5px;
+}
+#sell-h5-2 .content .array-l {
+    background: url(../../../images/mob/h5-2/array.png) no-repeat;
+    background-size: 8px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#sell-h5-2 .content .array-u {
+    background: url(../../../images/mob/h5-2/array.png) no-repeat;
+    background-size: 8px;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+#sell-h5-2 .content #opt-main .text {
+    width: 25%;
+}
+#sell-h5-2 .content #choose-brand .selected-text {
+    float: left;
+    margin-left: 5px;
+}
+#sell-h5-2 .content .options .selected-text {
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    color: #797979;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 270px;
+    margin-right: 5px;
+}
+#sell-h5-2 .content .options #option-advance,
+#sell-h5-2 .content .options #car-saletype {
+    border-bottom: 1px solid #d0d0d0;
+}
+#sell-h5-2 .content .options #option-advance-show {
+    display: none;
+}
+#sell-h5-2 .content .options #car-mile select,
+#sell-h5-2 .content .options #car-model select,
+#sell-h5-2 .content .options #car-saletype select {
+    background: none;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+#sell-h5-2 .content .options .option-group {
+    height: 35px;
+    background-color: #dbdbdb;
+    line-height: 35px;
+    padding-left: 5px;
+}
+#sell-h5-2 .content .options .option-item {
+    height: 60px;
+    border-bottom: 1px solid #d0d0d0;
+    position: relative;
+}
+#sell-h5-2 .content .options .option-item .text {
+    padding-left: 5px;
+    line-height: 60px;
+    /*font-weight: bold;*/
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    width: 85%;
+    color: #444;
+    font-size: 14px;
+}
+#sell-h5-2 .content #opt-main.options .option-item .text {
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+}
+#sell-h5-2 .content .options .option-item .input-content {
+    padding-top: 10px;
+    float: left;
+    width: 73%;
+    text-align: left;
+}
+#sell-h5-2 .content .options .option-item .input-content input {
+    width: 85%;
+    height: 38px;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color;
+    background-color: transparent;
+}
+#sell-h5-2 .content .btns {
+    text-align: center;
+    padding: 30px 0;
+}
+#sell-h5-2 .content .btns #submit-btn {
+    background-color: #fc7000;
+    width: 160px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+#sell-h5-2 .img-ad{
+    box-sizing: border-box;
+}
+#sell-h5-2 .img-ad .intro{
+    padding:0 20px;
+}
+#sell-h5-2 .img-ad .title{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#sell-h5-2 .img-ad .spec-title{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+
+}
+#sell-h5-2 .img-ad .content{
+    color: #666;
+    font-size: 12px;
+}
+#sell-h5-2 .img-ad .image-wrapper img{
+    width: 100%;
+}
+#sell-h5-2 .img-ad p{
+    line-height: 18px;
+}
+#sell-h5-2 .ad-1{
+    padding:23px 0 45px;
+    background-color: #f3f3f3;
+}
+#sell-h5-2 .ad-2{
+    padding:32px 0 30px;
+    background-color: #fff;
+}
+#sell-h5-2 .ad-3{
+    padding:35px 0 40px;
+    background-color: #f3f3f3;
+}
+#sell-h5-2 .ad-4{
+    padding:35px 0 40px;
+    background-color: #fff;
+}
+#sell-h5-2 .image-w-1{
+    margin:0 auto;
+    margin-top: 15px;
+    width: 218px;
+    height: 141px;
+}
+#sell-h5-2 .image-w-2{
+    margin:0 auto;
+    margin-top: 30px;
+    width: 232px;
+    height: 115px;
+}
+#sell-h5-2 .image-w-3{
+    margin:0 auto;
+    margin-top: 45px;
+    width: 265px;
+    height: 97px;
+}
+#sell-h5-2 .image-w-4{
+    margin:0 auto;
+    margin-top: 22px;
+    width: 273px;
+    height: 181px;
+}
+#sell-h5-2 .text-center{
+    text-align: center;
+}
+#sell-h5-2 .content #faq {
+    background-color: #f3f3f3;
+    padding: 58px 20px 30px;
+}
+#sell-h5-2 .content #faq .title {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+}
+#sell-h5-2 .content #faq .title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #262626;
+}
+#sell-h5-2 .content #faq .faq-content {
+    margin: 0 auto;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left {
+    float: left;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question {
+    margin-bottom: 35px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title {
+    border-bottom: 3px solid #262626;
+    margin-right: 45px;
+
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title i {
+    display: inline-block;
+    vertical-align: -3px;
+    width: 15px;
+    height: 15px;
+    background: url(../../../images/mob/sellcar/q.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: 5px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-title span {
+    font-size: 14px;
+    color: #262626;
+    line-height: 20px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer {
+    margin-top: 15px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer p {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .question .q-answer p a {
+    color: #0090cc;
+    cursor: pointer;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q2 .q-answer h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    margin-top: 15px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer ul li {
+    font-size: 12px;
+    color: #444;
+    line-height: 25px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer .answer-left {
+    float: left;
+    margin-right: 60px;
+}
+#sell-h5-2 .content #faq .faq-content .faq-left .q3 .q-answer .answer-right {
+    float: left;
+}
+
+.addr {
+    color: #007cca;
+}
+#sell-h5-2 .content .sell-info .wrapper .info-item .info-content .array-r-gray {
+    float: left;
+    background: url(../../../images/mob/h5-2/array-gray.png) no-repeat center center;
+    background-size: 8px;
+    width: 10px;
+    height: 30px;
+}
+.brand-zimu {
+    background: #e4e4e4;
+}
+.brand-zimu .zimu-title {
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    padding-left: 10px;
+}
+.brand-zimu .brand-word {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background: #fff;
+}
+.brand-zimu .brand-word.no-brand {
+    color: #ddd;
+}

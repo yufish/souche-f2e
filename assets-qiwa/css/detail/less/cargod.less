@@ -1,0 +1,153 @@
+// 车神点评 样式
+
+// 大搜车主色调
+@themeC: #EF5E00;
+// config
+@contentBGC: #fff;
+@containerBC: #e4e4e4;
+    // container 配置
+@minH: 200px;
+@padTB: 20px;
+@padLR: 40px;
+    // profile 配置
+@avatarW: 100px;
+@profileW: 280px;
+@profileFS: 12px;
+@profileFC: #666;
+@btnBGC: #3b9fea;
+@btnHoverBGC: #0089e6;
+    // separator 配置
+@sepW: 50px;   //占据的宽度
+@sepBGC: #EBEBEB;
+    // review 配置
+@reviewFS: 14px;
+@reviewFC: #888;
+
+
+
+.border-radius(@v){
+    -webkit-border-radius: @v;
+    -moz-border-radius: @v;
+    -ms-border-radius: @v;
+    -o-border-radius: @v;
+    border-radius: @v;
+}
+.box-sizing(@v:border-box){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+
+.cargod{
+    position: relative;
+    min-height: @minH;
+    padding: @padTB @padLR;
+    margin-bottom: 20px;
+    background-color: @contentBGC;
+    border: 1px solid @containerBC;
+    .box-sizing();
+
+    .cargod-profile{
+        float: left;
+        width: @profileW;
+        padding-top: 22px;
+
+        .profile-avatar{
+            float: left;
+            width: @avatarW;
+            height: @avatarW;
+            overflow: hidden;
+            background-color: #ccc;
+            .border-radius(@avatarW/2);
+        }
+        .profile-text-ctn{
+            // bfc
+            margin-left: @avatarW;
+            padding-left: 23px;
+            overflow: hidden;
+            .profile-name{
+                margin: 5px 0 6px 0;
+                font-size: 16px;
+                color: #profileFC;
+            }
+            .profile-title{
+                margin-bottom: 18px;
+                font-size: @profileFS;
+                color: @profileFC;
+            }
+            .contact-btn{
+                .box-sizing();
+                display: inline-block;
+                height: 30px;
+                padding: 0 16px 0 34px;
+                font-size: @profileFS;
+                // 由于box-sizing, 30px - 2px border
+                line-height: 30px - 2px;
+                color: #fff;
+                border: 1px solid @btnBGC;
+                background-color: @btnBGC;
+                background-image: url('../../images/index/ask.png');
+                background-repeat: no-repeat;
+                background-position: 0 50%;
+                .border-radius(3px);
+
+                &:hover{
+                    border: 1px solid @btnHoverBGC;
+                    background-color: @btnHoverBGC;
+                    background-image: url('../../images/index/ask-hover.png');
+                }
+                // &:active{
+                //     border: 1px solid lighten(@themeC, 10%);
+                // }
+            }
+        }
+
+    }
+    .cargod-separator{
+        position: absolute;
+        top: @padTB;
+        bottom: @padTB;
+        left: @padLR + @profileW + 2px;
+        width: 1px;
+        background-color: @sepBGC;
+        overflow: visible;
+
+        .tri-left{
+            height: 20px;
+            width: 10px;
+            margin: 70px 0 0 -8px;
+            background-image: url('../../images/detail/cargod-trileft.png');
+            background-repeat: no-repeat;
+        }
+    }
+    .cargod-review{
+        width: auto;
+        margin-left: @profileW + @sepW;
+
+        .review-quote-pre{
+            height: 30px;
+            background-image: url('../../images/detail/cargod-quote.png');
+            background-repeat: no-repeat;
+            background-position: 5px 10px;
+        }
+        .review-quote-after{
+            height: 30px;
+            margin-right: 10px;
+            background-image: url('../../images/detail/cargod-quote-after.png');
+            background-repeat: no-repeat;
+            background-position: 100% 0;
+        }
+        .review-list{
+            padding-left: 27px;
+            font-size: @reviewFS;
+            line-height: 1.5;
+            list-style-type: disc;
+            list-style-position: inside;
+            color: @reviewFC;
+
+            .review-item{
+
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+#car-life{
+  background: #f2f2f2;
+  .wrapper{
+    width:1180px;
+    margin:0 auto;
+  }
+
+  .go-list{
+    margin-top: 20px;
+    width:1300px;
+  }
+  .go-card{
+    width:570px;
+    height: 240px;
+    float:left;
+    margin-right: 40px;
+    background: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    .pic{
+      float:left;
+      width:285px;
+      overflow: hidden;
+      height: 100%;
+      img{
+        width: 295px;
+        height: 100%;
+      }
+    }
+    .infos{
+      float:left;
+      width:285px;
+      .title{
+        font-size:20px;
+        margin-top: 20px;
+        line-height: 30px;
+      }
+      .desc{
+        line-height: 25px;
+        font-size: 14px;
+        margin-top: 10px;
+        color:#999;
+        height: 55px;
+      }
+      .car-pic{
+        display: table-cell;
+        width: 285px;
+        height: 120px;
+        vertical-align: middle;
+        overflow: hidden;
+        img{
+          max-width: 210px;
+          max-height: 110px;
+        }
+      }
+    }
+  }
+}
+
+#car-life{
+  .go-card{
+    &,
+    .car-pic img,
+    .title{
+      .tst();
+    }
+    .car-pic img{
+      position: relative;
+      left: 0;
+    }
+
+    &:hover{
+      .box-shadow(0px 0px 3px #aaa;);
+
+      .title{
+        color: @soucheOrange;
+      }
+      .car-pic img{
+        left: -10px;
+      }
+    }
+  }
+}

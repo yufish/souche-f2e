@@ -1,0 +1,120 @@
+.brand-select {
+  width: 257px;
+  height: auto;
+  display: block;
+}
+.brand-select .close {
+  background: #fc7000;
+  color: #fff;
+  font-size: 12px;
+  float: right;
+  margin-right: 10px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.brand-select .sc-select-list {
+  overflow: hidden;
+  width: 500px;
+  height: 400px !important;
+}
+.brand-select .sc-select-content {
+  padding-left: 0;
+}
+.brand-select .placeholder {
+  padding-left: 10px;
+}
+.brand-select .sc-popup-bd {
+  height: 370px;
+}
+.brand-select .word-title {
+  float: left;
+  color: #5bb0b3;
+  font-size: 20px;
+  line-height: 30px;
+  width: 30px;
+}
+.brand-select .word-brands {
+  float: left;
+  display: inline;
+  width: 450px;
+}
+.brand-select .option {
+  padding: 0 5px;
+  margin-left: 7px;
+  color: #666;
+  float: left;
+  display: inline;
+  font-size: 12px;
+  border: 2px solid #fff;
+  line-height: 20px;
+  margin-top: 3px;
+}
+.brand-select .option.active {
+  border: 2px solid #fc7000;
+  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  color: #fc7000;
+}
+.brand-select .option:hover {
+  color: #fc7000;
+}
+.brand-select .sc-popup {
+  padding-right: 0;
+}
+.series-select {
+  width: 257px;
+  height: auto;
+  display: block;
+}
+.series-select .sc-select-list {
+  overflow: hidden;
+  width: 500px;
+  height: 400px !important;
+}
+.series-select .close {
+  background: #fc7000;
+  color: #fff;
+  font-size: 12px;
+  float: right;
+  margin-right: 10px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.series-select .sc-select-content {
+  padding-left: 0;
+}
+.series-select .placeholder {
+  padding-left: 10px;
+}
+.series-select .sc-popup-bd {
+  height: 370px;
+}
+.series-select .brand-title {
+  color: #fc7000;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 30px;
+}
+.series-select .option {
+  padding: 0 5px;
+  margin-right: 5px;
+  color: #333;
+  float: left;
+  display: inline;
+  font-size: 12px;
+  border: 2px solid #fff;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.series-select .option.active {
+  border: 2px solid #fc7000;
+  background: #ffedda url(../images/index/popup-active.png) no-repeat right bottom;
+  color: #fc7000;
+}
+.series-select .option:hover {
+  color: #fc7000;
+}
+.series-select .sc-popup {
+  padding-right: 0;
+}

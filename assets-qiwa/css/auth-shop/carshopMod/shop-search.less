@@ -1,0 +1,163 @@
+
+.search-car{
+    padding: 10px 20px;
+    .box-sizing();
+    border: 1px solid @bc;
+
+    *{
+        .box-sizing();
+    }
+
+    .search-result,
+    .searchby-price,
+    .searchby-brand{
+        .search-title{
+            font-size: 14px;
+            color: #333;
+        }
+        .searchby-content{
+            margin-top: 12px;
+        }
+    }
+
+    .search-result{
+        position: relative;
+        padding-bottom: 12px;
+        border-bottom: 1px solid @bc;
+        margin-bottom: 15px;
+        font-size: 14px;
+
+        .search-result-count{
+            max-width: 110px;
+            color: @soucheOrange;
+
+            .text-collapse();
+        }
+        .back-to-all{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            text-decoration: underline;
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .choose_item {
+            float:left;
+            position: relative;
+            .box-sizing();
+            padding:0 20px 0 10px;
+            line-height:30px;
+            border:1px solid #ccc;
+            color:#666;
+            margin-top: 8px;
+            margin-right: 8px;
+
+            *width:70px;
+            overflow:hidden;
+            background-color: #fff;
+            cursor: pointer;
+            span {
+                position: absolute;
+                color:#bbb;
+                line-height: 28px;
+                padding: 0 6px;
+                font-size:12px;
+                top: 0px;
+                right: 1px;
+                z-index: 100;
+            }
+            &:hover {
+                border:1px solid #FC7000;
+                span{
+                    color:#fc7000;
+                }
+            }
+        }
+    }
+
+    .searchby-price{
+        .searchby-content{
+            *{
+                float: left;
+            }
+        }
+        .price-warning{
+            color: #ff4200;
+        }
+        .to{
+            margin: 0 5px;
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .price-unit{
+            margin-left: 6px;
+            line-height: 22px;
+        }
+        #min-price,
+        #max-price{
+            width: 50px;
+            height: 22px;
+            padding: 4px;
+            font-size: 12px;
+            line-height: normal;
+        }
+
+        #submit-price.btn{
+            display: inline-block;
+            padding: 0 6px;
+            margin-left: 13px;
+            line-height: 20px;
+            border: 1px solid darken(@soucheOrange, 10%);
+            color: #fff;
+            background-color: @soucheOrange;
+            cursor: pointer;
+        }
+
+    }
+
+    .searchby-brand{
+        margin-top: 20px;
+        .searchby-content .brand-list{
+
+            .brand-item{
+                float: left;
+                width: 50%;
+                margin-bottom: 12px;
+                // cursor: pointer;
+
+                &.active{
+                    color: @soucheOrange;
+                }
+                
+                a{
+                    display: inline-block;
+                    height: 100%;
+                    max-width: 100%;
+                    padding: 5px 5px 5px 0;
+                    cursor: pointer;
+                    color: #666;
+
+                    .text-collapse();
+
+                    &:hover{
+                        color: @soucheOrange;
+                    }
+                }
+                
+                .brand-img{
+                    position: relative;
+                    width: 20px;
+                    // 定高 防止图片加载时的晃动
+                    height: 15px;
+                    top: 2px;
+                    height: auto;
+                }
+                .brand-name{
+                    margin-left: 8px;
+                }
+            }
+        }
+        
+    }
+}

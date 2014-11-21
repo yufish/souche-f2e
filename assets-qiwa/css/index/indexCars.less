@@ -1,0 +1,966 @@
+@import "../config.less";
+
+body {
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+.myAdviser-loading,.hotNewCars-loading,.carsContent .loading{
+  height:60px;
+  background: url(../images/index/ajax-loader1.gif) no-repeat center center;
+}
+.btn{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    display: inline-block;
+    font-size: 12px;
+  }
+  .btn:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+.record_warning{
+  border:1px solid #fcd1a6;
+  background: #fffee7;
+  line-height: 40px;
+  font-size: 12px;
+  color:#d8a06b;
+  padding-left: 10px;
+  margin-top:10px;
+  margin-right: 19px;
+  a{
+    background: #ff5517;
+    border:1px solid #d32e16;
+    border-radius: 3px;
+    color:#fff;
+    line-height: 12px;
+    display: inline-block;
+    padding:8px 15px;
+    font-size: 12px;
+    float:right;
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  a:hover{
+    color:#fff;
+    background: #e33900;
+    border:1px solid #c02914;
+  }
+  em{
+    font-style: normal;
+    color:#ff5517;
+  }
+  s{
+    background: url(../images/index/tip-close.png) no-repeat;
+    width:10px;
+    height:10px;
+    display: inline-block;
+    margin-right:10px;
+    float:right;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+}
+#carsNav{
+  .new-tip{
+    width:30px;
+    height:18px;
+    position: absolute;
+    right:-20px;
+    top:-10px;
+    display: block;
+    background: url(../images/index/update.png) no-repeat;
+  }
+}
+#carsNav,.carsMore {
+  width: 96.8%;
+  position: relative;
+  height: 40px;
+  background: #F5F5F5;
+  border: 1px solid #E6E6E6;
+  ul {
+    height: auto;
+    list-style: none;
+    li {
+      position: relative;
+      cursor: pointer;
+      height: auto;
+      float: left;
+      padding: 10px 15px;
+      font-size: 15px;
+      color:#666666 ;
+      height: 20px;
+      border-bottom: 1px solid #E6E6E6;
+     
+    }
+    li:hover{
+      color: #333;
+    }
+    li.active{
+      color: @soucheOrange;
+      background: #ffffff;
+      font-weight: bold;
+      border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
+      border-bottom: 1px solid #ffffff;
+      height: 20px;
+    }
+    li:first-child.active{
+      border-left:none;
+    }
+  }
+}
+  #carsNav, .carsMore {
+    width: 97.8%;
+    position: relative;
+    height: 40px;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+
+
+
+  
+  .carsContent {
+    margin-top: 10px;
+    .carsItem {
+      width: 228px;
+      height:320px;
+      margin-bottom:9px;
+      margin-top: 10px;
+      margin-right: 13px;
+      float: left;
+      border: 1px solid #EDEDED;
+    }
+    .hotNewCars{
+      width:110%;
+    }
+    .adviserInitAnimate {
+      margin-left: -1.8%;
+      margin-top: 10px;
+      width: 75%;
+      overflow: hidden;
+      *width: 87.8%;
+      img
+      {
+        left: -800px;
+      }
+      .road{
+        position: absolute;
+        width: 100%;
+        height: 61px;
+        top:294px
+      }
+      .boy, .girl{
+        position: absolute;
+        top: 25%;
+        left: -800px;
+        height: 75%;
+        width: 22%;
+      }
+      .boy {
+        margin-left: 6%;
+      }
+      .girl{
+        margin-left: 70%;
+      }
+      .talk-inner{
+        height:40px;
+        overflow: hidden;
+      }
+      .boytalk
+      {
+        position: absolute;
+        top: 20%;
+        margin-left: 24%;
+        width: 20%;
+        height:54px;
+        font-size: 14px;
+        left:-500px;
+        color:#fff;
+        line-height: 20px;
+        padding:8px;
+        background: url(../../assets/images/index/boytalk.png) no-repeat;
+        overflow: hidden;
+
+        .item{
+          height:40px;
+        }
+      }
+      .girltalk
+      {
+        position: absolute;
+        top: 50%;
+        margin-left: 50%;
+        width: 25%;
+        height:54px;
+        font-size: 14px;
+        color:#fff;
+        left:-600px;
+        line-height: 20px;
+        padding:8px;
+        background: url(../../assets/images/index/girltalk.png) no-repeat;
+        overflow: hidden;
+        .item{
+          height:40px;
+        }
+      }
+    }
+  }
+
+
+
+
+
+.clearBoth
+{
+  clear: both;
+}
+
+.carsContent {
+  width: 100%;
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-right: 1px solid #EDEDED;
+  .myAdviser{
+    min-height: 402px;
+    .operationItem {
+    background: #F5F5F5;
+margin-top: 10px;
+  }
+  }
+  .hotNewCars{
+     .operationItem {
+margin-top: 10px;
+  }
+  }
+  .myAdviser ,.hotNewCars {
+    position: relative;
+    overflow: hidden;
+  }
+  .no-recommendcar{
+    margin-top:10px;
+    background-color: #f5f5f5;
+    border:1px solid #EDEDED;
+    float:left;
+    height:325px;
+    width:75%;
+    margin-left: -20px;
+    overflow: hidden;
+    img{
+      width:100%;
+    }
+  }
+  .carsItem {
+    >img
+    {
+      width: 100%;
+    }
+  }
+  .operationItem {
+    position: relative;
+    background: #F5F5F5;
+    margin-top: 10px;
+    .mm {
+      width: 86px;
+      position: absolute;
+      top: -9px;
+      left: 140px;
+    }
+    .opItemTitle {
+      margin: 0px 0px 0px 20px;
+      font-weight: normal;
+      font-size: 14px;
+
+    }
+    .opItemTitleTop {
+      margin: 46px 0px 0px 20px;
+    }
+    .important {
+      color: #fc7000;
+    }
+    .dataContainer {
+      border-top:1px solid #E6E6E6;
+      position: relative;
+      margin-top: 46px;
+padding-top: 46px;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      >div
+      {
+        position: relative;
+        height: 50px;
+      }
+      > span {
+        font-size: 14px;
+        display: block;
+        clear: both;
+      }
+      >div>a {
+        vertical-align: middle;
+        display: block;
+        width: 12px;
+        margin: 0 auto;
+        position: relative;
+        top: 17px;
+      }
+
+      .submit{
+        margin-top: 20px;
+        width: 100%;
+        padding-top: 10px;
+        height: 28px;
+        color: #ffffff;
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+      }
+      
+      .inputContainer {
+        margin-top: 10px;
+        position:   absolute;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        width: 45%;
+        vertical-align: middle;
+        border: 1px solid #CCCCCC;
+        height: 30px;
+        background: #ffffff;
+        color: #B6B6B6;
+        a {
+          color: #B6B6B6;
+          vertical-align: middle;
+          float: right;
+          padding-top: 7px;
+          padding-right: 8%;
+        }
+        input {
+          width:40%;
+          height: 20px;
+          border: none;
+          padding: 5px;
+          float: left;
+        }
+      }
+      .leftContainer
+      {
+        position: absolute;
+        left: 0px;
+      }
+      .rightContainer
+      {
+        position: absolute;
+        right: 0px;
+        top:0px;
+      }
+      .carinstrest {
+        height: 20px !important;
+        margin-top: 10px;
+        width: 100%;
+        background: #FF5719;
+        text-align: center;
+        padding: 10px 0px;
+        color: #ffffff;
+        font-size: 15px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+      }
+    }
+  }
+  .adviserInitAnimate {
+    float: left;
+    position: relative;
+    z-index: -10;
+    img
+    {
+      position: relative;
+    }
+  }
+    .carItem{
+      width: 228px;
+      height: 320px;
+      border: 1px solid #E6E6E6;
+      float: left;
+      margin-bottom: 9px;
+      margin-top: 10px;
+      margin-right: 13px;
+      position: relative;
+      .carImg{
+        width:100%;
+        height: 160px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        img{
+          border: none;
+        }
+        .timebuy{
+          width: 84px;
+          height: 84px;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          background: url(../images/list/timebuy.png) no-repeat;
+        }
+      }
+      .car-link{
+        font-size: 14px;
+        color: #333;
+        display: block;
+        height: 40px;
+        overflow:hidden;
+        margin: 10px 15px 0 15px;
+      }
+      .car-link:hover{
+        color: #FF5517;
+      }
+      .car-price{
+        margin: 5px 15px;
+        .price{
+          font-size: 18px;
+          color: #FF5517;
+          margin-left: -3px;
+          font-weight: bold;
+          margin-right: 5px;
+          em{
+            font-weight:bold;
+          }
+        }
+        .recommended{
+          font-size: 12px;
+          color: #FF5517;
+        }
+      }
+      .car-info{
+        margin: 0 10px;
+        color: #999;
+        font-size: 12px;
+        margin-bottom: 20px;
+        height:20px;
+        overflow: hidden;
+        em{
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        span{
+        }
+      }
+      .carTail{
+        position: absolute;
+        width:100%;
+        height: 25px;
+        top: 123px;
+        .collect{
+          display: block;
+          box-shadow: 0px 0px 4px #666;
+          width: 45px;
+          float: left;
+          height: 23px;
+          margin-left: 6px;
+          border-radius:2px;
+          color: #333;
+          background: #fff url(../images/list/collect.png) no-repeat 5px center;
+          opacity: 0.5;
+          filter:alpha(opacity=50);
+          line-height: 24px;
+          cursor: pointer;
+          span{
+            margin-left: 25px;
+          }
+        }
+        .collect:hover{
+          opacity: 1;
+          filter:alpha(opacity=100);
+        }
+        .colled{
+          background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
+        }
+        .carConstrast{
+          display:none;
+          margin-right: 6px;
+          height: 23px;
+          float: right;
+          background: #fff;
+          line-height: 23px;
+          box-shadow: 0px 0px 4px #666;
+          opacity: 0.5;
+          filter:alpha(opacity=50);
+          border-radius:2px;
+          cursor: pointer;
+          display:none;
+          input{
+            margin-top: 7px;
+            margin-left: 8px;
+            display: none;
+            float: left;
+          }
+          span{
+            line-height: 23px;
+            display: block;
+            float: right;
+            margin : 0 10px;
+          }
+        }
+        .carConstrast:hover{
+          opacity: 1;
+          filter:alpha(opacity=100);
+        }
+      }
+      .car-type{
+        width: 210px;
+        margin: 0 auto;
+        border-top:1px solid #E6E6E6;
+        padding-top: 10px;
+        .zhijian{
+          height: 16px;
+          background: #FF5517;
+          color: #fff;
+          padding: 0 3px;
+          line-height: 16px;
+          font-size: 12px;
+          margin-right: 3px;
+          float: left;
+          cursor:default;
+        }
+        .baoxian{
+          width: 16px;
+          height: 16px;
+          float: left;
+          background: url(../images/list/baoxiu.png) no-repeat;
+          margin-right: 3px;
+          cursor:default;
+        }
+        .shouquan{
+          height: 16px;
+          background: #EBBB58;
+          color: #fff;
+          font-size: 12px;
+          margin-right: 3px;
+          float: left;
+          padding: 0 3px;
+          cursor:default;
+        }
+        .up-time{
+          float: right;
+          color: #D9D9D9;
+
+        }
+      }
+    }
+  .carItem:hover {
+    .carTail .carConstrast{
+//      display:block;
+    }
+  }
+  .infoItem {
+    position: relative;
+
+    a {
+      margin:25px 20px 0px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      display: block;
+      cursor: pointer;
+      color: #333333;
+      span {
+        padding:0px 4px;
+        color: #fff;
+        background: #6CACE7;
+        font-size: 12px;
+        font-weight: normal;
+        margin-right: 5px;
+      }
+    }
+    a:hover{
+      color: #F44B0B;
+    }
+    .infoContent {
+      margin:15px 20px 0px 20px;
+      font-size: 14px;
+      color: #999;
+      line-height: 25px;
+      overflow: hidden;
+      height: 125px;
+      position: relative;
+    }
+
+    .infoImg {
+      margin:20px 20px 0px 20px;
+      position: relative;
+      height: 65px;
+      .leftImg
+      {
+        width: 45%;
+        position: absolute;
+        left: 0px;
+      }
+      .rightImg
+      {
+        width: 45%;
+        position: absolute;
+        right: 0px;
+      }
+      img {
+        margin-right: 16px;
+      }
+    }
+    .infoTail {
+      position: absolute;
+      bottom: 10px;
+      width: 85%;
+      left: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #f5f5f5;
+      .readed {
+        color: #999;
+        font-size: 12px;
+        display: block;
+        float: left;
+        a {
+          color: #999;
+        }
+
+      }
+      .recommendedToday {
+        font-size: 12px;
+        display: block;
+        float: right;
+        color: #999;
+
+      }
+    }
+  }
+
+
+
+
+}
+
+.carsMore
+{
+  padding: 10px 0px;
+  text-align: center;
+  position: relative;
+  height: 20px;
+  background: #F5F5F5;
+  border: 1px solid #E6E6E6;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.down-counter
+{
+ color: #666666;
+  font-size: 13px;
+  ins
+  {
+    color: #FF571A;
+    font-size: 13px;
+  }
+}
+@media screen  and (max-width: 1024px) {
+  .carsContent .no-recommendcar{
+    width:67%;
+  }
+  .carsContent .hotNewCars .adviserInitAnimate
+  {
+  }
+  .carsContent .operationItem {
+    background: #F5F5F5;
+  }
+  .carsContent {
+    .carsItem {
+      //width: 30.3% ;
+      //*width: 30.03% ;
+      width: 228px;
+      height:315px;
+      margin-right: 17px;
+      margin-bottom: 9px;
+      margin-top: 10px;
+      float: left;
+      border: 1px solid #EDEDED;
+      .carImg{
+        height: 152px;
+      }
+    }
+    .adviserInitAnimate {
+      margin-left: -2.69%;
+      *margin-left: -2.4%;
+      width: 66.5%;
+      *width: 69.9%;
+      img
+      {
+        left: -800px;
+      }
+      .road {
+        position: absolute;
+        width: 100%;
+        height: 61px;
+        top: 294px
+      }
+      .boy, .girl{
+        position: absolute;
+        top: 25%;
+        left: -800px;
+        height: 75%;
+        width: 25%;
+      }
+      .boy {
+        margin-left: 6%;
+      }
+      .girl{
+        margin-left: 70%;
+      }
+      .boytalk
+      {
+        position: absolute;
+        top: 22%;
+        margin-left: 24%;
+        width: 22%;
+
+      }
+      .girltalk
+      {
+        position: absolute;
+        top: 57%;
+        margin-left: 50%;
+        width: 22%;
+      }
+    }
+  }
+
+
+
+}
+.contrast-waring {
+ position: absolute;
+ top: -30px;
+ left: 89px;
+border: 1px solid #ee7700;
+background: #ffeed6;
+color: #333;
+padding: 10px;
+font-size: 13px;
+}
+@media screen and (min-width: 1400px) {
+  #carsNav, .carsMore {
+    //width: 98%;
+    width: 1020px;
+    position: relative;
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+  }
+  .carsContent .carItem .car-info{
+    margin:0 15px;
+    margin-bottom: 20px;
+  }
+  .carsContent .no-recommendcar{
+    height:334px;
+  }
+.carsContent .operationItem {
+    background: #F5F5F5;
+  }
+
+
+
+  .carsContent .carItem .carTail{
+    top:130px;
+  }
+  .carsContent {
+    .carsItem {
+      //width: 22.9%;
+      width: 240px;
+      height:325px;
+      //margin: 2% 1.9% 0px 0px;
+      //*margin: 2% 1.519% 0px 0px;
+      margin: 10px 18px 8px 0px;
+      //*width: 22.92%;
+      float: left;
+      border: 1px solid #EDEDED;
+      .carImg{
+        width:240px ;
+        height: 160px;
+      }
+    }
+    .adviserInitAnimate
+    {
+      margin-left: -20px;
+      //*margin-left: -1.5%;
+     // margin-top: 2%;
+      margin-top: 10px;
+      width: 75%;
+      img
+      {
+        left: -800px;
+      }
+      .road{
+        position: absolute;
+        width: 100%;
+        height: 61px;
+        top:294px
+      }
+      .boy, .girl{
+        position: absolute;
+        top: 25%;
+        left: -800px;
+        height: 75%;
+      }
+      .boy {
+        margin-left: 6%;
+      }
+      .girl{
+        margin-left: 70%;
+      }
+      .boytalk
+      {
+        position: absolute;
+        top: 22%;
+        margin-left: 24%;
+      }
+      .girltalk
+      {
+        position: absolute;
+        top: 50%;
+        margin-left: 53%;
+      }
+    }
+  }
+}
+//热门图片
+.hotCarImages{
+  margin-top: 20px;
+  .hotImages{
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 304px;
+    .imabox{
+      float:left;
+      position: relative;
+      height: 304px;
+      display: block;
+      margin-right: 13px;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+      .shadow{
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        background: url(../../assets/images/index/hotcar-shadow.png?1) repeat-x;
+        bottom: 0px;    
+      }
+      .hotTit{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        padding-bottom: 15px;
+        .title{
+          width: 100%;
+          text-align: center;
+          color: #fff;
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+        .adv{
+          span{
+            background: #FF5417;
+            color: #fff;
+            font-size: 14px;
+            padding:0px 2px;
+          }
+        }
+      }
+     .mask{
+      width: 100%;
+      height: 304px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background: #000;
+      opacity: 0;
+      filter:alpha(opacity=0);
+      
+     }
+     }
+    .imgbox-b{
+      width: 475px;
+
+    }
+    .imgbox-s{
+      width: 228px;
+      margin-right: 17px;
+    }
+  }
+  // .Image211{
+  //   .imgbox-s{
+  //     margin-left: 20px;
+  //   }
+  // }
+  // .Image22{
+  //   .imgbox-b{
+  //     margin-right: 20px;
+  //   }
+  // }
+  // .Image1111{
+  //   .imgbox-s{
+  //    margin-right: 20px;
+  //   }
+  // }
+}
+
+@import "./guess-like.less";
+
+@media screen and (min-width: 1400px) {
+  .carsContent .hotNewCars .adviserInitAnimate {}
+  .hotCarImages{
+    .hotImages{
+      height: 320px;
+      .imabox{
+      height: 320px;
+      margin-right: 20px;
+      }
+     .imgbox-b{
+      width: 500px;
+      }
+      .imgbox-s{
+        width: 240px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px){
+  .guess-like .like-line{
+   height: 330px;
+    overflow: hidden
+  }
+  .guess-like .car-youlike .list_content_img{
+    height:154px;
+  }
+  .guess-like .tit-item{
+      float: left;
+      width:228px;
+      margin-right: 17px;
+      height: 25px;
+      line-height: 40px;
+      color: #999;
+      font-size: 12px;
+    }
+  .guess-like .car-youlike{
+    width: 228px;
+    margin-right: 17px;
+    margin-top: 15px;
+    float: left;
+    border: 1px solid #EDEDED;
+  }
+}

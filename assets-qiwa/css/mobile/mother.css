@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#mother-h5 .wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+#mother-h5 .wrapper .fenxiang {
+    width: 100%;
+    display: block;
+    top: 0;
+    position: fixed;
+    left: 0;
+    z-index: 10000;
+}
+#mother-h5 .wrapper .banner {
+    width: 100%;
+}
+#mother-h5 .wrapper .content {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    position: relative;
+}
+#mother-h5 .wrapper .content p {
+    line-height: 20px;
+}
+#mother-h5 .wrapper .content .content-img {
+    margin: 0 auto;
+}
+#mother-h5 .wrapper .content .zan {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    width: 60px;
+    height: 22px;
+}
+#mother-h5 .wrapper .content .zan i {
+    width: 26px;
+    height: 23px;
+    background: url(../../images/mob/huodong/mother/an.png) no-repeat center center;
+    background-size: 100%;
+    display: block;
+    float: left;
+}
+#mother-h5 .wrapper .content .zan.praised i {
+    background: url(../../images/mob/huodong/mother/liang.png) no-repeat center center;
+    background-size: 100%;
+}
+#mother-h5 .wrapper .content .zan span {
+    font-size: 22px;
+    line-height: 23px;
+    color: #000;
+}
+#mother-h5 .wrapper #mama1 {
+    background-color: #ffe762;
+}
+#mother-h5 .wrapper #mama1 .content-img {
+    margin-top: 20px;
+}
+#mother-h5 .wrapper #mama2 {
+    background-color: #8f79b1;
+    color: #fff;
+}
+#mother-h5 .wrapper #mama2 .content-img {
+    margin-top: 20px;
+}
+#mother-h5 .wrapper #mama3 {
+    background-color: #ef746f;
+}
+#mother-h5 .wrapper #mama3 .content-img {
+    margin-top: 20px;
+}
+#mother-h5 .wrapper #mama4 {
+    background-color: #7a7a7a;
+    color: #fff;
+}
+#mother-h5 .wrapper #mama4 .content-img {
+    margin-top: 20px;
+}
+#mother-h5 .wrapper #mama5 {
+    background-color: #ff8c40;
+}
+#mother-h5 .wrapper #mama5 .content-img {
+    margin-top: 10px;
+}
+.foot {
+    height: 50px;
+    padding: 10px;
+}
+.foot img {
+    margin: 0 auto;
+    display: block;
+}

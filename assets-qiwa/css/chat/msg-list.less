@@ -1,0 +1,121 @@
+.msg-list{
+    // list-style: decimal inside;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+
+    background-color: #E8ECED;
+    
+    @avatarW: 3em;
+    @paddingTop: 0.5em;
+    @paddingLeft: 0.5em;
+
+    .no-msg-tip{
+        padding: 1em 0;
+        font-size: 1.5em;
+        text-align: center;
+        color: #ccc;
+    }
+
+    .msg-item{
+        position: relative;
+        overflow: hidden;
+        min-height: @avatarW + 2*@paddingTop;
+        padding: @paddingTop @paddingLeft;
+        .clear-flt();
+
+        .msg-user-avatar{
+            // float: left;
+            position: absolute;
+            left: @paddingLeft;
+            top: @paddingTop;
+            // margin-right: 8px;
+            width: @avatarW;
+            height: @avatarW;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 0px 3px rgba(0,0,0,0.5);
+        }
+        
+        // 头像所占据的空间
+        @avatarSpace:  @avatarW + @paddingLeft + 0.25em;
+        .msg-content-ctn{
+            float: left;
+            margin-left: @avatarSpace;
+            padding: 4px 8px;
+            border-radius: 4px;
+            min-width: 180px;
+            margin-right: @avatarSpace + 2em;
+            
+            background-color: #fff;
+            box-shadow: 0 1px 1px 0 rgba(200, 200,200, 1);
+            .msg-header{
+                &:after{
+                    content: '';
+                    display: table;
+                    clear: both;
+                }
+            }
+            
+            .msg-user-name,
+            .msg-sendtime{
+                margin: 0;
+                font-size: 12px;
+                max-width: 50%;
+                .text-collapse();
+            }
+            .msg-user-name{
+                float: left;
+                color: #27C198;
+            }
+            .msg-sendtime{
+                float: right;
+            }
+            .msg-text{
+                margin-top: 4px;
+                margin-bottom: 0;
+                color: #444;
+                // 防止一个超级长的连接把bubble撑的特别长
+                word-break: break-all;
+
+                .msg-img{
+                    max-width: 100%;
+                    // max-height: 
+                }
+                .msg-carid-link{
+                    position: relative;
+                    display: inline-block;
+                    padding-left: 1.6em;
+                    .tst();
+                    &:hover{
+                        background-color: #ddd;
+                    }
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: -0.1em;
+                        left: 0;
+                        height: 1.2em;
+                        width: 1.2em;
+                        background-image: url('../../images/list/danbao-icon.png');
+                        background-size: 100% auto;
+                    }
+                }
+            }
+        }
+        
+        &.sendbyme{
+            .msg-user-avatar{
+                left: auto;
+                right: @paddingLeft;
+            }
+            .msg-content-ctn{
+                float: right;
+                margin-right: @avatarSpace;
+                margin-left: @avatarSpace + 2em;
+            }
+        }
+    }
+}

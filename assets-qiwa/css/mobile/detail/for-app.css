@@ -1,0 +1,85 @@
+#header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
+.recommend-cars,.header-placeholder,#global-subscription{
+    display:none !important;
+}
+
+#detail #quality-test .cube .h .l{
+    height: 65px;
+    line-height: 65px;
+    background: #ff4400 url(../../../images/mob/for-app/check_tag.png) no-repeat;
+    background-size: 98px 65px;
+
+}
+#detail .header .back-icon{
+    display: none !important;
+}
+#detail .header .text{
+    width: auto;
+    float: none;
+}
+#detail #quality-test .cube .h .r{
+    line-height: 65px;
+    height: 65px;
+    background: #FF4400;
+    font-size: 16px;
+}
+#detail #quality-test .cube .h .r i{
+    display: none !important;
+}
+#detail #quality-test .cube #stand_level_name{
+    font-size: 30px;
+    font-family: '华文黑体', '黑体';
+    margin-left: 5px;
+}
+#detail #quality-test .cube .h .l .w{
+    padding-left: 30px;
+    font-size: 16px;
+}
+#detail .check-detail-ctn{
+    float:left;
+    width:50%;
+ }
+#detail #quality-test .cube .s .icon{
+    display:none !important;
+}
+
+#detail #quality-test .cube .s{
+    padding:0;
+    border:none;
+    position: static;
+    background: #1C2E47;
+}
+#detail #quality-test .cube .s span{
+    text-align: center;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    color:#fff;
+    margin:0;
+}
+#detail .diban4app{
+    background: #101924;
+}
+#detail .fadongji4app{
+    background: #13253B;
+}
+#detail .qimian4app{
+    background: #1C2E47;
+}
+#detail .waiguanchengse4app{
+    background: #25364E;
+}
+
+#detail #quality-test .cube{
+    position: relative;
+}
+#detail #quality-test .cube .s .ok{
+    background: url(../../../images/mob/for-app/report_ok.png) no-repeat;
+    background-size: 100%;
+}
+#detail #quality-test .cube .s .nook{
+    background: url(../../../images/mob/for-app/report_fail.png) no-repeat;
+    background-size: 100%;
+}

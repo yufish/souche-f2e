@@ -1,0 +1,54 @@
+
+.module-hd{
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .main-title{
+    font-size: 32px;
+    color:#333;
+    line-height: 50px;
+  }
+  .sub-title{
+    font-size: 16px;
+    color:#999;
+    line-height: 40px;
+  }
+}
+.wrapper{
+  width:1180px;
+  margin:0 auto;
+}
+@import "../config.less";
+
+@import "./mod/header.less";
+@import "./mod/choose-nav.less";
+@import "./mod/main-service.less";
+@import "./mod/car-life.less";
+@import "./mod/good-car.less";
+@import "./mod/special-car.less";
+@import "./mod/who-buy.less";
+@import "./mod/social.less";
+
+// 有banner的页面 把header底边覆盖掉
+#header{
+  border-bottom: none;
+}
+
+#who-buy{
+  .weibo-button{
+    margin-top: -30px;
+    position: relative;
+    z-index:10;
+  }
+}
+
+
+.btn {
+  background: @soucheOrange;
+  border: 1px solid #d32e16;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+}

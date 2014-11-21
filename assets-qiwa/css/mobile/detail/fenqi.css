@@ -1,0 +1,58 @@
+#fenqi {
+    background-color: #fff;
+}
+#fenqi .content .options .option-item {
+    height: 60px;
+    border-top: 1px solid #d0d0d0;
+    position: relative;
+}
+#fenqi .content .option-item {
+    border-bottom: 1px solid #d0d0d0;
+    width: 100%;
+}
+#fenqi .content .option-item .text {
+    padding-left: 9px;
+    line-height: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    width: 50px;
+    color: #444;
+    font-size: 14px;
+}
+#fenqi .content .option-item .content {
+    text-align: right;
+}
+#fenqi .content .option-item .content .content-text {
+    line-height: 60px;
+    margin-right: 47px;
+}
+#fenqi .content .option-item .content select {
+    margin-top: 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 38px;
+    margin-right: 10px;
+    width: 192px;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
+    background: url(../../images/mob/h5-2/dropdown.png) no-repeat right transparent;
+    background-size: 32px;
+    background-color: #fff;
+    padding-left: 65px;
+}
+#fenqi .hr20 {
+    background-color: #f3f3f3;
+}
+#fenqi .condition {
+    padding: 20px 0 18px 10px;
+    background-color: #f3f3f3;
+}
+#fenqi .b {
+    font-size: 14px;
+    line-height: 20px;
+}
+#fenqi .s {
+    font-size: 13px;
+    line-height: 18px;
+}

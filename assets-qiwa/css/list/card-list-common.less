@@ -1,0 +1,81 @@
+// card-list-common.less
+
+
+
+.card-box,
+.list-box{
+  .carItem{
+    .timebuy,
+    .whole-new{
+        width: 84px;
+        height: 84px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-repeat: no-repeat;
+    }
+    .timebuy{
+        background-image: url(../images/list/timebuy.png);
+    }
+    .whole-new{
+        background-image: url(../images/list/new-car.png);
+    }
+    
+    .car-price .price{
+      // 多个inline元素间在代码缩进之后有间距
+      // 既然子元素都单独定义了font-size
+      // 就把父元素定义为0  解决这个问题
+      font-size: 0;
+      .rmb-symbol{
+        font-family: @yahei;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .price-amount{
+        font-family: 'Tahoma';
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .price-unit{
+        font-family: @yahei;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+    .carTail{
+      .carCollect:hover,
+      .carConstrast:hover{
+        color: @soucheOrange;
+      }
+      .carConstrast{
+        &.added{
+          cursor: not-allowed;
+          &:hover{
+            color: #333;
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+
+// 已售列表, 图片上显示已售的遮罩
+.car-wrap.sold{
+    .carItem .carImg{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            background-image: url('../../assets/images/list/soldtag.png');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    }
+}

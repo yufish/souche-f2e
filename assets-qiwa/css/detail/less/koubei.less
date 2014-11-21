@@ -1,0 +1,229 @@
+#koubei_svg{
+    margin: 0px auto;
+    width:400px;
+    height:500px;
+  svg{
+    position: absolute;
+    top:56px;
+
+  }
+}
+.net-koubei{
+    position: relative;
+  padding-bottom: 10px;
+    .koubei-title{
+        font-size: 20px;
+        line-height: 50px;
+        margin-top:20px;
+    }
+    .koubei-desc{
+        margin:20px 80px;
+        padding:20px;
+        text-align: center;
+        .koubei-l{
+            font-size: 23px;
+            line-height:50px;
+        }
+        .koubei-labels{
+            label{
+                background: #60B25E;
+                color:#fff;
+                font-size: 18px;
+                line-height: 30px;
+                padding:0 10px;
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom:5px;
+            }
+            span{
+                font-size: 12px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .all-score{
+        width:100px;
+        text-align: center;
+        font-size: 16px;
+        color:#51944f;
+        position: absolute;
+        top:320px;
+        left:544px;
+        em{
+            font-size: 30px;
+            font-weight: bold;
+            display: block;
+        }
+    }
+    .koubei-content{
+        position: relative;
+        padding:68px 0;
+      padding-bottom: 0;
+      width:1190px;
+    }
+    .koubei-item{
+        position: absolute;
+        top:0;
+        width:280px;
+        height:100px;
+        left:0;
+        cursor: pointer;
+        .koubei-item-title{
+            font-size: 14px;
+            color:#444;
+            .rate{
+                height:20px;
+                background: url(../../images/detail/rate-star.png) repeat-x;
+                width:70px;
+                display: inline-block;
+                margin:0 5px;
+                vertical-align: top;
+                margin-top:2px;
+                .rate-real{
+                    display: block;
+                    height:20px;
+                background: url(../../images/detail/rate-star-light.png) repeat-x;
+                overflow: hidden;
+
+                }
+            }
+        }
+        .koubei-item-labels{
+            display: block;
+            width:260px;
+            background: #f9f9f9;
+            position: absolute;
+            top:25px;
+            border:1px solid #ddd;
+            padding:6px;
+            z-index: 10;
+            .koubei-label{
+                line-height: 20px;
+                color:#666;
+                padding:0 5px;
+                display: block;
+                text-align: left;
+                span{
+                    color:#aaa;
+                    margin-left: 5px;
+                }
+            }
+            .koubei-tri{
+                background: url(../../images/detail/baoyang-label-trigger.png) no-repeat;
+                width:19px;
+                height:10px;
+                position: absolute;
+                top:-10px;
+                left:20px;
+            }
+        }
+    }
+    .float-left-item{
+        .koubei-item-title{
+            text-align: right;
+            label{
+                float:right;
+            }
+            .rate{
+                float:right;
+            }
+        }
+        .koubei-item-labels{
+text-align: right;
+.koubei-tri{
+                background: url(../../images/detail/baoyang-label-trigger.png) no-repeat;
+                width:19px;
+                height:10px;
+                position: absolute;
+                top:-10px;
+                right:20px;
+                left:auto;
+            }
+        }
+    }
+    .koubei-series{
+        text-align: center;
+        padding:20px 0;
+        .series-wrapper{
+            display: inline-block;
+
+        }
+        .series-t{
+            padding-right: 10px;
+            float:left;
+            line-height: 25px;
+        }
+        .series-tab{
+            float:left;
+            border:1px solid #dcdcdc;
+            border-radius: 3px;
+            .series-tab-item{
+                padding:0 15px;
+                line-height: 25px;
+                font-size: 12px;
+                color:#999;
+                border-right:1px solid #dcdcdc;
+                float:left;
+                cursor: pointer;
+
+            }
+            .item-active,.series-tab-item:hover{
+                background: #f2f2f2;
+
+            }
+        }
+    }
+    .koubei-advantage{
+        background: #f9f9f9;
+        border:1px solid #eee;
+        margin:20px 80px;
+        padding:20px;
+        li{
+            margin-top: 10px;
+        }
+        .advantage-title{
+            font-size:18px;
+            line-height:40px;
+        }
+        .advantage-left{
+            float:left;
+            width:45%;
+            border-right:1px solid #eee;
+            padding:20px;
+            font-size: 14px;
+            line-height: 20px;
+            color:#666;
+            .advantage-title{
+                color:#fa7022;
+                i{
+                    background: url(../../images/detail/koubei_good.png) no-repeat;
+                    display: inline-block;
+                    width:20px;
+                    height:20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+            }
+
+        }
+        .advantage-right{
+            float:left;
+            width:45%;
+            font-size: 14px;
+            line-height: 20px;
+            padding:20px;
+            color:#666;
+             .advantage-title{
+                color:#8c5476;
+                i{
+                    background: url(../../images/detail/koubei_bad.png) no-repeat;
+                    display: inline-block;
+                    width:20px;
+                    height:20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

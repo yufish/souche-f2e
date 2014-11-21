@@ -1,0 +1,373 @@
+img{
+    vertical-align: middle;
+}
+body {
+    font-family: 'Heiti SC', '华文黑体', '黑体';
+}
+a{
+    text-decoration: none;
+}
+.flexslider{
+    position: relative;
+}
+.flexslider img{
+    width: 100%;
+}
+.flex-control-nav,
+.flex-direction-nav{
+    display: none;
+}
+#banners{
+    position: relative;
+}
+#banner-cover{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    color:#fff;
+    line-height: 30px;
+    background: #000;
+    opacity: 0.6;
+    font-size: 13px;
+}
+#share{
+    float: left;
+    margin-left: 15px;
+}
+#share-icon{
+    display: inline-block;
+    vertical-align: -4px;
+    height: 20px;
+    width: 20px;
+    background: url(../../../../images/mob/huodong/tpl/share-act.png) no-repeat center;
+    background-size: 100%;
+}
+.dot{
+    display: inline-block;
+    vertical-align: 3px;
+    width: 4px;
+    height: 4px;
+    background: #ff4400;
+    border-radius: 80%;
+}
+#more-acts{
+    float: right;
+    margin-right: 15px;
+}
+#act-info{
+    height: 45px;
+    line-height: 45px;
+}
+#act-title{
+    float: left;
+    margin-left: 10px;
+}
+#act-rule{
+    float: right;
+    margin-right: 10px;
+}
+#btn-rule{
+    border: none;
+    background: #ff4400;
+    border-radius: 8px;
+    color:#fff;
+    padding: 5px 15px;
+    font-size: 15px;
+}
+#cars{
+    border-top:1px solid #e3e3e3;
+    padding: 10px;
+    background: #ebedf7;
+}
+#cars .car img{
+    width: 210px;
+    height: 139px;
+}
+#cars .car .lft{
+    float:left;
+    position: relative;
+}
+#cars .car-img-cover{
+    position: absolute;
+    background: rgba(0,0,0,.7);
+    color:#fff;
+    text-align: center;
+    width: 100%;
+    line-height: 24px;
+    font-size: 14px;
+    bottom: 0;
+}
+#cars .car .car-price{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding:8px 5px 8px 8px;
+    background: #ff4400;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-left-radius: 10px;
+}
+.wan{
+    font-size: 13px;
+}
+#cars .car .rht{
+    color:#fff;
+    margin-left: 210px;
+    text-align: center;
+    background:#1b0e0e;
+    height: 139px;
+    font-size: 12px;
+    padding-top: 23px;
+    box-sizing: border-box;
+}
+#cars .feature-1{
+    font-size: 14px;
+    margin-bottom: 16px;
+    color:#ff4400;
+}
+#cars .feature-2{
+    margin-bottom: 10px;
+    color:#ffd060;
+ }
+#cars .feature-3{
+    margin-bottom: 10px;
+}
+#cars .car-introduction{
+    background: #fff;
+    color: #5d5d5d;
+    padding: 11px 14px;
+    font-size: 12px;
+}
+#pagination{
+    margin:0 auto;
+    margin-top:23px;
+    text-align: center;
+}
+#pagination .page-num{
+    border:1px solid #c9c9c9;
+    background: #f2f2f2;
+    margin-left: 12px;
+    box-sizing: border-box;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+#pagination .page-num:first-child{
+    margin: 0;
+}
+#pagination .page-num.selected{
+    border:1px solid #ff4400;
+    background: #fff;
+}
+.vertical-line{
+     background: #777;
+     width: 2px;
+     height: 12px;
+ }
+.disabled .vertical-line{
+    background: #c9c9c9;
+}
+#prev-page .vertical-line{
+    float: left;
+}
+#next-page .vertical-line{
+    float: right;
+}
+.triangle-left{
+    width: 0;
+    height: 0;
+    border:6px solid;
+    border-color: transparent #777 transparent transparent;
+}
+.disabled .triangle-left{
+    border-color: transparent #c9c9c9 transparent transparent;
+}
+.triangle-right{
+    width: 0;
+    height: 0;
+    border:6px solid;
+    border-color: transparent transparent transparent #777;
+}
+.disabled .triangle-right{
+    border-color: transparent  transparent transparent #c9c9c9;
+}
+#prev-page,#next-page{
+    padding:8px 8px 0;
+}
+.page-dot{
+    width: 2px;
+    height: 2px;
+    border-radius: 80%;
+    display: inline-block;
+    background: #000;
+    vertical-align: 5px;
+    margin-left: -3px;
+}
+.page-num .page-dot:first-child{
+    margin-left: 0;
+}
+#rule-popup{
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    left:50%;
+    margin-left: -150px;
+    top:60px;
+    z-index: 100;
+    display: none;
+}
+#rule-popup #popup-title{
+    background: #ff4400;
+    height: 33px;
+    line-height: 33px;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+#rule-popup #popup-content{
+    padding:0 8px 30px;
+}
+#popup-content .p{
+    margin: 18px 0;
+}
+#popup-content .p-title{
+    font-size: 13px;
+    font-weight: bold;
+}
+#popup-content .p-content{
+    font-size: 12px;
+    line-height: 16px;
+}
+#rule-popup .close{
+    width: 24px;
+    height: 24px;
+    background: url(../../../../images/mob/huodong/tpl/popup-close.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    right: 5px;
+    top:5px;
+}
+#no-car-detail #rule-popup{
+    margin: 0;
+    border-radius: 0;
+}
+#btn-join{
+    width: 160px;
+    height: 35px;
+    border:none;
+    border-radius: 5px;
+    background: #ff4400;
+    color: #fff;
+}
+#go-act-all,#share-text{
+    color:#fff;
+}
+/*style of act_all*/
+.wrapper-320{
+    width:320px;
+    margin:0 auto;
+    padding:0 12px;
+}
+#act-all #act-container{
+    width:68px;
+    border-right:3px solid #BCC4C7;
+    padding:15px 0;
+}
+#act-all .act-item{
+    position: relative;
+    margin-left:88px;
+    display: block;
+}
+.act-item .act-time{
+    position: absolute;
+    top:6px;
+    left:-88px;
+    width: 44px;
+}
+.act-item .circle{
+    position: absolute;
+    width:15px;
+    height: 15px;
+    border:3px solid #BCC4C7;
+    border-radius: 80%;
+    top:5px;
+    left:-29px;
+    background: #fff;
+}
+.act-item .act-detail{
+    position: relative;
+    margin:5px 0 20px;
+}
+.act-item .content{
+    width:222px;
+    position: relative;
+    background: #F0F0F0;
+    border-radius: 5px;
+    padding:8px 10px;
+    line-height: 18px;
+    font-size: 14px;
+    color:#000;
+}
+.act-detail .triangle{
+    height: 0;
+    width:0;
+    border: 6px solid;
+    border-color: transparent #F0F0F0 transparent transparent;
+    position: absolute;
+    left: -12px;
+    top: 10px;
+}
+.act-item{
+    color:#000;
+}
+.act-item .month{
+    font-size:12px;
+}
+.act-item .year{
+    font-size: 12px;
+    display: block;
+    float: right;
+}
+.act-item .day{
+    font-size: 18px;
+}
+
+.act-item:first-child .day,
+.act-item:first-child .year,
+.act-item:first-child .month{
+    color:#ff4400;
+}
+.act-item:first-child .content{
+    background: #ff4400;
+    color:#fff;
+}
+.act-item:first-child .circle{
+    border-color: #ff4400;
+}
+.act-item:first-child .triangle{
+    border-right-color: #ff4400;
+}
+
+.backBg{
+    position: fixed;
+    z-index: 10;
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    display: none;
+}
+
+
+
+

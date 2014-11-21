@@ -1,0 +1,70 @@
+// list-mediaquery.less
+
+@oneItemW: 240px + 20px;
+
+@media screen and (max-width:1280px){
+    // #header .wrapper{
+    //     -webkit-box-sizing: border-box;
+    //     -moz-box-sizing: border-box;
+    //     box-sizing: border-box;
+    //     width: 100%;
+    //     height: 74px + 40px;
+    //     padding-left: 2em;
+    //     padding-right: 2em;
+    //     min-width: 1000px;
+
+    //     .search .index-search{
+    //         width: 500px;
+
+    //         .search-text{
+    //             width: 415px;
+    //         }
+    //     }
+    // }
+    // #nav{
+    //     -webkit-box-sizing: border-box;
+    //     -moz-box-sizing: border-box;
+    //     box-sizing: border-box;
+    //     width: 100%;
+    //     min-width: 1000px;
+    //     padding-right: 2em;
+    //     .wrapper{
+    //         width: 100%;
+    //     }
+    // }
+    .list-head{
+       .wrap {
+        width: 1220px;
+        margin: 0 auto;
+        .danbao-service{
+          .service-item{
+            padding-left: 20px;
+            width: 230px;
+          }
+        } 
+       } 
+
+    }
+    #list_wrap{
+        width: 1280px - @oneItemW;
+        .list_main{
+            width: 1040px - @oneItemW;
+            .car-nav {
+                width: 1018px - @oneItemW;
+            }
+        }
+
+        .car-wrap.list-box .carItem .car-price{
+            left: 520px;
+        }
+
+    }
+  #list .shop-head .wrap{
+    width:1220px;
+  }
+    // #footer .wrapper{
+    //     width: auto;
+    //     padding-left: 2em;
+    // }
+
+}

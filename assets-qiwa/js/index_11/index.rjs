@@ -1,0 +1,7 @@
+({
+    baseUrl: "./../",
+
+    name: "index_11/index",
+    include: [],
+    out: "index.r.js"
+})

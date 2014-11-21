@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+#mini-h5 {
+  background-color: #267365;
+}
+#mini-h5 .wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 40px;
+}
+#mini-h5 .wrapper .fenxiang {
+  width: 100%;
+  display: block;
+  top: 0;
+  position: fixed;
+  left: 0;
+  z-index: 10000;
+}
+#mini-h5 .wrapper .banner {
+  width: 100%;
+}
+#mini-h5 .wrapper .mini-danshen {
+  margin-top: 30px;
+}
+#mini-h5 .wrapper .mini-danshen p {
+  font-size: 15px;
+  color: #fff;
+  padding: 35px;
+}
+#mini-h5 .wrapper .mini-dashi {
+  margin-top: 30px;
+}
+#mini-h5 .wrapper .mini-dashi .wrapper {
+  width: 295px;
+  margin: 0 auto;
+}
+#mini-h5 .wrapper .mini-dashi .wrapper .dashi-box {
+  margin-top: 10px;
+  height: 77px;
+}
+#mini-h5 .wrapper .mini-dashi .wrapper .dashi-box img {
+  width: 45px;
+  height: 45px;
+  display: block;
+  float: left;
+  margin-left: 5px;
+}
+#mini-h5 .wrapper .mini-dashi .wrapper .dashi-box .dashi-text {
+  width: 235px;
+  float: left;
+  border: 1px dashed #fff;
+  padding: 3px;
+  font-size: 14px;
+  color: #fff;
+}
+#mini-h5 .wrapper .mini-suoyou {
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+#mini-h5 .wrapper .mini-mingreng {
+  margin-top: 30px;
+}
+#mini-h5 .wrapper .mini-mingreng .shishang {
+  margin-top: 40px;
+  background-color: #194f45;
+  padding: 25px 15px;
+}
+#mini-h5 .wrapper .mini-mingreng .shishang p {
+  color: #fff;
+  font-size: 15px;
+}
+#mini-h5 .wrapper .mini-mingreng .shishang-car {
+  background-color: #22675a;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+#mini-h5 .wrapper .mini-movice {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#mini-h5 .wrapper .mini-movice .movice-text {
+  padding: 20px;
+}
+#mini-h5 .wrapper .mini-movice .movice-text p {
+  color: #fff;
+  font-size: 15px;
+}
+#mini-h5 .wrapper .foot {
+  margin: 0 auto;
+  width: 180px;
+}
+#mini-h5 .wrapper .foot a {
+  display: block;
+  width: 180px;
+  height: 90px;
+}
+#mini-h5 .wrapper .foot img {
+  width: 180px;
+  height: 90px;
+  margin: 0 auto;
+}

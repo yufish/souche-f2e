@@ -1,0 +1,175 @@
+.sc-option{
+    display:inline-block;
+    border:1px solid #d9d9d9;
+    height:25px;
+    background:#fff;
+    line-height:25px;
+    width:145px;
+    position:relative;
+}
+.sc-option-hd{
+    text-align:left;
+    padding-left:10px;
+    position:relative;font-size:12px;
+    color:#aaa;
+    font-weight:normal;
+}
+.sc-option-action{
+    width:25px;height:25px;
+    position:absolute;
+    right:0;
+    top:0;
+    *top:-4px;
+    background:#d9d9d9;
+    cursor:pointer;
+    font-size:0px;
+    line-height:0px;
+    _right:-1px;
+}
+.sc-option-action i{
+    margin-left:8px;
+    margin-top:10px;
+    display:block;
+    width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
+    font-size:0px;
+    line-height:0px;
+    
+}
+.sc-option-list{
+    width:100%;
+    border:1px solid #d9d9d9;
+    left:-1px;
+    position:absolute;
+        overflow:auto;
+    z-index:10000;
+    overflow-x:hidden;
+}
+.sc-option-list .panel{
+    font-size:12px;
+    color:#aaa;
+    padding-left:10px;
+    line-height:25px;
+    background:#fff;
+}
+.sc-option-list li{
+    display:block  !important;
+    float:none !important;
+    
+    width:100% !important;
+    line-height:30px;
+    background:#fff;
+}
+.sc-option-list li a{
+    padding-left:20px;
+    display:block;
+    font-weight:normal;
+    font-size:12px;
+    color:#404040;
+}
+.sc-option-list li a:hover{
+    background:#ff6700;
+    color:#fff !important;
+}
+
+.sc-select{
+    display:inline-block;
+    border:1px solid #d9d9d9;
+    height:25px;
+    background:#fff;
+    line-height:25px;
+    width:145px;
+    position:relative;
+}
+.sc-multi-select{
+  height:auto;
+  min-height: 30px;
+}
+.sc-multi-select .sc-select-hd{
+padding-left: 0;
+  }
+.sc-select-hd{
+    text-align:left;
+    padding-left:10px;
+    position:relative;font-size:12px;
+    color:#aaa;
+    font-weight:normal;
+    height:30px;
+}
+.sc-select-hd .sc-selected-item{
+  border-radius: 3px;
+  margin:3px;
+  background: #eee;
+  line-height: 23px;
+  padding:0 5px;
+  float:left;
+  color:#666;
+  padding-right:15px;
+  position: relative;
+}
+.sc-select-hd .sc-selected-item .sc-close{
+  font-style: normal;
+  position: absolute;
+  right:5px;
+  top:0px;
+}
+.sc-select-content .placeholder{
+  line-height: 20px;
+}
+.sc-select-action{
+    width:25px;height:25px;
+    position:absolute;
+    right:0;
+    top:0;
+    *top:-4px;
+    background:#d9d9d9;
+    cursor:pointer;
+    font-size:0px;
+    line-height:0px;
+    _right:-1px;
+}
+.sc-select-action i{
+    margin-left:8px;
+    margin-top:10px;
+    display:block;
+    width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
+    font-size:0px;
+    line-height:0px;
+    
+}
+.sc-select-list{
+    width:100%;
+    border:1px solid #d9d9d9;
+    left:-1px;
+    position:absolute;
+        overflow:auto;
+    z-index:10000;
+    overflow-x:hidden;
+}
+.sc-select-list .panel{
+    font-size:12px;
+    color:#aaa;
+    padding-left:10px;
+    line-height:25px;
+    background:#fff;
+}
+.sc-select-list li{
+    display:block  !important;
+    float:none !important;
+    
+    width:100% !important;
+    line-height:30px;
+    background:#fff;
+}
+.sc-select-list li a{
+    padding-left:20px;
+    display:block;
+    font-weight:normal;
+    font-size:12px;
+    color:#404040;
+}
+.sc-select-list li a:hover{
+    background:#ff6700;
+    color:#fff !important;
+}
+
+
