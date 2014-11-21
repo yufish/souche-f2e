@@ -1,0 +1,434 @@
+@import "../config.less";
+
+html,body{
+  font-family: 'Microsoft YaHei',Tahoma,Verdana;
+}
+#header{
+
+  &, *{
+    .box-sizing();
+    &:before,
+    &:after{
+      .box-sizing();
+    }
+  }
+
+  height:80px;
+  background: #fff;
+  margin-top: 0px;
+  width:100%;
+  border-top: 4px solid @soucheOrange;
+  border-bottom: 1px solid #DCDCDC;
+
+  .wrapper{
+    width:1180px;
+    margin:0 auto;
+  }
+  .h-lft{
+    float:left;
+    width:670px;
+    margin-right: 10px;
+    .logo{
+      margin-left:37px;
+      padding-top:25px;
+      float:left;
+    }
+    .city{
+      font-size: 14px;
+      color: #999;
+      margin-right: 40px;
+      float: left;
+      width: 60px;
+      height: 30px;
+      position: relative;
+      margin-top: 30px;
+      margin-left:20px;
+      .J_city{
+        cursor: pointer;
+      }
+      .J_hotcity{
+        color: #FF5719;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .active-city{
+        background: #ff5517 ;
+        color: #fff !important;
+      }
+      span{
+        display: block;
+        float: left;
+
+      }
+      i{
+        display: block;
+        float: left;
+        width: 10px;
+        height: 6px;
+        background: url(../../images/index/city-chose.png) no-repeat;
+        margin-top: 8px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      .city-open{
+        position: absolute;
+        top: 31px;
+        z-index: 100000;
+        width: 362px;
+        overflow: hidden;
+        border: 1px solid #FF581A;
+        background:#fff;
+      }
+      .city-wrap{
+        width: 725px;
+        position: relative;
+        height: 57px;
+      }
+      .area-box{
+        position: absolute;
+        width: 360px;
+        height: 260px;
+
+        background: #fff;
+        padding: 20px;
+
+        .hot-city{
+          border-bottom: 1px solid #ededed;
+          color: #777;
+          padding-bottom: 20px;
+          font-size: 13px;
+          .title{
+            color: #777;
+            margin-right: 15px;
+          }
+          .hot-item{
+            color: #FF5719;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+        .area-city{
+          margin-top: 20px;
+          font-size: 13px;
+          .area-line{
+            margin-bottom: 10px;
+            .area{
+              color: #777;
+              padding-right: 15px;
+              border-right: 1px solid #ededed;
+            }
+            .province-item{
+              margin-left: 15px;
+              color: #333;
+              cursor: pointer;
+            }
+            .province-item:hover{
+              color: #FF5719;
+            }
+          }
+        }
+      }
+      .city-box{
+        width: 320px;
+        padding: 20px;
+        height: 140px;
+        background: #fff;
+        position: absolute;
+        left: 362px;
+        .tit{
+          border-bottom: 1px solid #ededed;
+          padding-bottom: 20px;
+          .city-return{
+            display: block;
+            background: url(../../images/index/city-return.png) no-repeat 0 center;
+            padding-left: 12px;
+            color: #999;
+            float: left;
+            line-height: 13px;
+            height: 13px;
+            font-size: 13px;
+            cursor: pointer;
+          }
+          .province{
+            display: block;
+            float: left;
+            margin-left: 95px;
+            height: 14px;
+            font-size: 15px;
+            line-height: 12px;
+            color: #333;
+          }
+          .city-close{
+            display: block;
+            float: right;
+            width: 9px;
+            height: 9px;
+            background:url(../../images/index/city-close.png) no-repeat;
+            margin-top: 5px;
+            cursor: pointer;
+          }
+        }
+        .city-list{
+          margin-top: 20px;
+          .city-item{
+            display: block;
+            margin-bottom: 10px;
+            margin-right: 15px;
+            font-size: 13px;
+            color: #333;
+            float: left;
+            cursor: pointer;
+          }
+          .city-item:hover{
+            color: #FF5719;
+          }
+        }
+      }
+    }
+    .main-navs{
+      float: left;
+      a{
+        line-height: 80px;
+        padding:0 17px;
+        font-size: 14px;
+        color:#333;
+      }
+      a:hover,a.active{
+        color:@soucheOrange;
+      }
+    }
+
+  }
+  .search{
+      float: left;
+      .index-search{
+        margin-top: 25px;
+        position: relative;
+        .search-text{
+          box-sizing: border-box;
+          width: 240px;
+          height: 32px;
+          padding: 5px;
+          border: 2px solid #E6E6E6;
+        }
+        .search-submit{
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url(../../images/index_11/search.png) no-repeat;
+          border: none;
+          position: absolute;
+          top: 9px;
+          right: 10px;
+          cursor: pointer;
+
+          &:hover{
+            background: url(../../images/index_11/search-active.png) no-repeat;
+          }
+        }
+      }
+  }
+  .h-rht{
+    float:right;
+    .phone-number{
+      margin:30px 0px 30px 0px;
+      padding-left: 20px;
+      float:right;
+      border-left:1px solid #bbbbbb; 
+    }
+    .user{
+      position: relative;
+      float:right;
+      margin-top: 20px;
+      .headpic{
+        display: inline-block;
+        vertical-align: -13px;
+        cursor: pointer;
+        
+        img{
+          border-radius:30px;
+          width:36px;
+          height:36px;
+          border:3px solid #fff;
+          box-shadow: 1px 1px 3px #999;
+        }
+      }
+      .username{
+        color:#666;
+      }
+      .trigger{
+        display: inline-block;
+        width: 7px;
+        height: 4px;
+        background: url(../../images/index_11/user-down.png) no-repeat;
+        margin: 0px 10px;
+        cursor: pointer;
+      }
+      span{
+        font-size: 12px;
+        color: #bbbbbb;
+        line-height: 20px;
+      }
+      .login-text{
+        margin-top: 12px;
+        margin-right: 15px;
+        font-size: 12px;
+        color: #333;
+        cursor: pointer;
+
+        &:hover{
+          color: @soucheOrange;
+        }
+      }
+
+      #user-menu{
+        position: absolute;
+        right: -3px;
+        top: 100%;
+        margin-top: 10px;
+        width: 110px;
+        // height: 120px;
+        padding: 16px 0;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.dropdown-menu{
+  position: relative;
+  display: none;
+  border: 1px solid #e7e7e7;
+  list-style: none;
+  z-index: 1000;
+  
+  &:after{
+    content: '';
+    position: absolute;
+    top: -9px;
+    right: 6px;
+    height: 9px;
+    width: 18px;
+    background-image: url('../../images/index_11/tri-totop.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 1100;
+  }
+  &.active{
+    display: block;
+  }
+
+  li{
+    padding: 0.5em 1.5em;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+    .text-collapse();
+    &:hover{
+      background-color: #e7e7e7;
+    }
+  }
+}
+
+
+#footer{
+  width: 100%;
+  background: #333333;
+  margin-top: 25px;
+  .wrapper{
+    margin: 0 auto;
+    padding: 30px 0;
+    .foot-detail{
+      .detail-item{
+        float: left;
+        width: 190px;
+        margin-bottom: 30px;
+        .title {
+          color: #fff;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          display: block;
+        }
+        .art-link{
+          display: block;
+          color: #717171;
+          line-height: 25px;
+        }
+        .art-link:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .friendlinks{
+      border-bottom: 1px solid #717171;
+      border-top: 1px solid #717171;
+      padding: 10px 0;
+      a{
+        color: #717171;
+        margin-right: 25px;
+        display: block;
+        float: left;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+    p{
+      color: #717171;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+#footer{
+  .wrapper{
+    width: 1220px;
+  }
+}
+
+
+.realIndexTimeDown {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+  overflow: auto;
+  z-index: 10000;
+  overflow-x: hidden;
+  background: #fff;
+}
+.realIndexTimeDown span {
+  display: block;
+  float: none;
+  padding: 3px 0px;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #B4B4B4;
+  cursor: pointer;
+  font-size: 13px;
+  a{
+    display: block;
+    color:  #666;
+  }
+}
+
+.realIndexTimeDown span .enterChexi {
+  float: right;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #FF5719;
+  font-weight: bolder;
+  margin-top:-5px;
+}
+.realIndexTimeDown .hover {
+  background: #F8F8F6;
+}
+
+#toolbar,
+.sidebar-top{
+  display: none;
+}
+

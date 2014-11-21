@@ -1,0 +1,128 @@
+.header {
+    position: relative;
+    background-color: #ff4400;
+    height: 44px;
+}
+.header .text {
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 18px;
+}
+.header .header-feature {
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    padding-top: 12px;
+}
+.header .header-feature .search-icon {
+    float: left;
+    background: url(../../images/mob/h5-2/search-big-new.png) no-repeat center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+.header .header-feature .search-icon-2 {
+    display: none;
+    float: left;
+    background: url(../../images/mob/h5-2/search-2-big-new.png) no-repeat center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+.header .header-feature .tel-icon {
+    float: left;
+    background: url(../../images/mob/h5-2/tel-big-new.png) no-repeat center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+.header .search-box {
+    position: absolute;
+    top: 40px;
+    z-index: 10000;
+    width: 100%;
+    display: none;
+}
+.header .search-box .search-header {
+    padding: 5px 10px;
+    overflow: hidden;
+    background-color: #eaeaea;
+}
+.header .search-box .search-header .input {
+    width: 85%;
+    border-radius: 5px;
+    background-color: #fff;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.header .search-box .search-header .input .cancel-icon {
+    display: inline-block;
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.header .search-box .search-header .input input[type='text'] {
+    font-size: 14px;
+    border: none;
+    width: 85%;
+    height: 28px;
+}
+.header .search-box .search-header .search-btn {
+    cursor: pointer;
+    width: 15%;
+    float: left;
+    height: 30px;
+}
+.header .search-box .search-header .search-btn span {
+    padding-left: 10px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.header .back-icon {
+    position: absolute;
+    top:0;
+    left:0;
+    background: url(../../images/mob/h5-2/back-new.png) no-repeat center;
+    background-size: 10px;
+    width: 60px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+}
+.header .back-icon .back-text {
+    color: #fff;
+}
+.header .header-feature .login-icon {
+    float: left;
+    background: url(../../images/mob/h5-2/login-big.png) no-repeat center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+.footer-mobile .footer-nav {
+    margin: 30px 0 30px 0;
+}
+.footer-mobile .footer-nav a {
+    display: block;
+    text-align: center;
+    border-right: 1px solid #b5b5b5;
+    color: #000;
+    font-size: 14px;
+}
+.footer-mobile #footer-beian {
+    margin-top: 10px;
+}
+.footer-mobile #footer-beian .text {
+    color: #b5b5b5;
+    text-align: center;
+}

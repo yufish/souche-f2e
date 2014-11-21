@@ -1,0 +1,146 @@
+#main-service .service-card .go .icon{
+  display: inline-block;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+.icon-qq{
+  background-image: url('../../images/index_11/qq-black.png');
+}
+
+#main-service{
+  height:480px;
+  background: #f2f2f2;
+  .wrapper{
+    width:1180px;
+    margin:0 auto;
+  }
+  .card-list{
+    // 卡片横排间距 + 20
+    // 卡片阴影 左边需要有空间 10px
+    width:1180px + 20px + 10px;
+    margin-left: -20px;
+    padding: 10px 0 10px 10px;
+    
+    overflow: hidden;
+  }
+  .service-card{
+    float:left;
+    width:280px;
+    margin-top: 70px;
+    margin-right: 20px;
+    height:320px;
+    background: #fff;
+    text-align: center;
+
+    .title{
+      font-size: 20px;
+      margin-top: 30px;
+      line-height: 30px;
+
+    }
+    .icon{
+      margin:30px 0px 20px 0;
+      height:50px;
+    }
+    .desc{
+      font-size: 14px;
+      color:#666;
+      line-height: 20px;
+      height:40px;
+    }
+    .go{
+      width:160px;
+      height:36px;
+      border:2px solid #B7BBC6;
+      color:#333;
+      font-size: 16px;
+      line-height: 36px;
+      text-align: center;
+      display: inline-block;
+      margin-top: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .gift-card{
+    .go{
+      background: @soucheOrange;
+      color:#fff;
+      border:2px solid @soucheOrange;
+    }
+    .go:hover{
+      background: #FF6630;
+    }
+  }
+  .sell-card{
+    .go:hover{
+      background: @soucheOrange;
+      color:#fff;
+      border:2px solid @soucheOrange;
+    }
+  }
+  .god-card{
+    .go .icon-qq{
+      position: relative;
+      top: 3px;
+      margin-right: 6px;
+    }
+    .go:hover{
+      background: #5C9BEF;
+      color:#fff;
+      border:2px solid #5C9BEF;
+
+      .icon-qq{
+        background-image: url('../../images/index_11/qq-white.png');
+      }
+    }
+  }
+  .app-card{
+    .go:hover{
+      background: @soucheOrange;
+      color:#fff;
+      border:2px solid @soucheOrange;
+    }
+  }
+}
+
+.gift-card{
+  .icon{
+    position: relative;
+  }
+  .advice-count{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    height: 24px;
+    min-width: 24px;
+    margin-left: -12px + 20px;
+    padding: 0 6px;
+    .border-radius(12px);
+    font-size: 14px;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    background-color: @soucheOrange;
+
+    .box-sizing();
+  }
+
+  &.has-advice{
+    .advice-count{
+      display: block;
+    }
+  }
+}
+
+// 动态效果  hover
+#main-service .service-card{
+  .tst();
+
+  &:hover{
+    .box-shadow( 0 0 6px rgba(0,0,0,0.15););
+  }
+}

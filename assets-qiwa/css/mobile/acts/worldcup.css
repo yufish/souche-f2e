@@ -1,0 +1,786 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+.text-center{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.wrapGrayBg{
+    height: 1500px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7f7f7f;
+    z-index: 10;
+    opacity: 0.6;
+}
+
+img{
+    vertical-align: middle;
+    width:100%;
+}
+body{
+    font-family: '华文黑体', '黑体';
+}
+.absolute{
+    position: absolute;
+}
+#head{
+    position: relative;
+}
+.btns{
+    text-align: center;
+    width: 115px;
+    left:50%;
+    margin-left:-58px;
+    bottom: 20px;
+    height: 32px;
+}
+#involve,#go-quiz{
+    background: #f8504c;
+    border:none;
+    border-radius: 5px;
+    width:115px;
+    height: 32px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 32px;
+    color:#000;
+}
+#football{
+    width: 55px;
+    height: 48px;
+    background: url(../../../images/mob/huodong/worldcup/football.png) no-repeat center;
+    background-size: 100%;
+    top: -8px;
+    right: -40px;
+}
+#flower{
+    width:12px;
+    height: 11px;
+    background: url(../../../images/mob/huodong/worldcup/flower-over-btn.png) no-repeat center;
+    background-size: 100%;
+    top: 6px;
+    left: -2px;
+}
+#cup-small{
+    width:30px;
+    height: 51px;
+    background: url(../../../images/mob/huodong/worldcup/cup-small.png) no-repeat center;
+    background-size: 100%;
+    bottom: -35px;
+    left: -30px;
+}
+#ball-shadow{
+    width:20px;
+    height: 10px;
+    background: url(../../../images/mob/huodong/worldcup/ball-shadow.png) no-repeat center;
+    background-size: 100%;
+    left: 12px;
+    bottom: -35px;
+}
+#content{
+    background: url(../../../images/mob/huodong/worldcup/grass-bg.png) repeat-y center;
+    background-size: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.select-title{
+    margin:35px 0 20px;
+    text-align: center;
+    color:#fff;
+}
+#support-wrap-no{
+    background: url(../../../images/mob/huodong/worldcup/cup-no.png)  center;
+    background-size: 100%;
+    width:267px;
+    height: 211px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#support-wrap{
+    background: url(../../../images/mob/huodong/worldcup/cup.png)  center;
+    background-size: 100%;
+    width:267px;
+    height: 211px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#country-flag{
+    width: 107px;
+    height: 76px;
+    text-align: center;
+    margin: 35px auto 0;
+}
+#country-name{
+    margin-top: 10px;
+}
+#intro{
+    font-size: 12px;
+    margin:18px 30px 20px 40px;
+    line-height: 14px;
+}
+#intro .text{
+    color:#fff;
+}
+#intro .ps{
+    margin-top: 20px;
+}
+.card{
+    text-align: center;
+    display: inline-block;
+    width:85px;
+    height: 87px;
+}
+#cars{
+    background: url(../../../images/mob/huodong/worldcup/yello-card.png) no-repeat center;
+    background-size: 100%;
+}
+#rule{
+    background: url(../../../images/mob/huodong/worldcup/red-card.png) no-repeat center;
+    background-size: 100%;
+    margin-left: 35px;
+}
+#link-wrapper{
+    width: 215px;
+    margin:0 auto;
+}
+
+.input-box{
+    height: 22px;
+    width: 113px;
+    border:2px solid #c6bf28;
+}
+#submit-form{
+    width:115px;
+    margin:55px auto 0;
+}
+#team{
+    padding-left: 10px;
+}
+#phone{
+    padding-left: 10px;
+}
+.match-item{
+    float:left;
+    width:140px
+}
+.match-title{
+    text-align: center;
+    color:#fff;
+    font-size:16px;
+    line-height: 28px;
+}
+#today-match{
+    margin-right: 20px;
+}
+#today-match .match-title{
+    background: #e7131c;
+}
+#future-match .match-title{
+    background: #15a6ca;
+}
+#match-info{
+    width:300px;
+    margin:35px auto 45px;
+    font-size: 12px;
+}
+#match-info .one-match{
+    height: 65px;
+    padding-top: 10px;
+    margin-bottom: 34px;
+    position: relative;
+}
+#match-info #today-match .one-match{
+    background: #f5a1a4;
+}
+
+#match-info #today-match .one-match.my-fav{
+    background: #e7131c;
+}
+#match-info #today-match .one-match.my-fav .one-title{
+    color: #fff;
+}
+
+#today-match .one-title{
+    text-align: center;
+    color:#7e0505;
+}
+#future-match .one-title{
+    text-align: center;
+    color:#067f8a;
+}
+
+#match-info #future-match .one-match{
+    background: #a1dbea;
+}
+#match-info .match-content{
+    padding:6px;
+    background: #fff;
+}
+#match-info #future-match .one-match.my-fav{
+    background: #15a6ca;
+}
+#match-info #future-match .one-match.my-fav .one-title{
+    color: #fff;
+}
+#match-info .match-board{
+    position: absolute;
+    background: url(../../../images/mob/huodong/worldcup/match-board.png) no-repeat center;
+    background-size: 100%;
+    height: 56px;
+    width: 80px;
+    margin-left:-40px;
+    left:50%;
+    top:30px;
+}
+#match-info .time-board{
+    background: url(../../../images/mob/huodong/worldcup/time-board.png) no-repeat center;
+    background-size: 100%;
+    width: 78px;
+    margin:5px auto;
+    text-align: center;
+    font-size: 17px;
+    line-height: 33px;
+    color:#fff;
+}
+
+#match-info  .date{
+    text-align: center;
+    font-size: 13px;
+    color:#067f8a;
+    margin-top:8px;
+}
+#match-info .score{
+    font-size: 32px;
+    line-height: 56px;
+    color:#fff;
+}
+#match-info .score:first-child{
+    margin-left: 10px;
+}
+#match-info .score:last-child{
+    margin-left: 26px;
+}
+
+#popup{
+    position: absolute;
+    width: 100%;
+    top:0;
+    display: none;
+}
+#popup-submit{
+    overflow: hidden;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 232px;
+    height: 365px;
+    background: url(../../../images/mob/huodong/worldcup/submit-bg.png) no-repeat center;
+    background-size: 100%;
+    left:50%;
+    margin-left:-116px;
+    position: absolute;
+    z-index:100;
+}
+#popup-submit p{
+    margin-bottom: 5px;
+}
+#submit-tips{
+    width: 150px;
+    margin:0 auto;
+    color:#938d07;
+}
+#btn-submit{
+    background: #f8504c;
+    width:60px;
+    border:none;
+    border-radius: 5px;
+    height: 21px;
+    margin-top:10px;
+}
+
+#list .car {
+    padding-top:10px;
+    position: relative;
+    margin: 20px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    display: block;
+    background: #e6e6e6;
+}
+
+#list .car .lft {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 105px;
+    float: left;
+    height: 80px;
+    overflow: hidden;
+}
+#list .car .lft img {
+    width: 100%;
+    margin: 0;
+}
+#list .car .rht {
+    vertical-align: top;
+    padding-left: 117px;
+}
+#list .car .rht .title {
+    line-height: 16px;
+    font-size: 12px;
+    color: #333;
+}
+#list .car .rht .price {
+    line-height: 20px;
+    position: relative;
+}
+#list .car .rht .price s {
+    color: #999;
+    font-size: 14px;
+}
+#list .car .rht .price em {
+    color: #ff4301;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 65px;
+    float: left;
+}
+#list .car .rht .info {
+    color: #888;
+    line-height: 18px;
+    font-size: 12px;
+}
+#list .car .rht .info .car-card-time {
+    margin-left: 10px;
+}
+#list .car .rht .buy-time {
+    color: #888;
+    line-height: 16px;
+    font-size: 12px;
+}
+#list .car .rht .rate-yushou {
+    background: #208ba7;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    font-size: 12px;
+    color: #fff;
+    margin-top: -2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 60px;
+    text-align: center;
+}
+#list .car .rht .rate span {
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+    font-size: 12px;
+}
+#list .car .lft .rate {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    background-color: #89bc26;
+    color: #fff;
+    width: 20px;
+    text-align: center;
+    border-radius: 3px;
+}
+#list .car .lft .extra-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+}
+#list .car .lft .extra-info .time-limit {
+    margin-top: 3px;
+    background-color: #fc7000;
+    color: #fff;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 3px;
+    padding-right: 5px;
+}
+#list .car .lft .extra-info .period {
+    margin-top: 3px;
+    background-color: #5eb1bd;
+    color: #fff;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 3px;
+    padding-right: 5px;
+}
+#list .car .lft .rate.no-pass {
+    background: #1b8ba8;
+}
+#list .car .rht .shangou-price {
+    color: #999;
+}
+#list .car .rht .shangou-price em {
+    color: #df5d16;
+    font-size: 12px;
+}
+.car .sold-out {
+    width: 54px;
+    height: 27px;
+    background: url(../../../images/mob/h5-2/sold-out.png) no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#guess{
+    font-size: 12px;
+}
+#guess #your-support{
+    padding-top: 20px;
+    position: relative;
+}
+#guess #g-content{
+    background: #60951f;
+    padding-bottom: 20px;
+}
+#guess #team-name{
+    text-align: center;
+    color:#fffc00;
+}
+#guess #team-flag{
+    background: url(../../../images/mob/huodong/worldcup/new/cup.png) no-repeat center;
+    background-size: 100%;
+    width:69px;
+    height: 113px;
+    position: absolute;
+    top: -45px;
+    left: 10px;
+    -webkit-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+    -webkit-transform: rotateZ(-20deg);
+    transform: rotateZ(-20deg);
+}
+#guess #team-flag.other-state{
+    -webkit-transform: rotateZ(20deg);
+    transform: rotateZ(20deg);
+}
+
+#guess #country-flag{
+    width:39px;
+    height: 27px;
+    position: absolute;
+    top:-12px;
+    left:50%;
+    margin-left:-19px;
+}
+#guess #your-award{
+    border:1px dashed #54db14;
+    background: #476f17;
+    width:218px;
+    height: 74px;
+    margin-left:80px;
+    color:#fff;
+    padding:20px 12px;
+    box-sizing: border-box;
+    position: relative;
+}
+#guess .yellow{
+    color:#f7f601;
+}
+#guess #your-award .money{
+    font-size:14px;
+    font-weight: bold;
+}
+#guess #your-award .down-arrow{
+    width:14px;
+    height: 11px;
+    background: url(../../../images/mob/huodong/worldcup/new/down-arrow.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    bottom: -11px;
+    left:39px;
+}
+#guess #grass{
+    width:287px;
+    height: 247px;
+    margin:3px auto 0;
+    background: url(../../../images/mob/huodong/worldcup/new/grass-ground.png) no-repeat center;
+    background-size: 100%;
+}
+#guess .down-arrow .border{
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    background: url(../../../images/mob/huodong/worldcup/new/border.png) no-repeat center;
+    background-size:12px 1px ;
+    top:0;
+}
+#guess #old-match{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#guess #old-match-title{
+    float:left;
+    width: 26px;
+    color: #fff;
+    background: #e7131c;
+    padding:20px 6px;
+}
+#guess #old-match-content{
+    margin-left: 26px;
+    background: #fff;
+    padding-left: 3px;
+    height: 96px;
+    text-align: center;
+}
+#guess .old-match-item{
+    margin-top: 6px;
+    width: 106px;
+    height: 48px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    background: #f5a1a4;
+    vertical-align: middle;
+}
+#guess .board{
+    background: url(../../../images/mob/huodong/worldcup/match-board.png) no-repeat center;
+    background-size: 100%;
+    height: 56px;
+    width: 80px;
+    display: inline-block;
+    position: absolute;
+    left:50%;
+    margin-left: -40px;
+    top:27px;
+}
+#guess .om-title{
+    color: #7e0505;
+    margin-top: 12px;
+    display: inline-block;
+}
+#guess .board .score{
+    position: absolute;
+    font-size: 32px;
+    line-height: 56px;
+    color: #fff;
+    left:10px;
+}
+#guess .board .score:last-child{
+    left:52px;
+}
+
+#guess #first-match{
+    width: 145px;
+    margin:0 auto;
+    padding-top: 20px;
+    position: relative;
+    height: 56px;
+}
+#guess #match-text{
+    height: 56px;
+    padding-top:30px;
+}
+#guess .team-info{
+    position: absolute;
+    left:0;
+    width: 54px;
+    color: #fff;
+    top: 20px;
+}
+#guess .team-info:last-child{
+    left:auto;
+    right: 0;
+}
+#guess .flag-border{
+    width:100%;
+    height: 2px;
+    background: #fff;
+}
+#guess .vs{
+    text-align: center;
+    color: #fff;
+    margin-top: 22px;
+}
+#guess #first-match img{
+    display: block;
+    width: 50px;
+    margin:0 auto;
+}
+#guess .flag-name{
+    text-align: center;
+    padding: 3px 0;
+}
+#guess #second-match{
+    width: 170px;
+    margin:0 auto;
+    padding-top: 82px;
+    position: relative;
+}
+#guess #second-match .team-info{
+    top:82px;
+}
+#guess .time-board{
+    background: url(../../../images/mob/huodong/worldcup/new/time-board.png) no-repeat center;
+    position: absolute;
+    color:#fff;
+}
+#guess #first-time-board{
+    width: 72px;
+    height: 52px;
+    bottom: -52px;
+    left: -70px;
+    background-size: 72px 52px;
+}
+#guess #second-time-board{
+    width: 73px;
+    height: 54px;
+    bottom: -54px;
+    left: -72px;
+    background-size: 73px 54px;
+}
+#guess .time-board .hour{
+    position: absolute;
+    top:6px;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    left: 8px;
+}
+#guess .time-board .minute{
+    position: absolute;
+    top:6px;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    left: 44px;
+}
+#guess .yyyy-mm-dd{
+    margin-top: 30px;
+    text-align: center;
+    color:#efe602;
+}
+#guess #cars{
+    background: url(../../../images/mob/huodong/worldcup/new/yello-card.png) no-repeat center;
+    background-size: 100%;
+}
+#guess #rule{
+    background: url(../../../images/mob/huodong/worldcup/new/red-card.png) no-repeat center;
+    background-size: 100%;
+    margin-left: 35px;
+}
+#guess .selected-cup{
+    background: url(../../../images/mob/huodong/worldcup/new/cup.png) no-repeat center;
+    background-size: 100%;
+    width:14px;
+    height: 23px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: -7px;
+}
+#guess .wrapGrayBg{
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+}
+.wrapTransBg{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom: 0;
+    right: 0;
+}
+.align-center{
+    text-align: center;
+}
+#alert-yes{
+    position: absolute;
+    width: 206px;
+    left:50%;
+    margin-left:-103px;
+    top:800px;
+    background: rgba(0, 0, 0, .7);;
+    height: 104px;
+    overflow: hidden;
+    z-index:100;
+    border-radius:3px;
+}
+#alert-yes .alert-tip{
+    text-align: center;
+    margin-top: 30px;
+    color:#fff;
+    font-size: 13px;
+}
+#alert-yes .alert-close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border:1px solid #fff;
+    border-radius: 80%;
+    color:#fff;
+    text-align: center;
+    line-height: 18px;
+    right: 10px;
+    top:8px;
+}
+#alert-yes #yes-button{
+    border:none;
+    border-radius: 3px;
+    background: #f8504c;
+    width: 72px;
+    height: 23px;
+    color: #fff;
+    display: block;
+    margin:0 auto;
+    margin-top:15px;
+}
+#mask-popup{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+#final-png{
+    width: 126px;
+    height: 39px;
+    display: block;
+    margin:0 auto;
+}
+#half-final-png{
+    width: 126px;
+    height: 39px;
+    display: block;
+    margin:0 auto;
+}
+
+
+
+

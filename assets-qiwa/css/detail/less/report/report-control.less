@@ -1,0 +1,414 @@
+
+@disappTF: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+@disappDur: 150ms;
+
+
+@appTF: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+@appDelay: 150ms;
+@appDur: 150ms;
+.report_control{
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .costum-slide-ctn{
+        // height: 645px;
+        // padding-top: 60px;
+        padding-bottom: 95px;
+
+        .content,
+        .road,
+        .indicator{
+            list-style: none;
+            padding: 0;
+            width: 860px;
+            margin: 0 auto;
+        }
+        .content{
+            position: relative;
+            height: 430px;
+            
+            .slide-item{
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -10;
+                opacity: 0;
+                .tst( opacity 0ms @disappTF @disappDur, z-index 0ms @disappTF @disappDur;);
+                
+                // IE Hack, for less than IE8
+                display: ~"none\9";
+
+                &.active{
+                    opacity: 1;
+                    z-index: 100;
+                    .tst( opacity 0ms ease 0ms, z-index 0ms ease 0ms;);
+
+                    display: ~"block\9";
+
+
+                    .car-and-info{
+                        .guide-lines,
+                        .info-item{
+                            opacity: 1;
+                            .tst(opacity @appDur @appTF @appDelay;);
+                        }
+                    }
+                }
+                .car-and-info{
+                    position: relative;
+                    height: 350px;
+                    margin-top: 80px;
+                    background-repeat: no-repeat;
+
+                    .guide-lines{
+                        position: absolute;
+                        z-index: 50;
+                        background-repeat: no-repeat;
+                    }
+    
+                    .guide-lines,
+                    .info-item{
+                        opacity: 0;
+                        .tst(opacity @disappDur @disappTF;);
+                    }
+
+                    .info-item{
+                        position: absolute;
+                        width: 370px;
+                        z-index: 100;
+
+                        .info-icon{
+                            float: left;
+                            position: relative;
+                            top: 3px;
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+
+                        }
+                        .info-text{
+                            margin-left: 20px;
+                            overflow: hidden;
+
+                            .info-text-title,
+                            .info-text-detail{
+                                font-size: 14px;
+                                line-height: 1.35;
+                            }
+                            .info-text-title{
+                                color: #666;
+                                margin-bottom: 2px;
+                            }
+                            .info-text-detail{
+                                color: #9F9F9F;
+                                ol{
+                                    list-style: decimal inside;
+                                }
+                                ul{
+                                    list-style: none;
+                                }
+                            }
+                        }
+                        &.good{
+                            .info-icon{
+                                background: url("../../images/detail/config-normal.png") no-repeat;
+                            }
+                        }
+                        &.warn{
+                            .info-text{
+                                .info-text-title,
+                                .info-text-detail{
+                                    color: @red;
+                                }
+                            }
+
+                            .info-icon{
+                                background: url("../../images/detail/config-abnormal.png") no-repeat
+                            };
+                        }
+                        &.right-dir{
+                            width: 250px;
+                            .info-icon{
+                                float: right;
+                            }
+                            .info-text{
+                                margin-right: 20px;
+                                margin-left: 0;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+
+                &.control-start .car-and-info .guide-lines{
+                    width: 130px;
+                    height: 190px;
+                    top: 79px;
+                    left: 323px;
+                    background-image: url("../../images/detail/guideline-start.png");
+                }
+                &.control-accelerate .car-and-info .guide-lines{
+                    width: 48px;
+                    height: 149px;
+                    top: 130px;
+                    left: 402px;
+                    background-image: url("../../images/detail/guideline-acc.png");
+                }
+                &.control-steady .car-and-info .guide-lines{
+                    width: 206px;
+                    height: 252px;
+                    top: 67px;
+                    left: 245px;
+                    background-image: url("../../images/detail/guideline-steady.png");
+                }
+                &.control-turn .car-and-info .guide-lines{
+                    width: 238px;
+                    height: 237px;
+                    top: 46px;
+                    left: 261px;
+                    background-image: url("../../images/detail/guideline-turn.png");
+                }
+                &.control-brake .car-and-info .guide-lines{
+                    width: 205px;
+                    height: 214px;
+                    top: 86px;
+                    left: 268px;
+                    background-image: url("../../images/detail/guideline-brake.png");
+                }
+            }
+            .no-slide{
+                // 一直显示的slide item
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                opacity: 1;
+                &.car-shake{
+                    height: 149px;
+                    width: 426px;
+                    top: auto;
+                    right: auto;
+                    left: 61px;
+                    // bottom: 17px;
+                    background: url("../../images/detail/car_shake.gif") no-repeat;
+
+                    .wheel{
+                        position: absolute;
+                        bottom: 0;
+                        height: 58px;
+                        width: 58px;
+                        background: url("../../images/detail/wheel.gif") no-repeat;
+                        z-index: 50;
+
+                        &.wheel-back{
+                            left: 64px;
+                        }
+                        &.wheel-front{
+                            left: 315px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .road{
+            height: 20px;
+            background-image: url("../../images/detail/road.gif");
+            background-repeat: no-repeat;
+        }
+        @itemW: 50px;
+        @itemBC: #ccc;
+        @itemBW: 2px;
+        @lineW: 45px;
+        .indicator{
+            height: 50px;
+            width: 860px;
+            margin-top: 50px;
+            // background-color: #ddd;
+            
+            
+            .idc-item{
+                float: left;
+                .clear-flt();
+
+                .idc-line{
+                    float: left;
+                    display: block;
+                    height: @itemBW;
+                    width: 45px;
+                    background-color: @itemBC;
+                    margin-top: (@itemW - @itemBW)/2;
+                }
+                .idc-target{
+                    float: left;
+                    height: @itemW;
+                    width: @itemW;
+                    border-radius: @itemW/2;
+                    border: @itemBW solid @itemBC;
+                    
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: @itemW - 2*@itemBW;
+                    color: @itemBC;
+                    cursor: pointer;
+                    background-color: #fff;
+                }
+                &.first{
+                    margin-left: (860px - (5*@itemW + 4*@lineW))/2;
+                }
+
+                &.active .idc-target{
+                    color: #fff;
+                    border-color: @green;
+                    background-color: @green;
+                }
+            }
+        }
+    }
+}
+
+
+// 操控性 检车结果 定位
+// 上面做了所有的基础样式, 这里只做定位
+.report_control{
+    .costum-slide-ctn{
+        .content{}
+        // 启动
+        .car-and-info .info-item{
+            // 点火开关
+            &.fire-switch{
+                left: 82px;
+                top: 70px;
+            }
+            // 启动马达及线路
+            &.start-engine{
+                left: 442px;
+                top: 70px;
+            }
+            // 点火线圈
+            &.fire-loops{
+                left: 442px;
+                top: 142px;
+            }
+            // 火花塞
+            &.spark-plug{
+                left: 442px;
+                top: 216px;
+            }
+        }
+        // 加速
+        @accCommonLeft: 442px;
+        .car-and-info .info-item{
+            // 变速器总成
+            // &.acc-hub{
+            //     left: @accCommonLeft;
+            //     top: 38px;
+            // }
+            // 汽油泵
+            &.petrol-pump{
+                left: @accCommonLeft;
+                top: 121px;
+            }
+            // 燃油压力调节器
+            &.fuel-pressure-regulator{
+                left: @accCommonLeft;
+                top: 172px;
+            }
+            // 喷油嘴
+            &.injection-nozzle{
+                left: @accCommonLeft;
+                top: 226px;
+            }
+        }
+        // 匀速
+        @steadyCommonLeft: 442px;
+        .car-and-info .info-item{
+            // 传动轴
+            &.drive-shaft{
+                left: @steadyCommonLeft;
+                top: 58px;
+            }
+            // 驱动半轴
+            &.axle-shaft{
+                left: @steadyCommonLeft;
+                top: 106px;
+            }
+            // 后支臂,平衡杆
+            &.back-arm{
+                left: @steadyCommonLeft;
+                top: 175px;
+            }
+            // 后悬臂总成
+            &.back-cantilever-hub{
+                left: @steadyCommonLeft;      
+                top: 226px;
+            }
+        }
+
+        // 转弯
+        @turnCommonLeft: 488px;
+        .car-and-info .info-item{
+            // 转向机
+            &.steering-box{
+                left: 19px;
+                top: 72px;
+            }
+            // 转向拉杆及球头
+            &.draglink{
+                left: 19px;
+                top: 149px;
+            }
+            // 前支臂,平衡杆
+            &.front-arm{
+                left: @turnCommonLeft;
+                top: 36px;
+            }
+            // 转向助力泵
+            &.power-steering-pump{
+                left: @turnCommonLeft;
+                top: 92px;
+            }
+            // 转向助力液压管路
+            &.power-assisted-steering{
+                left: @turnCommonLeft;
+                top: 144px;
+            }
+            // 前减震器
+            &.front-damper{
+                left: @turnCommonLeft;
+                top: 199px;
+            }
+        }
+
+        // 制动
+        @brakeCommonLeft: 462px;
+        .car-and-info .info-item{
+            // 刹车真空助力泵
+            &.brake-assist-pump{
+                top: 77px;
+                left: 22px;
+            }
+            // 刹车分泵,总泵
+            &.brake-pump-hub{
+                left: @brakeCommonLeft;
+                top: 78px;
+            }
+            // 制动油管及ABS传感器
+            &.brake-abs{
+                left: @brakeCommonLeft;
+                top: 126px;
+            }
+            // 制动助力器及软管
+            &.brake-booster{
+                left: @brakeCommonLeft;
+                top: 198px;
+            }
+        }
+    }
+}

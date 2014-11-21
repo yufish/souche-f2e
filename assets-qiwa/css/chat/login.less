@@ -1,0 +1,124 @@
+.full-module{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    overflow: hidden;
+
+    opacity: 0;
+    z-index: -10;
+    .tst(opacity 300ms ease-in-out, bottom 0ms ease 300ms, z-index 0ms ease 300ms;);
+
+
+    &.active{
+        bottom: 0;
+        opacity: 1;
+        z-index: 1000;
+
+        .tst(opacity 300ms ease-in-out;);
+    }
+
+    .module-mask{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.6);
+    }
+    @defaultW: 350px;
+    @defaultH: 450px;
+    .module-content{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+
+        width: @defaultW;
+        margin-left: -@defaultW/2;
+
+        height: @defaultH;
+        background-color: #fff;
+    }
+}
+
+
+.btn{
+    display: inline-block;
+    line-height: 2.3*16px;
+    border: 1px solid #ccc;
+    text-align: center;
+
+    text-decoration: none;
+    color: #444;
+    background-color: #fff;
+    cursor: pointer;
+}
+.btn-block{
+    display: block;
+}
+.btn-primary{
+    background-color: #395175;
+    border: 1px solid #eee;
+    color: #fff;
+    .tst(background-color 300ms ease;);
+
+    &.disabled{
+        color: #999;
+        background-color: lighten(#395175, 50%);
+        cursor: not-allowed;
+    }
+}
+
+#login-module{
+
+    .module-content{
+        border-radius: 6px;
+        box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+        height: auto;
+        width: 280px;
+        margin-right: -140px;
+    }
+
+    @aW: 80px;
+    .avatar-ctn{
+        height: @aW;
+        width: @aW;
+        margin: -(@aW)/2 auto 0 auto;
+        border-radius: (@aW)/2;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+
+        .avatar{
+            margin: 1px;
+            height: @aW;
+            width: @aW;
+            border-radius: @aW/2;
+        }
+    }
+
+    #login-form{
+        // margin-top: 2em;
+        padding: 2em;
+        #alias-input,
+        #login-btn{
+            border-radius: 3px;
+        }
+        #alias-input{
+            display: block;
+            font-size: 16px;
+            height: 2.3em;
+            width:  100%;
+            // margin: 0 auto;
+            padding-left: 0.5em;
+            margin-bottom: 1.5em;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        #login-btn{
+            // display: block;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+    }
+    
+}

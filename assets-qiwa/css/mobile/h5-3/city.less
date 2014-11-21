@@ -1,0 +1,111 @@
+@fontC: #333;
+
+@cityCtnBGC: #ededed;
+@rowBC: #ccc;
+
+@proPad: 3%;
+@triH: 6px;
+
+*{
+  box-sizing: border-box;
+}
+.row{
+  &.province-row{
+    margin: 0 10px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 12px;
+    &:first-child{
+      border-top: none;
+    }
+  }
+  &.province-row.active{
+    border-bottom: none;
+  }
+  .province-item,
+  .city-item{
+    float: left;
+    width: 25%;
+    height: 44px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .province-item a,
+  .city-item a{
+    display: inline-block;
+    padding: 4px 5px;
+    margin-top: 10px;
+    color: @fontC;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:active{
+      background-color: #ccc;
+    }
+  }
+  .city-item a{
+    width: 100%;
+  }
+  .province-item a{
+    border:1px solid #fff;
+    border-radius: 2px;
+  }
+  .province-item.active a{
+    border:1px solid #ff571a;
+    border-radius: 2px;
+    color:#FF571a;
+  }
+  .cities{
+    position: relative;
+    margin: 0 -10px;
+    padding: 0 10px;
+    border-top: 1px solid @rowBC;
+    background-color: @cityCtnBGC;
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border: @triH solid transparent;
+      border-top-width: 0;
+      border-bottom-color: @cityCtnBGC;
+      top: -@triH + 1px;
+    }
+    &:before{
+      z-index: 20;
+    }
+    &:after{
+      z-index: 10;
+      top: -@triH;
+      border-bottom-color: @rowBC;
+    }
+
+    &.active-0{
+      &:before,
+      &:after{
+        left:   12.5%;
+      }
+    }
+    &.active-1{
+      &:before,
+      &:after{
+        left:   37.5%;
+        margin-left: -5px;
+      }
+    }
+    &.active-2{
+      &:before,
+      &:after{
+        left: 62.5%;
+        margin-left: -10px;
+      }
+    }
+    &.active-3{
+      &:before,
+      &:after{
+        left:  87.5%;
+        margin-left: -15px;
+      }
+    }
+  }
+}

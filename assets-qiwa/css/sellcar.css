@@ -1,0 +1,623 @@
+body {
+    font-family: 'Microsoft YaHei', Tahoma, Verdana;
+}
+.wrapper {
+    width: 1191px;
+    margin: 0 auto;
+    position: relative;
+}
+#footer{
+    margin-top: 0px;
+}
+.sellcar-app{
+    width: 100%;
+}
+.sellcar-app .app-img{
+    width: 100%;
+    display: block;
+}
+#sellcar #content .banner {
+    width: 100%;
+    background: url(../images/sellcar/banner-x.png) no-repeat;
+    background-position: center;
+    background-color: #ffb722;
+}
+#sellcar #content .banner .wrapper {
+    height: 480px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform {
+    width: 330px;
+    background-color: #fff;
+    padding: 30px;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    padding-bottom: 40px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform h1 {
+    font-size: 22px;
+    color: #262626;
+    font-family: 'Microsoft YaHei', Tahoma, Verdana;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form {
+    clear: both;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list {
+    height: 35px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list label {
+    font-size: 16px;
+    color: #545454;
+    line-height: 35px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list select {
+    width: 250px;
+    margin-left: 10px;
+    border: 1px solid #d1d1d1;
+    height: 33px;
+    padding-left: 5px;
+    line-height: 33px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list input {
+    border: 1px solid #d1d1d1;
+    width: 243px;
+    margin-left: 3px;
+    height: 23px;
+    padding-left: 5px;
+    line-height: 28px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .from-list #sell-phone {
+    margin-bottom: 20px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form #sell-phone {
+    margin-left: -7px;
+    margin-top: 20px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form #sell-phone label {
+    margin-right: 7px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit {
+    margin-top: 40px;
+}
+#sellcar #content .banner .wrapper #J_sellcarform #sellcar-form .sellcar-submit button {
+    display: block;
+    width: 185px;
+    height: 35px;
+    background-color: #fc7000;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    margin-left: 64px;
+    cursor: pointer;
+}
+#sellcar #content .banner .wrapper #J_sellcarform .qiugou-history {
+    font-size: 12px;
+    color: #666;
+    height: 20px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+#sellcar #content .banner .wrapper .sellcar-success {
+    width: 330px;
+    height: 360px;
+    background-color: #fff;
+    padding: 30px;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    text-align: center;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-icon {
+    margin-top: 20px;
+    width: 100%;
+    height: 52px;
+    background: url(../images/sellcar/success.png) no-repeat;
+    background-position: center;
+}
+#sellcar #content .banner .wrapper .sellcar-success h1 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: #262626;
+    margin-top: 30px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-jump {
+    margin-top: 20px;
+    color: #333;
+    font-size: 14px;
+    line-height: 25px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-jump span {
+    color: #fc7000;
+    margin-right: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-link {
+    color: #fc7000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-link a {
+    color: #fc7000;
+    border-bottom: 1px solid #fc7000;
+    font-size: 14px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-explain {
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    height: 50px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#sellcar #content .banner .wrapper .sellcar-success .success-explain p {
+    color: #333;
+    font-size: 14px;
+    line-height: 25px;
+}
+#sellcar #content .sell-mod .mod-title {
+    font-size: 42px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#sellcar #content .sell-mod p {
+    color: #929292;
+    font-size: 16px;
+    line-height: 25px;
+}
+#sellcar #content #findbuyer {
+    background-color: #f3f3f3;
+    position: relative;
+}
+#sellcar #content #findbuyer .wrapper {
+    height: 550px;
+}
+#sellcar #content #findbuyer .mod-text {
+    width: 355px;
+    margin-left: 110px;
+    float: left;
+    margin-top: 180px;
+}
+#sellcar #content #findbuyer .mod-pics {
+    position: absolute;
+    width: 580px;
+    left: 570px;
+    top: 0;
+}
+#sellcar #content #findbuyer .mod-pics img {
+    position: absolute;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-1 {
+    top: 90px;
+    z-index: 3;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-2 {
+    top: 145px;
+    z-index: 2;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-3 {
+    top: 287px;
+    z-index: 4;
+    left: -10px;
+}
+#sellcar #content #findbuyer .mod-pics .pic1-4 {
+    top: 374px;
+    z-index: 3;
+}
+#sellcar #content #findbuyer .mod-pics .layer1-1 {
+    background: #f3f3f3;
+    position: absolute;
+    top: 90px;
+    height: 200px;
+    width: 580px;
+    z-index: 2;
+}
+#sellcar #content #findbuyer .mod-pics .layer1-2 {
+    background: #f3f3f3;
+    position: absolute;
+    top: 250px;
+    height: 200px;
+    width: 580px;
+    z-index: 3;
+}
+#sellcar #content #realvalue {
+    background-color: #fff;
+    position: relative;
+}
+#sellcar #content #realvalue .wrapper {
+    height: 540px;
+}
+#sellcar #content #realvalue .mod-text {
+    width: 480px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 195px;
+}
+#sellcar #content #realvalue .mod-pics {
+    position: absolute;
+    width: 580px;
+    left: 0px;
+    top: 0;
+}
+#sellcar #content #realvalue .mod-pics img {
+    position: absolute;
+}
+#sellcar #content #realvalue .mod-pics .pic2-1 {
+    top: 140px;
+    z-index: 3;
+    left: -500px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+}
+#sellcar #content #realvalue .mod-pics .pic2-1 .pic2-1-cont {
+    background: url("../images/sellcar/2-1.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/2-1.png');
+    zoom: 1;
+    width: 511px;
+    height: 221px;
+}
+#sellcar #content #realvalue .mod-pics .pic2-2 {
+    position: absolute;
+    top: -100px;
+    z-index: 4;
+    left: 350px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#sellcar #content #realvalue .mod-pics .pic2-2 .pic2-2-cont {
+    width: 223px;
+    height: 278px;
+    background: url("../images/sellcar/2-2.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/2-2.png');
+    zoom: 1;
+}
+#sellcar #content #realvalue .mod-pics .pic2-3 {
+    position: absolute;
+    top: 158px;
+    z-index: 5;
+    left: -500px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#sellcar #content #realvalue .mod-pics .pic2-3 .pic2-3-cont {
+    width: 316px;
+    height: 133px;
+    background: url("../images/sellcar/2-3.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/2-3.png');
+    zoom: 1;
+}
+#sellcar #content #helpsell {
+    background-color: #f3f3f3;
+    position: relative;
+}
+#sellcar #content #helpsell .wrapper {
+    height: 550px;
+}
+#sellcar #content #helpsell .mod-text {
+    width: 435px;
+    margin-top: 220px;
+    float: left;
+    margin-left: 75px;
+}
+#sellcar #content #helpsell .mod-pics {
+    position: absolute;
+    width: 580px;
+    left: 580px;
+    top: 0;
+}
+#sellcar #content #helpsell .mod-pics img {
+    position: absolute;
+}
+#sellcar #content #helpsell .mod-pics .pic3-1 {
+    position: absolute;
+    top: 400px;
+    z-index: 3;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#sellcar #content #helpsell .mod-pics .pic3-1 .pic3-1-cont {
+    width: 620px;
+    height: 193px;
+    background: url("../images/sellcar/3-1.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/3-1.png');
+    zoom: 1;
+}
+#sellcar #content #helpsell .mod-pics .pic3-2 {
+    position: absolute;
+    top: 180px;
+    z-index: 4;
+    left: -5px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#sellcar #content #helpsell .mod-pics .pic3-2 .pic3-2-cont {
+    width: 620px;
+    height: 32px;
+    background: url("../images/sellcar/3-2.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/3-2.png');
+    zoom: 1;
+}
+#sellcar #content #timeandprice {
+    background-color: #fff;
+}
+#sellcar #content #timeandprice .wrapper {
+    height: 755px;
+}
+#sellcar #content #timeandprice .title {
+    padding-top: 80px;
+    margin: 0 auto;
+}
+#sellcar #content #timeandprice .title h1 {
+    font-size: 42px;
+    color: #000000;
+    text-align: center;
+}
+#sellcar #content #timeandprice .mod-pics {
+    position: absolute;
+    width: 580px;
+    left: 300px;
+    top: 250px;
+}
+#sellcar #content #timeandprice .mod-pics img {
+    position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-1 {
+    width: 615px;
+    height: 428px;
+    position: absolute;
+    z-index: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-1 .pic4-1-cont {
+    width: 615px;
+    height: 428px;
+    background: url("../images/sellcar/4-1.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-1.png');
+    zoom: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-2 {
+    left: 115px;
+    top: 300px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 2;
+    position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-2 .pic4-2-cont {
+    width: 80px;
+    height: 80px;
+    background: url("../images/sellcar/4-2.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-1.png');
+    zoom: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-3 {
+    left: 175px;
+    top: 300px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 3;
+    position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-3 .pic4-3-cont {
+    width: 105px;
+    height: 102px;
+    background: url("../images/sellcar/4-3.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-3.png');
+    zoom: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-4 {
+    left: 260px;
+    top: 300px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 4;
+    position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-4 .pic4-4-cont {
+    width: 90px;
+    height: 91px;
+    background: url("../images/sellcar/4-4-x.png") no-repeat;
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-4-x.png');
+    zoom: 1;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-5 {
+    left: 362px;
+    top: 300px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 5;
+    position: absolute;
+}
+#sellcar #content #timeandprice .mod-pics .pic4-5 .pic4-5-cont {
+    width: 76px;
+    height: 76px;
+    background: url("../images/sellcar/4-5-x.png");
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.souche.com/assets/images/sellcar/4-5-x.png');
+    zoom: 1;
+}
+#sellcar #content #sellstep {
+    background-color: #f3f3f3;
+}
+#sellcar #content #sellstep .wrapper {
+    height: 300px;
+}
+#sellcar #content #sellstep .title {
+    padding-top: 40px;
+    margin: 0 auto;
+}
+#sellcar #content #sellstep .title h1 {
+    color: #262626;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+#sellcar #content #sellstep .mod-pics {
+    position: absolute;
+    width: 580px;
+    left: 150px;
+    top: 0;
+}
+#sellcar #content #sellstep .mod-pics img {
+    position: absolute;
+}
+#sellcar #content #sellstep .mod-pics .pic5-1 {
+    left: 0;
+    top: 130px;
+    z-index: 2;
+    position: absolute;
+    width: 0;
+    height: 90px;
+    overflow: hidden;
+}
+#sellcar #content #sellstep .mod-pics .pic5-2 {
+    left: 0;
+    top: 128px;
+    z-index: 1;
+}
+#sellcar #content #sellstep .mod-pics .pic5-3 {
+    left: 0;
+    top: 210px;
+}
+#sellcar #content #sellstep .mod-pics .layer5-1 {
+    position: absolute;
+    top: 130px;
+    height: 90px;
+    width: 100%;
+}
+#sellcar #content #faq {
+    background-color: #fff;
+}
+#sellcar #content #faq .wrapper {
+    height: 1110px;
+}
+#sellcar #content #faq .title {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+}
+#sellcar #content #faq .title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #262626;
+}
+#sellcar #content #faq .faq-content {
+    width: 1015px;
+    margin: 0 auto;
+}
+#sellcar #content #faq .faq-content .faq-left {
+    width: 510px;
+    float: left;
+}
+#sellcar #content #faq .faq-content .faq-left .question {
+    margin-bottom: 80px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title {
+    height: 40px;
+    border-bottom: 3px solid #262626;
+    width: 100%;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title i {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/sellcar/q.png) no-repeat;
+    float: left;
+    margin-right: 5px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-title span {
+    display: block;
+    float: left;
+    font-size: 24px;
+    color: #262626;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer {
+    margin-top: 15px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer p {
+    font-size: 14px;
+    color: #444444;
+    line-height: 25px;
+}
+#sellcar #content #faq .faq-content .faq-left .question .q-answer p a {
+    color: #0090cc;
+    cursor: pointer;
+}
+#sellcar #content #faq .faq-content .faq-left .q2 .q-answer h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    margin-top: 15px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer ul li {
+    font-size: 14px;
+    color: #444444;
+    line-height: 25px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer .answer-left {
+    float: left;
+    margin-right: 60px;
+}
+#sellcar #content #faq .faq-content .faq-left .q3 .q-answer .answer-right {
+    float: left;
+}
+#sellcar #content #faq .faq-content .faq-right {
+    float: right;
+    width: 300px;
+}
+#sellcar #content #faq .faq-content .faq-right .faq-button {
+    width: 296px;
+    height: 296px;
+    background: url(../images/sellcar/sellcar-x.png) no-repeat;
+    margin-top: 100px;
+    cursor: pointer;
+}
+#sellcar #content #faq .faq-content .faq-right .faq-button a {
+    width: 298px;
+    height: 298px;
+    display: block;
+}
+#sellcar #content #faq .faq-content .faq-right .faq-button:hover {
+    background: url(../images/sellcar/sellcar-hover.png) no-repeat;
+}
+.slide {
+    height: 13px;
+}
+.history {
+    height: 30px;
+    width: 100%;
+    background: #fff;
+}
+.history .qiugou-history {
+    font-size: 14px;
+    color: #666;
+    height: 20px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.history .qiugou-history .slide {
+    height: 14px;
+}
+.history .qiugou-history .slide span {
+    margin-right: 120px;
+}
+.history .qiugou-history .slide span em {
+    color: #fc7000;
+    font-weight: bold;
+}

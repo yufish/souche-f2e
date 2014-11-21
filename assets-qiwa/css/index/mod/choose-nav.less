@@ -1,0 +1,296 @@
+.car-modal(@x:1, @y:1, @xOffset:0px, @yOffset: 0px){
+  background-position: -((@x - 1)*50px+@xOffset) -((@y - 1)*20px+@yOffset);
+}
+#choose-nav{
+  position: relative;
+  z-index:10;
+  .wrapper{
+    width:1180px;
+    margin: 0 auto;
+  }
+
+  height:100px;
+  background: #fff;
+  padding:20px;
+  .brand-all {
+    background: #fff;
+    position: absolute;
+    width: 598px;
+    border: 1px solid #fc7000;
+    top: 100px;
+    left:0px;
+    z-index:100;
+    background: #fff;
+    padding:15px;
+    display:none;
+    .title{
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    .brand-list {
+      .left-list {
+        float: left;
+        margin-right: 50px;
+      }
+      .right-list {
+        float: left;
+      }
+      .brand-item-l {
+        margin-bottom: 10px;
+        width: 270px;
+        .letter {
+          color: #fc7000;
+          font-weight: bold;
+          font-size: 14px;
+          float: left;
+          width: 40px;
+        }
+        .brand-letter {
+          float: left;
+          width: 225px;
+          .brand-item {
+            margin-right: 13px;
+            margin-bottom: 5px;
+            display: inline-block;
+            float: left;
+          }
+        }
+
+      }
+    }
+  }
+  .item-brand{
+    width:442px;
+    float:left;
+    height:100px;
+    border-right:1px solid #eee;
+    position: relative;
+    .trigger-icon{
+      position: absolute;
+      right:20px;
+      top:20px;
+      width:9px;
+      height:6px;
+      background:url(../../images/index_11/arrow-down-grey.png) no-repeat;
+      z-index:102;
+      cursor: pointer;
+    }
+    .brand-wrapper{
+      z-index:101;
+      border:1px solid #fff;
+      border-bottom:1px solid #fff;
+      background: #fff;
+      position: relative;
+    }
+    .hd{
+      font-size: 16px;
+      line-height: 40px;
+      padding-left: 15px;
+
+    }
+    .bd{
+      height:60px;
+    }
+    .brand-item{
+      float:left;
+      width:55px;
+
+      img{
+        width:35px;
+        display: block;
+        margin:0 auto;
+      }
+      span{
+        text-align: center;
+        line-height: 30px;
+        display: block;
+        color:#666;
+      }
+    }
+  }
+  .item-brand.active{
+    .brand-wrapper{
+      border:1px solid @soucheOrange;
+      border-bottom:1px solid #fff;
+    }
+    .trigger-icon{
+      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
+    }
+    .brand-all{
+      display: block;
+    }
+
+  }
+  .item-model.active{
+    .bd{
+      height:auto;
+    }
+    .model-wrapper{
+      border:1px solid @soucheOrange;
+    }
+    .trigger-icon{
+      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
+    }
+    .model-all{
+      display: block;
+    }
+
+  }
+  .item-model{
+    width:440px;
+    float:left;
+    height:100px;
+    border-right:1px solid #eee;
+    position: relative;
+    .model-wrapper{
+      z-index:101;
+      border:1px solid #fff;
+      border-bottom:1px solid #fff;
+      background: #fff;
+      position: relative;
+    }
+    .trigger-icon{
+      width:9px;
+      height:6px;
+      position: absolute;
+      right:20px;
+      top:20px;
+      background:url(../../images/index_11/arrow-down-grey.png) no-repeat;
+      z-index:102;
+    }
+    .hd{
+      font-size: 16px;
+      line-height: 40px;
+      padding-left: 15px;
+    }
+    .bd{
+      padding:0 10px;
+      height: 57px;
+      overflow: hidden;
+    }
+    a.model-item{
+      display: block;
+      text-align: center;
+      float:left;
+      width:59px;
+      height:55px;
+      &:hover{
+        .car-modal-img{
+          opacity: 1;
+        }
+      }
+      &.listNav_active{
+        .car-modal-img{
+          opacity: 1;
+        }
+      }
+    }
+
+    .car-modal-img{
+      width: 50px;
+      height: 20px;
+      margin: 0 auto;
+      margin-top:7px;
+      // margin-bottom: 4px;
+      background-image: url('../../images/list/car_modal_sprite.png');
+      background-repeat: no-repeat;
+      opacity: 0.6;
+    }
+
+    .car-modal-name{
+      text-align: center;
+      line-height: 30px;
+      display: block;
+      color:#666;
+    }
+    .car-modal-img{
+      &.modal-suv{
+        .car-modal(1,1, -6px);
+      }
+      &.modal-mpv{
+        .car-modal(2,1, -5px);
+      }
+      // 微小型车
+      &.modal-tinycar{
+        .car-modal(3,1, -6px);
+      }
+      // 紧凑型车
+      &.modal-compactcar{
+        .car-modal(2,1, -5px);
+      }
+      // 中型车
+      &.modal-midsize{
+        .car-modal(2,2, -6px);
+      }
+      // 中大型车
+      &.modal-premiummidsize{
+        .car-modal(3,2, -2px);
+      }
+      // 跑车
+      &.modal-sportscar{
+        .car-modal(1,3, -6px);
+      }
+      // 两厢车
+      &.modal-doublebox{
+        .car-modal(3,3, -4px);
+      }
+      // 三厢车
+      &.modal-sedan{
+        .car-modal(2,3, -5px);
+      }
+    }
+    .model-all{
+      margin:20px;
+      display: none;
+      .models-line {
+        margin-bottom: 10px;
+        overflow: hidden;
+        height: 15px;
+        .models-item-m {
+          color: #333;
+          width: 55px;
+          border-right: 1px solid #E6E6E6;
+          margin-right: 10px;
+          font-weight: bold;
+          display: block;
+          float: left;
+        }
+        .models-item-m:hover {
+          color: #fc7000;
+        }
+        .models-item {
+          margin-right: 15px;
+          display: block;
+          float: left;
+        }
+      }
+    }
+
+  }
+  .item-price{
+    width:290px;
+    float:left;
+    height:100px;
+    .hd{
+      font-size: 16px;
+      line-height: 40px;
+      padding-left: 15px;
+    }
+    .price-item{
+      margin-left: 15px;
+      margin-right: 10px;
+      display: inline-block;
+      word-break: break-all;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      color:#666;
+    }
+  }
+  a:hover{
+    span{
+      color:@orange !important;
+    }
+    color:@orange ;
+  }
+}

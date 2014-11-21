@@ -1,0 +1,39 @@
+// config for less
+@orange: #ff5517;
+@soucheOrange: #ff5517;
+@yahei: "Microsoft Yahei" "微软雅黑";
+
+.box-sizing(@v: border-box){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+.box-shadow(@v: 0 0 5px rgba(0,0,0,0.25)){
+    -webkit-box-shadow: @v;
+    box-shadow: @v;
+}
+.border-radius(@v){
+    -webkit-border-radius: @v;
+    border-radius: @v;
+}
+.text-collapse(){
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tst(@v: all 300ms ease;){
+    -webkit-transition: @v;
+    -moz-transition: @v;
+    -ms-transition: @v;
+    transition: @v;
+}
+
+// support to IE8
+.clear-flt(){
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}

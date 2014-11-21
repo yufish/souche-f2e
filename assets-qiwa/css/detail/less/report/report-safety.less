@@ -1,0 +1,438 @@
+
+@indexW: 40px;
+
+// 整体布局
+.safety-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    
+    // item common
+    .safety-item{
+        float: left;
+        width: 50%;
+        height: 505px;
+        padding: 45px 45px 0 45px;
+        .box-sizing();
+
+        &.brake-system{
+            height: 385px;
+        }
+
+        .safety-item-hd{
+            .safety-item-hd-index{
+                position: relative;
+                top: -8px;
+                float: left;
+                width: @indexW;
+                font-size: 52px;
+                // text-align: center;
+            }
+            .safety-item-hd-name{
+                margin-right: @indexW;
+                font-size: 16px;
+                margin-bottom: 4px;
+
+                .report-tip{
+                    margin-left: 10px;
+                }
+            }
+            .safety-item-hd-summary{
+                font-size: 18px;
+            }
+        }
+        .safety-item-bd{
+            padding-top: 70px;
+        }
+    }
+    .lft,
+    .rht{
+        border: none;
+        border-bottom: 1px solid @moduleBC;
+    }
+    .lft{
+        border-right: 1px solid @moduleBC;
+    }
+    .full{
+        width: 100%;
+    }
+    // endof item common
+}
+
+@barBGC: @moduleHeadBGC;
+@yW: 58px;
+@yDis: 15px;
+@barW: 50px;
+@barH: 215px;
+@barDis: 25px;
+// 几个样式值由js实例化对象的时候设定:
+// y轴是否显示, y轴的宽度, 高度(与bar的高度一致)
+// chart-bar的宽高, (颜色暂时不给定义), 间隔距离
+// x轴宽度 = bar数量*bar宽 + (bar数量-1)*间隔宽
+// x轴刻度不可以超出bar的宽度
+// x轴刻度间隔 = bar间隔
+
+
+@bgcTstDur: 300ms;
+@bgcTstDelay: 500ms;
+// 柱状图
+.histogram{
+    position: relative;
+    margin: 0 auto;
+    .clear-flt();
+
+    // width: @barW*4 + @barDis*3 + @yW + @yDis;
+    
+    &.with-x{
+        .x-axis{
+            display: block;
+        }
+    }
+    &.with-y{
+        .y-axis{
+            display: block;
+        }
+        .chart-content{
+            margin-left: @yW + @yDis;
+        }
+    }
+    .y-axis{
+        position: absolute;
+        display: none;
+        font-size: 14px;
+        top: 0;
+        left: 0;
+        
+        // set by js, same as chart-bar;
+        // width: @yW;
+        // height: @barH;
+
+        .y-scale-item{
+            position: absolute;
+            width: 100%;
+            color: #aaa;
+            line-height: 16px;
+            margin-top: -8px;
+            text-align: right;
+
+            &:after{
+                content: '';
+                position: absolute;
+                top: 5px;
+                right: -14px;
+                height: 8px;
+                width: 8px;
+                background-image: url('../../images/detail/histgram-arrow-toright.png');
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .x-axis{
+        float: right;
+        display: none;
+        margin-top: 5px;
+        padding-top: 8px;
+        border-top: 2px solid @moduleBC;
+        font-size: 16px;
+        .clear-flt();
+
+        // width: @barW*4 + @barDis*3;
+
+        .x-scale-item{
+            float: left;
+            text-align: center;
+            .text-collapse();
+
+            // set by js
+            // width: @barW;
+            // margin-left: @barDis;
+            // &:first-child{
+            //     margin-left: 0;
+            // }
+            // end of set by js
+        }
+    }
+    .chart-content{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .chart-bar{
+            position: relative;
+            float: left;
+            background-color: @barBGC;
+            overflow: hidden;
+                
+            // temp value
+            // width: @barW;
+            // height: @barH;
+            // margin-left: @barDis;
+            // &:first-child{
+            //     margin-left: 0;
+            // }
+
+
+            .bar-value,
+            .guideLine{
+                position: absolute;
+                left: 0;
+                right: 0;
+            }
+            .bar-value{
+                bottom: 0;
+                background-color: darken(@moduleBC, 10%);
+                // .tst(height 300ms ease, background-color 200ms ease 200ms;);
+                
+
+                .tst( background-color @bgcTstDur ease @bgcTstDelay;);
+                // 为了bounce(弹动越界)的效果, 下面多留一些...
+                &:after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    // bounce 越界的值为20px
+                    bottom: -30px;
+                    height: 30px;
+                    background-color: darken(@moduleBC, 10%);
+
+                    .tst( background-color @bgcTstDur ease @bgcTstDelay;);
+                }
+
+                &.normal{
+                    background-color: @green;
+                    &:after{
+                        background-color: @green;
+                    }
+                }
+                &.danger{
+                    background-color: @red;
+                    &:after{
+                        background-color: @red;
+                    }
+
+                    .value-text{
+                        color: #000;
+                    }
+                }
+
+                .value-text{
+                    position: absolute;
+                    width: 100%;
+                    font-size: 14px;
+                    text-align: center;
+                    bottom: 50px;
+                    color: #eee;
+                }
+            }
+            .guideLine{
+                // set by js
+                // bottom: percentage((1.6-1.2)/(1.9-1.2));
+                // end of set
+                border-top: 2px dashed #000;
+                opacity: 0.2;
+                filter:alpha(opacity=20)
+            }
+        }    
+    }
+}
+
+// 防冻液温度
+.antifreeze{
+    .safety-item-bd{
+        position: relative;
+        padding-right: 40px;
+
+        .hist-ctn{
+            
+        }
+        .histogram{
+            margin-top: -30px;
+
+            // 为了将value-text显示到小球上面
+            .chart-content .chart-bar{
+                // 放到js里去实现
+                // overflow: visible;
+                z-index: 100;
+
+                .value-text{
+                    bottom: -26px;
+                    z-index: 100;
+                }
+            }
+        }
+        .bottom-ball{
+            position: absolute;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 35px;
+            margin-top: -10px;
+            background-color: darken(@moduleBC, 10%);
+            .tst(background-color @bgcTstDur ease @bgcTstDelay;);
+            
+            &.normal{
+                background-color: @green;
+            }
+            &.danger{
+                background-color: @red;
+            }
+            
+
+            // margin-left: (118px/2 - 50px) + 5px - 30px/2;
+        }
+    }
+}
+
+// 制动系统
+.brake-system{
+    &.safety-item .safety-item-bd{
+        padding-top: 10px;
+    }
+    .brake-system-list{
+        width: 600px;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.5;
+
+        .brake-system-item{
+            padding: 16px 30px 16px 0;
+            border-top: 1px solid @moduleBC;
+            .clear-flt();
+
+            .brake-system-icon{
+                // display: inline-block;
+                float: left;
+                width: 14px;
+                height: 14px;
+                background: url("../../images/detail/config-normal.png") no-repeat;
+                margin-right: 8px;
+                margin-top: 5px;
+            }
+            .item-name{
+                float: left;
+                width: 145px;
+                margin-right: 20px;
+            }
+            .item-detail{
+                float: left;
+                max-width: 350px;
+
+                ol.detail-list{
+                    list-style: decimal;
+                    margin-left: 24px;
+                }
+            }
+            
+            &.first{
+                border-top: none;
+            }
+            &.good{
+
+            }
+            &.warn{
+                color: @red;
+                .brake-system-icon{
+                    background: url("../../images/detail/config-abnormal.png") no-repeat;
+                }
+            }
+        }
+    }
+}
+
+
+// *********************************** animation ***********************************
+
+.animated {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+
+@-webkit-keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 300px, 0);
+            transform: translate3d(0, 300px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 300px, 0);
+            transform: translate3d(0, 300px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+          animation-name: bounceInUp;
+}

@@ -1,0 +1,372 @@
+#toolbar,.sidebar-top{
+  display: none;
+}
+#zhuanpan{
+  #content{
+    position: relative;
+    .banner{
+      width: 100%;
+      background: url(../../images/acts/dazhuanpan/banner.png?123) no-repeat center;
+      height:438px;
+    }
+    .mask{
+      width: 100%;
+      height: 1800px;
+      background: #000;
+      opacity: 0.5;
+      z-index:300;
+      position: absolute;
+      top: 0;
+      left: 0;
+      filter:alpha(opacity=50);
+    }
+    .erweima{
+      position: fixed;
+      top: 150px;
+      width: 192px;
+      height: 240px;
+      background:  url(../../images/acts/dazhuanpan/erweima.png) no-repeat;
+      right: 10px;
+    }
+    .zhuanpan{
+      width: 100%;
+      height: 1610px;
+      background:  url(../../images/acts/dazhuanpan/bg.jpg) no-repeat;
+      .warp{
+        width: 950px;
+        margin: 0 auto;
+
+        .top{
+          
+        }
+        .cont{
+          background: #fff;
+          
+          height: 650px;
+          background:  url(../../images/acts/dazhuanpan/rule.png) no-repeat;
+          .rule-text{
+            width: 350px;
+            margin-left: 25px;
+            float: left;
+            margin-right: 10px;
+            height: 650px;
+            .text-item{
+              font-size: 20px;
+              line-height: 30px;
+              margin-bottom: 5px;
+              span{
+                color: #333;
+              }
+              em{
+                color: #eb4c20;
+              }
+             }
+          }
+          .luck{
+            width: 545px;
+            position: relative;
+            float: left;
+            height:650px;
+            .pointer{
+              position: absolute;
+              width: 102px;
+              height: 200px;
+              background: url(../../images/acts/dazhuanpan/jiantou.png) no-repeat;
+              left: 218px;
+              top: 0px;
+              z-index: 5;
+              z-index: 200;
+            }
+            .bule-bottom{
+              position: absolute;
+              width: 551px;
+              height: 556px;
+              background: url(../../images/acts/dazhuanpan/zhuanpan-bg.png) no-repeat;
+              top: 63px;
+              z-index: 2;
+            }
+            .table{
+              width: 548px;
+              height: 548px;
+              background: url(../../images/acts/dazhuanpan/zhuanpan.png) no-repeat;
+              position: absolute;
+              top: 60px;
+              left: -5px;
+              z-index: 100;
+            }
+            #flash-ctn{
+              position: absolute;
+              top: -123px;
+              left: -5px;
+              z-index: 150;
+            }
+            .button#start-turn{
+              width: 388px;
+              height: 123px;
+              position: absolute;
+              background: url(../../images/acts/dazhuanpan/buttom.png?124) no-repeat;
+              bottom:40px;
+              left: -384px;
+              cursor: pointer;
+              z-index: 200;
+            }
+          }
+        }
+      }
+    }
+    .zhuanpan-popup{
+      position: fixed;
+      width: 785px;
+      height: 530px;
+      left: 50%;
+      margin-left: -350px;
+      top: 50px;
+      background: #fff;
+      z-index: 1000;
+      .head{
+        width: 100%;
+        height: 66px;
+        background: #e98989;
+        position: relative;
+        .close{
+          width: 34px;
+          height: 34px;
+          background: url(../../images/acts/dazhuanpan/close.png?124) no-repeat;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          cursor: pointer;
+        }
+      }
+      .choujiang{
+        height: 464px;
+        width: 100%;
+        background: #fff url(../../images/acts/dazhuanpan/choujiang-popup.png?124) no-repeat center 20px;
+        form{
+          width: 350px;
+          margin: 0 auto;
+          padding-top: 245px;
+          input{
+            width: 333px;
+            border:1px solid #000;
+            height: 26px;
+            font-size: 20px;
+            color: #333;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 26px;
+          }
+          p{
+            text-align: center;
+            font-size: 17px;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+          button{
+            width: 200px;
+            height: 105px;
+            background: #fd5426;
+            border: none;
+            text-align: center;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            line-height: 105px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .zhongjiang{
+        height: 414px;
+        width: 100%;
+        padding-top: 50px;
+        h1{
+          text-align: center;
+          font-size: 38px;
+          color: #fd5426; 
+        }
+        p{
+          text-align: center;
+          font-size: 20px;
+          color: #fd5426; 
+        }
+        .prompt{
+          margin-top: 60px;
+          margin-left: 50px;
+          em{
+            font-size: 20px;
+            display: block;
+            float: left;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background: #fd5426; 
+            color: #fff;
+            margin-right: 5px;
+            margin-top: 21px;
+          }
+          i{
+            display: block;
+            float: left;
+            width: 83px;
+            height: 52px;
+          }
+          .baijian1{
+            background: url(../../images/acts/dazhuanpan/baijian1.png) no-repeat ;
+            margin-right: 10px;
+          }
+          .baijian2{
+            background: url(../../images/acts/dazhuanpan/baijian2.png) no-repeat ;
+          }
+          span{
+            color: #333;
+            font-size: 20px;
+            float: left;
+            display: block;
+            line-height: 80px;
+          }
+         
+        }
+         .end{
+            font-size: 20px;
+            color: #333;
+            position: absolute;
+            bottom: 145px;
+            left: 55px;
+          }
+      }
+      .wrong{
+        text-align: center;
+        height: 464px;
+        margin-top: 180px;
+        font-size: 40px;
+        color: #fd5426;
+      }
+    }
+    .bottom{
+      width: 100%;
+      background: url(../../images/acts/dazhuanpan/bg2.png) no-repeat ;
+      height: 252px;
+    }
+  }
+}
+#footer{
+  margin-top: 0px;
+}
+//热门图片
+.hotCarImages{
+  
+  .hotImages{
+    margin-bottom: 10px;
+    
+    
+    .imabox{
+      float:left;
+      position: relative;
+      height: 304px;
+      display: block;
+      margin-right: 5px;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+      .shadow{
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        background: url(../../assets/images/index/hotcar-shadow.png?4) repeat-x;
+        bottom: 0px;    
+      }
+      .hotTit{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        padding-bottom: 15px;
+        .title{
+          width: 100%;
+          text-align: center;
+          color: #fff;
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+        .adv{
+          span{
+            background: #FF5417;
+            color: #fff;
+            font-size: 14px;
+            padding:0px 2px;
+          }
+        }
+      }
+      .mask{
+        width: 100%;
+        height: 320px;
+        position: absolute;
+        bottom: 0;
+        background: #000;
+        opacity: 0;
+        filter:alpha(opacity=0);
+      }
+     }
+    .imgbox-b{
+      width: 475px;
+
+    }
+    .imgbox-s{
+      width: 228px;
+      margin-right: 5px;
+    }
+  }
+  // .Image211{
+  //   .imgbox-s{
+  //     margin-left: 20px;
+  //   }
+  // }
+  // .Image22{
+  //   .imgbox-b{
+  //     margin-right: 20px;
+  //   }
+  // }
+  // .Image1111{
+  //   .imgbox-s{
+  //    margin-right: 20px;
+  //   }
+  // }
+}
+.hotcar{
+  width: 950px;
+  margin: 0 auto;
+}
+.history{
+  width: 750px;
+  margin: 0 auto;
+  height: 70px;
+  padding: 10px 100px;
+  background: #f7d2d2;
+  border: 1px solid #e36767;
+  font-size: 20px;
+  color: #555;
+  .luck-history{
+    width: 750px;
+    height: 70px;
+    overflow: hidden;
+    text-align: center;
+    .slide{
+      height: 20px;
+      ul{
+        li{
+
+          span{
+            margin-right: 120px;
+          }
+        }
+      }
+    }
+  }
+}

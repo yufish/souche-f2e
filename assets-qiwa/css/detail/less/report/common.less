@@ -1,0 +1,182 @@
+.car_report{
+  margin:auto;
+  background: #fff;
+  width:1144px;
+  .red{
+    color:@red !important;
+  }
+  .report_module{
+    margin-bottom: 35px;
+    // 自身没有border 
+    // 应该把border下放到report-bd中
+    // border:1px solid @moduleBC;
+
+    .report_hd{
+      height:90px;
+      background: @moduleHeadBGC;
+      .num{
+        width:20px;
+        background: @red;
+        color:#fff;
+        height:90px;
+        font-size: 60px;
+        line-height: 90px;
+        text-align: center;
+        float: left;
+      }
+      .title{
+        float: left;
+        margin-left:20px;
+        padding-top: 20px;
+        .main_title{
+          font-size:24px;
+          line-height: 25px;
+          color:#444;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        .sub_title{
+          font-size: 14px;
+          line-height: 25px;
+          color:#444;
+        }
+      }
+      .promise{
+        float: right;
+        width:400px;
+        margin-right: 20px;
+        .desc{
+          width:320px;
+          float: left;
+          font-size: 24px;
+          color:#666;
+          text-align: right;
+          padding-top: 30px;
+          padding-right: 10px;
+
+          &.desc-small-f{
+            padding-top: 24px;
+            font-size: 18px;
+          }
+        }
+        .icon{
+          float: right;
+          width:61px;
+          height:61px;
+          margin-top: 15px;
+        }
+        .icon-tui{
+          background: url(../../images/detail/tui.png) no-repeat;
+        }
+        .icon-xiu{
+          background: url(../../images/detail/xiu.png) no-repeat;
+        }
+      }
+    }
+    .report_bd{
+      border: 1px solid @moduleBC;
+      border-top: none;
+    }
+  }
+
+}
+
+
+.clear-flt{
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.report-tip{
+  display: inline-block;
+  width: 16px;
+  height:16px;
+  background: url(../../images/detail/report-tip.png) no-repeat;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.tip-text{
+  color: #CCCCCC;
+  font-size: 14px;
+  margin-left: 10px;
+
+}
+.record-tip-popup{
+  .arrow{
+    background: url(../../images/detail/report-tip-arrow.png) no-repeat;
+    width:50px;
+    height:16px;
+    display: block;
+    position: absolute;
+    top: -16px;
+    left:50px;
+    right:auto;
+  }
+  width:390px;
+  position: absolute;
+  left:0;
+  top:0;
+  padding:15px;
+  border:1px solid #ccc;
+  background: #fff;
+  box-shadow: 1px 1px 3px #ccc;
+  z-index: 500;
+  .tip-title{
+    font-size: 14px;
+    color:#333;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .tip-summary{
+    font-size: 14px;
+    line-height: 25px;
+    color:#999;
+  }
+}
+.record-tip-popup.arrow-right{
+  .arrow{
+    background: url(../../images/detail/report-tip-arrow.png) no-repeat;
+    width:50px;
+    height:16px;
+    display: block;
+    position: absolute;
+    top: -16px;
+    right:50px;
+    left:auto;
+
+  }
+}
+.rule-popup{
+  width:700px;
+  height:450px;
+  border:1px solid #ddd;
+  box-shadow: 0px 0px 3px #aaa;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  background: #fff;
+  .hd{
+    font-size: 16px;
+    line-height: 70px;
+    padding-left: 30px;
+  }
+  .close{
+    position: absolute;
+    right:10px;
+    top:10px;
+    background: url(../../images/detail/rule-close.png);
+    display: block;
+    width:30px;
+    height:30px;
+    text-indent: -10000px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .bd{
+    padding:20px 70px;
+  }
+}

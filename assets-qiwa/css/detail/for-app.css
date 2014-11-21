@@ -1,0 +1,6 @@
+#header,#detail-nav,#footer,.detail_otherCars,#detailDoor,#onsale_record,.advisor-unfold,#nav
+,#my-advisor,#toolbar,.sidebar-top,#guwen_slider_global,#guwen_show_global{
+    display:none !important;
+}
+
+#detail_main{overflow:hidden;}

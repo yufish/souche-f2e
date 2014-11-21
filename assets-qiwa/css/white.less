@@ -1,0 +1,279 @@
+@orange:#fc7000;
+
+#white{
+  font-family: 'Microsoft YaHei',Tahoma,Verdana;
+  color:#333;
+  a{
+    color:#444;
+  }
+  a:hover{
+  color:@orange;
+}
+  .module{
+    margin-top:10px;
+    .mod-main{
+      width:920px;
+      float:left;
+      display: inline;
+    }
+    .mod-side{
+      width:260px;
+      float:left;
+      margin-left:10px;
+      display: inline;
+    }
+    .hd{
+      font-size: 16px;
+      line-height: 35px;
+      color:#333;
+    }
+  }
+  #header{
+    height:115px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+
+      position: relative;
+    }
+    .logo{
+      display: block;
+      position: absolute;
+      top:40px;
+      left:0px;
+    }
+    .search{
+      position: absolute;
+      left:300px;
+      top:40px;
+      .search-text{
+        width:490px;
+        height:20px;
+        border:2px solid @orange;
+        vertical-align: top;
+        padding-left:10px;
+      }
+      .search-submit{
+        background: @orange;
+        color:#fff;
+        font-size: 16px;
+        width:88px;
+        height:38px;
+        border:none;
+        vertical-align: top;
+        margin-left: -5px;
+        cursor: pointer;
+      }
+      .hot-keywords{
+        line-height:30px;
+        a{
+          color:#666;
+          margin-left: 10px;
+        }
+        a:hover{
+          color:@orange;
+        }
+      }
+
+    }
+    .head-tel{
+      position: absolute;
+      right:0;
+      top:40px;
+    }
+  }
+  #content{
+    background-color: #F4F4F4;
+    #banner{
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    img{ height: 380px;width: 1920px;display:inline;}
+  }
+  .wrapper{
+    width: 1190px;
+    
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    .car-list{
+      width: 988px;
+      margin: 0 auto;
+      
+      overflow: hidden;
+      .hd-image{
+        height: 170px;
+        img.hd{width: 459px;height: 170px;margin: 0 auto;display: block;}
+      }
+      
+      ul{
+        height: 346px;
+        li{
+          height: 346px;
+          float: left;
+          margin-left: 5px;
+          overflow: hidden;
+          .car-box{
+            height: 230px;
+            padding: 16px;
+            background-color: #d96c6c;
+            a.car-image{
+              display: block;
+              width: 210px;
+              height: 142px;
+              img{width: 210px;height: 142px;}
+            }
+            .car-title{
+              width: 210px;
+              margin: 10px 0;
+              line-height: 20px;
+              height: 45px;
+              a{font-size: 12px;color: #fff;display: block;overflow: hidden;height: 38px;}
+              .send{float: right;display: block;color: #990000;font-size: 12px;margin-right: 5px;border-bottom: 1px solid #990000; cursor: pointer;height: 20px;}
+            }
+            .car-price{
+              width: 210px;
+              height: 25px;
+              color: #fff;
+              overflow: hidden;
+              span{font-size: 17px;font-weight: bold;float: left;width: 65px;}
+              i{font-style: normal;font-size: 12px;float: left;display: block;line-height: 30px;width: 145px;height: 20px;}
+            }
+            .car-go{display: block;width: 37px;height: 25px;position: relative;top: 8px;left: 189px;background: url(../images/acts/white/go-image.png)}
+          }
+          .car-fenqi{
+            height: 98px;
+            background-color: #fff;
+            ul{
+              height: 60px;
+              padding:20px 10px;
+
+              li{
+                float: left;width: 66px;height: 60px;border-right: 1px solid #e7e7e7;
+                i{font-style:normal;text-align: center;text-align: center;}
+                p{font-size: 12px;color: #444;}
+              }
+              .li1{
+                i{
+                  font-size: 16px;color: #db2400;line-height: 33px;
+                  i{font-size: 16px;margin-left: 3px;}
+                }
+              }
+              .li2{
+                i{font-size: 14px;color: #444;line-height: 35px;text-align: center;display: block;width: 60px;}
+                p{text-align: center;}
+            }
+              .li3{
+                border-right: none;
+                i{font-size: 14px;color: #444;line-height: 35px;text-align: center;display: block;width: 60px;}
+                p{text-align: center;}
+              }
+            }
+          }
+        }
+      }
+    }
+    .explanation{
+      height: 900px;
+      .hd{margin:0 auto;width: 419px;height: 165px;display: block;}
+      .explanation-image{
+        margin: 0 auto;width: 988px;height: 615px;background: url(../images/acts/white/explanation.png?123)
+      }
+    }
+  }
+ }
+  
+
+  #footer{
+    margin-top: 30px;
+    .wrapper{
+      width:1190px;
+      margin:0 auto;
+      overflow: hidden;
+    }
+    .friendlinks{
+      text-align: center;
+      margin-bottom: 15px;
+      .wrapper{
+      width:1190px;
+      margin:0 auto;
+      
+      a{
+        font-size:12px;
+        color:#333;
+        padding:0 20px;
+        border-right: 1px solid #e6e6e6;
+      }
+      a.last{
+        border:none;
+      }
+    }
+  }
+    .footer-content{
+      background: #f5f5f5;
+      border-top:1px solid #e6e6e6;
+    }
+    .performance{
+      padding: 40px 0;
+      border-bottom: 1px solid #e6e6e6;
+      width:1400px;
+      i{
+        display: block;
+        width:40px;
+        height:40px;
+        position: absolute;
+        top:8px;
+        left:20px;
+
+      }
+      .per{
+        position: relative;
+        float:left;
+        width:380px;
+        padding-left:70px;
+        display: inline;
+      }
+      .t{
+        font-size: 16px;
+        line-height: 30px;
+        color:#666;
+      }
+      .st{
+        font-size: 14px;
+        color:#999;
+        line-height: 20px;
+      }
+      .per-1{
+
+        i{
+          background: url(../images/index/per-1.png) no-repeat;
+        }
+      }
+      .per-2{
+        i{
+          background: url(../images/index/per-2.png) no-repeat;
+        }
+      }
+      .per-3{
+        i{
+          background: url(../images/index/per-3.png) no-repeat;
+        }
+      }
+    }
+    .company_info{
+      padding:20px 0px;
+      .wrap{
+        text-align: center;
+        a{
+          color:#666;
+          padding:0 10px;
+        }
+      }
+      p{
+        text-align: center;
+        line-height: 30px;
+        color:#999;
+      }
+    }
+  }
+  
+}

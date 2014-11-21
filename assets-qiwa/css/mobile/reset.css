@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+fieldset,
+img {
+    border: 0;
+}
+:focus {
+    outline: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,Ø
+var,
+optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+input,
+button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+code,
+kbd,
+samp,
+tt {
+    font-size: 100%;
+}
+input,
+button,
+textarea,
+select {
+    *font-size: 100%;
+}
+ol,
+ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption,
+th {
+    text-align: left;
+}
+sup,
+sub {
+    font-size: 100%;
+    vertical-align: baseline;
+}
+:link,
+:visited,
+ins {
+    text-decoration: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+.hidden {
+    display: none !important;
+}
+a {
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+
+/*common for souche mobile*/
+body{
+    font-family: "Helvetica Neue",'Heiti SC','华文黑体', '黑体';
+    -webkit-user-select: none;
+}
+.col-1-2 {
+    display: block;
+    float: left;
+    width: 50%;
+}
+.col-1-3 {
+    display: block;
+    float: left;
+    width: 33.3%;
+}
+.col-1-4 {
+    display: block;
+    float: left;
+    width: 25%;
+}
+.hr1-gray {
+    height: 1px;
+    background-color: #e3e3e3;
+}
+.wrapGrayBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7f7f7f;
+    z-index: 1100;
+    opacity: 0.7;
+}
+.wrapTransBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:RGBA(255,255,255,0) ;
+    z-index: 1000;
+}
+.wrapper-320 {
+    width: 320px;
+    margin: 0 auto;
+}
+.hidden{
+    display: none !important;
+}

@@ -1,0 +1,341 @@
+#center {
+    background: #fff;
+}
+#center .car .title {
+    line-height: 20px;
+    height: 45px;
+    font-size: 14px;
+    color: #666;
+}
+#center .car .sold-out {
+    width: 54px;
+    height: 27px;
+    background: url(../../../images/mob/h5-2/sold-out.png) no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+#center .car .price {
+    line-height: 25px;
+}
+#center .group {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#center .group .option {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    background: #f6f6f6;
+    border-bottom: 1px solid #ccc;
+    display: block;
+}
+#center .group .option select {
+    background: none;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+#center .group .option .name {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    height: 40px;
+}
+#center .group .option .value {
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    font-size: 14px;
+    color: #666;
+    height: 40px;
+    overflow: hidden;
+    color: #999;
+}
+#center .group .option i {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 10px;
+    height: 15px;
+    display: inline-block;
+    background: url(../../../images/mob/filter-i.png) no-repeat;
+    background-size: 100%;
+}
+#center .group .option label {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    height: 40px;
+}
+#center .center-nav {
+    height: 46px;
+    line-height: 42px;
+    font-size: 14px;
+    text-align: center;
+}
+#center .nav-item {
+    float: left;
+    width: 50%;
+    height: 44px;
+    color: #333;
+    border-bottom: 1px solid #E6E6E6;
+}
+#center .nav-item span {
+    line-height: 44px;
+    height: 44px;
+    padding: 0 4px;
+    display: inline-block;
+}
+#center .nav-item:last-child span {
+    border-right: none;
+}
+#center .nav-item.nav-active span,
+#center .nav-item:active span{
+    color: #fa7022;
+    border-bottom: 2px solid #fa7022;
+}
+#center .date {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+#center .tip {
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    line-height: 20px;
+    color: #666;
+}
+#center .index-group .item {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #666;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+#center .index-group .item i {
+    background: url(../../../images/mob/center-cur.png) no-repeat;
+    background-size: 100%;
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+#center .no-item{
+    text-align: center;
+    margin-top: 50px;
+}
+.common-cars {
+    width: 100%;
+    overflow: hidden;
+}
+.common-cars .car {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: block;
+}
+.common-cars .car .i-shanggou {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../../../images/mob/i-shangou.png) no-repeat;
+    background-size: 100%;
+}
+.common-cars .car .i-yushou {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../../../images/mob/i-yushou.png) no-repeat;
+    background-size: 100%;
+}
+.common-cars .car .i-yishou,
+.common-cars .car .i-kaishou {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 14px;
+    color: #fff;
+    background: #000;
+    opacity: 0.6;
+}
+.common-cars .car .lft {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 70px;
+    overflow: hidden;
+}
+.common-cars .car .lft img {
+    width: 100%;
+    margin: 0;
+}
+.common-cars .car .rht {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 120px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.common-cars .car .rht .title {
+    line-height: 16px;
+    font-size: 12px;
+    color: #333;
+}
+.common-cars .car .rht .price {
+    line-height: 20px;
+}
+.common-cars .car .rht .price s {
+    color: #888;
+}
+.common-cars .car .rht .price em {
+    color: #df5d16;
+    font-size: 15px;
+}
+.common-cars .car .rht .info {
+    color: #888;
+    line-height: 18px;
+    font-size: 12px;
+}
+.common-cars .car .rht .new-price {
+    color: #888;
+    line-height: 16px;
+    font-size: 12px;
+}
+.common-cars .car .rht .buy-time {
+    color: #888;
+    line-height: 16px;
+    font-size: 12px;
+}
+.common-cars .car .rht .first-time {
+    float: right;
+    color: #999;
+    font-size: 12px;
+    margin-top: -15px;
+}
+.common-cars .car .rht .rate {
+    background: #91ad2d;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    font-size: 0;
+    color: #fff;
+    margin-top: -2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.common-cars .car .rht .rate span {
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+    font-size: 12px;
+}
+.common-cars .car .rht .rate em {
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+    float: right;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    background: #698517;
+}
+.common-cars .car .rht .rate-yushou {
+    background: #208ba7;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    font-size: 12px;
+    color: #fff;
+    margin-top: -2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 60px;
+    text-align: center;
+}
+.common-cars .car .rht .rate.no-pass {
+    background: #1b8ba8;
+}
+.common-cars .car .rht .shangou-price {
+    color: #999;
+    font-size: 12px;
+}
+.common-cars .car .rht .shangou-price em {
+    color: #df5d16;
+    font-size: 12px;
+}
+#howtogo-yuyue {
+    margin: 5px;
+}
+#howtogo-yuyue .h {
+    line-height: 30px;
+    background: #ddd;
+    padding-left: 8px;
+    font-size: 16px;
+    color: #333;
+}
+#howtogo-yuyue .b a {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-right: 92px;
+    color: #333;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    background: url(../../../images/mob/daohanggo.png) no-repeat right top;
+    background-size: 95px;
+    height: 70px;
+}
+#howtogo-yuyue .b a span {
+    font-size: 12px;
+    line-height: 20px;
+}
+#howtogo-yuyue .b a a {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

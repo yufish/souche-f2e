@@ -1,0 +1,369 @@
+.cover-layer {
+    width: 99999px;
+    height: 99999px;
+    z-index: 100;
+    background-color: #7f7f7f;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.loading-cover-layer {
+    width: 99999px;
+    height: 99999px;
+    z-index: 100;
+    background-color: #7f7f7f;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#guwen-h5-2 {
+    position: relative;
+}
+#guwen-h5-2 #page-1,
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding-bottom:60px ;
+    margin-top: 44px;
+}
+#guwen-h5-2 #page-2 {
+    min-height: 1150px;
+}
+#guwen-h5-2 #page-2,
+#guwen-h5-2 #page-3,
+#guwen-h5-2 #page-4 {
+    left: 100%;
+    display: none;
+}
+#guwen-h5-2 #submit-btn {
+    background-color: #ff4400;
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    position: fixed;
+    left:50%;
+    margin-left: -150px;
+    bottom: 20px;
+}
+.icon-item .brand-wrapper {
+    width: 60px;
+    border: 1px solid #fff;
+    margin: 0 auto
+}
+.icon-item.selected .brand-wrapper {
+    border-color: #fc7000;
+    background: #ffffff url(../../images/mob/h5-2/selected-corner.png) no-repeat right bottom;
+    background-size: 14px;
+    border-radius: 8px;
+}
+.content{
+    font-size: 14px;
+}
+ .gouche-info {
+    margin: 10px 10px;
+}
+ .gouche-info .photo {
+    float: left;
+}
+ .gouche-info .photo .head-photo {
+    width: 45px;
+    height: 45px;
+
+    background: url(../../images/mob/h5-3/custom-erge.png) no-repeat center center;
+    background-size: 45px;
+}
+ .gouche-info .text {
+    position: relative;
+    padding: 8px 10px;
+    width: 220px;
+    margin: 0 10px 0 55px;
+    background-color: #fff7d4;
+    border-radius: 8px;
+    border: 1px solid #f2e4a5;
+}
+ .gouche-info .text p {
+    line-height: 20px;
+}
+ .gouche-info .text .hi-img {
+    background: url(../../images/mob/h5-2/hi-array.png) no-repeat;
+    background-size: 8px;
+    width: 8px;
+    height: 11px;
+    position: absolute;
+    top: 15px;
+    left: -8px;
+}
+ .gouche-info .step {
+    width: 215px;
+    position: relative;
+    margin: 10px 0;
+    border: 1px solid #d5cda9;
+    border-top: none;
+}
+ .gouche-info  .step .circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #d5cda9;
+    position: absolute;
+    top: -3px;
+}
+ .gouche-info .step .circle.active {
+    width: 11px;
+    height: 11px;
+    background-color: #fc7000;
+    top: -5px;
+}
+ .gouche-info .step #step-circle-1 {
+    left: -6px;
+}
+ .gouche-info .step #step-circle-2 {
+    left: 102px;
+}
+ .gouche-info .step #step-circle-3 {
+    left: 210px;
+}
+
+ #brand #selected-brand {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px dashed #e9e9e9;
+    border-radius: 8px;
+    padding: 9px 3px 3px 0;
+    overflow: hidden;
+    display: none;
+    overflow: hidden;
+}
+ #brand #selected-brand .sb-item {
+    margin: 0 0 6px 6px;
+    float: left;
+    border-radius: 8px;
+    padding: 9px;
+}
+ #brand #selected-brand .sb-item .close-icon {
+    display: inline-block;
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    vertical-align: -3px;
+    margin-left: 3px;
+}
+#series #selected-series {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px dashed #e9e9e9;
+    border-radius: 8px;
+    padding: 9px 3px 3px 0;
+    overflow: hidden;
+    display: none;
+}
+#series #selected-series .ss-item {
+    margin: 0 0 6px 6px;
+    float: left;
+    border-radius: 8px;
+    padding: 9px;
+}
+#series #selected-series .ss-item .close-icon {
+    display: inline-block;
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    vertical-align: -3px;
+    margin-left: 3px;
+}
+ #brand-icons-container {
+    margin: 10px 0 0 0;
+}
+ #brand-icons-container  .icon-item {
+    width: 25%;
+    float: left;
+    position: relative;
+    margin-bottom: 10px;
+}
+ #brand-icons-container .icon-item-more {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+ #brand-icons-container .icon-item .brand-img {
+    position: relative;
+    width: 28px;
+    margin: 0 auto;
+}
+ #brand-icons-container  .icon-item .brand-img .brand-array {
+    position: absolute;
+    background: url(../../images/mob/h5-2/brand-array.png) no-repeat center center;
+    background-size: 13px;
+    left: 7px;
+    bottom: -29px;
+    width: 13px;
+    height: 7px;
+    display: none;
+}
+ #brand-icons-container .icon-item img {
+    width: 28px;
+    height: 28px;
+}
+ #brand-icons-container .icon-item .brand-name {
+    margin-top: 5px;
+     text-align: center;
+}
+#price-container{
+    margin-top: 50px;
+}
+#price-container .qs-item{
+    float: left;
+    position: relative;
+}
+#price-container .price-tag{
+    position: absolute;
+    display: none;
+    font-size: 12px;
+    top: -30px;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    text-align: center;
+
+}
+#price-container .card{
+    height: 23px;
+    width: 33px;
+    background: #D2D2D2;
+    margin-left: 3px;
+}
+#price-container .qs-item.selected .card{
+    background: #ff4400;
+}
+#price-container .qs-item.selected .price-tag{
+    display: block;
+}
+#price-container .price-tag .value{
+    border-radius: 5px;
+    width: 47px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../../images/mob/h5-2/price-tag-box.png) no-repeat center;
+    background-size: 100%;
+    padding-top:3px;
+}
+
+#limit-symbol{
+    margin: 23px 0 0 -8px;
+}
+
+#series .selected-series {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px dashed #e9e9e9;
+    border-radius: 8px;
+    padding: 9px 3px 3px 0;
+    overflow: hidden;
+    display: none;
+}
+#brand .selected-series .ss-item {
+    margin: 0 0 6px 6px;
+    float: left;
+    border-radius: 8px;
+    padding: 9px;
+}
+#brand .selected-series .ss-item .close-icon {
+    display: inline-block;
+    background: url(../../images/mob/h5-2/search-cancel.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    vertical-align: -3px;
+    margin-left: 3px;
+}
+#series-container {
+    margin: 10px 0 0 0;
+}
+#series-container .title {
+    margin-left: 10px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: bold;
+    float: left;
+    color:#fff;
+}
+#series-container .buxian {
+    float: right;
+    margin: 8px 10px 0 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    line-height: 20px;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: normal;
+    color:#b1b1b1;
+}
+#series-container .series-title {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ececec;
+    font-weight: bold;
+}
+#series-container .series-name-wrapper {
+    padding-left: 10px;
+}
+#series-container .series-item .series-name {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    font-size: 13px;
+}
+#series-container .series-item.selected .series-name {
+    color: #ff4400;
+    border: 1px solid #ff4400;
+    background: url('../../images/mob/gou.png') no-repeat 101% bottom;
+    background-size: 12px 12px;
+}
+#series-container .series-item{
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+.searching-bg {
+    width: 80px;
+    height: 75px;
+    margin: 0 auto;
+    background: url(../../images/mob/h5-2/searching4you.png) no-repeat center center;
+    background-size: 80px 75px;
+    margin-top: 50px;
+}
+.searching4you {
+    margin-top: 50px;
+}
+.searching4you .first-line {
+    text-align: center;
+    font-size: 16px;
+}
+.searching4you .second-line {
+    text-align: center;
+    font-size: 16px;
+}
+.price-box{
+    box-sizing: border-box;
+    width:48px;
+    height: 28px;
+    border:1px solid #C2C2C2;
+    border-radius:5px;
+    padding-left: 3px;
+}
+
+
+
+

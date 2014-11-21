@@ -38,14 +38,15 @@
     padding-left: 30px;
   }
   .bbs-pic{
-    width:120px;
-    height:90px;
+    max-width:135px;
+    max-height:90px;
     overflow: hidden;
     position: relative;
     float:left;
     img{
-      width:120px;
-      height:90px;
+      width: 135px;
+      height: auto;
+      max-height: 90px;
     }
     .t{
       position: absolute;
@@ -71,6 +72,7 @@
       padding-left: 20px;
       font-size:14px;
       color:#666;
+      .text-collapse();
       
       &:hover{
         color: @soucheOrange;

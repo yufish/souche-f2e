@@ -11,12 +11,9 @@ html(lang='zh-CN')
        Le styles
     link(href='http://f2e.souche.com/assets/css/bootstrap/bootstrap-back.css', rel='stylesheet')
     link(href='http://f2e.souche.com/assets/css/bootstrap/style-metro.css', rel='stylesheet')
+    link(href='http://101.251.107.123:8081/assets/css/font-awesome.min.css', rel='stylesheet')
     link(href='http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css', rel='stylesheet')
     link(href='http://f2e.souche.com/assets/css/bootstrap/doc.css', rel='stylesheet')
-    style.
-      body {
-        font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-      }
     link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
     //
        Le HTML5 shim, for IE6-8 support of HTML5 elements
@@ -62,330 +59,44 @@ html(lang='zh-CN')
             li
               a(href='#typography')
                 i.icon-chevron-right
-                | 表单
+                | 双行表单
+            li
+              a(href='#typography')
+                i.icon-chevron-right
+                | 单行表单
+            li
+              a(href='#typography')
+                i.icon-chevron-right
+                | 行内表单
             li
               a(href='#code')
                 i.icon-chevron-right
-                | 代码
+                | 表格
             li
               a(href='#tables')
                 i.icon-chevron-right
-                | 表格
-            li
-              a(href='#forms')
-                i.icon-chevron-right
-                | 表单
-            li
-              a(href='#buttons')
-                i.icon-chevron-right
-                | 按钮
-            li
-              a(href='#images')
-                i.icon-chevron-right
-                | 图片
-            li
-              a(href='#icons')
-                i.icon-chevron-right
-                | 由Glyphicons提供的图标
-        .span9
-          form#form.form-horizontal(name='form', method='post', enctype='multipart/form-data')
-            input(type='hidden', name='shopId', value='')
-            input(type='hidden', name='bankId', value='')
-            input#shopCode(type='hidden', name='shopCode', value='')
-            input#pictureValue(type='hidden', name='pictureValue')
-            input(type='hidden', name='token', value='true')
-            h3.form-section 公司基本信息
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 公司名称:
-                  .controls
-                    input#name.input-medium.span12(type='text', name='name', value='', placeholder='公司全称，详细，如北京大搜车汽车服务西苑北店')
-                    span#name_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 公司简称:
-                  .controls
-                    input#nickname.input-medium.span12(type='text', name='nickname', value='', placeholder='简称，如：北京大搜车')
-                    span#nickname_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 固定电话:
-                  .controls
-                    input#addresscall.input-medium.span12(type='text', value='', name='addresscall', placeholder='固定电话。如：0577-65899785')
-                    span#addresscall_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 移动电话:
-                  .controls
-                    input#phone.input-medium.span12(type='text', value='', name='phone', placeholder='手机号码,如：18869987598')
-                    span#phone_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 地址:
-                  .controls
-                    input#place.input-medium.span12(type='text', value='', name='place', placeholder='公司详细地址，精确到门牌号')
-                    span#place_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 省份城市:
-                  .controls
-                    select#province.input-medium(style='width: 80px;', name='province', tabindex='1')
-                      option(value='') -不限-
-                      option(value='00001') 北京
-                      option(value='03095') 新疆
-                      option(value='00530') 辽宁
-                      option(value='01840') 湖南
-                      option(value='02914') 甘肃
-                      option(value='00105') 河北
-                      option(value='00419') 内蒙古
-                      option(value='00043') 天津
-                      option(value='02245') 海南
-                      option(value='01193') 福建
-                      option(value='02799') 陕西
-                      option(value='00974') 浙江
-                      option(value='03231') 台湾
-                      option(value='02272') 四川
-                      option(value='02718') 西藏
-                      option(value='02474') 贵州
-                      option(value='02572') 云南
-                      option(value='00021') 上海
-                      option(value='00289') 山西
-                      option(value='01288') 江西
-                      option(value='02122') 广西
-                      option(value='00714') 黑龙江
-                      option(value='03066') 宁夏
-                      option(value='00858') 江苏
-                      option(value='01075') 安徽
-                      option(value='03206') 香港
-                      option(value='00644') 吉林
-                      option(value='01725') 湖北
-                      option(value='00063') 重庆
-                      option(value='01398') 山东
-                      option(value='03222') 澳门
-                      option(value='01556') 河南
-                      option(value='03014') 青海
-                      option(value='01977') 广东
-                    select#city.input-medium( name='city', tabindex='1')
-                      option(value='') -不限-
-                    span#province_err.help-inline(style='color: #B94A48;')
-                    span#city_err.help-inline(style='color: #B94A48;')
-                    input#provinceCode(type='hidden', value='')
-                    input#cityCode(type='hidden', value='')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 门店检测标准:
-                  .controls
-                    select#standard.small.input-medium(name='standard')
-                      option(value='A') A级检测
-                      option(value='B') B级检测
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 总库存数:
-                  .controls
-                    input#carSum.input-small.span12(type='text', value='', name='carSum', placeholder='具体库存数量，单位：台')
-                    span#carSum_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 开店日期:
-                  .controls
-                    .input-append.date
-                      input#openDate.m-wrap.date-picker.span12(type='text', value='', name='openDate', placeholder='yyyy-mm-dd')
-                      span.add-on
-                        i.icon-calendar
-                    span#openDate_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 开始营业时间:
-                  .controls
-                    .input-append
-                      input#startTime.m-wrap.span12(type='text', value='', name='startTime', placeholder='hh:mm')
-                      button#start.btn(type='button')
-                        i.icon-time
-                    span#startTime_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 结束营业时间:
-                  .controls
-                    .input-append
-                      input#endTime.m-wrap.span12(type='text', value='', name='endTime', placeholder='hh:mm')
-                      button#end.btn(type='button')
-                        i.icon-time
-                    span#endTime_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span12
-                .control-group
-                  label.control-label 公司介绍:
-                  .controls
-                    textarea#introduce.span10.input-medium(name='introduce', rows='7', wrap='physical')
-                    span#introduce_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            h3.form-section 公司银行账户信息
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 银行账户:
-                  .controls
-                    input#bankAccount.input-medium.span12(type='text', name='bankAccount', value='', placeholder='小心小心再小心')
-                    span#bankAccount_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 开户名:
-                  .controls
-                    input#accountName.input-medium.span12(type='text', name='accountName', value='', placeholder='开户名')
-                    span#accountName_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 开户银行:
-                  .controls
-                    input#bankName.input-medium.span12(type='text', name='bankName', value='', placeholder='详细银行名，如：中国农业银行')
-                    span#bankName_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 协议有效开始时间:
-                  .controls
-                    .input-append.date
-                      input#validStartDate.m-wrap.small.date-picker(name='validStartDate', value='', size='10', type='text', placeholder='yyyy-mm-dd')
-                      span.add-on
-                        i.icon-calendar
-                    span#validStartDate_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 协议有效结束时间:
-                  .controls
-                    .input-append.date
-                      input#validEndDate.m-wrap.small.date-picker(name='validEndDate', value='', size='10', type='text', placeholder='yyyy-mm-dd')
-                      span.add-on
-                        i.icon-calendar
-                    span#validEndDate_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            h3.form-section 地图设置
-            .row-fluid
-              .span6
-                .control-group
-                  label.control-label 图层级别:
-                  .controls
-                    input#level.input-medium.span12(type='text', name='level', value='', placeholder='建议13级，里面填写:13')
-                    span#level_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-              .span6
-                .control-group
-                  label.control-label 坐标值:
-                  .controls
-                    input#coordinate.input-medium.span12(type='text', name='coordinate', value='', placeholder='将地址坐标复制进来')
-                    span#coordinate_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-                  .alert
-                      p 使用说明:
-                      p 1、访问
-                        a(href='http://api.map.baidu.com/lbsapi/getpoint/', target='_black') http://api.map.baidu.com/lbsapi/getpoint/
-                      p 2、搜索到公司实际地址
-                      p 3、复制坐标点及当前图层
-            .row-fluid
-              .span12
-                .control-group
-                  label.control-label 地图分享地址:
-                  .controls
-                    input#mapUrl.input-medium.span12(type='text', name='mapUrl', value='', placeholder='使用百度地图查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp')
-                    span#mapUrl_err.help-inline(style='color: #B94A48;')
-              //
-                /span
-            //
-               /row
-            .row-fluid
-              .span12
-                .control-group
-                  .alert
-                      p 使用说明:
-                      p 使用
-                        a(href='http://map.baidu.com/', target='_black') 百度地图
-                      p 查询到店铺名，复制地图中的分享链接,例如：http://j.map.baidu.com/KQsWp
-            //
-               /row
-            h3.form-section
-              | 企业形象(图片高度建议为：
-              strong 380px
-              | )
-              //
-                 <a class="btn red" id="addpicture" ><i class="icon-plus"></i>增加一张图片</a>
-            #picturecontrols.row-fluid.search-images
-              .fileupload.fileupload-new(data-provides='fileupload', style='float: left;')
-                .fileupload-new.thumbnail(style='width: 195px; height: 150px;')
-                  img(src=' ', style='height: 150px; float: left;')
-                .fileupload-preview.fileupload-exists.thumbnail(style='max-width: 195px; max-height: 150px; line-height: 20px;')
-                  img(src=' ', style='height: 150px; float: left;')
-                div
-                  span.btn.btn-file
-                    span.fileupload-new 添加图片
-                    input.default(type='file', name='picture')
-                  a.btn.fileupload-exists(data-dismiss='fileupload') 移除图片
-            //
-               /row
+                | 翻页
 
+        .span9
+          h2 双行表单示例
+          .doc-container
+            include backend/multi-form
+          | <hr class="bs-docs-separator">
+          h2 单行表单示例
+          .doc-container
+            include backend/single-form
+          | <hr class="bs-docs-separator">
+          h2 行内表单
+          .doc-container
+            include backend/inline-form
+          | <hr class="bs-docs-separator">
+          h2 基本表格示例
+          .doc-container
+            include backend/normal-table
+          | <hr class="bs-docs-separator">
+          h2 分页
+          .doc-container
+            include backend/page
       Footer
     footer.footer
       .container
