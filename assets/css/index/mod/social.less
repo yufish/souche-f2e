@@ -43,6 +43,14 @@
     overflow: hidden;
     position: relative;
     float:left;
+
+    &:hover{
+      .t{
+        opacity: 1;
+      }
+    }
+
+
     img{
       width: 135px;
       height: auto;
@@ -59,6 +67,7 @@
       background: #333;
       opacity: 0.7;
       text-align: center;
+      .tst();
     }
   }
   .bbs-list{
@@ -109,6 +118,37 @@
     }
     .num{
       margin-bottom: 4px;
+    }
+  }
+
+  .wx-item{
+    &:hover{
+      .socila-img{
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        margin-left: -(128px - 60px)/2;
+        margin-top: -(128px - 60px)/2;
+        z-index: 100;
+        .box-shadow(0 3px 7px #aaa;);
+        .tst();
+      }
+    }
+    .socila-img{
+      position: absolute;
+      margin-left: 0px;
+      margin-top: 0px;
+      .tst();
+    }
+
+    .icon-wx{
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      margin-left: 8px;
+      width: 16px;
+      height: 16px;
+      background-image: url('../../images/index_11/wx-icon.jpg');
     }
   }
 }
