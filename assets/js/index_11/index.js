@@ -1,4 +1,4 @@
-define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
+flexslider(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
@@ -29,7 +29,7 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
           },500)
       });
     $(".flexslider").mouseleave(function(){
-          $(".flex-direction-nav").stop()..animate({
+          $(".flex-direction-nav").stop().animate({
               opacity:0.1
           },500)
       });
