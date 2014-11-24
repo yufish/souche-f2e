@@ -15,8 +15,8 @@ html(lang='zh-CN')
     link(href='http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css', rel='stylesheet')
     link(href='http://f2e.souche.com/assets/css/bootstrap/doc.css', rel='stylesheet')
     link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
-    //
-       Le HTML5 shim, for IE6-8 support of HTML5 elements
+    link(href='http://101.251.107.123:8081/assets/css/datepicker.css', rel='stylesheet')
+    link(href='http://101.251.107.123:8081/assets/css/datetimepicker.css', rel='stylesheet')
     //if lt IE 9
       script(src='http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js')
     //
@@ -57,57 +57,65 @@ html(lang='zh-CN')
         .span3.bs-docs-sidebar
           ul.nav.nav-list.bs-docs-sidenav
             li
-              a(href='#typography')
+              a(href='#multi-form')
                 i.icon-chevron-right
                 | 双行表单
             li
-              a(href='#typography')
+              a(href='#single-form')
                 i.icon-chevron-right
                 | 单行表单
             li
-              a(href='#typography')
+              a(href='#inline-form')
                 i.icon-chevron-right
                 | 行内表单
             li
-              a(href='#code')
+              a(href='#normal-table')
                 i.icon-chevron-right
                 | 表格
             li
-              a(href='#tables')
+              a(href='#page')
                 i.icon-chevron-right
                 | 翻页
             li
-              a(href='#tables')
+              a(href='#tab')
                 i.icon-chevron-right
                 | 标签页
+            li
+              a(href='#popup')
+                i.icon-chevron-right
+                | 弹窗
+            li
+              a(href='#icons')
+                i.icon-chevron-right
+                | 图标
 
         .span9
-          h2 双行表单示例
+          h2#multi-form 双行表单示例
           .doc-container
             include backend/multi-form
           | <hr class="bs-docs-separator">
-          h2 单行表单示例
+          h2#single-form 单行表单示例
           .doc-container
             include backend/single-form
           | <hr class="bs-docs-separator">
-          h2 行内表单
+          h2#inline-form 行内表单
           .doc-container
             include backend/inline-form
           | <hr class="bs-docs-separator">
-          h2 基本表格示例
+          h2#normal-table 基本表格示例
           .doc-container
             include backend/normal-table
           | <hr class="bs-docs-separator">
-          h2 分页
+          h2#page 分页
           .doc-container
             include backend/page
-          h2 标签页
+          h2#tab 标签页
           .doc-container
             include backend/tab
-          h2 弹窗
+          h2#popup 弹窗
           .doc-container
             include backend/popup
-          h2 图标
+          h2#icons 图标
           .doc-container
             include backend/icons
       Footer
@@ -144,9 +152,5 @@ html(lang='zh-CN')
     script(src='http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js')
     script(src='http://cdn.bootcss.com/holder/2.0/holder.min.js')
     script(src='assets/js/google-code-prettify/prettify.js')
-    script(src='assets/js/application.js')
 
-    script(type='text/javascript').
-      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff8075d186077efcfbc077b500516e94a' type='text/javascript'%3E%3C/script%3E"));
-                            
+
