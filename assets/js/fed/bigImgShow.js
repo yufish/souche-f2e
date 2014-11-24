@@ -170,6 +170,7 @@ var Slider = null;
 						viewHeight = args.viewHeight || viewHeight;
 						container.width(length * baseWidth);
 						tabs.width(tabsWidth);
+
 						createTabs();
 						changeTitle(current,0)
 						setBtnShow(0);
