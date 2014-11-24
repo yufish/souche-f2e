@@ -1,12 +1,12 @@
 #social{
-  margin-top: 70px;
-  margin-bottom:70px;
+  // margin-top: 70px;
+  margin-bottom: 80px;
   .wrapper{
     border-top:1px solid #e6e6e6;
-    padding-top: 70px;
+    padding-top: 80px;
   }
   .social-item{
-    height:150px;
+    height: 155px;
     width:33%;
     float:left;
     overflow: hidden;
@@ -31,11 +31,11 @@
       }
     }
     .social-content{
-      margin-top:30px ;
+      margin-top: 33px ;
     }
   }
   .social-bbs .social-inner{
-    padding-left: 30px;
+    padding-left: 40px;
   }
   .bbs-pic{
     max-width:135px;
@@ -72,12 +72,12 @@
   }
   .bbs-list{
     float:left;
-    width:198px;
+    width: 190px;
     overflow: hidden;
     margin-top:-5px;
     a{
       display: block;
-      line-height: 25px;
+      line-height: 24px;
       padding-left: 20px;
       font-size:14px;
       color:#666;
@@ -92,11 +92,11 @@
   .social-tencent{
     border:none;
     .social-inner{
-      padding-left: 30px;
+      padding-left: 40px;
     }
   }
   .social-sub-item{
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     overflow: hidden;
 
     .socila-img{
@@ -160,6 +160,12 @@
   margin-bottom: 18px;
   // bfc
   overflow: hidden;
+
+  &:hover{
+    .buyer-name{
+      color: @soucheOrange;
+    }
+  }
   
   .buyer-avatar{
     float: left;
@@ -172,9 +178,11 @@
     margin-left: @buyerAvatarW + 12px;
   }
   .buyer-name{
+    display: block;
     margin-bottom: 6px;
     font-size: 14px;
     color: #666;
+    cursor: pointer;
   }
   .buyer-title{
     width: auto;

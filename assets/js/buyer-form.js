@@ -85,6 +85,12 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                 $("#car_series").val(series.join(","))
                 $(".selected_series_result").html(html)
             })
+            
+            //成功弹窗
+            $(".buyer-popup .apply_close").click(function(){
+                $(".buyer-popup").addClass("hidden")
+            })
+
             var phoneReg = /^1[3458][0-9]{9}$/;
             $("#form-submit").on("click",function(e){
                 e.preventDefault();
@@ -120,8 +126,10 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                     url:$("#main-form").attr("action"),
                     data:$("#main-form").serialize(),
                     success:function(data){
-                        alert("提交成功！")
-                        window.location.href="/pages/buyer.html"
+                        $(".buyer-popup").removeClass("hidden");
+                        setTimeout(function(){
+                          window.location.href="/pages/buyer.html"
+                        }3000);
                     }
                 })
 //                $("#main-form").submit();
