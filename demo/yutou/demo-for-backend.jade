@@ -76,6 +76,10 @@ html(lang='zh-CN')
               a(href='#tables')
                 i.icon-chevron-right
                 | 翻页
+            li
+              a(href='#tables')
+                i.icon-chevron-right
+                | 标签页
 
         .span9
           h2 双行表单示例
@@ -97,6 +101,15 @@ html(lang='zh-CN')
           h2 分页
           .doc-container
             include backend/page
+          h2 标签页
+          .doc-container
+            include backend/tab
+          h2 弹窗
+          .doc-container
+            include backend/popup
+          h2 图标
+          .doc-container
+            include backend/icons
       Footer
     footer.footer
       .container
@@ -132,6 +145,7 @@ html(lang='zh-CN')
     script(src='http://cdn.bootcss.com/holder/2.0/holder.min.js')
     script(src='assets/js/google-code-prettify/prettify.js')
     script(src='assets/js/application.js')
+
     script(type='text/javascript').
       var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
       document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff8075d186077efcfbc077b500516e94a' type='text/javascript'%3E%3C/script%3E"));

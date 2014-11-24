@@ -1,0 +1,56 @@
+.banner0904{width:100%;height:390px;background:url(../../../images/fed/acts/130904/banner2.jpg) no-repeat center top #487374}
+#container0904{position:relative}
+#nav0904{width:980px;height:80px;background-image:url(../../../images/fed/acts/130904/nav_bg.png);background-repeat:no-repeat;position:absolute;top:0;left:50%;margin-left:-477px;z-index:10000}#nav0904 li{float:left}#nav0904 li a{display:block;width:240px;height:55px;text-indent:-9999em}
+#nav0904.fixedNav{position:fixed}
+.jingji-nav{background-position:0 0}
+.shangwu-nav{background-position:0 -98px}
+.gfs-nav{background-position:0 -193px}
+.bfm-nav{background-position:0 -292px}
+.wrap0904{width:100%;padding-top:100px;padding-bottom:60px}.wrap0904 .content{width:1000px;margin:0 auto}.wrap0904 .content .subNav{width:165px;float:left;height:320px}.wrap0904 .content .subNav a{display:block;width:155px;height:58px;font-size:18px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align:center;line-height:51px}
+#container0904 .wrap0904 .content .subNav a:hover {color:#fff;}
+.wrap0904 .content p{float:left;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;line-height:1.8em;margin-left:30px}
+.wrap0904 .content .bigCar{float:left;width:400px}.wrap0904 .content .bigCar a{display:block;margin-left:-153px}
+.wrap0904 .content .carSmallBox{clear:both;width:1000px;padding:15px;position:relative}.wrap0904 .content .carSmallBox .tag{position:absolute;width:413px;height:226px;left:-30px;top:-21px;z-index:1}
+.wrap0904 .content .carSmallBox ul{position:relative;z-index:2}
+#jingji .bigCar a{width:661px;height:452px;background:url(../../../images/fed/acts/130904/bigcar1-6.png) no-repeat}
+#shangwu .bigCar a{width:753px;height:460px;background:url(../../../images/fed/acts/130904/bigcar2-6.png) no-repeat}
+#gfs .bigCar a{width:689px;height:469px;background:url(../../../images/fed/acts/130904/bigcar3-6.png) no-repeat;margin-left:-86px}
+#bfm .bigCar a{width:689px;height:452px;background:url(../../../images/fed/acts/130904/bigcar4-6.png) no-repeat}
+
+#jingji{background:url(../../../images/fed/acts/130904/bg1.png) no-repeat right top #e9f6c7}#jingji .subNav{background:url(../../../images/fed/acts/130904/nav1.png) no-repeat top left}#jingji .subNav a{color:#7e6200}
+#jingji p{color:#8ea740}
+#jingji .carSmallBox{background-color:#f4fbe3}#jingji .carSmallBox .tag{background:url(../../../images/fed/acts/130904/tag1.png) no-repeat}
+#jingji .carSmallBox .car_price,#jingji .carSmallBox dt a:hover{color:#5fa200}
+#shangwu{background:url(../../../images/fed/acts/130904/bg2.png) no-repeat right top #416c78}#shangwu .subNav{background:url(../../../images/fed/acts/130904/nav2.png) no-repeat top left}#shangwu .subNav a{width:147px;color:#3d5e67}
+#shangwu p{color:#90c1cf}
+#shangwu .carSmallBox{background-color:#ddf7f9}#shangwu .carSmallBox .tag{background:url(../../../images/fed/acts/130904/tag2.png) no-repeat}
+#shangwu .carSmallBox .car_price,#shangwu .carSmallBox dt a:hover{color:#416c78}
+#gfs{background:url(../../../images/fed/acts/130904/bg3.png) no-repeat right top #eedbb1}#gfs .subNav{background:url(../../../images/fed/acts/130904/nav3.png) no-repeat top left;height:382px}#gfs .subNav a{color:#95622f}
+#gfs p{color:#b6926d}
+#gfs .carSmallBox{background-color:#fff8e9}#gfs .carSmallBox .tag{background:url(../../../images/fed/acts/130904/tag3.png) no-repeat;top:-22px;left:-31px}
+#gfs .carSmallBox .car_price,#gfs .carSmallBox dt a:hover{color:#c05a00}
+#bfm{background:url(../../../images/fed/acts/130904/bg4.png) no-repeat right top #f5c9c9}#bfm .subNav{background:url(../../../images/fed/acts/130904/nav4.png) no-repeat top left;height:372px}#bfm .subNav a{color:#b73434}
+#bfm p{color:#c47676}
+#bfm .carSmallBox{background-color:#fee}#bfm .carSmallBox .tag{background:url(../../../images/fed/acts/130904/tag4.png) no-repeat;left:-31px}
+#bfm .carSmallBox .car_price,#bfm .carSmallBox dt a:hover{color:#c05a00}
+#float-nav{position:fixed;z-index:1000;right:20px;top:20px;padding-top:58px;display:none;background:url(../../../images/fed/acts/130904/float_nav.png) no-repeat}#float-nav ul{border-top:3px solid #41ac90}
+#float-nav li a{display:block;width:120px;line-height:45px;color:#fff;font-size:18px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align:center;border-bottom:1px solid #6bbca7;background:url(../../../images/fed/acts/130904/float_nav.png) no-repeat 100px -211px #41ac90}#float-nav li a:hover{background-color:#f18b36}
+#float-nav li .float_nav_active{background-color:#f18b36}
+#float-nav li .zd-nav{line-height:20px;padding:10px 0;background-position:100px -204px}#float-nav li .zd-nav ins{font-size:14px}
+#float-nav li .float-nav-weixin{width:120px;height:135px;background-position:0 -363px}
+#float-nav .top{width:120px;height:80px;background:url(../../../images/fed/acts/130904/float_nav.png) no-repeat 0 -128px #41ac90;cursor:pointer}#float-nav .top:hover{background-position:0 -270px}
+.car_title{font-size:28px;color:#333;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;margin-bottom:20px;font-weight:bold;letter-spacing:2px;padding-top:30px}
+.car_title a,.car_title a:hover {color:#333;}
+.car_title ins{font-size:16px;color:#999;padding-left:10px;font-weight:normal;letter-spacing:0}
+.car_title span{float:left;width:30px;height:38px;background:url(../../../images/fed/index/index_sprite2.png) no-repeat;margin-right:10px;margin-top: -6px\9;}
+.brand_show{background-color:#fff;padding:27px 0 5px 37px;border-top:1px solid #dadada}
+.brand_show li{float:left;display:inline;width:147px;color:#333;font-size:14px;text-align:center;margin-right:10px;margin-bottom:35px;height:152px}
+.brand_show img{margin:0 auto;display:block}
+#includedBrand {width:100%;background-color:#f4e9dd;padding-bottom:30px;margin-bottom:30px}
+#includedBrand .brand_info{width:69px;margin:0 auto;text-align:left;color:#666;font-size:12px;line-height:1.6em}
+#includedBrand h1 span{background-position:-139px -43px}
+#includedBrand .brand_info a{color:#333;font-size:14px}
+#includedBrand .brand_info a:hover{text-decoration:underline;font-weight:bold}
+#includedBrand .brand_info .brand_on{color:#ff4301}
+#includedBrand .brand_name{color:#333;margin-bottom:15px}
+#BDBridgeIconWrap {display:none !important;}

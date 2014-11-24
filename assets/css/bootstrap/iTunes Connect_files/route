@@ -1,0 +1,330 @@
+'use strict';
+
+define([getGlobalPath('/itc/js/ng-app/services/routeResolver.js')], function () {
+
+    var itcApp = angular.module('itcApp', [
+            'ngRoute',
+            'routeResolverServices',
+            'angularFileUpload',
+            'global_services',
+            'global_directives',
+            'global_filters',
+            'form_elements',
+            'ngCookies',
+            'angulartics',
+            'angulartics.adobe.analytics',
+            'ngSanitize',
+            'pasvaz.bindonce',
+            'ui.sortable',
+            'angular.filter'
+        ]);
+
+    itcApp.config(['$routeProvider', 'routeResolverProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider','$locationProvider','$cookiesProvider','$analyticsProvider', '$sceDelegateProvider',
+        function ($routeProvider, routeResolverProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider,$locationProvider,$cookiesProvider,$analyticsProvider, $sceDelegateProvider) {
+
+
+        $httpProvider.responseInterceptors.push(['$q', function($q) {
+            return function(promise) {
+
+                return promise.then(function(response) {
+                    return response;
+                }, function(response) {
+                    if(response.status === 401) {
+                        window.location = "/WebObjects/iTunesConnect.woa";
+                    } else if (response.status === 404) {
+                        window.location = "/WebObjects/iTunesConnect.woa/wa/defaultError"
+                    }
+                    return $q.reject(response);
+                });
+            }
+        }]);
+           
+
+ 
+    $locationProvider.html5Mode(true);
+
+    $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://itc.mzstatic.com/itc/**'
+    ]); 
+
+    itcApp.register =
+    {
+        controller: $controllerProvider.register,
+        directive: $compileProvider.directive,
+        filter: $filterProvider.register,
+        factory: $provide.factory,
+        service: $provide.service
+    };
+
+    //Define routes - controllers will be loaded dynamically
+    var route = routeResolverProvider.route;
+    
+    window.routeProvider = $routeProvider;
+
+    //route.resolve(path_to_controller_after_ng-app_controllers , controller_name, full_path_to_template)
+    //OR PASS IN an array for path to controller... if using an additional controller on the page
+    $routeProvider
+        .when('/',
+            route.resolve({
+                controllerPath: 'homepage_cntrl',
+                controllerName: 'homepageController',
+                templatePath:   '/itc/views/shared/homepage.html',
+                trackingConfig: { pageName: 'iTC Home Redesign', channel: 'iTC Main' }
+            }))
+        
+    // Note on trackingConfig: Wherever possible, we should use the same pageName as on the old site,
+    // with the addition of "Redesign" at the end. So "iTC Home" becomes "iTC Home Redesign".
+        
+
+        
+        // Redirect: /prerelease -> /prerelease/builds
+        .when('/app/:adamId/prerelease', { redirectTo: '/app/:adamId/pre/builds' })
+        
+        // Pre: Builds page
+        .when('/app/:adamId/pre/builds',
+            route.resolve({
+                controllerPath: ['prerelease_builds_cntrl','app/app_header_cntrl','prerelease/submit_for_beta_review_cntrl'],
+                controllerName: 'prereleaseBuildsPageController',
+                templatePath:   '/itc/views/prerelease/builds.html',
+                trackingConfig: { pageName: 'Prerelease - Builds', channel: 'Manage Apps', hier5: '01' }
+            }))
+        
+        // Build: Build Details
+        .when('/app/:adamId/pre/trains/:trainVersion/build/:buildVersion',
+            route.resolve({
+                controllerPath: [
+                    'build/build_main_cntrl',
+                    'build/build_test_information_cntrl',
+                    'build/build_details_cntrl',
+                    'build/export_compliance_cntrl',
+                    'build/build_testers_cntrl'
+                ],
+                controllerName: 'prereleaseBuildDetailsPageController',
+                templatePath:   '/itc/views/build/index.html',
+                reloadOnSearch: false, // prevents a page reload when query string is modified
+                trackingConfig: { pageName: 'Prerelease - Build Details', channel: 'Manage Apps', hier5: '01' }
+           }))
+        
+        
+        // Pre: Internal Testers page
+        .when('/app/:adamId/pre/testers/internal',
+            route.resolve({
+                controllerPath: ['prerelease_internal_testers_cntrl','app/app_header_cntrl'],
+                controllerName: 'prereleaseInternalTestersPageController',
+                templatePath:   '/itc/views/prerelease/internal_testers.html',
+                trackingConfig: { pageName: 'Prerelease - Internal Testers', channel: 'Manage Apps', hier5: '01' }
+            }))
+        
+        // Pre: Beta Testers page
+        .when('/app/:adamId/pre/testers/beta',
+            route.resolve({
+                controllerPath: ['prerelease_beta_testers_cntrl','app/app_header_cntrl'],
+                controllerName: 'prereleaseBetaTestersPageController',
+                templatePath:   '/itc/views/prerelease/beta_testers.html',
+                trackingConfig: { pageName: 'Prerelease - External Testers', channel: 'Manage Apps', hier5: '01' }
+            }))
+        
+        .when('/app/:adamId/pre/testers/beta/addTesters',
+            route.resolve({
+                controllerPath: 'add_new_beta_testers_cntrl',
+                controllerName: 'addNewBetaTestersPageController',
+                templatePath:   '/itc/views/prerelease/add_new_beta_testers.html',
+                trackingConfig: { pageName: 'Prerelease - Add New Beta Testers', channel: 'Manage Apps', hier5: '01' },
+                pageConfig: { context: 'app', returnLink: '/app/{adamId}/pre/testers/beta' }
+            }))
+            
+        .when('/app/:adamId/pre/testers/beta/addExistingTesters',
+            route.resolve({
+                controllerPath: 'add_existing_beta_testers_cntrl',
+                controllerName: 'addExistingBetaTestersPageController',
+                templatePath:   '/itc/views/prerelease/add_existing_beta_testers.html',
+                trackingConfig: { pageName: 'Prerelease - Add Existing Beta Testers', channel: 'Manage Apps', hier5: '01' }
+            }))
+        
+        // Build: Build Details
+        // .when('/app/:adamId/pre/trains/:trainVersion/build/:buildVersion',
+        //     route.resolve({
+        //         controllerPath: [
+        //             'build/build_main_cntrl',
+        //             'build/build_test_information_cntrl',
+        //             'build/build_details_cntrl',
+        //             'build/export_compliance_cntrl',
+        //             'build/build_testers_cntrl'
+        //         ],
+        //         controllerName: 'prereleaseBuildDetailsPageController',
+        //         templatePath:   '/itc/views/build/index.html',
+        //         reloadOnSearch: false, // prevents a page reload when query string is modified
+        //         trackingConfig: { pageName: 'Prerelease - Build Details', channel: 'Manage Apps', hier5: '01' }
+        //    }))
+        
+        // Build: Export Compliance
+        .when('/app/:adamId/pre/trains/:trainVersion/build/:buildVersion/export',
+            route.resolve({
+                controllerPath: 'prerelease_build_export_cntrl',
+                controllerName: 'buildExportCompliancePageController',
+                templatePath:   '/itc/views/prerelease/build_export_compliance.html',
+                trackingConfig: { pageName: 'Prerelease - Export Compliance', channel: 'Manage Apps', hier5: '01' }
+            }))
+        
+        //.when('/app/:adamId/prerelease/testers/:testerContext',
+        //    route.resolve('prerelease_cntrl','prereleasePageController','/itc/views/prerelease/builds.html'))
+        
+        //.when('/app/:adamId/prerelease/testers/internal',
+        //    route.resolve('prerelease_cntrl','prereleasePageController','/itc/views/prerelease/builds.html'))
+        
+        //.when('/app/:adamId/build/:version',
+        //    route.resolve('prerelease_cntrl','prereleasePageController','/itc/views/prerelease/builds.html'))
+        
+
+
+
+
+        
+        .when('/app',
+            route.resolve({
+                controllerPath: ['app/app_manage_apps_cntrl','app/app_create_new_app_cntrl'], 
+                controllerName: 'manageAppsController', 
+                templatePath:   '/itc/views/app/manage_apps.html',
+                trackingConfig: { pageName: 'Manage Your App Redesign', channel: 'Manage Apps', hier5: '01' }
+            }))
+
+
+
+
+        .when('/bundle/:adamId?',
+            route.resolve({
+                controllerPath: ['app/bundle_cntrl', 'app/app_header_cntrl'], 
+                controllerName: 'bundleController', 
+                templatePath:   '/itc/views/app/bundle.html',
+                trackingConfig: { pageName: 'Bundle Redesign', channel: 'Manage Apps', hier5: '01' }
+            }))
+
+
+
+ 
+        .when('/app/:adamId/:ver?',
+            route.resolve({
+                controllerPath: [
+                    'app/app_version_cntrl',
+                    'app/app_header_cntrl',
+                    'app/submit_for_review_cntrl'
+                ],
+                controllerName: 'appVersionController',
+                templatePath:   '/itc/views/app/version.html',
+                trackingConfig: { pageName: 'App - Summary Redesign', channel: 'Manage Apps', hier5: '01' }
+            }))
+
+
+        .when('/contractinfo',
+            route.resolve({
+                controllerPath: 'contract_interstitial_cntrl',
+                controllerName: 'contractInterstitialController',
+                templatePath:   '/itc/views/shared/contractinterstitial.html',
+                trackingConfig: { pageName: 'iTC Main - Agreements, Tax, and Banking Redesign', channel: 'iTC Main', hier5: '' }
+            }))
+        
+        .when('/resources_page',
+            route.resolve({
+                controllerPath: 'resources_page_cntrl',
+                controllerName: 'resourcesPageController',
+                templatePath:   '/itc/views/shared/resources_page.html',
+                // Note: previously the resources page was tracked differently depending on provider type.
+                // I moved it to 'iTC Main', because it's now a single page ~Derryl
+                trackingConfig: { pageName: 'Support Redesign', channel: 'iTC Main', hier5: '' }
+            }))
+
+    
+        //MANAGE USERS
+        .when('/users_roles',
+            route.resolve({
+                controllerPath: 'manageusers/itc_users_cntrl',
+                controllerName: 'itcUsersController',
+                templatePath:   '/itc/views/manageusers/itc_users.html',
+                reloadOnSearch: false, // prevents a page reload when query string is modified
+                trackingConfig: { pageName: 'Manage Users - iTunes Connect Users', channel: 'Manage Users', hier5: '01' }
+           }))
+        .when('/users_roles/sandbox_users',
+            route.resolve({
+                controllerPath: 'manageusers/sandbox_users_cntrl',
+                controllerName: 'sandboxUsersController',
+                templatePath:   '/itc/views/manageusers/sandbox_users.html',
+                reloadOnSearch: false, // prevents a page reload when query string is modified
+                trackingConfig: { pageName: 'Manage Users - iTunes Connect Users - Sandbox Users', channel: 'Manage Users', hier5: '01' }
+           }))
+
+        
+            .when('/users_roles/testflight_internal',
+                route.resolve({
+                    controllerPath: 'manageusers/testflight_internal_cntrl',
+                    controllerName: 'testflightInternalController',
+                    templatePath:   '/itc/views/manageusers/testflight_internal.html',
+                    trackingConfig: { pageName: 'Manage Users - TestFlight Testers - Internal', channel: 'Manage Users', hier5: '01' }
+               }))
+            
+                .when('/users_roles/testflight_external',
+                    route.resolve({
+                        controllerPath: 'manageusers/testflight_external_cntrl',
+                        controllerName: 'testflightExternalController',
+                        templatePath:   '/itc/views/manageusers/testflight_external.html',
+                        trackingConfig: { pageName: 'Manage Users - TestFlight Testers - External', channel: 'Manage Users', hier5: '01' }
+                   }))
+                /* .when('/users_roles/testflight_external/addTesters',
+                    route.resolve({
+                        controllerPath: 'add_new_beta_testers_cntrl',
+                        controllerName: 'addNewBetaTestersPageController',
+                        templatePath:   '/itc/views/prerelease/add_new_beta_testers.html',
+                        trackingConfig: { pageName: 'Manage Users - TestFlight Testers - External', channel: 'Manage Users', hier5: '01' },
+                        pageConfig: { context: 'provider', returnLink: '/users_roles/testflight_external' }
+                   }))*/
+            
+         
+
+        .when('/users_roles/new',
+            route.resolve({
+                controllerPath: 'manageusers/new_itcUser_cntrl',
+                controllerName: 'newItcUserController',
+                templatePath:   '/itc/views/manageusers/createNewItcUser.html',
+                reloadOnSearch: false,
+                trackingConfig: { pageName: 'Manage Users - iTunes Connect Users - New', channel: 'Manage Users', hier5: '01' }
+           }))
+         
+            .when('/users_roles/sandbox_users/new',
+                route.resolve({
+                    controllerPath: 'manageusers/new_sandbox_user_cntrl',
+                    controllerName: 'newSandboxUserController',
+                    templatePath:   '/itc/views/manageusers/new_sandbox_user.html',
+                    trackingConfig: { pageName: 'Manage Users - iTunes Connect Users - New Sandbox User', channel: 'Manage Users', hier5: '01' }
+               }))
+        
+    
+        .when('/users_roles/:username',
+            route.resolve({
+                controllerPath: 'manageusers/edit_user_details_cntrl',
+                controllerName: 'editUserDetailsController',
+                templatePath:   '/itc/views/manageusers/edit_user_details.html',
+                trackingConfig: { pageName: 'Manage Users - Edit User Details', channel: 'Manage Users', hier5: '01' }
+           }))
+    
+        .when('/users_roles/:username/roles',
+            route.resolve({
+                controllerPath: 'manageusers/edit_user_roles_cntrl',
+                controllerName: 'editUserRolesController',
+                templatePath:   '/itc/views/manageusers/edit_user_roles.html',
+                trackingConfig: { pageName: 'Manage Users - Edit User Roles', channel: 'Manage Users', hier5: '01' }
+           }))
+        .when('/users_roles/:username/notifications',
+            route.resolve({
+                controllerPath: 'manageusers/edit_user_notifications_cntrl',
+                controllerName: 'editUserNotificationsController',
+                templatePath:   '/itc/views/manageusers/edit_user_notifications.html',
+                trackingConfig: { pageName: 'Manage Users - Edit User Notifications', channel: 'Manage Users', hier5: '01' }
+           }))
+        
+        
+    
+
+        .otherwise({ redirectTo: '/' });
+    }]);
+    return itcApp;
+});
