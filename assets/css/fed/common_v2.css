@@ -1,0 +1,285 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote{margin:0;padding:0}
+fieldset,img{border:0}
+:focus{outline:0}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:normal;font-weight:normal}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+abbr,acronym{border:0;font-variant:normal}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+code,kbd,samp,tt{font-size:100%}
+input,button,textarea,select{*font-size:100%}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+sup,sub{font-size:100%;vertical-align:baseline}
+:link,:visited,ins{text-decoration:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+* html .clearfix{height:1%}
+.clearfix{display:block}
+body{font-size:12px;font-family:"������",Tahoma,Verdana;color:#000;background-color:#fff}
+a{color:#000}
+a:hover{text-decoration:none;color:#e70}
+.wrap{width:1190px;margin:0 auto;zoom:1;}
+.marginRight0{margin-right:0}
+.wrapGrayBg{height:100%;width:100%;position:fixed;top:0;left:0;background-color:#000;z-index:10000}
+.must_write{color:#f00;padding-right:5px}
+.hidden{display:none !important}
+optgroup{color:#008000;background-color:#f5f5f5;font-weight:bold}
+option{color:#333;line-height:1.8em;font-style:normal;font-weight:normal;background-color:#fff}
+#header{background-color:#e7e7e7}
+.index_login{width:1200px;margin:0 auto;text-align:right;color:#666;padding:5px 0}
+.index_login a{color:#666}
+.index_login a:hover{color:#e70}
+.index_login span{padding:0 13px}
+.index_logined .index_self{color:#ff4301;padding:0 15px}
+.header_main{height:93px;background-color:#fff}
+.souche_logo{width:306px;height:45px;padding-top:23px}
+.souche_logo a{width:306px;height:45px;text-indent:-9999em;background:url(../../images/fed/souche_sprite2.jpg);display:block}
+.header_main h2{font-size:12px;float:left;margin-left:191px;margin-top:-15px}
+.header_service{float:right;margin-top:-65px}
+.header_service p{float:left;width:85px;text-align:center;margin-top:10px;margin-left:15px;color:#999}
+.header_service p a{-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;color:#999;display:block}
+.header_service p a:hover{-webkit-transform:scale(1.2, 1.2);transform:scale(1.2, 1.2)}
+.header_service span{display:block;width:30px;height:33px;margin:0 auto;background:url(../../images/fed/souche_sprite2.jpg)}
+.header_service .service_door{background-position:0 -63px}
+.header_service .service_check{background-position:-44px -63px}
+.header_service .servive_promise{background-position:-88px -63px}
+.topAd{width:100%;background-color:#fff;overflow:hidden;}
+.topAd a{display:block;height:50px;margin:0 auto;background-position:center top;}
+#nav{height:40px;background-color:#111;position:relative}
+#nav ul{float:left}
+#nav li{float:left;margin-right:1px}
+#nav ul a{display:inline-block;width:135px;height:40px;line-height:40px;color:#fff;font-size:16px;text-align:center;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1"}
+#nav ul a:hover{text-decoration:none;background-color:#e70}
+#nav .nav_active{background-color:#e70}
+#nav .qiangche{background:url(../../images/fed/new1.gif) no-repeat 101px 6px;}
+#nav .nav_phone{-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;float:right;margin-top:3px;width:150px;height:30px;background:url(../../images/fed/index/index_sprite4.png) no-repeat 0 0;text-indent:-9999em}
+#nav .nav_phone span{display:inline-block}
+#nav .nav_phone:hover{-webkit-transform:scale(1.2, 1.2);transform:scale(1.2, 1.2)}
+#nav .index_login{float:right;line-height:28px;margin-right:15px;margin-top:6px;color:#999}
+#nav .index_login a{color:#999}
+#nav .index_login a:hover{color:#e70}
+#nav h1{float:left;width:113px;height:40px;text-indent:-9999em;background:url(../../images/fed/souche_sprite2.jpg) 0 -273px}
+.car_list li{float:left;display:inline;cursor:pointer;height:297px;background-color:#fff;margin-bottom:20px;border:1px solid #eaeaea;margin-right:-1px;position:relative;padding:15px;margin-right:20px;overflow:hidden}
+.car_list .car_info dt{color:#333;font-size:14px;line-height:1.3em;margin-bottom:2px;margin-top:10px;height:40px;overflow:hidden;width:290px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+.car_list .car_info dt a{color:#333}
+.car_list .car_info dt a:hover{color:#e70}
+.car_list .car_info .car_price{color:#ff4301;font-size:24px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";*font-family:"\5FAE\8F6F\96C5\9ED1";line-height:1em;margin-bottom:2px}
+.car_list .car_price ins{color:#999;font-size:12px;font-family:"������";padding-left:10px}
+.car_list .car_info dd{line-height:1.8em}
+.car_list .car_other{color:#999;float:left;height:20px;overflow:hidden}
+.car_list .car_other ins{color:#333}
+.car_list .car_pic{display:block;width:290px;height:190px;overflow:hidden;background-color:#fff}
+/*.car_list .marginRignt0{margin-right: 0;}*/
+.moreCar{display:block;width:190px;margin:0 auto;height:40px;line-height:40px;color:#e70;clear:both;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;margin-bottom:20px}
+.moreCar span{float:right;display:inline;margin-top:4px;*margin-top:-35px;margin-right:37px;width:30px;height:30px;cursor:pointer;background:url(../../images/fed/index/index_sprite2.png) no-repeat 0 -94px}
+.carSmallBox li{padding:10px;height:290px;*height:284px;_width:220px;float:left;display:inline;margin-right:10px;border:1px solid #d9d9d9;margin-bottom:20px;background-color:#fff;position:relative}
+.carSmallBox .marginRight0{margin-right:0}
+.carSmallBox .car_pic{background-color:#fff;display:block;width:220px;height:165px;overflow:hidden;background-color:#fff}
+.carSmallBox .car_info{padding-top:3px;height:115px;overflow:hidden}
+.carSmallBox .car_info .car_price{font-size:24px;color:#00b0b4}
+.carSmallBox .car_info dt{margin-bottom:10px;width:213px}
+.carSmallBox .car_info dt a:hover{color:#00b0b4}
+.carSmallBox span{background:url(../../images/fed/moreCar_green.png) no-repeat;}
+.carSmallBox .moreCar{color:#048689;width:237px}
+.buy{float:left;display:inline;padding-top:30px}
+.buy h1{margin-bottom:38px}
+.buy label{width:70px;float:left;margin-bottom:15px;margin-right:1px}
+.buy label input{margin-right:5px;_margin-right:0;float:left;height:13px;vertical-align:text-top;margin-top:1px}
+.buy .select_title{display:block;color:#333;font-size:14px;font-weight:bold;margin-bottom:10px;float:none}
+.buy select{display:block;width:210px;height:23px;margin-bottom:12px;border:1px solid #c1c2bd}
+.buy_button{display:block;width:125px;height:25px;line-height:24px;text-align:center;background-color:#e70;color:#fff;border:1px solid #f45600;*border-width:0;margin-left:40px;margin-top:5px;font-size:14px;font-weight:bold;cursor:pointer;clear:both}
+.buy_button:hover{text-decoration:none;color:#fff}
+.buy_result{width:216px;margin-left:16px;margin-top:14px}
+.buy_result .buy_result_tag{display:block;background:url(../../images/fed/buy_success.png) no-repeat;width:58px;height:52px;margin:0 auto}
+.buy_result p{color:#666;line-height:1.8em}
+.buy_result h2{color:#333;font-size:18px;margin-top:6px;margin-bottom:7px;width:250px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;margin-left:-28px;text-indent:26px}
+.buy_result ul{height:78px}
+.buy_result li{line-height:2.2em;height:2.2em;overflow:hidden}
+.buy_result li a{color:#333}
+.buy_result li a:hover{color:#e70}
+.buy_result .buy_button{margin-top:15px}
+.buy_result_link{display:block;width:251px;height:40px;background-color:#d9d9d9;line-height:40px;margin-left:-27px;margin-top:23px;text-align:center}
+.buy .error_remind{line-height:24px;margin-bottom:2px;width:177px;margin-top:-28px}
+.buy_age_controller{height:74px;overflow:hidden}
+.buy_result_push h3{color:#999;margin-top:14px;margin-bottom:2px;width:268px;border-bottom:1px dotted #999;padding-bottom:7px;margin-left:-26px;text-indent:26px}
+.controller_float{width:100px;float:left;display:inline;margin-right:10px}
+.controller_float select{width:100px}
+.select_remind{text-align:center;color:#666;margin-top:-28px;line-height:26px;margin-bottom:2px}
+#footer{height:270px;background-color:#111}
+#footer .footer_service{background-color:#111;font-size:15px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1"}
+#footer .footer_service ul{width:800px;margin:0 auto;background:url(../../images/fed/footer_cut.png) no-repeat bottom center;line-height:105px}
+#footer .footer_service li{float:left;width:200px}
+#footer .footer_service li a{color:#999;font-size:15px}
+#footer .footer_service ins{float:left;width:50px;height:50px;margin:28px 5px 0 40px;background:url(../../images/fed/footer_service.png) no-repeat}
+#footer .service_footer_check ins{background-position:0 0}
+#footer .service_footer_return ins{background-position:-61px 0}
+#footer .service_footer_promise ins{background-position:-129px 0}
+#footer .service_footer_car ins{background-position:-195px 0}
+#footer .service_footer_pay ins{background-position:-262px 0}
+#footer .company_info{text-align:center;margin-top:35px;color:#999}
+#footer .company_info a{color:#999;padding:0 6px}
+#footer .company_info a:hover{color:#e70}
+#footer .company_info p{color:#666;margin-top:10px;font-family:"Arial","������"}
+#loginInner{width:460px;padding-bottom:30px;border:1px solid #f2f2f2;background-color:#fff;position:fixed;top:100px;left:50%;margin-left:-230px;z-index:100000}
+.login_title{height:34px;line-height:34px;background-color:#fcfcfc;border-bottom:1px solid #f2f2f2;color:#000;font-size:14px;font-weight:bold;padding-left:15px}
+.login_title i{float:right;margin:7px 14px 0 0;*margin-top:-26px;width:20px;height:18px;background:url(../../images/fed/souche_sprite2.jpg) no-repeat 5px -243px;cursor:pointer}
+#loginInner form{margin-left:19px;padding-top:60px}
+.login_controller{margin-bottom:25px}
+.login_controller label{float:left;font-size:14px;width:75px;text-align:right;line-height:35px;margin-right:10px;color:#333}
+.login_controller .login_text_input{width:240px;height:34px;height:24px\9;line-height:16px;border:1px solid #7abd54;background-color:#fff;float:left;margin-right:10px;padding:0 15px;padding-top:8px\9}
+.login_auto{margin-left:70px;width:272px;color:#333}
+.login_auto input{margin-right:5px}
+.login_auto a{color:#df5d15;float:right}
+.login_button{width:270px;height:35px;cursor:pointer;line-height:35px;margin-left:87px;background-color:#e70;font-size:14px;font-weight:bold;text-align:center;color:#fff;letter-spacing:8px;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+#loginInner .linkToRegister{text-align:center;padding-top:25px;border-top:1px dotted #d4d4d4;width:95%;margin:0 auto}
+.login_remind{width:241px;height:30px;line-height:30px;margin-left:84px;margin-bottom:10px;margin-top:-42px}
+.linkToRegister{font-size:14px;color:#333}
+.linkToRegister a{color:#df5d15;text-decoration:underline}
+.error_remind{color:#f00;background-color:#ffebeb;border:1px solid #ffbdbe;padding:0 15px}
+.error_remind a{text-decoration:underline;color:#df5d15}
+.login_controller .error_input{border-color:#f00}
+.loginSpan{float:left;width:24px;height:24px;background:url(../../images/fed/souche_sprite2.jpg) no-repeat;margin-top:5px;margin-left:-36px}
+.telSpan{background-position:-34px -239px}
+.psdSpan{background-position:-68px -241px}
+.nameSpan{background-position:-110px -241px}
+#online_service{position:fixed;bottom:130px;left:50%;margin-left:560px;width:80px;height:85px;display:block;background-color:#ccc;color:#333;text-align:center;padding-top:15px;z-index:100}
+#online_service:hover{text-decoration:none}
+#online_service span{display:block;width:50px;height:50px;background:url(../../images/fed/online_service.jpg) no-repeat 0 0;margin:0 auto}
+#floatLayer{position:fixed;bottom:60px;right:0;z-index:10000;}
+#toTop{width:60px;height:56px;background-color:#fff;border:1px solid #ddd;border-top:none;cursor:pointer;display:none;background:url(../../images/fed/float-layer3.png) no-repeat -38px -394px}
+#toTop.toTopActive {background-position: -101px -394px;background-color:#d9d9d9;}
+#BizQQWPA{background: url(../../images/fed/float-layer3.png) no-repeat -34px -451px !important;width: 60px;
+height: 99px;border:1px solid #ddd;border-bottom:0;cursor:pointer;}
+#erweima{position: relative;}
+#erweima .erweima-small{width:60px;height:100px;border:1px solid #ddd;background:url(../../images/fed/float-layer3.png) no-repeat -76px -229px;}
+#erweima .erweima-active{background-position:-1px -229px;background-color:#d9d9d9;}
+#erweima .erweima-big{width:245px;height:256px;background:url(../../images/fed/float-layer3.png) no-repeat 42px 36px #fff;position:absolute;top:-99px;left:-246px;border:1px solid #bbb;display:none;}
+#erweima .erweima-big span {float: right;background-position:0 -353px;width: 7px;height: 13px;margin-right: -7px;margin-top: 130px;}
+#suggest .suggest-tag{width: 60px;height: 90px;border:1px solid #ddd;border-top:none;background:url(../../images/fed/float-layer3.png) no-repeat -36px -555px;cursor:pointer;}
+#suggest .suggest-tag-active{background-position: -102px -555px;background-color:#d9d9d9;}
+#suggest .suggest-popup{position: fixed;z-index:100000;top:100px;left:50%;margin-left: -290px;width: 580px;height: 387px;background-color: #eee;}
+#suggest .suggest-popup .suggest-close{float: right;width: 30px;height: 30px;margin: 20px 13px;cursor:pointer;background:url(../../images/fed/float-layer3.png) no-repeat 0px -560px;}
+#suggest .suggest-popup .suggest-close:hover{background-position: 0px -597px;}
+#suggest .suggest-popup .suggest-title{margin: 20px 0 20px 17px;color: #666;}
+#suggest .suggest-popup .suggest-title ins{font-size: 24px;font-weight: bold;font-family: "\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;color: #333;padding-right: 5px;}
+#suggest .suggest-popup .suggest-area{width: 528px;height: 235px;padding: 10px;border: 1px solid #e0e0e0;background-color: #fff;margin-left: 15px;color:#b5b5b5;font-size: 14px;resize:none;}
+#suggest .suggest-popup .suggest-area-active{color: #333}
+#suggest .suggest-popup .suggest-num{float: left;color: #666;line-height: 50px;margin-left: 15px;}
+#suggest .suggest-popup .suggest-num ins{color: #ee7700}
+#suggest .suggest-popup .suggest-remind{float: left;margin-left: 15px;color:#ff0000;line-height: 50px;}
+#suggest .suggest-popup .suggest-button{float: right;width: 130px;margin-right:16px;margin-top:10px;line-height: 35px;height:35px;background-color:#a0a0a0;border:none;font-weight:bold;color: #fff;font-size: 14px;text-align: center;}
+#suggest .suggest-popup .suggest-submit{cursor: pointer;background-color:#33b600;}
+#suggest .suggest-result{position: fixed;z-index:100000;top:180px;left:50%;margin-left: -290px;width: 580px;padding:25px 0;background-color: #eee;text-align: center;font-size: 20px;color:#313131;font-family: "\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-weight: bold;}
+.popup_remind{width:340px;padding:50px 0 20px;text-align:center;background-color:#fcfcfc;position:fixed;top:230px;left:50%;margin-left:-170px;z-index:11000}
+.popup_close{float:right;margin:-43px 14px 0 0;width:20px;height:20px;background:url(../../images/fed/souche_sprite2.jpg) no-repeat 4px -240px;cursor:pointer}
+#BDBridgeIconWrap{bottom:309px !important;top:auto !important;margin:0 !important;border:1px solid #ddd !important;width:60px !important;}
+#bridgehead {background:url(../../images/fed/float-layer3.png) no-repeat -34px -451px !important;}
+#BaiduBridgePigeon .BdBridgeLogo{display:none}
+#BDBridgeIconWrap .BDActive {background:url(../../images/fed/float-layer3.png) no-repeat -101px -451px !important;}
+.car_tag_zhijian{width:34px;height:46px;position:absolute;right:10px;top:10px;background:url(../../images/fed/tag_sprite.png) no-repeat 0 -50px;color:#e70;font-size:14px;text-align:center;line-height:56px;font-style:normal;font-family:Arial}
+.car_tag_yushou{width:41px;height:45px;position:absolute;right:9px;top:5px;background:url(../../images/fed/tag_sprite.png) no-repeat 0 0}
+.car_tag_yushou_big{width:62px;height:65px;position:absolute;left:0;top:-7px;z-index:10;background:url(../../images/fed/tag_sprite.png) no-repeat -58px 0}
+.sort{margin:30px auto;text-align:center}.sort a,.sort span{display:inline-block;margin-right:5px;width:30px;height:30px;background-color:#fff;border:1px solid #d9d9d9;color:#666;text-align:center;line-height:32px;font-size:14px;font-family:Arial}
+.sort a:hover{border-color:#e70;color:#e70}
+.sort a:active{background-color:#e70;color:#fff}
+.sort .pre{padding-left:20px;width:68px;background:url(../../images/fed/pre.jpg) no-repeat 17px 11px #fff}
+.sort .next{padding-right:20px;width:68px;background:url(../../images/fed/next.jpg) no-repeat 62px 10px #fff}
+.sort .next:hover,.sort .pre:hover{border-color:#d9d9d9;color:#666}
+.sort .next:active,.sort .pre:active{background-color:#fff;color:#666}
+.sort span{background:url(../../images/fed/sort.png) no-repeat center center #fff;text-indent:-9999em}
+.sort .activeNumber{background-color:#e70;border-color:#e70;color:#fff}
+.sort .activeNumber:hover{color:#fff}
+.shareTo{margin:0 auto;width:273px;margin-top: 3px;}.shareTo .bds_more{background:none !important;color:#999;float:left;padding-top: 3px !important;}
+.shareTo a{background:url(../../images/fed/share.png) no-repeat !important;margin-right:4px;padding-top: 2px !important;padding-bottom: 0 !important;padding-left: 18px !important;}
+.shareTo .bds_tsina{background-position:-68px -3px !important}
+.shareTo .bds_qzone{background-position:-23px -3px !important}
+.shareTo .bds_tqq{background-position:-1px -3px !important}
+#quick_buy{width:100%;background-color:#282828;color:#fff;opacity:.9;position:fixed;bottom:0;left:0;z-index:100}#quick_buy .quick_buy_remind,#quick_buy .quick_buy_info p{width:452px;height:47px;line-height:47px;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;cursor:pointer;margin:0 auto}#quick_buy .quick_buy_remind span,#quick_buy .quick_buy_info p span{float:right;width:30px;height:30px;background:url(../../images/fed/index/index_sprite2.png) no-repeat -96px -95px;margin-top:7px;*margin-top:-39px}
+#quick_buy .quick_buy_remind{text-indent:74px;}
+#quick_buy .quick_buy_remind span{margin-right:71px;}
+#quick_buy .quick_buy_info p{height:60px;line-height:60px}
+#quick_buy .quick_buy_info p span{background-position:-141px -98px;height:30px;width:30px;line-height:47px;margin-top:15px;*margin-top:-43px}
+#quick_buy .quick_buy_p{border-bottom:1px solid #3e3e3e}
+.quick_buy_form{width:482px;margin:0 auto;float:none;display:block;padding-left:32px;padding-bottom:30px}.quick_buy_form .select_controller label{color:#fff;font-size:12px;font-weight:normal}
+.quick_buy_form .select_controller select{float:left;display:inline;width:208px;margin-right:30px;height:28px}
+.quick_buy_form .controller_float{float:left;margin-right:0;width:auto}
+.quick_buy_form .select_controller{margin-bottom:10px}
+.quick_buy_form input.buy_button{margin-left:133px;margin-top:91px;*margin-top:0;border:none;height:31px;width:182px}
+#pageError{height:550px;background: url(../../images/fed/error.png) no-repeat center center #fff;}
+
+.sc-option{
+    display:inline-block;
+    border:1px solid #d9d9d9;
+    height:25px;
+    background:#fff;
+    line-height:25px;
+    width:145px;
+    position:relative;
+}
+.sc-option-hd{
+    text-align:left;
+    padding-left:10px;
+    position:relative;font-size:12px;
+    color:#aaa;
+    font-weight:normal;
+}
+.sc-option-action{
+    width:25px;height:25px;
+    position:absolute;
+    right:0;
+    top:0;
+    *top:-4px;
+    background:#d9d9d9;
+    cursor:pointer;
+    font-size:0px;
+    line-height:0px;
+    _right:-1px;
+}
+.sc-option-action i{
+    margin-left:8px;
+    margin-top:10px;
+    display:block;
+    width:0; height:0; border:5px solid; border-color:#555 #d9d9d9 #d9d9d9 #d9d9d9;
+    font-size:0px;
+    line-height:0px;
+    
+}
+.sc-option-list{
+    width:100%;
+    border:1px solid #d9d9d9;
+    left:-1px;
+    position:absolute;
+        overflow:auto;
+    z-index:10000;
+    overflow-x:hidden;
+}
+.sc-option-list .panel{
+    font-size:12px;
+    color:#aaa;
+    padding-left:10px;
+    line-height:25px;
+    background:#fff;
+}
+.sc-option-list li{
+    display:block  !important;
+    float:none !important;
+    
+    width:100% !important;
+    line-height:30px;
+    background:#fff;
+}
+.sc-option-list li a{
+    padding-left:20px;
+    display:block;
+    font-weight:normal;
+    font-size:12px;
+    color:#404040;
+
+}
+.sc-option-list li a:hover{
+    background:#ff6700;
+    color:#fff !important;
+}

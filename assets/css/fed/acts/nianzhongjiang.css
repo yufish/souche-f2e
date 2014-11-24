@@ -1,0 +1,467 @@
+body {font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";}
+a {color: #414141;}
+.horizontalframe i a{color:#fff724;}
+.horizontalframe i a:hover,.horizontalframe i a:visited{color:#fff724;}
+.littlecontent i a,.littlecontent i a:hover,.littlecontent i a:visited{color:#fff724;}
+.littlecontent2 i a,.littlecontent2 i a:hover,.littlecontent2 i a:visited{color:#fff724;}
+#content{width:100%;background: url(../../../images/fed/acts/nianzhongjiang/head-bg2.jpg) #efb271 repeat-x top center;padding-top: 414px;}
+#content .wrapper{width:1000px;margin:0 auto;width:980px; height:284px; background-color: #d12929; padding-left:21px;}
+/*四个横向框*/
+.horizontalframe {position: relative;width:960px; height:265px; background-color:#f7f7f7;}
+.carname {position:absolute; left:425px; top:35px;}
+.carprice1 {position:absolute; left:625px; top:35px;}
+.carprice2 {position:absolute; right:160px; top:50px;}
+
+.newcarprice {
+	position:absolute; 
+	left:425px; 
+	top:110px; 
+	width:120px; 
+	border-right:solid 1px #919191;
+}
+
+.cardistance {
+	position:absolute;
+	right:285px; 
+	top:110px; 
+	width:90px; 
+	border-right:solid 1px #919191;
+}
+
+.carliscense {
+	position:absolute; 
+	right:160px; 
+	top:110px; 
+	width:130px; 
+}
+
+.shinetip {
+	position:absolute; 
+	left:400px; 
+	top:147px; 
+	width:560px; 
+	height:120px; 
+	border-top:1px solid #e8e8e8;
+}
+
+.shinetipspan {
+	padding: 3px 5px;
+	border-bottom: 5px;
+	margin-left:25px; 
+	
+	margin-right:15px; 
+	font-size:14px; 
+	background-color:#ff7f00; 
+	 line-height: 30px;
+	color:white;
+}
+
+.littlecontent {
+	position:relative; 
+	width:290px; 
+	height:370px; 
+	float:left; 
+	padding-left:10px; 
+	padding-right:10px; 
+	margin-right:15px; 
+	background-color:#ffffff;
+}
+
+.littlecontent2 {
+	position:relative; 
+	width:290px; 
+	height:370px; 
+	float:left; 
+	padding-left:10px; 
+	padding-right:10px; 
+	background-color:#ffffff;
+}
+
+.xinchejia {
+	position:absolute; 
+	left:10px; 
+	top:260px; 
+	width:100px; 
+	border-right:solid 1px #919191;
+}
+
+.xinchejiapara {
+	font-size:1.1em;
+	font-weight:normal; 
+	color:#919191;
+}
+
+.gonglishu {
+	position:absolute; 
+	left:115px; 
+	top:260px; 
+	width:75px; 
+	border-right:solid 1px #919191;
+}
+
+.gonglishupara {
+	font-size:1.1em;
+	font-weight:normal; 
+	color:#919191;
+}
+
+.shangpairi {
+	position:absolute; 
+	right:10px; 
+	top:260px; 
+	width:105px; 
+	border-right:solid 0px #919191;
+}
+
+.shangpairipara {
+	font-size:1.1em;
+	font-weight:normal; 
+	color:#919191;
+}
+
+.pricechange {
+	position:absolute; 
+	top:300px; 
+	width:170px; 
+	border-top:solid 1px #919191;
+}
+
+
+/*质检标志*/
+.car_tag_zhijian{
+	width:34px;
+	height:46px;
+	position:absolute;
+	left:350px;
+	top:10px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+.car_tag_zhijian2{
+	width:34px;
+	height:46px;
+	position:absolute;
+	right:880px;
+	top:918px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+.car_tag_zhijian3{
+	width:34px;
+	height:46px;
+	position:absolute;
+	right:880px;
+	top:1201px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+.car_tag_zhijian4{
+	width:34px;
+	height:46px;
+	position:absolute;
+	right:880px;
+	top:1484px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+
+.car_tag_zhijian5{
+	width:34px;
+	height:46px;
+	position:absolute;
+	right:880px;
+	top:1767px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+.car_tag_zhijian6{
+	width:34px;
+	height:46px;
+	position:absolute;
+	right:880px;
+	top:2050px;
+	background:url(../../../images/fed/acts/nianzhongjiang/images-fed-tag_sprite.png) no-repeat 0 -50px;
+	color:#e70;
+	font-size:14px;
+	text-align:center;
+	line-height:56px;
+	font-style:normal;
+	font-family:Arial
+}
+
+/*iceprice链接*/
+.bingdianzj {
+	width: 120px;
+	height: 148px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../../../images/fed/acts/nianzhongjiang/iceprice5w.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: underline;
+	line-height: 250px;
+	font-style: normal;
+	font-family: Arial;
+
+}
+
+.bingdianzj2 {
+	width: 120px;
+	height: 148px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../../../images/fed/acts/nianzhongjiang/iceprice.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: underline;
+	line-height: 250px;
+	font-style: normal;
+	font-family: Arial;
+
+}
+
+.bingdianzj3 {
+	width: 120px;
+	height: 148px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../../../images/fed/acts/nianzhongjiang/iceprice.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: underline;
+	line-height: 250px;
+	font-style: normal;
+	font-family: Arial;
+
+}
+
+.bingdianzj4 {
+	width: 120px;
+	height: 148px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../../../images/fed/acts/nianzhongjiang/iceprice.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: underline;
+	line-height: 250px;
+	font-style: normal;
+	font-family: Arial;
+
+}
+
+/*24部其它降价车*/
+
+.car_tag_jiangjia {
+	display: block;
+	width: 34px;
+	height: 46px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	background: url(http://souche.cdn.aliyuncs.com/images/fed/tag_sprite.png) no-repeat 0 -50px;
+	color: #e70;
+	font-size: 14px;
+	text-align: center;
+	font-style: normal;
+	font-family: Arial;
+	line-height: 56px;
+}
+
+
+.bingdian5000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice5000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+/*冰点直降7000*/
+.bingdian7000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/bdzj_7k.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+/*iceprice6000元系列*/
+.bingdian6000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice6000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*iceprice4000系列*/
+.bingdian4000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice4000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*iceprice3000元系列*/
+.bingdian3000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice3000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*iceprice2000元系列*/
+.bingdian2000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice2000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*iceprice1500元系列*/
+.bingdian1500 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice1500.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*iceprice1000元系列*/
+.bingdian1000 {
+	width: 132px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 300px;
+	background:  url(../../../images/fed/acts/nianzhongjiang/iceprice1000.jpg) no-repeat 0 ;
+	color: #fff724;
+	font-size: 12px;
+	text-decoration: underline;
+	line-height: 120px;
+	font-style: normal;
+	font-family: Arial;
+	text-align: center;
+}
+
+/*彩票*/
+.caipiaocontainer {
+	position:relative; 
+	left:292px; 
+	width:1000px; 
+	height:210px;
+	padding-top:30px;
+
+}
+
+.caipiao {
+	width: 1000px;
+	height: 180px;
+	position: absolute;
+
+}
+
+/*规则*/
+.rules {
+	position: relative;
+	left: 292px;
+	width: 1000px;
+	height: 316px;
+	padding-bottom: 50px;
+}
+.guize {
+	width: 1000px;
+	height: 266px;
+	position: absolute;
+}
