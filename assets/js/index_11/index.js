@@ -1,4 +1,4 @@
-flexslider(['wannaBuy/sweetCountdown'],function(SweetCountdown){
+define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
 
     var _config = {};
 
