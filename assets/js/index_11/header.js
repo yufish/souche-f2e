@@ -64,7 +64,7 @@ define(function() {
                 nowCity.name = data.addressName;
                 $(".city-wrap a").removeClass("active-city");
                 $(".city-wrap a[data-code='" + data.provinceCode + "']").addClass("active-city");
-                document.title = document.title.replace(/北京/, data.addressName)
+                document.title = document.title.replace(/北京/g, data.addressName)
             }
         }
     });
