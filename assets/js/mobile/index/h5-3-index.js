@@ -94,6 +94,19 @@ if (navigator.userAgent.match(/Android/i)){
             }
         })
     })
+    $.ajax({
+        type: "GET",
+        url: contextPath + "/pages/toolbarAction/getAdderssMap.json",
+        dataType: "json",
+        success: function(data) {
+            if (data && data.addressName) {
+
+                $(".city-name").html(data.addressName);
+                $(".choose-city-item").removeClass("active");
+                $(".choose-city-item[data-code='" + data.provinceCode + "']").addClass("active");
+            }
+        }
+    });
 
 }()
 //tab动画的相关实现
