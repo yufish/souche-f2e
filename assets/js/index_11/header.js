@@ -62,6 +62,7 @@ define(function() {
                 $("#J_city_show").html(data.addressName);
                 nowCity.code = data.cityCode
                 nowCity.name = data.addressName;
+                $(".city-wrap a").removeClass("active-city");
                 $(".city-wrap a[data-code='" + data.provinceCode + "']").addClass("active-city");
             }
         }
