@@ -123,8 +123,8 @@ form#form.form-horizontal(name='form', method='post', enctype='multipart/form-da
       .control-group
         label.control-label 开店日期:
         .controls
-          .input-append.date
-            input#openDate.m-wrap.date-picker.span12(type='text', value='', name='openDate', placeholder='yyyy-mm-dd')
+          .input-append#openDate.date(data-date="12-02-2012",data-date-format="dd-mm-yyyy")
+            input.m-wrap.date-picker.span12(type='text', value='', name='openDate', placeholder='yyyy-mm-dd')
             span.add-on
               i.icon-calendar
           span#openDate_err.help-inline(style='color: #B94A48;')

@@ -16,7 +16,7 @@
     background: #fff;
 
     .module-bd{
-        margin-top: 50px;
+        margin-top: 40px;
         padding-bottom: 80px;
     }
     
@@ -31,7 +31,7 @@
 
         .good-item-title{
             font-weight: bold;
-            font-size: 22px;
+            font-size: 20px;
             color: #000;
         }
     }
@@ -90,16 +90,20 @@
 
     }
     .car-info{
+        margin-top: -17px;
         .limit-sale-car-img{
             float: right;
             max-height: 100px;
             max-width: 260px;
             width: auto;
-            margin-top: -6px;
+            // margin-top: -5px;
         }
         .car-name,
         .car-price{
             padding-left: 30px;
+        }
+        .car-price{
+            padding-left: 27px;
         }
         .car-name{
             margin-top: 20px;
@@ -150,7 +154,7 @@
         padding-top: 20px;
     }
     .good-item-sub-title{
-        margin-top: 10px;
+        margin-top: 5px;
         color: #999;
     }
     .car-info{
@@ -173,6 +177,8 @@
             .text-collapse();
         }
         .item-car-ptice{
+            margin-top: 6px;
+            margin-left: -3px;
             font-weight: bold;
             color: @soucheOrange;
         }
@@ -236,6 +242,8 @@
             .text-collapse();
         }
         .journal-car-price{
+            margin-top: 6px;
+            margin-left: -3px;
             font-weight: bold;
             color: @soucheOrange;
         }
@@ -327,7 +335,7 @@
         .car-name{
             .tst();
         }
-        &.hover .car-name{
+        &:hover .car-name{
             color: @soucheOrange;
         }
     }
