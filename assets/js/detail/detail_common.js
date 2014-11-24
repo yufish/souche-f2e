@@ -465,15 +465,18 @@ $(".unfold").on("submit", function(e) {
                 height: $(document.body).height(),
                 zIndex: 1000000000000
             })
-            $(document.body).append(bigImages);
-            iframe = window.frames['bigImages'];
-            $(iframe).load(function() {
+
+            $(bigImages).load(function() {
+                iframe = window.frames['bigImages'];
                 iframe.Slider.init({
                     viewHeight: $(window).height()
                 });
                 iframe.Slider.setCurrent(index);
                 bigImages.css("display", "block");
             })
+            $(document.body).append(bigImages);
+
+
         }
     }
     $("#onsale_detail .photosWrap").click(function(event) {
