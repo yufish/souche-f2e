@@ -129,7 +129,7 @@ define(['souche/add-series','souche/custom-select','souche/util/load-info'],func
                         $(".buyer-popup").removeClass("hidden");
                         setTimeout(function(){
                           window.location.href="/pages/buyer.html"
-                        }3000);
+                        },5000);
                     }
                 })
 //                $("#main-form").submit();
