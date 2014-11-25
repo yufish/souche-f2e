@@ -223,3 +223,58 @@
     border-radius: 4px;
     margin-bottom: 10px;
 }
+
+.buyer-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.4);
+}
+
+.buyer-alert .buyer-alert-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 35px 19px;
+    width: 86%;
+    max-width: 360px;
+    height: 320px;
+    transform: translate3d(-50%,-50%,0);
+    background-color: #fff;
+}
+
+.buyer-alert .buyer-inner-detail {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+.buyer-alert .buyer-inner-detail p:first-child {
+    margin-bottom: 15px;
+}
+
+.buyer-alert .buyer-inner-detail p {
+    line-height: 30px;
+}
+
+.buyer-alert .buyer-alert-inner h6 {
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.icon-result-success {
+    margin-right: 15px;
+    background: url(../../../images/common/result-success.png) no-repeat left center;
+    width: 49px;
+    height: 52px;
+    display: inline-block;
+    vertical-align: middle;
+}
+

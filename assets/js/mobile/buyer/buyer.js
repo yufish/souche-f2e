@@ -341,8 +341,11 @@ $('#main-form').submit(function(e){
         url:url,
         data:$(this).serialize(),
         success:function(e){
-            console.log(e)
-            alert('提交成功');
+            console.log(e);
+            $('.buyer-alert').show(0);
+            setTimeout(function() {
+                window.location.href = contextPath + '/pages/mobile/h5-buyer/buyer-index.html';
+            }, 2000)
         }
     })
 })
