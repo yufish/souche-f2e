@@ -150,16 +150,18 @@
         content: '';
         display: none;
         position: absolute;
-        bottom: 0;
+        
         width: @borderW;
         height: @borderW;
         background-color: @soucheOrange;
         z-index: 200;
       }
       &:before{
+        bottom: -2px;
         left: -@borderW;
       }
       &:after{
+        bottom: -1px;
         right: -@borderW;
       }
     }
@@ -302,7 +304,7 @@
       margin:20px;
       margin-bottom: 25px;
       display: none;
-      
+
       .models-line {
         margin-bottom: 17px;
         overflow: hidden;
