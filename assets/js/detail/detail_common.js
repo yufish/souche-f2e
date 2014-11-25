@@ -286,7 +286,8 @@
             url: SaleDetailConfig.api_AddressToPhone,
             data: {
                 phone: $("#address-phone").val(),
-                place:$(".adress-open p").html()
+                place:$(".adress-open p").html(),
+                carId:SaleDetailConfig.carId
             },
             type: "post",
             success: function() {

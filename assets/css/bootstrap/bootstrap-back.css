@@ -1671,6 +1671,7 @@ select:focus:invalid:focus {
     display: inline-block;
     margin-bottom: 10px;
     white-space: nowrap;
+    font-size:0;
     vertical-align: middle;
 }
 
