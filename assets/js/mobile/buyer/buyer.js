@@ -24,14 +24,14 @@
     var utils = {
         getAllBrand: function (cb) {
             $.ajax({
-                url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
+                url: contextPath + "/pages/dicAction/loadRootLevel.json?type=car-subdivision",
                 dataType: "json",
                 success: cb
             })
         },
         getSeriesByBrand: function (bCode, cb) {
             $.ajax({
-                url: contextPath + "/pages/dicAction/loadExistSeries.json",
+                url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
                 dataType: "json",
                 data: {
                     type: "car-subdivision",
@@ -196,17 +196,26 @@
         })
         var seriesList = {
             list:[],
+            nameList:[],
             $input:$('#car_series'),
-            removeSeries:function (sCode){
+            removeSeries:function (sCode,sName){
                 var seriesList = this.list;
                 for(var i=0;i<seriesList.length; i++){
                     if(seriesList[i]==sCode){
                         seriesList.splice(i,1);
                     }
                 }
+
+                var seriesNameList = this.nameList;
+                for(var i=0;i<seriesNameList.length; i++){
+                    if(seriesNameList[i]==sName){
+                        seriesNameList.splice(i,1);
+                    }
+                }
             },
-            push:function(sCode){
+            push:function(sCode,sName){
                 this.list.push(sCode)
+                this.nameList.push(sName);
             },
             clear:function(){
                 this.list = [];
@@ -215,7 +224,7 @@
                 return this.list.length;
             },
             syncValue:function(){
-                this.$input.val(this.list.join(','))
+                this.$input.val(this.nameList.join(','))
             }
         };
 
@@ -223,15 +232,16 @@
             var self = $(this);
             if(self.hasClass('selected')){
                 self.removeClass('selected');
+                var sName = self.find('.series-name').text()
                 var code = self.attr('data-code');
-                seriesList.removeSeries(code)
+                seriesList.removeSeries(code,sName)
 
             }else{
                 self.find('.series-item').removeClass('selected');
                 self.addClass('selected');
                 var sName = self.find('.series-name').text()
                 var sCode = self.attr('data-code');
-                seriesList.push(sCode)
+                seriesList.push(sCode,sName)
                 $('#J_series').text(sName);
             }
             var len = seriesList.length();
@@ -285,19 +295,19 @@
         for(var i = 0;i<items.length;i++){
             var code = items[i].code;
             var name = items[i].enName;
-            html+='<option value="'+code+'">'+name+'</option>'
+            html+='<option value="'+name+'" data-code='+code+'>'+name+'</option>'
         }
         $('#J_province').html(html);
     })
     $('#J_province').change(function(){
-        var code =$('#J_province option:selected').val();
+        var code =$('#J_province option:selected').attr("data-code");
         loadCityByProvinceCode(code,function(e){
             var items = e.items
             var html='<option value="">不限</option>'
             for(var i = 0;i<items.length;i++){
                 var code = items[i].code;
                 var name = items[i].enName;
-                html+='<option value="'+code+'">'+name+'</option>'
+                html+='<option value="'+name+'">'+name+'</option>'
             }
             $('#J_city').html(html);
         })
@@ -331,8 +341,11 @@ $('#main-form').submit(function(e){
         url:url,
         data:$(this).serialize(),
         success:function(e){
-            console.log(e)
-            alert('提交成功');
+            console.log(e);
+            $('.buyer-alert').show(0);
+            setTimeout(function() {
+                window.location.href = contextPath + '/pages/mobile/h5-buyer/buyer-index.html';
+            }, 2000)
         }
     })
 })
