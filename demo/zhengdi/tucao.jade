@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        link(href="/assets/css/mobile/feedback.css",rel="stylesheet",type="text/css")
+        title 吐槽demo
+        meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+        script(src="/assets/js/lib/jquery-2.1.1.min.js")
+    body
+        .sc-feedback
+            .sc-feedback-title 
+                img(src="assets/images/mob/tucao.png", alt="")
+            .sc-feedback-content
+                form(id="form-feedback" action="")
+                    textarea#J_fbContent(placeholder="啊，小搜又做错了什么，求亲留下点线索，给小搜一个改过的机会＞﹏＜")
+                    input#J_fbMobile(placeholder="手机号", type="tel")
+                    button#J_fbButton 立刻吐槽
+        script.
+            $('#form-feedback').on('submit', function(e) {
+                e.preventDefault();
+                var fb_content = $('#J_fbContent').val(),
+                    fb_mobile  = $('#J_fbMobile').val(),
+                    $fb_box    = $('.sc-feedback-content'),
+                    phoneReg   = /^1[34578][0-9]{9}$/,
+                    $this      = $(this);
+               
+                if (fb_content == '') {
+                    alert('请输入吐槽的内容');
+                } else {
+                    if (fb_mobile != '' && !phoneReg.test(fb_mobile)) {
+                        alert('请输入正确的手机号！');
+                        return;
+                    }
+                    $.ajax({
+                        url: 'http://f2e.souche.com/demo/zhengdi',
+                        data: $this.serialize(),
+                        success: function() {
+                            $fb_box.html('<p class="fb-back">已收到您的建议！非常感谢，我们将继续改进，您的每几句吐槽都是我们成长的养料。</p>');
+                        } 
+                    })
+                }
+            })
+
+
+
