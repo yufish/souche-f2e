@@ -199,6 +199,14 @@ define(function() {
             $('#header .user .login-text').on('click', _event.login);
             $('#header .user').on('mouseenter', _event.popUserMenu);
             _event.bindUsermenuHide();
+
+            var searchForm = $('#header .index-search');
+            $('#header .search-text').on('focus', function(){
+                searchForm.addClass('input-focusing');
+            });
+            $('#header .search-text').on('blur', function(){
+                searchForm.removeClass('input-focusing');
+            });
         },
         login: function() {
             Souche.MiniLogin.checkLogin(function() {
@@ -212,7 +220,6 @@ define(function() {
                     $('#user-menu').addClass('active');
                 }
             },300)
-
         },
         bindUsermenuHide: function() {
             $(document.body).on('click', function() {
