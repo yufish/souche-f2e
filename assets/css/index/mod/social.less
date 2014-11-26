@@ -76,12 +76,25 @@
     overflow: hidden;
     margin-top:-5px;
     a{
+      position: relative;
       display: block;
       line-height: 24px;
-      padding-left: 20px;
+      padding-left: 22px;
       font-size:14px;
       color:#666;
       .text-collapse();
+
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: -1px;
+        width: 24px;
+        height: 24px;
+        background-image: url('../../images/index_11/bbs-list-dot.png');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
       
       &:hover{
         color: @soucheOrange;

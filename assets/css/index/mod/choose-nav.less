@@ -15,16 +15,63 @@
     width:1180px;
     margin: 0 auto;
   }
+  // common of these three
+  .hd{
+    font-weight: bold;
+    padding-left: 24px;
+  }
+  .bd{
+    padding-left: 24px;
+  }
+  .brand-wrapper,
+  .model-wrapper{
+    border: 2px solid #fff;
+  }
+  .brand-all{
+    border: 2px solid @soucheOrange;
+  }
+  .item-brand.active{
+    .brand-wrapper{
+      border:2px solid @soucheOrange;
+      border-bottom:2px solid #fff;
+    }
+    .trigger-icon{
+      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
+    }
+    .brand-all{
+      display: block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  }
+
+  .item-model.active{
+    .bd{
+      height:auto;
+    }
+    .model-wrapper{
+      border: 2px solid @soucheOrange;
+    }
+    .trigger-icon{
+      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
+    }
+    .model-all{
+      display: block;
+    }
+  }
+
+
+
   .brand-all {
     background: #fff;
     position: absolute;
     width: 598px;
-    border: 1px solid @soucheOrange;
-    top: 100px;
+    padding:15px;
+    padding-left: 24px;
+    padding-bottom: 30px;
+    top: 101px;
     left:0px;
     z-index:100;
     background: #fff;
-    padding:15px;
     display:none;
     .title{
       font-size: 14px;
@@ -70,6 +117,16 @@
     height:100px;
     border-right:1px solid #eee;
     position: relative;
+    
+    &.active{
+      .brand-wrapper{
+        &:before,
+        &:after{
+          display: block;
+        }
+      }
+    }
+
     .trigger-icon{
       position: absolute;
       right:20px;
@@ -81,24 +138,44 @@
       cursor: pointer;
     }
     .brand-wrapper{
+      position: relative;
       z-index:101;
-      border:1px solid #fff;
+      border: 2px solid #fff;
       border-bottom:1px solid #fff;
       background: #fff;
-      position: relative;
+
+      @borderW: 2px;
+      &:before,
+      &:after{
+        content: '';
+        display: none;
+        position: absolute;
+        
+        width: @borderW;
+        height: @borderW;
+        background-color: @soucheOrange;
+        z-index: 200;
+      }
+      &:before{
+        bottom: -2px;
+        left: -@borderW;
+      }
+      &:after{
+        bottom: -1px;
+        right: -@borderW;
+      }
     }
+    
     .hd{
       font-size: 16px;
       line-height: 40px;
-      padding-left: 15px;
-
     }
     .bd{
       height:60px;
     }
     .brand-item{
       float:left;
-      width:52px;
+      width: 48px;
       overflow: hidden;
       img{
         width:32px;
@@ -114,34 +191,7 @@
       }
     }
   }
-  .item-brand.active{
-    .brand-wrapper{
-      border:1px solid @soucheOrange;
-      border-bottom:1px solid #fff;
-    }
-    .trigger-icon{
-      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
-    }
-    .brand-all{
-      display: block;
-    }
-
-  }
-  .item-model.active{
-    .bd{
-      height:auto;
-    }
-    .model-wrapper{
-      border:1px solid @soucheOrange;
-    }
-    .trigger-icon{
-      background:url(../../images/index_11/arrow-down-orange.png) no-repeat;
-    }
-    .model-all{
-      display: block;
-    }
-
-  }
+  
   .item-model{
     width:440px;
     float:left;
@@ -150,8 +200,6 @@
     position: relative;
     .model-wrapper{
       z-index:101;
-      border:1px solid #fff;
-      border-bottom:1px solid #fff;
       background: #fff;
       position: relative;
     }
@@ -167,10 +215,10 @@
     .hd{
       font-size: 16px;
       line-height: 40px;
-      padding-left: 15px;
     }
     .bd{
-      padding:0 10px;
+      padding-top: 0px;
+      padding-right: 10px;
       height: 57px;
       overflow: hidden;
     }
@@ -178,7 +226,7 @@
       display: block;
       text-align: center;
       float:left;
-      width:59px;
+      width: 56px;
       height:55px;
       &:hover{
         .car-modal-img{
@@ -254,9 +302,11 @@
     }
     .model-all{
       margin:20px;
+      margin-bottom: 25px;
       display: none;
+
       .models-line {
-        margin-bottom: 10px;
+        margin-bottom: 17px;
         overflow: hidden;
         height: 15px;
         .models-item-m {
@@ -290,8 +340,8 @@
       padding-left: 15px;
     }
     .price-item{
-      margin-left: 15px;
-      margin-right: 10px;
+      margin-left: 5px;
+      margin-right: 15px;
       display: inline-block;
       word-break: break-all;
       margin-top: 5px;
