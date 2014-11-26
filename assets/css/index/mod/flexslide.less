@@ -9,6 +9,10 @@
     }
 
     .flex-direction-nav{
+        top: 0;
+        width: 100%;
+        height: 0;
+        overflow: visible;
         .tst();
         .opacity(0);
 
@@ -18,25 +22,27 @@
 
         .flex-prev,
         .flex-next{
-            width: 26px;
-            height:44px;
-            margin: -40px 0 0;
-            display: block;
             position: absolute;
-            top: 50%;
+            width: 160px;
+            height: 460px;
+            margin: 0;
+            display: block;
+            top: 0;
             opacity: 1;
             cursor: pointer;
             text-indent: -9999px;
-            -webkit-transition: all .3s ease;
+            .tst( all .3s ease;);
+            background-position: center;
+            background-repeat: no-repeat;
             z-index: 100;
         }
         .flex-prev{
-            background: url(../../images/index_11/flex-prev.png?123) no-repeat;
-            left: 60px;
+            background-image: url(../../images/index_11/flex-prev.png?123);
+            left: 0px;
         }
         .flex-next{
-            background: url(../../images/index_11/flex-next.png?123) no-repeat;
-            right: 60px;
+            background-image: url(../../images/index_11/flex-next.png?123);
+            right: 0px;
         }
     }
 }
