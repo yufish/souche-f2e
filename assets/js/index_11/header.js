@@ -35,8 +35,10 @@ define(function() {
     };
     $("#J_logout").on("click",function(e){
         e.preventDefault();
-        $.ajax({url:"http://www.souche.com/pages/clear_cookie.html"});
-        window.location.href=$(this).attr("href")
+        $.ajax({url:"http://www.souche.com/pages/clear_cookie.html"},success:function(){
+            window.location.href=$(this).attr("href")
+        }});
+
     })
     $.ajax({
         type: "GET",
