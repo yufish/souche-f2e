@@ -165,7 +165,6 @@ define(['index/car-god',
                     animationLoop: false,
                     randomize: false,
                     directionNav: false
-
                 });
                 $(".flex-direction-nav").hide();
                 $(".main-slider").mouseenter(function() {
