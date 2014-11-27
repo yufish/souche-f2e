@@ -1,3 +1,5 @@
+@cardH: 360px;
+
 .carsModule{
     position: relative;
     width:1040px;
@@ -5,7 +7,7 @@
 .dialogContentContainer{
     position: absolute;
     width: 0px;
-    height: 370px;
+    height: @cardH;
     left: 0px;
     top: 0px;
     vertical-align: top;
@@ -36,9 +38,9 @@
 
     .dialog-item{
         width:25%;
-        margin-top: 10px;
+        margin-top: 32px;
         .hd{
-            margin-bottom: 34px;
+            margin-bottom: 24px;
             span{
                 display: inline-block;
                 padding-left: 25px;
@@ -53,7 +55,7 @@
     }
     .carBanner{
         float: left;
-        height: 370px;
+        height: @cardH;
         margin-top: -1px;
         background:url(../images/index/rss-lft-banner.png) no-repeat;
         background-color: #454954;
@@ -79,13 +81,15 @@
         }
         .dataContainer {
             position: relative;
+            width: 235px;
+            margin: 0 auto;
             vertical-align: middle;
             .selectContainer {
                 border: 1px solid #d9d9d9;
                 height: 30px;
                 background: #fff;
                 line-height: 25px;
-                width: 36%;
+                width: 100px;
                 position: relative;
                 float: left;
                 padding-left: 5%;
@@ -102,9 +106,7 @@
             }
             > a {
                 float: left;
-                width: 5%;
-                margin-left: 2%;
-                margin-right: 2%;
+                width: 35px;
                 overflow: hidden;
                 top: 7px;
                 position: relative;
@@ -166,10 +168,14 @@
         height: 273px;
         overflow-x:hidden;
         .instrest-tip{
-            font-size:12px;
-            line-height: 25px;
+            width: 235px;
+            margin: 0 auto;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            line-height: 20px;
             color:#aaa;
-            text-align: center;
+            text-align: left;
         }
         .hd{
             span{
@@ -182,18 +188,20 @@
             }
         }
         .selected_series_result{
+            width: 235px;
+            margin: 0 auto;
             margin-top:10px;
-            width:234px;
+
             .selected-item{
                 float:left;
                 line-height: 30px;
-                padding-right: 15px;
+                padding-right: 30px;
                 border:2px solid #fff;
                 cursor:pointer;
                 margin-right: 4px;
-                width:93px;
+                width: 110px;
                 white-space:nowrap;
-                height:30px;
+                height: 30px;
                 overflow: hidden;
                 text-overflow:ellipsis;
                 img{
@@ -215,7 +223,7 @@
             height:100%;
         }
         h1 {
-            margin-left: 10px;
+            margin-left: 18px;
             font-size: 14px;
         }
         .carinstrestItem {
@@ -245,15 +253,16 @@
             }
         }
         .addCarinstrestItem {
+            position: relative;
+            height:32px;
+            width: 235px;
+            padding: 0 8px;
+            margin: 0 auto;
             margin-top: 10px;
             background: #ffffff;
-            padding: 0 8px;
             border: 1px solid #ccc;
-            margin-right: 5px;
-            margin-left: 5px;
             cursor: pointer;
-            height:32px;
-            position: relative;
+            
             a {
                 margin-right: 10px;
                 font-size: 14px;
@@ -301,6 +310,8 @@
         }
         .dataContainer {
             position: relative;
+            width: 235px;
+            margin: 0 auto;
             vertical-align: middle;
 
             .selectContainer {
@@ -308,7 +319,7 @@
                 height: 30px;
                 background: #fff;
                 line-height: 25px;
-                width: 39%;
+                width: 100px;
                 position: relative;
                 float: left;
                 padding-left: 5%;
@@ -342,9 +353,7 @@
 
             > a {
                 float: left;
-                width: 5%;
-                margin-left: 2%;
-                margin-right: 2%;
+                width: 35px;
                 overflow: hidden;
                 top: 7px;
                 position: relative;
@@ -358,11 +367,11 @@
         float: right;
         clear: both;
         border-top: 1px solid #ededed;
-        height: 50px;
+        height: 53px;
         position: relative;
         z-index: -1;
         width: 100%;
-        margin-top: -48px;
+        margin-top: -53px;
         .t{
             margin: 15px 20px 0px 20px;
             float: left;
@@ -382,12 +391,12 @@
             margin-right:10px;
         }
         .cancel {
-            margin-top: 7px;
+            margin-top: 12px;
             color: #6E6E6E;
             width:63px;
-            height:30px;
+            // height: 30px;
             text-align: center;
-            line-height: 30px;
+            line-height: 26px;
             border-radius: 3px;
             -webkit-border-radius: 3px;
             -moz-border-radius: 3px;
@@ -401,14 +410,19 @@
         }
         .submit {
             float: right;
-            margin-top: 7px;
+            margin-top: 12px;
             right: 20px;
             width:80px;
-            height:30px;
             text-align: center;
-            line-height: 30px;
+            line-height: 26px;
             cursor: pointer;
             margin-right: 10px;
+            border: 1px solid @soucheOrange;
+
+            &:hover{
+                background-color: #FF6630;
+                border-color: #FF6630;
+            }
         }
 
         .submit.loading{
@@ -831,7 +845,7 @@
         }
     }
     .bindLoginInfo .require-info, .bindunLoginInfo .require-info{
-        height: 262px;
+        height: 259px;
     }
     .bindLoginInfo .year span, .bindunLoginInfo .year span{
         font-size:18px;

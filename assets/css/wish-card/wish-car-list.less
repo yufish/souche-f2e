@@ -5,12 +5,13 @@
     margin-right: -20px;
 }
 
+@spaceLR: 18px;
 .carItem{
     position: relative;
     float: left;
     // 新的尺寸
     width: 280px;
-    height: 370px;
+    height: 360px;
     // border去由下面的元素实现
     margin-bottom: 20px;
     margin-right: 20px;
@@ -46,19 +47,22 @@
         }
     }
     .car-link{
-        font-size: 14px;
-        color: #333;
         display: block;
+        font-size: 14px;
+        line-height: 22px;
+        color: #333;
         height: 40px;
-        margin: 10px 15px 0 15px;
+        margin: 14px @spaceLR 0 @spaceLR;
     }
     .car-link:hover{
         color: #FF5517;
     }
     .car-price{
-        margin: 5px 15px;
+        margin: 0 @spaceLR;
+        margin-top: 4px;
+        margin-bottom: 6px;
         .price{
-            font-size: 18px;
+            font-size: 16px;
             color: #FF5517;
             margin-left: -3px;
             font-weight: bold;
@@ -73,11 +77,11 @@
         }
     }
     .car-info{
-        margin: 0 10px;
+        margin: 0 @spaceLR;
         color: #999;
         font-size: 12px;
-        margin-bottom: 20px;
-        height:20px;
+        margin-bottom: 19px;
+        // height:20px;
         overflow: hidden;
         em{
             margin-left: 6px;
@@ -90,14 +94,14 @@
         position: absolute;
         width:100%;
         height: 25px;
-        top: 155px;
+        top: 186px - @spaceLR - 25px;
         .collect{
             display: block;
             box-shadow: 0px 0px 4px #666;
             width: 45px;
             float: left;
             height: 23px;
-            margin-left: 6px;
+            margin-left: @spaceLR;
             border-radius:2px;
             color: #333;
             background: #fff url(../images/list/collect.png) no-repeat 5px center;
@@ -148,10 +152,10 @@
         }
     }
     .car-type{
-        width: 250px;
-        margin: 0 auto;
+        // width: 250px;
+        margin: 0 @spaceLR;
         border-top:1px solid #E6E6E6;
-        padding-top: 10px;
+        padding-top: 16px;
         .zhijian{
             height: 16px;
             background: #FF5517;

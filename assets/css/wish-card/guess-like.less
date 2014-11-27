@@ -2,6 +2,7 @@
 
 @carItemW: 280px;
 @carItemDis: 20px;
+@cardH: 360px;
 
 .guess-like{
     margin: 0 auto;
@@ -35,7 +36,7 @@
         font-size: 12px;
     }
     .like-line{
-        height: 375px + 25px + 20px;
+        height: @cardH + 25px + 20px;
         margin-left: 0px;
         margin-right: -20px;
         overflow: hidden;
@@ -46,7 +47,7 @@
 
         .carsItem{
             width: 280px;
-            height: 375px;
+            height: @cardH;
         }
     }
     .car-youlike{

@@ -5,4 +5,4 @@ npm-debug.log
 .idea/
 nbproject/private/
 **/*.r.js
-.DS_Store
+**/.DS_Store
