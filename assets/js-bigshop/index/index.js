@@ -176,12 +176,9 @@ define(['index/car-god',
                 });
             });
             _bind();
-            carGod.init();
             topNav.init();
 
 
-            qiugou.init(config);
-            carConstrast.init(config);
 
 
 
@@ -203,12 +200,8 @@ define(['index/car-god',
                 })
             })
 
-            GuessLike.init( config );
 
-            ImageResize.init(".carsItem .img", 240, 160);
             //提示品牌是否加入心愿单
-            recordTip.init(config);
-            loadCars.init(config);
             //闹着玩
             // Souche.Util.appear(".hotNewCars", function() {
             //     $(".hotNewCars .carItem").css({
