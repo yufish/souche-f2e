@@ -33,6 +33,11 @@ define(function() {
     var HeaderConfig = {
         selectSearch: contextPath + "/pages/headerAction/selectSearchCode.json"
     };
+    $("#J_logout").on("click",function(e){
+        e.preventDefault();
+        $.ajax({url:"http://www.souche.com/pages/clear_cookie.html"});
+        window.location.href=$(this).attr("href")
+    })
     $.ajax({
         type: "GET",
         url: HeaderConfig.selectSearch,
