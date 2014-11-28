@@ -231,7 +231,7 @@ body {
 }
 
 a {
-    color: #6acebd;
+    color: #5bb793;
     text-decoration: none;
 }
 
@@ -2633,7 +2633,10 @@ button.close {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-
+.btn [class^="icon-"],.btn [class*=" icon-"]{
+margin-right:10px;
+    color:#fff;
+}
 .btn:hover,
 .btn:focus,
 .btn:active,
