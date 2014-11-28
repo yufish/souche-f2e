@@ -465,24 +465,33 @@ html,body{
 
 .sort .pre {
   padding-left: 20px;
-  width: 68px;
-  background: url(../../images/fed/pre.png) no-repeat 17px 11px #fff;
+  width: 40px;
+  background: url(../../images/fed/pre.png) no-repeat 16px 14px #fff;
+  margin-bottom: -14px;
+}
+.sort .pre:hover{
+  background: url(../../images/fed/pre-hover.png) no-repeat 16px 14px #fff;
+  border-color: #FF5517;
+  background-color: #FF5517;
 }
 .sort a, .sort span {
+  box-sizing: border-box;
   display: inline-block;
   margin-right: 5px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
   border: 1px solid #d9d9d9;
   color: #666;
   text-align: center;
-  line-height: 32px;
+  line-height: 40px;
   font-size: 14px;
   font-family: Arial;
 }
 .sort a:hover{
   border-color: #FF5517;
+  background-color: #FF5517;
+  color: #fff;
 }
 .sort .activeNumber {
   background-color: #FF5517;
@@ -494,9 +503,16 @@ html,body{
   color: #666;
 }
 .sort .next {
+  margin-bottom: -14px;
   padding-right: 20px;
-  width: 68px;
-  background: url(../../images/fed/next.png) no-repeat 62px 10px #fff;
+  width: 40px;
+  background: url(../../images/fed/next.png) no-repeat 16px 14px #fff;
+}
+.sort .next:hover{
+  background: url(../../images/fed/next-hover.png) no-repeat 16px 14px #fff;
+  border-color: #FF5517;
+  background-color: #FF5517;
+
 }
 .sort {
   margin: 30px auto;

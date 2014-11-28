@@ -26,23 +26,24 @@ html,body{
   }
   .h-lft{
     float:left;
-    width:670px;
+    width: 654px;
     margin-right: 10px;
     .logo{
-
+      
       padding-top: 18px;
       float:left;
     }
     .city{
+      position: relative;
       font-size: 14px;
       color: #999;
-      margin-right: 40px;
+      margin-right: 16px;
+      margin-top: 28px;
+      margin-left: 18px;
       float: left;
       width: 60px;
       height: 30px;
-      position: relative;
-      margin-top: 30px;
-      margin-left:20px;
+      
       .J_city{
         cursor: pointer;
       }
@@ -189,7 +190,7 @@ html,body{
       float: left;
       a{
         line-height: 76px;
-        padding:0 17px;
+        padding:0 15px;
         font-size: 14px;
         color:#333;
       }
@@ -200,60 +201,77 @@ html,body{
 
   }
   .search{
-    float: left;
-    .index-search{
-      margin-top: 22px;
-      position: relative;
-      .search-text{
-        box-sizing: border-box;
-        width: 220px;
-        height: 32px;
-        padding: 5px;
-        border: 2px solid #E6E6E6;
-      }
-      .search-submit{
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url(../../images/index_11/search.png) no-repeat;
-        border: none;
-        position: absolute;
-        top: 9px;
-        right: 10px;
-        cursor: pointer;
+      float: left;
+      .index-search{
+        margin-top: 22px;
+        position: relative;
 
-        &:hover{
-          background: url(../../images/index_11/search-active.png) no-repeat;
+        &.input-focusing{
+          .search-submit{
+            .opacity(1);
+          }
+        }
+        .search-text{
+          box-sizing: border-box;
+          width: 220px;
+          height: 32px;
+          padding: 5px;
+          padding-left: 7px;
+          color: #999;
+          border: 2px solid #E6E6E6;
+
+          &:focus{
+            border-color: #ccc;
+          }
+        }
+        .search-submit{
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url(../../images/index_11/search.png) no-repeat;
+          border: none;
+          position: absolute;
+          top: 9px;
+          right: 10px;
+          cursor: pointer;
+          .opacity(0.45);
+
+          &:hover{
+            .opacity(1);
+            background: url(../../images/index_11/search-active.png) no-repeat;
+          }
         }
       }
-    }
   }
   .h-rht{
     float:right;
     .phone-number{
-      margin:30px 0px auto 0px;
-      padding-left: 20px;
+      margin: 30px 0px auto 0px;
+      padding-left: 24px;
       float:right;
-      border-left:1px solid #bbbbbb;
+      border-left:1px solid #eee; 
     }
     .user{
       position: relative;
       float:right;
-      margin-top: 20px;
+      margin-top: 22px;
+      margin-right: 9px;
       .headpic{
         display: inline-block;
         vertical-align: -13px;
         cursor: pointer;
-
+        
         img{
           border-radius:30px;
           width:32px;
           height:32px;
-
-
+          
+          
         }
       }
       .username{
+        position: relative;
+        top: 2px;
         color:#666;
       }
       .trigger{
@@ -272,7 +290,7 @@ html,body{
         line-height: 20px;
       }
       .login-text{
-        margin-top: 10px;
+        margin-top: 9px;
         margin-right: 15px;
         font-size: 12px;
         color: #333;
@@ -295,7 +313,7 @@ html,body{
 
         li a{
           &:hover{
-            color: #666;
+            color: #333;
           }
         }
       }
@@ -309,7 +327,7 @@ html,body{
   border: 1px solid #e7e7e7;
   list-style: none;
   z-index: 1000;
-
+  
   &:after{
     content: '';
     position: absolute;
@@ -374,8 +392,8 @@ html,body{
       }
     }
     .friendlinks{
-      border-bottom: 1px solid #717171;
-      border-top: 1px solid #717171;
+      border-bottom: 1px solid #363636;
+      border-top: 1px solid #363636;
       padding: 10px 0;
       a{
         color: #717171;
@@ -437,7 +455,7 @@ html,body{
   margin-top:-5px;
 }
 .realIndexTimeDown .hover {
-  background: #F8F8F6;
+  background: #f2f2f2;
 }
 .price-num{
   font-family: Tahoma !important;
@@ -447,24 +465,33 @@ html,body{
 
 .sort .pre {
   padding-left: 20px;
-  width: 68px;
-  background: url(../../images/fed/pre.png) no-repeat 17px 11px #fff;
+  width: 40px;
+  background: url(../../images/fed/pre.png) no-repeat 16px 14px #fff;
+  margin-bottom: -14px;
+}
+.sort .pre:hover{
+  background: url(../../images/fed/pre-hover.png) no-repeat 16px 14px #fff;
+  border-color: #FF5517;
+  background-color: #FF5517;
 }
 .sort a, .sort span {
+  box-sizing: border-box;
   display: inline-block;
   margin-right: 5px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
   border: 1px solid #d9d9d9;
   color: #666;
   text-align: center;
-  line-height: 32px;
+  line-height: 40px;
   font-size: 14px;
   font-family: Arial;
 }
 .sort a:hover{
   border-color: #FF5517;
+  background-color: #FF5517;
+  color: #fff;
 }
 .sort .activeNumber {
   background-color: #FF5517;
@@ -476,9 +503,16 @@ html,body{
   color: #666;
 }
 .sort .next {
+  margin-bottom: -14px;
   padding-right: 20px;
-  width: 68px;
-  background: url(../../images/fed/next.png) no-repeat 62px 10px #fff;
+  width: 40px;
+  background: url(../../images/fed/next.png) no-repeat 16px 14px #fff;
+}
+.sort .next:hover{
+  background: url(../../images/fed/next-hover.png) no-repeat 16px 14px #fff;
+  border-color: #FF5517;
+  background-color: #FF5517;
+
 }
 .sort {
   margin: 30px auto;

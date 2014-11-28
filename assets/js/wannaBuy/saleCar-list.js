@@ -17,7 +17,7 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             _view.initLimitYouhuiCountdown();
             // 暂时没有猜你喜欢
             _view.initGuessLike();
-            _view.autoFitImage();
+            //_view.autoFitImage();
         },
         // 初始化"下拉选择"
         initDropdown: function() {
@@ -109,17 +109,17 @@ define(['souche/dropdown', 'souche/custom-select', 'wannaBuy/leftNav', 'wannaBuy
             });
         },
         // 避免尺寸不同的car-img造成样式错乱
-        autoFitImage: function(){
-            var carWrap = $('.car-wrap');
+//         autoFitImage: function(){
+//             var carWrap = $('.car-wrap');
 
-            if( carWrap.hasClass('card-box') ){
-                ImageResize.init(".carsItem img", 240, 160);
-            }
-//            else if(carWrap.hasClass('list-box')){
-//                ImageResize.init(".carsItem img", 180, 120);
-//            }
+//             if( carWrap.hasClass('card-box') ){
+//                 ImageResize.init(".carsItem img", 240, 160);
+//             }
+// //            else if(carWrap.hasClass('list-box')){
+// //                ImageResize.init(".carsItem img", 180, 120);
+// //            }
             
-        }
+//         }
     };
 
 
