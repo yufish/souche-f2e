@@ -36,9 +36,10 @@ select:focus {
   -webkit-box-shadow: none !important;
      -moz-box-shadow: none !important;
           box-shadow: none !important;
-  -webkit-border-radius: 0 !important;
-     -moz-border-radius: 0 !important;
-          border-radius: 0 !important;
+  -webkit-border-radius: 3px !important;
+     -moz-border-radius: 3px !important;
+          border-radius: 3px !important;
+    border-radius: 3px;
 }
 .btn:hover, 
 .btn:focus, 
@@ -118,7 +119,7 @@ select:focus {
 .btn.green {
   color: white;
   text-shadow: none;	 
-  background-color: #44c0a1;
+  background-color: #6dcebe;
 }
 .btn.green:hover, 
 .btn.green:focus, 
