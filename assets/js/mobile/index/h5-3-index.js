@@ -377,6 +377,29 @@ var utils = {
         })
     }
 }
+
+var utilsSell = {
+    getAllBrand : function (cb) {
+        $.ajax({
+            url: contextPath + "/pages/dicAction/loadRootLevel.json?type=car-subdivision",
+            dataType: "json",
+            success: cb
+        })
+    },
+    getSeriesByBrand :function (bCode, cb) {
+        $.ajax({
+            url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
+            dataType: "json",
+            data: {
+                type: "car-subdivision",
+                code: bCode
+            },
+            success: cb
+        })
+    }
+}
+
+
 !function(){
     var filterGlobal = {}; //用于本模块中公用变量的传递
 
@@ -1087,7 +1110,7 @@ $('.wrapGrayBg').on('click',function(){
             hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
         }
         $hotCtn.append(hotBrandsStr);
-        utils.getAllBrand(function(data){
+        utilsSell.getAllBrand(function(data){
             self.attr('hasLoaded',true);
             makeBrands(data.items);
         })
@@ -1130,7 +1153,7 @@ $('.wrapGrayBg').on('click',function(){
             sellGlobal.selectBrand = bCode;
             sellGlobal.selectBrandName = bName;
 
-            utils.getSeriesByBrand(bCode,makeSeries);
+            utilsSell.getSeriesByBrand(bCode,makeSeries);
             $('#J_series-for-sell').text('选择车系').removeClass('no-active')
         }
     })

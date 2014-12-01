@@ -152,17 +152,17 @@
                     background-image: url("../../images/detail/guideline-start.png");
                 }
                 &.control-accelerate .car-and-info .guide-lines{
-                    width: 48px;
-                    height: 149px;
-                    top: 130px;
-                    left: 402px;
+                    width: 300px;
+                    height: 162px;
+                    top: 119px;
+                    left: 153px;
                     background-image: url("../../images/detail/guideline-acc.png");
                 }
                 &.control-steady .car-and-info .guide-lines{
-                    width: 206px;
-                    height: 252px;
-                    top: 67px;
-                    left: 245px;
+                    width: 345px;
+                    height: 233px;
+                    top: 79px;
+                    left: 123px;
                     background-image: url("../../images/detail/guideline-steady.png");
                 }
                 &.control-turn .car-and-info .guide-lines{
@@ -313,41 +313,48 @@
             // 汽油泵
             &.petrol-pump{
                 left: @accCommonLeft;
-                top: 121px;
+                top: 109px;
             }
             // 燃油压力调节器
             &.fuel-pressure-regulator{
                 left: @accCommonLeft;
-                top: 172px;
+                top: 170px;
             }
             // 喷油嘴
             &.injection-nozzle{
                 left: @accCommonLeft;
-                top: 226px;
+                top: 224px;
             }
         }
         // 匀速
-        @steadyCommonLeft: 442px;
+        @steadyCommonLeft: 458px;
         .car-and-info .info-item{
             // 传动轴
             &.drive-shaft{
                 left: @steadyCommonLeft;
-                top: 58px;
+                top: 134px;
             }
             // 驱动半轴
             &.axle-shaft{
                 left: @steadyCommonLeft;
-                top: 106px;
+                top: 184px;
             }
             // 后支臂,平衡杆
             &.back-arm{
-                left: @steadyCommonLeft;
-                top: 175px;
+                width: 250px;
+                left: -125px;
+                top: 70px;
             }
             // 后悬臂总成
             &.back-cantilever-hub{
-                left: @steadyCommonLeft;      
-                top: 226px;
+                width: 250px;
+                left: -125px;
+                top: 146px;
+            }
+            // 后减震器
+            &.back-damper{
+                left: @steadyCommonLeft;
+                top: 69px;
             }
         }
 
