@@ -19,8 +19,14 @@ define([
             _view.initLazyLoad();
         },
         initLazyLoad: function(){
-            $(".wish-card-main img").lazyload({
-                threshold: 200
+            var allImgs = $(".wish-card-main img");
+
+            allImgs.lazyload({
+                threshold: 200,
+                effect : "fadeIn",
+                load: function(leftCount){
+                    ImageResizer.init('.wish-card-main .carImg img', _config.guessLikeImgSize.width, _config.guessLikeImgSize.height);
+                }
             });
         },
         buildCarItem: function(item, index){
@@ -131,7 +137,6 @@ define([
 
         WishCardEdit.init(_config);
         Collect.init(_config);
-        ImageResizer.init('.wish-card-main .carImg img', 280, 200);
         GuessLike.init(_config);
     }
 

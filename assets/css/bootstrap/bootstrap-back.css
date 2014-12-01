@@ -231,7 +231,7 @@ body {
 }
 
 a {
-    color: #6acebd;
+    color: #6dcebe;
     text-decoration: none;
 }
 
@@ -2633,7 +2633,10 @@ button.close {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-
+.btn [class^="icon-"],.btn [class*=" icon-"]{
+margin-right:10px;
+    color:#fff;
+}
 .btn:hover,
 .btn:focus,
 .btn:active,
@@ -3400,7 +3403,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list > .active > a:hover,
 .nav-list > .active > a:focus {
     color: #ffffff;
-    background-color: #5bb793;
+    background-color: #6dcebe;
 }
 
 .nav-list [class^="icon-"],
@@ -3501,7 +3504,7 @@ input[type="submit"].btn.btn-mini {
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
     color: #ffffff;
-    background-color: #5bb793;
+    background-color: #6dcebe;
 }
 
 .nav-stacked > li {
@@ -4718,7 +4721,7 @@ input[type="submit"].btn.btn-mini {
     color: #ffffff;
     text-align: center;
     text-decoration: none;
-    background-color: #5bb793;
+    background-color: #6dcebe;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -4736,7 +4739,7 @@ input[type="submit"].btn.btn-mini {
     bottom: 0;
     left: 50%;
     margin-left: -5px;
-    border-top-color: #5bb793;
+    border-top-color: #6dcebe;
     border-width: 5px 5px 0;
 }
 
@@ -4744,7 +4747,7 @@ input[type="submit"].btn.btn-mini {
     top: 50%;
     left: 0;
     margin-top: -5px;
-    border-right-color: #5bb793;
+    border-right-color: #6dcebe;
     border-width: 5px 5px 5px 0;
 }
 
@@ -4752,7 +4755,7 @@ input[type="submit"].btn.btn-mini {
     top: 50%;
     right: 0;
     margin-top: -5px;
-    border-left-color: #5bb793;
+    border-left-color: #6dcebe;
     border-width: 5px 0 5px 5px;
 }
 
@@ -4760,7 +4763,7 @@ input[type="submit"].btn.btn-mini {
     top: 0;
     left: 50%;
     margin-left: -5px;
-    border-bottom-color: #5bb793;
+    border-bottom-color: #6dcebe;
     border-width: 0 5px 5px;
 }
 
@@ -5052,12 +5055,12 @@ a.thumbnail:focus {
 }
 
 .label-success {
-    background-color: #5bb793;
+    background-color: #6dcebe;
 }
 
 .label-success[href]:hover,
 .label-success[href]:focus {
-    background-color: #5bb793;
+    background-color: #6dcebe;
 }
 
 .label-info {
