@@ -22,15 +22,16 @@ select:focus {
 }
 
 .btn {
-	background-color: #e5e5e5;
+	background-color: #e7e7e7;
 	background-image: none;
 	filter: none;
 	border: 0;
-	padding: 7px 14px; 
+	padding: 5px 20px;
+    border:1px solid #ddd;
 	text-shadow: none;
 	font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 14px;  	
-  color: #333333;
+  color: #666;
 	cursor: pointer;
 	outline: none;
   -webkit-box-shadow: none !important;
@@ -40,6 +41,11 @@ select:focus {
      -moz-border-radius: 3px !important;
           border-radius: 3px !important;
     border-radius: 3px;
+}
+.btn.gray{
+    border:1px solid #ddd;
+    background-color: #e7e7e7;
+    color: #666;
 }
 .btn:hover, 
 .btn:focus, 
@@ -88,6 +94,7 @@ select:focus {
 .btn.red[disabled], 
 .btn.red.disabled {    
   background-color: #bb2413 !important;
+    border:1px solid #bb2413;
   color: #fff !important;
 }
 
@@ -97,6 +104,7 @@ select:focus {
   color: black;  
   text-shadow: none;  
   background-color: transparent;
+
 }
 
 .btn.blue   
@@ -104,6 +112,8 @@ select:focus {
   color: white;  
   text-shadow: none;	
   background-color: #4d90fe;
+    border:1px solid #4d90fe;
+
 }
 .btn.blue:hover, 
 .btn.blue:focus, 
@@ -120,6 +130,7 @@ select:focus {
   color: white;
   text-shadow: none;	 
   background-color: #6dcebe;
+    border:1px solid #6dcebe;
 }
 .btn.green:hover, 
 .btn.green:focus, 
@@ -136,6 +147,7 @@ select:focus {
   color: white; 
   text-shadow: none;	
   background-color: #852b99;
+    border:1px solid #852b99;
 }
 .btn.purple:hover, 
 .btn.purple:focus, 
@@ -151,6 +163,7 @@ select:focus {
   color: white; 
   text-shadow: none;	
   background-color: #ffb848;
+    border:1px solid #ffb848;
 }
 .btn.yellow:hover, 
 .btn.yellow:focus, 
@@ -166,6 +179,7 @@ select:focus {
   color: white; 
   text-shadow: none;	
   background-color: #555555;
+    border:1px solid #555555;
 }
 .btn.black:hover, 
 .btn.black:focus, 
