@@ -23,35 +23,39 @@ var ThreadList = React.createClass({
     componentDidMount: function() {
         ThreadStore.addChangeListener(this._changeHandler);
         UnreadStore.addChangeListener(this._changeHandler);
+        UnreadStore.addNewUnreadListener(this._haveNewUnread);
     },
     componentWillUnmount: function() {
         ThreadStore.removeChangeListener(this._changeHandler);
         UnreadStore.removeChangeListener(this._changeHandler);
+        UnreadStore.removeChangeListener(this._haveNewUnread);
     },
     render: function() {
         var curThread = ThreadStore.getCurThread();
         var nodes = [];
+        var threads = this.state.threads;
 
-        if( Tool.isEmptyObj(this.state.threads) ){
+        if( threads.length <= 0 ){
             nodes.push(
                 <li className="thread-item no-chat-yet" key="000">没有对话</li>
             );
         }
         else{
-            for(var i in this.state.threads){
-                var thread = this.state.threads[i];
-                var unread = this.state.threads[i].unreadCount;
+            var self = this;
+            threads.forEach(function(thread){
+                var unread = thread.unreadCount;
+                var key = thread.id;
                 nodes.push(
                     <ThreadItem
                         thread={thread}
                         unreadCount={unread}
-                        itemClickHandler={this.switchThread}
-                        key={i}
+                        itemClickHandler={self.switchThread}
+                        key={key}
                         activeClass={ curThread == thread.id }
                     >
                     </ThreadItem>
                 );
-            }
+            });
         }
 
         return (
@@ -65,6 +69,29 @@ var ThreadList = React.createClass({
             threads: this.getThreadData()
         });
     },
+    // 在有新的unread时
+    // 将该thread放到最上面
+    // 注意该thread的数据要更新哦~
+    _haveNewUnread: function(msg){
+        var unreadThread = null;
+        var unreadThreadIndex = null;
+        var threads = this.state.threads;
+        var unreadThreadInList = threads.some(function(t, i){
+            if( t.id === msg.threadId){
+                unreadThreadIndex = i;
+                return true;
+            }
+            return false;
+        });
+        if(unreadThreadInList){
+            unreadThread = threads.splice(unreadThreadIndex, 1)[0];
+            unreadThread.unreadCount = UnreadStore.getCountByThread(unreadThread.id);
+            threads.unshift(unreadThread);
+            this.setState({
+                threads: threads
+            });
+        }
+    },
     switchThread: function(threadId){
         // 如果点击的就是当前激活的thread
         if( ThreadStore.getCurThread() === threadId ){
@@ -77,10 +104,22 @@ var ThreadList = React.createClass({
     },
     getThreadData: function(){
         var threads = ThreadStore.getAll();
-        for( var i in threads ){
-            var t = threads[i];
+        threads.forEach(function(t){
             t.unreadCount = UnreadStore.getCountByThread(t.id);
+        });
+        // 如果是刚初始化的时候
+        // 按未读 进行一下排序
+        if( !this.state || this.state.threads.length <= 0 ){
+            threads.sort(function(a, b){
+                return b.unreadCount - a.unreadCount;
+            });
         }
+
+        // console.log('--------');
+        // threads.forEach(function(t){
+        //     console.log(t.unreadCount);
+        // });
+        
         return threads;
     }
 

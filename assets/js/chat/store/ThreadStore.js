@@ -69,7 +69,11 @@ function updateThreadData(threads){
 // exports出去的 只有get  没有set 
 var ThreadStore = merge(EventEmitter.prototype, {
     getAll: function(){
-        return ThreadData;
+        var arr = [];
+        for(var t in ThreadData){
+            arr.push(ThreadData[t]);
+        }
+        return arr;
     },
     getCurThread: function(){
         return curThread;
@@ -95,7 +99,6 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
         case ChatConstants.APP_INIT:
             ChatDispatcher.waitFor([UserStore.dispatchToken]);
             initThreadData( action.threads );
-            // ~~不触发change, 最后在msgstore中触发~~
             ThreadStore.emitChange();
             break;
         case ChatConstants.CHANGE_THREAD:
@@ -105,8 +108,10 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
             break;
         case ChatConstants.SCHEDUAL_UPDATE:
             ChatDispatcher.waitFor([UserStore.dispatchToken]);
-            updateThreadData(action.threads);
-            ThreadStore.emitChange();
+            if( action.threads.length > 0 ){
+                updateThreadData(action.threads);
+                ThreadStore.emitChange();
+            }
             break;
     };
 });
