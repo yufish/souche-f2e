@@ -243,7 +243,8 @@
     width: 86%;
     max-width: 360px;
     height: 320px;
-    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     background-color: #fff;
 }
 

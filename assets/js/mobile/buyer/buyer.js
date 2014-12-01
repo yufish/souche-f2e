@@ -344,7 +344,7 @@ $('#main-form').submit(function(e){
             console.log(e);
             $('.buyer-alert').show(0);
             setTimeout(function() {
-                window.location.href = contextPath + '/pages/mobile/h5-buyer/buyer-index.html';
+                $('.buyer-alert').hide(0);
             }, 2000)
         }
     })
