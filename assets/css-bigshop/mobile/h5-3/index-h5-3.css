@@ -4,6 +4,9 @@
 body{
     background: #f5f5f5;
 }
+a{
+    color:#333;
+}
 .placeholder-for-tabNavBar{
     height: 88px;
 }
