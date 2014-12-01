@@ -4,6 +4,9 @@
 body{
     background: #f5f5f5;
 }
+a{
+    color:#333;
+}
 .placeholder-for-tabNavBar{
     height: 88px;
 }
@@ -14,6 +17,17 @@ body{
     border-bottom: 1px solid #e7e7e7;
     width: 100%;
     background: #fff;
+}
+.car-mod{
+margin-bottom: 20px;
+}
+.mod-hd{
+    font-size:14px;
+    line-height: 20px;
+    margin-left:10px;
+    padding-left:10px;
+
+    border-left:3px solid #FF571A;
 }
 .nav-icon{
     display: inline-block;

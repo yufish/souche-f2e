@@ -31,7 +31,7 @@ if (navigator.userAgent.match(/Android/i)){
     var imgHeight;
     $bannerDom.find('img').load(function(){
         imgHeight = $(this).height();
-        placeHolder.css({height:imgHeight+88})
+        placeHolder.css({height:100})
     })
     $win.scroll(function(){
         var winTop = $win.scrollTop();
