@@ -67,11 +67,36 @@ var ThreadList = React.createClass({
         });
     },
     // change发生时, 为了不变更thread的排序, 为每一个thread单独获取数据
-    _changeHandler: function(){
+    _changeHandler: function(threadHaveNewUnread, threadTotalNew){
         var threads = this.state.threads;
         var newData = threads.map(function(t){
             return ThreadStore.getById(t.id);
         });
+        // 某些thread有未读
+        // 遍历, 挪到头部去
+        if( threadHaveNewUnread && threadHaveNewUnread.length > 0 ){
+            threadHaveNewUnread.forEach(function(tu){
+                var tuIndex = null;
+                var findTu = newData.some(function(t, i){
+                    if( tu.id === t.id){
+                        tuIndex = i;
+                        return true;
+                    }
+                    return false;
+                });
+                if(findTu){
+                    newData.splice(tuIndex, 1);
+                    newData.unshift(tu);
+                }
+            });
+        }
+        // 有新thread, 加在头部
+        if(threadTotalNew && threadTotalNew.length > 0){
+            threadTotalNew.forEach(function(tn){
+                newData.unshift(tn);
+            });
+        }
+
         this.setState({
             threads: newData
         });
