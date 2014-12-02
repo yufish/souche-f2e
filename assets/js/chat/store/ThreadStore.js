@@ -16,7 +16,7 @@ var CHANGE_EVENT = 'change';
 
 // 存储区
 var ThreadData = {};
-var curThread = '';
+var curThread = null;
 
 
 
@@ -25,12 +25,9 @@ function initThreadData(serverThreads){
     serverThreads.forEach(function(t){
         // 以聊天的对象的id作为thread的id
         t.id = t.friendId;
+        t.unreadCount = 0;
         ThreadData[t.id] = t;
     });
-    // init 时 取第一个id
-    if( serverThreads[0] ){
-        changeThread(serverThreads[0].id);
-    }
 }
 function changeThread(newId){
     curThread = newId;
@@ -65,17 +62,42 @@ function updateThreadData(threads){
     after();
 }
 
+// 未读消息的操作
+function addUnread(threadId){
+    ThreadData[threadId].unreadCount++;
+}
+function clearUnread(threadId){
+    ThreadData[threadId].unreadCount = 0;
+}
+function clearAll(){
+    for(var i in ThreadData){
+        UnreadData[i].unreadCount = 0;
+    }
+}
 
 // exports出去的 只有get  没有set 
 var ThreadStore = merge(EventEmitter.prototype, {
     getAll: function(){
-        return ThreadData;
+        var arr = [];
+        for(var t in ThreadData){
+            arr.push(ThreadData[t]);
+        }
+        return arr;
+    },
+    getById: function(id){
+        return ThreadData[id];
     },
     getCurThread: function(){
         return curThread;
     },
     emitChange: function(){
         this.emit(CHANGE_EVENT);
+    },
+    emitInitDone: function(){
+        this.emit('thread_init_done');
+    },
+    addInitListener: function(cb){
+        this.on('thread_init_done', cb);
     },
     addChangeListener: function(cb){
         this.on(CHANGE_EVENT, cb)
@@ -92,21 +114,30 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
     var actionType = action.actionType;
 
     switch(actionType){
+        // app 初始时
         case ChatConstants.APP_INIT:
             ChatDispatcher.waitFor([UserStore.dispatchToken]);
             initThreadData( action.threads );
-            // ~~不触发change, 最后在msgstore中触发~~
-            ThreadStore.emitChange();
+
+            var msgs = action.msgs;
+            msgs.forEach(function(m){
+                addUnread(m.threadId);
+            });
+
+            ThreadStore.emitInitDone();
             break;
         case ChatConstants.CHANGE_THREAD:
             // if()  // 检查是否是可用的uuid?
             changeThread( action.newId );
+            clearUnread( action.newId );
             ThreadStore.emitChange();
             break;
         case ChatConstants.SCHEDUAL_UPDATE:
             ChatDispatcher.waitFor([UserStore.dispatchToken]);
-            updateThreadData(action.threads);
-            ThreadStore.emitChange();
+            if( action.threads.length > 0 ){
+                updateThreadData(action.threads);
+                ThreadStore.emitChange();
+            }
             break;
     };
 });

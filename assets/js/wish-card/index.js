@@ -112,7 +112,10 @@ define([
                     }
 
                     $('.myAdviser').append(carDoms);
-                    ImageResizer.init('.wish-card-main .carImg img', 280, 200);
+                    setTimeout(function(){
+                        ImageResizer.init('.wish-card-main .carImg img', _config.guessLikeImgSize.width, _config.guessLikeImgSize.height);
+                    }, 100);
+                    
                     // 为下次请求做准备
                     pageIndex++;
                     if( data.hasNext ){

@@ -58,7 +58,14 @@ var MsgList = React.createClass({
         var list = [];
 
         if( this.state.msgData.length <=0 ){
-            var noMsgTip = '还没有对话消息...';
+            var noMsgTip = '';
+            if(!ThreadStore.getCurThread()){
+                noMsgTip = '请选择对话~';
+            }
+            else{
+                noMsgTip = '还没有对话消息...';
+            }
+
             // 就算是只有一个元素也要有个key
             list.push(<li className="no-msg-tip" key="0">{noMsgTip}</li>);
         }
