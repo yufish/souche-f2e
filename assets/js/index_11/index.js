@@ -133,7 +133,7 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
         initWhoBuySlide: function(){
         $('.flexslider').unslider({
             speed: 500,
-            delay: 3000, 
+            delay: 3000,
             keys: true,  
             dots: true,   
             fluid: false  
