@@ -321,6 +321,11 @@ function checkRequired($dom,msg){
     }
     return true;
 }
+
+$('.buyer-alert-inner .btn-close').on('click', function() {
+    $('.buyer-alert').hide(0);
+})
+
 $('#main-form').submit(function(e){
     e.preventDefault();
     if(!checkRequired($('#J_name'),'请输入用户名')){
@@ -343,9 +348,6 @@ $('#main-form').submit(function(e){
         success:function(e){
             console.log(e);
             $('.buyer-alert').show(0);
-            setTimeout(function() {
-                window.location.href = contextPath + '/pages/mobile/h5-buyer/buyer-index.html';
-            }, 2000)
         }
     })
 })

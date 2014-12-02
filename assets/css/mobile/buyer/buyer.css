@@ -243,9 +243,23 @@
     width: 86%;
     max-width: 360px;
     height: 320px;
-    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     background-color: #fff;
 }
+
+
+.buyer-alert .buyer-alert-inner .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 99;
+    display: block;
+    background: url(../../../images/mob/h5-buyer/btn-close.png) no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+}
+
 
 .buyer-alert .buyer-inner-detail {
     text-align: center;

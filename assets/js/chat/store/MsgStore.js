@@ -140,8 +140,10 @@ ChatDispatcher.register(function(payload){
             break;
         case ChatConstants.SCHEDUAL_UPDATE:
             ChatDispatcher.waitFor([UserStore.dispatchToken, ThreadStore.dispatchToken]);
-            _dataHandler.schedualUpdate(action.msgs);
-            MsgStore.emitChange();
+            if( action.msgs.length > 0 ){
+                _dataHandler.schedualUpdate(action.msgs);
+                MsgStore.emitChange();
+            }
             break;
         case ChatConstants.MSG_RECEIVE:
             _dataHandler.receive( action.msgObj );
