@@ -33,10 +33,12 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
         });
         var unslider = $('.flex-viewport').unslider();
         $(".flex-prev").click(function(){
-           unslider.data('unslider').prev()
+           unslider.data('unslider').stop();
+           unslider.data('unslider').prev();
         });
         $(".flex-next").click(function(){
-           unslider.data('unslider').next()
+           unslider.data('unslider').stop();
+           unslider.data('unslider').next();
         });
 
     })
@@ -129,9 +131,14 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
             });
         },
         initWhoBuySlide: function(){
-            $('.flexslider').flexslider({
-                animation: "slide"
-            });
+        $('.flexslider').unslider({
+            speed: 500,
+            delay: 3000, 
+            keys: true,  
+            dots: true,   
+            fluid: false  
+        });
+    
         }
     };
 
