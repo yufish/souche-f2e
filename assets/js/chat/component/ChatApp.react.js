@@ -40,12 +40,14 @@ var ChatApp = React.createClass({
         return {
             threadW: 250,
             dialogH: 350,
-            composeH: 150
+            composeH: 150,
+            threadChoosed: !!(ThreadStore.getCurThread())
         };
     },
     componentDidMount: function() {
         // console.log('chat app mounted');
         AppServer.init();
+        ThreadStore.addChangeListener(this.updateChooseStatus)
     },
     render: function() {
         var threadStyle = {
@@ -60,7 +62,11 @@ var ChatApp = React.createClass({
             marginLeft: this.state.threadW + 'px',
             height: this.state.composeH + 'px'
         };
-
+        if(!this.state.threadChoosed){
+            dialogStyle.height = this.state.dialogH + this.state.composeH + 'px';
+            compostStyle.height = '0';
+            compostStyle.overflow = 'hidden';
+        }
         return (
             <div id="chat-window">
                 <ThreadList style={threadStyle}/>
@@ -98,6 +104,11 @@ var ChatApp = React.createClass({
             receiver: getReceiver()
         };
         Msg.send(msg);
+    },
+    updateChooseStatus: function(){
+        this.setState({
+            threadChoosed: ThreadStore.getCurThread()
+        });
     }
 });
 
