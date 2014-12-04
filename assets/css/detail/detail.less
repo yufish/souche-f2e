@@ -2845,26 +2845,3 @@ right: 10px;
 top: 10px;
 cursor: pointer;
 }
-
-
-.tagPos(@x:0, @y:0){
-    display: inline-block;
-    background-position: -(100px * (@x - 1) ) -(50px * (@y - 1));
-}
-.shop-approve-tag{
-    display: none;
-    width: 100px;
-    height: 15px;
-    background-image: url('../../images/detail/approve-tag-sprite.png');
-    background-repeat: no-repeat;
-
-    &.souche-dealer-tag{
-        .tagPos(1,1);
-    }
-    &.fours-brand-tag{
-        .tagPos(2,1);
-    }
-    &.realname-tag{
-        .tagPos(3,1);
-    }
-}

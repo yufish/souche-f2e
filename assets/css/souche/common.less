@@ -523,3 +523,33 @@ html,body{
   margin: 30px auto;
   text-align: center;
 }
+
+.tagPos(@x:0, @y:0){
+    display: inline-block;
+    background-position: -(100px * (@x - 1) ) -(20px * (@y - 1));
+}
+.shop-approve-tag{
+    display: none;
+    width: 100px;
+    height: 15px;
+    background-image: url('../../images/detail/approve-tag-sprite.png');
+    background-repeat: no-repeat;
+    
+    // detail页面的标
+    &.souche-dealer-tag{
+        .tagPos(1,1);
+    }
+    &.fours-brand-tag{
+        .tagPos(2,1);
+    }
+    &.realname-tag{
+        .tagPos(3,1);
+    }
+    // list页的标 心愿卡页面 限时优惠页面
+    &.dealer-tag{
+        .tagPos(2,2);
+    }
+    &.fours-tag{
+        .tagPos(2,2);
+    }
+}
