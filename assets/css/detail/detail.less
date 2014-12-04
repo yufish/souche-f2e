@@ -2423,33 +2423,43 @@ top: 12px;
   zoom: 1;
 }
 .shop-head{
+  .box-sizing();
+  padding: 25px 0px;
+  height: 100px;
   background: #F5F5F5;
   border-bottom: 1px solid #E6E6E6;
-  padding: 20px 0px;
   .wrap{
     width: 1280px;
     margin: 0 auto;
   }
-  .auth-icon{
-    width: 60px;
-    height: 60px;
-    background: url(../../images/auth-shop/shop.png) no-repeat;
+  .shop-logo{
     float: left;
+    width: 100px;
+    height: 50px;
     margin-right: 10px;
-    display: block;
-    margin-left:20px;
+    text-align: center;
+    
+    .shop-logo-img{
+        max-width: 100%;
+        max-height: 100%;
+    }
   }
   .shop-info{
     float: left;
-    margin-top: 5px;
     .shop-name{
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 10px;
       display: block;
+      margin: 2px 0;
+      font-size: 16px;
+      line-height: 23px;
+      color: #333;
+    }
+    .shop-approve-tag{
+        position: relative;
+        top: 2px;
     }
     .shop-add{
       font-size: 12px;
+      line-height: 19px;
       color: #666;
     }
     .shop-score{
@@ -2510,47 +2520,6 @@ top: 12px;
       margin-left: 20px;
       float: left;
       line-height: 45px;
-    }
-  }
-}
-.danbao-service{
-  float: right;
-  height: 60px;
-  .service-item{
-    width: 250px;
-    float: left;
-    display: block;
-    .danboa-icon1{
-      width: 40px;
-      height: 40px;
-      background: url(../../images/auth-shop/danbao_1.png) no-repeat;
-      margin-top: 12px;
-      float: left;
-    }
-    .danboa-icon2{
-      width: 40px;
-      height: 40px;
-      background: url(../../images/auth-shop/danbao_2.png) no-repeat;
-      margin-top: 12px;
-      float: left;
-    }
-    .danboa-icon3{
-      width: 40px;
-      height: 40px;
-      background: url(../../images/auth-shop/danbao_3.png) no-repeat;
-      margin-top: 12px;
-      float: left;
-    }
-    .danbao-text{
-      margin-top: 11px;
-      float: left;
-      margin-left: 15px;
-      p{
-        font-size: 14px;
-        color: #666;
-        line-height: 20px;
-
-      }
     }
   }
 }
@@ -2875,4 +2844,27 @@ background: url("../../images/common/popup-close.png") no-repeat ;
 right: 10px;
 top: 10px;
 cursor: pointer;
+}
+
+
+.tagPos(@x:0, @y:0){
+    display: inline-block;
+    background-position: -(100px * (@x - 1) ) -(50px * (@y - 1));
+}
+.shop-approve-tag{
+    display: none;
+    width: 100px;
+    height: 15px;
+    background-image: url('../../images/detail/approve-tag-sprite.png');
+    background-repeat: no-repeat;
+
+    &.souche-dealer-tag{
+        .tagPos(1,1);
+    }
+    &.fours-brand-tag{
+        .tagPos(2,1);
+    }
+    &.realname-tag{
+        .tagPos(3,1);
+    }
 }
