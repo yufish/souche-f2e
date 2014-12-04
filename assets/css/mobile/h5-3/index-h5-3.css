@@ -691,43 +691,31 @@ nav .nav-item.active .nav-item-content{
  #faq .faq-content .faq-left .q3 .q-answer .answer-right {
     float: left;
 }
-#buy-app{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    height:54px;
-    background: rgba(0,0,0,0.8);
-    color:#fff;
-    display:block;
+#J_banner {
+    display: block;
+    width: 100%;
+    position: relative;
 }
-#app-hello{
-    width:42px;
-    height:42px;
-    position:relative;
-    vertical-align:middle;
-    margin-left:18px;
+
+#J_banner img {
+    width: 100%;
+    height: auto;
 }
-#buy-app .text{
-    line-height:50px;
-    height:50px;
-    display:inline-block;
-    margin-left:15px;
+
+#J_banner .close{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 99;
+   display: block;
+   width: 30px;
+   height: 30px;
+   font: 0/0 a;
 }
-#buy-app .close{
-    background:#d6d6d6;
-    border-radius:80%;
-    color:#000;
-    float: right;
-    margin: 16px 10px 0 0 ;
-    height: 16px;
-    line-height: 14px;
-    width: 16px;
-    text-align: center;
-}
-#J_tabContainer .tab-panel:first-child{
+
+/*#J_tabContainer .tab-panel:first-child{
     margin-bottom: 60px;
-}
+}*/
 
 .checkbox-cond{
     display: block;
