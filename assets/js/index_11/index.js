@@ -29,7 +29,7 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
             delay: 3000, 
             keys: true,  
             dots: true,   
-            fluid: false  
+            fluid: true  
         });
         var unslider = $('.flex-viewport').unslider();
         $(".flex-prev").click(function(){
