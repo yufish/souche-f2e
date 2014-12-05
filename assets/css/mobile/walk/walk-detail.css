@@ -33,6 +33,11 @@ img{vertical-align: middle}
     line-height: 26px;
     padding:0 16px;
 }
+
+#cars img {
+    width: 100%!important;
+    height: auto!important;
+}
 .car-card{
     line-height: 22px;
     border-bottom: 1px solid #e6e6e6;
