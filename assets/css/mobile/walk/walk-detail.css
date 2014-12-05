@@ -33,11 +33,11 @@ img{vertical-align: middle}
     font-weight: bold;
 }
 
-#cars h1
-#cars h2
-#cars h3
-#cars h4
-#cars h5
+#cars h1,
+#cars h2,
+#cars h3,
+#cars h4,
+#cars h5,
 #cars h6 {
     margin-bottom: 15px;
     padding:0 16px;
