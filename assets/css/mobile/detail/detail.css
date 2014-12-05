@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
 #detail {
     background-color: #fff;
     padding-bottom: 60px;

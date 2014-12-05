@@ -51,6 +51,7 @@ if (navigator.userAgent.match(/Android/i)){
         //}
     })
 }()
+
 !function() {
     /*var txt = $(".city-name").text();
     //不是北京地区
@@ -1054,11 +1055,12 @@ $('.wrapGrayBg').on('click',function(){
 
 //buy-app
 !function(){
-    var buyApp = $('#buy-app')
-    $('#buy-app .close').click(function(e){
+    var buyApp = $('#J_banner')
+    $('#J_banner .close').click(function(e){
         e.preventDefault();
         buyApp.hide();
-        $('#J_tabContainer .tab-panel:first-child').css({'margin-bottom':0})
+        $('#J_fixed-placeholder').css({'height': 88});
+        // $('#J_tabContainer .tab-panel:first-child').css({'margin-bottom':0})
     })
 }()
 
@@ -1187,6 +1189,8 @@ $('.wrapGrayBg').on('click',function(){
         var ajaxData= {
             brand:sellGlobal.selectBrand,
             series:sellGlobal.selectSeries,
+            province: $('#J_province option:selected').text(),
+            city: $('#J_city option:selected').text(),
             mobile:phoneNum
         }
         var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
@@ -1286,5 +1290,50 @@ $('.wrapGrayBg').on('click',function(){
     if(phoneNum){
         $('#phonenum-for-sell').val(phoneNum);
     }
+}()
+
+!function(){
+    function loadProvince(cb){
+        var url = contextPath+'/pages/dicAction/loadRootLevel.json?type=area';
+        $.ajax({
+            url: url,
+            dataType:'json',
+            success:cb
+        })
+    }
+    function loadCityByProvinceCode(code,cb) {
+        var url = contextPath + '/pages/dicAction/loadNextLevel.json?type=area';
+        $.ajax({
+            url:url,
+            dataType:'json',
+            data:{
+                code:code
+            },
+            success:cb
+        })
+    }
+    loadProvince(function(e){
+        var items = e.items;
+        var html='<option value="">不限</option>'
+        for(var i = 0;i<items.length;i++){
+            var code = items[i].code;
+            var name = items[i].enName;
+            html+='<option value="'+name+'" data-code='+code+'>'+name+'</option>'
+        }
+        $('#J_province').html(html);
+    })
+    $('#J_province').change(function(){
+        var code =$('#J_province option:selected').attr("data-code");
+        loadCityByProvinceCode(code,function(e){
+            var items = e.items
+            var html='<option value="">不限</option>'
+            for(var i = 0;i<items.length;i++){
+                var code = items[i].code;
+                var name = items[i].enName;
+                html+='<option value="'+name+'">'+name+'</option>'
+            }
+            $('#J_city').html(html);
+        })
+    })
 }()
 
