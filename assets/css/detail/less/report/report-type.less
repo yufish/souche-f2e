@@ -25,28 +25,4 @@
             min-height: 50px;
         }
     }
-
-    // 质检报告 -> 服务承诺
-    // 默认显示质检报告
-    // &.report-type-detect-reprot{
-    .report_summary .summary-box .title .text{
-        &.detect-reprot-text{
-            display: block;
-        }
-        &.promise-reprot-text{
-            display: none;
-        }
-    }
-    &.report-type-promise-report{
-        .report_summary .summary-box{
-            .title{
-                .text.detect-reprot-text{
-                    display: none;
-                }
-                .text.promise-reprot-text{
-                    display: block;
-                }
-            }
-        }
-    }
 }
