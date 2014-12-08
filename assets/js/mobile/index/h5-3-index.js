@@ -1337,3 +1337,20 @@ $('.wrapGrayBg').on('click',function(){
     })
 }()
 
+var $modelCity = $('#city-wrap');
+
+if (localStorage.getItem('index_city_choose') !== 'hide') {
+    $modelCity.removeClass('hidden');
+}
+
+function closeModel() {
+    $modelCity.addClass('hidden');
+    localStorage.setItem('index_city_choose', 'hide');
+}
+
+$modelCity.find('.ft').on('click', closeModel);
+
+setTimeout(closeModel, 3000);
+
+
+
