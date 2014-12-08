@@ -68,10 +68,10 @@ define(function() {
         success: function(data) {
             if (data && data.addressName) {
                 $("#J_city_show").html(data.addressName);
-                nowCity.code = data.cityCode
+                nowCity.code = data.cityCode?data.cityCode:data.provinceCode;
                 nowCity.name = data.addressName;
                 $(".city-wrap a").removeClass("active-city");
-                $(".city-wrap a[data-code='" + data.provinceCode + "']").addClass("active-city");
+                $(".city-wrap a[data-code='" + nowCity.code + "']").addClass("active-city");
                 document.title = document.title.replace(/北京/g, data.addressName)
             }
         }
