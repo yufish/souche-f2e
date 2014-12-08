@@ -28,10 +28,30 @@ img{vertical-align: middle}
     line-height: 26px;
     padding:0 16px;
 }
+
+#cars strong {
+    font-weight: bold;
+}
+
+#cars h1,
+#cars h2,
+#cars h3,
+#cars h4,
+#cars h5,
+#cars h6 {
+    margin-bottom: 15px;
+    padding:0 16px;
+}
+
 #cars p{
     font-size: 16px;
     line-height: 26px;
     padding:0 16px;
+}
+
+#cars img {
+    width: 100%!important;
+    height: auto!important;
 }
 .car-card{
     line-height: 22px;
@@ -73,6 +93,7 @@ img{vertical-align: middle}
 }
 .gc-img img{
     width: 100%;
+    height: auto;
 }
 .gc-content{
     color: #666;
