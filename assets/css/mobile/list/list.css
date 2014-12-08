@@ -208,6 +208,15 @@
     padding: 2px;
     float: left;
 }
+
+#list .car-footer .quality-danbao {
+    background-color: #eb5533;
+    color: #fff;
+    padding: 2px;
+    float: left;
+    font-size: 12px;
+}
+
 #list .car-footer .quality-level{
     border:1px solid #ff571a;
     color:#ff571a;
