@@ -76,40 +76,60 @@ define(function() {
             }
         }
     });
-    var isInCity = false;
-    //城市切换
-    $(".city").on("mouseenter",function(e) {
-        isInCity = true;
-        setTimeout(function(){
-            if(isInCity){
-                $(".city-open").css({
-                    opacity: 1
-                }).removeClass("hidden");
-                $(".area-box").css({
-                    left: "0px"
-                });
-                $(".city-box").css({
-                    left: "362px"
-                });
-                e.stopPropagation();
-            }
-        },300)
-
-    })
-    $(".city").on("mouseleave",function(){
-        isInCity = false;
-        setTimeout(function(){
-            if(!isInCity){
-                $(".city-open").addClass("hidden");
-            }
-        },500)
-
-    })
-    $(document.body).on("click", function(e) {
-        if (!$(e.target).closest(".city-open").length) {
+    
+    // 城市切换popover的操作 绑定
+    (function(){
+        // var isInCity = false;
+        var timerShow, timerHide;
+        function show(){
+            $(".city-open").css({
+                opacity: 1
+            }).removeClass("hidden");
+            $(".area-box").css({
+                left: "0px"
+            });
+            $(".city-box").css({
+                left: "362px"
+            });
+        }
+        function hide(){
             $(".city-open").addClass("hidden");
         }
-    });
+        // 显示 hover 和 点击都可以
+        $(".city").on("mouseenter",function(e) {
+            clearTimeout(timerHide);
+            timerShow = setTimeout(function(){
+                show();
+            },300)
+        });
+        $(".city").on("click", function(e){
+            clearTimeout(timerShow);
+            clearTimeout(timerHide);
+            if( $(".city-open").hasClass("hidden") ){
+                show();
+            }
+            else{
+                hide();
+            }
+            e.stopPropagation();
+        });
+        // 在popover上操作, 保持弹出状态
+        $('.city-open').on('click mouseenter', function(e){
+            clearTimeout(timerHide);
+            e.stopPropagation();
+        });
+
+
+        $(".city").on("mouseleave",function(){
+            timerHide = setTimeout(function(){
+                hide();
+            }, 500);
+        });
+        $(document.body).on("click", function(e) {
+            hide();
+        });
+    })();
+
     var loadCity = function(provinceCode, provinceName) {
         $("#J_province_title").html(provinceName);
         $.ajax({
