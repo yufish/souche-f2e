@@ -785,8 +785,8 @@
     margin: 0 4px;
 }
 #detail-main #pic-dots .dot.active{
-    border:1px solid #FF571A;
-    background: #FF571A;
+    border:1px solid #0f448e;
+    background: #0f448e;
 }
 
 #detail-main .car-all-name-info{
@@ -829,7 +829,7 @@
 }
 #detail-main .sec-info .price .price-num{
     font-size: 20px;
-    color:#FF571A;
+    color:#0f448e;
     font-weight: bold;
     margin-left: -3px;
     line-height: 20px;
@@ -859,14 +859,14 @@
 }
 #detail-main .sec-info .fenqi-text{
     color:#fff;
-    background:#FF571A;
+    background:#0f448e;
     padding:2px 4px;
     font-size: 12px;
     line-height: 12px;
     margin-right: 2px;
 }
 #detail-main .sec-info .go-fenqi {
-    color: #FF571a;
+    color: #0f448e;
     margin-left: 8px;
 }
 #detail-main .sale-info{
@@ -946,7 +946,7 @@
     padding:0 5px;
 }
 .request4guarantee{
-    background: #ff571a;
+    background: #0f448e;
     display: block;
     color:#fff;
     text-align: center;
@@ -969,7 +969,7 @@
 }
 .guard-info-item .gi-title{
     height: 62px;
-    color:#FF571a;
+    color:#0f448e;
     font-size: 14px;
 }
 .guard-info-item .gi-content{
@@ -995,6 +995,25 @@
 #actions .btn-wrapper-right{
     margin-left: 100px;
 }
+#actions .detail-item{
+    width:48%;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#actions .yuyue-item{
+float:left;
+
+}
+#actions .yuyue-item .request4guarantee{
+    background: #fff;
+    border:1px solid #ddd;
+    color:#333;
+    border-radius: 5px;
+}
+#actions .call-item{
+    float:right;
+}
 #actions .wrapper-fav{
     float: left;
     width: 33%;
@@ -1018,7 +1037,7 @@
 }
 
 #actions .yuyue-btn {
-    background: #FF571A;
+    background: #0f448e;
     color: #fff;
     display: inline-block;
     vertical-align: top;
@@ -1050,7 +1069,7 @@
     height: 44px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    background: #FF571A url(../../../../assets/images/mob/h5-3/addr-location.png) no-repeat center;
+    background: #0f448e url(../../../../assets/images/mob/h5-3/addr-location.png) no-repeat center;
     background-size: 14px 20px;
 }
 #detail-main .address .address-name{
@@ -1098,7 +1117,7 @@
 }
 #detail-main .car-price-down{
     font-size: 13px;
-    color: #FF571a;
+    color: #0f448e;
 }
 #detail-main .timelimt-info{
     font-size: 14px;
@@ -1482,7 +1501,7 @@
     padding: 32px 0;
 }
 #yuyue-success .yuyue-title{
-    color: #ff571a;
+    color: #0f448e;
     border-bottom: 1px dotted #e6e6e6;
 }
 #yuyue-success .yt-big{
@@ -1550,7 +1569,7 @@
 .go-to-shop{
     float: right;
     font-size: 12px;
-    color:#FF571a;
+    color:#0f448e;
 }
 .auth-area .auth-title .left-arrow{
     float:right;

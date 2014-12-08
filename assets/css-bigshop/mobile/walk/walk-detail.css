@@ -41,7 +41,7 @@ img{vertical-align: middle}
     width:100%;
 }
 .car-card img{width: 100%;height:auto;}
-.car-card .price{font-size: 20px;color: #FF571A;float: left;font-weight: bold}
+.car-card .price{font-size: 20px;color: #0f448e;float: left;font-weight: bold}
 .car-card .time{font-size: 14px;color:#999;float: right}
 .car-card .all-info-name{font-size: 18px;font-weight:bold;}
 .car-card .car-basic{padding: 16px 16px 0;;background: #fff;}
@@ -85,7 +85,7 @@ img{vertical-align: middle}
     height: 18px;
     border-radius: 80%;
     color: #fff;
-    background: #ff571a;
+    background: #0f448e;
     text-align: center;
     line-height: 18px;
 }
