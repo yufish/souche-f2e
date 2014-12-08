@@ -276,8 +276,8 @@ Souche.Form = function() {
 Souche.MiniLogin = Souche.MiniLogin || {};
 Souche.MiniLogin = function () {
 
-    var secret_login_url = contextPath + "/login.html";
-    var static_login_url = contextPath+"/login.html";
+    var secret_login_url = contextPath + "/login.htm";
+    var static_login_url = contextPath+"/login.htm";
     var minilogin = null;
     var minilayer = null;
     var is_secret = false;

@@ -758,3 +758,40 @@ input.checkbox-cond:checked + .filter-title{
     color:#FF571a;
     border-left: 2px solid #ff571a;
 }
+
+
+#city-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);
+}
+
+#city-wrap .wrap-inner {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.wrap-inner .ct {
+    padding: 24px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.wrap-inner .ft {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    color: #2279d1;
+    font-size: 14px;
+}
