@@ -187,7 +187,7 @@
 }
 #list #cars .car .sc-price{
     font-weight: bold;
-    color:#0f448e;
+    color:#ff571a;
     font-size: 14px;
     line-height: 14px;
     float: left;
@@ -209,8 +209,8 @@
     float: left;
 }
 #list .car-footer .quality-level{
-    border:1px solid #0f448e;
-    color:#0f448e;
+    border:1px solid #ff571a;
+    color:#ff571a;
     padding: 2px;
     float: left;
     margin-left: 4px;
