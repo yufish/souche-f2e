@@ -93,7 +93,7 @@ $.getJSON(config.brandUrl, function(data) {
 
     var brandNum = _view.buildNum(letterArr);
     var buildItem = _view.buildItem(brand);
-    $('#brand-list').append(brandNum + buildItem);
+    $('body').append('<div id="brand-list">' + brandNum + buildItem + '</div>');
 
 
     $('.brand-item').on('click', '.item', function() {

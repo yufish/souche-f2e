@@ -8,7 +8,7 @@ html
         meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
         script(src="/assets/js/lib/jquery-2.1.1.min.js")
     body
-        #brand-list
+        //- #brand-list
             //- .brand-num
             //-     h2 拼音选品牌
             //-     ul.list
@@ -175,7 +175,7 @@ html
 
             var brandNum = _view.buildNum(letterArr);
             var buildItem = _view.buildItem(brand);
-            $('#brand-list').append(brandNum + buildItem);
+            $('body').append('<div id="brand-list">' + brandNum + buildItem + '</div>');
 
 
             $('.brand-item').on('click', '.item', function() {
