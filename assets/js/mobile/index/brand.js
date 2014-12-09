@@ -1,7 +1,6 @@
 var config = {
     'brandUrl': contextPath + '/pages/dicAction/loadRootLevel.json?type=car-subdivision',
-    'seriesUrl': contextPath + '/pages/dicAction/loadRootLevelForCar.json',
-    'imgUrl': 'http://res.souche.com/files/carproduct/brand/'
+    'seriesUrl': contextPath + '/pages/dicAction/loadRootLevelForCar.json'
 }
 
 var _view = {
@@ -32,7 +31,7 @@ var _view = {
                     buildItem += '<ul class="list">';
                 }
                 buildItem += '<li class="item" data-code="' + arr[p][i].code 
-                            + '"><img src="config.imgUrl' + 
+                            + '"><img src="http://res.souche.com/files/carproduct/brand/' + 
                             +  arr[p][i].code +'.png"><span>' 
                             + arr[p][i].name + '</span></li>';
                 if (i % rowItem == 3) {
