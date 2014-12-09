@@ -44,8 +44,8 @@ var _view = {
     },
 
     buildSeries: function(obj, activeCode) {
-        var subStr = '<div class="sub"><div class="car" data－code＝"' 
-                    + activeCode + '"><span>全部车系</span></div>';
+        var subStr = '<div class="sub"><div class="car"><span data－code＝"' 
+                    + activeCode + '">全部车系</span></div>';
         for (var p in obj) {
             subStr += '<div class="car-cat">'
                         + p + '</div><div class="car">';
@@ -92,7 +92,7 @@ $.getJSON(config.brandUrl, function(data) {
 
     var brandNum = _view.buildNum(letterArr);
     var buildItem = _view.buildItem(brand);
-    $('body').append('<div id="brand-list">' + brandNum + buildItem + '</div>');
+    $('body').append('<div id="brand" class="hidden">' + brandNum + buildItem + '</div>');
 
 
     $('.brand-item').on('click', '.item', function() {
