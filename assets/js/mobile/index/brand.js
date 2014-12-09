@@ -32,7 +32,7 @@ var _view = {
                     buildItem += '<ul class="list">';
                 }
                 buildItem += '<li class="item" data-code="' + arr[p][i].code 
-                            + '"><img src="' + config.imgUrl + 
+                            + '"><img src="config.imgUrl' + 
                             +  arr[p][i].code +'.png"><span>' 
                             + arr[p][i].name + '</span></li>';
                 if (i % rowItem == 3) {
