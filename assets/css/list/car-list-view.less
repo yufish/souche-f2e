@@ -213,12 +213,33 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
         }
 
         .national-car-info{
-            // float: left;
-            // margin-left: 14px;
-            // background-color: #ccc;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            bottom: 20px;
+            width: 170px;
+            padding: 0 20px;
+            border-left: 1px solid #ededed;
+            text-align: center;
 
             .shop-logo{
+                display: inline-block;
+                margin-bottom: 15px;
+                margin-top: -20px;
+                img{
+                    width: 100px;
+                    height: 50px;
+                }
+            }
+            .shop-approve-tag{
+                position: relative;
+                left: 0;
+                top: 90px;
+            }
+            .shop-name-text{
                 display: block;
+                margin-bottom: 10px;
+                text-align: center;
             }
         }
     }
