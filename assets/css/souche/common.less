@@ -533,29 +533,35 @@ html,body{
   background-position: -(100px * (@x - 1) ) -(20px * (@y - 1));
 }
 .shop-approve-tag{
-  display: none;
-  width: 100px;
-  height: 15px;
-  background-image: url('../../images/detail/approve-tag-sprite.png');
-  background-repeat: no-repeat;
-
-  // detail页面的标
-  &.souche-dealer-tag{
-    .tagPos(1,1);
-  }
-  &.fours-brand-tag{
-    .tagPos(2,1);
-  }
-  &.realname-tag{
-    .tagPos(3,1);
-  }
-  // list页的标 心愿卡页面 限时优惠页面
-  &.fours-tag{
-    .tagPos(1,2);
-  }
-  &.dealer-tag{
-    .tagPos(2,2);
-  }
+    display: none;
+    width: 100px;
+    height: 16px;
+    background-image: url('../../images/detail/approve-tag-sprite.png');
+    background-repeat: no-repeat;
+    
+    // detail页面的标
+    &.detail-souche-dealer-tag{
+        .tagPos(1,1);
+    }
+    &.detail-fours-brand-tag{
+        .tagPos(2,1);
+    }
+    &.detail-realname-tag{
+        .tagPos(3,1);
+    }
+    // list页的标 心愿卡页面 限时优惠页面
+    &.list-dealer-tag{
+        width: 56px;
+        .tagPos(1,2);
+    } 
+    &.list-fours-tag{
+        width: 34px;
+        .tagPos(2,2);
+    }
+    &.list-realname-tag{
+        width: 56px;
+        .tagPos(3,2);
+    }
 }
 
 .car_tag_zhijian{width:34px;height:46px;position:absolute;right:10px;top:10px;background:url(../../images/fed/tag_sprite.png) no-repeat 0 -50px;color:#e70;font-size:14px;text-align:center;line-height:56px;font-style:normal;font-family:Arial}
