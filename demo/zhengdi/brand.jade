@@ -189,8 +189,9 @@ html
                         if (data) {
                             obj = data.codes;
                             $('.item').removeClass('active');
-                            var subStr = _view.buildSeries(obj, code);
                             $this.addClass('active');
+                            var subStr = _view.buildSeries(obj, code);
+                            $('.brand-item .sub').remove();
                             $this.closest('.list').after(subStr);
                         }
                     }
