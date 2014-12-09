@@ -50,6 +50,7 @@ define(function() {
                         })
                     } else {
                         $("*[data-id=onsale_price]").addClass("hidden")
+                        $("*[data-scrollto=onsale_price]").addClass("hidden")
                     }
                 }
             })
@@ -76,6 +77,7 @@ define(function() {
                         }
                         if(totalPrice<0){
                             $("*[data-id=onsale_baoyang]").addClass("hidden")
+                            $("*[data-scrollto=onsale_baoyang]").addClass("hidden")
                         }
                         var distanceData = [];
                         for (var i in baoyangData.mileageMark) {
@@ -103,6 +105,7 @@ define(function() {
                         })
                     } else {
                         $("*[data-id=onsale_baoyang]").addClass("hidden")
+                        $("*[data-scrollto=onsale_baoyang]").addClass("hidden")
                     }
                 }
             })
@@ -170,6 +173,7 @@ define(function() {
 
                     } else {
                         $("*[data-id=onsale_koubei]").addClass("hidden")
+                        $("*[data-scrollto=onsale_koubei]").addClass("hidden")
                     }
 
                 }

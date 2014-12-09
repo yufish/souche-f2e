@@ -338,7 +338,7 @@ input.checkbox-cond:checked{
     background-size: 100%;
 }
 input.checkbox-cond:checked + .filter-title{
-    color:#ff571a;
+    color:#0f448e;
 }
 .filter-title{
     line-height: 60px;
@@ -360,6 +360,6 @@ input.checkbox-cond:checked + .filter-title{
     border-radius: 4px;
 }
 .auth-brand-item.active{
-    color:#ff571a;
-    border:1px solid #ff571a;
+    color:#0f448e;
+    border:1px solid #0f448e;
 }

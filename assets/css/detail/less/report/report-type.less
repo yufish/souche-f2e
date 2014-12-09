@@ -1,7 +1,6 @@
 .wrapper{
-    // 类型1
-    // 小车商
-    &.report-type-1{
+    // 承诺报告
+    &.report-type-promise-report{
         .report_module .report_hd .num{
             background-color: #666;
         }
@@ -24,50 +23,6 @@
         }
         .report_important .item .hd{
             min-height: 50px;
-        }
-    }
-
-
-    &.report-type-2{
-        .report_summary .level-card{
-            .card-stage .card-box .card-cont{
-                background: url(../../images/detail/special-shop-report-icon.png) no-repeat;
-                background-position: center;
-
-                *{
-                    display: none;
-                }
-            }
-            .card-rule{
-                display: none !important;
-            }
-            .look-rule{
-                display: none;
-            }
-        }
-    }
-    
-
-
-    // 质检报告 -> 服务承诺
-    // 默认显示质检报告
-    .report_summary .summary-box .title .text{
-        &.quality-report{
-            display: block;
-        }
-        &.service-promise{
-            display: none;
-            padding-left:20px;
-        }
-    }
-    &.report-type-1{
-        .report_summary .summary-box .title .text{
-            &.quality-report{
-                display: none;
-            }
-            &.service-promise{
-                display: block;
-            }
         }
     }
 }
