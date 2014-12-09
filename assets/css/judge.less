@@ -1,0 +1,294 @@
+#judge{
+  *{box-sizing: border-box;}
+  #content{
+    .banner{
+      width: 100%;
+      height: 459px;
+      background: url(../images/judge/banner.jpg) no-repeat center;
+      .judge-form{
+        width: 380px;
+        margin: 0 auto;
+        padding-top: 60px;
+        h1{
+          color: #333;
+          font-size: 32px;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .judge-car{
+          .select-item{
+            height: 35px;
+            margin-bottom: 10px;
+          }
+          select,input{
+            width: 100%;
+            height: 35px;
+            border: 1px solid #e6e6e6;
+            display: block;
+            float: left;
+            padding:0 8px;
+            color: #999;
+          }
+         
+          .car-kind{
+            select{
+              width: 126px;
+              border-right: none;
+            }
+            #sell_type{
+              border-right: 1px solid #e6e6e6;
+            }
+          }
+          .form-button{
+            margin-top: 25px;
+            #submit-judge{
+              display: block;
+              float: left;
+              width: 180px;
+              height: 45px;
+              background: #ff5517;
+              color: #fff;
+              font-size: 16px;
+              text-align: center;
+              line-height: 45px;
+              border: none;
+              border-radius: 2px;
+              cursor: pointer;
+            }
+            #submit-judge:hover{
+              background: #ff6630;
+            }
+            .sellcar{
+              display: block;
+              float: left;
+              width: 180px;
+              height: 45px;
+              margin-left: 20px;
+              border: 2px solid #d9d9d9;
+              color: #333;
+              font-size: 16px;
+              border-radius: 2px;
+              text-align: center;
+              line-height: 41px;
+            }
+            .sellcar:hover{
+              background: #ff5517;
+              color: #fff;
+              border: none;
+              line-height: 45px;
+            }
+          }
+        }
+      }
+    }
+    .wrapper{
+      width: 1180px;
+      margin: 0 auto;
+    }
+    .cont-head{
+      height: 180px;
+      padding-top: 70px;
+      .explain-item{
+        width: 393px;
+        float: left;
+        padding-left: 30px;
+        .icon-1{
+          float: left;
+          width: 63px;
+          height: 47px;
+          background: url(../images/judge/icon-1.png) no-repeat;
+          margin-top: 2px;
+        }
+        .icon-2{
+          float: left;
+          width: 70px;
+          height: 58px;
+          background: url(../images/judge/icon-2.png) no-repeat;
+        }
+        .icon-3{
+          float: left;
+          width: 70px;
+          height: 47px;
+          background: url(../images/judge/icon-3.png) no-repeat;
+          margin-top: 2px;
+        }
+        .ex-text{
+          float: left;
+          margin-left: 15px;
+          h1{
+            color: #333;
+            font-size: 20px;
+          }
+          p{
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .judge-result{
+      border: 1px solid #e6e6e6;
+      padding: 45px 30px;
+      .car-result{
+        float: left;
+        width: 820px;
+        border-right: 1px solid #e6e6e6;
+        padding-left: 25px;
+        position: relative;
+        .powerd{
+          position: absolute;
+          top: 0px;
+          right: 45px;
+          .icon{
+            width: 70px;
+            height: 70px;
+            background: url(../images/judge/powerd.png) no-repeat;
+          }
+          p{
+            color: #d9d9d9;
+            text-align: center;
+            margin-top: 3px;
+          }
+        }
+        .car-box{
+          .car-info{
+            margin-bottom: 25px;
+            .carimg{
+              float: left;
+            }
+            .car-type{
+              float: left;
+              margin-left: 20px;
+              h1{
+                font-size: 20px;
+                color: #333;
+                margin-bottom: 3px;
+              }
+              p{
+                font-size: 14px;
+                color: #666;
+              }
+            }
+          }
+          .car-detail{
+            margin-bottom: 85px;
+            .detail-item{
+              width: 100px;
+              float: left;
+              padding-left: 10px;
+              border-left: 1px solid #b2b2b2;
+              font-size: 14px;
+              .data{
+                color: #666;
+                margin-bottom: 4px;
+              }
+              p{
+                color: #999;
+              }
+            }
+          }
+        }
+      .judge-price{
+        margin-bottom: 30px;
+        .price{
+            margin-bottom: 10px;
+            span{
+              font-size: 30px;
+              color: #333;
+            }
+            em{
+              font-size: 30px;
+              color: #ff5517;
+            }
+          }
+          .price-state{
+            font-size: 14px;
+            line-height: 20px;
+            .newcar-price{
+              float: left;
+              margin-right: 25px;
+              span{
+                color: #333;
+              }
+              em{
+                color: #ff5517;
+                font-weight: bold;
+              }
+            }
+            .price-level{
+              float: left;
+              span{
+                display: block;
+                float: left;
+                color: #333;
+                }
+              i{
+                 display: block;
+                 float: left;
+                 width: 84px;
+                 height: 20px;
+              }
+              .level-4{
+                background: url(../images/judge/level-4.png) no-repeat;
+              }
+            }
+          }
+        }
+        .souche-judge{
+          font-size: 14px;
+          color: #666;
+          margin-bottom: 40px;
+          p{
+            line-height: 20px;
+            span{
+              color: #ff5517;
+              font-weight: bold;
+              margin:0 2px;
+            }
+          }
+        }
+        .judge-button{
+          margin-bottom: 20px;
+          a{
+            display: block;
+            float: left;
+            width: 180px;
+            height: 45px;
+            border-radius: 2px;
+            font-size: 16px;
+            text-align: center;
+          }
+          .sellcar{
+            background: #ff5517;
+            color: #fff;
+            line-height: 45px;
+          }
+          .sellcar:hover{
+            background: #ff6630;
+          }
+          .judge-again{
+            border: 2px solid #d9d9d9;
+            line-height: 41px;
+            color: #333;
+            margin-left:15px;
+          }
+          .judge-again:hover{
+            background: #ff5517;
+            color: #fff;
+            border: none;
+            line-height: 45px;
+          }
+        }
+        .share-judge{
+          line-height: 25px;
+          color: #666;
+        }
+      }
+      .cargod{
+        float: left;
+
+      }
+    }
+  }
+}
