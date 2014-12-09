@@ -184,7 +184,7 @@
     line-height: 45px;
     border-bottom: 1px solid #d9d9d9;
     padding: 0 16px;
-    color:#FF571a;
+    color:#0f448e;
     font-size: 14px;
     background: #fff;
 }
@@ -203,7 +203,7 @@
 #J_submit{
     width:100%;
     border:none;
-    background: #FF571a;
+    background: #0f448e;
     height: 45px;
     color:#fff;
     text-align: center;
@@ -215,7 +215,7 @@
 }
 #J_series-ok-btn{
     height: 30px;
-    background: #FF571a;
+    background: #0f448e;
     color:#FFF;
     text-align: center;
     width: 120px;
