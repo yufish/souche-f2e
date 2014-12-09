@@ -222,25 +222,43 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             border-left: 1px solid #ededed;
             text-align: center;
 
+            .national-car-info-wrapper{
+                position: relative;
+                height: auto;
+            }
+
             .shop-logo{
-                display: inline-block;
+                display: block;
+                height: 20px;
+                overflow: visible;
                 margin-bottom: 15px;
-                margin-top: -20px;
                 img{
                     width: 100px;
                     height: 50px;
                 }
             }
-            .shop-approve-tag{
-                position: relative;
-                left: 0;
-                top: 90px;
-            }
             .shop-name-text{
                 display: block;
+                margin-top: 48px;
                 margin-bottom: 10px;
                 text-align: center;
             }
+            .shop-approve-tag{
+                position: absolute;
+                left: 50%;
+                top: auto;
+                bottom: -25px;
+                
+                &.list-dealer-tag,
+                &.list-realname-tag{
+                    margin-left: -(56px/2);
+                }
+                &.list-fours-tag{
+                    margin-left: -(34px/2);
+                }
+
+            }
+            
         }
     }
 }
