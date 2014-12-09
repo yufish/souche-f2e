@@ -197,81 +197,11 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
 
 
         .carTail{
-            position: absolute;
-            right: 0;
-            top: @paddingTB;
-            width: 85px;
-            
-            .carCollect{
-                text-align: center;
-                
-                .add-to-coll,
-                .already-colled{
-                    padding-left: 20px;
-                }
-                .add-to-coll{
-                    background-image: url(../images/list/collect.png);
-                    background-repeat: no-repeat;
-                    background-position: 2px 50%;
-                }
-                .already-colled{
-                    display: none;
-                    background-image: url(../images/list/colled.png);
-                    background-repeat: no-repeat;
-                    background-position: 2px 50%;
-                }
-                &.faved{
-                    .add-to-coll{
-                        display: none;
-                    }
-                    .already-colled{
-                        display: inline-block;
-                    }
-                }
-            }
-
-            .carCollect{
-                // 超出隐藏
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .carConstrast{
-                top: 0;
-                text-align: center;
-                .constrast-notyet{
-                    display: none;
-                }
-                .constrast-notyet-verbose{
-                    display: inline-block;
-                }
-                .constrast-added{
-                    display: none;
-                }
-                #addconst{
-                    display: none;
-                }
-                &.added{
-
-                  .constrast-notyet-verbose{
-                    display: none;
-                  }
-                  .constrast-added{
-                    display: inline-block;
-                  }
-                }
-            }
-            .carCollect,
-            .carConstrast{
-                position: absolute;
-                display: inline-block;
-                line-height: 24px;
-                width: 85px;
-                font-size: 12px;
-                border: 1px solid #e0e0e0;
-                cursor: pointer;
-                color: #999;
-            }
+            width: auto;
+            height: auto;
+            top: auto;
+            bottom: 30px;
+            left: 15px;
         }
         .up-time{
             position: absolute;
@@ -280,6 +210,16 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             width: 200px;
             text-align: right;
             color: #999;
+        }
+
+        .national-car-info{
+            // float: left;
+            // margin-left: 14px;
+            // background-color: #ccc;
+
+            .shop-logo{
+                display: block;
+            }
         }
     }
 }

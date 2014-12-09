@@ -55,7 +55,103 @@
           }
         }
       }
+    }
+    .carTail{
+      position: absolute;
+      width: 230px;
+      height: 25px;
+      top: 132px;
+      left: 5px;
+      .carCollect{
+        float: left;
+        display: block;
+        min-width: 41px;
+        height: 23px;
+        padding-right: 4px;
+        border-radius:2px;
+        color: #333;
+        background: #fff url(../images/list/collect.png) no-repeat 5px center;
+        opacity: 0.5;
+        filter:alpha(opacity=50);
+        line-height: 24px;
+        cursor: pointer;
+        -webkit-transition: opacity 200ms ease;
+        -moz-transition: opacity 200ms ease;
+        transition: opacity 200ms ease;
+
+        span{
+          margin-left: 25px;
+        }
+        .add-to-coll,
+        .already-colled{
+          display: none;
+        }
+      }
       
+      .faved{
+        background: #fff url(../images/list/colled.png) no-repeat 5px center !important;
+      }
+      .carConstrast{
+        width: 45px;
+        height: 23px;
+        float: right;
+        background: #fff;
+        line-height: 23px;
+        opacity: 0;
+        filter:alpha(opacity=0);
+        border-radius:2px;
+        cursor: pointer;
+        -webkit-transition: opacity 200ms ease;
+        -moz-transition: opacity 200ms ease;
+        transition: opacity 200ms ease;
+
+        text-align: center;
+
+        #addconst{
+          display: none;
+          // margin-top: 5px;
+          // margin-left: 2px;
+          // margin-right: 2px;
+          // display: block;
+        }
+        span{
+          line-height: 23px;
+        }
+        .constrast-notyet{
+            display: inline-block;
+        }
+        .constrast-notyet-verbose,
+        .constrast-added{
+            display: none;
+        }
+        
+        &.added{
+          width: 55px;
+          #addconst{
+            display: none;
+          }
+          .constrast-notyet{
+            display: none;
+          }
+          .constrast-added{
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+
+    &:hover{
+      .carTail{
+        .carConstrast{
+          opacity: 1;
+          filter:alpha(opacity=100);
+        }
+        .carCollect{
+          opacity: 1;
+          filter:alpha(opacity=100);
+        }
+      }
     }
   }
 }
