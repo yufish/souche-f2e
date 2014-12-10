@@ -80,9 +80,11 @@
                 url: config.api_saleCarOrder,
                 data: {
                     phone: $("#yuyue-phone").val(),
-                    carId: config.carId
+                    carId: config.carId,
+                    crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId")
                 },
-                dataType:"json",
+                dataType:"jsonp",
                 type: "post",
                 success: function(data) {
                     //code    400:无手机号码 401:无carId  402:重复预约   403系统异常  200成功
