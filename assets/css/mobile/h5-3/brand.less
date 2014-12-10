@@ -88,18 +88,30 @@
 			text-align: left;
 
 			.car {
+				margin-bottom: 16px;
+				border-bottom: 1px solid #d9d9d9;
 				span {
+					padding: 4px;
+					border: 1px solid #e6e6e6;
 					margin: 0 32px 32px 0;
 					display: inline-block;
 					color: #333;
 					font-size: 14px;
 					font-family: '黑体';
+					&.active {
+						color: #FF571a;
+						border-color: #FF571a;
+					}
+				}
+
+				&:last-child {
+					border-bottom: 0;
 				}
 			}
 
 			.car-cat {
 				color: #999;
-				margin-bottom: 16px;
+				margin-bottom: 32px;
 				font-size: 12px;
 				font-family: '黑体';
 			}
