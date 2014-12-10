@@ -6,38 +6,39 @@ define(function() {
         $.ajax({
             url: config.api_saveFavorite,
             data: {
-                phone: $("#fav-phone").val(),
-                carType: config.carType,
+                crmUserId: $.cookie("crmUserId"),
+                siteId:$.cookie("siteId"),
                 carId: config.carId
             },
-            dataType: "json",
+            dataType: "jsonp",
             type: "post",
             success: function(data) {
                 if (data.errorMessage) {
                     alert(data.errorMessage)
                 } else {
                     //$('#shoucang-popup').removeClass('hidden');
-                    var favPos = $("#J_shoucang").offset();
-                    $("<div class='icon-fei'></div>").css({
-                        left: favPos.left + 7,
-                        top: favPos.top + 7
-                    })
-                        .appendTo(document.body)
-                        .animate({
-                            left: $(".sidebar").offset().left + 10,
-                            top: $(".sidebar").offset().top + 10,
-                            opacity: 0
-                        }, 700, function() {
-                            $(".collectside").addClass("flash")
-                            setTimeout(function() {
-                                $(".collectside").removeClass("flash")
-                            }, 500)
-                        })
+//                    var favPos = $("#J_shoucang").offset();
+//                    $("<div class='icon-fei'></div>").css({
+//                        left: favPos.left + 7,
+//                        top: favPos.top + 7
+//                    })
+//                        .appendTo(document.body)
+//                        .animate({
+//                            left: $(".sidebar").offset().left + 10,
+//                            top: $(".sidebar").offset().top + 10,
+//                            opacity: 0
+//                        }, 700, function() {
+//                            $(".collectside").addClass("flash")
+//                            setTimeout(function() {
+//                                $(".collectside").removeClass("flash")
+//                            }, 500)
+//                        })
                     $("#fav-popup").addClass("hidden")
                     $(".wrapGrayBg").hide();
                     $("#J_shoucang label").html('已收藏')
                     $("#J_shoucang").attr('value', '1').addClass("faved");
                     var num = $('#J_car_favorite').html();
+                    num = num?num:0;
                     $('#J_car_favorite').html(parseInt(num) + 1);
                     doubleClickFlag = false;
                 }
