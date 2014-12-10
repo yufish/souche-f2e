@@ -1,36 +1,3 @@
-/*
-
-a.carImg
-  img
-  .timebuy.hidden
-
-a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?carId=0388PhM1E3')
-  | 雪佛兰 2013款  科帕奇2.4-A/MT七座城市版前驱
-
-.car-price
-  span.price ￥18.36万
-  span.recommended 直降5000元
-
-.car-info
-  span.info-item 2012-04  上牌
-  span.info-item 6.4万公里
-  span.info-item 杭州
-
-.carTail.clearfix
-  a.collect.carCollect(data-carid='0388PhM1E3', data-num='7')
-    | 收藏
-    span 7
-  .carConstrast(contrastid='null', carid='0388PhM1E3')
-    input(type='checkbox')
-    span 加入对比
-  .contrast-waring.hidden 对比栏已满！你可以删除不需要的车辆，再继续添加。
-
-.car-type
-  .type-icon
-  .up-time 三天前
-
-*/
-
 .list-box{
     margin-top: -10px;
     *{
@@ -74,6 +41,22 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             margin-left: 200px;
             width: 290px;
         }
+        .car-type{
+
+            .car-type-wrapper{
+                overflow: hidden;
+            }
+            .zhijian,
+            .danbao,
+            .baoxian{
+                float: left;
+            }
+            .up-time{
+                display: block;
+                margin-top: 16px + 8px;
+            }
+        }
+       
 
         .car-link{
             font-size: 14px;
@@ -104,54 +87,6 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             }
             em{
                 margin: 0 @dis;
-            }
-        }
-        .car-type{
-            font-size: 12px;
-
-            .zhijian,
-            .baoxian,
-            .shouquan{
-                display: inline-block;
-                margin-right: 1em;
-                margin-bottom: 12px;
-
-                .type-icon{
-                    display: inline-block;
-                    height: 16px;
-                    color: #fff;
-                    padding: 0 3px;
-                    line-height: 16px;
-                    font-size: 12px;
-                }
-                
-            }
-            .shouquan{
-               .extra-text{
-                    color: #999;
-                    text-decoration: underline;
-                }
-            }
-            .extra-text{
-                display: inline;
-                color: #666;
-            }
-            .zhijian .type-icon{
-                background: #FF5517;
-            }
-            .baoxian .type-icon{
-                width: 16px;
-                height: 16px;
-                background: url(../images/list/baoxiu.png) no-repeat;
-                background-position: 0 100%;
-                margin-bottom: -2px;
-            }
-            .shouquan{
-                color: #999;
-
-                .type-icon{
-                    background: #EBBB58;
-                }
             }
         }
   
@@ -203,14 +138,6 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
             bottom: 30px;
             left: 15px;
         }
-        .up-time{
-            position: absolute;
-            right: 0;
-            bottom: 20px;
-            width: 200px;
-            text-align: right;
-            color: #999;
-        }
 
         .national-car-info{
             position: absolute;
@@ -242,6 +169,7 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
                 margin-top: 48px;
                 margin-bottom: 10px;
                 text-align: center;
+                .text-collapse();
             }
             .shop-approve-tag{
                 position: absolute;
@@ -258,7 +186,6 @@ a.car-link(target='_blank', href='/pages/choosecarpage/choose-car-detail.html?ca
                 }
 
             }
-            
         }
     }
 }

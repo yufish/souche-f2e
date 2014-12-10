@@ -100,17 +100,17 @@ define(function() {
             clearTimeout(timerHide);
             timerShow = setTimeout(function(){
                 show();
-            },300)
+            }, 66);
         });
         $(".city").on("click", function(e){
-            clearTimeout(timerShow);
-            clearTimeout(timerHide);
-            if( $(".city-open").hasClass("hidden") ){
-                show();
-            }
-            else{
-                hide();
-            }
+            // clearTimeout(timerShow);
+            // clearTimeout(timerHide);
+            // if( $(".city-open").hasClass("hidden") ){
+            //     show();
+            // }
+            // else{
+            //     hide();
+            // }
             e.stopPropagation();
         });
         // 在popover上操作, 保持弹出状态
