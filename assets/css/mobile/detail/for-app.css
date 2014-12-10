@@ -1,6 +1,6 @@
 #header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
 .recommend-cars,.header-placeholder,#global-subscription{
-    display:none !important;
+    display:block !important;
 }
 
 #detail #quality-test .cube .h .l{

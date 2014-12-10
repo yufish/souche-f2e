@@ -539,6 +539,10 @@ var utilsSell = {
             $('#brand').removeClass('hidden');
         });
 
+        $(document).on('click', '#brand .back', function() {
+            $('#brand').addClass('hidden');
+        });
+
         $(document).on('click', '#brand .list .item', function() {
             filterGlobal.selectBrand = $(this).attr('data-code');
             filterGlobal.selectBrandName = $(this).find('span').text();
