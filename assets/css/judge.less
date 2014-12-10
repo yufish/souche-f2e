@@ -283,11 +283,338 @@
         .share-judge{
           line-height: 25px;
           color: #666;
+          span{
+            display: block;
+            float: left;
+          }
+          a{
+            display: block;
+            float: left;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+          }
+          .qzone{
+            background: url(../images/judge/q-zon.png) no-repeat;
+          }
+          .sina{
+            background: url(../images/judge/sina.png) no-repeat;
+          }
+          .tenxun{
+            background: url(../images/judge/tenxun.png) no-repeat;
+          }
         }
       }
       .cargod{
+        
         float: left;
+        padding-left: 40px;
+        h1{
+          color: #333;
+          font-size: 20px;
+          margin-bottom: 3px;
+        }
+        p{
+          font-size: 14px;
+          color: #999;
+          margin-bottom: 5px;
+        }
+        .god-item{
+          width: 100%;
+         border-bottom: 1px solid #ededed;
+         width: 245px;
+         padding: 25px 0;
+         
+         .god-boxs{
+          .god-img{
+            float: left;
+          }
+          .god-info{
+            float: left;
+            margin-left: 10px;
+            .god-name{
+              font-size: 16px;
+              color: #666666;
+              margin-bottom: 5px;
+              margin-top: 5px;
+            }
+            p{
+              color: #999;
+            }
+          }
+         }
+         .god-button{
+          display: block;
+          width: 94px;
+          height: 28px;
+          border: 1px solid #d9d9d9;
+          border-radius: 2px;
+          color: #8a8a8a;
+          padding-left: 15px;
+          background: url(../images/judge/qq.png) no-repeat center left;
+          text-align: center;
+          line-height: 26px;
+          margin-top: 12px;
+         }
+         .god-button:hover{
+          border: 1px solid #5c9bef;
+          background: #5c9bef url(../images/judge/qq-hover.png) no-repeat center left;
+          color: #fff;
 
+         }
+        }
+      }
+    }
+    .price-analy{
+      border: 1px solid #e6e6e6;
+      border-top: none;
+      padding: 80px 70px;
+      .price-trend{
+        .trend-chart{
+          float: left;
+          width: 540px;
+          position: relative;
+          .price-time{
+            float: left;
+            margin-right: 15px;
+            color: #333;
+            li{
+              height: 50px;
+              line-height: 50px;
+            }
+          }
+          .car-price{
+            float: left;
+            li{
+              width: 58px;
+              float: left;
+              i{
+                display: block;
+                width: 2px;
+                height: 150px;
+                background: #dfdfdf;
+                margin-left: 3px;
+              }
+              span{
+                display: block;
+                margin-top:10px;
+              }
+            }
+          }
+          .price-unit{
+            position: absolute;
+            bottom: 0px;
+            right: 20px;
+          }
+          .price-block{
+            position: absolute;
+            left: 59px;
+            z-index: 10;
+            li{
+              height: 50px;
+              i{
+                display: block;
+                float: left;
+                height: 25px;
+                margin: 13px 0;
+              }
+              .block-1{
+                width: 380px;
+                background: #ffb093;
+              }
+              .block-2{
+                width: 360px;
+                background: #ff723e;
+              }
+              .block-3{
+                width: 340px;
+                background: #ff5517;
+              }
+              span{
+                display: block;
+                float: left;
+                margin-left: 5px;
+                line-height: 50px;
+                font-weight: bold;
+              }
+              .price-1{
+                color: #ffb093;
+              }
+              .price-2{
+                color: #ff723e;
+              }
+              .price-3{
+                color: #ff5517;
+              }
+            }
+          }
+        }
+        .trend-text{
+          float: left;
+          width: 420px;
+          h1{
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+          }
+          p{
+            font-size: 14px;
+            color: #999;
+            line-height: 20px;
+          }
+        }
+      }
+      .price-chart{
+        margin-top: 120px;
+        .title{
+          margin-bottom: 45px;
+          span{
+            font-size: 20px;
+            color: #333;
+          }
+          em{
+            font-size: 14px;
+            color: #999;
+            margin-left: 15px;
+          }
+        }
+        .chare-box{
+          height: 150px;
+          margin-bottom: 55px;
+          .price-item{
+            float: left;
+            height: 10px;
+            width: 33%;
+            position: relative;
+            .start{
+              position: absolute;
+              left: -11px;
+              z-index: 10;
+              top: -4px;
+              .dot{
+                width: 18px;
+                height: 18px;
+                margin-left: 10px;
+                border-radius: 18px;
+                z-index: 10;
+                background: #fff;
+              }
+              .price{
+                margin-top: 10px;
+                color: #666;
+              }
+            }
+            .end{
+              position: absolute;
+              top: 3px;
+              right:-30px;
+              z-index: 10;
+              top: -4px;
+              .dot{
+                margin-left: 10px;
+                width: 18px;
+                height: 18px;
+                border-radius: 18px;
+                background: #fff;
+              }
+              .price{
+                margin-top: 10px;
+                color: #666;
+              }
+            }
+            .this-car{
+              position: absolute;
+              z-index: 10;
+            }
+          }
+          .buy-price{
+            background: #0081d2;
+            .dot{
+              border: 3px solid #0081d2;
+            }
+            .this-car{
+              width: 107px;
+              height: 115px;
+              top: -4px;
+              left: 20px;
+              background: url(../images/judge/buy-price.png) no-repeat;
+              padding-top: 75px;
+              text-align: center;
+              color: #0081d2;
+            }
+          }
+          .personal-price{
+            background: #66b100;
+            .dot{
+              border: 3px solid #66b100;
+            }
+            .this-car{
+              width: 149px;
+              height: 133px;
+              top: -4px;
+              left: 50px;
+              background: url(../images/judge/person-price.png) no-repeat;
+              padding-top: 80px;
+              text-align: center;
+              color: #66b100;
+              font-size: 14px;
+            }
+          }
+          .retail-price{
+            background: #ff723e;
+            .dot{
+              border: 3px solid #ff723e;
+            }
+            .this-car{
+              width: 107px;
+              height: 115px;
+              top: -4px;
+              left: 50px;
+              background: url(../images/judge/retail-price.png) no-repeat;
+              padding-top: 75px;
+              text-align: center;
+              color: #ff723e;
+             
+            }
+          }
+        }
+        .chare-text{
+          width: 740px;
+          margin: 0 auto;
+          .price-text{
+            margin-bottom: 24px;
+            i{
+              display: block;
+              float: left;
+              width: 12px;
+              height: 12px;
+              border-radius: 12px;
+              margin-top: 3px;
+            }
+            .blue-dot{
+              background: #0081d2;
+            }
+            .green-dot{
+              background: #66b100;
+            }
+            .orange-dot{
+              background: #ff723e;
+            }
+            .text-box{
+              float: left;
+              width: 710px;
+              margin-left:10px;
+              h2{
+                color: #666;
+                margin-bottom: 3px;
+              }
+              p{
+                color: #999;
+                line-height: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }

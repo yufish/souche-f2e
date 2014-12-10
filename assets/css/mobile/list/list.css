@@ -159,6 +159,22 @@
     width: 100%;
     margin: 0;
 }
+
+#list #cars .car .lft .car-for-sale {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    display: block;
+    width: 60%;
+    height: 60%;
+}
+
+#list #cars .car .lft .car-for-sale img {
+    height: 100%;
+    width: auto;
+}
+
 #list #cars .car .rht {
     float: left;
     width: 61.8%;
@@ -202,6 +218,16 @@
     position: relative;
     margin-top: 7px;
 }
+#list .car-auth {
+    float: left;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px;
+    background-color: #62b061;
+    color: #fff;
+    font-size: 12px;
+}
+
 #list .car-footer .quality-guide{
     border:1px solid #639f47;
     color:#639f47;
@@ -210,7 +236,7 @@
 }
 
 #list .car-footer .quality-danbao {
-    background-color: #eb5533;
+    background-color: #ff5a1a;
     color: #fff;
     padding: 2px;
     float: left;
