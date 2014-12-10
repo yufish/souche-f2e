@@ -169,9 +169,11 @@ Souche.Inside = (function() {
                 $.ajax({
                     url: config.fav_api,
                     data: {
+                        crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId"),
                         carId: fav_carId //$(self).attr("data-carid")
                     },
-                    dataType: "json",
+                    dataType: "jsonp",
                     type: "post",
                     success: function(data) {
                         if (data.errorMessage) {
