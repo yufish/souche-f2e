@@ -93,8 +93,8 @@
 
         var brandNum = _view.buildNum(letterArr);
         var buildItem = _view.buildItem(brand);
-        $('body').append('<div id="brand" class="hidden"><div class="header" id="header-common"><header class="header"><a class="back" href="#">
-                <i class="header-back-icon"></i>返回</a><span class="brand-top-right">不限品牌</span></header></div>' + brandNum + buildItem + '</div>');
+        $('body').append('<div id="brand" class="hidden"><div class="header" id="header-common">'
+                            + '<header class="header"><a class="back" href="#"><i class="header-back-icon"></i>返回</a><span class="brand-top-right">不限品牌</span></header></div>' + brandNum + buildItem + '</div>');
 
         $('.brand-item').on('click', '.item', function() {
             var code = $(this).attr('data-code');
