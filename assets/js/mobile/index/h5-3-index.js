@@ -564,7 +564,9 @@ var utilsSell = {
             filterGlobal.selectSeriesName = $(this).text();
             $('#brand .car span').removeClass('active');
             $(this).addClass('active');
-            $('#brand').delay(1000).addClass('hidden');
+            setTimeout(function() {
+                $('#brand').addClass('hidden');
+            }, 1000);
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
         });
