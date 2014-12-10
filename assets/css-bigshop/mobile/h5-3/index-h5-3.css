@@ -27,7 +27,7 @@ margin-bottom: 20px;
     margin-left:10px;
     padding-left:10px;
 
-    border-left:3px solid #FF571A;
+    border-left:3px solid #0f448e;
 }
 .nav-icon{
     display: inline-block;
@@ -71,7 +71,7 @@ nav .nav-item{
     font-size: 14px;
 }
 nav .nav-item.active{
-    color:#FF571A;
+    color:#0f448e;
 }
 nav .nav-item .nav-item-content{
     height: 44px;
@@ -79,11 +79,11 @@ nav .nav-item .nav-item-content{
     padding: 0 6px;
 }
 nav .nav-item.active .nav-item-content{
-    border-bottom: 2px solid #FF571A;
+    border-bottom: 2px solid #0f448e;
 }
 #J_navbar_underline{
     height: 4px;
-    background: #ff571a;
+    background: #0f448e;
     width: 33.3%;
     position: absolute;
     bottom: 0;
@@ -163,7 +163,7 @@ nav .nav-item.active .nav-item-content{
     text-align: center;
     border-left: 1px solid #E6E6E6;
     font-weight: bold;
-    color:#FF571a;
+    color:#0f448e;
 }
 .for-carcustom .erge{
     display: inline-block;
@@ -255,7 +255,7 @@ nav .nav-item.active .nav-item-content{
     font-size: 14px;
     color:#333;
     line-height: 14px;
-    border-left: 2px solid #FF571A;
+    border-left: 2px solid #0f448e;
     padding-left: 8px;
     font-weight: bold;
 }
@@ -504,8 +504,8 @@ nav .nav-item.active .nav-item-content{
 }
 .walk-tabs .walk-tab-item.active{
     background: #fff;
-    color: #ff571a;
-    border:1px solid #ff571a;
+    color: #0f448e;
+    border:1px solid #0f448e;
 }
 
 .walkaround-area{
@@ -757,7 +757,7 @@ input.checkbox-cond:checked{
     background-size: 100%;
 }
 input.checkbox-cond:checked + .filter-title{
-    color:#ff571a;
+    color:#0f448e;
 }
 .guard-banner{
     overflow: hidden;
@@ -782,6 +782,6 @@ input.checkbox-cond:checked + .filter-title{
     border-left: 2px solid #fff;
 }
 .choose-city-item.active{
-    color:#FF571a;
-    border-left: 2px solid #ff571a;
+    color:#0f448e;
+    border-left: 2px solid #0f448e;
 }

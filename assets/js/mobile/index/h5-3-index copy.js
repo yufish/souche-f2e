@@ -344,24 +344,24 @@ var hotBrands_g = {
     "brand-155": "雪铁龙"
 };
 var utils = {
-    getAllBrand : function (cb) {
-        $.ajax({
-            url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
-            dataType: "json",
-            success: cb
-        })
-    },
-    getSeriesByBrand :function (bCode, cb) {
-        $.ajax({
-            url: contextPath + "/pages/dicAction/loadExistSeries.json",
-            dataType: "json",
-            data: {
-                type: "car-subdivision",
-                code: bCode
-            },
-            success: cb
-        })
-    },
+    // getAllBrand : function (cb) {
+    //     $.ajax({
+    //         url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
+    //         dataType: "json",
+    //         success: cb
+    //     })
+    // },
+    // getSeriesByBrand :function (bCode, cb) {
+    //     $.ajax({
+    //         url: contextPath + "/pages/dicAction/loadExistSeries.json",
+    //         dataType: "json",
+    //         data: {
+    //             type: "car-subdivision",
+    //             code: bCode
+    //         },
+    //         success: cb
+    //     })
+    // },
     queryCarsCount:function(dataObj,cb){
         $.ajax({
             url: contextPath + '/pages/mobile/listAction/countMatchCars.json?tracktype=0',
@@ -473,137 +473,119 @@ var utilsSell = {
 
     //品牌车系相关操作
     !function brandSeries(){
-    //     function makeBrands(brands) {
-    //         var b, otherBrandsStr = '';
-    //         var brandList = $('#brand-list');
+        function makeBrands(brands) {
+            var b, otherBrandsStr = '';
+            var brandList = $('#brand-list');
 
-    //         var $otherCtn = brandList.find('#other-brands');
-    //         for (var i = 0; i < brands.length; i++) {
-    //             b = brands[i];
-    //             if (!hotBrands_g[b.code]) {
-    //                 otherBrandsStr += '<div data-code="' + b.code + '" class="item col-1-4"><span class="brand-name">' + b.enName + '</span></div>';
-    //             }
-    //         }
-    //         $otherCtn.append(otherBrandsStr);
-    //     }
-        // function makeSeries(data){
-        //     var codes = data['codes'];
-        //     var html = '';
-        //     for (var i in codes) {
-        //         //html += '<div class="clearfix" >';
-        //         html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
-        //         var s = codes[i];
-        //         for (var j in s) {
-        //             var b = s[j];
-        //             html += '<div class="series-item" data-code="' + b.code + '"><span class="series-name">' + b.name + '</span></div>';
-        //         }
-        //         html += '</div>';
-        //     }
-        //     $('#series-list .series-content').append(html);
-        // }
-        // $('#J_brand').on('click',function(){
-        //     //显示品牌弹出框
-        //     $('.wrapGrayBg').removeClass('hidden');
-        //     $('#brand-list').css({
-        //         top: document.body.scrollTop + 50
-        //     }).removeClass('hidden');
+            var $otherCtn = brandList.find('#other-brands');
+            for (var i = 0; i < brands.length; i++) {
+                b = brands[i];
+                if (!hotBrands_g[b.code]) {
+                    otherBrandsStr += '<div data-code="' + b.code + '" class="item col-1-4"><span class="brand-name">' + b.enName + '</span></div>';
+                }
+            }
+            $otherCtn.append(otherBrandsStr);
+        }
+        function makeSeries(data){
+            var codes = data['codes'];
+            var html = '';
+            for (var i in codes) {
+                //html += '<div class="clearfix" >';
+                html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
+                var s = codes[i];
+                for (var j in s) {
+                    var b = s[j];
+                    html += '<div class="series-item" data-code="' + b.code + '"><span class="series-name">' + b.name + '</span></div>';
+                }
+                html += '</div>';
+            }
+            $('#series-list .series-content').append(html);
+        }
+        $('#J_brand').on('click',function(){
+            //显示品牌弹出框
+            $('.wrapGrayBg').removeClass('hidden');
+            $('#brand-list').css({
+                top: document.body.scrollTop + 50
+            }).removeClass('hidden');
 
-        //     var self = $(this);
-        //     if(self.attr('hasLoaded'))return;
-        //     //add hot brands first
-        //     var hotBrandsStr = '';
-        //     var $hotCtn = $('#brand-list #hot-brands');
-        //     for (var i in hotBrands_g) {
-        //         hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
-        //     }
-        //     $hotCtn.append(hotBrandsStr);
-        //     utils.getAllBrand(function(data){
-        //         self.attr('hasLoaded',true);
-        //         makeBrands(data.items);
-        //     })
-        // })
+            var self = $(this);
+            if(self.attr('hasLoaded'))return;
+            //add hot brands first
+            var hotBrandsStr = '';
+            var $hotCtn = $('#brand-list #hot-brands');
+            for (var i in hotBrands_g) {
+                hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
+            }
+            $hotCtn.append(hotBrandsStr);
+            utils.getAllBrand(function(data){
+                self.attr('hasLoaded',true);
+                makeBrands(data.items);
+            })
+        })
 
-        // $('#J_series').on('click',function(){
-        //     if(filterGlobal.selectBrand=='')return;
-        //     $('.wrapGrayBg').removeClass('hidden');
-        //     $('#series-list').css({
-        //         top: document.body.scrollTop + 50
-        //     }).removeClass('hidden');
-        // })
+        $('#J_series').on('click',function(){
+            if(filterGlobal.selectBrand=='')return;
+            $('.wrapGrayBg').removeClass('hidden');
+            $('#series-list').css({
+                top: document.body.scrollTop + 50
+            }).removeClass('hidden');
+        })
         filterGlobal.selectBrand = '';
         filterGlobal.selectBrandName='';
         filterGlobal.selectSeries = '';
         filterGlobal.selectSeriesName='';
+        $('#brand-list').on('click','.item',function(){
+            var self = $(this)
+            //清空车系的状态
+            $('#series-list .series-content').empty();
+            $('#J_series').text('请先选择品牌').addClass('no-active');
+            filterGlobal.selectSeries = '';
+            filterGlobal.selectSeriesName='';
+            $('#brand-list .item').removeClass('selected')
+            if(self.hasClass('selected')){
+                self.removeClass('selected');
+                $('#J_brand').text('选择品牌');
+                filterGlobal.selectBrand = "";
+                filterGlobal.selectBrandName = "";
+            }else{
+                self.find('.item').removeClass('selected');
+                self.addClass('selected');
+                setTimeout(function(){
+                    $('.filter-popup-wrapper').addClass('hidden');
+                    $('.wrapGrayBg').addClass('hidden');
+                },200);
+                var bName = self.find('.brand-name').text()
+                var bCode = self.attr('data-code');
+                $('#J_brand').text(bName);
+                $('.selected-brand-name').text(bName);
+                filterGlobal.selectBrand = bCode;
+                filterGlobal.selectBrandName = bName;
 
-        $('#J_brand').on('click', function() {
-            $('#brand').removeClass('hidden');
-        });
-
-        $(document).on('click', '#brand .list .item', function() {
-            filterGlobal.selectBrand = $(this).attr('data-code');
-            filterGlobal.selectBrandName = $(this).find('span').text();
-        });
-
-        $(document).on('click', '#brand .car span', function() {
-            filterGlobal.selectSeries = $(this).attr('data-code');
-            filterGlobal.selectSeriesName = $(this).text();
-            $('#brand').addClass('hidden');
-            $('#J_brand').text(filterGlobal.selectBrandName + ': ' + filterGlobal.selectSeriesName);
+                utils.getSeriesByBrand(bCode,makeSeries);
+                $('#J_series').text('选择车系').removeClass('no-active')
+            }
             filterGlobal.queryCount();
-        });
-
-        // $('#brand-list').on('click','.item',function(){
-        //     var self = $(this)
-        //     //清空车系的状态
-        //     $('#series-list .series-content').empty();
-        //     $('#J_series').text('请先选择品牌').addClass('no-active');
-        //     filterGlobal.selectSeries = '';
-        //     filterGlobal.selectSeriesName='';
-        //     $('#brand-list .item').removeClass('selected')
-        //     if(self.hasClass('selected')){
-        //         self.removeClass('selected');
-        //         $('#J_brand').text('选择品牌');
-        //         filterGlobal.selectBrand = "";
-        //         filterGlobal.selectBrandName = "";
-        //     }else{
-        //         self.find('.item').removeClass('selected');
-        //         self.addClass('selected');
-        //         setTimeout(function(){
-        //             $('.filter-popup-wrapper').addClass('hidden');
-        //             $('.wrapGrayBg').addClass('hidden');
-        //         },200);
-        //         var bName = self.find('.brand-name').text()
-        //         var bCode = self.attr('data-code');
-        //         $('#J_brand').text(bName);
-        //         $('.selected-brand-name').text(bName);
-        //         filterGlobal.selectBrand = bCode;
-        //         filterGlobal.selectBrandName = bName;
-
-        //         utils.getSeriesByBrand(bCode,makeSeries);
-        //         $('#J_series').text('选择车系').removeClass('no-active')
-        //     }
-        //     filterGlobal.queryCount();
-        // })
-        // $('#series-list').on('click','.series-item',function(){
-        //     var self = $(this);
-        //     if(self.hasClass('selected')){
-        //         self.removeClass('selected');
-        //         $('#J_series').text('选择车系');
-        //     }else{
-        //         self.find('.series-item').removeClass('selected');
-        //         self.addClass('selected');
-        //         setTimeout(function(){
-        //             $('.filter-popup-wrapper').addClass('hidden');
-        //             $('.wrapGrayBg').addClass('hidden');
-        //         },200)
-        //         var sName = self.find('.series-name').text()
-        //         var sCode = self.attr('data-code');
-        //         filterGlobal.selectSeries = sCode;
-        //         filterGlobal.selectSeriesName = sName;
-        //         $('#J_series').text(sName);
-        //     }
-        //     filterGlobal.queryCount();
-        // })
+        })
+        $('#series-list').on('click','.series-item',function(){
+            var self = $(this);
+            if(self.hasClass('selected')){
+                self.removeClass('selected');
+                $('#J_series').text('选择车系');
+            }else{
+                self.find('.series-item').removeClass('selected');
+                self.addClass('selected');
+                setTimeout(function(){
+                    $('.filter-popup-wrapper').addClass('hidden');
+                    $('.wrapGrayBg').addClass('hidden');
+                },200)
+                var sName = self.find('.series-name').text()
+                var sCode = self.attr('data-code');
+                filterGlobal.selectSeries = sCode;
+                filterGlobal.selectSeriesName = sName;
+                $('#J_series').text(sName);
+            }
+            filterGlobal.queryCount();
+        })
         //重置
         /*!function() {
             $('#J_btnFilter_reset').on('click', function (e) {

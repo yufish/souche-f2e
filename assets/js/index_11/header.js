@@ -36,7 +36,7 @@ define(function() {
     $("#J_logout").on("click",function(e){
         e.preventDefault();
         var self  = this;
-        $.ajax({url:"http://www.souche.com/pages/clear_cookie.html",success:function(){
+        $.ajax({url:contextPath + "/pages/clear_cookie.html",success:function(){
             window.location.href=$(self).attr("href")
         }});
 

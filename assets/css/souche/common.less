@@ -29,7 +29,7 @@ html,body{
     width: 654px;
     margin-right: 10px;
     .logo{
-      
+
       padding-top: 18px;
       float:left;
     }
@@ -47,9 +47,9 @@ html,body{
       border-radius: 3px;
       border: 1px solid #EDEDED;
       line-height: 28px;
-     
+
       padding-right: 15px;
-      
+
       .J_city{
         cursor: pointer;
         padding-left: 10px;
@@ -210,47 +210,47 @@ html,body{
 
   }
   .search{
-      float: left;
-      .index-search{
-        margin-top: 22px;
-        position: relative;
+    float: left;
+    .index-search{
+      margin-top: 22px;
+      position: relative;
 
-        &.input-focusing{
-          .search-submit{
-            .opacity(1);
-          }
-        }
-        .search-text{
-          box-sizing: border-box;
-          width: 220px;
-          height: 32px;
-          padding: 5px;
-          padding-left: 7px;
-          color: #999;
-          border: 2px solid #E6E6E6;
-
-          &:focus{
-            border-color: #ccc;
-          }
-        }
+      &.input-focusing{
         .search-submit{
-          display: inline-block;
-          width: 16px;
-          height: 16px;
-          background: url(../../images/index_11/search.png) no-repeat;
-          border: none;
-          position: absolute;
-          top: 9px;
-          right: 10px;
-          cursor: pointer;
-          .opacity(0.45);
-
-          &:hover{
-            .opacity(1);
-            background: url(../../images/index_11/search-active.png) no-repeat;
-          }
+          .opacity(1);
         }
       }
+      .search-text{
+        box-sizing: border-box;
+        width: 220px;
+        height: 32px;
+        padding: 5px;
+        padding-left: 7px;
+        color: #999;
+        border: 2px solid #E6E6E6;
+
+        &:focus{
+          border-color: #ccc;
+        }
+      }
+      .search-submit{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url(../../images/index_11/search.png) no-repeat;
+        border: none;
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        cursor: pointer;
+        .opacity(0.45);
+
+        &:hover{
+          .opacity(1);
+          background: url(../../images/index_11/search-active.png) no-repeat;
+        }
+      }
+    }
   }
   .h-rht{
     float:right;
@@ -258,7 +258,7 @@ html,body{
       margin: 30px 0px auto 0px;
       padding-left: 24px;
       float:right;
-      border-left:1px solid #eee; 
+      border-left:1px solid #eee;
     }
     .user{
       position: relative;
@@ -269,13 +269,13 @@ html,body{
         display: inline-block;
         vertical-align: -13px;
         cursor: pointer;
-        
+
         img{
           border-radius:30px;
           width:32px;
           height:32px;
-          
-          
+
+
         }
       }
       .username{
@@ -336,7 +336,7 @@ html,body{
   border: 1px solid #e7e7e7;
   list-style: none;
   z-index: 1000;
-  
+
   &:after{
     content: '';
     position: absolute;
@@ -529,33 +529,39 @@ html,body{
 }
 
 .tagPos(@x:0, @y:0){
-    display: inline-block;
-    background-position: -(100px * (@x - 1) ) -(20px * (@y - 1));
+  display: inline-block;
+  background-position: -(100px * (@x - 1) ) -(20px * (@y - 1));
 }
 .shop-approve-tag{
     display: none;
     width: 100px;
-    height: 15px;
+    height: 16px;
     background-image: url('../../images/detail/approve-tag-sprite.png');
     background-repeat: no-repeat;
     
     // detail页面的标
-    &.souche-dealer-tag{
+    &.detail-souche-dealer-tag{
         .tagPos(1,1);
     }
-    &.fours-brand-tag{
+    &.detail-fours-brand-tag{
         .tagPos(2,1);
     }
-    &.realname-tag{
+    &.detail-realname-tag{
         .tagPos(3,1);
     }
     // list页的标 心愿卡页面 限时优惠页面
-    &.fours-tag{
+    &.list-dealer-tag{
+        width: 56px;
         .tagPos(1,2);
-    }
-    &.dealer-tag{
+    } 
+    &.list-fours-tag{
+        width: 34px;
         .tagPos(2,2);
-    }  
+    }
+    &.list-realname-tag{
+        width: 56px;
+        .tagPos(3,2);
+    }
 }
 
 .car_tag_zhijian{width:34px;height:46px;position:absolute;right:10px;top:10px;background:url(../../images/fed/tag_sprite.png) no-repeat 0 -50px;color:#e70;font-size:14px;text-align:center;line-height:56px;font-style:normal;font-family:Arial}
