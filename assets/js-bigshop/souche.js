@@ -382,8 +382,8 @@ Souche.MiniLogin = function () {
         checkLogin: function(_callback,_is_secret,no_third,no_useCheck,_hide_weixin) {
             callback = _callback;
             var self = this;
-            is_secret = !!_is_secret;
-            has_third = !no_third;
+            is_secret = false;
+            has_third = false;
             useCheck = !no_useCheck;
             hide_weixin = !!_hide_weixin;
             if(useCheck){
@@ -452,11 +452,10 @@ Souche.MiniLogin = function () {
  */
 Souche.checkVerifyAndThirdLogin = function(callback){
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/isVerifyAndThirdLogin.json",
+        url: contextPath + "/json/logined.json",
         type: "post",
-        dataType: "json",
         success: function(data) {
-            if (data.result == "true") {
+            if (data.toString().replace(/\s/g,'') == "true") {
                 callback(true)
             } else {
                 callback(false)
@@ -469,11 +468,10 @@ Souche.checkVerifyAndThirdLogin = function(callback){
 }
 Souche.checkAllLogin = function(callback){
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/isLogin.json",
+        url: contextPath + "/json/logined.json",
         type: "post",
-        dataType: "json",
         success: function(data) {
-            if (data.result == "true") {
+            if (data.toString().replace(/\s/g,'') == "true") {
                 callback(true)
             } else {
                 callback(false)
@@ -487,11 +485,10 @@ Souche.checkAllLogin = function(callback){
 //检查是否填过手机号
 Souche.checkPhoneExist = function(callback) {
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/isPhoneLogin.json",
+        url: contextPath + "/json/logined.json",
         type: "post",
-        dataType: "json",
         success: function(data) {
-            if (data.result == "true") {
+            if (data.toString().replace(/\s/g,'') == "true") {
                 callback(true)
             } else {
                 callback(false)
