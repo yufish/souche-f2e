@@ -1,7 +1,16 @@
-#header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
+#header,.header,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
 .recommend-cars,.header-placeholder,#global-subscription{
     display:none !important;
 }
+
+#detail-main .top-info,
+#detail-main .sec-info,
+#detail-main .shop-auth,
+#detail-main .gray-12px,
+#detail-main .auth-area {
+    display: block!important;
+}
+
 #detail #quality-test .cube .h .l{
     height: 65px;
     line-height: 65px;
@@ -81,8 +90,4 @@
 #detail #quality-test .cube .s .nook{
     background: url(../../../images/mob/for-app/report_fail.png) no-repeat;
     background-size: 100%;
-}
-
-.car-onwer-word {
-    display: block!important;
 }
