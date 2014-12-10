@@ -855,7 +855,8 @@
     line-height: 36px;
     height: 36px;
     font-size: 14px;
-    color: #666;
+    color: #333;
+    font-weight: bold;
     display: block;
 }
 #detail-main .sec-info .fenqi-item a{
@@ -959,6 +960,8 @@
     font-size: 18px;
 }
 .icon-thumb{
+    margin: 20px 16px 0 0;
+    float: left;
     width: 32px;
     height: 32px;
     display: inline-block;
@@ -966,21 +969,50 @@
     background-size: 100%;
 }
 .guard-info-item{
+    display: block;
     padding: 0 16px;
 }
-.guard-info-item .gi-left{
-    width: 260px;
+
+.guard-info-item .gi-wrapper {
+    padding: 16px;
+    background-color: #fffde8;
+    border: 1px solid #f8d3a8;
+    color: #ff571a;
+    font-size: 12px;
 }
+
+.guard-info-item .gi-left{
+    position: relative;
+    line-height: 20px;
+}
+
+.guard-info-item .gi-left .icon-thumb {
+    position: absolute;
+    float: none;
+    margin-top: -16px;
+    top: 50%;
+    left: 0;
+}
+
+.guard-info-item .gi-content{
+    padding: 0 30px 0 44px;;
+    overflow: hidden;
+}
+
+.guard-info-item .gi-left .left-arrow {
+    position: absolute;
+    right: 10px;
+    margin-top: -6px;
+    top: 50%;
+   
+}
+
 .guard-info-item .gi-title{
     height: 62px;
     color:#FF571a;
     font-size: 14px;
 }
-.guard-info-item .gi-content{
-    color:#666;
-    font-size: 12px;
-    margin-bottom: 14px;
-}
+
 #detail #actions{
     font-size: 14px;
 }
@@ -1522,6 +1554,27 @@
     color:#999;
     font-size: 14px;;
 }
+
+.shop-fenqi {
+    padding: 16px;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.shop-auth {
+    padding: 10px 16px;
+    overflow: hidden;
+}
+
+.shop-auth .car-auth {
+    float: left;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px;
+    background-color: #62b061;
+    color: #fff;
+    font-size: 12px;
+}
 .auth-area{
     padding: 0 16px;
 }
@@ -1537,19 +1590,38 @@
     height: 44px;
     line-height: 44px;
 }
+
+.auth-area .auth-title-fix {
+    position: relative;
+    padding: 16px 0;
+    height: auto;
+    line-height: 24px;
+    overflow: hidden;
+}
+
+.auth-area .auth-title-fix .left-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    float: none!important;
+    margin: 0;
+    margin-top: -6px!important;
+}
+
 .auth-title .auth-txt{
     color:#666;
     font-size: 14px;
+    width: 200px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
 }
 .auth-title .auth-txt-with-width{
+    padding-right: 16px;
     color:#666;
     font-size: 14px;
     float: left;
     display: block;
-    width: 220px;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    overflow:hidden;
 }
 .go-to-shop{
     float: right;
@@ -1567,7 +1639,7 @@
     background: url(../../../images/mob/authorization/location.png);
     background-size: 100%;
     float: left;
-    margin: 12px 4px 0 0;
+    margin: 4px 4px 0 0;
 }
 .icon-call{
     display: inline-block;
@@ -1579,9 +1651,9 @@
 }
 .icon-auth-shop{
     display: inline-block;
-    width:16px;
-    height: 16px;
-    background: url(../../../images/mob/authorization/shop-icon.png);
+    width:28px;
+    height:28px;
+    background: url(../../../images/mob/authorization/shop-icon2.png);
     background-size: 100%;
-    vertical-align: -2px;
+    vertical-align: middle;
 }
