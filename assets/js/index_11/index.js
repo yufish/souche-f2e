@@ -24,14 +24,14 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
     //   });
    ;
     $(document).ready(function(){
-        $('.flex-viewport').unslider({
+        var unslider = $('.flex-viewport').unslider({
             speed: 500,
             delay: 3000, 
             keys: true,  
             dots: true,   
             fluid: true  
         });
-        var unslider = $('.flex-viewport').unslider();
+        
         $(".flex-prev").click(function(){
            unslider.data('unslider').stop();
            unslider.data('unslider').prev();
