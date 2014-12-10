@@ -133,13 +133,12 @@ define(function() {
     var loadCity = function(provinceCode, provinceName) {
         $("#J_province_title").html(provinceName);
         $.ajax({
-            url: contextPath + "/pages/dicAction/loadNextLevel.json",
+            url: contextPath + "/pages/toolbarAction/queryCities.json",
             data: {
-                request_message: '{"code":"' + provinceCode + '","type":"area"}'
+                code:provinceCode
             },
             dataType: "json",
             success: function(data) {
-                console.log(data)
                 $(".city-list").html("");
                 if (data && data.items) {
                     $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "'>全部城市</a>")
