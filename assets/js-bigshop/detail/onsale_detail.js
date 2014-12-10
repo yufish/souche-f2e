@@ -79,7 +79,6 @@
             $.ajax({
                 url: config.api_saleCarOrder,
                 data: {
-                    phone: $("#yuyue-phone").val(),
                     carId: config.carId,
                     crmUserId: $.cookie("crmUserId"),
                         siteId:$.cookie("siteId")
