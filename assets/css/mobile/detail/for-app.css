@@ -8,7 +8,7 @@
 #detail-main .shop-auth,
 #detail-main .gray-12px,
 #detail-main .auth-area {
-    display: block!important;
+    display: none!important;
 }
 
 #detail #quality-test .cube .h .l{

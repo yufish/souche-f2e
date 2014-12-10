@@ -553,6 +553,7 @@ var utilsSell = {
             filterGlobal.selectBrandName = $(this).text();
             filterGlobal.selectSeries = '';
             filterGlobal.selectSeriesName = '';
+            $('#brand .car span').removeClass('active');
             $('#brand').addClass('hidden');
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
