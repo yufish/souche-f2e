@@ -545,10 +545,10 @@ var utilsSell = {
         });
 
         $(document).on('click', '#brand .car span', function() {
-            filterGlobal.selectSeries = $(this).attr('data-code');
+            filterGlobal.selectSeries = $(this).attr('data-code') ? $(this).attr('data-code') : '';
             filterGlobal.selectSeriesName = $(this).text();
             $('#brand').addClass('hidden');
-            $('#J_brand').text(filterGlobal.selectBrandName + ': ' + filterGlobal.selectSeriesName);
+            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
         });
 
