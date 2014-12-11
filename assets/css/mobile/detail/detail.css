@@ -1656,7 +1656,7 @@
     display: inline-block;
     width:28px;
     height:28px;
-    background: url(../../../images/mob/authorization/shop-icon2.png);
+    background: url(../../../images/mob/authorization/shop-icon2.png?t=9);
     background-size: 100%;
     vertical-align: middle;
 }
