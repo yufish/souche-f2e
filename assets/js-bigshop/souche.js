@@ -502,7 +502,7 @@ Souche.checkPhoneExist = function(callback) {
 //一步注册手机号
 Souche.PhoneRegister = function(phone, callback) {
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/noRegisterLogin.json",
+        url: contextPath + "/json/login.json",
         type: "post",
         dataType: "json",
         data: {

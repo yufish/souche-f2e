@@ -33,11 +33,11 @@ window.SM=window.SM||{};
 SM.checkPhoneExist = function(callback) {
     $.ajax({
         //url: contextPath + "/pages/evaluateAction/isNoRegisterLogin.json",
-        url: contextPath + "/pages/evaluateAction/isPhoneLogin.json",
+        url: contextPath + "/json/logined.json",
         type: "post",
         dataType: "json",
         success: function(data) {
-            if (data.result == "true") {
+            if (data.toString().replace(/\s/g,'') == "true") {
                 callback(true)
             } else {
                 callback(false)
@@ -51,7 +51,7 @@ SM.checkPhoneExist = function(callback) {
 //一步注册手机号
 SM.PhoneRegister = function(phone, callback) {
     $.ajax({
-        url: contextPath + "/pages/evaluateAction/noRegisterLogin.json",
+        url: contextPath + "/json/login.json",
         type: "post",
         dataType: "json",
         data: {

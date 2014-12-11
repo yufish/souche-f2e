@@ -60,10 +60,11 @@ var Action = (function () {
                 $.ajax({
                     url:$('#yuyue-submit').attr('data-url'),
                     data:{
-                        type:globalConfig.yuyue_type
+                        type:globalConfig.yuyue_type,
+                        crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId")
                     },
-                    type:'post',
-                    dataType:'json',
+                    dataType:'jsonp',
                     success:function(e){
                         //e.type,e.code,e.orderSn,e.contactPhone
                         hidePopup();
@@ -126,17 +127,19 @@ var Action = (function () {
 
             };
             var favUrl = {
-                fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
+                fav: WebPre + '/favSaleCar.jsonp',
                 unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
             };
             function saveFav(carId){
                 $(".detail-fav .fav-text").html('收藏中...')
                 $.ajax({
                     url: favUrl.fav,
-                    dataType: "json",
+                    dataType: "jsonp",
                     data: {
                         platform : 'PLATFORM_H5',
-                        carId: carId
+                        carId: carId,
+                        crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId")
                     },
                     success: function () {
                         $(".detail-fav .fav-text").html("已收藏")
