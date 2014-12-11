@@ -8,11 +8,11 @@ define(function() {
     var phoneReg = /^1[3458][0-9]{9}$/;
     var is_requesting = false;
     var _bind = function() {
-        $(".carCollect").live("click", function() {
+        $(".collect").live("click", function() {
             var context = this;
             if (is_requesting) return;
             Souche.MiniLogin.checkLogin(function() {
-                if ($(context).hasClass("colled")) {
+                if ($(context).hasClass("faved")) {
                     var carID = $(context).attr("data-carid");
                     deleteCollect.call(context, carID);
                 } else {
@@ -53,13 +53,12 @@ define(function() {
             collecting = false;
             $.ajax({
                 url: url,
-                type: "POST",
                 data: {
-                    phone: $("#fav-phone").val() || $.cookie("noregisteruser"),
-                    carType: config.carType,
+                    crmUserId: $.cookie("crmUserId"),
+                    siteId:$.cookie("siteId"),
                     carId: carID
                 },
-                context: self
+                dataType:"jsonp"
             }).done(function(data) {
                 is_requesting = false;
                 if (data.errorMessage) {
@@ -68,8 +67,8 @@ define(function() {
 
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
-                    $(this).find("span").html($(this).find("span").html() * 1 + 1);
-                    $(this).addClass("colled");
+                    $(self).find("span").html($(this).find("span").html() * 1 + 1);
+                    $(self).addClass("faved");
 
                 }
                 collecting = false;
