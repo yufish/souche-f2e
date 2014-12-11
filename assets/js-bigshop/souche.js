@@ -106,7 +106,7 @@ Souche.UI.Select = function() {
             }
             //没有默认值，则只需要一个请求即可初始化
             $.ajax({
-                url: contextPath + "/pages/dicAction/loadRootLevel.json",
+                url: contextPath + "/json/dict/loadRootLevel.json",
                 dataType: "json",
                 data: {
                     type: c.type
@@ -139,7 +139,7 @@ Souche.UI.Select = function() {
                     if (index >= c.eles.length - 1) return;
                     if (a == 'brand') {
                         $.ajax({
-                            url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
+                            url: contextPath + "/json/dict/loadRootLevelForCar.json",
                             dataType: "json",
                             data: {
                                 type: c.type,
@@ -167,7 +167,7 @@ Souche.UI.Select = function() {
                         });
                     } else {
                         $.ajax({
-                            url: contextPath + "/pages/dicAction/loadNextLevel.json",
+                            url: contextPath + "/json/dict/loadNextLevel.json",
                             dataType: "json",
                             data: {
                                 type: c.type,

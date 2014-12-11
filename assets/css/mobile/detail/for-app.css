@@ -1,6 +1,14 @@
-#header,.header,#detail-main,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
+#header,.header,#actions,#howtogo,.recommend,#whyus,.footer-mobile,#tab-params .car-title,
 .recommend-cars,.header-placeholder,#global-subscription{
-    display:block !important;
+    display:none !important;
+}
+
+#detail-main .top-info,
+#detail-main .sec-info,
+#detail-main .shop-auth,
+#detail-main .gray-12px,
+#detail-main .auth-area {
+    display: none!important;
 }
 
 #detail #quality-test .cube .h .l{

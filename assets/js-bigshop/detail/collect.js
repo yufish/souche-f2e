@@ -11,11 +11,11 @@ define(function()
             $.ajax({
                 url: SaleDetailConfig.api_saveFavorite,
                 data: {
-                    phone: $("#fav-phone").val(),
-                    carType: SaleDetailConfig.carType,
+                    crmUserId: $.cookie("crmUserId"),
+                    siteId:$.cookie("siteId"),
                     carId: SaleDetailConfig.carId
                 },
-                dataType: "json",
+                dataType: "jsonp",
                 type: "post",
                 success: function(data) {
                     if (data.errorMessage) {

@@ -79,14 +79,15 @@
             $.ajax({
                 url: config.api_saleCarOrder,
                 data: {
-                    phone: $("#yuyue-phone").val(),
-                    carId: config.carId
+                    carId: config.carId,
+                    crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId")
                 },
-                dataType:"json",
+                dataType:"jsonp",
                 type: "post",
                 success: function(data) {
                     //code    400:无手机号码 401:无carId  402:重复预约   403系统异常  200成功
-                    if(data&&data.code&&data.code==402){
+                    if(data&&data.code&&(data.code==402||data.code==200)){
                         $("#J_yuyue,#J_nav_yuyue").remove();
                         $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
                         return;
@@ -95,7 +96,6 @@
 //                    $(".wrapGrayBg").show();
 //                    $("#yuyue-popup").addClass("hidden");
 //                    $("#yuyue-result-popup").removeClass('hidden');
-                    window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1&source=1"
                 }
             })
         }
