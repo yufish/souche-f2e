@@ -572,7 +572,6 @@ var utilsSell = {
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
         });
-
         $(document).on('click', '#brand .brand-top-right', function() {
             filterGlobal.selectBrand = '';
             filterGlobal.selectBrandName = $(this).text();
