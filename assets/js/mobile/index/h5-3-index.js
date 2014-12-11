@@ -1238,8 +1238,8 @@ $('.wrapGrayBg').on('click',function(){
         var ajaxData= {
             brand:sellGlobal.selectBrand,
             series:sellGlobal.selectSeries,
-            province: $('#J_province option:selected').text(),
-            city: $('#J_city option:selected').text(),
+            // province: $('#J_province option:selected').text(),
+            // city: $('#J_city option:selected').text(),
             mobile:phoneNum
         }
         var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
