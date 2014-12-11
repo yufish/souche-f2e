@@ -398,11 +398,10 @@ nav .nav-item.active .nav-item-content{
 }
 .filter-popup-wrapper {
     position: absolute;
+    left: 10px;
+    right: 10px;
     z-index: 10000;
     margin-bottom: 55px;
-    width:300px;
-    left: 50%;
-    margin-left: -150px;
     box-sizing: border-box;
     background: #fff;
     border-radius: 3px;
