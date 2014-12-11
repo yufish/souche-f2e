@@ -61,13 +61,14 @@
         _makeSeriesUI:function(bCode,bName){
             var self =this;
             $.ajax({
-                    url: contextPath + "/pages/dicAction/loadExistSeries.json",
+                    url: contextPath + "/json/dict/loadRootLevelForCar.json",
                     dataType: "json",
                     data: {
                         type: "car-subdivision",
                         code: bCode
                     },
-                success: function (data) {
+                success: function (_data) {
+                    var data = _data.data
                     self._makeTab(bCode,bName);
                     var codes = data['codes'];
 

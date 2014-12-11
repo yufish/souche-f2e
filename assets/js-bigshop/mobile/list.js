@@ -19,23 +19,15 @@ var List = function() {
                     item = items[i];
                     tpl_data = {
                         id: item.id,
-                        detailUrl: item.carVo.status == 'zaishou' ? 'detail' : 'yushou-detail',
-                        flashPurchase: item.flashPurchase,
-                        fenqi: ( !! item.carPriceVO && item.carPriceVO.fenqi == 1),
-                        downPrice: ( !! item.flashPurchaseVO) ? item.flashPurchaseVO.totalMasterOutPriceToString * 1000 : undefined,
-                        favorite: item.favorite,
-                        favCount: item.count,
-                        year: item.carVo.yearShow,
-                        month: item.carVo.monthShow,
-                        newPrice: item.carVo.newPriceToString,
-                        levelName: item.carVo.levelName,
-                        pictureBig: ( !! item.carPicturesVO)?item.carPicturesVO.pictureBig:'',
-                        carOtherAllNameShow: item.carVo.carOtherAllNameShow,
+                        year: item.year,
+                        month: "",
+                        newPrice: item.price,
+                        levelName: item.levelName,
+                        pictureBig: item.smallImage,
+                        carOtherAllNameShow: item.fullName,
                         price: item.price,
-                        zaishou: (item.carVo.status == 'zaishou'),
-                        carOtherAllName:item.carVo.carOtherAllName,
-                        carShortName:item.carVo.carShortName,
-                        modelName:item.carVo.simpleModelName
+                        carOtherAllName:item.fullName,
+                        carShortName:item.fullName
                     }
                     carList.push(tpl_data);
                     html = Mustache.render(tpl_cars, {
