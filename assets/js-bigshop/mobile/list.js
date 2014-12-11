@@ -156,8 +156,8 @@ var List = function() {
             //do fav
             ! function() {
                 var api = {
-                    fav: contextPath + '/pages/saleDetailAction/savaCarFavorite.json',
-                    unfav: contextPath + '/pages/saleDetailAction/delCarFavorite.json'
+                    fav: WebPre + '/favSaleCar.jsonp',
+                    unfav: WebPre + '/favSaleCar.jsonp'
                 };
 
                 function showPopup() {
@@ -180,9 +180,11 @@ var List = function() {
                         url: api.fav,
                         data: {
                             carId: $node.attr("data-id"),
-                            platform : 'PLATFORM_H5'
+                            platform : 'PLATFORM_H5',
+                            crmUserId: $.cookie("crmUserId"),
+                            siteId:$.cookie("siteId")
                         },
-                        dataType: "json",
+                        dataType: "jsonp",
                         success: function() {
                             $node.addClass("star");
                             var $numSpan = $node.find('span');
