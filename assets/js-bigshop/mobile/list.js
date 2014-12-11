@@ -12,7 +12,7 @@ var List = function() {
             dataType: "json",
             success: function(data) {
                 //console.log(data)
-                var items = data.page.items;
+                var items = data.items;
                 var tpl_data, item, html;
                 var $cars = $('.cars')
                 for (var i = 0; i < items.length; i++) {
