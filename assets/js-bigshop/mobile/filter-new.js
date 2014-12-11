@@ -96,7 +96,6 @@ function filter(BrandMgr, addListener) {
                 if(initBrandName) {
                     $('#btn-select-brand').text(initBrandName).css('color','#333');
                 }
-                history.replaceState({},document.title,'filter-car.html')
             }()
             var brandLoaded = false;
             $('#btn-select-brand').click(function() {

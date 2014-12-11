@@ -545,6 +545,14 @@ var utilsSell = {
             $('#brand').addClass('hidden');
         });
 
+        $(document).on('click', '#brand .brand-num a', function(e) {
+            e.preventDefault();
+            var brandName = $(this).attr('href');
+            var height = $(brandName).position().top;
+            $('#brand').animate({scrollTop: height}, 400);
+
+        });
+
         $(document).on('click', '#brand .list .item', function() {
             filterGlobal.selectBrand = $(this).attr('data-code');
             filterGlobal.selectBrandName = $(this).find('span').text();
@@ -570,7 +578,7 @@ var utilsSell = {
                 $('#brand').addClass('hidden');
                 $('.brand-item .sub').remove();
                 $('.brand-item .item').removeClass('active');
-            }, 1000);
+            }, 500);
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
         });
