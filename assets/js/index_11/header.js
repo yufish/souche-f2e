@@ -1,8 +1,16 @@
-define(function() {
+define( ['souche/realTimeDown'], function(searchSuggest) {
 
 
     $(".search-text").focus();
     $(document).ready(function() {
+
+        searchSuggest.init($(".search"), {
+               url: contextPath + "/pages/common/boxSuggestAction/list.json",
+               type: "GET",
+               dataType: "json",
+               success: function() {}
+           }, 900);
+
         setTimeout(function() {
             $(".double11").animate({
                 height: "0px"
