@@ -35,7 +35,10 @@ var List = function() {
                         zaishou: (item.carVo.status == 'zaishou'),
                         carOtherAllName:item.carVo.carOtherAllName,
                         carShortName:item.carVo.carShortName,
-                        modelName:item.carVo.simpleModelName
+                        modelName:item.carVo.simpleModelName,
+                        shangjiaAuth: (item.carVo.source != 'cheniu'),
+                        brandAuth: item.authshopDetail.brandCertification,
+                        danbao: item.carVo.qualityAssurance == '1'
                     }
                     carList.push(tpl_data);
                     html = Mustache.render(tpl_cars, {
