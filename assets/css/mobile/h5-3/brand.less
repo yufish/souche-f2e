@@ -32,10 +32,14 @@
 
 		.list {
 			overflow: hidden;
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-justify-content: space-between;
+			justify-content: space-between;
 			li {
-				float: left;
 				a {
-					margin: 0 10px 10px 0;
+					margin: 0 0 10px 0;
 					display: inline-block;
 					width: 37px;
 					text-align: center;
@@ -48,6 +52,11 @@
 					text-transform: uppercase;
 				}
 			}
+
+			// &:last-child {
+			// 	-webkit-justify-content: space-between;
+			// 	justify-content: space-between;
+			// }
 			
 		}
 
