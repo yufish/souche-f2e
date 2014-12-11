@@ -145,8 +145,8 @@ Souche.UI.Select = function() {
                                 type: c.type,
                                 code: code
                             },
-                            success: function(data) {
-
+                            success: function(_data) {
+                            var data = _data.data;
                                 $(c.eles[1]).empty();
                                 $(c.eles[1]).append($("<option value=''>-请选择-</option>"));
                                 for (var j = 0; j < data['keys'].length; j++) {

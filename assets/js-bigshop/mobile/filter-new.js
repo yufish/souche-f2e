@@ -116,10 +116,13 @@ function filter(BrandMgr, addListener) {
                     $hotCtn.append(hotBrandsStr);
 
                     $.ajax({
-                        url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
+                        url: contextPath + "/json/dict/loadRootLevel.json",
+                        data:{
+                            type:"car-subdivision"
+                        },
                         dataType: "json ",
                         success: function(data) {
-                            makeBrands(data.items);
+                            makeBrands(data.data);
                             brandLoaded = true;
                         }
                     })
