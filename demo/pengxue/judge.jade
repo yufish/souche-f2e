@@ -168,7 +168,8 @@ html
                   em 36.98万
                 .price-level
                   span 保值率排名等级：
-                  i.level-4
+                  i.level-bg
+                  i.level-act(value="3")
             .souche-judge.
               <p>根据大搜车实际交易统计，</p>
               <p>杭州平均买车周期为<span>12.6</span>天，看车次数为<span>3.5</span>次。大搜车提供我要卖车服务，帮您定个</p>
@@ -347,3 +348,14 @@ html
         
         <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号</p>
       </div>
+  script.
+    $(function(){
+      
+      var level = $(".level-act").attr("value");
+          levelWidth = level*16+"px";
+        
+        $(".level-act").css({width:levelWidth});
+    });
+      
+      
+    

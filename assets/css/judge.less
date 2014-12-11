@@ -231,6 +231,7 @@
             }
             .price-level{
               float: left;
+              position: relative;
               span{
                 display: block;
                 float: left;
@@ -239,11 +240,22 @@
               i{
                  display: block;
                  float: left;
-                 width: 84px;
+                 width: 80px;
                  height: 20px;
               }
-              .level-4{
-                background: url(../images/judge/level-4.png) no-repeat;
+              .level-bg{
+                background: url(../images/judge/star-bg.png) no-repeat;
+                z-index: 1;
+                margin-top: 3px;
+                margin-left: 5px;
+              }
+              .level-act{
+                background: url(../images/judge/star-act.png) no-repeat;
+                position: absolute;
+                left: 117px;
+                top: 3px;
+                z-index: 2;
+                width: 15px;
               }
             }
           }
