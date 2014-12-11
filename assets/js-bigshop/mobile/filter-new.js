@@ -291,7 +291,7 @@ function filter(BrandMgr, addListener) {
 
             function hasResult(dataObj) {
                 $.ajax({
-                    url: contextPath + '/pages/mobile/listAction/queryCars.json?index=999999&tracktype=0',
+                    url: contextPath + '/json/buy.json?index=999999&tracktype=0',
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
@@ -299,7 +299,7 @@ function filter(BrandMgr, addListener) {
                         if (data.i == 0) {
                             showSorry();
                         } else {
-                            var addr = contextPath + '/pages/mobile/list.html?';
+                            var addr = contextPath + '/buy.htm?__mobile=true&';
                             for (var i in dataObj) {
                                 addr += (i + '=' + dataObj[i] + '&');
                             }
