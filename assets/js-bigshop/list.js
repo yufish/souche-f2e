@@ -162,7 +162,33 @@ Souche.Inside = (function() {
             this._bind()
         },
         _bind: function() {
+            $.ajax({
+                url:config.api_favCounts,
+                data:{
+                    siteId: $.cookie("siteId"),
+                    carIds:(function(){
+                        var ids =[];
+                        $(".carItem").each(function(i,item){
+                            ids.push($(item).attr("data-id"))
+                        })
+                        return ids;
+                    })().join(",")
+                },
+                dataType:"jsonp",
+                success:function(data){
+                    console.log(data)
 
+                    if(data.code==200){
+                        for(var key in data){
+                            var arr = key.split("_")
+                            if(arr.length>1){
+                                var carId = arr[1];
+                                $(".carItem[data-id="+carId+"] .fav-count").html(data[key])
+                            }
+                        }
+                    }
+                }
+            })
             var phoneReg = /^1[3458][0-9]{9}$/;
             var fav_carId = null;
             var favSubmit = function() {
