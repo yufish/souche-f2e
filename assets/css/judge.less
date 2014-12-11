@@ -22,14 +22,27 @@
           }
           select,input{
             width: 100%;
-            height: 35px;
+            height: 32px;
             border: 1px solid #e6e6e6;
             display: block;
             float: left;
-            padding:0 8px;
+            padding:0 0 0 11px;
             color: #999;
           }
-         
+          input{
+            padding-left: 15px;
+          }
+          .car-phone{
+            input::-webkit-input-placeholder{
+              color: #ff571a;
+            }
+            input:-ms-input-placeholder{
+              color: #ff571a;
+            }
+            input:-moz-placeholder{
+              color: #ff571a;
+            }
+          }
           .car-kind{
             select{
               width: 126px;
@@ -40,7 +53,7 @@
             }
           }
           .form-button{
-            margin-top: 25px;
+            margin-top: 20px;
             #submit-judge{
               display: block;
               float: left;
@@ -52,7 +65,7 @@
               text-align: center;
               line-height: 45px;
               border: none;
-              border-radius: 2px;
+              border-radius: 4px;
               cursor: pointer;
             }
             #submit-judge:hover{
@@ -67,7 +80,7 @@
               border: 2px solid #d9d9d9;
               color: #333;
               font-size: 16px;
-              border-radius: 2px;
+              border-radius: 4px;
               text-align: center;
               line-height: 41px;
             }
@@ -86,7 +99,7 @@
       margin: 0 auto;
     }
     .cont-head{
-      height: 180px;
+      height: 175px;
       padding-top: 70px;
       .explain-item{
         width: 393px;
@@ -120,7 +133,7 @@
             font-size: 20px;
           }
           p{
-            color: #666;
+            color: #999;
             font-size: 14px;
             margin-top: 5px;
           }
@@ -134,7 +147,7 @@
         float: left;
         width: 820px;
         border-right: 1px solid #e6e6e6;
-        padding-left: 25px;
+        padding-left: 30px;
         position: relative;
         .powerd{
           position: absolute;
@@ -153,7 +166,7 @@
         }
         .car-box{
           .car-info{
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             .carimg{
               float: left;
             }
@@ -190,9 +203,9 @@
           }
         }
       .judge-price{
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         .price{
-            margin-bottom: 10px;
+            margin-bottom: 7px;
             span{
               font-size: 30px;
               color: #333;
@@ -207,7 +220,7 @@
             line-height: 20px;
             .newcar-price{
               float: left;
-              margin-right: 25px;
+              margin-right: 30px;
               span{
                 color: #333;
               }
@@ -240,7 +253,7 @@
           color: #666;
           margin-bottom: 40px;
           p{
-            line-height: 20px;
+            line-height: 24px;
             span{
               color: #ff5517;
               font-weight: bold;
@@ -255,7 +268,7 @@
             float: left;
             width: 180px;
             height: 45px;
-            border-radius: 2px;
+            border-radius: 4px;
             font-size: 16px;
             text-align: center;
           }
@@ -271,7 +284,7 @@
             border: 2px solid #d9d9d9;
             line-height: 41px;
             color: #333;
-            margin-left:15px;
+            margin-left:12px;
           }
           .judge-again:hover{
             background: #ff5517;
@@ -368,11 +381,12 @@
     .price-analy{
       border: 1px solid #e6e6e6;
       border-top: none;
-      padding: 80px 70px;
+      padding: 110px 85px;
+      margin-bottom: 80px;
       .price-trend{
         .trend-chart{
           float: left;
-          width: 540px;
+          width: 605px;
           position: relative;
           .price-time{
             float: left;
@@ -404,7 +418,7 @@
           .price-unit{
             position: absolute;
             bottom: 0px;
-            right: 20px;
+            right: 85px;
           }
           .price-block{
             position: absolute;
@@ -451,23 +465,23 @@
         }
         .trend-text{
           float: left;
-          width: 420px;
+          margin-top: 30px;
           h1{
             font-size: 20px;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
           }
           p{
             font-size: 14px;
             color: #999;
-            line-height: 20px;
+            line-height: 24px;
           }
         }
       }
       .price-chart{
-        margin-top: 120px;
+        margin-top: 142px;
         .title{
-          margin-bottom: 45px;
+          margin-bottom: 50px;
           span{
             font-size: 20px;
             color: #333;
@@ -475,7 +489,7 @@
           em{
             font-size: 14px;
             color: #999;
-            margin-left: 15px;
+            margin-left: 19px;
           }
         }
         .chare-box{
@@ -582,7 +596,7 @@
           width: 740px;
           margin: 0 auto;
           .price-text{
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             i{
               display: block;
               float: left;
