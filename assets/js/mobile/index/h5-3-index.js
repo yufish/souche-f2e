@@ -558,17 +558,7 @@ var utilsSell = {
             filterGlobal.selectBrandName = $(this).find('span').text();
         });
 
-        $(document).on('click', '#brand .brand-top-right', function() {
-            filterGlobal.selectBrand = '';
-            filterGlobal.selectBrandName = $(this).text();
-            filterGlobal.selectSeries = '';
-            filterGlobal.selectSeriesName = '';
-            $('#brand .car span').removeClass('active');
-            $('#brand').addClass('hidden');
-            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
-            filterGlobal.queryCount();
-        });
-
+        
         $(document).on('click', '#brand .car span', function() {
             filterGlobal.selectSeries = $(this).attr('data-code') ? $(this).attr('data-code') : '';
             filterGlobal.selectSeriesName = $(this).text();
@@ -582,6 +572,18 @@ var utilsSell = {
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
         });
+
+        $(document).on('click', '#brand .brand-top-right', function() {
+            filterGlobal.selectBrand = '';
+            filterGlobal.selectBrandName = $(this).text();
+            filterGlobal.selectSeries = '';
+            filterGlobal.selectSeriesName = '';
+            $('#brand .car span').removeClass('active');
+            $('#brand').addClass('hidden');
+            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
+            filterGlobal.queryCount();
+        });
+
 
         // $('#brand-list').on('click','.item',function(){
         //     var self = $(this)
