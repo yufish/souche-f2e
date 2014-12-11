@@ -971,6 +971,8 @@
 .guard-info-item{
     display: block;
     padding: 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .guard-info-item .gi-wrapper {
@@ -1563,6 +1565,7 @@
 
 .shop-auth {
     padding: 10px 16px;
+    border-top: 1px solid #e6e6e6;
     overflow: hidden;
 }
 
