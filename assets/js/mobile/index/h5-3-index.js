@@ -535,6 +535,8 @@ var utilsSell = {
         filterGlobal.selectSeries = '';
         filterGlobal.selectSeriesName='';
 
+
+        // todo: 有点糟糕，待修改
         $('#J_brand').on('click', function() {
             $('#brand').removeClass('hidden');
         });
@@ -566,6 +568,8 @@ var utilsSell = {
             $(this).addClass('active');
             setTimeout(function() {
                 $('#brand').addClass('hidden');
+                $('.brand-item .sub').remove();
+                $('.brand-item .item').removeClass('active');
             }, 1000);
             $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
             filterGlobal.queryCount();
