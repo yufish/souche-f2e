@@ -1,4 +1,4 @@
-require( ['souche/realTimeDown'], function(searchSuggest) {
+define( ['souche/realTimeDown'], function(searchSuggest) {
 
 
     $(".search-text").focus();
