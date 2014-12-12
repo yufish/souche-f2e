@@ -199,7 +199,33 @@ define(['index/car-god',
                 })
             })
 
+            $.ajax({
+                url:config.api_favCounts,
+                data:{
+                    siteId: $.cookie("siteId"),
+                    carIds:(function(){
+                        var ids =[];
+                        $(".carItem").each(function(i,item){
+                            ids.push($(item).attr("data-id"))
+                        })
+                        return ids;
+                    })().join(",")
+                },
+                dataType:"jsonp",
+                success:function(data){
+                    console.log(data)
 
+                    if(data.code==200){
+                        for(var key in data){
+                            var arr = key.split("_")
+                            if(arr.length>1){
+                                var carId = arr[1];
+                                $(".carItem[data-id="+carId+"] .fav-count").html(data[key])
+                            }
+                        }
+                    }
+                }
+            })
             //提示品牌是否加入心愿单
             //闹着玩
             // Souche.Util.appear(".hotNewCars", function() {

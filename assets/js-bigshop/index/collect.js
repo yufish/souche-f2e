@@ -67,7 +67,7 @@ define(function() {
 
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
-                    $(self).find("span").html($(this).find("span").html() * 1 + 1);
+                    $(self).find(".fav-count").html($(self).find(".fav-count").html() * 1 + 1);
                     $(self).addClass("faved");
 
                 }
