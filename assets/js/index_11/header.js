@@ -163,6 +163,26 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             }
         })
     }
+
+    // 某些页面进行本页刷新
+    // 某些页面要跳转到特定页面
+    // 下面是需要跳转的页面的规则列表
+    var PAGE_HOME = '/';
+    var PAGE_LIST = contextPath + '/pages/onsale/sale_car_list.html';
+    var jump_rules = {
+        // 主题精选 list页和详情页 都条状往首页
+        '/pages/acts/theme-activity-all.html': PAGE_HOME,
+        '/pages/acts/activity_car_list.html': PAGE_HOME,
+        // detail页 跳往list页
+        '/pages/choosecarpage/choose-car-detail.html': PAGE_LIST,
+        // 营销活动list页（限时特价，好车日报）：切换首页
+        '/pages/timelimit_price.html': PAGE_HOME,
+        '/pages/car-journal.html': PAGE_HOME
+    };
+    // 匹配添加contextPath
+    for(var r in jump_rules){
+        jump_rules[contextPath + r] = jump_rules[r];
+    }
     var goCity = function(code) {
         $.ajax({
             url: contextPath + "/pages/toolbarAction/choosePosition.json",
@@ -171,7 +191,13 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                 position: code
             },
             success: function() {
-                window.location.reload();
+                var curPath = location.pathname;
+                if( jump_rules[curPath] === undefined ){
+                    window.location.reload();
+                }
+                else{
+                    window.location.href = jump_rules[curPath];
+                }
             }
         });
     }
