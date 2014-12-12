@@ -154,7 +154,7 @@ define(['index/car-god',
                     animation: "slide",
                     slideshowSpeed: 5000,
                     directionNav: true,
-                    controlNav: true,
+                    controlNav: false,
                     pauseOnHover: true
                 });
                 $('.flexslider2').flexslider({
@@ -175,10 +175,10 @@ define(['index/car-god',
                     directionNav: false
                 });
                 $(".flexslider2").mouseenter(function() {
-                    $(".flex-direction-nav").fadeIn("normal");
+                    $(".flexslider2 .flex-direction-nav").fadeIn("normal");
                 });
                 $(".flexslider2").mouseleave(function() {
-                    $(".flex-direction-nav").fadeOut("normal");
+                    $(".flexslider2 .flex-direction-nav").fadeOut("normal");
                 });
             });
             _bind();
