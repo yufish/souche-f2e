@@ -1,6 +1,7 @@
 define(function() {
     var topNav = {
         init: function() {
+            var zINDEX = 110;
             $(".nav-item").each(function(i, item) {
                 var inner = $(item).find(".nav-inner");
                 //预先计算每个inner的高度，留着动画用
@@ -38,7 +39,8 @@ define(function() {
                     inner.css({
                         width: itemWidth,
                         height: itemHeight,
-                        opacity: 1
+                        opacity: 1,
+                        zIndex:zINDEX++
                     }).animate({
                         width: $(self).attr("data-innerWidth"),
                         height: innerHeight,

@@ -174,6 +174,7 @@ define(['index/car-god',
                     randomize: false,
                     directionNav: false
                 });
+                $(".flexslider .flex-direction-nav").hide();
                 $(".flexslider2").mouseenter(function() {
                     $(".flexslider2 .flex-direction-nav").fadeIn("normal");
                 });
