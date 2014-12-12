@@ -183,6 +183,10 @@ body {
     background-color: #f3f3f3;
     position: relative;
 }
+#sellcar #content #findbuyer img{
+    display: block;
+    margin:0 auto;
+}
 #sellcar #content #findbuyer .wrapper {
     height: 550px;
 }
