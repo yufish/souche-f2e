@@ -177,7 +177,9 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         '/pages/choosecarpage/choose-car-detail.html': PAGE_LIST,
         // 营销活动list页（限时特价，好车日报）：切换首页
         '/pages/timelimit_price.html': PAGE_HOME,
-        '/pages/car-journal.html': PAGE_HOME
+        '/pages/car-journal.html': PAGE_HOME,
+        // list页面 把所有的query条件过滤掉
+        '/pages/onsale/sale_car_list.html': PAGE_LIST
     };
     // 匹配添加contextPath
     for(var r in jump_rules){
