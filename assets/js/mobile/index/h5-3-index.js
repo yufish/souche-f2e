@@ -545,11 +545,33 @@ var utilsSell = {
             $('#brand').addClass('hidden');
         });
 
+        $(document).on('click', '#brand .brand-num a', function(e) {
+            e.preventDefault();
+            var brandName = $(this).attr('href');
+            var height = $(brandName).position().top;
+            $('#brand').animate({scrollTop: height}, 400);
+
+        });
+
         $(document).on('click', '#brand .list .item', function() {
             filterGlobal.selectBrand = $(this).attr('data-code');
             filterGlobal.selectBrandName = $(this).find('span').text();
         });
 
+        
+        $(document).on('click', '#brand .car span', function() {
+            filterGlobal.selectSeries = $(this).attr('data-code') ? $(this).attr('data-code') : '';
+            filterGlobal.selectSeriesName = $(this).text();
+            $('#brand .car span').removeClass('active');
+            $(this).addClass('active');
+            setTimeout(function() {
+                $('#brand').addClass('hidden');
+                $('.brand-item .sub').remove();
+                $('.brand-item .item').removeClass('active');
+            }, 500);
+            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
+            filterGlobal.queryCount();
+        });
         $(document).on('click', '#brand .brand-top-right', function() {
             filterGlobal.selectBrand = '';
             filterGlobal.selectBrandName = $(this).text();
@@ -561,19 +583,6 @@ var utilsSell = {
             filterGlobal.queryCount();
         });
 
-        $(document).on('click', '#brand .car span', function() {
-            filterGlobal.selectSeries = $(this).attr('data-code') ? $(this).attr('data-code') : '';
-            filterGlobal.selectSeriesName = $(this).text();
-            $('#brand .car span').removeClass('active');
-            $(this).addClass('active');
-            setTimeout(function() {
-                $('#brand').addClass('hidden');
-                $('.brand-item .sub').remove();
-                $('.brand-item .item').removeClass('active');
-            }, 1000);
-            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
-            filterGlobal.queryCount();
-        });
 
         // $('#brand-list').on('click','.item',function(){
         //     var self = $(this)
@@ -1230,8 +1239,8 @@ $('.wrapGrayBg').on('click',function(){
         var ajaxData= {
             brand:sellGlobal.selectBrand,
             series:sellGlobal.selectSeries,
-            province: $('#J_province option:selected').text(),
-            city: $('#J_city option:selected').text(),
+            // province: $('#J_province option:selected').text(),
+            // city: $('#J_city option:selected').text(),
             mobile:phoneNum
         }
         var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';

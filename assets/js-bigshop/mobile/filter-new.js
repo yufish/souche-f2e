@@ -96,7 +96,6 @@ function filter(BrandMgr, addListener) {
                 if(initBrandName) {
                     $('#btn-select-brand').text(initBrandName).css('color','#333');
                 }
-                history.replaceState({},document.title,'filter-car.html')
             }()
             var brandLoaded = false;
             $('#btn-select-brand').click(function() {
@@ -117,10 +116,13 @@ function filter(BrandMgr, addListener) {
                     $hotCtn.append(hotBrandsStr);
 
                     $.ajax({
-                        url: contextPath + "/pages/dicAction/loadAllExistBrands.json",
+                        url: contextPath + "/json/dict/loadRootLevel.json",
+                        data:{
+                            type:"car-subdivision"
+                        },
                         dataType: "json ",
                         success: function(data) {
-                            makeBrands(data.items);
+                            makeBrands(data.data);
                             brandLoaded = true;
                         }
                     })
@@ -289,7 +291,7 @@ function filter(BrandMgr, addListener) {
 
             function hasResult(dataObj) {
                 $.ajax({
-                    url: contextPath + '/pages/mobile/listAction/queryCars.json?index=999999&tracktype=0',
+                    url: contextPath + '/json/buy.json?index=999999&tracktype=0',
                     data: dataObj,
                     dataType: 'json',
                     success: function(data) {
@@ -297,7 +299,7 @@ function filter(BrandMgr, addListener) {
                         if (data.i == 0) {
                             showSorry();
                         } else {
-                            var addr = contextPath + '/pages/mobile/list.html?';
+                            var addr = contextPath + '/buy.htm?__mobile=true&';
                             for (var i in dataObj) {
                                 addr += (i + '=' + dataObj[i] + '&');
                             }

@@ -5,19 +5,40 @@
     }
 
     var _view = {
+        // buildNum: function(arr) {
+        //     var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2><ul class="list">';
+        //     var i,
+        //         len = arr.length;
+                
+        //     for (i = 0; i < len; i++) {
+        //         brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>'
+        //     }
+
+        //     brandNum += '</ul></div>';
+
+        //     return brandNum;
+        // },
+
         buildNum: function(arr) {
-            var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2><ul class="list">';
+            var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2>';
             var i,
                 len = arr.length;
                 
             for (i = 0; i < len; i++) {
-                brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>'
+                if (i % 7 == 0) {
+                   brandNum += '<ul class="list">'; 
+                }
+                brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>';
+                if (i % 7 == 6) {
+                    brandNum += '</ul>'
+                }
             }
 
-            brandNum += '</ul></div>';
+            brandNum += '</div>';
 
             return brandNum;
         },
+
 
 
         buildItem: function(arr) {
@@ -95,7 +116,7 @@
         var brandNum = _view.buildNum(letterArr);
         var buildItem = _view.buildItem(brand);
         $('body').append('<div id="brand" class="hidden"><div class="header" id="header-common">'
-                            + '<header class="header"><a class="back" href="#"><i class="header-back-icon"></i>返回</a><span class="brand-top-right">不限品牌</span></header></div>' + brandNum + buildItem + '</div>');
+                            + '<header class="header"><a class="back" href="#"><i class="header-back-icon"></i>返回</a><a class="brand-top-right" href="#">不限品牌</a></header></div>' + brandNum + buildItem + '</div>');
 
         $('.brand-item').on('click', '.item', function() {
             var code = $(this).attr('data-code');

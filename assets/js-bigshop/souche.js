@@ -113,8 +113,8 @@ Souche.UI.Select = function() {
                 },
                 success: function(data) {
                     $(c.eles[0]).append($("<option value=''>-请选择-</option>"));
-                    for (var i in data.items) {
-                        var item = data.items[i];
+                    for (var i in data.data) {
+                        var item = data.data[i];
                         $(c.eles[0]).append('<option value="' + item.code + '" ' + (c.defaultValues[0] == item.code ? "selected" : "") + '>' + item.name + '</option>');
                     }
                     if (c.defaultValues[0]) {
@@ -145,8 +145,8 @@ Souche.UI.Select = function() {
                                 type: c.type,
                                 code: code
                             },
-                            success: function(data) {
-
+                            success: function(_data) {
+                            var data = _data.data;
                                 $(c.eles[1]).empty();
                                 $(c.eles[1]).append($("<option value=''>-请选择-</option>"));
                                 for (var j = 0; j < data['keys'].length; j++) {
@@ -176,8 +176,8 @@ Souche.UI.Select = function() {
                             success: function(data) {
                                 $(c.eles[index + 1]).empty();
                                 $(c.eles[index + 1]).append($("<option value=''>-请选择-</option>"));
-                                for (var i in data.items) {
-                                    var item = data.items[i];
+                                for (var i in data.data) {
+                                    var item = data.data[i];
                                     $(c.eles[index + 1]).append('<option value="' + item.code + '" ' + (c.defaultValues[index + 1] == item.code ? "selected" : "") + '>' + item.name + '</option>');
                                 }
                             }
