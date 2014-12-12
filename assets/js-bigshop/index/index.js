@@ -157,6 +157,14 @@ define(['index/car-god',
                     controlNav: true,
                     pauseOnHover: true
                 });
+                $('.flexslider2').flexslider({
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    pauseOnHover: true,
+                    slideshow:false,
+                    directionNav: true,
+                    controlNav: false
+                });
                 $(".right-slide").flexslider({
                     slideshow: false,
                     animation: "slide",
@@ -166,11 +174,10 @@ define(['index/car-god',
                     randomize: false,
                     directionNav: false
                 });
-                $(".flex-direction-nav").hide();
-                $(".main-slider").mouseenter(function() {
+                $(".flexslider2").mouseenter(function() {
                     $(".flex-direction-nav").fadeIn("normal");
                 });
-                $(".main-slider").mouseleave(function() {
+                $(".flexslider2").mouseleave(function() {
                     $(".flex-direction-nav").fadeOut("normal");
                 });
             });
