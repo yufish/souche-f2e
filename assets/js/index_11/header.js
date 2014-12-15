@@ -149,10 +149,10 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             success: function(data) {
                 $(".city-list").html("");
                 if (data && data.items) {
-                    $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "'>全部城市</a>")
+                    $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "' click_type='city-"+provinceCode+"'>全部城市</a>");
                     for (var i = 0; i < data.items.length; i++) {
                         var item = data.items[i];
-                        $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "'>" + item.name + "</a>")
+                        $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "' click_type='city-"+provinceCode+"'>" + item.name + "</a>")
                     }
                     $(".city-item").on("click", function(e) {
                         e.stopPropagation();
@@ -252,6 +252,28 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     });
 
 
+    var _view = {
+        init: function(){
+            _view.addClickType();
+        },
+        /*
+         * 添加click_type
+         *      热门城市: hotcity-xxx
+         *      省份直辖市: provience-xxx
+         *      动态load的城市列表: city-xxx
+         */
+        addClickType: function(){
+            $('.hot-city [data-code]').each(function(i, el){
+                var $el = $(el);
+                $el.attr('click_type', 'hotcity-'+$el.attr('data-code'));
+            });
+
+            $('.area-line [data-code]').each(function(i, el){
+                var $el = $(el);
+                $el.attr('click_type', 'province-'+$el.attr('data-code'));
+            });
+        }
+    };
 
 
 
@@ -304,6 +326,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     };
 
     function init() {
+        _view.init();
         _event.bind();
     }
 

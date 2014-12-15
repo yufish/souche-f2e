@@ -57,6 +57,23 @@ define([
             }
             htmlStr += '"><span>' +item.count+ '</span></span>';
             htmlStr += '</div>';
+
+            htmlStr += '<div class="national-car-info"><div class="national-car-info-wrapper">';
+            if(item.carVo.source != 'cheniu'){
+                htmlStr += '<span class="shop-approve-tag list-dealer-tag" title="大搜车认证商家"></span>';
+            }
+            if( item.authshopDetail.brandCertification != '' && item.authshopDetail.brandCertification != null && item.authshopDetail.brandCertification != undefined ){
+                htmlStr += '<span class="shop-approve-tag list-fours-tag"></span>';
+            }
+            if( item.carVo.source == 'cheniu' ){
+                htmlStr += '<span class="shop-approve-tag list-realname-tag" title="大搜车实名认证"></span>';
+            }
+            htmlStr += '<a class="shop-logo" href="'+contextPath+'/pages/onsale/car_shop.html?authshopCode='+item.authshopDetail.code+'" target="_blank">';
+            htmlStr += '<span class="shop-name-text';
+            htmlStr += '" title="'+item.authshopDetail.name +'">'+item.authshopDetail.name+'</span>';
+            htmlStr += '</a>';
+            htmlStr += '</div></div>';
+
             htmlStr += '<div class="car-type clearfix">';
             if( item.carVo.status == 'zaishou' &&  item.carVo.levelName!=null){
                 htmlStr += '<div class="zhijian">检' +item.carVo.levelName+ '</div>'
