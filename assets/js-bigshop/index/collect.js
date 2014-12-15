@@ -61,8 +61,8 @@ define(function() {
                 dataType:"jsonp"
             }).done(function(data) {
                 is_requesting = false;
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
+                if (data.code==402) {
+                    alert("您已经收藏过这辆车")
                 } else {
 
                     $("#fav-popup").addClass("hidden");
