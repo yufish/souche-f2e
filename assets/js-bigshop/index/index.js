@@ -154,8 +154,16 @@ define(['index/car-god',
                     animation: "slide",
                     slideshowSpeed: 5000,
                     directionNav: true,
-                    controlNav: true,
+                    controlNav: false,
                     pauseOnHover: true
+                });
+                $('.flexslider2').flexslider({
+                    animation: "slide",
+                    slideshowSpeed: 5000,
+                    pauseOnHover: true,
+                    slideshow:false,
+                    directionNav: true,
+                    controlNav: false
                 });
                 $(".right-slide").flexslider({
                     slideshow: false,
@@ -166,12 +174,12 @@ define(['index/car-god',
                     randomize: false,
                     directionNav: false
                 });
-                $(".flex-direction-nav").hide();
-                $(".main-slider").mouseenter(function() {
-                    $(".flex-direction-nav").fadeIn("normal");
+                $(".flexslider .flex-direction-nav").hide();
+                $(".flexslider2").mouseenter(function() {
+                    $(".flexslider2 .flex-direction-nav").fadeIn("normal");
                 });
-                $(".main-slider").mouseleave(function() {
-                    $(".flex-direction-nav").fadeOut("normal");
+                $(".flexslider2").mouseleave(function() {
+                    $(".flexslider2 .flex-direction-nav").fadeOut("normal");
                 });
             });
             _bind();
@@ -199,7 +207,33 @@ define(['index/car-god',
                 })
             })
 
+            $.ajax({
+                url:config.api_favCounts,
+                data:{
+                    siteId: $.cookie("siteId"),
+                    carIds:(function(){
+                        var ids =[];
+                        $(".carItem").each(function(i,item){
+                            ids.push($(item).attr("data-id"))
+                        })
+                        return ids;
+                    })().join(",")
+                },
+                dataType:"jsonp",
+                success:function(data){
+                    console.log(data)
 
+                    if(data.code==200){
+                        for(var key in data){
+                            var arr = key.split("_")
+                            if(arr.length>1){
+                                var carId = arr[1];
+                                $(".carItem[data-id="+carId+"] .fav-count").html(data[key])
+                            }
+                        }
+                    }
+                }
+            })
             //提示品牌是否加入心愿单
             //闹着玩
             // Souche.Util.appear(".hotNewCars", function() {

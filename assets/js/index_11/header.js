@@ -149,10 +149,10 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             success: function(data) {
                 $(".city-list").html("");
                 if (data && data.items) {
-                    $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "'>全部城市</a>")
+                    $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "' click_type='city-"+provinceCode+"'>全部城市</a>");
                     for (var i = 0; i < data.items.length; i++) {
                         var item = data.items[i];
-                        $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "'>" + item.name + "</a>")
+                        $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "' click_type='city-"+provinceCode+"'>" + item.name + "</a>")
                     }
                     $(".city-item").on("click", function(e) {
                         e.stopPropagation();
@@ -163,6 +163,28 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             }
         })
     }
+
+    // 某些页面进行本页刷新
+    // 某些页面要跳转到特定页面
+    // 下面是需要跳转的页面的规则列表
+    var PAGE_HOME = '/';
+    var PAGE_LIST = contextPath + '/pages/onsale/sale_car_list.html';
+    var jump_rules = {
+        // 主题精选 list页和详情页 都条状往首页
+        '/pages/acts/theme-activity-all.html': PAGE_HOME,
+        '/pages/acts/activity_car_list.html': PAGE_HOME,
+        // detail页 跳往list页
+        '/pages/choosecarpage/choose-car-detail.html': PAGE_LIST,
+        // 营销活动list页（限时特价，好车日报）：切换首页
+        '/pages/timelimit_price.html': PAGE_HOME,
+        '/pages/car-journal.html': PAGE_HOME,
+        // list页面 把所有的query条件过滤掉
+        '/pages/onsale/sale_car_list.html': PAGE_LIST
+    };
+    // 匹配添加contextPath
+    for(var r in jump_rules){
+        jump_rules[contextPath + r] = jump_rules[r];
+    }
     var goCity = function(code) {
         $.ajax({
             url: contextPath + "/pages/toolbarAction/choosePosition.json",
@@ -171,7 +193,13 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                 position: code
             },
             success: function() {
-                window.location.reload();
+                var curPath = location.pathname;
+                if( jump_rules[curPath] === undefined ){
+                    window.location.reload();
+                }
+                else{
+                    window.location.href = jump_rules[curPath];
+                }
             }
         });
     }
@@ -224,6 +252,28 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     });
 
 
+    var _view = {
+        init: function(){
+            _view.addClickType();
+        },
+        /*
+         * 添加click_type
+         *      热门城市: hotcity-xxx
+         *      省份直辖市: provience-xxx
+         *      动态load的城市列表: city-xxx
+         */
+        addClickType: function(){
+            $('.hot-city [data-code]').each(function(i, el){
+                var $el = $(el);
+                $el.attr('click_type', 'hotcity-'+$el.attr('data-code'));
+            });
+
+            $('.area-line [data-code]').each(function(i, el){
+                var $el = $(el);
+                $el.attr('click_type', 'province-'+$el.attr('data-code'));
+            });
+        }
+    };
 
 
 
@@ -276,6 +326,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     };
 
     function init() {
+        _view.init();
         _event.bind();
     }
 
