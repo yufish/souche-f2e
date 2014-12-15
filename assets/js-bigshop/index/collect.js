@@ -63,6 +63,7 @@ define(function() {
                 is_requesting = false;
                 if (data.code==402) {
                     alert("您已经收藏过这辆车")
+                    $(self).addClass("faved");
                 } else {
 
                     $("#fav-popup").addClass("hidden");

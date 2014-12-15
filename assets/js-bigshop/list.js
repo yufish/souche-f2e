@@ -205,6 +205,8 @@ Souche.Inside = (function() {
                     success: function(data) {
                         if (data.code==402) {
                             alert("您已经收藏过这辆车")
+                            var favCtn = $(".fav[data-carid=" + fav_carId + "], .guess-like .carCollect[data-carid=" + fav_carId + "]");
+                            $(favCtn).addClass("faved");
                         } else {
                             var favCtn = $(".fav[data-carid=" + fav_carId + "], .guess-like .carCollect[data-carid=" + fav_carId + "]");
                             $(favCtn).find(".fav-count").html($(favCtn).find(".fav-count").html() * 1 + 1);
@@ -216,19 +218,21 @@ Souche.Inside = (function() {
 
             var cancelFavSubmit = function() {
                 $.ajax({
-                    url: config.cancelfav_api,
+                    url: config.fav_api,
                     data: {
+                        crmUserId: $.cookie("crmUserId"),
+                        siteId:$.cookie("siteId"),
                         carId: fav_carId //$(self).attr("data-carid")
                     },
-                    dataType: "json",
+                    dataType: "jsonp",
                     type: "post",
                     success: function(data) {
                         if (data.errorMessage) {
                             alert(data.errorMessage)
                         } else {
-
                             var favCtn = $(".fav[data-carid=" + fav_carId + "], .guess-like .carCollect[data-carid=" + fav_carId + "]");
-                            updateFav( favCtn, false);
+                            $(favCtn).find(".fav-count").html($(favCtn).find(".fav-count").html() * 1 + 1);
+                            $(favCtn).removeClass("faved");
                         }
                     }
                 })
