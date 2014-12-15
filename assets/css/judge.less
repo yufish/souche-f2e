@@ -20,8 +20,17 @@
             height: 35px;
             margin-bottom: 10px;
           }
+          .car-mile{
+            position: relative;
+            .unit{
+              position: absolute;
+              right: 10px;
+              top: 8px;
+              color: #999;  
+            }
+          }
           select,input{
-            width: 100%;
+            width: 189px;
             height: 32px;
             border: 1px solid #e6e6e6;
             display: block;
@@ -30,19 +39,20 @@
             color: #999;
           }
           input{
+            width: 378px;
             padding-left: 15px;
           }
-          .car-phone{
-            input::-webkit-input-placeholder{
-              color: #ff571a;
-            }
-            input:-ms-input-placeholder{
-              color: #ff571a;
-            }
-            input:-moz-placeholder{
-              color: #ff571a;
-            }
-          }
+          // .car-phone{
+          //   input::-webkit-input-placeholder{
+          //     color: #ff571a;
+          //   }
+          //   input:-ms-input-placeholder{
+          //     color: #ff571a;
+          //   }
+          //   input:-moz-placeholder{
+          //     color: #ff571a;
+          //   }
+          // }
           .car-kind{
             select{
               width: 126px;
@@ -618,7 +628,7 @@
               width: 107px;
               height: 115px;
               top: -4px;
-              left: 20px;
+              left: 120px;
               background: url(../images/judge/buy-price.png) no-repeat;
               padding-top: 75px;
               text-align: center;
@@ -634,7 +644,7 @@
               width: 149px;
               height: 133px;
               top: -4px;
-              left: 50px;
+              left: 100px;
               background: url(../images/judge/person-price.png) no-repeat;
               padding-top: 80px;
               text-align: center;
@@ -651,7 +661,7 @@
               width: 107px;
               height: 115px;
               top: -4px;
-              left: 50px;
+              left: 115px;
               background: url(../images/judge/retail-price.png) no-repeat;
               padding-top: 75px;
               text-align: center;
@@ -697,6 +707,76 @@
             }
           }
         }
+      }
+    }
+  }
+}
+.sellcar-popup{
+  position: fixed;
+  background: #fff;
+  box-shadow: 1px 1px 1px #ededed;
+  width: 390px;
+  height: 385px;
+  top: 115px;
+  left: 50%;
+  margin-left: -195px;
+  .sellcar-success {
+    width: 330px;
+    height: 360px;
+    background-color: #fff;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+    .success-icon {
+    margin-top: 20px;
+    width: 100%;
+    height: 52px;
+    background: url(../images/sellcar/success.png) no-repeat;
+    background-position: center;
+    }
+    h1 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: #262626;
+    margin-top: 30px;
+    }
+    .success-jump {
+    margin-top: 20px;
+    color: #333;
+    font-size: 14px;
+    line-height: 25px;
+    span {
+      color: #fc7000;
+      margin-right: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 20px;
+      }   
+    }
+    .success-link {
+    color: #fc7000;
+    font-size: 14px;
+    margin-top: 5px;
+     a {
+      color: #fc7000;
+      border-bottom: 1px solid #fc7000;
+      font-size: 14px;
+      }
+    }
+    .success-explain {
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    height:85px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    p {
+    color: #333;
+    font-size: 14px;
+    line-height: 25px;
       }
     }
   }
