@@ -152,10 +152,16 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
         }
     };
 
+    var _body = document.body;
+    var _header = $('#header');
+    
+    var scrollTimer;
     var _event = {
         bind: function(){
             // 有推荐车辆时, 发送一个已读请求
             $('.gift-card.has-advice .go').on('click', _event.markAdviceRead);
+
+            $(window).on('scroll', _event.headerFixedScroll);
         },
         markAdviceRead: function(e){
             e.preventDefault();
@@ -166,6 +172,26 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
                     window.location.href= _config.wishCardPageUrl;
                 });
             }
+        },
+        headerFixedScroll: function(){
+            if(!scrollTimer){
+                scrollTimer = setTimeout(function(){
+                    var scrollTop = _body.scrollTop;
+                    if(scrollTop > 50){
+                        if( !_header.hasClass('fixed-scroll') ){
+                            // _header.css('top', scrollTop);
+                            // setTimeout(function(){
+                                _header.addClass('fixed-scroll');
+                            // }, 50);
+                        }
+                    }
+                    if(scrollTop < 30){
+                        _header.removeClass('fixed-scroll');
+                    }
+                    scrollTimer = null;
+                }, 50);
+            }
+            
         }
     }
 
