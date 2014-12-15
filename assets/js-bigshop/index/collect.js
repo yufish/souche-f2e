@@ -14,7 +14,7 @@ define(function() {
             Souche.MiniLogin.checkLogin(function() {
                 if ($(context).hasClass("faved")) {
                     var carID = $(context).attr("data-carid");
-                    deleteCollect.call(context, carID);
+//                    deleteCollect.call(context, carID);
                 } else {
                     var carID = $(context).attr("data-carid");
                     addCollect.call(context, carID);

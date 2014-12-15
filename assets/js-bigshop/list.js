@@ -260,7 +260,7 @@ Souche.Inside = (function() {
                 e.preventDefault();
                 fav_carId = $(this).attr("data-carid")
                 if ($(this).hasClass("faved")){
-                    cancelFavSubmit()
+//                    cancelFavSubmit()
                 }else{
                     Souche.MiniLogin.checkLogin(function(){
                         favSubmit()

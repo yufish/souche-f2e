@@ -120,7 +120,7 @@ var Action = (function () {
             });
             var submitFav = function (carId) {
                 if(favDom.hasClass("active")){
-                    delFav(carId)
+//                    delFav(carId)
                 }else{
                     saveFav(carId);
                 }
