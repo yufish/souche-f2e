@@ -48,6 +48,11 @@ a{
 }
 .car-mod{
 margin-bottom: 20px;
+    background: #fff;
+    padding:10px 0;
+    border:1px solid #ededed;
+    border-left:none;
+    border-right:none;
 }
 .mod-hd{
     font-size:14px;
@@ -192,6 +197,18 @@ nav .nav-item.active .nav-item-content{
     border-left: 1px solid #E6E6E6;
     font-weight: bold;
     color:#0f448e;
+}
+
+#index .mod-more{
+    margin:5px 15px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color:#666;
+    border:1px solid #ededed;
+display: block;
+    border-radius: 3px;
 }
 .for-carcustom .erge{
     display: inline-block;
