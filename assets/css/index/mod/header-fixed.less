@@ -1,0 +1,71 @@
+#header{
+    position: absolute;
+    top: 0;
+    z-index: 2000;
+}
+#top-head{
+    margin-top: 100px;
+}
+
+#header{
+    // .tst(all 300ms ease;);
+    &.fixed-scroll{
+        position: fixed;
+        // .tst(height 200ms ease;);
+        height: 60px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .logo{
+            padding-top: 14px;
+            img{
+                width: 64px;
+                height: 28px;
+            }
+        }
+
+        .h-lft{
+            width:500px;
+            // overflow: hidden;
+
+            .city{
+                width: 62px;
+                height: 28px;
+                margin-top: 14px;
+                line-height: 26px;
+
+                i.J_city{
+                    margin-top: 11px;
+                }
+
+                .city-open{
+                    top: 29px;
+                }
+            }
+            .main-navs a{
+                line-height: 60px - 4px;
+
+                &.nav-to-danbaohaoche
+                &[click_type="index-danbaohaoche"],
+                &[click_type="index-atcsAll"],
+                &.nav-to-themecollection{
+                    display: none;
+                }
+            }
+        }
+        .search .index-search{
+            margin-top: 13px;
+            .search-text{
+                width: 400px;
+            }
+        }
+
+        .h-rht{
+            .phone-number{
+                margin-top: 19px;
+            }
+            .user{
+                margin-top: 11px;
+            }
+        }
+    }
+}
