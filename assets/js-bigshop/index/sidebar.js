@@ -61,9 +61,11 @@ Souche.Sidebar = (function() {
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
 
-console.log(this);
             if ($(this).hasClass("collect-box")) {
-                showSidebar(self);
+                Souche.MiniLogin.checkLogin(function(){
+                    showSidebar(this);
+                })
+
             } else {
 
             }

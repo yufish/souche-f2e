@@ -10,6 +10,34 @@ a{
 .placeholder-for-tabNavBar{
     height: 88px;
 }
+
+#index .index-hd-bg{
+    width:100%;
+    height:190px;
+    overflow: hidden;
+}
+#index .index-hd-bg img{
+    width:100%;
+}
+#index .fixed-wrapper{
+    position: relative;
+    margin-bottom:20px;
+}
+#index .header{
+    background: rgba(10,10,10,0.5);
+    margin-top:-44px;
+}
+#index .header .header-title-txt {
+    position: absolute;
+    top: 0;
+    width:200px;
+    left: 0;
+    margin-left:0;
+    text-align: left;
+    padding-left:10px;
+    font-size:20px;
+    /* margin-left: -80px; */
+}
 #J_tabNavbar{
     height: 44px;
     line-height: 44px;
@@ -20,6 +48,11 @@ a{
 }
 .car-mod{
 margin-bottom: 20px;
+    background: #fff;
+    padding:10px 0;
+    border:1px solid #ededed;
+    border-left:none;
+    border-right:none;
 }
 .mod-hd{
     font-size:14px;
@@ -164,6 +197,18 @@ nav .nav-item.active .nav-item-content{
     border-left: 1px solid #E6E6E6;
     font-weight: bold;
     color:#0f448e;
+}
+
+#index .mod-more{
+    margin:5px 15px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color:#666;
+    border:1px solid #ededed;
+display: block;
+    border-radius: 3px;
 }
 .for-carcustom .erge{
     display: inline-block;
@@ -388,7 +433,7 @@ nav .nav-item.active .nav-item-content{
     border-top-left-radius: 3px;
 }
 .btn-submit{
-    background: #ff5a00;
+    background: #0f448e;
     width: 100%;
     border-radius: 3px;
     font-size: 14px;

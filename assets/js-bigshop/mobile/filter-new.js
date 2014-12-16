@@ -238,9 +238,9 @@ function filter(BrandMgr, addListener) {
                 document.body.scrollTop = 0;
             }
 
-            $('#select-price-1').change(function() {
+            $('#slt-price-1').change(function() {
                 var lowP = $(this).val();
-                var $highP = $('#select-price-2');
+                var $highP = $('#slt-price-2');
                 var curHighP = $highP.val();
                 $highP.empty();
                 var findSelected = false;
@@ -263,9 +263,9 @@ function filter(BrandMgr, addListener) {
                 }
                 $highP.append(html)
             });
-            $('#select-price-2').change(function() {
+            $('#slt-price-2').change(function() {
                 var highP = $(this).val();
-                var $lowP = $('#select-price-1');
+                var $lowP = $('#slt-price-1');
                 var curLowP = $lowP.val();
                 $lowP.empty();
                 var html = '';
@@ -317,7 +317,7 @@ function filter(BrandMgr, addListener) {
 
                 var sStr = brands.map(function(b) {
                         if(b['series'].length==0){
-                            return 'null'
+                            return ''
                         }else{
                             return b['series'].map(function(s) {
                                 return s['code'];
@@ -356,14 +356,14 @@ function filter(BrandMgr, addListener) {
                     year = year + '-9999'
                 }
                 var brandSeries = buildBsQueryString();
-                var price1 = $('#select-price-1').val();
-                var price2 = $('#select-price-2').val();
+                var price1 = $('#slt-price-1').val();
+                var price2 = $('#slt-price-2').val();
                 dataObj.carYear = year;
                 //dataObj.carMinYear = year;
                 //dataObj.carMaxYear = '';
                 dataObj.carPrice = price1 + '-' + price2;
-                dataObj.carBrand = brandSeries.brandStr;
-                dataObj.carSeries = brandSeries.seriesStr;
+                dataObj.carBrand = brandSeries.brandStr?brandSeries.brandStr:"";
+                dataObj.carSeries = brandSeries.seriesStr?brandSeries.seriesStr:"";
                 dataObj.carMileage = getCond($("#select-mile").val());
                 dataObj.carModel = getCond($('#select-model').val());
                 dataObj.carEngineVolume = getCond($('#select-volume').val());
