@@ -60,10 +60,10 @@ Souche.Sidebar = (function() {
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
-
+var self = this;
             if ($(this).hasClass("collect-box")) {
                 Souche.MiniLogin.checkLogin(function(){
-                    showSidebar(this);
+                    showSidebar(self);
                 })
 
             } else {
