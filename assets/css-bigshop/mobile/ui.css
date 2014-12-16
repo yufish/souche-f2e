@@ -65,7 +65,7 @@
      z-index: 1001;
  }
 .header-placeholder{
-    height: 44px;
+    height: 88px;
 }
 .header .hd-logo{
     float: left;
@@ -175,6 +175,7 @@
     color: #fff;
     margin-left: 10px;
 }
+
 /*car card*/
 .car-card-container{
     padding: 0 5px;
@@ -188,7 +189,7 @@
     width: 145px;
     margin: 10px auto 0;
     background: #fff;
-    border:1px solid #d9d9d9;
+    border:1px solid #ececec;
     display: block;
     position: relative;
 }

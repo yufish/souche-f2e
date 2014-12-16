@@ -60,13 +60,11 @@ Souche.Sidebar = (function() {
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
-            var self = this;
-            if ($(this).hasClass("suggest-box")) {
-                showSidebar(self);
+
+            if ($(this).hasClass("collect-box")) {
+                showSidebar(this);
             } else {
-                Souche.MiniLogin.checkLogin(function(isLogin) {
-                    showSidebar(self);
-                })
+
             }
 
 

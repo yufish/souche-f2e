@@ -4,7 +4,7 @@
   margin-top: 20px;
   .filter-nav{
     float: left;
-    display: inline-block;
+    display:inline;
     height: 304px;
     border: 1px solid #E6E6E6;
     background: #F5F5F5;
@@ -156,6 +156,7 @@
       .models-inner{
         width: 570px;
         background: #fff;
+        z-index:100;
         border:1px solid #fc7000;
         position: absolute;
         top: -16px;
@@ -235,6 +236,7 @@
   .main-slider{
     float: left;
     width: 880px;
+    display: inline;
     height: 335px;
     margin-left: 18px;
     background: #999;
@@ -302,6 +304,48 @@ text-indent: -9999px;
 
 .banner{
   img{
-    width:100%;
+
+  }
+  .b-left{
+    float:left;
+    width:280px;
+    height:159px;
+    overflow: hidden;
+  }
+  .b-right{
+    float:right;
+    width:900px;
+    height:159px;
+    overflow: hidden;
+    position: relative;
+    .flex-direction-nav{
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+    }
+    .flex-direction-nav a{
+      top:80px;
+    }
+     .flex-direction-nav a {
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0;
+      display: block;
+      background: url(../images/index/index_sprite_v2.png) no-repeat 0 0;
+      position: absolute;
+      opacity: 1;
+      cursor: pointer;
+      text-indent: -9999px;
+      -webkit-transition: all .3s ease;
+    }
+     .flex-direction-nav .flex-prev {
+      background-position: -150px 0;
+      left: 0px;
+    }
+     .flex-direction-nav .flex-next {
+      background-position: -200px 0;
+      right: 0px;
+    }
   }
 }

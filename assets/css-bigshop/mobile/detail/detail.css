@@ -1090,7 +1090,6 @@ float:left;
     overflow: hidden;
 }
 .big-picture li {
-    float: left;
 }
 .big-picture li img {
     width: 100%;
@@ -1107,9 +1106,10 @@ float:left;
 }
 .big-picture {
     background-color: #000;
-    top: 0;left: 0;right: 0;bottom: 0;
+    top: 0;left: 0;
     padding-top: 40px;
-    position: fixed;
+    width:100%;
+    position: absolute;
 }
 .big-picture img {
     background: url(../../../images/mob/ajax-loader-black.gif) black no-repeat center 80px;

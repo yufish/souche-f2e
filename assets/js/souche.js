@@ -80,7 +80,7 @@ Souche.UI.Select = function() {
     /**
 	* 优化调用方式，同时优化请求数，用最少的代码和逻辑完成最多的工作！
 		Souche.UI.Select.init({
-			eles:['#sell_brand','#sell_set','#sell_type'],
+			eles:['sell_brand','sell_set','sell_type'],
 			type:"car-subdivision",
 			defaultValues:[]
 		})
@@ -135,7 +135,7 @@ Souche.UI.Select = function() {
                     if (code == null) return;
                     var a = code.split("-")[0];
                     var index = $(this).attr("data-index") * 1;
-
+                    $(Souche.UI.Select).trigger("change",{id:this.id,value:this.value,text:this.options[this.selectedIndex].innerHTML})
                     if (index >= c.eles.length - 1) return;
                     if (a == 'brand') {
                         $.ajax({

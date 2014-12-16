@@ -20,7 +20,7 @@ body {
     width: 100%;
     background: url(../images/sellcar/banner-x.png) no-repeat;
     background-position: center;
-    background-color: #ffb722;
+    background-color: #446da6;
 }
 #sellcar #content .banner .wrapper {
     height: 480px;
@@ -182,6 +182,10 @@ body {
 #sellcar #content #findbuyer {
     background-color: #f3f3f3;
     position: relative;
+}
+#sellcar #content #findbuyer img{
+    display: block;
+    margin:0 auto;
 }
 #sellcar #content #findbuyer .wrapper {
     height: 550px;

@@ -18,8 +18,9 @@ define(function()
                 dataType: "jsonp",
                 type: "post",
                 success: function(data) {
-                    if (data.errorMessage) {
-                        alert(data.errorMessage)
+                    if (data.code==402) {
+                        alert("您已经收藏过这辆车")
+                        $("#J_shoucang").attr('value', '1').addClass("faved");
                     } else {
                         //$('#shoucang-popup').removeClass('hidden');
                         var favPos = $("#J_shoucang").offset();

@@ -14,7 +14,7 @@ define(function() {
             Souche.MiniLogin.checkLogin(function() {
                 if ($(context).hasClass("faved")) {
                     var carID = $(context).attr("data-carid");
-                    deleteCollect.call(context, carID);
+//                    deleteCollect.call(context, carID);
                 } else {
                     var carID = $(context).attr("data-carid");
                     addCollect.call(context, carID);
@@ -61,13 +61,14 @@ define(function() {
                 dataType:"jsonp"
             }).done(function(data) {
                 is_requesting = false;
-                if (data.errorMessage) {
-                    alert(data.errorMessage)
+                if (data.code==402) {
+                    alert("您已经收藏过这辆车")
+                    $(self).addClass("faved");
                 } else {
 
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
-                    $(self).find("span").html($(this).find("span").html() * 1 + 1);
+                    $(self).find(".fav-count").html($(self).find(".fav-count").html() * 1 + 1);
                     $(self).addClass("faved");
 
                 }

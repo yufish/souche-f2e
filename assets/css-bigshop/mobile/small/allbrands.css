@@ -23,14 +23,15 @@
 }
 #allbrands .brands .brand .name {
     line-height: 14px;
-    width: 80px;
+    width: 60px;
+    overflow:hidden;
     text-align: left;
+    display: inline-block;
 }
 #allbrands .brands .brand .lft {
     float: left;
     text-align: left;
     color: #666;
-    width: 28px;
     margin-left: 5px;
 }
 #allbrands .brands .brand .rht {
