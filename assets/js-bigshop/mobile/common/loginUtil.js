@@ -61,6 +61,7 @@ SM.PhoneRegister = function(phone, callback) {
             if (data.errorMessage) {
                 callback(false,data.errorMessage)
             } else {
+                $.cookie("crmUserId",data.item.crmUserId);
                 callback(true)
             }
         },

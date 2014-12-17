@@ -90,9 +90,13 @@
                     if(data&&data.code&&(data.code==402||data.code==200)){
                         $("#J_yuyue,#J_nav_yuyue").remove();
                         $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
+                        alert("预约成功，我们的销售顾问将尽快联系您")
                         return;
+                    }else{
+                        $("#J_yuyue").html("预约看车")
+                        alert("预约失败，请稍后再试")
                     }
-                    alert("预约成功，我们的销售顾问将尽快联系您")
+
 //                    $('body').append(data);
 //                    $(".wrapGrayBg").show();
 //                    $("#yuyue-popup").addClass("hidden");
