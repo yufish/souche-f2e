@@ -327,14 +327,15 @@
             width: 24px;
             height: 24px;
             margin-left: 10px;
+            cursor: pointer;
           }
-          .qzone{
+          #qzone{
             background: url(../images/judge/q-zon.png) no-repeat;
           }
-          .sina{
+          #sina{
             background: url(../images/judge/sina.png) no-repeat;
           }
-          .tenxun{
+          #tenxun{
             background: url(../images/judge/tenxun.png) no-repeat;
           }
         }
@@ -838,4 +839,49 @@
          }
         }
       }
+}
+.warning{
+  position: fixed;
+  background: #fff;
+  box-shadow: 0px 0px 6px #D6D6D6;
+  width: 410px;
+  height:203px;
+  top: 205px;
+  left: 50%;
+  margin-left: -205px;
+  .close{
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../images/fed/member/popup-close2.png") no-repeat;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+  }
+  .warning-cont{
+    margin-top: 60px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    h1{
+      margin-bottom: 5px;
+    }
+    p{
+      color: #ff5517;
+    }
+  }
+  .queren-but{
+   
+    width: 60px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background: #FF5517;
+    border-radius:3px;
+    margin: 30px auto;
+    line-height: 28px;
+  }
 }
