@@ -55,7 +55,20 @@ define(function() {
         if(activeInput){
             var top = $(activeInput).offset().top + $(activeInput).parent().height();
             var left = $(activeInput).offset().left;
-            var width = $(activeInput).width()
+            var width = $(activeInput).width();
+
+            var Header = $ele.parents('#header');
+            if(Header.length > 0){
+                if( Header.hasClass('fixed-scroll') ){
+                    $ele.css({position: 'fixed', 'z-index': '2200'});
+                }
+                else{
+                    $ele.css({position: 'absolute'});
+                }
+            }
+            else{
+                $ele.css({position: 'absolute'});
+            }
         }
         $ele.css({
             top: top-1,
@@ -161,11 +174,11 @@ define(function() {
                 $(".search-text").val($(".realIndexTimeDown .list").eq(index).find("a").html())
                 return;
             }
+            if (e.keyCode == 13) {
+                return;
+            }
 
             var hasParam = !!(ajaxOption.url.indexOf("?") + 1);
-            // 搜索词不为空, 而且不是"空推荐"填充的内容
-            // var downList = $('.realIndexTimeDown');
-            // if ($(this).val() && downList.length>0 && !downList.hasClass('empty-suggestion') ) {
             if ($(this).val()) {
                 ajaxOption.url = ajaxOption.url.substr(0, hasParam ? (ajaxOption.url.indexOf("?")) : ajaxOption.url.length) + "?words=" + $(this).val();
                 //Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
@@ -178,12 +191,9 @@ define(function() {
                 hotQuery.sendReq();
             }
         });
-
         $element.find("input").focus(function() {
+            activeInput = this;
             var hasParam = !!(ajaxOption.url.indexOf("?") + 1);
-            // 搜索词不为空, 而且不是"空推荐"填充的内容
-            // var downList = $('.realIndexTimeDown');
-            // if ($(this).val() && downList.length>0 && !downList.hasClass('empty-suggestion') ) {
             if ($(this).val()) {
                 ajaxOption.url = ajaxOption.url.substr(0, hasParam ? (ajaxOption.url.indexOf("?")) : ajaxOption.url.length) + "?words=" + $(this).val();
                 //Souche.DelayAjax.addAjax(ajaxOption, callback, 300, true, true);
@@ -210,7 +220,17 @@ define(function() {
         $("body").click(function() {
             $(".realIndexTimeDown").remove();
         });
-
+        $(window).on('scroll', function() {
+            // $(".realIndexTimeDown").remove();
+            if( $('#header .search-text').get(0) == activeInput ){
+                // styleDownList( $('.realIndexTimeDown') );
+                $(".realIndexTimeDown").remove();
+            }
+            
+        });
+        $('.search-text').on('click', function(e){
+            e.stopPropagation();
+        });
     }
     down.init = init;
     return down;
