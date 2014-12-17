@@ -174,6 +174,9 @@ define(function() {
                 $(".search-text").val($(".realIndexTimeDown .list").eq(index).find("a").html())
                 return;
             }
+            if (e.keyCode == 13) {
+                return;
+            }
 
             var hasParam = !!(ajaxOption.url.indexOf("?") + 1);
             if ($(this).val()) {
