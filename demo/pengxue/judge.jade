@@ -95,7 +95,7 @@ html
         .wrapper
           .judge-form
             h1 二手车专业评估系统
-            form.judge-car
+            form#judge-car
               .error_remind.hidden
               .car-kind.select-item
                 select#sell_brand
@@ -192,33 +192,7 @@ html
               p 您可以选择其他车型重新进行估价，也可以资讯右侧私人专家。
               .button-again.clearfix
                a.judge-again 重新估价
-          .cargod
-            h1 私人评估专家
-            p 为您提供一对一评估服务
-            .god-item.clearfix
-              .god-boxs.clearfix
-                .god-img.clearfix
-                  img(src="../assets/images/judge/car-god.png")
-                .god-info
-                  .god-name 木石
-                  p 真实体验说话/态度鲜明
-              a.god-button(href="#") 咨询车神 
-            .god-item.clearfix
-              .god-boxs.clearfix
-                .god-img.clearfix
-                  img(src="../assets/images/judge/car-god2.png")
-                .god-info
-                  .god-name 古月
-                  p 评估大师/专业性能测评
-              a.god-button(href="#") 咨询车神 
-            .god-item.clearfix(style="border-bottom:none;")
-              .god-boxs.clearfix
-                .god-img.clearfix
-                  img(src="../assets/images/judge/car-god3.png")
-                .god-info
-                  .god-name 暮雨
-                  p 外形甄选/犀利、爱挑刺
-              a.god-button(href="#") 咨询车神 
+    
         .price-analy
           .price-trend.clearfix
             .trend-chart
@@ -311,6 +285,66 @@ html
                 .text-box 
                   h2 车商零售价
                   p 是指品牌车商或中介平台根据车辆自身价值及自身品牌信誉和售后服务，采用帮卖、寄售或直销等方式转卖给购车者的价格。一般根据车商的品牌信誉和提供的服务不同而加加幅度不同，或赚取差价或收取交易佣金。
+        .cargod-wrap.clearfix.
+          <div class="god-talk">
+           <h1>在线车辆评估</h1>
+           <div class="talk-box clearfix">
+              <div class="talk-people">
+                 <img src="<sc:assets value="/assets/images/judge/talk-pic.png"/>">
+                 <div class="talk-name">张先生</div>
+                 <div class="talk-phone">139****1254</div>
+              </div>
+              <div class="talk-cont cont1">
+                <p>红色日产骐达 1.6排量自动挡车型 ，2012.12购入，目前公里数1.6万公里 ，定期4s店做保养，加配了倒车影像和倒车雷达。</p>
+                <p>车神帮忙评估下还值多少钱？</p>
+              </div>
+           </div>
+           <div class="talk-box clearfix">
+             <div class="talk-cont cont2">
+                <p>2012年的骐达，应该为CVT车型，行驶两年，里程却只有1.6万公里，跑的较少。按照目前骐达CVT车型最低10万的新车售价来看，这款车合理售价应该在8万左右，但是根据加配，公里数少，以及全程4S店保养来看，成交价会适当提升。我给的综合估价<em>8.5万元左右</em></p>
+              </div>
+              <div class="talk-people">
+                 <img src="<sc:assets value="/assets/images/judge/talk-pic.png"/>">
+                 <div class="talk-name">木石</div>
+                 <div class="talk-phone">车神点评</div>
+              </div>
+           </div>
+          </div>
+          <div class="cargod">
+             <h1>私人评估专家</h1>
+             <p>为您提供一对一评估服务</p>
+             <div class="god-item clearfix cheshen-detail">
+                 <div class="god-boxs clearfix">
+                     <div class="god-img clearfix"><img src="<sc:assets value="/assets/images/judge/car-god.png"/>"></div>
+                     <div class="god-info">
+                         <div class="god-name">木石</div>
+                         <p>真实体验说话/态度鲜明</p>
+                     </div>
+                 </div>
+                 <a class="god-button" id="cheshenQQ1" click_type="cheshen_1">咨询车神 </a>
+             </div>
+             <div class="god-item clearfix cheshen-detail">
+                 <div class="god-boxs clearfix">
+                     <div class="god-img clearfix"><img src="<sc:assets value="/assets/images/judge/car-god2.png"/>"></div>
+                     <div class="god-info">
+                         <div class="god-name">古月</div>
+                         <p>评估大师/专业性能测评</p>
+                     </div>
+                 </div>
+                 <a class="god-button" id="cheshenQQ2" click_type="cheshen_2">咨询车神 </a>
+             </div>
+             <div style="border-bottom:none;" class="god-item clearfix cheshen-detail">
+                 <div class="god-boxs clearfix">
+                     <div class="god-img clearfix"><img src="<sc:assets value="/assets/images/judge/car-god3.png"/>"></div>
+                     <div class="god-info">
+                         <div class="god-name">暮雨</div>
+                         <p>外形甄选/犀利、爱挑刺</p>
+                     </div>
+                 </div>
+                 <a class="god-button" id="cheshenQQ3" click_type="cheshen_3">咨询车神 </a>
+             </div>
+          </div>
+
     #footer.
       <div class="wrapper">
         <div class="foot-detail clearfix">
