@@ -119,12 +119,10 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             // else{
             //     hide();
             // }
-            e.stopPropagation();
         });
         // 在popover上操作, 保持弹出状态
         $('.city-open').on('click mouseenter', function(e){
             clearTimeout(timerHide);
-            e.stopPropagation();
         });
 
 
@@ -133,9 +131,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                 hide();
             }, 500);
         });
-        $(document.body).on("click", function(e) {
-            hide();
-        });
+
     })();
 
     var loadCity = function(provinceCode, provinceName) {
@@ -155,7 +151,6 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                         $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "' click_type='city-"+provinceCode+"'>" + item.name + "</a>")
                     }
                     $(".city-item").on("click", function(e) {
-                        e.stopPropagation();
                         e.preventDefault();
                         goCity($(this).attr("data-code"))
                     });
@@ -204,7 +199,6 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         });
     }
     $(".J_hotcity").click(function(e) {
-        e.stopPropagation();
         e.preventDefault();
         goCity($(this).attr("data-code"));
         return;
@@ -221,7 +215,6 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         $(".city-box").animate({
             left: "0px"
         }, 400);
-        e.stopPropagation();
     });
     $(".province-item").click(function(e) {
         if ($(this).hasClass("direct-item")) {
@@ -235,7 +228,6 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         $(".city-box").animate({
             left: "0px"
         }, 400);
-        e.stopPropagation();
     });
     $(".city-return").click(function(e) {
         $(".area-box").animate({
@@ -244,11 +236,9 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         $(".city-box").animate({
             left: "362px"
         }, 400);
-        e.stopPropagation();
     });
     $(".city-close").on("click", function(e) {
         $(".city-open").addClass("hidden");
-        e.stopPropagation();
     });
 
 

@@ -15,7 +15,7 @@
           text-align: center;
           margin-bottom: 30px;
         }
-        .judge-car{
+        #judge-car{
           .select-item{
             height: 35px;
             margin-bottom: 10px;
@@ -155,8 +155,7 @@
       padding: 45px 30px;
       .car-result{
         float: left;
-        width: 820px;
-        border-right: 1px solid #e6e6e6;
+        width:100%;
         padding-left: 30px;
         position: relative;
         .powerd{
@@ -396,71 +395,13 @@
           }
         }
       }
-      .cargod{
-        
-        float: left;
-        padding-left: 40px;
-        h1{
-          color: #333;
-          font-size: 20px;
-          margin-bottom: 3px;
-        }
-        p{
-          font-size: 14px;
-          color: #999;
-          margin-bottom: 5px;
-        }
-        .god-item{
-          width: 100%;
-         border-bottom: 1px solid #ededed;
-         width: 245px;
-         padding: 25px 0;
-         
-         .god-boxs{
-          .god-img{
-            float: left;
-          }
-          .god-info{
-            float: left;
-            margin-left: 10px;
-            .god-name{
-              font-size: 16px;
-              color: #666666;
-              margin-bottom: 5px;
-              margin-top: 5px;
-            }
-            p{
-              color: #999;
-            }
-          }
-         }
-         .god-button{
-          display: block;
-          width: 94px;
-          height: 28px;
-          border: 1px solid #d9d9d9;
-          border-radius: 2px;
-          color: #8a8a8a;
-          padding-left: 15px;
-          background: url(../images/judge/qq.png) no-repeat center left;
-          text-align: center;
-          line-height: 26px;
-          margin-top: 12px;
-         }
-         .god-button:hover{
-          border: 1px solid #5c9bef;
-          background: #5c9bef url(../images/judge/qq-hover.png) no-repeat center left;
-          color: #fff;
-
-         }
-        }
-      }
+      
     }
     .price-analy{
       border: 1px solid #e6e6e6;
       border-top: none;
+      border-bottom: none;
       padding: 110px 85px;
-      margin-bottom: 80px;
       .price-trend{
         .trend-chart{
           float: left;
@@ -780,4 +721,121 @@
       }
     }
   }
+}
+.cargod-wrap{
+  border: 1px solid #e6e6e6;
+  padding: 55px 60px;
+  margin-bottom: 80px;
+  .god-talk{
+    float: left;
+    width: 730px;
+    h1{
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 45px;
+    }
+    .talk-box{
+      margin-bottom: 24px;
+      .talk-people{
+        float: left;
+        padding-top: 15px;
+        .talk-name{
+          font-size: 14px;
+          color: #666;
+          margin-top: 10px;
+        }
+        .talk-phone{
+          margin-top: 3px;
+          font-size: 14px;
+          color: #999;
+        }
+      }
+      .talk-cont{
+        float: left;
+        width: 614px;
+        color: #666;
+        font-size: 14px;
+        line-height: 20px;
+        em{
+          color: #ff5517;
+          font-weight: bold;
+        }
+      }
+      .cont1{
+        height: 158px;
+        background: url(../images/judge/talk-box1.png) no-repeat;
+        margin-left: 10px;
+        padding-left: 50px;
+        padding-top: 40px;
+        padding-right: 30px;
+      }
+      .cont2{
+        height: 167px;
+        background: url(../images/judge/talk-box2.png) no-repeat;
+        margin-right: 25px;
+        padding-left: 50px;
+        padding-top: 40px;
+        padding-right: 50px;
+      }
+    }
+  }
+  .cargod{
+        float: right;
+        padding-left: 40px;
+        h1{
+          color: #333;
+          font-size: 20px;
+          margin-bottom: 3px;
+        }
+        p{
+          font-size: 14px;
+          color: #999;
+          margin-bottom: 5px;
+        }
+        .god-item{
+          width: 100%;
+         border-bottom: 1px solid #ededed;
+         width: 245px;
+         padding: 25px 0;
+         
+         .god-boxs{
+          .god-img{
+            float: left;
+          }
+          .god-info{
+            float: left;
+            margin-left: 10px;
+            .god-name{
+              font-size: 16px;
+              color: #666666;
+              margin-bottom: 5px;
+              margin-top: 5px;
+            }
+            p{
+              color: #999;
+            }
+          }
+         }
+         .god-button{
+          display: block;
+          width: 94px;
+          height: 28px;
+          border: 1px solid #d9d9d9;
+          border-radius: 2px;
+          color: #8a8a8a;
+          padding-left: 15px;
+          background: url(../images/judge/qq.png) no-repeat center left;
+          text-align: center;
+          line-height: 26px;
+          margin-top: 12px;
+          cursor: pointer;
+         }
+         .god-button:hover{
+          border: 1px solid #5c9bef;
+          background: #5c9bef url(../images/judge/qq-hover.png) no-repeat center left;
+          color: #fff;
+
+         }
+        }
+      }
 }

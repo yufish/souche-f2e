@@ -59,11 +59,12 @@ Souche.Sidebar = (function() {
             e.stopPropagation();
         })
         $(".sidebar .side-trigger").click(function(e) {
-            e.preventDefault();
 
+var self = this;
             if ($(this).hasClass("collect-box")) {
+                e.preventDefault();
                 Souche.MiniLogin.checkLogin(function(){
-                    showSidebar(this);
+                    showSidebar(self);
                 })
 
             } else {
