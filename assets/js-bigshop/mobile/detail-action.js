@@ -91,6 +91,7 @@ var Action = (function () {
                             $('#yuyue-submit').text('您已预约看车')
                             globalConfig.hasOrder = true;
                         }
+                        alert("预约成功，我们的销售顾问将尽快联系您")
                     }
                 })
             };
