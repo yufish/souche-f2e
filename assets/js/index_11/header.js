@@ -1,7 +1,7 @@
 define( ['souche/realTimeDown'], function(searchSuggest) {
+    // 不auto focus
+    // $(".search-text").focus();
 
-
-    $(".search-text").focus();
     $(document).ready(function() {
 
         searchSuggest.init($(".search"), {
