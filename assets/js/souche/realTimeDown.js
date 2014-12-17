@@ -210,7 +210,9 @@ define(function() {
         $("body").click(function() {
             $(".realIndexTimeDown").remove();
         });
-
+        $('.search-text').on('click', function(e){
+            e.stopPropagation()
+        });
     }
     down.init = init;
     return down;
