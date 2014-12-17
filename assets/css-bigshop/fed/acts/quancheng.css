@@ -1,0 +1,106 @@
+body{background-color:#441961}
+.banner{width:100%;height:567px;background:url(../../../images/fed/acts/quancheng/banner.jpg) center top;position:relative;}
+.banner .shareTo{position:absolute;left:50%;margin-left:377px;margin-top:11px;}
+.banner .share_span{float:left;color: #fff;line-height: 18px;}
+.banner .banner_rule{display:block;position:absolute;width:107px;height:35px;left:50%;margin-left:338px;margin-top:405px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat 0 -280px;}
+.banner .banner_rule:hover{color:#ee7700;background-position:-141px -278px; ;}
+.banner .bannerRules{width:1000px;padding-top:451px;margin: 0 auto;}
+.banner .bannerRules .bannerRule{width: 333px;float: left;display: inline;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align: center;color: #441961;}
+.banner .bannerRules .bannerRule .bannerRule-title{font-size: 28px;font-weight: bold;}
+.banner .bannerRules .bannerRule .bannerRule-time{font-size: 14px;line-height: 29px;}
+.banner .bannerRules .bannerRule .rule-time-more{line-height: 18px;}
+.banner .bannerRules .bannerRule .bannerRule-intro{font-size: 16px;font-weight: bold;}
+.banner .bannerRules .bannerRule a{text-decoration: underline;color: #441961}
+.wrap{width:1000px;margin:0 auto}
+.carBox{background-color:#e9e0eb;padding-left: 20px;padding-bottom: 10px;}
+.carBox li{float:left;display:inline;width:308px;height:306px;*width:308px;*height:330px;margin-right:18px;margin-bottom:20px;position:relative;cursor:pointer;}
+.carBox .car-info dt{color:#2b2a2a;font-size:16px;line-height:1.3em;margin-bottom:8px;margin-top:10px;height:40px;overflow:hidden;width:308px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+.carBox .car-info dt a{color:#2b2a2a;font-size:16px;}
+.carBox .car-info dt a:hover{color:#cc1010}
+.carBox .car-info .car-price{float:right;font-size:24px;color:#cc1010;font-weight:bold;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";*font-family:"\5FAE\8F6F\96C5\9ED1";line-height:1em;margin-bottom:2px}
+.carBox .car-info .car-price-old{float:left;color:#737373;font-size:14px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";*font-family:"\5FAE\8F6F\96C5\9ED1";line-height:2em;}
+.carBox .car-info dd{line-height:1.8em}
+.carBox .car-other{clear:both;}
+.carBox .car-otherItem{float:left;height:20px;color:#737373;font-size: 14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+.carBox .car-rightOther{float:right}
+.carBox .car-pic{display:block;width:308px;height:200px;overflow:hidden;position:relative;background-color:#fff}
+.carBox .marginRight0{margin-right:0}
+.carBox .hoverBorder{position: absolute;top: -1px;left: 0;border: 1px solid #fff;width: 296px;height: 396px;display: none;}
+.subNav{width: 1005px;margin: 0 auto;padding-left: 3px;margin-top: 6px;}
+.subNav li{width: 331px;float:left;display:inline;margin-right: 4px;}
+.subNav li a{display: block;width: 331px;line-height: 65px;font-size: 30px;text-align: center;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+.subNav .subNav-smart{background-color: #96580e;color:#c79d6a;font-weight: bold;}
+.subNav .subNav-mini{background-color: #636f44;color:#aeb69b;}
+.subNav .subNav-shangku{background-color: #215566;color:#6d94a1;}
+.subNav .subNav-smart:hover{background-color: #d58d38;color:#fff;font-weight: bold;}
+.subNav .subNav-mini:hover{background-color: #7da21a;color:#fff;}
+.subNav .subNav-shangku:hover{background-color: #2199c0;color:#fff;}
+.contain{margin-bottom:20px;position: relative;padding-top: 10px;}
+.contain .title1{font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;color: #fff;position:relative;z-index: 2;}
+.contain .title1 .title-name{float:left;width:262px;height:42px;margin-right:4px;line-height:42px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -376px -137px;font-size:26px;font-weight:bold;font-style: italic;text-align: center;}
+.contain .title1 .title-more{float:left;width:56px;font-size: 16px;color: #fff;margin-top: 18px;line-height: 18px;}
+.contain .title1 .title-more span{float:right;width: 19px;height: 19px;margin-left:5px;*margin-top:-18px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -261px -237px;}
+.contain .title-bg{width: 100%;height: 28px;background-color: #692b12;position: absolute;top: 24px;left:0;z-index: 1;}
+.contain .kancheBtn{display:block;position: absolute;top: 3px;right: 0;z-index:3;width: 205px;height: 65px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -498px -185px;}
+.contain .kancheBtn:hover{background-position: -498px -257px;}
+.contain .kanche-num{width: 100%;clear:both;*clear:none;line-height: 38px;font-size:16px;background-color: #e9e0eb;text-indent: 678px;color: #424242;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+.contain .kanche-num ins{font-size: 30px;color: #df4e07;font-weight: bold;}
+.contain .media_video{width: 308px;height: 200px;border: 1px solid #a69da8;background-color: #fff;}
+.contain .quancheng-tags{width: 100%;padding-left: 20px;margin-top: 12px;}
+.contain .quancheng-tag{display:inline-block;height: 25px;line-height: 25px;margin-right:4px;margin-bottom:9px;color: #fff;font-style:normal;font-size: 16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;background-color:#c98e72;}
+.contain .quancheng-tag ins{float: left;}
+.contain .tag-left{float: left;width: 12px;height: 25px;margin-right:3px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -127px -231px;}
+.contain .tag-right{float:left;width: 12px;height: 25px;margin-left:3px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -145px -231px;}
+.contain .yishou{position: absolute;top:27px;left:82px;width: 150px;height: 150px;background:url(../../../images/fed/acts/quancheng/yishou.png) no-repeat;}
+#mini .title1 .title-name{background-position: -646px -137px;width: 283px;}
+#mini .title1 .title-more span{background-position: -233px -236px;}
+#mini .title-bg{background-color: #333e18;}
+#mini .quancheng-tag{background-color: #a3ba6a;}
+#mini .kancheBtn{background-position: -712px -185px;}
+#mini .kancheBtn:hover{background-position:-712px -257px;}
+#mini .tag-left{background-position:-99px -232px}
+#mini .tag-right{background-position:-115px -232px}
+#shangku .title1 .title-name{background-position: -110px -137px;width: 253px;}
+#shangku .title1 .title-more span{background-position: -206px -235px;}
+#shangku .title-bg{background-color: #152f37;}
+#shangku .quancheng-tag{background-color: #60a3b1;}
+#shangku .kancheBtn{background-position: -283px -185px;}
+#shangku .kancheBtn:hover{background-position:-283px -257px;}
+#shangku .tag-left{background-position:-167px -232px}
+#shangku .tag-right{background-position:-183px -232px}
+#weibo .title{width: 890px;height: 78px;line-height:78px;padding-left:123px;margin-left:-4px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -3px -57px;color: #441961;font-size: 30px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+#weibo .weibo-rule{margin: 0 auto;padding-bottom:10px;background-color: #e7debd;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+#weibo .weibo-rule .liwu{float: left;width: 177px;height: 129px;margin-left: 25px;margin-right: 13px;}
+#weibo .weibo-intro{float: left;}
+#weibo .weibo-intro .weibo-h{text-indent:12px;line-height:40px;font-size: 20px;color: #966428}
+#weibo .weibo-intro p{width:735px;padding: 8px 12px;line-height:1.5em;font-size: 16px;color: #4e4e4e;background-color: #f8f7f2;}
+#weibo .content{padding: 0 25px;background-color: #e7debd}
+#rule{position:relative;}
+#rule .title{width: 1012px;height: 50px;margin-left:-4px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -3px -0px;}
+#rule .content{background-color: #e7debd;padding-left: 36px;padding-top: 20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+#rule h2{margin-bottom:8px;padding-left:3px;line-height:24px;color:#ac6c4e;font-size:24px;border-left: 5px solid #b58670;font-weight: bold;}
+#rule .content p{color:#4e4e4e;line-height:1.8em;margin-bottom:12px;margin-left:10px;padding-bottom:10px;font-size: 16px;}
+#door{margin-bottom:30px}
+#door .title{margin-bottom:24px;color: #e7debd;font-size: 16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+#door .title span{font-size: 30px;color: #fff;font-weight: bold;padding-right: 5px;}
+#door .doorIntro{padding:20px;background-color:#e7debd;position:relative}
+#door .doorIntro p{width:290px;padding:12px;height:141px;color:#fff;font-size:12px;line-height:23px;text-indent:2em;position:absolute;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;bottom:23px;left:20px;z-index:20}
+#door .doorIntro span{width:314px;height:167px;position:absolute;bottom:23px;left:20px;background-color:#e70;z-index:10}
+
+.popup{display:none;}
+.popup-bg{position: fixed;z-index:10000;top:120px;left: 50%;margin-left: -270px;width: 540px;height: 370px;background-color: #000;}
+.popup-wrap{position: fixed;z-index:10000;top:130px;left: 50%;margin-left: -260px;width: 519px;height: 349px;background: url(../../../images/fed/acts/quancheng/popup.png) no-repeat;}
+.popup .popup-close{float: right;width: 37px;height: 38px;cursor: pointer;margin: 10px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat 0px -150px;}
+.popup .popup-close-hover{background-position: 0px -205px;}
+.popup p{margin-top:111px;margin-left:32px;line-height:20px;color: #4e4e4e;font-size: 15px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;}
+.popup p ins{color: #cf6321;}
+.popup p span{font-weight: bold;}
+.popup .popupBtn{width:180px;margin:54px auto;line-height: 55px;background-color: #dd4601;color: #fff;font-size: 21px;text-align: center;cursor:pointer;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;}
+.popup .popupBtn-hover{background-color: #dd7801;}
+#quancheng_nav{position:fixed;right:20px;top:20px;padding-top:42px;background:url(../../../images/fed/acts/quancheng/quancheng.jpg) no-repeat -115px -179px;display:none;}
+#quancheng_nav li a{display:block;width:150px;line-height:58px;color:#fff;font-size:18px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align:center;border-bottom:1px solid #9764a4;background:url(../../../images/fed/acts/quancheng/nav.png) no-repeat 125px -224px #7a4987}#quancheng_nav li a:hover{background-color:#c98900}
+#quancheng_nav li .nav_active{background-color:#c98900}
+#quancheng_nav .top{width:150px;height:63px;background:url(../../../images/fed/acts/quancheng/nav.png) no-repeat  4px -2px #8341ac;cursor:pointer}
+#quancheng_nav .weixin{background-position: 2px -63px;padding-top: 153px;}
+#quancheng_nav .weixin:hover{background-color: #7a4987}
+#BDBridgeIconWrap {display:none !important;}

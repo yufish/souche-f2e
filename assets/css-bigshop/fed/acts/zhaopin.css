@@ -1,0 +1,22 @@
+body{background-color:#f2f2f2}
+#zhaopin-top{width:100%;height:142px;background:url(../../../images/fed/acts/zhaopin/zhaopin-banner-new3.jpg) no-repeat center top}
+#zhaopin-top .zhaopin-banner{width:1200px;margin:0 auto}
+#zhaopin-top .zhaopin-title{width:239px;padding-top:18px;background:url(../../../images/fed/acts/zhaopin/zhaopin-title.png) no-repeat center bottom}
+#zhaopin-top .zhaopin-title a{display:block;width:239px;height:31px;}
+#zhaopin-top .zhaopin-back{display:block;float:right;width:81px;line-height:20px;margin-top:-28px;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;color:#666;background:url(../../../images/fed/acts/zhaopin/zhaopin-back.png) no-repeat right center}
+.wrap{width:1200px}
+#zhaopin-main{margin-top:14px;padding-bottom:30px}#zhaopin-main .zhaopin-nav{float:left;width:260px;height:476px;border:1px solid #e4e4e4;border-left:none;background:url(../../../images/fed/acts/zhaopin/zhaopin-nav.png) repeat-y #fff}
+#zhaopin-main .zhaopin-items{margin-bottom:20px}#zhaopin-main .zhaopin-items .zp-nav-title{width:258px;text-indent:13px;margin-left:3px;margin-bottom:18px;line-height:44px;background-color:#e70;color:#fff;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+#zhaopin-main .zhaopin-items .zp-nav-item{width:220px;margin:0 auto 9px;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;border-bottom:1px solid #e4e4e4;text-indent:10px}#zhaopin-main .zhaopin-items .zp-nav-item a{color:#666}#zhaopin-main .zhaopin-items .zp-nav-item a:hover{color:#e70}
+#zhaopin-main .zhaopin-items .zp-nav-item .zp-nav-active{color:#e70}
+#zhaopin-main .zhaopin-contain{width:916px;float:right}
+#zhaopin-main .zhaopin-list .zhaopin-list-content{width:100%;text-align:center;border:1px solid #ececec}#zhaopin-main .zhaopin-list .zhaopin-list-content thead th{height:40px;color:#fff;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;text-align:center;font-size:14px;background-color:#4a4a4a}
+#zhaopin-main .zhaopin-list .zhaopin-list-content tbody tr{background-color:#fff;height:40px;font-size:14px;color:#4a4a4a}#zhaopin-main .zhaopin-list .zhaopin-list-content tbody tr.highlight{background-color:#fafafa;border-top:1px solid #ececec;border-bottom:1px solid #ececec}
+#zhaopin-main .zhaopin-list .zhaopin-list-content tbody .zhaopin-zw{width:306px;line-height:40px;}#zhaopin-main .zhaopin-list .zhaopin-list-content tbody .zhaopin-zw a{color:#666}
+#zhaopin-main .zhaopin-list .zhaopin-list-content tbody .zhaopin-zw a:hover{color:#e70;text-decoration:underline}
+#zhaopin-main .zhaopin-detail{padding-top:5px;padding-bottom:24px;background-color:#fff;border:1px solid #ddd;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}#zhaopin-main .zhaopin-detail .zhaopin-detail-top{width:882px;margin-left:15px;border-bottom:1px solid #e4e4e4;line-height:50px}#zhaopin-main .zhaopin-detail .zhaopin-detail-top .zhaopin-name{float:left;margin-right:70px;text-indent:5px;color:#e70;font-size:24px}
+#zhaopin-main .zhaopin-detail .zhaopin-detail-top .zhaopin-addr{float:left;color:#666;font-size:16px}
+#zhaopin-main .zhaopin-detail .zhaopin-info{width:500px;margin:8px 30px}#zhaopin-main .zhaopin-detail .zhaopin-info td{height:25px;font-size:14px;color:#666;font-weight:bold}#zhaopin-main .zhaopin-detail .zhaopin-info td em{font-weight:normal}
+#zhaopin-main .zhaopin-detail .zhaopin-detail-content{width:882px;margin-left:15px;padding-top:20px;margin-bottom:50px;border-top:1px solid #e4e4e4;color:#666}#zhaopin-main .zhaopin-detail .zhaopin-detail-content .detail-list{margin-left:17px;margin-bottom:8px}#zhaopin-main .zhaopin-detail .zhaopin-detail-content .detail-list dt{margin-bottom:3px;font-size:18px;font-weight:bold}
+#zhaopin-main .zhaopin-detail .zhaopin-detail-content .detail-list dd{font-size:14px;line-height:24px}
+#zhaopin-main .zhaopin-detail .detail-connect{width:870px;margin:0 auto;line-height:70px;text-indent:164px;color:#666;font-size:14px;background-color:#f5f5f5;border:1px solid #ddd}#zhaopin-main .zhaopin-detail .detail-connect em{font-size:20px;color:#e70;padding-right:50px}
