@@ -290,23 +290,24 @@ function filter(BrandMgr, addListener) {
             });
 
             function hasResult(dataObj) {
-                $.ajax({
-                    url: contextPath + '/json/buy.json?index=999999&tracktype=0',
-                    data: dataObj,
-                    dataType: 'json',
-                    success: function(data) {
-
-                        if (data.i == 0) {
-                            showSorry();
-                        } else {
-                            var addr = contextPath + '/buy.htm?__mobile=true&';
-                            for (var i in dataObj) {
-                                addr += (i + '=' + dataObj[i] + '&');
-                            }
-                            window.location.href = addr.substr(0,addr.length-1);
-                        }
-                    }
-                })
+//                $.ajax({
+//                    url: contextPath + '/json/buy.json?index=999999&tracktype=0',
+//                    data: dataObj,
+//                    dataType: 'json',
+//                    success: function(data) {
+//
+//                        if (data.i == 0) {
+//                            showSorry();
+//                        } else {
+//
+//                        }
+//                    }
+//                })
+                var addr = contextPath + '/buy.htm?__mobile=true&';
+                for (var i in dataObj) {
+                    addr += (i + '=' + dataObj[i] + '&');
+                }
+                window.location.href = addr.substr(0,addr.length-1);
             }
 
             function buildBsQueryString() {
