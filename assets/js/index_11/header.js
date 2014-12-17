@@ -10,18 +10,6 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                dataType: "json",
                success: function() {}
            }, 900);
-
-        setTimeout(function() {
-            $(".double11").animate({
-                height: "0px"
-            }, 1000);
-        }, 3000);
-        setTimeout(function() {
-            $(".double11-sort").animate({
-                height: "135px",
-                opacity: 1
-            }, 1000);
-        }, 4000);
     });
     $(".cord-h5").mouseenter(function() {
         $(".h5-open").slideDown("normal");
