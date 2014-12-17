@@ -92,6 +92,7 @@
                         $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
                         return;
                     }
+                    alert("预约成功，我们的销售顾问将尽快联系您")
 //                    $('body').append(data);
 //                    $(".wrapGrayBg").show();
 //                    $("#yuyue-popup").addClass("hidden");

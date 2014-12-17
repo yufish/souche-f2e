@@ -1,0 +1,51 @@
+body{background-color:#d9d9d9}
+.wrap{width:1000px}
+.sPaimai-banner{width:100%;height:476px;background:url(../../../images/fed/acts/paimai/paimai-banner-1.jpg) no-repeat center top;position:relative}.sPaimai-banner .sPaimai-link{display:block;width:150px;height:35px;position:absolute;top:335px;left:50%;margin-left:276px}
+.paimai-title{margin-top:30px;margin-bottom:27px;color:#222;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-size:30px;font-weight:bold}.paimai-title ins{font-weight:normal;color:#ff4301;font-size:12px}
+.sPaimai-car .paimai-box{width:1001px;background-color:#fff;margin-bottom:22px}
+.car-title{font-size:20px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;padding-bottom:15px;font-weight:bold;letter-spacing:2px;padding-top:15px;color:#00b0b4}
+.car-title span{float:left;height:31px;width:3px;background:url(../../../images/fed/acts/paimai/paimai-title.png) no-repeat;margin-left:15px;margin-right:10px;margin-top:2px}
+.car_tag_yushou{right:29px;top:25px;left:auto}
+.carBox li{float:left;display:inline;height:288px;*width:221px;background-color:#fff;border:1px solid #d9d9d9;margin-right:-1px;position:relative;padding:14px}
+.carBox .car-info dt{color:#333;font-size:14px;line-height:1.3em;margin-bottom:5px;margin-top:10px;height:40px;overflow:hidden;width:221px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana}
+.carBox .car-info dt a{color:#333}
+.carBox .car-info dt a:hover{color:#00b0b4}
+.carBox .car-info .car-price{font-size:24px;font-family:Tahoma,Verdana,"\5FAE\8F6F\96C5\9ED1";*font-family:"\5FAE\8F6F\96C5\9ED1";line-height:1em;margin-bottom:2px;color:#00b0b4}
+.carBox .car-other{clear:both;margin-top:10px;line-height:30px}
+.carBox .car-otherItem{color:#999;float:left;height:20px}
+.carBox .car-otherItem ins{color:#ff4301}
+.carBox .qiupaimai{cursor:pointer;width:105px;height:30px;background-color:#ff4301;color:#fff;font-size:14px;font-family:"宋体",Tahoma,Verdana;font-weight:bold;text-align:center;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}
+.carBox .qiupaimai-haved{background-color:#ccc;cursor:default;}
+.carBox .car-rightOther{float:right}
+.carBox .car-pic{display:block;width:220px;height:165px;overflow:hidden;position:relative;background-color:#fff}
+.paimai-tag{position:absolute;top:0;right:15px;width:35px;height:46px;background:url(../../../images/fed/acts/paimai/paimai-tag.png) no-repeat}
+#soucheDoor{margin-bottom:30px}
+#soucheDoor .car-title span{background-position:0 -205px}
+#soucheDoor .doorContain{padding:20px;border:1px solid #dadada;background-color:#fff;position:relative}
+#soucheDoor .doorContain .doorWrap{width:960px;height:421px;overflow:hidden;position:relative}
+#soucheDoor .doorContain .doorList{width:3600px}
+#soucheDoor .doorContain .doorList li{float:left;position:relative}
+#soucheDoor .doorContain .doorList .doorIntro p{color:#fff;font-size:12px;line-height:23px;text-indent:2em;position:absolute;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;bottom:0;left:0;z-index:20}
+#soucheDoor .doorContain .doorList .doorIntro span{position:absolute;bottom:0;left:0;background-color:#e70;z-index:10}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro1 p{width:290px;padding:12px;height:141px}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro1 span{width:314px;height:167px}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro2 p{width:345px;height:70px;bottom:15px;left:23px;padding:10px}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro2 span{width:380px;height:98px;bottom:15px;left:15px}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro3 p{width:254px;height:92px;padding:9px;right:0;left:auto;padding-top:20px}
+#soucheDoor .doorContain .doorList .doorIntro.doorIntro3 span{width:274px;height:111px;right:0;left:auto}
+#soucheDoor .doorContain .doorTab .doorTabItem{position:absolute;top:194px;left:20px;width:39px;height:73px;cursor:pointer;background:url(../../../images/fed/acts/paimai/index_sprite4.png) no-repeat -139px -288px;display:none}
+#soucheDoor .doorContain .doorTab .doorNextTab{background-position:-139px -211px;right:18px;left:auto}
+#soucheDoor .doorContain .doorTab .doorPreHover{background-position:-2px -651px}
+#soucheDoor .doorContain .doorTab .doorNextHover{background-position:-46px -651px}
+.common-popup .popup-contain{position:fixed;top:200px;left:50%;margin-left:-268px;width:537px;background-color:#fff;height:350px;z-index:100000}
+.common-popup .popup-contain .popup-close{position:absolute;right:13px;top:21px;width:30px;height:30px;background:url("../../../images/fed/acts/paimai/paimai-close.png") no-repeat 0 0;cursor:pointer}
+.common-popup .popup-contain .popup-close:hover{background-position:0 -32px}
+.common-popup .popup-contain .paimai-remind{color:#666;font-size:12px;line-height:1.5em;margin-top:28px;margin-bottom:23px;text-align:center}
+.common-popup .popup-contain .paimai-remind-alone{margin:74px auto 47px}
+.common-popup .popup-title{line-height:70px;padding-left:30px;color:#111;font-size:16px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;background-color:#efefef}
+.common-popup .paimai-form{margin-left:155px}.common-popup .paimai-form .paimai-controller{margin-bottom:11px}
+.common-popup .paimai-form .paimai-label{padding-right:8px;color:#666;font-size:14px;line-height:30px}
+.common-popup .paimai-form .paimai-text{width:170px;height:30px;padding:0 5px;*padding-top:7px;*height:23px;background-color:#fff;border:1px solid #7f9db9}
+.common-popup .paimai-form .paimai-select{width:82px;height:22px;margin-right:12px;line-height:22px;background-color:#fff;border:1px solid #7f9db9}
+.common-popup .paimai-form .paimai-button{margin-left:43px}
+.common-popup .paimai-button{display:block;cursor:pointer;width:121px;height:30px;margin:0 auto;line-height:30px;border:none;background-color:#ff4301;color:#fff;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Verdana;font-weight:bold;text-align:center;letter-spacing:5px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}
