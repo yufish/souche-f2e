@@ -7,7 +7,43 @@ html
         title brand
         meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
         script(src="/assets/js/lib/jquery-2.1.1.min.js")
+        script(src="/assets/js/lib/require.js")
+        style.
+            .hidden {
+                display: none;
+            }
+        script.
+            var contextPath = "<%=request.getContextPath() %>";//contextPath这个跟requirejs没关系，用来表示页面的contextPath
+            require.config({
+                //- baseUrl: '<sc:res value="/assets/js"/>', 
+                baseUrl: '/assets/js/'
+                //- urlArgs: 'bust=v12' //异步加载时间戳
+            });
+
+            require(['mobile/index/brand2'], function (Brand){
+                
+              Brand.init();
+
+              $('.click').on('click', function() {
+                $('#brand').removeClass('hidden');
+              });
+            
+              function doSth(b, bn, s, sn) {
+                $('.car').text(bn + ' ' + sn);
+              }
+
+              Brand.bind(doSth);
+
+            });
+
+              //- if ($('#brand').hasClass('hidden')) {
+              //-   var car = Brand.bind();
+              //-   console.log(car);
+              //-   $('.car').text(car.brandName + car.seriesName);
+              //- }
     body
+        span.click click
+        span.car
         //- #brand-list
             //- .brand-num
             //-     h2 拼音选品牌
@@ -84,138 +120,138 @@ html
     script.
         //- var brandUrl = contextPath + '/pages/dicAction/loadRootLevel.json?type=car-subdivision';
         
-        var _view = {
-            buildNum: function(arr) {
-                var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2><ul class="list">';
-                var i,
-                    len = arr.length;
-                for (i = 0; i < len; i++) {
-                    brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>'
-                }
+        //- var _view = {
+        //-     buildNum: function(arr) {
+        //-         var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2><ul class="list">';
+        //-         var i,
+        //-             len = arr.length;
+        //-         for (i = 0; i < len; i++) {
+        //-             brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>'
+        //-         }
 
-                brandNum += '</ul></div>';
+        //-         brandNum += '</ul></div>';
 
-                return brandNum;
-            },
+        //-         return brandNum;
+        //-     },
 
 
-            buildItem: function(arr) {
-                var buildItem = '';
-                var i;
-                var len = arr.length;
-                var rowItem = 4;
-                for (var p in arr) {
-                    buildItem += '<div class="brand-item"><div class="title" id="brand' + p 
-                                + '">' + p + '</div>';
-                    for (var i = 0; i < arr[p].length; i++) {
-                        if (i % rowItem == 0) {
-                            buildItem += '<ul class="list">';
-                        }
-                        buildItem += '<li class="item" data-code="' + arr[p][i].code 
-                                    + '"><img src="http://res.souche.com/files/carproduct/brand/' 
-                                    +  arr[p][i].code +'.png"><span>' 
-                                    + arr[p][i].name + '</span></li>';
-                        if (i % rowItem == 3) {
-                            buildItem += '</ul>'
-                        }
-                    }
-                    buildItem += '</ul></div>';
-                }
-                return buildItem;
-            },
+        //-     buildItem: function(arr) {
+        //-         var buildItem = '';
+        //-         var i;
+        //-         var len = arr.length;
+        //-         var rowItem = 4;
+        //-         for (var p in arr) {
+        //-             buildItem += '<div class="brand-item"><div class="title" id="brand' + p 
+        //-                         + '">' + p + '</div>';
+        //-             for (var i = 0; i < arr[p].length; i++) {
+        //-                 if (i % rowItem == 0) {
+        //-                     buildItem += '<ul class="list">';
+        //-                 }
+        //-                 buildItem += '<li class="item" data-code="' + arr[p][i].code 
+        //-                             + '"><img src="http://res.souche.com/files/carproduct/brand/' 
+        //-                             +  arr[p][i].code +'.png"><span>' 
+        //-                             + arr[p][i].name + '</span></li>';
+        //-                 if (i % rowItem == 3) {
+        //-                     buildItem += '</ul>'
+        //-                 }
+        //-             }
+        //-             buildItem += '</ul></div>';
+        //-         }
+        //-         return buildItem;
+        //-     },
 
-            //- {"p":[{},{}]}
-            buildSeries: function(obj, activeCode) {
-                var subStr = '<div class="sub"><div class="car" data－code＝"' 
-                            + activeCode + '"><span>全部车系</span></div>';
-                for (var p in obj) {
-                    subStr += '<div class="car-cat">'
-                                + p + '</div><div class="car">';
-                    var arr = obj[p];
-                    for (var i = 0; i < arr.length; i++) {
-                        subStr += '<span data-code="' + arr[i].code + '">' 
-                                + arr[i].enName + '</span>';
-                    }
-                    subStr += '</div>';
-                }
-                subStr += '</div>';
-                return subStr;
-            }
+        //-     //- {"p":[{},{}]}
+        //-     buildSeries: function(obj, activeCode) {
+        //-         var subStr = '<div class="sub"><div class="car" data－code＝"' 
+        //-                     + activeCode + '"><span>全部车系</span></div>';
+        //-         for (var p in obj) {
+        //-             subStr += '<div class="car-cat">'
+        //-                         + p + '</div><div class="car">';
+        //-             var arr = obj[p];
+        //-             for (var i = 0; i < arr.length; i++) {
+        //-                 subStr += '<span data-code="' + arr[i].code + '">' 
+        //-                         + arr[i].enName + '</span>';
+        //-             }
+        //-             subStr += '</div>';
+        //-         }
+        //-         subStr += '</div>';
+        //-         return subStr;
+        //-     }
 
-        };
+        //- };
 
-        var url = 'data.json';
-        var brand = [], len, letter, str, i, j, brandItem, letterArr = [];
-        $.getJSON(url, function(data) {
-            len = data.items.length;
-            for (i = 0; i < len; i++) {
-                letter = data.items[i].name.substring(0, 1);
-                brand[letter] = [];
-                for (j = 0; j < len; j++) {
-                    str = data.items[j].name.substring(0, 1);
-                    brandItem = {
-                        name: data.items[j].enName,
-                        code:  data.items[j].code
-                    }
-                    if (str === letter ) {
-                        brand[letter].push(brandItem);
-                    }
-                }
+        //- var url = 'data.json';
+        //- var brand = [], len, letter, str, i, j, brandItem, letterArr = [];
+        //- $.getJSON(url, function(data) {
+        //-     len = data.items.length;
+        //-     for (i = 0; i < len; i++) {
+        //-         letter = data.items[i].name.substring(0, 1);
+        //-         brand[letter] = [];
+        //-         for (j = 0; j < len; j++) {
+        //-             str = data.items[j].name.substring(0, 1);
+        //-             brandItem = {
+        //-                 name: data.items[j].enName,
+        //-                 code:  data.items[j].code
+        //-             }
+        //-             if (str === letter ) {
+        //-                 brand[letter].push(brandItem);
+        //-             }
+        //-         }
                    
-            }
+        //-     }
             
-            //- 数组不使用for in
-            for (var pop in brand) {
-                if (brand.hasOwnProperty(pop)) {
-                    var num = pop;
-                }
-                letterArr.push(num)
+        //-     //- 数组不使用for in
+        //-     for (var pop in brand) {
+        //-         if (brand.hasOwnProperty(pop)) {
+        //-             var num = pop;
+        //-         }
+        //-         letterArr.push(num)
                 
-            }
+        //-     }
 
-            var brandNum = _view.buildNum(letterArr);
-            var buildItem = _view.buildItem(brand);
-            $('body').append('<div id="brand">' + brandNum + buildItem + '</div>');
+        //-     var brandNum = _view.buildNum(letterArr);
+        //-     var buildItem = _view.buildItem(brand);
+        //-     $('body').append('<div id="brand">' + brandNum + buildItem + '</div>');
 
 
-            $('.brand-item').on('click', '.item', function() {
-                var code = $(this).attr('data-code');
-                var $this = $(this);
-                var obj;
-                $.ajax({
-                    url: 's.json',
-                    dataType: "json",
-                    success: function(data) {
-                        if (data) {
-                            obj = data.codes;
-                            $('.item').removeClass('active');
-                            $this.addClass('active');
-                            var subStr = _view.buildSeries(obj, code);
-                            $('.brand-item .sub').remove();
-                            $this.closest('.list').after(subStr);
-                        }
-                    }
-                })
-            })
-            
-        });
-
-        //- var getSeriesByBrand = function (code, cb) {
-        //-     $.ajax({
-        //-         url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
-        //-         dataType: "json",
-        //-         data: {
-        //-             type: "car-subdivision",
-        //-             code: bCode
-        //-         },
-        //-         success: cb
+        //-     $('.brand-item').on('click', '.item', function() {
+        //-         var code = $(this).attr('data-code');
+        //-         var $this = $(this);
+        //-         var obj;
+        //-         $.ajax({
+        //-             url: 's.json',
+        //-             dataType: "json",
+        //-             success: function(data) {
+        //-                 if (data) {
+        //-                     obj = data.codes;
+        //-                     $('.item').removeClass('active');
+        //-                     $this.addClass('active');
+        //-                     var subStr = _view.buildSeries(obj, code);
+        //-                     $('.brand-item .sub').remove();
+        //-                     $this.closest('.list').after(subStr);
+        //-                 }
+        //-             }
+        //-         })
         //-     })
-        //- }
+            
+        //- });
+
+        //- //- var getSeriesByBrand = function (code, cb) {
+        //- //-     $.ajax({
+        //- //-         url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
+        //- //-         dataType: "json",
+        //- //-         data: {
+        //- //-             type: "car-subdivision",
+        //- //-             code: bCode
+        //- //-         },
+        //- //-         success: cb
+        //- //-     })
+        //- //- }
 
 
-        $(document).on('click', '.car span' ,function() {
-            console.log('111');
-        })
+        //- $(document).on('click', '.car span' ,function() {
+        //-     console.log('111');
+        //- })
 
 
 

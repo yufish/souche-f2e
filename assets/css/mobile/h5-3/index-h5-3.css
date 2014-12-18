@@ -316,10 +316,13 @@ nav .nav-item.active .nav-item-content{
     color:#999;
 }
 .filter-content{
+    height: 100%;
     float: right;
     position: relative;
 }
 .filter-content .select-cond{
+    padding-right: 25px;
+    overflow: hidden;
     font-size: 14px;
     color:#333;
     text-align: left;
@@ -331,7 +334,9 @@ nav .nav-item.active .nav-item-content{
     appearance: none;
     border:1px solid #ccc;
     height: 36px;
+    line-height: 36px;
     width: 230px;
+    vertical-align: middle;
 }
 .filter-content .select-cond.no-active{
     background: #fafafa;
@@ -795,4 +800,152 @@ input.checkbox-cond:checked + .filter-title{
     text-align: center;
     color: #2279d1;
     font-size: 14px;
+}
+
+.car-seller-tab {
+    
+}
+
+.car-seller-tab .tab-index {
+    padding: 16px;
+    background-color: #fff;
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.car-seller-tab .tab-index span {
+    display: table-cell;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    color: #ff571a;
+    text-align: center;
+    border: 2px solid #ff571a;
+}
+
+.car-seller-tab .tab-index span:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.car-seller-tab .tab-index span:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.car-seller-tab .tab-index span.active {
+    background-color: #ff571a;
+    color: #fff;
+}
+
+#evaluate-form #evaluate-brand,
+#evaluate-form #car-model {
+    margin-top: 15px;
+}
+
+#evaluate-form span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 14px;
+    font-family: '黑体';
+    color: #999;
+}
+
+#evaluate-form label {
+    font-size: 14px;
+    color: #333;
+    font-family: '黑体';
+}
+
+#evaluate-form .filter-year {
+    position: relative;
+    vertical-align: middle;
+    height: 68px;
+    line-height: 68px;
+    float: left;
+    width: 110px;
+}
+
+#evaluate-form .filter-year:last-child {
+    margin-left: 10px;
+}
+
+#evaluate-form .filter-year .select-cond {
+    padding-right: 45px;
+    width: 100%;
+}
+
+#evaluate-form .filter-year span {
+   right: 30px;
+}
+
+#evaluate-form .filter-mileage {
+    background-image: none;
+}
+
+#evaluate-form .models {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; 
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+}
+
+#evaluate-form .models .content {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    background-color: #fff;
+    border-radius: 5px;  
+}
+
+#car-models {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff; 
+}
+
+#car-models .item h4 {
+    padding: 0 16px;
+    font-size: 14px;
+    color: #999;
+    height: 25px;
+    line-height: 25px;
+    background-color: #f5f5f5;
+}
+
+#car-models .item li {
+    list-style: none;
+    padding: 0 16px;
+    border-bottom: 1px solid #E6E6E6;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+}
+
+#car-models .item li .left-arrow {
+    margin-top: 16px;
+    float: right;
+    width: 7px;
+    height: 12px;
+    background: url(../../../images/mob/h5-3/left-arrow.png) no-repeat center;
+    background-size: 100%;
+    display: inline-block;
+}
+
+#car-models .item li.active {
+    color: #ff5a00;
 }
