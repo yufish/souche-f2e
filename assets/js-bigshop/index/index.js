@@ -175,6 +175,13 @@ define(['index/car-god',
                     directionNav: false
                 });
                 $(".flexslider .flex-direction-nav").hide();
+                $(".flexslider2 .flex-direction-nav").hide();
+                $(".flexslider").mouseenter(function() {
+                    $(".flexslider .flex-direction-nav").fadeIn("normal");
+                });
+                $(".flexslider").mouseleave(function() {
+                    $(".flexslider .flex-direction-nav").fadeOut("normal");
+                });
                 $(".flexslider2").mouseenter(function() {
                     $(".flexslider2 .flex-direction-nav").fadeIn("normal");
                 });
