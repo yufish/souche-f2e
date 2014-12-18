@@ -5,20 +5,7 @@
     }
 
     var _view = {
-        // buildNum: function(arr) {
-        //     var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2><ul class="list">';
-        //     var i,
-        //         len = arr.length;
-                
-        //     for (i = 0; i < len; i++) {
-        //         brandNum += '<li><a href="#brand' + arr[i] + '">' + arr[i] + '</a></li>'
-        //     }
-
-        //     brandNum += '</ul></div>';
-
-        //     return brandNum;
-        // },
-
+        
         buildNum: function(arr) {
             var brandNum = '<div class="brand-num"><h2>拼音选品牌</h2>';
             var i,
@@ -145,5 +132,6 @@
     });  
 
 })();
+
 
 
