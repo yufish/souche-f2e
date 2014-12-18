@@ -1,7 +1,7 @@
 define( ['souche/realTimeDown'], function(searchSuggest) {
+    // 不auto focus
+    // $(".search-text").focus();
 
-
-    $(".search-text").focus();
     $(document).ready(function() {
 
         searchSuggest.init($(".search"), {
@@ -152,7 +152,8 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     // 下面是需要跳转的页面的规则列表
     var PAGE_HOME = '/';
     var PAGE_LIST = contextPath + '/pages/onsale/sale_car_list.html';
-    var jump_rules = {
+    // 基础规则 还需要下面的修饰
+    var baseRules = {
         // 主题精选 list页和详情页 都条状往首页
         '/pages/acts/theme-activity-all.html': PAGE_HOME,
         '/pages/acts/activity_car_list.html': PAGE_HOME,
@@ -164,9 +165,11 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         // list页面 把所有的query条件过滤掉
         '/pages/onsale/sale_car_list.html': PAGE_LIST
     };
+
     // 匹配添加contextPath
-    for(var r in jump_rules){
-        jump_rules[contextPath + r] = jump_rules[r];
+    var jump_rules = {}
+    for(var r in baseRules){
+        jump_rules[contextPath + r] = baseRules[r] ;
     }
     var goCity = function(code) {
         $.ajax({

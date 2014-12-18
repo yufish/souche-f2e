@@ -180,6 +180,9 @@ Souche.UI.Select = function() {
                                     var item = data.items[i];
                                     $(c.eles[index + 1]).append('<option value="' + item.code + '" ' + (c.defaultValues[index + 1] == item.code ? "selected" : "") + '>' + item.name + '</option>');
                                 }
+                                if (c.defaultValues[2]) {
+                                    $(c.eles[2]).change();
+                                }
                             }
                         });
                     }
