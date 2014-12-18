@@ -132,7 +132,8 @@ define(function() {
                         var hotLen = hots.length;
                         if(hotLen > 0){
                             htmlStr += '<span class="list-title">热门搜索</span>';
-                            if( hotLen + data.history.length > 10 ){
+                            var recDataLen = (data.history)? data.history.length : 0;
+                            if( hotLen + recDataLen > 10 ){
                                 hotLen = (hotLen > itemAlreadHave)? (10-itemAlreadHave) : hotLen;
                             }
                             for(var i=0; i<hotLen; i++){
