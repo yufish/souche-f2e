@@ -473,184 +473,31 @@ var utilsSell = {
 
     //品牌车系相关操作
     !function brandSeries(){
-    //     function makeBrands(brands) {
-    //         var b, otherBrandsStr = '';
-    //         var brandList = $('#brand-list');
-
-    //         var $otherCtn = brandList.find('#other-brands');
-    //         for (var i = 0; i < brands.length; i++) {
-    //             b = brands[i];
-    //             if (!hotBrands_g[b.code]) {
-    //                 otherBrandsStr += '<div data-code="' + b.code + '" class="item col-1-4"><span class="brand-name">' + b.enName + '</span></div>';
-    //             }
-    //         }
-    //         $otherCtn.append(otherBrandsStr);
-    //     }
-        // function makeSeries(data){
-        //     var codes = data['codes'];
-        //     var html = '';
-        //     for (var i in codes) {
-        //         //html += '<div class="clearfix" >';
-        //         html += '<div class="series-title">' + i + '</div ><div class="series-name-wrapper">'
-        //         var s = codes[i];
-        //         for (var j in s) {
-        //             var b = s[j];
-        //             html += '<div class="series-item" data-code="' + b.code + '"><span class="series-name">' + b.name + '</span></div>';
-        //         }
-        //         html += '</div>';
-        //     }
-        //     $('#series-list .series-content').append(html);
-        // }
-        // $('#J_brand').on('click',function(){
-        //     //显示品牌弹出框
-        //     $('.wrapGrayBg').removeClass('hidden');
-        //     $('#brand-list').css({
-        //         top: document.body.scrollTop + 50
-        //     }).removeClass('hidden');
-
-        //     var self = $(this);
-        //     if(self.attr('hasLoaded'))return;
-        //     //add hot brands first
-        //     var hotBrandsStr = '';
-        //     var $hotCtn = $('#brand-list #hot-brands');
-        //     for (var i in hotBrands_g) {
-        //         hotBrandsStr += '<div data-code = "' + i + '"class = "item col-1-4"><span class="brand-name">' + hotBrands_g[i] + ' </span></div>';
-        //     }
-        //     $hotCtn.append(hotBrandsStr);
-        //     utils.getAllBrand(function(data){
-        //         self.attr('hasLoaded',true);
-        //         makeBrands(data.items);
-        //     })
-        // })
-
-        // $('#J_series').on('click',function(){
-        //     if(filterGlobal.selectBrand=='')return;
-        //     $('.wrapGrayBg').removeClass('hidden');
-        //     $('#series-list').css({
-        //         top: document.body.scrollTop + 50
-        //     }).removeClass('hidden');
-        // })
+    
         filterGlobal.selectBrand = '';
         filterGlobal.selectBrandName='';
         filterGlobal.selectSeries = '';
         filterGlobal.selectSeriesName='';
 
+        require(['mobile/index/brand2'], function (Brand){
+                
+          Brand.init();
 
-        // todo: 有点糟糕，待修改
-        $('#J_brand').on('click', function() {
+          $('#J_brand').on('click', function() {
             $('#brand').removeClass('hidden');
+            function getBrand(b, bn, s, sn) {
+
+              $('#J_brand').text(bn + ' ' + sn);
+                filterGlobal.selectBrand = b;
+                filterGlobal.selectBrandName = bn;
+                filterGlobal.selectSeries = s;
+                filterGlobal.selectSeriesName= sn;
+                filterGlobal.queryCount();
+            }
+            Brand.bind(getBrand);
+          });
         });
 
-        $(document).on('click', '#brand .back', function() {
-            $('#brand').addClass('hidden');
-        });
-
-        $(document).on('click', '#brand .brand-num a', function(e) {
-            e.preventDefault();
-            var brandName = $(this).attr('href');
-            var height = $(brandName).position().top;
-            $('#brand').animate({scrollTop: height}, 400);
-
-        });
-
-        $(document).on('click', '#brand .list .item', function() {
-            filterGlobal.selectBrand = $(this).attr('data-code');
-            filterGlobal.selectBrandName = $(this).find('span').text();
-        });
-
-        
-        $(document).on('click', '#brand .car span', function() {
-            filterGlobal.selectSeries = $(this).attr('data-code') ? $(this).attr('data-code') : '';
-            filterGlobal.selectSeriesName = $(this).text();
-            $('#brand .car span').removeClass('active');
-            $(this).addClass('active');
-            setTimeout(function() {
-                $('#brand').addClass('hidden');
-                $('.brand-item .sub').remove();
-                $('.brand-item .item').removeClass('active');
-            }, 500);
-            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
-            filterGlobal.queryCount();
-        });
-        $(document).on('click', '#brand .brand-top-right', function() {
-            filterGlobal.selectBrand = '';
-            filterGlobal.selectBrandName = $(this).text();
-            filterGlobal.selectSeries = '';
-            filterGlobal.selectSeriesName = '';
-            $('#brand .car span').removeClass('active');
-            $('#brand').addClass('hidden');
-            $('#J_brand').text(filterGlobal.selectBrandName + ' ' + filterGlobal.selectSeriesName);
-            filterGlobal.queryCount();
-        });
-
-
-        // $('#brand-list').on('click','.item',function(){
-        //     var self = $(this)
-        //     //清空车系的状态
-        //     $('#series-list .series-content').empty();
-        //     $('#J_series').text('请先选择品牌').addClass('no-active');
-        //     filterGlobal.selectSeries = '';
-        //     filterGlobal.selectSeriesName='';
-        //     $('#brand-list .item').removeClass('selected')
-        //     if(self.hasClass('selected')){
-        //         self.removeClass('selected');
-        //         $('#J_brand').text('选择品牌');
-        //         filterGlobal.selectBrand = "";
-        //         filterGlobal.selectBrandName = "";
-        //     }else{
-        //         self.find('.item').removeClass('selected');
-        //         self.addClass('selected');
-        //         setTimeout(function(){
-        //             $('.filter-popup-wrapper').addClass('hidden');
-        //             $('.wrapGrayBg').addClass('hidden');
-        //         },200);
-        //         var bName = self.find('.brand-name').text()
-        //         var bCode = self.attr('data-code');
-        //         $('#J_brand').text(bName);
-        //         $('.selected-brand-name').text(bName);
-        //         filterGlobal.selectBrand = bCode;
-        //         filterGlobal.selectBrandName = bName;
-
-        //         utils.getSeriesByBrand(bCode,makeSeries);
-        //         $('#J_series').text('选择车系').removeClass('no-active')
-        //     }
-        //     filterGlobal.queryCount();
-        // })
-        // $('#series-list').on('click','.series-item',function(){
-        //     var self = $(this);
-        //     if(self.hasClass('selected')){
-        //         self.removeClass('selected');
-        //         $('#J_series').text('选择车系');
-        //     }else{
-        //         self.find('.series-item').removeClass('selected');
-        //         self.addClass('selected');
-        //         setTimeout(function(){
-        //             $('.filter-popup-wrapper').addClass('hidden');
-        //             $('.wrapGrayBg').addClass('hidden');
-        //         },200)
-        //         var sName = self.find('.series-name').text()
-        //         var sCode = self.attr('data-code');
-        //         filterGlobal.selectSeries = sCode;
-        //         filterGlobal.selectSeriesName = sName;
-        //         $('#J_series').text(sName);
-        //     }
-        //     filterGlobal.queryCount();
-        // })
-        //重置
-        /*!function() {
-            $('#J_btnFilter_reset').on('click', function (e) {
-                filterGlobal.selectBrand = '';
-                filterGlobal.selectSeries = '';
-                $('.series-content').empty();
-                $('#brand-list .item').removeClass('selected');
-                $('#J_brand').text('选择品牌')
-                $('#J_series').text('选择车系')
-                $('.selected-brand-name').text('请先选择品牌');
-                filterGlobal.initPriceOption();
-                $('#J_advancedFilterItems select>option:first-child').prop('selected', true)
-            })
-
-        }();*/
         //数量显示
         $('.select-cond').change(function(){
             filterGlobal.queryCount();
@@ -1387,20 +1234,204 @@ $('.wrapGrayBg').on('click',function(){
     })
 }()
 
-var $modelCity = $('#city-wrap');
 
-if (localStorage.getItem('index_city_choose') !== 'hide') {
-    $modelCity.removeClass('hidden');
-}
 
-function closeModel() {
-    $modelCity.addClass('hidden');
-    localStorage.setItem('index_city_choose', 'hide');
-}
+// 城市自动选择弹窗
+;(function() {
+    var $modelCity = $('#city-wrap');
 
-$modelCity.find('.ft').on('click', closeModel);
+    if (localStorage.getItem('index_city_choose') !== 'hide') {
+        $modelCity.removeClass('hidden');
+    }
 
-setTimeout(closeModel, 3000);
+    function closeModel() {
+        $modelCity.addClass('hidden');
+        localStorage.setItem('index_city_choose', 'hide');
+    }
+
+    $modelCity.find('.ft').on('click', closeModel);
+
+    setTimeout(closeModel, 3000);
+})();
+
+// 卖车和估价tab切换
+;(function () {
+    $('.car-seller-tab').on('click', '.tab-index span', function() {
+        var item = $('.tab-index span').index($(this));
+        $('.tab-index span').removeClass('active').eq(item).addClass('active');
+        $('.car-seller-tab .item').addClass('hidden').eq(item).removeClass('hidden');
+    });
+})();
+
+
+// 估价页面
+;(function(){
+
+    // 选品牌 ＋ 车型
+    require(['mobile/index/brand2'], function (Brand){
+                
+      $('#evaluate-brand').text('');
+
+      $('#evaluate-brand').on('click', function() {
+        $('#brand').removeClass('hidden');
+
+        function brandInfo(b, bn, s, sn) {
+          $('#evaluate-brand').attr('data-brand', b).attr('data-series', s)
+                .text(bn + ' ' + sn);
+          $('#car-model').removeClass('no-active').text('');
+
+          var modelUrl = contextPath + '/pages/dicAction/loadNextLevel.json?type=car-subdivision';
+
+          $.getJSON(modelUrl, { code: s }, function(data) {
+            var obj = {};
+            var data = data.items;
+            for (var i = 0, len = data.length; i < len; i ++) {
+              var t = data[i].name.slice(0,4);
+              var d = data[i].name.trim();
+              var c = data[i].code;
+              if (!obj[t]) {
+                obj[t] = [];
+              }
+              obj[t].push({title: d, code: c});
+            }
+            createModel(obj);
+            createDate(obj);
+          });
+
+          // 车型弹窗
+          function createModel(obj) {
+            $('#car-models').empty();
+            var str = '';
+            for (var p in obj) {
+              // str += '<div class="item"><h4>' + p + '</h4>';
+              str += '<div class="item">';
+              for (var i = 0, arr = obj[p], len = arr.length; i < len; i ++) {
+                str += '<li data-code="' +  arr[i].code + '">' +  arr[i].title + '<span class="left-arrow"></span></li>'
+              }
+              str += '</div>'
+            }
+            $('#car-models').append(str);
+          }
+
+          // 年月
+          function createDate(obj) {
+            // var y = new Date().getFullYear();
+            var $form = $('#evaluate-form');
+            var $year = $form.find('.select-year');
+            var $month = $form.find('.select-month');
+            var month = '';
+            var year = '';
+
+            year += '<option value=""></option>'
+
+            for (var i in obj) {
+              year += '<option value="' + i + '">' + i + '</option>';
+            }
+
+            $year.html(year);
+
+            month += '<option value=""></option>'
+            for (var i = 1; i < 13; i++) {
+                month += '<option value="' + i + '">' + i + '</option>';
+            } 
+            $month.html(month);
+          }
+
+        }
+
+        Brand.bind(brandInfo);
+      });
+      
+      $('#car-model').on('click', function() {
+        if ($(this).hasClass('no-active')) return;
+        $('#car-models').removeClass('hidden');
+
+        $('#car-models').on('click', '.item li', function() {
+            $('#car-models .item li').removeClass('active');
+            $(this).addClass('active');
+            $('#car-model').attr('data-code', $(this).attr('data-code'));
+            $('#car-model').text($(this).text())
+            setTimeout(function() {
+                $('#car-models').addClass('hidden');
+            }, 500)
+        })
+      });
+    
+    });
+
+
+    // 地区联动
+    Souche.UI.Select.init({
+        eles:[ 'J_province', 'J_city' ],
+        type:"area",
+        defaultValues:[]
+    })
+
+
+    // 手机号默认值
+    var phoneNum = checkUserLocal().phoneNum
+    if(phoneNum){
+        $('#evaluate-phone').val(phoneNum);
+    }
+
+    function getData() {
+        var brand = $('#evaluate-brand').text();
+        var arr = brand.split(' ');
+        var obj = {
+            brand: arr[0],
+            series: arr[1],
+            model: $('#car-model').text(),
+            province: $('#J_province').val(),
+            city: $('#J_city').val(),
+
+            // code
+            brand_code: $('#evaluate-brand').attr('data-brand'),
+            series_code: $('#evaluate-brand').attr('data-series'),
+            model_code: $('#car-model').attr('data-code'),
+            province_code: $('#J_province').val(),
+            city_code: $('#J_city').val()
+        }; 
+        return obj;
+    }
+
+    $('#evaluate-form .btn-submit').on('click', function(e) {
+        e.preventDefault();
+        var obj = getData();
+        console.log(obj);
+        
+        // 验证
+        if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
+            || $('.select-year').val() == '' || $('.select-month').val() == '' 
+            || $('#J_province').val() == ''
+            || $('.car-mile').val() == '' || $('#evaluate-phone').val() == '') {
+            
+            alert('所有信息都是必填项，请认真填写！'); return;
+        }
+
+        var phoneReg = /^1[34578][0-9]{9}$/;
+        var phoneNum = $('#evaluate-phone').val();
+        if(!phoneReg.test(phoneNum)){
+            alert('手机号填写错误，请输入正确的手机号码');
+            return;
+        }
+
+        window.location.href="evaluate_result.html?"
+            +(function(){
+                var obj = getData();
+                var params = "";
+                for(var i in obj){
+                    params += i + "=" + obj[i] + "&";
+                }
+                return params;
+            })();
+    });
+
+})();
+
+
+
+   
+
 
 
 

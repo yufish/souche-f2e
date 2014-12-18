@@ -1,0 +1,148 @@
+doctype html
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/evaluate.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1395020944195476" charset="utf-8"></script>
+    <script>
+      var contextPath = "http://www.souche.com/";
+      require.config({
+        baseUrl: "http://f2e.souche.com/assets/js"
+      });
+    </script>
+  body
+    #evaluate
+      .evaluate-box
+        .car-box
+          .car-info
+            .carimg
+              img(src="../assets/images/judge/car-modle.png")
+            .car-type
+              h1 奥迪A4L
+              p 2013款 35 TFSI 自动 技术型
+          .car-detail
+            .detail-item 
+              .data 2013/03
+              p 上牌
+            .detail-item
+              .data 3.00万
+              p 里程
+            .detail-item
+              .data 2.0L
+              p 排量 
+            .detail-item 
+              .data 自动
+              p 变速箱
+      .evaluate-box
+        .judge-price
+          .price
+            span 车辆评估价：
+            em ￥20.56万
+          .newcar-price
+            span 新车指导价：
+            em 36.98万
+          .price-level
+            span 保值率排名等级：
+            i.level-bg
+            i.level-act(value="3") 
+          .souche-judge
+            p 根据大搜车实际交易统计，杭州平均买车周期为<span>12.6</span>天
+      .evaluate-box
+        h2.title 未来两年价格趋势预测图
+        .price-trend
+          .trend-chart
+            ul.price-time
+              li 2014
+              li 2015
+              li 2016
+            .price-box
+              ul.price-block
+                li.clearfix 
+                  i(style="width: 30%").block-1
+                  span.price-1 16.30万
+                li.clearfix
+                  i(style="width: 100%").block-2
+                  span.price-2 15.69万
+                li.clearfix
+                  i(style="width: 80%").block-3
+                  span.price-3 14.56万
+              ul.car-price
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+            .price-unit
+            
+          .trend-text
+            p 根据千万二手车辆的真实成交价格，通过客观独立的数据分析及市场行情预测未来两年的车辆价格趋势。
+      .evaluate-box
+        h2.title 此款车型价格分布图
+        .chare-box
+          .buy-price.price-item
+            .start
+              span.dot
+              .price 14.12
+            .this-car
+              .tit 车商收购价
+              .price ￥14.22万
+          .personal-price.price-item
+            .start
+              span.dot
+              .price 15.32
+            .this-car
+              .tit 个人交易价
+              .price ￥16.30万
+            .end
+              span.dot
+              .price 16.45
+          .retail-price.price-item
+            .this-car
+              .tit 车商收购价
+              .price ￥16.52万
+            .end
+              span.dot
+              .price 17.04
+        .chare-text
+          .price-text
+            i.blue-dot
+            .text-box
+              h3 车商收购价
+              p 是指车商从车主收购或其它车商处批发的价格，绝大部分车商以此方式购入车辆。车主选择此方式交易周期最短，但价格不具备优势。
+          .price-text
+            i.green-dot
+            .text-box
+              h3 个人交易价
+              p 是指车主或小黄牛将车辆销售给个人购买者的价格。销售方式一般是通过互联网、张贴小广告或门店，交易周期较长，不能提供相关的售后服务和品牌担保，但价格较为真实反映车辆实际价值。
+          .price-text
+            i.orange-dot
+            .text-box 
+              h3 车商零售价
+              p 是指品牌车商或中介平台根据车辆自身价值及自身品牌信誉和售后服务，采用帮卖、寄售或直销等方式转卖给购车者的价格。一般根据车商的品牌信誉和提供的服务不同而加加幅度不同，或赚取差价或收取交易佣金。
+      .concat
+        a.sell 我要买车
+        a.evaluate 重新估价              
+  script.
+    $(function(){
+      
+      var level = $(".level-act").attr("value");
+          levelWidth = level*16+"px";
+        
+        $(".level-act").css({width:levelWidth});
+    });
+      
+      
+    
