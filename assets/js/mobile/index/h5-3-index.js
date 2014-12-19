@@ -1364,7 +1364,7 @@ $('.wrapGrayBg').on('click',function(){
 
     // 地区联动
     Souche.UI.Select.init({
-        eles:[ 'J_province', 'J_city' ],
+        eles:[ 'J_province_e', 'J_city_e' ],
         type:"area",
         defaultValues:[]
     })
@@ -1390,26 +1390,25 @@ $('.wrapGrayBg').on('click',function(){
         obj.brand = arr[0];
         obj.series = arr[1];
         obj.model = $('#car-model').text();
-        obj.province = $('#J_province').val();
-        obj.city = $('#J_city').val();
+        obj.province = $('#J_province_e option:selected').text();
+        obj.city = $('#J_city_e option:selected').text();
 
         // code
         obj.brand_code = $('#evaluate-brand').attr('data-brand');
         obj.series_code = $('#evaluate-brand').attr('data-series');
         obj.model_code = $('#car-model').attr('data-code');
-        obj.province_code = $('#J_province option:selected').attr('data-code');
-        obj.city_code = $('#J_city option:selected').val();
+        obj.province_code = $('#J_province_e').val();
+        obj.city_code = $('#J_city_e').val();
         return obj;
     }
 
     $('#evaluate-form .btn-submit').on('click', function(e) {
         e.preventDefault();
         var obj = getData();
-        
         // 验证
         if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
             || $('.select-year').val() == '' || $('.select-month').val() == '' 
-            || $('#J_province').val() == ''
+            || $('#J_province_e').val() == '' || $('#J_city_e').val() == ''
             || $('.car-mile').val() == '' || $('#evaluate-phone').val() == '') {
             
             alert('所有信息都是必填项，请认真填写！'); return;
@@ -1425,18 +1424,25 @@ $('.wrapGrayBg').on('click',function(){
         var vlidateUrl = contextPath + '/pages/mobile/homePageAction/checkCanEvaluate.json';
 
         $.getJSON(vlidateUrl, obj, function(data) {
-            console.log(data);
-        })
+            var $modal = $('#evaluate-model');
+            if (data.result == 'fail') {
+                $modal.removeClass('hidden');
+                setTimeout(function() {
+                    $modal.addClass('hidden');
+                }, 2000);
+            } else {
+                window.location.href="evaluate_result.html?"
+                    +(function(){
+                        var obj = getData();
+                        var params = "";
+                        for(var i in obj){
+                            params += i + "=" + obj[i] + "&";
+                        }
+                        return params;
+                    })();
+            }
+        });
 
-        window.location.href="evaluate_result.html?"
-            +(function(){
-                var obj = getData();
-                var params = "";
-                for(var i in obj){
-                    params += i + "=" + obj[i] + "&";
-                }
-                return params;
-            })();
     });
 
 })();
