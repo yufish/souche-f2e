@@ -176,7 +176,7 @@ function(AddSeries, CustomSelect, Tool){
                             rss_isSubmiting = false;
                         }
                     })
-                },false,false,false)
+                },false,true,false)
 
             })
             //获取一个初始宽度
