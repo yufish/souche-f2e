@@ -38,8 +38,8 @@ var obj = JSON.parse(localStorage.getItem('evaluate_obj'));
 var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
 
 var sellObj = {
-  brand: obj.brand,
-  series: obj.series,
+  brand: obj.brand_code,
+  series: obj.series_code,
   mobile: obj.mobile
 };
 
