@@ -1409,7 +1409,7 @@ $('.wrapGrayBg').on('click',function(){
         if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
             || $('.select-year').val() == '' || $('.select-month').val() == '' 
             || $('#J_province_e').val() == '' || $('#J_city_e').val() == ''
-            || $('.car-mile').val() == '' || $('#evaluate-phone').val() == '') {
+            || $('.car-mile').val() == '') {
             
             alert('所有信息都是必填项，请认真填写！'); return;
         }
@@ -1425,15 +1425,19 @@ $('.wrapGrayBg').on('click',function(){
 
         $.getJSON(vlidateUrl, obj, function(data) {
             var $modal = $('#evaluate-model');
+            console.log(data);
             if (data.result == 'fail') {
+                var value = JSON.stringify(obj);
+                localStorage.setItem('evaluate_obj',value);
                 $modal.removeClass('hidden');
                 setTimeout(function() {
                     $modal.addClass('hidden');
                 }, 2000);
             } else {
+                var value = JSON.stringify(obj);
+                localStorage.setItem('evaluate_obj',value);
                 window.location.href="evaluate_result.html?"
                     +(function(){
-                        var obj = getData();
                         var params = "";
                         for(var i in obj){
                             params += i + "=" + obj[i] + "&";
@@ -1442,6 +1446,10 @@ $('.wrapGrayBg').on('click',function(){
                     })();
             }
         });
+
+        $('#evaluate-model .ft').on('click', function() {
+            $('#evaluate-model').addClass('hidden');
+        })
 
     });
 
