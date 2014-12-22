@@ -10,5 +10,6 @@ module.exports = keyMirror({
     MSG_RECEIVE: null,
     ADD_UNREAD: null,
     CLEAR_THREAD_UNREAD: null,
-    CLEAR_ALL_UNREAD: null
+    CLEAR_ALL_UNREAD: null,
+    SCHEDUAL_UPDATE: null
 });
