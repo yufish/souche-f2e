@@ -120,6 +120,24 @@ html
           .sell-form
             .title 我要卖车
             form.sell-info
+              .select-item.clearfix
+                #select-area.select 浙江 杭州
+                  .select-open
+              .select-item.clearfix
+                #select-car.select 选择车型
+                  .select-open
+              .select-item.clearfix
+                #select-time.select 上牌时间
+                  .select-open
+                input#input-mile(placeholder="行驶里程")
+                .unit 公里
+              .select-item.clearfix
+                #select-hope.select 希望多久能卖掉
+                  .select-open
+                input#input-reason(placeholder="卖车理由")
+              .form-sub.clearfixs
+                button#sell-submit 我要卖车
+                a.judge-link(href="#") 估个价先 » 
       .sell-flow
         .wrapper.clearfix
           .flow-item.clearfix
@@ -169,9 +187,21 @@ html
           .detail-item
             .tit 更优价，更高效
             p 或是时间和价格的完美平衡
-            .price-table
+            .price-table.clearfix
               .price-pic
               .price-ds
+                .text-item
+                  .title.clearfix
+                    i.tuoguan
+                    span 托管寄售
+                  p 20000平米寄售大厅，专业寄售员服务，避免黄牛骚扰
+                  p 透明交易，不赚差价，寄卖不成功不产生任何费用 
+                .text-item
+                  .title.clearfix
+                    i.paimai
+                    span 全网拍卖
+                  p 全国各地车商同时出价竞拍
+                  p 电脑、平板、手机竞价工具畅通无阻  
     #footer.
       <div class="wrapper">
         <div class="foot-detail clearfix">
