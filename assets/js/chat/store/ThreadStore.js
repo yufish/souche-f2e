@@ -115,11 +115,11 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
             if( action.threads.length > 0 ){
                 var threads = action.threads, msgs = action.msgs;
                 var haveNewUnread = [], totalNewThread = [];
-                var curThread = ThreadData.getCurThread();
+                var curThread = ThreadStore.getCurThread();
                 threads.forEach(function(t){
                     // 该thread已存在
                     if( ThreadData[t.id] ){
-                        updateThread(id, t);
+                        updateThread(t.id, t);
                         if( t.id !== curThread ){
                             haveNewUnread.push(t);
                         }

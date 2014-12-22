@@ -202,6 +202,7 @@ var _data = {
                         }
                         else{
                             appInitFail('获取和 '+(chat.friendName||chat.friendId)+' 的聊天消息失败...');
+                            ep.emit('get msg', []);
                         }
                     });
                 });
