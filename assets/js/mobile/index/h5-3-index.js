@@ -1425,7 +1425,6 @@ $('.wrapGrayBg').on('click',function(){
 
         $.getJSON(vlidateUrl, obj, function(data) {
             var $modal = $('#evaluate-model');
-            console.log(data);
             if (data.result == 'fail') {
                 var value = JSON.stringify(obj);
                 localStorage.setItem('evaluate_obj',value);

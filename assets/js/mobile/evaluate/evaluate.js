@@ -72,6 +72,8 @@ $(document).on('click', '#e-submit', function() {
     return;
   }
 
+  sellObj.mobile = phoneNum;
+
   $.ajax({
     url: actionUrl,
     data: sellObj,
