@@ -24,7 +24,7 @@ var curThread = null;
 function initThreadData(serverThreads){
     serverThreads.forEach(function(t){
         // 以聊天的对象的id作为thread的id
-        t.id = t.friendId;
+        t.id = t.threadId;
         t.unreadCount = 0;
         ThreadData[t.id] = t;
     });
@@ -115,17 +115,17 @@ ThreadStore.dispatchToken = ChatDispatcher.register(function(payload){
             if( action.threads.length > 0 ){
                 var threads = action.threads, msgs = action.msgs;
                 var haveNewUnread = [], totalNewThread = [];
-                var curThread = ThreadData.getCurThread();
+                var curThread = ThreadStore.getCurThread();
                 threads.forEach(function(t){
                     // 该thread已存在
-                    if( ThreadData[t.id] ){
-                        updateThread(id, t);
-                        if( t.id !== curThread ){
+                    if( ThreadData[t.threadId] ){
+                        updateThread(t.threadId, t);
+                        if( t.threadId !== curThread ){
                             haveNewUnread.push(t);
                         }
                     }
                     else{
-                        ThreadData[t.id] = t;
+                        ThreadData[t.threadId] = t;
                         totalNewThread.push(t);
                     }
                 });

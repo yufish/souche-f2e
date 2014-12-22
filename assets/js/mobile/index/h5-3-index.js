@@ -1279,6 +1279,7 @@ $('.wrapGrayBg').on('click',function(){
           $('#evaluate-brand').attr('data-brand', b).attr('data-series', s)
                 .text(bn + ' ' + sn);
           $('#car-model').removeClass('no-active').text('');
+          $('#car-models').empty();
 
           var modelUrl = contextPath + '/pages/dicAction/loadNextLevel.json?type=car-subdivision';
 
@@ -1295,7 +1296,6 @@ $('.wrapGrayBg').on('click',function(){
               obj[t].push({title: d, code: c});
             }
             createModel(obj);
-            createDate(obj);
           });
 
           // 车型弹窗
@@ -1313,34 +1313,34 @@ $('.wrapGrayBg').on('click',function(){
             $('#car-models').append(str);
           }
 
-          // 年月
-          function createDate(obj) {
-            // var y = new Date().getFullYear();
-            var $form = $('#evaluate-form');
-            var $year = $form.find('.select-year');
-            var $month = $form.find('.select-month');
-            var month = '';
-            var year = '';
-
-            year += '<option value=""></option>'
-
-            for (var i in obj) {
-              year += '<option value="' + i + '">' + i + '</option>';
-            }
-
-            $year.html(year);
-
-            month += '<option value=""></option>'
-            for (var i = 1; i < 13; i++) {
-                month += '<option value="' + i + '">' + i + '</option>';
-            } 
-            $month.html(month);
-          }
-
         }
 
         Brand.bind(brandInfo);
       });
+
+      // 年月
+      function createDate(y) {
+        var n = new Date().getFullYear();
+        var $form = $('#evaluate-form');
+        var $year = $form.find('.select-year');
+        var $month = $form.find('.select-month');
+        var month = '';
+        var year = '';
+
+        year += '<option value=""></option>'
+
+        for (var j = y; j < n + 1; j ++) {
+          year += '<option value="' + j + '">' + j + '</option>';
+        }
+
+        $year.html(year);
+
+        month += '<option value=""></option>'
+        for (var i = 1; i < 13; i ++) {
+            month += '<option value="' + i + '">' + i + '</option>';
+        } 
+        $month.html(month);
+      }
       
       $('#car-model').on('click', function() {
         if ($(this).hasClass('no-active')) return;
@@ -1353,7 +1353,9 @@ $('.wrapGrayBg').on('click',function(){
             $('#car-model').text($(this).text())
             setTimeout(function() {
                 $('#car-models').addClass('hidden');
-            }, 500)
+            }, 500);
+            var y = parseInt($(this).text()) - 1;
+            createDate(y);
         })
       });
     
@@ -1362,7 +1364,7 @@ $('.wrapGrayBg').on('click',function(){
 
     // 地区联动
     Souche.UI.Select.init({
-        eles:[ 'J_province', 'J_city' ],
+        eles:[ 'J_province_e', 'J_city_e' ],
         type:"area",
         defaultValues:[]
     })
@@ -1375,55 +1377,79 @@ $('.wrapGrayBg').on('click',function(){
     }
 
     function getData() {
+        var serilal = $('#evaluate-form').serialize();
+        var ss = serilal.split("&");
+        var obj = {}
+        for(var i=0;i<ss.length;i++){
+          var kv = ss[i].split("=")
+          obj[kv[0]]=kv[1]
+        }
+
         var brand = $('#evaluate-brand').text();
         var arr = brand.split(' ');
-        var obj = {
-            brand: arr[0],
-            series: arr[1],
-            model: $('#car-model').text(),
-            province: $('#J_province').val(),
-            city: $('#J_city').val(),
+        obj.brand = arr[0];
+        obj.series = arr[1];
+        obj.model = $('#car-model').text();
+        obj.province = $('#J_province_e option:selected').text();
+        obj.city = $('#J_city_e option:selected').text();
 
-            // code
-            brand_code: $('#evaluate-brand').attr('data-brand'),
-            series_code: $('#evaluate-brand').attr('data-series'),
-            model_code: $('#car-model').attr('data-code'),
-            province_code: $('#J_province').val(),
-            city_code: $('#J_city').val()
-        }; 
+        // code
+        obj.brand_code = $('#evaluate-brand').attr('data-brand');
+        obj.series_code = $('#evaluate-brand').attr('data-series');
+        obj.model_code = $('#car-model').attr('data-code');
+        obj.province_code = $('#J_province_e').val();
+        obj.city_code = $('#J_city_e').val();
         return obj;
     }
 
     $('#evaluate-form .btn-submit').on('click', function(e) {
         e.preventDefault();
         var obj = getData();
-        console.log(obj);
-        
         // 验证
         if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
             || $('.select-year').val() == '' || $('.select-month').val() == '' 
-            || $('#J_province').val() == ''
-            || $('.car-mile').val() == '' || $('#evaluate-phone').val() == '') {
+            || $('#J_province_e').val() == '' || $('#J_city_e').val() == ''
+            || $('.car-mile').val() == '') {
             
             alert('所有信息都是必填项，请认真填写！'); return;
         }
 
         var phoneReg = /^1[34578][0-9]{9}$/;
         var phoneNum = $('#evaluate-phone').val();
-        if(!phoneReg.test(phoneNum)){
+        if(phoneNum && !phoneReg.test(phoneNum)){
             alert('手机号填写错误，请输入正确的手机号码');
             return;
         }
 
-        window.location.href="evaluate_result.html?"
-            +(function(){
-                var obj = getData();
-                var params = "";
-                for(var i in obj){
-                    params += i + "=" + obj[i] + "&";
-                }
-                return params;
-            })();
+        var vlidateUrl = contextPath + '/pages/mobile/homePageAction/checkCanEvaluate.json';
+
+        $.getJSON(vlidateUrl, obj, function(data) {
+            var $modal = $('#evaluate-model');
+            if (data.result == 'fail') {
+                var value = JSON.stringify(obj);
+                localStorage.setItem('evaluate_obj',value);
+                $modal.removeClass('hidden');
+                setTimeout(function() {
+                    $modal.addClass('hidden');
+                }, 2000);
+            } else {
+                var value = JSON.stringify(obj);
+                localStorage.setItem('evaluate_obj',value);
+                window.location.href="evaluate_result.html?"
+                    +(function(){
+                        var params = "";
+                        for(var i in obj){
+                            params += i + "=" + obj[i] + "&";
+                        }
+                        return params;
+                    })();
+            }
+        });
+
+        $('#evaluate-model .ft').on('click', function() {
+            $('#evaluate-model').addClass('hidden');
+        })
+
     });
 
 })();

@@ -230,6 +230,7 @@ define(function() {
             
         });
         $('.search-text').on('click', function(e){
+            Souche.stats.add_click( $(this).attr('click_type') );
             e.stopPropagation();
         });
     }
