@@ -1416,7 +1416,7 @@ $('.wrapGrayBg').on('click',function(){
 
         var phoneReg = /^1[34578][0-9]{9}$/;
         var phoneNum = $('#evaluate-phone').val();
-        if(!phoneReg.test(phoneNum)){
+        if(phoneNum && !phoneReg.test(phoneNum)){
             alert('手机号填写错误，请输入正确的手机号码');
             return;
         }
