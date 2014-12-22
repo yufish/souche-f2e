@@ -16,6 +16,7 @@
         }
         dotContainer.append(html);
     }();
+    
     var dots = $('#pic-dots .dot');
     $("#pic-container").swipeLeft(function (e) {
         var self = $(this);
