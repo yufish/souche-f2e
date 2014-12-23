@@ -26,7 +26,8 @@ define(function() {
                         $(".onsale-tab-item-price").removeClass("hidden")
                         $(".float-nav-item-price").removeClass("hidden")
                         $("#onsale_price").removeClass("hidden");
-                        var maxPrice = ((priceData.price_guide).toFixed(1) * 1+config.taxPrice).toFixed(2) * 1;
+                        // 新车厂商指导成交价 不应该加税
+                        var maxPrice = (priceData.price_guide).toFixed(2) * 1;
                         var minPrice = ((config.minPrice + config.maxPrice) / 2).toFixed(2) * 1;
                         var rangePrice = config.minPrice + "-" + config.maxPrice;
                         if (config.minPrice == config.maxPrice) {
