@@ -1,5 +1,8 @@
 @height: 64px;
 
+*{
+  box-sizing: border-box;
+}
 
 .clearfix {
   &:before,
@@ -294,9 +297,9 @@
     }
     .end{
       position: absolute;
-      right: 0;
+      right: -2px;
       z-index: 10;
-      top: -4px;
+      top: -5px;
       text-align: right;
       width: 30px;
       .dot{
@@ -307,8 +310,9 @@
         background: #fff;
       }
       .price{
-        margin-top: 10px;
-        color: #666;
+        margin-top: 5px;
+        color: #999;
+        font-size: 12px;
       }
     }
     .this-car{
