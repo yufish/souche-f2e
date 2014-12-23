@@ -13,7 +13,6 @@ html
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/require.js"></script>
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche.js"></script>
-    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1395020944195476" charset="utf-8"></script>
     <script>
       var contextPath = "http://www.souche.com/";
       require.config({
@@ -122,18 +121,146 @@ html
             form.sell-info
               .select-item.clearfix
                 #select-area.select 浙江 杭州
-                  .select-open
+                  .open-icon
+                  #area-open.select-open.clearfixs.hidden
+                    .open-item#choose-area
+                      .open-tit 选择省份
+                      .choose-box
+                        .cont-item
+                          .choose-cont 河北
+                          .choose-cont 山西
+                          .choose-cont 辽宁
+                          .choose-cont 吉林
+                          .choose-cont 黑龙江
+                          .choose-cont 江苏
+                          .choose-cont 浙江
+                          .choose-cont 安徽
+                          .choose-cont 福建
+                          .choose-cont 江西
+                          .choose-cont 山东
+                    .open-item#choose-city
+                      .open-tit 选择城市
+                      .choose-box
+                        .cont-item
+                          .choose-cont 杭州
+                          .choose-cont 宁波
+                          .choose-cont 温州
+                          .choose-cont 绍兴
+                          .choose-cont 湖州
+                          .choose-cont 嘉兴
+                          .choose-cont 金华
+                          .choose-cont 衢州
+                          .choose-cont 舟山
+                          .choose-cont 台州
+                          .choose-cont 丽水
               .select-item.clearfix
                 #select-car.select 选择车型
-                  .select-open
+                  .open-icon
+                  #car-open.select-open.clearfix.hidden
+                    .open-item#choose-brand
+                      .open-tit 请选择品牌
+                      .choose-box
+                        .cont-item
+                          .cont-tit A
+                          .choose-cont 奥迪
+                          .choose-cont 阿斯顿马丁
+                        .cont-item
+                          .cont-tit B
+                          .choose-cont 宝马
+                          .choose-cont 保时捷
+                          .choose-cont 奔驰
+                          .choose-cont 别克
+                          .choose-cont 宾利
+                          .choose-cont 巴斯博
+                          .choose-cont 宝骏
+                          .choose-cont 北汽制造
+                          .choose-cont 比亚迪
+                        .cont-item
+                          .cont-tit C 
+                          .choose-cont 长安
+                          .choose-cont 长城
+                          .choose-cont 长河
+                        .cont-item
+                          .cont-tit D
+                          .choose-cont 道奇
+                          .choose-cont 大众
+                          .choose-cont 帝豪
+                          .choose-cont 东风
+                          .choose-cont 东南
+                    .open-item#choose-set
+                      .open-tit 请选择车系
+                      .choose-box 
+                        .cont-item
+                          .cont-tit 一汽-大众奥迪
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                        .cont-item
+                          .cont-tit 奥迪(进口)
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3 
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3 
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3
+                          .choose-cont 奥迪A3 
+                    
+                    .open-item#choose-type
+                      .open-tit 请选择车型
+                      .choose-box 
+                        .cont-item
+                          .cont-tit 2014款
+                          .choose-cont 2014款 Sportback 35 TFSI 豪华型
+                          .choose-cont 2014款 Sportback 35 TFSI 时尚型
+                          .choose-cont 2014款 Sportback 35 TFSI 舒适型
+                        .cont-item
+                          .cont-tit 2013款
+                          .choose-cont 2013款 Sportback 35 TFSI 豪华型
+                          .choose-cont 2014款 Sportback 35 TFSI 时尚型
+                          .choose-cont 2014款 Sportback 35 TFSI 舒适型
               .select-item.clearfix
                 #select-time.select 上牌时间
-                  .select-open
+                  .open-icon
+                  #time-open.select-open.clearfixs.hidden
+                    .open-item#choose-years
+                      .open-tit 选择年份
+                      .choose-box
+                        .cont-item
+                          .choose-cont 2014
+                          .choose-cont 2013
+                          .choose-cont 2012
+                          .choose-cont 2011
+                          .choose-cont 2010
+                          .choose-cont 2009
+                    .open-item#choose-mouth
+                      .open-tit 选择年份
+                      .choose-box
+                        .cont-item
+                          .choose-cont 1月
+                          .choose-cont 2月
+                          .choose-cont 3月
+                          .choose-cont 4月
+                          .choose-cont 5月
+                          .choose-cont 6月
+                          .choose-cont 7月
+                          .choose-cont 8月
+                          .choose-cont 9月
+                          .choose-cont 10月
+                          .choose-cont 11月
+                          .choose-cont 12月
                 input#input-mile(placeholder="行驶里程")
                 .unit 公里
               .select-item.clearfix
                 #select-hope.select 希望多久能卖掉
-                  .select-open
+                  .open-icon
                 input#input-reason(placeholder="卖车理由")
               .form-sub.clearfixs
                 button#sell-submit 我要卖车
@@ -202,6 +329,29 @@ html
                     span 全网拍卖
                   p 全国各地车商同时出价竞拍
                   p 电脑、平板、手机竞价工具畅通无阻  
+          .questions
+            h1 常见问题
+            .ques-box
+              .ques-item
+                .ques-cont 支持提供上门检测的区域有哪些？
+                .answer.hidden 
+                  p 北京、天津、河南郑州、河北石家庄、山东济南
+              .ques-item.quer-or
+                .ques-cont 哪些车不属于大搜车二手车服务范围？
+                .answer.hidden 
+                  p 事故车、火烧车、水浸车不属于大搜车二手车的服务范围。
+                  p 大搜车只接收6年以内，12万公里以下的车。
+              .ques-item
+                .ques-cont 如何预约检测？
+                .answer.hidden 
+                  p 网上提交信息预约或者电话预约
+              .ques-item
+                .ques-cont 为什么要进行专业的车辆评估？
+                .answer.hidden 
+                  p 网上提交信息预约或者电话预约
+              .sellcar-up 
+                a(href="#") 我要卖车
+
     #footer.
       <div class="wrapper">
         <div class="foot-detail clearfix">
@@ -240,3 +390,12 @@ html
         
         <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号</p>
       </div>
+  script.
+    $(".select").click(function(e){
+      e.stopPropagation();
+      $(this).find(".select-open").removeClass("hidden");
+      });
+
+    $(document.body).click(function() {
+        $(".select-open").addClass("hidden");
+    });

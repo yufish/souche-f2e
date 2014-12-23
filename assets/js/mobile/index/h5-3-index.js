@@ -1256,8 +1256,13 @@ $('.wrapGrayBg').on('click',function(){
 
 // 卖车和估价tab切换
 ;(function () {
+    activeItem = sessionStorage.getItem('index_eval_tab') || 0;
+    $('.tab-index span').removeClass('active').eq(activeItem).addClass('active');
+    $('.car-seller-tab .item').addClass('hidden').eq(activeItem).removeClass('hidden');
+
     $('.car-seller-tab').on('click', '.tab-index span', function() {
         var item = $('.tab-index span').index($(this));
+        sessionStorage.setItem('index_eval_tab', item);
         $('.tab-index span').removeClass('active').eq(item).addClass('active');
         $('.car-seller-tab .item').addClass('hidden').eq(item).removeClass('hidden');
     });
@@ -1269,9 +1274,7 @@ $('.wrapGrayBg').on('click',function(){
 
     // 选品牌 ＋ 车型
     require(['mobile/index/brand2'], function (Brand){
-                
-      $('#evaluate-brand').text('');
-
+    
       $('#evaluate-brand').on('click', function() {
         $('#brand').removeClass('hidden');
 
@@ -1327,19 +1330,19 @@ $('.wrapGrayBg').on('click',function(){
         var month = '';
         var year = '';
 
-        year += '<option value=""></option>'
+        year += '<option value="">年</option>'
 
         for (var j = y; j < n + 1; j ++) {
-          year += '<option value="' + j + '">' + j + '</option>';
+          year += '<option value="' + j + '">' + j + '年</option>';
         }
 
-        $year.html(year);
+        $year.removeClass('no-active').html(year);
 
-        month += '<option value=""></option>'
+        month += '<option value="">月</option>'
         for (var i = 1; i < 13; i ++) {
-            month += '<option value="' + i + '">' + i + '</option>';
+            month += '<option value="' + i + '">' + i + '月</option>';
         } 
-        $month.html(month);
+        $month.removeClass('no-active').html(month);
       }
       
       $('#car-model').on('click', function() {
@@ -1408,10 +1411,17 @@ $('.wrapGrayBg').on('click',function(){
         // 验证
         if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
             || $('.select-year').val() == '' || $('.select-month').val() == '' 
-            || $('#J_province_e').val() == '' || $('#J_city_e').val() == ''
-            || $('.car-mile').val() == '') {
+            || $('#J_province_e').val() == '' || $('#J_city_e').val() == '') {
             
             alert('所有信息都是必填项，请认真填写！'); return;
+        }
+
+        var mileStr = $(".car-mile").val();
+        var mileNum = Number(mileStr);
+        // 判断是否为NaN
+        if((Boolean(mileNum) == false && mileNum !=0) || mileNum < 0 || mileStr == '' ){
+          alert("请正确填写车辆行驶里程");
+          return;
         }
 
         var phoneReg = /^1[34578][0-9]{9}$/;
@@ -1427,14 +1437,14 @@ $('.wrapGrayBg').on('click',function(){
             var $modal = $('#evaluate-model');
             if (data.result == 'fail') {
                 var value = JSON.stringify(obj);
-                localStorage.setItem('evaluate_obj',value);
+                sessionStorage.setItem('evaluate_obj',value);
                 $modal.removeClass('hidden');
                 setTimeout(function() {
                     $modal.addClass('hidden');
                 }, 2000);
             } else {
                 var value = JSON.stringify(obj);
-                localStorage.setItem('evaluate_obj',value);
+                sessionStorage.setItem('evaluate_obj',value);
                 window.location.href="evaluate_result.html?"
                     +(function(){
                         var params = "";
@@ -1452,6 +1462,91 @@ $('.wrapGrayBg').on('click',function(){
 
     });
 
+})();
+
+// 估价页面返回数据填充
+;(function() {
+    var obj = JSON.parse(sessionStorage.getItem('evaluate_obj'));
+    if (obj) {
+        console.log(obj);
+        $('#evaluate-brand').text(obj.brand + ' ' + obj.series);
+        $('#car-model').text(obj.model).removeClass('no-active');
+
+        $('#evaluate-mileage').val(obj.mileage);
+        $('#evaluate-year').html('<option value="' + obj.year + '">' + obj.year + '</option>');
+        $('#evaluate-month').html('<option value="' + obj.date + '">' + obj.date + '</option>');
+
+        $('#evaluate-brand').attr('data-brand', obj.brand_code);
+        $('#evaluate-brand').attr('data-series', obj.series_code);
+        $('#car-model').attr('data-code', obj.model_code);
+
+        $('#J_province_e').html('<option value="' + obj.province_code + '">' + obj.province + '</option>');
+        $('#J_city_e').html('<option value="' + obj.city_code + '">' + obj.city + '</option>');
+
+        var modelUrl = contextPath + '/pages/dicAction/loadNextLevel.json?type=car-subdivision';
+
+        $.getJSON(modelUrl, { code: obj.series_code }, function(data) {
+            var obj = {};
+            var data = data.items;
+            for (var i = 0, len = data.length; i < len; i ++) {
+              var t = data[i].name.slice(0,4);
+              var d = data[i].name.trim();
+              var c = data[i].code;
+              if (!obj[t]) {
+                obj[t] = [];
+              }
+              obj[t].push({title: d, code: c});
+            }
+            createModel(obj);
+        });
+
+        // 车型弹窗
+        function createModel(obj) {
+            $('#car-models').empty();
+            var str = '';
+            for (var p in obj) {
+              // str += '<div class="item"><h4>' + p + '</h4>';
+              str += '<div class="item">';
+              for (var i = 0, arr = obj[p], len = arr.length; i < len; i ++) {
+                str += '<li data-code="' +  arr[i].code + '">' +  arr[i].title + '<span class="left-arrow"></span></li>'
+              }
+              str += '</div>'
+            }
+            $('#car-models').append(str);
+        }
+
+        (function(o) {
+            var n = new Date().getFullYear();
+            var $form = $('#evaluate-form');
+            var $year = $form.find('.select-year');
+            var $month = $form.find('.select-month');
+            var month = '';
+            var year = '';
+            var y = parseInt(obj.model) - 1;
+
+            year += '<option value="">年</option>'
+
+            for (var j = y; j < n + 1; j ++) {
+                if (obj.year == j) {
+                    year += '<option value="' + j + '" selected>' + j + '年</option>';
+                } else {
+                    year += '<option value="' + j + '">' + j + '年</option>'; 
+                }
+            }
+
+            $year.removeClass('no-active').html(year);
+
+            month += '<option value="">月</option>'
+            for (var i = 1; i < 13; i ++) {
+                if (obj.date == i) {
+                    month += '<option value="' + i + '" selected>' + i + '月</option>';
+                } else {
+                    month += '<option value="' + i + '">' + i + '月</option>';
+                }
+            } 
+            $month.removeClass('no-active').html(month);
+        })(obj);
+    }
 })();
 
 

@@ -70,13 +70,130 @@
                 height: 32px;
                 border: 1px solid #DDDDDD;
                 position: relative;
-                .select-open{
+                .open-icon{
                   position: absolute;
                   width: 7px;
                   height: 4px;
                   background: url(../images/sellcar-new/select-open.png) no-repeat;
                   top: 14px;
                   right: 15px;
+                }
+                .select-open{
+                  position: absolute;
+                  border: 2px solid #FF5517;
+                  padding: 10px 11px;
+                  background: #fff;
+                  z-index: 100;
+                  top: 31px;
+                  
+                  .open-item{
+                    float: left;
+                    margin-right: 22px;
+                    .open-tit{
+                      font-size: 12px;
+                      color: #999;
+                      margin-bottom: 10px;
+                    }
+                    .choose-box{
+                      overflow-y: scroll;
+                      border: 1px solid #ddd;
+                      .cont-tit{
+                        line-height: 28px;
+                        color: #333;
+                        font-size: 14px;
+                        background: #F7F7F7;
+                        padding-left: 10px;
+                      }
+                      .choose-cont{
+                        line-height: 32px;
+                        font-size: 12px;
+                        color: #666;
+                        padding-left: 10px;
+                        cursor: pointer;
+                        
+                      }
+                      .choose-cont:hover{
+                        color: #fff;
+                        background:#F44B0B ; 
+                      }
+                      .cont-choosed{
+                        color: #fff;
+                        background:#F44B0B ; 
+                      }
+                    }
+                  }
+                }
+                #car-open{
+                  width: 705px;
+                  height: 444px;
+                  right:-1px;
+                  .choose-box{
+                    height: 375px;
+                  }
+                  #choose-brand{
+                    width: 171px;
+                    .choose-box{
+                      margin-left: 22px;
+                      
+                      .choose-cont{
+                        background: url(../images/sellcar-new/cont-item.png) no-repeat 120px center;
+                      }
+                      .choose-cont:hover{
+                        background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
+                      }
+                    }
+                  }
+                  #choose-set{
+                    width: 169px;
+
+                    .choose-cont{
+                        background: url(../images/sellcar-new/cont-item.png) no-repeat 140px center;
+                      }
+                      .choose-cont:hover{
+                        background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
+                      }
+                  }
+                  #choose-type{
+                    width: 280px;
+                    margin-right: 0px;
+                  }
+                }
+                #area-open{
+                  width: 310px;
+                  height: 390px;
+                  padding-left: 20px;
+                  right:-1px;
+                  .choose-box{
+                    height: 325px;
+                  }
+                  #choose-area{
+                    width: 122px;
+                  }
+                  #choose-city{
+                    width: 120px;
+                    margin-right: 0px;
+                  }
+                }
+                #time-open{
+                  width: 310px;
+                  padding-left: 20px;
+                  left: -1px;
+                  height: 220px;
+                  top: 33px;
+                  #choose-years{
+                    width: 120px;
+                    .choose-box{
+                      height: 160px;
+                    }
+                    
+                  }
+                  #choose-mouth{
+                    width: 120px;
+                    margin-right: 0px;
+                    .choose-box{
+                      height: 160px;
+                    }
+                  }
                 }
               }
               #select-time{
@@ -244,6 +361,60 @@
           }
         }
       }
+    }
+  }
+}
+.questions{
+  width: 510px;
+  margin: 0 auto;
+  padding-top: 77px;
+  h1{
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .sellcar-up{
+    margin-top: 80px;
+    a{
+      display: block;
+      width: 150px;
+      height: 40px;
+      border-radius: 2px;
+      background: #FF5517;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  }
+  .ques-box{
+    padding-bottom: 100px;
+    .ques-item{
+      padding-bottom: 20px;
+      border-bottom: 1px solid #F2F2F2;
+      .ques-cont{
+        line-height: 26px;
+        font-size: 20px;
+        color: #333;
+        background: url(../images/sellcar-new/qa-down.png) no-repeat right center;
+        margin-top: 23px;
+        cursor: pointer;
+      }
+      .answer{
+        margin-top: 18px;
+        line-height: 19px;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+    .quer-or{
+      .ques-cont{
+        color: #FF5417;
+        background: url(../images/sellcar-new/qa-down-or.png) no-repeat right center;
+      }
+
     }
   }
 }
