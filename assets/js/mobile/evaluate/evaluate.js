@@ -34,14 +34,15 @@ var checkUserLocal = function () {
   }
 }
 
-var obj = JSON.parse(localStorage.getItem('evaluate_obj'));
+var obj = JSON.parse(sessionStorage.getItem('evaluate_obj')) || {};
 var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
 
 var sellObj = {
-  brand: obj.brand_code,
-  series: obj.series_code,
-  mobile: obj.mobile
+  brand: obj.brand_code || '',
+  series: obj.series_code || '',
+  mobile: obj.mobile || ''
 };
+
 
 var phoneNum = checkUserLocal().phoneNum;
 
@@ -52,7 +53,7 @@ $('.concat .sell').on('click', function() {
     str += '<p>补充您的手机号，开始卖车！</p>'
         + '<input id="e-mobile" type="tel" placeholder="请输入您的手机号">';
   } else {
-    var pm = sellObj.mobile ? sellObj.mobile : phoneNum;
+    var pm = sellObj.mobile || phoneNum;
     str += '<p>确定以此号码作为联系方式！</p>'
           + '<input id="e-mobile" type="tel" value="' + pm + '">';
   }
