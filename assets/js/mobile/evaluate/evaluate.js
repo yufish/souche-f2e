@@ -58,7 +58,7 @@ $('.concat .sell').on('click', function() {
           + '<input id="e-mobile" type="tel" value="' + pm + '">';
   }
 
-  str += '<button id="e-submit">确定</button><a class="e-close e-close－btn"></a>'
+  str += '<button id="e-submit">确定</button><a class="e-close e-close-btn"></a>'
 
   $('.e-popup').html(str);
   $('#e-popup').removeClass('hidden');
