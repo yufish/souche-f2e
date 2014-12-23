@@ -399,3 +399,10 @@ html
     $(document.body).click(function() {
         $(".select-open").addClass("hidden");
     });
+
+    $(".ques-cont").click(function(){
+      $(".ques-cont").removeClass("an-up");
+      $(".answer").addClass("hidden");
+      $(this).addClass("an-up");
+      $(this).next(".answer").removeClass("hidden");
+      })
