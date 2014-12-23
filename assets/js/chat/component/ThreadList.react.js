@@ -72,7 +72,7 @@ var ThreadList = React.createClass({
         var newData = threads.map(function(t){
             return ThreadStore.getById(t.id);
         });
-        // 某些thread有未读
+        // 某些thread有新的未读
         // 遍历, 挪到头部去
         if( threadHaveNewUnread && threadHaveNewUnread.length > 0 ){
             threadHaveNewUnread.forEach(function(tu){
