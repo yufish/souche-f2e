@@ -1,5 +1,17 @@
 @height: 64px;
 
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table; 
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 #evaluate {
   padding-bottom: 58px;
 
@@ -203,10 +215,14 @@
           height: 30px;
           overflow: hidden;
           i{
+            max-width: 220px;
             display: block;
             float: left;
             height: 10px;
             margin: 10px 0;
+            @media screen and (max-width: 320px) {
+              max-width: 180px;
+            }
           }
           .block-1{
             background: #ffb093;
