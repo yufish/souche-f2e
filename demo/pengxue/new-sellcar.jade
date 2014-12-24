@@ -112,7 +112,19 @@ html
                       span 135*****326
                       span Mini-Cooper 17.3万上拍成交
                     li.history-item 
-                      span 王先生 
+                      span 李先生 
+                      span 135*****326
+                      span Mini-Cooper 17.3万上拍成交
+                    li.history-item 
+                      span 李先生 
+                      span 135*****326
+                      span Mini-Cooper 17.3万上拍成交
+                    li.history-item 
+                      span 李先生 
+                      span 135*****326
+                      span Mini-Cooper 17.3万上拍成交
+                    li.history-item 
+                      span 李先生 
                       span 135*****326
                       span Mini-Cooper 17.3万上拍成交
             .serv-num 服务热线：4008-010-010
@@ -391,6 +403,55 @@ html
         <p>Copyright © 2014 SouChe   All Rights Reserved 北京搜车网科技有限公司  版权所有      京 ICP备 13012136号 京公网安备 11010802013095号</p>
       </div>
   script.
+    (function ($) {
+        $.fn.myScroll = function (options) {
+
+            var opts = $.extend({}, options),
+                intId = [];
+
+            function marquee(obj, step) {
+
+                obj.find("ul").animate({
+                    marginTop: '-=1'
+                }, 0, function () {
+                    var s = Math.abs(parseInt($(this).css("margin-top")));
+                    if (s >= step) {
+                        $(this).find("li").slice(0, 1).appendTo($(this));
+                        $(this).css("margin-top", 0);
+                    }
+                });
+            }
+
+            this.each(function (i) {
+                var sh = 88,
+                    speed = 90,
+                    _this = $(this);
+                intId[i] = setInterval(function () {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh);
+                    }
+                }, speed);
+
+                _this.hover(function () {
+                    clearInterval(intId[i]);
+                }, function () {
+                    intId[i] = setInterval(function () {
+                        if (_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
+                });
+            });
+        }
+    })(jQuery);
+    $(function(){
+        $(".slide").myScroll({});
+    });
+
     $(".select").click(function(e){
       e.stopPropagation();
       $(this).find(".select-open").removeClass("hidden");
@@ -405,4 +466,6 @@ html
       $(".answer").addClass("hidden");
       $(this).addClass("an-up");
       $(this).next(".answer").removeClass("hidden");
-      })
+      });
+
+    
