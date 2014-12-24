@@ -156,6 +156,13 @@ var List = function() {
                 $(this).addClass('hidden');
                 $('#phone-popup').addClass('hidden')
             })
+
+            // car num 
+            setTimeout(function() {
+                $('.car-num').addClass('hidden');
+            }, 2000)
+
+
             //do fav
             ! function() {
                 var api = {

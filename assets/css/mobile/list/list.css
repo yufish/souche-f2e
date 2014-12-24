@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 #order li {
+    position: relative;
     line-height: 44px;
     height: 44px;
     text-align: center;
@@ -133,6 +134,16 @@
 #list #cars {
     margin:0 10px;
 }
+
+#list #cars .car-num {
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    background: rgba(0,0,0,0.5);
+}
+
 #list #cars .car {
     position: relative;
     padding: 10px 0;
@@ -188,12 +199,12 @@
     overflow: hidden;
 }
 #list #cars .car .car-series{
+    margin-top: -2px;
     font-weight: bold;
     line-height: 16px;
 }
 #list #cars .car .other-detail-info{
     margin-top: 2px;
-    line-height: 14px;
 }
 #list #cars .car .rht .info {
     color: #999;
@@ -226,6 +237,7 @@
     background-color: #62b061;
     color: #fff;
     font-size: 12px;
+    border:1px solid #62b061;
 }
 
 #list .car-footer .quality-guide{
@@ -236,8 +248,9 @@
 }
 
 #list .car-footer .quality-danbao {
-    background-color: #ff5a1a;
-    color: #fff;
+    color: #ff5a1a;
+    border: 1px solid #ff5a1a;
+    background-color: #fff;
     padding: 2px;
     float: left;
     font-size: 12px;
@@ -313,27 +326,22 @@
     font-size: 12px;
 }
 #list #cars .fav {
-    padding-top: 20px;
     position: absolute;
-    right: -10px;
-    top: -20px;
-    line-height: 14px;
-    color: #000;
-    width: 60px;
-    height: 50px;
-    text-align: center;
+    left: 5px;
+    bottom: 5px;
+    z-index: 999;
+    width: 20px;
+    height: 20px;
 }
 #list #cars .fav i {
     display: inline-block;
-    height: 13px;
-    width: 13px;
-    background: #ffffff url(../../../images/mob/h5-2/fav-unstar.png) no-repeat center center;
+    height: 20px;
+    width: 20px;
+    background: url(../../../images/mob/list/star.png) no-repeat center center;
     background-size: 100%;
-    vertical-align: -1px;
-    margin: 0 5px 0 0;
 }
 #list #cars .fav.star i {
-    background: #ffffff url(../../../images/mob/h5-2/fav-star.png) no-repeat center center;
+    background: url(../../../images/mob/list/star-r.png) no-repeat center center;
     background-size: 100%;
 }
 #list #act-for-suv .hot {
@@ -421,8 +429,12 @@
     background-position: -95px 0;
 }
 .filter-icon{
+    position: absolute;
+    left: 0;
+    top: 9px;
+    height: 25px;
+    width: 1px;
+    background-color: #e5e5e5;
+    vertical-align: middle;
     display: inline-block;
-    width:13px;height: 14px;
-    background: url(../../../images/mob/authorization/filter-icon.png);
-    background-size: 100%;
 }
