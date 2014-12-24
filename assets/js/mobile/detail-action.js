@@ -209,6 +209,13 @@ var Action = (function () {
                 $("#standard").addClass('hidden')
             })
 
+            //buy-app
+            var buyApp = $('#J_banner')
+            $('#J_banner .close').click(function(e){
+                e.preventDefault();
+                buyApp.hide();
+            })
+
         }
     }
 })();
