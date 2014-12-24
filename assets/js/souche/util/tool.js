@@ -97,14 +97,14 @@ define(function(){
         }
     };
 
-    var pathed = pathed || false;
-    if( !pathed ){
+    var patched = window.patched || false;
+    if( !patched ){
          for( var i in es5Shim ){
             if(es5Shim.hasOwnProperty(i)){
                 es5Shim[i]();
             }
         }
-        pathed = true;
+        window.patched = true;
     }
    
 

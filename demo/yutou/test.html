@@ -1,170 +1,53 @@
+
 <!doctype html>
-<html  >
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <title>大搜车-工程检测</title>
-    <link rel="stylesheet" href="/css/ipad/bootstrap.css">
-    <link rel="stylesheet" href="/css/ipad/common.css">
-    <link id="themecss" rel="stylesheet" href="">
+    <title>大搜车,为我选好车-二手车交易市场_二手车评估_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" id="viewport" content="width=1200">
+    <meta property="wb:webmaster" content="3a4a81533042fb49" />
+
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/$$lib/jquery-1.7.1.min.js,lib/require.js,lib/unslider.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/stats.js?t=16"></script>
+    <script src="http://f2e.souche.com/assets/js/lib/avalon.js"></script>
     <script>
         var contextPath = "";
-        /* var theme = localStorage.getItem('theme_name');
-         if (theme == null || theme == 'default' || theme == 'null')
-         document.querySelector('#themecss').href=contextPath + "/css/ipad/enginner.css";
-         else
-         document.querySelector('#themecss').href=contextPath + "/css/ipad/enginner-" + theme + ".css"; */
-        var isIpad = navigator.userAgent.match(/(iPad).*OS\s([\d_]+)/);
-        if (isIpad){
-            document.querySelector('#themecss').href=contextPath + "/css/ipad/enginner.css";
-        }else{
-            document.querySelector('#themecss').href=contextPath + "/css/ipad/pc.css";
-        }
+        require.config({
+            baseUrl: "http://f2e.souche.com/assets/js",
+            urlArgs:"bust=v2"
+        });
     </script>
+
 </head>
-<body class="bg">
-<header class="animated headroom">
-    <div class="slot"></div>
-    <nav>
-        <button onclick="javascript:window.location='index.html?back=EP69SnTECD'" class="back pull-left" style="display: none;">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </button>
-        <script>
-            if(isIpad){
-                document.querySelector('.back').style.display='inline-block';
-            }
-        </script>
-        <button id="menu-info" data-url="testinfo.html"><span >基础信息</span></button>
-        <button id="menu-tra" data-url="testaccident.html"><span class="">事故排查</span></button>
+<body>
+    <script>
+        var first = 0;
+        var userModel = avalon.define("userModel",function(vm){
+            vm.user = "18667046650";
+            vm.unread = "6";
+            vm.friend = "15967171060";
+            vm.createTime = new Date().getTime();
+        })
+
+        var model = avalon.define("talkList", function(vm) {
+            vm.messages = [];
+        })
+        model.messages.push({
+            user:"18667046650",
+            unread:8
+        });
+        model.messages.push({
+            user:"18667046650",
+            unread:8
+        });
 
 
-        <button id="menu-safe" data-url="testsafe.html"><span class="">安全评估</span></button>
-        <button id="menu-painting" data-url="testpaint.html"><span class="">漆面</span></button>
-
-
-        <!-- 	        <button id="menu-drive" data-url="testdrive.html"><span class="">路试</span></button> -->
-        <!--  <button id="menu-body" data-url="testbody.html"><span class="">车身</span></button>
-         <button id="menu-inner" data-url="testinner.html"><span class="">内饰</span></button> -->
-        <!-- 			<button id="menu-dipan" data-url="testdipan.html"><span class="">底盘</span></button> -->
-        <button id="menu-deep" data-url="testdeep.html"><span class="">操控检测</span></button>
-        <button id="menu-base" data-url="testbase.html"><span class="">参数</span></button>
-        <button id="menu-cfg" data-url="testconfig.html"><span class="">配置</span></button>
-        <button id="menu-preview" data-url="testpreview.html"><span class="">预览</span></button>
-        <!-- <button id="menu-progress" data-url="progress.html" class="nav-progress">
-            <div class="progress">
-              <div id="menu-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-
-              </div>
-        </div>
-        </button> -->
-        <!-- <button id="refresh-btn" onclick="javascript:window.location.reload();">
-            <span class="glyphicon glyphicon-repeat"></span>
-        </button> -->
-    </nav>
-</header>
-
-<style>
-    section.headfixed article {
-        width: 100%;
-        margin-top: 80px;
-        overflow: scroll;
-        height:100%;
-    }
-    div.finish{
-        width:148px;
-        margin:0 auto;
-        height:148px;
-        margin-top:10px;
-        margin-bottom:20px;
-    }
-    div.finish button{
-        border-radius:50%;
-        width:148px;
-        height:148px;
-    }
-    body.bg {
-        overflow-y: scroll;
-    }
-    .btn-load{
-        margin-top:100px;
-    }
-
-</style>
-<section class="headfixed">
-    <article style="min-height:500px;">
-
-        <iframe id="iframe"   class="scrollable" src="http://121.199.21.232/pages/choosecarpage/car-new-report.html?carId=EP69SnTECD" frameborder="0" style="width:100%;height:100%;overflow: scroll;display:none;"></iframe>
-        <div  class="finish"><button id="finished" class="btn-load">加载中...</button></div>
-    </article>
-</section>
-
-
-
-
-<div class="modal fade" style="" id="alert-modal" tabindex="-1"  aria-hidden="true">
-    <div class="modal-dialog alert-dialog">
-        <div class="modal-content alert-content">
-            <div class="slot-color"></div>
-            <div class="alert-close"><span class="glyphicon glyphicon-remove-sign"></span></div>
-            <div class="alert-tip"></div>
-        </div>
+    </script>
+<div class="user-list" ms-controller='talkList' >
+    <div class="user-list-item"  ms-each="messages">
+        <span>{{el.user}}</span> <span>{{el.unread}}</span>
     </div>
 </div>
-<script src="/js/common/jquery-1.7.1.min.js"></script>
-<script src="/js-back/ipad/icheck.js"></script>
-<script src="/js-back/ipad/quo.js"></script>
-<script src="/js-back/ipad/laio.js"></script>
-<script src="/js-back/ipad/modal.js"></script>
-<script src="/js-back/ipad/transition.js"></script>
-<script src="/js-back/ipad/jquery.loading.js"></script>
-<script>
-    var activeMenu = 'menu-preview';
-    $('#' + activeMenu).addClass('active');
-    /* 	$("header.headroom nav button[data-url]:not('.active')").click(function(){ */
-    $("header.headroom nav button[data-url]").click(function(){
-        window.location= $(this).data('url') + '?carId=EP69SnTECD';
-    });
-    var laioAlert = Laio.alert('#alert-modal');
-    Laio.noOverScroll();
-    Laio.heartbeat();
-</script>
-
-<script type="text/javascript">
-
-    document.getElementById("iframe").onload=function(){
-        $("#iframe").slideDown();
-        $("#finished").removeAttr("disabled");
-        $("#finished").text("全部检测完成");
-        $("#finished").removeClass("btn-load");
-
-    };
-
-    $('#finished').click(function(){
-        if ($("#finished").text() != "全部检测完成") return;
-        laioAlert.tip('<div class="tiploading"></div>');
-        $.ajax({
-            type: 'POST',
-            url: contextPath + "/pages/progressAction/detectFinish.json",
-            data: {carId:'EP69SnTECD'},
-            dataType: 'json',
-            success: function(data) {
-                if(data.errorMessage){
-                    laioAlert.tipError(data.errorMessage);
-                }else{
-                    laioAlert.tipSuccess('检测完成');
-                }
-            }
-        });
-    });
-
-    function downloadReport(carId) {
-        Laio.post(contextPath
-                + "/pages/carReportDownLoadAction/load.download", {
-            reportId : carId
-        });
-    }
-</script>
 </body>
 </html>
