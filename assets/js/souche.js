@@ -240,7 +240,7 @@ Souche.UI.NewSelect = function() {
                     $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
                     $(this).addClass("active");
                     if (index >= c.eles.length - 1) {
-                        $(this).closest(".open-item").addClass("hidden")
+                        $(this).closest(".select-open").addClass("hidden")
                         $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
                             var arr = []
                             for(var z=0;z< c.eles.length;z++){
@@ -250,6 +250,7 @@ Souche.UI.NewSelect = function() {
                         })
                     }
                     $(".choose-result",$(this).closest(".open-item")).val(code);
+                    e.stopPropagation();
                 });
                 return;
 
@@ -293,7 +294,8 @@ Souche.UI.NewSelect = function() {
                                         code:$(this).attr("data-code"),
                                         name:$(this).attr("data-name")
                                     });
-
+                                    $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                    $(this).addClass("active");
 
                                 })
                             }
@@ -313,7 +315,8 @@ Souche.UI.NewSelect = function() {
                                     code:$(this).attr("data-code"),
                                     name:$(this).attr("data-name")
                                 });
-
+                                $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                $(this).addClass("active");
 
                             })
                         }
@@ -341,6 +344,7 @@ Souche.UI.NewSelect = function() {
 
                     var index = $(this).attr("data-index") * 1;
                     $(".choose-result",$(this)).val(data.code);
+
 
                     $(Souche.UI.NewSelect).trigger("change",{id:this.id,code:data.code,name:data.name})
                     if (index >= c.eles.length - 1) {
@@ -381,7 +385,8 @@ Souche.UI.NewSelect = function() {
                                                 code: $(this).attr("data-code"),
                                                 name: $(this).attr("data-name")
                                             });
-
+                                            $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                            $(this).addClass("active");
                                         })
                                     }
                                 }
@@ -418,7 +423,8 @@ Souche.UI.NewSelect = function() {
                                             code:$(this).attr("data-code"),
                                             name:$(this).attr("data-name")
                                         });
-
+                                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                        $(this).addClass("active");
                                     })
                                 }
                                 if (c.defaultValues[index+1]) {
