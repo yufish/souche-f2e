@@ -34,6 +34,7 @@ SM.checkPhoneExist = function(callback) {
     $.ajax({
         //url: contextPath + "/pages/evaluateAction/isNoRegisterLogin.json",
         url: contextPath + "/pages/evaluateAction/isPhoneLogin.json",
+        // url: 'a.json',
         type: "post",
         dataType: "json",
         success: function(data) {
