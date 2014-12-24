@@ -197,6 +197,250 @@ Souche.UI.Select = function() {
         }
     };
 }();
+Souche.UI.NewSelect = function() {
+    /**
+     * 优化调用方式，同时优化请求数，用最少的代码和逻辑完成最多的工作！
+     Souche.UI.Select.init({
+			eles:['sell_brand','sell_set','sell_type'],
+			type:"car-subdivision",
+			defaultValues:[]
+		})
+     *
+     * @time 2013-9-3
+     * @author 芋头
+     */
+    var Select = function(_config) {
+        this.config = {
+            eles: ['#J_buybrand', '#J_buyset', ''],
+            type: "car-subdivision",
+            defaultValues: []
+        };
+        Souche.Util.mixin(this.config, _config);
+        this.init();
+    };
+    Select.prototype = {
+        init: function() {
+            var c = this.config;
+            for (var i = 0; i < c.eles.length; i++) {
+                c.defaultValues[i] = c.defaultValues[i] || "";
+                c.eles[i] = "#" + c.eles[i];
+            }
+            if(c.type!="car-subdivision"&& c.type!="area"){
+                for (var i in c.eles) {
+                    $(c.eles[i]).attr("data-index", i)
+                }
+                $(".choose-cont").on("click",function(e){
+                    var code = $(this).attr("data-code");
+                    var name = $(this).html();
+                    var index = $(this).closest(".open-item").attr("data-index")
+                    $(this).closest(".open-item").attr({
+                        "data-code":code,
+                        "data-name":name
+                    })
+                    $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                    $(this).addClass("active");
+                    if (index >= c.eles.length - 1) {
+                        $(this).closest(".open-item").addClass("hidden")
+                        $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
+                            var arr = []
+                            for(var z=0;z< c.eles.length;z++){
+                                arr.push($(c.eles[z]).attr("data-name"))
+                            }
+                            return arr.join(" ")
+                        })
+                    }
+                    $(".choose-result",$(this).closest(".open-item")).val(code);
+                });
+                return;
+
+            }
+            //没有默认值，则只需要一个请求即可初始化
+            $.ajax({
+                url: contextPath + "/pages/dicAction/loadRootLevel.json",
+                dataType: "json",
+                data: {
+                    type: c.type
+                },
+                success: function(data) {
+                    $(".choose-box",c.eles[0]).html("")
+
+                    if(c.type=="car-subdivision"){
+                        var obj = {}
+                        for (var i in data.items) {
+                            var zimu = data.items[i].name.split(" ")[0]
+                            var name = data.items[i].name.split(" ")[1]
+                            data.items[i].name = name;
+                            if(obj[zimu]){
+                                obj[zimu].push(data.items[i])
+                            }else{
+                                obj[zimu] = [data.items[i]]
+                            }
+
+                        }
+                        for(var i in obj){
+                            $(".choose-box",c.eles[0]).append("<div class=cont-tit>"+i+"</div>")
+                            for (var ii in obj[i]) {
+                                var item = obj[i][ii];
+                                var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                                $(".choose-box",c.eles[0]).append(con);
+                                con.on("click",function(e){
+                                    e.stopPropagation();
+                                    $(c.eles[0]).attr({
+                                        "data-code":$(this).attr("data-code"),
+                                        "data-name":$(this).attr("data-name")
+                                    })
+                                    $(c.eles[0]).trigger("change",{
+                                        code:$(this).attr("data-code"),
+                                        name:$(this).attr("data-name")
+                                    });
+
+
+                                })
+                            }
+                        }
+                    }else{
+                        for (var i in data.items) {
+                            var item = data.items[i];
+                            var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                            $(".choose-box",c.eles[0]).append(con);
+                            con.on("click",function(e){
+                                e.stopPropagation();
+                                $(c.eles[0]).attr({
+                                    "data-code":$(this).attr("data-code"),
+                                    "data-name":$(this).attr("data-name")
+                                })
+                                $(c.eles[0]).trigger("change",{
+                                    code:$(this).attr("data-code"),
+                                    name:$(this).attr("data-name")
+                                });
+
+
+                            })
+                        }
+                    }
+
+                    if (c.defaultValues[0]) {
+                        $(c.eles[0]).trigger("change",{
+                            code:c.defaultValues[0]
+                        });
+                    }
+                },
+                error: function() {
+
+                },
+                failure: function() {
+
+                }
+            });
+            for (var i in c.eles) {
+
+                $(c.eles[i]).attr("data-index", i).change(function(e,data) {
+                    var code = data.code;
+                    if (code == null) return;
+                    var a = code.split("-")[0];
+
+                    var index = $(this).attr("data-index") * 1;
+                    $(".choose-result",$(this)).val(data.code);
+
+                    $(Souche.UI.NewSelect).trigger("change",{id:this.id,code:data.code,name:data.name})
+                    if (index >= c.eles.length - 1) {
+                        $(c.eles[0]).closest(".select-open").addClass("hidden")
+                        $(".display-text",$(c.eles[0]).closest(".select-item")).html(function(){
+                            var arr = []
+                            for(var z=0;z< c.eles.length;z++){
+                                arr.push($(c.eles[z]).attr("data-name"))
+                            }
+                            return arr.join(" ")
+                        })
+                        return;
+                    }
+                    if (a == 'brand') {
+                        $.ajax({
+                            url: contextPath + "/pages/dicAction/loadRootLevelForCar.json",
+                            dataType: "json",
+                            data: {
+                                type: c.type,
+                                code: code
+                            },
+                            success: function(data) {
+                                $(".choose-box",c.eles[1]).html("")
+                                for (var j = 0; j < data['keys'].length; j++) {
+                                    var key = data['keys'][j];
+                                    $(".choose-box",c.eles[1]).append("<div class=cont-tit>"+key+"</div>")
+                                    for (var a = 0; a < data['codes'][key].length; a++) {
+                                        var item = data['codes'][key][a]
+                                        var con = $('<div class="choose-cont" data-code="' + item.code + '" data-name="' + item.name + '">' + item.name + '</option>');
+                                        $(".choose-box", c.eles[1]).append(con);
+                                        con.on("click", function (e) {
+                                            e.stopPropagation();
+                                            $(c.eles[1]).attr({
+                                                "data-code":$(this).attr("data-code"),
+                                                "data-name":$(this).attr("data-name")
+                                            })
+                                            $(c.eles[1]).trigger("change",{
+                                                code: $(this).attr("data-code"),
+                                                name: $(this).attr("data-name")
+                                            });
+
+                                        })
+                                    }
+                                }
+
+                                if (c.defaultValues[1]) {
+                                    $(c.eles[1]).trigger("change",{
+                                        code:c.defaultValues[1]
+                                    });
+                                }
+
+                            }
+                        });
+                    } else {
+                        $.ajax({
+                            url: contextPath + "/pages/dicAction/loadNextLevel.json",
+                            dataType: "json",
+                            data: {
+                                type: c.type,
+                                code: code
+                            },
+                            success: function(data) {
+                                $(".choose-box",c.eles[index+1]).html("")
+                                for (var i in data.items) {
+                                    var item = data.items[i];
+                                    var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                                    $(".choose-box",c.eles[index+1]).append(con);
+                                    con.on("click",function(e){
+                                        e.stopPropagation();
+                                        $(c.eles[index+1]).attr({
+                                            "data-code":$(this).attr("data-code"),
+                                            "data-name":$(this).attr("data-name")
+                                        })
+                                        $(c.eles[index+1]).trigger("change",{
+                                            code:$(this).attr("data-code"),
+                                            name:$(this).attr("data-name")
+                                        });
+
+                                    })
+                                }
+                                if (c.defaultValues[index+1]) {
+                                    $(c.eles[index+1]).trigger("change",{
+                                        code:c.defaultValues[index+1]
+                                    });
+                                }
+
+                            }
+                        });
+                    }
+                });
+            }
+
+        }
+    };
+    return {
+        init: function(config) {
+            return new Select(config);
+        }
+    };
+}();
 Souche.Form = Souche.Form || {};
 Souche.Form = function() {
     if (jQuery.validator) {
