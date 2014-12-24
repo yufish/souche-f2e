@@ -1,5 +1,8 @@
 @height: 64px;
 
+*{
+  box-sizing: border-box;
+}
 
 .clearfix {
   &:before,
@@ -27,6 +30,7 @@
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     background-color: #f5f5f5;
+    width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -34,6 +38,7 @@
     justify-content: space-between;
     a {
       width: 48%;
+      min-width: 144px;
       display: inline-block;
       height: 34px;
       line-height: 34px;
@@ -42,7 +47,6 @@
       border: 1px solid #ccc;
       font-size: 16px;
       border-radius: 4px;
-
       &.sell {
         color: #fff;
         background-color: #ff5517;
@@ -293,9 +297,9 @@
     }
     .end{
       position: absolute;
-      right: 0;
+      right: -2px;
       z-index: 10;
-      top: -4px;
+      top: -5px;
       text-align: right;
       width: 30px;
       .dot{
@@ -306,8 +310,9 @@
         background: #fff;
       }
       .price{
-        margin-top: 10px;
-        color: #666;
+        margin-top: 5px;
+        color: #999;
+        font-size: 12px;
       }
     }
     .this-car{
@@ -346,7 +351,7 @@
         height: 8px;
         border: 3px solid #0081d2;
         background-color: #fff;
-        top: -(@height + 4);
+        top: -(@height + 5);
       }
 
       &:after {
