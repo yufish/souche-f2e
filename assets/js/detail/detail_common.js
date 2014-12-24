@@ -541,7 +541,7 @@ Souche.Detail.PriceDown = function() {
 }();
 
 
-define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detail/mod/free-call","souche/util/image-resize", 'detail/mod/car-picture'], function(Fav, onSaleDetail, InitSummary, FreeCall,ImageResizem, carPicture) {
+define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detail/mod/free-call","souche/util/image-resize", 'detail/mod/car-picture', 'detail/mod/brand-history'], function(Fav, onSaleDetail, InitSummary, FreeCall,ImageResize, CarPicture, BrandHistory) {
     Souche.DetailCommon = function() {
         var config = {}
 
@@ -655,36 +655,10 @@ define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detai
                 InitSummary.init(config);
                 Fav.init(config);
                 FreeCall.init(config);
-                carPicture.init(config);
+                CarPicture.init(config);
+                BrandHistory.init(config);
 
                 Souche.Detail.PriceDown.init(config);
-                if ($(".brand-nav").length) {
-                    $(window).scroll(function() {
-                        var brandNavPos = $(".brand-nav").offset().top;
-                        var brandHeight = $(".brand-wrapper").height();
-                        var brandNavHeight = $(".brand-nav").height();
-                        if ($(window).scrollTop() > brandNavPos + 40) {
-
-                            if ($(window).scrollTop() > brandNavPos + brandHeight - brandNavHeight - 150) {
-                                $(".brand-list").css({
-                                    position: "absolute",
-                                    top: brandHeight - brandNavHeight - 100
-                                })
-                            } else {
-                                $(".brand-list").css({
-                                    position: "fixed",
-                                    top: 80
-                                })
-                            }
-                        } else {
-                            $(".brand-list").css({
-                                position: "relative",
-                                top: 0
-                            })
-                        }
-
-                    })
-                }
 
                 _bind();
 
