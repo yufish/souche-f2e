@@ -541,7 +541,7 @@ Souche.Detail.PriceDown = function() {
 }();
 
 
-define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/util/image-resize"], function(Fav, InitSummary, FreeCall,ImageResize) {
+define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detail/mod/free-call","souche/util/image-resize", 'detail/mod/car-picture'], function(Fav, onSaleDetail, InitSummary, FreeCall,ImageResizem, carPicture) {
     Souche.DetailCommon = function() {
         var config = {}
 
@@ -651,19 +651,12 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
         return {
             init: function(_config) {
                 $.extend(config, _config)
+                onSaleDetail.init(config);
                 InitSummary.init(config);
                 Fav.init(config);
-//                ImageResize.init($(".photosWrap img"), 445, 293);
                 FreeCall.init(config);
+                carPicture.init(config);
 
-                // var carPrice = parseInt($('.price-now.now').text());
-                // var nowPrice = carPrice;
-                // var nowStr = nowPrice.toString();
-                // var start = '<div class="price-num"><em>',
-                //     end = '</em></div>';
-                // for (var i = 0; i < nowStr.length; i++) {
-                //     $('.cutprice').append(start + nowStr.charAt(i) + end);
-                // }
                 Souche.Detail.PriceDown.init(config);
                 if ($(".brand-nav").length) {
                     $(window).scroll(function() {
@@ -695,7 +688,6 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
 
                 _bind();
 
-
                 var navSaleTabTop = $("#onsale_tab").offset().top;
                 var navSaleTabHeight = $("#onsale_tab").height();
 
@@ -723,9 +715,6 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
                         })
                         $("#onsale_tab_space").addClass("hidden")
                     }
-
-
-
                 });
 
                 //大图少于14张，隐藏左右切换
@@ -734,9 +723,10 @@ define(["detail/mod/fav", "detail/init_summary", "detail/mod/free-call","souche/
                     $(".photosSmallWrap").css("width",620);
                     $(".photoInfo").html("")
                 }
-
             }
         }
     }();
+
+
     return Souche.DetailCommon;
 });
