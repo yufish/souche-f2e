@@ -569,7 +569,7 @@ Souche.MiniLogin = function () {
         // 关闭按钮被点击时
         manualClose: function(){
             this.close();
-            $(this).trigger('menualClose');
+            $(this).trigger('manualClose');
         },
         _show: function() {
             var self = this;
