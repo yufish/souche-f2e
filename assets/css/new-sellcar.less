@@ -58,11 +58,13 @@
           margin-top: 60px;
           padding: 24px 35px;
           background: #fff;
+          position: relative;
           .title{
             color: #333;
             font-size: 20px;
             margin-bottom: 19px;
           }
+
           .sell-info{
             .select-item{
               height: 32px;
@@ -101,7 +103,7 @@
                 border: 2px solid #FF5517;
                 padding: 10px 11px;
                 background: #fff;
-                z-index: 100;
+                z-index: 2000;
                 top: 31px;
                 .cont-default{
                   line-height: 30px;
@@ -480,6 +482,29 @@
     color: #333;
     margin-bottom: 50px;
   }
+  .woring{
+    position: absolute;
+    top: 55px;
+    right: 80px;
+    width: 250px;
+    height: 32px;
+    border: 1px solid #F29797;
+    background: #FFE8EF;
+    color: #EE394B;
+    .error-tip{
+      display: block;
+      float: left;
+      width: 12px;
+      height: 12px;
+      background: url(../images/common/input-error-tip.png) no-repeat;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    span{
+      line-height: 30px;
+      margin-left: 10px;
+    }
+  }
   .close{
     position: absolute;
     width: 18px;
@@ -517,30 +542,26 @@
       height: 32px;
       margin-bottom: 25px;
       position: relative;
-      #ueser-name{
+      #user-name{
         width: 120px;
         height: 32px;
         border: 1px solid #DDDDDD;
         line-height: 18px;
         color: #999;
         padding:6px 8px;
-        
+        margin-right: 20px;
       }
       span{
-       
+        
         color: #333;
         position: absolute;
       }
-      .male{
-        top: 5px;
-        right: 62px;
-      }
-      .female{
-        top: 5px;
-        right: 0px;
+      label{
+        
+        margin-right: 8px;
       }
       .sex-radio{
-        width: 58px;
+        vertical-align:middle; margin-top:-2px; margin-bottom:1px;
       }
     }
     .form-sub{
