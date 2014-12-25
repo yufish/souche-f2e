@@ -58,11 +58,13 @@
           margin-top: 60px;
           padding: 24px 35px;
           background: #fff;
+          position: relative;
           .title{
             color: #333;
             font-size: 20px;
             margin-bottom: 19px;
           }
+
           .sell-info{
             .select-item{
               height: 32px;
@@ -221,6 +223,11 @@
                     height: 160px;
                   }
                 }
+              }
+              #hope-open{
+                width: 150px;
+                left: -1px;
+                height: 220px;
               }
               #select-time{
                 width: 150px;
@@ -448,6 +455,179 @@
       .an-up{
         background: url(../images/sellcar-new/qa-up-or.png) no-repeat right center;
       }
+    }
+  }
+}
+.bg-wrap{
+  width: 100%;
+  height: 4008px;
+  background: #000000;
+  opacity: 0.6;
+  filter:alpha(opacity=60);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.phone-papup{
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  margin-left: -205px;
+  width: 410px;
+  height: 318px;
+  padding: 22px;
+  background: #fff;
+  .title{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 50px;
+  }
+  .woring{
+    position: absolute;
+    top: 55px;
+    right: 80px;
+    width: 250px;
+    height: 32px;
+    border: 1px solid #F29797;
+    background: #FFE8EF;
+    color: #EE394B;
+    .error-tip{
+      display: block;
+      float: left;
+      width: 12px;
+      height: 12px;
+      background: url(../images/common/input-error-tip.png) no-repeat;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    span{
+      line-height: 30px;
+      margin-left: 10px;
+    }
+  }
+  .close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url("../images/fed/member/popup-close2.png") no-repeat;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  #phone-form{
+    width: 250px;
+    margin: 0 auto;
+    .sub-phone{
+      position: relative;
+      height: 32px;
+      margin-bottom: 10px;
+      span{
+        position: absolute;
+        top: 8px;
+        left: -10px;
+        color: #FF5417;
+        font-size: 14px;
+      }
+      #phone-num{
+        width: 250px;
+        height: 32px;
+        border: 1px solid #DDDDDD;
+        line-height: 18px;
+        color: #999;
+        padding:6px 8px;
+      }
+    }
+    .sub-name{
+      position: relative;
+      height: 32px;
+      margin-bottom: 25px;
+      position: relative;
+      #ueser-name{
+        width: 120px;
+        height: 32px;
+        border: 1px solid #DDDDDD;
+        line-height: 18px;
+        color: #999;
+        padding:6px 8px;
+        
+      }
+      span{
+       
+        color: #333;
+        position: absolute;
+      }
+      .male{
+        top: 5px;
+        right: 62px;
+      }
+      .female{
+        top: 5px;
+        right: 0px;
+      }
+      .sex-radio{
+        width: 58px;
+      }
+    }
+    .form-sub{
+      button{
+        width: 250px;
+        height: 40px;
+        color: #fff;
+        background: #FF5517;
+        line-height: 40px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover{
+        background: #fc7b15;
+      }
+    }
+  }
+}
+.sell-succ{
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  margin-left: -205px;
+  width: 410px;
+  height: 318px;
+  padding: 22px;
+  background: #fff;
+  text-align: center;
+  .close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url("../images/fed/member/popup-close2.png") no-repeat;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  h1{
+    margin-top: 56px;
+    margin-bottom: 18px;
+    font-size: 20px;
+    color: #333;
+  }
+  p{
+    color: #999;
+    line-height: 24px;
+  }
+  .succ-sub{
+    margin-top: 35px;
+    .affirm{
+      width: 160px;
+      height: 40px;
+      font-size: 16px;
+      color: #fff;
+      background: #FF5517;
+      border-radius: 2px;
+      line-height: 40px;
+      margin: 0 auto;
+      cursor: pointer;
     }
   }
 }
