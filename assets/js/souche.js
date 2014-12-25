@@ -228,31 +228,38 @@ Souche.UI.NewSelect = function() {
             if(c.type!="car-subdivision"&& c.type!="area"){
                 for (var i in c.eles) {
                     $(c.eles[i]).attr("data-index", i)
-                }
-                $(".choose-cont").on("click",function(e){
-                    var code = $(this).attr("data-code");
-                    var name = $(this).html();
-                    var index = $(this).closest(".open-item").attr("data-index")
-                    $(this).closest(".open-item").attr({
-                        "data-code":code,
-                        "data-name":name
-                    })
-                    $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
-                    $(this).addClass("active");
-                    if (index >= c.eles.length - 1) {
-                        $(this).closest(".select-open").addClass("hidden")
-                        $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
-                            var arr = []
-                            for(var z=0;z< c.eles.length;z++){
-                                arr.push($(c.eles[z]).attr("data-name"))
+                    $(".choose-cont").on("click",c.eles[i],function(e){
+                        var code = $(this).attr("data-code");
+                        var name = $(this).html();
+                        var index = $(this).closest(".open-item").attr("data-index")
+                        if(c.type=="time"&&index==0){
+                            $(".choose-box", c.eles[1]).html("")
+                            for(var i=1;i<13;i++){
+                                $(".choose-box", c.eles[1]).append('<div class="choose-cont" data-code="'+i+'">'+i+'月</div>')
                             }
-                            return arr.join(" ")
+                        }
+                        $(this).closest(".open-item").attr({
+                            "data-code":code,
+                            "data-name":name
                         })
-                    }
-                    $(".choose-result",$(this).closest(".open-item")).val(code);
-                    $(".choose-result-name",$(this).closest(".open-item")).val(name);
-                    e.stopPropagation();
-                });
+                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                        $(this).addClass("active");
+                        if (index >= c.eles.length - 1) {
+                            $(this).closest(".select-open").addClass("hidden")
+                            $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
+                                var arr = []
+                                for(var z=0;z< c.eles.length;z++){
+                                    arr.push($(c.eles[z]).attr("data-name"))
+                                }
+                                return arr.join(" ")
+                            })
+                        }
+                        $(".choose-result",$(this).closest(".open-item")).val(code);
+                        $(".choose-result-name",$(this).closest(".open-item")).val(name);
+                        e.stopPropagation();
+                    });
+                }
+
                 return;
 
             }
