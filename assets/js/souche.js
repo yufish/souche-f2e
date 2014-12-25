@@ -274,6 +274,7 @@ Souche.UI.NewSelect = function() {
 
                     if(c.type=="car-subdivision"){
                         var obj = {}
+                        $(".brand-cata").html("")
                         for (var i in data.items) {
                             var zimu = data.items[i].name.split(" ")[0]
                             var name = data.items[i].name.split(" ")[1]
@@ -285,7 +286,9 @@ Souche.UI.NewSelect = function() {
                             }
 
                         }
+
                         for(var i in obj){
+                            $(".brand-cata").append("<li><a>"+i+"</a></li>")
                             $(".choose-box",c.eles[0]).append("<div class=cont-tit data-name='"+i+"'>"+i+"</div>")
                             for (var ii in obj[i]) {
                                 var item = obj[i][ii];
@@ -312,6 +315,13 @@ Souche.UI.NewSelect = function() {
                                 })
                             }
                         }
+                        $(".brand-cata a").on("click",function(){
+                            var name = $(this).html();
+                            var ele = $("#choose-brand .choose-box .cont-tit[data-name="+name.toUpperCase()+"]");
+                            if(ele.length){
+                                ele.parent().animate({scrollTop:ele.parent().scrollTop()+(ele.offset().top - ele.parent().offset().top)})
+                            }
+                        })
                     }else{
                         for (var i in data.items) {
                             var item = data.items[i];
