@@ -286,7 +286,7 @@ Souche.UI.NewSelect = function() {
 
                         }
                         for(var i in obj){
-                            $(".choose-box",c.eles[0]).append("<div class=cont-tit>"+i+"</div>")
+                            $(".choose-box",c.eles[0]).append("<div class=cont-tit data-name='"+i+"'>"+i+"</div>")
                             for (var ii in obj[i]) {
                                 var item = obj[i][ii];
                                 var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
@@ -420,25 +420,43 @@ Souche.UI.NewSelect = function() {
                                 code: code
                             },
                             success: function(data) {
-                                $(".choose-box",c.eles[index+1]).html("")
-                                for (var i in data.items) {
-                                    var item = data.items[i];
-                                    var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
-                                    $(".choose-box",c.eles[index+1]).append(con);
-                                    con.on("click",function(e){
-                                        e.stopPropagation();
-                                        $(c.eles[index+1]).attr({
-                                            "data-code":$(this).attr("data-code"),
-                                            "data-name":$(this).attr("data-name")
+
+                                if(false){//c.type=="car-subdivision"&&index==2){
+                                    var obj = {};
+                                    for (var i in data.items) {
+                                        var zimu = data.items[i].name.split(" ")[0]
+                                        var name = data.items[i].name.split(" ")[1]
+                                        data.items[i].name = name;
+                                        if(obj[zimu]){
+                                            obj[zimu].push(data.items[i])
+                                        }else{
+                                            obj[zimu] = [data.items[i]]
+                                        }
+
+                                    }
+                                }else{
+                                    $(".choose-box",c.eles[index+1]).html("")
+                                    for (var i in data.items) {
+                                        var item = data.items[i];
+                                        var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                                        $(".choose-box",c.eles[index+1]).append(con);
+                                        con.on("click",function(e){
+                                            e.stopPropagation();
+                                            $(c.eles[index+1]).attr({
+                                                "data-code":$(this).attr("data-code"),
+                                                "data-name":$(this).attr("data-name")
+                                            })
+                                            $(c.eles[index+1]).trigger("change",{
+                                                code:$(this).attr("data-code"),
+                                                name:$(this).attr("data-name")
+                                            });
+                                            $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                            $(this).addClass("active");
                                         })
-                                        $(c.eles[index+1]).trigger("change",{
-                                            code:$(this).attr("data-code"),
-                                            name:$(this).attr("data-name")
-                                        });
-                                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
-                                        $(this).addClass("active");
-                                    })
+                                    }
                                 }
+
+
                                 if (c.defaultValues[index+1]) {
                                     $(c.eles[index+1]).trigger("change",{
                                         code:c.defaultValues[index+1]
