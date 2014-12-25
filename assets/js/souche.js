@@ -228,15 +228,14 @@ Souche.UI.NewSelect = function() {
             if(c.type!="car-subdivision"&& c.type!="area"){
                 for (var i in c.eles) {
                     $(c.eles[i]).attr("data-index", i)
-                    $(".choose-cont").on("click",c.eles[i],function(e){
+                    $(".choose-cont").on("click",function(e){
                         var code = $(this).attr("data-code");
                         var name = $(this).html();
                         var index = $(this).closest(".open-item").attr("data-index")
                         if(c.type=="time"&&index==0){
-                            $(".choose-box", c.eles[1]).html("")
-                            for(var i=1;i<13;i++){
-                                $(".choose-box", c.eles[1]).append('<div class="choose-cont" data-code="'+i+'">'+i+'月</div>')
-                            }
+
+                            $(".cont-default", c.eles[1]).addClass("hidden");
+                            $(".cont-item", c.eles[1]).removeClass("hidden");
                         }
                         $(this).closest(".open-item").attr({
                             "data-code":code,
@@ -292,7 +291,12 @@ Souche.UI.NewSelect = function() {
                                 var item = obj[i][ii];
                                 var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
                                 $(".choose-box",c.eles[0]).append(con);
+
                                 con.on("click",function(e){
+                                    if(c.eles.length>2){
+                                        $(".choose-box",c.eles[2]).html('<div class="cont-default" data-code="" data-name="">请先选择车系</div>')
+                                    }
+
                                     e.stopPropagation();
                                     $(c.eles[0]).attr({
                                         "data-code":$(this).attr("data-code"),
