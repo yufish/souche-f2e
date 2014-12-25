@@ -1,3 +1,4 @@
+define([], function(){    
     Souche.OnsaleDetail = function() {
         var phoneReg = /^1[3458][0-9]{9}$/;
         //注释#detail-nav元素  添加.onsale-tab元素 by boykiller 2014.6.9
@@ -91,10 +92,10 @@
                         $('.detail-button').prepend("<div class='detail-yuyue yuyue-haved'>已预约</div>");
                         return;
                     }
-//                    $('body').append(data);
-//                    $(".wrapGrayBg").show();
-//                    $("#yuyue-popup").addClass("hidden");
-//                    $("#yuyue-result-popup").removeClass('hidden');
+                   // $('body').append(data);
+                   // $(".wrapGrayBg").show();
+                   // $("#yuyue-popup").addClass("hidden");
+                   // $("#yuyue-result-popup").removeClass('hidden');
                     window.location.href=contextPath+"/pages/myorder/my_order_list.html?index=1&source=1"
                 }
             })
@@ -140,15 +141,15 @@
                 $("#J_yuyue").html("预约看车");
                 $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
             })
-//            Souche.checkPhoneExist(function(is_login) {
-//                if (is_login) {
-//                    submitYuyue();
-//                } else {
-//                    $("#yuyue-popup").removeClass("hidden")
-//                    $(".wrapGrayBg").show();
-//                }
-//                $("#login_button").attr("disabled", false);
-//            })
+           // Souche.checkPhoneExist(function(is_login) {
+           //     if (is_login) {
+           //         submitYuyue();
+           //     } else {
+           //         $("#yuyue-popup").removeClass("hidden")
+           //         $(".wrapGrayBg").show();
+           //     }
+           //     $("#login_button").attr("disabled", false);
+           // })
         });
         $('#yuyue-popup .apply_close').live('click', function() {
             $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
@@ -448,3 +449,6 @@
             }
         };
     }();
+
+    return Souche.OnsaleDetail;
+});

@@ -369,9 +369,21 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                             maxPrice: maxPrice
                         },
                         success: function() {
-                            setTimeout(function() {
-                                window.location.href = 'index.html' + location.search;
-                            }, 50)
+
+                            SM.checkPhoneExist(function(is_login) {
+                                if (is_login) {
+                                    setTimeout(function() {
+                                        window.location.href = 'index.html' + location.search;
+                                    }, 50)
+                                } else {
+                                    $('.wrapGrayBg').removeClass('hidden');
+                                    var $popup = $('.login-popup');
+                                    $popup.removeClass('hidden');
+                                    $('.e-close-btn').on('click', function() {
+                                        window.location.href = 'index.html' + location.search;
+                                    });
+                                }
+                            });                          
                         }
 
                     });
@@ -380,6 +392,22 @@ define(['lib/mustache', 'mobile/common/BrandManager', 'mobile/guwen/addListener'
                 function showLoading(){
 
                 }
+
+                $('#login-form').submit(function(e) {
+                    var phoneReg = /^1[3458][0-9]{9}$/;
+                    var phoneNum = $("#phone-for-login").val();
+                    e.preventDefault();
+                    if (!phoneReg.test(phoneNum)) {
+                        alert('请输入正确的手机号码');
+                    } else {
+                        SM.PhoneRegister(phoneNum, function() {
+                            window.location.href = 'index.html' + location.search;
+                        })
+                    }
+                });
+
+
+
                 $('#submit-btn').click(function() {
                     if (curPageIndex == pages.length - 1) {
                         //gotoPage()
