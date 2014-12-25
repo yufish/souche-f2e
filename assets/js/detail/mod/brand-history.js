@@ -10,6 +10,9 @@ define(['lib/mustache'],function(Mustache){
         showBrandHistoryTab: function(){
             $('.onsale-tab-item-brand.hidden').removeClass('hidden');
         },
+        hideBrandHistoryTab: function(){
+            $('.onsale-tab-item-brand').addClass('hidden');
+        },
         buildBrandHistory: function(historyData){
             var tmpl = $('#brand-story-tmpl').html();
             if(historyData.ages){
@@ -82,6 +85,9 @@ define(['lib/mustache'],function(Mustache){
                 setTimeout(function(){
                     _event.bind();
                 }, 1000);
+            }
+            else{
+                _view.hideBrandHistoryTab();
             }
         });
     }
