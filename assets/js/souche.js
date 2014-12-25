@@ -564,8 +564,11 @@ Souche.MiniLogin = function () {
                     display: "none"
                 });
             }
-
-
+        },
+        // 关闭按钮被点击时
+        manualClose: function(){
+            this.close();
+            $(this).trigger('menualClose');
         },
         _show: function() {
             var self = this;
