@@ -29,17 +29,28 @@ define(function() {
 
         var downList = "<div class='realIndexTimeDown'>";
         for (var index = 0, len = list.length; index < len; index++) {
-            var key = "carSeries";
+            var key = null;
             if (list[index].type == 0) {
                 key = "carBrand"
             } else if (list[index].type == 2) {
                 key = "country"
             } else if (list[index].type == 3) {
                 key = "color"
+            } else if (list[index].type == 1) {
+                key = "carSeries"
+            } else{
+
             }
-            list[index].url = contextPath + "/pages/onsale/sale_car_list.html" + "?" + key + "=" + list[index].code + "&pfrom=boxsearch&recommand=box";
-            downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
-        }
+            if(key){
+                list[index].url = contextPath + "/pages/onsale/sale_car_list.html" + "?" + key + "=" + list[index].code + "&pfrom=boxsearch&recommand=box";
+                downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
+
+            }else{
+                list[index].url = contextPath + "/pages/onsale/sale_car_list.html?keyword=" + list[index].name + "&pfrom=boxsearch&recommand=box";
+                downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
+
+            }
+            }
 
         downList += "<\/div>";
         $(".realIndexTimeDown").remove();

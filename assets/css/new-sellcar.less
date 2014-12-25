@@ -130,7 +130,8 @@
                       padding-left: 10px;
                     }
                     .choose-cont{
-                      line-height: 32px;
+                      line-height: 20px;
+                      padding:6px 0;
                       font-size: 12px;
                       color: #666;
                       padding-left: 10px;
@@ -139,15 +140,15 @@
                     }
                     .choose-cont:hover{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                     .choose-cont.active{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                     .cont-choosed{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                   }
                 }
@@ -161,14 +162,32 @@
                 }
                 #choose-brand{
                   width: 171px;
+                  .brand-cata{
+                    width: 22px;
+                    float: left;
+                    li{
+                      line-height: 17px;
+                      cursor: pointer;
+                      a{
+                        cursor: pointer;
+                        color: #B5B5B5;
+                      }
+                      a:hover{
+                        color: #FF5517;
+                      }
+                      .choosed{
+                        color: #FF5517;
+                      }
+                    }
+                  }
                   .choose-box{
-                    margin-left: 22px;
+                    float: left;
 
                     .choose-cont{
                       background: url(../images/sellcar-new/cont-item.png) no-repeat 120px center;
                     }
                     .choose-cont:hover,.choose-cont.active{
-                      background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
+                      background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
                     }
                   }
                 }
@@ -179,7 +198,7 @@
                     background: url(../images/sellcar-new/cont-item.png) no-repeat 140px center;
                   }
                   .choose-cont:hover,.choose-cont.active{
-                    background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
+                    background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
                   }
                 }
                 #choose-type{
@@ -258,7 +277,7 @@
               }
             }
             .form-sub{
-              margin-top: 12px;
+              margin-top: 24px;
               #sell-submit{
                 display: block;
                 float: left;
@@ -272,6 +291,10 @@
                 line-height: 40px;
                 color: #fff;
                 text-align: center;
+                cursor: pointer;
+              }
+              #sell-submit:hover{
+                background: #FF4600;
               }
               .judge-link{
                 display: block;
@@ -422,6 +445,7 @@
       color: #fff;
       font-size: 16px;
       margin: 0 auto;
+      cursor: pointer;
     }
   }
   .ques-box{
@@ -581,7 +605,7 @@
         cursor: pointer;
       }
       button:hover{
-        background: #fc7b15;
+        background: #FF4600;
       }
     }
   }

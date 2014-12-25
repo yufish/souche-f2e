@@ -228,31 +228,37 @@ Souche.UI.NewSelect = function() {
             if(c.type!="car-subdivision"&& c.type!="area"){
                 for (var i in c.eles) {
                     $(c.eles[i]).attr("data-index", i)
-                }
-                $(".choose-cont").on("click",function(e){
-                    var code = $(this).attr("data-code");
-                    var name = $(this).html();
-                    var index = $(this).closest(".open-item").attr("data-index")
-                    $(this).closest(".open-item").attr({
-                        "data-code":code,
-                        "data-name":name
-                    })
-                    $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
-                    $(this).addClass("active");
-                    if (index >= c.eles.length - 1) {
-                        $(this).closest(".select-open").addClass("hidden")
-                        $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
-                            var arr = []
-                            for(var z=0;z< c.eles.length;z++){
-                                arr.push($(c.eles[z]).attr("data-name"))
-                            }
-                            return arr.join(" ")
+                    $(".choose-cont").on("click",function(e){
+                        var code = $(this).attr("data-code");
+                        var name = $(this).html();
+                        var index = $(this).closest(".open-item").attr("data-index")
+                        if(c.type=="time"&&index==0){
+
+                            $(".cont-default", c.eles[1]).addClass("hidden");
+                            $(".cont-item", c.eles[1]).removeClass("hidden");
+                        }
+                        $(this).closest(".open-item").attr({
+                            "data-code":code,
+                            "data-name":name
                         })
-                    }
-                    $(".choose-result",$(this).closest(".open-item")).val(code);
-                    $(".choose-result-name",$(this).closest(".open-item")).val(name);
-                    e.stopPropagation();
-                });
+                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                        $(this).addClass("active");
+                        if (index >= c.eles.length - 1) {
+                            $(this).closest(".select-open").addClass("hidden")
+                            $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
+                                var arr = []
+                                for(var z=0;z< c.eles.length;z++){
+                                    arr.push($(c.eles[z]).attr("data-name"))
+                                }
+                                return arr.join(" ")
+                            })
+                        }
+                        $(".choose-result",$(this).closest(".open-item")).val(code);
+                        $(".choose-result-name",$(this).closest(".open-item")).val(name);
+                        e.stopPropagation();
+                    });
+                }
+
                 return;
 
             }
@@ -268,6 +274,7 @@ Souche.UI.NewSelect = function() {
 
                     if(c.type=="car-subdivision"){
                         var obj = {}
+                        $(".brand-cata").html("")
                         for (var i in data.items) {
                             var zimu = data.items[i].name.split(" ")[0]
                             var name = data.items[i].name.split(" ")[1]
@@ -279,13 +286,20 @@ Souche.UI.NewSelect = function() {
                             }
 
                         }
+
                         for(var i in obj){
-                            $(".choose-box",c.eles[0]).append("<div class=cont-tit>"+i+"</div>")
+                            $(".brand-cata").append("<li><a>"+i+"</a></li>")
+                            $(".choose-box",c.eles[0]).append("<div class=cont-tit data-name='"+i+"'>"+i+"</div>")
                             for (var ii in obj[i]) {
                                 var item = obj[i][ii];
                                 var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
                                 $(".choose-box",c.eles[0]).append(con);
+
                                 con.on("click",function(e){
+                                    if(c.eles.length>2){
+                                        $(".choose-box",c.eles[2]).html('<div class="cont-default" data-code="" data-name="">请先选择车系</div>')
+                                    }
+
                                     e.stopPropagation();
                                     $(c.eles[0]).attr({
                                         "data-code":$(this).attr("data-code"),
@@ -301,6 +315,13 @@ Souche.UI.NewSelect = function() {
                                 })
                             }
                         }
+                        $(".brand-cata a").on("click",function(){
+                            var name = $(this).html();
+                            var ele = $("#choose-brand .choose-box .cont-tit[data-name="+name.toUpperCase()+"]");
+                            if(ele.length){
+                                ele.parent().animate({scrollTop:ele.parent().scrollTop()+(ele.offset().top - ele.parent().offset().top)})
+                            }
+                        })
                     }else{
                         for (var i in data.items) {
                             var item = data.items[i];
@@ -409,25 +430,64 @@ Souche.UI.NewSelect = function() {
                                 code: code
                             },
                             success: function(data) {
-                                $(".choose-box",c.eles[index+1]).html("")
-                                for (var i in data.items) {
-                                    var item = data.items[i];
-                                    var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
-                                    $(".choose-box",c.eles[index+1]).append(con);
-                                    con.on("click",function(e){
-                                        e.stopPropagation();
-                                        $(c.eles[index+1]).attr({
-                                            "data-code":$(this).attr("data-code"),
-                                            "data-name":$(this).attr("data-name")
+                                if(c.type=="car-subdivision"&&index==1){
+                                    $(".choose-box",c.eles[index+1]).html("")
+                                    var obj = {};
+                                    for (var i in data.items) {
+                                        var zimu = data.items[i].name.split(" ")[0]
+                                        if(obj[zimu]){
+                                            obj[zimu].push(data.items[i])
+                                        }else{
+                                            obj[zimu] = [data.items[i]]
+                                        }
+                                    }
+                                    for(var i in obj){
+                                        $(".choose-box",c.eles[index+1]).append("<div class=cont-tit data-name='"+i+"'>"+i+"</div>")
+                                        for (var ii in obj[i]) {
+                                            var item = obj[i][ii];
+                                            var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                                            $(".choose-box",c.eles[index+1]).append(con);
+
+                                            con.on("click",function(e){
+                                                e.stopPropagation();
+                                                $(c.eles[index+1]).attr({
+                                                    "data-code":$(this).attr("data-code"),
+                                                    "data-name":$(this).attr("data-name")
+                                                })
+                                                $(c.eles[index+1]).trigger("change",{
+                                                    code:$(this).attr("data-code"),
+                                                    name:$(this).attr("data-name")
+                                                });
+                                                $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                                $(this).addClass("active");
+
+                                            })
+                                        }
+                                    }
+
+                                }else{
+                                    $(".choose-box",c.eles[index+1]).html("")
+                                    for (var i in data.items) {
+                                        var item = data.items[i];
+                                        var con = $('<div class="choose-cont" data-code="'+item.code+'" data-name="'+item.name+'">' + item.name + '</option>');
+                                        $(".choose-box",c.eles[index+1]).append(con);
+                                        con.on("click",function(e){
+                                            e.stopPropagation();
+                                            $(c.eles[index+1]).attr({
+                                                "data-code":$(this).attr("data-code"),
+                                                "data-name":$(this).attr("data-name")
+                                            })
+                                            $(c.eles[index+1]).trigger("change",{
+                                                code:$(this).attr("data-code"),
+                                                name:$(this).attr("data-name")
+                                            });
+                                            $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                                            $(this).addClass("active");
                                         })
-                                        $(c.eles[index+1]).trigger("change",{
-                                            code:$(this).attr("data-code"),
-                                            name:$(this).attr("data-name")
-                                        });
-                                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
-                                        $(this).addClass("active");
-                                    })
+                                    }
                                 }
+
+
                                 if (c.defaultValues[index+1]) {
                                     $(c.eles[index+1]).trigger("change",{
                                         code:c.defaultValues[index+1]
