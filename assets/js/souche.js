@@ -250,6 +250,7 @@ Souche.UI.NewSelect = function() {
                         })
                     }
                     $(".choose-result",$(this).closest(".open-item")).val(code);
+                    $(".choose-result-name",$(this).closest(".open-item")).val(name);
                     e.stopPropagation();
                 });
                 return;
@@ -344,7 +345,7 @@ Souche.UI.NewSelect = function() {
 
                     var index = $(this).attr("data-index") * 1;
                     $(".choose-result",$(this)).val(data.code);
-
+                    $(".choose-result-name",$(this)).val(data.name);
 
                     $(Souche.UI.NewSelect).trigger("change",{id:this.id,code:data.code,name:data.name})
                     if (index >= c.eles.length - 1) {
