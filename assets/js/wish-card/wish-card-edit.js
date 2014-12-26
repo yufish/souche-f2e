@@ -177,8 +177,10 @@ function(AddSeries, CustomSelect, Tool){
                         }
                     })
                 },false,true,false)
-
-            })
+            });
+            $(Souche.MiniLogin).on('manualClose', function(){
+                $('#J_xuqiu_submit').removeClass("loading").html("提交")
+            });
             //获取一个初始宽度
             if($(".dialogContentContainer").hasClass("hidden")){
                 $(".dialogContentContainer").css({opacity:0}).removeClass("hidden")

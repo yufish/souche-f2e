@@ -136,7 +136,7 @@ define([], function(){
             Souche.MiniLogin.checkLogin(function(){
                 submitYuyue();
             },false,true);
-            $(Souche.MiniLogin).on("menualClose",function(){
+            $(Souche.MiniLogin).on("manualClose",function(){
                 $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
                 $("#J_yuyue").html("预约看车");
                 $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
