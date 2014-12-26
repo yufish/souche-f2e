@@ -541,7 +541,7 @@ Souche.Detail.PriceDown = function() {
 }();
 
 
-define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detail/mod/free-call","souche/util/image-resize", 'detail/mod/car-picture', 'detail/mod/brand-history'], function(Fav, onSaleDetail, InitSummary, FreeCall,ImageResize, CarPicture, BrandHistory) {
+define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detail/mod/free-call","souche/util/image-resize", 'detail/mod/car-picture', 'detail/mod/brand-history', 'detail/mod/car-sale-history'], function(Fav, onSaleDetail, InitSummary, FreeCall,ImageResize, CarPicture, BrandHistory, CarSaleHistory) {
     Souche.DetailCommon = function() {
         var config = {}
 
@@ -657,6 +657,7 @@ define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detai
                 FreeCall.init(config);
                 CarPicture.init(config);
                 BrandHistory.init(config);
+                CarSaleHistory.init(config);
 
                 Souche.Detail.PriceDown.init(config);
 

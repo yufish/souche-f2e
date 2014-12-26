@@ -58,10 +58,34 @@
           margin-top: 60px;
           padding: 24px 35px;
           background: #fff;
+          position: relative;
           .title{
             color: #333;
             font-size: 20px;
             margin-bottom: 19px;
+          }
+           .woring{
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            width: 200px;
+            height: 32px;
+            border: 1px solid #F29797;
+            background: #FFE8EF;
+            color: #EE394B;
+            .error-tip{
+              display: block;
+              float: left;
+              width: 12px;
+              height: 12px;
+              background: url(../images/common/input-error-tip.png) no-repeat;
+              margin-top: 10px;
+              margin-left: 10px;
+            }
+            span{
+              line-height: 30px;
+              margin-left: 10px;
+            }
           }
           .sell-info{
             .select-item{
@@ -101,7 +125,7 @@
                 border: 2px solid #FF5517;
                 padding: 10px 11px;
                 background: #fff;
-                z-index: 100;
+                z-index: 2000;
                 top: 31px;
                 .cont-default{
                   line-height: 30px;
@@ -128,7 +152,8 @@
                       padding-left: 10px;
                     }
                     .choose-cont{
-                      line-height: 32px;
+                      line-height: 20px;
+                      padding:6px 0;
                       font-size: 12px;
                       color: #666;
                       padding-left: 10px;
@@ -137,15 +162,15 @@
                     }
                     .choose-cont:hover{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                     .choose-cont.active{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                     .cont-choosed{
                       color: #fff;
-                      background:#F44B0B ;
+                      background:#ff5517 ;
                     }
                   }
                 }
@@ -159,14 +184,32 @@
                 }
                 #choose-brand{
                   width: 171px;
+                  .brand-cata{
+                    width: 22px;
+                    float: left;
+                    li{
+                      line-height: 17px;
+                      cursor: pointer;
+                      a{
+                        cursor: pointer;
+                        color: #B5B5B5;
+                      }
+                      a:hover{
+                        color: #FF5517;
+                      }
+                      .choosed{
+                        color: #FF5517;
+                      }
+                    }
+                  }
                   .choose-box{
-                    margin-left: 22px;
+                    float: left;
 
                     .choose-cont{
                       background: url(../images/sellcar-new/cont-item.png) no-repeat 120px center;
                     }
                     .choose-cont:hover,.choose-cont.active{
-                      background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
+                      background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
                     }
                   }
                 }
@@ -177,7 +220,7 @@
                     background: url(../images/sellcar-new/cont-item.png) no-repeat 140px center;
                   }
                   .choose-cont:hover,.choose-cont.active{
-                    background: #F44B0B url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
+                    background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
                   }
                 }
                 #choose-type{
@@ -222,6 +265,11 @@
                   }
                 }
               }
+              #hope-open{
+                width: 150px;
+                left: -1px;
+                height: 220px;
+              }
               #select-time{
                 width: 150px;
                 float: left;
@@ -251,7 +299,7 @@
               }
             }
             .form-sub{
-              margin-top: 12px;
+              margin-top: 24px;
               #sell-submit{
                 display: block;
                 float: left;
@@ -265,6 +313,10 @@
                 line-height: 40px;
                 color: #fff;
                 text-align: center;
+                cursor: pointer;
+              }
+              #sell-submit:hover{
+                background: #FF4600;
               }
               .judge-link{
                 display: block;
@@ -415,6 +467,7 @@
       color: #fff;
       font-size: 16px;
       margin: 0 auto;
+      cursor: pointer;
     }
   }
   .ques-box{
@@ -438,6 +491,7 @@
         line-height: 19px;
         font-size: 14px;
         color: #333;
+        display: none;
       }
     }
     .quer-or{
@@ -448,6 +502,178 @@
       .an-up{
         background: url(../images/sellcar-new/qa-up-or.png) no-repeat right center;
       }
+    }
+  }
+}
+.bg-wrap{
+  width: 100%;
+  height: 4008px;
+  background: #000000;
+  opacity: 0.6;
+  filter:alpha(opacity=60);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100000;
+}
+.phone-papup{
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  margin-left: -205px;
+  width: 410px;
+  height: 318px;
+  padding: 22px;
+  background: #fff;
+  z-index: 100001;
+  .title{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 50px;
+  }
+  .woring{
+    position: absolute;
+    top: 55px;
+    right: 80px;
+    width: 250px;
+    height: 32px;
+    border: 1px solid #F29797;
+    background: #FFE8EF;
+    color: #EE394B;
+    .error-tip{
+      display: block;
+      float: left;
+      width: 12px;
+      height: 12px;
+      background: url(../images/common/input-error-tip.png) no-repeat;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    span{
+      line-height: 30px;
+      margin-left: 10px;
+    }
+  }
+  .close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url("../images/fed/member/popup-close2.png") no-repeat;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  #phone-form{
+    width: 250px;
+    margin: 0 auto;
+    .sub-phone{
+      position: relative;
+      height: 32px;
+      margin-bottom: 10px;
+      span{
+        position: absolute;
+        top: 8px;
+        left: -10px;
+        color: #FF5417;
+        font-size: 14px;
+      }
+      #phone-num{
+        width: 250px;
+        height: 32px;
+        border: 1px solid #DDDDDD;
+        line-height: 18px;
+        color: #999;
+        padding:6px 8px;
+      }
+    }
+    .sub-name{
+      position: relative;
+      height: 32px;
+      margin-bottom: 25px;
+      position: relative;
+      #user-name{
+        width: 120px;
+        height: 32px;
+        border: 1px solid #DDDDDD;
+        line-height: 18px;
+        color: #999;
+        padding:6px 8px;
+        margin-right: 20px;
+      }
+      span{
+        
+        color: #333;
+        position: absolute;
+      }
+      label{
+        
+        margin-right: 8px;
+      }
+      .sex-radio{
+        vertical-align:middle; margin-top:-2px; margin-bottom:1px;
+      }
+    }
+    .form-sub{
+      button{
+        width: 250px;
+        height: 40px;
+        color: #fff;
+        background: #FF5517;
+        line-height: 40px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover{
+        background: #FF4600;
+      }
+    }
+  }
+}
+.sell-succ{
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  margin-left: -205px;
+  width: 410px;
+  height: 318px;
+  padding: 22px;
+  background: #fff;
+  text-align: center;
+  z-index: 100001;
+  .close{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url("../images/fed/member/popup-close2.png") no-repeat;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  h1{
+    margin-top: 56px;
+    margin-bottom: 18px;
+    font-size: 20px;
+    color: #333;
+  }
+  p{
+    color: #999;
+    line-height: 24px;
+  }
+  .succ-sub{
+    margin-top: 35px;
+    .affirm{
+      width: 160px;
+      height: 40px;
+      font-size: 16px;
+      color: #fff;
+      background: #FF5517;
+      border-radius: 2px;
+      line-height: 40px;
+      margin: 0 auto;
+      cursor: pointer;
     }
   }
 }

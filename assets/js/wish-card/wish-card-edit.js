@@ -153,9 +153,9 @@ function(AddSeries, CustomSelect, Tool){
                     $(".trail .warning").html("预算填写错误").removeClass("hidden")
                     return;
                 }
-                rss_isSubmiting = true;
                 $(this).addClass("loading").html("提交中")
                 Souche.MiniLogin.checkLogin(function(){
+                    rss_isSubmiting = true;
                     $.ajax({
                         url:config.submit_api,
                         data:{
@@ -177,8 +177,10 @@ function(AddSeries, CustomSelect, Tool){
                         }
                     })
                 },false,true,false)
-
-            })
+            });
+            $(Souche.MiniLogin).on('manualClose', function(){
+                $('#J_xuqiu_submit').removeClass("loading").html("提交")
+            });
             //获取一个初始宽度
             if($(".dialogContentContainer").hasClass("hidden")){
                 $(".dialogContentContainer").css({opacity:0}).removeClass("hidden")

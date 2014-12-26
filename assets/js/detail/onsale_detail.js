@@ -135,12 +135,12 @@ define([], function(){
             }, 1000)
             Souche.MiniLogin.checkLogin(function(){
                 submitYuyue();
-            },false,true)
-            $(Souche.MiniLogin).on("minilogin:close",function(){
+            },false,true);
+            $(Souche.MiniLogin).on("manualClose",function(){
                 $("#J_yuyue,#J_nav_yuyue").removeClass('yuyue-loading');
                 $("#J_yuyue").html("预约看车");
                 $("#J_yuyue,#J_nav_yuyue").addClass('detail-yuyue');
-            })
+            });
            // Souche.checkPhoneExist(function(is_login) {
            //     if (is_login) {
            //         submitYuyue();
