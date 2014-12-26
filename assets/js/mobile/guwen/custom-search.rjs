@@ -1,0 +1,6 @@
+({
+    baseUrl: "./../../", //基础路径，默认是当前路径
+
+    name: "mobile/guwen/custom-search", //主入口的模块名
+    out: "custom-search.r.js" //输出的文件名
+})
