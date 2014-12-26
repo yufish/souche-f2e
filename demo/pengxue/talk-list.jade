@@ -1,6 +1,6 @@
 html
   head.
-    meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
     <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
     <meta name="viewport" id="viewport" content="width=1340" /> 
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@ html
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
-  body
+  body#talk-list.clearfix
     .contact-list
       .title 最近联系人列表
       ul.contacts
@@ -35,39 +35,79 @@ html
           i.info-num 9
         li
           span.cont-name 小王二手车
-          i.info-num 
+          
         li
           span.cont-name 奥尊汽车销售公司
-          i.info-num 
+          
         li
           span.cont-name 合辉二手车
-          i.info-num 
+          
         li
           span.cont-name 宁波奥德汽车旗舰店
-          i.info-num 
+          
     .talk-box
       .talk-wrap
         ul.talk-histary
-          li.my-cont
+          li.my-cont.clearfix
             .time 10:25
             .figure 我
             .talk-content
               i.cont-arrow
               p 你好
-          li.my-cont
+          li.my-cont.clearfix
             .time 10:30
             .figure 我
             .talk-content
               i.cont-arrow
               p 请问，成色较新的2013款 2.0T的奥迪A4L有吗？
-          li.shop-cont
+          li.shop-cont.clearfix
             .time 10:30
             .figure 小王二手车
             .talk-content
               i.cont-arrow
               a(href="http://souche.com/pages/choosecarpage/choose-car-detail.html?carId=R9cfC9fGYA") http://souche.com/pages/choosecarpage/choose-car-detail.html?carId=R9cfC9fGYA
-
-
+              .car-box.clearfix
+                a.car-img.clearfix
+                  img(src="http://img.souche.com/files/default/452C7E4F7A8120E09CD05A72BAC85CBF_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg")
+                .car-info
+                  .car-title
+                    a(href="#") 福特 2010款 福克斯2.0-手动-SVP限量版两厢
+                  .car-price
+                    span 价格：
+                    em ￥7.6万
+                  .car-time
+                    span 上牌
+                    span 2012-12
+                  .car-area
+                    span 所属地：
+                    span 北京
+          li.shop-cont.clearfix
+            .time 10:30
+            .figure 小王二手车
+            .talk-content
+              i.cont-arrow
+              p 请问，成色较新的2013款 2.0T的奥迪A4L有吗？
+          li.my-cont.clearfix
+            .time 10:30
+            .figure 小王二手车
+            .talk-content
+              i.cont-arrow
+              a(href="http://souche.com/pages/choosecarpage/choose-car-detail.html?carId=R9cfC9fGYA") http://souche.com/pages/choosecarpage/choose-car-detail.html?carId=R9cfC9fGYA
+              .car-box.clearfix
+                a.car-img.clearfix
+                  img(src="http://img.souche.com/files/default/452C7E4F7A8120E09CD05A72BAC85CBF_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg")
+                .car-info
+                  .car-title
+                    a(href="#") 福特 2010款 福克斯2.0-手动-SVP限量版两厢
+                  .car-price
+                    span 价格：
+                    em ￥7.6万
+                  .car-time
+                    span 上牌
+                    span 2012-12
+                  .car-area
+                    span 所属地：
+                    span 北京
       form.talking
         input(type="text" id="talking-text")
-        input(type="submit" id="talking-sub") 发送
+        button#talking-sub 发送

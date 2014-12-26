@@ -54,10 +54,14 @@ define(function() {
       },
 
       // 获取二级车系
-      buildSeries: function(obj, activeCode) {
-        // var subStr = '<div class="sub"><div class="car"><span data－code＝"' 
-        //           + activeCode + '">全部车系</span></div>';
-        var subStr = '<div class="sub">';
+      buildSeries: function(obj, activeCode, b) {
+        if (b === true) {
+          var subStr = '<div class="sub"><div class="car"><span data－code＝"' 
+                  + activeCode + '">全部车系</span></div>';  
+        } else {
+          var subStr = '<div class="sub">';   
+        }
+        
         for (var p in obj) {
           subStr += '<div class="car-cat">'
                  + p + '</div><div class="car">';
@@ -128,7 +132,7 @@ define(function() {
     };
 
     return {
-      init: function() {
+      init: function(b) {
         var brand = [], len, letter, str, i, j, brandItem, letterArr = [];
 
         // 构建品牌页面
@@ -183,7 +187,7 @@ define(function() {
                   obj = data.codes;
                   $('.item').removeClass('active');
                   $this.addClass('active');
-                  var subStr = _build.buildSeries(obj, code);
+                  var subStr = _build.buildSeries(obj, code, b);
                   $('.brand-item .sub').remove();
                   $this.closest('.list').after(subStr);
                 }
@@ -191,8 +195,6 @@ define(function() {
             })
           });
 
-
-            
         });
       },
 
