@@ -64,7 +64,29 @@
             font-size: 20px;
             margin-bottom: 19px;
           }
-
+           .woring{
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            width: 200px;
+            height: 32px;
+            border: 1px solid #F29797;
+            background: #FFE8EF;
+            color: #EE394B;
+            .error-tip{
+              display: block;
+              float: left;
+              width: 12px;
+              height: 12px;
+              background: url(../images/common/input-error-tip.png) no-repeat;
+              margin-top: 10px;
+              margin-left: 10px;
+            }
+            span{
+              line-height: 30px;
+              margin-left: 10px;
+            }
+          }
           .sell-info{
             .select-item{
               height: 32px;
@@ -182,7 +204,7 @@
                   }
                   .choose-box{
                     float: left;
-
+                    width: 148px;
                     .choose-cont{
                       background: url(../images/sellcar-new/cont-item.png) no-repeat 120px center;
                     }
@@ -461,8 +483,16 @@
         margin-top: 23px;
         cursor: pointer;
       }
+      .ques-cont:hover{
+        color:#FF5417; 
+        background: url(../images/sellcar-new/qa-down-or.png) no-repeat right center;
+      }
       .an-up{
         background: url(../images/sellcar-new/qa-up.png) no-repeat right center;
+      }
+      .an-up:hover{
+        color:#FF5417; 
+        background: url(../images/sellcar-new/qa-up-or.png) no-repeat right center;
       }
       .answer{
         margin-top: 18px;
@@ -470,15 +500,6 @@
         font-size: 14px;
         color: #333;
         display: none;
-      }
-    }
-    .quer-or{
-      .ques-cont{
-        color: #FF5417;
-        background: url(../images/sellcar-new/qa-down-or.png) no-repeat right center;
-      }
-      .an-up{
-        background: url(../images/sellcar-new/qa-up-or.png) no-repeat right center;
       }
     }
   }
@@ -639,6 +660,7 @@
   p{
     color: #999;
     line-height: 24px;
+    font-size: 14px;
   }
   .succ-sub{
     margin-top: 35px;
