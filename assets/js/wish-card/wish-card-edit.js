@@ -153,9 +153,9 @@ function(AddSeries, CustomSelect, Tool){
                     $(".trail .warning").html("预算填写错误").removeClass("hidden")
                     return;
                 }
-                rss_isSubmiting = true;
                 $(this).addClass("loading").html("提交中")
                 Souche.MiniLogin.checkLogin(function(){
+                    rss_isSubmiting = true;
                     $.ajax({
                         url:config.submit_api,
                         data:{
