@@ -2,7 +2,7 @@ html
   head.
     <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
     <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
-    <meta name="viewport" id="viewport" content="width=1340" /> 
+    <meta name="viewport" id="viewport" content="width=1340" />
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
@@ -17,6 +17,9 @@ html
         baseUrl: "http://f2e.souche.com/assets/js"
       });
     </script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/strophe-custom-1.0.0.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/json2.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/easemob.im-1.0.4.js"></script>
   body#talk-list.clearfix
     .contact-list
       .title 最近联系人列表
@@ -35,16 +38,16 @@ html
           i.info-num 9
         li
           span.cont-name 小王二手车
-          
+
         li
           span.cont-name 奥尊汽车销售公司
-          
+
         li
           span.cont-name 合辉二手车
-          
+
         li
           span.cont-name 宁波奥德汽车旗舰店
-          
+
     .talk-box
       .talk-wrap
         ul.talk-histary
@@ -111,3 +114,6 @@ html
       form.talking
         input(type="text" id="talking-text")
         button#talking-sub 发送
+
+
+    script(src="http://f2e.souche.com/assets/js/talk/talk.js")

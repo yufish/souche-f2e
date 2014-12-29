@@ -1,0 +1,202 @@
+*{
+  box-sizing: border-box;
+}
+#talk-list{
+  box-sizing: border-box;
+  width: 745px;
+  height: 469px;
+  border: 1px solid #DEDEDE;
+  .contact-list{
+    float: left;
+    width: 180px;
+    height: 469px;
+    border-right: 1px solid #DEDEDE;
+    .title{
+      color: #333;
+      font-size: 14px;
+      margin-top: 12px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+    }
+    .contacts{
+      li{
+        height: 38px;
+        cursor: pointer;
+        padding: 0 10px;
+        span{
+          display: block;
+          float: left;
+          color: #666;
+          line-height: 38px;
+        }
+        i{
+          display: block;
+          float: right;
+          background:#FF5517;
+          color: #fff;
+          border-radius: 12px; 
+          padding:0 4px;
+          font-style: normal;
+          margin-top: 12px;
+        }
+      }
+      li:hover{
+        background: #F7F7F7;
+        span{color:#FF5517; }
+      }
+    }
+  }
+  .talk-box{
+    float: left;
+    width: 563px;
+    height: 469px;
+    .talk-wrap{
+      background: #F7F7F7;
+      overflow-y: scroll;
+      height: 409px;
+      .talk-histary{
+        padding: 0px 20px;
+        li{
+          margin-bottom: 20px;
+          .time{
+            text-align: center;
+            font-size: 12px;
+            color: #CCCCCC;
+            margin-bottom: 8px;
+          }
+          .figure{
+            color: #999;
+          }
+          .talk-content{
+            position: relative;
+            .cont-arrow{
+              display: block;
+              position: absolute;
+            }
+            p{
+              font-size: 14px;
+              color: #333;
+            }
+            a{
+              color: #007AD8;
+              font-size: 14px;
+            }
+            .car-box{
+              width: 350px;
+              height: 122px;
+              border: 1px solid #E7E7E7;
+              background: #fff;
+              padding: 10px;
+              margin-top: 10px;
+              .car-img{
+                display: block;
+                float: left;
+                margin-right: 10px;
+                img{
+                  width: 150px;
+                  height: 100px;
+                }
+              }
+              .car-info{
+                width: 165px;
+                float: left;
+                span{
+                  font-size: 12px;
+                  color: #999;
+                }
+                em{
+                  color: #FF5517;
+                  font-weight: bold;
+                }
+                .car-title{
+                  height: 40px;
+                   margin-bottom: 3px;
+                  a{
+                    font-size: 14px;
+                    color: #333;
+                  }
+                  a:hover{
+                    color: #FF5517;
+                  }
+                }
+                .car-price{
+                   margin-bottom: 3px;
+                }
+                .car-time{
+                  margin-bottom: 3px;
+                }
+              }
+            }
+          }
+        }
+        .my-cont{
+          .figure{
+            text-align: right;
+          }
+          .talk-content{
+            .cont-arrow{
+              width: 10px;
+              height: 6px;
+              background: url(../images/common/talk-arrow-g.png) no-repeat;
+              top: -6px;
+              right: 10px;
+            }
+            margin-top: 10px;
+            float: right;
+            background: #C4E285;
+            border: 1px solid #85B129;
+            padding: 8px;
+            border-radius: 3px;
+          }
+        }
+        .shop-cont{
+          .figure{
+            text-align: left;
+          }
+          .talk-content{
+            .cont-arrow{
+              width: 12px;
+              height: 6px;
+              background: url(../images/common/talk-arrow-w.png) no-repeat;
+              top: -6px;
+              left: 10px;
+            }
+            margin-top: 10px;
+            float: left;
+            background: #fff;
+            border: 1px solid #E7E7E7;
+            padding: 8px;
+            border-radius: 3px;
+          }
+        }
+
+      }
+
+    }
+    .talking{
+      border-top: 1px solid #DEDEDE;
+      padding-left: 20px;
+      padding-top: 17px;
+      input{
+        border: 1px solid #DEDEDE;
+        color: #333;
+        width: 420px;
+        height: 30px;
+        margin-right: 10px;
+        padding-left:10px; 
+      }
+      button{
+        width: 90px;
+        height: 30px;
+        background: #FF5517;
+        color: #fff;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 30px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+}

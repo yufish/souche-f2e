@@ -60,6 +60,7 @@ Souche.Sidebar = (function() {
         })
         $(".sidebar .side-trigger").click(function(e) {
             e.preventDefault();
+            Souche.stats&&Souche.stats.add_click($(this).attr("click_type"))
             var self = this;
             if ($(this).hasClass("suggest-box")) {
                 showSidebar(self);
