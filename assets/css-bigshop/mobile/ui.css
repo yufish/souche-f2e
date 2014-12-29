@@ -62,7 +62,7 @@
      position: fixed;
      width: 100%;
      top:0;
-     z-index: 1001;
+     z-index: 1000;
  }
 .header-placeholder{
     height: 44px;

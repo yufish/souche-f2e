@@ -1105,6 +1105,9 @@ float:left;
     position: relative;
 }
 .big-picture {
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/mob/close-50.png?2);
     background-color: #000;
     top: 0;left: 0;
     padding-top: 40px;
