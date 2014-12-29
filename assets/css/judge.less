@@ -895,3 +895,248 @@
     line-height: 28px;
   }
 }
+#judge-car{
+  .select-item{
+    height: 32px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #999;
+    position: relative;
+    .unit{
+      position: absolute;
+      top: 8px;
+      right: 10px;
+    }
+    .select{
+      padding: 6px 8px;
+      padding-left: 15px;
+      height: 32px;
+      border: 1px solid #DDDDDD;
+      position: relative;
+      background: #fff;
+      .open-icon{
+        position: absolute;
+        width: 7px;
+        height: 4px;
+        background: url(../images/sellcar-new/select-open.png) no-repeat;
+        top: 14px;
+        right: 15px;
+      }
+      .display-text{
+        overflow: hidden;
+        height:18px;
+        display: block;
+        padding-right: 15px;
+      }
+
+    }
+    .select-open{
+      position: absolute;
+      border: 2px solid #FF5517;
+      padding: 10px 11px;
+      background: #fff;
+      z-index: 2000;
+      top: 31px;
+      .cont-default{
+        line-height: 30px;
+        font-size: 12px;
+        color:#999;
+        padding-left: 10px;
+      }
+      .open-item{
+        float: left;
+        margin-right: 22px;
+        .open-tit{
+          font-size: 12px;
+          color: #999;
+          margin-bottom: 10px;
+        }
+        .choose-box{
+          overflow-y: scroll;
+          border: 1px solid #ddd;
+          .cont-tit{
+            line-height: 28px;
+            color: #333;
+            font-size: 14px;
+            background: #F7F7F7;
+            padding-left: 10px;
+          }
+          .choose-cont{
+            line-height: 20px;
+            padding:6px 0;
+            font-size: 12px;
+            color: #666;
+            padding-left: 10px;
+            cursor: pointer;
+
+          }
+          .choose-cont:hover{
+            color: #fff;
+            background:#ff5517 ;
+          }
+          .choose-cont.active{
+            color: #fff;
+            background:#ff5517 ;
+          }
+          .cont-choosed{
+            color: #fff;
+            background:#ff5517 ;
+          }
+        }
+      }
+    }
+    #car-open{
+      width: 705px;
+      height: 444px;
+      right:-1px;
+      .choose-box{
+        height: 375px;
+      }
+      #choose-brand{
+        width: 171px;
+        .brand-cata{
+          width: 22px;
+          float: left;
+          li{
+            line-height: 17px;
+            cursor: pointer;
+            a{
+              cursor: pointer;
+              color: #B5B5B5;
+            }
+            a:hover{
+              color: #FF5517;
+            }
+            .choosed{
+              color: #FF5517;
+            }
+          }
+        }
+        .choose-box{
+          float: left;
+          width: 148px;
+          .choose-cont{
+            background: url(../images/sellcar-new/cont-item.png) no-repeat 120px center;
+          }
+          .choose-cont:hover,.choose-cont.active{
+            background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 120px center;
+          }
+        }
+      }
+      #choose-set{
+        width: 169px;
+
+        .choose-cont{
+          background: url(../images/sellcar-new/cont-item.png) no-repeat 140px center;
+        }
+        .choose-cont:hover,.choose-cont.active{
+          background: #ff5517 url(../images/sellcar-new/cont-item-ho.png) no-repeat 140px center;
+        }
+      }
+      #choose-type{
+        width: 280px;
+        margin-right: 0px;
+      }
+    }
+    #area-open{
+      width: 380px;
+      height: 390px;
+      padding-left: 20px;
+      left:-1px;
+      .choose-box{
+        height: 325px;
+      }
+      #choose-area{
+        width: 122px;
+      }
+      #choose-city{
+        width: 120px;
+        margin-right: 0px;
+      }
+    }
+    #time-open{
+      width: 380px;
+      padding-left: 20px;
+      left: -1px;
+      height: 220px;
+      top: 31px;
+      #choose-years{
+        width: 120px;
+        .choose-box{
+          height: 160px;
+        }
+
+      }
+      #choose-mouth{
+        width: 120px;
+        margin-right: 0px;
+        .choose-box{
+          height: 160px;
+        }
+      }
+    }
+    #hope-open{
+      width: 150px;
+      left: -1px;
+      height: 220px;
+    }
+    #select-time{
+      width:100%;
+      float: left;
+      margin-right: 10px;
+    }
+    #input-mile{
+      width: 150px;
+      float: left;
+      padding: 6px 8px;
+      height: 32px;
+      border: 1px solid #DDDDDD;
+      position: relative;
+    }
+    #select-hope{
+      width: 150px;
+      float: left;
+      margin-right: 10px;
+    }
+    #input-reason{
+      padding: 6px 8px;
+      display: block;
+      width: 150px;
+      float: left;
+      height: 32px;
+      border: 1px solid #DDDDDD;
+      position: relative;
+    }
+  }
+  .form-sub{
+    margin-top: 24px;
+    #sell-submit{
+      display: block;
+      float: left;
+      width: 150px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 2px;
+      background: #FF5517;
+      border: none;
+      font-size: 16px;
+      line-height: 40px;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+    }
+    #sell-submit:hover{
+      background: #FF4600;
+    }
+    .judge-link{
+      display: block;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      color: #333;
+      width: 150px;
+      text-align: center;
+    }
+  }
+}
