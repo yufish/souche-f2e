@@ -1131,6 +1131,12 @@ $('.wrapGrayBg').on('click',function(){
     });
 })();
 
+/**
+ *
+ *  todo：把公用方法抽出来
+ * 
+ */
+
 
 // 买车页面
 ;(function(){
@@ -1244,34 +1250,26 @@ $('.wrapGrayBg').on('click',function(){
     }
 
     function getData() {
-        var serilal = $('#sale-form').serialize();
-        var ss = serilal.split("&");
-        var obj = {}
-        for(var i=0;i<ss.length;i++){
-          var kv = ss[i].split("=")
-          obj[kv[0]]=kv[1]
-        }
-
-        var brand = $('#sale-brand').text();
-        var arr = brand.split(' ');
-        obj.brand = arr[0];
-        obj.series = arr[1];
-        obj.model = $('#sale-model').text();
-        obj.province = $('#J_province_s option:selected').text();
-        obj.city = $('#J_city_s option:selected').text();
-
+        var obj = {};
         // code
-        obj.brand_code = $('#sale-brand').attr('data-brand');
-        obj.series_code = $('#sale-brand').attr('data-series');
-        obj.model_code = $('#sale-model').attr('data-code');
-        obj.province_code = $('#J_province_s').val();
-        obj.city_code = $('#J_city_s').val();
+        obj.brand = $('#sale-brand').attr('data-brand');
+        obj.series = $('#sale-brand').attr('data-series');
+        obj.model = $('#sale-model').attr('data-code');
+        obj.province = $('#J_province_s').val();
+        obj.city = $('#J_city_s').val();
+        obj.mileage = $('#sale-mileage').val();
+        if ($('#sale-year').val() && $('#sale-year').val()) {
+            obj.firstsdate = $('#sale-year').val() + '-' + $('#sale-month').val();
+        }
+        obj.mobile = $('#sale-phone').val();
+        obj.expectTime = $('#sale-expect').val();
+        obj.reason = $('#sale-reason').val();
         return obj;
     }
 
     $('#sale-form .btn-submit').on('click', function(e) {
         e.preventDefault();
-        var obj = getData();
+        
         // 验证
         if ($('#sale-brand').text() == '' || $('#sale-model').text() == '' 
             || $('#sale-phone').val() == '') {
@@ -1281,12 +1279,20 @@ $('.wrapGrayBg').on('click',function(){
             return
         }
 
+        if (($('#sale-year').val() != $('#sale-month').val())
+            && ($('#sale-year').val() == '' || $('#sale-month').val() == '')) {
+            alert('请同时填写年月信息');
+            return
+        }
+
         var mileStr = $("#sale-mileage").val();
         var mileNum = Number(mileStr);
-        // 判断是否为NaN
-        if((Boolean(mileNum) == false && mileNum !=0) || mileNum < 0 || mileStr == '' ){
-          alert("请正确填写车辆行驶里程");
-          return;
+        if (mileNum) {
+            // 判断是否为NaN
+            if((Boolean(mileNum) == false && mileNum !=0) || mileNum < 0 || mileStr == '' ){
+              alert("请正确填写车辆行驶里程");
+              return;
+            }
         }
 
         var phoneReg = /^1[34578][0-9]{9}$/;
@@ -1297,11 +1303,11 @@ $('.wrapGrayBg').on('click',function(){
         }
 
         var actionUrl = contextPath + '/pages/mobile/sellCarAction/savaSellCar.json';
-        
+        var obj = getData();
+
         $.ajax({
             url: actionUrl,
             data: obj,
-            dataType:"json",
             success: function() {
                 $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><div class="ft">好</div></div>')
                 $('#evaluate-model').removeClass('hidden');
