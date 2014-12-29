@@ -82,3 +82,23 @@ var handleOpen = function(conn){
         },
     });
 }
+
+
+var SoucheIM = function(){
+    var souche_token = "ScM9Eno7f2dl0vz"
+    return {
+        getRecentContacts:function(user_id){
+            $.ajax({
+                url:contextPath+"/pages/app/thumbelina/messageAction/getChatList.json",
+                data:{
+                    token:souche_token,
+                    user:user_id
+                },
+                dataType:"json",
+                success:function(data){
+
+                }
+            })
+        }
+    }
+}();
