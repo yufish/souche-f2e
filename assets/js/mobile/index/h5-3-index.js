@@ -1235,7 +1235,7 @@ $('.wrapGrayBg').on('click',function(){
     });
 
     $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
-        var cityName = data.cityName || data.provinceName;
+        var cityName = data.cityName || '';
         // $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
         //                .text(provinceName + ' ' + cityName);
         var cityCode = data.cityCode || '';
