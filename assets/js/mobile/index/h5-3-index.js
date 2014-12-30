@@ -1235,10 +1235,18 @@ $('.wrapGrayBg').on('click',function(){
     });
 
     $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
-        var provinceName = data.provinceName || '';
-        var cityName = data.cityName || '';
-        $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
-                       .text(provinceName + ' ' + cityName);
+        var cityName = data.cityName || data.provinceName;
+        // $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
+        //                .text(provinceName + ' ' + cityName);
+        var cityCode = data.cityCode || '';
+        $('#J_province_s').html('<option value="' + data.provinceCode + '">' + data.provinceName + '</option>');
+        $('#J_city_s').html('<option value="' + cityCode + '">' + cityName + '</option>');
+        // 地区联动
+        Souche.UI.Select.init({
+            eles:[ 'J_province_s', 'J_city_s' ],
+            type:"area",
+            defaultValues:[]
+        })
     }); 
 
     // 手机号默认值
@@ -1253,8 +1261,8 @@ $('.wrapGrayBg').on('click',function(){
         obj.brand = $('#sale-brand').attr('data-brand');
         obj.series = $('#sale-brand').attr('data-series');
         obj.model = $('#sale-model').attr('data-code');
-        obj.province = $('#J_province_s').attr('data-province');
-        obj.city = $('#J_city_s').attr('data-city') || '';
+        obj.province = $('#J_province_s').val();
+        obj.city = $('#J_city_s').val() || '';
         obj.mileage = $('#sale-mileage').val();
         if ($('#sale-year').val() && $('#sale-year').val()) {
             obj.firstsdate = $('#sale-year').val() + '-' + $('#sale-month').val();
