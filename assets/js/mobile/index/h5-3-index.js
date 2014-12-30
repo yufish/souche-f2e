@@ -1235,17 +1235,18 @@ $('.wrapGrayBg').on('click',function(){
     });
 
     $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
-        var cityName = data.cityName || '';
-        // $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
-        //                .text(provinceName + ' ' + cityName);
-        var cityCode = data.cityCode || '';
-        $('#J_province_s').html('<option value="' + data.provinceCode + '">' + data.provinceName + '</option>');
-        $('#J_city_s').html('<option value="' + cityCode + '">' + cityName + '</option>');
+        // var cityName = data.cityName || '';
+        // // $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
+        // //                .text(provinceName + ' ' + cityName);
+        // var cityCode = data.cityCode || '';
+        // $('#J_province_s').html('<option value="' + data.provinceCode + '">' + data.provinceName + '</option>');
+        // $('#J_city_s').html('<option value="' + cityCode + '">' + cityName + '</option>');
         // 地区联动
+        console.log(data.cityCode);
         Souche.UI.Select.init({
             eles:[ 'J_province_s', 'J_city_s' ],
             type:"area",
-            defaultValues:[]
+            defaultValues:[data.provinceCode,data.cityCode]
         })
     }); 
 
