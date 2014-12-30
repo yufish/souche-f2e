@@ -1460,13 +1460,13 @@ $('.wrapGrayBg').on('click',function(){
         var obj = getData();
         // 验证
         if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
-            || $('.select-year').val() == '' || $('.select-month').val() == '' 
+            || $('#evaluate-year').val() == '' || $('#evaluate-month').val() == '' 
             || $('#J_province_e').val() == '' || $('#J_city_e').val() == '') {
             
             alert('所有信息都是必填项，请认真填写！'); return;
         }
 
-        var mileStr = $(".car-mile").val();
+        var mileStr = $("#evaluate-mileage").val();
         var mileNum = Number(mileStr);
         // 判断是否为NaN
         if((Boolean(mileNum) == false && mileNum !=0) || mileNum < 0 || mileStr == '' ){
