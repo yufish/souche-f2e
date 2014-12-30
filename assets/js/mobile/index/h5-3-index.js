@@ -1456,11 +1456,12 @@ $('.wrapGrayBg').on('click',function(){
         e.preventDefault();
         var obj = getData();
         // 验证
-        if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
+        if (!$('#evaluate-brand').attr('data-brand') || !$('#car-model').attr('data-code')
             || $('#evaluate-year').val() == '' || $('#evaluate-month').val() == '' 
             || $('#J_province_e').val() == '' || $('#J_city_e').val() == '') {
             
-            alert('所有信息都是必填项，请认真填写！'); return;
+            alert('所有信息都是必填项，请认真填写！'); 
+            return;
         }
 
         var mileStr = $("#evaluate-mileage").val();
