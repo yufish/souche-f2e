@@ -1234,18 +1234,13 @@ $('.wrapGrayBg').on('click',function(){
     
     });
 
-    $.ajax({
-        type: "GET",
-        url: contextPath + "/pages/toolbarAction/getAdderssMap.json",
-        dataType: "json",
-        success: function(data) {
-            Souche.UI.Select.init({
-                eles:[ 'J_province_s', 'J_city_s' ],
-                type:"area",
-                defaultValues:[data.provinceCode,data.cityCode]
-            })
-        }
-    });
+    $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
+        Souche.UI.Select.init({
+            eles:[ 'J_province_s', 'J_city_s' ],
+            type:"area",
+            defaultValues:[data.provinceCode,data.cityCode]
+        })
+    }); 
 
     // 手机号默认值
     var phoneNum = checkUserLocal().phoneNum
