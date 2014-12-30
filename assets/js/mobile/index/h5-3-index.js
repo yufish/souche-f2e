@@ -1119,8 +1119,8 @@ $('.wrapGrayBg').on('click',function(){
 
 // 卖车和估价tab切换
 ;(function () {
-    activeItem = sessionStorage.getItem('index_eval_tab') || 0;
-    // activeItem = 0;
+    // activeItem = sessionStorage.getItem('index_eval_tab') || 0;
+    var activeItem = $('.tab-index span').length > 2 ? sessionStorage.getItem('index_eval_tab') : 0;
     $('.tab-index span').removeClass('active').eq(activeItem).addClass('active');
     $('.car-seller-tab .item').addClass('hidden').eq(activeItem).removeClass('hidden');
 
