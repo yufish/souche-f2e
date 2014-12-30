@@ -840,7 +840,8 @@ input.checkbox-cond:checked + .filter-title{
 #evaluate-form #evaluate-brand,
 #evaluate-form #car-model,
 #sale-form #sale-brand,
-#sale-form #sale-model {
+#sale-form #sale-model,
+#sale-form #sale-area {
     margin-top: 15px;
 }
 
@@ -881,11 +882,10 @@ input.checkbox-cond:checked + .filter-title{
    right: 30px;
 }
 
-.com-form .filter-mileage {
+.com-form .filter-mileage,
+.com-form #sale-area {
     background-image: none;
 }
-
-
 
 #car-models {
     position: fixed;

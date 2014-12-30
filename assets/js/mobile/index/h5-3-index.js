@@ -1137,8 +1137,7 @@ $('.wrapGrayBg').on('click',function(){
  * 
  */
 
-
-// 买车页面
+// 卖车页面
 ;(function(){
 
     // 选品牌 ＋ 车型
@@ -1234,14 +1233,12 @@ $('.wrapGrayBg').on('click',function(){
     
     });
 
-
-    // 地区联动
-    Souche.UI.Select.init({
-        eles:[ 'J_province_s', 'J_city_s' ],
-        type:"area",
-        defaultValues:[]
-    })
-
+    $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
+        var provinceName = data.provinceName || '';
+        var cityName = data.cityName || '';
+        $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
+                       .text(provinceName + ' ' + cityName);
+    }); 
 
     // 手机号默认值
     var phoneNum = checkUserLocal().phoneNum
@@ -1255,8 +1252,8 @@ $('.wrapGrayBg').on('click',function(){
         obj.brand = $('#sale-brand').attr('data-brand');
         obj.series = $('#sale-brand').attr('data-series');
         obj.model = $('#sale-model').attr('data-code');
-        obj.province = $('#J_province_s').val();
-        obj.city = $('#J_city_s').val();
+        obj.province = $('#J_province_s').attr('data-province');
+        obj.city = $('#J_city_s').attr('data-city') || '';
         obj.mileage = $('#sale-mileage').val();
         if ($('#sale-year').val() && $('#sale-year').val()) {
             obj.firstsdate = $('#sale-year').val() + '-' + $('#sale-month').val();
@@ -1514,7 +1511,6 @@ $('.wrapGrayBg').on('click',function(){
 ;(function() {
     var obj = JSON.parse(sessionStorage.getItem('evaluate_obj'));
     if (obj) {
-        console.log(obj);
         $('#evaluate-brand').text(obj.brand + ' ' + obj.series);
         $('#car-model').text(obj.model).removeClass('no-active');
 
@@ -1564,8 +1560,8 @@ $('.wrapGrayBg').on('click',function(){
         (function(o) {
             var n = new Date().getFullYear();
             var $form = $('#evaluate-form');
-            var $year = $form.find('.select-year');
-            var $month = $form.find('.select-month');
+            var $year = $form.find('#evaluate-year');
+            var $month = $form.find('#evaluate-month');
             var month = '';
             var year = '';
             var y = parseInt(obj.model) - 1;
