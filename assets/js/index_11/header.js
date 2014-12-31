@@ -47,7 +47,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                 for (var i = 0; i < data.items.length; i++) {
                     var keyword = data.items[i].name;
                     var searchcode = data.items[i].searchCode;
-                    html += "<a click_type='search-item" + i + "' href='/pages/onsale/sale_car_list.html?keyword=" + searchcode + "' target='_blank'>" + keyword + "</a>"
+                    html += "<a click_type='search-item" + i + "' href='"+$(".index-search").attr("action")+"?keyword=" + searchcode + "' target='_blank'>" + keyword + "</a>"
                 }
                 $(".recom").html(html)
             }
