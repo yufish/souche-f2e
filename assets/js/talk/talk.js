@@ -428,16 +428,18 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                         area:"北京 北京",
                         pictures:"http:\\/\\/cheniu.u.qiniudn.com\\/18667932551\\/9BFD626B6F6AE1A243D53EE1627FF69D\\/20141225162241"
                     }
-                    conn.sendTextMessage({
+                    var msg = {
                         to : SoucheIMData.now_chat_userid,
-                        msg :content,
-                        ext:{"content":JSON.stringify(carInfo),"messageType":"3"}
-                    });
-                    SoucheIMData.addLocalMessage({
-                        to : SoucheIMData.now_chat_userid,
-                        msg :content,
-                        ext:{"content":JSON.stringify(carInfo),"messageType":"3"}
-                    })
+                        msg :content
+                    }
+                    var carId;
+                    var matchResult = content.match(/carId=([^&]+)/);
+                    if(matchResult){
+                        carId = matchResult[1];
+                        msg.ext =  {"content":JSON.stringify(carInfo),"messageType":"3"}
+                    }
+                    conn.sendTextMessage(msg);
+                    SoucheIMData.addLocalMessage(msg)
                     SoucheIMUtil.sendMessage(SoucheIMData.now_chat_userid.replace(/[^0-9]/g,""),content);
                 })
                 $(".contacts").on("click",".contact-item",function(e){
