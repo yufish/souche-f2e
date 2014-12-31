@@ -1235,14 +1235,6 @@ $('.wrapGrayBg').on('click',function(){
     });
 
     $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
-        // var cityName = data.cityName || '';
-        // // $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
-        // //                .text(provinceName + ' ' + cityName);
-        // var cityCode = data.cityCode || '';
-        // $('#J_province_s').html('<option value="' + data.provinceCode + '">' + data.provinceName + '</option>');
-        // $('#J_city_s').html('<option value="' + cityCode + '">' + cityName + '</option>');
-        // 地区联动
-        console.log(data.cityCode);
         Souche.UI.Select.init({
             eles:[ 'J_province_s', 'J_city_s' ],
             type:"area",
@@ -1280,7 +1272,7 @@ $('.wrapGrayBg').on('click',function(){
         // 验证
         if ($('#sale-brand').text() == '' || $('#sale-model').text() == '' 
             || $('#sale-phone').val() == '') {
-            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><div class="ft">好</div></div>')
+            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><a class="ft" href="#">好</a></div>')
             $('#evaluate-model').removeClass('hidden');
             $('.label-need').addClass('active');
             return
@@ -1316,7 +1308,7 @@ $('.wrapGrayBg').on('click',function(){
             url: actionUrl,
             data: obj,
             success: function() {
-                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><div class="ft">好</div></div>')
+                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><a class="ft" href="#">好</a></div>')
                 $('#evaluate-model').removeClass('hidden');
             }
         });
@@ -1602,7 +1594,8 @@ $('.wrapGrayBg').on('click',function(){
     }
 })();
 
-$(document).on('click', '#evaluate-model .ft', function() {
+$(document).on('click', '#evaluate-model .ft', function(e) {
+    e.preventDefault();
     $('#evaluate-model').addClass('hidden');
 })
 
