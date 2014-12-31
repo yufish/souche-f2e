@@ -840,7 +840,8 @@ input.checkbox-cond:checked + .filter-title{
 #evaluate-form #evaluate-brand,
 #evaluate-form #car-model,
 #sale-form #sale-brand,
-#sale-form #sale-model {
+#sale-form #sale-model,
+#sale-form #sale-area {
     margin-top: 15px;
 }
 
@@ -881,11 +882,10 @@ input.checkbox-cond:checked + .filter-title{
    right: 30px;
 }
 
-.com-form .filter-mileage {
+.com-form .filter-mileage,
+.com-form #sale-area {
     background-image: none;
 }
-
-
 
 #car-models {
     position: fixed;
@@ -971,6 +971,8 @@ input.checkbox-cond:checked + .filter-title{
 }
 
 #evaluate-model .content .ft {
+    display: block;
+    width: 100%;
     color: #0276a8;
     text-align: center;
     font-size: 16px;
@@ -989,35 +991,6 @@ input.checkbox-cond:checked + .filter-title{
 
 #sale-form .label-need.active {
     color: #ff571a;
-}
-
-#sale-faq {
-    background-color: #fff;
-    padding: 36px 16px 60px 16px;
-}
-
-#sale-faq h1 {
-    margin: 0 0 34px 0;
-    text-align: center;
-    font-size: 22px;
-    color: #333;
-}
-
-#sale-faq .faq-item {
-    margin-bottom: 18px;
-    padding: 0 0 18px 0;
-    border-bottom: 1px solid #F5F5F5;
-}
-
-#sale-faq .faq-item h2 {
-    margin-bottom: 4px;
-    color: #333;
-    font-size: 14px;
-}
-
-#sale-faq .faq-item p {
-    font-size: 12px;
-    color: #999;
 }
 
 #sale-step {
@@ -1039,6 +1012,7 @@ input.checkbox-cond:checked + .filter-title{
 }
 
 #sale-step .step-item .text {
+    min-width: 129px;
     display: inline-block;
     vertical-align: middle;
 }

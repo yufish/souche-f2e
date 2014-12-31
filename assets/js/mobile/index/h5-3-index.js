@@ -1119,7 +1119,8 @@ $('.wrapGrayBg').on('click',function(){
 
 // 卖车和估价tab切换
 ;(function () {
-    activeItem = sessionStorage.getItem('index_eval_tab') || 0;
+    // activeItem = sessionStorage.getItem('index_eval_tab') || 0;
+    var activeItem = $('.tab-index span').length ? sessionStorage.getItem('index_eval_tab') : 0;
     $('.tab-index span').removeClass('active').eq(activeItem).addClass('active');
     $('.car-seller-tab .item').addClass('hidden').eq(activeItem).removeClass('hidden');
 
@@ -1137,8 +1138,7 @@ $('.wrapGrayBg').on('click',function(){
  * 
  */
 
-
-// 买车页面
+// 卖车页面
 ;(function(){
 
     // 选品牌 ＋ 车型
@@ -1234,14 +1234,13 @@ $('.wrapGrayBg').on('click',function(){
     
     });
 
-
-    // 地区联动
-    Souche.UI.Select.init({
-        eles:[ 'J_province_s', 'J_city_s' ],
-        type:"area",
-        defaultValues:[]
-    })
-
+    $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
+        Souche.UI.Select.init({
+            eles:[ 'J_province_s', 'J_city_s' ],
+            type:"area",
+            defaultValues:[data.provinceCode,data.cityCode]
+        })
+    }); 
 
     // 手机号默认值
     var phoneNum = checkUserLocal().phoneNum
@@ -1256,7 +1255,7 @@ $('.wrapGrayBg').on('click',function(){
         obj.series = $('#sale-brand').attr('data-series');
         obj.model = $('#sale-model').attr('data-code');
         obj.province = $('#J_province_s').val();
-        obj.city = $('#J_city_s').val();
+        obj.city = $('#J_city_s').val() || '';
         obj.mileage = $('#sale-mileage').val();
         if ($('#sale-year').val() && $('#sale-year').val()) {
             obj.firstsdate = $('#sale-year').val() + '-' + $('#sale-month').val();
@@ -1273,7 +1272,7 @@ $('.wrapGrayBg').on('click',function(){
         // 验证
         if ($('#sale-brand').text() == '' || $('#sale-model').text() == '' 
             || $('#sale-phone').val() == '') {
-            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><div class="ft">好</div></div>')
+            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><a class="ft" href="#">好</a></div>')
             $('#evaluate-model').removeClass('hidden');
             $('.label-need').addClass('active');
             return
@@ -1309,7 +1308,7 @@ $('.wrapGrayBg').on('click',function(){
             url: actionUrl,
             data: obj,
             success: function() {
-                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><div class="ft">好</div></div>')
+                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><a class="ft" href="#">好</a></div>')
                 $('#evaluate-model').removeClass('hidden');
             }
         });
@@ -1459,14 +1458,15 @@ $('.wrapGrayBg').on('click',function(){
         e.preventDefault();
         var obj = getData();
         // 验证
-        if ($('#evaluate-brand').text() == '' || $('#car-model').text() == ''
-            || $('.select-year').val() == '' || $('.select-month').val() == '' 
+        if (!$('#evaluate-brand').attr('data-brand') || !$('#car-model').attr('data-code')
+            || $('#evaluate-year').val() == '' || $('#evaluate-month').val() == '' 
             || $('#J_province_e').val() == '' || $('#J_city_e').val() == '') {
             
-            alert('所有信息都是必填项，请认真填写！'); return;
+            alert('所有信息都是必填项，请认真填写！'); 
+            return;
         }
 
-        var mileStr = $(".car-mile").val();
+        var mileStr = $("#evaluate-mileage").val();
         var mileNum = Number(mileStr);
         // 判断是否为NaN
         if((Boolean(mileNum) == false && mileNum !=0) || mileNum < 0 || mileStr == '' ){
@@ -1514,7 +1514,6 @@ $('.wrapGrayBg').on('click',function(){
 ;(function() {
     var obj = JSON.parse(sessionStorage.getItem('evaluate_obj'));
     if (obj) {
-        console.log(obj);
         $('#evaluate-brand').text(obj.brand + ' ' + obj.series);
         $('#car-model').text(obj.model).removeClass('no-active');
 
@@ -1564,8 +1563,8 @@ $('.wrapGrayBg').on('click',function(){
         (function(o) {
             var n = new Date().getFullYear();
             var $form = $('#evaluate-form');
-            var $year = $form.find('.select-year');
-            var $month = $form.find('.select-month');
+            var $year = $form.find('#evaluate-year');
+            var $month = $form.find('#evaluate-month');
             var month = '';
             var year = '';
             var y = parseInt(obj.model) - 1;
@@ -1595,7 +1594,8 @@ $('.wrapGrayBg').on('click',function(){
     }
 })();
 
-$(document).on('click', '#evaluate-model .ft', function() {
+$(document).on('click', '#evaluate-model .ft', function(e) {
+    e.preventDefault();
     $('#evaluate-model').addClass('hidden');
 })
 

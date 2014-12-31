@@ -122,7 +122,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
 
     })();
 
-    var loadCity = function(provinceCode, provinceName) {
+    var loadCity = function(provinceCode, provinceName,pinyin) {
         $("#J_province_title").html(provinceName);
         $.ajax({
             url: contextPath + "/pages/toolbarAction/queryCities.json",
@@ -133,14 +133,14 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             success: function(data) {
                 $(".city-list").html("");
                 if (data && data.items) {
-                    $(".city-list").append("<a class='city-item' data-code='" + provinceCode + "' click_type='city-"+provinceCode+"'>全部城市</a>");
+                    $(".city-list").append("<a class='city-item' data-pinyin='"+pinyin+"' data-code='" + provinceCode + "' click_type='city-"+provinceCode+"'>全部城市</a>");
                     for (var i = 0; i < data.items.length; i++) {
                         var item = data.items[i];
-                        $(".city-list").append("<a class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "' click_type='city-"+provinceCode+"'>" + item.name + "</a>")
+                        $(".city-list").append("<a data-pinyin='"+item.check+"' class='city-item " + (item.code == nowCity.code ? "active-city" : "") + "' data-code='" + item.code + "' click_type='city-"+provinceCode+"'>" + item.name + "</a>")
                     }
                     $(".city-item").on("click", function(e) {
                         e.preventDefault();
-                        goCity($(this).attr("data-code"))
+                        goCity($(this).attr("data-code"),$(this).attr("data-pinyin"))
                     });
                 }
             }
@@ -152,6 +152,7 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     // 下面是需要跳转的页面的规则列表
     var PAGE_HOME = '/';
     var PAGE_LIST = contextPath + '/pages/onsale/sale_car_list.html';
+    var PAGE_SEO_LIST = contextPath+"";
     // 基础规则 还需要下面的修饰
     var baseRules = {
         // 主题精选 list页和详情页 都条状往首页
@@ -165,13 +166,16 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
         // list页面 把所有的query条件过滤掉
         '/pages/onsale/sale_car_list.html': PAGE_LIST
     };
-
+    var regRules = {
+        "/.*?/list":"/[location]/list",
+        "/[^?/]*?$":"/[location]"
+    }
     // 匹配添加contextPath
     var jump_rules = {}
     for(var r in baseRules){
         jump_rules[contextPath + r] = baseRules[r] ;
     }
-    var goCity = function(code) {
+    var goCity = function(code,pinyin) {
         $.ajax({
             url: contextPath + "/pages/toolbarAction/choosePosition.json",
             dataType: "json",
@@ -180,6 +184,16 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
             },
             success: function() {
                 var curPath = location.pathname;
+                for(var i in regRules){
+                    var reg = new RegExp(i)
+                    if(reg.test(curPath)){
+                        console.log(" reg")
+                        window.location.href=contextPath+regRules[i].replace("[location]",pinyin)
+                        return;
+                    }else{
+                        console.log("no reg")
+                    }
+                }
                 if( jump_rules[curPath] === undefined ){
                     window.location.reload();
                 }
@@ -191,15 +205,15 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     }
     $(".J_hotcity").click(function(e) {
         e.preventDefault();
-        goCity($(this).attr("data-code"));
+        goCity($(this).attr("data-code"),$(this).attr("data-pinyin"));
         return;
     })
     $(".hot-item").click(function(e) {
         if ($(this).hasClass("hot-item-all")) {
-            goCity($(this).attr("data-code"))
+            goCity($(this).attr("data-code"),$(this).attr("data-pinyin"))
             return;
         }
-        loadCity($(this).attr("data-code"), $(this).html());
+        loadCity($(this).attr("data-code"), $(this).html(),$(this).attr("data-pinyin"));
         $(".area-box").animate({
             left: "-362px"
         }, 400);
@@ -209,10 +223,10 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
     });
     $(".province-item").click(function(e) {
         if ($(this).hasClass("direct-item")) {
-            goCity($(this).attr("data-code"))
+            goCity($(this).attr("data-code"),$(this).attr("data-pinyin"))
             return;
         }
-        loadCity($(this).attr("data-code"), $(this).html());
+        loadCity($(this).attr("data-code"), $(this).html(),$(this).attr("data-pinyin"));
         $(".area-box").animate({
             left: "-362px"
         }, 400);
