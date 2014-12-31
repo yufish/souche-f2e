@@ -1235,10 +1235,11 @@ $('.wrapGrayBg').on('click',function(){
     });
 
     $.getJSON(contextPath + "/pages/toolbarAction/getAdderssMap.json", function(data) {
-        var provinceName = data.provinceName || '';
-        var cityName = data.cityName || '';
-        $('#sale-area').attr({'data-province': data.provinceCode, 'data-city': data.cityCode})
-                       .text(provinceName + ' ' + cityName);
+        Souche.UI.Select.init({
+            eles:[ 'J_province_s', 'J_city_s' ],
+            type:"area",
+            defaultValues:[data.provinceCode,data.cityCode]
+        })
     }); 
 
     // 手机号默认值
@@ -1253,8 +1254,8 @@ $('.wrapGrayBg').on('click',function(){
         obj.brand = $('#sale-brand').attr('data-brand');
         obj.series = $('#sale-brand').attr('data-series');
         obj.model = $('#sale-model').attr('data-code');
-        obj.province = $('#J_province_s').attr('data-province');
-        obj.city = $('#J_city_s').attr('data-city') || '';
+        obj.province = $('#J_province_s').val();
+        obj.city = $('#J_city_s').val() || '';
         obj.mileage = $('#sale-mileage').val();
         if ($('#sale-year').val() && $('#sale-year').val()) {
             obj.firstsdate = $('#sale-year').val() + '-' + $('#sale-month').val();
@@ -1271,7 +1272,7 @@ $('.wrapGrayBg').on('click',function(){
         // 验证
         if ($('#sale-brand').text() == '' || $('#sale-model').text() == '' 
             || $('#sale-phone').val() == '') {
-            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><div class="ft">好</div></div>')
+            $('#evaluate-model').html('<div class="content"><h6>提交失败</h6><p>请将必填信息补充完整</p><a class="ft" href="#">好</a></div>')
             $('#evaluate-model').removeClass('hidden');
             $('.label-need').addClass('active');
             return
@@ -1307,7 +1308,7 @@ $('.wrapGrayBg').on('click',function(){
             url: actionUrl,
             data: obj,
             success: function() {
-                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><div class="ft">好</div></div>')
+                $('#evaluate-model').html('<div class="content"><h6>成功提交</h6><p>工作人员会在24小时内和您联系如有疑问可咨询：4008-010-010</p><a class="ft" href="#">好</a></div>')
                 $('#evaluate-model').removeClass('hidden');
             }
         });
@@ -1593,7 +1594,8 @@ $('.wrapGrayBg').on('click',function(){
     }
 })();
 
-$(document).on('click', '#evaluate-model .ft', function() {
+$(document).on('click', '#evaluate-model .ft', function(e) {
+    e.preventDefault();
     $('#evaluate-model').addClass('hidden');
 })
 
