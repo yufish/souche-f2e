@@ -42,11 +42,11 @@ define(function() {
 
             }
             if(key){
-                list[index].url = contextPath + "/pages/onsale/sale_car_list.html" + "?" + key + "=" + list[index].code + "&pfrom=boxsearch&recommand=box";
+                list[index].url = $(".index-search").attr("action") + "?" + key + "=" + list[index].code + "&pfrom=boxsearch&recommand=box";
                 downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
 
             }else{
-                list[index].url = contextPath + "/pages/onsale/sale_car_list.html?keyword=" + list[index].name + "&pfrom=boxsearch&recommand=box";
+                list[index].url = $(".index-search").attr("action")+"?keyword=" + list[index].name + "&pfrom=boxsearch&recommand=box";
                 downList += "<span class='list'><a href='" + list[index].url + "'>" + list[index].name + "</a><\/span>";
 
             }
@@ -134,7 +134,7 @@ define(function() {
                             itemAlreadHave = recLen;
                             for(var i=0; i<recLen; i++){
                                 var name = recs[i].name;
-                                htmlStr += '<span class="list list-rec"><a href="'+contextPath+'/pages/onsale/sale_car_list.html?keyword='+name+'&pfrom=boxsearch&recommand=box">'+name+'</a></span>';
+                                htmlStr += '<span class="list list-rec"><a href="'+$(".index-search").attr("action")+'?keyword='+name+'&pfrom=boxsearch&recommand=box">'+name+'</a></span>';
                             }
                         }
                     }
@@ -149,7 +149,7 @@ define(function() {
                             }
                             for(var i=0; i<hotLen; i++){
                                 var name = hots[i].name;
-                                htmlStr += '<span class="list list-hot"><a href="'+contextPath+'/pages/onsale/sale_car_list.html?keyword='+name+'&pfrom=boxsearch&recommand=box">'+name+'</a></span>';
+                                htmlStr += '<span class="list list-hot"><a href="'+$(".index-search").attr("action")+'?keyword='+name+'&pfrom=boxsearch&recommand=box">'+name+'</a></span>';
                             }
                         }
                     }
