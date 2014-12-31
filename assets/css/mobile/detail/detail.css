@@ -1080,6 +1080,10 @@
     font-size: 18px;
 }
 
+#detail #actions .detail-btn-d {
+    color: #666;
+}
+
 #detail #actions{
     font-size: 14px;
 }
