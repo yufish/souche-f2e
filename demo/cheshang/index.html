@@ -1,0 +1,1342 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+
+    <title>元通二手车-元通名品车-元通评估</title>
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" href="http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico"  type="image/x-icon"/>
+    <link rel="bookmark" href="http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico"  type="image/x-icon"/>
+    <link href="http://assets.souche.com/assets/css-bigshop/souche/reset.css?t=201412311824" rel="stylesheet" type="text/css" />
+    <link href="http://assets.souche.com/assets/css-bigshop/souche/ui.css?t=201412311824" rel="stylesheet" type="text/css" />
+    <link href="http://assets.souche.com/assets/css-bigshop/souche/common.css?t=201412311824" rel="stylesheet" type="text/css" />
+
+    <link href="http://assets.souche.com/assets/css-bigshop/sidebar.css?t=201412311824" rel="stylesheet" type="text/css" />
+    <script src="http://assets.souche.com/assets/js-bigshop/lib/jquery-1.7.1.min.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://assets.souche.com/assets/js-bigshop/lib/jquery.flexslider-min.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://assets.souche.com/assets/js-bigshop/lib/require.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://assets.souche.com/assets/js-bigshop/souche.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://assets.souche.com/assets/js-bigshop/lib/lazyload.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://assets.souche.com/assets/js-bigshop/index/sidebar.js?t=201412311824" type="text/javascript"></script>
+    <script src="http://wpa.b.qq.com/cgi/wpa.php" charset="utf-8"></script>
+    <script>
+        var contextPath = "";
+        require.config({
+            baseUrl: "http://assets.souche.com/assets/js-bigshop",
+            urlArgs:"bust=201412311824"
+        });
+    </script>
+    <link href="http://assets.souche.com/assets/css-bigshop/souche/blue.css?t=201412311824" rel="stylesheet" type="text/css" />
+
+</head>
+<body
+
+        >
+<!-- 顶部 -->
+<div id="header">
+    <div class="wrapper">
+        <a href="http://www.ytucar.net/" class="logo"><img src="http://img.souche.com/files/default/9E25DFB535868CC1ED6CD585E8E35EA9_235x52.png" ></a>
+
+        <div class="search">
+            <form class="index-search" action="http://www.ytucar.net/buy.htm">
+                <input type="text" name="keyword" placeholder="搜索你想要的车"
+                       class="search-text" autocomplete="off">
+                <input type="hidden" name="pfrom" value="search">
+                <button type="submit" class="search-submit">
+                    <i></i>
+                </button>
+                <div class="recom">
+                    <!--      -->
+                </div>
+            </form>
+        </div>
+        <div class="phone-number">
+            <div style="font-size:18px;color:grey;">4008-571-000</div>
+            <div style="font-size:12px;color:grey">服务时间&nbsp;&nbsp;08:30-17:00</div>
+
+        </div>
+        <a class="cord-h5" href="" target="_blank">
+            <i class="phone-icon"></i>
+            <span>关注微信</span>
+            <i class="open-icon"></i>
+            <div class="h5-open clearfix">
+                <div class="h5-code">
+                    <img src="http://img.souche.com/files/default/1BE1BF84EA353A06B3316586F0918B82_160x160.jpg"
+                            />
+                </div>
+            </div>
+        </a>
+    </div>
+    <script>
+        $(".cord-h5").mouseenter(function(){
+            $(".h5-open").slideDown("normal");
+        });
+
+        $(document.body).on("click", function(e) {
+            if (!$(e.target).closest(".h5-open").length) {
+                $(".h5-open").slideUp("normal");
+            }
+        });
+    </script>
+</div>
+<!-- 导航条 + 登录 -->
+<div id="nav">
+    <div class="wrapper clearfix">
+        <div class="main-navs">
+            <a href="/"
+               class="active"
+                    >首页</a>
+            <a href="/buy.htm"
+                    >我要买车</a>
+            <a href="/sale.htm"
+                    >我要卖车</a>
+            <a href="/support.htm"
+                    >服务支持</a>
+        </div>
+        <div class="other-navs">
+            <!--<span>无需注册，直接用</span>
+  <a click_type="header2-login" id="J_phone_login" href="http://www.ytucar.net/login.htm" class="nsv-item" style="color:#ff571a;border-right:none;">手机号登录</a>
+  -->
+        </div>
+    </div>
+    <script>
+        $("#J_phone_login").on("click", function(e) {
+            e.preventDefault();
+            Souche.MiniLogin.checkLogin(function() {
+                $(".qiugou .go-login").addClass("hidden")
+                window.location.reload();
+            },true,false,true);
+        });
+
+        $(".logonOut").on("click",function(e){
+            var url = 'http://www.ytucar.net/json/logout.json';
+            jQuery.ajax({
+                type: "get",
+                url: url,
+                success:function(data, textStatus){
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+</div>
+
+<!-- 内容主体 -->
+<style>
+    .moduleTitle {
+        font-size: 20px;
+        font-weight:bold;
+        padding-top: 10px;
+    }
+
+    #content{
+        margin:0px;
+    }
+</style>
+<link href="http://assets.souche.com/assets/css-bigshop/index.css?t=201412311824" rel="stylesheet" type="text/css" />
+<!-- 首页焦点模块 -->
+<div id="content">
+<div class="wrapper clearfix">
+<div class="index-left">
+<div id="top-info" class="clearfix">
+<div class="filter-nav">
+<div class="car-brand clearfix nav-item" data-width="410"
+     data-height="85" data-innerwidth="598">
+<div class="title">品牌</div>
+<div id="brand-open"></div>
+<div class="brand-list clearfix"
+     style="height: 45px; overflow: hidden;">
+    <div class="brand-line">
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-25" class="brand-item" target="_blank">奔驰</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-20" class="brand-item" target="_blank">宝马</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-15" class="brand-item" target="_blank">奥迪</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-99" class="brand-item" target="_blank">路虎</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-92" class="brand-item" target="_blank">雷克萨斯</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-146" class="brand-item" target="_blank">沃尔沃</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-41" class="brand-item" target="_blank">大众</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-74" class="brand-item" target="_blank">吉普</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-30" class="brand-item" target="_blank">别克</a>
+    </div>
+</div>
+<div class="brand-inner nav-inner hidden" data-name="brand"
+     data-height="525" >
+<div class="brand-conf clearfix">
+    <div class="title">品牌</div>
+    <div class="brand-line clearfix">
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-25" class="brand-item" target="_blank">奔驰</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-20" class="brand-item" target="_blank">宝马</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-15" class="brand-item" target="_blank">奥迪</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-99" class="brand-item" target="_blank">路虎</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-92" class="brand-item" target="_blank">雷克萨斯</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-146" class="brand-item" target="_blank">沃尔沃</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-41" class="brand-item" target="_blank">大众</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-74" class="brand-item" target="_blank">吉普</a>
+
+        <a href="http://www.ytucar.net/buy.htm?carBrand=brand-30" class="brand-item" target="_blank">别克</a>
+    </div>
+</div>
+<div class="brand-all clearfix">
+<div class="title">所有品牌</div>
+<div class="brand-list clearfix">
+<div class="left-list">
+    <div class="brand-item-l clearfix">
+        <div class="letter">A</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-12" class="brand-item" target="_blank">阿尔法罗米欧</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-13" class="brand-item" target="_blank">阿斯顿马丁</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-15" class="brand-item" target="_blank">奥迪</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">B</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-18" class="brand-item" target="_blank">宝骏</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-20" class="brand-item" target="_blank">宝马</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-22" class="brand-item" target="_blank">保时捷</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-23" class="brand-item" target="_blank">北京汽车</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-24" class="brand-item" target="_blank">北汽制造</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-25" class="brand-item" target="_blank">奔驰</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-26" class="brand-item" target="_blank">奔腾</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-27" class="brand-item" target="_blank">本田</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-28" class="brand-item" target="_blank">比亚迪</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-29" class="brand-item" target="_blank">标致</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-30" class="brand-item" target="_blank">别克</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-31" class="brand-item" target="_blank">宾利</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-33" class="brand-item" target="_blank">布加迪</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1003-n" class="brand-item" target="_blank">BDNT</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1018-n" class="brand-item" target="_blank">巴博斯</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">C</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-35" class="brand-item" target="_blank">昌河</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-164" class="brand-item" target="_blank">长安</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-165" class="brand-item" target="_blank">长城</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1006-n" class="brand-item" target="_blank">chenggongqiche</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">D</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-41" class="brand-item" target="_blank">大众</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-42" class="brand-item" target="_blank">道奇</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-43" class="brand-item" target="_blank">帝豪</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-44" class="brand-item" target="_blank">东风</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-45" class="brand-item" target="_blank">东南</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">F</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-46" class="brand-item" target="_blank">法拉利</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-48" class="brand-item" target="_blank">菲亚特</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-49" class="brand-item" target="_blank">丰田</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-52" class="brand-item" target="_blank">福迪</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-53" class="brand-item" target="_blank">福特</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-54" class="brand-item" target="_blank">福田</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">G</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-3" class="brand-item" target="_blank">GMC</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-56" class="brand-item" target="_blank">广汽</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1001-n" class="brand-item" target="_blank">QOROS</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">H</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-57" class="brand-item" target="_blank">哈飞</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-58" class="brand-item" target="_blank">海马</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-59" class="brand-item" target="_blank">悍马</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-62" class="brand-item" target="_blank">红旗</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-64" class="brand-item" target="_blank">华普</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-65" class="brand-item" target="_blank">华泰</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-68" class="brand-item" target="_blank">黄海</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-69" class="brand-item" target="_blank">汇众</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-465" class="brand-item" target="_blank">海格</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">J</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-71" class="brand-item" target="_blank">吉奥</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-72" class="brand-item" target="_blank">吉利</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-74" class="brand-item" target="_blank">吉普</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-75" class="brand-item" target="_blank">江淮</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-76" class="brand-item" target="_blank">江铃</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-78" class="brand-item" target="_blank">捷豹</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-79" class="brand-item" target="_blank">金杯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1022-n" class="brand-item" target="_blank">江南汽车</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">K</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-82" class="brand-item" target="_blank">开瑞</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-84" class="brand-item" target="_blank">凯迪拉克</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-86" class="brand-item" target="_blank">克莱斯勒</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">L</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-88" class="brand-item" target="_blank">兰博基尼</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-89" class="brand-item" target="_blank">蓝旗亚</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-91" class="brand-item" target="_blank">劳斯莱斯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-92" class="brand-item" target="_blank">雷克萨斯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-93" class="brand-item" target="_blank">雷诺</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-94" class="brand-item" target="_blank">力帆</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-95" class="brand-item" target="_blank">莲花汽车</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-96" class="brand-item" target="_blank">林肯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-97" class="brand-item" target="_blank">铃木</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-98" class="brand-item" target="_blank">陆风</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-99" class="brand-item" target="_blank">路虎</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-100" class="brand-item" target="_blank">路特斯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-166" class="brand-item" target="_blank">猎豹汽车</a>
+        </div>
+    </div>
+</div>
+<div class="right-list">
+    <div class="brand-item-l clearfix">
+        <div class="letter">M</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-102" class="brand-item" target="_blank">马自达</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-103" class="brand-item" target="_blank">玛莎拉蒂</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-104" class="brand-item" target="_blank">迈巴赫</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-108" class="brand-item" target="_blank">迷你</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-109" class="brand-item" target="_blank">名爵</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1020-n" class="brand-item" target="_blank">McLaren</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">N</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-111" class="brand-item" target="_blank">纳智捷</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">O</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-113" class="brand-item" target="_blank">讴歌</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-114" class="brand-item" target="_blank">欧宝</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">Q</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-118" class="brand-item" target="_blank">奇瑞</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-119" class="brand-item" target="_blank">起亚</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">R</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-121" class="brand-item" target="_blank">日产</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-122" class="brand-item" target="_blank">荣威</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-123" class="brand-item" target="_blank">瑞麒</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">S</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-124" class="brand-item" target="_blank">萨博</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-126" class="brand-item" target="_blank">三菱</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-130" class="brand-item" target="_blank">世爵</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-131" class="brand-item" target="_blank">双环</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-132" class="brand-item" target="_blank">双龙</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-134" class="brand-item" target="_blank">斯巴鲁</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-135" class="brand-item" target="_blank">斯柯达</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-10" class="brand-item" target="_blank">Smart</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1004-n" class="brand-item" target="_blank">SAIC commercial vehicle</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">T</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-138" class="brand-item" target="_blank">天津一汽</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1007-n" class="brand-item" target="_blank">Tesla</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">W</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-144" class="brand-item" target="_blank">威麟</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-145" class="brand-item" target="_blank">weiziman</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-146" class="brand-item" target="_blank">沃尔沃</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-148" class="brand-item" target="_blank">五菱</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1002-n" class="brand-item" target="_blank">潍柴汽车</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">X</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-150" class="brand-item" target="_blank">西雅特</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-151" class="brand-item" target="_blank">现代</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-154" class="brand-item" target="_blank">雪佛兰</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-155" class="brand-item" target="_blank">雪铁龙</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-401" class="brand-item" target="_blank">新龙马</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">Y</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-156" class="brand-item" target="_blank">一汽</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-157" class="brand-item" target="_blank">依维柯</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-158" class="brand-item" target="_blank">英菲尼迪</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-160" class="brand-item" target="_blank">英伦</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-161" class="brand-item" target="_blank">永源汽车</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-1005-n" class="brand-item" target="_blank">野马汽车</a>
+        </div>
+    </div>
+    <div class="brand-item-l clearfix">
+        <div class="letter">Z</div>
+        <div class="brand-letter">
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-167" class="brand-item" target="_blank">中华</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-170" class="brand-item" target="_blank">中兴</a>
+            <a href="http://www.ytucar.net/buy.htm?carBrand=brand-172" class="brand-item" target="_blank">众泰</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="car-models nav-item" data-name="models" data-width="410"
+     data-height="115" data-innerwidth="570">
+    <div class="title">车系</div>
+    <div id="models-open"></div>
+    <div class="models-list">
+        <div class="models-line">
+            <a href="http://www.ytucar.net/buy.htm?carModel=compactCar" class="models-item-m" target="_blank">紧凑型车</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-340" class="models-item" target="_blank">朗逸</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1979" class="models-item" target="_blank">福克斯两厢</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1051" class="models-item" target="_blank">睿翼</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1163" class="models-item" target="_blank">A级</a>
+        </div>
+        <div class="models-line">
+            <a href="http://www.ytucar.net/buy.htm?carModel=midSize" class="models-item-m" target="_blank">中型车</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-422" class="models-item" target="_blank">宝马3系</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1147" class="models-item" target="_blank">C级</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-621" class="models-item" target="_blank">奥迪A4L</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-595" class="models-item" target="_blank">帕萨特</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-564" class="models-item" target="_blank">雅阁</a>
+        </div>
+        <div class="models-line">
+            <a href="http://www.ytucar.net/buy.htm?carModel=PremiumMidsize" class="models-item-m" target="_blank">中大型车</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-425" class="models-item" target="_blank">宝马5系</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1151" class="models-item" target="_blank">E级</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-269" class="models-item" target="_blank">奥迪A6L</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-997" class="models-item" target="_blank">ES</a>
+        </div>
+        <div class="models-line">
+            <a href="http://www.ytucar.net/buy.htm?carModel=SUV" class="models-item-m" target="_blank">SUV</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1919" class="models-item" target="_blank">奥迪Q5</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1168" class="models-item" target="_blank">GLK级</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-2313" class="models-item" target="_blank">揽胜极光</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-707" class="models-item" target="_blank">X3</a>
+            <a href="http://www.ytucar.net/buy.htm?carSeries=series-1027" class="models-item" target="_blank">RX</a>
+        </div>
+    </div>
+    <div class="models-inner  nav-inner hidden" data-height="225"
+         style="opacity: 1; width: 410px; height: 225px;">
+        <div class="title">车系</div>
+        <div class="models-all">
+            <div class="models-line">
+                <a href="http://www.ytucar.net/buy.htm?carModel=compactCar" class="models-item-m" target="_blank">紧凑型车</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-340" class="models-item" target="_blank">朗逸</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1979" class="models-item" target="_blank">福克斯两厢</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1051" class="models-item" target="_blank">睿翼</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1163" class="models-item" target="_blank">A级</a>
+            </div>
+            <div class="models-line">
+                <a href="http://www.ytucar.net/buy.htm?carModel=midSize" class="models-item-m" target="_blank">中型车</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-422" class="models-item" target="_blank">宝马3系</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1147" class="models-item" target="_blank">C级</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-621" class="models-item" target="_blank">奥迪A4L</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-595" class="models-item" target="_blank">帕萨特</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-564" class="models-item" target="_blank">雅阁</a>
+            </div>
+            <div class="models-line">
+                <a href="http://www.ytucar.net/buy.htm?carModel=PremiumMidsize" class="models-item-m" target="_blank">中大型车</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-425" class="models-item" target="_blank">宝马5系</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1151" class="models-item" target="_blank">E级</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-269" class="models-item" target="_blank">奥迪A6L</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-997" class="models-item" target="_blank">ES</a>
+            </div>
+            <div class="models-line">
+                <a href="http://www.ytucar.net/buy.htm?carModel=SUV" class="models-item-m" target="_blank">SUV</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1919" class="models-item" target="_blank">奥迪Q5</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1168" class="models-item" target="_blank">GLK级</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-2313" class="models-item" target="_blank">揽胜极光</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-707" class="models-item" target="_blank">X3</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-1027" class="models-item" target="_blank">RX</a>
+            </div>
+            <div class="models-line">
+                <a href="http://www.ytucar.net/buy.htm?carModel=SportsCar" class="models-item-m" target="_blank">跑车</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-821" class="models-item" target="_blank">卡曼</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-693" class="models-item" target="_blank">TT</a>
+                <a href="http://www.ytucar.net/buy.htm?carSeries=series-728" class="models-item" target="_blank">SLK级</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="car-price nav-item" data-name="price" data-width="410"
+     data-height="50" data-innerwidth="500">
+    <div class="title">价格</div>
+    <div class="price-open"></div>
+    <div class="price-list clearfix">
+        <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=0-15" class="price-item">15万以下</a>
+        <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=15-30" class="price-item">15万-30万</a>
+        <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=30-50" class="price-item">30万-50万</a>
+        <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=50-100" class="price-item">50万-100万</a>
+        <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=100-1000" class="price-item">100万以上</a>
+    </div>
+    <div class="price-inner  nav-inner hidden" data-height="68"
+         style="opacity: 1; width: 410px; height: 68px;">
+        <div class="title">价格</div>
+        <div class="price-list">
+            <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=0-15" class="price-item">15万以下</a>
+            <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=15-30" class="price-item">15万-30万</a>
+            <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=30-50" class="price-item">30万-50万</a>
+            <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=50-100" class="price-item">50万-100万</a>
+            <a target="_blank" href="http://www.ytucar.net/buy.htm?carPrice=100-1000" class="price-item">100万以上</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="main-slider">
+    <div class="flexslider">
+        <div class="flex-viewport">
+            <ul class="slides">
+                <li>
+                    <a href="" target="_blank">					<img src="http://img.souche.com/files/default/C75D4FB5CC65679EB5C7F383E2C30A28_880x335.png"
+                            />
+                    </a>     			</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshowSpeed: 5000,
+            directionNav: true,
+            controlNav: true,
+            pauseOnHover: true
+        });
+    });
+</script>
+</div>
+</div>
+</div>
+
+
+<!-- 图片轮播模块 -->
+<div id="pics">
+    <div class="banner">
+        <div class="wrapper clearfix">
+            <div class="b-left">
+
+                <img src="http://img.souche.com/files/default/4AB9D31001F98B650F937EF661A17EC1_280x159.png"
+                        />
+
+                <img src="http://img.souche.com/files/default/4AB9D31001F98B650F937EF661A17EC1_280x159.png"
+                        />
+            </div>
+            <div class="b-right">
+                <div class="flexslider2">
+                    <div class="flex-viewport"
+                         style="overflow: hidden; position: relative;">
+                        <ul class="slides" style="">
+                            <li class="" style="width: 880px; float: left; display: block;">
+                                <img src="http://img.souche.com/files/default/F03161A24B69D4CD33260A54DCD405A9_900x159.png" draggable="false">
+                            </li>
+                            <li class="" style="width: 880px; float: left; display: block;">
+                                <img src="http://img.souche.com/files/default/6B329F91DD1F92D398E635E493915E49_900x159.png" draggable="false">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 车辆列表模块1 -->
+<div class="moduleTitle">&gt;最新车源</div>
+<div class="carsModule">
+<div class="carsContent hotNewCarsContent">
+<div class="hotNewCars clearfix">
+<div class="carsItem carItem"  data-id="b0aede63-9bfc-4340-a727-0f5a414b8b2d">
+    <a href="/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w"
+             data-original="http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG"
+             alt="保时捷 2008款  卡宴4.8-手自一体-GTS" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d" target="_blank" class="car-link">保时捷 2008款  卡宴4.8-手自一体-GTS </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">69.80</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2010/05 上牌</span> <em>|</em> <span
+            class="info-item">7.77万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="b0aede63-9bfc-4340-a727-0f5a414b8b2d" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="c03ca64d-542b-4d17-8db2-b485e0211bee">
+    <a href="/detail.htm?carId=c03ca64d-542b-4d17-8db2-b485e0211bee" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/958BDE880A9E072EE76EA31EDA7F6507_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/958BDE880A9E072EE76EA31EDA7F6507_690x460.jpg"
+             alt="保时捷 2007款  卡宴3.6-手自一体" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=c03ca64d-542b-4d17-8db2-b485e0211bee" target="_blank" class="car-link">保时捷 2007款  卡宴3.6-手自一体 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">46.80</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2008/05 上牌</span> <em>|</em> <span
+            class="info-item">9.71万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="c03ca64d-542b-4d17-8db2-b485e0211bee" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="40882011-d81b-4894-ba29-9351db985cbe">
+    <a href="/detail.htm?carId=40882011-d81b-4894-ba29-9351db985cbe" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/B910BB72FAB6EB76D5511E126AA5DF4A_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/B910BB72FAB6EB76D5511E126AA5DF4A_690x460.jpg"
+             alt="保时捷 2010款 Panamera 4 3.6L" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=40882011-d81b-4894-ba29-9351db985cbe" target="_blank" class="car-link">保时捷 2010款 Panamera 4 3.6L </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">76.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2010/11 上牌</span> <em>|</em> <span
+            class="info-item">7.06万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="40882011-d81b-4894-ba29-9351db985cbe" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="ccac95c0-d9fc-4e4e-ac48-5a6d9dc359a6">
+    <a href="/detail.htm?carId=ccac95c0-d9fc-4e4e-ac48-5a6d9dc359a6" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/2059D4C18AB250DF2941847F2835FDDE_690x460.JPG@240w"
+             data-original="http://img.souche.com/files/default/2059D4C18AB250DF2941847F2835FDDE_690x460.JPG"
+             alt="保时捷 2009款  卡曼2.9-手自一体" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=ccac95c0-d9fc-4e4e-ac48-5a6d9dc359a6" target="_blank" class="car-link">保时捷 2009款  卡曼2.9-手自一体 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">42.80</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2010/08 上牌</span> <em>|</em> <span
+            class="info-item">4.75万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="ccac95c0-d9fc-4e4e-ac48-5a6d9dc359a6" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="01bf5b6d-40cf-45d1-ba28-9273934fff21">
+    <a href="/detail.htm?carId=01bf5b6d-40cf-45d1-ba28-9273934fff21" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/2F92E45E56BEC5E5973C8C1C77D2B5C1_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/2F92E45E56BEC5E5973C8C1C77D2B5C1_690x460.jpg"
+             alt="保时捷 2011款  博克斯特-2.9-手自一体-Black-Edition" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=01bf5b6d-40cf-45d1-ba28-9273934fff21" target="_blank" class="car-link">保时捷 2011款  博克斯特-2.9-手自一体-Black-Edition </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">49.18</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/04 上牌</span> <em>|</em> <span
+            class="info-item">1.16万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="01bf5b6d-40cf-45d1-ba28-9273934fff21" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="8de97f77-8f34-46e7-9d95-5cf9e30cd88f">
+    <a href="/detail.htm?carId=8de97f77-8f34-46e7-9d95-5cf9e30cd88f" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/9B484F4039BF8F08997B069C7B5A9D69_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/9B484F4039BF8F08997B069C7B5A9D69_690x460.jpg"
+             alt="2011款  宝马X6-xDrive35i-3.0T-手自一体" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=8de97f77-8f34-46e7-9d95-5cf9e30cd88f" target="_blank" class="car-link">2011款  宝马X6-xDrive35i-3.0T-手自一体 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">62.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/01 上牌</span> <em>|</em> <span
+            class="info-item">7.86万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="8de97f77-8f34-46e7-9d95-5cf9e30cd88f" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="ded35641-dae6-4b22-b8c8-bb33f77c19ac">
+    <a href="/detail.htm?carId=ded35641-dae6-4b22-b8c8-bb33f77c19ac" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/98A5CF3E5B95C05F06114B4722723168_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/98A5CF3E5B95C05F06114B4722723168_690x460.jpg"
+             alt="2012款  宝马X6-xDrive35-3.0T-手自一体" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=ded35641-dae6-4b22-b8c8-bb33f77c19ac" target="_blank" class="car-link">2012款  宝马X6-xDrive35-3.0T-手自一体 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">69.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2012/08 上牌</span> <em>|</em> <span
+            class="info-item">4.21万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="ded35641-dae6-4b22-b8c8-bb33f77c19ac" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="ba1683e9-982d-43d6-9c79-8d9e73e2fd47">
+    <a href="/detail.htm?carId=ba1683e9-982d-43d6-9c79-8d9e73e2fd47" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/EE9348A5F1B444F3A86D77997EE8F26F_690x460.JPG@240w"
+             data-original="http://img.souche.com/files/default/EE9348A5F1B444F3A86D77997EE8F26F_690x460.JPG"
+             alt="日产 2012款  奇骏XL-2.5-手动豪华版四驱" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=ba1683e9-982d-43d6-9c79-8d9e73e2fd47" target="_blank" class="car-link">日产 2012款  奇骏XL-2.5-手动豪华版四驱 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">15.78</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/11 上牌</span> <em>|</em> <span
+            class="info-item">3.39万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="ba1683e9-982d-43d6-9c79-8d9e73e2fd47" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 车辆列表模块2 -->
+<div class="moduleTitle">&gt;推荐车辆</div>
+<div class="carsModule">
+<div class="carsContent hotNewCarsContent">
+<div class="hotNewCars clearfix">
+<div class="carsItem carItem"  data-id="wGeYGcARfr">
+    <a href="/detail.htm?carId=wGeYGcARfr" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/D0858BA4AF00BA2551196B351FD329A9_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/D0858BA4AF00BA2551196B351FD329A9_690x460.jpg"
+             alt="别克 2012款  君越2.4-SIDI-手自一体雅致版" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=wGeYGcARfr" target="_blank" class="car-link">别克 2012款  君越2.4-SIDI-手自一体雅致版 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">18.68</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2013/01 上牌</span> <em>|</em> <span
+            class="info-item">1.72万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="wGeYGcARfr" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="GpMD84WrzQ">
+    <a href="/detail.htm?carId=GpMD84WrzQ" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/A229F5D17936EB596721FA990CCF0FE6_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/A229F5D17936EB596721FA990CCF0FE6_690x460.jpg"
+             alt="现代 2011款  索纳塔2.0-手自一体-LUX至尊版" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=GpMD84WrzQ" target="_blank" class="car-link">现代 2011款  索纳塔2.0-手自一体-LUX至尊版 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">12.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/05 上牌</span> <em>|</em> <span
+            class="info-item">3.89万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="GpMD84WrzQ" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="ded35641-dae6-4b22-b8c8-bb33f77c19ac">
+    <a href="/detail.htm?carId=ded35641-dae6-4b22-b8c8-bb33f77c19ac" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/98A5CF3E5B95C05F06114B4722723168_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/98A5CF3E5B95C05F06114B4722723168_690x460.jpg"
+             alt="2012款  宝马X6-xDrive35-3.0T-手自一体" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=ded35641-dae6-4b22-b8c8-bb33f77c19ac" target="_blank" class="car-link">2012款  宝马X6-xDrive35-3.0T-手自一体 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">69.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2012/08 上牌</span> <em>|</em> <span
+            class="info-item">4.21万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="ded35641-dae6-4b22-b8c8-bb33f77c19ac" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="ba1683e9-982d-43d6-9c79-8d9e73e2fd47">
+    <a href="/detail.htm?carId=ba1683e9-982d-43d6-9c79-8d9e73e2fd47" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/EE9348A5F1B444F3A86D77997EE8F26F_690x460.JPG@240w"
+             data-original="http://img.souche.com/files/default/EE9348A5F1B444F3A86D77997EE8F26F_690x460.JPG"
+             alt="日产 2012款  奇骏XL-2.5-手动豪华版四驱" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=ba1683e9-982d-43d6-9c79-8d9e73e2fd47" target="_blank" class="car-link">日产 2012款  奇骏XL-2.5-手动豪华版四驱 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">15.78</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/11 上牌</span> <em>|</em> <span
+            class="info-item">3.39万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="ba1683e9-982d-43d6-9c79-8d9e73e2fd47" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="72ce1363-fe92-4b50-8315-6487618c7bd5">
+    <a href="/detail.htm?carId=72ce1363-fe92-4b50-8315-6487618c7bd5" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/B0582B99C842C78C5FDEB6713C3E4403_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/B0582B99C842C78C5FDEB6713C3E4403_690x460.jpg"
+             alt="2010款  宝马3系三厢320i-2.0-手自一体豪华型" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=72ce1363-fe92-4b50-8315-6487618c7bd5" target="_blank" class="car-link">2010款  宝马3系三厢320i-2.0-手自一体豪华型 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">20.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2011/03 上牌</span> <em>|</em> <span
+            class="info-item">3.42万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="72ce1363-fe92-4b50-8315-6487618c7bd5" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="05155689-f2d7-48df-a226-3b9eb83cf9f6">
+    <a href="/detail.htm?carId=05155689-f2d7-48df-a226-3b9eb83cf9f6" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/4756ED191945268BD0A31835CC3839F0_690x460.JPG@240w"
+             data-original="http://img.souche.com/files/default/4756ED191945268BD0A31835CC3839F0_690x460.JPG"
+             alt="日产 2013款  天籁2.5-无级变速-NAVI Tech智享版" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=05155689-f2d7-48df-a226-3b9eb83cf9f6" target="_blank" class="car-link">日产 2013款  天籁2.5-无级变速-NAVI Tech智享版 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">19.38</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2013/04 上牌</span> <em>|</em> <span
+            class="info-item">2.25万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="05155689-f2d7-48df-a226-3b9eb83cf9f6" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="f6fd44ba-8930-4a56-9859-a8ecba5e6b37">
+    <a href="/detail.htm?carId=f6fd44ba-8930-4a56-9859-a8ecba5e6b37" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/D101DB72F78B045175134A5C81E17584_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/D101DB72F78B045175134A5C81E17584_690x460.jpg"
+             alt="2011款  凯迪拉克SRX-3.0-手自一体四驱旗舰版" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=f6fd44ba-8930-4a56-9859-a8ecba5e6b37" target="_blank" class="car-link">2011款  凯迪拉克SRX-3.0-手自一体四驱旗舰版 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">35.88</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2012/03 上牌</span> <em>|</em> <span
+            class="info-item">3.00万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="f6fd44ba-8930-4a56-9859-a8ecba5e6b37" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+<div class="carsItem carItem"  data-id="1650ef92-c11d-4685-aa55-31858e06a1ef">
+    <a href="/detail.htm?carId=1650ef92-c11d-4685-aa55-31858e06a1ef" target="_blank" class="carImg">
+        <img src="http://img.souche.com/files/default/A71417CBD3778F3BDA009539C3187471_690x460.jpg@240w"
+             data-original="http://img.souche.com/files/default/A71417CBD3778F3BDA009539C3187471_690x460.jpg"
+             alt="2013款  捷豹XF-2.0T-手自一体风华版" width="325px" height="215px"
+             style="display: inline; width: 100%; height: auto;">
+        <div class="timebuy hidden"></div>
+    </a>
+    <a href="/detail.htm?carId=1650ef92-c11d-4685-aa55-31858e06a1ef" target="_blank" class="car-link">2013款  捷豹XF-2.0T-手自一体风华版 </a>
+    <div class="car-price">
+			<span class="price"> <span class="rmb-symbol">￥</span> <span
+                    class="price-amount">38.80</span> <span class="price-unit">万</span>			</span>
+    </div>
+    <div class="car-info">
+        <span class="info-item">2013/04 上牌</span> <em>|</em> <span
+            class="info-item">1.98万公里</span> <em>|</em> <span
+            class="info-item"> <span class="info-item-name">归属地:</span>
+				杭州
+			</span>
+    </div>
+    <div class="carTail clearfix">
+        <a data-carid="1650ef92-c11d-4685-aa55-31858e06a1ef" click_type="sale-favs"
+           data-num="0" title="收藏 0"
+           class="fav collect "> <span
+                class="add-to-coll">收藏</span> <span class="already-colled">已收藏</span>
+            <span class="fav-count" data-favcount="0">0</span>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 最热咨询 -->
+<!-- 
+<div class="moduleTitle">&gt;最热咨询</div>
+<div id="news" style="margin-top:20px;">
+	<style>
+	.newsContent{
+		display:block;
+		border:1px solid lightgrey;
+		height:300px;
+		float:left;
+	}
+	
+	.newsContentLeft{
+		width:450px;
+		height:280px;
+		margin-right: 15px;
+		padding:10px;
+	}
+	
+	.newsContentLeft table{
+		height:inherit;
+	}
+	
+	.newsContentLeft table td{
+		vertical-align : top;
+	}
+	
+	.newsContentLeft img{
+		width:220px;
+		height:280px;
+	}
+	
+    .newsBody{
+		height:140px;
+	}
+	
+	.newsBody .newsTitle{
+		color:#14468B;
+		padding-bottom: 20px;
+		padding-left:5px;
+	}
+	
+	.newsBody .news{
+		color:black;
+		padding-bottom: 30px;
+		padding-left:5px;
+	}
+	
+	.newsBody .newsPublish{
+		color:grey;
+		padding-left:5px;
+	}
+	
+	.newsContentMid{
+		width:280px;
+		height:280px;
+		margin-right: 15px;
+		padding:10px;
+	}
+	
+	.newsContentMid table td{
+		vertical-align : top;
+	}
+	
+	.newsContentMid img{
+		width:120px;
+		height:120px;
+	}
+	
+	.newsContentRight{
+		width:150px;
+	}
+	
+	.newsContentRight img{
+		border:0px;
+		width:inherit;
+		height:inherit;
+	}
+</style>
+<div class="newsContent newsContentLeft">
+	<table>
+		<tr>
+			<td>
+				<img src="aaa" >
+			</td>
+			<td>
+				<div class='newsBody'>
+					<p class='newsTitle'>"行"认证二手车走进浙江</p>
+					<p class='news'>10月25日,元通二手车正式被授权为"行"认证单位</p>
+					<p class='newsPublish'>发布时间: 2014-11-19 15:15</p>
+				</div>
+				<hr>
+				<div class='newsBody'>
+					<p class='newsTitle'>"行"认证二手车走进浙江</p>
+					<p class='news'>10月25日,元通二手车正式被授权为"行"认证单位</p>
+					<p class='newsPublish'>发布时间: 2014-11-19 15:15</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="newsContent newsContentMid">
+	<table>
+		<tr>
+			<td>
+				<img src="aaa" >
+			</td>
+			<td>
+				<div class='newsBody'>
+					<p class='newsTitle'>"行"认证二手车走进浙江</p>
+					<p class='news'>10月25日,元通二手车正式被授权为"行"认证单位</p>
+					<p class='newsPublish'>2014-11-19 15:15</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table>
+		<tr>
+			<td>
+				<img src="aaa" >
+			</td>
+			<td>
+				<div class='newsBody'>
+					<p class='newsTitle'>"行"认证二手车走进浙江</p>
+					<p class='news'>10月25日,元通二手车正式被授权为"行"认证单位</p>
+					<p class='newsPublish'>2014-11-19 15:15</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="newsContent newsContentRight">
+	<img src="aaa" >
+</div>
+<div class="clearfix">
+</div>
+</div> -->
+</div>
+<script>
+    var config={
+        series_api:'/pages/dicAction/loadRootLevelForCar.json?type=car-subdivision&code=',
+        brand_api:'/pages/dicAction/loadRootLevel.json?type=car-subdivision',
+        getMoreUserRecommend_api:"/pages/homePageAction/loadUserRecommendCar.json?page",
+        getMoreHotCars_api:"/pages/homePageAction/loadHotRecCars.json?page=",
+        getMoreOtherCars_api:"/pages/homePageAction/loadHotNewCar.json",
+        search_api:"/pages/common/boxSuggestAction/list.json",
+        submit_api:"/pages/homePageAction/saveBuyInfo.json",
+        api_saveFavorite:  'http://www.souche.com/pages/userOperationAction/favSaleCar.jsonp',
+        api_delFavorite:'/pages/saleDetailAction/delCarFavorite.json',
+        api_addContrast:'/pages/carContrastAction/addContrastCar.json',
+        api_deleteContrast:'/pages/carContrastAction/deleteContrastCar.json',
+        carType:'zaishou',
+        api_matchUrl:"http://www.souche.com/pages/onsale/sale_car_list.html",
+        api_nolikeUrl:"/pages/saleDetailAction/notLikeMatchCar.json",
+        api_guessCars:"/pages/guesscars.html",
+        api_showTipUrl:"/pages/homePageAction/queryTagTip.json",
+        api_noShowTipUrl:"/pages/homePageAction/readTagTip.json",
+        api_addToWishUrl:"",
+        api_favCounts:"http://www.souche.com/pages/userOperationAction/queryCarsFavNum.jsonp"
+    };
+
+    require(["index/index"],function(Index){
+        Index.init(config)
+    })
+
+</script>
+
+<!-- 右边工具栏 -->
+<div class="sidebar" id="toolbar">
+    <div class="sidebar-tit">
+        <i>我的车库</i>
+        <span class="toolbar-close"></span>
+    </div>
+    <div class="sidebar-nav">
+        <div class="collectside side-box">
+            <a click_type="toolbar-faver"
+               class="buy-box side-trigger"
+               target='_blank'
+               href='http://wpa.qq.com/msgrd?v=3&amp;uin=2221424738&amp;site=qq&amp;menu=yes'
+               id="buy_qq"><div class="collect-img icon"></div><i>买车咨询</i></a>
+
+            <i class="point-num hidden" id="fav_notice">12</i>
+        </div>
+        <div class="collectside side-box">
+            <a click_type="toolbar-faver"
+               class="sell-box side-trigger"
+               target="_blank"
+               href='http://wpa.qq.com/msgrd?v=3&amp;uin=2221424738&amp;site=qq&amp;menu=yes'
+               id="sell_qq"><div class="collect-img icon"></div><i>卖车咨询</i></a>
+            <i class="point-num hidden" id="fav_notice">12</i>
+        </div>
+        <div class="collectside side-box">
+            <a click_type="toolbar-faver" class="collect-box side-trigger" href='/favorite.htm'><div class="collect-img icon"></div><i>收藏的车</i></a>
+            <i class="point-num hidden" id="fav_notice">12</i>
+        </div>
+    </div>
+    <div class="toolbar-content">
+        <div class="iframe-loading"></div>
+        <iframe src="" height="500px" width="855px"  name="toolbar-open" frameborder="0" class="hidden" scrolling="no"></iframe>
+    </div>
+</div>
+<!-- 底部 -->
+<div id="footer">
+    <style>
+        #footer .wrapper{
+            margin:0px;
+            padding:0px;
+            width:100%;
+            text-align:center;
+            background:white;
+        }
+
+        #footer .wrapper .footImg{
+            text-align:center;
+            width:100%;
+            padding-top:40px;
+            padding-bottom:30px;
+        }
+
+        #footer .wrapper .spliter{
+            min-width:50px;
+            text-align:center;
+            display:inline-block;
+            color:#717171;
+        }
+
+        #footer .wrapper .friendlinks{
+            text-align:center;
+        }
+
+        #footer .wrapper .friendlinks a{
+            display:inline;
+            float:none;
+        }
+
+        #footer .wrapper p a{
+            padding:0px;
+            margin:0px;
+            color:#717171;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="footImg">
+
+            <img src="http://img.souche.com/files/default/4C818162904024F2645275AB275427E6_1180x221.png"
+                    />
+        </div>
+        <div class="friendlinks clearfix">
+
+            <a href="http://www.souche.com" target="_blank">大搜车</a>
+            <a href="http://www.zjmi.com/" target="_blank">浙江物产集团</a>
+            <a href="http://www.yuantong.com.cn/" target="_blank">元通集团</a>
+            <a href="http://www.mycjj.com/" target="_blank">车家佳</a>
+            <a href="http://www.icip.com.cn/" target="_blank">一车一品</a>        	            </div>
+        <p>
+        </p>
+        <p>CopyRight © 2015 版权所有 元通二手车商务平台 &nbsp;&nbsp;&nbsp;&nbsp;浙ICP备:11003688号 </p>
+        <p>公司网址: www.ytucar.net &nbsp;&nbsp;&nbsp;&nbsp;联系电话: 4008-571-000 &nbsp;&nbsp;&nbsp;&nbsp;通讯地址: 浙江省杭州市沈半路245号物产元通名车馆</p>
+    </div>
+
+</div>
+</body>
+</html>
