@@ -1,0 +1,210 @@
+@import "./config.less";
+
+@W: 1180px;
+@asideW: 280px;
+@asideDis: 20px;
+
+.content{
+    .box-sizing();
+    *{
+        .box-sizing();
+    }
+
+    width: 1180px;
+    margin: 0 auto;
+    padding-top: 20px;
+    // overflow: hidden;
+
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+.aside{
+    float: right;
+    width: @asideW;
+
+    .banner-item{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+.main{
+    margin-right: @asideDis + @asideW;
+    // 为什么右侧aside会影响这里的布局?
+    overflow: hidden;
+
+    // slider容器
+    .slider-ctn{
+        height: 340px;
+        overflow: hidden;
+
+        .slider-list{
+            float: left;
+            position: relative;
+            width: 620px;
+            height: 100%;
+            .slider-item{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                .opacity(0);
+                z-index: -10;
+                overflow: hidden;
+
+                img{
+                    width: 100%;
+                }
+                
+                &.active{
+                    .opacity(1);
+                    z-index: 100;
+                }
+            }
+        }
+        
+        .slide-nav-list{
+            float: right;
+            width: 250px;
+            height: 100%;
+            .slide-nav-item{
+                height: 160px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    // 新闻 news-feed
+    @bc: #ececec;
+    .news-feed{
+        padding-bottom: 60px;
+        .news-list{
+            border-top: 1px solid @bc;
+            margin-bottom: 60px;
+            
+            @picW: 180px;
+            @picH: 120px;
+            @picDis: 20px;
+            .news-item{
+                padding: 20px 32px;
+                min-height: @picH + 40px + 25px;
+                border-bottom: 1px solid @bc;
+
+                &:after{
+                    content: '';
+                    display: table;
+                    clear: both;
+                }
+                
+                .news-pic{
+                    float: left;
+                    height: @picH;
+                    width: @picW;
+                    margin-top: 25px;
+                    background-color: #f4f4f4;
+                    border: none;
+                }
+                .new-content{
+                    position: relative;
+                    margin-left: @picW + @picDis;
+                    
+                    @tagPink: #FC9695;
+                    @tagCyan: #9FB960;
+                    .news-tag{
+                        position: absolute;
+                        left: -( @picW + @picDis );
+                        width: 52px;
+                        height: 18px;
+                        font-size: 16px;
+                        font-style: normal;
+                        text-align: center;
+                        line-height: 18px;
+                        color: #fff;
+
+                        &.tag-activity{
+                            background-color: @tagPink;
+                        }
+                        &.tag-info{
+                            background-color: @tagCyan;
+                        }
+                    }
+                    .news-title{
+                        position: relative;
+                        top: -3px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        color: #333;
+                    }
+                    .news-summary{
+                        position: relative;
+                        height: 4 * 24px;
+                        margin-top: 4px;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #666;
+                        overflow: hidden;
+
+                        .read-more{
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            width: 94px;
+                            text-align: right;
+                            background-color: #fff;
+                            font-size: inherit;
+                            line-height: inherit;
+                        }
+                    }
+                    
+                    .news-pub-time{
+                        float: right;
+                        position: relative;
+                        bottom: -10px;
+                        font-size: 14px;
+                        color: #999;
+                    }
+                }
+            }
+        }
+        .news-pagination{
+            text-align: center;
+            &:after{
+                content: '';
+                display: table;
+                clear: both;
+            }
+            .pagi-nav{
+                display: inline-block;
+                min-width: 32px;
+                height: 32px;
+                margin: 0 6px;
+                padding: 0 8px;
+                line-height: 30px;
+                border: 1px solid @bc;
+                text-align: center;
+                color: #333;
+                cursor: pointer;
+
+                &.disabled{
+                    cursor: default;
+                    color: #aaa;
+                    background-color: #ececec;
+                }
+                &.active{
+                    cursor: default;
+                    color: #ccc;
+                    background-color: #643032;
+                }
+            }
+            
+        }
+    }
+
+}
