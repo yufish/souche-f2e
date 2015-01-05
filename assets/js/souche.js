@@ -226,39 +226,43 @@ Souche.UI.NewSelect = function() {
                 c.eles[i] = "#" + c.eles[i];
             }
             if(c.type!="car-subdivision"&& c.type!="area"){
+
+                $(".choose-cont").on("click",function(e){
+                    var code = $(this).attr("data-code");
+                    var name = $(this).html();
+                    var index = $(this).closest(".open-item").attr("data-index")
+                    if(c.type=="time"&&index==0){
+
+                        $(".cont-default", c.eles[1]).addClass("hidden");
+                        $(".cont-item", c.eles[1]).removeClass("hidden");
+                    }
+                    $(this).closest(".open-item").attr({
+                        "data-code":code,
+                        "data-name":name
+                    })
+                    $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
+                    $(this).addClass("active");
+                    if (index >= c.eles.length - 1) {
+                        $(this).closest(".select-open").addClass("hidden")
+                        $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
+                            var arr = []
+                            for(var z=0;z< c.eles.length;z++){
+                                arr.push($(c.eles[z]).attr("data-name"))
+                            }
+                            return arr.join(" ")
+                        })
+                    }
+                    $(".choose-result",$(this).closest(".open-item")).val(code);
+                    $(".choose-result-name",$(this).closest(".open-item")).val(name);
+                    e.stopPropagation();
+                });
                 for (var i in c.eles) {
                     $(c.eles[i]).attr("data-index", i)
-                    $(".choose-cont").on("click",function(e){
-                        var code = $(this).attr("data-code");
-                        var name = $(this).html();
-                        var index = $(this).closest(".open-item").attr("data-index")
-                        if(c.type=="time"&&index==0){
+                    if (c.defaultValues[i]) {
+                        $(".choose-cont[data-code="+c.defaultValues[i]+"]", c.eles[i]).trigger("click")
 
-                            $(".cont-default", c.eles[1]).addClass("hidden");
-                            $(".cont-item", c.eles[1]).removeClass("hidden");
-                        }
-                        $(this).closest(".open-item").attr({
-                            "data-code":code,
-                            "data-name":name
-                        })
-                        $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
-                        $(this).addClass("active");
-                        if (index >= c.eles.length - 1) {
-                            $(this).closest(".select-open").addClass("hidden")
-                            $(".display-text",$(c.eles[0]).closest(".select")).html(function(){
-                                var arr = []
-                                for(var z=0;z< c.eles.length;z++){
-                                    arr.push($(c.eles[z]).attr("data-name"))
-                                }
-                                return arr.join(" ")
-                            })
-                        }
-                        $(".choose-result",$(this).closest(".open-item")).val(code);
-                        $(".choose-result-name",$(this).closest(".open-item")).val(name);
-                        e.stopPropagation();
-                    });
+                    }
                 }
-
                 return;
 
             }
@@ -313,6 +317,12 @@ Souche.UI.NewSelect = function() {
                                     $(this).addClass("active");
 
                                 })
+                                if (c.defaultValues[0]) {
+                                    if(c.defaultValues[0]==item.code){
+                                        con.trigger("click")
+                                    }
+
+                                }
                             }
                         }
                         $(".brand-cata a").on("click",function(){
@@ -341,14 +351,16 @@ Souche.UI.NewSelect = function() {
                                 $(this).addClass("active");
 
                             })
+                            if (c.defaultValues[0]) {
+                                if(c.defaultValues[0]==item.code){
+                                    con.trigger("click")
+                                }
+
+                            }
                         }
                     }
 
-                    if (c.defaultValues[0]) {
-                        $(c.eles[0]).trigger("change",{
-                            code:c.defaultValues[0]
-                        });
-                    }
+
                 },
                 error: function() {
 
@@ -410,14 +422,15 @@ Souche.UI.NewSelect = function() {
                                             $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
                                             $(this).addClass("active");
                                         })
+                                        if (c.defaultValues[1]) {
+                                            if(c.defaultValues[1]==item.code){
+                                                con.trigger("click")
+                                            }
+
+                                        }
                                     }
                                 }
 
-                                if (c.defaultValues[1]) {
-                                    $(c.eles[1]).trigger("change",{
-                                        code:c.defaultValues[1]
-                                    });
-                                }
 
                             }
                         });
@@ -462,6 +475,11 @@ Souche.UI.NewSelect = function() {
                                                 $(this).addClass("active");
 
                                             })
+                                            if (c.defaultValues[index+1]) {
+                                                if(c.defaultValues[index+1]==item.code){
+                                                    con.trigger("click")
+                                                }
+                                            }
                                         }
                                     }
 
@@ -484,15 +502,16 @@ Souche.UI.NewSelect = function() {
                                             $(".choose-cont",$(this).closest(".open-item")).removeClass("active");
                                             $(this).addClass("active");
                                         })
+                                        if (c.defaultValues[index+1]) {
+                                            if(c.defaultValues[index+1]==item.code){
+                                                con.trigger("click")
+                                            }
+                                        }
                                     }
                                 }
 
 
-                                if (c.defaultValues[index+1]) {
-                                    $(c.eles[index+1]).trigger("change",{
-                                        code:c.defaultValues[index+1]
-                                    });
-                                }
+
 
                             }
                         });
