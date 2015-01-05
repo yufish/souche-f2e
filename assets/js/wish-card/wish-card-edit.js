@@ -211,6 +211,7 @@ function(AddSeries, CustomSelect, Tool){
     var _event = {
         bind: function(){
             //编辑订阅卡片
+            $(".btn-go-fill").click(_event.startEdit);
             $("#J_card_edit").click(_event.startEdit);
             //去掉填写的需求
             $("#J_xuqiu_cancel").click(_event.cacelEdit);
