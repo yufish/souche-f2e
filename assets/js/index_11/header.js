@@ -187,11 +187,9 @@ define( ['souche/realTimeDown'], function(searchSuggest) {
                 for(var i in regRules){
                     var reg = new RegExp(i)
                     if(reg.test(curPath)){
-                        console.log(" reg")
                         window.location.href=contextPath+regRules[i].replace("[location]",pinyin)
                         return;
                     }else{
-                        console.log("no reg")
                     }
                 }
                 if( jump_rules[curPath] === undefined ){

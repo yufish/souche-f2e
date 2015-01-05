@@ -1,0 +1,93 @@
+@import "../config.less";
+
+@bc: #E6E6E6;
+@ytBlue: #0f448e;
+
+.latest-news{
+    margin-top: 20px;
+    margin-left: -20px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+    .box-sizing();
+    *{
+        .box-sizing();
+    }
+
+    .news-list{
+        float: left;
+        width: 580px;
+        margin-left: 20px;
+        padding: 0 20px;
+        border: 1px solid @bc;
+        
+        .news-item{
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid @bc;
+
+            @picW: 120px;
+            @picH: 90px;
+            .news-item-pic{
+                float: left;
+                width: @picW;
+                height: @picH;
+                background-color: #f4f4f4;
+                border: none;
+            }
+            .news-item-content{
+                height: @picH;
+                margin-left: @picW + 15px;
+                
+                @tagPink: #FC9695;
+                @tagCyan: #9FB960;
+                .news-tag{
+                    display: inline-block;
+                    width: 52px;
+                    height: 18px;
+                    font-size: 16px;
+                    font-style: normal;
+                    text-align: center;
+                    line-height: 18px;
+                    color: #fff;
+
+                    &.tag-activity{
+                        background-color: @tagPink;
+                    }
+                    &.tag-info{
+                        background-color: @tagCyan;
+                    }
+                }
+                .news-title{
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: @ytBlue;
+                }
+                .news-summary{
+                    position: relative;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #666;
+                    height: 2 * 18px;
+                    overflow: hidden;
+
+                    &:after{
+                        content: '...';
+                        position: absolute;
+                        height: 18px;
+                        width: 14px;
+                        bottom: 0;
+                        right: 0;
+                        text-align: right;
+                        background-color: #fff;
+                    }
+                }
+                .news-pub-time{
+                    float: right;
+                    color: #999;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
