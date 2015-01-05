@@ -1,22 +1,23 @@
-.car-mod .mod-bd .news-wrapper {
+.car-mod .mod-bd a.news-wrapper {
+  display: block;
   width: 300px;
   margin: 20px auto;
 }
-.car-mod .mod-bd .news-wrapper .news-img {
+.car-mod .mod-bd a.news-wrapper .news-img {
   width: 26.67%;
   float: left;
 }
-.car-mod .mod-bd .news-wrapper .news-img img {
+.car-mod .mod-bd a.news-wrapper .news-img img {
   width: 100%;
 }
-.car-mod .mod-bd .news-wrapper .news-body {
+.car-mod .mod-bd a.news-wrapper .news-body {
   display: table-cell;
   padding-left: 5px;
 }
-.car-mod .mod-bd .news-wrapper .news-body .news-title {
+.car-mod .mod-bd a.news-wrapper .news-body .news-title {
   font-size: 14px;
 }
-.car-mod .mod-bd .news-wrapper .news-body .news-sub {
+.car-mod .mod-bd a.news-wrapper .news-body .news-sub {
   margin-top: 10px;
   color: #9a9a9a;
   height: 51px;
