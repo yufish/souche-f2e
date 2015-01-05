@@ -11,14 +11,16 @@
   width: 100%;
 }
 .car-mod .mod-bd a.news-wrapper .news-body {
+  width: 205px;
   display: table-cell;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 .car-mod .mod-bd a.news-wrapper .news-body .news-title {
-  font-size: 14px;
+  font-size: 19px;
+  height: 23px;
 }
 .car-mod .mod-bd a.news-wrapper .news-body .news-sub {
-  margin-top: 10px;
+  margin-top: 8px;
   color: #9a9a9a;
   height: 51px;
   font-size: 13px;
