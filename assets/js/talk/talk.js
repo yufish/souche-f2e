@@ -16,6 +16,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
         //收到文本消息时的回调方法
         onTextMessage : function(message) {
             console.log("text message")
+            message.content = message.data;
             console.log(message)
             setTimeout(function(){
                 SoucheIMData.addMessage(message);
@@ -65,6 +66,22 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
 
         }
         return {
+            getHistory:function(user_id,friend_id,callback){
+                $.ajax({
+                    url:contextPath+"/chatAction/receive.json",
+                    data:{
+                        token:souche_token,
+                        user:user_id,
+                        friend:friend_id.replace("cn_","cheniu_")
+                    },
+                    dataType:"json",
+                    success:function(data){
+                       if(data.msgList){
+                           callback(data.msgList);
+                       }
+                    }
+                })
+            },
             /**
              * 获取最近联系人列表
              * @param user_id
@@ -72,20 +89,25 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              */
             getRecentContacts:function(user_id,callback){
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/messageAction/getChatList.json",
+                    url:contextPath+"/chatAction/getChatList.json",
                     data:{
                         token:souche_token,
                         user:user_id
                     },
                     dataType:"json",
                     success:function(data){
-                        if(data.code=="100000"){
-                            data.data.chatList.forEach(function(c){
-                                if(/^[0-9]*$/.test(c.friendId)){
-                                    c.friendId = "cn_"+ c.friendId
-                                }
+                        /**
+                         * friendId:user_id,
+                         friendName:user_id,
+                         unReadMsg:1
+                         */
+                        if(data.chatList.code=="0"){
+                            data.chatList.items.forEach(function(c){
+                                    c.friendId = c.friend.replace("cheniu_","cn_");
+                                    c.friendName = c.friend.replace("cheniu_","cn_");
+                                    c.unReadMsg = c.unread;
                             })
-                            callback(data.data.chatList);
+                            callback(data.chatList.items);
                         }
                     }
                 })
@@ -95,13 +117,13 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              * @param toUserId
              * @param content
              */
-            sendMessage:function(toUserId,content){
+            sendMessage:function(userId,toUserId,content){
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/messageAction/send.json",
+                    url:contextPath+"/chatAction/send.json",
                     data:{
-                        receiver:toUserId,
-                        type:0,
-                        content:content
+                        friend:toUserId,
+                        user:userId,
+                        body:content
                     },
                     dataType:"json",
                     success:function(data){
@@ -122,13 +144,15 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                 $.ajax({
                     url:contextPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
                     data:{
-                        id:user_id
+                        id:user_id.replace(/[^0-9]/g,'')
                     },
                     dataType:"json",
                     success:function(data){
                         if(data.code==100000){
                             username_cache[user_id] = data.data.userInfo.friendName;
                             callback(data.data.userInfo.friendName);
+                        }else{
+                            callback()
                         }
                     }
                 })
@@ -175,24 +199,29 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              * 添加一条最近联系人，如果已存在则忽略，但是未读会+1
              * @param user_id
              */
-            addContact:function(user_id){
+            addContact:function(user_id,unread){
                 var is_in = false;
                 var self = this;
-                this.contacts.forEach(function(c,i){
-                    if(c.friendId==user_id){
-                        is_in = true;
-                        c.unReadMsg++;
-                        self.contacts.unshift(self.contacts.splice(i,1)[0]);
-                    }
-                })
-                if(!is_in){
-                    this.contacts.unshift({
-                        friendId:user_id,
-                        friendName:user_id,
-                        unReadMsg:1
+
+
+                SoucheIMUtil.getUsername(user_id,function(name) {
+                    self.contacts.forEach(function(c,i){
+                        if(c.friendId==user_id){
+                            is_in = true;
+                            c.unReadMsg+=(unread||1);
+                            self.contacts.unshift(self.contacts.splice(i,1)[0]);
+                        }
                     })
-                }
-                SoucheIMRender.renderContacts()
+                    if(!is_in) {
+                        self.contacts.unshift({
+                            friendId: user_id,
+                            friendName: name + ":" + user_id.replace(/[^0-9]/g,""),
+                            unReadMsg: (unread || 1)
+                        })
+                    }
+                    console.log(self.contacts)
+                    SoucheIMRender.renderContacts()
+                })
             },
             /**
              * 添加一条对方发来的消息
@@ -201,7 +230,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              */
             addMessage:function(msg){
                 var from_user_id = msg.from;
-                var content = msg.msg
+                var content = msg.data
                 this.addContact(from_user_id)
                 if(!this.messages[from_user_id]){
                     this.messages[from_user_id] = [];
@@ -374,19 +403,15 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                 SoucheIMData.my_userid = config.user_id;
                 SoucheIMUtil.getRecentContacts(config.user_id,function(contacts){
 
-                    SoucheIMData.switch_active("cn_18767123511")
-                    SoucheIMData.contacts = contacts;
+//                    SoucheIMData.switch_active("cn_18767123511")
+                    contacts.forEach(function(c){
+                        SoucheIMData.addContact(c.friendId, c.unReadMsg);
+                    })
+
                     if(config.talk_with){
-//                        config.talk_with = "cn_"+config.talk_with;
-                        SoucheIMUtil.getUsername(config.talk_with,function(name){
-                            SoucheIMData.contacts.unshift({
-                                friendId:"cn_"+config.talk_with,
-                                friendName:name,
-                                unReadMsg:0
-                            })
-                            SoucheIMData.switch_active("cn_"+config.talk_with)
-                            SoucheIMRender.renderContacts();
-                        })
+                        SoucheIMData.addContact(config.talk_with,0)
+                        SoucheIMData.switch_active(config.talk_with)
+                        SoucheIMRender.renderContacts();
                     }
                     SoucheIMRender.renderContacts();
                     SoucheIMRender.renderChat();
@@ -397,11 +422,12 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                         SoucheIMData.dumpMessages();
                     },2000)
                     SoucheIMData.restoreMessages();
-                    SoucheIMUtil.getLoginInfo(config.user_id,function(user,pwd){
+
+                    SoucheIMUtil.getLoginInfo(config.user_id.replace(/[^0-9]/g,''),function(user,pwd){
                         conn.open({
-                            user : "cn_18667046650",
-                            pwd : "123456",
-                            appKey : "souche#souche"
+                            user : user,
+                            pwd : pwd,
+                            appKey : "souche#souchetest"
                         });
                     })
 
@@ -440,7 +466,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     }
                     conn.sendTextMessage(msg);
                     SoucheIMData.addLocalMessage(msg)
-                    SoucheIMUtil.sendMessage(SoucheIMData.now_chat_userid.replace(/[^0-9]/g,""),content);
+                    SoucheIMUtil.sendMessage(config.user_id,SoucheIMData.now_chat_userid,content);
                 })
                 $(".contacts").on("click",".contact-item",function(e){
                     SoucheIMData.switch_active($(this).attr("data-id"))
