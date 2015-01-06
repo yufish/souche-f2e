@@ -16,6 +16,7 @@
 .car-mod .mod-bd a.news-wrapper .news-body .news-title {
   font-size: 14px;
   height: 18px;
+  line-height: 18px;
   overflow: hidden;
 }
 .car-mod .mod-bd a.news-wrapper .news-body .news-sub {
@@ -23,6 +24,7 @@
   color: #9a9a9a;
   height: 51px;
   font-size: 13px;
+  line-height: 17px;
   overflow: hidden;
 }
 /*# sourceMappingURL=yt.css.map */
