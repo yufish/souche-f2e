@@ -169,7 +169,21 @@ function(AddSeries, CustomSelect, Tool){
                         dataType:"json",
                         success:function(result){
                             // 带参数 刷新一下页面
-                            window.location.href=(window.location.href.indexOf("fromRss=1")!=-1)?window.location.href:(window.location.href+"?fromRss=1")
+                            var newUrl;
+                            if( window.location.href.indexOf("fromRss=1")!=-1 ){
+                                newUrl = window.location.href
+                            }
+                            else{
+                                var search = '';
+                                if( window.location.search ){
+                                    search = window.location.search + '&fromRss=1';
+                                }
+                                else{
+                                    search = '?fromRss=1';
+                                }
+                                newUrl = location.origin + location.pathname + search + location.hash;
+                            }
+                            window.location.href = newUrl;
                         },
                         error:function(){
 
