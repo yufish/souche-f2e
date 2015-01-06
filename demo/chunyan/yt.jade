@@ -65,6 +65,12 @@ html
 			type='text/javascript')
 		script.
 			var contextPath="";
+			// config by 王春岩
+			ytNews().init({
+				news_api: '',	//获取资讯 json 的地址, 默认为 test.json, 请修改这里
+				item_url: '', 	//资讯详情页地址, 默认为 http://f2e.souche.com/demo/chunyan/yt.news, 资讯 json 中 item id 为 7 的资讯，超链接将为 http://f2e.souche.com/demo/chunyan/yt.news?id=7
+				pageSize: 2 	//每页加载条目数, 默认为2, 不用修改
+			});
 	body(id='index')
 		.mobile-popup.login-popup.hidden(
 			style="top:50px; z-index:10000;")
