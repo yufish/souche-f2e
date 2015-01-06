@@ -1,0 +1,119 @@
+#story #content {
+  margin-top: 20px;
+}
+#story #content .banner {
+  width: 780px;
+  padding: 0px;
+  margin: 0 auto 60px auto;
+}
+#story #content .banner img {
+  width: 100%;
+}
+#story #content .wrapper {
+  width: 780px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+#story #content .wrapper h1 {
+  font-size: 46px;
+  color: #333;
+  margin-bottom: 15px;
+}
+#story #content .wrapper h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+#story #content .wrapper .pic-mod {
+  margin: 35px 0 60px 0;
+}
+#story #content .wrapper p {
+  font-size: 14px;
+  color: #666;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+#story #content .wrapper .stage-1 {
+  margin-top: 90px;
+}
+#story #content .wrapper .stage-1 .text {
+  float: left;
+  width: 410px;
+  margin-right: 60px;
+  padding-top: 90px;
+}
+#story #content .wrapper .stage-2 {
+  margin-top: 30px;
+}
+#story #content .wrapper .stage-3 {
+  padding: 40px 0;
+}
+#story #content .wrapper .stage-4 {
+  margin-bottom: 30px;
+}
+#story #content .wrapper .like-but {
+  margin-top: 100px;
+}
+#story #content .wrapper .like-but .like {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 7px 25px;
+  background: #ff5517;
+  border-radius: 4px;
+  margin-left: 370px;
+  cursor: pointer;
+}
+#story #content .wrapper .like-but .like i {
+  display: block;
+  width: 19px;
+  height: 16px;
+  float: left;
+  background: url(../../images/index_11/story-love.png) no-repeat;
+  margin-top: 3px;
+  margin-right: 8px;
+}
+#story #content .wrapper .like-but .like span {
+  display: block;
+  float: left;
+  color: #fff;
+  font-size: 16px;
+}
+#story #content .wrapper .recom {
+  margin-top: 80px;
+  border-top: 1px solid #ededed;
+  padding-top: 50px;
+}
+#story #content .wrapper .recom .recom-cont .head {
+  float: left;
+  margin-right: 30px;
+}
+#story #content .wrapper .recom .recom-cont .recom-text {
+  width: 670px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+#story #content .wrapper .recom .recom-car .car-box {
+  float: left;
+  width: 230px;
+  margin-right: 65px;
+  text-align: center;
+}
+#story #content .wrapper .recom .recom-car .car-box .car-brand {
+  display: block;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 6px;
+}
+#story #content .wrapper .recom .recom-car .car-box .price {
+  font-size: 15px;
+  color: #ff5517;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+#story #content .wrapper .recom .recom-car .car-box .reason {
+  color: #333;
+  font-size: 14px;
+}
+/*# sourceMappingURL=story.css.map */
