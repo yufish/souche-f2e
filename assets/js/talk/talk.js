@@ -77,7 +77,14 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     dataType:"json",
                     success:function(data){
                        if(data.msgList){
-                           callback(data.msgList);
+                           var arr = []
+                           data.msgList.items.forEach(function(msg){
+                               arr.push({
+                                   from:friend_id,
+                                   data:msg.body
+                               })
+                           })
+                           callback(arr);
                        }
                     }
                 })
@@ -219,7 +226,6 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                             unReadMsg: (unread || 1)
                         })
                     }
-                    console.log(self.contacts)
                     SoucheIMRender.renderContacts()
                 })
             },
@@ -228,7 +234,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              * @param from_user_id
              * @param content
              */
-            addMessage:function(msg){
+            addMessage:function(msg,addUnread){
                 var from_user_id = msg.from;
                 var content = msg.data
                 this.addContact(from_user_id)
@@ -300,6 +306,14 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                 if(ms){
                     this.messages = ms;
                 }
+            },
+            restoreMessageFromOnline:function(user_id,friend_id){
+                var self = this;
+                SoucheIMUtil.getHistory(user_id,friend_id,function(msgList){
+                    msgList.forEach(function(m){
+                        self.addMessage(m)
+                    })
+                })
             }
         }
 
@@ -418,10 +432,10 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     setInterval(function(){
                         SoucheIMRender.renderChat();
                     },500)
-                    setInterval(function(){
-                        SoucheIMData.dumpMessages();
-                    },2000)
-                    SoucheIMData.restoreMessages();
+//                    setInterval(function(){
+//                        SoucheIMData.dumpMessages();
+//                    },2000)
+//                    SoucheIMData.restoreMessages();
 
                     SoucheIMUtil.getLoginInfo(config.user_id.replace(/[^0-9]/g,''),function(user,pwd){
                         conn.open({
@@ -470,6 +484,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                 })
                 $(".contacts").on("click",".contact-item",function(e){
                     SoucheIMData.switch_active($(this).attr("data-id"))
+                    SoucheIMData.restoreMessageFromOnline(config.user_id,$(this).attr("data-id"))
                     SoucheIMRender.renderContacts();
 //                    $(".contact-item").removeClass("active")
 //                    $(this).addClass("active")
