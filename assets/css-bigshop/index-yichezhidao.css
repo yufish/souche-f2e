@@ -1,0 +1,188 @@
+.content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1180px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.content * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content .sort * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.content:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.aside {
+  float: right;
+  width: 280px;
+}
+.aside .banner-item {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.main {
+  margin-right: 300px;
+  overflow: hidden;
+}
+.main .slider-ctn {
+  height: 340px;
+  overflow: hidden;
+}
+.main .slider-ctn .slider-list {
+  float: left;
+  position: relative;
+  width: 620px;
+  height: 100%;
+}
+.main .slider-ctn .slider-list .slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: -10;
+  overflow: hidden;
+}
+.main .slider-ctn .slider-list .slider-item img {
+  width: 100%;
+}
+.main .slider-ctn .slider-list .slider-item.active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  z-index: 100;
+}
+.main .slider-ctn .slide-nav-list {
+  float: right;
+  width: 250px;
+  height: 100%;
+}
+.main .slider-ctn .slide-nav-list .slide-nav-item {
+  height: 165px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.main .slider-ctn .slide-nav-list .slide-nav-item img {
+  width: 100%;
+}
+.main .news-feed {
+  padding-bottom: 60px;
+}
+.main .news-feed .news-list {
+  border-top: 1px solid #ececec;
+  margin-bottom: 60px;
+}
+.main .news-feed .news-list .news-item {
+  padding: 20px 32px;
+  min-height: 185px;
+  border-bottom: 1px solid #ececec;
+}
+.main .news-feed .news-list .news-item:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.main .news-feed .news-list .news-item .news-pic {
+  float: left;
+  height: 120px;
+  width: 180px;
+  margin-top: 25px;
+  background-color: #f4f4f4;
+  border: none;
+}
+.main .news-feed .news-list .news-item .new-content {
+  position: relative;
+  margin-left: 200px;
+}
+.main .news-feed .news-list .news-item .new-content .news-tag {
+  position: absolute;
+  left: -200px;
+  width: 52px;
+  height: 18px;
+  font-size: 16px;
+  font-style: normal;
+  text-align: center;
+  line-height: 18px;
+  color: #fff;
+}
+.main .news-feed .news-list .news-item .new-content .news-tag.tag-activity {
+  background-color: #FC9695;
+}
+.main .news-feed .news-list .news-item .new-content .news-tag.tag-info {
+  background-color: #9FB960;
+}
+.main .news-feed .news-list .news-item .new-content .news-title {
+  position: relative;
+  top: -3px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #333;
+}
+.main .news-feed .news-list .news-item .new-content .news-summary {
+  position: relative;
+  height: 96px;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+  overflow: hidden;
+}
+.main .news-feed .news-list .news-item .new-content .news-summary .read-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 94px;
+  text-align: right;
+  background-color: #fff;
+  font-size: inherit;
+  line-height: inherit;
+}
+.main .news-feed .news-list .news-item .new-content .news-pub-time {
+  float: right;
+  position: relative;
+  bottom: -10px;
+  font-size: 14px;
+  color: #999;
+}
+.main .news-feed .news-pagination {
+  text-align: center;
+}
+.main .news-feed .news-pagination:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.main .news-feed .news-pagination .pagi-nav {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  margin: 0 6px;
+  padding: 0 8px;
+  line-height: 30px;
+  border: 1px solid #ececec;
+  text-align: center;
+  color: #333;
+  cursor: pointer;
+}
+.main .news-feed .news-pagination .pagi-nav.disabled {
+  cursor: default;
+  color: #aaa;
+  background-color: #ececec;
+}
+.main .news-feed .news-pagination .pagi-nav.active {
+  cursor: default;
+  color: #ccc;
+  background-color: #643032;
+}
+/*# sourceMappingURL=index-yichezhidao.css.map */
