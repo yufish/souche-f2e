@@ -1,9 +1,9 @@
 $(function () {
-  $('.news-wrapper .news-body .news-sub').dotdotdot();
-  $('.news-wrapper .news-body .news-title').dotdotdot();
+  // $('.news-wrapper .news-body .news-sub').dotdotdot();
+  // $('.news-wrapper .news-body .news-title').dotdotdot();
 
   $('#news-more').click(function (e) {
-    $.getJSON('http://t.com/souche/index.php', {param1: 'value1'}, function(json, textStatus) {
+    $.getJSON('http://115.29.10.121:12080/json/news/list.json?page=1&pageSize=2', {param1: 'value1'}, function(json, textStatus) {
         /*optional stuff to do after success */
         var s = '';
         for (var i in json) {
@@ -17,8 +17,8 @@ $(function () {
         }
         var $s = $(s);
         $('#news-mod').append($s);
-        $s.find('.news-sub').dotdotdot();
-        $s.find('.news-title').dotdotdot();
+        // $s.find('.news-sub').dotdotdot();
+        // $s.find('.news-title').dotdotdot();
     });
     return false;
   });
