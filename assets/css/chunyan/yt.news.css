@@ -1,0 +1,16 @@
+#content .news-wrapper {
+  margin: 10px;
+}
+#content .news-wrapper .news-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#content .news-wrapper .news-sub {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+#content .news-wrapper .news-img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=yt.news.css.map */
