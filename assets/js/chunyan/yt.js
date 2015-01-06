@@ -41,7 +41,7 @@ var ytNews = function () {
                         if (json.msg == 'ok') {
                             var s = '';
                             for (var i in json.items) {
-                                s += '<a class="news-wrapper" href="' + config.item_url + json.items[i].id + '&__mobile=true">'
+                                s += '<a class="news-wrapper" href="' + config.item_url + json.items[i].id + '">'
                                     +   '<div class="news-img"><img src="http://img.souche.com/' + json.items[i].image + '"></div>'
                                     +   '<div class="news-body">'
                                     +       '<h4 class="news-title">' + json.items[i].title + '</h4>'
