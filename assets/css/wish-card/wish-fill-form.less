@@ -19,16 +19,36 @@
     opacity: 0;
     .tst(width 400ms ease-out, opacity 300ms ease-out;);
 
+    
+    &.not-fill-yet{
+        width: 25%;
+        opacity: 1;
+        .dialog-item{
+            width: 0;
+            overflow: hidden;
+        }
+        .dialog-item.carBanner{
+            // width: 100%;
+            width: 295px;
+        }
+
+        // #J_xuqiu_cancel{
+        //     display: none;
+        // }
+    }
     &.active{
         width: 100%;
         opacity: 1;
         overflow: visible;
         border: 1px solid #CCCCCC;
         .tst(opacity 400ms ease 100ms, width 500ms ease;);
-    }
-    &.not-fill-yet{
-        #J_xuqiu_cancel{
-            display: none;
+        
+        .dialog-item{
+            width: 25%;
+            overflow: visible;
+        }
+        .dialog-item.carBanner{
+            width: 25%;
         }
     }
 
@@ -53,13 +73,50 @@
             }
         }
     }
+
     .carBanner{
         float: left;
         height: @cardH;
         margin-top: -1px;
-        background:url('../images/index/rss-lft-banner.png?t=20141225') no-repeat;
+        padding-left: 20px;
+        color: #fff;
+        background:url('../images/index/rss-lft-banner.png?t=201150105') no-repeat;
         background-color: #454954;
         background-position: 50% 100%;
+
+        .tit,
+        .sub-tit,
+        .rec-text{
+            white-space: nowrap;
+        }
+
+        .tit{
+            margin: 0;
+            padding-top: 24px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        .sub-tit{
+            margin-top: 13px;
+            margin-bottom: 112px;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgba(255,255,255,0.5);
+        }
+        .rec-text{
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .btn-go-fill{
+            width: 100px;
+            height: 40px;
+            margin-top: 16px;
+            line-height: 36px;
+            text-align: center;
+            border: 2px solid #fff;
+            border-radius: 3px;
+            background-color: transparent;
+        }
     }
     .carBudget {
         margin-bottom: 30px;

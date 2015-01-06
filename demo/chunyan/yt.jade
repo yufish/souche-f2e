@@ -1,0 +1,452 @@
+- var title = '元通二手车-元通名品车-元通评估';
+doctype html
+html
+	head
+		title= title
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='57x57'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='72x72'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='114x114'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='144x144'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		meta(
+			name='viewport'
+			content='width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/reset.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/ui.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/h5-3/index-h5-3.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/souche/blue-mobile.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://f2e.souche.com/assets/css/chunyan/yt.css'
+			rel='stylesheet'
+			type='text/css')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/jquery-1.9.1.min.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/lib/jquery.cookie.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/lib/af.touchEvents.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/common/loginUtil.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/souche/stats.js'
+			type='text/javascript')
+		script(
+			src='http://f2e.souche.com/assets/js/chunyan/jquery.dotdotdot.min.js'
+			type='text/javascript')
+		script(
+			src='http://f2e.souche.com/assets/js/chunyan/yt.js'
+			type='text/javascript')
+		script.
+			var contextPath="";
+	body(id='index')
+		.mobile-popup.login-popup.hidden(
+			style="top:50px; z-index:10000;")
+			.title 输入您的手机号登陆
+			form#login-form
+				.input-wrapper
+					input#phone-for-login.phone-input(
+						type='tel'
+						placeholder='您的手机号')
+				.wrong-tip.hidden 您输入的手机号有误
+				.btn-wrapper
+					input#btn-login.btn-main(
+						type='submit'
+						value='登陆')
+		#J_header-wrapper(
+			style='z-index:1001;width100%;')
+			.fixed-wrapper
+				.index-hd-bg
+					img(
+						width='100%'
+						src='http://img.souche.com/files/default/53A019A77D906E7036D069CB1915D1A8_640x360.png@640w')
+				header.header
+					#J_header-title.header-title-txt 元通二手车
+					.for-other-topic
+						.icon-bar
+						.icon-bar
+						.icon-bar
+					a.hd-search(
+						click_type='index_searchbox'
+						href='http://yt.sites.souche.com/searchbox.htm?__mobile=true')
+					.other-topic
+						a.topic-item(
+							href='http://yt.sites.souche.com/index.htm?__mobile=true') 首页
+						a#J_gotoCenter.topic-item(
+							click_type='index-nav-center'
+							href='http://yt.sites.souche.com/home.htm?__mobile=true'
+							style='position:relative') 个人中心
+						a#J_call-souche.topic-item.j_just4bj(
+							href='tel:4008-571-000') 联系客服
+						a.topic-item(
+							href='http://j.map.baidu.com/Qm5Tz') 地图导航
+				.wrapTransBg.hidden
+				nav#J_tabNavbar.clearfix(
+					data-active-index='1')
+					a(href='/?__mobile=true')
+					a(href='criteria.htm?__mobile=true')
+					a(href='/sale.htm?__mobile=true')
+					a(href='/support.htm?__mobile=true')
+			script.
+				$('#J_call-souche').click(function(){
+					new Image().src= contextPath+"/pages/common/trackAction/set.json?platform=PLATFORM_H5&typeid=TYPE_H5_CALL&"+(new Date());
+				})
+				!function(){
+					$('.back').click(function(e){
+						e.preventDefault();
+						history.back();
+						return;
+					})
+					
+					var otherTopic = $('.other-topic');
+					var topicItems = $('.topic-item',otherTopic);
+					var wrapBg = $('.wrapTransBg');
+
+					wrapBg.on("click",function(){
+						hideTopic();
+						$('.for-other-topic').attr('data-show-state',0)
+					})
+					$('.for-other-topic').on("click",function(){
+						var self =$(this);
+						if(self.attr('data-show-state')=='1'){
+							hideTopic();
+							self.attr('data-show-state',0)
+						}else{
+							showTopic()
+							self.attr('data-show-state',1)
+						}
+					})
+					var numOfTopic = topicItems.length;
+					var timeSpan = 100,hGap=44;
+					function showTopic(){
+						wrapBg.removeClass('hidden');
+						var time =0;
+						var height = 35;
+						topicItems.each(function(index,item){
+							setTimeout(function(){
+								if(index==numOfTopic-1){
+									height=44*numOfTopic;
+								}
+								otherTopic.css({height:height});
+								height+=hGap;
+								$(item).addClass("show");
+							},time)
+							time+=timeSpan
+						})
+					}
+					function hideTopic(){
+						var time =0;
+						var height = 50*numOfTopic;
+						for(var i = topicItems.length-1;i>-1;i--){
+							!function(index){
+								setTimeout(function(){
+									topicItems.eq(index).removeClass('show')
+									height-=hGap;
+									otherTopic.css({height:height});
+								},time)
+							}(i)
+							time+=timeSpan;
+						}
+						setTimeout(function(){
+							otherTopic.css({height:0});
+							wrapBg.addClass('hidden');
+						},timeSpan*numOfTopic)
+					};
+					
+					document.getElementById('J_gotoCenter').addEventListener('click',function(e){
+						e.preventDefault();
+						SM.checkPhoneExist(function(is_login) {
+							if (is_login) {
+								window.location.href=$('#J_gotoCenter').attr('href');
+							} else {
+								$('.wrapGrayBg').removeClass('hidden');
+								var popup = $('.login-popup');
+								popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+							}
+						})
+					});
+					$(document.body).ready(function(){
+						$('.wrapGrayBg').on("click",function(){
+							$('.login-popup').addClass("hidden")
+							$('.wrapGrayBg').addClass("hidden");
+						});
+					});
+					$('#login-form').submit(function(e) {
+						var phoneReg = /^1[3458][0-9]{9}$/;
+						var phoneNum = $("#phone-for-login").val();
+						e.preventDefault();
+						if (!phoneReg.test(phoneNum)) {
+							alert('请输入正确的手机号码');
+						} else {
+							SM.PhoneRegister(phoneNum, function() {
+								window.location.href=$('#J_gotoCenter').attr('href');
+							})
+						}
+					})
+				}()
+		.banner
+		.car-mod
+			.mod-hd 最新车源
+			.mod-bd.clearfix
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+			a.mod-more(
+				href='http://yt.sites.souche.com/hotnew.htm?__mobile=true') 更多最新车源
+		.car-mod
+			.mod-hd 推荐车辆
+			.mod-bd.clearfix
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+				.car-wrapper
+					a.car-card(
+						href='http://yt.sites.souche.com/detail.htm?carId=b0aede63-9bfc-4340-a727-0f5a414b8b2d&__mobile=true')
+						img(
+							src='http://img.souche.com/files/default/CC77993E316148C5C3CAD8F0A31509F3_690x460.JPG@240w')
+						.car-info
+							.car-introduction
+								.car-series
+								.other-detail-info 保时捷 2008款  卡宴4.8-手自一体-GTS
+							.car-price
+								span.price-num 69.80
+								| 万
+							.car-time 2010/05上牌
+			a.mod-more(
+				href='http://yt.sites.souche.com/recommend.htm?__mobile=true') 更多推荐车辆
+		.car-mod
+			.mod-hd 最新资讯
+			.mod-bd.clearfix
+				a.news-wrapper
+					.news-img
+						img(
+							src="http://img.souche.com/files/default/C649CDC11D50226618591EA9163BB9D8_60x60.jpg")
+					.news-body
+						h4.news-title 一二三四五六七八九一
+						p.news-sub 一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九
+				a.news-wrapper
+					.news-img
+						img(
+							src="http://img.souche.com/files/default/C649CDC11D50226618591EA9163BB9D8_60x60.jpg")
+					.news-body
+						h4.news-title 奔跑吧西雅图标题字数限制10个字
+						p.news-sub 一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九一二三四五六七八九
+			a#news-more.mod-more(
+				href='#') 点击查看更多资讯
+		.hot-brands.quick-search-area
+			.title 
+				| 热门品牌
+				a.more(
+					href='http://yt.sites.souche.com/allbrands.htm?__mobile=true') 更多
+			.bd.clearfix
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+				a.brand.col-1-4(
+					href='http://yt.sites.souche.com/buy.htm?carBrand=brand-25&__mobile=true')
+					.brand-wrapper
+						img(
+							src='http://res.souche.com/files/brand/brand-25.jpg_100x10000.jpg')
+						.brand-name 奔驰
+		.price-tag.quick-search-area
+			.title 价格
+			.bd.clearfix
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carPrice=0-15&__mobile=true') 15万以下
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carPrice=0-15&__mobile=true') 15万以下
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carPrice=0-15&__mobile=true') 15万以下
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carPrice=0-15&__mobile=true') 15万以下
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carPrice=0-15&__mobile=true') 15万以下
+		.price-tag.quick-search-area
+			.title 车型
+			.bd.clearfix
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carModel=compactCar&__mobile=true') 紧凑型车
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carModel=compactCar&__mobile=true') 紧凑型车
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carModel=compactCar&__mobile=true') 紧凑型车
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carModel=compactCar&__mobile=true') 紧凑型车
+				a.col-1-4.tag-item(
+					href='http://yt.sites.souche.com/buy.htm?carModel=compactCar&__mobile=true') 紧凑型车
+		footer.footer(
+			style="height:auto;")
+			div(
+				style='width:320px; margin:0 auto; text-align:center; border-bottom:1px solid gray;')
+				div(
+					style='text-align:left; padding-left:10px; font-size:13px; padding-bottom:5px;') 版权所有: 元通二手车
+				div(
+					style='text-align:left; padding-left:10px; font-size:13px; padding-bottom:5px;') 公司地址: 浙江省杭州市沈半路245号物产元通名车馆
+				div(
+					style='text-align:left; padding-left:10px; font-size:13px; padding-bottom:5px;') 咨询热线: 4008-571-000
+			div(
+				style='text-align:center; padding:10px; font-size:13px; color:grey;')
+				| Powered by 
+				img(
+					style='width:18px; height:18px;'
+					src='http://yt.sites.souche.com/static/img/logo.png'
+					alt='大风车')
+				a(
+					href='http://www.souche.com') 大风车
+		.wrapGrayBg.hidden
