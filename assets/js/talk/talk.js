@@ -234,7 +234,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
              * @param from_user_id
              * @param content
              */
-            addMessage:function(msg){
+            addMessage:function(msg,addUnread){
                 var from_user_id = msg.from;
                 var content = msg.data
                 this.addContact(from_user_id)
