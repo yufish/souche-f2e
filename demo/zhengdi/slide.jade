@@ -1,0 +1,83 @@
+doctype html
+html
+  head.
+    <title>大搜车,为二手车代言-北京二手车交易市场_北京二手车市场_二手车网</title>
+    <meta name="Description" content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/slide/slide.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="<sc:assets value='/assets/js/mobile/lib/af.touchEvents.js'/>"></script>
+  body
+    #story-slide
+      section.slide-top(data-index=1) 1
+      section.slide-active(data-index=2) 2
+      section.slide-down(data-index=3) 3
+      section.slide-down(data-index=4) 4
+      section.slide-down(data-index=5) 5
+      section.slide-down(data-index=6) 6
+    a#next 下一页
+   
+  script.
+    // 简单的滑块实现
+    ;(function($, window) {
+
+      var maxItem = $('[data-index]').length;
+
+      var action = {
+        moveTop: function() {
+          if ($(this).data('index') == maxItem) return null;
+          $(this).removeClass().addClass('slide-top');
+          $(this).next().removeClass().addClass('slide-active');
+          action.displayBtn();
+        },
+        moveDown: function() {
+          if ($(this).data('index') == 1) return null;
+          $(this).removeClass().addClass('slide-down');
+          $(this).prev().removeClass().addClass('slide-active');
+          action.displayBtn();
+        },
+        move: function(e) {
+          e.preventDefault();
+          var $active = $('.slide-active');
+          if ($active.data('index') == maxItem) return null;
+          $active.removeClass().addClass('slide-top');
+          $active.next().removeClass().addClass('slide-active');
+          action.displayBtn();
+        },
+        displayBtn: function() {
+          if ($('.slide-active').data('index') == maxItem) {
+            $('#next').addClass('hidden');
+          } else {
+            $('#next').removeClass('hidden');
+          }
+        }
+      }
+
+      $('#next').on('click', action.move);
+        
+      $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop);
+
+      setTimeout(function() {
+        if (window.history && history.pushState) {
+          history.pushState(null, "", "slide?lan=en");
+        }
+      }, 2000)
+
+
+
+    })(jQuery, window);
+
+    
+    
+
+
+
+    
+    
+      
+      
+    
