@@ -216,8 +216,9 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
 
 
                 if(!hasLoadOnline[this.now_chat_userid]){
-                    var lastDumpTime = souchedb.get("souche_talk_messages_time");
+                    var lastDumpTime = souchedb.get("souche_talk_messages_time_"+this.my_userid+"_to_"+this.now_chat_userid);
                     var loadFromLocal = false;
+                    console.log(lastDumpTime)
                     if(lastDumpTime){
                         if(new Date().getTime() - lastDumpTime*1<1000*60){
                             loadFromLocal = true;
@@ -227,7 +228,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                         }
                     }
                     if(loadFromLocal){
-//                        SoucheIMData.restoreMessages();
+                        SoucheIMData.restoreMessages(this.my_userid,this.now_chat_userid);
                     }else{
                         SoucheIMData.restoreMessageFromOnline(this.my_userid,this.now_chat_userid)
                     }
@@ -352,22 +353,21 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
             dumpMessages:function(){
                 for(var i in this.messages){
                     if(this.messages[i]&&this.messages[i].length){
-                        if(this.messages[i]){
-
-                        }
+                        souchedb.sets("souche_talk_messages_"+SoucheIMData.my_userid+"_to_"+i,this.messages[i])
+                        souchedb.set("souche_talk_messages_time_"+SoucheIMData.my_userid+"_to_"+i,new Date().getTime())
                     }
                 }
-                souchedb.set("souche_talk_messages",this.messages)
-                souchedb.set("souche_talk_messages_time",new Date().getTime())
+
                 console.log("dump message")
             },
             /**
              * 从本地恢复聊天记录
              */
-            restoreMessages:function(){
-                var ms = souchedb.get("souche_talk_messages");
+            restoreMessages:function(user_id,friend_id){
+                var ms = souchedb.gets("souche_talk_messages_"+user_id+"_to_"+friend_id);
+                console.log(ms)
                 if(ms){
-                    this.messages = ms;
+                    this.messages[friend_id] = ms;
                 }
             },
             restoreMessageFromOnline:function(user_id,friend_id){
@@ -502,19 +502,19 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     renderChatTimer = setInterval(function(){
                         SoucheIMRender.renderChat();
                     },500)
-                        var lastDumpTime = souchedb.get("souche_talk_messages_time");
-                        var loadFromLocal = false;
-                        if(lastDumpTime){
-                            if(new Date().getTime() - lastDumpTime*1<1000*60){
-                                loadFromLocal = true;
-
-                            }else{
-
-                            }
-                        }
-                        if(loadFromLocal) {
-                            SoucheIMData.restoreMessages();
-                        }
+//                        var lastDumpTime = souchedb.get("souche_talk_messages_time");
+//                        var loadFromLocal = false;
+//                        if(lastDumpTime){
+//                            if(new Date().getTime() - lastDumpTime*1<1000*60){
+//                                loadFromLocal = true;
+//
+//                            }else{
+//
+//                            }
+//                        }
+//                        if(loadFromLocal) {
+//                            SoucheIMData.restoreMessages();
+//                        }
 
 
                     SoucheIMUtil.getLoginInfo(config.user_id.replace(/[^0-9]/g,''),function(user,pwd){

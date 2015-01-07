@@ -94,7 +94,7 @@ Souche.Sidebar = (function() {
         $(document.body).on("mousemove",function(){
             Souche.Sidebar.hideMessageTip();
         })
-        if(Souche_user_id){
+        if(window.Souche_user_id){
             $.ajax({
                 url:contextPath+"/pages/chatAction/getTotalUnreadCount.json",
                 dataType:"json",
