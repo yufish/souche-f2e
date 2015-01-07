@@ -1,0 +1,57 @@
+doctype html
+html
+  head.
+    <title>大搜车,为我选好车-二手车交易市场_二手车评估_二手车网</title>
+    <meta name="Description"content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/talk/talk-list.css" rel="stylesheet" type="text/css"/>
+    <script src="http://f2e.souche.com/assets/js/mobile/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/stats.js"></script>
+  body
+    .header-placeholder
+      .fixed-wrapper.
+        <header class='header-back header'>
+          <a class='back' href='#'>
+            <i class='header-back-icon'></i>
+            返回
+          </a>
+          <div class="header-title">最近联系</div>
+          <script>
+            $('.back').click(function(e){
+              e.preventDefault();
+              var refer = document.referrer;
+              if (refer.indexOf("souche") != -1) {
+                history.back();
+                        return;
+                    } 
+                window.location.href='index.html';
+            })
+          </script>
+        </header>
+    .wrapper
+      .list-box
+        a.talk-item(href="#")
+          .talk-name.clearfix
+            span 小王二手车
+            i 1
+          .talk-cont
+            p 2014款宝马5系准新车有吗？
+          .talk-time 上午 11:50
+        a.talk-item(href="#")
+          .talk-name.clearfix
+            span 宁波奥德汽车旗舰店
+            i 99
+          .talk-cont
+            p 2014款宝马5系准新车有吗？
+          .talk-time 上午 11:50
+        a.talk-item(href="#")
+          .talk-name.clearfix
+            span 华阳汽车
+            i.hidden 1
+          .talk-cont
+            p 2014款宝马5系准新车有吗？
+          .talk-time 上午 11:50
+

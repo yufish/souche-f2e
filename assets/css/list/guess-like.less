@@ -89,26 +89,40 @@
       }
     }
     .collect {
+      position: relative;
       padding-left: 20px;
       color: #999;
-      background: url(../images/index/index_sprite_v2.png) no-repeat center;
-      background-position: -10px -40px;
       cursor: pointer;
       font-size: 12px;
       line-height: 15px;
       float: right;
       margin-top: 5px;
       display: block;
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 20px;
+        background: url(../images/index/index_sprite_v2.png) no-repeat center;
+        background-position: -10px -40px;
+      }
       a {
         color: #999;
 
       }
     }
     .collect:hover {
-      background-position: -10px -60px;
+      &:before{
+        background-position: -10px -60px;
+      }
     }
     .collect.active {
-      background-position: -10px -80px;
+      &:before{
+        background-position: -10px -80px;
+      }
     }
     .carTail {
     width: 206px;
