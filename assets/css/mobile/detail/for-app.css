@@ -8,7 +8,8 @@
 #detail-main .shop-auth,
 #detail-main .gray-12px,
 #detail-main .auth-area,
-#detail-main .guard-info-item {
+#detail-main .guard-info-item,
+#detail-main .shop-fenqi {
     display: none!important;
 }
 

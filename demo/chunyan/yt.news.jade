@@ -1,0 +1,215 @@
+- var title = '元通二手车-元通名品车-元通评估';
+doctype html
+html
+	head
+		title= title
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='57x57'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='72x72'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='114x114'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		link(
+			rel='apple-touch-icon-precomposed'
+			size='144x144'
+			href='http://res.souche.com/files/default/2F4C445950E4003EDF4677C231006CA8_64x64.ico')
+		meta(
+			name='viewport'
+			content='width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/reset.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/ui.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/mobile/h5-3/index-h5-3.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://assets.souche.com/assets/css-bigshop/souche/blue-mobile.css'
+			rel='stylesheet'
+			type='text/css')
+		link(
+			href='http://f2e.souche.com/assets/css/chunyan/yt.news.css'
+			rel='stylesheet'
+			type='text/css')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/jquery-1.9.1.min.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/lib/jquery.cookie.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/lib/af.touchEvents.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/mobile/common/loginUtil.js'
+			type='text/javascript')
+		script(
+			src='http://assets.souche.com/assets/js-bigshop/souche/stats.js'
+			type='text/javascript')
+		//script(
+			src='http://f2e.souche.com/assets/js/chunyan/jquery.dotdotdot.min.js'
+			type='text/javascript')
+		//script(
+			src='http://f2e.souche.com/assets/js/chunyan/yt.js'
+			type='text/javascript')
+		script.
+			var contextPath="";
+	body(id='news')
+		.header-placeholder
+		.mobile-popup.login-popup.hidden(
+			style='top:50px; z-index:10010;')
+		.fixed-wrapper
+			header.header
+				a.back(
+					href='#')
+					i.header-back-icon
+					| &nbsp;返回
+				#J_header-title.header-title-txt
+				.for-other-topic(
+					data-show-state='0')
+					.icon-bar
+					.icon-bar
+					.icon-bar
+				a.hd-search(
+					click_type='index_searchbox'
+					href='http://yt.sites.souche.com/searchbox.htm?__mobile=true')
+			.other-topic(
+				style='z-index:1001; height:0px;')
+				a.topic-item(
+					href='http://yt.sites.souche.com/index.htm?__mobile=true') 首页
+				a#J_gotoCenter.topic-item(
+					href='http://yt.sites.souche.com/home.htm?__mobile=true'
+					style='relative') 个人中心
+					.icon-dot
+				a.J_call-souche.topic-item.j_just4bj(
+					href='tel:4008-571-000') 联系客服
+				a.topic-item(
+					href='http://j.map.baidu.com/Qm5Tz') 地图导航
+			.wrapTransBg.hidden
+			script.
+				$('#J_header-title').text('');
+		script.
+			$('#J_call-souche').click(function(){
+				new Image().src= contextPath+"/pages/common/trackAction/set.json?platform=PLATFORM_H5&typeid=TYPE_H5_CALL&"+(new Date());
+			})
+			!function(){
+				$('.back').click(function(e){
+					e.preventDefault();
+					var refer = document.referrer;
+					if (refer.indexOf("com") != -1) {
+						history.back();
+						return;
+					} 
+					window.location.href='/index.htm';
+				})
+				var otherTopic = $('.other-topic');
+				var topicItems = $('.topic-item',otherTopic);
+				var wrapBg = $('.wrapTransBg');
+				wrapBg.on("click",function(){
+					hideTopic();
+					$('.for-other-topic').attr('data-show-state',0)
+				})
+				$('.for-other-topic').on("click",function(){
+					var self =$(this);
+					if(self.attr('data-show-state')=='1'){
+						hideTopic();
+						self.attr('data-show-state',0)
+					}else{
+						showTopic()
+						self.attr('data-show-state',1)
+					}
+				})
+				var numOfTopic = topicItems.length;
+				var timeSpan = 100,hGap=44;
+				function showTopic(){
+					wrapBg.removeClass('hidden');
+					var time =0;
+					var height = 35;
+					topicItems.each(function(index,item){
+						setTimeout(function(){
+							if(index==numOfTopic-1){
+								height=44*numOfTopic;
+							}
+							otherTopic.css({height:height});
+							height+=hGap;
+							$(item).addClass("show");
+						},time)
+						time+=timeSpan
+					})
+				}
+				function hideTopic(){
+					var time =0;
+					var height = 50*numOfTopic;
+					for(var i = topicItems.length-1;i>-1;i--){
+						!function(index){
+							setTimeout(function(){
+								topicItems.eq(index).removeClass('show')
+								height-=hGap;
+								otherTopic.css({height:height});
+							},time)
+						}(i)
+						time+=timeSpan;
+					}
+					setTimeout(function(){
+						otherTopic.css({height:0});
+						wrapBg.addClass('hidden');
+					},timeSpan*numOfTopic)
+				};
+				document.getElementById('J_gotoCenter').addEventListener('click',function(e){
+					e.preventDefault();
+					SM.checkPhoneExist(function(is_login) {
+						if (is_login) {
+							window.location.href=$('#J_gotoCenter').attr('href');
+						} else {
+							$('.wrapGrayBg').removeClass('hidden');
+							var popup = $('.login-popup');
+							popup.removeClass('hidden').css({'top':document.body.scrollTop+50});
+						}
+					})
+				});
+				$(document.body).ready(function(){
+					$('.wrapGrayBg').on("click",function(){
+						$('.mobile-popup').addClass("hidden")
+						$('.wrapGrayBg').addClass("hidden");
+					});
+				});
+				$('#login-form').submit(function(e) {
+					var phoneReg = /^1[3458][0-9]{9}$/;
+					var phoneNum = $("#phone-for-login").val();
+					e.preventDefault();
+					if (!phoneReg.test(phoneNum)) {
+						alert('请输入正确的手机号码');
+					} else {
+						SM.PhoneRegister(phoneNum, function() {
+							window.location.href=$('#J_gotoCenter').attr('href');
+						})
+					}
+				})
+			}()
+		script.
+			$('#J_header-title').text('');
+			$('#J_tabNavbar').hide();
+		#content
+			.news-wrapper
+				h4.news-title 奔跑吧，西雅图
+				p.news-sub.
+					开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐...
+				img.news-img(
+					src='http://assets.souche.com/assets/images/story/aj-pic1.jpg?t=9')
+			.news-wrapper
+				h4.news-title 奔跑吧，西雅图
+				p.news-sub.
+					开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐，开西雅特的西小姐。开西雅特的西小姐...
+				img.news-img(
+					src='http://assets.souche.com/assets/images/story/aj-pic1.jpg?t=9')
