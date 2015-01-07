@@ -91,7 +91,32 @@ Souche.Sidebar = (function() {
                 scrollTop: 0
             });
         });
+        $(document.body).on("mousemove",function(){
+            Souche.Sidebar.hideMessageTip();
+        })
+        if(Souche_user_id){
+            $.ajax({
+                url:contextPath+"/pages/chatAction/getTotalUnreadCount.json",
+                dataType:"json",
+                data:{
+                    user:"buyer_"+Souche_user_id
+                },
+                success:function(data){
+                    console.log(data.totalCount)
+                    if(data&&data.totalCount>0){
+                        $(".unreadtip").removeClass("hidden")
+                    }
+                }
+
+            })
+        }
+
     });
+    var pageTitle = document.title;
+    var tipDotCount = 1;
+    var tipTimer;
+    var hasNewMessage;
+
     return {
         showTalk:function(user_id){
             var href = $("#sidebar-talk").attr("href")
@@ -100,7 +125,28 @@ Souche.Sidebar = (function() {
             }else{
                 href=href+"?talk_with="+user_id
             }
-            this.showSidebar($("#sidebar-talk")[0])
+            $("#sidebar-talk").attr("href",href)
+            Souche.MiniLogin.checkLogin(function(isLogin) {
+                Souche.Sidebar.showSidebar($("#sidebar-talk")[0])
+            },false,true)
+
+        },
+        hideMessageTip:function(){
+            if(tipTimer) clearInterval(tipTimer)
+            document.title =  pageTitle
+        },
+        newMessageTip:function(){
+            clearInterval(tipTimer)
+            hasNewMessage = true;
+            tipTimer = setInterval(function(){
+                if(tipDotCount==1){
+                    tipDotCount = 0;
+                }else{
+                    tipDotCount=1;
+                }
+                document.title = (tipDotCount==1?"☏":"☎")+"您有新消息 | "+pageTitle
+            },50)
+
         },
         hideTalk:function(){
             $("#toolbar").animate({
