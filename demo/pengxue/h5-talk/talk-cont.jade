@@ -1,0 +1,77 @@
+doctype html
+html
+  head.
+    <title>大搜车,为我选好车-二手车交易市场_二手车评估_二手车网</title>
+    <meta name="Description"content="大搜车致力于成为中国最大、最专业的二手车交易服务商；打造诚信、透明的二手车交易平台；为消费者提供最专业的二手车认证、交易及质保服务" />
+    <meta name="Keywords" content="二手车网，北京二手车，二手车评估，二手车买卖，二手车门店,二手车检测,二手车交易市场" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://f2e.souche.com/assets/css/mobile/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://f2e.souche.com/assets/css/mobile/talk/talk-list.css" rel="stylesheet" type="text/css"/>
+    <script src="http://f2e.souche.com/assets/js/mobile/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://f2e.souche.com/assets/js/souche/stats.js"></script>
+  body#talk-cont
+    .header-placeholder
+      .fixed-wrapper.
+        <header class='header-back header'>
+          <a class='back' href='#'>
+            <i class='header-back-icon'></i>
+            返回
+          </a>
+          <div class="header-title">小王二手车</div>
+          <a class="newly-contact" href='#'>最近联系</a>
+          <script>
+            $('.back').click(function(e){
+              e.preventDefault();
+              var refer = document.referrer;
+              if (refer.indexOf("souche") != -1) {
+                history.back();
+                        return;
+                    } 
+                window.location.href='index.html';
+            })
+          </script>
+        </header>
+    .wrapper
+      .talk-wrap
+        ul.talk-histary
+          li.my-cont.clearfix
+            .time 10:25
+            .figure 我
+            .talk-content
+              i.cont-arrow
+              p 你好
+          li.shop-cont.clearfix
+            .time 10:30
+            .figure 小王二手车
+            .talk-content
+              i.cont-arrow
+              p 请问，成色较新的2013款 2.0T的奥迪A4L有吗？
+          li.shop-cont.clearfix
+            .time 10:30
+            .figure 小王二手车
+            .car-card
+              i.cont-arrow
+              .car-box.clearfix
+                a.car-img.clearfix
+                  img(src="http://img.souche.com/files/default/452C7E4F7A8120E09CD05A72BAC85CBF_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg")
+                .car-info
+                  .car-title
+                    a(href="#") 福特 2010款 福克斯2.0-手动-SVP限量版两厢
+          li.my-cont.clearfix
+            .time 10:30
+            .figure 我
+            .car-card
+              i.cont-arrow
+              .car-box.clearfix
+                a.car-img.clearfix
+                  img(src="http://img.souche.com/files/default/452C7E4F7A8120E09CD05A72BAC85CBF_690x460.jpg@1e_240w_160h_1c_0i_1o_90Q_1x.jpg")
+                .car-info
+                  .car-title
+                    a(href="#") 福特 2010款 福克斯2.0-手动-SVP限量版两厢
+    .foot-placeholder
+      .foot-wrapper
+        form.talk-form
+          input#talk-input
+          button#talk-sub 发送
