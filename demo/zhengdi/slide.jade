@@ -8,9 +8,18 @@ html
     <link href="http://f2e.souche.com/assets/css/souche/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/ui.css" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/souche/common.css" rel="stylesheet" type="text/css" />
+    <link href="<sc:assets value='/assets/css/mobile/h5-3/brand.css'/>" rel="stylesheet" type="text/css" />
     <link href="http://f2e.souche.com/assets/css/mobile/slide/slide.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://f2e.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="<sc:assets value='/assets/js/mobile/lib/af.touchEvents.js'/>"></script>
+    <script src="<sc:assets value="/assets/js/lib/require.js"/>"></script>
+    <script>
+        var contextPath = "<%=request.getContextPath() %>";
+        require.config({
+          baseUrl: '<sc:assets value="/assets/js"/>',
+          urlArgs: 'bust=v13' 
+        });
+    </script>
   body
     #slide
       #content
@@ -33,6 +42,8 @@ html
           .ft 
             p 我也曾 
             p ……
+          .bg 
+            img(src="/assets/images/mob/slide/s2.png")
         section.slide-bottom(data-index=3) 
           .text
             p  上大学，离别是一辆火车 
@@ -43,6 +54,8 @@ html
           .ft 
             p 我也曾
             p ……
+          .bg 
+            img(src="/assets/images/mob/slide/s3.png")
         section.slide-bottom(data-index=4) 
           .text
             p  工作后，距离抵不过一辆公交 
@@ -52,6 +65,8 @@ html
           .ft 
             p 我曾想 
             p ……
+          .bg 
+            img(src="/assets/images/mob/slide/s4.png")
         section.slide-bottom(data-index=5) 
           .text
             p 然而 
@@ -61,6 +76,8 @@ html
           .ft 
             p 后来 
             p …… 
+          .bg 
+            img(src="/assets/images/mob/slide/s5.png")
         section.slide-bottom(data-index=6) 
           .text
             p 如果车轮也有记忆，希望有一天 
@@ -71,24 +88,26 @@ html
           .ft 
             p 后来 
             p ……
+          .bg 
+            img(src="/assets/images/mob/slide/s6.png")
         section.slide-bottom(data-index=7) 
           .text
             p 于是 
             p.mb10 我买了属于自己的第一辆车
           form#slide-form
             .form-control
-              .form-item 品牌
+              #slide-brand.form-item 品牌
             .form-control
-              .form-item 车型
+              #slide-model.form-item 车型
             .form-control
               label 行驶公里
               input.form-item.form-input 
               span 万公里
             .form-control
               label 上牌时间
-              select.form-item(name="")
+              select#slide-time.form-item(name="")
               span 年
-            button 为爱车点赞!
+            button#slide-btn 为爱车点赞!
           .ft 
             p 我没有车 
             p 但这样的美好也许会迟到，但从不缺席
@@ -96,7 +115,9 @@ html
             p.mb10 我拥有了自己的奥迪A4L  
             p 8万公里的车轮印迹 
             p 也见证了4年来 
-            p 汽车带来的幸福记忆…          
+            p 汽车带来的幸福记忆… 
+          .bg 
+            img(src="/assets/images/mob/slide/s7.png")         
         section.slide-bottom(data-index=8)
           .text 
             p TA已为我的家庭奉献了  
@@ -121,18 +142,27 @@ html
             p 唯有家庭与爱不可辜负
           .ft 
             p 千万不要往下看...
+          .bg 
+            img(src="/assets/images/mob/slide/s8.png")
         section.slide-bottom(data-index=9)
           .text 
             p  嗯！你没看错！ 
-            p 这就是一条赤果果的广告！  
+            p.mb10 这就是一条赤果果的广告！  
             p 我们这么拼 
             p 只是想让你买车而已 
             p 就是这么任性！
-          a.btn 看看我的dream car
-          a.btn.hiden 我!要!卖!车!
-      div.speaker
+          a#btn-link.btn 看看我的dream car
+          a#btn-link.btn.hidden 我!要!卖!车!
+          .bg 
+            img(src="/assets/images/mob/slide/s9.png")
+      div.speaker.playaround
       a#next
-      <audio id="audio" src="http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/music/bgm.mp3" loop preload="auto" autoplay="true"></audio>
+      arudio(id="audio" class="playing" src="http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/music/bgm.mp3" loop preload="auto" autoplay="true")
+    #popup.hidden
+      .content
+        p 爱车信息缺失
+        p 你真的有诚意为TA点赞吗？
+        a.btn 补充爱车信息
   script.
     // 简单的滑块实现
     ;(function($, window) {
@@ -205,9 +235,104 @@ html
       //-   }
       //- }, 2000)
 
-
+      //- $('#audio').on('click', function() {
+      //-   if ($(this).hasClass('playing')) {
+      //-     $(this).pause().toggleClass('playing');
+      //-   } else {
+      //-     $(this).play().toggleClass('playing');
+      //-   }
+      //- });
 
     })(jQuery, window);
+
+    ;(function() {
+      
+      // 选品牌 ＋ 车型
+      require(['mobile/index/brand2'], function (Brand){
+      
+        $('#slide-brand').on('click', function() {
+          
+          $('#brand').removeClass('hidden');
+
+          function brandInfo(b, bn, s, sn) {
+            $('#slide-brand').attr('data-brand', b).attr('data-series', s)
+                  .text(bn + ' ' + sn);
+            $('#car-model').removeClass('no-active').text('');
+            $('#car-models').empty();
+
+            var modelUrl = contextPath + '/pages/dicAction/loadNextLevel.json?type=car-subdivision';
+
+            $.getJSON(modelUrl, { code: s }, function(data) {
+              var obj = {};
+              var data = data.items;
+              for (var i = 0, len = data.length; i < len; i ++) {
+                var t = data[i].name.slice(0,4);
+                var d = data[i].name.trim();
+                var c = data[i].code;
+                if (!obj[t]) {
+                  obj[t] = [];
+                }
+                obj[t].push({title: d, code: c});
+              }
+              createModel(obj);
+            });
+
+            // 车型弹窗
+            function createModel(obj) {
+              $('#car-models').empty();
+              var str = '';
+              for (var p in obj) {
+                // str += '<div class="item"><h4>' + p + '</h4>';
+                str += '<div class="item">';
+                for (var i = 0, arr = obj[p], len = arr.length; i < len; i ++) {
+                  str += '<li data-code="' +  arr[i].code + '">' +  arr[i].title + '<span class="left-arrow"></span></li>'
+                }
+                str += '</div>'
+              }
+              $('#car-models').append(str);
+            }
+
+          }
+
+          Brand.bind(brandInfo);
+        });
+
+        // 年月
+        function createDate(y) {
+          var n = new Date().getFullYear();
+          var $form = $('#slide-form');
+          var $year = $form.find('#slide-time');
+          var year = '';
+
+          year += '<option value="">年</option>'
+
+          for (var j = y; j < n + 1; j ++) {
+            year += '<option value="' + j + '">' + j + '年</option>';
+          }
+
+          $year.html(year);
+        }
+        
+        $('#slide-model').on('click', function() {
+          if ($(this).hasClass('no-active')) return;
+          $('#car-models').removeClass('hidden');
+
+          $('#car-models').on('click', '.item li', function() {
+              $('#car-models .item li').removeClass('active');
+              $(this).addClass('active');
+              $('#slide-model').attr('data-code', $(this).attr('data-code'));
+              $('#slide-model').text($(this).text())
+              setTimeout(function() {
+                  $('#car-models').addClass('hidden');
+              }, 500);
+              var y = parseInt($(this).text()) - 1;
+              createDate(y);
+          })
+        });
+      
+      });
+
+    })();
 
     
     

@@ -169,24 +169,34 @@ function(AddSeries, CustomSelect, Tool){
                         dataType:"json",
                         success:function(result){
                             // 带参数 刷新一下页面
+                            // 去掉recommend=today
+                            var urlParam = Tool.parseUrlParam();
                             var newUrl;
-                            if( window.location.href.indexOf("fromRss=1")!=-1 ){
-                                newUrl = window.location.href
+                            function isEmptyObj(obj){
+                                for(var i in obj){
+                                    return false;
+                                }
+                                return true;
+                            }
+                            if(isEmptyObj(urlParam)){
+                                newUrl = location.origin + location.pathname + '?fromRss=1' + location.hash;
                             }
                             else{
-                                var search = '';
-                                if( window.location.search ){
-                                    search = window.location.search + '&fromRss=1';
+                                urlParam.fromRss = 1;
+                                if(urlParam.recommend == 'today'){
+                                    delete urlParam.recommend;
                                 }
-                                else{
-                                    search = '?fromRss=1';
+                                var search = '?';
+                                var upArr = [];
+                                for(var i in urlParam){
+                                    upArr.push( i +'='+urlParam[i] );
                                 }
+                                search += upArr.join('&');
                                 newUrl = location.origin + location.pathname + search + location.hash;
                             }
                             window.location.href = newUrl;
                         },
                         error:function(){
-
                             rss_isSubmiting = false;
                         }
                     })

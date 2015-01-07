@@ -542,6 +542,7 @@ var utilsSell = {
         }
         setTimeout(function(){
             window.location.href = addr.substr(0,addr.length-1);
+            $('#J_btnFilter_submit').text('正在跳转中...')
         },50)
         Souche.stats.add_click('index-filter-car');
     });
