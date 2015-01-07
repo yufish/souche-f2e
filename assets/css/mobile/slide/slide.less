@@ -61,32 +61,60 @@ html, body {
     width: 100%;
     height: 100%;
     .backface-visibility(hidden);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .user-info {
+      margin-bottom: 25px;
+      text-align: center;
+      img {
+        margin-bottom: 5px;
+        display: inline-block;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
+      span {
+        display: block;
+        font-size: 14px;
+        color: #1d1d1d;
+      }
+    }
 
     &[data-index='1'] {
+      
     }
 
     &[data-index='2'] {
+      background-image: url(../../../images/mob/slide/s2.png);
     }
 
     &[data-index='3'] {
+      background-image: url(../../../images/mob/slide/s3.png);
     }
 
     &[data-index='4'] {
+      background-image: url(../../../images/mob/slide/s4.png);
     }
 
     &[data-index='5'] {
+      background-image: url(../../../images/mob/slide/s5.png);
     }
 
     &[data-index='6'] {
+      background-image: url(../../../images/mob/slide/s6.png);
     }
 
     &[data-index='7'] {
+      background-image: url(../../../images/mob/slide/s7.png);
     }
 
     &[data-index='8'] {
+      background-image: url(../../../images/mob/slide/s8.png);
     }
 
     &[data-index='9'] {
+      background-image: url(../../../images/mob/slide/s9.png);
     }
 
     &.slide-t {
@@ -193,19 +221,19 @@ html, body {
       margin: 0 10px;
       width: 135px;
     }
-    button {
-      margin: 20px auto;
-      display: block;
-      -webkit-appearance: none;
-      border: none;
-      border-radius: 0;
-      background: none;
-      color: @color;
-      border: 1px solid @color;
-      width: 160px;
-      height: 35px;
-      line-height: 35px;
-    }
+  }
+  button {
+    margin: 20px auto;
+    display: block;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: @color;
+    border: 1px solid @color;
+    width: 160px;
+    height: 35px;
+    line-height: 35px;
   }
 }
 
