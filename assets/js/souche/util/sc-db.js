@@ -43,17 +43,22 @@ define(function() {
         get: function(key, time) {
             key = this.namespace + key;
             var value = localStorage.getItem(key);
-            var _data = JSON.parse(value);
-            value = _data.data;
-            var lastTime = _data.time;
-            if (time && ((new Date()).getTime() - lastTime > time)) {
+            try{
+                var _data = JSON.parse(value);
+                value = _data.data;
+                var lastTime = _data.time;
+                if (time && ((new Date()).getTime() - lastTime > time)) {
+                    return null;
+                }
+                if (!value.length) {
+                    value = null;
+                    return value;
+                }
+                return value[0];
+            }catch(e){
                 return null;
             }
-            if (!value.length) {
-                value = null;
-                return value;
-            }
-            return value[0];
+
         },
         set: function(key, value) {
             key = this.namespace + key;
