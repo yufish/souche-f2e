@@ -8,6 +8,8 @@ html, body {
   overflow: hidden;
 }
 
+@color: #ff4400;
+
 
 // mixin
 .transition(@value) {
@@ -38,61 +40,211 @@ html, body {
   .transition(-webkit-transform .3s cubic-bezier(0.42, 0, 0.58, 1.0));
 }
 
-#story-slide {
+#slide {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   position: relative;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   .backface-visibility(hidden);
 
   section {
     position: absolute;
+    padding-top: 44px;
     width: 100%;
     height: 100%;
     .backface-visibility(hidden);
-    &:extend(.trans-base);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .user-info {
+      margin-bottom: 25px;
+      text-align: center;
+      img {
+        margin-bottom: 5px;
+        display: inline-block;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
+      span {
+        display: block;
+        font-size: 14px;
+        color: #1d1d1d;
+      }
+    }
 
     &[data-index='1'] {
-      background-color: red;
+      
     }
 
     &[data-index='2'] {
-      background-color: blue;
+      background-image: url(../../../images/mob/slide/s2.png);
     }
 
     &[data-index='3'] {
-      background-color: black;
+      background-image: url(../../../images/mob/slide/s3.png);
     }
 
     &[data-index='4'] {
-      background-color: yellow;
+      background-image: url(../../../images/mob/slide/s4.png);
     }
 
     &[data-index='5'] {
-      background-color: blue;
+      background-image: url(../../../images/mob/slide/s5.png);
     }
 
     &[data-index='6'] {
-      background-color: pink;
+      background-image: url(../../../images/mob/slide/s6.png);
+    }
+
+    &[data-index='7'] {
+      background-image: url(../../../images/mob/slide/s7.png);
+    }
+
+    &[data-index='8'] {
+      background-image: url(../../../images/mob/slide/s8.png);
+    }
+
+    &[data-index='9'] {
+      background-image: url(../../../images/mob/slide/s9.png);
+    }
+
+    &.slide-t {
+      .transform(translate3d(0, -100%, 0));
+    }
+
+    &.slide-bt {
+      .transform(translate3d(0, 100%, 0));
     }
 
     &.slide-top {
       .transform(translate3d(0, -100%, 0));
+      &:extend(.trans-base);
     }
 
-    &.slide-down {
+    &.slide-bottom {
       .transform(translate3d(0, 100%, 0));
+      &:extend(.trans-base);
     }
 
     &.slide-active {
       z-index: 9999;
       .transform(translate3d(0, 0, 0));
+      &:extend(.trans-base);
+    }
+
+    .diff p {
+      color: @color;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      line-height: 19px;
+      color: #1c1c1c;
+      font-family: "黑体";
+
+      span {
+        display: block;
+        margin-top: 10px;
+        color: @color;
+        font-size: 28px;
+      }
+
+      &.mb10 {
+        margin-bottom: 15px;
+      }
+    }
+
+    .ft {
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      right: 0;
     }
   }
 }
 
+.speaker {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  z-index: 9999;
+  background: url(../../../images/mob/slide/speaker.png) no-repeat;
+  background-size: 100%;
+}
+
 #next {
-  position: fixed;
+  position: absolute;
+  display: block;
   z-index: 9999;
   bottom: 10px;
   left: 50%;
+  margin-left: -17.5px;
+  width: 35px;
+  height: 20px;
+  background: url(../../../images/mob/slide/next.png) no-repeat;
+  background-size: 100%;
+}
+
+#slide-form {
+  margin: 0 auto;
+  width: 260px;
+  display: block;
+  color: #949494;
+  font-size: 14px;
+
+  .form-control {
+    margin-bottom: 10px;
+    .form-item {
+      border: none;
+      border-radius: 0;
+      background: none;
+      padding-left: 10px;
+      height: 35px;
+      line-height: 35px;
+      border: 1px solid #949494;
+      -webkit-appearance: none;
+    }
+
+    input, select {
+      margin: 0 10px;
+      width: 135px;
+    }
+  }
+  button {
+    margin: 20px auto;
+    display: block;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: @color;
+    border: 1px solid @color;
+    width: 160px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+.btn {
+  margin: 10px auto;
+  display: block;
+  color: @color;
+  border: 1px solid @color;
+  width: 160px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 16px;
 }
