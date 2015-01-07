@@ -23,6 +23,13 @@ html, body {
           transform: @value;
 }
 
+.rotate(@deg) {
+  -webkit-transform: rotate(@deg); /* Safari 和 Chrome */
+     -moz-transform: rotate(@deg);  /* Firefox */
+      -ms-transform: rotate(@deg);   /* IE 9 */
+          transform: rotate(@deg);
+}
+
 .backface-visibility(@value) {
   -webkit-backface-visibility: @value;
           backface-visibility: @value; 
@@ -33,6 +40,39 @@ html, body {
   @opacity-ie: (@opacity * 100);
   filter: alpha(opacity=@opacity-ie);
 }
+
+.animation(@vaule) {
+  -webkit-animation: @value;
+          animation: @value;
+}
+
+@-webkit-keyframes disccircle {
+    form {
+      .rotate(0)
+    }
+    to {
+      .rotate(360deg);
+    }
+}
+
+@-moz-keyframes disccircle {
+    form {
+      .rotate(0)
+    }
+    to {
+      .rotate(360deg);
+    }
+}
+
+@keyframes disccircle {
+   form {
+     .rotate(0)
+   }
+   to {
+     .rotate(360deg);
+   }
+}
+
 
 // extend
 .trans-base {
@@ -61,6 +101,7 @@ html, body {
     width: 100%;
     height: 100%;
     .backface-visibility(hidden);
+    background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -86,35 +127,27 @@ html, body {
     }
 
     &[data-index='2'] {
-      background-image: url(../../../images/mob/slide/s2.png);
     }
 
     &[data-index='3'] {
-      background-image: url(../../../images/mob/slide/s3.png);
     }
 
     &[data-index='4'] {
-      background-image: url(../../../images/mob/slide/s4.png);
     }
 
     &[data-index='5'] {
-      background-image: url(../../../images/mob/slide/s5.png);
     }
 
     &[data-index='6'] {
-      background-image: url(../../../images/mob/slide/s6.png);
     }
 
     &[data-index='7'] {
-      background-image: url(../../../images/mob/slide/s7.png);
     }
 
     &[data-index='8'] {
-      background-image: url(../../../images/mob/slide/s8.png);
     }
 
     &[data-index='9'] {
-      background-image: url(../../../images/mob/slide/s9.png);
     }
 
     &.slide-t {
@@ -170,6 +203,20 @@ html, body {
       left: 0;
       right: 0;
     }
+
+    .bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
 
@@ -182,6 +229,11 @@ html, body {
   z-index: 9999;
   background: url(../../../images/mob/slide/speaker.png) no-repeat;
   background-size: 100%;
+}
+
+.playaround {
+  -webkit-animation: disccircle 4s linear infinite;
+          animation: disccircle 4s linear infinite;
 }
 
 #next {
@@ -199,13 +251,19 @@ html, body {
 
 #slide-form {
   margin: 0 auto;
-  width: 260px;
+  width: 240px;
   display: block;
   color: #949494;
   font-size: 14px;
 
   .form-control {
     margin-bottom: 10px;
+
+    #slide-brand,
+    #slide-model {
+      overflow: hidden;
+    }
+
     .form-item {
       border: none;
       border-radius: 0;
@@ -219,7 +277,15 @@ html, body {
 
     input, select {
       margin: 0 10px;
-      width: 135px;
+      display: inline-block;
+      width: 115px;
+    }
+
+    label, span {
+      display: inline-block;
+      vertical-align: middle;
+      height: 35px;
+      line-height: 35px;
     }
   }
   button {
@@ -231,7 +297,7 @@ html, body {
     background: none;
     color: @color;
     border: 1px solid @color;
-    width: 160px;
+    width: 120px;
     height: 35px;
     line-height: 35px;
   }
@@ -241,10 +307,54 @@ html, body {
   margin: 10px auto;
   display: block;
   color: @color;
-  border: 1px solid @color;
   width: 160px;
+  border: 1px solid @color;
+  padding: 0 10px;
   height: 35px;
   line-height: 35px;
   text-align: center;
   font-size: 16px;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.54);
+  color: #fff;
+
+  .btn {
+    margin-top: 20px;
+    color: #fff;
+    border-color: #fff;
+    width: 120px;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+    line-height: 24px;
+  }
+  
+  .content {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: 40%;
+    // -webkit-transform: translate(0, -50%);
+    // transform: translate(0, -50%);
+    background-color: transparent;
+  }
+}
+
+#btn-link {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
 }
