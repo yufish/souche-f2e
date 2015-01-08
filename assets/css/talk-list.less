@@ -3,9 +3,10 @@
 }
 #talk-list{
   box-sizing: border-box;
-  width: 745px;
+  width: 100%;
   height: 469px;
   border: 1px solid #DEDEDE;
+  border-left:none;
   .contact-list{
     float: left;
     width: 180px;
@@ -19,6 +20,12 @@
       padding-left: 10px;
     }
     .contacts{
+      .no-contact{
+        color:#999;
+        line-height: 38px;
+        text-align: left;
+
+      }
       li{
         height: 38px;
         cursor: pointer;
@@ -48,7 +55,7 @@
   }
   .talk-box{
     float: left;
-    width: 563px;
+    width:673px;
     height: 469px;
     .talk-wrap{
       background: #F7F7F7;
