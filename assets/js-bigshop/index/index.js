@@ -9,8 +9,7 @@ define(['index/car-god',
     "souche/util/image-resize",
     "souche/time-countdown",
     "index/mod/loadCars",
-    "lib/mustache",
-    "index/guess-like"
+    "lib/mustache"
 ], function(carGod,
             topNav,
             qiugou,
@@ -22,8 +21,7 @@ define(['index/car-god',
             ImageResize,
             TimeCountDown,
             loadCars,
-            Mustache,
-            GuessLike) {
+            Mustache) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
