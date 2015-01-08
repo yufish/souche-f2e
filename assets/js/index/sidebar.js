@@ -4,7 +4,13 @@ Souche.Sidebar = (function() {
 
     $(document).ready(function() {
         $("#talk_with").on("click",function(e){
-            Souche.Sidebar.showTalk($(this).attr("data-userid"),window.location.href);
+            var uid = $(this).attr("data-userid");
+            if(Math.random()>0.5){
+                uid = "cn_18667046361"
+            }else{
+                uid = "cn_17098045671"
+            }
+            Souche.Sidebar.showTalk(uid,window.location.href);
         })
         $(".advisor-tip-close").click(function(e) {
             e.preventDefault();

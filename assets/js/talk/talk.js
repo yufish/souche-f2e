@@ -28,7 +28,6 @@ define([
             $("#talking-text").attr("placeholder","连接成功，开始聊天吧")
             conn.setPresence();
             SoucheIM.onOpen();
-
         },
         //当连接关闭时的回调方法
         onClosed : function() {
@@ -64,10 +63,6 @@ define([
 //    onAudioMessage : function(message) {
 //        console.log(message)
 //        //handleAudioMessage(message);
-//    },
-//    onLocationMessage : function(message) {
-//        console.log(message)
-//        //handleLocationMessage(message);
 //    },
         //收到联系人订阅请求的回调方法
         onPresence : function(message) {
@@ -160,7 +155,7 @@ define([
                 $(".contacts").on("click",".contact-item",function(e){
                     var id = $(this).attr("data-id");
                     if(id!=SoucheIMData.now_chat_userid){
-                        self._switch_active()
+                        self._switch_active(id)
                         SoucheIMRender.renderContacts();
                     }
                 })
