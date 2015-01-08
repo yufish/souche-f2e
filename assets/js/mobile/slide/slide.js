@@ -278,3 +278,8 @@
   });
 
 })();
+
+$(function() {
+  $('#animation').addClass('bounce-in');
+  $('#next').addClass('next-bounce-in');
+})
