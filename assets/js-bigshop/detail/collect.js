@@ -13,7 +13,8 @@ define(function()
                 data: {
                     crmUserId: $.cookie("crmUserId"),
                     siteId:$.cookie("siteId"),
-                    carId: SaleDetailConfig.carId
+                    carId: SaleDetailConfig.carId,
+                    shopId:$.cookie("shopId")
                 },
                 dataType: "jsonp",
                 type: "post",

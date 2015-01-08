@@ -56,6 +56,7 @@ define(function() {
                 data: {
                     crmUserId: $.cookie("crmUserId"),
                     siteId:$.cookie("siteId"),
+                    shopId:$.cookie("shopId"),
                     carId: carID
                 },
                 dataType:"jsonp"
@@ -65,7 +66,6 @@ define(function() {
                     alert("您已经收藏过这辆车")
                     $(self).addClass("faved");
                 } else {
-
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
                     $(self).find(".fav-count").html($(self).find(".fav-count").html() * 1 + 1);

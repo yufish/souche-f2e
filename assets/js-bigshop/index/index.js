@@ -216,6 +216,7 @@ define(['index/car-god',
                 url:config.api_favCounts,
                 data:{
                     siteId: $.cookie("siteId"),
+                    shopId:$.cookie("shopId"),
                     carIds:(function(){
                         var ids =[];
                         $(".carItem").each(function(i,item){

@@ -61,7 +61,7 @@ var Action = (function () {
                     url:$('#yuyue-submit').attr('data-url'),
                     data:{
                         type:globalConfig.yuyue_type,
-                        crmUserId: $.cookie("crmUserId"),
+                        crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
                         siteId:$.cookie("siteId")
                     },
                     dataType:'jsonp',
@@ -139,7 +139,7 @@ var Action = (function () {
                     data: {
                         platform : 'PLATFORM_H5',
                         carId: carId,
-                        crmUserId: $.cookie("crmUserId"),
+                        crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
                         siteId:$.cookie("siteId")
                     },
                     success: function () {
