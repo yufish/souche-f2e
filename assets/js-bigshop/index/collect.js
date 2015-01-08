@@ -57,7 +57,8 @@ define(function() {
                     crmUserId: $.cookie("crmUserId"),
                     siteId:$.cookie("siteId"),
                     shopId:$.cookie("shopId"),
-                    carId: carID
+                    carId: carID,
+                    platform : 'PLATFORM_WEB'
                 },
                 dataType:"jsonp"
             }).done(function(data) {
