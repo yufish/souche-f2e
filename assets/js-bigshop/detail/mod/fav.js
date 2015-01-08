@@ -8,7 +8,8 @@ define(function() {
             data: {
                 crmUserId: $.cookie("crmUserId"),
                 siteId:$.cookie("siteId"),
-                carId: config.carId
+                carId: config.carId,
+                shopId:$.cookie("shopId")
             },
             dataType: "jsonp",
             type: "post",

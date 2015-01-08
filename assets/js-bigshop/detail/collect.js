@@ -13,7 +13,9 @@ define(function()
                 data: {
                     crmUserId: $.cookie("crmUserId"),
                     siteId:$.cookie("siteId"),
-                    carId: SaleDetailConfig.carId
+                    carId: SaleDetailConfig.carId,
+                    shopId:$.cookie("shopId"),
+                    platform : 'PLATFORM_WEB'
                 },
                 dataType: "jsonp",
                 type: "post",

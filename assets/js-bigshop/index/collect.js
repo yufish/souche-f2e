@@ -56,7 +56,9 @@ define(function() {
                 data: {
                     crmUserId: $.cookie("crmUserId"),
                     siteId:$.cookie("siteId"),
-                    carId: carID
+                    shopId:$.cookie("shopId"),
+                    carId: carID,
+                    platform : 'PLATFORM_WEB'
                 },
                 dataType:"jsonp"
             }).done(function(data) {
@@ -65,7 +67,6 @@ define(function() {
                     alert("您已经收藏过这辆车")
                     $(self).addClass("faved");
                 } else {
-
                     $("#fav-popup").addClass("hidden");
                     $(".wrapGrayBg").hide();
                     $(self).find(".fav-count").html($(self).find(".fav-count").html() * 1 + 1);

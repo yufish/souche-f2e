@@ -173,7 +173,7 @@ var List = function() {
                         data: {
                             carId: $node.attr("data-id"),
                             platform : 'PLATFORM_H5',
-                            crmUserId: $.cookie("crmUserId"),
+                            crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
                             siteId:$.cookie("siteId")
                         },
                         dataType: "jsonp",

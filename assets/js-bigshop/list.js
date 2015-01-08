@@ -167,6 +167,7 @@ Souche.Inside = (function() {
                 url:config.api_favCounts,
                 data:{
                     siteId: $.cookie("siteId"),
+                    shopId:$.cookie("shopId"),
                     carIds:(function(){
                         var ids =[];
                         $(".carItem").each(function(i,item){
@@ -198,6 +199,7 @@ Souche.Inside = (function() {
                     data: {
                         crmUserId: $.cookie("crmUserId"),
                         siteId:$.cookie("siteId"),
+                        shopId:$.cookie("shopId"),
                         carId: fav_carId //$(self).attr("data-carid")
                     },
                     dataType: "jsonp",
@@ -222,6 +224,8 @@ Souche.Inside = (function() {
                     data: {
                         crmUserId: $.cookie("crmUserId"),
                         siteId:$.cookie("siteId"),
+                        shopId:$.cookie("shopId"),
+                        platform : 'PLATFORM_WEB',
                         carId: fav_carId //$(self).attr("data-carid")
                     },
                     dataType: "jsonp",

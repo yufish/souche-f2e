@@ -61,8 +61,9 @@ var Action = (function () {
                     url:$('#yuyue-submit').attr('data-url'),
                     data:{
                         type:globalConfig.yuyue_type,
-                        crmUserId: $.cookie("crmUserId"),
-                        siteId:$.cookie("siteId")
+                        crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
+                        siteId:$.cookie("siteId"),
+                        platform : 'PLATFORM_H5'
                     },
                     dataType:'jsonp',
                     success:function(e){
@@ -139,8 +140,9 @@ var Action = (function () {
                     data: {
                         platform : 'PLATFORM_H5',
                         carId: carId,
-                        crmUserId: $.cookie("crmUserId"),
+                        crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
                         siteId:$.cookie("siteId")
+
                     },
                     success: function () {
                         $(".detail-fav .fav-text").html("已收藏")
