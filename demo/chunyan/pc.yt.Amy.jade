@@ -131,6 +131,27 @@ html
             i.J_city
             .city-open.hidden(
               style='opacity: 1;')
+              .city-wrap.clearfix
+                .area-box(
+                  style='left:0;')
+                  .hot-city
+                    span.title 热门
+                    a.hot-item.hot-item-all.hidden(
+                      data-code='country'
+                      click_type='hotcity-country') 全国
+                    a.J_hotcity(
+                      data-pinyin='beijing'
+                      data-code='00001'
+                      click_type='hotcity-00001') 北京
+                  .area-city
+                    .area-line
+                      span.area
+                      a.province-item.direct-item.J_hotcity(
+                        data-pinyin='beijing'
+                        data-code='00001'
+                        click_type='province-00001')
+                .city-box(
+                  style='left:362px;')
           .main-navs(
             style='margin-left:20px;')
         .search
@@ -141,7 +162,7 @@ html
     script.
       require(['index_11/header'], function(Header){
         Header.init();
-      );
+      });
     #top-head
     #choose-nav
     #main-service
