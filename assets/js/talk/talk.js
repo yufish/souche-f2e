@@ -2,11 +2,14 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
     var souchedb = new DB("souche");
     var appkey = "souche#souchetest";
     var conn = new Easemob.im.Connection();
+
+    $("#talking-text").attr("placeholder","正在连接聊天服务器，请稍候")
     conn.init({
         https : false,
         //当连接成功时的回调方法
         onOpened : function() {
             console.log("open")
+            $("#talking-text").attr("placeholder","连接成功，开始聊天吧")
             conn.setPresence();
             SoucheIM.onOpen();
 //            handleOpen(conn);
@@ -15,6 +18,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
         onClosed : function() {
             //handleClosed();
             console.log("close")
+            $("#talking-text").attr("placeholder","聊天结束，连接关闭")
             SoucheIM.leaveWindow();
         },
         //收到文本消息时的回调方法
@@ -24,6 +28,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
             console.log(message)
             setTimeout(function(){
                 SoucheIMData.addMessage(message);
+                window.parent.window.Souche.Sidebar.newMessageTip();
             })
         },
 //    //收到表情消息时的回调方法
@@ -211,8 +216,9 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
 
 
                 if(!hasLoadOnline[this.now_chat_userid]){
-                    var lastDumpTime = souchedb.get("souche_talk_messages_time");
+                    var lastDumpTime = souchedb.get("souche_talk_messages_time_"+this.my_userid+"_to_"+this.now_chat_userid);
                     var loadFromLocal = false;
+                    console.log(lastDumpTime)
                     if(lastDumpTime){
                         if(new Date().getTime() - lastDumpTime*1<1000*60){
                             loadFromLocal = true;
@@ -222,7 +228,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                         }
                     }
                     if(loadFromLocal){
-//                        SoucheIMData.restoreMessages();
+                        SoucheIMData.restoreMessages(this.my_userid,this.now_chat_userid);
                     }else{
                         SoucheIMData.restoreMessageFromOnline(this.my_userid,this.now_chat_userid)
                     }
@@ -289,7 +295,11 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
             addMessage:function(msg,addUnread){
                 var from_user_id = msg.from;
                 var content = msg.data
-                this.addContact(from_user_id)
+                var unreadCount = 1;
+                if(from_user_id==this.now_chat_userid){
+                    unreadCount = 0;
+                }
+                this.addContact(from_user_id,unreadCount)
                 if(!this.messages[from_user_id]){
                     this.messages[from_user_id] = [];
                 }
@@ -343,22 +353,21 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
             dumpMessages:function(){
                 for(var i in this.messages){
                     if(this.messages[i]&&this.messages[i].length){
-                        if(this.messages[i]){
-
-                        }
+                        souchedb.sets("souche_talk_messages_"+SoucheIMData.my_userid+"_to_"+i,this.messages[i])
+                        souchedb.set("souche_talk_messages_time_"+SoucheIMData.my_userid+"_to_"+i,new Date().getTime())
                     }
                 }
-                souchedb.set("souche_talk_messages",this.messages)
-                souchedb.set("souche_talk_messages_time",new Date().getTime())
+
                 console.log("dump message")
             },
             /**
              * 从本地恢复聊天记录
              */
-            restoreMessages:function(){
-                var ms = souchedb.get("souche_talk_messages");
+            restoreMessages:function(user_id,friend_id){
+                var ms = souchedb.gets("souche_talk_messages_"+user_id+"_to_"+friend_id);
+                console.log(ms)
                 if(ms){
-                    this.messages = ms;
+                    this.messages[friend_id] = ms;
                 }
             },
             restoreMessageFromOnline:function(user_id,friend_id){
@@ -398,6 +407,9 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     SoucheIMData.contacts.forEach(function (c) {
                         html += "<li class='contact-item "+(SoucheIMData.now_chat_userid==c.friendId?"active":"")+"' data-id='" + c.friendId + "'><span class='cont-name'>" + c.friendName + "</span>"+(c.unReadMsg?("<i class='info-num'>" + c.unReadMsg + "</i>"):"")+"</li>"
                     })
+                    if(!SoucheIMData.contacts.length){
+                        html="<li class=no-contact>暂无联系人</li>"
+                    }
                     return html;
                 }())
             },
@@ -471,6 +483,7 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
         return {
             init:function(_config){
                 $.extend(config,_config);
+                $("#talking-text").focus();
                 SoucheIMData.my_userid = config.user_id;
                 SoucheIMUtil.getRecentContacts(config.user_id,function(contacts){
 
@@ -489,19 +502,19 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                     renderChatTimer = setInterval(function(){
                         SoucheIMRender.renderChat();
                     },500)
-                        var lastDumpTime = souchedb.get("souche_talk_messages_time");
-                        var loadFromLocal = false;
-                        if(lastDumpTime){
-                            if(new Date().getTime() - lastDumpTime*1<1000*60){
-                                loadFromLocal = true;
-
-                            }else{
-
-                            }
-                        }
-                        if(loadFromLocal) {
-                            SoucheIMData.restoreMessages();
-                        }
+//                        var lastDumpTime = souchedb.get("souche_talk_messages_time");
+//                        var loadFromLocal = false;
+//                        if(lastDumpTime){
+//                            if(new Date().getTime() - lastDumpTime*1<1000*60){
+//                                loadFromLocal = true;
+//
+//                            }else{
+//
+//                            }
+//                        }
+//                        if(loadFromLocal) {
+//                            SoucheIMData.restoreMessages();
+//                        }
 
 
                     SoucheIMUtil.getLoginInfo(config.user_id.replace(/[^0-9]/g,''),function(user,pwd){
@@ -519,7 +532,11 @@ define(['souche/util/sc-db','lib/moment'],function(DB,Moment){
                 $("#talk_form").on("submit",function(e){
                     e.preventDefault();
                     var content = $("#talking-text").val();
-
+                    if(content==""){
+                        alert("请输入聊天内容")
+                        $("#talking-text").focus();
+                        return
+                    }
                     $("#talking-text").val("")
                     var carInfo  = {
                         ownerId:"18667932551",

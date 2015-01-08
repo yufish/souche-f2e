@@ -100,29 +100,38 @@
             }
         }
         .collect {
+            float: right;
+            display: block;
+            margin-top: 5px;
             padding-left: 20px;
-            color: #999;
-            background: url(../images/index/index_sprite_v2.png) no-repeat center;
-            background-position: -10px -40px;
-            cursor: pointer;
             font-size: 12px;
             line-height: 15px;
-            float: right;
-            margin-top: 5px;
-            display: block;
+            color: #999;
+            cursor: pointer;
+            
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 20px;
+                background: url(../images/index/index_sprite_v2.png) no-repeat center;
+                background-position: -10px -40px;
+            }
             a {
                 color: #999;
-
             }
         }
-        .collect:hover{
-            background-image: url(../images/index/index_sprite_v2.png) !important;
-            background-position: -10px -60px !important;
+        .collect:hover {
+            &:before{
+                background-position: -10px -60px;
+            }
         }
-        .collect.active,
-        .collect.colled {
-            background-image: url(../images/index/index_sprite_v2.png) !important;
-            background-position: -10px -80px !important;
+        .collect.active {
+            &:before{
+                background-position: -10px -80px;
+            }
         }
         .carTail {
             top: auto;
@@ -136,7 +145,8 @@
 
             .collect{
                 position: relative;
-                width: 6em;
+                width: auto;
+                max-width: 10em;
                 height: 20px;
                 padding-right: 2em;
                 border: none;

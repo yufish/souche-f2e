@@ -198,10 +198,10 @@
         series: arr[1],
         model: $('#slide-model').text(),
         year: $('#slide-time').val(),
-        mile: $('#slide-mile').val(),
-        brand_code: $('#slide-brand').attr('data-brand'),
-        series_code: $('#slide-brand').attr('data-series'),
-        model_code: $('#slide-model').attr('data-code')
+        mileage: $('#slide-mile').val()
+        // brand_code: $('#slide-brand').attr('data-brand'),
+        // series_code: $('#slide-brand').attr('data-series'),
+        // model_code: $('#slide-model').attr('data-code')
       }
 
       $('.section-form').addClass('hidden');
