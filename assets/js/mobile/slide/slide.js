@@ -74,7 +74,6 @@
 
   $('#jump-btn').on('click', function(e) {
     e.preventDefault();
-    action.goto(8);
     var num = $(this).attr('data-num');
     if (num === "0") {
       $('#popup').html('').removeClass('hidden');
@@ -83,7 +82,9 @@
       }, 1000)
     }
     if (num === "1") {
-      action.goto(7)
+      action.goto(7);
+      $('.section-form').removeClass('hidden');
+      $('.section-result').addClass('hidden');
     }
   });
 
