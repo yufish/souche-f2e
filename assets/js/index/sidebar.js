@@ -129,9 +129,8 @@ Souche.Sidebar = (function() {
             if(user_id){
                 href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
             }
-            $("#sidebar-talk").attr("href",href)
             Souche.MiniLogin.checkLogin(function(isLogin) {
-                Souche.Sidebar.showSidebar($("#sidebar-talk")[0])
+                Souche.Sidebar.showSidebar($("#sidebar-talk")[0],href)
             },false,true)
 
         },
@@ -162,8 +161,11 @@ Souche.Sidebar = (function() {
             $("#toolbar").removeClass("sidebar-active")
             siderbarShow = false;
         },
-        showSidebar:function(self) {
-
+        showSidebar:function(self,url) {
+            var href = $(self).attr("href");
+            if(url){
+                href = url;
+            }
             $(".sidebar .side-box").removeClass("active")
             $(self.parentNode).addClass("active")
             if (!$("#toolbar").hasClass("sidebar-active")) {
@@ -179,7 +181,7 @@ Souche.Sidebar = (function() {
                 $("#toolbar").addClass("sidebar-active")
                 $(".sidebar").removeClass("active")
             }
-            $(".toolbar-content iframe").attr("src", $(self).attr("href"));
+            $(".toolbar-content iframe").attr("src", href);
             $(".toolbar-content .iframe-loading").removeClass("hidden");
             $(".toolbar-content iframe").load(function() {
                 $(this).removeClass("hidden");
