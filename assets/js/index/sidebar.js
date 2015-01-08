@@ -4,7 +4,7 @@ Souche.Sidebar = (function() {
 
     $(document).ready(function() {
         $("#talk_with").on("click",function(e){
-            Souche.Sidebar.showTalk($(this).attr("data-userid"));
+            Souche.Sidebar.showTalk($(this).attr("data-userid"),window.location.href);
         })
         $(".advisor-tip-close").click(function(e) {
             e.preventDefault();
@@ -118,12 +118,10 @@ Souche.Sidebar = (function() {
     var hasNewMessage;
 
     return {
-        showTalk:function(user_id){
+        showTalk:function(user_id,url){
             var href = $("#sidebar-talk").attr("href")
-            if(href.indexOf("talk_with")!=-1){
-                href=href.replace(/talk_with=.+/,"talk_with="+user_id)
-            }else{
-                href=href+"?talk_with="+user_id
+            if(user_id){
+                href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
             }
             $("#sidebar-talk").attr("href",href)
             Souche.MiniLogin.checkLogin(function(isLogin) {
@@ -145,7 +143,7 @@ Souche.Sidebar = (function() {
                     tipDotCount=1;
                 }
                 document.title = (tipDotCount==1?"☏":"☎")+"您有新消息 | "+pageTitle
-            },50)
+            },10)
 
         },
         hideTalk:function(){
