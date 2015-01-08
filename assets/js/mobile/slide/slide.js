@@ -26,6 +26,11 @@
       e.preventDefault();
       var $active = $('.slide-active');
       if ($active.data('index') == maxItem) return null;
+      // 第六张跳过下一步
+      if ($active.attr('data-skip') === 'true') {
+        action.goto(8);
+        return;
+      }
       $active.removeClass().addClass('slide-top');
       $active.next().removeClass().addClass('slide-active');
       action.displayBtn();
@@ -242,7 +247,7 @@
                   year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                 .removeClass('hidden');
               $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
-                '</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
+                '%</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
                 '<p>然而汽车的耗损，</p>' + 
                 '<p class="mb10">也见证了幸福感的与日俱增</p>' +
                 '<p>怎能为那些难免的磕碰</p>' +
@@ -251,13 +256,14 @@
                 '<p class="mb10">忽视父母带给你无与伦比的关爱</p>' +
                 '<p>我来自山川湖海</p>' +
                 '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
-              $('#btn-link').html('<a class="btn btn-success">我!要!卖!车!</a>');
+              $('#jump-btn').html('举手之劳 传递亲情').attr('data-num', '0');
+              $('#btn-link').html('<a class="btn btn-success" href="' + contextPath + '/pages/mobile/index.html?tab=4">我!要!卖!车!</a>');
             }
 
             if (data.code == '300') {
               $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
                   .removeClass('hidden');
-              $('#btn-link').html('<a class="btn btn-failure">看看我的dream car</a>');
+              $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html?tab=2">看看我的dream car</a>');
             }
           }
         }

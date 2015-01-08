@@ -9,8 +9,7 @@ define(['index/car-god',
     "souche/util/image-resize",
     "souche/time-countdown",
     "index/mod/loadCars",
-    "lib/mustache",
-    "index/guess-like"
+    "lib/mustache"
 ], function(carGod,
             topNav,
             qiugou,
@@ -22,128 +21,127 @@ define(['index/car-god',
             ImageResize,
             TimeCountDown,
             loadCars,
-            Mustache,
-            GuessLike) {
+            Mustache) {
     var config = {};
     var myAdviserPageIndex = 1,
         hotNewCarsPageIndex = 0;
 
-    var _bind = function() {
-        var timeout = null;
-
-        var carTemplate = $("#carTemplate").html();
-        var adviser_end = false;
-        var newcar_end = false;
-        var getMore = function(id) {
-            $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
-            var self = this;
-            if ($(this).hasClass("myAdviser-more") || id == "myAdviser") {
-                if (adviser_end) return;
-                myAdviserPageIndex++;
-                var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
-                $(self).find("span").html("正在加载中...")
-                if (myAdviserPageIndex > 2) {
-                    $(".myAdviser-loading").removeClass("hidden")
-                }
-
-                $.ajax({
-                    url: url,
-                    type: "GET",
-                    dataType: "json"
-                }).done(function(result) {
-                    $(self).find("span").html("查看更多")
-                    $(".myAdviser-loading").addClass("hidden")
-                    $(".carsMore.myAdviser-more").remove();
-                    if (result.code == 204) {} else {
-                        var list = result.recommendCars;
-                        var list = result.recommendCars.items;
-                        var template = "";
-                        for (var idx = 0, len = list.length; idx < len; idx++) {
-                            list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                            list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
-                            template += Mustache.render(carTemplate,list[idx])
-                        }
-
-
-                        $(".myAdviserContent .myAdviser").eq(0).append(template);
-                        ImageResize.init($(".img",$(".myAdviserContent .myAdviser")), 240, 160);
-                        $(".myAdviserContent .myAdviser-more").remove();
-                        if (result.hasNext) {
-
-                        } else {
-                            adviser_end = true;
-                        }
-
-
-                    }
-                    isScrolling = true;
-                });
-            } else {
-                if (newcar_end) return;
-
-                hotNewCarsPageIndex++;
-                var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
-                $(self).find("span").html("正在加载中...")
-                if (hotNewCarsPageIndex > 2) {
-                    $(".hotNewCars-loading").removeClass("hidden")
-                }
-
-                $.ajax({
-                    url: url,
-                    type: "GET",
-                    dataType: "json"
-                }).done(function(result) {
-                    $(self).find("span").html("查看更多")
-                    $(".hotNewCars-loading").addClass("hidden")
-                    if(hotNewCarsPageIndex>1){
-                        $(".carsMore.hotNewCars-more").remove();
-                    }
-                    if (result.code == 204) {
-
-                    } else {
-                        var list = result.newCars.items;
-                        if (list.length == 0) {
-                            newcar_end = true;
-                        } else {
-                            var template = "";
-                            for (var idx = 0, len = list.length; idx < len; idx++) {
-                                list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
-                                list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
-                                template += Mustache.render(carTemplate,list[idx])
-                            }
-                            $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
-                            ImageResize.init($(".img",$(".hotNewCarsContent .hotNewCars")), 240, 160);
-
-                        }
-
-
-                    }
-                    isScrolling = true;
-                });
-            }
-        }
-
-        var isScrolling = true;
-        //查看更多
-        $(".carsMore").click(function() {
-            getMore.call(this);
-            var self = this;
-            $(window).scroll(function() {
-                if($("#hotNewCars").hasClass("active")||$("#myAdviser").hasClass("active")){
-                    if ($("." + $("#carsNav li.active").attr("id") + "Content .carsMore").length == 0) {
-                        if (($("#footer").offset().top - 600) <= ($(window).scrollTop() + $(window).height())) {
-                            if (isScrolling) {
-                                isScrolling = false;
-                                getMore($("#carsNav li.active").attr("id"));
-                            }
-                        }
-                    }
-                }
-
-            });
-        });
-        getMore("hotNewCars")
-    }
+//  var _bind = function() {
+//      var timeout = null;
+//
+//      var carTemplate = $("#carTemplate").html();
+//      var adviser_end = false;
+//      var newcar_end = false;
+//      var getMore = function(id) {
+//          $("." + $("#carsNav li.active").attr("id") + ".carsMore span").html("正在获取");
+//          var self = this;
+//          if ($(this).hasClass("myAdviser-more") || id == "myAdviser") {
+//              if (adviser_end) return;
+//              myAdviserPageIndex++;
+//              var url = config.getMoreUserRecommend_api + "=" + myAdviserPageIndex;
+//              $(self).find("span").html("正在加载中...")
+//              if (myAdviserPageIndex > 2) {
+//                  $(".myAdviser-loading").removeClass("hidden")
+//              }
+//
+//              $.ajax({
+//                  url: url,
+//                  type: "GET",
+//                  dataType: "json"
+//              }).done(function(result) {
+//                  $(self).find("span").html("查看更多")
+//                  $(".myAdviser-loading").addClass("hidden")
+//                  $(".carsMore.myAdviser-more").remove();
+//                  if (result.code == 204) {} else {
+//                      var list = result.recommendCars;
+//                      var list = result.recommendCars.items;
+//                      var template = "";
+//                      for (var idx = 0, len = list.length; idx < len; idx++) {
+//                          list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+//                          list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+//                          template += Mustache.render(carTemplate,list[idx])
+//                      }
+//
+//
+//                      $(".myAdviserContent .myAdviser").eq(0).append(template);
+//                      ImageResize.init($(".img",$(".myAdviserContent .myAdviser")), 240, 160);
+//                      $(".myAdviserContent .myAdviser-more").remove();
+//                      if (result.hasNext) {
+//
+//                      } else {
+//                          adviser_end = true;
+//                      }
+//
+//
+//                  }
+//                  isScrolling = true;
+//              });
+//          } else {
+//              if (newcar_end) return;
+//
+//              hotNewCarsPageIndex++;
+//              var url = config.getMoreHotCars_api + hotNewCarsPageIndex;
+//              $(self).find("span").html("正在加载中...")
+//              if (hotNewCarsPageIndex > 2) {
+//                  $(".hotNewCars-loading").removeClass("hidden")
+//              }
+//
+//              $.ajax({
+//                  url: url,
+//                  type: "GET",
+//                  dataType: "json"
+//              }).done(function(result) {
+//                  $(self).find("span").html("查看更多")
+//                  $(".hotNewCars-loading").addClass("hidden")
+//                  if(hotNewCarsPageIndex>1){
+//                      $(".carsMore.hotNewCars-more").remove();
+//                  }
+//                  if (result.code == 204) {
+//
+//                  } else {
+//                      var list = result.newCars.items;
+//                      if (list.length == 0) {
+//                          newcar_end = true;
+//                      } else {
+//                          var template = "";
+//                          for (var idx = 0, len = list.length; idx < len; idx++) {
+//                              list[idx].url = (contextPath + "/pages/choosecarpage/choose-car-detail.html?carId=" + list[idx].id);
+//                              list[idx].isZaishou = !!(list[idx].carVo.status == "zaishou")
+//                              template += Mustache.render(carTemplate,list[idx])
+//                          }
+//                          $(".hotNewCarsContent .hotNewCars").eq(0).append(template);
+//                          ImageResize.init($(".img",$(".hotNewCarsContent .hotNewCars")), 240, 160);
+//
+//                      }
+//
+//
+//                  }
+//                  isScrolling = true;
+//              });
+//          }
+//      }
+//
+//      var isScrolling = true;
+//      //查看更多
+//      $(".carsMore").click(function() {
+//          getMore.call(this);
+//          var self = this;
+//          $(window).scroll(function() {
+//              if($("#hotNewCars").hasClass("active")||$("#myAdviser").hasClass("active")){
+//                  if ($("." + $("#carsNav li.active").attr("id") + "Content .carsMore").length == 0) {
+//                      if (($("#footer").offset().top - 600) <= ($(window).scrollTop() + $(window).height())) {
+//                          if (isScrolling) {
+//                              isScrolling = false;
+//                              getMore($("#carsNav li.active").attr("id"));
+//                          }
+//                      }
+//                  }
+//              }
+//
+//          });
+//      });
+//      getMore("hotNewCars")
+//  }
 
 
     return {
@@ -189,7 +187,7 @@ define(['index/car-god',
                     $(".flexslider2 .flex-direction-nav").fadeOut("normal");
                 });
             });
-            _bind();
+//          _bind();
             topNav.init();
 
 
