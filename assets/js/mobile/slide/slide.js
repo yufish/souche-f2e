@@ -6,6 +6,12 @@
   var action = {
     moveTop: function() {
       if ($(this).data('index') == maxItem) return null;
+
+      // 第六张跳过下一步
+      if ($(this).attr('data-skip') === 'true') {
+        action.goto(8);
+        return;
+      }
       $(this).removeClass().addClass('slide-top');
       $(this).next().removeClass().addClass('slide-active');
       action.displayBtn();
@@ -42,34 +48,48 @@
       action.displayBtn();
     },
     goto: function(num) {
-      return function() {
-        var $currentItem = $('.slide-active');
-        var current = $currentItem.data('index');
-        if (current == num) return null;
-        $('[data-index]').eq(num - 1).removeClass().addClass('slide-active');
-        if (num < current) {
-          $currentItem.removeClass().addClass('slide-bottom');
-        } else {
-          $currentItem.removeClass().addClass('slide-top');
-        }
-        action.init(num - 1);
+      var $currentItem = $('.slide-active');
+      var current = $currentItem.data('index');
+      if (current == num) return null;
+      $('[data-index]').eq(num - 1).removeClass().addClass('slide-active');
+      action.init(num - 1);
+      if (num < current) {
+        $currentItem.removeClass().addClass('slide-bottom');
+      } else {
+        $currentItem.removeClass().addClass('slide-top');
       }
     }
   }
 
   $('#next').on('click', action.move);
 
-  $('.speaker').on('click', action.goto(7));
     
   $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop);
-
+    
   //- setTimeout(function() {
   //-   if (window.history && history.pushState) {
   //-     history.pushState(null, "", "slide?lan=en");
   //-   }
   //- }, 2000)
 
-  $('.speaker').on('click', function() {
+  $('#jump-btn').on('click', function(e) {
+    e.preventDefault();
+    var num = $(this).attr('data-num');
+    if (num === "0") {
+      $('#popup').html('').removeClass('hidden');
+      setTimeout(function() {
+        $('#popup').addClass('hidden');
+      }, 1000)
+    }
+    if (num === "1") {
+      action.goto(7);
+      $('.section-form').removeClass('hidden');
+      $('.section-result').addClass('hidden');
+    }
+  });
+
+  $('.speaker').on('click', function(e) {
+    e.preventDefault();
     var $audio = $('#audio');
     if ($audio.hasClass('playing')) {
       $audio.toggleClass('playing');
@@ -81,6 +101,7 @@
       $(this).addClass('playaround');
     }
   });
+
 
 })(jQuery, window);
 
@@ -198,16 +219,50 @@
         series: arr[1],
         model: $('#slide-model').text(),
         year: $('#slide-time').val(),
-        mile: $('#slide-mile').val(),
-        brand_code: $('#slide-brand').attr('data-brand'),
-        series_code: $('#slide-brand').attr('data-series'),
-        model_code: $('#slide-model').attr('data-code')
+        mileage: $('#slide-mile').val()
+        // openId: "mizhengdi"
+        // brand_code: $('#slide-brand').attr('data-brand'),
+        // series_code: $('#slide-brand').attr('data-series'),
+        // model_code: $('#slide-model').attr('data-code')
       }
 
-      $('.section-form').addClass('hidden');
-      // $.getJSON
-      $('.section-result').html('<div class="text diff"><p class="mb10">我拥有了自己的奥迪A4L</p><p>8万公里的车轮印迹 </p><p>也见证了4年来 </p><p>汽车带来的幸福记忆… </p></div>')
-        .removeClass('hidden');
+      $.ajax({
+        url: contextPath + '/pages/acts/mobile/warmDiffuseAction/evaluate.json',
+        data: obj,
+        // dataType: json,
+        success: function(data) {
+          data = JSON.parse(data);
+          if (data) {
+            if (data.code == '200') {
+              var car = data.operateUserInfo;
+              $('.section-form').addClass('hidden');
+              var year = new Date().getFullYear() - car.regDate;
+              $('.section-result').html('<div class="text diff"><p class="mb10">我拥有了自己的' +
+                  car.brand + ' ' + car.series + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
+                  year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
+                .removeClass('hidden');
+              $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
+                '</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
+                '<p>然而汽车的耗损，</p>' + 
+                '<p class="mb10">也见证了幸福感的与日俱增</p>' +
+                '<p>怎能为那些难免的磕碰</p>' +
+                '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p>' +
+                '<p>怎能因那些难免的争吵</p>' +
+                '<p class="mb10">忽视父母带给你无与伦比的关爱</p>' +
+                '<p>我来自山川湖海</p>' +
+                '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
+              $('#btn-link').html('<a class="btn btn-success">我!要!卖!车!</a>');
+            }
+
+            if (data.code == '300') {
+              $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
+                  .removeClass('hidden');
+              $('#btn-link').html('<a class="btn btn-failure">看看我的dream car</a>');
+            }
+          }
+        }
+      })
+
     })
 
     $(document).on('click', '#slide-back', function() {

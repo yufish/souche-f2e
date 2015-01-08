@@ -122,33 +122,33 @@ html, body {
       }
     }
 
-    &[data-index='1'] {
+    // &[data-index='1'] {
       
-    }
+    // }
 
-    &[data-index='2'] {
-    }
+    // &[data-index='2'] {
+    // }
 
-    &[data-index='3'] {
-    }
+    // &[data-index='3'] {
+    // }
 
-    &[data-index='4'] {
-    }
+    // &[data-index='4'] {
+    // }
 
-    &[data-index='5'] {
-    }
+    // &[data-index='5'] {
+    // }
 
-    &[data-index='6'] {
-    }
+    // &[data-index='6'] {
+    // }
 
-    &[data-index='7'] {
-    }
+    // &[data-index='7'] {
+    // }
 
-    &[data-index='8'] {
-    }
+    // &[data-index='8'] {
+    // }
 
-    &[data-index='9'] {
-    }
+    // &[data-index='9'] {
+    // }
 
     &.slide-t {
       .transform(translate3d(0, -100%, 0));
@@ -209,20 +209,24 @@ html, body {
       left: 0;
       right: 0;
       bottom: 0;
+      top: 0;
       z-index: -1;
-      height: auto;
+      overflow: hidden;
 
       img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
+        margin: 0 auto;
+        display: block;
       }
     }
   }
 }
 
 .speaker {
+  display: block;
   position: absolute;
-  top: 30px;
+  top: 15px;
   right: 15px;
   width: 30px;
   height: 30px;
@@ -279,6 +283,7 @@ html, body {
       margin: 0 10px;
       display: inline-block;
       width: 115px;
+      color: #949494;
     }
 
     label, span {

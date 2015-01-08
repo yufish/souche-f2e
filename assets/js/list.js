@@ -70,6 +70,11 @@ Souche.Inside = (function() {
             threshold: 250
 
         });
+        $(".car-random img").lazyload({
+            effect: "fadeIn",
+            threshold: 250
+
+        });
         $(".recommend img").lazyload({
             effect: "fadeIn",
             threshold: 250
