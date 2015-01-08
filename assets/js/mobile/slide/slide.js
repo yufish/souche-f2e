@@ -257,13 +257,13 @@
                 '<p>我来自山川湖海</p>' +
                 '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
               $('#jump-btn').html('举手之劳 传递亲情').attr('data-num', '0');
-              $('#btn-link').html('<a class="btn btn-success" href="/pages/mobile/index.html?tab=4">我!要!卖!车!</a>');
+              $('#btn-link').html('<a class="btn btn-success" href="' + contextPath + '/pages/mobile/index.html?tab=4">我!要!卖!车!</a>');
             }
 
             if (data.code == '300') {
               $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
                   .removeClass('hidden');
-              $('#btn-link').html('<a class="btn btn-failure" href="/pages/mobile/index.html?tab=2">看看我的dream car</a>');
+              $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html?tab=2">看看我的dream car</a>');
             }
           }
         }
