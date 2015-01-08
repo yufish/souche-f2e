@@ -235,10 +235,21 @@
             if (data.code == '200') {
               var car = data.operateUserInfo;
               $('.section-form').addClass('hidden');
+              var year = new Date().getFullYear() - car.regDate;
               $('.section-result').html('<div class="text diff"><p class="mb10">我拥有了自己的' +
                   car.brand + ' ' + car.series + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
-                  car.regDate + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
+                  year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                 .removeClass('hidden');
+              $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
+                '</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
+                '<p>然而汽车的耗损，</p>' + 
+                '<p class="mb10">也见证了幸福感的与日俱增</p>' +
+                '<p>怎能为那些难免的磕碰</p>' +
+                '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p>' +
+                '<p>怎能因那些难免的争吵</p>' +
+                '<p class="mb10">忽视父母带给你无与伦比的关爱</p>' +
+                '<p>我来自山川湖海</p>' +
+                '<p>唯有家庭与爱不可辜负</p>')
               $('#btn-link').html('<a class="btn btn-success">我!要!卖!车!</a>');
             }
 
