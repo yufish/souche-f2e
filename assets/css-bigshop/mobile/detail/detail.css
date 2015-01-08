@@ -1122,7 +1122,9 @@ float:left;
     background-color: #000;
     top: 0;left: 0;
     width:100%;
-    height: 50px;
+    height: 65px;
+    display: block;
+    position: fixed;
 }
 .big-picture img {
     background: url(../../../images/mob/ajax-loader-black.gif) black no-repeat center 80px;
