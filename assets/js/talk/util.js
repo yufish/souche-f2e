@@ -159,6 +159,7 @@ define(function(){
                     },
                     success:function(data){
                         data.item.ID = carId;
+                        data.item.carShortName = data.item.model;
                         data.item.price = data.price*10000;
                         callback(data.item)
                     }

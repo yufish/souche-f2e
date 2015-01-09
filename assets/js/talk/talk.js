@@ -120,7 +120,10 @@ define([
                     }
                     //如果默认指定了一个url，则发送此url
                     if(config.url){
-                        self._send(config.url)
+                        setTimeout(function(){
+                            self._send(config.url)
+                        },500)
+
                     }
                     SoucheIMRender.renderContacts();
                     SoucheIMRender.renderChat();
