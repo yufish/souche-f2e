@@ -174,7 +174,9 @@ define([
                     $("#talking-text").focus();
                     return
                 }
-
+                if(!SoucheIMData.now_chat_userid){
+                   alert("请先选择一个联系人")
+                }
                 $("#talking-text").val("")
 
                 var msg = {
