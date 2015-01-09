@@ -4,13 +4,6 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
-  //- setTimeout(function() {
-  //-   if (window.history && history.pushState) {
-  //-     history.pushState(null, "", "slide?lan=en");
-  //-   }
-  //- }, 2000)
-  //
-  
   // 简单的滑块实现
   ;(function($, window) {
 
@@ -302,6 +295,10 @@ $(function() {
   //   document.addEventListener( 'touchstart', stopScrolling, false );  
   //   document.addEventListener( 'touchmove', stopScrolling, false );  
   // })();
-
+  
+  // 改掉url地址
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  }
 
 })
