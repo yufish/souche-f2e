@@ -254,6 +254,7 @@
     color:#999;
     float: right;
     line-height: 22px;
+    letter-spacing:-1px;
 }
 .car-card .car-price{
     font-size: 14px;
@@ -261,6 +262,7 @@
     color:#ff571a;
     line-height: 22px;
     margin-bottom: 3px;
+    letter-spacing:-1px;
 }
 .car-card .car-footer{
     clear: both;
