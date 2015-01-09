@@ -3,72 +3,6 @@ Souche.Sidebar = (function() {
     var siderbarShow = false;
 
     $(document).ready(function() {
-      
-        var lessThenIE8 = function () {
-            if($.browser.msie){
-              if($.browser.version <= 8.0){
-                return true;
-              }
-                return false;
-                }else{
-                  return false;
-                }
-            }();
-        
-    if(lessThenIE8){
-           $(".sidebar").css({height:"254px"});
-           $(".talkside ,#talk-list").remove();
-
-            $(".toolbar-close").on("click",function(e) {
-                e.stopPropagation();
-                $("#toolbar").animate({
-                    width: 52,
-                    height: 254
-                }, 500, function() {
-
-                })
-                $("#toolbar").removeClass("sidebar-active")
-                siderbarShow = false;
-            });
-
-            $(document.body).click(function() {
-                if (siderbarShow) {
-                    $("#toolbar").animate({
-                        width: 52,
-                        height: 254
-                    }, 500, function() {
-
-                    })
-                    $("#toolbar").removeClass("sidebar-active")
-                    siderbarShow = false;
-                }
-
-            });
-        }else{
-             $(".toolbar-close").click(function() {
-                $("#toolbar").animate({
-                    width: 52,
-                    height: 309
-                }, 500, function() {
-
-                })
-                $("#toolbar").removeClass("sidebar-active")
-                siderbarShow = false;
-            });
-            $(document.body).click(function() {
-                if (siderbarShow) {
-                    $("#toolbar").animate({
-                        width: 52,
-                        height: 309
-                    }, 500, function() {
-
-                    })
-                    $("#toolbar").removeClass("sidebar-active")
-                    siderbarShow = false;
-                }
-            });
-        };
-
         $("#talk_with").on("click",function(e){
             var uid = $(this).attr("data-userid");
             if(Math.random()>0.5){
@@ -123,7 +57,29 @@ Souche.Sidebar = (function() {
         }).mouseleave(function() {
             $(".sidebar").removeClass("active")
         });
-      
+        $(".toolbar-close").click(function() {
+            $("#toolbar").animate({
+                width: 52,
+                height: 309
+            }, 500, function() {
+
+            })
+            $("#toolbar").removeClass("sidebar-active")
+            siderbarShow = false;
+        });
+        $(document.body).click(function() {
+            if (siderbarShow) {
+                $("#toolbar").animate({
+                    width: 52,
+                    height: 309
+                }, 500, function() {
+
+                })
+                $("#toolbar").removeClass("sidebar-active")
+                siderbarShow = false;
+            }
+
+        });
         $("#noreg-popup").on("click", function(e) {
             e.stopPropagation();
         })
