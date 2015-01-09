@@ -13,7 +13,7 @@ Souche.Sidebar = (function() {
                 }else{
                   return false;
                 }
-            }();
+        }();
         
     if(lessThenIE8){
            $(".sidebar").css({height:"254px"});
