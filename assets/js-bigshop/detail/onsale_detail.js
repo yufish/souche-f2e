@@ -82,7 +82,8 @@
                     carId: config.carId,
                     crmUserId: $.cookie("crmUserId"),
                         siteId:$.cookie("siteId"),
-                    shopId:$.cookie("shopId")
+                    shopId:$.cookie("shopId"),
+                    platform : 'PLATFORM_WEB'
                 },
                 dataType:"jsonp",
                 type: "post",

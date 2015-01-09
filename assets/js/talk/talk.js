@@ -120,7 +120,10 @@ define([
                     }
                     //如果默认指定了一个url，则发送此url
                     if(config.url){
-                        self._send(config.url)
+                        setTimeout(function(){
+                            self._send(config.url)
+                        },500)
+
                     }
                     SoucheIMRender.renderContacts();
                     SoucheIMRender.renderChat();
@@ -213,7 +216,7 @@ define([
                     var lastDumpTime = souchedb.get("souche_talk_messages_time_"+config.user_id+"_to_"+SoucheIMData.now_chat_userid);
                     var loadFromLocal = false;
                     if(lastDumpTime){
-                        if(new Date().getTime() - lastDumpTime*1<1000*60){
+                        if(new Date().getTime() - lastDumpTime*1<3000){
                             loadFromLocal = true;
                         }else{
 

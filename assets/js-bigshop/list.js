@@ -225,6 +225,7 @@ Souche.Inside = (function() {
                         crmUserId: $.cookie("crmUserId"),
                         siteId:$.cookie("siteId"),
                         shopId:$.cookie("shopId"),
+                        platform : 'PLATFORM_WEB',
                         carId: fav_carId //$(self).attr("data-carid")
                     },
                     dataType: "jsonp",

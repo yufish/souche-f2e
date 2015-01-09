@@ -62,7 +62,8 @@ var Action = (function () {
                     data:{
                         type:globalConfig.yuyue_type,
                         crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
-                        siteId:$.cookie("siteId")
+                        siteId:$.cookie("siteId"),
+                        platform : 'PLATFORM_H5'
                     },
                     dataType:'jsonp',
                     success:function(e){
@@ -141,6 +142,7 @@ var Action = (function () {
                         carId: carId,
                         crmUserId: $.cookie("crmUserId"),shopId:$.cookie("shopId"),
                         siteId:$.cookie("siteId")
+
                     },
                     success: function () {
                         $(".detail-fav .fav-text").html("已收藏")

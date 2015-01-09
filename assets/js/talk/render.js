@@ -65,7 +65,7 @@ define(['talk/util','talk/data'],function(SoucheIMUtil,SoucheIMData){
                                     '<div class="car-box clearfix"><a class="car-img clearfix" target="_blank" href="http://www.souche.com/pages/mobile/detail.html?carId='+carInfo.ID+'"><img src="'+carInfo.pictures+'"></a>'+
                                     '<div class="car-info">'+
                                     '<div class="car-title"><a target="_blank" href="http://www.souche.com/pages/mobile/detail.html?carId='+carInfo.ID+'">'+carInfo.model+'</a></div>'+
-                                    '<div class="car-price"><span>价格：</span><em>￥'+carInfo.price+'万</em></div>'+
+                                    '<div class="car-price"><span>价格：</span><em>￥'+(carInfo.price/10000).toFixed(2)+'万</em></div>'+
                                     '<div class="car-time"><span>上牌：</span><span>'+carInfo.registerDate+'</span></div>'+
                                     '<div class="car-area"><span>所属地：</span><span>'+carInfo.area+'</span></div>'+
                                     '</div>'+

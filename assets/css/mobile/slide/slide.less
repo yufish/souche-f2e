@@ -25,8 +25,6 @@ html, body {
 
 .rotate(@deg) {
   -webkit-transform: rotate(@deg); /* Safari 和 Chrome */
-     -moz-transform: rotate(@deg);  /* Firefox */
-      -ms-transform: rotate(@deg);   /* IE 9 */
           transform: rotate(@deg);
 }
 
@@ -44,6 +42,11 @@ html, body {
 .animation(@vaule) {
   -webkit-animation: @value;
           animation: @value;
+}
+
+.backface-visibility(@visibility) {
+  -webkit-backface-visibility: @visibility;
+          backface-visibility: @visibility;
 }
 
 @-webkit-keyframes disccircle {
@@ -73,11 +76,46 @@ html, body {
    }
 }
 
+@-webkit-keyframes swipeMove {
+    form {
+      .transform(translate3d(0,0,0));
+    }
+    50% {
+      .transform(translate3d(0,-10px,0));
+    }
+    to {
+      .transform(translate3d(0,0,0));
+    }
+}
+
+@-moz-keyframes swipeMove {
+    form {
+      .transform(translate3d(0,0,0));
+    }
+    50% {
+      .transform(translate3d(0,-10px,0));
+    }
+    to {
+      .transform(translate3d(0,0,0));
+    }
+}
+
+@keyframes swipeMove {
+   form {
+     .transform(translate3d(0,0,0));
+   }
+   50% {
+     .transform(translate3d(0,-10px,0));
+   }
+   to {
+     .transform(translate3d(0,0,0));
+   }
+}
 
 // extend
 .trans-base {
-  .transition(transform .3s cubic-bezier(0.42, 0, 0.58, 1.0));
-  .transition(-webkit-transform .3s cubic-bezier(0.42, 0, 0.58, 1.0));
+  .transition(transform .4s ease-in-out);
+  .transition(-webkit-transform .4s ease-in-out);
 }
 
 #slide {
@@ -85,6 +123,68 @@ html, body {
   height: 100%;
   overflow: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 组合动画
+.step1,
+.step2,
+.step5 {
+  width: 100%;
+  position: absolute;
+  .transform(translate3d(0,30px,0));
+  .opacity(0);
+  .backface-visibility(hidden);
+}
+
+.step1 {
+  top: 44px;
+  left: 0;
+}
+
+.step2 {
+  top: 160px;
+  left: 0;
+}
+
+.step3, .step4 {
+  .opacity(0);
+}
+
+.bounce-in {
+
+  .step1 {
+    .transition(all .5s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+  .step2 {
+    .transition(all 1s .5s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+  .step3 {
+    .transition(opacity 1.5s linear);
+    .opacity(1);
+  }
+
+  .step4 {
+    .transition(opacity 1.5s .5s linear);
+    .opacity(1);
+  }
+
+  .step5 {
+    .transition(all 1s 1s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+}
+
+.animate.bounce-in .step1 {
+  .transition(all 1s linear);
 }
 
 #content {
@@ -192,6 +292,10 @@ html, body {
         font-size: 28px;
       }
 
+      i {
+        font-style: normal;
+      }
+
       &.mb10 {
         margin-bottom: 15px;
       }
@@ -251,6 +355,15 @@ html, body {
   height: 20px;
   background: url(../../../images/mob/slide/next.png) no-repeat;
   background-size: 100%;
+  .backface-visibility(hidden);
+  -webkit-animation: swipeMove 1.5s linear infinite;
+          animation: swipeMove 1.5s linear infinite;
+  .opacity(0);
+}
+
+#next.next-bounce-in {
+  .transition(opacity 1s 1.5s linear);
+  .opacity(1);
 }
 
 #slide-form {
@@ -357,9 +470,26 @@ html, body {
 
 #btn-link {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
+}
 
+.share {
+  position: absolute;
+  background: url(../../../images/mob/slide/share.png);
+  width: 239px;
+  height: 96px;
+  -webkit-background-size: 239px 96px;
+  background-size: 239px 96px;
+  top: 10px;
+  right: 26px;
+}
+
+#jump-btn {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  .transform(translate(-50%, 0));
 }
