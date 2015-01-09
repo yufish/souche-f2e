@@ -250,7 +250,7 @@ $(function() {
                 $('.section-form').addClass('hidden');
                 var year = new Date().getFullYear() - car.regDate;
                 $('.section-result').html('<div class="text diff"><p class="mb10">我拥有了自己的' +
-                    car.brand + ' ' + car.series + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
+                    car.carShowName + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
                     year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                   .removeClass('hidden');
                 $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
