@@ -10,7 +10,9 @@ $(function() {
     var maxItem = $('[data-index]').length;
 
     var action = {
-      moveTop: function() {
+      moveTop: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         if ($(this).data('index') == maxItem) return null;
 
         // 第六张跳过下一步
@@ -23,7 +25,9 @@ $(function() {
         $('.animation' + ($(this).data('index') + 1)).addClass('bounce-in');
         action.displayBtn();
       },
-      moveDown: function() {
+      moveDown: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         if ($(this).data('index') == 1) return null;
         $(this).removeClass().addClass('slide-bottom');
         $(this).prev().removeClass().addClass('slide-active');
@@ -31,6 +35,7 @@ $(function() {
       },
       move: function(e) {
         e.preventDefault();
+        e.stopPropagation();
         var $active = $('.slide-active');
         if ($active.data('index') == maxItem) return null;
         // 第六张跳过下一步
@@ -77,13 +82,7 @@ $(function() {
 
     $('#next').on('click', action.move);
       
-    $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop);
-      
-    //- setTimeout(function() {
-    //-   if (window.history && history.pushState) {
-    //-     history.pushState(null, "", "slide?lan=en");
-    //-   }
-    //- }, 2000)
+    $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop); 
 
     $('#jump-btn').on('click', function(e) {
       e.preventDefault();
@@ -92,7 +91,7 @@ $(function() {
         $('#popup').html('<div class="share"></div>').removeClass('hidden');
         setTimeout(function() {
           $('#popup').addClass('hidden');
-        }, 1000)
+        }, 2000)
       }
       if (num === "1") {
         action.goto(7);
@@ -172,7 +171,7 @@ $(function() {
 
       // 年月
       function createDate(y) {
-        var n = new Date().getFullYear();
+        var n = new Date().getFullYear() - 1;
         var $form = $('#slide-form');
         var $year = $form.find('#slide-time');
         var year = '';
@@ -265,6 +264,7 @@ $(function() {
                   '<p>我来自山川湖海</p>' +
                   '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
                 $('#form-result-sec').addClass('hidden');
+                $('#operateCarText').text('卖');
                 $('#jump-btn').html('举手之劳 传递亲情').attr('data-num', '0');
                 $('#btn-link').html('<a class="btn btn-success" href="' + contextPath + '/pages/mobile/index.html?tab=4">我!要!卖!车!</a>');
               }
@@ -272,7 +272,7 @@ $(function() {
               if (data.code == '300') {
                 $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
                     .removeClass('hidden');
-                $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html?tab=2">看看我的dream car</a>');
+                $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html">看看我的dream car</a>');
               }
             }
           }
@@ -287,5 +287,18 @@ $(function() {
     });
 
   })();
+
+  // (function() {
+  //   function stopScrolling( touchEvent ) {   
+  //       touchEvent.preventDefault();   
+  //   }  
+  //   document.addEventListener( 'touchstart', stopScrolling, false );  
+  //   document.addEventListener( 'touchmove', stopScrolling, false );  
+  // })();
+  
+  // 改掉url地址
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  }
 
 })

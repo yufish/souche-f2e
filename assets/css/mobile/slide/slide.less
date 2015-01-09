@@ -114,8 +114,8 @@ html, body {
 
 // extend
 .trans-base {
-  .transition(transform .3s cubic-bezier(0.42, 0, 0.58, 1.0));
-  .transition(-webkit-transform .3s cubic-bezier(0.42, 0, 0.58, 1.0));
+  .transition(transform .4s ease-in-out);
+  .transition(-webkit-transform .4s ease-in-out);
 }
 
 #slide {
@@ -123,6 +123,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 // 组合动画
@@ -291,6 +292,10 @@ html, body {
         font-size: 28px;
       }
 
+      i {
+        font-style: normal;
+      }
+
       &.mb10 {
         margin-bottom: 15px;
       }
@@ -367,6 +372,10 @@ html, body {
   display: block;
   color: #949494;
   font-size: 14px;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  margin-left: -120px;
 
   .form-control {
     margin-bottom: 10px;
