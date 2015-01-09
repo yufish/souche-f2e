@@ -1,7 +1,7 @@
 $(function() {
 
   // 动画
-  $('#animation').addClass('bounce-in');
+  $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
   // 简单的滑块实现
@@ -20,6 +20,7 @@ $(function() {
         }
         $(this).removeClass().addClass('slide-top');
         $(this).next().removeClass().addClass('slide-active');
+        $('.animation' + ($(this).data('index') + 1)).addClass('bounce-in');
         action.displayBtn();
       },
       moveDown: function() {
@@ -39,6 +40,7 @@ $(function() {
         }
         $active.removeClass().addClass('slide-top');
         $active.next().removeClass().addClass('slide-active');
+        $('.animation' + ($active.data('index') + 1)).addClass('bounce-in');
         action.displayBtn();
       },
       displayBtn: function() {
@@ -69,6 +71,7 @@ $(function() {
         } else {
           $currentItem.removeClass().addClass('slide-top');
         }
+        $('.animation' + num).addClass('bounce-in');
       }
     }
 
