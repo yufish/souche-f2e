@@ -137,20 +137,20 @@ define(function(){
              * @param callback
              */
             getCarInfo:function(carId,callback){
-//                var carInfo  = {
-//                    ownerId:"18667932551",
-//                    brand:"本田",
-//                    carShortName:"2013款  歌诗图3.5-A\\/MT尊贵版京Ⅴ",
-//                    registerDate:"2014-01-01",
-//                    ID:"Kgs2WusYyg",
-//                    crawlSource:"0",
-//                    emissions:"国五",
-//                    price:"230000",
-//                    model:"2013款  歌诗图3.5-A\\/MT尊贵版京Ⅴ",
-//                    series:"歌诗图",
-//                    area:"北京 北京",
-//                    pictures:"http:\\/\\/cheniu.u.qiniudn.com\\/18667932551\\/9BFD626B6F6AE1A243D53EE1627FF69D\\/20141225162241"
-//                }
+                var carInfo  = {
+                    ownerId:"18667932551",
+                    brand:"本田",
+                    carShortName:"2013款  歌诗图3.5-A\\/MT尊贵版京Ⅴ",
+                    registerDate:"2014-01-01",
+                    ID:"Kgs2WusYyg",
+                    crawlSource:"0",
+                    emissions:"国五",
+                    price:"230000",
+                    model:"2013款  歌诗图3.5-A\\/MT尊贵版京Ⅴ",
+                    series:"歌诗图",
+                    area:"北京 北京",
+                    pictures:"http:\\/\\/cheniu.u.qiniudn.com\\/18667932551\\/9BFD626B6F6AE1A243D53EE1627FF69D\\/20141225162241"
+                }
                 $.ajax({
                     url:contextPath+"/pages/carAction/getCar.json",
                     dataType:"json",
@@ -158,6 +158,9 @@ define(function(){
                         carId:carId
                     },
                     success:function(data){
+                        data.item.ID = carId;
+                        data.item.carShortName = data.item.model;
+                        data.item.price = data.price*10000;
                         callback(data.item)
                     }
                 })

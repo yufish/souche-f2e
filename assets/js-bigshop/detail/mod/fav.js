@@ -9,7 +9,8 @@ define(function() {
                 crmUserId: $.cookie("crmUserId"),
                 siteId:$.cookie("siteId"),
                 carId: config.carId,
-                shopId:$.cookie("shopId")
+                shopId:$.cookie("shopId"),
+                platform : 'PLATFORM_WEB'
             },
             dataType: "jsonp",
             type: "post",
