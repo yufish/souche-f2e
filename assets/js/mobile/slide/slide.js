@@ -253,16 +253,16 @@ $(function() {
                     car.carShowName + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
                     year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                   .removeClass('hidden');
-                $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
+                $('#form-result').html('<div class="a8-text1"><p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
                   '%</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
                   '<p>然而汽车的耗损，</p>' + 
-                  '<p class="mb10">也见证了幸福感的与日俱增</p>' +
-                  '<p>怎能为那些难免的磕碰</p>' +
-                  '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p>' +
-                  '<p>怎能因那些难免的争吵</p>' +
-                  '<p class="mb10">忽视父母带给你无与伦比的关爱</p>' +
-                  '<p>我来自山川湖海</p>' +
-                  '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
+                  '<p class="mb10">也见证了幸福感的与日俱增</p></div>' +
+                  '<div class="a8-text2"><p>怎能为那些难免的磕碰</p>' +
+                  '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p></div>' +
+                  '<div class="a8-text3"><p>怎能因那些难免的争吵</p>' +
+                  '<p class="mb10">忽视父母带给你无与伦比的关爱</p></div>' +
+                  '<div class="a8-text4"><p>我来自山川湖海</p>' +
+                  '<p>唯有家庭与爱不可辜负</p></div>').removeClass('hidden');
                 $('#form-result-sec').addClass('hidden');
                 $('#operateCarText').text('卖');
                 $('#jump-btn').html('举手之劳 传递亲情').attr('data-num', '0');

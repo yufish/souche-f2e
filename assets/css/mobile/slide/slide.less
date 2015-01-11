@@ -112,6 +112,11 @@ html, body {
    }
 }
 
+.hidden-pic {
+  position: absolute;
+  top: -350px;
+}
+
 // extend
 .trans-base {
   .transition(transform .4s ease-in-out);
@@ -186,6 +191,61 @@ html, body {
 .animate.bounce-in .step1 {
   .transition(all 1s linear);
 }
+
+// 第八步动画
+.a8-text1,
+.a8-text2,
+.a8-text3,
+.a8-text4 {
+  width: 100%;
+  position: absolute;
+  .transform(translate3d(0,30px,0));
+  .opacity(0);
+  .backface-visibility(hidden);
+}
+
+.a8-text1 {
+  top: 44px;
+}
+
+.a8-text2 {
+  top: 82px;
+}
+
+.a8-text3 {
+  top: 120px;
+}
+
+.a8-text4 {
+  top: 158px;
+}
+
+.bounce-in {
+  .a8-text1 {
+    .transition(all .6s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+  .a8-text2 {
+    .transition(all .6s .8s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+  .a8-text3 {
+    .transition(all .6s 1.2s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+
+  .a8-text4 {
+    .transition(all .6s 1.5s linear);
+    .transform(translate3d(0,0,0));
+    .opacity(1);
+  }
+}
+
 
 #content {
   position: absolute;
@@ -329,10 +389,10 @@ html, body {
 .speaker {
   display: block;
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
   z-index: 9999;
   background: url(../../../images/mob/slide/speaker.png) no-repeat;
   background-size: 100%;
