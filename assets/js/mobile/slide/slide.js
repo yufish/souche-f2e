@@ -4,17 +4,14 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
-  function changeUrl() {
-    if (window.history && history.pushState) {
-      history.pushState(null, "", contextPath + $('#shareUrl').val());
-    }
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
   }
-
-  setTimeout(changeUrl, 100);
 
   function stopScrolling( touchEvent ) {  
       touchEvent.preventDefault();   
   }  
+
 
   // document.addEventListener( 'touchstart', stopScrolling, false ); 
   document.addEventListener( 'touchmove', stopScrolling, false );  
