@@ -94,6 +94,8 @@ $(function() {
     }
 
     $('#next').on('click', action.move);
+
+    $('#diff-link').on('click', function(){ action.goto(8) });
       
     $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop); 
 
