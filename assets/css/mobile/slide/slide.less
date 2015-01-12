@@ -114,7 +114,8 @@ html, body {
 
 .hidden-pic {
   position: absolute;
-  top: -350px;
+  top: -100%;
+  left: -100%;
 }
 
 // extend
@@ -218,6 +219,19 @@ html, body {
 
 .a8-text4 {
   top: 158px;
+}
+
+#form-result {
+  .a8-text2 {
+    top: 170px;
+  }
+  .a8-text3 {
+    top: 220px;
+  }
+
+  .a8-text4 {
+    top: 260px;
+  }
 }
 
 .bounce-in {
@@ -367,6 +381,20 @@ html, body {
       right: 0;
     }
 
+    .bg-cover-8 {
+
+      img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: auot;
+        max-width: 100%;
+        height: auto;
+        z-index: -1;
+      }
+    }
+
     .bg {
       position: absolute;
       left: 0;
@@ -375,6 +403,16 @@ html, body {
       top: 0;
       z-index: -1;
       overflow: hidden;
+
+      &.bg-cover-8 {
+        // background: url(../../../images/mob/slide/s8.png) bottom center no-repeat;
+        // background-size: 100%;
+      }
+
+      &.bg-cover-9 {
+        background: url(../../../images/mob/slide/s9.png) bottom center no-repeat;
+        background-size: 100%;
+      }
 
       img {
         max-width: 100%;
@@ -539,6 +577,16 @@ html, body {
     transform: translate(-50%, 0);
 }
 
+.section-img {
+  position: absolute;
+  width: 100%;
+  bottom: 32%;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .share {
   position: absolute;
   background: url(../../../images/mob/slide/share.png);
@@ -552,7 +600,7 @@ html, body {
 
 #jump-btn {
   position: absolute;
-  bottom: 25%;
+  bottom: 33%;
   left: 50%;
   .transform(translate(-50%, 0));
 }

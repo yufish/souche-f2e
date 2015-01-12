@@ -4,6 +4,19 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  }
+
+  function stopScrolling( touchEvent ) {  
+      touchEvent.preventDefault();   
+  }  
+
+
+  // document.addEventListener( 'touchstart', stopScrolling, false ); 
+  document.addEventListener( 'touchmove', stopScrolling, false );  
+
+
   // 简单的滑块实现
   ;(function($, window) {
 
@@ -97,6 +110,7 @@ $(function() {
         action.goto(7);
         $('.section-form').removeClass('hidden');
         $('.section-result').addClass('hidden');
+        $(this).attr('data-num', '0').html('举手之劳 传递亲情');
       }
     });
 
@@ -124,6 +138,7 @@ $(function() {
     
       $('#slide-brand').on('click', function() {
         $('#brand').removeClass('hidden');
+        document.removeEventListener( 'touchmove', stopScrolling, false ); 
         Brand.init();
 
         function brandInfo(b, bn, s, sn) {
@@ -188,9 +203,11 @@ $(function() {
       $('#slide-model').on('click', function() {
         if ($(this).hasClass('no-active')) return;
         $('#car-models').removeClass('hidden');
+        document.removeEventListener( 'touchmove', stopScrolling, false );
 
         $('#car-models').on('click', '.item li', function() {
             if ($(this).hasClass('no-active')) return;
+            document.addEventListener( 'touchmove', stopScrolling, false );
             $('#car-models .item li').removeClass('active');
             $(this).addClass('active');
             $('#slide-model').attr('data-code', $(this).attr('data-code'));
@@ -288,17 +305,5 @@ $(function() {
 
   })();
 
-  // (function() {
-  //   function stopScrolling( touchEvent ) {   
-  //       touchEvent.preventDefault();   
-  //   }  
-  //   document.addEventListener( 'touchstart', stopScrolling, false );  
-  //   document.addEventListener( 'touchmove', stopScrolling, false );  
-  // })();
-  
-  // 改掉url地址
-  if (window.history && history.pushState) {
-    history.pushState(null, "", contextPath + $('#shareUrl').val());
-  }
 
 })
