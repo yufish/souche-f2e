@@ -114,7 +114,8 @@ html, body {
 
 .hidden-pic {
   position: absolute;
-  top: -350px;
+  top: -100%;
+  left: -100%;
 }
 
 // extend
@@ -218,6 +219,19 @@ html, body {
 
 .a8-text4 {
   top: 158px;
+}
+
+#form-result {
+  .a8-text2 {
+    top: 170px;
+  }
+  .a8-text3 {
+    top: 220px;
+  }
+
+  .a8-text4 {
+    top: 260px;
+  }
 }
 
 .bounce-in {
@@ -375,6 +389,16 @@ html, body {
       top: 0;
       z-index: -1;
       overflow: hidden;
+
+      &.bg-cover-8 {
+        background: url(../../../images/mob/slide/s8.png) bottom center no-repeat;
+        background-size: 100%;
+      }
+
+      &.bg-cover-9 {
+        background: url(../../../images/mob/slide/s9.png) bottom center no-repeat;
+        background-size: 100%;
+      }
 
       img {
         max-width: 100%;

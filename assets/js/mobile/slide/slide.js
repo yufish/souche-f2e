@@ -4,6 +4,18 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  }
+
+  (function() {
+    function stopScrolling( touchEvent ) {   
+        touchEvent.preventDefault();   
+    }  
+    // document.addEventListener( 'touchstart', stopScrolling, false );  
+    document.addEventListener( 'touchmove', stopScrolling, false );  
+  })();
+
   // 简单的滑块实现
   ;(function($, window) {
 
@@ -288,17 +300,5 @@ $(function() {
 
   })();
 
-  // (function() {
-  //   function stopScrolling( touchEvent ) {   
-  //       touchEvent.preventDefault();   
-  //   }  
-  //   document.addEventListener( 'touchstart', stopScrolling, false );  
-  //   document.addEventListener( 'touchmove', stopScrolling, false );  
-  // })();
-  
-  // 改掉url地址
-  if (window.history && history.pushState) {
-    history.pushState(null, "", contextPath + $('#shareUrl').val());
-  }
 
 })
