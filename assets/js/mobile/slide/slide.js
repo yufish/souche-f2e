@@ -114,6 +114,8 @@ $(function() {
       }
     });
 
+
+    // todo: 用这个audio.paused
     $('.speaker').on('click', function(e) {
       e.preventDefault();
       var $audio = $('#audio');
@@ -226,7 +228,7 @@ $(function() {
         if (!$('#slide-brand').attr('data-brand') || !$('#slide-model').attr('data-code')
             || $('#slide-time').val() == '' || $('#slide-mile').val() == '') {
           
-          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a id="slide-back" class="btn">补充爱车信息</a></div>')
+          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a href="#" id="slide-back" class="btn">补充爱车信息</a></div>')
               .removeClass('hidden');
           return;
         }
@@ -271,13 +273,11 @@ $(function() {
                     year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                   .removeClass('hidden');
                 $('#form-result').html('<div class="a8-text1"><p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
-                  '%</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
-                  '<p>然而汽车的耗损，</p>' + 
-                  '<p class="mb10">也见证了幸福感的与日俱增</p></div>' +
+                  '%</span></p><p>的青春（汽车的折损率</p>' + 
                   '<div class="a8-text2"><p>怎能为那些难免的磕碰</p>' +
-                  '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p></div>' +
+                  '<p">忘却Ta曾经为你遮风挡雨的日子</p></div>' +
                   '<div class="a8-text3"><p>怎能因那些难免的争吵</p>' +
-                  '<p class="mb10">忽视父母带给你无与伦比的关爱</p></div>' +
+                  '<p">忽视父母带给你无与伦比的关爱</p></div>' +
                   '<div class="a8-text4"><p>我来自山川湖海</p>' +
                   '<p>唯有家庭与爱不可辜负</p></div>').removeClass('hidden');
                 $('#form-result-sec').addClass('hidden');
@@ -287,7 +287,7 @@ $(function() {
               }
 
               if (data.code == '300') {
-                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
+                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a href="#" id="slide-back" class="btn">重新填写表单</a></div>')
                     .removeClass('hidden');
                 $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html">看看我的dream car</a>');
               }
@@ -297,7 +297,8 @@ $(function() {
 
       })
 
-      $(document).on('click', '#slide-back', function() {
+      $(document).on('click', '#slide-back', function(e) {
+        e.preventDefault();
         $('#popup').addClass('hidden');
       })
     

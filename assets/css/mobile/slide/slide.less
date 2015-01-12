@@ -1,5 +1,8 @@
-* {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
 }
 
 html, body {
@@ -223,14 +226,14 @@ html, body {
 
 #form-result {
   .a8-text2 {
-    top: 170px;
+    top: 120px;
   }
   .a8-text3 {
-    top: 220px;
+    top: 160px;
   }
 
   .a8-text4 {
-    top: 260px;
+    top: 200px;
   }
 }
 
@@ -315,8 +318,12 @@ html, body {
     // &[data-index='6'] {
     // }
 
-    // &[data-index='7'] {
-    // }
+    &[data-index='7'] {
+
+      .diff p {
+        text-decoration: underline;
+      }
+    }
 
     
 
@@ -600,7 +607,7 @@ html, body {
 
 #jump-btn {
   position: absolute;
-  bottom: 33%;
+  bottom: 20%;
   left: 50%;
   .transform(translate(-50%, 0));
 }
