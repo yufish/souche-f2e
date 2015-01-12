@@ -692,12 +692,13 @@ define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detai
                     }
                 });
 
-                //大图少于14张，隐藏左右切换
+                //大图少于8张，隐藏左右切换
                 if($(".photosSmall li").length<8){
                     $(".photoSmallTab").addClass("hidden");
                     $(".photosSmallWrap").css("width",620);
                     $(".photoInfo").html("")
                 }
+             
             }
         }
     }();
