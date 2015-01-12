@@ -1,0 +1,12 @@
+mixin css(url)
+	link(
+		type='text/css'
+		rel='stylesheet'
+		href=url)
+
++css('http://f2e.souche.com/assets/css-bigshop/souche/reset.css?t=${maven.build.timestamp}')
++css('http://f2e.souche.com/assets/css-bigshop/souche/ui.css?t=${maven.build.timestamp}')
++css('http://f2e.souche.com/assets/css-bigshop/souche/common.css?t=${maven.build.timestamp}')
++css('http://f2e.souche.com/assets/css-bigshop/sidebar.css?t=${maven.build.timestamp}')
+
++css('http://f2e.souche.com/assets/css-bigshop/souche/blue.css?t=${maven.build.timestamp}')

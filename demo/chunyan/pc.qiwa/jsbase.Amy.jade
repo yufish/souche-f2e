@@ -1,0 +1,20 @@
+mixin js(url)
+	script(
+		type='text/javascript'
+		src=url)
++js('http://f2e.souche.com/assets/js-bigshop/lib/jquery-1.7.1.min.js?t=${maven.build.timestamp}')
++js('http://f2e.souche.com/assets/js-bigshop/lib/jquery.flexslider-min.js?t=${maven.build.timestamp}')
++js('http://f2e.souche.com/assets/js-bigshop/lib/require.js?t=${maven.build.timestamp}')
++js('http://f2e.souche.com/assets/js-bigshop/souche.js?t=${maven.build.timestamp}')
++js('http://f2e.souche.com/assets/js-bigshop/lib/lazyload.js?t=${maven.build.timestamp}')
++js('http://f2e.souche.com/assets/js-bigshop/index/sidebar.js?t=${maven.build.timestamp}')
+script(
+	type='text/javascript'
+	src='http://wpa.b.qq.com/cgi/wpa.php'
+	charset='utf-8')
+script.
+	var contextPath = "";
+	require.config({
+		baseUrl: "http://f2e.souche.com/assets/js-bigshop",
+		urlArgs:"bust=${maven.build.timestamp}"
+	});
