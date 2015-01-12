@@ -110,6 +110,7 @@ $(function() {
         action.goto(7);
         $('.section-form').removeClass('hidden');
         $('.section-result').addClass('hidden');
+        $(this).attr('data-num', '0').html('举手之劳 传递亲情');
       }
     });
 
