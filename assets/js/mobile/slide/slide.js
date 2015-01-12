@@ -16,7 +16,6 @@ $(function() {
       touchEvent.preventDefault();   
   }  
 
-
   // document.addEventListener( 'touchstart', stopScrolling, false ); 
   document.addEventListener( 'touchmove', stopScrolling, false );  
 
