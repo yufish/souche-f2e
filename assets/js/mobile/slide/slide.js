@@ -4,9 +4,13 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
-  if (window.history && history.pushState) {
-    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  function changeUrl() {
+    if (window.history && history.pushState) {
+      history.pushState(null, "", contextPath + $('#shareUrl').val());
+    }
   }
+
+  setTimeout(changeUrl, 100);
 
   function stopScrolling( touchEvent ) {  
       touchEvent.preventDefault();   
@@ -114,6 +118,8 @@ $(function() {
       }
     });
 
+
+    // todo: 用这个audio.paused
     $('.speaker').on('click', function(e) {
       e.preventDefault();
       var $audio = $('#audio');
