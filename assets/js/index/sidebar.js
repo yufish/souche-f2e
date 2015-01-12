@@ -5,10 +5,12 @@ Souche.Sidebar = (function() {
     $(document).ready(function() {
         $("#talk_with").on("click",function(e){
             var uid = $(this).attr("data-userid");
-            if(Math.random()>0.5){
+            if(Math.random()<0.3){
                 uid = "cn_18667046361"
-            }else{
+            }else if(Math.random()<0.6){
                 uid = "cn_17098045671"
+            }else{
+                uid="cn_15700097025"
             }
             Souche.Sidebar.showTalk(uid,window.location.href);
         })
