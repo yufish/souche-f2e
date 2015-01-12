@@ -1,4 +1,4 @@
-define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
+define(['wannaBuy/sweetCountdown','lib/lazyload'],function(SweetCountdown,lazyload){
 
     var _config = {};
 
@@ -40,7 +40,11 @@ define(['wannaBuy/sweetCountdown'],function(SweetCountdown){
            unslider.data('unslider').stop();
            unslider.data('unslider').next();
         });
+        $("#choose-nav img").lazyload({
 
+        })
+        $("#main-service img").lazyload({})
+        $("#car-life img").lazyload({})
     })
     // $(".flexslider").mouseenter(function(){
     //       $(".flex-direction-nav").stop().animate({
