@@ -226,7 +226,7 @@ $(function() {
         if (!$('#slide-brand').attr('data-brand') || !$('#slide-model').attr('data-code')
             || $('#slide-time').val() == '' || $('#slide-mile').val() == '') {
           
-          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a id="slide-back" class="btn">补充爱车信息</a></div>')
+          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a href="#" id="slide-back" class="btn">补充爱车信息</a></div>')
               .removeClass('hidden');
           return;
         }
@@ -285,7 +285,7 @@ $(function() {
               }
 
               if (data.code == '300') {
-                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
+                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a href="#" id="slide-back" class="btn">重新填写表单</a></div>')
                     .removeClass('hidden');
                 $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html">看看我的dream car</a>');
               }
@@ -295,7 +295,8 @@ $(function() {
 
       })
 
-      $(document).on('click', '#slide-back', function() {
+      $(document).on('click', '#slide-back', function(e) {
+        e.preventDefault();
         $('#popup').addClass('hidden');
       })
     
