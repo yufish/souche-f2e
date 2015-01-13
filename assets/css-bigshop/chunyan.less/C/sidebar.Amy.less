@@ -1,42 +1,24 @@
-// .sidebar-top{
-//   height: 131px;
-//   border: 1px solid #e6e6e6;
-//   margin-bottom: 35px;
-//   .suggestside{
-//     height: 65px;
-//     border-bottom: 1px solid #e6e6e6;
-//     .suggest-box{
-//       padding: 11px;
-//       display: block;
-//       .suggest-img{
-//         width: 29px;
-//         height: 27px;
-//         background: url(../images/index/suggest.png?1);
-//       }
-//       i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
-//     }
-//   }
-//   .customerside{
-//     height: 65px;
-//     .customer-box{
-//       padding: 11px;
-//       display: block;
-//       .customer-img{width: 29px;height: 27px;background: url(../images/index/customer.png?1);}
-//       i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
-//     }
-//   }
-// }
+// - @by Bolt
+// - 
+
+@themeColor:#0f448e;
+
+.sidebar .sidebar-tit,
+.sort .activeNumber{
+  border: 1px solid @themeColor !important;
+  background: @themeColor !important;
+}
 .sidebar-top{
   width: 52px;
   position: fixed;
   right: 0px;
-  bottom:50px;
+  bottom:55px;
   z-index: 10000;
   height: 25px;
   .scroll-top{
     width: 50px;
     height: 20px;
-    border: 1px solid #333333;
+    border: 1px solid #262626;
     background: #333333;
     cursor: pointer;
     color: #fff;
@@ -49,7 +31,7 @@
       display: block;
       width: 5px;
       height: 3px;
-      background: url(../images/index/index_sprite_v2.png?2345) no-repeat;
+      background: url(../../../../images/index/index_sprite_v2.png?1) no-repeat;
       background-position: 0 -40px;
       margin-left: 10px;
       margin-top: 7px;
@@ -72,7 +54,7 @@
       display: block;
       width: 26px;
       height: 26px;
-      background: url(../images/index/feedback-hover.png?123) no-repeat;
+      background: url(../../../../images/index/feedback-hover.png?123) no-repeat;
       background-position: center;
       background-color: #BFBFBF;
     }
@@ -86,7 +68,7 @@
     color: #BFBFBF;
     opacity: 1;
     i{
-      background: url(../images/index/feedback-hover.png) no-repeat;
+      background: url(../../../../images/index/feedback-hover.png?1) no-repeat;
       background-position: center;
       background-color:#BFBFBF;
     }
@@ -95,6 +77,7 @@
     }
   }
 }
+
 .sidebar-bottom{
   height: 263px;
   border: 1px solid #e6e6e6;
@@ -104,7 +87,7 @@
     .collect-box{
       padding: 11px;
       display: block;
-      .collect-img{width: 29px;height: 27px;background: url(../images/index/toolbar_sprite.png?234);background-position: 0 0;}
+      .collect-img{width: 29px;height: 27px;background: url(../images/index/toolbar_sprite_b.png?1243);background-position: 0 0;}
       i{font-size: 13px;color: #666;font-style: normal;line-height: 20px;}
     }
   }
@@ -233,7 +216,7 @@
 }
 .sidebar{
   width: 52px;
-  height: 309px;
+  height: 199px;
   position: fixed;
   right: 0px;
   bottom: 80px;
@@ -242,8 +225,8 @@
   overflow: hidden;
   .sidebar-tit{
     height: 32px;
-    border: 1px solid #FF571A;
-    background: #FF571A;
+    border: 1px solid #0f448e;
+    background: #0f448e;
     color: #fff;
     font-size: 14px;
     position: relative;
@@ -258,7 +241,7 @@
       cursor:pointer;
       width: 12px;
       height: 12px;
-      background: url(../images/index/index_sprite_v2.png?2345) no-repeat;
+      background: url(../../../../images/index/index_sprite_v2_b.png?1) no-repeat;
       background-position: -100px 0;
       float: right;
       right: 10px;
@@ -283,18 +266,8 @@
     }
     a{
       padding: 6px 5px;display: block;
-      .icon{background: url(../images/index/index_sprite_v2.png?2345);margin-bottom: 5px;}
+      .icon{background: url(../../../../images/index/index_sprite_v2.png?1);margin-bottom: 5px;}
       i{margin-left:11px;display: block;color: #666;width:30px;font-size: 12px;text-align: left;font-style: normal;height:16px;overflow: hidden;}
-    }
-    .unreadtip{
-      width:6px;
-      height:6px;
-      border-radius: 10px;
-      background: #ff5517;
-      display: block;
-      position: absolute;
-      right:10px;
-      top:10px;
     }
     .collect-box{
       .collect-img{
@@ -325,7 +298,7 @@
     }
     .scan-box{
       .scan-img{
-        background: url(../images/index/scan.png?1) no-repeat 0px 0px;
+        background: url(../../../../images/index/scan.png?1) no-repeat 0px 0px;
       }
     }
     .contrast-box{
@@ -346,24 +319,6 @@
         margin-top: 5px;
       }
     }
-    .talk-box{
-      .talk-img{
-        width: 18px;
-        height: 16px;
-        margin-left: 13px;
-        margin-top: 5px;
-        background-position: -150px 0;
-      }
-    }
-    .judge-box{
-      .judge-img{
-        background-position: -40px -42px;
-        width: 17px;
-        height: 14px;
-        margin-left: 14px;
-        margin-top: 5px;
-      }
-    }
 
   }
   .side-box.flash{
@@ -373,7 +328,7 @@
       i{color: #fff8dd;}
     }
     .collect-box{
-      .collect-img{background: url(../images/index/collect-hover.png?1) no-repeat 0px 0px;}
+      .collect-img{background: url(../../../../images/index/collect-hover.png?1) no-repeat 0px 0px;}
     }
   }
   .side-box:hover{
@@ -395,19 +350,9 @@
     .scan-box{
       .scan-img{}
     }
-    .judge-box{
-      .judge-img{
-        background-position: -40px -60px;
-      }
-    }
     .contrast-box{
       .contrast-img{
         background-position: -60px -20px;
-      }
-    }
-    .talk-box{
-      .talk-img{
-        background-position: -150px -20px;
       }
     }
     .suggest-box{
@@ -514,17 +459,12 @@
         .icon{background-position: -80px -20px;}
       }
     }
-    .judgeside:hover,.judgeside.active{
-      a{
-        .icon{background-position: -40px -60px;}
-      }
-    }
-    .scanside{a{.icon{background: url(../images/index/scan-hover.png?1);}}}
+    .scanside{a{.icon{background: url(../../../../images/index/scan-hover.png?1);}}}
     .scanside:hover,.scanside.active{
       border-bottom: 1px solid #dedede;border-right: none;
       background: #fff;
       a{
-        .icon{background: url(../images/index/scan-active.png?1);}
+        .icon{background: url(../../../../images/index/scan-active.png?1);}
         i{color: #666;}
       }
     }
@@ -535,8 +475,8 @@
     }
   }
   .toolbar-content{
-    width: 851px;
-    height: 468px;
+    width: 845px;
+    height: 520px;
     border-left: none;
     float: left;
     overflow: hidden;
@@ -544,7 +484,7 @@
     i{cursor:pointer;
       width: 11px;
       height: 11px;
-      background: url(../images/index/toolbar_sprite.png?1234) no-repeat;
+      background: url(../../../../images/index/toolbar_sprite.png?1234) no-repeat;
        background-position: -240px 0;
        display: block;
        top: 10px;
@@ -555,7 +495,7 @@
     .iframe-loading{
       width: 845px;
       height: 470px;
-      background: url(../images/index/loader.gif) no-repeat center;
+      background: url(../../../../images/index/loader.gif) no-repeat center;
       position: fixed;
       background-color: #fff;
     }
@@ -588,7 +528,7 @@
 
 
   .wrapper-bg{
-    background: url("../images/common/advisor-bg.png") no-repeat;
+    background: url("../../../../images/common/advisor-bg.png?1") no-repeat;
     background-position: right bottom;
     z-index: 10000;
     padding-left: 80px;
@@ -600,7 +540,7 @@
     display: block;
     width: 18px;
     height: 18px;
-    background: url("../images/common/popup-close2.png") no-repeat;
+    background: url("../../../../images/common/popup-close2.png?1") no-repeat;
     right: 20px;
     top: 20px;
     cursor: pointer;
@@ -640,7 +580,7 @@
         border: 1px solid #d1d1d1;
         padding-left: 10px;
         margin-top: 10px;
-        background: url("../images/common/unfold-phone.png") no-repeat;
+        background: url("../../../../images/common/unfold-phone.png?1?1") no-repeat;
         background-position: right center;
         width: 245px;
         height: 21px;
@@ -651,7 +591,7 @@
       #unfold-submit{
         width: 165px;
         height: 35px;
-        background: url("../images/common/unfold-submit.png") no-repeat;
+        background: url("../../../../images/common/unfold-submit.png?1") no-repeat;
         margin-top: 20px;
         cursor: pointer;
         border: none;
@@ -661,3 +601,15 @@
   }
 }
 
+#toolbar{
+  .collectside{
+    .buy-box,.sell-box{
+      .collect-img{margin-left:6px;width: 29px;height: 25px;margin-bottom:0;background: url(../../../../images/index/qqicon1.png?1);background-repeat: no-repeat;background-position: center center; }
+
+    }
+    .buy-box:hover,.sell-box:hover{
+      .collect-img{background-image: url(../../../../images/index/qqicon_active.png?21);}
+
+    }
+     }
+}

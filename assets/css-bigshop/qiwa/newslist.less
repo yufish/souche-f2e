@@ -1,4 +1,3 @@
-.slider-list,
 .slide-nav-list {
 	li {
 		position: relative;
@@ -18,15 +17,49 @@
 			}
 		}
 	}
+	li:nth-child(1) {
+	    h4 {
+	        background: linear-gradient(to top, rgba(255, 94, 58, 0.8) 0%, rgba(255, 42, 104, 0.8) 100%);
+	    }
+	}
+	li:nth-child(2) {
+        h4 {
+            background: linear-gradient(to top, rgba(88, 86, 214, 0.8) 0%, rgba(198, 68, 252, 0.8) 100%);
+        }
+    }
+    li:nth-child(3) {
+        h4 {
+            background: linear-gradient(to top, rgba(90, 200, 251, 0.8) 0%, rgba(82, 237, 199, 0.8) 100%);
+        }
+    }
+    li:nth-child(4) {
+        h4 {
+            background: linear-gradient(to top, rgba(29, 98, 240, 0.8) 0%, rgba(26, 214, 253, 0.8) 100%);
+        }
+    }
 }
 
 .slider-list {
 	li {
 		h4 {
-			font-size: 24px;
+		    position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            transition: background-color 0.3s;
 			span {
-				padding: 40px;
+				position: absolute;
+                bottom: 0;
+                font-size: 24px;
+                color: #fff;
+//          width: 100%;
+                padding: 10px;
+                text-shadow: #aaa 1px 1px 1px;
 			}
+		}
+		h4:hover {
+		    background-color: rgba(0,0,0,0);
 		}
 	}
 }

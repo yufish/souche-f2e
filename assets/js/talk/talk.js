@@ -13,7 +13,7 @@ define([
     DB,
     Moment){
     var souchedb = new DB("souche");
-    var appkey = "souche#souchetest";
+    var appkey = "souche#souche";
     var conn = new Easemob.im.Connection();
     var state_connected = false;
     //黑名单，这些消息网站端不予处理

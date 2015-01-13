@@ -1,0 +1,41 @@
+//- @by bolt
+//- include less->C/sidebar.Amy
+//- include js
+#toolbar.sidebar
+	.sidebar-tit
+		i 我的车库
+		span.toolbar-close
+	.sidebar-nav
+		.collectside.side-box
+			a#buy_qq.buy-box.side-trigger(
+				href='http://wpa.qq.com/msgrd?v=3&uin=2221424738&site=qq&menu=yes'
+				target='_blank'
+				click_type='toolbar-faver')
+				.collect-img.icon
+				i 买车资讯
+			i#fav_notice.point-num.hidden 12
+		.collectside.side-box
+			a#buy_qq.buy-box.side-trigger(
+				href='http://wpa.qq.com/msgrd?v=3&uin=2221424738&site=qq&menu=yes'
+				target='_blank'
+				click_type='toolbar-faver')
+				.collect-img.icon
+				i 买车资讯
+			i#fav_notice.point-num.hidden 12
+		.collectside.side-box
+			a#buy_qq.buy-box.side-trigger(
+				href='http://wpa.qq.com/msgrd?v=3&uin=2221424738&site=qq&menu=yes'
+				target='_blank'
+				click_type='toolbar-faver')
+				.collect-img.icon
+				i 买车资讯
+			i#fav_notice.point-num.hidden 12
+	.toolbar-content
+		.iframe-loading
+		iframe.hidden(
+			width='855px'
+			height='500px'
+			frameborder='0'
+			scrolling='no'
+			name='toolbar-open'
+			src='')
