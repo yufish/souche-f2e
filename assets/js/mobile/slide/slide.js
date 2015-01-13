@@ -112,6 +112,8 @@ $(function() {
         action.goto(7);
         $('.section-form').removeClass('hidden');
         $('.section-result').addClass('hidden');
+        $('#form-result').addClass('hidden');
+        $('#form-result-sec').removeClass('hidden');
         $(this).attr('data-num', '0').html('举手之劳 传递亲情');
       }
     });
@@ -139,11 +141,12 @@ $(function() {
     
     // 选品牌 ＋ 车型
     require(['mobile/index/brand2'], function (Brand){
+
+      Brand.init();
     
       $('#slide-brand').on('click', function() {
         $('#brand').removeClass('hidden');
         document.removeEventListener( 'touchmove', stopScrolling, false ); 
-        Brand.init();
 
         function brandInfo(b, bn, s, sn) {
           $('#slide-brand').attr('data-brand', b).attr('data-series', s)
