@@ -71,7 +71,7 @@ Souche.Sidebar = (function() {
 
         $("#talk_with").on("click",function(e){
             var uid = $(this).attr("data-userid");
-            
+
             Souche.Sidebar.showTalk(uid,window.location.href);
         })
         $(".advisor-tip-close").click(function(e) {

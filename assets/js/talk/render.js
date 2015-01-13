@@ -17,6 +17,7 @@ define(['talk/util','talk/data'],function(SoucheIMUtil,SoucheIMData){
             })
             return is_in;
         }
+        var blackList = [ 'thumb_pushuser',  'thumb_deallist'   , 'thumbelina_dasouche']
         var lastRenderMessage = {};
         return {
             /**
@@ -26,6 +27,7 @@ define(['talk/util','talk/data'],function(SoucheIMUtil,SoucheIMData){
                 $(".contact-list .contacts").html(function () {
                     var html = "";
                     SoucheIMData.contacts.forEach(function (c) {
+                        if(blackList.indexOf(c.friendId)!=-1) return;
                         html += "<li class='contact-item "+(SoucheIMData.now_chat_userid==c.friendId?"active":"")+"' data-id='" + c.friendId + "'><span class='cont-name'>" + c.friendName + "</span>"+(c.unReadMsg?("<i class='info-num'>" + c.unReadMsg + "</i>"):"")+"</li>"
                     })
                     if(!SoucheIMData.contacts.length){
