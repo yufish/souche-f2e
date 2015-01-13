@@ -59,7 +59,7 @@ define([
             console.log("onPictureMessage")
             console.log(message)
             if(blackList.indexOf(message.from)!=-1) return;
-            
+
             setTimeout(function(){
                 SoucheIMData.addMessage(message,function(){
                     SoucheIMRender.renderContacts();
