@@ -35,6 +35,9 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
                 var is_in = false;
                 var self = this;
                 SoucheIMUtil.getUsername(user_id,function(name) {
+                    if(!name){
+                        var name = user_id;
+                    }
                     self.contacts.forEach(function(c,i){
                         if(c.friendId==user_id){
                             is_in = true;
@@ -45,7 +48,7 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
                     if(!is_in) {
                         self.contacts.unshift({
                             friendId: user_id,
-                            friendName: name + ":" + user_id.replace(/[^0-9]/g,""),
+                            friendName: name ,
                             unReadMsg: (typeof(unread)=="undefined"?1:unread)
                         })
                     }
@@ -60,6 +63,9 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
                 }
                 var self = this;
                 SoucheIMUtil.getUsername(from_user_id,function(name){
+                    if(!name){
+                        var name = from_user_id;
+                    }
                     var message = {
                         user_id:from_user_id,
                         user_name:name,
@@ -94,6 +100,9 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
                 }
                 var self = this;
                 SoucheIMUtil.getUsername(from_user_id,function(name){
+                    if(!name){
+                        var name = from_user_id;
+                    }
                     var message = {
                         user_id:from_user_id,
                         user_name:name,

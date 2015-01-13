@@ -71,11 +71,7 @@ Souche.Sidebar = (function() {
 
         $("#talk_with").on("click",function(e){
             var uid = $(this).attr("data-userid");
-            if(Math.random()>0.5){
-                uid = "cn_18667046361"
-            }else{
-                uid = "cn_17098045671"
-            }
+
             Souche.Sidebar.showTalk(uid,window.location.href);
         })
         $(".advisor-tip-close").click(function(e) {
@@ -168,13 +164,6 @@ Souche.Sidebar = (function() {
     var hasNewMessage;
 
     return {
-<<<<<<< HEAD
-        showTalk:function(user_id,url){
-            var href = $("#sidebar-talk").attr("href")
-            if(user_id){
-                href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
-            }
-=======
         getSalerId:function(store,callback){
             $.ajax({
                 url:contextPath+"/pages/saleDetailAction/getChatId.json",
@@ -210,7 +199,6 @@ Souche.Sidebar = (function() {
         },
         showTalk:function(user_id,url){
             var self = this;
->>>>>>> 3df1f0a49839396c1ce1ba89222825f501780a04
             Souche.MiniLogin.checkLogin(function(isLogin) {
                 $(".unreadtip").addClass("hidden")
                 if(user_id.indexOf("shop_")!=-1){

@@ -1,0 +1,7 @@
+({
+    baseUrl: "./../",
+
+    name: "talk/talk",
+    include: [],
+    out: "talk.r.js"
+})

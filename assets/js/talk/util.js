@@ -2,6 +2,10 @@ define(function(){
     /**
      * 工具类，主要是对网络操作，获取一些信息等
      */
+    var appPath = "";
+    if(contextPath){
+        appPath = "http://app.souche.com"
+    }
     var SoucheIMUtil = function(){
         var souche_token = "ScM9Eno7f2dl0vz"
         var username_cache = {
@@ -20,7 +24,7 @@ define(function(){
                     data:{
                         token:souche_token,
                         user:user_id,
-                        friend:friend_id.replace("cn_","cheniu_")
+                        friend:friend_id
                     },
                     dataType:"json",
                     success:function(data){
@@ -100,9 +104,9 @@ define(function(){
                     return;
                 }
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
+                    url:appPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
                     data:{
-                        id:user_id.replace(/buyer_|cn_|cheniu_/g,'')
+                        id:user_id
                     },
                     dataType:"json",
                     success:function(data){
@@ -110,7 +114,7 @@ define(function(){
                             username_cache[user_id] = data.data.userInfo.friendName;
                             callback(data.data.userInfo.friendName);
                         }else{
-                            callback()
+                            callback("")
                         }
                     }
                 })
@@ -122,7 +126,7 @@ define(function(){
              */
             getLoginInfo:function(phone,callback){
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/chatIDMapAction/getMapChatID.json",
+                    url:appPath+"/pages/app/thumbelina/chatIDMapAction/getMapChatID.json",
                     data:{
                         userId:phone
                     },
