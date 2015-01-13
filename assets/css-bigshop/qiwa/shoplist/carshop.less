@@ -1,0 +1,254 @@
+@soucheOrange: #ff5517;
+@yahei: "Microsoft Yahei" "微软雅黑";
+@bc: #E6E6E6;
+
+.text-collapse(){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.box-sizing(@v: border-box;){
+    -webkit-box-sizing: @v;
+    -moz-box-sizing: @v;
+    box-sizing: @v;
+}
+
+.danbao-service{
+  float: right;
+  height: 60px;
+  .service-item{
+    width: 250px;
+    float: left;
+    display: block;
+    .danboa-icon1{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_1.png) no-repeat;
+      margin-top: 12px;
+      float: left;
+    }
+    .danboa-icon2{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_2.png) no-repeat;
+      margin-top: 12px;
+      float: left;
+    }
+    .danboa-icon3{
+      width: 40px;
+      height: 40px;
+      background: url(../../images/auth-shop/danbao_3.png) no-repeat;
+      margin-top: 12px;
+      float: left;
+    }
+    .danbao-text{
+      margin-top: 11px;
+      float: left;
+      margin-left: 15px;
+      p{
+        font-size: 14px;
+        color: #666;
+        line-height: 20px;
+
+      }
+    }
+  }
+}
+.shop-head{
+  background: #F5F5F5;
+  //height: 65px;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 20px 0px;
+  .wrap{
+    width: 1280px;
+    margin: 0 auto;
+  }
+  .auth-icon{
+    width: 65px;
+    height: 65px;
+    background: url(../../images/auth-shop/shop.png) no-repeat;
+    float: left;
+    margin-right: 10px;
+    display: block;
+  }
+  .shop-info{
+    float: left;
+    margin-top: 5px;
+    .shop-name{
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .shop-add{
+      font-size: 12px;
+      color: #666;
+    }
+    .shop-score{
+      font-size: 12px;
+      color: #333;
+      .score-sum{
+        float: left;
+        span{
+          font-size: 16px;
+          color: #FF571A;
+          margin-left: 5px;
+        }
+      }
+      .score-item{
+        float: left;
+        margin-left: 25px;
+        color: #333;
+        font-size: 12px;
+        width: 125px;
+        line-height: 23px;
+        i{
+          display: block;
+          width: 70px;
+          height: 11px;
+          float: right;
+          margin-top: 6px;
+        }
+        .star-1{
+          background: url(../../images/auth-shop/score-1.png) no-repeat;
+        }
+        .star-2{
+          background: url(../../images/auth-shop/score-2.png) no-repeat;
+        }
+        .star-3{
+          background: url(../../images/auth-shop/score-3.png) no-repeat;
+        }
+        .star-4{
+          background: url(../../images/auth-shop/score-4.png) no-repeat;
+        }
+        .star-5{
+          background: url(../../images/auth-shop/score-5.png) no-repeat;
+        }
+      }
+    }
+  }
+  .shop-brand{
+    float: right;
+    margin-top: 8px;
+    .brand-item{
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: 1px solid #E9E9E9;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-left: 20px;
+      float: left;
+      line-height: 45px;
+    }
+  }
+}
+.shop-banner{
+  width: 100%;
+  margin: 0 auto;
+  height: 380px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.shop-left{
+  .search-car{
+    width: 240px;
+    
+  }
+}
+.shop-detail{
+  width: 238px;
+  min-height: 260px;
+  padding-bottom: 10px;
+  border: 1px solid @bc;
+  margin-top: 20px;
+  .detail-tit{
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 30px;
+    color: #333;
+    font-size: 14px;
+    background: #F5F5F5;
+    border-bottom: 1px solid @bc;
+    width: 218px;
+    overflow: hidden;
+    .auth-shop-tag{
+      display: none;
+      background: #EBBB58;
+      color: #fff;
+      font-size: 12px;
+      padding:0px 3px;
+      margin-left: 5px;
+    }
+  }
+  .info{
+    padding-bottom: 15px;
+    margin:20px 10px;
+    border-bottom: 1px solid @bc;
+    .info-item{
+      margin-bottom: 10px;
+      font-size: 12px;
+      span{
+        color: #999;
+      }
+      em{
+        color: #000;
+        margin-left: 5px;
+      }
+    }
+  }
+  h1{
+    color: #999;
+    margin-top: 15px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  p{
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 15px;
+    line-height: 20px;
+  }
+}
+
+#list_wrap .list_main .car-nav{
+  border-bottom: none;
+  .cat-nav-upper{
+  }
+  .car-filter-group{
+    display: none;
+  }
+}
+
+@import "carshopMod/shop-search.less";
+@import "carshopMod/shop-location.less";
+@import "carshopMod/shop-comment.less";
+
+
+// 店铺页面不显示车辆的对比按钮
+.list_main .card-box .carItem .carTail .carConstrast,
+.list_main .list-box .carItem .carTail .carConstrast{
+  display: none;
+}
+
+// 卡片视图 授权标完全不显示
+.list_main .card-box .carItem .car-type .shouquan{
+  display: none;
+}
+// 列表视图的收藏按钮上移
+.list_main .list-box .carItem .carTail .carCollect{
+  top: 0;
+}
+// 店铺页 列表视图 不显示"授权店"标, 店铺名称保留
+.list_main .list-box .carItem .car-type .shouquan{
+  display: block;
+  .type-icon{
+    display: none;
+  }
+}

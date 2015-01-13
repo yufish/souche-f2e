@@ -70,6 +70,9 @@ define(['talk/util','talk/data'],function(SoucheIMUtil,SoucheIMData){
                                     '<div class="car-area"><span>所属地：</span><span>'+carInfo.area+'</span></div>'+
                                     '</div>'+
                                     '</div>'
+                            }else if(message.ext&&message.ext.messageType==2){
+                                console.log(message)
+                                html +='    <p><img src="' + message.img + '"/></p>'
                             }else{
                                 html +='    <p>' + message.content + '</p>'
                             }

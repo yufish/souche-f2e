@@ -129,7 +129,7 @@ Souche.Sidebar = (function() {
         },
         showTalk:function(user_id,url){
 
-
+            $(".unreadtip").addClass("hidden")
             var href = $("#sidebar-talk").attr("href")
             if(user_id){
                 href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
