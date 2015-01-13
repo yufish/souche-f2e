@@ -61,15 +61,15 @@ define(['talk/util','talk/data'],function(SoucheIMUtil,SoucheIMData){
                                 '<div class="talk-content"><i class="cont-arrow"></i>';
                             if(message.ext&&message.ext.messageType==3){
                                 var carInfo = JSON.parse(message.ext.content);
-                                html +='<p>'+message.content+'</p>'+
-                                    '<div class="car-box clearfix"><a class="car-img clearfix" target="_blank" href="http://www.souche.com/pages/mobile/detail.html?carId='+carInfo.ID+'"><img src="'+carInfo.pictures+'"></a>'+
+                                html +='<div style="width:400px;"><a target="_blank" href="http://www.souche.com/pages/choosecarpage/choose-car-detail.html?carId='+carInfo.ID+'">'+message.content+'</a>'+
+                                    '<div class="car-box clearfix"><a class="car-img clearfix" target="_blank" href="http://www.souche.com/pages/choosecarpage/choose-car-detail.html?carId='+carInfo.ID+'"><img src="'+carInfo.pictures+'"></a>'+
                                     '<div class="car-info">'+
-                                    '<div class="car-title"><a target="_blank" href="http://www.souche.com/pages/mobile/detail.html?carId='+carInfo.ID+'">'+carInfo.model+'</a></div>'+
+                                    '<div class="car-title"><a target="_blank" href="http://www.souche.com/pages/choosecarpage/choose-car-detail.html?carId='+carInfo.ID+'">'+carInfo.model+'</a></div>'+
                                     '<div class="car-price"><span>价格：</span><em>￥'+(carInfo.price/10000).toFixed(2)+'万</em></div>'+
                                     '<div class="car-time"><span>上牌：</span><span>'+carInfo.registerDate+'</span></div>'+
                                     '<div class="car-area"><span>所属地：</span><span>'+carInfo.area+'</span></div>'+
                                     '</div>'+
-                                    '</div>'
+                                    '</div></div>'
                             }else if(message.ext&&message.ext.messageType==2){
                                 console.log(message)
                                 html +='    <p><img src="' + message.img + '"/></p>'

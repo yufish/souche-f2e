@@ -102,7 +102,7 @@ define(function(){
                 $.ajax({
                     url:contextPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
                     data:{
-                        id:user_id.replace(/buyer_|cn_|cheniu_/g,'')
+                        id:user_id
                     },
                     dataType:"json",
                     success:function(data){
@@ -110,7 +110,7 @@ define(function(){
                             username_cache[user_id] = data.data.userInfo.friendName;
                             callback(data.data.userInfo.friendName);
                         }else{
-                            callback()
+                            callback("")
                         }
                     }
                 })
