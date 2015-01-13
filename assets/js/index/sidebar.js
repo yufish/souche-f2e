@@ -126,7 +126,17 @@ Souche.Sidebar = (function() {
     var hasNewMessage;
 
     return {
+        getSalerId:function(callback){
+            $.ajax({
+                url:contextPath+"/pages/saleDetailAction/getChatId.json",
+                success:function(){
+
+                }
+            })
+        },
         showTalk:function(user_id,url){
+
+
             var href = $("#sidebar-talk").attr("href")
             if(user_id){
                 href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
