@@ -58,15 +58,20 @@ define([
         onPictureMessage : function(message) {
             console.log("onPictureMessage")
             console.log(message)
-            SoucheIMQueue.putMessage({
-                to:message.from,
-                msg:"您好，当前用户暂不支持图片消息，请通过文字与他联系。"
-            });
+            if(blackList.indexOf(message.from)!=-1) return;
+            
+            setTimeout(function(){
+                SoucheIMData.addMessage(message,function(){
+                    SoucheIMRender.renderContacts();
+                });
+                window.parent.window.Souche.Sidebar.newMessageTip();
+            })
             //handlePictureMessage(message);
         },
         //收到音频消息的回调方法
         onAudioMessage : function(message) {
             console.log(message)
+            if(blackList.indexOf(message.from)!=-1) return;
             SoucheIMQueue.putMessage({
                 to:message.from,
                 msg:"您好，当前用户暂不支持语音消息，请通过文字与他联系。"

@@ -27,10 +27,13 @@ define(function(){
                         if(data.msgList){
                             var arr = []
                             data.msgList.items.forEach(function(msg){
-                                arr.push({
-                                    from:friend_id,
-                                    data:msg.body
-                                })
+                                if(msg.type==0){
+                                    arr.push({
+                                        from:friend_id,
+                                        data:msg.body
+                                    })
+                                }
+
                             })
                             callback(arr);
                         }

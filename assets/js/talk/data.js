@@ -100,6 +100,7 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
                         content:content,
                         is_me:false,
                         ext:msg.ext,
+                        img:msg.url,
                         timestramp:new Date().getTime()+Math.random()
                     }
                     var nowTime = new Date().getTime()
