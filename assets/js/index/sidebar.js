@@ -119,23 +119,66 @@ Souche.Sidebar = (function() {
     var hasNewMessage;
 
     return {
-        getSalerId:function(callback){
+        getSalerId:function(store,callback){
             $.ajax({
                 url:contextPath+"/pages/saleDetailAction/getChatId.json",
-                success:function(){
+                data:{
+                    store:store
+                },
+                success:function(data){
+                    if(data.chatId){
+                        callback(data.chatId);
+                    }else{
+                        callback()
+                    }
+
+                }
+            })
+        },
+        setChatMsgPoint:function(store,callback){
+            $.ajax({
+                url:contextPath+"/pages/saleDetailAction/setChatMsgPoint.json",
+                data:{
+                    sender:Souche_user_id,
+                    chatID:"",
+                    receiver:store,
+                    text:"hillo world",
+                    img:"",
+                    voice:"",
+                    time:new Date().getTime()
+                },
+                success:function(data){
 
                 }
             })
         },
         showTalk:function(user_id,url){
-
-            $(".unreadtip").addClass("hidden")
-            var href = $("#sidebar-talk").attr("href")
-            if(user_id){
-                href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
-            }
+            var self = this;
             Souche.MiniLogin.checkLogin(function(isLogin) {
-                Souche.Sidebar.showSidebar($("#sidebar-talk")[0],href)
+                $(".unreadtip").addClass("hidden")
+                if(user_id.indexOf("shop_")!=-1){
+                    //授权店
+                    self.getSalerId(user_id,function(chatId){
+                        if(chatId){
+                            var href = $("#sidebar-talk").attr("href")
+                            if(user_id){
+                                href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
+                            }
+                            Souche.Sidebar.showSidebar($("#sidebar-talk")[0],href)
+                        }else{
+                            Souche.Sidebar.setChatMsgPoint(user_id,function(){
+
+                            })
+                        }
+                    })
+                }else{
+                    var href = $("#sidebar-talk").attr("href")
+                    if(user_id){
+                        href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);
+                    }
+                    Souche.Sidebar.showSidebar($("#sidebar-talk")[0],href)
+
+                }
             },false,true)
 
         },

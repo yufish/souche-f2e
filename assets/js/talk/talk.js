@@ -131,6 +131,8 @@ define([
                         })
                         self._switch_active(config.talk_with)
                         SoucheIMRender.renderContacts();
+                    }else if(contacts.length){
+                        self._switch_active(contacts[0].friendId);
                     }
                     //如果默认指定了一个url，则发送此url
                     if(config.url){
