@@ -23,8 +23,8 @@ define(function(){
                     url:contextPath+"/chatAction/receive.json",
                     data:{
                         token:souche_token,
-                        user:friend_id,
-                        friend:user_id
+                        user:user_id,
+                        friend:friend_id
                     },
                     dataType:"json",
                     success:function(data){
