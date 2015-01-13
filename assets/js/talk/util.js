@@ -2,6 +2,10 @@ define(function(){
     /**
      * 工具类，主要是对网络操作，获取一些信息等
      */
+    var appPath = "";
+    if(contextPath){
+        appPath = "http://app.souche.com"
+    }
     var SoucheIMUtil = function(){
         var souche_token = "ScM9Eno7f2dl0vz"
         var username_cache = {
@@ -100,7 +104,7 @@ define(function(){
                     return;
                 }
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
+                    url:appPath+"/pages/app/thumbelina/easemobIMUsersAction/getChatUserInfo.json",
                     data:{
                         id:user_id
                     },
@@ -122,7 +126,7 @@ define(function(){
              */
             getLoginInfo:function(phone,callback){
                 $.ajax({
-                    url:contextPath+"/pages/app/thumbelina/chatIDMapAction/getMapChatID.json",
+                    url:appPath+"/pages/app/thumbelina/chatIDMapAction/getMapChatID.json",
                     data:{
                         userId:phone
                     },
