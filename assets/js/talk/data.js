@@ -14,7 +14,7 @@ define(['talk/util','souche/util/sc-db'],function(SoucheIMUtil,DB){
              */
             contacts:[],
             //现在激活的聊天对象
-            now_chat_userid:"admin",
+            now_chat_userid:"",
             //我的id
             my_userid:"",
             /**

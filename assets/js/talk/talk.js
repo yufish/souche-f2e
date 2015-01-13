@@ -190,6 +190,7 @@ define([
                 }
                 if(!SoucheIMData.now_chat_userid){
                    alert("请先选择一个联系人")
+                    return;
                 }
                 $("#talking-text").val("")
 
