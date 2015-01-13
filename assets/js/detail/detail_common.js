@@ -697,7 +697,19 @@ define(["detail/mod/fav", "detail/onsale_detail",  "detail/init_summary", "detai
                     $(".photoSmallTab").addClass("hidden");
                     $(".photosSmallWrap").css("width",620);
                     $(".photoInfo").html("")
-                }
+                }else{};
+
+                $(".photosSmallWrap").mouseenter(function(){
+                  $(".photoSmallTab").animate({
+                    opacity: 0.9
+                  },600)
+                });
+                $(".photosSmallWrap").mouseleave(function(e){
+                    e.stopPropagation;
+                    $(".photoSmallTab").animate({
+                    opacity: 0
+                  },600)
+                 });
              
             }
         }

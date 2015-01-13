@@ -262,7 +262,11 @@ define([], function(){
             }
         });
 
-        
+        $(".photosSmallWrap").mouseenter(function(){
+          $(this).closest(".photoSmallPre").animate({
+            opacity: 1
+          },400)
+        });
         // 绑定 pre next点击
         (function(){
             var LI_COUNT_PER_SCREEN = 8;
