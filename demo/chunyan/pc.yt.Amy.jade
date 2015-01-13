@@ -139,10 +139,17 @@ html
                     a.hot-item.hot-item-all.hidden(
                       data-code='country'
                       click_type='hotcity-country') 全国
-                    a.J_hotcity(
-                      data-pinyin='beijing'
-                      data-code='00001'
-                      click_type='hotcity-00001') 北京
+                    - for (var i in [0,0,0,0,0,0]) {
+                    - var class1 = (i==2? 'active-city': '')
+                      a.J_hotcity(
+                        class=class1
+                        data-pinyin='beijing'
+                        data-code='00001'
+                        click_type='hotcity-00001') 北京
+                    - }
+                    a.J_hotcity.hidden(
+                      data-code='other'
+                      click_type="hotcity-other") 其他
                   .area-city
                     .area-line
                       span.area

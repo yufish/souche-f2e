@@ -13,7 +13,7 @@ Souche.stats = {
     add_click:function(click_type){
         var data = {
             element_id: click_type || "",
-            page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+            page_url: window.pageBaseUrl?window.pageBaseUrl:window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
             cookie: document.cookie
         }
         if (ABtest && ABtest.id) {
@@ -56,7 +56,7 @@ $(document).ready(function() {
     //加载点击数据
     if (getQueryString("load_data")) {
         var click_types = {};
-        var url = "http://f2e-monitor.souche.com/performance/click-data?url=" + window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, "")
+        var url = "http://f2e-monitor.souche.com/performance/click-data?url=" +  window.pageBaseUrl?window.pageBaseUrl:window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, "")
         if (getQueryString("time")) {
             url += "&time=" + getQueryString("time")
         }
@@ -161,7 +161,7 @@ $(document).ready(function() {
                     page_x: e.pageX - ($(window).width() / 2 - 595),
                     page_y: e.pageY,
                     element_id: clickType || "",
-                    page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+                    page_url:  window.pageBaseUrl?window.pageBaseUrl:window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
                     refer_url: document.referrer,
                     user_agent: navigator.userAgent,
                     user_screenwidth: screen.width,
@@ -190,7 +190,7 @@ $(document).ready(function() {
                     page_x: e.pageX - ($(window).width() / 2 - 595),
                     page_y: e.pageY,
                     element_id: clickType || "",
-                    page_url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+                    page_url:  window.pageBaseUrl?window.pageBaseUrl:window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
                     refer_url: document.referrer,
                     user_agent: navigator.userAgent,
                     user_screenwidth: screen.width,
@@ -231,7 +231,7 @@ $(window).load(function() {
     f2e_all_load_time = new Date().getTime();
 
     var data = {
-        url: window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
+        url:  window.pageBaseUrl?window.pageBaseUrl:window.location.href.replace(/[?;].*?$/, "").replace("http://souche.com", "http://www.souche.com").replace("souche.com/index.html", "souche.com").replace(/\/$/, ""),
         referrer: document.referrer,
         load_first_time: f2e_first_load_time - f2e_begin_load_time,
         load_all_time: f2e_all_load_time - f2e_begin_load_time

@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		block title
+			title base.Amy
+		link(
+			rel='shortcut icon'
+			href='http://res.souche.com/files/default/9B7B800FD20334ECC556A0035D5458F5_64x64.ico'
+			type='image/x-icon')
+		link(
+			rel='bookmark'
+			href='http://res.souche.com/files/default/9B7B800FD20334ECC556A0035D5458F5_64x64.ico'
+			type='image/x-icon')
+		include ./cssbase.Amy.jade
+		include ./jsbase.Amy.jade
+		block css
+	body
+		include ./header.Amy.jade
+		include ./nav.Amy.jade
+		block content
+		include ./toolbar.Amy.jade
+		include ./footer.Amy.jade
+		block js

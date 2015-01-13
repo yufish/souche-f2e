@@ -4,13 +4,19 @@ $(function() {
   $('.animation').addClass('bounce-in');
   $('#next').addClass('next-bounce-in');
 
-  //- setTimeout(function() {
-  //-   if (window.history && history.pushState) {
-  //-     history.pushState(null, "", "slide?lan=en");
-  //-   }
-  //- }, 2000)
-  //
-  
+  if (window.history && history.pushState) {
+    history.pushState(null, "", contextPath + $('#shareUrl').val());
+  }
+
+  function stopScrolling( touchEvent ) {  
+      touchEvent.preventDefault();   
+  }  
+
+
+  // document.addEventListener( 'touchstart', stopScrolling, false ); 
+  document.addEventListener( 'touchmove', stopScrolling, false );  
+
+
   // 简单的滑块实现
   ;(function($, window) {
 
@@ -88,6 +94,8 @@ $(function() {
     }
 
     $('#next').on('click', action.move);
+
+    $('#diff-link').on('click', function(){ action.goto(8) });
       
     $('[data-index]').swipeDown(action.moveDown).swipeUp(action.moveTop); 
 
@@ -104,9 +112,12 @@ $(function() {
         action.goto(7);
         $('.section-form').removeClass('hidden');
         $('.section-result').addClass('hidden');
+        $(this).attr('data-num', '0').html('举手之劳 传递亲情');
       }
     });
 
+
+    // todo: 用这个audio.paused
     $('.speaker').on('click', function(e) {
       e.preventDefault();
       var $audio = $('#audio');
@@ -131,6 +142,7 @@ $(function() {
     
       $('#slide-brand').on('click', function() {
         $('#brand').removeClass('hidden');
+        document.removeEventListener( 'touchmove', stopScrolling, false ); 
         Brand.init();
 
         function brandInfo(b, bn, s, sn) {
@@ -195,9 +207,11 @@ $(function() {
       $('#slide-model').on('click', function() {
         if ($(this).hasClass('no-active')) return;
         $('#car-models').removeClass('hidden');
+        document.removeEventListener( 'touchmove', stopScrolling, false );
 
         $('#car-models').on('click', '.item li', function() {
             if ($(this).hasClass('no-active')) return;
+            document.addEventListener( 'touchmove', stopScrolling, false );
             $('#car-models .item li').removeClass('active');
             $(this).addClass('active');
             $('#slide-model').attr('data-code', $(this).attr('data-code'));
@@ -216,7 +230,7 @@ $(function() {
         if (!$('#slide-brand').attr('data-brand') || !$('#slide-model').attr('data-code')
             || $('#slide-time').val() == '' || $('#slide-mile').val() == '') {
           
-          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a id="slide-back" class="btn">补充爱车信息</a></div>')
+          $('#popup').html('<div class="content"><p>爱车信息缺失</p><p>你真的有诚意为TA点赞吗？</p><a href="#" id="slide-back" class="btn">补充爱车信息</a></div>')
               .removeClass('hidden');
           return;
         }
@@ -257,19 +271,17 @@ $(function() {
                 $('.section-form').addClass('hidden');
                 var year = new Date().getFullYear() - car.regDate;
                 $('.section-result').html('<div class="text diff"><p class="mb10">我拥有了自己的' +
-                    car.brand + ' ' + car.series + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
+                    car.carShowName + '</p><p>' + car.mileage + '万公里的车轮印迹 </p><p>也见证了' + 
                     year + '年来 </p><p>汽车带来的幸福记忆… </p></div>')
                   .removeClass('hidden');
-                $('#form-result').html('<p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
-                  '%</span></p><p class="mb10">的青春（汽车的折损率</p>' + 
-                  '<p>然而汽车的耗损，</p>' + 
-                  '<p class="mb10">也见证了幸福感的与日俱增</p>' +
-                  '<p>怎能为那些难免的磕碰</p>' +
-                  '<p class="mb10">忘却Ta曾经为你遮风挡雨的日子</p>' +
-                  '<p>怎能因那些难免的争吵</p>' +
-                  '<p class="mb10">忽视父母带给你无与伦比的关爱</p>' +
-                  '<p>我来自山川湖海</p>' +
-                  '<p>唯有家庭与爱不可辜负</p>').removeClass('hidden');
+                $('#form-result').html('<div class="a8-text1"><p>TA已为我的家庭奉献了</p><p> <span>' + car.wreckRate + 
+                  '%</span></p><p>的青春（汽车的折损率</p>' + 
+                  '<div class="a8-text2"><p>怎能为那些难免的磕碰</p>' +
+                  '<p">忘却Ta曾经为你遮风挡雨的日子</p></div>' +
+                  '<div class="a8-text3"><p>怎能因那些难免的争吵</p>' +
+                  '<p">忽视父母带给你无与伦比的关爱</p></div>' +
+                  '<div class="a8-text4"><p>我来自山川湖海</p>' +
+                  '<p>唯有家庭与爱不可辜负</p></div>').removeClass('hidden');
                 $('#form-result-sec').addClass('hidden');
                 $('#operateCarText').text('卖');
                 $('#jump-btn').html('举手之劳 传递亲情').attr('data-num', '0');
@@ -277,7 +289,7 @@ $(function() {
               }
 
               if (data.code == '300') {
-                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a id="slide-back" class="btn">重新填写表单</a></div>')
+                $('#popup').html('<div class="content"><p>暂时不支持估价！</p><a href="#" id="slide-back" class="btn">重新填写表单</a></div>')
                     .removeClass('hidden');
                 $('#btn-link').html('<a class="btn btn-failure" href="' + contextPath + '/pages/mobile/index.html">看看我的dream car</a>');
               }
@@ -287,21 +299,14 @@ $(function() {
 
       })
 
-      $(document).on('click', '#slide-back', function() {
+      $(document).on('click', '#slide-back', function(e) {
+        e.preventDefault();
         $('#popup').addClass('hidden');
       })
     
     });
 
   })();
-
-  // (function() {
-  //   function stopScrolling( touchEvent ) {   
-  //       touchEvent.preventDefault();   
-  //   }  
-  //   document.addEventListener( 'touchstart', stopScrolling, false );  
-  //   document.addEventListener( 'touchmove', stopScrolling, false );  
-  // })();
 
 
 })
