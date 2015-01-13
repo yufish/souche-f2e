@@ -261,32 +261,76 @@ define([], function(){
                 photoSlide(lastPhoto + 1);
             }
         });
-        var wrapWidth = $(".wrap").width();
-        if (wrapWidth >= 1280) {
-            smallSlideWidth = "-546px";
-        } else {
-            smallSlideWidth = "-368px";
-        }
-        var smallSlide = function(current) {
-            var left = "0px";
-            if (current.is($(".photoSmallNext"))) {
-                left = smallSlideWidth;
-                current.addClass("photoActiveNext");
-                $(".photoSmallPre").removeClass("photoActivePre");
-            } else {
-                current.addClass("photoActivePre");
-                $(".photoSmallNext").removeClass("photoActiveNext");
+
+        
+        // 绑定 pre next点击
+        (function(){
+            var LI_COUNT_PER_SCREEN = 8;
+            var LI_SPACE_WIDTH = 76;
+            var ONE_SCREEN_WIDTH = LI_COUNT_PER_SCREEN*LI_SPACE_WIDTH;
+            var smallSlideItems = photoSmall;
+            var smallSlideList = $('.photosSmall');
+            var ssiCount = smallSlideItems.length;
+
+            // 计算ul的宽度， 应该为li个数/8的上整数
+            // 先算出来应该有多少屏 
+            var screenCount = Math.ceil(ssiCount/8);
+            var listWidth = screenCount*ONE_SCREEN_WIDTH
+            smallSlideList.css('width', listWidth);
+
+            function addDisable($ele){
+                $ele.addClass('disabled');
             }
-            $(".photosSmallWrap div").animate({
-                "margin-left": left
-            }, 300);
-        };
-        $(".photoSmallNext").click(function() {
-            smallSlide($(this));
-        });
-        $(".photoSmallPre").click(function() {
-            smallSlide($(this));
-        });
+            function removeDisable($ele){
+                $ele.removeClass('disabled');
+            }
+            var preBtn =  $(".photoSmallPre"), nextBtn = $(".photoSmallNext");
+
+            if( screenCount <= 1 ){
+                addDisable(preBtn);
+                addDisable(nextBtn);
+            }
+            else{
+                nextBtn.click(function() {
+                    if($(this).hasClass('disabled') ){
+                        return;
+                    }
+                    else{
+                        var curMarginLeft = parseInt(smallSlideList.css('margin-left'));
+                        var targetMargenLeft = curMarginLeft - ONE_SCREEN_WIDTH;
+                        smallSlideList.css('margin-left', targetMargenLeft);
+                        var iToSlide = -targetMargenLeft/LI_SPACE_WIDTH;
+                        photoSlide(iToSlide);
+
+                        var nextML = targetMargenLeft - ONE_SCREEN_WIDTH;
+                        if( Math.abs(nextML) >= listWidth){
+                            addDisable(nextBtn);
+                        }
+                        removeDisable(preBtn);
+                    }
+                });
+                preBtn.click(function() {
+                    if($(this).hasClass('disabled') ){
+                        return;
+                    }
+                    else{
+                        var curMarginLeft = parseInt(smallSlideList.css('margin-left'));
+                        var targetMargenLeft = curMarginLeft + ONE_SCREEN_WIDTH;
+                        smallSlideList.css('margin-left', targetMargenLeft);
+                        var iToSlide = -targetMargenLeft/LI_SPACE_WIDTH;
+                        photoSlide(iToSlide);
+
+                        var nextML = targetMargenLeft + ONE_SCREEN_WIDTH;
+                        if( nextML > 0){
+                            addDisable(preBtn);
+                        }
+                        removeDisable(nextBtn);
+                    }
+                });
+            }
+        })();
+
+
 
         var oldImg = null;
         var oldSrc = "";
