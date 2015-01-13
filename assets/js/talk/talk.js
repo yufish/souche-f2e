@@ -131,6 +131,8 @@ define([
                         })
                         self._switch_active(config.talk_with)
                         SoucheIMRender.renderContacts();
+                    }else if(contacts.length){
+                        self._switch_active(contacts[0].friendId);
                     }
                     //如果默认指定了一个url，则发送此url
                     if(config.url){
@@ -205,9 +207,13 @@ define([
                     carId = matchResult[1];
                     SoucheIMUtil.getCarInfo(carId,function(carInfo){
                         msg.ext =  {"content":JSON.stringify(carInfo),"messageType":"3"}
-                        SoucheIMQueue.putMessage(msg);
                         SoucheIMData.addLocalMessage(msg)
                         SoucheIMUtil.sendMessage(config.user_id,SoucheIMData.now_chat_userid,content);
+                        console.log(carInfo.pictures)
+                        carInfo.pictures = carInfo.pictures.replace(/\?.*$/,'')
+                        msg.ext =  {"content":JSON.stringify(carInfo),"messageType":"3"}
+                        console.log(msg)
+                        SoucheIMQueue.putMessage(msg);
                     })
                 }else{
                     SoucheIMQueue.putMessage(msg);
