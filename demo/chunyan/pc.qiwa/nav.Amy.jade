@@ -1,0 +1,30 @@
+#nav
+    .wrapper.clearfix
+        .main-navs
+            a.active(
+                href='/') 首页
+            a(
+                href='/bue.htm') 我要买车
+            a(
+                href='/sale.htm') 我要卖车
+            a(
+                href='/support.htm') 服务支持
+        .other-navs
+    script.
+        $("#J_phone_login").on("click", function(e) {
+            e.preventDefault();
+            Souche.MiniLogin.checkLogin(function() {
+                $(".qiugou .go-login").addClass("hidden")
+                window.location.reload();
+            },true,false,true);
+        });
+        $(".logonOut").on("click",function(e){
+            var url = 'http://127.0.0.1:8080/json/logout.json';
+            jQuery.ajax({
+                type: "get",
+                url: url,
+                success:function(data, textStatus){
+                    window.location.reload();
+                }
+            });
+        });
