@@ -24,7 +24,7 @@ define(function(){
                     data:{
                         token:souche_token,
                         user:user_id,
-                        friend:friend_id.replace("cn_","cheniu_")
+                        friend:friend_id
                     },
                     dataType:"json",
                     success:function(data){
