@@ -318,11 +318,11 @@ html, body {
     // &[data-index='6'] {
     // }
 
-    &[data-index='7'] {
+   
 
-      .diff p {
-        text-decoration: underline;
-      }
+    #text-diff p { 
+      color: @color;
+      text-decoration: underline; 
     }
 
     
@@ -610,4 +610,9 @@ html, body {
   bottom: 20%;
   left: 50%;
   .transform(translate(-50%, 0));
+}
+
+#diff-link {
+  display: block;
+  width: 100%;
 }
