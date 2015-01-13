@@ -207,9 +207,13 @@ define([
                     carId = matchResult[1];
                     SoucheIMUtil.getCarInfo(carId,function(carInfo){
                         msg.ext =  {"content":JSON.stringify(carInfo),"messageType":"3"}
-                        SoucheIMQueue.putMessage(msg);
                         SoucheIMData.addLocalMessage(msg)
                         SoucheIMUtil.sendMessage(config.user_id,SoucheIMData.now_chat_userid,content);
+                        console.log(carInfo.pictures)
+                        carInfo.pictures = carInfo.pictures.replace(/\?.*$/,'')
+                        msg.ext =  {"content":JSON.stringify(carInfo),"messageType":"3"}
+                        console.log(msg)
+                        SoucheIMQueue.putMessage(msg);
                     })
                 }else{
                     SoucheIMQueue.putMessage(msg);
