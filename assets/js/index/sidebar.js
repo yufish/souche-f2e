@@ -5,13 +5,6 @@ Souche.Sidebar = (function() {
     $(document).ready(function() {
         $("#talk_with").on("click",function(e){
             var uid = $(this).attr("data-userid");
-            if(Math.random()<0.3){
-                uid = "cn_18667046361"
-            }else if(Math.random()<0.6){
-                uid = "cn_17098045671"
-            }else{
-                uid="cn_15700097025"
-            }
             Souche.Sidebar.showTalk(uid,window.location.href);
         })
         $(".advisor-tip-close").click(function(e) {
@@ -126,7 +119,17 @@ Souche.Sidebar = (function() {
     var hasNewMessage;
 
     return {
+        getSalerId:function(callback){
+            $.ajax({
+                url:contextPath+"/pages/saleDetailAction/getChatId.json",
+                success:function(){
+
+                }
+            })
+        },
         showTalk:function(user_id,url){
+
+            $(".unreadtip").addClass("hidden")
             var href = $("#sidebar-talk").attr("href")
             if(user_id){
                 href = contextPath+"/pages/toolbar/talk.html?talk_with="+user_id+"&url="+encodeURIComponent(url);

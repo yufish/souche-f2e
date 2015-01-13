@@ -1,14 +1,15 @@
 @orange:#FF5517;
 #detail_main  .detail-price{
-    border:1px solid #e4e3e3;
-    background: #f9f9f9;
-    margin:10px 0;
-     padding:20px;
-     margin-bottom: 10px;
-     position: relative;
-     width: 430px;
+    background: #F5F5F5;
+    padding:20px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 500px;
+     .price-box{
+        margin-bottom: 17px;
+     }
      .timebuy{
-        margin-top: 15px;
+       
        .timebuy-tit{
          color: @orange;
          float: left;
@@ -39,15 +40,15 @@
         }
      }
      .detail_price_left{
-        padding-right: 20px;
+        padding-right: 34px;
         float: left;
         border-right: 1px solid #e4e3e3;
-        height: 30px;
-        line-height: 30px;
+        
         em{
             font-size:30px;
             color:@orange;
             font-weight: bold;
+            margin-left: -6px;
         }
         label{
             display: block;
@@ -59,25 +60,29 @@
      .detail_price_right{
         width:54%;
         float: left;
-        
-        em{
-            color: @orange;
+        line-height: 18px;
+        .reduce{
+            color: #666666;
             font-size:12px;
             padding-left: 15px;
-            margin-bottom: 3px;
+           
+            em{
+                font-weight: bold;
+            }
         }
         label{
             display: block;
-            font-weight: 12px;
+            font-size: 12px;
             color:#999;
             padding-left: 15px;
         }
     }
-}
 
+}
+ .has-p{
+        margin-top: 18px;
+    }
 #detail_main .price-others{
-    margin-bottom: 15px;
-    
     .detail_price_other{
         line-height:25px;
         i.fenqi{
@@ -115,7 +120,7 @@
             *height:20px;
             *vertical-align: 3px;
         }
-        font-size: 14px;
+        font-size: 12px;
         color:#666;
         
     }
@@ -124,3 +129,12 @@
     }
 }
 
+     .timebuy-icon{
+        width: 84px;
+        height: 84px;
+        background: url(../../images/detail/timebuy.png) no-repeat;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10000;
+     }
