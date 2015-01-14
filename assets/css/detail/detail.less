@@ -679,15 +679,21 @@ position: relative;
     }
   }
 }
-#detail_main .adress-open{
+.send-adress{
+      float: left;
+      position: relative;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+.adress-open{
   position: absolute;
   width: 270px;
   height: 95px;
-  top: -1px;
-  right: 162px;
+  top: -11px;
+  left: -11px;
   background-color: #F9F9F9;
   border: 1px solid #E4E3E3;
-  padding:15px;
+  padding:10px;
   z-index: 10000;
   text-indent:0px;
   .adress-title{
@@ -2315,13 +2321,7 @@ top: 12px;
     .map:hover{
       color: #FF571A;
     }
-    .send-adress{
-      margin-left: 5px;
-      float: left;
-      position: relative;
-      cursor: pointer;
-      
-    }
+
   }
 }
 #detail_main #J_wx_phone .wx-open{
@@ -2472,6 +2472,10 @@ top: 12px;
       font-size: 12px;
       line-height: 19px;
       color: #666;
+      .add{
+        float: left;
+        margin-right: 20px;
+      }
     }
     .shop-score{
       font-size: 12px;
