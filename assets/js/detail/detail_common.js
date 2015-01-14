@@ -273,7 +273,7 @@
     //     })
     // })
     //门店地址
-    $(".act-left .send-adress").mousemove(function() {
+    $(".send-adress").mousemove(function() {
         $(".adress-open").removeClass("hidden");
     })
     $(document.body).on("click", function(e) {
