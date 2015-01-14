@@ -1,7 +1,8 @@
 var List = function() {
     var config = {
         page: 1,
-        moreURL: ""
+        moreURL: "",
+        lock: false
     }
     var tpl_cars;
     var carList = [];
@@ -109,6 +110,15 @@ var List = function() {
             this.bind()
         },
         bind: function() {
+            $(window).scroll(function () {
+                console.log($(window).scrollTop());
+                console.log('b' + $(document.body).height());
+                if ($(window).scrollTop() > $(document.body).height() - 500 && !config.lock) {
+                    loadMore();
+                    config.lock = true;
+                }
+            });
+
             $("#list .filter .t").on("click", function(e) {
                 setTimeout(function() {
                     $("#content").css("height", 0)

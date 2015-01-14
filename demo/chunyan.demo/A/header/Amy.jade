@@ -1,79 +1,94 @@
-#header
-    script.
-        function flushUserTag(){
-            $.ajax({  
-                type:"get",
-                dataType:"jsonp",
-                url: "http://115.29.10.121:9988/loginAction/getCookie.json",
-                crossDomain:true,
-                jsonpCallback:"setUserInfo",
-                success: function(data){
-                    flushUserTagIframe(data);
-                },
-                beforeSend:function(){
-                }, 
-                complete:function(data,status){
-                }  
-            });
-        }
-        function flushUserTagIframe(data){
-            var url = 'http://127.0.0.1:8080/flush_user_tag.htm' + '?userTag=' + data.userTag + "&userId=" + data.userId;
-            $("#flushUserTagIframe").attr("src", url);
-        }
-        $("#flushUserTagIframeSouche").attr("src", "http://115.29.10.121:9988/loginAction/getCookie.json");
-        $(document).ready(function(){
-            setTimeout("flushUserTag()", 2000);
-        });
-    iframe#flushUserTagIframeSouche(
-        width='0'
-        height='0'
-        frameborder='0'
-        src='')
-    iframe#flushUserTageIframe(
-        width='0'
-        height='0'
-        frameborder='0'
-        src='http://127.0.0.1:8080/flush_user_tag.htm?userTag=0hMLupVtBJ&userId=')
-    .wrapper
-        a.logo(
-            href='http://127.0.0.1:8080')
-            img(
-                src='http://img.souche.com/files/default/BDDF037B7A4B9468ED9221DEB42DF903_235x52.png')
-        .search
-            form.index-search(
-                action='http://127.0.0.1:8080/buy.htm')
-                input.search-text(
-                    type='text'
-                    autocomplete='off'
-                    placeholder='搜索你想要的车'
-                    name='keyword')
-                input(
-                    type='hidden'
-                    value='search'
-                    name='pfrom')
-                button.search-submit(
-                    type='submit')
-                    i
-                .recom
-        .phone-number
-            div(style='font-size: 18px; color: grey;') 4008571000
-            div(style='font-size: 12px; color: grey;') 服务时间  08:30-22:30
-        a.cord-h5(
-            target='_blank'
-            href="")
-            i.phone-icon
-            span 关注微信
-            i.open-icon
-            .h5-open.clearfix
-                .h5-code
-                    img(
-                        src='http://img.souche.com/files/default/9F4E33662B3753AE052417A0DBF2D414_160x160.png')
-    script.
-        $(".cord-h5").mouseenter(function(){
-            $(".h5-open").slideDown("normal");
-        });
-        $(document.body).on("click", function(e) {
-            if (!$(e.target).closest(".h5-open").length) {
-                $(".h5-open").slideUp("normal");
+mixin header
+    #header
+        script.
+            function flushUserTag(){
+                $.ajax({  
+                    type:"get",
+                    dataType:"jsonp",
+                    url: "http://115.29.10.121:9988/loginAction/getCookie.json",
+                    crossDomain:true,
+                    jsonpCallback:"setUserInfo",
+                    success: function(data){
+                        flushUserTagIframe(data);
+                    },
+                    beforeSend:function(){
+                    }, 
+                    complete:function(data,status){
+                    }  
+                });
             }
-        });
+            function flushUserTagIframe(data){
+                var url = 'http://127.0.0.1:8080/flush_user_tag.htm' + '?userTag=' + data.userTag + "&userId=" + data.userId;
+                $("#flushUserTagIframe").attr("src", url);
+            }
+            $("#flushUserTagIframeSouche").attr("src", "http://115.29.10.121:9988/loginAction/getCookie.json");
+            $(document).ready(function(){
+                setTimeout("flushUserTag()", 2000);
+            });
+        iframe#flushUserTagIframeSouche(
+            width='0'
+            height='0'
+            frameborder='0'
+            src='')
+        iframe#flushUserTageIframe(
+            width='0'
+            height='0'
+            frameborder='0'
+            src='http://127.0.0.1:8080/flush_user_tag.htm?userTag=0hMLupVtBJ&userId=')
+        .wrapper
+            a.logo(
+                href='http://127.0.0.1:8080')
+                img(
+                    src='http://img.souche.com/files/default/BDDF037B7A4B9468ED9221DEB42DF903_235x52.png')
+            .search
+                form.index-search(
+                    action='http://127.0.0.1:8080/buy.htm')
+                    input.search-text(
+                        type='text'
+                        autocomplete='off'
+                        placeholder='搜索你想要的车'
+                        name='keyword')
+                    input(
+                        type='hidden'
+                        value='search'
+                        name='pfrom')
+                    button.search-submit(
+                        type='submit')
+                        i
+                    .recom
+            .phone-number
+                div(style='font-size: 18px; color: grey;') 4008571000
+                div(style='font-size: 12px; color: grey;') 服务时间  08:30-22:30
+            a.cord-h5(
+                target='_blank'
+                href="")
+                i.phone-icon
+                span 关注微信
+                i.open-icon
+                .h5-open.clearfix
+                    .h5-code
+                        img(
+                            src='http://img.souche.com/files/default/9F4E33662B3753AE052417A0DBF2D414_160x160.png')
+        script.
+            $(".cord-h5").mouseenter(function(){
+                $(".h5-open").slideDown("normal");
+            });
+            $(document.body).on("click", function(e) {
+                if (!$(e.target).closest(".h5-open").length) {
+                    $(".h5-open").slideUp("normal");
+                }
+            });
+mixin dev
+    - var cssbase = 'http://f2e.souche.com/assets/css-bigshop/chunyan.less/S/pc.qiwa/';
+    doctype html
+    html
+        head
+            link(
+                href=cssbase+"index.Amy.css"
+                style='text/css'
+                rel='stylesheet')
+        body
+            +header
+
+if !cssbase
+    +dev
