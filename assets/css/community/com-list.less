@@ -1,0 +1,194 @@
+*{
+  box-sizing: border-box;
+}
+#com-list{
+  .wrapper{
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .list-map{
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+  }
+  .list-wrap{
+    margin-top: 22px;
+    .arts-search{
+      width: 300px;
+      float: left;
+      h1{
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      form{
+        width: 180px;
+        position: relative;
+        input{
+          width: 180px;
+          height: 32px;
+          border: 1px solid #E6E6E6;
+          padding: 5px 10px;
+        }
+        button{
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url(../../images/index/head-sprite.png) no-repeat;
+          background-position: 0 -35px;
+          border: none;
+          position: absolute;
+          top: 9px;
+          right: 10px;
+          cursor: pointer;
+          opacity: 0.45;
+          filter: alpha(opacity=45);
+        }
+        button:hover{
+          opacity: 1;
+          filter: alpha(opacity=100);
+          background: url(../../images/index/head-sprite.png) no-repeat;
+          background-position: 0 -55px;
+        }
+      }
+    }
+    .arts-list{
+      width: 880px;
+      float: left;
+      margin-bottom: 90px;
+      .arts-wrap{
+        margin-bottom: 95px;
+      }
+      .art-box{
+        border-bottom: 1px solid #DCDCDC;
+        padding-bottom: 25px;
+        margin-bottom: 40px;
+        .art-images{
+          float: left;
+          width: 300px;
+          margin-right: 30px;
+          img{
+            width: 100%;
+          }
+        }
+        .art-cont{
+          width: 545px;
+          float: left;
+          .title{
+            font-size: 20px;
+
+            span{
+              color: #FF5417;
+            }
+            em{
+              color: #333;
+            }
+          } 
+          .art-info{
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            em{
+              margin-left: 15px;
+            }
+            i{
+              font-style: normal;
+              margin-right: 5px;
+            }
+          }
+          .art-sum{
+            p{
+              font-size: 16px;
+              color: #666;
+              line-height: 27px;
+            }
+          }
+          .art-detail{
+            margin-top: 15px;
+            .art-author{
+              float: left;
+              img{
+                display: block;
+                float: left;
+                width: 33px;
+                height: 33px;
+              }
+              .author-name{
+                float: left;
+                line-height: 33px;
+                color: #999;
+                margin-left: 10px;
+                font-size: 14px;
+              }
+            }
+            .read-art{
+              display: block;
+              float: right;
+              width: 100px;
+              height: 32px;
+              border-radius: 2px;
+              background: #FF5517;
+              font-size: 16px;
+              color: #fff;
+              text-align: center;
+              line-height: 32px;
+              cursor: pointer;
+            }
+            .art-popu{
+              float: right;
+              margin-top: 6px;
+              margin-right: 20px;
+              .popu-item{
+                float: left;
+                cursor: pointer;
+                i{
+                  display: block;
+                  float: left;
+                  margin-right: 8px;
+                  margin-top: 4px;
+                }
+                span{
+                  display: block;
+                  float: left;
+                  font-size: 14px;
+                  color: #999;
+                  margin-right: 10px;
+                }
+                em{
+                  display: block;
+                  float: left;
+                  font-size: 12px;
+                  color: #E6E6E6;
+                  margin-right: 8px;
+                }
+              }
+              .browse{
+                i{
+                  width: 15px;
+                  height: 12px;
+                  background: url(../../images/community/browse.png) no-repeat;
+                }
+              }
+              .comment{
+                i{
+                  width: 14px;
+                  height: 12px;
+                  background: url(../../images/community/comment.png) no-repeat;
+                }
+              }
+              .praise{
+                i{
+                  width: 14px;
+                  height: 12px;
+                  background: url(../../images/community/praise.png) no-repeat;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
