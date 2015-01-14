@@ -56,9 +56,14 @@
     .arts-list{
       width: 880px;
       float: left;
+      margin-bottom: 90px;
+      .arts-wrap{
+        margin-bottom: 95px;
+      }
       .art-box{
         border-bottom: 1px solid #DCDCDC;
         padding-bottom: 25px;
+        margin-bottom: 40px;
         .art-images{
           float: left;
           width: 300px;
@@ -81,7 +86,7 @@
             }
           } 
           .art-info{
-            font-size: 12px;
+            font-size: 14px;
             color: #999;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -98,6 +103,88 @@
               font-size: 16px;
               color: #666;
               line-height: 27px;
+            }
+          }
+          .art-detail{
+            margin-top: 15px;
+            .art-author{
+              float: left;
+              img{
+                display: block;
+                float: left;
+                width: 33px;
+                height: 33px;
+              }
+              .author-name{
+                float: left;
+                line-height: 33px;
+                color: #999;
+                margin-left: 10px;
+                font-size: 14px;
+              }
+            }
+            .read-art{
+              display: block;
+              float: right;
+              width: 100px;
+              height: 32px;
+              border-radius: 2px;
+              background: #FF5517;
+              font-size: 16px;
+              color: #fff;
+              text-align: center;
+              line-height: 32px;
+              cursor: pointer;
+            }
+            .art-popu{
+              float: right;
+              margin-top: 6px;
+              margin-right: 20px;
+              .popu-item{
+                float: left;
+                cursor: pointer;
+                i{
+                  display: block;
+                  float: left;
+                  margin-right: 8px;
+                  margin-top: 4px;
+                }
+                span{
+                  display: block;
+                  float: left;
+                  font-size: 14px;
+                  color: #999;
+                  margin-right: 10px;
+                }
+                em{
+                  display: block;
+                  float: left;
+                  font-size: 12px;
+                  color: #E6E6E6;
+                  margin-right: 8px;
+                }
+              }
+              .browse{
+                i{
+                  width: 15px;
+                  height: 12px;
+                  background: url(../../images/community/browse.png) no-repeat;
+                }
+              }
+              .comment{
+                i{
+                  width: 14px;
+                  height: 12px;
+                  background: url(../../images/community/comment.png) no-repeat;
+                }
+              }
+              .praise{
+                i{
+                  width: 14px;
+                  height: 12px;
+                  background: url(../../images/community/praise.png) no-repeat;
+                }
+              }
             }
           }
         }
